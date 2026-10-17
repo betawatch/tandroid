@@ -1,11 +1,46 @@
 package androidx.fragment.app;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+import android.util.Log;
+import java.util.ArrayList;
+import java.util.concurrent.CopyOnWriteArrayList;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class a0 {
-    public final /* synthetic */ i0 a;
+    public boolean a = false;
+    public final CopyOnWriteArrayList b = new CopyOnWriteArrayList();
+    public kotlin.jvm.internal.h c;
+    public final /* synthetic */ j0 d;
 
-    public a0(i0 i0Var) {
-        this.a = i0Var;
+    public a0(j0 j0Var) {
+        this.d = j0Var;
+    }
+
+    public final void a() {
+        boolean K = j0.K(3);
+        j0 j0Var = this.d;
+        if (K) {
+            Log.d("FragmentManager", "handleOnBackCancelled. PREDICTIVE_BACK = true fragment manager " + j0Var);
+        }
+        if (j0.K(3)) {
+            Log.d("FragmentManager", "cancelBackStackTransition for transition " + j0Var.h);
+        }
+        a aVar = j0Var.h;
+        if (aVar != null) {
+            aVar.r = false;
+            aVar.d();
+            a aVar2 = j0Var.h;
+            d dVar = new d(j0Var, 1);
+            if (aVar2.p == null) {
+                aVar2.p = new ArrayList();
+            }
+            aVar2.p.add(dVar);
+            j0Var.h.e(false, true);
+            j0Var.i = true;
+            j0Var.A(true);
+            j0Var.E();
+            j0Var.i = false;
+            j0Var.h = null;
+        }
     }
 }

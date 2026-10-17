@@ -1,24 +1,18 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class kj extends org.telegram.ui.Components.ew {
-    public final /* synthetic */ fo W;
+public final class kj extends qh.i {
+    public final /* synthetic */ sn H;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kj(fo foVar, org.telegram.ui.ActionBar.m2 m2Var, Activity activity, org.telegram.ui.ActionBar.c6 c6Var, ArrayList arrayList) {
-        super(m2Var, activity, c6Var, arrayList);
-        this.W = foVar;
+    public kj(sn snVar, mf mfVar) {
+        super(mfVar);
+        this.H = snVar;
     }
 
-    @Override // org.telegram.ui.Components.ew, org.telegram.ui.ActionBar.e3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.i2
-    public final void dismiss() {
-        super.dismiss();
-        fo foVar = this.W;
-        foVar.getClass();
-        foVar.j8(false, true, 0.0f);
+    @Override // qh.i
+    public final r0.k1 b(r0.k1 k1Var) {
+        return this.H.z8(k1Var);
     }
 }

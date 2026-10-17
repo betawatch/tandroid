@@ -1,58 +1,29 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
 import android.view.View;
-import android.widget.ImageView;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationsController;
-import org.telegram.messenger.NotificationsSettingsFacade;
-import org.telegram.messenger.R;
+import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class pe implements View.OnClickListener {
-    public final /* synthetic */ org.telegram.ui.fo a;
-    public final /* synthetic */ Activity b;
-    public final /* synthetic */ ChatActivityEnterView c;
+public final class pe extends View.AccessibilityDelegate {
+    public final /* synthetic */ int a;
 
-    public pe(ChatActivityEnterView chatActivityEnterView, org.telegram.ui.fo foVar, Activity activity) {
-        this.c = chatActivityEnterView;
-        this.a = foVar;
-        this.b = activity;
-    }
-
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        String str;
-        int i10;
-        org.telegram.ui.fo foVar = this.a;
-        if (foVar == null) {
-            return;
+    @Override // android.view.View.AccessibilityDelegate
+    public final void onInitializeAccessibilityNodeInfo(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
+        switch (this.a) {
+            case 0:
+                super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
+                accessibilityNodeInfo.setClassName("android.widget.ImageButton");
+                accessibilityNodeInfo.setClickable(true);
+                accessibilityNodeInfo.setLongClickable(true);
+                break;
+            default:
+                super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
+                if (view.isEnabled()) {
+                    accessibilityNodeInfo.addAction(16);
+                    break;
+                }
+                break;
         }
-        ChatActivityEnterView chatActivityEnterView = this.c;
-        chatActivityEnterView.g2 = !chatActivityEnterView.g2;
-        if (chatActivityEnterView.e0 == null) {
-            chatActivityEnterView.e0 = new bs(this.b, R.drawable.input_notify_on, org.telegram.ui.ActionBar.g6.Wk);
-        }
-        chatActivityEnterView.e0.a(chatActivityEnterView.g2, true);
-        chatActivityEnterView.I1.setImageDrawable(chatActivityEnterView.e0);
-        MessagesController.getNotificationsSettings(chatActivityEnterView.Q).edit().putBoolean(NotificationsSettingsFacade.PROPERTY_SILENT + chatActivityEnterView.Q2, chatActivityEnterView.g2).commit();
-        NotificationsController.getInstance(chatActivityEnterView.Q).updateServerNotificationsSettings(chatActivityEnterView.Q2, foVar == null ? 0L : foVar.d());
-        foVar.T7();
-        UndoView undoView = foVar.y3;
-        if (undoView != null) {
-            undoView.j(!chatActivityEnterView.g2 ? 54 : 55, 0L, null);
-        }
-        ImageView imageView = chatActivityEnterView.I1;
-        if (chatActivityEnterView.g2) {
-            str = "AccDescrChanSilentOn";
-            i10 = R.string.AccDescrChanSilentOn;
-        } else {
-            str = "AccDescrChanSilentOff";
-            i10 = R.string.AccDescrChanSilentOff;
-        }
-        imageView.setContentDescription(LocaleController.getString(str, i10));
-        chatActivityEnterView.D1(true);
     }
 }

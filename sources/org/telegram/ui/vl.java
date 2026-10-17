@@ -1,55 +1,52 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.text.TextPaint;
-import android.view.animation.OvershootInterpolator;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class vl extends org.telegram.ui.Components.p11 {
-    public final /* synthetic */ fo K;
+public final class vl extends bu0 {
+    public final /* synthetic */ MessageObject a;
+    public final /* synthetic */ MediaController.PhotoEntry b;
+    public final /* synthetic */ wl c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vl(Activity activity, org.telegram.ui.ActionBar.c6 c6Var, fo foVar) {
-        super(activity);
-        this.K = foVar;
-        TextPaint textPaint = new TextPaint(1);
-        this.b = textPaint;
-        Paint paint = new Paint(1);
-        this.c = paint;
-        this.d = AndroidUtilities.dp(24.0f);
-        this.e = new OvershootInterpolator();
-        this.H = new org.telegram.ui.Components.kr0(this, 15);
-        this.J = new Path();
-        int w02 = org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.Hi, c6Var);
-        int alpha = Color.alpha(w02);
-        textPaint.setTextSize(AndroidUtilities.dp(15.0f));
-        textPaint.setColor(w02);
-        paint.setColor(w02);
-        paint.setAlpha((int) (alpha * 0.14d));
-        setBackground(org.telegram.ui.ActionBar.g6.c0(AndroidUtilities.dp(6.0f), org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.Fi, c6Var)));
+    public vl(wl wlVar, MessageObject messageObject, MediaController.PhotoEntry photoEntry) {
+        this.c = wlVar;
+        this.a = messageObject;
+        this.b = photoEntry;
     }
 
-    public final void d() {
-        int i10 = -(AndroidUtilities.dp(16.0f) + getMeasuredHeight());
-        fo foVar = this.K;
-        setTranslationY((foVar.Y.getTop() - foVar.X0.getMeasuredHeight()) - ((1.0f - getPrepareProgress()) * (r2 + i10)));
+    @Override // org.telegram.ui.bu0, org.telegram.ui.ju0
+    public final lu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        return this.c.a.Q.Ga.E(this.a, fileLocation, i10, z10, false);
     }
 
-    @Override // org.telegram.ui.Components.p11, android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        d();
-    }
-
-    @Override // org.telegram.ui.Components.p11, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        d();
+    @Override // org.telegram.ui.bu0, org.telegram.ui.ju0
+    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
+        fm fmVar = this.c.a;
+        MessageObject messageObject = this.a;
+        messageObject.settingAvatar = true;
+        MediaController.PhotoEntry photoEntry = this.b;
+        if (photoEntry.imagePath != null || photoEntry.isVideo) {
+            sn snVar = fmVar.Q;
+            vi viVar = new vi(messageObject, 5);
+            org.telegram.ui.ActionBar.d5 parentLayout = snVar.getParentLayout();
+            int currentAccount = snVar.getCurrentAccount();
+            org.telegram.ui.Components.e50 e50Var = new org.telegram.ui.Components.e50(0, true, true);
+            e50Var.a = snVar;
+            e50Var.s(photoEntry);
+            e50Var.b = new ha(currentAccount, viVar, parentLayout, e50Var);
+            return;
+        }
+        TLRPC.TL_photos_updateProfilePhoto tL_photos_updateProfilePhoto = new TLRPC.TL_photos_updateProfilePhoto();
+        TLRPC.TL_inputPhoto tL_inputPhoto = new TLRPC.TL_inputPhoto();
+        tL_photos_updateProfilePhoto.id = tL_inputPhoto;
+        TLRPC.Photo photo = messageObject.messageOwner.action.photo;
+        tL_inputPhoto.id = photo.id;
+        tL_inputPhoto.access_hash = photo.access_hash;
+        tL_inputPhoto.file_reference = photo.file_reference;
+        fmVar.Q.getConnectionsManager().sendRequest(tL_photos_updateProfilePhoto, new xc(6, this, messageObject));
     }
 }

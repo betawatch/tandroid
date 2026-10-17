@@ -1,15 +1,96 @@
 package org.telegram.ui.Wallet;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes4.dex */
-public final class g8 {
-    public final String a;
-    public final boolean b;
-    public final h8 c;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.xc;
 
-    public g8(i8 i8Var, String str, boolean z10, h8 h8Var) {
-        this.a = str;
-        this.b = z10;
-        this.c = new h8(i8Var, h8Var, h8Var.a, true);
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class g8 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k8 b;
+    public final /* synthetic */ pf.c c;
+
+    public /* synthetic */ g8(k8 k8Var, pf.c cVar, int i10) {
+        this.a = i10;
+        this.b = k8Var;
+        this.c = cVar;
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        String str = (String) obj;
+        switch (this.a) {
+            case 0:
+                k8 k8Var = this.b;
+                k8Var.getClass();
+                this.c.b();
+                if (!TextUtils.isEmpty(str)) {
+                    xc.a0(k8Var).e0(str, false);
+                    break;
+                }
+                break;
+            case 1:
+                this.c.c(false);
+                k8 k8Var2 = this.b;
+                org.telegram.ui.ActionBar.d5 parentLayout = k8Var2.getParentLayout();
+                if (parentLayout != null) {
+                    ArrayList arrayList = new ArrayList(parentLayout.getFragmentStack());
+                    int size = arrayList.size();
+                    int i10 = 0;
+                    while (i10 < size) {
+                        Object obj2 = arrayList.get(i10);
+                        i10++;
+                        org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) obj2;
+                        if ((n2Var instanceof t9) || (n2Var instanceof s8) || (n2Var instanceof aa)) {
+                            ((ActionBarLayout) parentLayout).a0(n2Var, false);
+                        }
+                    }
+                }
+                if (str == null) {
+                    qc M = xc.a0(k8Var2).M(LocaleController.getString(R.string.WalletBackupDisabled), LocaleController.getString(R.string.WalletBackupDisabledInfo), R.raw.contact_check);
+                    M.j = 5000;
+                    M.j();
+                    break;
+                } else {
+                    xc.a0(k8Var2).e0(str, false);
+                    break;
+                }
+                break;
+            default:
+                k8 k8Var3 = this.b;
+                k8Var3.getClass();
+                this.c.b();
+                if (str == null) {
+                    org.telegram.ui.ActionBar.d5 parentLayout2 = k8Var3.getParentLayout();
+                    if (parentLayout2 != null) {
+                        ArrayList arrayList2 = new ArrayList(parentLayout2.getFragmentStack());
+                        int size2 = arrayList2.size();
+                        int i11 = 0;
+                        while (i11 < size2) {
+                            Object obj3 = arrayList2.get(i11);
+                            i11++;
+                            org.telegram.ui.ActionBar.n2 n2Var2 = (org.telegram.ui.ActionBar.n2) obj3;
+                            if ((n2Var2 instanceof t9) || (n2Var2 instanceof s8) || (n2Var2 instanceof aa) || (n2Var2 instanceof k8)) {
+                                ((ActionBarLayout) parentLayout2).a0(n2Var2, false);
+                            }
+                        }
+                        k8Var3.finishFragment();
+                        break;
+                    } else {
+                        k8Var3.finishFragment();
+                        break;
+                    }
+                } else {
+                    xc.a0(k8Var3).e0(str, false);
+                    break;
+                }
+                break;
+        }
     }
 }

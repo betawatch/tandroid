@@ -1,33 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import android.app.Activity;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class x8 extends zq {
-    public final /* synthetic */ int f0;
+public final class x8 extends d9 {
+    public final /* synthetic */ w8 G;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ x8(Context context, boolean z10, yq yqVar, int i10) {
-        super(context, z10, yqVar);
-        this.f0 = i10;
+    public x8(e9 e9Var, Activity activity, w8 w8Var) {
+        super(e9Var, activity);
+        this.G = w8Var;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        switch (this.f0) {
-            case 0:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(300.0f), TLObject.FLAG_30));
-                break;
-            case 1:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(300.0f), TLObject.FLAG_30));
-                break;
-            default:
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(300.0f), TLObject.FLAG_30));
-                break;
-        }
+    @Override // org.telegram.ui.Components.d9, android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        this.G.invalidate();
     }
 }

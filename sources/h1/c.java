@@ -4,16 +4,16 @@ import android.database.Cursor;
 import android.util.Log;
 import android.widget.Filter;
 import androidx.appcompat.widget.SearchView;
-import m.c3;
+import m.b3;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class c extends Filter {
     public b a;
 
     @Override // android.widget.Filter
     public final CharSequence convertResultToString(Object obj) {
-        return ((c3) this.a).c((Cursor) obj);
+        return ((b3) this.a).c((Cursor) obj);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:14:0x0039  */
@@ -24,12 +24,12 @@ public final class c extends Filter {
     */
     public final Filter.FilterResults performFiltering(CharSequence charSequence) {
         Cursor cursor;
-        c3 c3Var = (c3) this.a;
-        SearchView searchView = c3Var.v;
+        b3 b3Var = (b3) this.a;
+        SearchView searchView = b3Var.v;
         String charSequence2 = charSequence == null ? "" : charSequence.toString();
         if (searchView.getVisibility() == 0 && searchView.getWindowVisibility() == 0) {
             try {
-                cursor = c3Var.f(c3Var.w, charSequence2);
+                cursor = b3Var.f(b3Var.w, charSequence2);
             } catch (RuntimeException e) {
                 Log.w("SuggestionsAdapter", "Search suggestions query threw an exception.", e);
             }
@@ -61,6 +61,6 @@ public final class c extends Filter {
         if (obj == null || obj == cursor) {
             return;
         }
-        ((c3) bVar).b((Cursor) obj);
+        ((b3) bVar).b((Cursor) obj);
     }
 }

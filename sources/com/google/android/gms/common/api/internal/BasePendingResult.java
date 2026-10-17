@@ -13,10 +13,10 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicReference;
 import v7.g5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class BasePendingResult<R extends com.google.android.gms.common.api.q> extends g5 {
-    public static final n1 n = new n1(0);
+    public static final m1 n = new m1(0);
     public final g b;
     public final WeakReference c;
     public e6.q f;
@@ -25,7 +25,7 @@ public abstract class BasePendingResult<R extends com.google.android.gms.common.
     public volatile boolean j;
     public boolean k;
     public boolean l;
-    private o1 resultGuardian;
+    private n1 resultGuardian;
     public final Object a = new Object();
     public final CountDownLatch d = new CountDownLatch(1);
     public final ArrayList e = new ArrayList();
@@ -155,9 +155,9 @@ public abstract class BasePendingResult<R extends com.google.android.gms.common.
             this.f = null;
             this.j = true;
         }
-        f1 f1Var = (f1) this.g.getAndSet(null);
-        if (f1Var != null) {
-            ((Set) f1Var.a.a).remove(this);
+        e1 e1Var = (e1) this.g.getAndSet(null);
+        if (e1Var != null) {
+            ((Set) e1Var.a.a).remove(this);
         }
         n6.l.h(qVar);
         return qVar;
@@ -176,7 +176,7 @@ public abstract class BasePendingResult<R extends com.google.android.gms.common.
                 gVar.removeMessages(2);
                 gVar.sendMessage(gVar.obtainMessage(1, new Pair(qVar2, j())));
             } else if (this.h instanceof x8.e) {
-                this.resultGuardian = new o1(this);
+                this.resultGuardian = new n1(this);
             }
         }
         ArrayList arrayList = this.e;

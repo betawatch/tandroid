@@ -1,31 +1,31 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l0 implements sd0 {
+public final /* synthetic */ class l0 implements md0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ud0 b;
-    public final /* synthetic */ ud0 c;
-    public final /* synthetic */ ud0 d;
+    public final /* synthetic */ od0 b;
+    public final /* synthetic */ od0 c;
+    public final /* synthetic */ od0 d;
 
-    public /* synthetic */ l0(ud0 ud0Var, ud0 ud0Var2, ud0 ud0Var3, int i10) {
+    public /* synthetic */ l0(od0 od0Var, od0 od0Var2, od0 od0Var3, int i10) {
         this.a = i10;
-        this.b = ud0Var;
-        this.c = ud0Var2;
-        this.d = ud0Var3;
+        this.b = od0Var;
+        this.c = od0Var2;
+        this.d = od0Var3;
     }
 
-    @Override // org.telegram.ui.Components.sd0
-    public final void r(ud0 ud0Var, int i10) {
+    @Override // org.telegram.ui.Components.md0
+    public final void q(od0 od0Var, int i10) {
         switch (this.a) {
             case 0:
-                g5.a(this.b, this.c, this.d);
+                f5.a(this.b, this.c, this.d);
                 break;
             case 1:
-                g5.x0(this.b, this.c, this.d);
+                f5.x0(this.b, this.c, this.d);
                 break;
             default:
-                g5.x0(this.b, this.c, this.d);
+                f5.x0(this.b, this.c, this.d);
                 break;
         }
     }

@@ -1,54 +1,47 @@
 package org.telegram.ui;
 
 import android.view.View;
-import org.telegram.messenger.MediaController;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zq implements org.telegram.ui.ActionBar.z1, org.telegram.ui.Components.f5 {
-    public final /* synthetic */ String a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
+public final /* synthetic */ class zq implements q0.a {
+    public final /* synthetic */ int a;
 
-    public /* synthetic */ zq(yr yrVar, TLRPC.User user, TLObject tLObject, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str, boolean z10) {
-        this.c = yrVar;
-        this.d = user;
-        this.e = tLObject;
-        this.f = tL_chatAdminRights;
-        this.h = tL_chatBannedRights;
-        this.a = str;
-        this.b = z10;
+    public /* synthetic */ zq(int i10) {
+        this.a = i10;
     }
 
-    @Override // org.telegram.ui.Components.f5
-    public void J(int i10, int i11, boolean z10) {
-        ((org.telegram.ui.Components.ig) this.c).B((View) this.d, this.e, this.a, this.f, z10, i10, i11, (MediaController.PhotoEntry) this.h, this.b);
-    }
-
-    @Override // org.telegram.ui.ActionBar.z1
-    public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
-        yr yrVar = (yr) this.c;
-        TLRPC.User user = (TLRPC.User) this.d;
-        TLObject tLObject = (TLObject) this.e;
-        TLRPC.TL_chatAdminRights tL_chatAdminRights = (TLRPC.TL_chatAdminRights) this.f;
-        TLRPC.TL_chatBannedRights tL_chatBannedRights = (TLRPC.TL_chatBannedRights) this.h;
-        yrVar.getClass();
-        yrVar.t0(user.id, tLObject, tL_chatAdminRights, tL_chatBannedRights, this.a, this.b, yrVar.e1 == 1 ? 0 : 1, false);
-    }
-
-    public /* synthetic */ zq(org.telegram.ui.Components.ig igVar, View view, Object obj, String str, Object obj2, MediaController.PhotoEntry photoEntry, boolean z10) {
-        this.c = igVar;
-        this.d = view;
-        this.e = obj;
-        this.a = str;
-        this.f = obj2;
-        this.h = photoEntry;
-        this.b = z10;
+    @Override // q0.a
+    public final void accept(Object obj) {
+        switch (this.a) {
+            case 0:
+                break;
+            case 1:
+                View view = (View) obj;
+                boolean z10 = ChatAttachAlertPhotoLayout.q1;
+                if (view instanceof org.telegram.ui.Cells.s5) {
+                    org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) view;
+                    s5Var.c(s5Var.getPhotoEntry() != null && s5Var.getPhotoEntry().hasSpoiler, Float.valueOf(250.0f));
+                    s5Var.setHighQuality(s5Var.getPhotoEntry() != null && s5Var.getPhotoEntry().isHighQuality());
+                    s5Var.f(s5Var.getPhotoEntry() != null ? s5Var.getPhotoEntry().starsAmount : 0L, ChatAttachAlertPhotoLayout.s1.size() > 1);
+                    break;
+                }
+                break;
+            case 2:
+                View view2 = (View) obj;
+                if (view2 instanceof org.telegram.ui.Components.eo0) {
+                    ((org.telegram.ui.Components.eo0) view2).a(false, true);
+                    break;
+                }
+                break;
+            default:
+                View view3 = (View) obj;
+                if (view3 instanceof org.telegram.ui.Components.eo0) {
+                    ((org.telegram.ui.Components.eo0) view3).a(false, true);
+                    break;
+                }
+                break;
+        }
     }
 }

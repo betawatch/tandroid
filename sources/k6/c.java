@@ -3,10 +3,10 @@ package k6;
 import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.Arrays;
-import m2.t;
+import mi.q;
 import w7.f0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class c extends o6.a {
     public static final Parcelable.Creator<c> CREATOR = new g8.j(18);
@@ -42,10 +42,10 @@ public final class c extends o6.a {
     }
 
     public final String toString() {
-        t tVar = new t(this);
-        tVar.q(this.a, "name");
-        tVar.q(Long.valueOf(b()), "version");
-        return tVar.toString();
+        q qVar = new q(this);
+        qVar.H(this.a, "name");
+        qVar.H(Long.valueOf(b()), "version");
+        return qVar.toString();
     }
 
     @Override // android.os.Parcelable

@@ -1,59 +1,55 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class mr implements rr {
-    public final /* synthetic */ yr a;
+public final class mr implements Drawable.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Drawable b;
 
-    public mr(yr yrVar) {
-        this.a = yrVar;
+    public /* synthetic */ mr(int i10, Drawable drawable) {
+        this.a = i10;
+        this.b = drawable;
     }
 
-    @Override // org.telegram.ui.rr
-    public final void c(long j10, TLObject tLObject) {
-        yr yrVar = this.a;
-        if (yrVar.K.f(j10) == null) {
-            sr w02 = yrVar.w0();
-            yrVar.F.add(tLObject);
-            yrVar.K.k(tLObject, j10);
-            yrVar.z0(yrVar.F);
-            yrVar.A0(w02);
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void invalidateDrawable(Drawable drawable) {
+        switch (this.a) {
+            case 0:
+                ((nr) this.b).invalidateSelf();
+                break;
+            default:
+                org.telegram.ui.Cells.x0 x0Var = ((p01) this.b).h;
+                if (x0Var != null) {
+                    x0Var.invalidate();
+                    break;
+                }
+                break;
         }
     }
 
-    @Override // org.telegram.ui.rr
-    public final void d(long j10) {
-        yr yrVar = this.a;
-        if (yrVar.K.f(j10) == null) {
-            sr w02 = yrVar.w0();
-            TLRPC.TL_channelParticipantBanned tL_channelParticipantBanned = new TLRPC.TL_channelParticipantBanned();
-            if (j10 > 0) {
-                TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
-                tL_channelParticipantBanned.peer = tL_peerUser;
-                tL_peerUser.user_id = j10;
-            } else {
-                TLRPC.TL_peerChannel tL_peerChannel = new TLRPC.TL_peerChannel();
-                tL_channelParticipantBanned.peer = tL_peerChannel;
-                tL_peerChannel.channel_id = -j10;
-            }
-            tL_channelParticipantBanned.date = yrVar.getConnectionsManager().getCurrentTime();
-            tL_channelParticipantBanned.kicked_by = yrVar.getAccountInstance().getUserConfig().clientUserId;
-            yrVar.s.kicked_count++;
-            yrVar.F.add(tL_channelParticipantBanned);
-            yrVar.K.k(tL_channelParticipantBanned, j10);
-            yrVar.z0(yrVar.F);
-            yrVar.A0(w02);
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j10) {
+        switch (this.a) {
+            case 0:
+                ((nr) this.b).scheduleSelf(runnable, j10);
+                break;
         }
     }
 
-    @Override // org.telegram.ui.rr
-    public final /* synthetic */ void a(TLRPC.User user) {
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
+        switch (this.a) {
+            case 0:
+                ((nr) this.b).unscheduleSelf(runnable);
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.rr
-    public final /* synthetic */ void b(long j10) {
+    private final void b(Drawable drawable, Runnable runnable) {
+    }
+
+    private final void a(Drawable drawable, Runnable runnable, long j10) {
     }
 }

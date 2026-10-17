@@ -1,14 +1,13 @@
 package mc;
 
-import com.google.android.gms.internal.play_billing.k3;
+import com.google.android.gms.internal.cast.a6;
 import java.nio.ByteBuffer;
-import ji.w4;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class b extends a {
-    public static final /* synthetic */ w4 n;
-    public static final /* synthetic */ w4 r;
+    public static final /* synthetic */ le.b n;
+    public static final /* synthetic */ le.b r;
 
     static {
         te.a aVar = new te.a(b.class, "ESDescriptorBox.java");
@@ -19,7 +18,7 @@ public final class b extends a {
     }
 
     public final boolean equals(Object obj) {
-        k3.p(te.a.c(n, this, this, obj));
+        a6.p(te.a.c(n, this, this, obj));
         if (this == obj) {
             return true;
         }
@@ -32,7 +31,7 @@ public final class b extends a {
     }
 
     public final int hashCode() {
-        k3.p(te.a.b(r, this, this));
+        a6.p(te.a.b(r, this, this));
         ByteBuffer byteBuffer = this.e;
         if (byteBuffer != null) {
             return byteBuffer.hashCode();

@@ -1,30 +1,85 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class me implements RequestDelegate {
+public final /* synthetic */ class me implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback4 b;
+    public final /* synthetic */ MessagesStorage b;
+    public final /* synthetic */ ArrayList c;
 
-    public /* synthetic */ me(Utilities.Callback4 callback4, int i10) {
+    public /* synthetic */ me(int i10, ArrayList arrayList, MessagesStorage messagesStorage) {
         this.a = i10;
-        this.b = callback4;
+        this.b = messagesStorage;
+        this.c = arrayList;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                MessagesController.1.lambda$getRemote$0(this.b, tLObject, tL_error);
+                this.b.lambda$markMessagesAsDeletedInternal$230(this.c);
+                break;
+            case 1:
+                this.b.lambda$markVoiceMessageContentAsRead$216(this.c);
+                break;
+            case 2:
+                this.b.lambda$emptyMessagesMedia$96(this.c);
+                break;
+            case 3:
+                this.b.lambda$emptyMessagesMedia$97(this.c);
+                break;
+            case 4:
+                this.b.lambda$loadUserInfo$128(this.c);
+                break;
+            case 5:
+                this.b.lambda$replaceMessageIfExists$233(this.c);
+                break;
+            case 6:
+                this.b.lambda$markMessagesAsDeletedByRandoms$220(this.c);
+                break;
+            case 7:
+                this.b.lambda$deleteFromDownloadQueue$183(this.c);
+                break;
+            case 8:
+                this.b.lambda$deleteContacts$147(this.c);
+                break;
+            case 9:
+                this.b.lambda$updateMessageVerifyFlags$195(this.c);
+                break;
+            case 10:
+                this.b.lambda$putMessagesInternal$198(this.c);
+                break;
+            case 11:
+                this.b.lambda$putMessagesInternal$197(this.c);
+                break;
+            case 12:
+                this.b.lambda$markMessagesAsDeletedByRandoms$221(this.c);
+                break;
+            case 13:
+                this.b.lambda$markMessagesAsDeletedInternal$224(this.c);
+                break;
+            case 14:
+                this.b.lambda$markMessagesAsDeletedInternal$227(this.c);
+                break;
+            case 15:
+                this.b.lambda$onReactionsUpdate$105(this.c);
+                break;
+            case 16:
+                this.b.lambda$deleteDialog$88(this.c);
+                break;
+            case 17:
+                this.b.lambda$saveDialogFiltersOrder$75(this.c);
+                break;
+            case 18:
+                this.b.lambda$putMessages$236(this.c);
+                break;
+            case 19:
+                this.b.lambda$putMessages$237(this.c);
                 break;
             default:
-                MessagesController.4.lambda$getRemote$0(this.b, tLObject, tL_error);
+                this.b.lambda$putWebPages$187(this.c);
                 break;
         }
     }

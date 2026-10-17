@@ -1,63 +1,64 @@
 package org.telegram.ui.Wallet;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.style.ReplacementSpan;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class f8 extends ReplacementSpan {
-    public final String a;
-    public final String b;
-    public final boolean c;
-    public float d;
-    public int e;
-    public int f;
-    public h8 h;
-    public h8 n;
-    public final /* synthetic */ i8 r;
+public final /* synthetic */ class f8 implements Utilities.Callback {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ k8 b;
+    public final /* synthetic */ Utilities.Callback c;
+    public final /* synthetic */ q0 d;
+    public final /* synthetic */ m0 e;
 
-    public f8(i8 i8Var, String str, boolean z10, boolean z11) {
-        this.r = i8Var;
-        this.a = str;
-        this.b = z10 ? i8Var.O : "";
-        this.c = z11;
+    public /* synthetic */ f8(k8 k8Var, Utilities.Callback callback, m0 m0Var, q0 q0Var) {
+        this.b = k8Var;
+        this.c = callback;
+        this.e = m0Var;
+        this.d = q0Var;
     }
 
-    public final int a() {
-        return Math.round((i8.R.getInterpolation(this.r.H) * (this.f - r0)) + this.e);
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
+            case 0:
+                k8.Y(this.b, this.c, this.e, this.d, (j0) obj);
+                break;
+            default:
+                d0 d0Var = (d0) obj;
+                Utilities.Callback callback = this.c;
+                if (d0Var != null) {
+                    byte[] bArr = d0Var.c;
+                    q0 q0Var = this.d;
+                    boolean z10 = false;
+                    if (bArr == null) {
+                        byte[][] m10 = q0Var.m();
+                        if (m10.length <= 0) {
+                            callback.run("STORAGE_NO_PUBLIC_KEY");
+                            break;
+                        } else {
+                            bArr = m10[0];
+                        }
+                    }
+                    if (!q0Var.f(bArr)) {
+                        callback.run("STORAGE_OLD_PUBLIC_KEY");
+                        break;
+                    } else {
+                        f8 f8Var = new f8(this.b, callback, this.e, q0Var);
+                        q0.h.execute(new org.telegram.ui.Components.q2(q0Var, q0Var.l(), bArr == null ? "" : q0.o(bArr), z10, f8Var));
+                        break;
+                    }
+                } else {
+                    callback.run("ADDRESS_NO_INFO");
+                    break;
+                }
+        }
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        Canvas canvas2;
-        Paint paint2;
-        int i15;
-        float textSize = paint.getTextSize();
-        if (this.c) {
-            paint.setTextSize((28.0f * textSize) / 44.0f);
-        }
-        float f10 = f7 - this.d;
-        h8 h8Var = this.n;
-        if (h8Var != null) {
-            paint2 = paint;
-            i15 = i13;
-            canvas2 = canvas;
-            h8Var.b(canvas2, paint2, this.b, f10, i15);
-        } else {
-            canvas2 = canvas;
-            paint2 = paint;
-            i15 = i13;
-        }
-        this.h.b(canvas2, paint2, this.a, f10, i15);
-        paint2.setTextSize(textSize);
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        if (fontMetricsInt != null) {
-            paint.getFontMetricsInt(fontMetricsInt);
-        }
-        return a();
+    public /* synthetic */ f8(k8 k8Var, Utilities.Callback callback, q0 q0Var, m0 m0Var) {
+        this.b = k8Var;
+        this.c = callback;
+        this.d = q0Var;
+        this.e = m0Var;
     }
 }

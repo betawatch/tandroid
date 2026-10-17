@@ -1,26 +1,34 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class yc implements Runnable {
+public final /* synthetic */ class yc implements Utilities.Callback2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ boolean c;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ Utilities.Callback2 d;
 
-    public /* synthetic */ yc(int i10, MessagesController messagesController, boolean z10) {
+    public /* synthetic */ yc(MessagesController messagesController, long j10, Utilities.Callback2 callback2, int i10) {
         this.a = i10;
         this.b = messagesController;
-        this.c = z10;
+        this.c = j10;
+        this.d = callback2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                this.b.lambda$checkPromoInfo$163(this.c);
+                this.b.lambda$resolveCommunityAllJoinPendingRequests$249(this.c, this.d, (TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
+                break;
+            case 1:
+                this.b.lambda$resolveCommunityJoinPendingRequest$248(this.c, this.d, (TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
-                this.b.lambda$removeFolderTemporarily$483(this.c);
+                this.b.lambda$toggleCommunityParticipantBanned$247(this.c, this.d, (TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
                 break;
         }
     }

@@ -1,9 +1,9 @@
 package org.telegram.ui.ActionBar;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.es;
+import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class s implements Runnable {
     public final /* synthetic */ boolean a;
@@ -44,73 +44,73 @@ public final class s implements Runnable {
         if (f7 > 1.0f) {
             actionBarLayout.E0 = 1.0f;
         }
-        m2 m2Var = actionBarLayout.H;
-        if (m2Var != null) {
-            m2Var.onTransitionAnimationProgress(true, actionBarLayout.E0);
+        n2 n2Var = actionBarLayout.H;
+        if (n2Var != null) {
+            n2Var.onTransitionAnimationProgress(true, actionBarLayout.E0);
         }
-        m2 m2Var2 = actionBarLayout.I;
-        if (m2Var2 != null) {
-            m2Var2.onTransitionAnimationProgress(false, actionBarLayout.E0);
+        n2 n2Var2 = actionBarLayout.I;
+        if (n2Var2 != null) {
+            n2Var2.onTransitionAnimationProgress(false, actionBarLayout.E0);
         }
-        m2 m2Var3 = actionBarLayout.I;
-        Integer valueOf = m2Var3 != null ? Integer.valueOf(m2Var3.getNavigationBarColor()) : null;
-        m2 m2Var4 = actionBarLayout.H;
-        Integer valueOf2 = m2Var4 != null ? Integer.valueOf(m2Var4.getNavigationBarColor()) : null;
-        m2 m2Var5 = actionBarLayout.I;
-        if (m2Var5 != null && m2Var5.isSupportEdgeToEdge() && valueOf2 != null) {
+        n2 n2Var3 = actionBarLayout.I;
+        Integer valueOf = n2Var3 != null ? Integer.valueOf(n2Var3.getNavigationBarColor()) : null;
+        n2 n2Var4 = actionBarLayout.H;
+        Integer valueOf2 = n2Var4 != null ? Integer.valueOf(n2Var4.getNavigationBarColor()) : null;
+        n2 n2Var5 = actionBarLayout.I;
+        if (n2Var5 != null && n2Var5.isSupportEdgeToEdge() && valueOf2 != null) {
             valueOf = valueOf2;
         }
-        m2 m2Var6 = actionBarLayout.H;
-        if (m2Var6 != null && m2Var6.isSupportEdgeToEdge() && valueOf != null) {
+        n2 n2Var6 = actionBarLayout.H;
+        if (n2Var6 != null && n2Var6.isSupportEdgeToEdge() && valueOf != null) {
             valueOf2 = valueOf;
         }
         if (actionBarLayout.H != null && valueOf != null && valueOf2 != null) {
-            int d = i0.a.d(w7.r.a(actionBarLayout.E0 * 4.0f, 0.0f, 1.0f), valueOf.intValue(), valueOf2.intValue());
+            int f10 = i0.b.f(w7.r.a(actionBarLayout.E0 * 4.0f, 0.0f, 1.0f), valueOf.intValue(), valueOf2.intValue());
             r rVar = actionBarLayout.G;
             if (rVar != null && rVar.sheetsStack != null) {
                 for (int i10 = 0; i10 < actionBarLayout.G.sheetsStack.size(); i10++) {
-                    i2 i2Var = actionBarLayout.G.sheetsStack.get(i10);
-                    if (i2Var.attachedToParent()) {
-                        d = i2Var.getNavigationBarColor(d);
+                    j2 j2Var = actionBarLayout.G.sheetsStack.get(i10);
+                    if (j2Var.attachedToParent()) {
+                        f10 = j2Var.getNavigationBarColor(f10);
                     }
                 }
             }
-            actionBarLayout.H.setNavigationBarColor(d);
+            actionBarLayout.H.setNavigationBarColor(f10);
         }
-        float interpolation = z12 ? z11 ? actionBarLayout.M.getInterpolation(actionBarLayout.E0) : es.h.getInterpolation(actionBarLayout.E0) : actionBarLayout.L.getInterpolation(actionBarLayout.E0);
+        float interpolation = z12 ? z11 ? actionBarLayout.M.getInterpolation(actionBarLayout.E0) : bs.h.getInterpolation(actionBarLayout.E0) : actionBarLayout.L.getInterpolation(actionBarLayout.E0);
         if (z11) {
             float a2 = w7.r.a(interpolation, 0.0f, 1.0f);
             actionBarLayout.s.setAlpha(a2);
             if (z12) {
-                float f10 = (0.3f * interpolation) + 0.7f;
-                actionBarLayout.s.setScaleX(f10);
-                actionBarLayout.s.setScaleY(f10);
+                float f11 = (0.3f * interpolation) + 0.7f;
+                actionBarLayout.s.setScaleX(f11);
+                actionBarLayout.s.setScaleY(f11);
                 if (actionBarLayout.J != null) {
-                    float f11 = 1.0f - interpolation;
-                    actionBarLayout.s.setTranslationY(AndroidUtilities.dp(40.0f) * f11);
-                    actionBarLayout.J.setTranslationY((-AndroidUtilities.dp(70.0f)) * f11);
-                    float f12 = (interpolation * 0.05f) + 0.95f;
-                    actionBarLayout.J.setScaleX(f12);
-                    actionBarLayout.J.setScaleY(f12);
+                    float f12 = 1.0f - interpolation;
+                    actionBarLayout.s.setTranslationY(AndroidUtilities.dp(40.0f) * f12);
+                    actionBarLayout.J.setTranslationY((-AndroidUtilities.dp(70.0f)) * f12);
+                    float f13 = (interpolation * 0.05f) + 0.95f;
+                    actionBarLayout.J.setScaleX(f13);
+                    actionBarLayout.J.setScaleY(f13);
                 }
                 actionBarLayout.r.setAlpha((int) (46.0f * a2));
-                g6.s0.setAlpha((int) (a2 * 255.0f));
+                h6.s0.setAlpha((int) (a2 * 255.0f));
                 actionBarLayout.s.invalidate();
                 actionBarLayout.invalidate();
             } else {
                 actionBarLayout.s.setTranslationX((1.0f - interpolation) * AndroidUtilities.dp(48.0f));
             }
         } else {
-            float f13 = 1.0f - interpolation;
-            float a10 = w7.r.a(f13, 0.0f, 1.0f);
+            float f14 = 1.0f - interpolation;
+            float a10 = w7.r.a(f14, 0.0f, 1.0f);
             actionBarLayout.v.setAlpha(a10);
             if (z12) {
-                float f14 = (f13 * 0.1f) + 0.9f;
-                actionBarLayout.v.setScaleX(f14);
-                actionBarLayout.v.setScaleY(f14);
+                float f15 = (f14 * 0.1f) + 0.9f;
+                actionBarLayout.v.setScaleX(f15);
+                actionBarLayout.v.setScaleY(f15);
                 actionBarLayout.r.setAlpha((int) (46.0f * a10));
                 if (actionBarLayout.J == null) {
-                    g6.s0.setAlpha((int) (a10 * 255.0f));
+                    h6.s0.setAlpha((int) (a10 * 255.0f));
                 }
                 actionBarLayout.s.invalidate();
                 actionBarLayout.invalidate();

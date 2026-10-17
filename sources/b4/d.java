@@ -7,11 +7,12 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.util.Log;
 import android.util.SparseArray;
+import b2.w;
 import e2.m0;
 import e2.x;
 import java.util.List;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class d implements w3.b {
     public int a;
@@ -88,7 +89,7 @@ public final class d implements w3.b {
         PackageInfo packageInfo;
         if (this.a == 0) {
             try {
-                packageInfo = w6.b.a((Context) this.c).e(0, "com.google.android.gms");
+                packageInfo = w6.b.a((Context) this.c).b(0, "com.google.android.gms");
             } catch (PackageManager.NameNotFoundException e) {
                 Log.w("Metadata", "Failed to find package ".concat(e.toString()));
                 packageInfo = null;
@@ -147,19 +148,19 @@ public final class d implements w3.b {
         this.c = sparseArray;
     }
 
-    public d(f2.d dVar, b2.x xVar) {
-        x xVar2 = dVar.c;
-        this.c = xVar2;
-        xVar2.N(12);
-        int E = xVar2.E();
-        if ("audio/raw".equals(xVar.s)) {
-            int u10 = m0.u(xVar.M) * xVar.K;
+    public d(f2.e eVar, w wVar) {
+        x xVar = eVar.c;
+        this.c = xVar;
+        xVar.N(12);
+        int E = xVar.E();
+        if ("audio/raw".equals(wVar.s)) {
+            int u10 = m0.u(wVar.M) * wVar.K;
             if (E % u10 != 0) {
                 e2.a.l("BoxParsers", "Audio sample size mismatch. stsd sample size: " + u10 + ", stsz sample size: " + E);
                 E = u10;
             }
         }
         this.a = E == 0 ? -1 : E;
-        this.b = xVar2.E();
+        this.b = xVar.E();
     }
 }

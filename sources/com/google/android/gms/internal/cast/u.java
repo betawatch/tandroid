@@ -5,8 +5,9 @@ import j$.util.DesugarCollections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class u {
     public static final g6.b i = new g6.b("SessionTransController", null);
@@ -67,7 +68,7 @@ public final class u {
                     m10.c();
                     n1.w((n1) m10.b, i10);
                     b10.e((n1) m10.a());
-                    a1Var.a.a((s1) b10.a(), 232);
+                    a1Var.a.a((s1) b10.a(), TLRPC.LAYER);
                     a1Var.i = false;
                     break;
                 default:
@@ -75,7 +76,7 @@ public final class u {
                     aVar.c = Integer.valueOf(i10);
                     z5 z5Var = (z5) y0Var.b;
                     aVar.d = Boolean.valueOf(((d) z5Var.c).d == 2);
-                    z5.E(z5Var, new x6(aVar));
+                    z5.D(z5Var, new y6(aVar));
                     break;
             }
         }

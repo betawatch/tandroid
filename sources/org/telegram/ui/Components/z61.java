@@ -1,23 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class z61 extends View {
-    public int a;
+public final class z61 extends s4.k {
+    public final /* synthetic */ a71 F;
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.a, TLObject.FLAG_30));
+    public z61(a71 a71Var) {
+        this.F = a71Var;
     }
 
-    public void setHeight(int i10) {
-        if (this.a == i10) {
-            return;
+    @Override // s4.k
+    public final void M() {
+        a71 a71Var = this.F;
+        if (a71Var.b1()) {
+            a71Var.invalidate();
         }
-        this.a = i10;
-        requestLayout();
+        a71Var.D1();
+    }
+
+    @Override // s4.k
+    public final void O() {
+        a71 a71Var = this.F;
+        if (a71Var.b1()) {
+            a71Var.invalidate();
+        }
+        a71Var.D1();
+    }
+
+    @Override // s4.k
+    public final void P(s4.b1 b1Var) {
+        a71 a71Var = this.F;
+        a71Var.invalidate();
+        a71Var.D1();
+    }
+
+    @Override // s4.k
+    public final void Q() {
+        a71 a71Var = this.F;
+        if (a71Var.b1()) {
+            a71Var.invalidate();
+        }
+        a71Var.D1();
     }
 }

@@ -6,12 +6,12 @@ import androidx.car.app.navigation.model.IPanModeListener;
 import androidx.car.app.navigation.model.PanModeDelegateImpl;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public class PanModeDelegateImpl implements g {
     private final IPanModeListener mStub;
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class PanModeListenerStub extends IPanModeListener.Stub {
         private final i mListener;
 
@@ -25,8 +25,8 @@ public class PanModeDelegateImpl implements g {
 
         @Override // androidx.car.app.navigation.model.IPanModeListener
         public void onPanModeChanged(final boolean z10, IOnDoneCallback iOnDoneCallback) {
-            androidx.car.app.utils.i.b(iOnDoneCallback, "onPanModeChanged", new androidx.car.app.utils.c() { // from class: androidx.car.app.navigation.model.h
-                @Override // androidx.car.app.utils.c
+            androidx.car.app.utils.g.b(iOnDoneCallback, "onPanModeChanged", new androidx.car.app.utils.a() { // from class: androidx.car.app.navigation.model.h
+                @Override // androidx.car.app.utils.a
                 public final Object a() {
                     Object lambda$onPanModeChanged$0;
                     lambda$onPanModeChanged$0 = PanModeDelegateImpl.PanModeListenerStub.this.lambda$onPanModeChanged$0(z10);
@@ -48,7 +48,7 @@ public class PanModeDelegateImpl implements g {
         try {
             IPanModeListener iPanModeListener = this.mStub;
             Objects.requireNonNull(iPanModeListener);
-            iPanModeListener.onPanModeChanged(z10, androidx.car.app.utils.i.a());
+            iPanModeListener.onPanModeChanged(z10, androidx.car.app.utils.g.a());
         } catch (RemoteException e) {
             throw new RuntimeException(e);
         }

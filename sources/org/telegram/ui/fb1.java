@@ -1,35 +1,88 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class fb1 extends ra1 {
-    public final int v;
-    public final int w;
-    public int x;
-    public bi y;
+public final /* synthetic */ class fb1 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ mc1 b;
 
-    public fb1(Context context, int i10, int i11, jg.f fVar, int i12) {
-        super(context, i11, fVar, null);
-        this.v = i10;
-        this.w = i12;
+    public /* synthetic */ fb1(mc1 mc1Var, int i10) {
+        this.a = i10;
+        this.b = mc1Var;
     }
 
-    @Override // org.telegram.ui.ra1
-    public final void b(ta1 ta1Var) {
-        int i10;
-        if (ta1Var == null || (i10 = this.x) < 0) {
-            return;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                final int i10 = 1;
+                final mc1 mc1Var = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.eb1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                mc1.W(mc1Var, tLObject);
+                                break;
+                            default:
+                                TLObject tLObject2 = tLObject;
+                                if (tLObject2 instanceof TLRPC.TL_wallPaper) {
+                                    TLRPC.TL_wallPaper tL_wallPaper = (TLRPC.TL_wallPaper) tLObject2;
+                                    if (tL_wallPaper.pattern) {
+                                        mc1 mc1Var2 = mc1Var;
+                                        mc1Var2.W0 = tL_wallPaper;
+                                        mc1Var2.b1(false);
+                                        mc1Var2.j1();
+                                        mc1Var2.U0.add(0, mc1Var2.W0);
+                                        kc1 kc1Var = mc1Var2.Q0;
+                                        if (kc1Var != null) {
+                                            kc1Var.l();
+                                            break;
+                                        }
+                                    }
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
+            default:
+                final int i11 = 0;
+                final mc1 mc1Var2 = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.eb1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                mc1.W(mc1Var2, tLObject);
+                                break;
+                            default:
+                                TLObject tLObject2 = tLObject;
+                                if (tLObject2 instanceof TLRPC.TL_wallPaper) {
+                                    TLRPC.TL_wallPaper tL_wallPaper = (TLRPC.TL_wallPaper) tLObject2;
+                                    if (tL_wallPaper.pattern) {
+                                        mc1 mc1Var22 = mc1Var2;
+                                        mc1Var22.W0 = tL_wallPaper;
+                                        mc1Var22.b1(false);
+                                        mc1Var22.j1();
+                                        mc1Var22.U0.add(0, mc1Var22.W0);
+                                        kc1 kc1Var = mc1Var22.Q0;
+                                        if (kc1Var != null) {
+                                            kc1Var.l();
+                                            break;
+                                        }
+                                    }
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
         }
-        ta1Var.a(this.v, this.w, i10, this.y);
-    }
-
-    @Override // org.telegram.ui.ra1
-    public final void c() {
-    }
-
-    @Override // org.telegram.ui.ra1
-    public final void f() {
     }
 }

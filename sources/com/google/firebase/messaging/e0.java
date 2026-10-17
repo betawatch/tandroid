@@ -6,13 +6,12 @@ import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.IBinder;
 import android.util.Log;
-import bi.la;
 import com.google.android.gms.tasks.Task;
 import java.util.ArrayDeque;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class e0 implements ServiceConnection {
     public final Context a;
@@ -23,7 +22,7 @@ public final class e0 implements ServiceConnection {
     public boolean f;
 
     public e0(Context context) {
-        ScheduledThreadPoolExecutor scheduledThreadPoolExecutor = new ScheduledThreadPoolExecutor(0, new c5.x("Firebase-FirebaseInstanceIdServiceConnection"));
+        ScheduledThreadPoolExecutor scheduledThreadPoolExecutor = new ScheduledThreadPoolExecutor(0, new c5.w("Firebase-FirebaseInstanceIdServiceConnection"));
         this.d = new ArrayDeque();
         this.f = false;
         Context applicationContext = context.getApplicationContext();
@@ -64,7 +63,7 @@ public final class e0 implements ServiceConnection {
             }
             d0Var = new d0(intent);
             ScheduledThreadPoolExecutor scheduledThreadPoolExecutor = this.c;
-            d0Var.b.getTask().addOnCompleteListener(scheduledThreadPoolExecutor, new a1.c(scheduledThreadPoolExecutor.schedule(new la(d0Var, 13), 20L, TimeUnit.SECONDS), 19));
+            d0Var.b.getTask().addOnCompleteListener(scheduledThreadPoolExecutor, new a1.c(scheduledThreadPoolExecutor.schedule(new s(d0Var, 1), 20L, TimeUnit.SECONDS), 26));
             this.d.add(d0Var);
             a();
         } catch (Throwable th2) {

@@ -1,94 +1,118 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.app.Activity;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.util.Property;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.os.SystemClock;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class dq extends FrameLayout {
-    public final TextView[] a;
-    public final bk0[] b;
-    public final ImageView c;
-    public AnimatorSet d;
-    public qg e;
+public class dq extends Drawable {
+    public static final u1.a h = new u1.a();
+    public float a;
+    public final float b;
+    public long c;
+    public final float[] d;
+    public final Paint e;
     public float f;
-    public final org.telegram.ui.ActionBar.c6 h;
+    public final RectF g;
 
-    public dq(Activity activity, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(activity);
-        this.a = new TextView[2];
-        this.b = new bk0[2];
-        this.h = c6Var;
-        FrameLayout frameLayout = new FrameLayout(activity);
-        frameLayout.setBackground(org.telegram.ui.ActionBar.g6.c0(AndroidUtilities.dp(6.0f), org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.qf, c6Var)));
-        int i10 = 0;
-        frameLayout.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
-        addView(frameLayout, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 6.0f, -2, 51));
-        while (i10 < 2) {
-            this.b[i10] = new bk0(activity);
-            this.b[i10].setScaleType(ImageView.ScaleType.CENTER);
-            frameLayout.addView(this.b[i10], w7.z5.a(24.0f, 0.0f, i10 == 0 ? 0.0f : 24.0f, 0.0f, 0.0f, 24, 51));
-            this.a[i10] = new TextView(activity);
-            this.a[i10].setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.pf, this.h));
-            this.a[i10].setTextSize(1, 14.0f);
-            this.a[i10].setMaxLines(1);
-            this.a[i10].setSingleLine(true);
-            this.a[i10].setMaxWidth(AndroidUtilities.dp(250.0f));
-            this.a[i10].setGravity(51);
-            this.a[i10].setPivotX(0.0f);
-            frameLayout.addView(this.a[i10], w7.z5.a(-2.0f, 32.0f, i10 == 0 ? 2.0f : 26.0f, 10.0f, 0.0f, -2, 51));
-            if (i10 == 0) {
-                this.b[i10].f(R.raw.ticks_single, 24, 24, null);
-                this.a[i10].setText(LocaleController.getString(R.string.HintSent));
-            } else {
-                this.b[i10].f(R.raw.ticks_double, 24, 24, null);
-                this.a[i10].setText(LocaleController.getString(R.string.HintRead));
-            }
-            this.b[i10].d();
-            i10++;
-        }
-        ImageView imageView = new ImageView(activity);
-        this.c = imageView;
-        imageView.setImageResource(R.drawable.tooltip_arrow);
-        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.qf, this.h), PorterDuff.Mode.MULTIPLY));
-        addView(imageView, w7.z5.a(6.0f, 0.0f, 0.0f, 0.0f, 0.0f, 14, 83));
+    public dq(int i10) {
+        this.a = AndroidUtilities.dp(18.0f);
+        this.b = AndroidUtilities.dp(2.25f);
+        this.c = -1L;
+        this.d = new float[2];
+        Paint paint = new Paint();
+        this.e = paint;
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        this.g = new RectF();
+        b(i10);
     }
 
-    public final void a() {
-        if (getTag() == null) {
-            return;
+    public static void a(float[] fArr, float f7) {
+        float f10 = (1520.0f * f7) / 5400.0f;
+        fArr[0] = Math.max(0.0f, f10 - 20.0f);
+        fArr[1] = f10;
+        for (int i10 = 0; i10 < 4; i10++) {
+            u1.a aVar = h;
+            fArr[1] = (aVar.getInterpolation((f7 - (i10 * 1350)) / 667.0f) * 250.0f) + fArr[1];
+            fArr[0] = (aVar.getInterpolation((f7 - (r4 + 667)) / 667.0f) * 250.0f) + fArr[0];
         }
-        setTag(null);
-        qg qgVar = this.e;
-        if (qgVar != null) {
-            AndroidUtilities.cancelRunOnUIThread(qgVar);
-            this.e = null;
-        }
-        AnimatorSet animatorSet = this.d;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-            this.d = null;
-        }
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        this.d = animatorSet2;
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(this, (Property<dq, Float>) View.ALPHA, 0.0f), ObjectAnimator.ofFloat(this, (Property<dq, Float>) View.SCALE_X, 0.0f), ObjectAnimator.ofFloat(this, (Property<dq, Float>) View.SCALE_Y, 0.0f));
-        this.d.addListener(new cq(this, 1));
-        this.d.setDuration(180L);
-        this.d.start();
     }
 
-    public float getBaseTranslationY() {
-        return this.f;
+    public final void b(int i10) {
+        this.e.setColor(i10);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        if (this.c < 0) {
+            this.c = SystemClock.elapsedRealtime();
+        }
+        float elapsedRealtime = (SystemClock.elapsedRealtime() - this.c) % 5400;
+        float[] fArr = this.d;
+        a(fArr, elapsedRealtime);
+        float f7 = this.f;
+        float f10 = fArr[0];
+        canvas.drawArc(this.g, f7 + f10, fArr[1] - f10, false, this.e);
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int getIntrinsicHeight() {
+        return (int) (this.a + this.b);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public int getIntrinsicWidth() {
+        return (int) (this.a + this.b);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.e.setAlpha(i10);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setBounds(int i10, int i11, int i12, int i13) {
+        float f7 = i10;
+        float f10 = i12 - i10;
+        float f11 = this.b;
+        float f12 = this.a;
+        float f13 = i11;
+        float f14 = i13 - i11;
+        this.g.set(com.google.android.gms.internal.cast.a6.z(f10 - (f11 / 2.0f), f12, 2.0f, f7), (((f14 - (f11 / 2.0f)) - f12) / 2.0f) + f13, ((((f11 / 2.0f) + f10) + f12) / 2.0f) + f7, ((((f11 / 2.0f) + f14) + f12) / 2.0f) + f13);
+        super.setBounds(i10, i11, i12, i13);
+        this.e.setStrokeWidth(f11);
+    }
+
+    public dq(float f7, float f10, int i10) {
+        this.a = AndroidUtilities.dp(18.0f);
+        this.b = AndroidUtilities.dp(2.25f);
+        this.c = -1L;
+        this.d = new float[2];
+        Paint paint = new Paint();
+        this.e = paint;
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        this.g = new RectF();
+        this.a = f7;
+        this.b = f10;
+        b(i10);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

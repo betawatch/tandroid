@@ -1,19 +1,17 @@
 package com.google.android.gms.common.api.internal;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public abstract class n0 {
-    public static final ExecutorService a;
+public final class n0 implements c {
+    public final /* synthetic */ h a;
 
-    static {
-        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(2, 2, 60L, TimeUnit.SECONDS, new LinkedBlockingQueue(), new v6.a());
-        threadPoolExecutor.allowCoreThreadTimeOut(true);
-        a = Executors.unconfigurableExecutorService(threadPoolExecutor);
+    public n0(h hVar) {
+        this.a = hVar;
+    }
+
+    @Override // com.google.android.gms.common.api.internal.c
+    public final void a(boolean z10) {
+        com.google.android.gms.internal.cast.a0 a0Var = this.a.x;
+        a0Var.sendMessage(a0Var.obtainMessage(1, Boolean.valueOf(z10)));
     }
 }

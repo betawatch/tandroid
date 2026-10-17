@@ -3,9 +3,9 @@ package androidx.mediarouter.app;
 import android.app.Dialog;
 import android.content.res.Configuration;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public class u extends androidx.fragment.app.o {
+public class u extends androidx.fragment.app.p {
     public boolean A0 = false;
     public g.t B0;
     public p4.r C0;
@@ -18,7 +18,7 @@ public class u extends androidx.fragment.app.o {
         }
     }
 
-    @Override // androidx.fragment.app.o, androidx.fragment.app.r
+    @Override // androidx.fragment.app.p, androidx.fragment.app.s
     public final void I() {
         super.I();
         g.t tVar = this.B0;
@@ -28,7 +28,7 @@ public class u extends androidx.fragment.app.o {
         ((t) tVar).i(false);
     }
 
-    @Override // androidx.fragment.app.o
+    @Override // androidx.fragment.app.p
     public final Dialog O() {
         if (this.A0) {
             n0 n0Var = new n0(n());
@@ -40,7 +40,7 @@ public class u extends androidx.fragment.app.o {
         return this.B0;
     }
 
-    @Override // androidx.fragment.app.r, android.content.ComponentCallbacks
+    @Override // androidx.fragment.app.s, android.content.ComponentCallbacks
     public final void onConfigurationChanged(Configuration configuration) {
         this.U = true;
         g.t tVar = this.B0;

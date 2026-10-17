@@ -1,106 +1,22 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.content.Context;
-import android.graphics.ColorFilter;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class y00 extends lm0 {
-    public final Context c;
-    public final /* synthetic */ z00 d;
+public final class y00 {
+    public byte a;
+    public byte b;
+    public byte c;
+    public byte d;
+    public byte e;
+    public byte f;
+    public float g;
+    public float h;
+    public short i;
+    public float j;
+    public float k;
+    public final /* synthetic */ z00 l;
 
-    public y00(z00 z00Var, Activity activity) {
-        this.d = z00Var;
-        this.c = activity;
-    }
-
-    @Override // org.telegram.ui.Components.lm0
-    public final boolean D(s4.b1 b1Var) {
-        return true;
-    }
-
-    @Override // s4.g0
-    public final int h() {
-        int size = this.d.s.size();
-        return size < 10 ? size + 1 : size;
-    }
-
-    @Override // s4.g0
-    public final int j(int i10) {
-        return 0;
-    }
-
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
-        int i11;
-        org.telegram.ui.ActionBar.c6 c6Var;
-        int i12;
-        org.telegram.ui.ActionBar.x2 x2Var = (org.telegram.ui.ActionBar.x2) b1Var.a;
-        z00 z00Var = this.d;
-        ArrayList arrayList = z00Var.v;
-        ArrayList arrayList2 = z00Var.s;
-        if (i10 >= arrayList2.size()) {
-            x2Var.getImageView().setColorFilter((ColorFilter) null);
-            Context context = this.c;
-            Drawable drawable = context.getResources().getDrawable(R.drawable.poll_add_circle);
-            Drawable drawable2 = context.getResources().getDrawable(R.drawable.poll_add_plus);
-            int x02 = org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.N6, false);
-            PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-            drawable.setColorFilter(new PorterDuffColorFilter(x02, mode));
-            drawable2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.k7, false), mode));
-            cr crVar = new cr(drawable, drawable2);
-            x2Var.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.q6, false));
-            x2Var.a(LocaleController.getString(R.string.CreateNewFilter), 0, crVar, false);
-            return;
-        }
-        x2Var.getImageView().setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.J5, false), PorterDuff.Mode.MULTIPLY));
-        MessagesController.DialogFilter dialogFilter = (MessagesController.DialogFilter) arrayList2.get(i10);
-        x2Var.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.j5, false));
-        int i13 = dialogFilter.flags;
-        if ((MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS & i13) == (MessagesController.DIALOG_FILTER_FLAG_CONTACTS | MessagesController.DIALOG_FILTER_FLAG_NON_CONTACTS)) {
-            i11 = R.drawable.msg_openprofile;
-        } else {
-            if ((MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_READ & i13) != 0) {
-                int i14 = MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS;
-                if ((i13 & i14) == i14) {
-                    i11 = R.drawable.msg_markunread;
-                }
-            }
-            i11 = (MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS & i13) == MessagesController.DIALOG_FILTER_FLAG_CHANNELS ? R.drawable.msg_channel : (MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS & i13) == MessagesController.DIALOG_FILTER_FLAG_GROUPS ? R.drawable.msg_groups : (MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS & i13) == MessagesController.DIALOG_FILTER_FLAG_CONTACTS ? R.drawable.msg_contacts : (i13 & MessagesController.DIALOG_FILTER_FLAG_ALL_CHATS) == MessagesController.DIALOG_FILTER_FLAG_BOTS ? R.drawable.msg_bots : R.drawable.msg_folders;
-        }
-        x2Var.a(MessageObject.replaceAnimatedEmoji(Emoji.replaceEmoji(dialogFilter.name, x2Var.getTextView().getPaint().getFontMetricsInt(), false), dialogFilter.entities, x2Var.getTextView().getPaint().getFontMetricsInt()), 0, new p10(z00Var.getContext(), i11, dialogFilter.color), false);
-        a6 textView = x2Var.getTextView();
-        int i15 = org.telegram.ui.ActionBar.g6.Oh;
-        c6Var = ((org.telegram.ui.ActionBar.e3) z00Var).resourcesProvider;
-        textView.setEmojiColor(org.telegram.ui.ActionBar.g6.w0(i15, c6Var));
-        boolean z10 = true;
-        for (int i16 = 0; i16 < arrayList.size(); i16++) {
-            long longValue = ((Long) arrayList.get(i16)).longValue();
-            i12 = ((org.telegram.ui.ActionBar.e3) z00Var).currentAccount;
-            if (!dialogFilter.includesDialog(AccountInstance.getInstance(i12), longValue)) {
-                z10 = false;
-            }
-        }
-        x2Var.setChecked(z10);
-    }
-
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        org.telegram.ui.ActionBar.x2 x2Var = new org.telegram.ui.ActionBar.x2(this.c, 0, null);
-        x2Var.setBackground(null);
-        x2Var.setLayoutParams(new s4.o0(-1, -2));
-        return new wl0(x2Var);
+    public y00(z00 z00Var) {
+        this.l = z00Var;
     }
 }

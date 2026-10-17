@@ -1,44 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.style.ReplacementSpan;
+import android.view.KeyEvent;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class mb0 extends s4.m0 {
-    public final /* synthetic */ nb0 a;
+public final class mb0 extends ReplacementSpan {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ KeyEvent.Callback b;
 
-    public mb0(nb0 nb0Var) {
-        this.a = nb0Var;
+    public /* synthetic */ mb0(KeyEvent.Callback callback, int i10) {
+        this.a = i10;
+        this.b = callback;
     }
 
-    @Override // s4.m0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.y0 y0Var) {
-        int R;
-        rect.left = 0;
-        rect.right = 0;
-        rect.top = 0;
-        rect.bottom = 0;
-        s4.n0 layoutManager = recyclerView.getLayoutManager();
-        ob0 ob0Var = this.a.Z2;
-        if (layoutManager != ob0Var.d || (R = RecyclerView.R(view)) == 0 || ob0Var.f.N()) {
-            return;
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        int i15 = this.a;
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+        switch (this.a) {
+            case 0:
+                return ((ob0) this.b).x;
+            case 1:
+                return (int) ((org.telegram.ui.dj0) this.b).n0;
+            default:
+                return (int) ((ug.l1) this.b).t0;
         }
-        if (ob0Var.f.I() == null && ob0Var.f.U == null) {
-            rect.top = AndroidUtilities.dp(2.0f);
-        } else {
-            if (R == 0) {
-                return;
-            }
-            R--;
-            hb0 hb0Var = ob0Var.d;
-            hb0Var.B1();
-            if (R > hb0Var.U) {
-                rect.top = AndroidUtilities.dp(2.0f);
-            }
-        }
-        rect.right = ob0Var.d.E1(R) ? 0 : AndroidUtilities.dp(2.0f);
+    }
+
+    private final void a(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+    }
+
+    private final void b(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+    }
+
+    private final void c(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
     }
 }

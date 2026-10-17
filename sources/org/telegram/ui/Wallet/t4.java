@@ -1,27 +1,15 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class t4 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ v4 b;
+public final class t4 implements ai.i7 {
+    public final /* synthetic */ TL_wallet.nftItem a;
+    public final /* synthetic */ l5 b;
 
-    public /* synthetic */ t4(v4 v4Var, int i10) {
-        this.a = i10;
-        this.b = v4Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new t4(this.b, 1));
-                break;
-            default:
-                this.b.a();
-                break;
-        }
+    public t4(l5 l5Var, TL_wallet.nftItem nftitem) {
+        this.b = l5Var;
+        this.a = nftitem;
     }
 }

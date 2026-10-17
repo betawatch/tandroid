@@ -1,39 +1,27 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
+import android.view.View;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o41 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ r41 b;
+public final class o41 extends v51 {
+    public final /* synthetic */ View Q;
+    public final /* synthetic */ TL_stars.TL_starGiftUnique R;
+    public final /* synthetic */ p41 S;
 
-    public /* synthetic */ o41(r41 r41Var, int i10) {
-        this.a = i10;
-        this.b = r41Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o41(p41 p41Var, Context context, Runnable runnable, View view, i51 i51Var, org.telegram.ui.ActionBar.d6 d6Var, View view2, TL_stars.TL_starGiftUnique tL_starGiftUnique) {
+        super(p41Var.e, context, runnable, view, i51Var, d6Var);
+        this.S = p41Var;
+        this.Q = view2;
+        this.R = tL_starGiftUnique;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                r41 r41Var = this.b;
-                r41Var.getClass();
-                r41Var.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                r41Var.g();
-                break;
-            case 1:
-                r41 r41Var2 = this.b;
-                r41Var2.getClass();
-                r41Var2.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                r41Var2.g();
-                break;
-            default:
-                r41 r41Var3 = this.b;
-                r41Var3.getClass();
-                r41Var3.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                r41Var3.g();
-                break;
-        }
+    @Override // org.telegram.ui.v51, android.app.Dialog, android.content.DialogInterface
+    public final void dismiss() {
+        super.dismiss();
+        this.S.e.X0 = null;
     }
 }

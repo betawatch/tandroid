@@ -1,35 +1,24 @@
 package sg;
 
-import android.animation.ValueAnimator;
-import org.telegram.messenger.AndroidUtilities;
+import ai.z4;
+import android.content.Context;
+import java.util.ArrayList;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.Components.aw;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g1 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ m1 b;
+public final class g1 extends aw {
+    public final /* synthetic */ l1 W;
 
-    public /* synthetic */ g1(m1 m1Var, int i10) {
-        this.a = i10;
-        this.b = m1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g1(l1 l1Var, z4 z4Var, Context context, d6 d6Var, ArrayList arrayList) {
+        super(z4Var, context, d6Var, arrayList);
+        this.W = l1Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                m1 m1Var = this.b;
-                m1Var.getClass();
-                m1Var.G0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                m1Var.container.invalidate();
-                break;
-            default:
-                m1 m1Var2 = this.b;
-                m1Var2.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                m1Var2.N0.getLayoutParams().height = AndroidUtilities.lerp(m1Var2.O0[0].getHeight(), m1Var2.O0[1].getHeight(), floatValue);
-                m1Var2.N0.requestLayout();
-                break;
-        }
+    @Override // org.telegram.ui.Components.aw
+    public final void Z() {
+        this.W.dismiss();
     }
 }

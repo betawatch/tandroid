@@ -1,215 +1,79 @@
 package org.telegram.ui.Components;
 
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
+import android.text.Layout;
+import android.text.StaticLayout;
 import android.text.TextPaint;
-import android.view.MotionEvent;
 import android.view.View;
-import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class ag0 extends View {
-    public int a;
-    public boolean b;
-    public boolean c;
+    public long E;
+    public float F;
+    public float G;
+    public float H;
+    public rc0 I;
+    public TextPaint a;
+    public TextPaint b;
+    public StaticLayout c;
     public float d;
-    public il0 e;
-    public Paint f;
-    public Paint h;
-    public Paint n;
-    public TextPaint r;
-    public Path s;
-    public zf0 v;
-    public fg0 w;
-
-    public final void a(int i10, MotionEvent motionEvent) {
-        float x10 = motionEvent.getX();
-        float y3 = motionEvent.getY();
-        if (i10 == 1) {
-            if (this.a != 0) {
-                return;
-            }
-            il0 il0Var = this.e;
-            this.a = (int) Math.floor(com.google.android.gms.internal.play_billing.k3.z(x10, il0Var.a, il0Var.c / 5.0f, 1.0f));
-            return;
-        }
-        if (i10 != 2) {
-            if ((i10 == 3 || i10 == 4 || i10 == 5) && this.a != 0) {
-                this.a = 0;
-                return;
-            }
-            return;
-        }
-        float min = Math.min(2.0f, (this.d - y3) / 8.0f);
-        fg0 fg0Var = this.w;
-        int i11 = fg0Var.f;
-        gg0 gg0Var = i11 != 0 ? i11 != 1 ? i11 != 2 ? i11 != 3 ? null : fg0Var.d : fg0Var.c : fg0Var.b : fg0Var.a;
-        int i12 = this.a;
-        if (i12 == 1) {
-            gg0Var.a = Math.max(0.0f, Math.min(100.0f, gg0Var.a + min));
-        } else if (i12 == 2) {
-            gg0Var.b = Math.max(0.0f, Math.min(100.0f, gg0Var.b + min));
-        } else if (i12 == 3) {
-            gg0Var.c = Math.max(0.0f, Math.min(100.0f, gg0Var.c + min));
-        } else if (i12 == 4) {
-            gg0Var.d = Math.max(0.0f, Math.min(100.0f, gg0Var.d + min));
-        } else if (i12 == 5) {
-            gg0Var.e = Math.max(0.0f, Math.min(100.0f, gg0Var.e + min));
-        }
-        invalidate();
-        zf0 zf0Var = this.v;
-        if (zf0Var != null) {
-            jg0 jg0Var = ((bg0) zf0Var).a;
-            jg0Var.g();
-            h00 h00Var = jg0Var.l0;
-            if (h00Var != null) {
-                h00Var.d(false, false, false);
-            }
-        }
-        this.d = y3;
-    }
+    public float e;
+    public StaticLayout f;
+    public float h;
+    public float n;
+    public boolean r;
+    public f6 s;
+    public boolean v;
+    public cg0 w;
+    public ei.t9 x;
+    public boolean y;
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        gg0 gg0Var;
-        int i10;
-        String format;
-        TextPaint textPaint = this.r;
-        Path path = this.s;
-        Paint paint = this.n;
-        fg0 fg0Var = this.w;
-        il0 il0Var = this.e;
-        float f7 = il0Var.c / 5.0f;
-        for (int i11 = 0; i11 < 4; i11++) {
-            float f10 = il0Var.a;
-            float f11 = i11 * f7;
-            float f12 = f10 + f7 + f11;
-            float f13 = il0Var.b;
-            canvas.drawLine(f12, f13, f11 + f10 + f7, f13 + il0Var.d, this.f);
+        float e = this.s.e(this.r);
+        if (e <= 0.0f || this.c == null || this.f == null) {
+            return;
         }
-        float f14 = il0Var.a;
-        float f15 = il0Var.b;
-        canvas.drawLine(f14, f15 + il0Var.d, f14 + il0Var.c, f15, this.h);
-        int i12 = fg0Var.f;
-        int i13 = 3;
-        int i14 = 2;
-        if (i12 == 0) {
-            paint.setColor(-1);
-            gg0Var = fg0Var.a;
-        } else if (i12 == 1) {
-            paint.setColor(-1229492);
-            gg0Var = fg0Var.b;
-        } else if (i12 == 2) {
-            paint.setColor(-15667555);
-            gg0Var = fg0Var.c;
-        } else if (i12 != 3) {
-            gg0Var = null;
-        } else {
-            paint.setColor(-13404165);
-            gg0Var = fg0Var.d;
-        }
-        int i15 = 0;
-        while (i15 < 5) {
-            if (i15 == 0) {
-                i10 = i14;
-                format = String.format(Locale.US, "%.2f", Float.valueOf(gg0Var.a / 100.0f));
-            } else if (i15 == 1) {
-                i10 = i14;
-                format = String.format(Locale.US, "%.2f", Float.valueOf(gg0Var.b / 100.0f));
-            } else if (i15 == i14) {
-                i10 = i14;
-                format = String.format(Locale.US, "%.2f", Float.valueOf(gg0Var.c / 100.0f));
-            } else if (i15 == i13) {
-                i10 = i14;
-                format = String.format(Locale.US, "%.2f", Float.valueOf(gg0Var.d / 100.0f));
-            } else if (i15 != 4) {
-                format = "";
-                i10 = i14;
-            } else {
-                i10 = i14;
-                format = String.format(Locale.US, "%.2f", Float.valueOf(gg0Var.e / 100.0f));
-            }
-            canvas.drawText(format, (i15 * f7) + com.google.android.gms.internal.play_billing.k3.z(f7, textPaint.measureText(format), 2.0f, il0Var.a), (il0Var.b + il0Var.d) - AndroidUtilities.dp(4.0f), textPaint);
-            i15++;
-            i14 = i10;
-            i13 = 3;
-        }
-        float[] a2 = gg0Var.a();
-        invalidate();
-        path.reset();
-        for (int i16 = 0; i16 < a2.length / 2; i16++) {
-            if (i16 == 0) {
-                int i17 = i16 * 2;
-                path.moveTo((a2[i17] * il0Var.c) + il0Var.a, ((1.0f - a2[i17 + 1]) * il0Var.d) + il0Var.b);
-            } else {
-                int i18 = i16 * 2;
-                path.lineTo((a2[i18] * il0Var.c) + il0Var.a, ((1.0f - a2[i18 + 1]) * il0Var.d) + il0Var.b);
-            }
-        }
-        canvas.drawPath(path, paint);
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) (e * 255.0f), 31);
+        canvas.save();
+        canvas.translate(((getWidth() - this.d) / 2.0f) - this.e, getHeight() * 0.22f);
+        this.c.draw(canvas);
+        canvas.restore();
+        canvas.save();
+        canvas.translate(((getWidth() - this.h) / 2.0f) - this.n, (getHeight() * 0.22f) + AndroidUtilities.dp(60.0f));
+        this.f.draw(canvas);
+        canvas.restore();
+        canvas.restore();
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x0014, code lost:
-    
-        if (r0 != 6) goto L44;
-     */
     @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        int actionMasked = motionEvent.getActionMasked();
-        if (actionMasked != 0) {
-            if (actionMasked != 1) {
-                if (actionMasked != 2) {
-                    if (actionMasked != 3) {
-                        if (actionMasked != 5) {
-                        }
-                    }
-                } else if (this.b) {
-                    a(2, motionEvent);
-                    return true;
-                }
-                return true;
-            }
-            if (this.b) {
-                a(3, motionEvent);
-                this.b = false;
-            }
-            this.c = true;
-            return true;
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i11));
+        TextPaint textPaint = this.a;
+        textPaint.setColor(-1);
+        textPaint.setShadowLayer(AndroidUtilities.dp(8.0f), 0.0f, 0.0f, 805306368);
+        textPaint.setTextSize(AndroidUtilities.dp(34.0f));
+        TextPaint textPaint2 = this.b;
+        textPaint2.setColor(-1);
+        textPaint2.setShadowLayer(AndroidUtilities.dp(12.0f), 0.0f, 0.0f, 805306368);
+        textPaint2.setTextSize(AndroidUtilities.dp(58.0f));
+        if (this.c == null) {
+            StaticLayout staticLayout = new StaticLayout(LocaleController.getString(R.string.Enhance), textPaint, getMeasuredWidth(), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+            this.c = staticLayout;
+            this.d = staticLayout.getLineCount() > 0 ? this.c.getLineWidth(0) : 0.0f;
+            this.e = this.c.getLineCount() > 0 ? this.c.getLineLeft(0) : 0.0f;
         }
-        if (motionEvent.getPointerCount() == 1) {
-            if (this.c && !this.b) {
-                float x10 = motionEvent.getX();
-                float y3 = motionEvent.getY();
-                this.d = y3;
-                il0 il0Var = this.e;
-                float f7 = il0Var.a;
-                if (x10 >= f7 && x10 <= f7 + il0Var.c) {
-                    float f10 = il0Var.b;
-                    if (y3 >= f10 && y3 <= f10 + il0Var.d) {
-                        this.b = true;
-                    }
-                }
-                this.c = false;
-                if (this.b) {
-                    a(1, motionEvent);
-                    return true;
-                }
-            }
-        } else if (this.b) {
-            a(3, motionEvent);
-            this.c = true;
-            this.b = false;
-        }
-        return true;
     }
 
-    public void setDelegate(zf0 zf0Var) {
-        this.v = zf0Var;
+    public void setAllowTouch(boolean z10) {
+        this.v = z10;
+    }
+
+    public void setFilterView(cg0 cg0Var) {
+        this.w = cg0Var;
     }
 }

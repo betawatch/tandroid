@@ -1,59 +1,140 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.text.style.ImageSpan;
-import org.telegram.messenger.Emoji;
+import android.R;
+import android.content.Context;
+import android.view.ActionMode;
+import android.view.Menu;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import java.util.Arrays;
+import org.telegram.ui.ua1;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class bo implements TextWatcher {
-    public final /* synthetic */ ao a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ go c;
+public final class bo extends org.telegram.ui.Cells.c6 {
+    public final /* synthetic */ co F;
 
-    public bo(go goVar, ao aoVar, int i10) {
-        this.c = goVar;
-        this.a = aoVar;
-        this.b = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bo(co coVar, Context context, int i10, vn vnVar, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, i10, vnVar, d6Var);
+        this.F = coVar;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        io ioVar = this.c.d;
-        ao aoVar = this.a;
-        if (aoVar.getTag() != null) {
-            return;
-        }
-        int i10 = this.b;
-        int i11 = i10 == 11 ? ioVar.n0 : ioVar.m0;
-        s4.b1 K = ioVar.s.K(i11);
-        if (K != null && ioVar.x != null) {
-            for (ImageSpan imageSpan : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
-                editable.removeSpan(imageSpan);
+    @Override // org.telegram.ui.Cells.c6
+    public final boolean e() {
+        fo foVar = this.F.d;
+        ua1 ua1Var = foVar.s;
+        View F = ua1Var.F(this);
+        s4.b1 T = F == null ? null : ua1Var.T(F);
+        if (T != null) {
+            int b10 = T.b();
+            int i10 = foVar.M;
+            if (i10 == foVar.J && b10 == (foVar.t0 + i10) - 1) {
+                return false;
             }
-            Emoji.replaceEmoji(editable, aoVar.getEditField().getPaint().getFontMetricsInt(), false);
-            ioVar.x.setDirection(1);
-            ioVar.x.setDelegate(aoVar);
-            ioVar.x.setTranslationY(K.a.getY());
-            ioVar.x.e();
         }
-        if (i10 == 11) {
-            ioVar.O = editable;
-        } else {
-            ioVar.N = editable;
-        }
-        if (K != null) {
-            io.O(ioVar, K.a, i11);
-        }
-        ioVar.W();
+        return true;
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // org.telegram.ui.Cells.c6
+    public final boolean f(org.telegram.ui.Cells.c6 c6Var) {
+        int b10;
+        fo foVar = this.F.d;
+        ua1 ua1Var = foVar.s;
+        View F = ua1Var.F(c6Var);
+        s4.b1 T = F == null ? null : ua1Var.T(F);
+        if (T == null || (b10 = T.b()) == -1) {
+            return false;
+        }
+        return foVar.L[b10 - foVar.t0];
     }
 
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // org.telegram.ui.Cells.c6
+    public final void g(org.telegram.ui.Cells.b6 b6Var, ActionMode actionMode) {
+        fo foVar = this.F.d;
+        if (foVar.n && b6Var.isFocused() && b6Var.hasSelection()) {
+            Menu menu = actionMode.getMenu();
+            if (menu.findItem(R.id.copy) == null) {
+                return;
+            }
+            org.telegram.ui.sn.n8(menu, ((org.telegram.ui.sn) foVar.b.f0).h, false, true, true, true);
+        }
+    }
+
+    @Override // org.telegram.ui.Cells.c6
+    public final void h(org.telegram.ui.Cells.c6 c6Var, boolean z10) {
+        int b10;
+        fo foVar = this.F.d;
+        if (z10 && foVar.c0 && !foVar.b0) {
+            Arrays.fill(foVar.L, false);
+            foVar.s.getChildCount();
+            for (int i10 = foVar.t0; i10 < foVar.t0 + foVar.M; i10++) {
+                s4.b1 K = foVar.s.K(i10);
+                if (K != null) {
+                    View view = K.a;
+                    if (view instanceof org.telegram.ui.Cells.c6) {
+                        ((org.telegram.ui.Cells.c6) view).r.a(false, true);
+                    }
+                }
+            }
+        }
+        super.h(c6Var, z10);
+        ua1 ua1Var = foVar.s;
+        View F = ua1Var.F(c6Var);
+        s4.b1 T = F == null ? null : ua1Var.T(F);
+        if (T != null && (b10 = T.b()) != -1) {
+            foVar.L[b10 - foVar.t0] = z10;
+        }
+        foVar.W();
+    }
+
+    @Override // org.telegram.ui.Cells.c6
+    public final void i(boolean z10) {
+        fo.P(this.F.d, this, z10);
+    }
+
+    @Override // org.telegram.ui.Cells.c6
+    public final void j(org.telegram.ui.Cells.c6 c6Var) {
+        fo.Q(this.F.d, c6Var);
+    }
+
+    @Override // org.telegram.ui.Cells.c6
+    public final void k(org.telegram.ui.Cells.b6 b6Var) {
+        this.F.d.b.w1(b6Var, true);
+    }
+
+    @Override // org.telegram.ui.Cells.c6
+    public final boolean l(ArrayList arrayList) {
+        fo foVar = this.F.d;
+        if (!arrayList.isEmpty()) {
+            foVar.s.getClass();
+            int R = RecyclerView.R(this) - foVar.t0;
+            if (R >= 0) {
+                org.telegram.ui.Cells.b6 b6Var = this.d;
+                b6Var.getText().replace(b6Var.getSelectionStart(), b6Var.getSelectionEnd(), (CharSequence) arrayList.remove(0));
+                int i10 = R + 1;
+                while (!arrayList.isEmpty() && i10 < foVar.J) {
+                    for (int length = foVar.K.length - 1; length > i10; length--) {
+                        CharSequence[] charSequenceArr = foVar.K;
+                        charSequenceArr[length] = charSequenceArr[length - 1];
+                    }
+                    foVar.K[i10] = (CharSequence) arrayList.remove(0);
+                    foVar.M++;
+                    i10++;
+                }
+                foVar.k0();
+                foVar.k0 = (foVar.t0 + i10) - 1;
+                foVar.s.setItemAnimator(foVar.v);
+                foVar.r.l();
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.c6
+    public final boolean o() {
+        return this.F.d.c0;
     }
 }

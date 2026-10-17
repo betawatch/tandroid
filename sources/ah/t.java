@@ -1,16 +1,18 @@
 package ah;
 
+import ai.a2;
+import ai.h5;
+import ai.k7;
 import android.content.Context;
 import android.media.AudioManager;
-import bi.o1;
-import di.d8;
-import di.j4;
-import di.mb;
-import di.o6;
-import di.q3;
-import fi.b3;
-import fi.i3;
-import fi.k3;
+import ei.d4;
+import ei.f6;
+import ei.m3;
+import ei.t7;
+import ei.xa;
+import gi.b3;
+import gi.d3;
+import gi.v2;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileUploadOperation;
@@ -26,24 +28,21 @@ import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.b4;
-import org.telegram.ui.Components.cb0;
-import org.telegram.ui.Components.i60;
-import org.telegram.ui.Components.lz0;
-import org.telegram.ui.Components.ms0;
-import org.telegram.ui.Components.o10;
-import org.telegram.ui.Components.o40;
-import org.telegram.ui.Components.ow;
-import org.telegram.ui.Components.p60;
-import org.telegram.ui.Components.xn0;
-import org.telegram.ui.Components.xp;
-import org.telegram.ui.Components.yp;
-import org.telegram.ui.Components.zp;
-import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.vm;
-import org.telegram.ui.zo;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.ActionBar.c4;
+import org.telegram.ui.Components.gz0;
+import org.telegram.ui.Components.hs0;
+import org.telegram.ui.Components.k10;
+import org.telegram.ui.Components.k40;
+import org.telegram.ui.Components.kw;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.up;
+import org.telegram.ui.Components.vp;
+import org.telegram.ui.Components.wp;
+import org.telegram.ui.jm;
+import org.telegram.ui.ko;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
@@ -59,9 +58,7 @@ public final /* synthetic */ class t implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         int i10 = this.a;
-        int i11 = 4;
-        int i12 = 2;
-        int i13 = 1;
+        int i11 = 1;
         boolean z10 = this.b;
         Object obj = this.c;
         switch (i10) {
@@ -75,203 +72,208 @@ public final /* synthetic */ class t implements Runnable {
                     break;
                 }
             case 1:
-                ci.t tVar = (ci.t) obj;
-                ms0 ms0Var = tVar.W;
+                a2 a2Var = (a2) obj;
                 if (!z10) {
-                    ms0Var.b(tVar.a.E);
+                    a2Var.q0.setVisibility(8);
                     break;
                 } else {
-                    new ci.x(ms0Var.a, LocaleController.getString(R.string.ProfileBotPreviewLanguageChoose), new o1(ms0Var, i11)).show();
+                    a2Var.getClass();
                     break;
                 }
             case 2:
-                q3 q3Var = (q3) obj;
-                if (!z10) {
-                    q3Var.I.setVisibility(8);
-                    break;
+                k7 k7Var = (k7) obj;
+                k7Var.getClass();
+                k7Var.I2(k7Var.j1, AndroidUtilities.replaceTags(LocaleController.formatString(z10 ? R.string.Gift2ActionWearDone : R.string.Gift2ActionWearOffDone, k7Var.P1())), true);
+                break;
+            case 3:
+                k7 k7Var2 = ((h5) obj).T;
+                TL_stars.SavedStarGift U1 = k7Var2.U1(z10);
+                if (U1 != null) {
+                    k7Var2.e1 = true;
+                    k7Var2.C2(U1, k7Var2.G0);
                 } else {
-                    q3Var.getClass();
+                    TL_stars.TL_starGiftUnique V1 = k7Var2.V1(z10);
+                    if (V1 != null) {
+                        k7Var2.e1 = true;
+                        k7Var2.A2(V1.slug, V1, k7Var2.G0);
+                    }
+                }
+                k7Var2.U0 = -1;
+                qc qcVar = qc.w;
+                if (qcVar != null) {
+                    qcVar.c(0L, false);
                     break;
                 }
-            case 3:
-                ((j4) obj).b.setVisibility(z10 ? 0 : 8);
                 break;
             case 4:
-                o6 o6Var = (o6) obj;
+                di.r rVar = (di.r) obj;
+                hs0 hs0Var = rVar.W;
                 if (!z10) {
-                    o6Var.X0.setVisibility(8);
+                    hs0Var.b(rVar.a.E);
                     break;
                 } else {
-                    o6Var.getClass();
+                    new di.u(hs0Var.a, LocaleController.getString(R.string.ProfileBotPreviewLanguageChoose), new ai.r0(hs0Var, 10)).show();
                     break;
                 }
             case 5:
-                d8 d8Var = (d8) obj;
+                m3 m3Var = (m3) obj;
                 if (!z10) {
-                    d8Var.setVisibility(8);
+                    m3Var.I.setVisibility(8);
                     break;
                 } else {
-                    d8Var.getClass();
+                    m3Var.getClass();
                     break;
                 }
             case 6:
-                mb mbVar = (mb) obj;
+                ((d4) obj).b.setVisibility(z10 ? 0 : 8);
+                break;
+            case 7:
+                f6 f6Var = (f6) obj;
                 if (!z10) {
-                    mbVar.A2.j1.setVisibility(8);
+                    f6Var.X0.setVisibility(8);
                     break;
                 } else {
-                    mbVar.getClass();
+                    f6Var.getClass();
                     break;
                 }
-            case 7:
-                k3 k3Var = (k3) obj;
-                i3 i3Var = k3Var.y;
-                b3 b3Var = k3Var.x;
-                if (b3Var.getWebView() != null) {
-                    b3Var.getWebView().animate().cancel();
-                    b3Var.getWebView().animate().alpha(0.0f).start();
-                }
-                i3Var.setLoadProgress(0.0f);
-                i3Var.setAlpha(1.0f);
-                i3Var.setVisibility(0);
-                b3Var.setBotUser(z10 ? null : MessagesController.getInstance(k3Var.G).getUser(Long.valueOf(k3Var.H)));
-                if (!z10) {
-                    b3Var.s(k3Var.G, k3Var.H);
-                }
-                NotificationCenter.getInstance(b3Var.M).doOnIdle(new org.telegram.ui.web.s(b3Var, i12));
-                break;
             case 8:
-                ((gi.t0) obj).f(z10, false);
-                break;
-            case 9:
-                k2.u uVar2 = (k2.u) ((qf.b) obj).c;
-                String str = e2.m0.a;
-                i2.h0 h0Var = ((i2.b0) uVar2).a;
-                if (h0Var.d0 != z10) {
-                    h0Var.d0 = z10;
-                    h0Var.m.e(23, new i2.x(i13, z10));
+                t7 t7Var = (t7) obj;
+                if (!z10) {
+                    t7Var.setVisibility(8);
+                    break;
+                } else {
+                    t7Var.getClass();
                     break;
                 }
-                break;
+            case 9:
+                xa xaVar = (xa) obj;
+                if (!z10) {
+                    xaVar.A2.j1.setVisibility(8);
+                    break;
+                } else {
+                    xaVar.getClass();
+                    break;
+                }
             case 10:
-                ((FileLoader) obj).lambda$onNetworkChanged$4(z10);
+                d3 d3Var = (d3) obj;
+                b3 b3Var = d3Var.y;
+                v2 v2Var = d3Var.x;
+                if (v2Var.getWebView() != null) {
+                    v2Var.getWebView().animate().cancel();
+                    v2Var.getWebView().animate().alpha(0.0f).start();
+                }
+                b3Var.setLoadProgress(0.0f);
+                b3Var.setAlpha(1.0f);
+                b3Var.setVisibility(0);
+                v2Var.setBotUser(z10 ? null : MessagesController.getInstance(d3Var.G).getUser(Long.valueOf(d3Var.H)));
+                if (!z10) {
+                    v2Var.s(d3Var.G, d3Var.H);
+                }
+                NotificationCenter.getInstance(v2Var.M).doOnIdle(new org.telegram.ui.web.s(v2Var, 2));
                 break;
             case 11:
-                ((FileUploadOperation) obj).lambda$onNetworkChanged$1(z10);
+                ((hi.s0) obj).f(z10, false);
                 break;
             case 12:
-                ((LocationController) obj).lambda$startFusedLocationRequest$5(z10);
-                break;
-            case 13:
-                ((RichMessageLayout.RichBlock) obj).lambda$toggleCheckbox$1(z10);
-                break;
-            case 14:
-                ((UserConfig) obj).lambda$saveConfig$0(z10);
-                break;
-            case 15:
-                ((CameraController) obj).lambda$recordVideo$11(z10);
-                break;
-            case 16:
-                ((VideoCapturerDevice) obj).lambda$new$0(z10);
-                break;
-            case 17:
-                ((VoIPService) obj).lambda$startGroupCall$27(z10);
-                break;
-            case 18:
-                ((AudioManager) obj).setSpeakerphoneOn(z10);
-                break;
-            case 19:
-                ((ConnectionsManager) obj).lambda$setIsUpdating$22(z10);
-                break;
-            case 20:
-                pf.d.r((Context) obj, LocaleController.getString(z10 ? R.string.BotMonetizationInfoTONLink : R.string.MonetizationInfoTONLink));
-                break;
-            case 21:
-                lz0 lz0Var = ((vm) obj).c.d1;
-                if (lz0Var != null && z10) {
-                    lz0Var.setVisibility(8);
+                k2.u uVar2 = (k2.u) ((qf.b) obj).c;
+                String str = e2.m0.a;
+                i2.g0 g0Var = ((i2.a0) uVar2).a;
+                if (g0Var.d0 != z10) {
+                    g0Var.d0 = z10;
+                    g0Var.m.e(23, new i2.w(i11, z10));
                     break;
                 }
                 break;
+            case 13:
+                ((FileLoader) obj).lambda$onNetworkChanged$4(z10);
+                break;
+            case 14:
+                ((FileUploadOperation) obj).lambda$onNetworkChanged$1(z10);
+                break;
+            case 15:
+                ((LocationController) obj).lambda$startFusedLocationRequest$5(z10);
+                break;
+            case 16:
+                ((RichMessageLayout.RichBlock) obj).lambda$toggleCheckbox$1(z10);
+                break;
+            case 17:
+                ((UserConfig) obj).lambda$saveConfig$0(z10);
+                break;
+            case 18:
+                ((CameraController) obj).lambda$recordVideo$11(z10);
+                break;
+            case 19:
+                ((VideoCapturerDevice) obj).lambda$new$0(z10);
+                break;
+            case 20:
+                ((VoIPService) obj).lambda$startGroupCall$27(z10);
+                break;
+            case 21:
+                ((AudioManager) obj).setSpeakerphoneOn(z10);
+                break;
             case 22:
-                zo zoVar = (zo) obj;
-                zoVar.x0.autotranslation = z10;
-                zoVar.getMessagesController().putChat(zoVar.x0, false);
+                ((ConnectionsManager) obj).lambda$setIsUpdating$22(z10);
                 break;
             case 23:
-                zp zpVar = (zp) obj;
-                xp xpVar = zpVar.h;
-                if (xpVar != null && xpVar.d != null && !zpVar.isDismissed()) {
-                    zpVar.D(z10, true);
-                    if (zpVar.M != null) {
-                        zpVar.P = true;
-                        TLRPC.WallPaper wallPaper = zpVar.x() ? null : zpVar.n.h;
-                        b4 b4Var = zpVar.M.a;
-                        if (b4Var.a) {
-                            zpVar.n.i(null, wallPaper, false, Boolean.valueOf(z10), false);
-                        } else {
-                            zpVar.n.i(b4Var, wallPaper, false, Boolean.valueOf(z10), false);
-                        }
-                    }
-                    if (xpVar.d != null) {
-                        while (r5 < xpVar.d.size()) {
-                            ((yp) xpVar.d.get(r5)).c = z10 ? 1 : 0;
-                            r5++;
-                        }
-                        xpVar.l();
-                        break;
-                    }
-                }
+                pf.d.r((Context) obj, LocaleController.getString(z10 ? R.string.BotMonetizationInfoTONLink : R.string.MonetizationInfoTONLink));
                 break;
             case 24:
-                ow owVar = (ow) obj;
-                if (!z10) {
-                    owVar.E.setVisibility(8);
+                gz0 gz0Var = ((jm) obj).c.d1;
+                if (gz0Var != null && z10) {
+                    gz0Var.setVisibility(8);
                     break;
                 }
                 break;
             case 25:
-                o10 o10Var = (o10) obj;
-                o10Var.S(o10Var.y0, z10);
+                ko koVar = (ko) obj;
+                koVar.x0.autotranslation = z10;
+                koVar.getMessagesController().putChat(koVar.x0, false);
                 break;
             case 26:
-                o40 o40Var = (o40) obj;
-                if (!z10) {
-                    o40Var.r.setVisibility(8);
-                    break;
-                } else {
-                    o40Var.getClass();
-                    break;
-                }
-            case 27:
-                p60 p60Var = ((i60) obj).H0;
-                if (!p60Var.l0) {
-                    try {
-                        p60Var.performHapticFeedback(3, 2);
-                    } catch (Exception unused) {
+                wp wpVar = (wp) obj;
+                up upVar = wpVar.h;
+                if (upVar != null && upVar.d != null && !wpVar.isDismissed()) {
+                    wpVar.C(z10, true);
+                    if (wpVar.M != null) {
+                        wpVar.P = true;
+                        TLRPC.WallPaper wallPaper = wpVar.x() ? null : wpVar.n.h;
+                        c4 c4Var = wpVar.M.a;
+                        if (c4Var.a) {
+                            wpVar.n.k(null, wallPaper, false, Boolean.valueOf(z10), false);
+                        } else {
+                            wpVar.n.k(c4Var, wallPaper, false, Boolean.valueOf(z10), false);
+                        }
                     }
-                    AndroidUtilities.lockOrientation(p60Var.n.getParentActivity());
-                    p60Var.i0 = z10 ? p60Var.k0 : 0L;
-                    p60Var.h0 = System.currentTimeMillis();
-                    p60Var.j0 = true;
-                    p60Var.v();
-                    p60Var.invalidate();
-                    NotificationCenter.getInstance(p60Var.f).lambda$postNotificationNameOnUIThread$1(NotificationCenter.recordStarted, Integer.valueOf(p60Var.V), Boolean.FALSE);
+                    if (upVar.d != null) {
+                        while (r3 < upVar.d.size()) {
+                            ((vp) upVar.d.get(r3)).c = z10 ? 1 : 0;
+                            r3++;
+                        }
+                        upVar.l();
+                        break;
+                    }
+                }
+                break;
+            case 27:
+                kw kwVar = (kw) obj;
+                if (!z10) {
+                    kwVar.E.setVisibility(8);
                     break;
                 }
                 break;
             case 28:
-                cb0 cb0Var = (cb0) obj;
+                k10 k10Var = (k10) obj;
+                k10Var.S(k10Var.y0, z10);
+                break;
+            default:
+                k40 k40Var = (k40) obj;
                 if (!z10) {
-                    cb0Var.getClass();
+                    k40Var.r.setVisibility(8);
                     break;
                 } else {
-                    cb0Var.G.setVisibility(8);
+                    k40Var.getClass();
                     break;
                 }
-            default:
-                ((xn0) obj).G.presentFragment(new PremiumPreviewFragment(0, z10 ? "upload_speed" : "download_speed"));
-                break;
         }
     }
 }

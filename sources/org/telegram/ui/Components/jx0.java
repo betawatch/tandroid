@@ -1,65 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class jx0 {
-    public final q5 a;
-    public Drawable b;
+public final class jx0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ kx0 b;
 
-    public jx0(FrameLayout frameLayout) {
-        this(18, frameLayout);
+    public /* synthetic */ jx0(kx0 kx0Var, int i10) {
+        this.a = i10;
+        this.b = kx0Var;
     }
 
-    public final q5 a(TLRPC.User user, TLRPC.Chat chat, int i10, boolean z10) {
-        q5 q5Var = this.a;
-        if (chat != null && chat.verified) {
-            Drawable drawable = this.b;
-            if (drawable == null) {
-                drawable = new cr(org.telegram.ui.ActionBar.g6.f1, org.telegram.ui.ActionBar.g6.i1);
-            }
-            this.b = drawable;
-            q5Var.g(drawable, z10);
-            q5Var.k(null);
-            return q5Var;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                kx0 kx0Var = this.b;
+                kx0Var.y = 1.0f;
+                kx0Var.invalidate();
+                kx0Var.G = null;
+                break;
+            case 1:
+                kx0 kx0Var2 = this.b;
+                kx0Var2.m(((Float) kx0Var2.v.getAnimatedValue()).floatValue());
+                kx0Var2.v = null;
+                break;
+            default:
+                super.onAnimationEnd(animator);
+                this.b.F = null;
+                break;
         }
-        if (chat != null && DialogObject.getEmojiStatusDocumentId(chat.emoji_status) != 0) {
-            q5Var.j(DialogObject.getEmojiStatusDocumentId(chat.emoji_status), z10);
-            q5Var.k(Integer.valueOf(i10));
-            return q5Var;
-        }
-        if (user != null && user.verified) {
-            Drawable drawable2 = this.b;
-            if (drawable2 == null) {
-                drawable2 = new cr(org.telegram.ui.ActionBar.g6.f1, org.telegram.ui.ActionBar.g6.i1);
-            }
-            this.b = drawable2;
-            q5Var.g(drawable2, z10);
-            q5Var.k(null);
-            return q5Var;
-        }
-        if (user != null && DialogObject.getEmojiStatusDocumentId(user.emoji_status) != 0) {
-            q5Var.j(DialogObject.getEmojiStatusDocumentId(user.emoji_status), z10);
-            q5Var.k(Integer.valueOf(i10));
-            return q5Var;
-        }
-        if (user == null || !user.premium) {
-            q5Var.g(null, z10);
-            q5Var.k(null);
-            return q5Var;
-        }
-        q5Var.g(sg.b1.d().e, z10);
-        q5Var.k(Integer.valueOf(i10));
-        return q5Var;
-    }
-
-    public jx0(int i10, View view) {
-        this.a = new q5(AndroidUtilities.dp(i10), view);
     }
 }

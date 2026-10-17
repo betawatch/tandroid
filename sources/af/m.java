@@ -1,6 +1,6 @@
 package af;
 
-import com.google.android.gms.internal.play_billing.k3;
+import com.google.android.gms.internal.cast.a6;
 import java.util.Arrays;
 import java.util.BitSet;
 import java.util.HashMap;
@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
 import v7.e5;
 import v7.f5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class m implements ef.a {
     public static final Pattern i = Pattern.compile("^[!\"#\\$%&'\\(\\)\\*\\+,\\-\\./:;<=>\\?@\\[\\\\\\]\\^_`\\{\\|\\}~\\p{Pc}\\p{Pd}\\p{Pe}\\p{Pf}\\p{Pi}\\p{Po}\\p{Ps}]");
@@ -208,7 +208,7 @@ public final class m implements ef.a {
                             int end = matcher.find() ? matcher.end() - matcher.start() : 0;
                             i10 = 0;
                             if (end > 0) {
-                                sVar3.g = k3.j(end, 0, str4);
+                                sVar3.g = a6.j(end, 0, str4);
                             }
                             gVar = end >= 2 ? new df.g(1) : new df.g(2);
                             pVar2 = gVar;
@@ -229,14 +229,14 @@ public final class m implements ef.a {
                         String d11 = d(o);
                         if (d11 != null) {
                             i11 = 1;
-                            String j10 = k3.j(1, 1, d11);
-                            kVar = new df.k(1, t8.b.h("mailto:", j10), null);
+                            String j10 = a6.j(1, 1, d11);
+                            kVar = new df.k(1, r.c.g("mailto:", j10), null);
                             kVar.b(new df.s(j10));
                         } else {
                             i11 = 1;
                             String d12 = d(p);
                             if (d12 != null) {
-                                String j11 = k3.j(1, 1, d12);
+                                String j11 = a6.j(1, 1, d12);
                                 kVar = new df.k(1, j11, null);
                                 kVar.b(new df.s(j11));
                             } else {
@@ -512,7 +512,7 @@ public final class m implements ef.a {
                             if (replace.length() >= 3 && replace.charAt(0) == ' ' && replace.charAt(replace.length() - 1) == ' ') {
                                 int length2 = replace.length();
                                 if (f5.b(' ', replace, 0, length2) != length2) {
-                                    replace = k3.j(1, 1, replace);
+                                    replace = a6.j(1, 1, replace);
                                 }
                             }
                             dVar.h = replace;
@@ -626,8 +626,8 @@ public final class m implements ef.a {
                     df.s sVar2 = fVar4.a;
                     fVar4.g -= i10;
                     fVar2.g -= i10;
-                    sVar2.g = k3.j(i10, 0, sVar2.g);
-                    sVar.g = k3.j(i10, 0, sVar.g);
+                    sVar2.g = a6.j(i10, 0, sVar2.g);
+                    sVar.g = a6.j(i10, 0, sVar.g);
                     f fVar5 = fVar2.e;
                     while (fVar5 != null && fVar5 != fVar4) {
                         f fVar6 = fVar5.e;

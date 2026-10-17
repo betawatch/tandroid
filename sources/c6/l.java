@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import com.google.android.gms.internal.play_billing.k3;
+import com.google.android.gms.internal.cast.a6;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -16,7 +16,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class l extends o6.a {
     public static final androidx.biometric.e e;
@@ -72,7 +72,7 @@ public final class l extends o6.a {
         Integer num = (Integer) ((HashMap) e.d).get(str);
         int intValue = num != null ? num.intValue() : 0;
         if (intValue != i10 && intValue != 0) {
-            throw new IllegalArgumentException(k3.k("Value for ", str, " must be a ", d[i10]));
+            throw new IllegalArgumentException(a6.k("Value for ", str, " must be a ", d[i10]));
         }
     }
 

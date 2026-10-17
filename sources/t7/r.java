@@ -1,5 +1,6 @@
 package t7;
 
+import ai.c1;
 import android.content.Context;
 import java.util.ArrayList;
 import v7.v8;
@@ -11,22 +12,22 @@ import w7.la;
 import x7.ba;
 import x7.ca;
 import x7.fa;
-import z7.sf;
 import z7.uf;
 import z7.wf;
+import z7.yf;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class r extends b2.h {
+public final class r extends c1 {
     public final /* synthetic */ int b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public /* synthetic */ r(int i10) {
-        super(5);
+        super(6);
         this.b = i10;
     }
 
-    @Override // b2.h
+    @Override // ai.c1
     public final Object Q0(Object obj) {
         switch (this.b) {
             case 0:
@@ -36,8 +37,8 @@ public final class r extends b2.h {
                 ((o) obj).getClass();
                 u uVar = new u(22);
                 j5.a aVar = j5.a.e;
-                l5.s.b(b10);
-                l5.s.a().c(aVar);
+                l5.t.b(b10);
+                l5.t.a().c(aVar);
                 j5.a.d.contains(new i5.c("json"));
                 arrayList.add(uVar);
                 return new q(c10.b(), (rb.k) c10.a(rb.k.class));
@@ -53,7 +54,7 @@ public final class r extends b2.h {
                 return new fa(c13.b(), (rb.k) c13.a(rb.k.class), new ca(rb.g.c().b(), (ba) obj));
             default:
                 rb.g c14 = rb.g.c();
-                return new wf(c14.b(), (rb.k) c14.a(rb.k.class), new uf(rb.g.c().b(), (sf) obj));
+                return new yf(c14.b(), (rb.k) c14.a(rb.k.class), new wf(rb.g.c().b(), (uf) obj));
         }
     }
 }

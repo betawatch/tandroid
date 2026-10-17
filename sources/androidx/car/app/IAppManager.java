@@ -6,7 +6,7 @@ import android.os.IInterface;
 import android.os.Parcel;
 import androidx.car.app.IOnDoneCallback;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public interface IAppManager extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$IAppManager".replace('$', '.');
@@ -19,14 +19,14 @@ public interface IAppManager extends IInterface {
 
     void stopLocationUpdates(IOnDoneCallback iOnDoneCallback);
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static abstract class Stub extends Binder implements IAppManager {
         static final int TRANSACTION_getTemplate = 2;
         static final int TRANSACTION_onBackPressed = 3;
         static final int TRANSACTION_startLocationUpdates = 4;
         static final int TRANSACTION_stopLocationUpdates = 5;
 
-        /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+        /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
         public static class Proxy implements IAppManager {
             private IBinder mRemote;
 
@@ -135,7 +135,7 @@ public interface IAppManager extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class Default implements IAppManager {
         @Override // android.os.IInterface
         public IBinder asBinder() {

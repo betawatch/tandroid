@@ -1,48 +1,156 @@
 package org.telegram.ui;
 
+import android.content.Context;
+import android.text.SpannableStringBuilder;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a70 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ j70 b;
+public final class a70 extends org.telegram.ui.Components.hm0 {
+    public final Context c;
+    public final /* synthetic */ c70 d;
 
-    public /* synthetic */ a70(j70 j70Var, int i10) {
-        this.a = i10;
-        this.b = j70Var;
+    public a70(c70 c70Var, Context context) {
+        this.d = c70Var;
+        this.c = context;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                j70 j70Var = this.b;
-                j70Var.f.r.clearFocus();
-                j70Var.f.r.requestFocus();
-                AndroidUtilities.showKeyboard(j70Var.f.r);
-                break;
-            case 1:
-                this.b.o0();
-                break;
-            case 2:
-                j70 j70Var2 = this.b;
-                j70Var2.n0(j70Var2.l0());
-                break;
-            case 3:
-                j70 j70Var3 = this.b;
-                j70Var3.n0(j70Var3.l0());
-                break;
-            default:
-                j70 j70Var4 = this.b;
-                j70Var4.X = null;
-                j70Var4.Z.b();
-                j70Var4.h.b();
-                j70Var4.k0();
-                j70Var4.r0();
-                j70Var4.s0();
-                break;
+    @Override // org.telegram.ui.Components.hm0
+    public final boolean D(s4.b1 b1Var) {
+        return b1Var.f == 0;
+    }
+
+    @Override // s4.g0
+    public final int h() {
+        return this.d.G;
+    }
+
+    @Override // s4.g0
+    public final int j(int i10) {
+        c70 c70Var = this.d;
+        if ((i10 >= c70Var.E && i10 < c70Var.F) || i10 == c70Var.J) {
+            return 0;
         }
+        if (i10 == c70Var.y || i10 == c70Var.H) {
+            return 4;
+        }
+        if (i10 == c70Var.x || i10 == c70Var.K) {
+            return 1;
+        }
+        return i10 == c70Var.I ? 5 : 0;
+    }
+
+    @Override // s4.g0
+    public final void v(s4.b1 b1Var, int i10) {
+        int i11;
+        c70 c70Var = this.d;
+        boolean z10 = c70Var.N;
+        int i12 = b1Var.f;
+        View view = b1Var.a;
+        if (i12 == 0) {
+            org.telegram.ui.Cells.l8 l8Var = (org.telegram.ui.Cells.l8) view;
+            if (i10 == c70Var.J) {
+                l8Var.b(false, false);
+                l8Var.d(c70Var.r, false, false);
+                l8Var.setDeleteAction(new y50(this, 2));
+                return;
+            }
+            i11 = ((org.telegram.ui.ActionBar.n2) c70Var).currentAccount;
+            ArrayList<TLRPC.TL_messages_stickerSet> stickerSets = MediaDataController.getInstance(i11).getStickerSets(c70Var.c0());
+            int i13 = i10 - c70Var.E;
+            TLRPC.TL_messages_stickerSet tL_messages_stickerSet = stickerSets.get(i13);
+            l8Var.d(stickerSets.get(i13), i13 != stickerSets.size() - 1, false);
+            l8Var.setDeleteAction(null);
+            TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = c70Var.r;
+            l8Var.b(tL_messages_stickerSet.set.id == (tL_messages_stickerSet2 != null ? tL_messages_stickerSet2.set.id : c70Var.b0(c70Var.v) != null ? c70Var.b0(c70Var.v).id : 0L), false);
+            return;
+        }
+        if (i12 == 1) {
+            if (i10 != c70Var.x) {
+                if (i10 == c70Var.K) {
+                    ((org.telegram.ui.Cells.d9) view).setText(LocaleController.getString(R.string.AddGroupEmojiPackHint));
+                    return;
+                }
+                return;
+            }
+            String string = LocaleController.getString(z10 ? R.string.ChooseEmojiPackMy : R.string.ChooseStickerSetMy);
+            int indexOf = string.indexOf("@stickers");
+            if (indexOf == -1) {
+                ((org.telegram.ui.Cells.d9) view).setText(string);
+                return;
+            }
+            try {
+                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(string);
+                spannableStringBuilder.setSpan(new org.telegram.ui.Components.n4(this, 3), indexOf, indexOf + 9, 18);
+                ((org.telegram.ui.Cells.d9) view).setText(spannableStringBuilder);
+                return;
+            } catch (Exception e) {
+                FileLog.e(e);
+                ((org.telegram.ui.Cells.d9) view).setText(string);
+                return;
+            }
+        }
+        if (i12 == 4) {
+            if (i10 == c70Var.H) {
+                ((org.telegram.ui.Cells.l4) view).setText(LocaleController.getString(R.string.AddEmojiPackHeader));
+                return;
+            } else {
+                ((org.telegram.ui.Cells.l4) view).setText(LocaleController.getString(z10 ? R.string.ChooseEmojiPackHeader : R.string.ChooseStickerSetHeader));
+                return;
+            }
+        }
+        if (i12 != 5) {
+            return;
+        }
+        z60 z60Var = (z60) view;
+        boolean z11 = c70Var.J > 0;
+        TLRPC.TL_messages_stickerSet tL_messages_stickerSet3 = c70Var.r;
+        z60Var.b = z11;
+        org.telegram.ui.Components.iu iuVar = z60Var.a;
+        y60 y60Var = z60Var.f;
+        iuVar.removeTextChangedListener(y60Var);
+        if (tL_messages_stickerSet3 == null) {
+            iuVar.setText("");
+        } else {
+            String str = tL_messages_stickerSet3.set.short_name;
+            iuVar.setText(str);
+            iuVar.setSelection(str.length());
+        }
+        iuVar.addTextChangedListener(y60Var);
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        FrameLayout frameLayout;
+        Context context = this.c;
+        if (i10 == 0) {
+            FrameLayout l8Var = new org.telegram.ui.Cells.l8(context, 3);
+            l8Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
+            frameLayout = l8Var;
+        } else if (i10 == 1) {
+            FrameLayout d9Var = new org.telegram.ui.Cells.d9(context);
+            d9Var.setBackground(org.telegram.ui.ActionBar.h6.W0(context, R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.h6.b7));
+            frameLayout = d9Var;
+        } else if (i10 != 5) {
+            FrameLayout l4Var = new org.telegram.ui.Cells.l4(context);
+            l4Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
+            frameLayout = l4Var;
+        } else {
+            c70 c70Var = this.d;
+            z60 z60Var = new z60(c70Var, context);
+            c70Var.O = z60Var;
+            frameLayout = z60Var;
+        }
+        frameLayout.setLayoutParams(new s4.o0(-1, -2));
+        return new org.telegram.ui.Components.sl0(frameLayout);
     }
 }

@@ -1,5 +1,6 @@
 package yh;
 
+import ai.m6;
 import android.graphics.Bitmap;
 import android.graphics.BlendMode;
 import android.graphics.BlendModeColorFilter;
@@ -22,20 +23,21 @@ import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.g6;
-import org.telegram.ui.Components.s5;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.bs;
+import org.telegram.ui.Components.f6;
+import org.telegram.ui.Components.r5;
 import v7.v7;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
 public final class e1 extends Drawable {
     public static l1 C = new l1();
     public Paint A;
     public int B;
     public final ViewGroup a;
-    public final c6 b;
+    public final d6 b;
     public final Paint c;
     public final Paint d;
     public final RectF e;
@@ -51,7 +53,7 @@ public final class e1 extends Drawable {
     public final Matrix o;
     public boolean p;
     public final Paint q;
-    public final g6 r;
+    public final f6 r;
     public float s;
     public boolean t;
     public boolean u;
@@ -61,7 +63,7 @@ public final class e1 extends Drawable {
     public long y;
     public Bitmap z;
 
-    public e1(ViewGroup viewGroup, c6 c6Var, boolean z10) {
+    public e1(ViewGroup viewGroup, d6 d6Var, boolean z10) {
         Paint paint = new Paint(1);
         this.c = paint;
         Paint paint2 = new Paint(1);
@@ -73,22 +75,22 @@ public final class e1 extends Drawable {
         this.o = new Matrix();
         Paint paint3 = new Paint(1);
         this.q = paint3;
-        this.r = new g6(new ri.h0(this, 26), 320L, es.h);
+        this.r = new f6(new tg.p(this, 16), 320L, bs.h);
         this.s = AndroidUtilities.dp(11.0f);
         this.u = true;
         this.v = 0;
-        int i10 = org.telegram.ui.ActionBar.g6.d6;
+        int i10 = h6.d6;
         this.w = i10;
         this.a = viewGroup;
-        this.b = c6Var;
+        this.b = d6Var;
         d1 d1Var = new d1(this, viewGroup, AndroidUtilities.dp(28.0f));
         this.l = d1Var;
-        viewGroup.addOnAttachStateChangeListener(new bi.j2(this, 12));
+        viewGroup.addOnAttachStateChangeListener(new m6(this, 13));
         if (viewGroup.isAttachedToWindow()) {
             d1Var.a();
         }
         this.g = z10;
-        paint.setColor(org.telegram.ui.ActionBar.g6.w0(i10, c6Var));
+        paint.setColor(h6.w0(i10, d6Var));
         a(z10);
         Paint.Style style = Paint.Style.STROKE;
         paint3.setStyle(style);
@@ -100,7 +102,7 @@ public final class e1 extends Drawable {
             this.t = z10;
             Paint paint = this.c;
             if (z10) {
-                paint.setShadowLayer(AndroidUtilities.dp(1.66f), 0.0f, AndroidUtilities.dp(0.33f), org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.a6, this.b));
+                paint.setShadowLayer(AndroidUtilities.dp(1.66f), 0.0f, AndroidUtilities.dp(0.33f), h6.w0(h6.a6, this.b));
             } else {
                 paint.setShadowLayer(0.0f, 0.0f, 0.0f, 0);
             }
@@ -109,19 +111,16 @@ public final class e1 extends Drawable {
 
     /* JADX WARN: Code restructure failed: missing block: B:69:0x02c0, code lost:
     
-        if (r6 != null) goto L99;
+        if (r5 != null) goto L99;
      */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x02ca  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x02c7  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void b(Canvas canvas, float f7) {
         boolean z10;
-        boolean z11;
         float f10;
-        float f11;
         Bitmap bitmap;
-        boolean z12;
         BlendMode blendMode;
         Bitmap bitmap2;
         NinePatchDrawable ninePatchDrawable;
@@ -139,10 +138,10 @@ public final class e1 extends Drawable {
             int lerp = AndroidUtilities.lerp(Math.min(bounds.width(), bounds.height()), Math.max(bounds.width(), bounds.height()), 0.35f) / 2;
             if (this.j == null || this.i != lerp) {
                 this.i = lerp;
-                float f12 = lerp;
+                float f11 = lerp;
                 TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop2 = this.h;
                 int i10 = stargiftattributebackdrop2.center_color | (-16777216);
-                this.j = new RadialGradient(0.0f, 0.0f, f12, new int[]{i10, i10, stargiftattributebackdrop2.edge_color | (-16777216)}, new float[]{0.0f, 0.0f, 1.0f}, Shader.TileMode.CLAMP);
+                this.j = new RadialGradient(0.0f, 0.0f, f11, new int[]{i10, i10, stargiftattributebackdrop2.edge_color | (-16777216)}, new float[]{0.0f, 0.0f, 1.0f}, Shader.TileMode.CLAMP);
             }
             Matrix matrix = this.k;
             matrix.reset();
@@ -152,23 +151,23 @@ public final class e1 extends Drawable {
         } else {
             paint.setShader(null);
         }
-        int i11 = org.telegram.ui.ActionBar.g6.a6;
-        c6 c6Var = this.b;
-        final int w02 = org.telegram.ui.ActionBar.g6.w0(i11, c6Var);
-        int i12 = org.telegram.ui.ActionBar.g6.d6;
-        final int w03 = org.telegram.ui.ActionBar.g6.w0(i12, c6Var);
+        int i11 = h6.a6;
+        d6 d6Var = this.b;
+        final int w02 = h6.w0(i11, d6Var);
+        int i12 = h6.d6;
+        final int w03 = h6.w0(i12, d6Var);
         final int i13 = 0;
-        boolean z13 = this.s == ((float) AndroidUtilities.dp(11.0f)) && w02 == org.telegram.ui.ActionBar.g6.x0(null, i11, false) && w03 == org.telegram.ui.ActionBar.g6.x0(null, i12, false);
-        boolean z14 = this.g;
-        a(z14 && !z13);
-        if (z13) {
+        boolean z11 = this.s == ((float) AndroidUtilities.dp(11.0f)) && w02 == h6.x0(null, i11, false) && w03 == h6.x0(null, i12, false);
+        boolean z12 = this.g;
+        a(z12 && !z11);
+        if (z11) {
             if (C == null) {
                 C = new l1();
             }
             Rect rect = AndroidUtilities.rectTmp2;
             rectF.round(rect);
             if (this.h != null) {
-                if (z14) {
+                if (z12) {
                     l1 l1Var = C;
                     if (l1Var.b == null || l1Var.h != w02) {
                         l1Var.h = w02;
@@ -184,12 +183,12 @@ public final class e1 extends Drawable {
                                 Paint paint2 = new Paint(1);
                                 paint2.setStyle(Paint.Style.FILL);
                                 paint2.setColor(i13);
-                                float f13 = dp;
-                                if (f13 > 0.0f) {
-                                    paint2.setShadowLayer(f13, 0.0f, dp2, w02);
+                                float f12 = dp;
+                                if (f12 > 0.0f) {
+                                    paint2.setShadowLayer(f12, 0.0f, dp2, w02);
                                 }
                                 canvas3.drawPath(path, paint2);
-                                if (f13 > 0.0f) {
+                                if (f12 > 0.0f) {
                                     paint2.clearShadowLayer();
                                     canvas3.drawPath(path, paint2);
                                 }
@@ -197,14 +196,14 @@ public final class e1 extends Drawable {
                         });
                     }
                     NinePatchDrawable ninePatchDrawable2 = l1Var.b;
-                    zf.q.h(ninePatchDrawable2, rect);
+                    zf.p.h(ninePatchDrawable2, rect);
                     ninePatchDrawable2.draw(canvas2);
                 }
-                float f13 = this.s;
-                canvas2.drawRoundRect(rectF, f13, f13, paint);
+                float f12 = this.s;
+                canvas2.drawRoundRect(rectF, f12, f12, paint);
                 z10 = true;
             } else {
-                if (z14) {
+                if (z12) {
                     l1 l1Var2 = C;
                     if (l1Var2.f == null || !(l1Var2.j == w03 || l1Var2.k == w02)) {
                         l1Var2.j = w03;
@@ -222,12 +221,12 @@ public final class e1 extends Drawable {
                                 Paint paint2 = new Paint(1);
                                 paint2.setStyle(Paint.Style.FILL);
                                 paint2.setColor(w03);
-                                float f132 = dp3;
-                                if (f132 > 0.0f) {
-                                    paint2.setShadowLayer(f132, 0.0f, dp4, w02);
+                                float f122 = dp3;
+                                if (f122 > 0.0f) {
+                                    paint2.setShadowLayer(f122, 0.0f, dp4, w02);
                                 }
                                 canvas3.drawPath(path, paint2);
-                                if (f132 > 0.0f) {
+                                if (f122 > 0.0f) {
                                     paint2.clearShadowLayer();
                                     canvas3.drawPath(path, paint2);
                                 }
@@ -242,8 +241,8 @@ public final class e1 extends Drawable {
                     l1 l1Var3 = C;
                     if (l1Var3.d == null || l1Var3.i != w03) {
                         l1Var3.i = w03;
+                        final float f13 = 0.0f;
                         final float f14 = 0.0f;
-                        final float f15 = 0.0f;
                         l1Var3.d = v7.b(l1Var3.c, l1Var3.g, 0.0f, 0.0f, w03, new hh.f() { // from class: hh.e
                             @Override // hh.f
                             public final void a(Canvas canvas3, RectF rectF2, float[] fArr22) {
@@ -252,12 +251,12 @@ public final class e1 extends Drawable {
                                 Paint paint2 = new Paint(1);
                                 paint2.setStyle(Paint.Style.FILL);
                                 paint2.setColor(w03);
-                                float f132 = f14;
-                                if (f132 > 0.0f) {
-                                    paint2.setShadowLayer(f132, 0.0f, f15, i13);
+                                float f122 = f13;
+                                if (f122 > 0.0f) {
+                                    paint2.setShadowLayer(f122, 0.0f, f14, i13);
                                 }
                                 canvas3.drawPath(path, paint2);
-                                if (f132 > 0.0f) {
+                                if (f122 > 0.0f) {
                                     paint2.clearShadowLayer();
                                     canvas3.drawPath(path, paint2);
                                 }
@@ -266,23 +265,23 @@ public final class e1 extends Drawable {
                     }
                     ninePatchDrawable = l1Var3.d;
                 }
-                zf.q.h(ninePatchDrawable, rect);
+                zf.p.h(ninePatchDrawable, rect);
                 ninePatchDrawable.draw(canvas2);
             }
         } else {
             z10 = true;
-            float f16 = this.s;
-            canvas2.drawRoundRect(rectF, f16, f16, paint);
+            float f15 = this.s;
+            canvas2.drawRoundRect(rectF, f15, f15, paint);
         }
         int[] iArr = this.m;
         d1 d1Var = this.l;
-        boolean z15 = (iArr == null && (this.h == null || d1Var.d())) ? false : z10;
-        if (z15) {
+        boolean z13 = (iArr == null && (this.h == null || d1Var.d())) ? false : z10;
+        if (z13) {
             canvas2.save();
             Path path = this.f;
             path.rewind();
-            float f17 = this.s;
-            path.addRoundRect(rectF, f17, f17, Path.Direction.CW);
+            float f16 = this.s;
+            path.addRoundRect(rectF, f16, f16, Path.Direction.CW);
             canvas2.clipPath(path);
         }
         if (this.m != null) {
@@ -300,41 +299,34 @@ public final class e1 extends Drawable {
             Paint paint2 = this.d;
             paint2.setShader(linearGradient);
             paint2.setStrokeWidth(AndroidUtilities.dp(4.66f));
-            float f18 = this.s;
-            canvas2.drawRoundRect(rectF, f18, f18, paint2);
+            float f17 = this.s;
+            canvas2.drawRoundRect(rectF, f17, f17, paint2);
         }
-        if (this.h == null || d1Var.d()) {
-            z11 = z15;
-        } else {
+        if (this.h != null && !d1Var.d()) {
             int i14 = this.h.pattern_color | (-16777216);
             canvas2.save();
             canvas2.translate(bounds.centerX(), bounds.centerY());
-            int i15 = Build.VERSION.SDK_INT;
-            if (i15 >= 29) {
+            if (g0.a.g()) {
                 Drawable drawable = d1Var.f[0];
-                f10 = 1.0f;
-                if (drawable != null && d1Var.d.c == 1.0f && (drawable instanceof s5)) {
-                    s5 s5Var = (s5) drawable;
-                    bi.b4 b4Var = s5Var.k;
-                    long i16 = s5Var.i();
-                    if (b4Var != null) {
-                        z11 = z15;
-                        f11 = -31.0f;
-                        if (i16 == this.y) {
-                            bitmap = b4Var.getBitmap();
+                if (drawable != null && d1Var.d.c == 1.0f && (drawable instanceof r5)) {
+                    r5 r5Var = (r5) drawable;
+                    ci.g3 g3Var = r5Var.k;
+                    long i15 = r5Var.i();
+                    if (g3Var != null) {
+                        f10 = 1.0f;
+                        if (i15 == this.y) {
+                            bitmap = g3Var.getBitmap();
                         }
                         bitmap = null;
                         if (bitmap != null) {
                             if (this.z != bitmap || this.A == null) {
                                 this.z = bitmap;
                                 this.A = g0.a.a(bitmap);
-                                z12 = true;
-                            } else {
-                                z12 = false;
+                                i13 = 1;
                             }
-                            if (this.B != i14 || z12) {
+                            if (this.B != i14 || i13 != 0) {
                                 this.B = i14;
-                                if (i15 >= 29) {
+                                if (Build.VERSION.SDK_INT >= 29) {
                                     Paint paint3 = this.A;
                                     blendMode = BlendMode.SRC_IN;
                                     paint3.setColorFilter(new BlendModeColorFilter(i14, blendMode));
@@ -342,53 +334,51 @@ public final class e1 extends Drawable {
                                     this.A.setColorFilter(new PorterDuffColorFilter(i14, PorterDuff.Mode.SRC_IN));
                                 }
                             }
-                            if (f7 < 1.0f) {
+                            if (f7 < f10) {
+                                float f18 = f10 - f7;
                                 bitmap2 = bitmap;
-                                zh.i0.b(canvas2, 2, this.A, bitmap2, bounds.width(), bounds.height(), 1.0f - f7);
+                                ai.m1.b(canvas2, 2, this.A, bitmap2, bounds.width(), bounds.height(), f18);
                             } else {
                                 bitmap2 = bitmap;
                             }
                             if (f7 > 0.0f) {
-                                canvas2.translate(0.0f, AndroidUtilities.dp(f11));
-                                zh.i0.b(canvas2, 0, this.A, bitmap2, bounds.width(), bounds.height(), f7);
+                                canvas2.translate(0.0f, AndroidUtilities.dp(-31.0f));
+                                ai.m1.b(canvas2, 0, this.A, bitmap2, bounds.width(), bounds.height(), f7);
                             }
                             canvas2 = canvas;
                             canvas2.restore();
                         }
                     }
                 }
-                z11 = z15;
-                f11 = -31.0f;
+                f10 = 1.0f;
                 bitmap = null;
                 if (bitmap != null) {
                 }
             } else {
-                z11 = z15;
                 f10 = 1.0f;
-                f11 = -31.0f;
             }
             d1Var.k(Integer.valueOf(i14));
             if (f7 < f10) {
                 canvas2 = canvas;
-                zh.i0.a(canvas2, 2, d1Var, bounds.width(), bounds.height(), f10 - f7, 1.0f);
+                ai.m1.a(canvas2, 2, d1Var, bounds.width(), bounds.height(), f10 - f7, 1.0f);
             } else {
                 canvas2 = canvas;
             }
             if (f7 > 0.0f) {
-                canvas2.translate(0.0f, AndroidUtilities.dp(f11));
-                zh.i0.a(canvas2, 0, d1Var, bounds.width(), bounds.height(), f7, 1.0f);
+                canvas2.translate(0.0f, AndroidUtilities.dp(-31.0f));
+                ai.m1.a(canvas2, 0, d1Var, bounds.width(), bounds.height(), f7, 1.0f);
             }
             canvas2.restore();
         }
-        if (z11) {
+        if (z13) {
             canvas2.restore();
         }
         if (e > 0.0f) {
-            int i17 = this.v;
+            int i16 = this.v;
             Paint paint4 = this.q;
-            if (i17 == 0) {
+            if (i16 == 0) {
                 Integer num = this.x;
-                paint4.setColor(num != null ? num.intValue() : org.telegram.ui.ActionBar.g6.w0(this.w, c6Var));
+                paint4.setColor(num != null ? num.intValue() : h6.w0(this.w, d6Var));
                 paint4.setStrokeWidth(AndroidUtilities.lerp(0.0f, AndroidUtilities.dpf2(1.667f), e));
                 RectF rectF2 = AndroidUtilities.rectTmp;
                 rectF2.set(rectF);
@@ -398,9 +388,9 @@ public final class e1 extends Drawable {
                 canvas2.drawRoundRect(rectF2, lerp3, lerp3, paint4);
                 return;
             }
-            if (i17 == 1) {
+            if (i16 == 1) {
                 Integer num2 = this.x;
-                paint4.setColor(num2 != null ? num2.intValue() : org.telegram.ui.ActionBar.g6.w0(this.w, c6Var));
+                paint4.setColor(num2 != null ? num2.intValue() : h6.w0(this.w, d6Var));
                 paint4.setStrokeWidth(AndroidUtilities.lerp(0.0f, AndroidUtilities.dpf2(3.0f), e));
                 RectF rectF3 = AndroidUtilities.rectTmp;
                 rectF3.set(rectF);

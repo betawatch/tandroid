@@ -14,23 +14,23 @@ import androidx.appcompat.widget.ActionMenuView;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class i implements l.x {
     public int E;
     public int F;
     public boolean G;
-    public d I;
-    public d J;
-    public f K;
-    public e L;
+    public e I;
+    public e J;
+    public g K;
+    public f L;
     public final Context a;
     public Context b;
     public l.k c;
     public final LayoutInflater d;
     public l.w e;
     public l.z n;
-    public g r;
+    public h r;
     public Drawable s;
     public boolean v;
     public boolean w;
@@ -39,7 +39,7 @@ public final class i implements l.x {
     public final int f = R.layout.abc_action_menu_layout;
     public final int h = R.layout.abc_action_menu_item_layout;
     public final SparseBooleanArray H = new SparseBooleanArray();
-    public final h M = new h(this, 0);
+    public final k0.b M = new k0.b(this, 5);
 
     public i(Context context) {
         this.a = context;
@@ -59,7 +59,7 @@ public final class i implements l.x {
             ActionMenuItemView actionMenuItemView2 = actionMenuItemView;
             actionMenuItemView2.setItemInvoker((ActionMenuView) this.n);
             if (this.L == null) {
-                this.L = new e(this);
+                this.L = new f(this);
             }
             actionMenuItemView2.setPopupCallback(this.L);
             actionView = actionMenuItemView;
@@ -195,9 +195,9 @@ public final class i implements l.x {
     @Override // l.x
     public final void d(l.k kVar, boolean z10) {
         f();
-        d dVar = this.J;
-        if (dVar != null && dVar.b()) {
-            dVar.i.dismiss();
+        e eVar = this.J;
+        if (eVar != null && eVar.b()) {
+            eVar.i.dismiss();
         }
         l.w wVar = this.e;
         if (wVar != null) {
@@ -275,7 +275,7 @@ public final class i implements l.x {
         }
         if (z10) {
             if (this.r == null) {
-                this.r = new g(this, this.a);
+                this.r = new h(this, this.a);
             }
             ViewGroup viewGroup3 = (ViewGroup) this.r.getParent();
             if (viewGroup3 != this.n) {
@@ -283,16 +283,16 @@ public final class i implements l.x {
                     viewGroup3.removeView(this.r);
                 }
                 ActionMenuView actionMenuView = (ActionMenuView) this.n;
-                g gVar = this.r;
+                h hVar = this.r;
                 actionMenuView.getClass();
                 k i13 = ActionMenuView.i();
                 i13.a = true;
-                actionMenuView.addView(gVar, i13);
+                actionMenuView.addView(hVar, i13);
             }
         } else {
-            g gVar2 = this.r;
-            if (gVar2 != null) {
-                Object parent = gVar2.getParent();
+            h hVar2 = this.r;
+            if (hVar2 != null) {
+                Object parent = hVar2.getParent();
                 Object obj = this.n;
                 if (parent == obj) {
                     ((ViewGroup) obj).removeView(this.r);
@@ -304,25 +304,25 @@ public final class i implements l.x {
 
     public final boolean f() {
         Object obj;
-        f fVar = this.K;
-        if (fVar != null && (obj = this.n) != null) {
-            ((View) obj).removeCallbacks(fVar);
+        g gVar = this.K;
+        if (gVar != null && (obj = this.n) != null) {
+            ((View) obj).removeCallbacks(gVar);
             this.K = null;
             return true;
         }
-        d dVar = this.I;
-        if (dVar == null) {
+        e eVar = this.I;
+        if (eVar == null) {
             return false;
         }
-        if (dVar.b()) {
-            dVar.i.dismiss();
+        if (eVar.b()) {
+            eVar.i.dismiss();
         }
         return true;
     }
 
     public final boolean g() {
-        d dVar = this.I;
-        return dVar != null && dVar.b();
+        e eVar = this.I;
+        return eVar != null && eVar.b();
     }
 
     @Override // l.x
@@ -355,10 +355,10 @@ public final class i implements l.x {
         int i13 = this.y;
         if (this.w) {
             if (this.r == null) {
-                g gVar = new g(this, this.a);
-                this.r = gVar;
+                h hVar = new h(this, this.a);
+                this.r = hVar;
                 if (this.v) {
-                    gVar.setImageDrawable(this.s);
+                    hVar.setImageDrawable(this.s);
                     this.s = null;
                     this.v = false;
                 }
@@ -420,23 +420,23 @@ public final class i implements l.x {
                     }
                     i11++;
                 }
-                d dVar = new d(this, this.b, d0Var, view);
-                this.J = dVar;
-                dVar.g = z10;
-                l.s sVar = dVar.i;
+                e eVar = new e(this, this.b, d0Var, view);
+                this.J = eVar;
+                eVar.g = z10;
+                l.s sVar = eVar.i;
                 if (sVar != null) {
                     sVar.o(z10);
                 }
-                d dVar2 = this.J;
-                if (!dVar2.b()) {
-                    if (dVar2.e == null) {
+                e eVar2 = this.J;
+                if (!eVar2.b()) {
+                    if (eVar2.e == null) {
                         throw new IllegalStateException("MenuPopupHelper cannot be used without an anchor");
                     }
-                    dVar2.d(0, 0, false, false);
+                    eVar2.d(0, 0, false, false);
                 }
                 l.w wVar = this.e;
                 if (wVar != null) {
-                    wVar.q(d0Var);
+                    wVar.u(d0Var);
                 }
                 return true;
             }
@@ -458,9 +458,9 @@ public final class i implements l.x {
         if (kVar.j.isEmpty()) {
             return false;
         }
-        f fVar = new f(this, new d(this, this.b, this.c, this.r));
-        this.K = fVar;
-        ((View) this.n).post(fVar);
+        g gVar = new g(this, new e(this, this.b, this.c, this.r));
+        this.K = gVar;
+        ((View) this.n).post(gVar);
         return true;
     }
 }

@@ -1,11 +1,10 @@
 package com.google.android.gms.internal.clearcut;
 
+import java.util.List;
+
 /* loaded from: classes.dex */
-public abstract class g0 {
-    public static final h0 a = new h0();
-    public static final i0 b = new i0();
+public interface g0 extends List {
+    List d();
 
-    public abstract void a(Object obj, long j10);
-
-    public abstract void b(Object obj, long j10, Object obj2);
+    g0 j();
 }

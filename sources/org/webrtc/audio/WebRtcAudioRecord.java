@@ -10,7 +10,6 @@ import android.media.AudioTimestamp;
 import android.os.Build;
 import android.os.Process;
 import com.google.firebase.messaging.h;
-import i2.d;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -22,12 +21,12 @@ import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.ui.ps0;
+import org.telegram.ui.hk0;
 import org.webrtc.Logging;
 import org.webrtc.ThreadUtils;
 import org.webrtc.audio.JavaAudioDeviceModule;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
 public class WebRtcAudioRecord {
     private static final int AUDIO_RECORD_START = 0;
@@ -62,7 +61,7 @@ public class WebRtcAudioRecord {
     private AudioDeviceInfo preferredDevice;
     private final JavaAudioDeviceModule.AudioRecordStateCallback stateCallback;
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public class AudioRecordThread extends Thread {
         private volatile boolean keepAlive;
 
@@ -184,7 +183,7 @@ public class WebRtcAudioRecord {
                 i11 = 4;
                 if (i10 != 4) {
                     if (i10 != 13) {
-                        throw new IllegalArgumentException(d.j(i10, "Bad audio format "));
+                        throw new IllegalArgumentException(i0.a.j(i10, "Bad audio format "));
                     }
                 }
             }
@@ -212,7 +211,7 @@ public class WebRtcAudioRecord {
         int channelCountToConfiguration = channelCountToConfiguration(i11);
         int minBufferSize = AudioRecord.getMinBufferSize(i10, channelCountToConfiguration, this.audioFormat);
         if (minBufferSize == -1 || minBufferSize == -2) {
-            reportWebRtcAudioRecordInitError(d.j(minBufferSize, "AudioRecord.getMinBufferSize failed: "));
+            reportWebRtcAudioRecordInitError(i0.a.j(minBufferSize, "AudioRecord.getMinBufferSize failed: "));
             return -1;
         }
         Logging.d(TAG, "AudioRecord.getMinBufferSize: " + minBufferSize);
@@ -261,7 +260,7 @@ public class WebRtcAudioRecord {
         Iterator<AudioRecordingConfiguration> it = list.iterator();
         Logging.d(TAG, "AudioRecordingConfigurations: ");
         while (it.hasNext()) {
-            AudioRecordingConfiguration c10 = ps0.c(it.next());
+            AudioRecordingConfiguration c10 = hk0.c(it.next());
             StringBuilder sb2 = new StringBuilder("  client audio source=");
             sb2.append(WebRtcAudioUtils.audioSourceToString(c10.getClientAudioSource()));
             sb2.append(", client session id=");
@@ -448,7 +447,7 @@ public class WebRtcAudioRecord {
         assertTrue(!list.isEmpty());
         Iterator<AudioRecordingConfiguration> it = list.iterator();
         while (it.hasNext()) {
-            AudioRecordingConfiguration c10 = ps0.c(it.next());
+            AudioRecordingConfiguration c10 = hk0.c(it.next());
             AudioDeviceInfo audioDevice = c10.getAudioDevice();
             if (audioDevice != null && c10.getClientAudioSource() == i10 && c10.getClientAudioSessionId() == i11 && c10.getClientFormat().getEncoding() == audioFormat.getEncoding() && c10.getClientFormat().getSampleRate() == audioFormat.getSampleRate() && c10.getClientFormat().getChannelMask() == audioFormat.getChannelMask() && c10.getClientFormat().getChannelIndexMask() == audioFormat.getChannelIndexMask() && c10.getFormat().getEncoding() != 0 && c10.getFormat().getSampleRate() > 0 && (c10.getFormat().getChannelMask() != 0 || c10.getFormat().getChannelIndexMask() != 0)) {
                 if (checkDeviceMatch(audioDevice, audioDeviceInfo)) {

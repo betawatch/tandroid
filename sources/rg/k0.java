@@ -4,35 +4,115 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Path;
 import android.graphics.RectF;
-import android.view.ViewGroup;
+import android.text.TextUtils;
+import android.view.KeyEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.gu0;
+import org.telegram.messenger.wh;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.q6;
+import w7.z5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class k0 extends k1 {
-    public final Path e3;
-    public final /* synthetic */ gu0 f3;
+public final class k0 extends FrameLayout {
+    public final /* synthetic */ int a = 2;
+    public final Object b;
+    public final KeyEvent.Callback c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k0(gu0 gu0Var, Context context) {
+    public k0(sg.x0 x0Var, Context context, sg.z0 z0Var) {
         super(context);
-        this.f3 = gu0Var;
-        this.e3 = new Path();
+        this.c = x0Var;
+        this.b = z0Var;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void draw(Canvas canvas) {
-        ViewGroup barView;
-        barView = this.f3.getBarView();
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(AndroidUtilities.lerp(barView.getLeft() - getLeft(), 0, r0.N1), AndroidUtilities.lerp(barView.getTop() - getTop(), 0, r0.N1), AndroidUtilities.lerp(barView.getRight() - getLeft(), getWidth(), r0.N1), AndroidUtilities.lerp(barView.getBottom() - getTop(), getHeight(), r0.N1));
-        Path path = this.e3;
-        path.rewind();
-        path.addRoundRect(rectF, AndroidUtilities.dp(32.0f), AndroidUtilities.dp(32.0f), Path.Direction.CW);
-        canvas.save();
-        canvas.clipPath(path);
-        super.draw(canvas);
-        canvas.restore();
+    @Override // android.view.ViewGroup, android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        switch (this.a) {
+            case 1:
+                ((sg.z0) this.b).d(0, 0.0f, 0, getMeasuredWidth(), 0.0f, getMeasuredHeight());
+                RectF rectF = AndroidUtilities.rectTmp;
+                rectF.set(0.0f, AndroidUtilities.dp(2.0f), getMeasuredWidth(), AndroidUtilities.dp(18.0f) + getMeasuredHeight());
+                canvas.save();
+                canvas.clipRect(0, 0, getMeasuredWidth(), getMeasuredHeight());
+                sg.z0 z0Var = (sg.z0) this.b;
+                z0Var.f.setAlpha(((sg.x0) this.c).K);
+                canvas.drawRoundRect(rectF, AndroidUtilities.dp(24.0f) - 1, AndroidUtilities.dp(24.0f) - 1, z0Var.f);
+                canvas.restore();
+                super.dispatchDraw(canvas);
+                break;
+            default:
+                super.dispatchDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.view.ViewGroup
+    public boolean drawChild(Canvas canvas, View view, long j10) {
+        boolean z10;
+        switch (this.a) {
+            case 0:
+                Path path = (Path) this.b;
+                l0 l0Var = (l0) this.c;
+                if (l0Var.h == null || (!((z10 = l0Var.f) && view == l0Var.d) && (z10 || view != l0Var.c))) {
+                    return super.drawChild(canvas, view, j10);
+                }
+                float measuredWidth = ((z10 ? l0Var.e : 1.0f - l0Var.e) * getMeasuredWidth()) / 2.0f;
+                canvas.save();
+                path.rewind();
+                path.addCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, measuredWidth, Path.Direction.CW);
+                canvas.clipPath(path);
+                boolean drawChild = super.drawChild(canvas, view, j10);
+                canvas.restore();
+                return drawChild;
+            default:
+                return super.drawChild(canvas, view, j10);
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.a) {
+            case 1:
+                super.onMeasure(i10, wh.D(2.0f, ((sg.x0) this.c).s, TLObject.FLAG_30));
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
+        }
+    }
+
+    public k0(Context context, d6 d6Var) {
+        super(context);
+        LinearLayout e = wh.e(context, 1);
+        q6 q6Var = new q6(context, false, false, false);
+        this.b = q6Var;
+        int i10 = h6.G6;
+        q6Var.setTextColor(h6.w0(i10, d6Var));
+        q6Var.setTextSize(AndroidUtilities.dp(17.0f));
+        q6Var.setTypeface(AndroidUtilities.bold());
+        e.addView(q6Var, z5.q(-2, 23, 1));
+        TextView textView = new TextView(context);
+        this.c = textView;
+        textView.setTextSize(1, 11.0f);
+        textView.setTextColor(h6.w0(i10, d6Var));
+        textView.setSingleLine();
+        textView.setMaxLines(1);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        e.addView(textView, z5.q(-2, -2, 1));
+        addView(e, z5.e(-2, -2, 17));
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public k0(l0 l0Var, Context context) {
+        super(context);
+        this.c = l0Var;
+        this.b = new Path();
     }
 }

@@ -5,16 +5,16 @@ import android.view.View;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Cells.r8;
-import org.telegram.ui.Cells.w8;
+import org.telegram.ui.Cells.q8;
+import org.telegram.ui.Cells.v8;
+import org.telegram.ui.Components.e5;
 import org.telegram.ui.Components.f5;
-import org.telegram.ui.Components.g5;
-import org.telegram.ui.Components.m61;
-import org.telegram.ui.fo;
+import org.telegram.ui.Components.f61;
+import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a implements Utilities.Callback5, org.telegram.ui.ActionBar.z1 {
+public final /* synthetic */ class a implements Utilities.Callback5, org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ c b;
 
@@ -23,8 +23,8 @@ public final /* synthetic */ class a implements Utilities.Callback5, org.telegra
         this.b = cVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.z1
-    public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 1:
                 this.b.X();
@@ -37,22 +37,22 @@ public final /* synthetic */ class a implements Utilities.Callback5, org.telegra
 
     @Override // org.telegram.messenger.Utilities.Callback5
     public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        m61 m61Var = (m61) obj;
+        f61 f61Var = (f61) obj;
         final View view = (View) obj2;
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
         final c cVar = this.b;
-        if (cVar.d.h(m61Var)) {
+        if (cVar.d.h(f61Var)) {
             return;
         }
-        int i10 = m61Var.d;
-        if (i10 == 2 || m61Var.a == 17) {
+        int i10 = f61Var.d;
+        if (i10 == 2 || f61Var.a == 17) {
             Bundle bundle = new Bundle();
             bundle.putLong("user_id", cVar.getUserConfig().getClientUserId());
             bundle.putInt("chatMode", 5);
             bundle.putString("quick_reply", "away");
-            cVar.presentFragment(new fo(bundle));
+            cVar.presentFragment(new sn(bundle));
             return;
         }
         if (i10 == 1) {
@@ -97,24 +97,24 @@ public final /* synthetic */ class a implements Utilities.Callback5, org.telegra
         }
         if (i10 == 8) {
             final int i11 = 0;
-            g5.x(cVar.getParentActivity(), LocaleController.getString(R.string.BusinessAwayScheduleCustomStartTitle), LocaleController.getString(R.string.BusinessAwayScheduleCustomSetButton), cVar.F, new f5() { // from class: ig.b
-                @Override // org.telegram.ui.Components.f5
-                public final void J(int i12, int i13, boolean z10) {
+            f5.x(cVar.getParentActivity(), LocaleController.getString(R.string.BusinessAwayScheduleCustomStartTitle), LocaleController.getString(R.string.BusinessAwayScheduleCustomSetButton), cVar.F, new e5() { // from class: ig.b
+                @Override // org.telegram.ui.Components.e5
+                public final void C(int i12, int i13, boolean z10) {
                     switch (i11) {
                         case 0:
                             c cVar2 = cVar;
                             cVar2.getClass();
-                            r8 r8Var = (r8) view;
+                            q8 q8Var = (q8) view;
                             cVar2.F = i12;
-                            r8Var.u(LocaleController.formatShortDateTime(i12), true);
+                            q8Var.u(LocaleController.formatShortDateTime(i12), true);
                             cVar2.V(true);
                             break;
                         default:
                             c cVar3 = cVar;
                             cVar3.getClass();
-                            r8 r8Var2 = (r8) view;
+                            q8 q8Var2 = (q8) view;
                             cVar3.G = i12;
-                            r8Var2.u(LocaleController.formatShortDateTime(i12), true);
+                            q8Var2.u(LocaleController.formatShortDateTime(i12), true);
                             cVar3.V(true);
                             break;
                     }
@@ -124,24 +124,24 @@ public final /* synthetic */ class a implements Utilities.Callback5, org.telegra
         }
         if (i10 == 9) {
             final int i12 = 1;
-            g5.x(cVar.getParentActivity(), LocaleController.getString(R.string.BusinessAwayScheduleCustomEndTitle), LocaleController.getString(R.string.BusinessAwayScheduleCustomSetButton), cVar.G, new f5() { // from class: ig.b
-                @Override // org.telegram.ui.Components.f5
-                public final void J(int i122, int i13, boolean z10) {
+            f5.x(cVar.getParentActivity(), LocaleController.getString(R.string.BusinessAwayScheduleCustomEndTitle), LocaleController.getString(R.string.BusinessAwayScheduleCustomSetButton), cVar.G, new e5() { // from class: ig.b
+                @Override // org.telegram.ui.Components.e5
+                public final void C(int i122, int i13, boolean z10) {
                     switch (i12) {
                         case 0:
                             c cVar2 = cVar;
                             cVar2.getClass();
-                            r8 r8Var = (r8) view;
+                            q8 q8Var = (q8) view;
                             cVar2.F = i122;
-                            r8Var.u(LocaleController.formatShortDateTime(i122), true);
+                            q8Var.u(LocaleController.formatShortDateTime(i122), true);
                             cVar2.V(true);
                             break;
                         default:
                             c cVar3 = cVar;
                             cVar3.getClass();
-                            r8 r8Var2 = (r8) view;
+                            q8 q8Var2 = (q8) view;
                             cVar3.G = i122;
-                            r8Var2.u(LocaleController.formatShortDateTime(i122), true);
+                            q8Var2.u(LocaleController.formatShortDateTime(i122), true);
                             cVar3.V(true);
                             break;
                     }
@@ -152,7 +152,7 @@ public final /* synthetic */ class a implements Utilities.Callback5, org.telegra
         if (i10 == 10) {
             boolean z10 = !cVar.w;
             cVar.w = z10;
-            ((w8) view).setChecked(z10);
+            ((v8) view).setChecked(z10);
             cVar.V(true);
         }
     }

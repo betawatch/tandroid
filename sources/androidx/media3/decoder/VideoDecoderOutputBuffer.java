@@ -1,13 +1,13 @@
 package androidx.media3.decoder;
 
-import b2.x;
+import b2.w;
 import h2.i;
 import h2.j;
 import java.nio.ByteBuffer;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public class VideoDecoderOutputBuffer extends j {
     public static final int COLORSPACE_BT2020 = 3;
@@ -17,7 +17,7 @@ public class VideoDecoderOutputBuffer extends j {
     public int colorspace;
     public ByteBuffer data;
     public long decoderPrivate;
-    public x format;
+    public w format;
     public int height;
     public int mode;
     private final i owner;
@@ -151,6 +151,6 @@ public class VideoDecoderOutputBuffer extends j {
 
     @Override // h2.j
     public void release() {
-        this.owner.h(this);
+        this.owner.f(this);
     }
 }

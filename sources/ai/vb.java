@@ -1,0 +1,187 @@
+package ai;
+
+import android.text.TextUtils;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.concurrent.ExecutorService;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.LaunchActivity;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class vb implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
+
+    public /* synthetic */ vb(int i10, ei.d dVar, TLObject tLObject, TL_stars.StarsSubscription starsSubscription, boolean z10, boolean z11, org.telegram.ui.ActionBar.f3[] f3VarArr) {
+        this.e = dVar;
+        this.f = f3VarArr;
+        this.d = i10;
+        this.b = z10;
+        this.h = starsSubscription;
+        this.c = z11;
+        this.n = tLObject;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00b7  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x00bc  */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        boolean z10;
+        String formatString;
+        File file;
+        File file2;
+        switch (this.a) {
+            case 0:
+                ei.d dVar = (ei.d) this.e;
+                org.telegram.ui.ActionBar.f3[] f3VarArr = (org.telegram.ui.ActionBar.f3[]) this.f;
+                int i10 = this.d;
+                boolean z11 = this.b;
+                TL_stars.StarsSubscription starsSubscription = (TL_stars.StarsSubscription) this.h;
+                boolean z12 = this.c;
+                TLObject tLObject = (TLObject) this.n;
+                dVar.setLoading(false);
+                org.telegram.ui.ActionBar.f3 f3Var = f3VarArr[0];
+                if (f3Var != null) {
+                    f3Var.dismiss();
+                }
+                fa.y(i10, false).S();
+                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                if (U != null) {
+                    if (z11 && !TextUtils.isEmpty(starsSubscription.title)) {
+                        formatString = LocaleController.formatString(R.string.StarsSubscriptionCancelledBizToastText, LocaleController.formatDateChat(starsSubscription.until_date), starsSubscription.title);
+                        z10 = false;
+                    } else if (!z12 || TextUtils.isEmpty(starsSubscription.title)) {
+                        z10 = false;
+                        formatString = LocaleController.formatString(R.string.StarsSubscriptionCancelledToastText, LocaleController.formatDateChat(starsSubscription.until_date));
+                    } else {
+                        z10 = false;
+                        formatString = LocaleController.formatString(R.string.StarsSubscriptionCancelledBotToastText, LocaleController.formatDateChat(starsSubscription.until_date), starsSubscription.title);
+                    }
+                    org.telegram.ui.Components.xc.a0(U).V(Collections.singletonList(tLObject), LocaleController.getString(R.string.StarsSubscriptionCancelledToast), AndroidUtilities.replaceTags(formatString), null).k(z10);
+                    return;
+                }
+                return;
+            case 1:
+                ((SendMessagesHelper) this.e).lambda$performSendMessageRequest$98(this.b, (TLRPC.Message) this.f, (ArrayList) this.h, this.c, (ArrayList) this.n, this.d);
+                return;
+            default:
+                si.t0 t0Var = (si.t0) this.e;
+                si.x xVar = (si.x) this.f;
+                boolean z13 = this.b;
+                File file3 = (File) this.h;
+                boolean z14 = this.c;
+                int i11 = this.d;
+                si.p0 p0Var = (si.p0) this.n;
+                t0Var.getClass();
+                long nanoTime = System.nanoTime();
+                try {
+                    xVar.g();
+                    t0Var.m.b("preview output finalized: size=" + xVar.a.length() + ", replace=" + z13 + ", elapsedMs=" + si.t0.f(nanoTime));
+                    t0Var.g();
+                    if (z13) {
+                        t0Var.s(file3, t0Var.G, t0Var.H, z14, i11);
+                        file = file3;
+                    } else {
+                        file = file3;
+                        try {
+                            try {
+                                File file4 = xVar.a;
+                                long j10 = t0Var.K;
+                                if (j10 <= 0) {
+                                    j10 = t0Var.E;
+                                }
+                                ExecutorService executorService = t0Var.k;
+                                try {
+                                    si.g0 g0Var = new si.g0(t0Var, p0Var, file4, j10, true);
+                                    t0Var = t0Var;
+                                    executorService.execute(g0Var);
+                                } catch (Exception e) {
+                                    e = e;
+                                    t0Var = t0Var;
+                                    t0Var.i.post(new si.e0(t0Var, e, 0));
+                                    if (file != null) {
+                                        w7.p7.c(file);
+                                    }
+                                    if (z13) {
+                                        file2 = xVar.a;
+                                        w7.p7.c(file2);
+                                        return;
+                                    }
+                                    return;
+                                }
+                            } catch (Exception e7) {
+                                e = e7;
+                            }
+                        } catch (Throwable th2) {
+                            th = th2;
+                            if (file != null) {
+                                w7.p7.c(file);
+                            }
+                            if (z13) {
+                                w7.p7.c(xVar.a);
+                            }
+                            throw th;
+                        }
+                    }
+                    t0Var.R = null;
+                    if (file != null) {
+                        w7.p7.c(file);
+                    }
+                } catch (Exception e10) {
+                    e = e10;
+                    file = file3;
+                } catch (Throwable th3) {
+                    th = th3;
+                    file = file3;
+                    if (file != null) {
+                    }
+                    if (z13) {
+                    }
+                    throw th;
+                }
+                if (z13) {
+                    file2 = xVar.a;
+                    w7.p7.c(file2);
+                    return;
+                }
+                return;
+        }
+    }
+
+    public /* synthetic */ vb(SendMessagesHelper sendMessagesHelper, boolean z10, TLRPC.Message message, ArrayList arrayList, boolean z11, ArrayList arrayList2, int i10) {
+        this.e = sendMessagesHelper;
+        this.b = z10;
+        this.f = message;
+        this.h = arrayList;
+        this.c = z11;
+        this.n = arrayList2;
+        this.d = i10;
+    }
+
+    public /* synthetic */ vb(si.t0 t0Var, si.x xVar, boolean z10, File file, boolean z11, int i10, si.p0 p0Var) {
+        this.e = t0Var;
+        this.f = xVar;
+        this.b = z10;
+        this.h = file;
+        this.c = z11;
+        this.d = i10;
+        this.n = p0Var;
+    }
+}

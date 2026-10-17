@@ -1,13 +1,13 @@
 package o2;
 
+import b2.v;
+import b2.v0;
 import b2.w;
-import b2.w0;
-import b2.x;
 import java.util.ArrayList;
 import t7.u;
 import v7.b8;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class c {
     public static final int[] d = {8, 13, 11, 2, 0, 1, 7};
@@ -22,19 +22,19 @@ public final class c {
         arrayList.add(Integer.valueOf(i10));
     }
 
-    public final x b(x xVar) {
-        if (!this.b || !this.a.a0(xVar)) {
-            return xVar;
+    public final w b(w wVar) {
+        if (!this.b || !this.a.a0(wVar)) {
+            return wVar;
         }
-        w a2 = xVar.a();
-        String str = xVar.k;
-        a2.r = w0.n("application/x-media3-cues");
-        a2.P = this.a.H(xVar);
+        v a2 = wVar.a();
+        String str = wVar.k;
+        a2.r = v0.n("application/x-media3-cues");
+        a2.P = this.a.L(wVar);
         StringBuilder sb2 = new StringBuilder();
-        sb2.append(xVar.s);
+        sb2.append(wVar.s);
         sb2.append(str != null ? " ".concat(str) : "");
         a2.j = sb2.toString();
         a2.w = Long.MAX_VALUE;
-        return new x(a2);
+        return new w(a2);
     }
 }

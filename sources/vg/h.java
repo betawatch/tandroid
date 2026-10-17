@@ -1,15 +1,16 @@
 package vg;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import bi.l5;
+import ci.l4;
+import ig.l0;
 import java.util.ArrayList;
 import java.util.HashMap;
-import ji.p1;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
@@ -18,49 +19,48 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Cells.r8;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Cells.q8;
+import org.telegram.ui.Cells.t3;
 import org.telegram.ui.Cells.u3;
-import org.telegram.ui.Cells.v3;
-import org.telegram.ui.Components.aq;
-import org.telegram.ui.Components.cr;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.wl0;
-import org.telegram.ui.Components.wx0;
-import org.telegram.ui.Components.z9;
-import org.telegram.ui.bz0;
+import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.rx0;
+import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.w9;
+import org.telegram.ui.Components.xp;
+import qg.n;
 import s4.b1;
 import s4.o0;
-import ug.c1;
+import ug.a1;
 import w7.z5;
-import yg.l;
+import yg.k;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class h extends pg.b {
-    public final c6 d;
+    public final d6 d;
     public final Context e;
-    public mm0 f;
+    public im0 f;
     public ArrayList n;
     public boolean s;
-    public v3 v;
+    public u3 v;
     public final boolean w;
     public boolean x;
     public final HashMap r = new HashMap();
     public boolean y = true;
     public final boolean h = true;
 
-    public h(Context context, c6 c6Var, boolean z10) {
+    public h(Context context, d6 d6Var, boolean z10) {
         this.e = context;
         this.w = z10;
-        this.d = c6Var;
-        p1 p1Var = new p1(this, 18);
+        this.d = d6Var;
+        l0 l0Var = new l0(this, 24);
         MessagesStorage messagesStorage = MessagesStorage.getInstance(UserConfig.selectedAccount);
-        messagesStorage.getStorageQueue().postRunnable(new s9.b(13, messagesStorage, p1Var));
+        messagesStorage.getStorageQueue().postRunnable(new uf.c(4, messagesStorage, l0Var));
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.hm0
     public final boolean D(b1 b1Var) {
         int i10 = b1Var.f;
         return i10 == 3 || i10 == 6 || i10 == 9;
@@ -139,7 +139,7 @@ public final class h extends pg.b {
             }
             if (i12 == 5) {
                 try {
-                    ((wx0) view).b.getImageReceiver().startAnimation();
+                    ((rx0) view).b.getImageReceiver().startAnimation();
                     return;
                 } catch (Exception unused) {
                     return;
@@ -147,9 +147,9 @@ public final class h extends pg.b {
             }
             if (i12 != 8) {
                 if (i12 == 9) {
-                    r8 r8Var = (r8) view;
-                    r8Var.e(g6.v6, g6.u6);
-                    r8Var.m(gVar.j, gVar.g, false);
+                    q8 q8Var = (q8) view;
+                    q8Var.e(h6.v6, h6.u6);
+                    q8Var.m(gVar.j, gVar.g, false);
                     return;
                 } else {
                     if (i12 == 10) {
@@ -164,168 +164,168 @@ public final class h extends pg.b {
                     return;
                 }
             }
-            v3 v3Var = (v3) view;
-            if (TextUtils.equals(v3Var.getText(), gVar.g)) {
-                String str = gVar.h;
-                if (str == null) {
-                    str = "";
+            u3 u3Var = (u3) view;
+            if (TextUtils.equals(u3Var.getText(), gVar.g)) {
+                CharSequence charSequence = gVar.h;
+                if (charSequence == null) {
+                    charSequence = "";
                 }
-                v3Var.b(str, gVar.m);
+                u3Var.b(charSequence, gVar.m);
             } else {
-                v3Var.setText(Emoji.replaceWithRestrictedEmoji(gVar.g, v3Var.getTextView(), (Runnable) null));
+                u3Var.setText(Emoji.replaceWithRestrictedEmoji(gVar.g, u3Var.getTextView(), (Runnable) null));
                 if (!TextUtils.isEmpty(gVar.h)) {
-                    String str2 = gVar.h;
-                    bz0 bz0Var = gVar.m;
-                    u3 u3Var = v3Var.b;
-                    u3Var.c(str2, false, true);
-                    u3Var.setOnClickListener(bz0Var);
-                    u3Var.setVisibility(0);
+                    CharSequence charSequence2 = gVar.h;
+                    n nVar = gVar.m;
+                    t3 t3Var = u3Var.b;
+                    t3Var.c(charSequence2, false, true);
+                    t3Var.setOnClickListener(nVar);
+                    t3Var.setVisibility(0);
                 }
             }
-            this.v = v3Var;
+            this.v = u3Var;
             return;
         }
-        l lVar = (l) view;
-        cr crVar = gVar.r;
-        if (crVar != null) {
-            CharSequence charSequence = gVar.g;
-            String str3 = gVar.h;
-            lVar.w.setVisibility(8);
-            lVar.H = null;
-            lVar.I = null;
-            z9 z9Var = lVar.c;
-            z9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
-            z9Var.setImageDrawable(crVar);
-            l5 l5Var = lVar.d;
-            l5Var.k(charSequence);
-            boolean[] zArr = lVar.s;
+        k kVar = (k) view;
+        Drawable drawable = gVar.r;
+        if (drawable != null) {
+            CharSequence charSequence3 = gVar.g;
+            CharSequence charSequence4 = gVar.h;
+            kVar.w.setVisibility(8);
+            kVar.H = null;
+            kVar.I = null;
+            w9 w9Var = kVar.c;
+            w9Var.setRoundRadius(AndroidUtilities.dp(20.0f));
+            w9Var.setImageDrawable(drawable);
+            l4 l4Var = kVar.d;
+            l4Var.k(charSequence3);
+            boolean[] zArr = kVar.s;
             zArr[0] = false;
-            lVar.setSubtitle(str3);
-            lVar.e.setTextColor(g6.w0(zArr[0] ? g6.n5 : g6.r5, lVar.a));
-            aq aqVar = lVar.v;
-            if (aqVar != null) {
-                aqVar.setAlpha(1.0f);
+            kVar.setSubtitle(charSequence4);
+            kVar.e.setTextColor(h6.w0(zArr[0] ? h6.n5 : h6.r5, kVar.a));
+            xp xpVar = kVar.v;
+            if (xpVar != null) {
+                xpVar.setAlpha(1.0f);
             }
-            l5Var.i(null);
+            l4Var.i(null);
         } else {
             TLRPC.User user = gVar.c;
             if (user != null) {
-                lVar.setUser(user);
-                String str4 = gVar.h;
-                if (str4 != null) {
-                    lVar.setSubtitle(str4);
-                    lVar.e.setTextColor(g6.w0(g6.r5, this.d));
+                kVar.setUser(user);
+                CharSequence charSequence5 = gVar.h;
+                if (charSequence5 != null) {
+                    kVar.setSubtitle(charSequence5);
+                    kVar.e.setTextColor(h6.w0(h6.r5, this.d));
                 }
             } else {
                 TLRPC.Chat chat = gVar.e;
                 if (chat != null) {
-                    lVar.h(F(chat), chat);
+                    kVar.h(F(chat), chat);
                 } else {
                     TLRPC.InputPeer inputPeer = gVar.d;
                     if (inputPeer != null) {
                         if (inputPeer instanceof TLRPC.TL_inputPeerSelf) {
-                            lVar.setUser(UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser());
+                            kVar.setUser(UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser());
                         } else if (inputPeer instanceof TLRPC.TL_inputPeerUser) {
-                            lVar.setUser(MessagesController.getInstance(UserConfig.selectedAccount).getUser(Long.valueOf(inputPeer.user_id)));
+                            kVar.setUser(MessagesController.getInstance(UserConfig.selectedAccount).getUser(Long.valueOf(inputPeer.user_id)));
                         } else if (inputPeer instanceof TLRPC.TL_inputPeerChat) {
                             TLRPC.Chat chat2 = MessagesController.getInstance(UserConfig.selectedAccount).getChat(Long.valueOf(inputPeer.chat_id));
-                            lVar.h(F(chat2), chat2);
+                            kVar.h(F(chat2), chat2);
                         } else if (inputPeer instanceof TLRPC.TL_inputPeerChannel) {
                             TLRPC.Chat chat3 = MessagesController.getInstance(UserConfig.selectedAccount).getChat(Long.valueOf(inputPeer.channel_id));
-                            lVar.h(F(chat3), chat3);
+                            kVar.h(F(chat3), chat3);
                         }
                     }
                 }
             }
         }
-        lVar.c(gVar.k, false);
-        lVar.i(1.0f, false);
+        kVar.c(gVar.k, false);
+        kVar.i(1.0f, false);
         int i15 = i10 + 1;
-        lVar.setDivider(i15 >= this.n.size() || ((g) this.n.get(i15)).a == i12);
+        kVar.setDivider(i15 >= this.n.size() || ((g) this.n.get(i15)).a == i12);
         if (i15 < this.n.size() && ((g) this.n.get(i15)).a == 7) {
-            lVar.setDivider(false);
+            kVar.setDivider(false);
         }
-        lVar.setOptions(gVar.n);
-        c1 c1Var = gVar.o;
-        c1 c1Var2 = gVar.p;
-        ImageView imageView = lVar.F;
-        ImageView imageView2 = lVar.y;
-        boolean z11 = c1Var != null;
-        lVar.x = z11;
-        imageView2.setVisibility((z11 && lVar.G) ? 0 : 8);
-        imageView2.setOnClickListener(c1Var);
-        z10 = c1Var2 != null;
-        lVar.E = z10;
-        if (z10 && lVar.G) {
+        kVar.setOptions(gVar.n);
+        a1 a1Var = gVar.o;
+        a1 a1Var2 = gVar.p;
+        ImageView imageView = kVar.F;
+        ImageView imageView2 = kVar.y;
+        boolean z11 = a1Var != null;
+        kVar.x = z11;
+        imageView2.setVisibility((z11 && kVar.G) ? 0 : 8);
+        imageView2.setOnClickListener(a1Var);
+        z10 = a1Var2 != null;
+        kVar.E = z10;
+        if (z10 && kVar.G) {
             i13 = 0;
         }
         imageView.setVisibility(i13);
-        imageView.setOnClickListener(c1Var2);
-        lVar.g(this.y, false);
+        imageView.setOnClickListener(a1Var2);
+        kVar.g(this.y, false);
     }
 
     @Override // s4.g0
     public final b1 x(ViewGroup viewGroup, int i10) {
-        View lVar;
+        View kVar;
         Context context = this.e;
         if (i10 == -1) {
             View view = new View(context);
             view.setTag(-33024);
-            lVar = view;
+            kVar = view;
         } else if (i10 == 3) {
-            lVar = new l(this.e, this.w, this.x, this.d, this.s);
+            kVar = new k(this.e, this.w, this.x, this.d, this.s);
         } else {
-            c6 c6Var = this.d;
+            d6 d6Var = this.d;
             if (i10 == 5) {
-                wx0 wx0Var = new wx0(context, null, 1, c6Var);
-                wx0Var.d.setText(LocaleController.getString(R.string.NoResult));
-                wx0Var.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
-                wx0Var.a.setTranslationY(AndroidUtilities.dp(24.0f));
-                lVar = wx0Var;
+                rx0 rx0Var = new rx0(context, null, 1, d6Var);
+                rx0Var.d.setText(LocaleController.getString(R.string.NoResult));
+                rx0Var.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+                rx0Var.a.setTranslationY(AndroidUtilities.dp(24.0f));
+                kVar = rx0Var;
             } else {
                 boolean z10 = this.h;
                 if (i10 == 7) {
-                    yg.d dVar = new yg.d(context, c6Var);
+                    yg.d dVar = new yg.d(context, d6Var);
                     dVar.setTag(-33024);
-                    lVar = dVar;
+                    kVar = dVar;
                     if (z10) {
                         dVar.setBackground(null);
-                        lVar = dVar;
+                        kVar = dVar;
                     }
                 } else if (i10 == 6) {
-                    yg.b bVar = new yg.b(context, c6Var);
+                    yg.b bVar = new yg.b(context, d6Var);
                     bVar.setTag(-33024);
-                    lVar = bVar;
+                    kVar = bVar;
                     if (z10) {
                         bVar.setBackground(null);
-                        lVar = bVar;
+                        kVar = bVar;
                     }
                 } else if (i10 == 8) {
-                    v3 v3Var = new v3(context, c6Var);
-                    v3Var.setTag(-33024);
-                    lVar = v3Var;
+                    u3 u3Var = new u3(context, d6Var);
+                    u3Var.setTag(-33024);
+                    kVar = u3Var;
                     if (z10) {
-                        v3Var.setBackground(null);
-                        lVar = v3Var;
+                        u3Var.setBackground(null);
+                        kVar = u3Var;
                     }
                 } else if (i10 == 9) {
-                    r8 r8Var = new r8(context, c6Var);
-                    r8Var.n = 16;
-                    r8Var.w = 19;
-                    lVar = r8Var;
+                    q8 q8Var = new q8(context, d6Var);
+                    q8Var.n = 16;
+                    q8Var.w = 19;
+                    kVar = q8Var;
                 } else {
-                    lVar = i10 == 10 ? new FrameLayout(context) : new View(context);
+                    kVar = i10 == 10 ? new FrameLayout(context) : new View(context);
                 }
             }
         }
-        return new wl0(lVar);
+        return new sl0(kVar);
     }
 
     @Override // s4.g0
     public final void y(b1 b1Var) {
         View view = b1Var.a;
-        if (view instanceof l) {
-            ((l) view).g(this.y, false);
+        if (view instanceof k) {
+            ((k) view).g(this.y, false);
         }
     }
 }

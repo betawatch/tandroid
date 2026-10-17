@@ -1,0 +1,112 @@
+package ai;
+
+import android.app.Activity;
+import android.text.SpannableStringBuilder;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.bs;
+import org.telegram.ui.dh;
+import org.telegram.ui.hj;
+import org.telegram.ui.sn;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class p5 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ Object d;
+
+    public /* synthetic */ p5(Object obj, long j10, long j11, int i10) {
+        this.a = i10;
+        this.d = obj;
+        this.b = j10;
+        this.c = j11;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0104 A[LOOP:1: B:36:0x0100->B:38:0x0104, LOOP_END] */
+    /* JADX WARN: Removed duplicated region for block: B:42:0x0138  */
+    @Override // org.telegram.messenger.Utilities.Callback
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run(Object obj) {
+        SpannableStringBuilder spannableStringBuilder;
+        int size;
+        int i10;
+        org.telegram.ui.ActionBar.d6 d6Var;
+        int i11 = this.a;
+        Object obj2 = this.d;
+        switch (i11) {
+            case 0:
+                d6 d6Var2 = (d6) obj2;
+                ArrayList arrayList = (ArrayList) obj;
+                org.telegram.ui.Components.z5 z5Var = d6Var2.E;
+                if (this.b == this.c) {
+                    d6Var2.d0 = arrayList;
+                    z5Var.animate().alpha(d6Var2.s ? 0.0f : d6Var2.d0 != null ? 1.0f : 0.25f).setInterpolator(bs.h).setDuration(420L).start();
+                    ArrayList arrayList2 = new ArrayList();
+                    for (int i12 = 0; i12 < arrayList.size(); i12++) {
+                        if ((arrayList.get(i12) instanceof TL_stars.starGiftAttributeModel) && !(((TL_stars.StarGiftAttribute) arrayList.get(i12)).rarity instanceof TL_stars.TL_starGiftAttributeRarity)) {
+                            arrayList2.add((TL_stars.starGiftAttributeModel) arrayList.get(i12));
+                            if (arrayList2.size() >= 3) {
+                                spannableStringBuilder = new SpannableStringBuilder();
+                                size = arrayList2.size();
+                                i10 = 0;
+                                while (i10 < size) {
+                                    Object obj3 = arrayList2.get(i10);
+                                    i10++;
+                                    spannableStringBuilder.append((CharSequence) "x");
+                                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.a6(((TL_stars.starGiftAttributeModel) obj3).document, z5Var.getPaint().getFontMetricsInt()), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
+                                    spannableStringBuilder.append((CharSequence) " ");
+                                }
+                                if (spannableStringBuilder.length() > 0) {
+                                    spannableStringBuilder.append((CharSequence) " ");
+                                }
+                                spannableStringBuilder.append(AndroidUtilities.replaceArrows(LocaleController.getString(R.string.GiftCraftViewAllVariants), false, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f)));
+                                z5Var.setText(spannableStringBuilder);
+                                break;
+                            }
+                        }
+                    }
+                    spannableStringBuilder = new SpannableStringBuilder();
+                    size = arrayList2.size();
+                    i10 = 0;
+                    while (i10 < size) {
+                    }
+                    if (spannableStringBuilder.length() > 0) {
+                    }
+                    spannableStringBuilder.append(AndroidUtilities.replaceArrows(LocaleController.getString(R.string.GiftCraftViewAllVariants), false, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f)));
+                    z5Var.setText(spannableStringBuilder);
+                }
+                break;
+            case 1:
+                sn.R0((sn) obj2, this.b, this.c, (Long) obj);
+                break;
+            default:
+                hj hjVar = (hj) obj2;
+                Long l4 = (Long) obj;
+                sn snVar = hjVar.b;
+                if (snVar.getParentActivity() != null) {
+                    Activity parentActivity = snVar.getParentActivity();
+                    String string = LocaleController.getString(R.string.RemoveMessageFeeTitle);
+                    int i13 = ChatObject.isMonoForum(snVar.e) ? R.string.RemoveMessageFeeMessageChannel : R.string.RemoveMessageFeeMessage;
+                    long j10 = this.b;
+                    SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(i13, DialogObject.getShortName(j10)));
+                    String formatPluralStringComma = l4.longValue() > 0 ? LocaleController.formatPluralStringComma("RemoveMessageFeeRefund", (int) l4.longValue()) : null;
+                    String string2 = LocaleController.getString(R.string.Confirm);
+                    dh dhVar = new dh(hjVar, j10, this.c, l4, 1);
+                    d6Var = ((org.telegram.ui.ActionBar.n2) snVar).resourceProvider;
+                    org.telegram.ui.Components.f5.h0(parentActivity, string, replaceTags, formatPluralStringComma, string2, dhVar, d6Var, true);
+                    break;
+                }
+                break;
+        }
+    }
+}

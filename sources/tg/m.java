@@ -11,9 +11,9 @@ import javax.microedition.khronos.opengles.GL10;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.EmuDetector;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Wallet.p5;
+import org.telegram.ui.Wallet.b6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class m extends Thread {
     public final SurfaceTexture a;
@@ -106,7 +106,7 @@ public final class m extends Thread {
                 }
             }
             n nVar4 = this.d;
-            if (nVar4.b != null && (!nVar4.G || (!nVar4.T && (nVar4 instanceof p5)))) {
+            if (nVar4.b != null && (!nVar4.G || (!nVar4.T && (nVar4 instanceof b6)))) {
                 long nanoTime2 = System.nanoTime();
                 n.a(this.d, (nanoTime2 - nanoTime) / 1.0E9f);
                 if (!this.c) {
@@ -119,7 +119,7 @@ public final class m extends Thread {
                 nVar = this.d;
             } catch (InterruptedException unused) {
             }
-            if (nVar.b != null && (!nVar.G || (!nVar.T && (nVar instanceof p5)))) {
+            if (nVar.b != null && (!nVar.G || (!nVar.T && (nVar instanceof b6)))) {
                 z10 = false;
                 if (z10) {
                     long nanoTime3 = this.d.w - (System.nanoTime() - nanoTime);

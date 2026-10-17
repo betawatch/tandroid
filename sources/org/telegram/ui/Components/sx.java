@@ -1,30 +1,29 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class sx extends s4.c0 {
-    public final /* synthetic */ int r;
+public final class sx extends g.o {
+    public final /* synthetic */ tz c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sx(Context context, int i10) {
-        super(context);
-        this.r = i10;
+    public sx(tz tzVar) {
+        this.c = tzVar;
     }
 
-    @Override // s4.c0
-    public final int i(int i10, int i11, int i12, int i13, int i14) {
-        return super.i(i10, i11, i12, i13, i14) + this.r;
-    }
-
-    @Override // s4.c0
-    public final int m(int i10) {
-        return super.m(i10) * 16;
-    }
-
-    @Override // s4.c0
-    public final int p() {
-        return -1;
+    @Override // g.o
+    public final int i(int i10) {
+        tz tzVar = this.c;
+        ay ayVar = tzVar.R;
+        rx rxVar = tzVar.Q;
+        s4.g0 adapter = tzVar.P.getAdapter();
+        ty tyVar = tzVar.S;
+        if (adapter == tyVar) {
+            int j10 = tyVar.j(i10);
+            if (j10 == 1 || j10 == 3 || j10 == 2 || j10 == 4 || j10 == 5) {
+                return rxVar.J;
+            }
+        } else if ((tzVar.d0 && i10 == 0) || i10 == ayVar.d || i10 == ayVar.c || i10 == ayVar.f || ayVar.r.indexOfKey(i10) >= 0 || ayVar.v.indexOfKey(i10) >= 0) {
+            return rxVar.J;
+        }
+        return 1;
     }
 }

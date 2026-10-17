@@ -2,7 +2,7 @@ package com.google.android.gms.internal.play_billing;
 
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class s0 {
     public final Object a;
@@ -45,7 +45,7 @@ public final class s0 {
     public synchronized int[] b() {
         try {
             if (((int[]) this.b) == null) {
-                this.b = ((li.s) this.a).b(this);
+                this.b = ((mi.t) this.a).b(this);
             }
         } catch (Throwable th2) {
             throw th2;
@@ -73,8 +73,8 @@ public final class s0 {
         }
     }
 
-    public s0(int[] iArr, li.s sVar) {
+    public s0(int[] iArr, mi.t tVar) {
         this.c = iArr;
-        this.a = sVar;
+        this.a = tVar;
     }
 }

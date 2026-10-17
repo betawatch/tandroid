@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.List;
 import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class d {
     public static final String h;
@@ -74,16 +74,16 @@ public final class d {
                 u6.f("Parameter has incorrect type.", obj instanceof Float);
                 break;
             case 5:
-                u6.f("Parameter has incorrect type.", obj instanceof b2.h1);
+                u6.f("Parameter has incorrect type.", obj instanceof b2.g1);
                 break;
             case 6:
-                u6.f("Parameter has incorrect type.", obj instanceof b2.p0);
+                u6.f("Parameter has incorrect type.", obj instanceof b2.o0);
                 break;
             case 7:
-                u6.f("Parameter has incorrect type.", obj instanceof b2.s0);
+                u6.f("Parameter has incorrect type.", obj instanceof b2.r0);
                 break;
             case 8:
-                u6.f("Parameter has incorrect type.", obj instanceof b2.u1);
+                u6.f("Parameter has incorrect type.", obj instanceof b2.t1);
                 break;
         }
         return obj;
@@ -181,19 +181,19 @@ public final class d {
             case 5:
                 Bundle bundle2 = bundle.getBundle("androidx.media3.session.CUSTOM_COMMAND_PARAMETER");
                 bundle2.getClass();
-                return b2.h1.a(bundle2);
+                return b2.g1.a(bundle2);
             case 6:
                 Bundle bundle3 = bundle.getBundle("androidx.media3.session.CUSTOM_COMMAND_PARAMETER");
                 bundle3.getClass();
-                return b2.p0.a(9, bundle3);
+                return b2.o0.a(9, bundle3);
             case 7:
                 Bundle bundle4 = bundle.getBundle("androidx.media3.session.CUSTOM_COMMAND_PARAMETER");
                 bundle4.getClass();
-                return b2.s0.b(9, bundle4);
+                return b2.r0.b(9, bundle4);
             case 8:
                 Bundle bundle5 = bundle.getBundle("androidx.media3.session.CUSTOM_COMMAND_PARAMETER");
                 bundle5.getClass();
-                return b2.u1.b(bundle5);
+                return b2.t1.b(bundle5);
             default:
                 return null;
         }
@@ -313,39 +313,39 @@ public final class d {
         return Objects.equals(this.a, dVar.a) && this.b == dVar.b && this.c == dVar.c && TextUtils.equals("", "") && this.f == dVar.f && this.e.equals(dVar.e) && Objects.equals(this.g, dVar.g);
     }
 
-    public final void f(b2.g1 g1Var) {
+    public final void f(b2.f1 f1Var) {
         if (this.f) {
             Object obj = this.g;
             int i10 = this.b;
             if (i10 == 19) {
                 if (obj != null) {
-                    g1Var.B((b2.s0) obj);
+                    f1Var.B((b2.r0) obj);
                     return;
                 }
                 return;
             }
             if (i10 == 24) {
                 if (obj != null) {
-                    g1Var.U(((Float) obj).floatValue());
+                    f1Var.U(((Float) obj).floatValue());
                     return;
-                } else if (g1Var.F() == 0.0f) {
-                    g1Var.c0();
+                } else if (f1Var.F() == 0.0f) {
+                    f1Var.c0();
                     return;
                 } else {
-                    g1Var.B0();
+                    f1Var.B0();
                     return;
                 }
             }
             if (i10 == 29) {
                 if (obj != null) {
-                    g1Var.p((b2.u1) obj);
+                    f1Var.p((b2.t1) obj);
                     return;
                 }
                 return;
             }
             if (i10 == 31) {
                 if (obj != null) {
-                    g1Var.r0((b2.p0) obj);
+                    f1Var.r0((b2.o0) obj);
                     return;
                 }
                 return;
@@ -353,68 +353,68 @@ public final class d {
             switch (i10) {
                 case 1:
                     if (obj == null) {
-                        g1Var.X(!g1Var.t());
+                        f1Var.X(!f1Var.t());
                         break;
                     } else {
-                        g1Var.X(((Boolean) obj).booleanValue());
+                        f1Var.X(((Boolean) obj).booleanValue());
                         break;
                     }
                 case 2:
-                    g1Var.b();
+                    f1Var.b();
                     break;
                 case 3:
-                    g1Var.stop();
+                    f1Var.stop();
                     break;
                 case 4:
-                    g1Var.G();
+                    f1Var.G();
                     break;
                 case 5:
                     if (obj != null) {
-                        g1Var.g(((Long) obj).longValue());
+                        f1Var.g(((Long) obj).longValue());
                         break;
                     }
                     break;
                 case 6:
-                    g1Var.E();
+                    f1Var.E();
                     break;
                 case 7:
-                    g1Var.V();
+                    f1Var.V();
                     break;
                 case 8:
-                    g1Var.f0();
+                    f1Var.f0();
                     break;
                 case 9:
-                    g1Var.H0();
+                    f1Var.H0();
                     break;
                 case 10:
                     if (obj != null) {
-                        g1Var.Y(((Integer) obj).intValue());
+                        f1Var.Y(((Integer) obj).intValue());
                         break;
                     }
                     break;
                 case 11:
-                    g1Var.J0();
+                    f1Var.J0();
                     break;
                 case 12:
-                    g1Var.I0();
+                    f1Var.I0();
                     break;
                 case 13:
                     if (obj != null) {
-                        g1Var.a(((Float) obj).floatValue());
+                        f1Var.a(((Float) obj).floatValue());
                         break;
                     }
                     break;
                 case 14:
                     if (obj == null) {
-                        g1Var.w(!g1Var.D0());
+                        f1Var.w(!f1Var.D0());
                         break;
                     } else {
-                        g1Var.w(((Boolean) obj).booleanValue());
+                        f1Var.w(((Boolean) obj).booleanValue());
                         break;
                     }
                 case 15:
                     if (obj != null) {
-                        g1Var.j(((Integer) obj).intValue());
+                        f1Var.j(((Integer) obj).intValue());
                         break;
                     }
                     break;
@@ -476,16 +476,16 @@ public final class d {
                 bundle.putFloat(str, ((Float) obj).floatValue());
                 break;
             case 5:
-                bundle.putBundle(str, ((b2.h1) obj).c());
+                bundle.putBundle(str, ((b2.g1) obj).c());
                 break;
             case 6:
-                bundle.putBundle(str, ((b2.p0) obj).c(i10, false));
+                bundle.putBundle(str, ((b2.o0) obj).c(i10, false));
                 break;
             case 7:
-                bundle.putBundle(str, ((b2.s0) obj).c(i10));
+                bundle.putBundle(str, ((b2.r0) obj).c(i10));
                 break;
             case 8:
-                bundle.putBundle(str, ((b2.u1) obj).c());
+                bundle.putBundle(str, ((b2.t1) obj).c());
                 break;
         }
     }

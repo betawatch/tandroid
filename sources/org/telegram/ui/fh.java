@@ -1,47 +1,58 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessagesStorage;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fh implements MessagesStorage.IntCallback {
+public final /* synthetic */ class fh implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ fo b;
+    public final /* synthetic */ View b;
 
-    public /* synthetic */ fh(fo foVar, int i10) {
+    public /* synthetic */ fh(int i10, View view) {
         this.a = i10;
-        this.b = foVar;
+        this.b = view;
     }
 
-    @Override // org.telegram.messenger.MessagesStorage.IntCallback
-    public final void run(int i10) {
-        switch (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        View view = this.b;
+        switch (i10) {
             case 0:
-                fo foVar = this.b;
-                if (foVar.getParentActivity() != null && foVar.fragmentView != null && i10 > 0) {
-                    org.telegram.ui.Components.zc.a0(foVar).m(org.telegram.ui.Components.yc.r, i10, 0, 0, foVar.ea).j();
+                try {
+                    view.performHapticFeedback(3, 2);
                     break;
+                } catch (Exception unused) {
+                    return;
                 }
-                break;
             case 1:
-                fo foVar2 = this.b;
-                if (i10 != 0) {
-                    foVar2.j(i10, 0, false, 0, true, 0);
-                    break;
-                } else {
-                    foVar2.m6 = false;
-                    foVar2.M9();
-                    break;
-                }
+                view.setBackgroundDrawable(null);
+                break;
+            case 2:
+                Drawable[] drawableArr = PhotoViewer.U8;
+                AndroidUtilities.removeFromParent(view);
+                break;
+            case 3:
+                Drawable[] drawableArr2 = PhotoViewer.U8;
+                view.setVisibility(8);
+                break;
+            case 4:
+                SharedConfig.setSuggestStickers(0);
+                ((org.telegram.ui.Cells.ba) view).c.c(LocaleController.getString(R.string.SuggestStickersAll), true, true);
+                break;
+            case 5:
+                SharedConfig.setSuggestStickers(1);
+                ((org.telegram.ui.Cells.ba) view).c.c(LocaleController.getString(R.string.SuggestStickersInstalled), true, true);
+                break;
             default:
-                fo foVar3 = this.b;
-                if (i10 != 0) {
-                    foVar3.finishFragment();
-                    break;
-                } else {
-                    foVar3.Uc(true);
-                    break;
-                }
+                SharedConfig.setSuggestStickers(2);
+                ((org.telegram.ui.Cells.ba) view).c.c(LocaleController.getString(R.string.SuggestStickersNone), true, true);
+                break;
         }
     }
 }

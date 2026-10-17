@@ -5,9 +5,9 @@ import android.net.Uri;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c implements org.telegram.ui.ActionBar.z1 {
+public final /* synthetic */ class c implements org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ h b;
 
@@ -16,8 +16,8 @@ public final /* synthetic */ class c implements org.telegram.ui.ActionBar.z1 {
         this.b = hVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.z1
-    public final void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.a2
+    public final void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 0:
                 h hVar = this.b;
@@ -34,9 +34,9 @@ public final /* synthetic */ class c implements org.telegram.ui.ActionBar.z1 {
             default:
                 h hVar2 = this.b;
                 hVar2.getClass();
-                ah0 ah0Var = new ah0();
-                ah0Var.F = 2;
-                hVar2.presentFragment(ah0Var, true);
+                fg0 fg0Var = new fg0();
+                fg0Var.F = 2;
+                hVar2.presentFragment(fg0Var, true);
                 break;
         }
     }

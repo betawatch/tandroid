@@ -1,5 +1,7 @@
 package sg;
 
+import ai.l5;
+import ai.t5;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -7,17 +9,16 @@ import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.Shader;
 import android.util.SparseIntArray;
-import bi.q7;
 import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class j extends b {
     public final ArrayList d;
@@ -28,8 +29,8 @@ public final class j extends b {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public j(Context context, int i10, c6 c6Var) {
-        super(context, c6Var);
+    public j(Context context, int i10, d6 d6Var) {
+        super(context, d6Var);
         SparseIntArray sparseIntArray;
         ArrayList arrayList = new ArrayList();
         this.d = arrayList;
@@ -56,7 +57,7 @@ public final class j extends b {
             arrayList2.add(new h(R.drawable.menu_feature_intro, 36, LocaleController.getString(R.string.PremiumBusinessIntro), LocaleController.getString(R.string.PremiumBusinessIntroDescription)));
             arrayList2.add(new h(R.drawable.menu_premium_chatlink, 37, LocaleController.getString(R.string.PremiumBusinessChatLinks), LocaleController.getString(R.string.PremiumBusinessChatLinksDescription)));
             if (sparseIntArray != null) {
-                Collections.sort(arrayList2, new q7(sparseIntArray, 4));
+                Collections.sort(arrayList2, new t5(sparseIntArray, 5));
             }
             arrayList.add(new h(0));
             arrayList.addAll(arrayList2);
@@ -65,7 +66,7 @@ public final class j extends b {
             this.e = createBitmap;
             Canvas canvas = new Canvas(createBitmap);
             Paint paint = new Paint();
-            paint.setShader(new LinearGradient(0.0f, 0.0f, createBitmap.getWidth(), 0.0f, new int[]{g6.x0(null, g6.Lj, false), g6.x0(null, g6.Mj, false), g6.x0(null, g6.Nj, false), g6.x0(null, g6.Oj, false)}, (float[]) null, Shader.TileMode.CLAMP));
+            paint.setShader(new LinearGradient(0.0f, 0.0f, createBitmap.getWidth(), 0.0f, new int[]{h6.x0(null, h6.Lj, false), h6.x0(null, h6.Mj, false), h6.x0(null, h6.Nj, false), h6.x0(null, h6.Oj, false)}, (float[]) null, Shader.TileMode.CLAMP));
             canvas.drawRect(0.0f, 0.0f, createBitmap.getWidth(), createBitmap.getHeight(), paint);
         }
         sparseIntArray = null;
@@ -78,12 +79,12 @@ public final class j extends b {
         this.e = createBitmap2;
         Canvas canvas2 = new Canvas(createBitmap2);
         Paint paint2 = new Paint();
-        paint2.setShader(new LinearGradient(0.0f, 0.0f, createBitmap2.getWidth(), 0.0f, new int[]{g6.x0(null, g6.Lj, false), g6.x0(null, g6.Mj, false), g6.x0(null, g6.Nj, false), g6.x0(null, g6.Oj, false)}, (float[]) null, Shader.TileMode.CLAMP));
+        paint2.setShader(new LinearGradient(0.0f, 0.0f, createBitmap2.getWidth(), 0.0f, new int[]{h6.x0(null, h6.Lj, false), h6.x0(null, h6.Mj, false), h6.x0(null, h6.Nj, false), h6.x0(null, h6.Oj, false)}, (float[]) null, Shader.TileMode.CLAMP));
         canvas2.drawRect(0.0f, 0.0f, createBitmap2.getWidth(), createBitmap2.getHeight(), paint2);
     }
 
     @Override // sg.b
     public final s4.g0 a() {
-        return new hg.m0(this, 5);
+        return new l5(this, 6);
     }
 }

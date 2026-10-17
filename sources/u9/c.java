@@ -5,7 +5,7 @@ import android.app.Application;
 import android.content.Context;
 import android.os.Build;
 import android.os.Process;
-import com.google.firebase.messaging.s;
+import com.google.firebase.messaging.r;
 import java.util.ArrayList;
 import java.util.List;
 import jd.g;
@@ -14,7 +14,7 @@ import kotlin.jvm.internal.i;
 import z9.t0;
 import z9.t1;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class c {
     public static final c a = new c();
@@ -47,16 +47,16 @@ public final class c {
             Object obj2 = arrayList.get(i11);
             i11++;
             ActivityManager.RunningAppProcessInfo runningAppProcessInfo = (ActivityManager.RunningAppProcessInfo) obj2;
-            s sVar = new s(13, false);
+            r rVar = new r(13, false);
             String str2 = runningAppProcessInfo.processName;
             if (str2 == null) {
                 throw new NullPointerException("Null processName");
             }
-            sVar.b = str2;
-            sVar.d = Integer.valueOf(runningAppProcessInfo.pid);
-            sVar.e = Integer.valueOf(runningAppProcessInfo.importance);
-            sVar.c = Boolean.valueOf(i.a(runningAppProcessInfo.processName, str));
-            arrayList2.add(sVar.c());
+            rVar.b = str2;
+            rVar.d = Integer.valueOf(runningAppProcessInfo.pid);
+            rVar.e = Integer.valueOf(runningAppProcessInfo.importance);
+            rVar.c = Boolean.valueOf(i.a(runningAppProcessInfo.processName, str));
+            arrayList2.add(rVar.c());
         }
         return arrayList2;
     }
@@ -92,11 +92,11 @@ public final class c {
             processName = "";
         }
         i.e(processName, "processName");
-        s sVar = new s(13, false);
-        sVar.b = processName;
-        sVar.d = Integer.valueOf(myPid);
-        sVar.e = 0;
-        sVar.c = false;
-        return sVar.c();
+        r rVar = new r(13, false);
+        rVar.b = processName;
+        rVar.d = Integer.valueOf(myPid);
+        rVar.e = 0;
+        rVar.c = false;
+        return rVar.c();
     }
 }

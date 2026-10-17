@@ -1,45 +1,87 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.content.Context;
+import android.util.LongSparseArray;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class e61 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
+public abstract class e61 {
+    private ArrayList<View> cache;
+    public final int viewType;
 
-    public e61(org.telegram.ui.iv ivVar, int i10, int i11) {
-        this.a = 1;
-        this.d = ivVar;
-        this.b = i10;
-        this.c = i11;
+    public e61() {
+        int i10 = f61.J;
+        f61.J = i10 + 1;
+        this.viewType = i10;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                int floatValue = (int) (((Float) valueAnimator.getAnimatedValue()).floatValue() * this.c);
-                i61 i61Var = (i61) this.d;
-                i61Var.N = true;
-                i61Var.n.scrollBy(0, floatValue - this.b);
-                i61Var.N = false;
-                this.b = floatValue;
-                break;
-            default:
-                ((org.telegram.ui.iv) this.d).c.d.setColorFilter(new PorterDuffColorFilter(i0.a.d(((Float) valueAnimator.getAnimatedValue()).floatValue(), this.b, this.c), PorterDuff.Mode.SRC_IN));
-                break;
+    public static void setup(e61 e61Var) {
+        if (f61.L == null) {
+            f61.L = new HashMap();
+        }
+        if (f61.K == null) {
+            f61.K = new LongSparseArray();
+        }
+        Class<?> cls = e61Var.getClass();
+        if (f61.L.containsKey(cls)) {
+            return;
+        }
+        f61.L.put(cls, e61Var);
+        f61.K.put(e61Var.viewType, e61Var);
+    }
+
+    public boolean contentsEquals(f61 f61Var, f61 f61Var2) {
+        return f61Var.H(f61Var2);
+    }
+
+    public abstract View createView(Context context, im0 im0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var);
+
+    public boolean equals(f61 f61Var, f61 f61Var2) {
+        return f61Var.I(f61Var2);
+    }
+
+    public View getCached() {
+        ArrayList<View> arrayList = this.cache;
+        if (arrayList == null || arrayList.isEmpty()) {
+            return null;
+        }
+        return this.cache.remove(0);
+    }
+
+    public boolean isClickable() {
+        return !(this instanceof dj);
+    }
+
+    public boolean isShadow() {
+        return false;
+    }
+
+    public void precache(org.telegram.ui.ActionBar.n2 n2Var, int i10) {
+        precache(n2Var.getContext(), n2Var.getCurrentAccount(), n2Var.getClassGuid(), n2Var.getResourceProvider(), i10);
+    }
+
+    public void precache(Context context, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var, int i12) {
+        if (context == null) {
+            return;
+        }
+        if (this.cache == null) {
+            this.cache = new ArrayList<>();
+        }
+        int i13 = 0;
+        while (i13 < this.cache.size() - i12) {
+            Context context2 = context;
+            this.cache.add(createView(context2, null, i10, i11, d6Var));
+            i13++;
+            context = context2;
         }
     }
 
-    public e61(i61 i61Var, int i10) {
-        this.a = 0;
-        this.d = i61Var;
-        this.c = i10;
-        this.b = 0;
+    public void attachedView(im0 im0Var, View view, f61 f61Var) {
+    }
+
+    public void bindView(View view, f61 f61Var, boolean z10, s61 s61Var, a71 a71Var) {
     }
 }

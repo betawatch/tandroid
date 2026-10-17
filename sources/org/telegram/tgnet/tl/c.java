@@ -12,7 +12,7 @@ import org.telegram.tgnet.tl.TL_communities;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c implements Vector.TLDeserializer {
     public final /* synthetic */ int a;
@@ -79,13 +79,13 @@ public final /* synthetic */ class c implements Vector.TLDeserializer {
             case 25:
                 return TL_iv.PageListItem.TLdeserialize(inputSerializedData, i10, z10);
             case 26:
-                return TL_iv.RichText.TLdeserialize(inputSerializedData, i10, z10);
-            case 27:
                 return TL_iv.PageListOrderedItem.TLdeserialize(inputSerializedData, i10, z10);
-            case 28:
+            case 27:
                 return TL_iv.pageRelatedArticle.TLdeserialize(inputSerializedData, i10, z10);
-            default:
+            case 28:
                 return TL_iv.pageTableRow.TLdeserialize(inputSerializedData, i10, z10);
+            default:
+                return TL_iv.pageTableCell.TLdeserialize(inputSerializedData, i10, z10);
         }
     }
 }

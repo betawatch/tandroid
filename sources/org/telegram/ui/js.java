@@ -1,58 +1,26 @@
 package org.telegram.ui;
 
-import android.R;
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.view.ActionMode;
-import android.view.Menu;
-import android.view.MenuItem;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class js implements ActionMode.Callback {
-    public final /* synthetic */ ks a;
+public final /* synthetic */ class js implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ContactsActivity b;
 
-    public js(ks ksVar) {
-        this.a = ksVar;
+    public /* synthetic */ js(ContactsActivity contactsActivity, int i10) {
+        this.a = i10;
+        this.b = contactsActivity;
     }
 
-    @Override // android.view.ActionMode.Callback
-    public final boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
-        ClipboardManager clipboardManager;
-        ClipData primaryClip;
-        int i10;
-        if (menuItem.getItemId() != 16908322) {
-            return true;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.g0();
+                break;
+            default:
+                ContactsActivity contactsActivity = this.b;
+                contactsActivity.f.postOnAnimation(new js(contactsActivity, 0));
+                break;
         }
-        ks ksVar = this.a;
-        hs hsVar = ksVar.getParent() instanceof hs ? (hs) ksVar.getParent() : null;
-        if (hsVar != null && (clipboardManager = (ClipboardManager) ksVar.getContext().getSystemService(ClipboardManager.class)) != null && (primaryClip = clipboardManager.getPrimaryClip()) != null) {
-            String charSequence = primaryClip.getItemAt(0).getText().toString();
-            try {
-                i10 = Integer.parseInt(charSequence);
-            } catch (Exception unused) {
-                i10 = -1;
-            }
-            if (i10 > 0) {
-                hsVar.c(charSequence, true);
-            }
-        }
-        ksVar.hideActionMode();
-        return true;
-    }
-
-    @Override // android.view.ActionMode.Callback
-    public final boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
-        menu.add(0, R.id.paste, 0, R.string.paste);
-        return true;
-    }
-
-    @Override // android.view.ActionMode.Callback
-    public final boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
-        return true;
-    }
-
-    @Override // android.view.ActionMode.Callback
-    public final void onDestroyActionMode(ActionMode actionMode) {
     }
 }

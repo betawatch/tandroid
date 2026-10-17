@@ -1,11 +1,11 @@
 package jd;
 
-import com.google.android.gms.internal.play_billing.k3;
+import com.google.android.gms.internal.cast.a6;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import v7.t8;
-import w7.p9;
+import w7.q9;
 
 /* loaded from: classes.dex */
 public abstract class f extends t8 {
@@ -69,7 +69,7 @@ public abstract class f extends t8 {
             if (i10 > 1) {
                 sb2.append((CharSequence) ",");
             }
-            p9.a(sb2, obj, null);
+            q9.a(sb2, obj, null);
         }
         sb2.append((CharSequence) "]");
         return sb2.toString();
@@ -88,7 +88,7 @@ public abstract class f extends t8 {
         ArrayList arrayList = new ArrayList(jArr.length);
         int length2 = jArr.length;
         while (i10 < length2) {
-            i10 = k3.h(jArr[i10], arrayList, i10, 1);
+            i10 = a6.h(jArr[i10], arrayList, i10, 1);
         }
         return arrayList;
     }

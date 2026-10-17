@@ -1,13 +1,13 @@
 package x3;
 
-import c3.i0;
+import c3.j0;
 import c3.q;
 import e2.x;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class i {
-    public i0 b;
+    public j0 b;
     public q c;
     public g d;
     public long e;
@@ -19,7 +19,7 @@ public abstract class i {
     public boolean l;
     public boolean m;
     public final e a = new e();
-    public n3.b j = new n3.b(23, false);
+    public n2.e j = new n2.e(24, false);
 
     public void a(long j10) {
         this.g = j10;
@@ -27,11 +27,11 @@ public abstract class i {
 
     public abstract long b(x xVar);
 
-    public abstract boolean c(x xVar, long j10, n3.b bVar);
+    public abstract boolean c(x xVar, long j10, n2.e eVar);
 
     public void d(boolean z10) {
         if (z10) {
-            this.j = new n3.b(23, false);
+            this.j = new n2.e(24, false);
             this.f = 0L;
             this.h = 0;
         } else {

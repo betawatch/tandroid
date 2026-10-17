@@ -1,34 +1,63 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
+import android.animation.ObjectAnimator;
+import android.content.Context;
+import android.util.Property;
+import android.view.MotionEvent;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class gx extends g.o {
-    public final /* synthetic */ wz c;
+public final class gx extends z4.g {
+    public final /* synthetic */ tz w0;
 
-    public gx(wz wzVar) {
-        this.c = wzVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gx(tz tzVar, Context context) {
+        super(context);
+        this.w0 = tzVar;
     }
 
-    @Override // g.o
-    public final int i(int i10) {
-        wz wzVar = this.c;
-        rz rzVar = wzVar.z0;
-        s4.g0 adapter = wzVar.D0.getAdapter();
-        mz mzVar = wzVar.y0;
-        if (adapter != mzVar) {
-            if (i10 == rzVar.x || !(rzVar.r.get(i10) == null || (rzVar.r.get(i10) instanceof TLRPC.Document))) {
-                return mzVar.d;
+    @Override // z4.g, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (this.w0.f) {
+            return false;
+        }
+        if (getParent() != null) {
+            getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1));
+        }
+        try {
+            return super.onInterceptTouchEvent(motionEvent);
+        } catch (IllegalArgumentException unused) {
+            return false;
+        }
+    }
+
+    @Override // z4.g
+    public final void x(int i10, boolean z10) {
+        tz tzVar = this.w0;
+        vx vxVar = tzVar.I;
+        tz.c(tzVar, i10 == 1);
+        if (i10 != getCurrentItem()) {
+            super.x(i10, z10);
+            return;
+        }
+        if (i10 != 0) {
+            if (i10 == 1) {
+                tzVar.h0.x0(0);
+                return;
+            } else {
+                tzVar.D0.x0(1);
+                return;
             }
-            return 1;
         }
-        if (i10 == 0) {
-            return mzVar.d;
+        tzVar.Q0[1] = 0;
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(vxVar, (Property<vx, Float>) ViewGroup.TRANSLATION_Y, 0.0f);
+        ofFloat.setDuration(150L);
+        ofFloat.setInterpolator(bs.h);
+        ofFloat.start();
+        tzVar.G(1, 0);
+        if (vxVar != null) {
+            vxVar.j(0, true);
         }
-        if (i10 == mzVar.s || !(mzVar.h.get(i10) == null || (mzVar.h.get(i10) instanceof TLRPC.Document))) {
-            return mzVar.d;
-        }
-        return 1;
     }
 }

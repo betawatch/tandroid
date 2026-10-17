@@ -4,9 +4,9 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
 import android.view.Surface;
-import b2.b2;
+import b2.a2;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class m implements Handler.Callback {
     public final Handler a;
@@ -16,7 +16,7 @@ public final class m implements Handler.Callback {
         this.b = nVar;
         Handler q6 = e2.m0.q(this);
         this.a = q6;
-        lVar.f(this, q6);
+        lVar.e(this, q6);
     }
 
     public final void a(long j10) {
@@ -32,10 +32,10 @@ public final class m implements Handler.Callback {
         }
         try {
             nVar.C0(j10);
-            b2 b2Var = nVar.H1;
-            if (!b2Var.equals(b2.d) && !b2Var.equals(nVar.I1)) {
-                nVar.I1 = b2Var;
-                sVar.H(b2Var);
+            a2 a2Var = nVar.H1;
+            if (!a2Var.equals(a2.d) && !a2Var.equals(nVar.I1)) {
+                nVar.I1 = a2Var;
+                sVar.M(a2Var);
             }
             nVar.O0.e++;
             a0 a0Var = nVar.e1;
@@ -44,11 +44,11 @@ public final class m implements Handler.Callback {
             a0Var.l.getClass();
             a0Var.g = e2.m0.S(SystemClock.elapsedRealtime());
             if (z10 && (surface = nVar.r1) != null) {
-                sVar.w(surface);
+                sVar.G(surface);
                 nVar.u1 = true;
             }
             nVar.h0(j10);
-        } catch (i2.m e) {
+        } catch (i2.l e) {
             nVar.N0 = e;
         }
     }

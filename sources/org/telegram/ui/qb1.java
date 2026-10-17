@@ -1,79 +1,66 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.Crop.CropAreaView;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class qb1 extends View {
-    public ImageReceiver a;
-    public ImageReceiver b;
-    public View c;
-    public org.telegram.ui.Components.uf0 d;
-    public Path e;
-    public Drawable f;
+public final class qb1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ mc1 b;
 
-    @Override // android.view.View
-    public final void draw(Canvas canvas) {
-        int measuredWidth = getMeasuredWidth() >> 1;
-        int measuredHeight = getMeasuredHeight() - AndroidUtilities.dp(30.0f);
-        int dp = measuredWidth - AndroidUtilities.dp(46.0f);
-        int dp2 = AndroidUtilities.dp(46.0f) + measuredWidth;
-        ImageReceiver imageReceiver = this.a;
-        imageReceiver.setImageCoords(dp - AndroidUtilities.dp(30.0f), measuredHeight - AndroidUtilities.dp(30.0f), AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f));
-        this.b.setImageCoords(dp2 - AndroidUtilities.dp(30.0f), measuredHeight - AndroidUtilities.dp(30.0f), AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f));
-        Drawable drawable = this.f;
-        drawable.setBounds(org.telegram.ui.Cells.c1.r(2, measuredWidth, drawable), org.telegram.ui.Cells.c1.c(2, measuredHeight, drawable), org.telegram.ui.Cells.c1.v(2, measuredWidth, drawable), org.telegram.ui.Cells.c1.u(2, measuredHeight, drawable));
-        drawable.draw(canvas);
-        Path path = this.e;
-        path.reset();
-        path.addCircle(dp2, measuredHeight, AndroidUtilities.dp(30.0f), Path.Direction.CW);
-        imageReceiver.draw(canvas);
-        if (this.c != null) {
-            float dp3 = AndroidUtilities.dp(60.0f);
-            CropAreaView cropAreaView = this.d.b.a;
-            float f7 = dp3 / cropAreaView.a;
-            float top = (0.0f - this.d.getTop()) - cropAreaView.c;
-            float left = (0.0f - this.d.getLeft()) - cropAreaView.b;
-            canvas.save();
-            canvas.clipPath(path);
-            canvas.scale(f7, f7, 0.0f, 0.0f);
-            canvas.translate(left, top);
-            canvas.translate((dp2 - AndroidUtilities.dp(30.0f)) / f7, (measuredHeight - AndroidUtilities.dp(30.0f)) / f7);
-            PhotoViewer.t1().g4 = true;
-            this.c.draw(canvas);
-            PhotoViewer.t1().g4 = false;
-            canvas.restore();
+    public /* synthetic */ qb1(mc1 mc1Var, int i10) {
+        this.a = i10;
+        this.b = mc1Var;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                super.onAnimationEnd(animator);
+                mc1 mc1Var = this.b;
+                mc1Var.x0.invalidate();
+                mc1Var.w0[1].setVisibility(8);
+                mc1Var.c2 = null;
+                break;
+            case 1:
+                this.b.B0 = null;
+                break;
+            case 2:
+                mc1 mc1Var2 = this.b;
+                if (mc1Var2.D0.getTag() == null) {
+                    mc1Var2.D0.setVisibility(4);
+                }
+                mc1Var2.H0 = null;
+                break;
+            case 3:
+                mc1 mc1Var3 = this.b;
+                if (mc1Var3.E0.getTag() == null) {
+                    mc1Var3.E0.setVisibility(4);
+                }
+                mc1Var3.I0 = null;
+                break;
+            case 4:
+                mc1 mc1Var4 = this.b;
+                nc ncVar = mc1Var4.h2;
+                if (ncVar != null) {
+                    if (ncVar.getParent() != null) {
+                        ((ViewGroup) mc1Var4.h2.getParent()).removeView(mc1Var4.h2);
+                    }
+                    mc1Var4.h2 = null;
+                }
+                mc1Var4.j2 = null;
+                super.onAnimationEnd(animator);
+                break;
+            default:
+                mc1 mc1Var5 = this.b;
+                if (!mc1Var5.p1.a()) {
+                    mc1Var5.R1.setVisibility(8);
+                    break;
+                }
+                break;
         }
-        super.draw(canvas);
-        this.c.invalidate();
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a.onAttachedToWindow();
-        this.b.onAttachedToWindow();
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.a.onDetachedFromWindow();
-        this.b.onDetachedFromWindow();
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        this.a.setRoundRadius(AndroidUtilities.dp(30.0f));
-        this.b.setRoundRadius(AndroidUtilities.dp(30.0f));
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(86.0f), TLObject.FLAG_30));
     }
 }

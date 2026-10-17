@@ -8,16 +8,16 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.sk;
-import org.telegram.ui.Components.es;
+import org.telegram.messenger.wh;
+import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes.dex */
 public final class n2 extends FrameLayout {
     public TextView[] a;
     public TextView b;
     public FrameLayout c;
-    public s2 d;
+    public r2 d;
     public CharSequence e;
     public boolean f;
     public ValueAnimator h;
@@ -31,9 +31,9 @@ public final class n2 extends FrameLayout {
         this.f = true;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         this.h = ofFloat;
-        ofFloat.addUpdateListener(new ah.l0(19, view2, view));
+        ofFloat.addUpdateListener(new ah.l0(20, view2, view));
         this.h.addListener(new hg.j0((FrameLayout) this, view, view2, (Object) runnable, 4));
-        this.h.setDuration(250L).setInterpolator(es.f);
+        this.h.setDuration(250L).setInterpolator(bs.f);
         this.h.start();
     }
 
@@ -44,7 +44,7 @@ public final class n2 extends FrameLayout {
         if (z10) {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
             SpannableString spannableString = new SpannableString(".");
-            spannableString.setSpan(new ig.w1(textViewArr), 0, 1, 33);
+            spannableString.setSpan(new ig.t1(textViewArr), 0, 1, 33);
             spannableStringBuilder.append((CharSequence) spannableString);
             str = spannableStringBuilder;
         }
@@ -75,7 +75,7 @@ public final class n2 extends FrameLayout {
                 return;
             }
             textViewArr[1].setText(str);
-            a(textViewArr[0], textViewArr[1], new ig.t0(this, 28));
+            a(textViewArr[0], textViewArr[1], new ki.u(this, 18));
         }
     }
 
@@ -85,7 +85,7 @@ public final class n2 extends FrameLayout {
             if (frameLayout.getVisibility() == 8) {
                 return;
             }
-            frameLayout.animate().alpha(0.0f).scaleX(0.6f).scaleY(0.6f).setInterpolator(es.f).setListener(new m2(this, 1)).setDuration(300L).start();
+            frameLayout.animate().alpha(0.0f).scaleX(0.6f).scaleY(0.6f).setInterpolator(bs.f).setListener(new m2(this, 1)).setDuration(300L).start();
         } else {
             if (frameLayout.getVisibility() == 0) {
                 return;
@@ -95,7 +95,7 @@ public final class n2 extends FrameLayout {
             frameLayout.setScaleY(0.6f);
             frameLayout.setScaleX(0.6f);
             frameLayout.animate().setListener(null).cancel();
-            sk.t(frameLayout.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f), es.k, 300L);
+            wh.t(frameLayout.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f), bs.k, 300L);
         }
     }
 
@@ -119,7 +119,7 @@ public final class n2 extends FrameLayout {
     }
 
     public final void e(boolean z10) {
-        s2 s2Var = this.d;
+        r2 r2Var = this.d;
         TextView[] textViewArr = this.a;
         if (TextUtils.isEmpty(textViewArr[0].getText())) {
             z10 = false;
@@ -127,14 +127,14 @@ public final class n2 extends FrameLayout {
         if (this.n) {
             return;
         }
-        s2Var.a();
+        r2Var.a();
         if (z10) {
             if (this.f) {
                 this.e = "timer";
                 return;
             } else {
                 this.n = true;
-                a(textViewArr[0], s2Var, null);
+                a(textViewArr[0], r2Var, null);
                 return;
             }
         }
@@ -146,7 +146,7 @@ public final class n2 extends FrameLayout {
         this.f = false;
         textViewArr[0].setVisibility(8);
         textViewArr[1].setVisibility(8);
-        s2Var.setVisibility(0);
+        r2Var.setVisibility(0);
     }
 
     public void setSignalBarCount(int i10) {

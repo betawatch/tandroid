@@ -1,8 +1,8 @@
 package k4;
 
 import android.util.Pair;
-import b2.x0;
-import c3.i0;
+import b2.w0;
+import c3.j0;
 import c3.o;
 import c3.p;
 import c3.q;
@@ -12,18 +12,18 @@ import e2.x;
 import e9.l0;
 import e9.n0;
 import e9.x1;
-import f2.t;
+import f2.u;
 import g2.l;
 import java.nio.ByteOrder;
 import java.util.Arrays;
 import java.util.List;
 import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class c implements o {
     public q a;
-    public i0 b;
+    public j0 b;
     public int c;
     public long d;
     public b e;
@@ -38,8 +38,8 @@ public final class c implements o {
     @Override // c3.o
     public final void c(q qVar) {
         this.a = qVar;
-        this.b = qVar.W(0, 1);
-        qVar.D();
+        this.b = qVar.j0(0, 1);
+        qVar.H();
     }
 
     @Override // c3.o
@@ -87,7 +87,7 @@ public final class c implements o {
                 return 0;
             }
             if (!e.a(pVar)) {
-                throw x0.a(null, "Unsupported or unrecognized wav file type.");
+                throw w0.a(null, "Unsupported or unrecognized wav file type.");
             }
             pVar.r((int) (pVar.k() - pVar.getPosition()));
             this.c = 1;
@@ -163,47 +163,47 @@ public final class c implements o {
                 xVar3.t();
                 int t14 = xVar3.t();
                 if (t14 != 0 && t14 != t13) {
-                    throw x0.c("validBits ( " + t14 + ")  != bitsPerSample( " + t13 + ") are not supported");
+                    throw w0.c("validBits ( " + t14 + ")  != bitsPerSample( " + t13 + ") are not supported");
                 }
                 int s11 = xVar3.s();
                 if ((s11 >> 18) != 0) {
-                    throw x0.c("invalid channel mask " + s11);
+                    throw w0.c("invalid channel mask " + s11);
                 }
                 if (s11 != 0 && Integer.bitCount(s11) != t11) {
-                    throw x0.c("invalid number of channels (" + Integer.bitCount(s11) + ") in channel mask " + s11);
+                    throw w0.c("invalid number of channels (" + Integer.bitCount(s11) + ") in channel mask " + s11);
                 }
                 t10 = xVar3.t();
                 byte[] bArr2 = new byte[14];
                 xVar3.k(0, 14, bArr2);
                 if (!Arrays.equals(bArr2, e.a) && !Arrays.equals(bArr2, e.b)) {
-                    throw x0.c("invalid wav format extension guid");
+                    throw w0.c("invalid wav format extension guid");
                 }
             }
         } else {
             bArr = m0.b;
         }
         pVar.r((int) (pVar.k() - pVar.getPosition()));
-        t tVar = new t();
-        tVar.a = t11;
-        tVar.b = s10;
-        tVar.c = t12;
-        tVar.d = t13;
-        tVar.e = bArr;
+        u uVar = new u();
+        uVar.a = t11;
+        uVar.b = s10;
+        uVar.c = t12;
+        uVar.d = t13;
+        uVar.e = bArr;
         if (t10 == 17) {
-            this.e = new a(this.a, this.b, tVar);
+            this.e = new a(this.a, this.b, uVar);
         } else if (t10 == 6) {
-            this.e = new l(this.a, this.b, tVar, "audio/g711-alaw", -1);
+            this.e = new l(this.a, this.b, uVar, "audio/g711-alaw", -1);
         } else if (t10 == 7) {
-            this.e = new l(this.a, this.b, tVar, "audio/g711-mlaw", -1);
+            this.e = new l(this.a, this.b, uVar, "audio/g711-mlaw", -1);
         } else {
             if (t10 != 1) {
                 if (t10 != 3) {
                 }
                 i10 = 0;
                 if (i10 != 0) {
-                    throw x0.c("Unsupported WAV format type: " + t10);
+                    throw w0.c("Unsupported WAV format type: " + t10);
                 }
-                this.e = new l(this.a, this.b, tVar, "audio/raw", i10);
+                this.e = new l(this.a, this.b, uVar, "audio/raw", i10);
             }
             i12 = m0.D(t13, ByteOrder.LITTLE_ENDIAN);
             i10 = i12;

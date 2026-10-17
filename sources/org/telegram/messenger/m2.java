@@ -7,83 +7,83 @@ import java.util.List;
 import java.util.Random;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.cd0;
-import org.telegram.ui.Components.nu;
-import org.telegram.ui.co;
-import org.telegram.ui.yn;
+import org.telegram.ui.Components.iu;
+import org.telegram.ui.Components.wc0;
+import org.telegram.ui.mn;
+import org.telegram.ui.qn;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class m2 implements org.telegram.ui.ActionBar.z1, ResultCallback {
+public final /* synthetic */ class m2 implements org.telegram.ui.ActionBar.a2, ResultCallback {
     public final /* synthetic */ boolean a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ m2(FactCheckController factCheckController, nu nuVar, int i10, MessageObject messageObject, boolean z10) {
+    public /* synthetic */ m2(FactCheckController factCheckController, iu iuVar, int i10, MessageObject messageObject, boolean z10) {
         this.c = factCheckController;
-        this.d = nuVar;
+        this.d = iuVar;
         this.b = i10;
         this.e = messageObject;
         this.a = z10;
     }
 
-    @Override // org.telegram.ui.ActionBar.z1
-    public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
-        ((FactCheckController) this.c).lambda$openFactCheckEditor$8((nu) this.d, this.b, (MessageObject) this.e, this.a, a2Var, i10);
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        ((FactCheckController) this.c).lambda$openFactCheckEditor$8((iu) this.d, this.b, (MessageObject) this.e, this.a, b2Var, i10);
     }
 
     @Override // org.telegram.tgnet.ResultCallback
     public void onComplete(Object obj) {
-        co coVar = (co) this.c;
-        org.telegram.ui.ActionBar.b4 b4Var = (org.telegram.ui.ActionBar.b4) this.d;
-        cd0 cd0Var = (cd0) this.e;
+        qn qnVar = (qn) this.c;
+        org.telegram.ui.ActionBar.c4 c4Var = (org.telegram.ui.ActionBar.c4) this.d;
+        wc0 wc0Var = (wc0) this.e;
         Pair pair = (Pair) obj;
         if (pair == null) {
             return;
         }
         long longValue = ((Long) pair.first).longValue();
         Bitmap bitmap = ((eg.a) pair.second).b;
-        org.telegram.ui.ActionBar.b4 b4Var2 = coVar.f;
-        if (b4Var2 == null || longValue != b4Var2.i(coVar.G ? 1 : 0) || bitmap == null) {
+        org.telegram.ui.ActionBar.c4 c4Var2 = qnVar.f;
+        if (c4Var2 == null || longValue != c4Var2.h(qnVar.G ? 1 : 0) || bitmap == null) {
             return;
         }
-        ValueAnimator valueAnimator = coVar.r;
+        ValueAnimator valueAnimator = qnVar.r;
         if (valueAnimator != null) {
             valueAnimator.cancel();
         }
-        int i10 = b4Var.k(this.a ? 1 : 0).settings.intensity;
+        int i10 = c4Var.j(this.a ? 1 : 0).settings.intensity;
         List list = ((eg.a) pair.second).c;
-        cd0Var.R = list;
-        long j10 = coVar.V.Ra;
+        wc0Var.R = list;
+        long j10 = qnVar.V.Ra;
         if (list != null) {
-            cd0Var.S = new Random(j10).nextInt(cd0Var.R.size());
+            wc0Var.S = new Random(j10).nextInt(wc0Var.R.size());
         }
-        cd0Var.t(bitmap, i10);
-        cd0Var.u(this.b);
+        wc0Var.s(bitmap, i10);
+        wc0Var.t(this.b);
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        coVar.r = ofFloat;
-        ofFloat.addUpdateListener(new yn(cd0Var, 2));
-        coVar.r.setDuration(250L);
-        coVar.r.start();
+        qnVar.r = ofFloat;
+        ofFloat.addUpdateListener(new mn(wc0Var, 2));
+        qnVar.r.setDuration(250L);
+        qnVar.r.start();
     }
 
     @Override // org.telegram.tgnet.ResultCallback
     public /* synthetic */ void onError(Throwable th2) {
-        org.telegram.tgnet.l.a(this, th2);
+        org.telegram.tgnet.k.a(this, th2);
     }
 
-    public /* synthetic */ m2(co coVar, org.telegram.ui.ActionBar.b4 b4Var, boolean z10, cd0 cd0Var, int i10) {
-        this.c = coVar;
-        this.d = b4Var;
+    public /* synthetic */ m2(qn qnVar, org.telegram.ui.ActionBar.c4 c4Var, boolean z10, wc0 wc0Var, int i10) {
+        this.c = qnVar;
+        this.d = c4Var;
         this.a = z10;
-        this.e = cd0Var;
+        this.e = wc0Var;
         this.b = i10;
     }
 
     @Override // org.telegram.tgnet.ResultCallback
     public /* synthetic */ void onError(TLRPC.TL_error tL_error) {
-        org.telegram.tgnet.l.b(this, tL_error);
+        org.telegram.tgnet.k.b(this, tL_error);
     }
 }

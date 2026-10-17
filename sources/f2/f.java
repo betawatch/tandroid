@@ -1,54 +1,34 @@
 package f2;
 
-import b2.r0;
-import b2.t0;
-import b2.x;
-import v7.u6;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class f implements t0 {
-    public final float a;
-    public final float b;
+public abstract class f {
+    public final /* synthetic */ int a;
+    public final int b;
 
-    public f(float f7, float f10) {
-        u6.f("Invalid latitude or longitude", f7 >= -90.0f && f7 <= 90.0f && f10 >= -180.0f && f10 <= 180.0f);
-        this.a = f7;
-        this.b = f10;
+    public /* synthetic */ f(int i10, int i11) {
+        this.a = i11;
+        this.b = i10;
     }
 
-    @Override // b2.t0
-    public final /* synthetic */ x a() {
-        return null;
+    public static String a(int i10) {
+        return "" + ((char) ((i10 >> 24) & 255)) + ((char) ((i10 >> 16) & 255)) + ((char) ((i10 >> 8) & 255)) + ((char) (i10 & 255));
     }
 
-    @Override // b2.t0
-    public final /* synthetic */ byte[] c() {
-        return null;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public static void c(StringBuilder sb2) {
+        if (sb2 != null) {
+            sb2.delete(0, sb2.length());
         }
-        if (obj != null && f.class == obj.getClass()) {
-            f fVar = (f) obj;
-            if (this.a == fVar.a && this.b == fVar.b) {
-                return true;
-            }
+    }
+
+    public abstract f b();
+
+    public String toString() {
+        switch (this.a) {
+            case 0:
+                return a(this.b);
+            default:
+                return super.toString();
         }
-        return false;
-    }
-
-    public final int hashCode() {
-        return Float.valueOf(this.b).hashCode() + ((Float.valueOf(this.a).hashCode() + 527) * 31);
-    }
-
-    public final String toString() {
-        return "xyz: latitude=" + this.a + ", longitude=" + this.b;
-    }
-
-    @Override // b2.t0
-    public final /* synthetic */ void b(r0 r0Var) {
     }
 }

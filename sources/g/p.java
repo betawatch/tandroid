@@ -5,7 +5,7 @@ import android.view.MotionEvent;
 import androidx.appcompat.widget.ContentFrameLayout;
 import v7.q7;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class p extends ContentFrameLayout {
     public final /* synthetic */ r r;
@@ -18,7 +18,7 @@ public final class p extends ContentFrameLayout {
 
     @Override // android.view.ViewGroup, android.view.View
     public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
-        return this.r.i(keyEvent) || super.dispatchKeyEvent(keyEvent);
+        return this.r.j(keyEvent) || super.dispatchKeyEvent(keyEvent);
     }
 
     @Override // android.view.ViewGroup
@@ -28,7 +28,7 @@ public final class p extends ContentFrameLayout {
             int y3 = (int) motionEvent.getY();
             if (x10 < -5 || y3 < -5 || x10 > getWidth() + 5 || y3 > getHeight() + 5) {
                 r rVar = this.r;
-                rVar.h(rVar.q(0), true);
+                rVar.i(rVar.q(0), true);
                 return true;
             }
         }

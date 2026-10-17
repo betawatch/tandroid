@@ -1,13 +1,34 @@
 package org.telegram.ui;
 
-import android.view.MotionEvent;
-import android.view.View;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class fv implements View.OnTouchListener {
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        return true;
+public final /* synthetic */ class fv implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ey b;
+
+    public /* synthetic */ fv(ey eyVar, int i10) {
+        this.a = i10;
+        this.b = eyVar;
+    }
+
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                ey eyVar = this.b;
+                eyVar.getClass();
+                eyVar.x4(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 1:
+                this.b.B4(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            default:
+                ey eyVar2 = this.b;
+                eyVar2.getClass();
+                eyVar2.D4(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+        }
     }
 }

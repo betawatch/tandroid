@@ -2,7 +2,7 @@ package k2;
 
 import m4.m1;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e0 implements e2.o, e2.j {
     public final /* synthetic */ long a;
@@ -19,10 +19,10 @@ public final /* synthetic */ class e0 implements e2.o, e2.j {
     @Override // e2.o
     public void invoke(Object obj) {
         x xVar;
-        o0 o0Var = (o0) obj;
-        s0 s0Var = o0Var.b;
-        if (o0Var.equals(s0Var.j) && (xVar = s0Var.n) != null) {
-            xVar.b(this.a);
+        p0 p0Var = (p0) obj;
+        t0 t0Var = p0Var.b;
+        if (p0Var.equals(t0Var.j) && (xVar = t0Var.n) != null) {
+            xVar.e(this.a);
         }
     }
 }

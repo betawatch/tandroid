@@ -1,23 +1,11 @@
 package org.telegram.ui;
 
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import android.view.View;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class es {
-    public ActionBarPopupWindow$ActionBarPopupWindowLayout a;
-    public org.telegram.ui.ActionBar.a1 b;
-    public org.telegram.ui.ActionBar.e1[] c;
-
-    public final void a(float f7, boolean z10) {
-        org.telegram.ui.ActionBar.e1[] e1VarArr = this.c;
-        for (int i10 = 0; i10 < e1VarArr.length; i10++) {
-            if (!z10 || ((i10 != 0 || Math.abs(f7 - 0.2f) >= 0.01f) && ((i10 != 1 || Math.abs(f7 - 0.5f) >= 0.1f) && ((i10 != 2 || Math.abs(f7 - 1.0f) >= 0.1f) && ((i10 != 3 || Math.abs(f7 - 1.5f) >= 0.1f) && (i10 != 4 || Math.abs(f7 - 2.0f) >= 0.1f)))))) {
-                e1VarArr[i10].c(-328966, -328966);
-            } else {
-                e1VarArr[i10].c(-9718023, -9718023);
-            }
-        }
-        this.b.d(f7, true);
+public final class es implements View.OnFocusChangeListener {
+    @Override // android.view.View.OnFocusChangeListener
+    public final void onFocusChange(View view, boolean z10) {
     }
 }

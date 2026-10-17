@@ -2,9 +2,9 @@ package u2;
 
 import e9.x1;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class s1 extends b2.x0 {
+public final class s1 extends b2.w0 {
     public final e9.n0 c;
 
     public s1(String str, x1 x1Var) {
@@ -12,7 +12,7 @@ public final class s1 extends b2.x0 {
         this.c = e9.n0.u(x1Var);
     }
 
-    @Override // b2.x0, java.lang.Throwable
+    @Override // b2.w0, java.lang.Throwable
     public final String getMessage() {
         String message = super.getMessage();
         e9.n0 n0Var = this.c;

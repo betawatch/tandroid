@@ -1,154 +1,149 @@
 package org.telegram.ui.Components;
 
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.animation.ValueAnimator;
+import android.graphics.Paint;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class wk0 extends pg.b {
-    public final /* synthetic */ gl0 d;
+public final class wk0 extends s4.r0 {
+    public boolean a;
+    public boolean b;
+    public ValueAnimator c;
+    public ValueAnimator d;
+    public final /* synthetic */ cl0 e;
 
-    public wk0(gl0 gl0Var) {
-        this.d = gl0Var;
+    public wk0(cl0 cl0Var) {
+        this.e = cl0Var;
     }
 
-    @Override // org.telegram.ui.Components.lm0
-    public final boolean D(s4.b1 b1Var) {
-        return false;
+    public static ValueAnimator c(float f7, float f10, q0.a aVar, Runnable runnable) {
+        ValueAnimator duration = ValueAnimator.ofFloat(f7, f10).setDuration((long) (Math.abs(f10 - f7) * 150.0f));
+        duration.addUpdateListener(new b80(aVar, 9));
+        duration.addListener(new org.telegram.ui.t0(1, runnable));
+        duration.start();
+        return duration;
     }
 
-    @Override // s4.g0
-    public final int h() {
-        return this.d.d.size();
-    }
-
-    @Override // s4.g0
-    public final int j(int i10) {
-        return ((xk0) this.d.d.get(i10)).a;
-    }
-
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
-        int i11 = b1Var.f;
-        if (i11 == 0 || i11 == 3) {
-            el0 el0Var = (el0) b1Var.a;
-            el0Var.setScaleX(1.0f);
-            el0Var.setScaleY(1.0f);
-            el0.a(el0Var, ((xk0) this.d.d.get(i10)).c, i10);
-        }
-    }
-
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        View view;
-        gl0 gl0Var = this.d;
-        if (i10 == 1) {
-            gl0Var.R = new FrameLayout(gl0Var.getContext());
-            sg.c1 c1Var = new sg.c1(gl0Var.getContext(), 0, null);
-            gl0Var.u0 = c1Var;
-            int x02 = org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.F8, false);
-            int i11 = org.telegram.ui.ActionBar.g6.h5;
-            c1Var.setColor(i0.a.d(0.7f, x02, org.telegram.ui.ActionBar.g6.x0(null, i11, false)));
-            gl0Var.u0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.x0(null, i11, false), PorterDuff.Mode.MULTIPLY));
-            gl0Var.u0.setScaleX(0.0f);
-            gl0Var.u0.setScaleY(0.0f);
-            gl0Var.u0.setPadding(AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f));
-            gl0Var.R.addView(gl0Var.u0, w7.z5.e(26, 26, 17));
+    @Override // s4.r0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        cl0 cl0Var = this.e;
+        hg.i0 i0Var = cl0Var.W;
+        boolean z10 = i0Var.L0() != 0;
+        if (z10 != this.a) {
+            ValueAnimator valueAnimator = this.c;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+            }
             final int i12 = 0;
-            gl0Var.u0.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.vk0
+            final int i13 = 0;
+            this.c = c(cl0Var.r, z10 ? 1.0f : 0.0f, new q0.a(this) { // from class: org.telegram.ui.Components.uk0
                 public final /* synthetic */ wk0 b;
 
                 {
                     this.b = this;
                 }
 
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view2) {
+                @Override // q0.a
+                public final void accept(Object obj) {
+                    Float f7 = (Float) obj;
                     switch (i12) {
                         case 0:
-                            wk0 wk0Var = this.b;
-                            wk0Var.getClass();
-                            view2.getLocationOnScreen(new int[2]);
-                            gl0 gl0Var2 = wk0Var.d;
-                            view2.getMeasuredWidth();
-                            view2.getMeasuredHeight();
-                            gl0Var2.getClass();
-                            new sg.y0(gl0Var2.t0, 4, true).show();
+                            cl0 cl0Var2 = this.b.e;
+                            Paint paint = cl0Var2.h;
+                            float floatValue = f7.floatValue();
+                            cl0Var2.r = floatValue;
+                            paint.setAlpha((int) (floatValue * 255.0f));
+                            cl0Var2.invalidate();
                             break;
                         default:
-                            gl0.a(this.b.d);
+                            cl0 cl0Var3 = this.b.e;
+                            Paint paint2 = cl0Var3.n;
+                            float floatValue2 = f7.floatValue();
+                            cl0Var3.s = floatValue2;
+                            paint2.setAlpha((int) (floatValue2 * 255.0f));
+                            cl0Var3.invalidate();
                             break;
                     }
                 }
-            });
-            view = gl0Var.R;
-        } else if (i10 != 2) {
-            view = new el0(gl0Var, gl0Var.getContext());
-        } else {
-            gl0Var.S = new ah.v(gl0Var, gl0Var.getContext());
-            gs gsVar = new gs(gl0Var, gl0Var.getContext());
-            gl0Var.v0 = gsVar;
-            gsVar.setImageResource(R.drawable.msg_reactions_expand);
-            gl0Var.v0.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-            int i13 = gl0Var.M0;
-            if (i13 == 1 || i13 == 2 || i13 == 4) {
-                gl0Var.v0.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.MULTIPLY));
-            } else {
-                gl0Var.v0.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.h5, false), PorterDuff.Mode.MULTIPLY));
-            }
-            gl0Var.v0.setBackground(org.telegram.ui.ActionBar.g6.i0(AndroidUtilities.dp(28.0f), 0, i0.a.k(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.i6, false), 40)));
-            gl0Var.v0.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
-            gl0Var.v0.setContentDescription(LocaleController.getString(R.string.AccDescrExpandPanel));
-            gl0Var.S.addView(gl0Var.v0, w7.z5.e(30, 30, 17));
-            final int i14 = 1;
-            gl0Var.v0.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.vk0
+            }, new Runnable(this) { // from class: org.telegram.ui.Components.vk0
                 public final /* synthetic */ wk0 b;
 
                 {
                     this.b = this;
                 }
 
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view2) {
-                    switch (i14) {
+                @Override // java.lang.Runnable
+                public final void run() {
+                    switch (i13) {
                         case 0:
-                            wk0 wk0Var = this.b;
-                            wk0Var.getClass();
-                            view2.getLocationOnScreen(new int[2]);
-                            gl0 gl0Var2 = wk0Var.d;
-                            view2.getMeasuredWidth();
-                            view2.getMeasuredHeight();
-                            gl0Var2.getClass();
-                            new sg.y0(gl0Var2.t0, 4, true).show();
+                            this.b.c = null;
                             break;
                         default:
-                            gl0.a(this.b.d);
+                            this.b.d = null;
                             break;
                     }
                 }
             });
-            view = gl0Var.S;
+            this.a = z10;
         }
-        int topOffset = ((gl0Var.getLayoutParams().height - ((int) gl0Var.getTopOffset())) - gl0Var.getPaddingTop()) - gl0Var.getPaddingBottom();
-        view.setLayoutParams(new s4.o0(topOffset - AndroidUtilities.dp(12.0f), topOffset));
-        return new wl0(view);
-    }
+        boolean z11 = i0Var.N0() != cl0Var.a0.h() - 1;
+        if (z11 != this.b) {
+            ValueAnimator valueAnimator2 = this.d;
+            if (valueAnimator2 != null) {
+                valueAnimator2.cancel();
+            }
+            final int i14 = 1;
+            final int i15 = 1;
+            this.d = c(cl0Var.s, z11 ? 1.0f : 0.0f, new q0.a(this) { // from class: org.telegram.ui.Components.uk0
+                public final /* synthetic */ wk0 b;
 
-    @Override // s4.g0
-    public final void y(s4.b1 b1Var) {
-        int b10;
-        ArrayList arrayList = this.d.d;
-        int i10 = b1Var.f;
-        if ((i10 == 0 || i10 == 3) && (b10 = b1Var.b()) >= 0 && b10 < arrayList.size()) {
-            ((el0) b1Var.a).f(((xk0) arrayList.get(b10)).c, false);
+                {
+                    this.b = this;
+                }
+
+                @Override // q0.a
+                public final void accept(Object obj) {
+                    Float f7 = (Float) obj;
+                    switch (i14) {
+                        case 0:
+                            cl0 cl0Var2 = this.b.e;
+                            Paint paint = cl0Var2.h;
+                            float floatValue = f7.floatValue();
+                            cl0Var2.r = floatValue;
+                            paint.setAlpha((int) (floatValue * 255.0f));
+                            cl0Var2.invalidate();
+                            break;
+                        default:
+                            cl0 cl0Var3 = this.b.e;
+                            Paint paint2 = cl0Var3.n;
+                            float floatValue2 = f7.floatValue();
+                            cl0Var3.s = floatValue2;
+                            paint2.setAlpha((int) (floatValue2 * 255.0f));
+                            cl0Var3.invalidate();
+                            break;
+                    }
+                }
+            }, new Runnable(this) { // from class: org.telegram.ui.Components.vk0
+                public final /* synthetic */ wk0 b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // java.lang.Runnable
+                public final void run() {
+                    switch (i15) {
+                        case 0:
+                            this.b.c = null;
+                            break;
+                        default:
+                            this.b.d = null;
+                            break;
+                    }
+                }
+            });
+            this.b = z11;
         }
     }
 }

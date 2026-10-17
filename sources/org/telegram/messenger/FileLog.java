@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public class FileLog {
     private static volatile FileLog Instance = null;
@@ -53,7 +53,7 @@ public class FileLog {
     private OutputStreamWriter tlStreamWriter = null;
     private File tlRequestsFile = null;
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class ByteArrayHexAdapter extends eb.u {
         @Override // eb.u
         public byte[] read(mb.a aVar) {
@@ -81,14 +81,14 @@ public class FileLog {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class IgnoreSentException extends Exception {
         public IgnoreSentException(String str) {
             super(str);
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class TLObjectDeserializer implements eb.o {
         private TLObjectDeserializer() {
         }
@@ -111,7 +111,7 @@ public class FileLog {
                                 if (obj != null) {
                                     Class<?> cls = obj.getClass();
                                     if (!cls.isInstance(DispatchQueue.class)) {
-                                        if (!cls.isInstance(org.telegram.ui.Components.f6.class)) {
+                                        if (!cls.isInstance(org.telegram.ui.Components.e6.class)) {
                                             if (!cls.isInstance(ColorStateList.class)) {
                                                 if (cls.isInstance(Context.class)) {
                                                 }
@@ -119,7 +119,7 @@ public class FileLog {
                                         }
                                     }
                                 }
-                                lVar.n(field.getName(), ((a6.i) nVar).n(obj));
+                                lVar.n(field.getName(), ((ya.c) nVar).d0(obj));
                             }
                         } catch (IllegalAccessException e) {
                             e.printStackTrace();
@@ -162,7 +162,7 @@ public class FileLog {
             exclusionStrategy = new eb.a() { // from class: org.telegram.messenger.FileLog.1
                 @Override // eb.a
                 public boolean shouldSkipClass(Class<?> cls) {
-                    return NativeByteBuffer.class.isAssignableFrom(cls) || cls.isInstance(DispatchQueue.class) || cls.isInstance(org.telegram.ui.Components.f6.class) || cls.isInstance(ColorStateList.class) || cls.isInstance(Context.class);
+                    return NativeByteBuffer.class.isAssignableFrom(cls) || cls.isInstance(DispatchQueue.class) || cls.isInstance(org.telegram.ui.Components.e6.class) || cls.isInstance(ColorStateList.class) || cls.isInstance(Context.class);
                 }
 
                 @Override // eb.a
@@ -176,7 +176,7 @@ public class FileLog {
                     return "message".equalsIgnoreCase(field2.getName()) && String.class.equals(field2.getGenericType());
                 }
             };
-            gb.h hVar = gb.h.c;
+            gb.f fVar = gb.f.c;
             HashMap hashMap = new HashMap();
             ArrayList arrayList = new ArrayList();
             ArrayList arrayList2 = new ArrayList();
@@ -186,8 +186,8 @@ public class FileLog {
             ArrayDeque arrayDeque = new ArrayDeque();
             eb.a aVar = exclusionStrategy;
             Objects.requireNonNull(aVar);
-            gb.h clone = hVar.clone();
-            ArrayList arrayList3 = new ArrayList(hVar.a);
+            gb.f clone = fVar.clone();
+            ArrayList arrayList3 = new ArrayList(fVar.a);
             clone.a = arrayList3;
             arrayList3.add(aVar);
             ByteArrayHexAdapter byteArrayHexAdapter = new ByteArrayHexAdapter();
@@ -283,7 +283,7 @@ public class FileLog {
 
     public static void dumpUnparsedMessage(TLObject tLObject, long j10, int i10) {
         if (BuildVars.DEBUG_PRIVATE_VERSION && BuildVars.LOGS_ENABLED && tLObject != null) {
-            postProtocolDump(new z4(tLObject, gsonDisabled, System.currentTimeMillis(), j10, i10));
+            postProtocolDump(new y4(tLObject, gsonDisabled, System.currentTimeMillis(), j10, i10));
         }
     }
 
@@ -415,7 +415,7 @@ public class FileLog {
         } else if (tL_error != null) {
             str2 = "err -> " + tL_error.getClass().getSimpleName() + " : " + gson.e(tL_error);
         } else {
-            str2 = BuildConfig.BETA_URL;
+            str2 = "null";
         }
         try {
             String str3 = "requestMsgId=" + j10 + " requestingTime=" + j11 + " request_token=" + i10 + " account=" + i11;

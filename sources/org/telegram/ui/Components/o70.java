@@ -1,35 +1,49 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class o70 extends org.telegram.ui.Cells.e9 {
-    public final org.telegram.ui.Cells.l7 v;
-    public boolean w;
-    public final /* synthetic */ p70 x;
+public final class o70 extends rx0 {
+    public final /* synthetic */ int K;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o70(p70 p70Var, Context context) {
-        super(context);
-        this.x = p70Var;
-        this.v = new org.telegram.ui.Cells.l7(this, 14);
+    public /* synthetic */ o70(Context context, View view, int i10, org.telegram.ui.ActionBar.d6 d6Var, int i11) {
+        super(context, view, i10, d6Var);
+        this.K = i11;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        org.telegram.ui.Cells.l7 l7Var = this.v;
-        AndroidUtilities.cancelRunOnUIThread(l7Var);
-        if (this.w) {
-            AndroidUtilities.runOnUIThread(l7Var, 500L);
+    @Override // org.telegram.ui.Components.rx0, android.view.ViewGroup, android.view.View
+    public void onAttachedToWindow() {
+        switch (this.K) {
+            case 0:
+                super.onAttachedToWindow();
+                this.b.getImageReceiver().startAnimation();
+                break;
+            case 1:
+                super.onAttachedToWindow();
+                this.b.getImageReceiver().startAnimation();
+                break;
+            default:
+                super.onAttachedToWindow();
+                break;
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        AndroidUtilities.cancelRunOnUIThread(this.v);
+    @Override // org.telegram.ui.Components.rx0, android.view.View
+    public void setVisibility(int i10) {
+        switch (this.K) {
+            case 2:
+                super.setVisibility(i10);
+                if (i10 != 0) {
+                    e(false, false);
+                    break;
+                }
+                break;
+            default:
+                super.setVisibility(i10);
+                break;
+        }
     }
 }

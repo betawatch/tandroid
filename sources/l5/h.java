@@ -3,20 +3,20 @@ package l5;
 import java.util.HashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class h {
     public final String a;
     public final Integer b;
-    public final l c;
+    public final m c;
     public final long d;
     public final long e;
     public final Map f;
 
-    public h(String str, Integer num, l lVar, long j10, long j11, HashMap hashMap) {
+    public h(String str, Integer num, m mVar, long j10, long j11, HashMap hashMap) {
         this.a = str;
         this.b = num;
-        this.c = lVar;
+        this.c = mVar;
         this.d = j10;
         this.e = j11;
         this.f = hashMap;
@@ -35,23 +35,23 @@ public final class h {
         return Integer.valueOf(str2).intValue();
     }
 
-    public final com.google.firebase.messaging.m c() {
-        com.google.firebase.messaging.m mVar = new com.google.firebase.messaging.m();
+    public final com.google.firebase.messaging.l c() {
+        com.google.firebase.messaging.l lVar = new com.google.firebase.messaging.l();
         String str = this.a;
         if (str == null) {
             throw new NullPointerException("Null transportName");
         }
-        mVar.a = str;
-        mVar.b = this.b;
-        l lVar = this.c;
-        if (lVar == null) {
+        lVar.a = str;
+        lVar.b = this.b;
+        m mVar = this.c;
+        if (mVar == null) {
             throw new NullPointerException("Null encodedPayload");
         }
-        mVar.c = lVar;
-        mVar.d = Long.valueOf(this.d);
-        mVar.e = Long.valueOf(this.e);
-        mVar.f = new HashMap(this.f);
-        return mVar;
+        lVar.c = mVar;
+        lVar.d = Long.valueOf(this.d);
+        lVar.e = Long.valueOf(this.e);
+        lVar.f = new HashMap(this.f);
+        return lVar;
     }
 
     public final boolean equals(Object obj) {

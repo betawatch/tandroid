@@ -1,121 +1,92 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.text.Layout;
-import android.text.TextUtils;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.view.animation.OvershootInterpolator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class fz0 {
-    public final int a;
-    public final org.telegram.ui.Cells.w0 b;
-    public final org.telegram.ui.ActionBar.c6 c;
-    public final yj0 d;
-    public TL_account.TL_birthday e;
-    public i11 f;
-    public i11[] g;
-    public i11[] h;
-    public boolean i;
-    public i11 j;
-    public final RectF k = new RectF();
-    public final Paint l = new Paint(1);
-    public final ad m;
+public final class fz0 extends View {
+    public String a;
+    public Drawable b;
+    public boolean c;
+    public int d;
+    public final f6 e;
+    public final /* synthetic */ gz0 f;
 
-    public fz0(int i10, org.telegram.ui.Cells.w0 w0Var, org.telegram.ui.ActionBar.c6 c6Var) {
-        this.a = i10;
-        this.b = w0Var;
-        this.c = c6Var;
-        yj0 yj0Var = new yj0(R.raw.cake, AndroidUtilities.dp(66.0f), AndroidUtilities.dp(66.0f), true, null);
-        this.d = yj0Var;
-        yj0Var.H(false);
-        this.m = new ad(w0Var);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fz0(gz0 gz0Var, Context context) {
+        super(context);
+        this.f = gz0Var;
+        this.d = 0;
+        this.e = new f6(this, 350L, new OvershootInterpolator(5.0f));
     }
 
-    public final void a(Canvas canvas) {
-        int dp = AndroidUtilities.dp(66.0f);
-        org.telegram.ui.Cells.w0 w0Var = this.b;
-        int width = (w0Var.getWidth() - dp) / 2;
-        int dp2 = AndroidUtilities.dp(13.0f) + dp;
-        yj0 yj0Var = this.d;
-        yj0Var.setBounds(width, AndroidUtilities.dp(13.0f), width + dp, dp2);
-        yj0Var.draw(canvas);
-        this.f.c((w0Var.getWidth() - this.f.l()) / 2.0f, AndroidUtilities.dp(19.0f) + dp, 1.0f, -1, canvas);
-        int j10 = (int) (this.f.j() + AndroidUtilities.dp(19.0f) + dp + AndroidUtilities.dp(17.0f));
-        int i10 = 0;
-        for (int i11 = 0; i11 < this.g.length; i11++) {
-            i10 = (int) (Math.max(this.g[i11].l(), this.h[i11].l()) + AndroidUtilities.dp(9.0f) + AndroidUtilities.dp(9.0f) + i10);
-        }
-        int width2 = (w0Var.getWidth() - i10) / 2;
-        int i12 = 0;
-        while (i12 < this.g.length) {
-            float max = Math.max(this.g[i12].l(), this.h[i12].l()) + AndroidUtilities.dp(9.0f) + AndroidUtilities.dp(9.0f);
-            float f7 = width2;
-            float f10 = (max / 2.0f) + f7;
-            int i13 = (int) (f7 + max);
-            i11 i11Var = this.g[i12];
-            i11Var.c(f10 - (i11Var.l() / 2.0f), j10, 0.75f, -1, canvas);
-            i11 i11Var2 = this.h[i12];
-            i11Var2.c(f10 - (i11Var2.l() / 2.0f), AndroidUtilities.dp(16.0f) + j10, 1.0f, -1, canvas);
-            i12++;
-            width2 = i13;
-        }
-        if (this.i) {
-            int dp3 = AndroidUtilities.dp(38.0f) + j10;
-            canvas.save();
-            float l4 = this.j.l() + AndroidUtilities.dp(26.0f);
-            float dp4 = AndroidUtilities.dp(30.0f);
-            float f11 = dp3;
-            RectF rectF = this.k;
-            rectF.set((w0Var.getWidth() - l4) / 2.0f, f11, (w0Var.getWidth() + l4) / 2.0f, f11 + dp4);
-            float a2 = this.m.a(0.1f);
-            canvas.scale(a2, a2, rectF.centerX(), rectF.centerY());
-            float f12 = dp4 / 2.0f;
-            canvas.drawRoundRect(rectF, f12, f12, this.l);
-            this.j.c(rectF.left + AndroidUtilities.dp(13.0f), rectF.centerY(), 1.0f, -1, canvas);
-            canvas.restore();
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float d = ((1.0f - this.e.d(isPressed() ? 1.0f : 0.0f, false)) * 0.2f) + 0.8f;
+        if (this.b != null) {
+            int width = getWidth() / 2;
+            int paddingTop = (getPaddingTop() + (getHeight() - getPaddingBottom())) / 2;
+            this.b.setBounds(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getHeight() - getPaddingBottom());
+            canvas.scale(d, d, width, paddingTop);
+            Drawable drawable = this.b;
+            if (drawable instanceof r5) {
+                ((r5) drawable).q(System.currentTimeMillis());
+            }
+            this.b.draw(canvas);
         }
     }
 
-    public final void b() {
-        g5.l(this.b.getContext(), LocaleController.getString(R.string.DateOfBirth), LocaleController.getString(R.string.DateOfBirthAddToProfile), this.e, new a3(this, 12), null, true, false, this.c).a.show();
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        Drawable drawable = this.b;
+        if (drawable instanceof r5) {
+            ((r5) drawable).a(this);
+        }
+        this.c = true;
     }
 
-    public final void c(MessageObject messageObject) {
-        TLRPC.TL_messageActionSuggestBirthday tL_messageActionSuggestBirthday = (TLRPC.TL_messageActionSuggestBirthday) messageObject.messageOwner.action;
-        this.e = tL_messageActionSuggestBirthday.birthday;
-        i11 i11Var = new i11(TextUtils.concat(messageObject.messageText, ":"), 13.0f, null);
-        i11Var.n(6);
-        Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
-        i11Var.a();
-        i11Var.q(AndroidUtilities.dp(174.0f) - AndroidUtilities.dp(32.0f));
-        this.f = i11Var;
-        int i10 = (tL_messageActionSuggestBirthday.birthday.flags & 1) != 0 ? 3 : 2;
-        i11[] i11VarArr = new i11[i10];
-        this.g = i11VarArr;
-        this.h = new i11[i10];
-        i11VarArr[0] = new i11(LocaleController.getString(R.string.DateDay), 11.0f, null);
-        this.h[0] = new i11("" + tL_messageActionSuggestBirthday.birthday.day, 11.0f, AndroidUtilities.bold());
-        this.g[1] = new i11(LocaleController.getString(R.string.DateMonth), 11.0f, null);
-        i11[] i11VarArr2 = this.h;
-        StringBuilder sb2 = new StringBuilder("");
-        int i11 = tL_messageActionSuggestBirthday.birthday.month - 1;
-        sb2.append((i11 < 0 || i11 >= 12) ? i2.d.j(i11, "") : LocaleController.getString(new int[]{R.string.January, R.string.February, R.string.March, R.string.April, R.string.May, R.string.June, R.string.July, R.string.August, R.string.September, R.string.October, R.string.November, R.string.December}[i11]));
-        i11VarArr2[1] = new i11(sb2.toString(), 11.0f, AndroidUtilities.bold());
-        if ((tL_messageActionSuggestBirthday.birthday.flags & 1) != 0) {
-            this.g[2] = new i11(LocaleController.getString(R.string.DateYear), 11.0f, null);
-            this.h[2] = new i11("" + tL_messageActionSuggestBirthday.birthday.year, 11.0f, AndroidUtilities.bold());
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        Drawable drawable = this.b;
+        if (drawable instanceof r5) {
+            ((r5) drawable).o(this);
         }
-        this.i = !messageObject.isOutOwner();
-        org.telegram.ui.ActionBar.c6 c6Var = this.c;
-        this.l.setColor(org.telegram.ui.ActionBar.g6.m1(0.12f, c6Var != null ? c6Var.a() : org.telegram.ui.ActionBar.g6.I.q() ? -1 : -16777216));
-        this.j = new i11(LocaleController.getString(R.string.SuggestedDateOfBirthView), 14.0f, AndroidUtilities.bold());
+        this.c = false;
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setPadding(AndroidUtilities.dp(3.0f), AndroidUtilities.dp((this.d == 0 ? 0.0f : 6.66f) + 3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp((this.d != 0 ? 0.0f : 6.66f) + 3.0f));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(44.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(52.0f), TLObject.FLAG_30));
+    }
+
+    public void setDirection(int i10) {
+        this.d = i10;
+        invalidate();
+    }
+
+    public void setImageDrawable(Drawable drawable) {
+        Drawable drawable2 = this.b;
+        if (drawable2 instanceof r5) {
+            ((r5) drawable2).o(this);
+        }
+        this.b = drawable;
+        if ((drawable instanceof r5) && this.c) {
+            ((r5) drawable).a(this);
+        }
+    }
+
+    @Override // android.view.View
+    public void setPressed(boolean z10) {
+        super.setPressed(z10);
+        invalidate();
     }
 }

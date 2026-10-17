@@ -1,53 +1,59 @@
 package org.telegram.ui;
 
-import android.content.res.Configuration;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.view.View;
+import android.app.Activity;
+import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class cv extends View {
-    public Path a;
-    public Paint b;
-    public boolean c;
+public final /* synthetic */ class cv implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Context b;
 
-    @Override // android.view.View
-    public final void onConfigurationChanged(Configuration configuration) {
-        super.onConfigurationChanged(configuration);
-        requestLayout();
+    public /* synthetic */ cv(Context context, int i10) {
+        this.a = i10;
+        this.b = context;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        canvas.drawPath(this.a, this.b);
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(13.0f), TLObject.FLAG_30));
-        setTop(this.c);
-    }
-
-    public void setTop(boolean z10) {
-        Path path = this.a;
-        path.rewind();
-        this.c = z10;
-        if (!z10) {
-            float dp = AndroidUtilities.dp(8.0f);
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(0.0f, ((-getMeasuredHeight()) * 2) - AndroidUtilities.dp(4.0f), getMeasuredWidth(), getMeasuredHeight() - AndroidUtilities.dp(4.0f));
-            path.addRoundRect(rectF, dp, dp, Path.Direction.CW);
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                org.telegram.ui.ActionBar.h6.J(this.b, false);
+                break;
+            case 1:
+                Activity findActivity = AndroidUtilities.findActivity(this.b);
+                if (findActivity == null) {
+                    findActivity = LaunchActivity.H1;
+                }
+                if (findActivity != null && !findActivity.isFinishing()) {
+                    findActivity.moveTaskToBack(true);
+                    break;
+                }
+                break;
+            case 2:
+                pf.d.r(this.b, "https://promote.telegram.org/guidelines");
+                break;
+            case 3:
+                pf.d.r(this.b, "https://promote.telegram.org/guidelines");
+                break;
+            case 4:
+                pf.d.r(this.b, "https://promote.telegram.org/guidelines");
+                break;
+            case 5:
+                pf.d.r(this.b, "https://promote.telegram.org/guidelines");
+                break;
+            case 6:
+                pf.d.r(this.b, "https://promote.telegram.org/guidelines");
+                break;
+            case 7:
+                pf.d.r(this.b, "https://promote.telegram.org/guidelines");
+                break;
+            default:
+                pf.d.r(this.b, LocaleController.getString(R.string.WebAppDisclaimerUrl));
+                break;
         }
-        float dp2 = AndroidUtilities.dp(14.0f);
-        RectF rectF2 = AndroidUtilities.rectTmp;
-        rectF2.set(0.0f, AndroidUtilities.dp(4.0f), getMeasuredWidth(), (getMeasuredHeight() * 2) + AndroidUtilities.dp(4.0f));
-        path.addRoundRect(rectF2, dp2, dp2, Path.Direction.CW);
     }
 }

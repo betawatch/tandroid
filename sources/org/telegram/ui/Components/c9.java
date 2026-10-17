@@ -1,40 +1,126 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class c9 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ float a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ h9 d;
+public final class c9 extends View {
+    public a9 a;
+    public final f6 b;
+    public boolean c;
+    public boolean d;
+    public final x20 e;
+    public Drawable f;
+    public Drawable h;
+    public boolean n;
+    public Paint r;
+    public Paint s;
+    public boolean v;
+    public final /* synthetic */ e9 w;
 
-    public c9(h9 h9Var, float f7, float f10, boolean z10) {
-        this.d = h9Var;
-        this.a = f7;
-        this.b = f10;
-        this.c = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c9(e9 e9Var, Context context) {
+        super(context);
+        this.w = e9Var;
+        f6 f6Var = new f6(400L, AndroidUtilities.overshootInterpolator);
+        this.b = f6Var;
+        this.e = new x20();
+        f6Var.a = this;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.ActionBar.k kVar2;
-        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        h9 h9Var = this.d;
-        h9Var.N = floatValue;
-        float lerp = AndroidUtilities.lerp(this.a, this.b, floatValue);
-        kVar = ((org.telegram.ui.ActionBar.m2) h9Var).actionBar;
-        kVar.getTitleTextView().setAlpha(h9Var.N);
-        if (h9Var.F && !this.c) {
-            h9Var.i0(1.0f - h9Var.N, false);
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x00b3, code lost:
+    
+        if (r14.n != (r14.d && r14.a == null)) goto L28;
+     */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onDraw(Canvas canvas) {
+        Paint paint;
+        super.onDraw(canvas);
+        float f7 = this.c ? 1.0f : 0.0f;
+        f6 f6Var = this.b;
+        f6Var.d(f7, false);
+        float measuredWidth = getMeasuredWidth() / 2.0f;
+        float measuredHeight = getMeasuredHeight() / 2.0f;
+        a9 a9Var = this.a;
+        if (a9Var != null) {
+            int i10 = a9Var.c;
+            int i11 = a9Var.d;
+            int i12 = a9Var.e;
+            int i13 = a9Var.f;
+            x20 x20Var = this.e;
+            x20Var.d(i10, i11, i12, i13);
+            x20Var.b(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+            paint = x20Var.c;
+        } else {
+            if (this.s == null) {
+                Paint paint2 = new Paint(1);
+                this.s = paint2;
+                paint2.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.He, false));
+            }
+            paint = this.s;
         }
-        h9Var.r.setTranslationY(lerp);
-        h9Var.x.setTranslationY(lerp);
-        h9Var.fragmentView.invalidate();
-        kVar2 = ((org.telegram.ui.ActionBar.m2) h9Var).actionBar;
-        kVar2.invalidate();
+        if (f6Var.c == 0.0f) {
+            canvas.drawCircle(measuredWidth, measuredHeight, AndroidUtilities.dp(15.0f), paint);
+        } else {
+            paint.setStyle(Paint.Style.STROKE);
+            paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
+            canvas.drawCircle(measuredWidth, measuredHeight, AndroidUtilities.dpf2(13.5f), paint);
+            paint.setStyle(Paint.Style.FILL);
+            canvas.drawCircle(measuredWidth, measuredHeight, com.google.android.gms.internal.cast.a6.x(1.0f, f6Var.c, AndroidUtilities.dp(5.0f), AndroidUtilities.dp(10.0f)), paint);
+        }
+        if (this.v) {
+            if (this.h != null) {
+            }
+            this.h = getContext().getResources().getDrawable(R.drawable.msg_mini_lock2).mutate();
+            boolean z10 = this.d && this.a == null;
+            this.n = z10;
+            this.h.setColorFilter(new PorterDuffColorFilter(z10 ? org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Je, false) : -1, PorterDuff.Mode.SRC_IN));
+            this.h.setBounds((int) (measuredWidth - (r1.getIntrinsicWidth() / 2.0f)), (int) (measuredHeight - (this.h.getIntrinsicHeight() / 2.0f)), (int) ((this.h.getIntrinsicWidth() / 2.0f) + measuredWidth), (int) ((this.h.getIntrinsicHeight() / 2.0f) + measuredHeight));
+            float lerp = AndroidUtilities.lerp(1.05f, 0.92f, f6Var.c);
+            canvas.save();
+            canvas.scale(lerp, lerp, measuredWidth, measuredHeight);
+            this.h.draw(canvas);
+            canvas.restore();
+            return;
+        }
+        if (this.d) {
+            if (this.a == null) {
+                if (this.f == null) {
+                    Drawable drawable = getContext().getDrawable(R.drawable.msg_filled_plus);
+                    this.f = drawable;
+                    drawable.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Je, false), PorterDuff.Mode.MULTIPLY));
+                }
+                this.f.setBounds((int) (measuredWidth - (r1.getIntrinsicWidth() / 2.0f)), (int) (measuredHeight - (this.f.getIntrinsicHeight() / 2.0f)), (int) ((this.f.getIntrinsicWidth() / 2.0f) + measuredWidth), (int) ((this.f.getIntrinsicHeight() / 2.0f) + measuredHeight));
+                this.f.draw(canvas);
+                return;
+            }
+            if (this.r == null) {
+                Paint paint3 = new Paint(1);
+                this.r = paint3;
+                paint3.setColor(-1);
+            }
+            this.r.setAlpha(Math.round(Utilities.clamp(f6Var.c, 1.0f, 0.0f) * 255.0f));
+            canvas.drawCircle(measuredWidth, measuredHeight, AndroidUtilities.dp(1.5f), this.r);
+            canvas.drawCircle(measuredWidth - (AndroidUtilities.dp(5.0f) * f6Var.c), measuredHeight, AndroidUtilities.dp(1.5f), this.r);
+            canvas.drawCircle((AndroidUtilities.dp(5.0f) * f6Var.c) + measuredWidth, measuredHeight, AndroidUtilities.dp(1.5f), this.r);
+        }
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.w.P, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
     }
 }

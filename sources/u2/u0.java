@@ -2,7 +2,7 @@ package u2;
 
 import java.io.IOException;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class u0 implements d1 {
     public final int a;
@@ -14,7 +14,7 @@ public final class u0 implements d1 {
     }
 
     @Override // u2.d1
-    public final void b() {
+    public final void a() {
         int i10 = this.a;
         w0 w0Var = this.b;
         w0Var.L[i10].C();
@@ -49,27 +49,27 @@ public final class u0 implements d1 {
             return -3;
         }
         int i11 = this.a;
-        w0Var.u(i11);
+        w0Var.x(i11);
         int F = w0Var.L[i11].F(bVar, hVar, i10, w0Var.g0);
         if (F == -3) {
-            w0Var.v(i11);
+            w0Var.y(i11);
         }
         return F;
     }
 
     @Override // u2.d1
-    public final int j(long j10) {
+    public final int h(long j10) {
         w0 w0Var = this.b;
         if (w0Var.C()) {
             return 0;
         }
         int i10 = this.a;
-        w0Var.u(i10);
+        w0Var.x(i10);
         c1 c1Var = w0Var.L[i10];
         int x10 = c1Var.x(j10, w0Var.g0);
         c1Var.L(x10);
         if (x10 == 0) {
-            w0Var.v(i10);
+            w0Var.y(i10);
         }
         return x10;
     }

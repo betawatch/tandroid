@@ -1,25 +1,84 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class l81 implements View.OnClickListener {
-    public final /* synthetic */ n81 a;
-    public final /* synthetic */ TLRPC.TL_authorization b;
-    public final /* synthetic */ o81 c;
+public final /* synthetic */ class l81 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ r91 b;
+    public final /* synthetic */ ArrayList c;
 
-    public l81(o81 o81Var, n81 n81Var, TLRPC.TL_authorization tL_authorization) {
-        this.c = o81Var;
-        this.a = n81Var;
-        this.b = tL_authorization;
+    public /* synthetic */ l81(r91 r91Var, ArrayList arrayList, int i10) {
+        this.a = i10;
+        this.b = r91Var;
+        this.c = arrayList;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        this.a.d.c(!r0.h, true);
-        this.b.call_requests_disabled = !r4.d.h;
-        o81.o(this.c);
+    @Override // java.lang.Runnable
+    public final void run() {
+        boolean z10;
+        switch (this.a) {
+            case 0:
+                r91 r91Var = this.b;
+                ArrayList arrayList = r91Var.s0;
+                ArrayList arrayList2 = r91Var.r0;
+                int i10 = 0;
+                r91Var.w0 = false;
+                ArrayList arrayList3 = this.c;
+                if (!arrayList3.isEmpty()) {
+                    int size = arrayList3.size();
+                    for (int i11 = 0; i11 < size; i11++) {
+                        MessageObject messageObject = (MessageObject) arrayList3.get(i11);
+                        int i12 = r91Var.p0.get(messageObject.getId(), -1);
+                        if (i12 >= 0 && ((o91) arrayList2.get(i12)).b() == messageObject.getId()) {
+                            ((o91) arrayList2.get(i12)).b = messageObject;
+                        }
+                    }
+                    arrayList.clear();
+                    int size2 = arrayList2.size();
+                    while (true) {
+                        if (i10 < size2) {
+                            o91 o91Var = (o91) arrayList2.get(i10);
+                            if (o91Var.b == null) {
+                                r91Var.o0 = o91Var.b();
+                            } else {
+                                arrayList.add(o91Var);
+                                i10++;
+                            }
+                        }
+                    }
+                    r91Var.o0();
+                    r91Var.S.setItemAnimator(null);
+                    r91Var.y0.f();
+                    break;
+                }
+                break;
+            default:
+                r91 r91Var2 = this.b;
+                ci.a7 a7Var = r91Var2.z0;
+                a7Var.getClass();
+                ArrayList arrayList4 = this.c;
+                int size3 = arrayList4.size();
+                int i13 = 0;
+                while (true) {
+                    if (i13 < size3) {
+                        Object obj = arrayList4.get(i13);
+                        i13++;
+                        if (!a7Var.j.containsKey((Integer) obj)) {
+                            z10 = true;
+                        }
+                    } else {
+                        z10 = false;
+                    }
+                }
+                if (!a7Var.q(0, arrayList4, z10)) {
+                    r91Var2.j0();
+                    r91Var2.o0();
+                    break;
+                }
+                break;
+        }
     }
 }

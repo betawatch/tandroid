@@ -1,58 +1,51 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.HashtagSearchController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p40 implements Utilities.Callback5, Utilities.Callback5Return {
-    public final /* synthetic */ q40 a;
+public final class p40 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ r40 b;
 
-    public /* synthetic */ p40(q40 q40Var) {
-        this.a = q40Var;
+    public /* synthetic */ p40(r40 r40Var, int i10) {
+        this.a = i10;
+        this.b = r40Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        int i10 = ((m61) obj).d;
-        q40 q40Var = this.a;
-        if (i10 == 0) {
-            HashtagSearchController.getInstance(q40Var.a).clearHistory();
-            q40Var.f.N(true);
-        } else {
-            Utilities.Callback callback = q40Var.h;
-            if (callback != null) {
-                callback.run((String) q40Var.c.get(i10 - 1));
-            }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                r40 r40Var = this.b;
+                r40Var.f = null;
+                if (!r40Var.H) {
+                    hq hqVar = new hq(this, 21);
+                    r40Var.h = hqVar;
+                    AndroidUtilities.runOnUIThread(hqVar, r40Var.n == 0 ? 10000L : 2000L);
+                    break;
+                }
+                break;
+            case 1:
+                r40 r40Var2 = this.b;
+                r40Var2.f = null;
+                if (!r40Var2.H) {
+                    hq hqVar2 = new hq(this, 22);
+                    r40Var2.h = hqVar2;
+                    AndroidUtilities.runOnUIThread(hqVar2, r40Var2.E);
+                    break;
+                }
+                break;
+            default:
+                r40 r40Var3 = this.b;
+                r40Var3.setVisibility(4);
+                r40Var3.getClass();
+                r40Var3.e = null;
+                r40Var3.d = null;
+                r40Var3.f = null;
+                break;
         }
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback5Return
-    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        int i10 = ((m61) obj).d;
-        boolean z10 = false;
-        if (i10 != 0) {
-            q40 q40Var = this.a;
-            String str = (String) q40Var.c.get(i10 - 1);
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(q40Var.getContext(), 0, q40Var.b);
-            String string = LocaleController.getString(R.string.ClearSearchSingleAlertTitle);
-            org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
-            a2Var.R = string;
-            a2Var.T = LocaleController.formatString(R.string.ClearSearchSingleHashtagAlertText, str);
-            alertDialog$Builder.k(LocaleController.getString(R.string.ClearSearchRemove), new u2(15, q40Var, str));
-            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-            a2Var.show();
-            z10 = true;
-        }
-        return Boolean.valueOf(z10);
     }
 }

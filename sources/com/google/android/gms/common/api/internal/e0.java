@@ -1,25 +1,46 @@
 package com.google.android.gms.common.api.internal;
 
-import java.lang.ref.WeakReference;
+import android.os.Bundle;
+import java.util.concurrent.locks.Lock;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class e0 extends o8.c {
-    public final WeakReference b;
+public final class e0 implements com.google.android.gms.common.api.k, com.google.android.gms.common.api.l {
+    public final /* synthetic */ f0 a;
 
-    public e0(g0 g0Var) {
-        this.b = new WeakReference(g0Var);
+    public /* synthetic */ e0(f0 f0Var) {
+        this.a = f0Var;
     }
 
-    @Override // o8.d
-    public final void B(o8.h hVar) {
-        g0 g0Var = (g0) this.b.get();
-        if (g0Var == null) {
-            return;
+    @Override // com.google.android.gms.common.api.k
+    public final void onConnected(Bundle bundle) {
+        f0 f0Var = this.a;
+        n6.l.h(f0Var.H);
+        o8.a aVar = f0Var.v;
+        n6.l.h(aVar);
+        aVar.H(new d0(f0Var));
+    }
+
+    @Override // com.google.android.gms.common.api.l
+    public final void onConnectionFailed(k6.a aVar) {
+        f0 f0Var = this.a;
+        Lock lock = f0Var.b;
+        lock.lock();
+        try {
+            if (f0Var.w && !aVar.b()) {
+                f0Var.b();
+                f0Var.h();
+            } else {
+                f0Var.f(aVar);
+            }
+            lock.unlock();
+        } catch (Throwable th2) {
+            lock.unlock();
+            throw th2;
         }
-        m0 m0Var = g0Var.a;
-        c0 c0Var = new c0(g0Var, g0Var, hVar);
-        h0 h0Var = m0Var.e;
-        h0Var.sendMessage(h0Var.obtainMessage(1, c0Var));
+    }
+
+    @Override // com.google.android.gms.common.api.k
+    public final void onConnectionSuspended(int i10) {
     }
 }

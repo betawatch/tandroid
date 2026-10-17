@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import android.widget.PopupWindow;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f0 implements PopupWindow.OnDismissListener {
     public final /* synthetic */ int a;
@@ -18,44 +18,44 @@ public final /* synthetic */ class f0 implements PopupWindow.OnDismissListener {
     public final void onDismiss() {
         switch (this.a) {
             case 0:
-                k4 k4Var = (k4) this.b;
-                View view = k4Var.f;
+                l4 l4Var = (l4) this.b;
+                View view = l4Var.f;
                 if (view != null) {
-                    k4Var.d = null;
+                    l4Var.d = null;
                     view.invalidate();
-                    k4Var.f = null;
+                    l4Var.f = null;
                     break;
                 }
                 break;
             case 1:
-                fo foVar = (fo) this.b;
-                foVar.Q8 = null;
-                foVar.T8 = null;
-                foVar.S8 = null;
-                foVar.z0.R = true;
-                foVar.j8(false, true, 0.0f);
-                sk skVar = foVar.Y;
-                if (skVar != null && skVar.getEditField() != null) {
-                    foVar.Y.getEditField().setAllowDrawCursor(true);
+                sn snVar = (sn) this.b;
+                snVar.Q8 = null;
+                snVar.T8 = null;
+                snVar.S8 = null;
+                snVar.z0.R = true;
+                snVar.j8(false, true, 0.0f);
+                hk hkVar = snVar.Y;
+                if (hkVar != null && hkVar.getEditField() != null) {
+                    snVar.Y.getEditField().setAllowDrawCursor(true);
                     break;
                 }
                 break;
             case 2:
-                tj tjVar = (tj) this.b;
-                tjVar.b = null;
-                fo foVar2 = tjVar.w;
-                foVar2.Q8 = null;
-                foVar2.T8 = null;
-                foVar2.S8 = null;
-                foVar2.z0.R = true;
-                if (foVar2.R8) {
-                    foVar2.j8(false, true, 0.0f);
+                ij ijVar = (ij) this.b;
+                ijVar.b = null;
+                sn snVar2 = ijVar.w;
+                snVar2.Q8 = null;
+                snVar2.T8 = null;
+                snVar2.S8 = null;
+                snVar2.z0.R = true;
+                if (snVar2.R8) {
+                    snVar2.j8(false, true, 0.0f);
                 } else {
-                    foVar2.R8 = true;
+                    snVar2.R8 = true;
                 }
-                sk skVar2 = foVar2.Y;
-                if (skVar2 != null && skVar2.getEditField() != null) {
-                    foVar2.Y.getEditField().setAllowDrawCursor(true);
+                hk hkVar2 = snVar2.Y;
+                if (hkVar2 != null && hkVar2.getEditField() != null) {
+                    snVar2.Y.getEditField().setAllowDrawCursor(true);
                     break;
                 }
                 break;

@@ -1,27 +1,28 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.ViewGroup;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class fg extends wz {
-    public final /* synthetic */ ChatActivityEnterView P2;
+public final class fg extends n51 {
+    public final /* synthetic */ gg h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fg(ChatActivityEnterView chatActivityEnterView, org.telegram.ui.ActionBar.m2 m2Var, boolean z10, Context context, TLRPC.ChatFull chatFull, ViewGroup viewGroup, boolean z11, org.telegram.ui.ActionBar.c6 c6Var, boolean z12, boolean z13) {
-        super(m2Var, z10, true, true, context, true, chatFull, viewGroup, z11, c6Var, z12, z13);
-        this.P2 = chatActivityEnterView;
+    public fg(gg ggVar, Context context, org.telegram.ui.ActionBar.n2 n2Var, b61 b61Var, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, n2Var, b61Var, d6Var);
+        this.h = ggVar;
     }
 
-    @Override // org.telegram.ui.Components.wz, android.view.View
-    public final void setTranslationY(float f7) {
-        super.setTranslationY(f7);
-        ChatActivityEnterView chatActivityEnterView = this.P2;
-        if (chatActivityEnterView.V0 == null || chatActivityEnterView.o3 != 0) {
-            return;
+    @Override // org.telegram.ui.Components.n51, org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
+    public final void dismiss() {
+        super.dismiss();
+        ChatActivityEnterView chatActivityEnterView = this.h.a;
+        if (chatActivityEnterView.a3 == this) {
+            chatActivityEnterView.a3 = null;
         }
-        chatActivityEnterView.Z2.A(f7);
+        og ogVar = chatActivityEnterView.Z2;
+        if (ogVar != null) {
+            ogVar.C(false);
+        }
     }
 }

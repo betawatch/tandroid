@@ -1,9 +1,107 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public interface gd0 {
-    void b(TLRPC.MessageMedia messageMedia, int i10, boolean z10, int i11, long j10);
+public final /* synthetic */ class gd0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ od0 b;
+
+    public /* synthetic */ gd0(od0 od0Var, int i10) {
+        this.a = i10;
+        this.b = od0Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.p();
+                break;
+            case 1:
+                od0 od0Var = this.b;
+                od0Var.postDelayed(new gd0(od0Var, 2), 150L);
+                gd0 gd0Var = od0Var.S;
+                od0Var.removeCallbacks(gd0Var);
+                od0Var.postDelayed(gd0Var, 3000L);
+                od0Var.R = true;
+                break;
+            case 2:
+                kd0 kd0Var = this.b.a;
+                int i10 = 0;
+                kd0Var.e = false;
+                kd0Var.f[0].requestFocus();
+                while (true) {
+                    vr[] vrVarArr = kd0Var.f;
+                    if (i10 >= vrVarArr.length) {
+                        break;
+                    } else {
+                        vrVarArr[i10].i(0.0f);
+                        i10++;
+                    }
+                }
+            case 3:
+                od0 od0Var2 = this.b;
+                od0Var2.postDelayed(new gd0(od0Var2, 5), 150L);
+                break;
+            case 4:
+                od0 od0Var3 = this.b;
+                nd0 nd0Var = od0Var3.Q;
+                boolean z10 = false;
+                od0Var3.R = false;
+                int i11 = 0;
+                while (true) {
+                    vr[] vrVarArr2 = od0Var3.a.f;
+                    if (i11 >= vrVarArr2.length) {
+                        if (nd0Var.getCurrentView() != od0Var3.e) {
+                            nd0Var.showNext();
+                            FrameLayout frameLayout = od0Var3.h;
+                            if (od0Var3.f.getVisibility() != 0 && od0Var3.W.F != 3 && !od0Var3.P) {
+                                z10 = true;
+                            }
+                            AndroidUtilities.updateViewVisibilityAnimated(frameLayout, z10, 1.0f, true);
+                            break;
+                        }
+                    } else {
+                        vrVarArr2[i11].i(0.0f);
+                        i11++;
+                    }
+                }
+                break;
+            case 5:
+                kd0 kd0Var2 = this.b.a;
+                int i12 = 0;
+                kd0Var2.e = false;
+                kd0Var2.f[0].requestFocus();
+                while (true) {
+                    vr[] vrVarArr3 = kd0Var2.f;
+                    if (i12 >= vrVarArr3.length) {
+                        break;
+                    } else {
+                        vrVarArr3[i12].i(0.0f);
+                        i12++;
+                    }
+                }
+            case 6:
+                this.b.q(true);
+                break;
+            case 7:
+                this.b.r();
+                break;
+            default:
+                od0 od0Var4 = this.b;
+                org.telegram.ui.Components.xj0 xj0Var = od0Var4.w;
+                xj0Var.getAnimatedDrawable().N(0, false, false);
+                xj0Var.d();
+                kd0 kd0Var3 = od0Var4.a;
+                if (kd0Var3 != null && kd0Var3.f != null) {
+                    kd0Var3.setText("");
+                    kd0Var3.f[0].requestFocus();
+                    break;
+                }
+                break;
+        }
+    }
 }

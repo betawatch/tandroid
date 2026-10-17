@@ -1,33 +1,61 @@
 package li;
 
-import android.graphics.Typeface;
-import android.text.TextPaint;
-import android.text.style.MetricAffectingSpan;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+import org.telegram.messenger.MessageObject;
+import org.telegram.ui.Cells.u1;
+import s4.b1;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class i extends MetricAffectingSpan {
-    public static final Typeface[] c;
-    public final int a;
-    public final int b;
+public final class i extends AnimatorListenerAdapter {
+    public final /* synthetic */ b1 a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ View c;
+    public final /* synthetic */ m d;
 
-    static {
-        Typeface typeface = Typeface.MONOSPACE;
-        c = new Typeface[]{typeface, Typeface.create(typeface, 1), Typeface.create(typeface, 2), Typeface.create(typeface, 3)};
-    }
-
-    public i(int i10) {
+    public i(m mVar, b1 b1Var, int i10, View view) {
+        this.d = mVar;
+        this.a = b1Var;
         this.b = i10;
-        this.a = ((i10 & 256) != 0 ? 1 : 0) | ((i10 & 512) != 0 ? 2 : 0);
+        this.c = view;
     }
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        updateMeasureState(textPaint);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        if (this.b != 0) {
+            this.c.setTranslationY(0.0f);
+        }
     }
 
-    @Override // android.text.style.MetricAffectingSpan
-    public final void updateMeasureState(TextPaint textPaint) {
-        textPaint.setTypeface(c[this.a]);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        animator.removeAllListeners();
+        b1 b1Var = this.a;
+        View view = b1Var.a;
+        m mVar = this.d;
+        mVar.X(view);
+        View view2 = b1Var.a;
+        if (view2 instanceof u1) {
+            u1 u1Var = (u1) view2;
+            if (u1Var.fd) {
+                u1Var.fd = false;
+                u1Var.setVisibility(0);
+            }
+            MessageObject.GroupedMessages currentMessagesGroup = u1Var.getCurrentMessagesGroup();
+            if (currentMessagesGroup != null) {
+                currentMessagesGroup.transitionParams.reset();
+            }
+        }
+        if (mVar.z.remove(b1Var)) {
+            mVar.v(b1Var);
+            mVar.G();
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
+        this.d.getClass();
     }
 }

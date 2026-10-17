@@ -8,22 +8,22 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.a2[] c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.b2[] c;
     public final /* synthetic */ View d;
     public final /* synthetic */ EditTextBoldCursor e;
     public final /* synthetic */ Object f;
 
-    public /* synthetic */ p(EditTextBoldCursor editTextBoldCursor, int i10, Object obj, org.telegram.ui.ActionBar.a2[] a2VarArr, View view, int i11) {
+    public /* synthetic */ p(EditTextBoldCursor editTextBoldCursor, int i10, Object obj, org.telegram.ui.ActionBar.b2[] b2VarArr, View view, int i11) {
         this.a = i11;
         this.e = editTextBoldCursor;
         this.b = i10;
         this.f = obj;
-        this.c = a2VarArr;
+        this.c = b2VarArr;
         this.d = view;
     }
 
@@ -47,12 +47,12 @@ public final /* synthetic */ class p implements TextView.OnEditorActionListener 
                             tL_inputBusinessChatLink.title = obj;
                             d.b(c10, tL_inputBusinessChatLink, null);
                         }
-                        org.telegram.ui.ActionBar.a2[] a2VarArr = this.c;
-                        org.telegram.ui.ActionBar.a2 a2Var = a2VarArr[0];
-                        if (a2Var != null) {
-                            a2Var.dismiss();
+                        org.telegram.ui.ActionBar.b2[] b2VarArr = this.c;
+                        org.telegram.ui.ActionBar.b2 b2Var = b2VarArr[0];
+                        if (b2Var != null) {
+                            b2Var.dismiss();
                         }
-                        if (a2VarArr[0] == v.d) {
+                        if (b2VarArr[0] == v.d) {
                             v.d = null;
                         }
                         View view = this.d;
@@ -72,9 +72,9 @@ public final /* synthetic */ class p implements TextView.OnEditorActionListener 
                         AndroidUtilities.shakeView(editTextBoldCursor);
                     } else {
                         stringCallback.run(obj2);
-                        org.telegram.ui.ActionBar.a2 a2Var2 = this.c[0];
-                        if (a2Var2 != null) {
-                            a2Var2.dismiss();
+                        org.telegram.ui.ActionBar.b2 b2Var2 = this.c[0];
+                        if (b2Var2 != null) {
+                            b2Var2.dismiss();
                         }
                         View view2 = this.d;
                         if (view2 != null) {

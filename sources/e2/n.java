@@ -4,7 +4,7 @@ import android.os.Handler;
 import android.os.Message;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class n implements Handler.Callback {
     public final /* synthetic */ int a;
@@ -26,8 +26,8 @@ public final /* synthetic */ class n implements Handler.Callback {
                 while (it.hasNext()) {
                     q qVar = (q) it.next();
                     if (!qVar.d && qVar.c) {
-                        b2.v d = qVar.b.d();
-                        qVar.b = new b2.u();
+                        b2.u d = qVar.b.d();
+                        qVar.b = new b2.t();
                         qVar.c = false;
                         pVar.c(qVar.a, d);
                     }

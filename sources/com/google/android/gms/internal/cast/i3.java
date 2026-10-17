@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class i3 extends f5 {
     private static final i3 zzb;
@@ -16,9 +16,9 @@ public final class i3 extends f5 {
     }
 
     public i3() {
-        g6 g6Var = g6.d;
-        this.zze = g6Var;
-        this.zzf = g6Var;
+        h6 h6Var = h6.d;
+        this.zze = h6Var;
+        this.zzf = h6Var;
     }
 
     @Override // com.google.android.gms.internal.cast.f5
@@ -28,7 +28,7 @@ public final class i3 extends f5 {
             return (byte) 1;
         }
         if (i11 == 2) {
-            return new h6(zzb, "\u0001\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0002\u0000\u0001\u001b\u0002\u001b\u0003ဉ\u0000", new Object[]{"zzd", "zze", q3.class, "zzf", i2.class, "zzg"});
+            return new i6(zzb, "\u0001\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0002\u0000\u0001\u001b\u0002\u001b\u0003ဉ\u0000", new Object[]{"zzd", "zze", q3.class, "zzf", i2.class, "zzg"});
         }
         if (i11 == 3) {
             return new i3();

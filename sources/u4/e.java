@@ -7,8 +7,8 @@ import android.text.TextUtils;
 import androidx.core.graphics.drawable.IconCompat;
 import androidx.sharetarget.ShortcutInfoCompatSaverImpl;
 import c0.m;
-import c5.w;
-import e0.n0;
+import c5.v;
+import e0.m0;
 import j9.y;
 import java.io.File;
 import java.util.ArrayList;
@@ -16,9 +16,9 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
-import s9.j;
+import s9.i;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class e implements Runnable {
     public final /* synthetic */ int a;
@@ -54,7 +54,7 @@ public final class e implements Runnable {
         String str;
         String str2;
         g0.c cVar;
-        n0[] n0VarArr;
+        m0[] m0VarArr;
         PersistableBundle persistableBundle;
         switch (this.a) {
             case 0:
@@ -112,9 +112,9 @@ public final class e implements Runnable {
                                     cVar.k = cVar2.k;
                                     cVar.l = cVar2.l;
                                     cVar.m = cVar2.m;
-                                    n0VarArr = cVar2.i;
-                                    if (n0VarArr != null) {
-                                        cVar.i = (n0[]) Arrays.copyOf(n0VarArr, n0VarArr.length);
+                                    m0VarArr = cVar2.i;
+                                    if (m0VarArr != null) {
+                                        cVar.i = (m0[]) Arrays.copyOf(m0VarArr, m0VarArr.length);
                                     }
                                     if (cVar2.j != null) {
                                         cVar.j = new HashSet(cVar2.j);
@@ -134,14 +134,14 @@ public final class e implements Runnable {
                                         String str4 = cVar2.b;
                                         shortcutInfoCompatSaverImpl2.b.put(str4, gVar);
                                         if (f7 != null) {
-                                            w wVar = new w(shortcutInfoCompatSaverImpl2, f7, str2, false, 10);
+                                            v vVar = new v(shortcutInfoCompatSaverImpl2, f7, str2, false, 10);
                                             m mVar = new m();
-                                            shortcutInfoCompatSaverImpl2.e.submit(new j(5, mVar, wVar));
+                                            shortcutInfoCompatSaverImpl2.e.submit(new i(5, mVar, vVar));
                                             y yVar2 = (y) shortcutInfoCompatSaverImpl2.c.put(str4, mVar);
                                             if (yVar2 != null) {
                                                 yVar2.cancel(false);
                                             }
-                                            mVar.a(new w(this, str4, mVar, false, 9), shortcutInfoCompatSaverImpl2.d);
+                                            mVar.a(new v(this, str4, mVar, false, 9), shortcutInfoCompatSaverImpl2.d);
                                         }
                                     }
                                 }
@@ -161,8 +161,8 @@ public final class e implements Runnable {
                             cVar.k = cVar2.k;
                             cVar.l = cVar2.l;
                             cVar.m = cVar2.m;
-                            n0VarArr = cVar2.i;
-                            if (n0VarArr != null) {
+                            m0VarArr = cVar2.i;
+                            if (m0VarArr != null) {
                             }
                             if (cVar2.j != null) {
                             }
@@ -188,8 +188,8 @@ public final class e implements Runnable {
                         cVar.k = cVar2.k;
                         cVar.l = cVar2.l;
                         cVar.m = cVar2.m;
-                        n0VarArr = cVar2.i;
-                        if (n0VarArr != null) {
+                        m0VarArr = cVar2.i;
+                        if (m0VarArr != null) {
                         }
                         if (cVar2.j != null) {
                         }

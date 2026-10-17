@@ -1,27 +1,15 @@
 package org.telegram.ui.Components;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+import android.view.View;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class jn0 {
-    public static final jn0 a;
-    public static final jn0 b;
-    public static final /* synthetic */ jn0[] c;
+public interface jn0 {
+    boolean b1(int i10, View view);
 
-    static {
-        jn0 jn0Var = new jn0("LINE", 0);
-        a = jn0Var;
-        jn0 jn0Var2 = new jn0("TAB", 1);
-        b = jn0Var2;
-        c = new jn0[]{jn0Var, jn0Var2};
-    }
+    void f(int i10, boolean z10);
 
-    public static jn0 valueOf(String str) {
-        return (jn0) Enum.valueOf(jn0.class, str);
-    }
+    void k0(float f7);
 
-    public static jn0[] values() {
-        return (jn0[]) c.clone();
-    }
+    void x();
 }

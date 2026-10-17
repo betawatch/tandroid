@@ -1,30 +1,30 @@
 package j2;
 
-import b2.p1;
+import b2.o1;
 import j$.util.Objects;
 import u2.g0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class a {
     public final long a;
-    public final p1 b;
+    public final o1 b;
     public final int c;
     public final g0 d;
     public final long e;
-    public final p1 f;
+    public final o1 f;
     public final int g;
     public final g0 h;
     public final long i;
     public final long j;
 
-    public a(long j10, p1 p1Var, int i10, g0 g0Var, long j11, p1 p1Var2, int i11, g0 g0Var2, long j12, long j13) {
+    public a(long j10, o1 o1Var, int i10, g0 g0Var, long j11, o1 o1Var2, int i11, g0 g0Var2, long j12, long j13) {
         this.a = j10;
-        this.b = p1Var;
+        this.b = o1Var;
         this.c = i10;
         this.d = g0Var;
         this.e = j11;
-        this.f = p1Var2;
+        this.f = o1Var2;
         this.g = i11;
         this.h = g0Var2;
         this.i = j12;

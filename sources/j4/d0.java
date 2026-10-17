@@ -3,7 +3,7 @@ package j4;
 import android.util.SparseArray;
 import android.util.SparseBooleanArray;
 import android.util.SparseIntArray;
-import b2.x0;
+import b2.w0;
 import e2.k0;
 import e9.l0;
 import e9.n0;
@@ -14,7 +14,7 @@ import java.util.List;
 import v7.m8;
 import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class d0 implements c3.o {
     public final int a;
@@ -23,7 +23,7 @@ public final class d0 implements c3.o {
     public final e2.x d;
     public final SparseIntArray e;
     public final f f;
-    public final z3.l g;
+    public final z3.k g;
     public final SparseArray h;
     public final SparseBooleanArray i;
     public final SparseBooleanArray j;
@@ -38,11 +38,11 @@ public final class d0 implements c3.o {
     public int s;
     public int t;
 
-    public d0(int i10, int i11, z3.l lVar, k0 k0Var, f fVar) {
+    public d0(int i10, int i11, z3.k kVar, k0 k0Var, f fVar) {
         this.f = fVar;
         this.a = i10;
         this.b = i11;
-        this.g = lVar;
+        this.g = kVar;
         if (i10 == 1 || i10 == 2) {
             this.c = Collections.singletonList(k0Var);
         } else {
@@ -273,12 +273,12 @@ public final class d0 implements c3.o {
                     i11 = i14;
                     h3.a aVar = new h3.a(new t7.u(3), new a5.a(this.t, xVar.b), j14, 1 + j14, 0L, length, 188L, 940);
                     this.l = aVar;
-                    this.m.K(aVar.a);
+                    this.m.g0(aVar.a);
                 } else {
                     i10 = 1;
                     z10 = false;
                     i11 = i14;
-                    this.m.K(new c3.t(j14));
+                    this.m.g0(new c3.t(j14));
                 }
             }
             if (this.q) {
@@ -329,7 +329,7 @@ public final class d0 implements c3.o {
                     i12 = i11;
                     i13 = 2;
                     if (i12 == 2 && i28 > 376) {
-                        throw x0.a(null, "Cannot find sync byte. Most likely not a Transport Stream.");
+                        throw w0.a(null, "Cannot find sync byte. Most likely not a Transport Stream.");
                     }
                 } else {
                     i12 = i11;

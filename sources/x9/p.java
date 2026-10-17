@@ -1,108 +1,221 @@
 package x9;
 
+import android.app.ActivityManager;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.hardware.SensorManager;
+import android.os.Environment;
+import android.os.StatFs;
 import android.util.Log;
-import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import com.google.android.gms.tasks.Tasks;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
-import java.util.concurrent.atomic.AtomicReference;
-import ji.w4;
+import com.google.android.gms.internal.cast.a6;
+import com.google.android.gms.internal.cast.z5;
+import j$.util.DesugarCollections;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import z9.o0;
+import z9.p0;
+import z9.u0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class p {
+    public static final HashMap f;
+    public static final String g;
     public final Context a;
-    public final s b;
-    public final n3.b c;
-    public l d;
-    public l e;
-    public n f;
-    public final v g;
-    public final ca.c h;
-    public final t9.a i;
-    public final t9.a j;
-    public final ExecutorService k;
-    public final com.google.firebase.messaging.s l;
-    public final j m;
-    public final u9.a n;
-    public final w4 o;
+    public final u b;
+    public final a c;
+    public final qf.b d;
+    public final ea.b e;
 
-    public p(l9.h hVar, v vVar, u9.a aVar, s sVar, t9.a aVar2, t9.a aVar3, ca.c cVar, ExecutorService executorService, j jVar, w4 w4Var) {
-        this.b = sVar;
-        hVar.a();
-        this.a = hVar.a;
-        this.g = vVar;
-        this.n = aVar;
-        this.i = aVar2;
-        this.j = aVar3;
-        this.k = executorService;
-        this.h = cVar;
-        this.l = new com.google.firebase.messaging.s(executorService);
-        this.m = jVar;
-        this.o = w4Var;
-        System.currentTimeMillis();
-        this.c = new n3.b(27);
+    static {
+        HashMap hashMap = new HashMap();
+        f = hashMap;
+        a6.n(5, hashMap, "armeabi", 6, "armeabi-v7a");
+        a6.n(9, hashMap, "arm64-v8a", 0, "x86");
+        hashMap.put("x86_64", 1);
+        Locale locale = Locale.US;
+        g = "Crashlytics Android SDK/18.6.0";
     }
 
-    public static Task a(p pVar, ea.b bVar) {
-        Task forException;
-        o oVar;
-        com.google.firebase.messaging.s sVar = pVar.l;
-        if (!Boolean.TRUE.equals(((ThreadLocal) sVar.e).get())) {
-            throw new IllegalStateException("Not running on background worker thread as intended.");
+    public p(Context context, u uVar, a aVar, qf.b bVar, ea.b bVar2) {
+        this.a = context;
+        this.b = uVar;
+        this.c = aVar;
+        this.d = bVar;
+        this.e = bVar2;
+    }
+
+    public static p0 c(com.google.firebase.messaging.r rVar, int i10) {
+        String str = (String) rVar.c;
+        String str2 = (String) rVar.b;
+        StackTraceElement[] stackTraceElementArr = (StackTraceElement[]) rVar.d;
+        int i11 = 0;
+        if (stackTraceElementArr == null) {
+            stackTraceElementArr = new StackTraceElement[0];
         }
-        pVar.d.a();
-        if (Log.isLoggable("FirebaseCrashlytics", 2)) {
-            Log.v("FirebaseCrashlytics", "Initialization marker file was created.", null);
-        }
-        try {
-            try {
-                pVar.i.a(new t0.a(23));
-                pVar.f.g();
-                if (bVar.d().b.a) {
-                    if (!pVar.f.d(bVar)) {
-                        Log.w("FirebaseCrashlytics", "Previous sessions could not be finalized.", null);
-                    }
-                    forException = pVar.f.h(((TaskCompletionSource) ((AtomicReference) bVar.i).get()).getTask());
-                    oVar = new o(pVar, 0);
-                } else {
-                    if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                        Log.d("FirebaseCrashlytics", "Collection of crash reports disabled in Crashlytics settings.", null);
-                    }
-                    forException = Tasks.forException(new RuntimeException("Collection of crash reports disabled in Crashlytics settings."));
-                    oVar = new o(pVar, 0);
-                }
-            } catch (Exception e) {
-                Log.e("FirebaseCrashlytics", "Crashlytics encountered a problem during asynchronous initialization.", e);
-                forException = Tasks.forException(e);
-                oVar = new o(pVar, 0);
+        com.google.firebase.messaging.r rVar2 = (com.google.firebase.messaging.r) rVar.e;
+        if (i10 >= 8) {
+            com.google.firebase.messaging.r rVar3 = rVar2;
+            while (rVar3 != null) {
+                rVar3 = (com.google.firebase.messaging.r) rVar3.e;
+                i11++;
             }
-            sVar.v(oVar);
-            return forException;
-        } catch (Throwable th2) {
-            sVar.v(new o(pVar, 0));
-            throw th2;
         }
+        int i12 = i11;
+        List d = d(stackTraceElementArr, 4);
+        if (d == null) {
+            throw new NullPointerException("Null frames");
+        }
+        p0 p0Var = null;
+        if (rVar2 != null && i12 == 0) {
+            p0Var = c(rVar2, i10 + 1);
+        }
+        return new p0(str, str2, d, p0Var, i12);
     }
 
-    public final void b(ea.b bVar) {
-        Future<?> submit = this.k.submit(new s9.j(14, this, bVar));
-        if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-            Log.d("FirebaseCrashlytics", "Crashlytics detected incomplete initialization on previous app launch. Will initialize synchronously.", null);
+    public static List d(StackTraceElement[] stackTraceElementArr, int i10) {
+        ArrayList arrayList = new ArrayList();
+        for (StackTraceElement stackTraceElement : stackTraceElementArr) {
+            z5 z5Var = new z5();
+            z5Var.e = Integer.valueOf(i10);
+            long j10 = 0;
+            long max = stackTraceElement.isNativeMethod() ? Math.max(stackTraceElement.getLineNumber(), 0L) : 0L;
+            String str = stackTraceElement.getClassName() + "." + stackTraceElement.getMethodName();
+            String fileName = stackTraceElement.getFileName();
+            if (!stackTraceElement.isNativeMethod() && stackTraceElement.getLineNumber() > 0) {
+                j10 = stackTraceElement.getLineNumber();
+            }
+            z5Var.b = Long.valueOf(max);
+            if (str == null) {
+                throw new NullPointerException("Null symbol");
+            }
+            z5Var.a = str;
+            z5Var.c = fileName;
+            z5Var.d = Long.valueOf(j10);
+            arrayList.add(z5Var.p());
         }
+        return DesugarCollections.unmodifiableList(arrayList);
+    }
+
+    public final List a() {
+        a aVar = this.c;
+        String str = aVar.e;
+        if (str != null) {
+            return Collections.singletonList(new o0(str, 0L, 0L, aVar.b));
+        }
+        throw new NullPointerException("Null name");
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:15:0x0051  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x005b A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x00a7  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x0078  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final u0 b(int i10) {
+        boolean z10;
+        Float f7;
+        long j10;
+        Intent registerReceiver;
+        int intExtra;
+        int intExtra2;
+        Context context = this.a;
+        int i11 = 2;
         try {
-            submit.get(3L, TimeUnit.SECONDS);
-        } catch (InterruptedException e) {
-            Log.e("FirebaseCrashlytics", "Crashlytics was interrupted during initialization.", e);
-        } catch (ExecutionException e7) {
-            Log.e("FirebaseCrashlytics", "Crashlytics encountered a problem during initialization.", e7);
-        } catch (TimeoutException e10) {
-            Log.e("FirebaseCrashlytics", "Crashlytics timed out during initialization.", e10);
+            registerReceiver = context.registerReceiver(null, new IntentFilter("android.intent.action.BATTERY_CHANGED"));
+        } catch (IllegalStateException e) {
+            e = e;
+            z10 = false;
         }
+        if (registerReceiver != null) {
+            int intExtra3 = registerReceiver.getIntExtra("status", -1);
+            z10 = intExtra3 != -1 && (intExtra3 == 2 || intExtra3 == 5);
+            try {
+                intExtra = registerReceiver.getIntExtra("level", -1);
+                intExtra2 = registerReceiver.getIntExtra("scale", -1);
+            } catch (IllegalStateException e7) {
+                e = e7;
+                Log.e("FirebaseCrashlytics", "An error occurred getting battery state.", e);
+                f7 = null;
+                if (f7 != null) {
+                }
+                if (z10) {
+                }
+                i11 = 1;
+                if (h.g()) {
+                }
+                long b10 = h.b(context);
+                ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
+                ((ActivityManager) context.getSystemService("activity")).getMemoryInfo(memoryInfo);
+                j10 = b10 - memoryInfo.availMem;
+                if (j10 <= 0) {
+                }
+                long blockSize = new StatFs(Environment.getDataDirectory().getPath()).getBlockSize();
+                com.google.firebase.messaging.l lVar = new com.google.firebase.messaging.l();
+                lVar.a = r4;
+                lVar.b = Integer.valueOf(i11);
+                lVar.c = Boolean.valueOf(r2);
+                lVar.d = Integer.valueOf(i10);
+                lVar.e = Long.valueOf(j10);
+                lVar.f = Long.valueOf((r3.getBlockCount() * blockSize) - (blockSize * r3.getAvailableBlocks()));
+                return lVar.l();
+            }
+            if (intExtra != -1 && intExtra2 != -1) {
+                f7 = Float.valueOf(intExtra / intExtra2);
+                Double valueOf = f7 != null ? Double.valueOf(f7.doubleValue()) : null;
+                if (z10 || f7 == null) {
+                    i11 = 1;
+                } else if (f7.floatValue() >= 0.99d) {
+                    i11 = 3;
+                }
+                boolean z11 = h.g() && ((SensorManager) context.getSystemService("sensor")).getDefaultSensor(8) != null;
+                long b102 = h.b(context);
+                ActivityManager.MemoryInfo memoryInfo2 = new ActivityManager.MemoryInfo();
+                ((ActivityManager) context.getSystemService("activity")).getMemoryInfo(memoryInfo2);
+                j10 = b102 - memoryInfo2.availMem;
+                if (j10 <= 0) {
+                    j10 = 0;
+                }
+                long blockSize2 = new StatFs(Environment.getDataDirectory().getPath()).getBlockSize();
+                com.google.firebase.messaging.l lVar2 = new com.google.firebase.messaging.l();
+                lVar2.a = valueOf;
+                lVar2.b = Integer.valueOf(i11);
+                lVar2.c = Boolean.valueOf(z11);
+                lVar2.d = Integer.valueOf(i10);
+                lVar2.e = Long.valueOf(j10);
+                lVar2.f = Long.valueOf((r3.getBlockCount() * blockSize2) - (blockSize2 * r3.getAvailableBlocks()));
+                return lVar2.l();
+            }
+        } else {
+            z10 = false;
+        }
+        f7 = null;
+        if (f7 != null) {
+        }
+        if (z10) {
+        }
+        i11 = 1;
+        if (h.g()) {
+        }
+        long b1022 = h.b(context);
+        ActivityManager.MemoryInfo memoryInfo22 = new ActivityManager.MemoryInfo();
+        ((ActivityManager) context.getSystemService("activity")).getMemoryInfo(memoryInfo22);
+        j10 = b1022 - memoryInfo22.availMem;
+        if (j10 <= 0) {
+        }
+        long blockSize22 = new StatFs(Environment.getDataDirectory().getPath()).getBlockSize();
+        com.google.firebase.messaging.l lVar22 = new com.google.firebase.messaging.l();
+        lVar22.a = valueOf;
+        lVar22.b = Integer.valueOf(i11);
+        lVar22.c = Boolean.valueOf(z11);
+        lVar22.d = Integer.valueOf(i10);
+        lVar22.e = Long.valueOf(j10);
+        lVar22.f = Long.valueOf((r3.getBlockCount() * blockSize22) - (blockSize22 * r3.getAvailableBlocks()));
+        return lVar22.l();
     }
 }

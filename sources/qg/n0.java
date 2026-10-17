@@ -1,32 +1,82 @@
 package qg;
 
-import ji.w4;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n0 implements Runnable {
+public final /* synthetic */ class n0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ q0 b;
+    public final /* synthetic */ s0 b;
 
-    public /* synthetic */ n0(q0 q0Var, int i10) {
+    public /* synthetic */ n0(s0 s0Var, int i10) {
         this.a = i10;
-        this.b = q0Var;
+        this.b = s0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(final ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                q0 q0Var = this.b;
-                q0Var.c = null;
-                w4 w4Var = q0Var.a;
-                if (w4Var != null) {
-                    w4Var.Y0();
-                    break;
-                }
+                final s0 s0Var = this.b;
+                final int i10 = 1;
+                s0Var.f.f(new Runnable() { // from class: qg.m0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                s0 s0Var2 = s0Var;
+                                s0Var2.getClass();
+                                s0Var2.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                                le.b bVar = s0Var2.a;
+                                if (bVar != null) {
+                                    bVar.a0();
+                                    break;
+                                }
+                                break;
+                            default:
+                                s0 s0Var3 = s0Var;
+                                s0Var3.getClass();
+                                s0Var3.I = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                                le.b bVar2 = s0Var3.a;
+                                if (bVar2 != null) {
+                                    bVar2.a0();
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
                 break;
             default:
-                this.b.b();
+                final s0 s0Var2 = this.b;
+                final int i11 = 0;
+                s0Var2.f.f(new Runnable() { // from class: qg.m0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                s0 s0Var22 = s0Var2;
+                                s0Var22.getClass();
+                                s0Var22.J = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                                le.b bVar = s0Var22.a;
+                                if (bVar != null) {
+                                    bVar.a0();
+                                    break;
+                                }
+                                break;
+                            default:
+                                s0 s0Var3 = s0Var2;
+                                s0Var3.getClass();
+                                s0Var3.I = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                                le.b bVar2 = s0Var3.a;
+                                if (bVar2 != null) {
+                                    bVar2.a0();
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
                 break;
         }
     }

@@ -5,15 +5,15 @@ import java.io.Closeable;
 import java.io.EOFException;
 import java.io.IOException;
 import java.util.ArrayDeque;
-import ji.w4;
+import ki.t1;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class f1 implements Closeable {
     public final ByteArrayInputStream a;
     public e1 b;
     public final byte[] c = new byte[8];
-    public final w4 d = new w4(8);
+    public final t1 d = new t1(8);
 
     public f1(ByteArrayInputStream byteArrayInputStream) {
         this.a = byteArrayInputStream;
@@ -40,7 +40,7 @@ public final class f1 implements Closeable {
             z10 = true;
         } else {
             if (b10 != 32) {
-                throw new IllegalStateException(i2.d.j((this.b.a >> 5) & 7, "expected major type 0 or 1 but found "));
+                throw new IllegalStateException(i0.a.j((this.b.a >> 5) & 7, "expected major type 0 or 1 but found "));
             }
             z10 = false;
         }
@@ -67,7 +67,7 @@ public final class f1 implements Closeable {
     @Override // java.io.Closeable, java.lang.AutoCloseable
     public final void close() {
         this.a.close();
-        this.d.o1();
+        this.d.a0();
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:52:0x0098, code lost:
@@ -80,9 +80,9 @@ public final class f1 implements Closeable {
     public final e1 d() {
         if (this.b == null) {
             int read = this.a.read();
-            w4 w4Var = this.d;
+            t1 t1Var = this.d;
             if (read == -1) {
-                w4Var.o1();
+                t1Var.a0();
                 return null;
             }
             e1 e1Var = new e1(read);
@@ -93,42 +93,42 @@ public final class f1 implements Closeable {
                 if (b10 != -32) {
                     if (b10 != 0 && b10 != 32) {
                         if (b10 == 64) {
-                            w4Var.p1(-1L);
+                            t1Var.b0(-1L);
                         } else {
                             if (b10 != 96) {
-                                throw new IllegalStateException(i2.d.j((this.b.a >> 5) & 7, "invalid major type: "));
+                                throw new IllegalStateException(i0.a.j((this.b.a >> 5) & 7, "invalid major type: "));
                             }
-                            w4Var.p1(-2L);
+                            t1Var.b0(-2L);
                         }
-                        long r12 = w4Var.r1();
-                        ArrayDeque arrayDeque = (ArrayDeque) w4Var.b;
-                        if (r12 == 1) {
+                        long c02 = t1Var.c0();
+                        ArrayDeque arrayDeque = (ArrayDeque) t1Var.b;
+                        if (c02 == 1) {
                             arrayDeque.pop();
-                        } else if (r12 > 1) {
+                        } else if (c02 > 1) {
                             arrayDeque.pop();
-                            arrayDeque.push(Long.valueOf(r12 - 1));
-                        } else if (r12 == -4) {
+                            arrayDeque.push(Long.valueOf(c02 - 1));
+                        } else if (c02 == -4) {
                             arrayDeque.pop();
                             arrayDeque.push(-5L);
-                        } else if (r12 == -5) {
+                        } else if (c02 == -5) {
                             arrayDeque.pop();
                             arrayDeque.push(-4L);
                         }
                     }
                 } else if (e1Var.b == 31) {
-                    long r13 = w4Var.r1();
-                    if (r13 >= 0) {
-                        throw new IOException(a1.g.o(r13, "expected indefinite length scope but found "));
+                    long c03 = t1Var.c0();
+                    if (c03 >= 0) {
+                        throw new IOException(a1.g.o(c03, "expected indefinite length scope but found "));
                     }
-                    if (r13 == -5) {
+                    if (c03 == -5) {
                         throw new IOException("expected a value for dangling key in indefinite-length map");
                     }
-                    ((ArrayDeque) w4Var.b).pop();
+                    ((ArrayDeque) t1Var.b).pop();
                 }
             }
-            long r14 = w4Var.r1();
-            if (r14 == -1) {
-                j10 = r14;
+            long c04 = t1Var.c0();
+            if (c04 == -1) {
+                j10 = c04;
             }
             throw new IOException(a1.g.o(j10, "expected non-string scope but found "));
         }
@@ -185,7 +185,7 @@ public final class f1 implements Closeable {
     public final void g() {
         d();
         if (this.b.b == 31) {
-            throw new IllegalStateException(i2.d.j(this.b.b, "expected definite length but found "));
+            throw new IllegalStateException(i0.a.j(this.b.b, "expected definite length but found "));
         }
     }
 

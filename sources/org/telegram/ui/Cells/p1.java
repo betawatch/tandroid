@@ -4,7 +4,7 @@ import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import java.util.Comparator;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p1 implements Comparator {
     public final /* synthetic */ int a;
@@ -22,13 +22,13 @@ public final /* synthetic */ class p1 implements Comparator {
         switch (this.a) {
             case 0:
                 Spanned spanned = this.b;
-                spanStart = spanned.getSpanStart((li.h) obj2);
-                spanStart2 = spanned.getSpanStart((li.h) obj);
+                spanStart = spanned.getSpanStart((mi.h) obj2);
+                spanStart2 = spanned.getSpanStart((mi.h) obj);
                 break;
             default:
                 SpannableStringBuilder spannableStringBuilder = (SpannableStringBuilder) this.b;
-                spanStart = spannableStringBuilder.getSpanStart((u9) obj2);
-                spanStart2 = spannableStringBuilder.getSpanStart((u9) obj);
+                spanStart = spannableStringBuilder.getSpanStart((t9) obj2);
+                spanStart2 = spannableStringBuilder.getSpanStart((t9) obj);
                 break;
         }
         return spanStart - spanStart2;

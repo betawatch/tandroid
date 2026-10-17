@@ -2,7 +2,7 @@ package b2;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class c {
     public static final c c = new c(new a[0]);
@@ -12,7 +12,7 @@ public final class c {
     public final a[] b;
 
     static {
-        a aVar = new a(-1, -1, new int[0], new p0[0], new long[0], new String[0], new b[0]);
+        a aVar = new a(-1, -1, new int[0], new o0[0], new long[0], new String[0], new b[0]);
         int[] iArr = aVar.e;
         int length = iArr.length;
         int max = Math.max(0, length);
@@ -23,10 +23,10 @@ public final class c {
         int max2 = Math.max(0, length2);
         long[] copyOf2 = Arrays.copyOf(jArr, max2);
         Arrays.fill(copyOf2, length2, max2, -9223372036854775807L);
-        p0[] p0VarArr = (p0[]) Arrays.copyOf(aVar.d, 0);
+        o0[] o0VarArr = (o0[]) Arrays.copyOf(aVar.d, 0);
         String[] strArr = (String[]) Arrays.copyOf(aVar.g, 0);
         b[] bVarArr = aVar.h;
-        d = new a(0, aVar.b, copyOf, p0VarArr, copyOf2, strArr, (b[]) Arrays.copyOf(bVarArr, Math.max(0, bVarArr.length)));
+        d = new a(0, aVar.b, copyOf, o0VarArr, copyOf2, strArr, (b[]) Arrays.copyOf(bVarArr, Math.max(0, bVarArr.length)));
         String str = e2.m0.a;
         e = Integer.toString(1, 36);
         Integer.toString(2, 36);

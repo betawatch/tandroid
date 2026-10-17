@@ -1,39 +1,92 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.view.MotionEvent;
 import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class bf extends ImageView {
-    public float a;
+    public final /* synthetic */ int a;
     public final /* synthetic */ ChatActivityEnterView b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bf(ChatActivityEnterView chatActivityEnterView, Context context) {
+    public /* synthetic */ bf(ChatActivityEnterView chatActivityEnterView, Context context, int i10) {
         super(context);
+        this.a = i10;
         this.b = chatActivityEnterView;
     }
 
     @Override // android.view.View
-    public final float getTranslationX() {
-        return this.a;
+    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        switch (this.a) {
+            case 0:
+                super.onLayout(z10, i10, i11, i12, i13);
+                post(new ie(this.b, 5));
+                break;
+            default:
+                super.onLayout(z10, i10, i11, i12, i13);
+                break;
+        }
     }
 
     @Override // android.view.View
-    public final void setTranslationX(float f7) {
-        this.a = f7;
-        float dp = AndroidUtilities.dp(-44.0f) + this.a;
-        ChatActivityEnterView chatActivityEnterView = this.b;
-        float f10 = dp + chatActivityEnterView.y + chatActivityEnterView.x;
-        df dfVar = chatActivityEnterView.K1;
-        float dp2 = AndroidUtilities.dp((dfVar == null || dfVar.getVisibility() != 0) ? 0.0f : -44.0f);
-        df dfVar2 = chatActivityEnterView.K1;
-        float alpha = (dp2 * (dfVar2 == null ? 0.0f : dfVar2.getAlpha())) + f10;
-        df dfVar3 = chatActivityEnterView.x1;
-        float dp3 = AndroidUtilities.dp((dfVar3 == null || dfVar3.getVisibility() != 0) ? 0.0f : -44.0f);
-        df dfVar4 = chatActivityEnterView.x1;
-        super.setTranslationX((dp3 * (dfVar4 != null ? dfVar4.getAlpha() : 0.0f)) + alpha);
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 2:
+                if (getAlpha() <= 0.0f) {
+                    return false;
+                }
+                return super.onTouchEvent(motionEvent);
+            default:
+                return super.onTouchEvent(motionEvent);
+        }
+    }
+
+    @Override // android.view.View
+    public final void setAlpha(float f7) {
+        switch (this.a) {
+            case 0:
+                super.setAlpha(f7);
+                ze zeVar = this.b.J1;
+                if (zeVar != null) {
+                    zeVar.setTranslationX(zeVar.a);
+                    break;
+                }
+                break;
+            case 1:
+                super.setAlpha(f7);
+                ze zeVar2 = this.b.J1;
+                if (zeVar2 != null) {
+                    zeVar2.setTranslationX(zeVar2.a);
+                    break;
+                }
+                break;
+            default:
+                super.setAlpha(f7);
+                ue ueVar = this.b.Z0;
+                if (ueVar != null) {
+                    ueVar.invalidate();
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // android.widget.ImageView, android.view.View
+    public void setVisibility(int i10) {
+        switch (this.a) {
+            case 2:
+                super.setVisibility(i10);
+                ue ueVar = this.b.Z0;
+                if (ueVar != null) {
+                    ueVar.invalidate();
+                    break;
+                }
+                break;
+            default:
+                super.setVisibility(i10);
+                break;
+        }
     }
 }

@@ -1,52 +1,32 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class xc implements RequestDelegate {
+public final /* synthetic */ class xc implements Utilities.Callback {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ long e;
 
-    public /* synthetic */ xc(int i10, long j10, long j11, MessagesController messagesController) {
-        this.a = 0;
+    public /* synthetic */ xc(MessagesController messagesController, int i10) {
+        this.a = i10;
         this.b = messagesController;
-        this.d = j10;
-        this.c = i10;
-        this.e = j11;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                int i10 = this.c;
-                long j10 = this.e;
-                this.b.lambda$getChannelDifference$348(this.d, i10, j10, tLObject, tL_error);
+                this.b.lambda$loadAppConfig$32((TLRPC.TL_help_appConfig) obj);
                 break;
             case 1:
-                long j11 = this.d;
-                long j12 = this.e;
-                this.b.lambda$sendTyping$171(this.c, j11, j12, tLObject, tL_error);
+                this.b.lambda$loadWebBrowserConfig$514((TL_account.TL_webBrowserSettings) obj);
                 break;
             default:
-                long j13 = this.d;
-                long j14 = this.e;
-                this.b.lambda$sendTyping$173(this.c, j13, j14, tLObject, tL_error);
+                this.b.lambda$getAvailableEffects$499((TLRPC.messages_AvailableEffects) obj);
                 break;
         }
-    }
-
-    public /* synthetic */ xc(MessagesController messagesController, int i10, long j10, long j11, int i11) {
-        this.a = i11;
-        this.b = messagesController;
-        this.c = i10;
-        this.d = j10;
-        this.e = j11;
     }
 }

@@ -7,15 +7,15 @@ import android.os.IInterface;
 import android.os.Looper;
 import com.google.android.gms.common.api.k;
 import com.google.android.gms.common.api.l;
-import m.t3;
+import m.s3;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class c extends n6.g {
     public final Bundle U;
 
-    public c(Context context, Looper looper, k kVar, l lVar, t3 t3Var) {
-        super(context, looper, 212, t3Var, kVar, lVar, 0);
+    public c(Context context, Looper looper, k kVar, l lVar, s3 s3Var) {
+        super(context, looper, 212, s3Var, kVar, lVar, 0);
         this.U = new Bundle();
     }
 

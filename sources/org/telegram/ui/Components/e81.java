@@ -1,117 +1,120 @@
 package org.telegram.ui.Components;
 
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class e81 {
-    public final boolean a;
-    public final int b;
-    public final int c;
-    public final ArrayList d;
+public final /* synthetic */ class e81 implements ImageReceiver.ImageReceiverDelegate {
+    public final /* synthetic */ View a;
 
-    public e81(g81 g81Var) {
-        ArrayList arrayList = new ArrayList();
-        this.d = arrayList;
-        this.a = g81Var.b;
-        this.b = g81Var.i;
-        this.c = g81Var.j;
-        arrayList.add(g81Var);
+    public /* synthetic */ e81(View view) {
+        this.a = view;
     }
 
-    public final g81 a() {
-        ArrayList arrayList = this.d;
-        g81 g81Var = null;
-        if (arrayList.isEmpty()) {
-            return null;
-        }
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            g81 g81Var2 = (g81) obj;
-            if (g81Var2.b()) {
-                return g81Var2;
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
+        boolean z13;
+        g81 g81Var;
+        int i10;
+        int i11;
+        double ceil;
+        h81 h81Var = (h81) this.a;
+        ImageReceiver imageReceiver2 = h81Var.Q;
+        if (z10) {
+            if (h81Var.N == null && h81Var.d0 == null) {
+                return;
             }
-        }
-        long j10 = Long.MAX_VALUE;
-        for (int i11 = 0; i11 < arrayList.size(); i11++) {
-            g81 g81Var3 = (g81) arrayList.get(i11);
-            if (g81Var3.k < j10 && i81.Y(g81Var3.m)) {
-                j10 = g81Var3.k;
-                g81Var = g81Var3;
+            int dp = AndroidUtilities.dp(150.0f);
+            org.telegram.ui.qt0 qt0Var = h81Var.N;
+            if (qt0Var != null) {
+                int i12 = (int) h81Var.O;
+                ArrayList arrayList = qt0Var.v;
+                int indexOf = arrayList.indexOf(qt0Var.c(i12));
+                if (indexOf == -1) {
+                    z13 = true;
+                    i11 = 0;
+                } else if (indexOf == arrayList.size() - 1) {
+                    int videoDuration = qt0Var.getVideoDuration() / MediaDataController.MAX_STYLE_RUNS_COUNT;
+                    if (videoDuration <= 100) {
+                        z13 = true;
+                        ceil = Math.ceil(videoDuration);
+                    } else {
+                        z13 = true;
+                        ceil = videoDuration <= 250 ? Math.ceil(videoDuration / 2.0f) : videoDuration <= 500 ? Math.ceil(videoDuration / 4.0f) : videoDuration <= 1000 ? Math.ceil(videoDuration / 5.0f) : Math.ceil(videoDuration / 10.0f);
+                    }
+                    i11 = Math.min(25, (((int) ceil) - ((arrayList.size() - 1) * 25)) + 1);
+                } else {
+                    z13 = true;
+                    i11 = 25;
+                }
+                float bitmapWidth = imageReceiver2.getBitmapWidth() / Math.min(i11, 5);
+                float bitmapHeight = imageReceiver2.getBitmapHeight() / ((int) Math.ceil(i11 / 5.0f));
+                org.telegram.ui.qt0 qt0Var2 = h81Var.N;
+                int i13 = (int) h81Var.O;
+                int videoDuration2 = qt0Var2.getVideoDuration() / MediaDataController.MAX_STYLE_RUNS_COUNT;
+                int min = Math.min(videoDuration2 <= 100 ? ((int) Math.ceil(i13)) % 25 : videoDuration2 <= 250 ? ((int) Math.ceil(i13 / 2.0f)) % 25 : videoDuration2 <= 500 ? ((int) Math.ceil(i13 / 4.0f)) % 25 : videoDuration2 <= 1000 ? ((int) Math.ceil(i13 / 5.0f)) % 25 : ((int) Math.ceil(i13 / 10.0f)) % 25, i11 - 1);
+                h81Var.R = (int) ((min % 5) * bitmapWidth);
+                h81Var.S = (int) ((min / 5) * bitmapHeight);
+                h81Var.T = (int) bitmapWidth;
+                h81Var.U = (int) bitmapHeight;
+            } else {
+                z13 = true;
+                int i14 = 0;
+                while (true) {
+                    if (i14 >= h81Var.d0.size()) {
+                        g81Var = null;
+                        break;
+                    }
+                    g81Var = (g81) h81Var.d0.get(i14);
+                    double d = i14 == 0 ? 0.0d : g81Var.a;
+                    double d10 = i14 == h81Var.d0.size() + (-1) ? 9.9999999E7d : ((g81) h81Var.d0.get(i14 + 1)).a;
+                    double d11 = h81Var.O;
+                    if (d11 >= d && d11 <= d10) {
+                        break;
+                    } else {
+                        i14++;
+                    }
+                }
+                if (g81Var == null) {
+                    return;
+                }
+                h81Var.R = g81Var.b;
+                h81Var.S = g81Var.c;
+                h81Var.T = h81Var.b0;
+                h81Var.U = h81Var.c0;
             }
+            h81Var.P = z13;
+            float f7 = h81Var.T / h81Var.U;
+            if (f7 > 1.0f) {
+                i10 = (int) (dp / f7);
+            } else {
+                dp = (int) (dp * f7);
+                i10 = dp;
+            }
+            ViewGroup.LayoutParams layoutParams = h81Var.getLayoutParams();
+            if (h81Var.getVisibility() == 0 && layoutParams.width == dp && layoutParams.height == i10) {
+                return;
+            }
+            layoutParams.width = dp;
+            layoutParams.height = i10;
+            h81Var.setVisibility(0);
+            h81Var.requestLayout();
         }
-        return g81Var != null ? g81Var : (g81) arrayList.get(0);
     }
 
-    public final int b() {
-        int min = Math.min(this.b, this.c);
-        if (Math.abs(min - 2160) < 55) {
-            return 2160;
-        }
-        if (Math.abs(min - 1440) < 55) {
-            return 1440;
-        }
-        if (Math.abs(min - 1080) < 55) {
-            return 1080;
-        }
-        if (Math.abs(min - 720) < 55) {
-            return 720;
-        }
-        if (Math.abs(min - 480) < 55) {
-            return 480;
-        }
-        if (Math.abs(min - 360) < 55) {
-            return 360;
-        }
-        if (Math.abs(min - 240) < 55) {
-            return 240;
-        }
-        if (Math.abs(min - 144) < 55) {
-            return 144;
-        }
-        return min;
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
+        org.telegram.messenger.k5.a(this, i10, str, drawable);
     }
 
-    public final String toString() {
-        String str;
-        boolean z10 = SharedConfig.debugVideoQualities;
-        boolean z11 = this.a;
-        String str2 = "";
-        if (!z10) {
-            StringBuilder sb2 = new StringBuilder();
-            sb2.append(b());
-            sb2.append("p");
-            if (z11) {
-                str2 = " (" + LocaleController.getString(R.string.QualitySource) + ")";
-            }
-            sb2.append(str2);
-            return sb2.toString();
-        }
-        StringBuilder sb3 = new StringBuilder();
-        sb3.append(this.b);
-        sb3.append("x");
-        sb3.append(this.c);
-        if (z11) {
-            str = " (" + LocaleController.getString(R.string.QualitySource) + ")";
-        } else {
-            str = "";
-        }
-        sb3.append(str);
-        sb3.append("\n");
-        ArrayList arrayList = this.d;
-        sb3.append(AndroidUtilities.formatFileSize((long) ((g81) arrayList.get(0)).l).replace(" ", ""));
-        sb3.append("/s");
-        if (((g81) arrayList.get(0)).m != null) {
-            str2 = ", " + ((g81) arrayList.get(0)).m;
-        }
-        sb3.append(str2);
-        return sb3.toString();
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
+        org.telegram.messenger.k5.b(this, imageReceiver);
     }
 }

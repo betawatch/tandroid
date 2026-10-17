@@ -1,42 +1,55 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class io0 extends ah.g1 {
-    public final /* synthetic */ jo0 h0;
+public final class io0 extends rx0 {
+    public final /* synthetic */ int K;
+    public final /* synthetic */ org.telegram.ui.nx L;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public io0(jo0 jo0Var, int i10, View view, TLRPC.TL_reactionCount tL_reactionCount, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(null, i10, view, tL_reactionCount, false, true, c6Var);
-        this.h0 = jo0Var;
+    public /* synthetic */ io0(org.telegram.ui.nx nxVar, Context context, b10 b10Var, int i10) {
+        super(context, b10Var, 1, null);
+        this.K = i10;
+        this.L = nxVar;
     }
 
-    @Override // ah.g1
-    public final boolean e() {
-        return this.w > 0 || this.u || this.F.l != 1.0f;
-    }
-
-    @Override // ah.g1
-    public final boolean i() {
-        return !e();
-    }
-
-    @Override // ah.g1
-    public final int j() {
-        return 18;
-    }
-
-    @Override // ah.g1
-    public final void s(float f7) {
-        int i10 = this.i;
-        jo0 jo0Var = this.h0;
-        this.N = i0.a.d(f7, i10, org.telegram.ui.ActionBar.g6.w0(jo0Var.e ? org.telegram.ui.ActionBar.g6.Fj : org.telegram.ui.ActionBar.g6.va, jo0Var.s.c));
-        int d = i0.a.d(f7, this.g, jo0Var.e ? org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.Cj, jo0Var.s.c) : 0);
-        this.O = d;
-        this.N = org.telegram.ui.ActionBar.g6.v(d, this.N);
-        this.P = i0.a.d(f7, this.h, jo0Var.e ? 1526726655 : org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.wa, jo0Var.s.c));
+    @Override // org.telegram.ui.Components.rx0, android.view.View
+    public final void setVisibility(int i10) {
+        switch (this.K) {
+            case 0:
+                if (this.L.M0.getTag() == null) {
+                    super.setVisibility(i10);
+                    break;
+                } else {
+                    super.setVisibility(8);
+                    break;
+                }
+            case 1:
+                if (this.L.M0.getTag() == null) {
+                    super.setVisibility(i10);
+                    break;
+                } else {
+                    super.setVisibility(8);
+                    break;
+                }
+            case 2:
+                if (this.L.M0.getTag() == null) {
+                    super.setVisibility(i10);
+                    break;
+                } else {
+                    super.setVisibility(8);
+                    break;
+                }
+            default:
+                if (this.L.M0.getTag() == null) {
+                    super.setVisibility(i10);
+                    break;
+                } else {
+                    super.setVisibility(8);
+                    break;
+                }
+        }
     }
 }

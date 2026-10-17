@@ -1,8 +1,8 @@
 package q3;
 
+import b2.s0;
 import b2.t0;
-import b2.u0;
-import b2.w0;
+import b2.v0;
 import e2.m0;
 import e2.x;
 import e9.k0;
@@ -14,13 +14,13 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Locale;
-import org.telegram.ui.ps0;
+import org.telegram.ui.hk0;
 import v7.s6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class h extends w7.m {
-    public static final ps0 b = new ps0(18);
+    public static final hk0 b = new hk0(21);
     public final g a;
 
     public h(g gVar) {
@@ -172,7 +172,7 @@ public final class h extends w7.m {
         x xVar3;
         ?? r122;
         x xVar4;
-        t0 bVar;
+        s0 bVar;
         int i16 = i10;
         int A = xVar.A();
         int A2 = xVar.A();
@@ -503,7 +503,7 @@ public final class h extends w7.m {
         byte[] bArr = new byte[i11];
         xVar.k(0, i11, bArr);
         int v = v(0, bArr);
-        String n10 = w0.n(new String(bArr, 0, v, StandardCharsets.ISO_8859_1));
+        String n10 = v0.n(new String(bArr, 0, v, StandardCharsets.ISO_8859_1));
         int i12 = v + 1;
         int u10 = u(i12, A, bArr);
         String l4 = l(bArr, i12, u10, s10);
@@ -736,7 +736,7 @@ public final class h extends w7.m {
     }
 
     @Override // w7.m
-    public final u0 b(l3.a aVar, ByteBuffer byteBuffer) {
+    public final t0 b(l3.a aVar, ByteBuffer byteBuffer) {
         return c(byteBuffer.limit(), byteBuffer.array());
     }
 
@@ -745,7 +745,7 @@ public final class h extends w7.m {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final u0 c(int i10, byte[] bArr) {
+    public final t0 c(int i10, byte[] bArr) {
         af.a aVar;
         ArrayList arrayList = new ArrayList();
         x xVar = new x(bArr, i10);
@@ -809,7 +809,7 @@ public final class h extends w7.m {
                         arrayList.add(h);
                     }
                 }
-                return new u0(arrayList);
+                return new t0(arrayList);
             }
             e2.a.l("Id3Decoder", "Unexpected first three bytes of ID3 tag header: 0x".concat(String.format("%06X", Integer.valueOf(D))));
         }

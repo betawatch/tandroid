@@ -1,6 +1,6 @@
 package u2;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class k1 implements d1 {
     public int a;
@@ -11,22 +11,22 @@ public final class k1 implements d1 {
         this.c = m1Var;
     }
 
-    public final void a() {
-        if (this.b) {
-            return;
-        }
-        m1 m1Var = this.c;
-        m1Var.e.m(b2.w0.h(m1Var.s.s), m1Var.s, 0, null, 0L);
-        this.b = true;
-    }
-
     @Override // u2.d1
-    public final void b() {
+    public final void a() {
         m1 m1Var = this.c;
         if (m1Var.v) {
             return;
         }
-        m1Var.r.b();
+        m1Var.r.a();
+    }
+
+    public final void b() {
+        if (this.b) {
+            return;
+        }
+        m1 m1Var = this.c;
+        m1Var.e.m(b2.v0.h(m1Var.s.s), m1Var.s, 0, null, 0L);
+        this.b = true;
     }
 
     @Override // u2.d1
@@ -36,7 +36,7 @@ public final class k1 implements d1 {
 
     @Override // u2.d1
     public final int f(qf.b bVar, h2.h hVar, int i10) {
-        a();
+        b();
         m1 m1Var = this.c;
         boolean z10 = m1Var.w;
         if (z10 && m1Var.x == null) {
@@ -69,8 +69,8 @@ public final class k1 implements d1 {
     }
 
     @Override // u2.d1
-    public final int j(long j10) {
-        a();
+    public final int h(long j10) {
+        b();
         if (j10 <= 0 || this.a == 2) {
             return 0;
         }

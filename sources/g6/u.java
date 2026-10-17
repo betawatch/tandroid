@@ -3,7 +3,7 @@ package g6;
 import com.google.android.gms.internal.cast.a0;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class u extends g {
     public final AtomicReference b;
@@ -55,7 +55,7 @@ public final class u extends g {
             return;
         }
         v.n0.b("Receive (type=text, ns=%s) %s", str, str2);
-        this.c.post(new c5.w(vVar, str, str2, 6));
+        this.c.post(new c5.v(vVar, str, str2, 6));
     }
 
     @Override // g6.h

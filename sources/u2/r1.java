@@ -2,10 +2,10 @@ package u2;
 
 import e9.x1;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class r1 {
-    public static final r1 d = new r1(new b2.q1[0]);
+    public static final r1 d = new r1(new b2.p1[0]);
     public static final String e;
     public final int a;
     public final x1 b;
@@ -16,15 +16,15 @@ public final class r1 {
         e = Integer.toString(0, 36);
     }
 
-    public r1(b2.q1... q1VarArr) {
-        x1 v = e9.n0.v(q1VarArr);
+    public r1(b2.p1... p1VarArr) {
+        x1 v = e9.n0.v(p1VarArr);
         this.b = v;
-        this.a = q1VarArr.length;
+        this.a = p1VarArr.length;
         int i10 = 0;
         while (i10 < v.d) {
             int i11 = i10 + 1;
             for (int i12 = i11; i12 < v.d; i12++) {
-                if (((b2.q1) v.get(i10)).equals(v.get(i12))) {
+                if (((b2.p1) v.get(i10)).equals(v.get(i12))) {
                     e2.a.d("TrackGroupArray", "", new IllegalArgumentException("Multiple identical TrackGroups added to one TrackGroupArray."));
                 }
             }
@@ -32,12 +32,12 @@ public final class r1 {
         }
     }
 
-    public final b2.q1 a(int i10) {
-        return (b2.q1) this.b.get(i10);
+    public final b2.p1 a(int i10) {
+        return (b2.p1) this.b.get(i10);
     }
 
-    public final int b(b2.q1 q1Var) {
-        int indexOf = this.b.indexOf(q1Var);
+    public final int b(b2.p1 p1Var) {
+        int indexOf = this.b.indexOf(p1Var);
         if (indexOf >= 0) {
             return indexOf;
         }

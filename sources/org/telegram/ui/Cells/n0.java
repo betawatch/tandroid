@@ -13,14 +13,14 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ad;
-import org.telegram.ui.Components.i11;
+import org.telegram.ui.Components.d11;
+import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class n0 {
     public final u1 a;
-    public final org.telegram.ui.Components.k9[] b;
+    public final org.telegram.ui.Components.h9[] b;
     public final ImageReceiver[] c;
     public final TextPaint d;
     public final CharSequence e;
@@ -29,10 +29,10 @@ public final class n0 {
     public final Drawable h;
     public final Paint i;
     public final Paint j;
-    public final i11 k;
+    public final d11 k;
     public boolean l;
     public boolean m;
-    public final ad n;
+    public final yc n;
     public final TLObject o;
 
     public n0(int i10, u1 u1Var, TLObject[] tLObjectArr, int i11) {
@@ -45,15 +45,15 @@ public final class n0 {
         this.o = tLObjectArr[0];
         this.n = new l0(u1Var, u1Var, 0);
         this.c = new ImageReceiver[3];
-        this.b = new org.telegram.ui.Components.k9[3];
+        this.b = new org.telegram.ui.Components.h9[3];
         for (int i12 = 0; i12 < 3; i12++) {
             this.c[i12] = new ImageReceiver(u1Var);
             this.c[i12].setParentView(u1Var);
             this.c[i12].setRoundRadius(AndroidUtilities.dp(54.0f));
-            this.b[i12] = new org.telegram.ui.Components.k9((org.telegram.ui.ActionBar.c6) null);
+            this.b[i12] = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
             if (i12 >= tLObjectArr.length || (tLObject = tLObjectArr[i12]) == null) {
                 Paint paint = new Paint(1);
-                int v = org.telegram.ui.ActionBar.g6.v(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.ra, u1Var.Id), org.telegram.ui.ActionBar.g6.m1(0.5f, org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.y6, u1Var.Id)));
+                int v = org.telegram.ui.ActionBar.h6.v(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.ra, u1Var.Id), org.telegram.ui.ActionBar.h6.m1(0.5f, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.y6, u1Var.Id)));
                 paint.setColor(v);
                 this.c[i12].setImageBitmap(new m0(paint, v));
             } else {
@@ -73,7 +73,7 @@ public final class n0 {
         if (b(this.o) == null) {
             this.k = null;
         } else {
-            this.k = new i11(i2.d.j(i11, "+"), 9.33f, AndroidUtilities.bold());
+            this.k = new d11(i0.a.j(i11, "+"), 9.33f, AndroidUtilities.bold());
         }
     }
 
@@ -120,11 +120,11 @@ public final class n0 {
         if (u1Var.M0) {
             a();
         }
-        org.telegram.ui.Components.k9[] k9VarArr = {r3};
-        this.b = k9VarArr;
-        org.telegram.ui.Components.k9 k9Var = new org.telegram.ui.Components.k9((org.telegram.ui.ActionBar.c6) null);
-        k9Var.j(i10, tLObject);
-        imageReceiverArr[0].setForUserOrChat(tLObject, k9VarArr[0]);
+        org.telegram.ui.Components.h9[] h9VarArr = {r3};
+        this.b = h9VarArr;
+        org.telegram.ui.Components.h9 h9Var = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
+        h9Var.j(i10, tLObject);
+        imageReceiverArr[0].setForUserOrChat(tLObject, h9VarArr[0]);
         textPaint.setTextSize(AndroidUtilities.dp(11.0f));
         if (tLObject instanceof TLRPC.Chat) {
             charSequence = ((TLRPC.Chat) tLObject).title;
@@ -144,7 +144,7 @@ public final class n0 {
         if (b(tLObject) == null) {
             this.k = null;
         } else {
-            this.k = new i11(b(tLObject), 9.33f, AndroidUtilities.bold());
+            this.k = new d11(b(tLObject), 9.33f, AndroidUtilities.bold());
         }
     }
 }

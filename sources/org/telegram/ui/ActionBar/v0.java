@@ -5,7 +5,7 @@ import android.view.View;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class v0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -28,8 +28,8 @@ public final /* synthetic */ class v0 implements ValueAnimator.AnimatorUpdateLis
             case 1:
                 e1 e1Var = (e1) this.b;
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                e1Var.setTextColor(i0.a.d(floatValue, -1, -9194260));
-                e1Var.setIconColor(i0.a.d(floatValue, -1, -9194260));
+                e1Var.setTextColor(i0.b.f(floatValue, -1, -9194260));
+                e1Var.setIconColor(i0.b.f(floatValue, -1, -9194260));
                 break;
             case 2:
                 ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) this.b;
@@ -51,30 +51,30 @@ public final /* synthetic */ class v0 implements ValueAnimator.AnimatorUpdateLis
                     if (o1Var.r) {
                         floatValue3 = 1.0f - floatValue3;
                     }
-                    float y3 = (int) com.google.android.gms.internal.play_billing.k3.y(1.0f, floatValue3, o1Var.q, o1Var.p * floatValue3);
+                    float x10 = (int) com.google.android.gms.internal.cast.a6.x(1.0f, floatValue3, o1Var.q, o1Var.p * floatValue3);
                     if (!(o1Var instanceof ah.u)) {
-                        o1Var.a.setTranslationY(y3);
+                        o1Var.a.setTranslationY(x10);
                     }
-                    o1Var.e(-y3, floatValue3, o1Var.s);
+                    o1Var.e(-x10, floatValue3, o1Var.s);
                     break;
                 }
                 break;
             case 4:
-                m3 m3Var = (m3) this.b;
-                m3Var.getClass();
-                m3Var.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                Iterator it = m3Var.I.iterator();
+                n3 n3Var = (n3) this.b;
+                n3Var.getClass();
+                n3Var.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                Iterator it = n3Var.I.iterator();
                 while (it.hasNext()) {
                     ((Runnable) it.next()).run();
                 }
-                m3Var.invalidate();
+                n3Var.invalidate();
                 break;
             default:
-                u3 u3Var = (u3) this.b;
-                u3Var.i = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                v3 v3Var = u3Var.b;
-                if (v3Var != null) {
-                    v3Var.invalidate();
+                v3 v3Var = (v3) this.b;
+                v3Var.i = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                w3 w3Var = v3Var.b;
+                if (w3Var != null) {
+                    w3Var.invalidate();
                     break;
                 }
                 break;

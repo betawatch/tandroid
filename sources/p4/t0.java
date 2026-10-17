@@ -17,11 +17,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.concurrent.Executor;
-import ji.m5;
 import org.telegram.messenger.MessageObject;
-import org.telegram.ui.c90;
+import org.telegram.ui.Components.w31;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class t0 {
     public boolean a;
@@ -51,13 +50,13 @@ public final class t0 {
             if (message == null || !message.contains("compressed")) {
                 return null;
             }
-            ((r4.c) this.c).h();
+            ((r4.c) this.c).x();
             return null;
         }
     }
 
     public void b(int i10, Serializable serializable) {
-        ((Executor) this.b).execute(new c90(this, i10, serializable, 19));
+        ((Executor) this.b).execute(new w31(this, i10, serializable, 23));
     }
 
     public void c() {
@@ -114,7 +113,7 @@ public final class t0 {
                     }
                     if (i13 < 0) {
                         r0 r0Var = new r0((Context) this.b, new ComponentName(serviceInfo.packageName, serviceInfo.name));
-                        r0Var.F = new m5(this, r0Var);
+                        r0Var.F = new j5.b(this, r0Var);
                         if (!r0Var.w) {
                             r0Var.w = true;
                             r0Var.r();

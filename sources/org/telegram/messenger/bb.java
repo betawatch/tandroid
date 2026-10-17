@@ -1,30 +1,52 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class bb implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ a0.h c;
+import org.telegram.messenger.FileLoadOperation;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ bb(MessagesController messagesController, a0.h hVar, int i10) {
-        this.a = i10;
-        this.b = messagesController;
-        this.c = hVar;
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes.dex */
+public final /* synthetic */ class bb implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+
+    public /* synthetic */ bb(Object obj, int i10, Object obj2, int i11) {
+        this.a = i11;
+        this.c = obj;
+        this.b = i10;
+        this.d = obj2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.b.lambda$processUpdateArray$409(this.c);
+                ((MessagesController) this.c).lambda$checkChatlistFolderUpdate$481(this.b, (MessagesController.ChatlistUpdatesStat) this.d, tLObject, tL_error);
                 break;
             case 1:
-                this.b.lambda$processUpdateArray$410(this.c);
+                ((FileLoadOperation) this.c).lambda$startDownloadRequest$29(this.b, (FileLoadOperation.RequestInfo) this.d, tLObject, tL_error);
+                break;
+            case 2:
+                ((MediaDataController) this.c).lambda$toggleStickerSetInternal$117((TLRPC.StickerSet) this.d, this.b, tLObject, tL_error);
+                break;
+            case 3:
+                ((MediaDataController) this.c).lambda$loadStickers$97(this.b, (Utilities.Callback) this.d, tLObject, tL_error);
                 break;
             default:
-                this.b.lambda$getChannelDifference$339(this.c);
+                ((MessagesController) this.c).lambda$registerForPush$323(this.b, (String) this.d, tLObject, tL_error);
                 break;
         }
+    }
+
+    public /* synthetic */ bb(MediaDataController mediaDataController, TLRPC.StickerSet stickerSet, int i10) {
+        this.a = 2;
+        this.c = mediaDataController;
+        this.d = stickerSet;
+        this.b = i10;
     }
 }

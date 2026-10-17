@@ -7,7 +7,7 @@ import android.os.Parcelable;
 import android.util.ArrayMap;
 import android.util.Log;
 import androidx.core.graphics.drawable.IconCompat;
-import e0.n0;
+import e0.m0;
 import j$.util.Objects;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -23,9 +23,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import org.telegram.ui.Cells.c1;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class g {
     public static final ArrayMap a;
@@ -86,7 +85,7 @@ public abstract class g {
         } catch (ClassNotFoundException e) {
             throw new f(a1.g.p("Enum class [", string2, "] not found"), eVar, e);
         } catch (IllegalArgumentException e7) {
-            throw new f(c1.i("Enum value [", string, "] does not exist in enum class [", string2, "]"), eVar, e7);
+            throw new f(r.c.h("Enum value [", string, "] does not exist in enum class [", string2, "]"), eVar, e7);
         } catch (ReflectiveOperationException e10) {
             throw new f(a1.g.p("Enum of class [", string2, "] missing valueOf method"), eVar, e10);
         }
@@ -157,7 +156,7 @@ public abstract class g {
                 String str = field.getDeclaringClass().getName() + field.getName();
                 Object obj2 = bundle.get(str);
                 if (obj2 == null) {
-                    obj2 = bundle.get(str.replaceAll("androidx.core.graphics.drawable.IconCompat", "androidx.core.graphics.drawable.IconCompat"));
+                    obj2 = bundle.get(str.replaceAll("androidx.core.graphics.drawable.IconCompat", "android.support.v4.graphics.drawable.IconCompat"));
                 }
                 if (obj2 instanceof Bundle) {
                     field.set(newInstance, f((Bundle) obj2, eVar));
@@ -265,7 +264,7 @@ public abstract class g {
                     eVar2.close();
                     return binder;
                 case 10:
-                    n0 a10 = n0.a(bundle);
+                    m0 a10 = m0.a(bundle);
                     eVar2.close();
                     return a10;
                 default:
@@ -379,14 +378,14 @@ public abstract class g {
                 i10++;
                 Field field = (Field) obj2;
                 field.setAccessible(true);
-                String u10 = t8.b.u(field.getDeclaringClass().getName(), field.getName());
+                String u10 = r.c.u(field.getDeclaringClass().getName(), field.getName());
                 try {
                     Object obj3 = field.get(obj);
                     if (obj3 != null) {
                         bundle.putParcelable(u10, o(obj3, field.getName(), eVar));
                     }
                 } catch (IllegalAccessException e) {
-                    throw new f(t8.b.h("Field is not accessible: ", u10), eVar, e);
+                    throw new f(r.c.g("Field is not accessible: ", u10), eVar, e);
                 }
             }
             return bundle;
@@ -513,12 +512,12 @@ public abstract class g {
                 if (obj.getClass().isArray()) {
                     throw new f("Object serializing contains an array, use a list or a set instead", eVar2);
                 }
-                if (!(obj instanceof n0)) {
+                if (!(obj instanceof m0)) {
                     Bundle m10 = m(obj, eVar2);
                     eVar2.close();
                     return m10;
                 }
-                Bundle c10 = ((n0) obj).c();
+                Bundle c10 = ((m0) obj).c();
                 c10.putInt("tag_class_type", 10);
                 eVar2.close();
                 return c10;

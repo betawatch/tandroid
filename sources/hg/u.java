@@ -1,7 +1,7 @@
 package hg;
 
-import bi.n8;
-import fi.l3;
+import ai.bb;
+import ai.tb;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
@@ -12,15 +12,15 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
-import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.Components.nr0;
-import org.telegram.ui.Components.r40;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Components.ir0;
+import org.telegram.ui.Components.n40;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.g9;
-import org.telegram.ui.ia;
-import org.telegram.ui.ry0;
+import org.telegram.ui.f9;
+import org.telegram.ui.ha;
+import org.telegram.ui.tx0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -28,11 +28,11 @@ public final /* synthetic */ class u implements RequestDelegate {
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ u(int i10, HashSet hashSet, m2 m2Var) {
+    public /* synthetic */ u(int i10, HashSet hashSet, n2 n2Var) {
         this.a = 4;
         this.b = i10;
         this.d = hashSet;
-        this.c = m2Var;
+        this.c = n2Var;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
@@ -42,7 +42,7 @@ public final /* synthetic */ class u implements RequestDelegate {
                 h0 h0Var = (h0) this.d;
                 String str = (String) this.c;
                 h0Var.getClass();
-                AndroidUtilities.runOnUIThread(new n8(h0Var, this.b, tLObject, str, 4));
+                AndroidUtilities.runOnUIThread(new bb(h0Var, this.b, tLObject, str, 5));
                 break;
             case 1:
                 ((VoIPService) this.d).lambda$startConferenceGroupCall$34(this.b, (String) this.c, tLObject, tL_error);
@@ -51,22 +51,22 @@ public final /* synthetic */ class u implements RequestDelegate {
                 ((VoIPService) this.d).lambda$editCallMember$90(this.b, (Runnable) this.c, tLObject, tL_error);
                 break;
             case 3:
-                AndroidUtilities.runOnUIThread(new n8((g9) this.d, tLObject, this.b, (TLRPC.User) this.c, 11));
+                AndroidUtilities.runOnUIThread(new bb((f9) this.d, tLObject, this.b, (TLRPC.User) this.c, 12));
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new l3(tLObject, this.b, (HashSet) this.d, tL_error, (m2) this.c, 15));
+                AndroidUtilities.runOnUIThread(new tb(tLObject, this.b, (HashSet) this.d, tL_error, (n2) this.c));
                 break;
             case 5:
-                AndroidUtilities.runOnUIThread(new n8((m2) this.d, tLObject, this.b, (Utilities.Callback) this.c, 19));
+                AndroidUtilities.runOnUIThread(new bb((n2) this.d, tLObject, this.b, (Utilities.Callback) this.c, 20));
                 break;
             case 6:
-                AndroidUtilities.runOnUIThread(new n8((r40) this.d, this.b, tLObject, (String) this.c, 21));
+                AndroidUtilities.runOnUIThread(new bb((n40) this.d, this.b, tLObject, (String) this.c, 22));
                 break;
             case 7:
-                AndroidUtilities.runOnUIThread(new n8((nr0) this.d, this.b, tLObject, (String) this.c, 23));
+                AndroidUtilities.runOnUIThread(new bb((ir0) this.d, this.b, tLObject, (String) this.c, 24));
                 break;
             case 8:
-                AndroidUtilities.runOnUIThread(new ry0((ProfileActivity) this.d, tL_error, tLObject, (TLRPC.TL_channels_getParticipants) this.c, 0), this.b);
+                AndroidUtilities.runOnUIThread(new tx0((ProfileActivity) this.d, tL_error, tLObject, (TLRPC.TL_channels_getParticipants) this.c, 0), this.b);
                 break;
             default:
                 TLRPC.Chat chat = (TLRPC.Chat) this.d;
@@ -88,11 +88,11 @@ public final /* synthetic */ class u implements RequestDelegate {
                     }
                     boolean isEmpty = arrayList2.isEmpty();
                     int i11 = this.b;
-                    if (isEmpty || !ug.s.h()) {
-                        AndroidUtilities.runOnUIThread(new ug.o(chat, i11, arrayList, callback, 0));
+                    if (isEmpty || !ug.q.h()) {
+                        AndroidUtilities.runOnUIThread(new ug.m(chat, i11, arrayList, callback, 0));
                         break;
                     } else {
-                        BillingController.getInstance().queryProductDetails(arrayList2, new ia(arrayList, chat, i11, callback, 10));
+                        BillingController.getInstance().queryProductDetails(arrayList2, new ha(arrayList, chat, i11, callback, 10));
                         break;
                     }
                 }

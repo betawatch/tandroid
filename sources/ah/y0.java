@@ -5,7 +5,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.Rect;
 import android.view.View;
-import bi.b4;
+import ci.g3;
 import j$.util.Objects;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.ImageLocation;
@@ -13,14 +13,14 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.s5;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.r5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class y0 {
     public final ImageReceiver a;
-    public s5 b;
+    public r5 b;
     public i1 e;
     public View f;
     public boolean g;
@@ -39,12 +39,12 @@ public final class y0 {
     }
 
     public final void a(Canvas canvas) {
-        s5 s5Var = this.b;
+        r5 r5Var = this.b;
         Rect rect = this.c;
-        if (s5Var != null) {
-            b4 b4Var = s5Var.k;
-            if (b4Var != null) {
-                b4Var.setRoundRadius((int) (rect.width() * 0.1f));
+        if (r5Var != null) {
+            g3 g3Var = r5Var.k;
+            if (g3Var != null) {
+                g3Var.setRoundRadius((int) (rect.width() * 0.1f));
             }
             this.b.setColorFilter(this.k);
             this.b.setBounds(rect);
@@ -67,17 +67,17 @@ public final class y0 {
         ImageReceiver imageReceiver = this.a;
         if (z10) {
             imageReceiver.onAttachedToWindow();
-            s5 s5Var = this.b;
-            if (s5Var != null) {
-                s5Var.a(this.f);
+            r5 r5Var = this.b;
+            if (r5Var != null) {
+                r5Var.a(this.f);
                 return;
             }
             return;
         }
         imageReceiver.onDetachedFromWindow();
-        s5 s5Var2 = this.b;
-        if (s5Var2 != null) {
-            s5Var2.o(this.f);
+        r5 r5Var2 = this.b;
+        if (r5Var2 != null) {
+            r5Var2.o(this.f);
         }
     }
 
@@ -102,9 +102,9 @@ public final class y0 {
         }
         ImageReceiver imageReceiver = this.a;
         imageReceiver.clearImage();
-        s5 s5Var = this.b;
-        if (s5Var != null) {
-            s5Var.o(this.f);
+        r5 r5Var = this.b;
+        if (r5Var != null) {
+            r5Var.o(this.f);
             this.b = null;
         }
         this.e = i1Var;
@@ -113,20 +113,20 @@ public final class y0 {
         if (i1Var.f != null) {
             TLRPC.TL_availableReaction tL_availableReaction = MediaDataController.getInstance(this.d).getReactionsMap().get(i1Var.f);
             if (tL_availableReaction != null) {
-                imageReceiver.setImage(ImageLocation.getForDocument(tL_availableReaction.select_animation), str, null, null, DocumentObject.getSvgThumb(tL_availableReaction.select_animation, g6.m6, 0.2f), 0L, "tgs", i1Var, 0);
+                imageReceiver.setImage(ImageLocation.getForDocument(tL_availableReaction.select_animation), str, null, null, DocumentObject.getSvgThumb(tL_availableReaction.select_animation, h6.m6, 0.2f), 0L, "tgs", i1Var, 0);
                 return;
             }
             return;
         }
-        s5 s5Var2 = new s5(z10 ? 13 : 1, UserConfig.selectedAccount, i1Var.g);
-        this.b = s5Var2;
+        r5 r5Var2 = new r5(z10 ? 13 : 1, UserConfig.selectedAccount, i1Var.g);
+        this.b = r5Var2;
         if (this.g) {
-            s5Var2.a(this.f);
+            r5Var2.a(this.f);
         }
-        s5 s5Var3 = this.b;
+        r5 r5Var3 = this.b;
         this.j = -16777216;
         PorterDuffColorFilter porterDuffColorFilter = new PorterDuffColorFilter(-16777216, PorterDuff.Mode.SRC_ATOP);
         this.k = porterDuffColorFilter;
-        s5Var3.setColorFilter(porterDuffColorFilter);
+        r5Var3.setColorFilter(porterDuffColorFilter);
     }
 }

@@ -1,120 +1,197 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.RectF;
-import android.graphics.drawable.GradientDrawable;
-import android.os.Build;
-import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
+import java.util.Arrays;
+import java.util.regex.Pattern;
+import org.telegram.messenger.ChannelBoostsController;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class n80 extends FrameLayout implements org.telegram.ui.ActionBar.x5 {
-    public final Paint a;
-    public final Path b;
-    public final ImageView c;
-    public final di.g2 d;
-    public GradientDrawable e;
-    public final /* synthetic */ p80 f;
+public final /* synthetic */ class n80 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object g;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n80(p80 p80Var, Context context, org.telegram.ui.ActionBar.u1 u1Var) {
-        super(context);
-        this.f = p80Var;
-        this.a = new Paint(1);
-        this.b = new Path();
-        setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(3.0f));
-        setClipChildren(false);
-        setClipToPadding(false);
-        ImageView imageView = new ImageView(context);
-        this.c = imageView;
-        imageView.setImageResource(R.drawable.outline_search_1_24);
-        int i10 = org.telegram.ui.ActionBar.g6.G6;
-        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.m1(0.6f, p80Var.getThemedColor(i10)), PorterDuff.Mode.SRC_IN));
-        addView(imageView, w7.z5.a(24.0f, 11.0f, 8.0f, 11.0f, 8.0f, 24, 51));
-        u1Var.setClipChildren(true);
-        addView(u1Var, w7.z5.a(-1.0f, 0.0f, 0.0f, 0.0f, 40.0f, -1, 119));
-        di.g2 g2Var = new di.g2(this, context, 7);
-        this.d = g2Var;
-        g2Var.setHint(LocaleController.getString(R.string.Search));
-        g2Var.setTextSize(1, 15.0f);
-        g2Var.setCursorWidth(1.5f);
-        g2Var.setInputType(g2Var.getInputType() | 176);
-        g2Var.setSingleLine(true);
-        g2Var.setBackground(null);
-        g2Var.setVerticalScrollBarEnabled(false);
-        g2Var.setHorizontalScrollBarEnabled(false);
-        g2Var.setClipToPadding(true);
-        g2Var.setPadding(AndroidUtilities.dp(46.0f), 0, AndroidUtilities.dp(46.0f), 0);
-        g2Var.setEllipsizeByGradient(true);
-        g2Var.setImeOptions(268435462);
-        g2Var.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
-        g2Var.addTextChangedListener(new m80(this));
-        if (Build.VERSION.SDK_INT >= 35) {
-            g2Var.setLocalePreferredLineHeightForMinimumUsed(false);
+    public /* synthetic */ n80(Object obj, Object obj2, Object obj3, Object obj4, Object obj5, Object obj6, int i10) {
+        this.a = i10;
+        this.b = obj;
+        this.c = obj2;
+        this.e = obj3;
+        this.g = obj4;
+        this.f = obj5;
+        this.d = obj6;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:59:0x013a, code lost:
+    
+        if (((org.telegram.ui.sn) r15).a() == r7.longValue()) goto L59;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:77:0x0155, code lost:
+    
+        if (r0.getCurrentFragmetDialogId() == r7.longValue()) goto L59;
+     */
+    @Override // org.telegram.messenger.Utilities.Callback
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run(Object obj) {
+        int i10 = this.a;
+        boolean z10 = false;
+        Object obj2 = this.d;
+        Object obj3 = this.f;
+        Object obj4 = this.g;
+        Object obj5 = this.e;
+        Object obj6 = this.c;
+        Object obj7 = this.b;
+        switch (i10) {
+            case 0:
+                LaunchActivity launchActivity = (LaunchActivity) obj7;
+                pf.c cVar = (pf.c) obj6;
+                Long l4 = (Long) obj5;
+                TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = (TL_stories.TL_premium_boostsStatus) obj4;
+                org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) obj3;
+                Runnable runnable = (Runnable) obj2;
+                ChannelBoostsController.CanApplyBoost canApplyBoost = (ChannelBoostsController.CanApplyBoost) obj;
+                Pattern pattern = LaunchActivity.C1;
+                if (cVar != null) {
+                    cVar.b();
+                }
+                org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
+                if (R instanceof pg0) {
+                    R = ((pg0) R).X();
+                }
+                org.telegram.ui.ActionBar.n2 n2Var = R;
+                if (n2Var != null) {
+                    org.telegram.ui.ActionBar.d6 resourceProvider = n2Var.getResourceProvider();
+                    if (n2Var.getLastStoryViewer() != null && n2Var.getLastStoryViewer().K0) {
+                        resourceProvider = n2Var.getLastStoryViewer().y;
+                    }
+                    sg.j0 j0Var = new sg.j0(19, launchActivity.O, launchActivity, n2Var, resourceProvider);
+                    j0Var.H1(canApplyBoost);
+                    if (n2Var instanceof sn) {
+                        break;
+                    } else if (n2Var instanceof ey) {
+                        yw ywVar = ((ey) n2Var).G3;
+                        if (ywVar != null) {
+                            break;
+                        }
+                        r2 = false;
+                        z10 = r2;
+                    }
+                    j0Var.G1(tL_premium_boostsStatus, z10);
+                    j0Var.I1(l4.longValue());
+                    j0Var.g0 = u1Var;
+                    n2Var.showDialog(j0Var);
+                    if (runnable != null) {
+                        try {
+                            runnable.run();
+                            break;
+                        } catch (Exception e) {
+                            FileLog.e(e);
+                            return;
+                        }
+                    }
+                }
+                break;
+            case 1:
+                LaunchActivity launchActivity2 = (LaunchActivity) obj7;
+                pf.c cVar2 = (pf.c) obj6;
+                Runnable runnable2 = (Runnable) obj2;
+                ChannelBoostsController channelBoostsController = (ChannelBoostsController) obj4;
+                Long l10 = (Long) obj5;
+                org.telegram.ui.Cells.u1 u1Var2 = (org.telegram.ui.Cells.u1) obj3;
+                TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus2 = (TL_stories.TL_premium_boostsStatus) obj;
+                Pattern pattern2 = LaunchActivity.C1;
+                if (tL_premium_boostsStatus2 != null) {
+                    channelBoostsController.userCanBoostChannel(l10.longValue(), tL_premium_boostsStatus2, new n80(launchActivity2, cVar2, l10, tL_premium_boostsStatus2, u1Var2, runnable2, 0));
+                    break;
+                } else {
+                    if (cVar2 != null) {
+                        cVar2.b();
+                    }
+                    if (runnable2 != null) {
+                        runnable2.run();
+                        break;
+                    }
+                }
+                break;
+            case 2:
+                TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr = (TL_wallet.inputTonConnectOauthSession[]) obj5;
+                TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest = (TLRPC.TL_urlAuthResultRequest) obj4;
+                org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) obj3;
+                ai.ub ubVar = (ai.ub) obj2;
+                TL_wallet.inputTonConnectOauthSession inputtonconnectoauthsession = (TL_wallet.inputTonConnectOauthSession) obj;
+                ((org.telegram.ui.ActionBar.f3[]) obj7)[0] = null;
+                wk0.a = null;
+                if (!((boolean[]) obj6)[0]) {
+                    inputtonconnectoauthsessionArr[0] = inputtonconnectoauthsession;
+                    if (!tL_urlAuthResultRequest.request_write_access && !tL_urlAuthResultRequest.request_phone_number) {
+                        ubVar.run();
+                        break;
+                    } else {
+                        wk0.a = f3Var;
+                        f3Var.show();
+                        break;
+                    }
+                } else {
+                    Arrays.fill(inputtonconnectoauthsession.challenge_answer, (byte) 0);
+                    break;
+                }
+                break;
+            case 3:
+                org.telegram.ui.Wallet.k2 k2Var = (org.telegram.ui.Wallet.k2) obj4;
+                org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) obj3;
+                hg.x0 x0Var = (hg.x0) obj2;
+                String str = (String) obj;
+                ((ei.d) obj7).setLoading(false);
+                ((ei.d) obj6).setEnabled(true);
+                ((ImageView) obj5).setEnabled(true);
+                if (str != null) {
+                    org.telegram.ui.Components.xc.c0(str, k2Var.topBulletinContainer, d6Var);
+                    x0Var.run();
+                    break;
+                } else {
+                    k2Var.dismiss();
+                    break;
+                }
+            default:
+                ei.d dVar = (ei.d) obj6;
+                org.telegram.ui.Wallet.j2 j2Var = (org.telegram.ui.Wallet.j2) obj5;
+                org.telegram.ui.ActionBar.d6 d6Var2 = (org.telegram.ui.ActionBar.d6) obj4;
+                org.telegram.ui.Wallet.h hVar = (org.telegram.ui.Wallet.h) obj3;
+                org.telegram.ui.Wallet.b2 b2Var = (org.telegram.ui.Wallet.b2) obj2;
+                String str2 = (String) obj;
+                ((ei.d) obj7).setLoading(false);
+                dVar.setLoading(false);
+                if (str2 != null) {
+                    org.telegram.ui.Components.xc.c0(str2, j2Var.topBulletinContainer, d6Var2);
+                    hVar.run();
+                    dVar.setEnabled((b2Var.n || b2Var.o) ? false : true);
+                    break;
+                } else {
+                    j2Var.dismiss();
+                    break;
+                }
+                break;
         }
-        g2Var.setTextColor(p80Var.getThemedColor(i10));
-        g2Var.setHintTextColor(p80Var.getThemedColor(org.telegram.ui.ActionBar.g6.H6));
-        addView(g2Var, w7.z5.a(40.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 55));
-        d();
     }
 
-    @Override // org.telegram.ui.ActionBar.x5
-    public final void d() {
-        int themedColor = this.f.getThemedColor(org.telegram.ui.ActionBar.g6.a7);
-        this.e = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{org.telegram.ui.ActionBar.g6.m1(1.0f, themedColor), org.telegram.ui.ActionBar.g6.m1(0.0f, themedColor)});
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        float dpf2 = AndroidUtilities.dpf2(2.0f);
-        float dpf22 = AndroidUtilities.dpf2(0.33f);
-        Paint paint = this.a;
-        paint.setShadowLayer(dpf2, 0.0f, dpf22, 285212672);
-        int i10 = org.telegram.ui.ActionBar.g6.d6;
-        p80 p80Var = this.f;
-        paint.setColor(p80Var.getThemedColor(i10));
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(3.0f), getWidth() - AndroidUtilities.dp(12.0f), AndroidUtilities.dp(3.0f) + p80Var.b.e + AndroidUtilities.dp(3.0f));
-        Path path = this.b;
-        path.rewind();
-        path.addRoundRect(rectF, AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f), Path.Direction.CW);
-        GradientDrawable gradientDrawable = this.e;
-        if (gradientDrawable != null) {
-            gradientDrawable.setBounds(0, 0, getWidth(), Math.min(getHeight(), AndroidUtilities.dp(24.0f) + ((int) p80Var.b.e)));
-            this.e.draw(canvas);
-        }
-        canvas.save();
-        canvas.drawPath(path, paint);
-        canvas.clipPath(path);
-        super.dispatchDraw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        if (view != this.f.e) {
-            return super.drawChild(canvas, view, j10);
-        }
-        canvas.save();
-        canvas.clipRect(view.getX(), view.getY(), view.getX() + view.getWidth(), view.getY() + view.getHeight());
-        boolean drawChild = super.drawChild(canvas, view, j10);
-        canvas.restore();
-        return drawChild;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(144.0f), TLObject.FLAG_30));
+    public /* synthetic */ n80(LaunchActivity launchActivity, pf.c cVar, Runnable runnable, ChannelBoostsController channelBoostsController, Long l4, org.telegram.ui.Cells.u1 u1Var) {
+        this.a = 1;
+        this.b = launchActivity;
+        this.c = cVar;
+        this.d = runnable;
+        this.g = channelBoostsController;
+        this.e = l4;
+        this.f = u1Var;
     }
 }

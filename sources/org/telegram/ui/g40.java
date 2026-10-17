@@ -1,23 +1,27 @@
 package org.telegram.ui;
 
+import android.graphics.Paint;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class g40 extends org.telegram.ui.Components.pi0 {
-    public final /* synthetic */ n60 s1;
+public final class g40 extends Paint {
+    public final /* synthetic */ s50 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g40(n60 n60Var, LaunchActivity launchActivity, j50 j50Var, t50 t50Var, f40 f40Var) {
-        super(launchActivity, j50Var, t50Var, f40Var);
-        this.s1 = n60Var;
+    public g40(s50 s50Var) {
+        this.a = s50Var;
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
+    @Override // android.graphics.Paint
+    public final void setAlpha(int i10) {
         ViewGroup viewGroup;
-        super.invalidate();
-        viewGroup = ((org.telegram.ui.ActionBar.e3) this.s1).containerView;
-        viewGroup.invalidate();
+        ViewGroup viewGroup2;
+        super.setAlpha(i10);
+        s50 s50Var = this.a;
+        viewGroup = ((org.telegram.ui.ActionBar.f3) s50Var).containerView;
+        if (viewGroup != null) {
+            viewGroup2 = ((org.telegram.ui.ActionBar.f3) s50Var).containerView;
+            viewGroup2.invalidate();
+        }
     }
 }

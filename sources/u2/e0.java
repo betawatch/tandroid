@@ -1,21 +1,21 @@
 package u2;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public interface e0 extends f1 {
     void g();
 
-    long h(long j10);
+    long i(long j10);
 
-    void i(long j10);
+    void k(long j10);
 
-    void k(d0 d0Var, long j10);
+    void m(d0 d0Var, long j10);
 
-    long l();
+    long o();
 
-    long n(x2.p[] pVarArr, boolean[] zArr, d1[] d1VarArr, boolean[] zArr2, long j10);
+    long q(x2.p[] pVarArr, boolean[] zArr, d1[] d1VarArr, boolean[] zArr2, long j10);
 
-    r1 o();
+    r1 r();
 
-    long r(long j10, i2.t1 t1Var);
+    long t(long j10, i2.r1 r1Var);
 }

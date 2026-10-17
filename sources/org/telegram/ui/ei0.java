@@ -1,82 +1,165 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
 import android.view.View;
-import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class ei0 extends org.telegram.ui.ActionBar.m2 {
-    public final org.telegram.ui.Components.db0 a;
+public final class ei0 implements org.telegram.ui.Components.bl0 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 a;
+    public final /* synthetic */ oi0 b;
 
-    public ei0(long j10) {
-        super(null);
-        this.a = new org.telegram.ui.Components.db0(this, this, getLayoutContainer(), j10);
+    public ei0(oi0 oi0Var, org.telegram.ui.ActionBar.n2 n2Var) {
+        this.b = oi0Var;
+        this.a = n2Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.m2
-    public final View createView(Context context) {
-        this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setActionBarMenuOnItemClick(new q70(this, 10));
-        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        org.telegram.ui.ActionBar.k kVar = this.actionBar;
-        org.telegram.ui.Components.db0 db0Var = this.a;
-        kVar.setTitle(LocaleController.getString(db0Var.a ? R.string.SubscribeRequests : R.string.MemberRequests));
-        org.telegram.ui.ActionBar.u0 a2 = this.actionBar.n().a(0, R.drawable.outline_header_search);
-        a2.F();
-        a2.H = new ig.d2(this, 13);
-        a2.setSearchFieldHint(LocaleController.getString(R.string.Search));
-        a2.setVisibility(8);
-        org.telegram.ui.ActionBar.m2 m2Var = db0Var.g;
-        if (db0Var.m == null) {
-            FrameLayout frameLayout = new FrameLayout(m2Var.getParentActivity());
-            db0Var.m = frameLayout;
-            frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.a7, m2Var.getResourceProvider()));
-            org.telegram.ui.Components.f10 b10 = db0Var.b();
-            db0Var.q = b10;
-            db0Var.m.addView(b10, -1, -1);
-            org.telegram.ui.Components.wx0 c10 = db0Var.c();
-            db0Var.o = c10;
-            db0Var.m.addView(c10, -1, -1);
-            org.telegram.ui.Components.wx0 a10 = db0Var.a();
-            db0Var.n = a10;
-            db0Var.m.addView(a10, w7.z5.d(-1.0f, -1));
-            m2Var.getParentActivity();
-            s4.b0 b0Var = new s4.b0();
-            org.telegram.ui.Components.mm0 mm0Var = new org.telegram.ui.Components.mm0(m2Var.getParentActivity(), null);
-            db0Var.p = mm0Var;
-            mm0Var.setAdapter(db0Var.f);
-            db0Var.p.p1();
-            db0Var.p.setLayoutManager(b0Var);
-            db0Var.p.setOnItemClickListener(new bi.d(db0Var, 19));
-            db0Var.p.setOnScrollListener(db0Var.D);
-            db0Var.p.setSelectorDrawableColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.i6, m2Var.getResourceProvider()));
-            db0Var.m.addView(db0Var.p, -1, -1);
-            s4.k kVar2 = new s4.k();
-            kVar2.n(350L);
-            kVar2.o(org.telegram.ui.Components.es.h);
-            kVar2.C = false;
-            kVar2.m = false;
-            db0Var.p.setItemAnimator(kVar2);
-        }
-        FrameLayout frameLayout2 = db0Var.m;
-        this.actionBar.B(db0Var.p, false);
-        db0Var.e();
-        this.fragmentView = frameLayout2;
-        return frameLayout2;
+    @Override // org.telegram.ui.Components.bl0
+    public final /* synthetic */ boolean j() {
+        return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.m2
-    public final boolean onBackPressed(boolean z10) {
-        xh.k kVar = this.a.s;
-        if (kVar == null) {
-            return true;
-        }
-        if (z10) {
-            kVar.e(false);
-        }
+    @Override // org.telegram.ui.Components.bl0
+    public final /* synthetic */ boolean k() {
         return false;
+    }
+
+    @Override // org.telegram.ui.Components.bl0
+    public final void l(View view, ah.i1 i1Var, boolean z10, boolean z11) {
+        boolean z12;
+        org.telegram.ui.ActionBar.n2 n2Var;
+        boolean z13;
+        long j10;
+        ah.i1 i1Var2 = i1Var;
+        if (i1Var2 != null) {
+            oi0 oi0Var = this.b;
+            ci0 ci0Var = oi0Var.e0;
+            ai0 ai0Var = oi0Var.a0;
+            int i10 = oi0Var.c;
+            if (ci0Var == null) {
+                return;
+            }
+            boolean z14 = !UserConfig.getInstance(i10).isPremium() && i1Var2.d;
+            org.telegram.ui.Cells.u1 u1Var = oi0Var.Q;
+            if (u1Var != null) {
+                MessageObject messageObject = u1Var.getMessageObject();
+                if (messageObject == null) {
+                    return;
+                }
+                TLRPC.Message message = messageObject.messageOwner;
+                long j11 = message.effect;
+                long j12 = i1Var2.c;
+                if (j12 == j11) {
+                    message.flags2 &= -5;
+                    message.effect = 0L;
+                    z13 = true;
+                } else {
+                    message.flags2 |= 4;
+                    message.effect = j12;
+                    z13 = false;
+                }
+                if (z14) {
+                    j10 = j11;
+                } else {
+                    j10 = j11;
+                    oi0Var.Q.X3(messageObject, oi0Var.l(messageObject), oi0Var.N.size() > 1, false, false, false);
+                    oi0Var.e0.setSelectedReactionAnimated(z13 ? null : i1Var2);
+                    if (oi0Var.e0.getReactionsWindow() != null && oi0Var.e0.getReactionsWindow().m != null) {
+                        ah.n0 n0Var = oi0Var.e0.getReactionsWindow().m;
+                        if (z13) {
+                            i1Var2 = null;
+                        }
+                        n0Var.setSelectedReaction(i1Var2);
+                        oi0Var.e0.getReactionsWindow().a.invalidate();
+                    }
+                }
+                ai0Var.c();
+                if (!z13) {
+                    ai0Var.n(oi0Var.Q, 0, false, false);
+                }
+                if (z14) {
+                    TLRPC.Message message2 = messageObject.messageOwner;
+                    message2.effect = j10;
+                    if (j10 == 0) {
+                        message2.flags2 &= -5;
+                    }
+                }
+                bi0 bi0Var = oi0Var.X;
+                if (bi0Var != null) {
+                    bi0Var.setEffect(messageObject.messageOwner.effect);
+                }
+                oi0Var.m(messageObject.messageOwner.effect);
+            } else if (oi0Var.l0 != null) {
+                long j13 = i1Var2.c;
+                if (j13 == oi0Var.I) {
+                    oi0Var.I = 0L;
+                    z12 = true;
+                } else {
+                    oi0Var.I = j13;
+                    z12 = false;
+                }
+                bi0 bi0Var2 = oi0Var.X;
+                if (bi0Var2 != null) {
+                    bi0Var2.setEffect(oi0Var.I);
+                }
+                oi0Var.m(oi0Var.I);
+                if (!z14) {
+                    TLRPC.TL_availableEffect effect = oi0Var.I == 0 ? null : MessagesController.getInstance(i10).getEffect(oi0Var.I);
+                    org.telegram.ui.Components.p5 p5Var = oi0Var.J;
+                    if (p5Var != null) {
+                        if (oi0Var.I == 0 || effect == null) {
+                            p5Var.g(null, true);
+                        } else {
+                            p5Var.g(Emoji.getEmojiDrawable(effect.emoticon), true);
+                        }
+                    }
+                    oi0Var.e0.setSelectedReactionAnimated(z12 ? null : i1Var2);
+                    if (oi0Var.e0.getReactionsWindow() != null && oi0Var.e0.getReactionsWindow().m != null) {
+                        ah.n0 n0Var2 = oi0Var.e0.getReactionsWindow().m;
+                        if (z12) {
+                            i1Var2 = null;
+                        }
+                        n0Var2.setSelectedReaction(i1Var2);
+                        oi0Var.e0.getReactionsWindow().a.invalidate();
+                    }
+                }
+                ai0Var.c();
+                if (!z12) {
+                    TLRPC.TL_message tL_message = new TLRPC.TL_message();
+                    long j14 = oi0Var.I;
+                    tL_message.effect = j14;
+                    if (j14 != 0) {
+                        tL_message.flags2 |= 4;
+                    }
+                    oi0Var.a0.d(null, 0, null, new MessageObject(i10, tL_message, false, false), 0, false, false, 0.0f, 0.0f, true);
+                }
+            }
+            if (z14 && (n2Var = this.a) != null) {
+                new org.telegram.ui.Components.xc(oi0Var.G, oi0Var.b).Q(R.raw.star_premium_2, 36, AndroidUtilities.premiumText(LocaleController.getString(R.string.AnimatedEffectPremium), new di0(0, n2Var))).j();
+            }
+            oi0Var.H.invalidate();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.bl0
+    public final /* synthetic */ boolean s() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.bl0
+    public final /* synthetic */ void q() {
+    }
+
+    @Override // org.telegram.ui.Components.bl0
+    public final /* synthetic */ void m(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

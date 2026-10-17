@@ -1,43 +1,24 @@
 package de;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final h a = new h(-1, null, null, 0);
     public static final int b = ge.a.j(32, 12, "kotlinx.coroutines.bufferedChannel.segmentSize");
     public static final int c = ge.a.j(10000, 12, "kotlinx.coroutines.bufferedChannel.expandBufferCompletionWaitIterations");
-    public static final a6.i d;
-    public static final a6.i e;
-    public static final a6.i f;
-    public static final a6.i g;
-    public static final a6.i h;
-    public static final a6.i i;
-    public static final a6.i j;
-    public static final a6.i k;
-    public static final a6.i l;
-    public static final a6.i m;
-    public static final a6.i n;
-    public static final a6.i o;
-    public static final a6.i p;
-    public static final a6.i q;
-    public static final a6.i r;
-
-    static {
-        int i10 = 22;
-        d = new a6.i("BUFFERED", i10);
-        e = new a6.i("SHOULD_BUFFER", i10);
-        f = new a6.i("S_RESUMING_BY_RCV", i10);
-        g = new a6.i("RESUMING_BY_EB", i10);
-        h = new a6.i("POISONED", i10);
-        i = new a6.i("DONE_RCV", i10);
-        j = new a6.i("INTERRUPTED_SEND", i10);
-        k = new a6.i("INTERRUPTED_RCV", i10);
-        l = new a6.i("CHANNEL_CLOSED", i10);
-        m = new a6.i("SUSPEND", i10);
-        n = new a6.i("SUSPEND_NO_WAITER", i10);
-        o = new a6.i("FAILED", i10);
-        p = new a6.i("CLOSE_HANDLER_CLOSED", i10);
-        q = new a6.i("CLOSE_HANDLER_INVOKED", i10);
-        r = new a6.i("NO_CLOSE_CAUSE", i10);
-    }
+    public static final com.google.android.gms.internal.clearcut.e d = new com.google.android.gms.internal.clearcut.e("BUFFERED", 1);
+    public static final com.google.android.gms.internal.clearcut.e e = new com.google.android.gms.internal.clearcut.e("SHOULD_BUFFER", 1);
+    public static final com.google.android.gms.internal.clearcut.e f = new com.google.android.gms.internal.clearcut.e("S_RESUMING_BY_RCV", 1);
+    public static final com.google.android.gms.internal.clearcut.e g = new com.google.android.gms.internal.clearcut.e("RESUMING_BY_EB", 1);
+    public static final com.google.android.gms.internal.clearcut.e h = new com.google.android.gms.internal.clearcut.e("POISONED", 1);
+    public static final com.google.android.gms.internal.clearcut.e i = new com.google.android.gms.internal.clearcut.e("DONE_RCV", 1);
+    public static final com.google.android.gms.internal.clearcut.e j = new com.google.android.gms.internal.clearcut.e("INTERRUPTED_SEND", 1);
+    public static final com.google.android.gms.internal.clearcut.e k = new com.google.android.gms.internal.clearcut.e("INTERRUPTED_RCV", 1);
+    public static final com.google.android.gms.internal.clearcut.e l = new com.google.android.gms.internal.clearcut.e("CHANNEL_CLOSED", 1);
+    public static final com.google.android.gms.internal.clearcut.e m = new com.google.android.gms.internal.clearcut.e("SUSPEND", 1);
+    public static final com.google.android.gms.internal.clearcut.e n = new com.google.android.gms.internal.clearcut.e("SUSPEND_NO_WAITER", 1);
+    public static final com.google.android.gms.internal.clearcut.e o = new com.google.android.gms.internal.clearcut.e("FAILED", 1);
+    public static final com.google.android.gms.internal.clearcut.e p = new com.google.android.gms.internal.clearcut.e("CLOSE_HANDLER_CLOSED", 1);
+    public static final com.google.android.gms.internal.clearcut.e q = new com.google.android.gms.internal.clearcut.e("CLOSE_HANDLER_INVOKED", 1);
+    public static final com.google.android.gms.internal.clearcut.e r = new com.google.android.gms.internal.clearcut.e("NO_CLOSE_CAUSE", 1);
 }

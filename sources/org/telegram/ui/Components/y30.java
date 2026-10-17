@@ -1,49 +1,51 @@
 package org.telegram.ui.Components;
 
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public abstract class y30 extends org.telegram.ui.ActionBar.e3 {
-    public z4.g b;
-    public v30 c;
-    public LinearLayout d;
-    public TextView[] e;
-    public float f;
-    public int h;
+public final class y30 implements hg.z1 {
+    public final /* synthetic */ z30 a;
 
-    public static void n(org.telegram.ui.m50 m50Var) {
-        TextView[] textViewArr = m50Var.e;
-        int i10 = m50Var.h;
-        TextView textView = textViewArr[i10];
-        TextView textView2 = i10 < textViewArr.length + (-1) ? textViewArr[i10 + 1] : null;
-        m50Var.containerView.getMeasuredWidth();
-        float measuredWidth = (textView.getMeasuredWidth() / 2) + textView.getLeft();
-        float measuredWidth2 = (m50Var.containerView.getMeasuredWidth() / 2) - measuredWidth;
-        if (textView2 != null) {
-            measuredWidth2 -= (((textView2.getMeasuredWidth() / 2) + textView2.getLeft()) - measuredWidth) * m50Var.f;
+    public y30(z30 z30Var) {
+        this.a = z30Var;
+    }
+
+    @Override // hg.z1
+    public final /* synthetic */ a0.h J() {
+        return null;
+    }
+
+    @Override // hg.z1
+    public final /* synthetic */ boolean O(int i10) {
+        return true;
+    }
+
+    @Override // hg.z1
+    public final void f(int i10) {
+        z30 z30Var = this.a;
+        a40 a40Var = z30Var.w;
+        if (i10 < 0 || i10 != z30Var.n || z30Var.h) {
+            return;
         }
-        for (int i11 = 0; i11 < textViewArr.length; i11++) {
-            int i12 = m50Var.h;
-            float f7 = 0.9f;
-            float f10 = 0.7f;
-            if (i11 >= i12 && i11 <= i12 + 1) {
-                if (i11 == i12) {
-                    float f11 = m50Var.f;
-                    f10 = 1.0f - (0.3f * f11);
-                    f7 = 1.0f - (f11 * 0.1f);
-                } else {
-                    float f12 = m50Var.f;
-                    f10 = 0.7f + (0.3f * f12);
-                    f7 = 0.9f + (f12 * 0.1f);
-                }
-            }
-            textViewArr[i11].setAlpha(f10);
-            textViewArr[i11].setScaleX(f7);
-            textViewArr[i11].setScaleY(f7);
+        int i11 = z30Var.f - 1;
+        boolean z10 = a40Var.s.getVisibility() == 0;
+        z30Var.l();
+        if (z30Var.f > i11) {
+            a40Var.K(i11);
         }
-        m50Var.d.setTranslationX(measuredWidth2);
-        m50Var.c.invalidate();
+        if (z30Var.d.e() || !a40Var.d.S0()) {
+            return;
+        }
+        a40Var.s.e(false, z10);
+    }
+
+    @Override // hg.z1
+    public final a0.h y() {
+        return this.a.w.e0;
+    }
+
+    @Override // hg.z1
+    public final /* synthetic */ void Y(ArrayList arrayList) {
     }
 }

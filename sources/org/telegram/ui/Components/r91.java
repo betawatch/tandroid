@@ -1,12 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import java.io.File;
+import android.view.TextureView;
+import android.view.View;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public interface r91 {
-    void a();
+    TextureView a(View view, boolean z10, float f7, int i10, boolean z11);
 
-    void b(File file, Bitmap bitmap, boolean z10);
+    void b();
+
+    void c(float f7);
+
+    void d();
+
+    void e(u91 u91Var, boolean z10);
+
+    TextureView f(View view, boolean z10, int i10, int i11, boolean z11);
+
+    ViewGroup g();
+
+    boolean h();
+
+    void i(boolean z10, m91 m91Var, float f7, boolean z11);
 }

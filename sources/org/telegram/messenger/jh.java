@@ -1,70 +1,44 @@
 package org.telegram.messenger;
 
-import android.os.CancellationSignal;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.PushListenerController;
-import org.telegram.messenger.RichMessageLayout;
-import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.messenger.PasskeysController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class jh implements Runnable {
+public final /* synthetic */ class jh implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ jh(Object obj, int i10) {
+    public /* synthetic */ jh(Object obj, Object obj2, long j10, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.c = obj;
+        this.d = obj2;
+        this.b = j10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                ((NotificationsSettingsFacade) this.b).lambda$applyDialogNotificationsSettings$0();
+                PasskeysController.1.lambda$onResult$0((org.telegram.ui.ActionBar.b2) this.c, (Utilities.Callback3) this.d, this.b, (TLRPC.auth_Authorization) obj, (TLRPC.TL_error) obj2);
                 break;
             case 1:
-                ((CancellationSignal) this.b).cancel();
-                break;
-            case 2:
-                ((ProxyRotationController) this.b).lambda$new$2();
-                break;
-            case 3:
-                ((PushListenerController.GooglePushListenerServiceProvider) this.b).lambda$onRequestPushToken$1();
-                break;
-            case 4:
-                ((RichMessageLayout.PreviewView) this.b).lambda$onTouchEvent$0();
-                break;
-            case 5:
-                ((RichMessageLayout.RichButtonRowBlock) this.b).invalidate();
-                break;
-            case 6:
-                ((RichMessageLayout.RichButtonSpan) this.b).invalidate();
-                break;
-            case 7:
-                RichMessageLayout.RichUnsupportedBlock.lambda$new$0((RichMessageLayout) this.b);
-                break;
-            case 8:
-                ((RichMessageLayout.Text) this.b).lambda$scheduleLongPress$2();
-                break;
-            case 9:
-                ((SecretChatHelper) this.b).lambda$startSecretChat$25();
-                break;
-            case 10:
-                ((SendMessagesHelper) this.b).lambda$new$0();
-                break;
-            case 11:
-                ((MessagesStorage.StringCallback) this.b).run(null);
-                break;
-            case 12:
-                ((SendMessagesHelper.LocationProvider) this.b).lambda$start$0();
-                break;
-            case 13:
-                ((TelegramMediaSession) this.b).onAccountSwitched();
+                ((BotForumHelper) this.c).lambda$performSendBotTopicCreate$5(this.b, (String) this.d, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
-                ((TranslateController) this.b).loadTranslatingDialogsCached();
+                ((GiftAuctionController) this.c).lambda$getOrRequestAuction$12((Utilities.Callback2) this.d, this.b, (TL_payments.TL_StarGiftAuctionState) obj, (TLRPC.TL_error) obj2);
                 break;
         }
+    }
+
+    public /* synthetic */ jh(BotForumHelper botForumHelper, long j10, String str) {
+        this.a = 1;
+        this.c = botForumHelper;
+        this.b = j10;
+        this.d = str;
     }
 }

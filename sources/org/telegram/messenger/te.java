@@ -1,31 +1,81 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class te implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ int c;
     public final /* synthetic */ long d;
-    public final /* synthetic */ String e;
+    public final /* synthetic */ long e;
 
-    public /* synthetic */ te(MessagesStorage messagesStorage, long j10, long j11, String str, int i10) {
-        this.a = i10;
+    public /* synthetic */ te(int i10, long j10, long j11, MessagesStorage messagesStorage) {
+        this.a = 4;
         this.b = messagesStorage;
-        this.c = j10;
-        this.d = j11;
-        this.e = str;
+        this.d = j10;
+        this.c = i10;
+        this.e = j11;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$updateRanksInLastMessages$45(this.c, this.d, this.e);
+                long j10 = this.d;
+                long j11 = this.e;
+                this.b.lambda$deleteAllReactionsFromChat$84(this.c, j10, j11);
+                break;
+            case 1:
+                long j12 = this.d;
+                long j13 = this.e;
+                this.b.lambda$updateMessageTopicId$214(this.c, j12, j13);
+                break;
+            case 2:
+                long j14 = this.e;
+                int i10 = this.c;
+                this.b.lambda$markMessagePollVotesAsRead$263(this.d, j14, i10);
+                break;
+            case 3:
+                long j15 = this.e;
+                int i11 = this.c;
+                this.b.lambda$markMessageReactionsAsRead$262(this.d, j15, i11);
+                break;
+            case 4:
+                int i12 = this.c;
+                long j16 = this.e;
+                this.b.lambda$loadPendingTasks$13(this.d, i12, j16);
+                break;
+            case 5:
+                long j17 = this.e;
+                int i13 = this.c;
+                this.b.lambda$loadPendingTasks$32(this.d, j17, i13);
+                break;
+            case 6:
+                long j18 = this.d;
+                long j19 = this.e;
+                this.b.lambda$markMentionMessageAsRead$112(this.c, j18, j19);
                 break;
             default:
-                this.b.lambda$updateRanksInLastMessages$46(this.c, this.d, this.e);
+                long j20 = this.e;
+                int i14 = this.c;
+                this.b.lambda$resetMentionsCount$114(this.d, j20, i14);
                 break;
         }
+    }
+
+    public /* synthetic */ te(MessagesStorage messagesStorage, int i10, long j10, long j11, int i11) {
+        this.a = i11;
+        this.b = messagesStorage;
+        this.c = i10;
+        this.d = j10;
+        this.e = j11;
+    }
+
+    public /* synthetic */ te(MessagesStorage messagesStorage, long j10, long j11, int i10, int i11) {
+        this.a = i11;
+        this.b = messagesStorage;
+        this.d = j10;
+        this.e = j11;
+        this.c = i10;
     }
 }

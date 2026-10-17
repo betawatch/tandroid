@@ -5,26 +5,26 @@ import android.text.style.ForegroundColorSpan;
 import android.text.style.StyleSpan;
 import android.text.style.TypefaceSpan;
 import android.text.style.UnderlineSpan;
+import d2.b;
 import e2.j;
 import e2.m0;
 import e2.x;
 import e9.l0;
 import e9.n0;
 import e9.x1;
-import i2.d;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
+import r.c;
 import v7.u6;
-import z3.b;
-import z3.e;
+import z3.d;
+import z3.l;
 import z3.m;
-import z3.n;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class a implements n {
+public final class a implements m {
     public final x a = new x();
     public final boolean b;
     public final int c;
@@ -58,13 +58,13 @@ public final class a implements n {
         }
     }
 
-    public static void a(SpannableStringBuilder spannableStringBuilder, int i10, int i11, int i12, int i13, int i14) {
+    public static void b(SpannableStringBuilder spannableStringBuilder, int i10, int i11, int i12, int i13, int i14) {
         if (i10 != i11) {
             spannableStringBuilder.setSpan(new ForegroundColorSpan((i10 >>> 8) | ((i10 & 255) << 24)), i12, i13, i14 | 33);
         }
     }
 
-    public static void b(SpannableStringBuilder spannableStringBuilder, int i10, int i11, int i12, int i13, int i14) {
+    public static void d(SpannableStringBuilder spannableStringBuilder, int i10, int i11, int i12, int i13, int i14) {
         if (i10 != i11) {
             int i15 = i14 | 33;
             boolean z10 = (i10 & 1) != 0;
@@ -89,14 +89,19 @@ public final class a implements n {
         }
     }
 
-    @Override // z3.n
-    public final int X() {
+    @Override // z3.m
+    public final /* synthetic */ d a(int i10, int i11, byte[] bArr) {
+        return c.a(this, bArr, i11);
+    }
+
+    @Override // z3.m
+    public final int c() {
         return 2;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // z3.n
-    public final void m0(byte[] bArr, int i10, int i11, m mVar, j jVar) {
+    @Override // z3.m
+    public final void g(byte[] bArr, int i10, int i11, l lVar, j jVar) {
         String y3;
         int i12;
         int i13;
@@ -121,12 +126,12 @@ public final class a implements n {
         }
         if (y3.isEmpty()) {
             l0 l0Var = n0.b;
-            jVar.accept(new b(-9223372036854775807L, -9223372036854775807L, x1.e));
+            jVar.accept(new z3.a(-9223372036854775807L, -9223372036854775807L, x1.e));
             return;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(y3);
-        b(spannableStringBuilder, this.c, 0, 0, spannableStringBuilder.length(), 16711680);
-        a(spannableStringBuilder, this.d, -1, 0, spannableStringBuilder.length(), 16711680);
+        d(spannableStringBuilder, this.c, 0, 0, spannableStringBuilder.length(), 16711680);
+        b(spannableStringBuilder, this.d, -1, 0, spannableStringBuilder.length(), 16711680);
         int length = spannableStringBuilder.length();
         String str = this.e;
         if (str != "sans-serif") {
@@ -151,7 +156,7 @@ public final class a implements n {
                     xVar.O(i14);
                     int m12 = xVar.m();
                     if (H4 > spannableStringBuilder.length()) {
-                        StringBuilder l4 = d.l(H4, "Truncating styl end (", ") to cueText.length() (");
+                        StringBuilder l4 = i0.a.l(H4, "Truncating styl end (", ") to cueText.length() (");
                         l4.append(spannableStringBuilder.length());
                         l4.append(").");
                         e2.a.l("Tx3gParser", l4.toString());
@@ -163,8 +168,8 @@ public final class a implements n {
                     } else {
                         i13 = i21;
                         int i22 = H4;
-                        b(spannableStringBuilder, A, this.c, H3, i22, 0);
-                        a(spannableStringBuilder, m12, this.d, H3, i22, 0);
+                        d(spannableStringBuilder, A, this.c, H3, i22, 0);
+                        b(spannableStringBuilder, m12, this.d, H3, i22, 0);
                     }
                     i20 = i13 + 1;
                     i14 = 1;
@@ -184,15 +189,10 @@ public final class a implements n {
             i14 = 1;
             i15 = 0;
         }
-        jVar.accept(new b(-9223372036854775807L, -9223372036854775807L, n0.y(new d2.b(spannableStringBuilder, null, null, null, f7, 0, 0, -3.4028235E38f, TLObject.FLAG_31, TLObject.FLAG_31, -3.4028235E38f, -3.4028235E38f, -3.4028235E38f, false, -16777216, TLObject.FLAG_31, 0.0f, 0))));
+        jVar.accept(new z3.a(-9223372036854775807L, -9223372036854775807L, n0.y(new b(spannableStringBuilder, null, null, null, f7, 0, 0, -3.4028235E38f, TLObject.FLAG_31, TLObject.FLAG_31, -3.4028235E38f, -3.4028235E38f, -3.4028235E38f, false, -16777216, TLObject.FLAG_31, 0.0f, 0))));
     }
 
-    @Override // z3.n
-    public final /* synthetic */ e x(int i10, int i11, byte[] bArr) {
-        return t8.b.a(this, bArr, i11);
-    }
-
-    @Override // z3.n
+    @Override // z3.m
     public final /* synthetic */ void reset() {
     }
 }

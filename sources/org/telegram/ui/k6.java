@@ -6,55 +6,55 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class k6 extends org.telegram.ui.Components.md0 {
-    public final /* synthetic */ d7 D0;
+public final class k6 extends org.telegram.ui.Components.gd0 {
+    public final /* synthetic */ c7 D0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k6(d7 d7Var, Context context) {
+    public k6(c7 c7Var, Context context) {
         super(context);
-        this.D0 = d7Var;
+        this.D0 = c7Var;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:11:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:8:0x003a  */
-    @Override // org.telegram.ui.Components.ow0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.jw0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void dispatchDraw(Canvas canvas) {
-        org.telegram.ui.ActionBar.b5 b5Var;
-        org.telegram.ui.ActionBar.b5 b5Var2;
+        org.telegram.ui.ActionBar.d5 d5Var;
+        org.telegram.ui.ActionBar.d5 d5Var2;
         super.dispatchDraw(canvas);
         boolean Z = Z();
-        d7 d7Var = this.D0;
+        c7 c7Var = this.D0;
         if (Z) {
-            float f7 = d7Var.j0;
+            float f7 = c7Var.j0;
             if (f7 != 0.0f) {
-                d7Var.j0 = f7 - 0.16f;
+                c7Var.j0 = f7 - 0.16f;
                 invalidate();
-                d7Var.j0 = Utilities.clamp(d7Var.j0, 1.0f, 0.0f);
-                b5Var = ((org.telegram.ui.ActionBar.m2) d7Var).parentLayout;
-                if (b5Var == null) {
-                    b5Var2 = ((org.telegram.ui.ActionBar.m2) d7Var).parentLayout;
-                    ActionBarLayout actionBarLayout = (ActionBarLayout) b5Var2;
-                    actionBarLayout.p(canvas, (int) (d7Var.h0 * 255.0f * d7Var.j0), org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight);
+                c7Var.j0 = Utilities.clamp(c7Var.j0, 1.0f, 0.0f);
+                d5Var = ((org.telegram.ui.ActionBar.n2) c7Var).parentLayout;
+                if (d5Var == null) {
+                    d5Var2 = ((org.telegram.ui.ActionBar.n2) c7Var).parentLayout;
+                    ActionBarLayout actionBarLayout = (ActionBarLayout) d5Var2;
+                    actionBarLayout.p(canvas, (int) (c7Var.h0 * 255.0f * c7Var.j0), org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight);
                     return;
                 }
                 return;
             }
         }
         if (!Z) {
-            float f10 = d7Var.j0;
+            float f10 = c7Var.j0;
             if (f10 != 1.0f) {
-                d7Var.j0 = f10 + 0.16f;
+                c7Var.j0 = f10 + 0.16f;
                 invalidate();
             }
         }
-        d7Var.j0 = Utilities.clamp(d7Var.j0, 1.0f, 0.0f);
-        b5Var = ((org.telegram.ui.ActionBar.m2) d7Var).parentLayout;
-        if (b5Var == null) {
+        c7Var.j0 = Utilities.clamp(c7Var.j0, 1.0f, 0.0f);
+        d5Var = ((org.telegram.ui.ActionBar.n2) c7Var).parentLayout;
+        if (d5Var == null) {
         }
     }
 }

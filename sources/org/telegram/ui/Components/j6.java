@@ -1,95 +1,19 @@
 package org.telegram.ui.Components;
 
-import android.animation.ObjectAnimator;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import java.util.ArrayList;
-import java.util.Locale;
+import android.graphics.Paint;
+import android.view.View;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class j6 {
-    public static final org.telegram.ui.Cells.t8 h = new org.telegram.ui.Cells.t8("progress", 3);
-    public final TextPaint c;
-    public ObjectAnimator d;
-    public final org.telegram.ui.Cells.u1 g;
-    public final ArrayList a = new ArrayList();
-    public final ArrayList b = new ArrayList();
-    public float e = 0.0f;
-    public int f = 1;
+public final class j6 extends Paint {
+    public final org.telegram.ui.ActionBar.d6 a;
+    public final i5 b;
 
-    public j6(org.telegram.ui.Cells.u1 u1Var, TextPaint textPaint) {
-        this.c = textPaint;
-        this.g = u1Var;
-    }
-
-    public final int a() {
-        ArrayList arrayList = this.a;
-        int size = arrayList.size();
-        float f7 = 0.0f;
-        for (int i10 = 0; i10 < size; i10++) {
-            f7 += ((StaticLayout) arrayList.get(i10)).getLineWidth(0);
-        }
-        return (int) Math.ceil(f7);
-    }
-
-    public final void b(int i10, boolean z10) {
-        float f7;
-        ArrayList arrayList;
-        int i11 = this.f;
-        ArrayList arrayList2 = this.a;
-        if (i11 != i10 || arrayList2.isEmpty()) {
-            ObjectAnimator objectAnimator = this.d;
-            if (objectAnimator != null) {
-                objectAnimator.cancel();
-                this.d = null;
-            }
-            ArrayList arrayList3 = this.b;
-            arrayList3.clear();
-            arrayList3.addAll(arrayList2);
-            arrayList2.clear();
-            Locale locale = Locale.US;
-            int i12 = this.f;
-            StringBuilder sb2 = new StringBuilder();
-            sb2.append(i12);
-            String sb3 = sb2.toString();
-            StringBuilder sb4 = new StringBuilder();
-            sb4.append(i10);
-            String sb5 = sb4.toString();
-            boolean z11 = i10 > this.f;
-            this.f = i10;
-            float f10 = 0.0f;
-            this.e = 0.0f;
-            int i13 = 0;
-            while (i13 < sb5.length()) {
-                int i14 = i13 + 1;
-                String substring = sb5.substring(i13, i14);
-                String substring2 = (arrayList3.isEmpty() || i13 >= sb3.length()) ? null : sb3.substring(i13, i14);
-                if (substring2 == null || !substring2.equals(substring)) {
-                    f7 = f10;
-                    arrayList = arrayList3;
-                    arrayList2.add(new StaticLayout(substring, this.c, (int) Math.ceil(r14.measureText(substring)), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false));
-                } else {
-                    arrayList2.add((StaticLayout) arrayList3.get(i13));
-                    arrayList3.set(i13, null);
-                    f7 = f10;
-                    arrayList = arrayList3;
-                }
-                f10 = f7;
-                i13 = i14;
-                arrayList3 = arrayList;
-            }
-            float f11 = f10;
-            ArrayList arrayList4 = arrayList3;
-            if (z10 && !arrayList4.isEmpty()) {
-                ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, h, z11 ? -1.0f : 1.0f, f11);
-                this.d = ofFloat;
-                ofFloat.setDuration(150L);
-                this.d.addListener(new org.telegram.ui.u0(this, 29));
-                this.d.start();
-            }
-            this.g.invalidate();
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j6(View view, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(3);
+        bs bsVar = bs.h;
+        this.a = d6Var;
+        this.b = new i5(view, 320L, bsVar);
     }
 }

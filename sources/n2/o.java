@@ -1,13 +1,51 @@
 package n2;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes.dex */
-public final class o {
-    public final byte[] a;
-    public final String b;
+import java.util.UUID;
 
-    public o(String str, byte[] bArr) {
-        this.a = bArr;
-        this.b = str;
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes.dex */
+public final class o implements h {
+    public final g a;
+
+    public o(g gVar) {
+        this.a = gVar;
+    }
+
+    @Override // n2.h
+    public final UUID c() {
+        return b2.m.b;
+    }
+
+    @Override // n2.h
+    public final boolean d() {
+        return false;
+    }
+
+    @Override // n2.h
+    public final int e() {
+        return 1;
+    }
+
+    @Override // n2.h
+    public final boolean f(String str) {
+        return false;
+    }
+
+    @Override // n2.h
+    public final g g() {
+        return this.a;
+    }
+
+    @Override // n2.h
+    public final h2.b h() {
+        return null;
+    }
+
+    @Override // n2.h
+    public final void a(k kVar) {
+    }
+
+    @Override // n2.h
+    public final void b(k kVar) {
     }
 }

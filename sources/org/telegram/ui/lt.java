@@ -1,58 +1,62 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.view.View;
+import java.util.Comparator;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.support.LongSparseIntArray;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lt implements View.OnClickListener {
+public final /* synthetic */ class lt implements Comparator {
     public final /* synthetic */ int a;
-    public final /* synthetic */ xt b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ lt(xt xtVar, int i10) {
+    public /* synthetic */ lt(Object obj, int i10) {
         this.a = i10;
-        this.b = xtVar;
+        this.b = obj;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                xt xtVar = this.b;
-                xtVar.K = false;
-                xtVar.z.invalidate();
-                xtVar.n();
-                break;
+                return ((Comparator) this.b).compare(((kt) obj).a, ((kt) obj2).a);
             case 1:
-                xt xtVar2 = this.b;
-                Activity activity = xtVar2.w;
-                if (activity instanceof LaunchActivity) {
-                    LaunchActivity launchActivity = (LaunchActivity) activity;
-                    if (launchActivity.O() != null && launchActivity.O().getLastFragment() != null) {
-                        launchActivity.O().getLastFragment().dismissCurrentDialog();
-                    }
-                    launchActivity.p0(new PremiumPreviewFragment(0, PremiumPreviewFragment.l0(5)));
+                LongSparseIntArray longSparseIntArray = (LongSparseIntArray) this.b;
+                int i10 = longSparseIntArray.get(((Long) obj).longValue());
+                int i11 = longSparseIntArray.get(((Long) obj2).longValue());
+                if (i10 > i11) {
+                    return 1;
                 }
-                xtVar2.K = false;
-                xtVar2.z.invalidate();
-                xtVar2.n();
-                break;
+                return i10 < i11 ? -1 : 0;
             case 2:
-                xt xtVar3 = this.b;
-                vt vtVar = xtVar3.l;
-                if (vtVar != null) {
-                    vtVar.K();
+                LocaleController.LocaleInfo localeInfo = (LocaleController.LocaleInfo) this.b;
+                LocaleController.LocaleInfo localeInfo2 = (LocaleController.LocaleInfo) obj;
+                LocaleController.LocaleInfo localeInfo3 = (LocaleController.LocaleInfo) obj2;
+                if (localeInfo2 != localeInfo) {
+                    if (localeInfo3 != localeInfo) {
+                        int i12 = localeInfo2.serverIndex;
+                        int i13 = localeInfo3.serverIndex;
+                        if (i12 == i13) {
+                            return localeInfo2.name.compareTo(localeInfo3.name);
+                        }
+                        if (i12 <= i13) {
+                            if (i12 >= i13) {
+                                return 0;
+                            }
+                        }
+                    }
+                    return 1;
                 }
-                xtVar3.p();
-                break;
+                return -1;
             default:
-                xt xtVar4 = this.b;
-                vt vtVar2 = xtVar4.l;
-                if (vtVar2 != null) {
-                    vtVar2.r();
+                StickersActivity stickersActivity = (StickersActivity) this.b;
+                int indexOf = stickersActivity.e.indexOf((TLRPC.TL_messages_stickerSet) obj);
+                int indexOf2 = stickersActivity.e.indexOf((TLRPC.TL_messages_stickerSet) obj2);
+                if (indexOf < 0 || indexOf2 < 0) {
+                    return 0;
                 }
-                xtVar4.p();
-                break;
+                return indexOf - indexOf2;
         }
     }
 }

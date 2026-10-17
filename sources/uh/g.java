@@ -1,40 +1,41 @@
 package uh;
 
 import android.app.Activity;
+import hg.o;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stats;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.j3;
 import org.telegram.ui.ActionBar.y;
-import org.telegram.ui.Components.a71;
-import org.telegram.ui.Components.db;
-import org.telegram.ui.Components.lm0;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.hb1;
-import org.telegram.ui.ta1;
-import org.telegram.ui.uc;
+import org.telegram.ui.Components.bb;
+import org.telegram.ui.Components.hm0;
+import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.s61;
+import org.telegram.ui.d91;
+import org.telegram.ui.r91;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes4.dex */
-public final class g extends db {
-    public a71 X;
-    public final ta1 Y;
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes3.dex */
+public final class g extends bb {
+    public s61 X;
+    public final d91 Y;
 
-    public g(Activity activity, c6 c6Var, TL_stats.TL_statsPollStats tL_statsPollStats) {
-        super(activity, null, true, false, 2, c6Var);
-        setBackgroundColor(g6.w0(g6.a7, c6Var));
+    public g(Activity activity, d6 d6Var, TL_stats.TL_statsPollStats tL_statsPollStats) {
+        super(activity, null, true, false, 2, d6Var);
+        setBackgroundColor(h6.w0(h6.a7, d6Var));
         this.occupyNavigationBar = true;
         this.drawNavigationBar = false;
         this.L = false;
         this.K = AndroidUtilities.dp(12.0f);
-        this.Y = hb1.f0(tL_statsPollStats.votes_graph, LocaleController.getString(R.string.PollV2StatsVoteTimeline), 2, false);
-        mm0 mm0Var = this.d;
+        this.Y = r91.f0(tL_statsPollStats.votes_graph, LocaleController.getString(R.string.PollV2StatsVoteTimeline), 2, false);
+        im0 im0Var = this.d;
         int i10 = this.backgroundPaddingLeft;
-        mm0Var.setPadding(i10, 0, i10, AndroidUtilities.navigationBarHeight);
+        im0Var.setPadding(i10, 0, i10, AndroidUtilities.navigationBarHeight);
         this.d.setClipToPadding(false);
         this.d.setSections(true);
         y n10 = this.e.n();
@@ -43,23 +44,23 @@ public final class g extends db {
         this.X.N(false);
     }
 
-    public static int Q(int i10, long j10, int i11, uc ucVar) {
+    public static int Q(int i10, long j10, int i11, j3 j3Var) {
         TL_stats.TL_statsGetPollStats tL_statsGetPollStats = new TL_stats.TL_statsGetPollStats();
         tL_statsGetPollStats.peer = MessagesController.getInstance(i10).getInputPeer(j10);
         tL_statsGetPollStats.msg_id = i11;
-        return ConnectionsManager.getInstance(i10).sendRequestTyped(tL_statsGetPollStats, new org.telegram.messenger.a(), new ii.a(ucVar, 10));
+        return ConnectionsManager.getInstance(i10).sendRequestTyped(tL_statsGetPollStats, new org.telegram.messenger.a(), new o(j3Var, 21));
     }
 
-    @Override // org.telegram.ui.Components.db
-    public final CharSequence B() {
+    @Override // org.telegram.ui.Components.bb
+    public final CharSequence A() {
         return LocaleController.getString(R.string.PollV2StatsPollStats);
     }
 
-    @Override // org.telegram.ui.Components.db
-    public final lm0 x(mm0 mm0Var) {
-        a71 a71Var = new a71(mm0Var, getContext(), this.currentAccount, 0, true, new ii.a(this, 9), this.resourcesProvider);
-        this.X = a71Var;
-        a71Var.r = false;
-        return a71Var;
+    @Override // org.telegram.ui.Components.bb
+    public final hm0 x(im0 im0Var) {
+        s61 s61Var = new s61(im0Var, getContext(), this.currentAccount, 0, true, new o(this, 20), this.resourcesProvider);
+        this.X = s61Var;
+        s61Var.r = false;
+        return s61Var;
     }
 }

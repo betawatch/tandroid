@@ -1,77 +1,66 @@
 package org.telegram.ui.Components;
 
-import java.util.List;
+import android.content.Context;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.beta.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h10 implements Utilities.Callback {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ org.telegram.ui.ActionBar.b5 b;
-    public final /* synthetic */ org.telegram.ui.uc c;
+public final class h10 extends FrameLayout {
+    public final q6 a;
+    public final q6 b;
 
-    public /* synthetic */ h10(org.telegram.ui.ActionBar.b5 b5Var, org.telegram.ui.uc ucVar) {
-        this.b = b5Var;
-        this.c = ucVar;
+    public h10(Context context) {
+        super(context);
+        q6 q6Var = new q6(context, true, true, false);
+        this.a = q6Var;
+        q6Var.setTextSize(AndroidUtilities.dp(15.0f));
+        q6Var.setTypeface(AndroidUtilities.bold());
+        int i10 = org.telegram.ui.ActionBar.h6.L6;
+        q6Var.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
+        q6Var.setGravity(LocaleController.isRTL ? 5 : 3);
+        addView(q6Var, w7.z5.a(20.0f, 21.0f, 15.0f, 21.0f, 2.0f, -1, (LocaleController.isRTL ? 5 : 3) | 80));
+        q6 q6Var2 = new q6(context, true, true, true);
+        this.b = q6Var2;
+        q6Var2.b(0.45f, 250L, bs.h);
+        q6Var2.setTextSize(AndroidUtilities.dp(15.0f));
+        q6Var2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i10, false));
+        q6Var2.setGravity(LocaleController.isRTL ? 3 : 5);
+        addView(q6Var2, w7.z5.a(20.0f, 21.0f, 15.0f, 21.0f, 2.0f, -2, (LocaleController.isRTL ? 3 : 5) | 80));
+        WeakHashMap weakHashMap = r0.i0.a;
+        new r0.w(R.id.tag_accessibility_heading, Boolean.class, 0, 28, 2).d(this, Boolean.TRUE);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0038  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0045  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0058  */
-    /* JADX WARN: Removed duplicated region for block: B:26:0x003e  */
-    @Override // org.telegram.messenger.Utilities.Callback
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run(Object obj) {
-        boolean z10;
-        switch (this.a) {
-            case 0:
-                this.c.run(this.b.getLastFragment());
-                break;
-            default:
-                Integer num = (Integer) obj;
-                List fragmentStack = this.b.getFragmentStack();
-                boolean z11 = true;
-                org.telegram.ui.ActionBar.m2 m2Var = null;
-                for (int size = fragmentStack.size() - 1; size >= 0; size--) {
-                    m2Var = (org.telegram.ui.ActionBar.m2) fragmentStack.get(size);
-                    if (!(m2Var instanceof org.telegram.ui.yy) && !(m2Var instanceof org.telegram.ui.jh0)) {
-                        if (z11) {
-                            m2Var.finishFragment();
-                            z11 = false;
-                        } else {
-                            m2Var.removeSelfFromStack();
-                        }
-                    }
-                    org.telegram.ui.ActionBar.m2 m2Var2 = m2Var;
-                    org.telegram.ui.ActionBar.m2 m2Var3 = !(m2Var2 instanceof org.telegram.ui.jh0) ? ((org.telegram.ui.jh0) m2Var2).J : m2Var2;
-                    z10 = m2Var3 instanceof org.telegram.ui.yy;
-                    org.telegram.ui.uc ucVar = this.c;
-                    if (z10) {
-                        ucVar.run(m2Var2);
-                        break;
-                    } else {
-                        org.telegram.ui.yy yyVar = (org.telegram.ui.yy) m2Var3;
-                        yyVar.I3();
-                        AndroidUtilities.runOnUIThread(new org.telegram.ui.p6(yyVar, num, ucVar, m2Var2, 21), 80L);
-                        break;
-                    }
-                }
-                org.telegram.ui.ActionBar.m2 m2Var22 = m2Var;
-                if (!(m2Var22 instanceof org.telegram.ui.jh0)) {
-                }
-                z10 = m2Var3 instanceof org.telegram.ui.yy;
-                org.telegram.ui.uc ucVar2 = this.c;
-                if (z10) {
-                }
-                break;
+    public final void a(String str, Runnable runnable) {
+        boolean z10 = !LocaleController.isRTL;
+        q6 q6Var = this.b;
+        q6Var.c(str, z10, true);
+        q6Var.setOnClickListener(new v6(1, runnable));
+    }
+
+    public final void b(String str, boolean z10) {
+        q6 q6Var = this.a;
+        if (z10) {
+            q6Var.a();
         }
+        q6Var.c(str, z10 && !LocaleController.isRTL, true);
     }
 
-    public /* synthetic */ h10(org.telegram.ui.uc ucVar, org.telegram.ui.ActionBar.b5 b5Var) {
-        this.c = ucVar;
-        this.b = b5Var;
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.widget.TextView");
+        accessibilityNodeInfo.setText(this.a.getText());
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
     }
 }

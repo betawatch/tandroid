@@ -1,48 +1,37 @@
 package org.telegram.ui.web;
 
-import android.webkit.GeolocationPermissions;
+import android.content.DialogInterface;
+import android.webkit.JsResult;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class r0 implements q0.a {
+public final /* synthetic */ class r0 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ w0 b;
-    public final /* synthetic */ GeolocationPermissions.Callback c;
-    public final /* synthetic */ String d;
+    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ JsResult c;
 
-    public /* synthetic */ r0(w0 w0Var, GeolocationPermissions.Callback callback, String str, int i10) {
+    public /* synthetic */ r0(boolean[] zArr, JsResult jsResult, int i10) {
         this.a = i10;
-        this.b = w0Var;
-        this.c = callback;
-        this.d = str;
+        this.b = zArr;
+        this.c = jsResult;
     }
 
-    @Override // q0.a
-    public final void accept(Object obj) {
-        Boolean bool = (Boolean) obj;
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                w0 w0Var = this.b;
-                if (w0Var.a != null) {
-                    w0Var.a = null;
-                    boolean booleanValue = bool.booleanValue();
-                    GeolocationPermissions.Callback callback = this.c;
-                    String str = this.d;
-                    if (!booleanValue) {
-                        callback.invoke(str, false, false);
-                        break;
-                    } else {
-                        c1.a(w0Var.e.Q, new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new r0(w0Var, callback, str, 1));
-                        break;
-                    }
+                boolean[] zArr = this.b;
+                if (!zArr[0]) {
+                    zArr[0] = true;
+                    this.c.cancel();
+                    break;
                 }
                 break;
             default:
-                w0 w0Var2 = this.b;
-                w0Var2.getClass();
-                this.c.invoke(this.d, bool.booleanValue(), false);
-                if (bool.booleanValue()) {
-                    w0Var2.e.Q.T = true;
+                boolean[] zArr2 = this.b;
+                if (!zArr2[0]) {
+                    zArr2[0] = true;
+                    this.c.cancel();
                     break;
                 }
                 break;

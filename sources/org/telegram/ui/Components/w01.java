@@ -1,21 +1,22 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
+import java.io.File;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class w01 extends org.telegram.ui.Cells.u1 {
-    @Override // org.telegram.ui.Cells.u1
-    public final int getParentWidth() {
-        return org.telegram.messenger.sk.A(128.0f, AndroidUtilities.displaySize.x, 2);
-    }
+public final class w01 {
+    public final File a;
+    public long b;
+    public long c;
+    public boolean d;
+    public boolean e;
+    public TLRPC.InputFile f;
+    public TLRPC.InputEncryptedFile g;
+    public byte[] h;
+    public byte[] i;
 
-    @Override // android.view.View
-    public final boolean isPressed() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Cells.u1
-    public final void y4() {
+    public w01(File file) {
+        this.a = file;
     }
 }

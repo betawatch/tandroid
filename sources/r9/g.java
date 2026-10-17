@@ -14,11 +14,10 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicReference;
-import org.telegram.ui.web.v;
-import w7.b7;
 import w7.c7;
+import w7.f7;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class g implements b {
     public static final f n = new f(0);
@@ -64,7 +63,7 @@ public final class g implements b {
                 try {
                     ComponentRegistrar componentRegistrar = (ComponentRegistrar) ((qa.b) it.next()).get();
                     if (componentRegistrar != null) {
-                        arrayList3.addAll(this.h.w(componentRegistrar));
+                        arrayList3.addAll(this.h.v(componentRegistrar));
                         it.remove();
                     }
                 } catch (m e) {
@@ -92,11 +91,11 @@ public final class g implements b {
                 }
             }
             if (this.a.isEmpty()) {
-                b7.a(arrayList3);
+                c7.a(arrayList3);
             } else {
                 ArrayList arrayList6 = new ArrayList(this.a.keySet());
                 arrayList6.addAll(arrayList3);
-                b7.a(arrayList6);
+                c7.a(arrayList6);
             }
             int size3 = arrayList3.size();
             int i15 = 0;
@@ -106,9 +105,9 @@ public final class g implements b {
                 a aVar2 = (a) obj4;
                 this.a.put(aVar2, new n(new l9.d(i10, this, aVar2)));
             }
-            arrayList5.addAll(j(arrayList3));
-            arrayList5.addAll(k());
-            i();
+            arrayList5.addAll(h(arrayList3));
+            arrayList5.addAll(j());
+            e();
         }
         int size4 = arrayList5.size();
         while (i11 < size4) {
@@ -124,12 +123,12 @@ public final class g implements b {
 
     @Override // r9.b
     public final Object a(Class cls) {
-        return d(r.a(cls));
+        return f(r.a(cls));
     }
 
     @Override // r9.b
     public final qa.b b(Class cls) {
-        return e(r.a(cls));
+        return g(r.a(cls));
     }
 
     public final void c(HashMap hashMap, boolean z10) {
@@ -163,40 +162,7 @@ public final class g implements b {
         }
     }
 
-    @Override // r9.b
-    public final Object d(r rVar) {
-        qa.b e = e(rVar);
-        if (e == null) {
-            return null;
-        }
-        return e.get();
-    }
-
-    @Override // r9.b
-    public final synchronized qa.b e(r rVar) {
-        c7.a(rVar, "Null interface requested.");
-        return (qa.b) this.b.get(rVar);
-    }
-
-    @Override // r9.b
-    public final Set f(r rVar) {
-        qa.b bVar;
-        synchronized (this) {
-            bVar = (o) this.c.get(rVar);
-            if (bVar == null) {
-                bVar = n;
-            }
-        }
-        return (Set) bVar.get();
-    }
-
-    @Override // r9.b
-    public final p g(r rVar) {
-        qa.b e = e(rVar);
-        return e == null ? new p(p.c, p.d) : e instanceof p ? (p) e : new p(null, e);
-    }
-
-    public final void h(boolean z10) {
+    public final void d(boolean z10) {
         HashMap hashMap;
         AtomicReference atomicReference = this.f;
         Boolean valueOf = Boolean.valueOf(z10);
@@ -211,7 +177,7 @@ public final class g implements b {
         c(hashMap, z10);
     }
 
-    public final void i() {
+    public final void e() {
         HashMap hashMap = this.b;
         HashMap hashMap2 = this.c;
         for (a aVar : this.a.keySet()) {
@@ -240,7 +206,22 @@ public final class g implements b {
         }
     }
 
-    public final ArrayList j(ArrayList arrayList) {
+    @Override // r9.b
+    public final Object f(r rVar) {
+        qa.b g10 = g(rVar);
+        if (g10 == null) {
+            return null;
+        }
+        return g10.get();
+    }
+
+    @Override // r9.b
+    public final synchronized qa.b g(r rVar) {
+        f7.a(rVar, "Null interface requested.");
+        return (qa.b) this.b.get(rVar);
+    }
+
+    public final ArrayList h(ArrayList arrayList) {
         ArrayList arrayList2 = new ArrayList();
         int size = arrayList.size();
         int i10 = 0;
@@ -253,7 +234,7 @@ public final class g implements b {
                 for (r rVar : aVar.b) {
                     HashMap hashMap = this.b;
                     if (hashMap.containsKey(rVar)) {
-                        arrayList2.add(new v(19, (p) ((qa.b) hashMap.get(rVar)), bVar));
+                        arrayList2.add(new p2.b(10, (p) ((qa.b) hashMap.get(rVar)), bVar));
                     } else {
                         hashMap.put(rVar, bVar);
                     }
@@ -263,7 +244,19 @@ public final class g implements b {
         return arrayList2;
     }
 
-    public final ArrayList k() {
+    @Override // r9.b
+    public final Set i(r rVar) {
+        qa.b bVar;
+        synchronized (this) {
+            bVar = (o) this.c.get(rVar);
+            if (bVar == null) {
+                bVar = n;
+            }
+        }
+        return (Set) bVar.get();
+    }
+
+    public final ArrayList j() {
         HashMap hashMap = this.c;
         ArrayList arrayList = new ArrayList();
         HashMap hashMap2 = new HashMap();
@@ -284,7 +277,7 @@ public final class g implements b {
                 o oVar = (o) hashMap.get(entry2.getKey());
                 Iterator it = ((Set) entry2.getValue()).iterator();
                 while (it.hasNext()) {
-                    arrayList.add(new v(20, oVar, (qa.b) it.next()));
+                    arrayList.add(new p2.b(11, oVar, (qa.b) it.next()));
                 }
             } else {
                 r rVar2 = (r) entry2.getKey();
@@ -297,5 +290,11 @@ public final class g implements b {
             }
         }
         return arrayList;
+    }
+
+    @Override // r9.b
+    public final p n(r rVar) {
+        qa.b g10 = g(rVar);
+        return g10 == null ? new p(p.c, p.d) : g10 instanceof p ? (p) g10 : new p(null, g10);
     }
 }

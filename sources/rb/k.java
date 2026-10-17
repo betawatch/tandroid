@@ -1,20 +1,20 @@
 package rb;
 
 import android.content.Context;
-import b2.n0;
+import b2.m0;
 import java.util.UUID;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class k {
     public static final r9.a b;
     public final Context a;
 
     static {
-        n0 a2 = r9.a.a(k.class);
+        m0 a2 = r9.a.a(k.class);
         a2.a(r9.j.a(g.class));
         a2.a(r9.j.a(Context.class));
-        a2.f = new pb.a(22);
+        a2.f = new oa.d(22);
         b = a2.b();
     }
 

@@ -10,10 +10,10 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.d20;
-import org.telegram.ui.s90;
+import org.telegram.ui.b80;
+import org.telegram.ui.b90;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k1 implements RequestDelegate {
     public final /* synthetic */ int a = 0;
@@ -63,16 +63,16 @@ public final /* synthetic */ class k1 implements RequestDelegate {
                 ((ContactsController) obj6).lambda$performSyncPhoneBook$20((HashMap) obj5, (SparseArray) obj3, (boolean[]) obj2, (HashMap) serializable3, (TLRPC.TL_contacts_importContacts) obj, this.c, (HashMap) obj4, this.b, (HashMap) serializable2, (ArrayList) cloneable, (HashMap) serializable, tLObject, tL_error);
                 break;
             default:
-                Pattern pattern = LaunchActivity.B1;
+                Pattern pattern = LaunchActivity.C1;
                 boolean z10 = this.b;
-                AndroidUtilities.runOnUIThread(new s90((LaunchActivity) obj6, (d20) obj5, tLObject, z10, (Long) serializable3, (pf.c) obj4, (Long) serializable2, (Integer) serializable, (Integer) obj3, (byte[]) obj2, (org.telegram.ui.ActionBar.m2) obj, this.c, (Bundle) cloneable));
+                AndroidUtilities.runOnUIThread(new b90((LaunchActivity) obj6, (b80) obj5, tLObject, z10, (Long) serializable3, (pf.c) obj4, (Long) serializable2, (Integer) serializable, (Integer) obj3, (byte[]) obj2, (org.telegram.ui.ActionBar.n2) obj, this.c, (Bundle) cloneable));
                 break;
         }
     }
 
-    public /* synthetic */ k1(LaunchActivity launchActivity, d20 d20Var, boolean z10, Long l4, pf.c cVar, Long l10, Integer num, Integer num2, byte[] bArr, org.telegram.ui.ActionBar.m2 m2Var, int i10, Bundle bundle) {
+    public /* synthetic */ k1(LaunchActivity launchActivity, b80 b80Var, boolean z10, Long l4, pf.c cVar, Long l10, Integer num, Integer num2, byte[] bArr, org.telegram.ui.ActionBar.n2 n2Var, int i10, Bundle bundle) {
         this.d = launchActivity;
-        this.e = d20Var;
+        this.e = b80Var;
         this.b = z10;
         this.f = l4;
         this.g = cVar;
@@ -80,7 +80,7 @@ public final /* synthetic */ class k1 implements RequestDelegate {
         this.i = num;
         this.j = num2;
         this.k = bArr;
-        this.l = m2Var;
+        this.l = n2Var;
         this.c = i10;
         this.m = bundle;
     }

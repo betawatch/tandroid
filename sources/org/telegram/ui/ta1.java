@@ -1,40 +1,86 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_stats;
+import android.content.Context;
+import java.util.ArrayList;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class ta1 {
-    public boolean a;
-    public String b;
-    public long c;
-    public kg.b d;
-    public kg.b e;
-    public String f;
-    public String g;
-    public boolean h;
-    public final int i;
-    public final String j;
-    public boolean k;
-    public boolean l;
-    public boolean m;
-    public boolean n;
-    public boolean o;
+public final class ta1 extends org.telegram.ui.Cells.ma {
+    public final /* synthetic */ int h3 = 1;
+    public final /* synthetic */ Object i3;
 
-    public ta1(String str, int i10) {
-        this.j = str;
-        this.i = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ta1(Context context, org.telegram.ui.ActionBar.n2 n2Var, ArrayList arrayList, ArrayList arrayList2, org.telegram.ui.ActionBar.a3 a3Var) {
+        super(context, n2Var, 2, arrayList, arrayList2);
+        this.i3 = a3Var;
     }
 
-    public final void a(int i10, int i11, int i12, Utilities.Callback0Return callback0Return) {
-        if (this.k) {
-            return;
+    @Override // org.telegram.ui.Cells.ma
+    public void A1(org.telegram.ui.ActionBar.g6 g6Var) {
+        CharSequence[] charSequenceArr;
+        boolean z10;
+        int[] iArr;
+        switch (this.h3) {
+            case 0:
+                wa1 wa1Var = ((wa1) this.i3).e.a;
+                ThemeActivity themeActivity = wa1Var.e;
+                if (themeActivity.getParentActivity() != null) {
+                    if ((g6Var.F == null || g6Var.U) && themeActivity.f != 1) {
+                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(themeActivity.getParentActivity());
+                        if (g6Var.b == null) {
+                            charSequenceArr = new CharSequence[]{null, LocaleController.getString("ExportTheme", R.string.ExportTheme)};
+                            iArr = new int[]{0, R.drawable.msg_shareout};
+                            z10 = false;
+                        } else {
+                            TLRPC.TL_theme tL_theme = g6Var.F;
+                            boolean z11 = tL_theme == null || !tL_theme.isDefault;
+                            String string = LocaleController.getString("ShareFile", R.string.ShareFile);
+                            String string2 = LocaleController.getString("ExportTheme", R.string.ExportTheme);
+                            TLRPC.TL_theme tL_theme2 = g6Var.F;
+                            String string3 = (tL_theme2 == null || (!tL_theme2.isDefault && tL_theme2.creator)) ? LocaleController.getString("Edit", R.string.Edit) : null;
+                            TLRPC.TL_theme tL_theme3 = g6Var.F;
+                            boolean z12 = z11;
+                            charSequenceArr = new CharSequence[]{string, string2, string3, (tL_theme3 == null || !tL_theme3.creator) ? null : LocaleController.getString("ThemeSetUrl", R.string.ThemeSetUrl), z11 ? LocaleController.getString("Delete", R.string.Delete) : null};
+                            z10 = z12;
+                            iArr = new int[]{R.drawable.msg_share, R.drawable.msg_shareout, R.drawable.msg_edit, R.drawable.msg_link, R.drawable.msg_delete};
+                        }
+                        mg.j jVar = new mg.j(13, wa1Var, g6Var);
+                        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+                        b2Var.P = charSequenceArr;
+                        b2Var.Q = iArr;
+                        b2Var.M = jVar;
+                        themeActivity.showDialog(b2Var);
+                        if (z10) {
+                            b2Var.l(b2Var.N0.size() - 1, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.q7, false), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.p7, false));
+                            break;
+                        }
+                    }
+                }
+                break;
         }
-        this.k = true;
-        TL_stats.TL_loadAsyncGraph tL_loadAsyncGraph = new TL_stats.TL_loadAsyncGraph();
-        tL_loadAsyncGraph.token = this.f;
-        ConnectionsManager.getInstance(i10).bindRequestToGuid(ConnectionsManager.getInstance(i10).sendRequest(tL_loadAsyncGraph, new ec0(24, this, callback0Return), null, null, 0, i12, 1, true), i11);
+    }
+
+    @Override // org.telegram.ui.Cells.ma
+    public final void B1() {
+        Runnable runnable;
+        switch (this.h3) {
+            case 0:
+                ((wa1) this.i3).e.A0(false);
+                break;
+            default:
+                runnable = ((org.telegram.ui.ActionBar.a3) this.i3).a.dismissRunnable;
+                runnable.run();
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ta1(wa1 wa1Var, Context context, org.telegram.ui.ActionBar.n2 n2Var, int i10, ArrayList arrayList, ArrayList arrayList2) {
+        super(context, n2Var, i10, arrayList, arrayList2);
+        this.i3 = wa1Var;
     }
 }

@@ -9,7 +9,7 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public class EmojiCompatInitializer implements v4.b {
     @Override // v4.b
@@ -19,7 +19,7 @@ public class EmojiCompatInitializer implements v4.b {
 
     @Override // v4.b
     public final Object b(Context context) {
-        r rVar = new r(new androidx.biometric.t(context, 1));
+        r rVar = new r(new k6.h(context, 2));
         rVar.a = 1;
         if (l.j == null) {
             synchronized (l.i) {

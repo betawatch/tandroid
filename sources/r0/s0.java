@@ -1,90 +1,85 @@
 package r0;
 
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.util.Base64;
-import com.google.android.gms.internal.cast.z5;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.firebase.components.ComponentRegistrar;
-import com.google.firebase.concurrent.ExecutorsRegistrar;
-import com.google.firebase.installations.FirebaseInstallationsRegistrar;
+import android.os.Build;
+import android.view.WindowInsets;
+import android.view.WindowInsetsAnimation;
+import android.view.WindowInsetsAnimation$Callback;
+import j$.util.DesugarCollections;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.ScheduledExecutorService;
-import org.telegram.ui.ActionBar.a2;
-import org.telegram.ui.ActionBar.z1;
-import rg.p2;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class s0 implements r9.e, qa.a, r9.d, OnFailureListener, s5.e, z1 {
-    public final /* synthetic */ int a;
+public final class s0 extends WindowInsetsAnimation$Callback {
+    public final qh.e a;
+    public List b;
+    public ArrayList c;
+    public final HashMap d;
 
-    public /* synthetic */ s0(int i10) {
-        this.a = i10;
+    public s0(qh.e eVar) {
+        super(0);
+        this.d = new HashMap();
+        this.a = eVar;
     }
 
-    @Override // s5.e
-    public Object apply(Object obj) {
-        Cursor rawQuery = ((SQLiteDatabase) obj).rawQuery("SELECT distinct t._id, t.backend_name, t.priority, t.extras FROM transport_contexts AS t, events AS e WHERE e.context_id = t._id", new String[0]);
-        try {
-            ArrayList arrayList = new ArrayList();
-            while (rawQuery.moveToNext()) {
-                androidx.biometric.e a2 = l5.i.a();
-                a2.v(rawQuery.getString(1));
-                a2.d = v5.a.b(rawQuery.getInt(2));
-                String string = rawQuery.getString(3);
-                a2.c = string == null ? null : Base64.decode(string, 0);
-                arrayList.add(a2.e());
+    public final v0 a(WindowInsetsAnimation windowInsetsAnimation) {
+        v0 v0Var = (v0) this.d.get(windowInsetsAnimation);
+        if (v0Var == null) {
+            v0Var = new v0(0, 0L, null);
+            if (Build.VERSION.SDK_INT >= 30) {
+                v0Var.a = new t0(windowInsetsAnimation);
             }
-            return arrayList;
-        } finally {
-            rawQuery.close();
+            this.d.put(windowInsetsAnimation, v0Var);
         }
+        return v0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.z1
-    public void g(a2 a2Var, int i10) {
-        switch (this.a) {
-            case 27:
-                a2Var.dismiss();
-                break;
-            default:
-                a2Var.dismiss();
-                break;
+    public final void onEnd(WindowInsetsAnimation windowInsetsAnimation) {
+        a(windowInsetsAnimation);
+        this.a.V0();
+        this.d.remove(windowInsetsAnimation);
+    }
+
+    public final void onPrepare(WindowInsetsAnimation windowInsetsAnimation) {
+        a(windowInsetsAnimation);
+        this.a.getClass();
+    }
+
+    public final WindowInsets onProgress(WindowInsets windowInsets, List list) {
+        ArrayList arrayList = this.c;
+        if (arrayList == null) {
+            ArrayList arrayList2 = new ArrayList(list.size());
+            this.c = arrayList2;
+            this.b = DesugarCollections.unmodifiableList(arrayList2);
+        } else {
+            arrayList.clear();
         }
-    }
-
-    @Override // r9.d
-    public Object n2(z5 z5Var) {
-        ra.d lambda$getComponents$0;
-        switch (this.a) {
-            case 4:
-                lambda$getComponents$0 = FirebaseInstallationsRegistrar.lambda$getComponents$0(z5Var);
-                return lambda$getComponents$0;
-            case 23:
-                return (ScheduledExecutorService) ExecutorsRegistrar.a.get();
-            case 24:
-                return (ScheduledExecutorService) ExecutorsRegistrar.c.get();
-            case 25:
-                return (ScheduledExecutorService) ExecutorsRegistrar.b.get();
-            default:
-                r9.n nVar = ExecutorsRegistrar.a;
-                return s9.l.a;
+        for (int size = list.size() - 1; size >= 0; size--) {
+            WindowInsetsAnimation windowInsetsAnimation = (WindowInsetsAnimation) list.get(size);
+            v0 a2 = a(windowInsetsAnimation);
+            a2.a.d(windowInsetsAnimation.getFraction());
+            this.c.add(a2);
         }
+        k1 h = k1.h(null, windowInsets);
+        this.a.W0(h, this.b);
+        return h.g();
     }
 
-    @Override // com.google.android.gms.tasks.OnFailureListener
-    public void onFailure(Exception exc) {
-        int i10 = p2.r0;
-    }
-
-    @Override // r9.e
-    public List w(ComponentRegistrar componentRegistrar) {
-        return componentRegistrar.getComponents();
-    }
-
-    @Override // qa.a
-    public void h(qa.b bVar) {
+    public final WindowInsetsAnimation.Bounds onStart(WindowInsetsAnimation windowInsetsAnimation, WindowInsetsAnimation.Bounds bounds) {
+        a(windowInsetsAnimation);
+        i0.c f7 = t0.f(bounds);
+        i0.c e = t0.e(bounds);
+        qh.e eVar = this.a;
+        if (eVar.c == 0) {
+            Iterator it = eVar.d.iterator();
+            while (it.hasNext()) {
+                ((qh.d) it.next()).t();
+            }
+        }
+        eVar.c++;
+        r0.c();
+        return r0.a(f7.d(), e.d());
     }
 }

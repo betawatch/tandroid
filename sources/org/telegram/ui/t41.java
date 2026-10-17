@@ -1,60 +1,68 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.view.View;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
 import android.widget.FrameLayout;
-import java.util.Locale;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class t41 extends org.telegram.ui.ActionBar.m2 {
-    public static final int[] c = {MediaController.VIDEO_BITRATE_360, MediaController.VIDEO_BITRATE_480, 1200000, 2000000};
-    public org.telegram.ui.Components.mm0 a;
-    public s41 b;
+public final class t41 extends FrameLayout {
+    public final Path a;
+    public final Paint b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d6 e;
+    public final /* synthetic */ Integer f;
+    public final /* synthetic */ z51 h;
 
-    public static String U(int i10) {
-        if (i10 % MediaController.VIDEO_BITRATE_480 == 0) {
-            return (i10 / MediaController.VIDEO_BITRATE_480) + " Mbps";
-        }
-        if (i10 > 1000000) {
-            return String.format(Locale.US, "%.1f Mbps", Float.valueOf(i10 / 1000000.0f));
-        }
-        return (i10 / MediaDataController.MAX_STYLE_RUNS_COUNT) + " kbps";
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t41(z51 z51Var, Context context, boolean z10, boolean z11, org.telegram.ui.ActionBar.d6 d6Var, Integer num) {
+        super(context);
+        this.h = z51Var;
+        this.c = z10;
+        this.d = z11;
+        this.e = d6Var;
+        this.f = num;
+        this.a = new Path();
+        this.b = new Paint(1);
     }
 
-    public final void V(int i10, CharSequence[] charSequenceArr, ps0 ps0Var) {
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
-        alertDialog$Builder.a.R = LocaleController.getString(i10);
-        alertDialog$Builder.f(charSequenceArr, new mg.j(11, this, ps0Var));
-        showDialog(alertDialog$Builder.a);
-    }
-
-    @Override // org.telegram.ui.ActionBar.m2
-    public final View createView(Context context) {
-        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(LocaleController.getString(R.string.RoundVideoSettings));
-        this.actionBar.setActionBarMenuOnItemClick(new q70(this, 29));
-        FrameLayout frameLayout = new FrameLayout(context);
-        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.a7, false));
-        this.fragmentView = frameLayout;
-        org.telegram.ui.Components.mm0 mm0Var = new org.telegram.ui.Components.mm0(context, null);
-        this.a = mm0Var;
-        mm0Var.p1();
-        this.actionBar.setAdaptiveBackground(this.a);
-        this.a.setLayoutManager(new s4.b0());
-        this.a.setVerticalScrollBarEnabled(false);
-        org.telegram.ui.Components.mm0 mm0Var2 = this.a;
-        s41 s41Var = new s41(context);
-        this.b = s41Var;
-        mm0Var2.setAdapter(s41Var);
-        this.a.setOnItemClickListener(new i21(this, 4));
-        frameLayout.addView(this.a, w7.z5.d(-1.0f, -1));
-        return this.fragmentView;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        z51 z51Var = this.h;
+        if (!z51Var.Q0) {
+            super.dispatchDraw(canvas);
+            return;
+        }
+        if (!this.c) {
+            super.dispatchDraw(canvas);
+            return;
+        }
+        canvas.save();
+        boolean z10 = this.d;
+        Paint paint = this.b;
+        if (z10) {
+            org.telegram.ui.ActionBar.h6.m(paint);
+        }
+        paint.setColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G8, this.e));
+        paint.setAlpha((int) (getAlpha() * 255.0f));
+        float width = (this.f == null ? getWidth() / 2.0f : r1.intValue()) + AndroidUtilities.dp(20.0f);
+        float width2 = (getWidth() - getPaddingLeft()) - getPaddingRight();
+        float height = (getHeight() - getPaddingBottom()) - getPaddingTop();
+        if (z51Var.n()) {
+            AndroidUtilities.rectTmp.set((width - (z51Var.a1 * width)) + getPaddingLeft(), com.google.android.gms.internal.cast.a6.x(1.0f, z51Var.b1, height, getPaddingTop()), ((width2 - width) * z51Var.a1) + getPaddingLeft() + width, getPaddingTop() + height);
+        } else {
+            AndroidUtilities.rectTmp.set((width - (z51Var.a1 * width)) + getPaddingLeft(), getPaddingTop(), ((width2 - width) * z51Var.a1) + getPaddingLeft() + width, (height * z51Var.b1) + getPaddingTop());
+        }
+        Path path = this.a;
+        path.rewind();
+        path.addRoundRect(AndroidUtilities.rectTmp, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), Path.Direction.CW);
+        canvas.drawPath(path, paint);
+        canvas.clipPath(path);
+        super.dispatchDraw(canvas);
+        canvas.restore();
     }
 }

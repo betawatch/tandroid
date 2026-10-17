@@ -1,42 +1,54 @@
 package org.telegram.ui;
 
-import android.location.Address;
-import android.location.Geocoder;
-import java.util.List;
-import java.util.Locale;
+import android.graphics.Bitmap;
+import android.graphics.Point;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zb1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ThemeActivity b;
+public final class zb1 extends bu0 {
+    public final /* synthetic */ MediaController.PhotoEntry a;
+    public final /* synthetic */ ac1 b;
 
-    public /* synthetic */ zb1(ThemeActivity themeActivity, int i10) {
-        this.a = i10;
-        this.b = themeActivity;
+    public zb1(ac1 ac1Var, MediaController.PhotoEntry photoEntry) {
+        this.b = ac1Var;
+        this.a = photoEntry;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ThemeActivity themeActivity = this.b;
-                themeActivity.b.e1(new vb1(themeActivity, 0), 700, true);
-                break;
-            default:
-                ThemeActivity themeActivity2 = this.b;
-                String str = null;
-                try {
-                    List<Address> fromLocation = new Geocoder(ApplicationLoader.applicationContext, Locale.getDefault()).getFromLocation(org.telegram.ui.ActionBar.g6.x, org.telegram.ui.ActionBar.g6.y, 1);
-                    if (fromLocation.size() > 0) {
-                        str = fromLocation.get(0).getLocality();
-                    }
-                } catch (Exception unused) {
-                }
-                AndroidUtilities.runOnUIThread(new i11(20, themeActivity2, str));
-                break;
+    @Override // org.telegram.ui.bu0, org.telegram.ui.ju0
+    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
+        mc1 mc1Var = this.b.a;
+        MediaController.PhotoEntry photoEntry = this.a;
+        if (photoEntry.imagePath != null) {
+            File file = new File(FileLoader.getDirectory(4), Utilities.random.nextInt() + ".jpg");
+            Point realScreenSize = AndroidUtilities.getRealScreenSize();
+            Bitmap loadBitmap = ImageLoader.loadBitmap(photoEntry.imagePath, null, (float) realScreenSize.x, (float) realScreenSize.y, true);
+            try {
+                loadBitmap.compress(Bitmap.CompressFormat.JPEG, 87, new FileOutputStream(file));
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+            File file2 = new File(photoEntry.imagePath);
+            mc1Var.B1 = new vh1(file2, file2, "");
+            mc1Var.C1 = loadBitmap;
+            mc1Var.b2 = 0;
+            mc1Var.x0.requestLayout();
+            mc1Var.b1(false);
+            mc1Var.w1 = null;
+            mc1Var.i1();
         }
+    }
+
+    @Override // org.telegram.ui.bu0, org.telegram.ui.ju0
+    public final boolean z() {
+        return false;
     }
 }

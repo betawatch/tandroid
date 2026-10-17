@@ -1,50 +1,41 @@
 package org.telegram.ui;
 
+import android.graphics.Canvas;
 import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lk0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationsCustomSettingsActivity b;
-    public final /* synthetic */ zk0 c;
-    public final /* synthetic */ View d;
+public final class lk0 extends FrameLayout {
+    public TextView a;
+    public RadioButton b;
+    public org.telegram.ui.Components.xp c;
+    public boolean d;
+    public kk0 e;
 
-    public /* synthetic */ lk0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity, zk0 zk0Var, View view, int i10, int i11) {
-        this.a = i11;
-        this.b = notificationsCustomSettingsActivity;
-        this.c = zk0Var;
-        this.d = view;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.k0(this.c, this.d, false);
-                break;
-            case 1:
-                this.b.e0(this.c, this.d);
-                break;
-            case 2:
-                NotificationsCustomSettingsActivity.X(this.b, this.c, this.d);
-                break;
-            case 3:
-                NotificationsCustomSettingsActivity.V(this.b, this.c, this.d);
-                break;
-            case 4:
-                this.b.e0(this.c, this.d);
-                break;
-            default:
-                this.b.k0(this.c, this.d, true);
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.d) {
+            canvas.drawLine(AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 60.0f), getHeight() - 1, getMeasuredWidth() - AndroidUtilities.dp(LocaleController.isRTL ? 60.0f : 0.0f), getHeight() - 1, org.telegram.ui.ActionBar.h6.k0);
         }
     }
 
-    public /* synthetic */ lk0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity, zk0 zk0Var, View view, boolean z10, int i10) {
-        this.a = i10;
-        this.b = notificationsCustomSettingsActivity;
-        this.c = zk0Var;
-        this.d = view;
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.widget.RadioButton");
+        accessibilityNodeInfo.setCheckable(true);
+        accessibilityNodeInfo.setChecked(this.b.f);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
     }
 }

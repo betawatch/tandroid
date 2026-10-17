@@ -2,34 +2,48 @@ package org.telegram.ui.Components;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class uf extends AnimatorListenerAdapter {
-    public final /* synthetic */ ChatActivityEnterView a;
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ ChatActivityEnterView b;
 
-    public uf(ChatActivityEnterView chatActivityEnterView) {
-        this.a = chatActivityEnterView;
+    public uf(ChatActivityEnterView chatActivityEnterView, boolean z10) {
+        this.b = chatActivityEnterView;
+        this.a = z10;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        ChatActivityEnterView chatActivityEnterView = this.a;
-        y81 y81Var = chatActivityEnterView.f1;
-        if (y81Var != null) {
-            y81Var.setVisibility(8);
+        ChatActivityEnterView chatActivityEnterView = this.b;
+        if (animator.equals(chatActivityEnterView.t2)) {
+            chatActivityEnterView.t2 = null;
         }
-        hl0 hl0Var = chatActivityEnterView.h1;
-        if (hl0Var != null) {
-            hl0Var.setVisibility(8);
-        }
-        chatActivityEnterView.p4 = 0.0f;
         chatActivityEnterView.v0();
-        chatActivityEnterView.n0();
-        ChatActivityEnterView.RecordCircle recordCircle = chatActivityEnterView.N1;
-        if (recordCircle != null) {
-            recordCircle.d();
+        chatActivityEnterView.k1.setAlpha(1.0f);
+        chatActivityEnterView.k1.setTranslationX(0.0f);
+        sg sgVar = chatActivityEnterView.O1;
+        if (sgVar != null && SharedConfig.lockRecordAudioVideoHint < 3) {
+            ChatActivityEnterView chatActivityEnterView2 = sgVar.V;
+            chatActivityEnterView2.e4 = true;
+            chatActivityEnterView2.f4 = System.currentTimeMillis();
+        }
+        pf pfVar = chatActivityEnterView.E0;
+        if (pfVar != null) {
+            pfVar.setAlpha(0.0f);
+        }
+        if (this.a) {
+            dl0 dl0Var = chatActivityEnterView.h1;
+            if (dl0Var != null) {
+                dl0Var.setVisibility(8);
+            }
+            ke keVar = chatActivityEnterView.e1;
+            if (keVar != null) {
+                keVar.setVisibility(8);
+            }
+            chatActivityEnterView.v0();
         }
     }
 }

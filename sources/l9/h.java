@@ -16,11 +16,12 @@ import java.util.ArrayList;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
-import m2.t;
+import mi.q;
 import n6.l;
 import r9.n;
+import s9.k;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class h {
     public static final Object k = new Object();
@@ -50,13 +51,13 @@ public final class h {
         a aVar = FirebaseInitProvider.a;
         Trace.beginSection("Firebase");
         Trace.beginSection("ComponentDiscovery");
-        ArrayList A = new t(21, context, new gb.e(ComponentDiscoveryService.class)).A();
+        ArrayList R = new q(19, context, new l2.f(ComponentDiscoveryService.class, 16)).R();
         Trace.endSection();
         Trace.beginSection("Runtime");
-        s9.l lVar = s9.l.a;
+        k kVar = k.a;
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
-        arrayList.addAll(A);
+        arrayList.addAll(R);
         int i10 = 1;
         arrayList.add(new r9.c(new FirebaseCommonRegistrar(), i10));
         arrayList.add(new r9.c(new ExecutorsRegistrar(), i10));
@@ -67,7 +68,7 @@ public final class h {
         if ((Build.VERSION.SDK_INT >= 24 ? w.g(context) : true) && FirebaseInitProvider.b.get()) {
             arrayList2.add(r9.a.c(aVar, a.class, new Class[0]));
         }
-        r9.g gVar = new r9.g(lVar, arrayList, arrayList2, aVar2);
+        r9.g gVar = new r9.g(kVar, arrayList, arrayList2, aVar2);
         this.d = gVar;
         Trace.endSection();
         this.g = new n(new d(0, this, context));
@@ -179,7 +180,7 @@ public final class h {
             sb2.append(str);
             Log.i("FirebaseApp", sb2.toString());
             a();
-            this.d.h("[DEFAULT]".equals(str));
+            this.d.d("[DEFAULT]".equals(str));
             ((oa.c) this.h.get()).c();
             return;
         }
@@ -223,9 +224,9 @@ public final class h {
     }
 
     public final String toString() {
-        t tVar = new t(this);
-        tVar.q(this.b, "name");
-        tVar.q(this.c, "options");
-        return tVar.toString();
+        q qVar = new q(this);
+        qVar.H(this.b, "name");
+        qVar.H(this.c, "options");
+        return qVar.toString();
     }
 }

@@ -1,9 +1,8 @@
 package hg;
 
+import ai.l3;
 import android.location.Location;
 import android.text.TextUtils;
-import bi.k8;
-import bi.z7;
 import java.util.ArrayList;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
@@ -17,7 +16,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public abstract class c extends pg.b {
     public a E;
@@ -122,7 +121,7 @@ public abstract class c extends pg.b {
                             cVar = this;
                             str2 = str;
                             location3 = location;
-                            Utilities.globalQueue.postRunnable(new k8(cVar, currentLocale, str2, locale, location3, str, 2));
+                            Utilities.globalQueue.postRunnable(new l3(cVar, currentLocale, str2, locale, location3, str, 9));
                         } else {
                             locale2 = Locale.US;
                         }
@@ -131,12 +130,12 @@ public abstract class c extends pg.b {
                     cVar = this;
                     str2 = str;
                     location3 = location;
-                    Utilities.globalQueue.postRunnable(new k8(cVar, currentLocale, str2, locale, location3, str, 2));
+                    Utilities.globalQueue.postRunnable(new l3(cVar, currentLocale, str2, locale, location3, str, 9));
                 }
                 if (location3 == null) {
                     return;
                 }
-                cVar.F = ConnectionsManager.getInstance(cVar.G).sendRequest(tL_messages_getInlineBotResults, new bi.m1(10, this, str2));
+                cVar.F = ConnectionsManager.getInstance(cVar.G).sendRequest(tL_messages_getInlineBotResults, new ai.g(17, this, str2));
                 l();
                 return;
             }
@@ -146,7 +145,7 @@ public abstract class c extends pg.b {
                     this.I = true;
                     TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
                     tL_contacts_resolveUsername.username = this.d ? MessagesController.getInstance(i10).storyVenueSearchBot : MessagesController.getInstance(i10).venueSearchBot;
-                    ConnectionsManager.getInstance(i10).sendRequest(tL_contacts_resolveUsername, new z7(this, 8));
+                    ConnectionsManager.getInstance(i10).sendRequest(tL_contacts_resolveUsername, new ai.h(this, 14));
                 }
             }
         }

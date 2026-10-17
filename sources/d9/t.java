@@ -4,19 +4,19 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class t implements Iterator {
     public String b;
     public final CharSequence c;
     public final i d;
     public int f;
-    public final /* synthetic */ ya.c h;
+    public final /* synthetic */ a6.i h;
     public int a = 2;
     public int e = 0;
 
-    public t(ya.c cVar, a5.a aVar, CharSequence charSequence) {
-        this.h = cVar;
+    public t(a6.i iVar, a5.a aVar, CharSequence charSequence) {
+        this.h = iVar;
         this.d = (i) aVar.c;
         this.f = aVar.b;
         this.c = charSequence;

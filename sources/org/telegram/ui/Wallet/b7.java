@@ -1,43 +1,32 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import java.util.concurrent.atomic.AtomicBoolean;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.sc;
-import org.telegram.ui.Components.zc;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class b7 implements Utilities.Callback {
+public final /* synthetic */ class b7 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ l7 b;
+    public final /* synthetic */ AtomicBoolean b;
+    public final /* synthetic */ Utilities.Callback2 c;
 
-    public /* synthetic */ b7(l7 l7Var, int i10) {
+    public /* synthetic */ b7(AtomicBoolean atomicBoolean, Utilities.Callback2 callback2, int i10) {
         this.a = i10;
-        this.b = l7Var;
+        this.b = atomicBoolean;
+        this.c = callback2;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                k0.v(r0.currentAccount).x(new bi.f0(28, this.b, (Utilities.Callback) obj), true, false);
+                WalletEngine2.lambda$emulateSend$17(this.b, this.c);
                 break;
             case 1:
-                String str = (String) obj;
-                l7 l7Var = this.b;
-                if (str == null) {
-                    sc M = zc.a0(l7Var).M(LocaleController.getString(R.string.WalletBackupEnabled), LocaleController.getString(R.string.WalletBackupEnabledInfo), R.raw.contact_check);
-                    M.j = 5000;
-                    M.j();
-                    l7Var.a.W2.N(true);
-                    break;
-                } else {
-                    zc.a0(l7Var).e0(str, false);
-                    break;
-                }
+                WalletEngine2.lambda$emulateSendNFT$21(this.b, this.c);
+                break;
             default:
-                l7.a0(this.b, (Boolean) obj);
+                WalletEngine2.lambda$emulateSendNFT$22(this.b, this.c);
                 break;
         }
     }

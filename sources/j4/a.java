@@ -5,7 +5,7 @@ import e9.n0;
 import e9.x1;
 import java.util.List;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class a implements c3.o {
     public final b a = new b("audio/ac3");
@@ -71,8 +71,8 @@ public final class a implements c3.o {
     @Override // c3.o
     public final void c(c3.q qVar) {
         this.a.d(qVar, new f0(0, 1));
-        qVar.D();
-        qVar.K(new c3.t(-9223372036854775807L));
+        qVar.H();
+        qVar.g0(new c3.t(-9223372036854775807L));
     }
 
     @Override // c3.o

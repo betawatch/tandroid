@@ -6,20 +6,21 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.f61;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t2 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ g4 b;
+    public final /* synthetic */ h4 b;
     public final /* synthetic */ String[] c;
     public final /* synthetic */ ArrayList d;
 
-    public /* synthetic */ t2(g4 g4Var, String[] strArr, ArrayList arrayList, int i10) {
+    public /* synthetic */ t2(h4 h4Var, String[] strArr, ArrayList arrayList, int i10) {
         this.a = i10;
-        this.b = g4Var;
+        this.b = h4Var;
         this.c = strArr;
         this.d = arrayList;
     }
@@ -39,13 +40,13 @@ public final /* synthetic */ class t2 implements Utilities.Callback2 {
         String str4 = " ";
         ArrayList arrayList = this.d;
         String[] strArr = this.c;
-        g4 g4Var = this.b;
+        h4 h4Var = this.b;
         switch (i10) {
             case 0:
                 ArrayList arrayList2 = (ArrayList) obj;
                 String lowerCase = strArr[0].toLowerCase();
                 String translitSafe = AndroidUtilities.translitSafe(lowerCase);
-                t3 t3Var = g4Var.d;
+                t3 t3Var = h4Var.d;
                 boolean isEmpty = t3Var.l.isEmpty();
                 int size = arrayList.size();
                 int i11 = 0;
@@ -55,11 +56,11 @@ public final /* synthetic */ class t2 implements Utilities.Callback2 {
                     TL_stars.starGiftAttributePattern stargiftattributepattern = (TL_stars.starGiftAttributePattern) obj3;
                     boolean contains = t3Var.l.contains(Long.valueOf(stargiftattributepattern.document.id));
                     boolean z12 = !contains;
-                    if (TextUtils.isEmpty(lowerCase) || stargiftattributepattern.name.toLowerCase().startsWith(lowerCase) || stargiftattributepattern.name.toLowerCase().startsWith(translitSafe) || org.telegram.messenger.g0.w(" ", lowerCase, stargiftattributepattern.name.toLowerCase()) || org.telegram.messenger.g0.w(" ", translitSafe, stargiftattributepattern.name.toLowerCase())) {
+                    if (TextUtils.isEmpty(lowerCase) || stargiftattributepattern.name.toLowerCase().startsWith(lowerCase) || stargiftattributepattern.name.toLowerCase().startsWith(translitSafe) || wh.w(" ", lowerCase, stargiftattributepattern.name.toLowerCase()) || wh.w(" ", translitSafe, stargiftattributepattern.name.toLowerCase())) {
                         Integer num = (Integer) t3Var.o.get(Long.valueOf(stargiftattributepattern.document.id));
                         int intValue = num == null ? 0 : num.intValue();
                         int i12 = q3.a;
-                        m61 J = m61.J(q3.class);
+                        f61 J = f61.J(q3.class);
                         J.G = stargiftattributepattern;
                         J.l = lowerCase;
                         J.z = intValue;
@@ -79,7 +80,7 @@ public final /* synthetic */ class t2 implements Utilities.Callback2 {
                 ArrayList arrayList3 = (ArrayList) obj;
                 String lowerCase2 = strArr[0].toLowerCase();
                 String translitSafe2 = AndroidUtilities.translitSafe(lowerCase2);
-                t3 t3Var2 = g4Var.d;
+                t3 t3Var2 = h4Var.d;
                 boolean isEmpty2 = t3Var2.k.isEmpty();
                 int size2 = arrayList.size();
                 int i13 = 0;
@@ -93,12 +94,12 @@ public final /* synthetic */ class t2 implements Utilities.Callback2 {
                         str2 = str;
                     } else {
                         str2 = str;
-                        str = (org.telegram.messenger.g0.w(str2, lowerCase2, stargiftattributebackdrop.name.toLowerCase()) || org.telegram.messenger.g0.w(str2, translitSafe2, stargiftattributebackdrop.name.toLowerCase())) ? " " : str2;
+                        str = (wh.w(str2, lowerCase2, stargiftattributebackdrop.name.toLowerCase()) || wh.w(str2, translitSafe2, stargiftattributebackdrop.name.toLowerCase())) ? " " : str2;
                     }
                     Integer num2 = (Integer) t3Var2.n.get(Integer.valueOf(stargiftattributebackdrop.backdrop_id));
                     int intValue2 = num2 == null ? 0 : num2.intValue();
                     int i14 = g3.a;
-                    m61 J2 = m61.J(g3.class);
+                    f61 J2 = f61.J(g3.class);
                     J2.G = stargiftattributebackdrop;
                     J2.l = lowerCase2;
                     J2.z = intValue2;
@@ -117,7 +118,7 @@ public final /* synthetic */ class t2 implements Utilities.Callback2 {
                 ArrayList arrayList4 = (ArrayList) obj;
                 String lowerCase3 = strArr[0].toLowerCase();
                 String translitSafe3 = AndroidUtilities.translitSafe(lowerCase3);
-                t3 t3Var3 = g4Var.d;
+                t3 t3Var3 = h4Var.d;
                 boolean isEmpty3 = t3Var3.j.isEmpty();
                 int size3 = arrayList.size();
                 int i15 = 0;
@@ -127,13 +128,13 @@ public final /* synthetic */ class t2 implements Utilities.Callback2 {
                     TL_stars.starGiftAttributeModel stargiftattributemodel = (TL_stars.starGiftAttributeModel) obj5;
                     boolean contains3 = t3Var3.j.contains(Long.valueOf(stargiftattributemodel.document.id));
                     boolean z14 = !contains3;
-                    if (TextUtils.isEmpty(lowerCase3) || stargiftattributemodel.name.toLowerCase().startsWith(lowerCase3) || stargiftattributemodel.name.toLowerCase().startsWith(translitSafe3) || org.telegram.messenger.g0.w(str4, lowerCase3, stargiftattributemodel.name.toLowerCase()) || org.telegram.messenger.g0.w(str4, translitSafe3, stargiftattributemodel.name.toLowerCase())) {
+                    if (TextUtils.isEmpty(lowerCase3) || stargiftattributemodel.name.toLowerCase().startsWith(lowerCase3) || stargiftattributemodel.name.toLowerCase().startsWith(translitSafe3) || wh.w(str4, lowerCase3, stargiftattributemodel.name.toLowerCase()) || wh.w(str4, translitSafe3, stargiftattributemodel.name.toLowerCase())) {
                         z10 = z11;
                         str3 = str4;
                         Integer num3 = (Integer) t3Var3.m.get(Long.valueOf(stargiftattributemodel.document.id));
                         ?? intValue3 = num3 == null ? z10 : num3.intValue();
                         int i16 = n3.a;
-                        m61 J3 = m61.J(n3.class);
+                        f61 J3 = f61.J(n3.class);
                         J3.G = stargiftattributemodel;
                         J3.l = lowerCase3;
                         J3.z = intValue3;

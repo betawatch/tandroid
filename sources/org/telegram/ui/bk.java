@@ -1,47 +1,39 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
+import android.content.Context;
+import org.telegram.ui.Components.FragmentContextView;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bk implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ck b;
+public final class bk extends FragmentContextView {
+    public final /* synthetic */ int R0;
+    public final /* synthetic */ sn S0;
 
-    public /* synthetic */ bk(ck ckVar, int i10) {
-        this.a = i10;
-        this.b = ckVar;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ck ckVar = this.b;
-                ckVar.W = null;
-                fo foVar = ckVar.X;
-                if (foVar.H9 != -1) {
-                    foVar.getNotificationCenter().onAnimationFinish(foVar.H9);
-                    foVar.H9 = -1;
-                }
-                if (BuildVars.LOGS_ENABLED) {
-                    FileLog.d("chatItemAnimator enable notifications");
-                    break;
-                }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bk(sn snVar, Context context, sn snVar2, org.telegram.ui.ActionBar.d6 d6Var, int i10) {
+        super(context, snVar2, null, true, d6Var);
+        this.R0 = i10;
+        switch (i10) {
+            case 1:
+                this.S0 = snVar;
+                super(context, snVar2, null, false, d6Var);
                 break;
             default:
-                ck ckVar2 = this.b;
-                ckVar2.W = null;
-                fo foVar2 = ckVar2.X;
-                if (foVar2.H9 != -1) {
-                    foVar2.getNotificationCenter().onAnimationFinish(foVar2.H9);
-                    foVar2.H9 = -1;
-                }
-                if (BuildVars.LOGS_ENABLED) {
-                    FileLog.d("chatItemAnimator enable notifications");
-                    break;
-                }
+                this.S0 = snVar;
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
+    public final void setVisibility(int i10) {
+        switch (this.R0) {
+            case 0:
+                sn snVar = this.S0;
+                snVar.M0.i(snVar.a2, i10 == 0, true);
+                break;
+            default:
+                sn snVar2 = this.S0;
+                snVar2.M0.i(snVar2.Y1, i10 == 0, true);
                 break;
         }
     }

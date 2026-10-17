@@ -4,7 +4,7 @@ import android.content.Context;
 import com.google.android.gms.tasks.Task;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class la {
     public static ua j;
@@ -35,9 +35,9 @@ public final class la {
         pa.b();
         this.g = "vision-common";
         rb.f a2 = rb.f.a();
-        c5.y yVar = new c5.y(this, 6);
+        c5.x xVar = new c5.x(this, 6);
         a2.getClass();
-        this.e = rb.f.b(yVar);
+        this.e = rb.f.b(xVar);
         rb.f a10 = rb.f.a();
         kVar.getClass();
         t7.p pVar = new t7.p(kVar, 2);

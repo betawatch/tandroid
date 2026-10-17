@@ -1,33 +1,39 @@
 package yg;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.messenger.Utilities;
+import android.view.KeyEvent;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.ui.Components.v30;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class f implements TextWatcher {
-    public final /* synthetic */ i a;
+public final class f implements View.OnKeyListener {
+    public boolean a;
+    public final /* synthetic */ HashSet b;
+    public final /* synthetic */ Runnable c;
+    public final /* synthetic */ h d;
 
-    public f(i iVar) {
-        this.a = iVar;
+    public f(h hVar, HashSet hashSet, Runnable runnable) {
+        this.d = hVar;
+        this.b = hashSet;
+        this.c = runnable;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        Utilities.Callback callback;
-        i iVar = this.a;
-        if (iVar.h || (callback = iVar.n) == null || editable == null) {
-            return;
+    @Override // android.view.View.OnKeyListener
+    public final boolean onKey(View view, int i10, KeyEvent keyEvent) {
+        h hVar = this.d;
+        ArrayList arrayList = hVar.e;
+        if (i10 == 67) {
+            if (keyEvent.getAction() == 0) {
+                this.a = hVar.b.length() == 0;
+                return false;
+            }
+            if (keyEvent.getAction() == 1 && this.a && !arrayList.isEmpty()) {
+                hVar.a((v30) i0.a.h(1, arrayList), this.b, this.c);
+                return true;
+            }
         }
-        callback.run(editable.toString());
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        return false;
     }
 }

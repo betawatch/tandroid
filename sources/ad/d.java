@@ -2,9 +2,9 @@ package ad;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import c3.b0;
-import c3.g0;
-import c3.i0;
+import c3.c0;
+import c3.h0;
+import c3.j0;
 import c3.p;
 import c3.q;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -17,19 +17,19 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 import org.telegram.messenger.MessagesController;
-import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.Components.bp;
-import org.telegram.ui.Components.zc;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.yo;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.c21;
-import org.telegram.ui.qg1;
+import org.telegram.ui.b11;
+import org.telegram.ui.ze1;
 import v7.u6;
 import v7.z8;
-import z7.xf;
+import z7.ra;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class d implements p, q, OnFailureListener, l2.h, bp {
+public final class d implements p, q, OnFailureListener, l2.i, yo {
     public final /* synthetic */ int a;
     public long b;
     public Object c;
@@ -66,23 +66,18 @@ public final class d implements p, q, OnFailureListener, l2.h, bp {
         thread.start();
     }
 
-    @Override // c3.q
-    public void D() {
-        ((q) this.c).D();
-    }
-
-    public boolean E(int i10) {
+    public boolean D(int i10) {
         if (i10 < 64) {
             return (this.b & (1 << i10)) != 0;
         }
         B();
-        return ((d) this.c).E(i10 - 64);
+        return ((d) this.c).D(i10 - 64);
     }
 
-    public void F(int i10, boolean z10) {
+    public void E(int i10, boolean z10) {
         if (i10 >= 64) {
             B();
-            ((d) this.c).F(i10 - 64, z10);
+            ((d) this.c).E(i10 - 64, z10);
             return;
         }
         long j10 = this.b;
@@ -96,14 +91,14 @@ public final class d implements p, q, OnFailureListener, l2.h, bp {
         }
         if (z11 || ((d) this.c) != null) {
             B();
-            ((d) this.c).F(0, z11);
+            ((d) this.c).E(0, z11);
         }
     }
 
-    public boolean G(int i10) {
+    public boolean F(int i10) {
         if (i10 >= 64) {
             B();
-            return ((d) this.c).G(i10 - 64);
+            return ((d) this.c).F(i10 - 64);
         }
         long j10 = 1 << i10;
         long j11 = this.b;
@@ -114,20 +109,25 @@ public final class d implements p, q, OnFailureListener, l2.h, bp {
         this.b = (j12 & j13) | Long.rotateRight((~j13) & j12, 1);
         d dVar = (d) this.c;
         if (dVar != null) {
-            if (dVar.E(0)) {
+            if (dVar.D(0)) {
                 I(63);
             }
-            ((d) this.c).G(0);
+            ((d) this.c).F(0);
         }
         return z10;
     }
 
-    public void H() {
+    public void G() {
         this.b = 0L;
         d dVar = (d) this.c;
         if (dVar != null) {
-            dVar.H();
+            dVar.G();
         }
+    }
+
+    @Override // c3.q
+    public void H() {
+        ((q) this.c).H();
     }
 
     public void I(int i10) {
@@ -139,17 +139,7 @@ public final class d implements p, q, OnFailureListener, l2.h, bp {
         }
     }
 
-    @Override // c3.q
-    public void K(b0 b0Var) {
-        ((q) this.c).K(new g0(this, b0Var, b0Var));
-    }
-
-    @Override // c3.q
-    public i0 W(int i10, int i11) {
-        return ((q) this.c).W(i10, i11);
-    }
-
-    @Override // l2.h
+    @Override // l2.i
     public long a(long j10) {
         return ((c3.j) this.c).e[(int) j10] - this.b;
     }
@@ -159,29 +149,34 @@ public final class d implements p, q, OnFailureListener, l2.h, bp {
         ((p) this.c).b(i10, i11, bArr);
     }
 
-    @Override // l2.h
-    public long c(long j10, long j11) {
+    @Override // c3.p
+    public boolean c(byte[] bArr, int i10, int i11, boolean z10) {
+        return ((p) this.c).c(bArr, 0, i11, z10);
+    }
+
+    @Override // l2.i
+    public long d(long j10, long j11) {
         return ((c3.j) this.c).d[(int) j10];
     }
 
-    @Override // c3.p
-    public boolean d(byte[] bArr, int i10, int i11, boolean z10) {
-        return ((p) this.c).d(bArr, 0, i11, z10);
-    }
-
-    @Override // l2.h
+    @Override // l2.i
     public long e(long j10, long j11) {
         return 0L;
     }
 
-    @Override // l2.h
+    @Override // l2.i
     public long f(long j10, long j11) {
         return -9223372036854775807L;
     }
 
-    @Override // c3.p
-    public int g(int i10, int i11, byte[] bArr) {
-        return ((p) this.c).g(i10, i11, bArr);
+    @Override // l2.i
+    public m2.j g(long j10) {
+        return new m2.j(((c3.j) this.c).c[(int) j10], r1.b[r7], null);
+    }
+
+    @Override // c3.q
+    public void g0(c0 c0Var) {
+        ((q) this.c).g0(new h0(this, c0Var, c0Var));
     }
 
     @Override // c3.p
@@ -194,9 +189,9 @@ public final class d implements p, q, OnFailureListener, l2.h, bp {
         return ((p) this.c).getPosition() - this.b;
     }
 
-    @Override // l2.h
-    public m2.j h(long j10) {
-        return new m2.j(((c3.j) this.c).c[(int) j10], r1.b[r7], null);
+    @Override // c3.p
+    public int h(int i10, int i11, byte[] bArr) {
+        return ((p) this.c).h(i10, i11, bArr);
     }
 
     @Override // c3.p
@@ -209,6 +204,11 @@ public final class d implements p, q, OnFailureListener, l2.h, bp {
         return ((p) this.c).j(bArr, i10, i11, z10);
     }
 
+    @Override // c3.q
+    public j0 j0(int i10, int i11) {
+        return ((q) this.c).j0(i10, i11);
+    }
+
     @Override // c3.p
     public long k() {
         return ((p) this.c).k() - this.b;
@@ -219,34 +219,34 @@ public final class d implements p, q, OnFailureListener, l2.h, bp {
         ((p) this.c).l(i10);
     }
 
-    @Override // org.telegram.ui.Components.bp
+    @Override // org.telegram.ui.Components.yo
     public void m() {
         Bundle bundle = new Bundle();
         bundle.putLong("dialog_id", this.b);
-        qg1 qg1Var = new qg1(bundle);
-        qg1Var.d = new ArrayList();
-        qg1Var.e = new HashSet();
+        ze1 ze1Var = new ze1(bundle);
+        ze1Var.d = new ArrayList();
+        ze1Var.e = new HashSet();
         ProfileActivity profileActivity = (ProfileActivity) this.c;
-        qg1Var.e = profileActivity.h5;
-        profileActivity.presentFragment(qg1Var);
+        ze1Var.e = profileActivity.j5;
+        profileActivity.presentFragment(ze1Var);
     }
 
-    @Override // l2.h
-    public long n(long j10, long j11) {
-        c3.j jVar = (c3.j) this.c;
-        return m0.f(jVar.e, j10 + this.b, true);
-    }
-
-    @Override // org.telegram.ui.Components.bp
-    public void o() {
+    @Override // org.telegram.ui.Components.yo
+    public void n() {
         ProfileActivity profileActivity = (ProfileActivity) this.c;
-        boolean z10 = !profileActivity.getMessagesController().isDialogMuted(this.b, profileActivity.g1);
-        profileActivity.getNotificationsController().muteDialog(this.b, profileActivity.g1, z10);
+        boolean z10 = !profileActivity.getMessagesController().isDialogMuted(this.b, profileActivity.h1);
+        profileActivity.getNotificationsController().muteDialog(this.b, profileActivity.h1, z10);
         if (profileActivity.fragmentView != null) {
-            zc.A(profileActivity, z10, null).j();
+            xc.A(profileActivity, z10, null).j();
         }
         profileActivity.a5();
         profileActivity.g5(true);
+    }
+
+    @Override // l2.i
+    public long o(long j10, long j11) {
+        c3.j jVar = (c3.j) this.c;
+        return m0.f(jVar.e, j10 + this.b, true);
     }
 
     @Override // com.google.android.gms.tasks.OnFailureListener
@@ -267,20 +267,20 @@ public final class d implements p, q, OnFailureListener, l2.h, bp {
                 ((z8) this.c).b.set(this.b);
                 break;
             default:
-                ((AtomicLong) ((xf) this.c).b).set(this.b);
+                ((AtomicLong) ((ra) this.c).b).set(this.b);
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.bp
+    @Override // org.telegram.ui.Components.yo
     public void p() {
         ProfileActivity profileActivity = (ProfileActivity) this.c;
         long j10 = this.b;
         if (j10 != 0) {
             Bundle bundle = new Bundle();
             bundle.putLong("dialog_id", j10);
-            bundle.putLong("topic_id", profileActivity.g1);
-            profileActivity.presentFragment(new c21(bundle, profileActivity.z0));
+            bundle.putLong("topic_id", profileActivity.h1);
+            profileActivity.presentFragment(new b11(bundle, profileActivity.A0));
         }
     }
 
@@ -294,7 +294,7 @@ public final class d implements p, q, OnFailureListener, l2.h, bp {
         ((p) this.c).r(i10);
     }
 
-    @Override // b2.p
+    @Override // b2.o
     public int read(byte[] bArr, int i10, int i11) {
         return ((p) this.c).read(bArr, i10, i11);
     }
@@ -304,7 +304,7 @@ public final class d implements p, q, OnFailureListener, l2.h, bp {
         ((p) this.c).readFully(bArr, i10, i11);
     }
 
-    @Override // l2.h
+    @Override // l2.i
     public boolean s() {
         return true;
     }
@@ -314,19 +314,19 @@ public final class d implements p, q, OnFailureListener, l2.h, bp {
         return ((p) this.c).skip(i10);
     }
 
-    @Override // org.telegram.ui.Components.bp
+    @Override // org.telegram.ui.Components.yo
     public void t() {
         int i10;
         ProfileActivity profileActivity = (ProfileActivity) this.c;
-        i10 = ((m2) profileActivity).currentAccount;
+        i10 = ((n2) profileActivity).currentAccount;
         SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(i10);
         StringBuilder sb2 = new StringBuilder("sound_enabled_");
         long j10 = this.b;
-        boolean z10 = notificationsSettings.getBoolean(org.telegram.messenger.g0.i(j10, profileActivity.g1, sb2), true);
+        boolean z10 = notificationsSettings.getBoolean(org.telegram.messenger.q.i(j10, profileActivity.h1, sb2), true);
         boolean z11 = !z10;
-        notificationsSettings.edit().putBoolean(org.telegram.messenger.g0.i(j10, profileActivity.g1, new StringBuilder("sound_enabled_")), z11).apply();
-        if (zc.a(profileActivity)) {
-            zc.S(z10 ? 1 : 0, profileActivity, profileActivity.z0).j();
+        notificationsSettings.edit().putBoolean(org.telegram.messenger.q.i(j10, profileActivity.h1, new StringBuilder("sound_enabled_")), z11).apply();
+        if (xc.a(profileActivity)) {
+            xc.S(z10 ? 1 : 0, profileActivity, profileActivity.A0).j();
         }
     }
 
@@ -342,7 +342,7 @@ public final class d implements p, q, OnFailureListener, l2.h, bp {
         }
     }
 
-    @Override // l2.h
+    @Override // l2.i
     public long u() {
         return 0L;
     }
@@ -352,32 +352,32 @@ public final class d implements p, q, OnFailureListener, l2.h, bp {
         return ((p) this.c).v(i10, true);
     }
 
-    @Override // l2.h
+    @Override // l2.i
     public long w(long j10) {
         return ((c3.j) this.c).a;
     }
 
-    @Override // l2.h
+    @Override // l2.i
     public long x(long j10, long j11) {
         return ((c3.j) this.c).a;
     }
 
-    @Override // org.telegram.ui.Components.bp
+    @Override // org.telegram.ui.Components.yo
     public void y(int i10) {
         ProfileActivity profileActivity = (ProfileActivity) this.c;
         if (i10 == 0) {
-            if (profileActivity.getMessagesController().isDialogMuted(this.b, profileActivity.g1)) {
-                o();
+            if (profileActivity.getMessagesController().isDialogMuted(this.b, profileActivity.h1)) {
+                n();
             }
-            if (zc.a(profileActivity)) {
-                zc.z(profileActivity, 4, i10, profileActivity.z0).j();
+            if (xc.a(profileActivity)) {
+                xc.z(profileActivity, 4, i10, profileActivity.A0).j();
                 return;
             }
             return;
         }
-        profileActivity.getNotificationsController().muteUntil(this.b, profileActivity.g1, i10);
-        if (zc.a(profileActivity)) {
-            zc.z(profileActivity, 5, i10, profileActivity.z0).j();
+        profileActivity.getNotificationsController().muteUntil(this.b, profileActivity.h1, i10);
+        if (xc.a(profileActivity)) {
+            xc.z(profileActivity, 5, i10, profileActivity.A0).j();
         }
         profileActivity.a5();
         profileActivity.g5(true);
@@ -419,7 +419,7 @@ public final class d implements p, q, OnFailureListener, l2.h, bp {
         }
     }
 
-    @Override // org.telegram.ui.Components.bp
+    @Override // org.telegram.ui.Components.yo
     public /* synthetic */ void dismiss() {
     }
 }

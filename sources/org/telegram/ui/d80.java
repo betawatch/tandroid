@@ -1,107 +1,399 @@
 package org.telegram.ui;
 
-import android.graphics.SurfaceTexture;
-import android.view.TextureView;
-import org.telegram.messenger.Intro;
-import org.telegram.messenger.NotificationCenter;
+import android.content.Context;
+import android.text.TextUtils;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class d80 implements TextureView.SurfaceTextureListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
+public final class d80 extends org.telegram.ui.Components.hm0 {
+    public final Context c;
+    public final boolean d;
+    public final /* synthetic */ LanguageSelectActivity e;
 
-    public /* synthetic */ d80(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10) {
-        this.a = i10;
-        this.b = notificationCenterDelegate;
+    public d80(LanguageSelectActivity languageSelectActivity, Context context, boolean z10) {
+        this.e = languageSelectActivity;
+        this.c = context;
+        this.d = z10;
     }
 
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                h80 h80Var = (h80) this.b;
-                if (h80Var.I == null && surfaceTexture != null) {
-                    h80Var.I = new f80(h80Var, surfaceTexture);
-                    Intro.onSurfaceChanged(i10, i11, Math.min(i10 / 150.0f, i11 / 150.0f), 0);
-                    h80Var.I.postRunnable(new zz(this, 12));
-                    f80 f80Var = h80Var.I;
-                    f80Var.postRunnable(f80Var.w);
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.hm0
+    public final boolean D(s4.b1 b1Var) {
+        int i10 = b1Var.f;
+        return i10 == 0 || i10 == 4 || i10 == 5 || i10 == 2;
+    }
+
+    @Override // s4.g0
+    public final int h() {
+        int i10;
+        boolean z10 = this.d;
+        LanguageSelectActivity languageSelectActivity = this.e;
+        if (z10) {
+            ArrayList arrayList = languageSelectActivity.e;
+            if (arrayList == null) {
+                return 0;
+            }
+            return arrayList.size();
         }
+        if (languageSelectActivity.getMessagesController().isTranslationsManualEnabled() || languageSelectActivity.getMessagesController().isTranslationsAutoEnabled()) {
+            int i11 = languageSelectActivity.getMessagesController().isTranslationsManualEnabled() ? 3 : 2;
+            if (languageSelectActivity.getMessagesController().isTranslationsAutoEnabled() && !languageSelectActivity.getMessagesController().premiumFeaturesBlocked()) {
+                i11++;
+            }
+            if (languageSelectActivity.g0() || languageSelectActivity.h0()) {
+                i11++;
+            }
+            i10 = i11 + 1;
+        } else {
+            i10 = 1;
+        }
+        int size = languageSelectActivity.f.size() + i10 + 1;
+        return !languageSelectActivity.h.isEmpty() ? languageSelectActivity.h.size() + 1 + size : size;
     }
 
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
-        switch (this.a) {
-            case 0:
-                h80 h80Var = (h80) this.b;
-                f80 f80Var = h80Var.I;
-                if (f80Var == null) {
-                    return true;
+    /* JADX WARN: Code restructure failed: missing block: B:18:0x00a1, code lost:
+    
+        if (r2 != ((r0.f.size() + r0.h.size()) + 1)) goto L55;
+     */
+    @Override // s4.g0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final int j(int i10) {
+        int i11;
+        if (this.d) {
+            return 0;
+        }
+        LanguageSelectActivity languageSelectActivity = this.e;
+        if (languageSelectActivity.getMessagesController().isTranslationsManualEnabled() || languageSelectActivity.getMessagesController().isTranslationsAutoEnabled()) {
+            int i12 = i10 - 1;
+            if (i10 == 0) {
+                return 3;
+            }
+            if (languageSelectActivity.getMessagesController().isTranslationsManualEnabled()) {
+                int i13 = i10 - 2;
+                if (i12 == 0) {
+                    languageSelectActivity.manualTranslationPosition = i10;
+                    return 2;
                 }
-                f80Var.postRunnable(new zz(f80Var, 14));
-                h80Var.I = null;
-                return true;
-            default:
-                PhotoViewer photoViewer = (PhotoViewer) this.b;
-                if (photoViewer.B2 != null) {
-                    org.telegram.ui.Components.fh0 fh0Var = org.telegram.ui.Components.fh0.p0;
-                    if (fh0Var.P && org.telegram.ui.Components.fh0.p() != null && org.telegram.ui.Components.fh0.p().b.a != 0) {
-                        (fh0Var != null ? fh0Var.l0 : null).setSurfaceTexture(surfaceTexture);
-                        (fh0Var != null ? fh0Var.l0 : null).setVisibility(0);
-                        return false;
-                    }
-                    if (photoViewer.F3) {
-                        if (photoViewer.L3) {
-                            photoViewer.G3 = 2;
+                i12 = i13;
+            } else {
+                languageSelectActivity.manualTranslationPosition = -1;
+            }
+            if (!languageSelectActivity.getMessagesController().isTranslationsAutoEnabled() || languageSelectActivity.getMessagesController().premiumFeaturesBlocked()) {
+                languageSelectActivity.autoTranslationPosition = -1;
+            } else {
+                int i14 = i12 - 1;
+                if (i12 == 0) {
+                    languageSelectActivity.autoTranslationPosition = i10;
+                    return 2;
+                }
+                i12 = i14;
+            }
+            if (languageSelectActivity.g0() || languageSelectActivity.h0()) {
+                languageSelectActivity.doNotTranslatePosition = i10;
+                int i15 = i12 - 1;
+                if (i12 == 0) {
+                    return 4;
+                }
+                i12 = i15;
+            }
+            i11 = i12 - 1;
+            if (i12 == 0) {
+                languageSelectActivity.n = i10;
+                return 6;
+            }
+        } else {
+            i11 = i10;
+        }
+        int i16 = i11 - 1;
+        if (i11 == 0) {
+            return 3;
+        }
+        if (!languageSelectActivity.h.isEmpty()) {
+            if (i16 != languageSelectActivity.h.size()) {
+            }
+            return 1;
+        }
+        if (!languageSelectActivity.h.isEmpty() || i16 != languageSelectActivity.f.size()) {
+            languageSelectActivity.r = i10 - i16;
+            return 0;
+        }
+        return 1;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:138:0x0284, code lost:
+    
+        if (r2 == (r11.e.size() - 1)) goto L134;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:139:0x0286, code lost:
+    
+        r2 = true;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:150:0x0288, code lost:
+    
+        r2 = false;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:157:0x02ac, code lost:
+    
+        if (r2 == (r11.h.size() - 1)) goto L134;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:166:0x02d7, code lost:
+    
+        if (r2 == (r11.f.size() - 1)) goto L134;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:52:0x0103, code lost:
+    
+        if (r1.getValueTextView().getPaint().measureText(r4) > java.lang.Math.min((org.telegram.messenger.AndroidUtilities.displaySize.x - org.telegram.messenger.AndroidUtilities.dp(34.0f)) / 2.0f, (org.telegram.messenger.AndroidUtilities.displaySize.x - org.telegram.messenger.AndroidUtilities.dp(84.0f)) - r1.getTextView().getPaint().measureText(r3))) goto L47;
+     */
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0109  */
+    @Override // s4.g0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void v(s4.b1 b1Var, int i10) {
+        boolean z10;
+        int i11;
+        int i12;
+        String sb2;
+        int i13 = i10;
+        int i14 = b1Var.f;
+        View view = b1Var.a;
+        boolean z11 = this.d;
+        LocaleController.LocaleInfo localeInfo = null;
+        r8 = null;
+        CharSequence charSequence = null;
+        localeInfo = null;
+        localeInfo = null;
+        localeInfo = null;
+        boolean z12 = true;
+        LanguageSelectActivity languageSelectActivity = this.e;
+        switch (i14) {
+            case 0:
+                if (!z11) {
+                    i13 -= languageSelectActivity.r;
+                }
+                org.telegram.ui.Cells.f9 f9Var = (org.telegram.ui.Cells.f9) view;
+                f9Var.c();
+                if (!z11) {
+                    if (!languageSelectActivity.h.isEmpty() && i13 >= 0 && i13 < languageSelectActivity.h.size()) {
+                        localeInfo = (LocaleController.LocaleInfo) languageSelectActivity.h.get(i13);
+                        break;
+                    } else {
+                        if (!languageSelectActivity.h.isEmpty()) {
+                            i13 = com.google.android.gms.internal.cast.a6.g(1, i13, languageSelectActivity.h);
                         }
-                        photoViewer.B2.setSurfaceTexture(surfaceTexture);
-                        photoViewer.B2.setVisibility(0);
-                        photoViewer.F3 = false;
-                        photoViewer.e0.invalidate();
-                        return false;
+                        if (i13 >= 0 && i13 < languageSelectActivity.f.size()) {
+                            localeInfo = (LocaleController.LocaleInfo) languageSelectActivity.f.get(i13);
+                        }
+                        break;
+                    }
+                } else {
+                    if (i13 >= 0 && i13 < languageSelectActivity.e.size()) {
+                        localeInfo = (LocaleController.LocaleInfo) languageSelectActivity.e.get(i13);
+                    }
+                    break;
+                }
+                if (localeInfo != null) {
+                    if (localeInfo.isLocal()) {
+                        f9Var.b(String.format("%1$s (%2$s)", localeInfo.name, LocaleController.getString(R.string.LanguageCustom)), localeInfo.nameEnglish, !z10);
+                    } else {
+                        f9Var.b(localeInfo.name, localeInfo.nameEnglish, !z10);
                     }
                 }
-                return true;
-        }
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                if (((h80) this.b).I != null) {
-                    Intro.onSurfaceChanged(i10, i11, Math.min(i10 / 150.0f, i11 / 150.0f), 0);
+                f9Var.setChecked(localeInfo == LocaleController.getInstance().getCurrentLocaleInfo());
+                break;
+            case 1:
+                if (!z11) {
+                    i13--;
+                }
+                org.telegram.ui.Cells.z6 z6Var = (org.telegram.ui.Cells.z6) view;
+                boolean isEmpty = languageSelectActivity.h.isEmpty();
+                Context context = this.c;
+                if (!isEmpty && i13 == languageSelectActivity.h.size()) {
+                    z6Var.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.W0(context, R.drawable.greydivider, org.telegram.ui.ActionBar.h6.b7));
+                    break;
+                } else {
+                    z6Var.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.W0(context, R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.h6.b7));
+                    break;
+                }
+            case 2:
+                org.telegram.ui.Cells.v8 v8Var = (org.telegram.ui.Cells.v8) view;
+                View view2 = v8Var.e;
+                TextView textView = v8Var.d;
+                TextView textView2 = v8Var.c;
+                boolean z13 = v8Var.H;
+                boolean z14 = LocaleController.isRTL;
+                if (z13 != z14) {
+                    v8Var.H = z14;
+                    textView2.setGravity((z14 ? 5 : 3) | 16);
+                    v8Var.removeView(textView2);
+                    boolean z15 = LocaleController.isRTL;
+                    v8Var.addView(textView2, w7.z5.a(-1.0f, z15 ? 70.0f : v8Var.E, 0.0f, z15 ? v8Var.E : 70.0f, 0.0f, -1, (z15 ? 5 : 3) | 48));
+                    textView.setGravity(LocaleController.isRTL ? 5 : 3);
+                    v8Var.removeView(textView);
+                    boolean z16 = LocaleController.isRTL;
+                    v8Var.addView(textView, w7.z5.a(-2.0f, z16 ? 64.0f : v8Var.E, 36.0f, z16 ? v8Var.E : 64.0f, 0.0f, -2, (z16 ? 5 : 3) | 48));
+                    v8Var.removeView(view2);
+                    v8Var.addView(view2, w7.z5.a(20.0f, 22.0f, 0.0f, 22.0f, 0.0f, 37, (LocaleController.isRTL ? 3 : 5) | 16));
+                }
+                i11 = languageSelectActivity.manualTranslationPosition;
+                if (i13 != i11) {
+                    i12 = languageSelectActivity.autoTranslationPosition;
+                    if (i13 == i12) {
+                        CharSequence string = LocaleController.getString(R.string.ShowTranslateChatButton);
+                        boolean g02 = languageSelectActivity.g0();
+                        if (!languageSelectActivity.h0() && !languageSelectActivity.g0()) {
+                            z12 = false;
+                        }
+                        v8Var.f(string, g02, z12);
+                        v8Var.setCheckBoxIcon(languageSelectActivity.getUserConfig().isPremium() ? 0 : R.drawable.permission_locked);
+                        break;
+                    }
+                } else {
+                    v8Var.f(LocaleController.getString(R.string.ShowTranslateButton), languageSelectActivity.h0(), true);
+                    v8Var.setCheckBoxIcon(0);
                     break;
                 }
                 break;
-        }
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
-        switch (this.a) {
-            case 0:
+            case 3:
+                ((org.telegram.ui.Cells.l4) view).setText(LocaleController.getString((i13 == 0 && (languageSelectActivity.getMessagesController().isTranslationsManualEnabled() || languageSelectActivity.getMessagesController().isTranslationsAutoEnabled())) ? R.string.TranslateMessages : R.string.Language));
                 break;
-            default:
-                PhotoViewer photoViewer = (PhotoViewer) this.b;
-                if (photoViewer.G3 == 1) {
-                    photoViewer.x0(true);
+            case 4:
+                org.telegram.ui.Cells.ba baVar = (org.telegram.ui.Cells.ba) view;
+                baVar.d();
+                HashSet Y = t21.Y();
+                String string2 = LocaleController.getString(R.string.DoNotTranslate);
+                try {
+                    boolean[] zArr = new boolean[1];
+                    if (Y.size() != 0) {
+                        if (Y.size() != 1) {
+                            Iterator it = Y.iterator();
+                            StringBuilder sb3 = new StringBuilder();
+                            Object[] objArr = true;
+                            while (it.hasNext()) {
+                                String str = (String) it.next();
+                                if (objArr == false) {
+                                    sb3.append(", ");
+                                }
+                                String A = org.telegram.ui.Components.r41.A(org.telegram.ui.Components.r41.F(str, zArr, null));
+                                if (A != null) {
+                                    sb3.append(A);
+                                    objArr = false;
+                                }
+                            }
+                            sb2 = sb3.toString();
+                            try {
+                                break;
+                            } catch (Exception unused) {
+                                break;
+                            }
+                        } else {
+                            charSequence = org.telegram.ui.Components.r41.A(org.telegram.ui.Components.r41.F((String) Y.iterator().next(), zArr, null));
+                        }
+                    } else {
+                        charSequence = "";
+                    }
+                } catch (Exception unused2) {
+                }
+                if (charSequence == null) {
+                    charSequence = String.format(LocaleController.getPluralString("Languages", Y.size()), Integer.valueOf(Y.size()));
+                }
+                baVar.c(string2, charSequence, true, false);
+                break;
+            case 5:
+                ((org.telegram.ui.Cells.ba) view).d();
+                break;
+            case 6:
+                org.telegram.ui.Cells.d9 d9Var = (org.telegram.ui.Cells.d9) view;
+                org.telegram.ui.Cells.y1 y1Var = d9Var.a;
+                boolean z17 = d9Var.n;
+                boolean z18 = LocaleController.isRTL;
+                if (z17 != z18) {
+                    d9Var.n = z18;
+                    y1Var.setGravity(z18 ? 5 : 3);
+                    FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) y1Var.getLayoutParams();
+                    layoutParams.gravity = (LocaleController.isRTL ? 5 : 3) | 48;
+                    y1Var.setLayoutParams(layoutParams);
+                }
+                if (i13 != languageSelectActivity.n) {
+                    d9Var.setTopPadding(0);
+                    d9Var.setBottomPadding(16);
+                    break;
+                } else {
+                    d9Var.setText(LocaleController.getString(R.string.TranslateMessagesInfo1));
+                    d9Var.setTopPadding(11);
+                    d9Var.setBottomPadding(16);
                     break;
                 }
-                break;
         }
+        return;
+        charSequence = sb2;
+        if (charSequence == null) {
+        }
+        baVar.c(string2, charSequence, true, false);
     }
 
-    private final void c(SurfaceTexture surfaceTexture) {
+    @Override // s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        View view;
+        Context context = this.c;
+        if (i10 != 0) {
+            view = i10 != 2 ? i10 != 3 ? (i10 == 4 || i10 == 5) ? new org.telegram.ui.Cells.ba(context) : i10 != 6 ? new org.telegram.ui.Cells.z6(context, (org.telegram.ui.Cells.t0) null) : new org.telegram.ui.Cells.d9(context) : new org.telegram.ui.Cells.l4(context) : new org.telegram.ui.Cells.v8(context);
+        } else {
+            org.telegram.ui.Cells.f9 f9Var = new org.telegram.ui.Cells.f9(context);
+            f9Var.e = 50;
+            f9Var.r = 21;
+            TextView textView = new TextView(context);
+            f9Var.a = textView;
+            org.telegram.messenger.wh.u(textView, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false), 1, 16.0f, 1);
+            textView.setMaxLines(1);
+            textView.setSingleLine(true);
+            textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
+            TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+            textView.setEllipsize(truncateAt);
+            boolean z10 = LocaleController.isRTL;
+            f9Var.addView(textView, w7.z5.a(-1.0f, z10 ? 21 : 64.0f, 0.0f, z10 ? 64.0f : 21, 0.0f, -1, (z10 ? 5 : 3) | 48));
+            TextView textView2 = new TextView(context);
+            f9Var.b = textView2;
+            textView2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.z6, false));
+            textView2.setTextSize(1, 13.0f);
+            textView2.setGravity(LocaleController.isRTL ? 5 : 3);
+            textView2.setLines(1);
+            textView2.setMaxLines(1);
+            textView2.setSingleLine(true);
+            textView2.setPadding(0, 0, 0, 0);
+            textView2.setEllipsize(truncateAt);
+            boolean z11 = LocaleController.isRTL;
+            f9Var.addView(textView2, w7.z5.a(-2.0f, z11 ? 21 : 64.0f, 36.0f, z11 ? 64.0f : 21, 0.0f, -2, (z11 ? 5 : 3) | 48));
+            RadioButton radioButton = new RadioButton(context);
+            f9Var.c = radioButton;
+            radioButton.setSize(AndroidUtilities.dp(20.0f));
+            radioButton.b(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.g7, false), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.h7, false));
+            f9Var.addView(radioButton, w7.z5.a(20.0f, 22.0f, 0.0f, 22.0f, 0.0f, 20, (LocaleController.isRTL ? 5 : 3) | 16));
+            f9Var.n = LocaleController.isRTL;
+            f9Var.setClipChildren(false);
+            view = f9Var;
+        }
+        return new org.telegram.ui.Components.sl0(view);
     }
 
-    private final void a(SurfaceTexture surfaceTexture, int i10, int i11) {
-    }
-
-    private final void b(SurfaceTexture surfaceTexture, int i10, int i11) {
+    @Override // s4.g0
+    public final void y(s4.b1 b1Var) {
+        View view = b1Var.a;
+        if (view instanceof org.telegram.ui.Cells.f9) {
+            ((org.telegram.ui.Cells.f9) view).c();
+        }
     }
 }

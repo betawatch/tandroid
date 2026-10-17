@@ -1,71 +1,108 @@
 package org.telegram.ui.Components;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.LocationController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class zv0 extends lm0 {
-    public final Context c;
-    public final /* synthetic */ bw0 d;
+public final class zv0 extends View {
+    public final ImageReceiver a;
+    public final h9 b;
+    public final Paint c;
+    public float d;
+    public boolean e;
+    public ValueAnimator f;
 
-    public zv0(bw0 bw0Var, Context context) {
-        this.d = bw0Var;
-        this.c = context;
+    public zv0(Context context) {
+        super(context);
+        ImageReceiver imageReceiver = new ImageReceiver(this);
+        this.a = imageReceiver;
+        this.b = new h9((org.telegram.ui.ActionBar.d6) null);
+        Paint paint = new Paint(1);
+        this.c = paint;
+        imageReceiver.setRoundRadius(AndroidUtilities.dp(28.0f));
+        paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
+        paint.setStyle(Paint.Style.STROKE);
     }
 
-    @Override // org.telegram.ui.Components.lm0
-    public final boolean D(s4.b1 b1Var) {
-        return b1Var.f == 0;
-    }
-
-    @Override // s4.g0
-    public final int h() {
-        return LocationController.getLocationsCount() + 1;
-    }
-
-    @Override // s4.g0
-    public final int j(int i10) {
-        return i10 == 0 ? 1 : 0;
-    }
-
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
-        TextView textView;
-        int i11 = b1Var.f;
-        if (i11 == 0) {
-            ((org.telegram.ui.Cells.w7) b1Var.a).setDialog(bw0.r(i10 - 1));
-        } else if (i11 == 1 && (textView = this.d.e) != null) {
-            textView.setText(LocaleController.formatString("SharingLiveLocationTitle", R.string.SharingLiveLocationTitle, LocaleController.formatPluralString("Chats", LocationController.getLocationsCount(), new Object[0])));
+    public final void a(boolean z10, boolean z11) {
+        ValueAnimator valueAnimator = this.f;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
         }
+        if (!z11) {
+            this.d = z10 ? 1.0f : 0.0f;
+            invalidate();
+            return;
+        }
+        ValueAnimator duration = ValueAnimator.ofFloat(this.d, z10 ? 1.0f : 0.0f).setDuration(200L);
+        duration.setInterpolator(bs.f);
+        duration.addUpdateListener(new b80(this, 22));
+        duration.addListener(new c80(this, 21));
+        duration.start();
+        this.f = duration;
     }
 
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        FrameLayout w7Var;
-        org.telegram.ui.ActionBar.c6 c6Var;
-        Context context = this.c;
-        bw0 bw0Var = this.d;
-        if (i10 != 0) {
-            w7Var = new bi.i5(context, 18);
-            w7Var.setWillNotDraw(false);
-            TextView textView = new TextView(context);
-            bw0Var.e = textView;
-            textView.setTextColor(bw0Var.getThemedColor(org.telegram.ui.ActionBar.g6.J5));
-            bw0Var.e.setTextSize(1, 14.0f);
-            bw0Var.e.setGravity(17);
-            bw0Var.e.setPadding(0, 0, 0, AndroidUtilities.dp(8.0f));
-            w7Var.addView(bw0Var.e, w7.z5.d(40.0f, -1));
-        } else {
-            c6Var = ((org.telegram.ui.ActionBar.e3) bw0Var).resourcesProvider;
-            w7Var = new org.telegram.ui.Cells.w7(54, context, c6Var, false);
+    @Override // android.view.View
+    public final boolean isSelected() {
+        return this.d == 1.0f;
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.onAttachedToWindow();
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.a.onDetachedFromWindow();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        canvas.save();
+        float f7 = (this.d * 0.1f) + 0.9f;
+        canvas.scale(f7, f7);
+        int x02 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.m5, false);
+        Paint paint = this.c;
+        paint.setColor(x02);
+        paint.setAlpha((int) (Color.alpha(paint.getColor()) * this.d));
+        float strokeWidth = paint.getStrokeWidth();
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(strokeWidth, strokeWidth, getWidth() - strokeWidth, getHeight() - strokeWidth);
+        canvas.drawArc(rectF, -90.0f, this.d * 360.0f, false, paint);
+        canvas.restore();
+        if (this.e) {
+            return;
         }
-        return new wl0(w7Var);
+        float strokeWidth2 = paint.getStrokeWidth() * 2.5f * this.d;
+        float f10 = 2.0f * strokeWidth2;
+        float width = getWidth() - f10;
+        float height = getHeight() - f10;
+        ImageReceiver imageReceiver = this.a;
+        imageReceiver.setImageCoords(strokeWidth2, strokeWidth2, width, height);
+        imageReceiver.draw(canvas);
+    }
+
+    public void setAvatar(TLObject tLObject) {
+        h9 h9Var = this.b;
+        h9Var.p(tLObject);
+        this.a.setForUserOrChat(tLObject, h9Var);
+    }
+
+    public void setHideAvatar(boolean z10) {
+        this.e = z10;
+        invalidate();
     }
 }

@@ -2,16 +2,16 @@ package r2;
 
 import android.media.MediaCodecInfo;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public interface u {
-    boolean G1(String str, MediaCodecInfo.CodecCapabilities codecCapabilities);
+    MediaCodecInfo a(int i10);
 
-    int I1();
+    boolean f(String str, String str2, MediaCodecInfo.CodecCapabilities codecCapabilities);
 
-    MediaCodecInfo l(int i10);
+    boolean h(String str, MediaCodecInfo.CodecCapabilities codecCapabilities);
 
-    boolean m2();
+    int k();
 
-    boolean w0(String str, String str2, MediaCodecInfo.CodecCapabilities codecCapabilities);
+    boolean u();
 }

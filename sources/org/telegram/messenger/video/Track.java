@@ -2,7 +2,7 @@ package org.telegram.messenger.video;
 
 import android.media.MediaCodec;
 import android.media.MediaFormat;
-import com.google.android.gms.internal.play_billing.k3;
+import com.google.android.gms.internal.cast.a6;
 import f5.s;
 import f5.z;
 import java.io.IOException;
@@ -16,7 +16,7 @@ import java.util.LinkedList;
 import java.util.Map;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public class Track {
     private static Map<Integer, Integer> samplingFrequencyIndexMap;
@@ -38,7 +38,7 @@ public class Track {
     private ArrayList<SamplePresentationTime> samplePresentationTimes = new ArrayList<>();
     private boolean first = true;
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class SamplePresentationTime {
         private long dt;
         private int index;
@@ -190,7 +190,7 @@ public class Track {
             allocate4.put((byte) (mVar2.d & 255));
             allocate.put(allocate2.array());
             allocate.put(allocate4.array());
-            k3.p(te.a.c(mc.a.h, bVar2, bVar2, allocate));
+            a6.p(te.a.c(mc.a.h, bVar2, bVar2, allocate));
             bVar2.e = allocate;
             bVar.a(bVar2);
             this.sampleDescriptionBox.a(bVar);
@@ -309,9 +309,9 @@ public class Track {
             byte[] bArr5 = new byte[byteBuffer2.remaining()];
             byteBuffer2.get(bArr5);
             arrayList2.add(bArr5);
-            k3.p(te.a.c(sc.a.h, aVar5, aVar5, arrayList));
+            a6.p(te.a.c(sc.a.h, aVar5, aVar5, arrayList));
             aVar5.a.f = arrayList;
-            k3.p(te.a.c(sc.a.n, aVar5, aVar5, arrayList2));
+            a6.p(te.a.c(sc.a.n, aVar5, aVar5, arrayList2));
             aVar5.a.g = arrayList2;
         }
         if (mediaFormat.containsKey("level")) {
@@ -374,17 +374,17 @@ public class Track {
         } else {
             aVar5.e(100);
         }
-        k3.p(te.a.c(sc.a.s, aVar5, aVar5, new Integer(-1)));
+        a6.p(te.a.c(sc.a.s, aVar5, aVar5, new Integer(-1)));
         aVar5.a.j = -1;
-        k3.p(te.a.c(sc.a.v, aVar5, aVar5, new Integer(-1)));
+        a6.p(te.a.c(sc.a.v, aVar5, aVar5, new Integer(-1)));
         aVar5.a.k = -1;
-        k3.p(te.a.c(sc.a.r, aVar5, aVar5, new Integer(-1)));
+        a6.p(te.a.c(sc.a.r, aVar5, aVar5, new Integer(-1)));
         aVar5.a.i = -1;
-        k3.p(te.a.c(sc.a.b, aVar5, aVar5, new Integer(1)));
+        a6.p(te.a.c(sc.a.b, aVar5, aVar5, new Integer(1)));
         aVar5.a.a = 1;
-        k3.p(te.a.c(sc.a.f, aVar5, aVar5, new Integer(3)));
+        a6.p(te.a.c(sc.a.f, aVar5, aVar5, new Integer(3)));
         aVar5.a.e = 3;
-        k3.p(te.a.c(sc.a.d, aVar5, aVar5, new Integer(0)));
+        a6.p(te.a.c(sc.a.d, aVar5, aVar5, new Integer(0)));
         aVar5.a.c = 0;
         cVar3.a(aVar5);
         this.sampleDescriptionBox.a(cVar3);

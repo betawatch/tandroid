@@ -8,9 +8,9 @@ import android.util.AttributeSet;
 import android.view.View;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public class MediaRouteExpandCollapseButton extends m.w {
+public class MediaRouteExpandCollapseButton extends m.v {
     public final AnimationDrawable d;
     public final AnimationDrawable e;
     public final String f;

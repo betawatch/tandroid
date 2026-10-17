@@ -1,230 +1,116 @@
 package ai;
 
-import android.util.LongSparseArray;
-import android.util.SparseArray;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Iterator;
-import org.telegram.ui.w6;
-import org.telegram.ui.x6;
+import android.content.Context;
+import android.text.SpannableStringBuilder;
+import android.view.MotionEvent;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BillingController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.x90;
+import org.telegram.ui.Components.yq;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class c {
-    public final boolean a;
-    public long k;
-    public boolean m;
-    public boolean n;
-    public boolean o;
-    public boolean p;
-    public boolean q;
-    public long r;
-    public long s;
-    public long t;
-    public long u;
-    public long v;
-    public ArrayList b = new ArrayList();
-    public final LongSparseArray c = new LongSparseArray();
-    public final ArrayList d = new ArrayList();
-    public final ArrayList e = new ArrayList();
-    public final ArrayList f = new ArrayList();
-    public final ArrayList g = new ArrayList();
-    public final ArrayList h = new ArrayList();
-    public final HashSet i = new HashSet();
-    public final HashSet j = new HashSet();
-    public final HashSet l = new HashSet();
+public final class c extends LinearLayout implements NotificationCenter.NotificationCenterDelegate {
+    public final int a;
+    public final org.telegram.ui.ActionBar.d6 b;
+    public final TextView c;
+    public final x90 d;
+    public ag.c e;
+    public final yq[] f;
 
-    public c(boolean z10) {
-        this.a = z10;
+    public c(Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+        this(context, i10, ag.c.a, d6Var);
     }
 
-    public final void a(int i10, boolean z10) {
-        if (this.a) {
-            if (!z10) {
-                if (i10 == 0) {
-                    this.m = false;
-                    return;
-                }
-                if (i10 == 1) {
-                    this.n = false;
-                    return;
-                }
-                if (i10 == 2) {
-                    this.o = false;
-                    return;
-                } else if (i10 == 3) {
-                    this.p = false;
-                    return;
-                } else {
-                    if (i10 == 4) {
-                        this.q = false;
-                        return;
-                    }
-                    return;
-                }
-            }
-            ArrayList arrayList = this.d;
-            if (i10 == 0) {
-                this.m = b(i10, arrayList);
-                return;
-            }
-            if (i10 == 1) {
-                this.n = b(i10, arrayList);
-                return;
-            }
-            if (i10 == 2) {
-                this.o = b(i10, this.e);
-                return;
-            }
-            if (i10 == 3) {
-                this.p = b(i10, this.f);
-            } else if (i10 == 4) {
-                this.q = b(i10, this.g);
-            } else if (i10 == 7) {
-                b(i10, this.h);
-            }
-        }
-    }
-
-    public final boolean b(int i10, ArrayList arrayList) {
-        for (int i11 = 0; i11 < arrayList.size(); i11++) {
-            if (((b) arrayList.get(i11)).d == i10 && !this.j.contains(arrayList.get(i11))) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    public final void c() {
-        if (this.a) {
+    public final void a() {
+        ag.c cVar = this.e;
+        int i10 = this.a;
+        ag.a s10 = fa.x(i10, cVar).s();
+        ag.c cVar2 = this.e;
+        ag.c cVar3 = ag.c.a;
+        TextView textView = this.c;
+        org.telegram.ui.ActionBar.d6 d6Var = this.b;
+        x90 x90Var = this.d;
+        if (cVar2 == cVar3) {
+            textView.setText(ld.Y0(false, LocaleController.formatString(R.string.Gift2MessageStarsInfo, LocaleController.formatNumber(s10.a(), ',')), 0.6f, null));
+            int i11 = org.telegram.ui.ActionBar.h6.Gi;
+            x90Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(i11, d6Var));
+            x90Var.setLinkTextColor(org.telegram.ui.ActionBar.h6.w0(i11, d6Var));
+            x90Var.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.Gift2MessageStarsInfoLink), new a3.d(this, 6)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)));
             return;
         }
-        HashSet hashSet = this.i;
-        hashSet.clear();
-        HashSet hashSet2 = this.j;
-        Iterator it = hashSet2.iterator();
-        while (it.hasNext()) {
-            long j10 = ((b) it.next()).b;
-            if (j10 != 0) {
-                hashSet.add(Long.valueOf(j10));
-            }
-        }
-        HashSet hashSet3 = this.l;
-        hashSet3.clear();
-        Iterator it2 = hashSet.iterator();
-        while (it2.hasNext()) {
-            w6 w6Var = (w6) this.c.get(((Long) it2.next()).longValue());
-            if (w6Var != null) {
-                SparseArray sparseArray = w6Var.d;
-                int i10 = 0;
-                while (true) {
-                    if (i10 >= sparseArray.size()) {
-                        hashSet3.add(Long.valueOf(w6Var.a));
-                        break;
-                    }
-                    ArrayList arrayList = ((x6) sparseArray.valueAt(i10)).b;
-                    int size = arrayList.size();
-                    int i11 = 0;
-                    while (i11 < size) {
-                        Object obj = arrayList.get(i11);
-                        i11++;
-                        if (!hashSet2.contains((b) obj)) {
-                            break;
-                        }
-                    }
-                    i10++;
-                }
-            }
+        if (cVar2 == ag.c.b) {
+            SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2MessageStarsInfoTON, s10.b()));
+            yq[] yqVarArr = this.f;
+            textView.setText(ld.Y0(true, replaceTags, 0.6f, yqVarArr));
+            yqVarArr[0].setColorKey(org.telegram.ui.ActionBar.h6.Gi);
+            StringBuilder sb2 = new StringBuilder(10);
+            sb2.append('~');
+            sb2.append(BillingController.getInstance().formatCurrency((long) (MessagesController.getInstance(i10).config.tonUsdRate.get() * s10.c() * 100.0d), "USD", 2));
+            int i12 = org.telegram.ui.ActionBar.h6.Hi;
+            int w02 = org.telegram.ui.ActionBar.h6.w0(i12, d6Var);
+            int i13 = org.telegram.ui.ActionBar.h6.Fi;
+            x90Var.setTextColor(i0.b.f(0.33f, w02, org.telegram.ui.ActionBar.h6.w0(i13, d6Var)));
+            x90Var.setLinkTextColor(i0.b.f(0.33f, org.telegram.ui.ActionBar.h6.w0(i12, d6Var), org.telegram.ui.ActionBar.h6.w0(i13, d6Var)));
+            x90Var.setText(sb2);
         }
     }
 
-    public final void d() {
-        this.k = 0L;
-        this.j.clear();
-        this.l.clear();
-    }
-
-    public final ArrayList e(int i10) {
-        if (i10 == 0 || i10 == 1) {
-            return this.d;
-        }
-        if (i10 == 2) {
-            return this.e;
-        }
-        if (i10 == 3) {
-            return this.f;
-        }
-        if (i10 == 4) {
-            return this.g;
-        }
-        if (i10 == 7) {
-            return this.h;
-        }
-        return null;
-    }
-
-    public final long f(int i10) {
-        if (i10 == 0) {
-            return this.r;
-        }
-        if (i10 == 1) {
-            return this.s;
-        }
-        if (i10 == 2) {
-            return this.t;
-        }
-        if (i10 == 3) {
-            return this.u;
-        }
-        if (i10 == 4) {
-            return this.v;
-        }
-        return -1L;
-    }
-
-    public final void g(b bVar, boolean z10) {
-        long j10 = bVar.c;
-        if (!z10) {
-            j10 = -j10;
-        }
-        int i10 = bVar.d;
-        if (i10 == 0) {
-            this.r += j10;
-            return;
-        }
-        if (i10 == 1) {
-            this.s += j10;
-            return;
-        }
-        if (i10 == 2) {
-            this.t += j10;
-        } else if (i10 == 3) {
-            this.u += j10;
-        } else if (i10 == 4) {
-            this.v += j10;
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 == NotificationCenter.starBalanceUpdated) {
+            a();
         }
     }
 
-    public final boolean h() {
-        if (this.d.isEmpty() && this.e.isEmpty() && this.f.isEmpty()) {
-            return this.a || this.b.isEmpty();
-        }
-        return false;
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        return isEnabled() && super.dispatchTouchEvent(motionEvent);
     }
 
-    public final void i(b bVar) {
-        HashSet hashSet = this.j;
-        if (hashSet.contains(bVar)) {
-            hashSet.remove(bVar);
-            g(bVar, false);
-            this.k -= bVar.c;
-            a(bVar.d, false);
-        } else {
-            hashSet.add(bVar);
-            g(bVar, true);
-            this.k += bVar.c;
-            a(bVar.d, true);
-        }
-        c();
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        a();
+        int i10 = this.a;
+        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.starBalanceUpdated);
+        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.botStarsUpdated);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        int i10 = this.a;
+        NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.starBalanceUpdated);
+        NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.botStarsUpdated);
+    }
+
+    public c(Context context, int i10, ag.c cVar, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context);
+        this.f = new yq[1];
+        this.a = i10;
+        this.b = d6Var;
+        this.e = cVar;
+        setOrientation(1);
+        setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(9.0f));
+        setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(24.0f), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Fi, d6Var)));
+        TextView textView = new TextView(context);
+        this.c = textView;
+        textView.setTextSize(1, 13.0f);
+        org.telegram.ui.Cells.t0.q(org.telegram.ui.ActionBar.h6.Hi, d6Var, textView, 17);
+        addView(textView, w7.z5.p(-2, -2, 0.0f, 17, 0, 0, 0, 0));
+        x90 x90Var = new x90(context, d6Var);
+        this.d = x90Var;
+        x90Var.setTextSize(1, 12.0f);
+        x90Var.setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.Gift2MessageStarsInfoLink), new b(context, 0, d6Var)), true, AndroidUtilities.dp(2.6666667f), AndroidUtilities.dp(1.0f)));
+        x90Var.setGravity(17);
+        addView(x90Var, w7.z5.p(-2, -2, 0.0f, 17, 0, 1, 0, 0));
+        a();
     }
 }

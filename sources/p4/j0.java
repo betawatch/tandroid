@@ -10,11 +10,10 @@ import android.view.Display;
 import com.google.android.gms.internal.vision.g3;
 import java.util.ArrayList;
 import java.util.Locale;
-import ji.h5;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public class j0 extends k0 implements b0 {
     public static final ArrayList I;
@@ -44,7 +43,7 @@ public class j0 extends k0 implements b0 {
     }
 
     public j0(Context context, e eVar) {
-        super(context, new h5(new ComponentName("android", k0.class.getName()), 18));
+        super(context, new k0.b(new ComponentName("android", k0.class.getName()), 19));
         this.G = new ArrayList();
         this.H = new ArrayList();
         this.r = eVar;
@@ -337,7 +336,7 @@ public class j0 extends k0 implements b0 {
             }
             arrayList.add(mVar);
         }
-        g(new b2.u(arrayList, false));
+        g(new b2.t(arrayList, false));
     }
 
     public void z(MediaRouter.RouteInfo routeInfo) {

@@ -6,16 +6,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class q1 extends p implements f1 {
     public final f1 e;
-    public final a4.l f;
+    public final ag.b f;
 
-    public q1(f1 f1Var, a4.l lVar) {
+    public q1(f1 f1Var, ag.b bVar) {
         f1Var.getClass();
         this.e = f1Var;
-        this.f = lVar;
+        this.f = bVar;
     }
 
     @Override // e9.n1
@@ -25,7 +25,7 @@ public final class q1 extends p implements f1 {
 
     @Override // e9.p
     public final Map d() {
-        return new m1(this.e.b(), new a1.c(this, 29));
+        return new m1(this.e.b(), new e1.c(this, 1));
     }
 
     @Override // e9.p
@@ -45,7 +45,7 @@ public final class q1 extends p implements f1 {
 
     @Override // e9.n1
     public final Collection get(Object obj) {
-        return s.x((List) this.e.get(obj), new n4.s(14, this.f, obj));
+        return s.x((List) this.e.get(obj), new n4.s(16, this.f, obj));
     }
 
     @Override // e9.p, e9.n1

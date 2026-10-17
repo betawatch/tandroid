@@ -1,29 +1,31 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.Utilities;
+import android.text.Spanned;
+import java.util.Comparator;
+import org.telegram.messenger.RichMessageLayout;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ph implements Runnable {
+public final /* synthetic */ class ph implements Comparator {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback2 b;
-    public final /* synthetic */ Exception c;
+    public final /* synthetic */ Spanned b;
 
-    public /* synthetic */ ph(Utilities.Callback2 callback2, Exception exc, int i10) {
+    public /* synthetic */ ph(Spanned spanned, int i10) {
         this.a = i10;
-        this.b = callback2;
-        this.c = exc;
+        this.b = spanned;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int lambda$withReplacements$0;
+        int lambda$new$0;
         switch (this.a) {
             case 0:
-                PasskeysController.lambda$create$3(this.b, this.c);
-                break;
+                lambda$withReplacements$0 = RichMessageLayout.RichBlock.lambda$withReplacements$0(this.b, (org.telegram.ui.Cells.t9) obj, (org.telegram.ui.Cells.t9) obj2);
+                return lambda$withReplacements$0;
             default:
-                PasskeysController.lambda$create$8(this.b, this.c);
-                break;
+                lambda$new$0 = RichMessageLayout.Text.lambda$new$0(this.b, (RichMessageLayout.RichButtonSpan) obj, (RichMessageLayout.RichButtonSpan) obj2);
+                return lambda$new$0;
         }
     }
 }

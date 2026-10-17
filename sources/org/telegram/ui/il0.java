@@ -1,97 +1,121 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import android.text.TextUtils;
-import java.io.Serializable;
-import java.util.ArrayList;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class il0 implements Utilities.Callback2 {
+public final /* synthetic */ class il0 implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Serializable b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ xm0 b;
 
-    public /* synthetic */ il0(Object obj, Object obj2, Serializable serializable, Object obj3, int i10) {
+    public /* synthetic */ il0(xm0 xm0Var, int i10) {
         this.a = i10;
-        this.c = obj;
-        this.d = obj2;
-        this.b = serializable;
-        this.e = obj3;
+        this.b = xm0Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        int i10 = this.a;
-        Object obj3 = this.e;
-        Serializable serializable = this.b;
-        Object obj4 = this.d;
-        Object obj5 = this.c;
-        switch (i10) {
+    @Override // android.widget.TextView.OnEditorActionListener
+    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
+        switch (this.a) {
             case 0:
-                org.telegram.ui.Components.m51 m51Var = (org.telegram.ui.Components.m51) obj4;
-                String str = (String) serializable;
-                org.telegram.ui.ActionBar.c6 c6Var = (org.telegram.ui.ActionBar.c6) obj3;
-                ((org.telegram.ui.ActionBar.a2) obj5).dismiss();
-                if (!(((TLRPC.Bool) obj) instanceof TLRPC.TL_boolTrue)) {
-                    org.telegram.ui.ActionBar.e3 e3Var = ql0.a;
-                    if (e3Var != null) {
-                        e3Var.dismiss();
-                        ql0.a = null;
+                xm0 xm0Var = this.b;
+                if (i10 != 5) {
+                    if (i10 != 6) {
+                        xm0Var.getClass();
+                        break;
+                    } else {
+                        xm0Var.L.callOnClick();
+                        break;
                     }
-                    ql0.a().M(LocaleController.getString(R.string.BotAuthLoggedInFailTitle), TextUtils.isEmpty(str) ? LocaleController.getString(R.string.BotAuthLoggedInFailNoDomain) : AndroidUtilities.replaceSingleLinkBold(LocaleController.formatString(R.string.BotAuthLoggedInFail, str), org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.Gi, c6Var)), R.raw.error).j();
-                    break;
                 } else {
-                    m51Var.run();
+                    xm0Var.Y[2].requestFocus();
                     break;
                 }
             case 1:
-                org.telegram.ui.web.c1 c1Var = (org.telegram.ui.web.c1) obj5;
-                bi.n9 n9Var = (bi.n9) obj4;
-                String str2 = (String) serializable;
-                TLRPC.User user = (TLRPC.User) obj3;
-                TLRPC.Updates updates = (TLRPC.Updates) obj;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                org.telegram.ui.ActionBar.c6 c6Var2 = c1Var.e;
-                if (updates == null) {
-                    if (tL_error == null) {
-                        new org.telegram.ui.Components.zc(c1Var, c6Var2).e0("UNKNOWN_BUTTON", false);
-                        c1Var.x(n9Var, "requested_chat_failed", org.telegram.ui.web.c1.A(str2, "req_id"));
-                        break;
-                    } else {
-                        new org.telegram.ui.Components.zc(c1Var, c6Var2).f0(tL_error, false);
-                        c1Var.x(n9Var, "requested_chat_failed", org.telegram.ui.web.c1.A(str2, "req_id"));
-                        break;
-                    }
-                } else {
-                    MessagesController.getInstance(c1Var.M).lambda$processUpdates$377(updates, false);
-                    c1Var.x(n9Var, "requested_chat_sent", org.telegram.ui.web.c1.A(str2, "req_id"));
-                    long j10 = c1Var.U.id;
-                    Bundle bundle = new Bundle();
-                    bundle.putLong("user_id", user.id);
-                    org.telegram.ui.web.f0 f0Var = new org.telegram.ui.web.f0(c1Var, bundle, user, j10);
-                    org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
-                    if (U != null) {
-                        U.presentFragment(f0Var);
-                    }
-                    org.telegram.ui.web.h0 h0Var = c1Var.c;
-                    if (h0Var != null) {
-                        h0Var.b();
-                        break;
+                xm0 xm0Var2 = this.b;
+                xm0Var2.getClass();
+                if (i10 == 5) {
+                    int intValue = ((Integer) textView.getTag()).intValue() + 1;
+                    EditTextBoldCursor[] editTextBoldCursorArr = xm0Var2.Y;
+                    if (intValue < editTextBoldCursorArr.length) {
+                        if (!editTextBoldCursorArr[intValue].isFocusable()) {
+                            xm0Var2.Y[intValue].dispatchTouchEvent(MotionEvent.obtain(0L, 0L, 1, 0.0f, 0.0f, 0));
+                            textView.clearFocus();
+                            AndroidUtilities.hideKeyboard(textView);
+                            break;
+                        } else {
+                            xm0Var2.Y[intValue].requestFocus();
+                            break;
+                        }
                     }
                 }
                 break;
+            case 2:
+                xm0 xm0Var3 = this.b;
+                xm0Var3.getClass();
+                if (i10 == 5) {
+                    int intValue2 = ((Integer) textView.getTag()).intValue() + 1;
+                    EditTextBoldCursor[] editTextBoldCursorArr2 = xm0Var3.a0;
+                    if (intValue2 < editTextBoldCursorArr2.length) {
+                        if (!editTextBoldCursorArr2[intValue2].isFocusable()) {
+                            xm0Var3.a0[intValue2].dispatchTouchEvent(MotionEvent.obtain(0L, 0L, 1, 0.0f, 0.0f, 0));
+                            textView.clearFocus();
+                            AndroidUtilities.hideKeyboard(textView);
+                            break;
+                        } else {
+                            xm0Var3.a0[intValue2].requestFocus();
+                            break;
+                        }
+                    }
+                }
+                break;
+            case 3:
+                xm0 xm0Var4 = this.b;
+                xm0Var4.getClass();
+                if (i10 == 6 || i10 == 5) {
+                    xm0Var4.L.callOnClick();
+                    break;
+                }
+                break;
+            case 4:
+                xm0 xm0Var5 = this.b;
+                xm0Var5.getClass();
+                if (i10 == 5) {
+                    int intValue3 = ((Integer) textView.getTag()).intValue() + 1;
+                    EditTextBoldCursor[] editTextBoldCursorArr3 = xm0Var5.Y;
+                    if (intValue3 < editTextBoldCursorArr3.length) {
+                        if (!editTextBoldCursorArr3[intValue3].isFocusable()) {
+                            xm0Var5.Y[intValue3].dispatchTouchEvent(MotionEvent.obtain(0L, 0L, 1, 0.0f, 0.0f, 0));
+                            textView.clearFocus();
+                            AndroidUtilities.hideKeyboard(textView);
+                            break;
+                        } else {
+                            xm0Var5.Y[intValue3].requestFocus();
+                            break;
+                        }
+                    }
+                }
+                break;
+            case 5:
+                xm0 xm0Var6 = this.b;
+                xm0Var6.getClass();
+                if (i10 == 5 || i10 == 6) {
+                    xm0Var6.L.callOnClick();
+                    break;
+                }
+                break;
             default:
-                zh.r3.d0((zh.r3) obj5, (Utilities.Callback2) obj4, (ArrayList) serializable, (Runnable) obj3, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
+                xm0 xm0Var7 = this.b;
+                xm0Var7.getClass();
+                if (i10 == 6 || i10 == 5) {
+                    xm0Var7.L.callOnClick();
+                    break;
+                }
                 break;
         }
+        return true;
     }
 }

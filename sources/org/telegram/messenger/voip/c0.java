@@ -1,42 +1,32 @@
 package org.telegram.messenger.voip;
 
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c0 implements Runnable {
+public final /* synthetic */ class c0 implements RequestDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ VoIPService b;
-    public final /* synthetic */ TLRPC.TL_error c;
-    public final /* synthetic */ TLObject d;
+    public final /* synthetic */ MessagesStorage c;
 
-    public /* synthetic */ c0(int i10, VoIPService voIPService, TLObject tLObject, TLRPC.TL_error tL_error) {
+    public /* synthetic */ c0(VoIPService voIPService, MessagesStorage messagesStorage, int i10) {
         this.a = i10;
         this.b = voIPService;
-        this.c = tL_error;
-        this.d = tLObject;
+        this.c = messagesStorage;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.b.lambda$startGroupCheckShortpoll$61(this.d, this.c);
-                break;
-            case 1:
-                this.b.lambda$processAcceptedCall$19(this.c, this.d);
+                this.b.lambda$acceptIncomingCall$103(this.c, tLObject, tL_error);
                 break;
             default:
-                this.b.lambda$acceptIncomingCall$101(this.c, this.d);
+                this.b.lambda$startOutgoingCall$11(this.c, tLObject, tL_error);
                 break;
         }
-    }
-
-    public /* synthetic */ c0(VoIPService voIPService, TLObject tLObject, TLRPC.TL_error tL_error) {
-        this.a = 0;
-        this.b = voIPService;
-        this.d = tLObject;
-        this.c = tL_error;
     }
 }

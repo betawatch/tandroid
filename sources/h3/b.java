@@ -1,35 +1,37 @@
 package h3;
 
 import a4.g;
-import a4.l;
-import b2.u0;
+import b2.t0;
+import b2.v;
+import b2.v0;
 import b2.w;
 import b2.w0;
-import b2.x0;
-import c3.b0;
-import c3.i0;
+import c3.c0;
+import c3.j0;
+import c3.l;
 import c3.o;
 import c3.p;
 import c3.q;
 import c3.s;
 import c3.t;
 import c3.u;
+import c3.y;
+import e1.c;
 import e2.m0;
 import e2.x;
 import e9.l0;
 import e9.n0;
 import e9.x1;
-import i2.d;
 import java.util.Arrays;
 import java.util.List;
 import q3.h;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class b implements o {
     public q e;
-    public i0 f;
-    public u0 h;
+    public j0 f;
+    public t0 h;
     public u i;
     public int j;
     public int k;
@@ -44,20 +46,20 @@ public final class b implements o {
 
     @Override // c3.o
     public final boolean a(p pVar) {
-        u0 P = new l(9).P(pVar, h.b, 0);
-        if (P != null) {
-            int length = P.a.length;
+        t0 b10 = new y(0).b(pVar, h.b, 0);
+        if (b10 != null) {
+            int length = b10.a.length;
         }
         x xVar = new x(4);
-        ((c3.l) pVar).j(xVar.a, 0, 4, false);
+        ((l) pVar).j(xVar.a, 0, 4, false);
         return xVar.C() == 1716281667;
     }
 
     @Override // c3.o
     public final void c(q qVar) {
         this.e = qVar;
-        this.f = qVar.W(0, 1);
-        qVar.D();
+        this.f = qVar.j0(0, 1);
+        qVar.H();
     }
 
     @Override // c3.o
@@ -90,23 +92,23 @@ public final class b implements o {
     public final int f(p pVar, s sVar) {
         u uVar;
         int i10;
-        b0 tVar;
+        c0 tVar;
         long j10;
         long j11;
         boolean z10;
         long I;
         long j12;
         int i11 = this.g;
-        u0 u0Var = null;
+        t0 t0Var = null;
         if (i11 == 0) {
             pVar.q();
             long k10 = pVar.k();
-            u0 P = new l(9).P(pVar, !this.c ? null : h.b, 0);
-            if (P != null && P.a.length != 0) {
-                u0Var = P;
+            t0 b10 = new y(0).b(pVar, !this.c ? null : h.b, 0);
+            if (b10 != null && b10.a.length != 0) {
+                t0Var = b10;
             }
             pVar.r((int) (pVar.k() - k10));
-            this.h = u0Var;
+            this.h = t0Var;
             this.g = 1;
             return 0;
         }
@@ -123,7 +125,7 @@ public final class b implements o {
             x xVar = new x(4);
             pVar.readFully(xVar.a, 0, 4);
             if (xVar.C() != 1716281667) {
-                throw x0.a(null, "Failed to read FLAC stream marker.");
+                throw w0.a(null, "Failed to read FLAC stream marker.");
             }
             this.g = 3;
             return 0;
@@ -150,7 +152,7 @@ public final class b implements o {
                     if (uVar2 == null) {
                         throw new IllegalArgumentException();
                     }
-                    u0 u0Var2 = uVar2.l;
+                    t0 t0Var2 = uVar2.l;
                     if (g10 == i13) {
                         x xVar2 = new x(g11);
                         pVar.readFully(xVar2.a, i16, g11);
@@ -160,20 +162,20 @@ public final class b implements o {
                             x xVar3 = new x(g11);
                             pVar.readFully(xVar3.a, 0, g11);
                             xVar3.O(i12);
-                            u0 r10 = c3.b.r(Arrays.asList(c3.b.u(xVar3, false, false).a));
-                            if (u0Var2 != null) {
-                                r10 = u0Var2.b(r10);
+                            t0 r10 = c3.b.r(Arrays.asList(c3.b.u(xVar3, false, false).a));
+                            if (t0Var2 != null) {
+                                r10 = t0Var2.b(r10);
                             }
                             uVar = new u(uVar2.a, uVar2.b, uVar2.c, uVar2.d, uVar2.e, uVar2.g, uVar2.h, uVar2.j, uVar2.k, r10);
                         } else if (g10 == i14) {
                             x xVar4 = new x(g11);
                             pVar.readFully(xVar4.a, 0, g11);
                             xVar4.O(4);
-                            u0 u0Var3 = new u0(n0.y(o3.a.d(xVar4)));
-                            if (u0Var2 != null) {
-                                u0Var3 = u0Var2.b(u0Var3);
+                            t0 t0Var3 = new t0(n0.y(o3.a.d(xVar4)));
+                            if (t0Var2 != null) {
+                                t0Var3 = t0Var2.b(t0Var3);
                             }
-                            uVar = new u(uVar2.a, uVar2.b, uVar2.c, uVar2.d, uVar2.e, uVar2.g, uVar2.h, uVar2.j, uVar2.k, u0Var3);
+                            uVar = new u(uVar2.a, uVar2.b, uVar2.c, uVar2.d, uVar2.e, uVar2.g, uVar2.h, uVar2.j, uVar2.k, t0Var3);
                         } else {
                             pVar.r(g11);
                         }
@@ -191,11 +193,11 @@ public final class b implements o {
             }
             this.i.getClass();
             this.j = Math.max(this.i.c, 6);
-            b2.x c10 = this.i.c(bArr, this.h);
-            i0 i0Var = this.f;
-            w a2 = c10.a();
-            a2.q = w0.n("audio/flac");
-            d.u(a2, i0Var);
+            w c10 = this.i.c(bArr, this.h);
+            j0 j0Var = this.f;
+            v a2 = c10.a();
+            a2.q = v0.n("audio/flac");
+            i0.a.u(a2, j0Var);
             this.f.e(this.i.b());
             this.g = 4;
             return 0;
@@ -208,7 +210,7 @@ public final class b implements o {
             int H = xVar5.H();
             if ((H >> 2) != 16382) {
                 pVar.q();
-                throw x0.a(null, "First frame does not start with sync code.");
+                throw w0.a(null, "First frame does not start with sync code.");
             }
             pVar.q();
             this.k = H;
@@ -218,8 +220,8 @@ public final class b implements o {
             long length = pVar.getLength();
             this.i.getClass();
             u uVar3 = this.i;
-            qf.b bVar = uVar3.k;
-            if (bVar != null && ((long[]) bVar.b).length > 0) {
+            n4.s sVar2 = uVar3.k;
+            if (sVar2 != null && ((long[]) sVar2.b).length > 0) {
                 tVar = new t(uVar3, position, 0);
                 i10 = 0;
             } else if (length == -1 || uVar3.j <= 0) {
@@ -228,9 +230,9 @@ public final class b implements o {
             } else {
                 int i17 = this.k;
                 int i18 = uVar3.c;
-                f1.a aVar = new f1.a(uVar3, 4);
-                a5.a aVar2 = new a5.a(uVar3, i17);
-                long b10 = uVar3.b();
+                c cVar = new c(uVar3, 13);
+                a5.a aVar = new a5.a(uVar3, i17);
+                long b11 = uVar3.b();
                 long j14 = uVar3.j;
                 int i19 = uVar3.d;
                 if (i19 > 0) {
@@ -241,11 +243,11 @@ public final class b implements o {
                     int i20 = uVar3.a;
                     j10 = 64 + (((((i20 != uVar3.b || i20 <= 0) ? 4096L : i20) * uVar3.g) * uVar3.h) / 8);
                 }
-                a aVar3 = new a(aVar, aVar2, b10, j14, position, length, j10, Math.max(6, i18));
-                this.l = aVar3;
-                tVar = aVar3.a;
+                a aVar2 = new a(cVar, aVar, b11, j14, position, length, j10, Math.max(6, i18));
+                this.l = aVar2;
+                tVar = aVar2.a;
             }
-            qVar.K(tVar);
+            qVar.g0(tVar);
             this.g = 5;
             return i10;
         }
@@ -254,9 +256,9 @@ public final class b implements o {
         }
         this.f.getClass();
         this.i.getClass();
-        a aVar4 = this.l;
-        if (aVar4 != null && aVar4.c != null) {
-            return aVar4.b(pVar, sVar);
+        a aVar3 = this.l;
+        if (aVar3 != null && aVar3.c != null) {
+            return aVar3.b(pVar, sVar);
         }
         if (this.n == -1) {
             u uVar4 = this.i;
@@ -271,11 +273,11 @@ public final class b implements o {
             byte[] bArr5 = xVar6.a;
             int i21 = 0;
             while (i21 < r10) {
-                int g12 = pVar.g(i21, r10 - i21, bArr5);
-                if (g12 == -1) {
+                int h = pVar.h(i21, r10 - i21, bArr5);
+                if (h == -1) {
                     break;
                 }
-                i21 += g12;
+                i21 += h;
             }
             xVar6.M(i21);
             pVar.q();
@@ -290,7 +292,7 @@ public final class b implements o {
             if (j12 == 0 || I <= j12) {
                 j13 = I;
                 if (r4) {
-                    throw x0.a(null, null);
+                    throw w0.a(null, null);
                 }
                 this.n = j13;
             }
@@ -325,12 +327,12 @@ public final class b implements o {
             int i26 = xVar7.b;
             while (true) {
                 int i27 = xVar7.c - 16;
-                s sVar2 = this.d;
+                s sVar3 = this.d;
                 if (i26 <= i27) {
                     xVar7.N(i26);
-                    if (c3.b.a(xVar7, this.i, this.k, sVar2)) {
+                    if (c3.b.a(xVar7, this.i, this.k, sVar3)) {
                         xVar7.N(i26);
-                        j11 = sVar2.a;
+                        j11 = sVar3.a;
                         break;
                     }
                     i26++;
@@ -344,7 +346,7 @@ public final class b implements o {
                             }
                             xVar7.N(i26);
                             try {
-                                z10 = c3.b.a(xVar7, this.i, this.k, sVar2);
+                                z10 = c3.b.a(xVar7, this.i, this.k, sVar3);
                             } catch (IndexOutOfBoundsException unused2) {
                                 z10 = false;
                             }
@@ -353,7 +355,7 @@ public final class b implements o {
                             }
                             if (z10) {
                                 xVar7.N(i26);
-                                j11 = sVar2.a;
+                                j11 = sVar3.a;
                                 break;
                             }
                             i26++;

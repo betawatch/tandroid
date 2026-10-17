@@ -1,24 +1,27 @@
 package b2;
 
-import java.util.Collections;
-import java.util.List;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class r1 {
-    public static final String c;
-    public static final String d;
-    public final q1 a;
-    public final e9.n0 b;
+    public static final r1 d = new r1(new af.l(1));
+    public static final String e;
+    public static final String f;
+    public static final String g;
+    public final int a;
+    public final boolean b;
+    public final boolean c;
 
     static {
         String str = e2.m0.a;
-        c = Integer.toString(0, 36);
-        d = Integer.toString(1, 36);
+        e = Integer.toString(1, 36);
+        f = Integer.toString(2, 36);
+        g = Integer.toString(3, 36);
     }
 
-    public r1(q1 q1Var, int i10) {
-        this(q1Var, e9.n0.y(Integer.valueOf(i10)));
+    public r1(af.l lVar) {
+        this.a = lVar.a;
+        this.b = lVar.b;
+        this.c = lVar.c;
     }
 
     public final boolean equals(Object obj) {
@@ -27,7 +30,7 @@ public final class r1 {
         }
         if (obj != null && r1.class == obj.getClass()) {
             r1 r1Var = (r1) obj;
-            if (this.a.equals(r1Var.a) && this.b.equals(r1Var.b)) {
+            if (this.a == r1Var.a && this.b == r1Var.b && this.c == r1Var.c) {
                 return true;
             }
         }
@@ -35,14 +38,6 @@ public final class r1 {
     }
 
     public final int hashCode() {
-        return (this.b.hashCode() * 31) + this.a.hashCode();
-    }
-
-    public r1(q1 q1Var, List list) {
-        if (!list.isEmpty() && (((Integer) Collections.min(list)).intValue() < 0 || ((Integer) Collections.max(list)).intValue() >= q1Var.a)) {
-            throw new IndexOutOfBoundsException();
-        }
-        this.a = q1Var;
-        this.b = e9.n0.u(list);
+        return ((((this.a + 31) * 31) + (this.b ? 1 : 0)) * 31) + (this.c ? 1 : 0);
     }
 }

@@ -1,10 +1,10 @@
 package jc;
 
-import com.google.android.gms.internal.play_billing.k3;
+import com.google.android.gms.internal.cast.a6;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class e {
     public static final d e = new d();
@@ -293,7 +293,7 @@ public final class e {
                                                     int i47 = i46 + 1;
                                                     float f16 = i46;
                                                     float f17 = i47;
-                                                    arrayList.set(i45, new c(((f7 * f16) + f11) / f17, k3.w(f16, f10, a2, f17), k3.w(f16, cVar.c, f14, f17), i47));
+                                                    arrayList.set(i45, new c(((f7 * f16) + f11) / f17, a6.v(f16, f10, a2, f17), a6.v(f16, cVar.c, f14, f17), i47));
                                                     return true;
                                                 }
                                             }

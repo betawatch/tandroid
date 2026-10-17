@@ -1,30 +1,33 @@
 package org.telegram.messenger;
 
-import android.content.Context;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class fi implements Runnable {
+public final /* synthetic */ class fi implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ SecretChatHelper b;
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.a2 d;
+    public final /* synthetic */ SendMessagesHelper b;
+    public final /* synthetic */ TLRPC.InputMedia c;
+    public final /* synthetic */ SendMessagesHelper.DelayedMessage d;
 
-    public /* synthetic */ fi(SecretChatHelper secretChatHelper, Context context, org.telegram.ui.ActionBar.a2 a2Var, int i10) {
+    public /* synthetic */ fi(SendMessagesHelper sendMessagesHelper, TLRPC.InputMedia inputMedia, SendMessagesHelper.DelayedMessage delayedMessage, int i10) {
         this.a = i10;
-        this.b = secretChatHelper;
-        this.c = context;
-        this.d = a2Var;
+        this.b = sendMessagesHelper;
+        this.c = inputMedia;
+        this.d = delayedMessage;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.b.lambda$startSecretChat$27(this.c, this.d);
+                this.b.lambda$performSendDelayedMessage$55(this.c, this.d, tLObject, tL_error);
                 break;
             default:
-                this.b.lambda$startSecretChat$29(this.c, this.d);
+                this.b.lambda$uploadMultiMedia$63(this.c, this.d, tLObject, tL_error);
                 break;
         }
     }

@@ -12,12 +12,12 @@ import java.util.Map;
 import java.util.RandomAccess;
 import java.util.Set;
 import x7.qa;
-import z7.de;
-import z7.ed;
-import z7.l9;
-import z7.mg;
+import z7.fe;
+import z7.gd;
+import z7.m9;
+import z7.ng;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public class e extends AbstractMap {
     public final /* synthetic */ int a;
@@ -75,7 +75,7 @@ public class e extends AbstractMap {
                     break;
                 }
             default:
-                z7.d dVar3 = ((mg) this.e).c;
+                z7.d dVar3 = ((ng) this.e).c;
                 if (this.b != dVar3) {
                     d dVar4 = new d(this, (char) 0);
                     while (dVar4.hasNext()) {
@@ -144,13 +144,13 @@ public class e extends AbstractMap {
                 this.c = qaVar2;
                 return qaVar2;
             default:
-                l9 l9Var = (l9) this.c;
-                if (l9Var != null) {
-                    return l9Var;
+                m9 m9Var = (m9) this.c;
+                if (m9Var != null) {
+                    return m9Var;
                 }
-                l9 l9Var2 = new l9(this);
-                this.c = l9Var2;
-                return l9Var2;
+                m9 m9Var2 = new m9(this);
+                this.c = m9Var2;
+                return m9Var2;
         }
     }
 
@@ -222,10 +222,10 @@ public class e extends AbstractMap {
                 if (collection3 == null) {
                     return null;
                 }
-                mg mgVar = (mg) this.e;
-                mgVar.getClass();
+                ng ngVar = (ng) this.e;
+                ngVar.getClass();
                 List list3 = (List) collection3;
-                return list3 instanceof RandomAccess ? new de(mgVar, obj, list3, null) : new m(mgVar, obj, list3, (m) null);
+                return list3 instanceof RandomAccess ? new fe(ngVar, obj, list3, null) : new m(ngVar, obj, list3, (m) null);
         }
     }
 
@@ -251,14 +251,14 @@ public class e extends AbstractMap {
                 fVar.a = aVar2;
                 return aVar2;
             default:
-                mg mgVar = (mg) this.e;
-                ed edVar = mgVar.a;
-                if (edVar != null) {
-                    return edVar;
+                ng ngVar = (ng) this.e;
+                gd gdVar = ngVar.a;
+                if (gdVar != null) {
+                    return gdVar;
                 }
-                ed edVar2 = new ed(mgVar, mgVar.c);
-                mgVar.a = edVar2;
-                return edVar2;
+                gd gdVar2 = new gd(ngVar, ngVar.c);
+                ngVar.a = gdVar2;
+                return gdVar2;
         }
     }
 
@@ -289,12 +289,12 @@ public class e extends AbstractMap {
                 collection2.clear();
                 return arrayList;
             default:
-                mg mgVar = (mg) this.e;
+                ng ngVar = (ng) this.e;
                 Collection collection3 = (Collection) this.b.remove(obj);
                 if (collection3 == null) {
                     return null;
                 }
-                mgVar.getClass();
+                ngVar.getClass();
                 ArrayList arrayList2 = new ArrayList(3);
                 arrayList2.addAll(collection3);
                 collection3.size();

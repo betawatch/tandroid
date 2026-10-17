@@ -1,44 +1,64 @@
 package c3;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+import java.io.Serializable;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class a0 {
-    public final c0 a;
-    public final c0 b;
+    public int a;
+    public int b;
+    public int c;
+    public int d;
+    public int e;
+    public int f;
+    public Serializable g;
 
-    public a0(c0 c0Var, c0 c0Var2) {
-        this.a = c0Var;
-        this.b = c0Var2;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public boolean a(int i10) {
+        int i11;
+        int i12;
+        int i13;
+        int i14;
+        if ((i10 & (-2097152)) != -2097152 || (i11 = (i10 >>> 19) & 3) == 1 || (i12 = (i10 >>> 17) & 3) == 0 || (i13 = (i10 >>> 12) & 15) == 0 || i13 == 15 || (i14 = (i10 >>> 10) & 3) == 3) {
+            return false;
         }
-        if (obj != null && a0.class == obj.getClass()) {
-            a0 a0Var = (a0) obj;
-            if (this.a.equals(a0Var.a) && this.b.equals(a0Var.b)) {
-                return true;
+        this.a = i11;
+        this.g = b.s[3 - i12];
+        int i15 = b.t[i14];
+        this.c = i15;
+        if (i11 == 2) {
+            this.c = i15 / 2;
+        } else if (i11 == 0) {
+            this.c = i15 / 4;
+        }
+        int i16 = (i10 >>> 9) & 1;
+        int i17 = 1152;
+        if (i12 != 1) {
+            if (i12 != 2) {
+                if (i12 != 3) {
+                    throw new IllegalArgumentException();
+                }
+                i17 = 384;
+            }
+        } else if (i11 != 3) {
+            i17 = 576;
+        }
+        this.f = i17;
+        if (i12 == 3) {
+            int i18 = i11 == 3 ? b.u[i13 - 1] : b.v[i13 - 1];
+            this.e = i18;
+            this.b = (((i18 * 12) / this.c) + i16) * 4;
+        } else {
+            if (i11 == 3) {
+                int i19 = i12 == 2 ? b.w[i13 - 1] : b.x[i13 - 1];
+                this.e = i19;
+                this.b = ((i19 * 144) / this.c) + i16;
+            } else {
+                int i20 = b.y[i13 - 1];
+                this.e = i20;
+                this.b = (((i12 == 1 ? 72 : 144) * i20) / this.c) + i16;
             }
         }
-        return false;
-    }
-
-    public final int hashCode() {
-        return this.b.hashCode() + (this.a.hashCode() * 31);
-    }
-
-    public final String toString() {
-        String str;
-        StringBuilder sb2 = new StringBuilder("[");
-        c0 c0Var = this.a;
-        sb2.append(c0Var);
-        c0 c0Var2 = this.b;
-        if (c0Var.equals(c0Var2)) {
-            str = "";
-        } else {
-            str = ", " + c0Var2;
-        }
-        return a1.g.s(sb2, str, "]");
+        this.d = ((i10 >> 6) & 3) == 3 ? 1 : 2;
+        return true;
     }
 }

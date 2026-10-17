@@ -1,11 +1,10 @@
 package te;
 
-import com.google.firebase.messaging.s;
+import com.google.firebase.messaging.r;
 import java.util.Hashtable;
 import java.util.StringTokenizer;
-import ji.w4;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class a {
     public static final Hashtable b;
@@ -56,12 +55,12 @@ public final class a {
         }
     }
 
-    public static s b(w4 w4Var, Object obj, Object obj2) {
-        return new s(w4Var, obj, obj2, c);
+    public static r b(le.b bVar, Object obj, Object obj2) {
+        return new r(bVar, obj, obj2, c);
     }
 
-    public static s c(w4 w4Var, Object obj, Object obj2, Object obj3) {
-        return new s(w4Var, obj, obj2, new Object[]{obj3});
+    public static r c(le.b bVar, Object obj, Object obj2, Object obj3) {
+        return new r(bVar, obj, obj2, new Object[]{obj3});
     }
 
     public final s4.b d(String str, String str2, String str3, String str4, String str5) {
@@ -96,9 +95,9 @@ public final class a {
         return bVar;
     }
 
-    public final w4 e(s4.b bVar) {
-        w4 w4Var = new w4(28);
-        w4Var.b = bVar;
-        return w4Var;
+    public final le.b e(s4.b bVar) {
+        le.b bVar2 = new le.b(22, false);
+        bVar2.b = bVar;
+        return bVar2;
     }
 }

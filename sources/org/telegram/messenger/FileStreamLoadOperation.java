@@ -16,7 +16,7 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.TLRPC;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public class FileStreamLoadOperation implements g2.h, FileLoadOperationStream {
     public static final ConcurrentHashMap<Long, FileStreamLoadOperation> allStreams = new ConcurrentHashMap<>();
@@ -251,7 +251,7 @@ public class FileStreamLoadOperation implements g2.h, FileLoadOperationStream {
     
         if (r12.opened == false) goto L21;
      */
-    @Override // b2.p
+    @Override // b2.o
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

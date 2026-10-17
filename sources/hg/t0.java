@@ -7,28 +7,28 @@ import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.Cells.u4;
-import org.telegram.ui.Cells.v3;
-import org.telegram.ui.Components.f10;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.Cells.t4;
+import org.telegram.ui.Cells.u3;
+import org.telegram.ui.Components.b10;
+import org.telegram.ui.Components.sl0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public abstract class t0 extends c {
     public final Context K;
-    public final c6 L;
+    public final d6 L;
     public boolean M;
 
-    public t0(Context context, c6 c6Var, boolean z10, boolean z11) {
+    public t0(Context context, d6 d6Var, boolean z10, boolean z11) {
         super(z10, z11);
         this.M = false;
         this.K = context;
-        this.L = c6Var;
-        new f10(context, null).setIsSingleCell(true);
+        this.L = d6Var;
+        new b10(context, null).setIsSingleCell(true);
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.hm0
     public final boolean D(s4.b1 b1Var) {
         return true;
     }
@@ -93,10 +93,10 @@ public abstract class t0 extends c {
         if (i12 != 0) {
             if (i12 == 1) {
                 if (i10 != 0 || arrayList.isEmpty()) {
-                    ((v3) view).setText(LocaleController.getString(R.string.NearbyVenue));
+                    ((u3) view).setText(LocaleController.getString(R.string.NearbyVenue));
                     return;
                 } else {
-                    ((v3) view).setText(LocaleController.getString(R.string.LocationOnMap));
+                    ((u3) view).setText(LocaleController.getString(R.string.LocationOnMap));
                     return;
                 }
             }
@@ -123,17 +123,17 @@ public abstract class t0 extends c {
             tL_messageMediaVenue = (TLRPC.TL_messageMediaVenue) arrayList.get(i13);
             i11 = 2;
         }
-        u4 u4Var = (u4) view;
+        t4 t4Var = (t4) view;
         if (i10 == h() - 1 || (!this.n && !arrayList.isEmpty() && i10 == arrayList.size())) {
             z10 = false;
         }
-        u4Var.b(tL_messageMediaVenue, i11, z10, false);
+        t4Var.b(tL_messageMediaVenue, i11, z10, false);
     }
 
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        c6 c6Var = this.L;
+        d6 d6Var = this.L;
         Context context = this.K;
-        return new wl0(i10 == 0 ? new u4(context, c6Var) : new v3(context, c6Var));
+        return new sl0(i10 == 0 ? new t4(context, d6Var) : new u3(context, d6Var));
     }
 }

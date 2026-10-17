@@ -4,7 +4,7 @@ import android.graphics.Typeface;
 import android.text.TextPaint;
 import android.util.SparseArray;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class s3 {
     public TextPaint a;
@@ -35,15 +35,15 @@ public final class s3 {
     public final SparseArray z = new SparseArray();
     public final SparseArray A = new SparseArray();
 
-    public static void a(k4 k4Var, SparseArray sparseArray) {
+    public static void a(l4 l4Var, SparseArray sparseArray) {
         for (int i10 = 0; i10 < sparseArray.size(); i10++) {
             int keyAt = sparseArray.keyAt(i10);
             TextPaint textPaint = (TextPaint) sparseArray.valueAt(i10);
             if (textPaint != null) {
                 if ((keyAt & 8) == 0 && (keyAt & 512) == 0) {
-                    textPaint.setColor(k4Var.b());
+                    textPaint.setColor(l4Var.b());
                 } else {
-                    textPaint.setColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.J6, false));
+                    textPaint.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.J6, false));
                 }
             }
         }

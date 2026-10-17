@@ -1,12 +1,12 @@
 package com.google.android.gms.internal.vision;
 
-import com.google.android.gms.internal.play_billing.k3;
+import com.google.android.gms.internal.cast.a6;
 import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class o2 {
     public static final Class a;
@@ -233,7 +233,7 @@ public abstract class o2 {
             c10 = n2Var.zzb(l0Var);
             l0Var.b(c10);
         }
-        return k3.d(c10, c10, T);
+        return a6.u(c10, c10, T);
     }
 
     public static int b(int i10, List list, n2 n2Var) {
@@ -249,7 +249,7 @@ public abstract class o2 {
                 c10 = n2Var.zzb(l0Var);
                 l0Var.b(c10);
             }
-            y3 = k3.d(c10, c10, y3);
+            y3 = a6.u(c10, c10, y3);
         }
         return y3;
     }
@@ -453,7 +453,7 @@ public abstract class o2 {
                 Object obj = list.get(i11);
                 if (obj instanceof q0) {
                     int m10 = ((q0) obj).m();
-                    y3 = k3.d(m10, m10, y3);
+                    y3 = a6.u(m10, m10, y3);
                 } else {
                     y3 = r0.G((String) obj) + y3;
                 }
@@ -466,7 +466,7 @@ public abstract class o2 {
             Object a2 = t1Var.a(i11);
             if (a2 instanceof q0) {
                 int m11 = ((q0) a2).m();
-                y3 = k3.d(m11, m11, y3);
+                y3 = a6.u(m11, m11, y3);
             } else {
                 y3 = r0.G((String) a2) + y3;
             }
@@ -556,7 +556,7 @@ public abstract class o2 {
         int y3 = r0.y(i10) * size;
         for (int i11 = 0; i11 < list.size(); i11++) {
             int m10 = ((q0) list.get(i11)).m();
-            y3 = k3.d(m10, m10, y3);
+            y3 = a6.u(m10, m10, y3);
         }
         return y3;
     }

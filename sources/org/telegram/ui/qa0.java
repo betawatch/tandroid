@@ -1,61 +1,59 @@
 package org.telegram.ui;
 
-import android.content.Intent;
-import java.util.regex.Pattern;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.NotificationsController;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.ActionBar.ActionBarLayout;
+import android.content.ComponentName;
+import android.content.Context;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* JADX WARN: Enum visitor error
+jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'h' uses external variables
+	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
+	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
+	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
+	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
+	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
+	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
+ */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qa0 implements org.telegram.ui.Components.qe0, org.telegram.ui.ActionBar.z1 {
-    public final /* synthetic */ LaunchActivity a;
+public final class qa0 {
+    public static final qa0 h;
+    public static final /* synthetic */ qa0[] n;
+    public final String a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final boolean e;
+    public ComponentName f;
 
-    public /* synthetic */ qa0(LaunchActivity launchActivity) {
-        this.a = launchActivity;
+    static {
+        int i10 = R.drawable.icon_background_sa;
+        int i11 = R.mipmap.icon_foreground_sa;
+        qa0 qa0Var = new qa0("DEFAULT", 0, "DefaultIcon", i10, i11, R.string.AppIconDefault, false);
+        h = qa0Var;
+        n = new qa0[]{qa0Var, new qa0("VINTAGE", 1, "VintageIcon", R.drawable.icon_6_background_sa, R.mipmap.icon_6_foreground_sa, R.string.AppIconVintage, false), new qa0("AQUA", 2, "AquaIcon", R.drawable.icon_4_background_sa, i11, R.string.AppIconAqua, false), new qa0("PREMIUM", 3, "PremiumIcon", R.drawable.icon_3_background_sa, R.mipmap.icon_3_foreground_sa, R.string.AppIconPremium, true), new qa0("TURBO", 4, "TurboIcon", R.drawable.icon_5_background_sa, R.mipmap.icon_5_foreground_sa, R.string.AppIconTurbo, true), new qa0("NOX", 5, "NoxIcon", R.mipmap.icon_2_background_sa, i11, R.string.AppIconNox, true)};
     }
 
-    @Override // org.telegram.ui.ActionBar.z1
-    public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
-        Pattern pattern = LaunchActivity.B1;
-        MessagesController.getInstance(this.a.O).performLogout(2);
+    public qa0(String str, int i10, String str2, int i11, int i12, int i13, boolean z10) {
+        this.a = str2;
+        this.b = i11;
+        this.c = i12;
+        this.d = i13;
+        this.e = z10;
     }
 
-    @Override // org.telegram.ui.Components.qe0
-    public void i(org.telegram.ui.Components.re0 re0Var) {
-        Pattern pattern = LaunchActivity.B1;
-        SharedConfig.isWaitingForPasscodeEnter = false;
-        LaunchActivity launchActivity = this.a;
-        Intent intent = launchActivity.L0;
-        if (intent != null) {
-            launchActivity.X(intent, launchActivity.M0, launchActivity.N0, true, null, false, true);
-            launchActivity.L0 = null;
+    public static qa0 valueOf(String str) {
+        return (qa0) Enum.valueOf(qa0.class, str);
+    }
+
+    public static qa0[] values() {
+        return (qa0[]) n.clone();
+    }
+
+    public final ComponentName a(Context context) {
+        if (this.f == null) {
+            this.f = new ComponentName(context.getPackageName(), "org.telegram.messenger." + this.a);
         }
-        launchActivity.q0.getView().setVisibility(0);
-        launchActivity.q0.U(true, true);
-        ActionBarLayout actionBarLayout = launchActivity.q0;
-        org.telegram.ui.ActionBar.m2 lastFragment = actionBarLayout.getLastFragment();
-        if (lastFragment != null) {
-            lastFragment.setTitleOverlayText(actionBarLayout.G0, actionBarLayout.H0, actionBarLayout.I0);
-        }
-        if (AndroidUtilities.isTablet()) {
-            launchActivity.r0.U(true, true);
-            launchActivity.s0.U(true, true);
-            if (launchActivity.r0.getView().getVisibility() == 4) {
-                launchActivity.r0.getView().setVisibility(0);
-            }
-            launchActivity.s0.getView().setVisibility(0);
-        }
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.passcodeDismissed, re0Var);
-        try {
-            NotificationsController.getInstance(UserConfig.selectedAccount).showNotifications();
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
+        return this.f;
     }
 }

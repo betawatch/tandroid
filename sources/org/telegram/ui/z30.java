@@ -1,23 +1,19 @@
 package org.telegram.ui;
 
-import org.telegram.ui.Components.UndoView;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class z30 extends UndoView {
-    public final /* synthetic */ n60 f0;
+public final class z30 extends AnimatorListenerAdapter {
+    public final /* synthetic */ s50 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z30(n60 n60Var, LaunchActivity launchActivity) {
-        super(launchActivity);
-        this.f0 = n60Var;
+    public z30(s50 s50Var) {
+        this.a = s50Var;
     }
 
-    @Override // org.telegram.ui.Components.UndoView
-    public final void k(long j10, int i10, Object obj, Object obj2, Runnable runnable, Runnable runnable2) {
-        if (this.f0.z0 != null) {
-            return;
-        }
-        super.k(j10, i10, obj, obj2, runnable, runnable2);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        this.a.X0 = null;
     }
 }

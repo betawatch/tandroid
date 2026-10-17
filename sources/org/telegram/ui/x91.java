@@ -1,38 +1,30 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.text.style.ReplacementSpan;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class x91 extends ReplacementSpan {
-    public final org.telegram.ui.Components.i11 a = new org.telegram.ui.Components.i11(LocaleController.getString(R.string.StakeDiceTitleBeta), 12.0f, AndroidUtilities.bold());
-    public final Paint b = new Paint(1);
-    public final /* synthetic */ org.telegram.ui.ActionBar.c6 c;
+public final class x91 extends org.telegram.ui.Components.y51 {
+    public final /* synthetic */ StickersActivity b;
 
-    public x91(org.telegram.ui.ActionBar.c6 c6Var) {
-        this.c = c6Var;
+    public x91(StickersActivity stickersActivity) {
+        this.b = stickersActivity;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        float dp = ((i12 + i14) / 2.0f) + AndroidUtilities.dp(1.0f);
-        int w02 = org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.Oh, this.c);
-        Paint paint2 = this.b;
-        paint2.setColor(w02);
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(f7, dp - AndroidUtilities.dp(9.0f), AndroidUtilities.dp(16.0f) + f7 + this.a.c, AndroidUtilities.dp(9.0f) + dp);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), paint2);
-        this.a.c(f7 + AndroidUtilities.dp(8.0f), dp, 1.0f, -1, canvas);
+    @Override // org.telegram.ui.Components.y51
+    public final void g(TLRPC.StickerSetCovered stickerSetCovered, boolean z10) {
+        int i10;
+        StickersActivity stickersActivity = this.b;
+        i10 = ((org.telegram.ui.ActionBar.n2) stickersActivity).currentAccount;
+        MediaDataController.getInstance(i10).toggleStickerSet(stickersActivity.getParentActivity(), stickerSetCovered, 2, stickersActivity, false, false);
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        return (int) (AndroidUtilities.dp(16.0f) + this.a.c);
+    @Override // org.telegram.ui.Components.y51
+    public final void h(TLRPC.StickerSetCovered stickerSetCovered) {
+        int i10;
+        StickersActivity stickersActivity = this.b;
+        i10 = ((org.telegram.ui.ActionBar.n2) stickersActivity).currentAccount;
+        MediaDataController.getInstance(i10).toggleStickerSet(stickersActivity.getParentActivity(), stickerSetCovered, 0, stickersActivity, false, false);
     }
 }

@@ -11,7 +11,7 @@ import com.google.android.gms.common.internal.ReflectedParcelable;
 import java.util.Arrays;
 import w7.f0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class Status extends o6.a implements q, ReflectedParcelable {
     public final int a;
@@ -58,14 +58,14 @@ public final class Status extends o6.a implements q, ReflectedParcelable {
     }
 
     public final String toString() {
-        m2.t tVar = new m2.t(this);
+        mi.q qVar = new mi.q(this);
         String str = this.b;
         if (str == null) {
             str = x8.j.a(this.a);
         }
-        tVar.q(str, "statusCode");
-        tVar.q(this.c, "resolution");
-        return tVar.toString();
+        qVar.H(str, "statusCode");
+        qVar.H(this.c, "resolution");
+        return qVar.toString();
     }
 
     @Override // android.os.Parcelable

@@ -1,25 +1,68 @@
 package qi;
 
-import android.os.SystemClock;
-import java.util.concurrent.atomic.AtomicLong;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class b {
-    public static final AtomicLong d = new AtomicLong(1);
-    public final long a = d.getAndIncrement();
-    public final long b = SystemClock.elapsedRealtime();
-    public final i c;
+public final /* synthetic */ class b implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ e b;
+    public final /* synthetic */ d c;
 
-    public b(i iVar) {
-        this.c = iVar;
+    public /* synthetic */ b(e eVar, d dVar, int i10) {
+        this.a = i10;
+        this.b = eVar;
+        this.c = dVar;
     }
 
-    public final void a(String str, Throwable th2) {
-        this.c.error("AudioRecorder[" + this.a + "] t+" + (SystemClock.elapsedRealtime() - this.b) + "ms [" + Thread.currentThread().getName() + "] " + str, th2);
-    }
-
-    public final void b(String str) {
-        this.c.log("AudioRecorder[" + this.a + "] t+" + (SystemClock.elapsedRealtime() - this.b) + "ms [" + Thread.currentThread().getName() + "] " + str);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                e eVar = this.b;
+                d dVar = (d) eVar.b;
+                d dVar2 = this.c;
+                if (dVar == dVar2) {
+                    eVar.c = null;
+                    eVar.k(dVar2);
+                    break;
+                }
+                break;
+            case 1:
+                e eVar2 = this.b;
+                d dVar3 = (d) eVar2.b;
+                d dVar4 = this.c;
+                if (dVar3 == dVar4) {
+                    b bVar = (b) eVar2.c;
+                    if (bVar != null) {
+                        AndroidUtilities.cancelRunOnUIThread(bVar);
+                        eVar2.c = null;
+                    }
+                    int i10 = dVar4.d;
+                    if (i10 != 0) {
+                        b bVar2 = new b(eVar2, dVar4, 2);
+                        eVar2.d = bVar2;
+                        AndroidUtilities.runOnUIThread(bVar2, 20000L);
+                        j5.b bVar3 = dVar4.a;
+                        ((ConnectionsManager) bVar3.b).checkWebProxyInternal(dVar4.b, i10, new c(eVar2, dVar4));
+                        break;
+                    } else {
+                        eVar2.k(dVar4);
+                        break;
+                    }
+                }
+                break;
+            default:
+                e eVar3 = this.b;
+                d dVar5 = (d) eVar3.b;
+                d dVar6 = this.c;
+                if (dVar5 == dVar6) {
+                    eVar3.d = null;
+                    eVar3.k(dVar6);
+                    break;
+                }
+                break;
+        }
     }
 }

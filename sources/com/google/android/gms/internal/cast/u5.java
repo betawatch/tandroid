@@ -4,7 +4,7 @@ import android.content.SharedPreferences;
 import android.util.Log;
 import java.nio.charset.Charset;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class u5 implements d6.h {
     public static final d5 b = new d5(1);
@@ -14,19 +14,19 @@ public final class u5 implements d6.h {
         this.a = a1Var;
     }
 
-    public void a(int i10, Object obj, i6 i6Var) {
+    public void a(int i10, Object obj, j6 j6Var) {
         y4 y4Var = (y4) this.a;
         y4Var.i(i10, 3);
-        i6Var.e((t4) obj, y4Var.a);
+        j6Var.e((t4) obj, y4Var.a);
         y4Var.i(i10, 4);
     }
 
-    public void b(int i10, Object obj, i6 i6Var) {
+    public void b(int i10, Object obj, j6 j6Var) {
         t4 t4Var = (t4) obj;
         y4 y4Var = (y4) this.a;
         y4Var.j((i10 << 3) | 2);
-        y4Var.j(t4Var.a(i6Var));
-        i6Var.e(t4Var, y4Var.a);
+        y4Var.j(t4Var.a(j6Var));
+        j6Var.e(t4Var, y4Var.a);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:12:0x00b0  */
@@ -118,14 +118,14 @@ public final class u5 implements d6.h {
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void e(d6.f fVar, int i10) {
+    public /* bridge */ /* synthetic */ void g(d6.f fVar, int i10) {
         a1 a1Var = (a1) this.a;
         a1Var.h = (d6.c) fVar;
         a1.a(a1Var, i10);
     }
 
     @Override // d6.h
-    public void f(d6.f fVar, boolean z10) {
+    public void i(d6.f fVar, boolean z10) {
         a1.j.b("onSessionResumed with wasSuspended = %b", Boolean.valueOf(z10));
         a1 a1Var = (a1) this.a;
         a1Var.h = (d6.c) fVar;
@@ -143,14 +143,14 @@ public final class u5 implements d6.h {
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void h(d6.f fVar, int i10) {
+    public /* bridge */ /* synthetic */ void j(d6.f fVar, int i10) {
         a1 a1Var = (a1) this.a;
         a1Var.h = (d6.c) fVar;
         a1.a(a1Var, i10);
     }
 
     @Override // d6.h
-    public void j(d6.f fVar) {
+    public void n(d6.f fVar) {
         g6.b bVar = a1.j;
         bVar.b("onSessionStarting", new Object[0]);
         a1 a1Var = (a1) this.a;
@@ -172,19 +172,19 @@ public final class u5 implements d6.h {
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void n(d6.f fVar, int i10) {
+    public /* bridge */ /* synthetic */ void s(d6.f fVar, int i10) {
         a1 a1Var = (a1) this.a;
         a1Var.h = (d6.c) fVar;
         a1.a(a1Var, i10);
     }
 
     @Override // d6.h
-    public /* synthetic */ void p(d6.f fVar) {
+    public /* synthetic */ void u(d6.f fVar) {
         ((a1) this.a).h = (d6.c) fVar;
     }
 
     @Override // d6.h
-    public void r(d6.f fVar, String str) {
+    public void w(d6.f fVar, String str) {
         a1.j.b("onSessionStarted with sessionId = %s", str);
         a1 a1Var = (a1) this.a;
         a1Var.h = (d6.c) fVar;
@@ -197,7 +197,7 @@ public final class u5 implements d6.h {
     }
 
     @Override // d6.h
-    public void s(d6.f fVar, int i10) {
+    public void x(d6.f fVar, int i10) {
         a1.j.b("onSessionSuspended with reason = %d", Integer.valueOf(i10));
         a1 a1Var = (a1) this.a;
         a1Var.h = (d6.c) fVar;

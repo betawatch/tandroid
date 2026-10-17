@@ -1,56 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.graphics.PointF;
-import java.nio.ByteBuffer;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public interface k00 {
-    ByteBuffer a();
+public final /* synthetic */ class k00 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ q00 b;
 
-    boolean b();
+    public /* synthetic */ k00(q00 q00Var, int i10) {
+        this.a = i10;
+        this.b = q00Var;
+    }
 
-    boolean c();
-
-    float getBlurAngle();
-
-    float getBlurExcludeBlurSize();
-
-    PointF getBlurExcludePoint();
-
-    float getBlurExcludeSize();
-
-    int getBlurType();
-
-    float getContrastValue();
-
-    float getEnhanceValue();
-
-    float getExposureValue();
-
-    float getFadeValue();
-
-    float getGrainValue();
-
-    float getHighlightsValue();
-
-    float getSaturationValue();
-
-    float getShadowsValue();
-
-    float getSharpenValue();
-
-    float getSoftenSkinValue();
-
-    int getTintHighlightsColor();
-
-    float getTintHighlightsIntensityValue();
-
-    int getTintShadowsColor();
-
-    float getTintShadowsIntensityValue();
-
-    float getVignetteValue();
-
-    float getWarmthValue();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                q00 q00Var = this.b;
+                q00Var.x = floatValue;
+                q00Var.invalidate();
+                break;
+            default:
+                q00 q00Var2 = this.b;
+                q00Var2.getClass();
+                q00Var2.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                q00Var2.invalidate();
+                break;
+        }
+    }
 }

@@ -1,29 +1,56 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Typeface;
+import android.text.TextPaint;
+import android.text.style.MetricAffectingSpan;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class c61 implements ry0 {
-    public final /* synthetic */ i61 a;
+public final class c61 extends MetricAffectingSpan {
+    public Typeface a;
+    public int b;
+    public int c;
 
-    public c61(i61 i61Var) {
-        this.a = i61Var;
+    public c61(Typeface typeface) {
+        this.c = -1;
+        this.a = typeface;
     }
 
-    @Override // org.telegram.ui.Components.ry0
-    public final void a(TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z10, boolean z11, int i10, int i11) {
-        this.a.b.f(document, obj, z11, i10);
+    @Override // android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        int i10 = this.c;
+        if (i10 >= 0) {
+            this.b = org.telegram.ui.ActionBar.h6.x0(null, i10, false);
+        }
+        Typeface typeface = this.a;
+        if (typeface != null) {
+            textPaint.setTypeface(typeface);
+        }
+        int i11 = this.b;
+        if (i11 != 0) {
+            textPaint.setColor(i11);
+        }
+        textPaint.setFlags(textPaint.getFlags() | 128);
     }
 
-    @Override // org.telegram.ui.Components.ry0
-    public final boolean b() {
-        return this.a.b.a();
+    @Override // android.text.style.MetricAffectingSpan
+    public final void updateMeasureState(TextPaint textPaint) {
+        Typeface typeface = this.a;
+        if (typeface != null) {
+            textPaint.setTypeface(typeface);
+        }
+        textPaint.setFlags(textPaint.getFlags() | 128);
     }
 
-    @Override // org.telegram.ui.Components.ry0
-    public final boolean c() {
-        return this.a.b.c();
+    public c61() {
+        Typeface typeface = Typeface.DEFAULT;
+        this.c = -1;
+        this.a = typeface;
+    }
+
+    public c61(Typeface typeface, int i10) {
+        this.c = -1;
+        this.a = typeface;
+        this.b = i10;
     }
 }

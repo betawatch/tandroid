@@ -1,23 +1,44 @@
 package org.telegram.ui.Components;
 
+import android.app.Activity;
 import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.TLObject;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class py0 extends org.telegram.ui.Cells.f8 {
-    public final /* synthetic */ qy0 O;
+public final class py0 extends hm0 {
+    public final Context c;
+    public final /* synthetic */ qy0 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public py0(qy0 qy0Var, Context context, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, c6Var, false);
-        this.O = qy0Var;
+    public py0(qy0 qy0Var, Activity activity) {
+        this.d = qy0Var;
+        this.c = activity;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        qy0 qy0Var = this.O;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(qy0Var.r.O, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(qy0Var.r.O, TLObject.FLAG_30));
+    @Override // org.telegram.ui.Components.hm0
+    public final boolean D(s4.b1 b1Var) {
+        return false;
+    }
+
+    @Override // s4.g0
+    public final int h() {
+        return this.d.c.size();
+    }
+
+    @Override // s4.g0
+    public final void v(s4.b1 b1Var, int i10) {
+        org.telegram.ui.Cells.w wVar = (org.telegram.ui.Cells.w) b1Var.a;
+        ArrayList arrayList = this.d.c;
+        wVar.b((TLRPC.StickerSetCovered) arrayList.get(i10), i10 != arrayList.size() - 1);
+    }
+
+    @Override // s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        org.telegram.ui.Cells.w wVar = new org.telegram.ui.Cells.w(this.c, false);
+        wVar.setLayoutParams(new s4.o0(-1, AndroidUtilities.dp(82.0f)));
+        return new sl0(wVar);
     }
 }

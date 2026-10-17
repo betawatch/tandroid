@@ -21,7 +21,7 @@ import java.util.Collections;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class g extends g.t {
     public LinearLayout E;
@@ -207,7 +207,6 @@ public final class g extends g.t {
         this.G = (ProgressBar) findViewById(R.id.mr_chooser_search_progress_bar);
         Context context = getContext();
         boolean z11 = false;
-        int i10 = 1;
         if (v7.y.a == null) {
             if (!v7.y.c(context)) {
                 PackageManager packageManager = context.getPackageManager();
@@ -244,7 +243,7 @@ public final class g extends g.t {
                 }
                 this.x.setText(string);
                 this.y.setMovementMethod(LinkMovementMethod.getInstance());
-                this.F.setOnClickListener(new ah.g0(this, i10));
+                this.F.setOnClickListener(new ah.g0(this, 11));
                 ListView listView = (ListView) findViewById(R.id.mr_chooser_list);
                 this.H = listView;
                 listView.setAdapter((ListAdapter) this.I);
@@ -257,7 +256,7 @@ public final class g extends g.t {
         string = context.getString(R.string.mr_chooser_wifi_warning_description_phone);
         this.x.setText(string);
         this.y.setMovementMethod(LinkMovementMethod.getInstance());
-        this.F.setOnClickListener(new ah.g0(this, i10));
+        this.F.setOnClickListener(new ah.g0(this, 11));
         ListView listView2 = (ListView) findViewById(R.id.mr_chooser_list);
         this.H = listView2;
         listView2.setAdapter((ListAdapter) this.I);

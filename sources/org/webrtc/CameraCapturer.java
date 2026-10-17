@@ -9,7 +9,7 @@ import java.util.List;
 import org.webrtc.CameraSession;
 import org.webrtc.CameraVideoCapturer;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
 abstract class CameraCapturer implements CameraVideoCapturer {
     private static final int MAX_OPEN_CAMERA_ATTEMPTS = 3;
@@ -201,7 +201,7 @@ abstract class CameraCapturer implements CameraVideoCapturer {
     private final Object stateLock = new Object();
     private SwitchState switchState = SwitchState.IDLE;
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public enum SwitchState {
         IDLE,
         PENDING,
@@ -210,18 +210,6 @@ abstract class CameraCapturer implements CameraVideoCapturer {
 
     public CameraCapturer(String str, CameraVideoCapturer.CameraEventsHandler cameraEventsHandler, CameraEnumerator cameraEnumerator) {
         this.eventsHandler = cameraEventsHandler == null ? new CameraVideoCapturer.CameraEventsHandler() { // from class: org.webrtc.CameraCapturer.4
-            @Override // org.webrtc.CameraVideoCapturer.CameraEventsHandler
-            public void onCameraError(String str2) {
-            }
-
-            @Override // org.webrtc.CameraVideoCapturer.CameraEventsHandler
-            public void onCameraFreezed(String str2) {
-            }
-
-            @Override // org.webrtc.CameraVideoCapturer.CameraEventsHandler
-            public void onCameraOpening(String str2) {
-            }
-
             @Override // org.webrtc.CameraVideoCapturer.CameraEventsHandler
             public void onCameraClosed() {
             }
@@ -232,6 +220,18 @@ abstract class CameraCapturer implements CameraVideoCapturer {
 
             @Override // org.webrtc.CameraVideoCapturer.CameraEventsHandler
             public void onFirstFrameAvailable() {
+            }
+
+            @Override // org.webrtc.CameraVideoCapturer.CameraEventsHandler
+            public void onCameraError(String str2) {
+            }
+
+            @Override // org.webrtc.CameraVideoCapturer.CameraEventsHandler
+            public void onCameraFreezed(String str2) {
+            }
+
+            @Override // org.webrtc.CameraVideoCapturer.CameraEventsHandler
+            public void onCameraOpening(String str2) {
             }
         } : cameraEventsHandler;
         this.cameraEnumerator = cameraEnumerator;
@@ -285,7 +285,7 @@ abstract class CameraCapturer implements CameraVideoCapturer {
     public void switchCameraInternal(CameraVideoCapturer.CameraSwitchHandler cameraSwitchHandler, String str) {
         Logging.d(TAG, "switchCamera internal");
         if (!Arrays.asList(this.cameraEnumerator.getDeviceNames()).contains(str)) {
-            reportCameraSwitchError(t8.b.h("Attempted to switch to unknown camera device ", str), cameraSwitchHandler);
+            reportCameraSwitchError(r.c.g("Attempted to switch to unknown camera device ", str), cameraSwitchHandler);
             return;
         }
         synchronized (this.stateLock) {
@@ -335,7 +335,7 @@ abstract class CameraCapturer implements CameraVideoCapturer {
 
     @Override // org.webrtc.VideoCapturer
     public void changeCaptureFormat(int i10, int i11, int i12) {
-        StringBuilder m10 = i2.d.m("changeCaptureFormat: ", i10, "x", i11, "@");
+        StringBuilder m10 = i0.a.m("changeCaptureFormat: ", i10, "x", i11, "@");
         m10.append(i12);
         Logging.d(TAG, m10.toString());
         synchronized (this.stateLock) {
@@ -394,7 +394,7 @@ abstract class CameraCapturer implements CameraVideoCapturer {
 
     @Override // org.webrtc.VideoCapturer
     public void startCapture(int i10, int i11, int i12) {
-        StringBuilder m10 = i2.d.m("startCapture: ", i10, "x", i11, "@");
+        StringBuilder m10 = i0.a.m("startCapture: ", i10, "x", i11, "@");
         m10.append(i12);
         Logging.d(TAG, m10.toString());
         if (this.applicationContext == null) {

@@ -5,9 +5,8 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import java.util.HashSet;
 import java.util.Iterator;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s implements OnSuccessListener, OnFailureListener, d6.h {
     public final /* synthetic */ u a;
@@ -21,15 +20,15 @@ public final /* synthetic */ class s implements OnSuccessListener, OnFailureList
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void e(d6.f fVar, int i10) {
+    public /* bridge */ /* synthetic */ void g(d6.f fVar, int i10) {
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void f(d6.f fVar, boolean z10) {
+    public /* bridge */ /* synthetic */ void i(d6.f fVar, boolean z10) {
     }
 
     @Override // d6.h
-    public void h(d6.f fVar, int i10) {
+    public void j(d6.f fVar, int i10) {
         g6.b bVar = u.i;
         bVar.b("onSessionEnded with error = %d", Integer.valueOf(i10));
         u uVar = this.a;
@@ -51,7 +50,7 @@ public final /* synthetic */ class s implements OnSuccessListener, OnFailureList
                             m10.c();
                             n1.v((n1) m10.b, i12);
                             b10.e((n1) m10.a());
-                            a1Var.a.a((s1) b10.a(), TLRPC.LAYER);
+                            a1Var.a.a((s1) b10.a(), 231);
                             a1Var.i = false;
                             a1Var.g = null;
                             break;
@@ -70,11 +69,7 @@ public final /* synthetic */ class s implements OnSuccessListener, OnFailureList
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void j(d6.f fVar) {
-    }
-
-    @Override // d6.h
-    public /* bridge */ /* synthetic */ void n(d6.f fVar, int i10) {
+    public /* bridge */ /* synthetic */ void n(d6.f fVar) {
     }
 
     @Override // com.google.android.gms.tasks.OnFailureListener
@@ -97,11 +92,15 @@ public final /* synthetic */ class s implements OnSuccessListener, OnFailureList
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void p(d6.f fVar) {
+    public /* bridge */ /* synthetic */ void s(d6.f fVar, int i10) {
     }
 
     @Override // d6.h
-    public void r(d6.f fVar, String str) {
+    public /* bridge */ /* synthetic */ void u(d6.f fVar) {
+    }
+
+    @Override // d6.h
+    public void w(d6.f fVar, String str) {
         c6.k kVar;
         g6.b bVar = u.i;
         u uVar = this.a;
@@ -133,6 +132,6 @@ public final /* synthetic */ class s implements OnSuccessListener, OnFailureList
     }
 
     @Override // d6.h
-    public /* bridge */ /* synthetic */ void s(d6.f fVar, int i10) {
+    public /* bridge */ /* synthetic */ void x(d6.f fVar, int i10) {
     }
 }

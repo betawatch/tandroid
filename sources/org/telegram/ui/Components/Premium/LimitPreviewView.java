@@ -1,5 +1,6 @@
 package org.telegram.ui.Components.Premium;
 
+import ai.n5;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
@@ -15,9 +16,9 @@ import android.view.animation.OvershootInterpolator;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import i2.d;
+import ei.i6;
+import i0.a;
 import java.util.ArrayList;
-import ki.a;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
@@ -25,44 +26,43 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
-import org.telegram.ui.Components.br;
-import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.jh0;
-import org.telegram.ui.Components.s6;
-import org.telegram.ui.Components.xu;
-import org.telegram.ui.Components.xz;
-import org.telegram.ui.i50;
-import org.telegram.ui.x5;
-import sg.a1;
+import org.telegram.ui.Components.bs;
+import org.telegram.ui.Components.dh0;
+import org.telegram.ui.Components.q6;
+import org.telegram.ui.Components.su;
+import org.telegram.ui.Components.uz;
+import org.telegram.ui.Components.yq;
+import org.telegram.ui.n40;
 import sg.p;
 import sg.q;
 import sg.s;
 import sg.t;
+import sg.z0;
 import w7.r;
 import w7.z5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public class LimitPreviewView extends LinearLayout {
     public static final /* synthetic */ int l0 = 0;
-    public a1 E;
+    public z0 E;
     public int F;
     public boolean G;
     public boolean H;
-    public final x5 I;
+    public final n5 I;
     public boolean J;
     public final Paint K;
     public boolean L;
     public boolean M;
-    public final s6 N;
+    public final q6 N;
     public final TextView O;
     public boolean P;
     public boolean Q;
     public boolean R;
-    public final c6 S;
+    public final d6 S;
     public boolean T;
     public boolean U;
     public boolean V;
@@ -78,8 +78,8 @@ public class LimitPreviewView extends LinearLayout {
     public final s e;
     public t e0;
     public boolean f;
-    public final jh0 f0;
-    public final jh0 g0;
+    public final dh0 f0;
+    public final dh0 g0;
     public float h;
     public boolean h0;
     public ValueAnimator i0;
@@ -88,13 +88,13 @@ public class LimitPreviewView extends LinearLayout {
     public int n;
     public final int r;
     public float s;
-    public final s6 v;
+    public final q6 v;
     public final TextView w;
     public float x;
     public ViewGroup y;
 
-    public LimitPreviewView(Context context, int i10, int i11, c6 c6Var, int i12) {
-        this(context, i10, i11, i12, 0.5f, c6Var);
+    public LimitPreviewView(Context context, int i10, int i11, d6 d6Var, int i12) {
+        this(context, i10, i11, i12, 0.5f, d6Var);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:14:0x0124  */
@@ -107,9 +107,9 @@ public class LimitPreviewView extends LinearLayout {
         s sVar;
         Paint paint = limitPreviewView.K;
         s sVar2 = limitPreviewView.e;
-        c6 c6Var = limitPreviewView.S;
-        s6 s6Var = limitPreviewView.v;
-        s6 s6Var2 = limitPreviewView.N;
+        d6 d6Var = limitPreviewView.S;
+        q6 q6Var = limitPreviewView.v;
+        q6 q6Var2 = limitPreviewView.N;
         limitPreviewView.k0 = null;
         if (limitPreviewView.isAttachedToWindow()) {
             ValueAnimator valueAnimator = limitPreviewView.i0;
@@ -117,12 +117,12 @@ public class LimitPreviewView extends LinearLayout {
                 valueAnimator.cancel();
             }
             limitPreviewView.L = false;
-            paint.setColor(g6.w0(g6.Oh, c6Var));
+            paint.setColor(h6.w0(h6.Oh, d6Var));
             if (tl_starsRating.stars <= 0) {
                 limitPreviewView.a = 0.5f;
-                s6Var2.setText("");
-                s6Var.setText(LocaleController.getString(R.string.StarRatingLevelNegative));
-                paint.setColor(g6.w0(g6.wj, c6Var));
+                q6Var2.setText("");
+                q6Var.setText(LocaleController.getString(R.string.StarRatingLevelNegative));
+                paint.setColor(h6.w0(h6.wj, d6Var));
                 limitPreviewView.L = true;
             } else {
                 if (tl_starsRating.next_level_stars != 0) {
@@ -130,8 +130,8 @@ public class LimitPreviewView extends LinearLayout {
                     z10 = false;
                     sVar = sVar2;
                     limitPreviewView.a = r.a((r8 - j10) / (r10 - j10), 0.0f, 1.0f);
-                    s6Var2.setText(LocaleController.formatString(R.string.StarRatingLevel, Integer.valueOf(tl_starsRating.level)));
-                    s6Var.setText(LocaleController.formatString(R.string.StarRatingLevel, Integer.valueOf(tl_starsRating.level + 1)));
+                    q6Var2.setText(LocaleController.formatString(R.string.StarRatingLevel, Integer.valueOf(tl_starsRating.level)));
+                    q6Var.setText(LocaleController.formatString(R.string.StarRatingLevel, Integer.valueOf(tl_starsRating.level + 1)));
                     limitPreviewView.setArrowX(1.0f);
                     sVar.setScaleX(0.6f);
                     sVar.setScaleY(0.6f);
@@ -142,17 +142,17 @@ public class LimitPreviewView extends LinearLayout {
                     limitPreviewView.a0 = limitPreviewView.n;
                     limitPreviewView.I.requestLayout();
                     limitPreviewView.requestLayout();
-                    ViewPropertyAnimator duration = s6Var2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L);
-                    es esVar = es.h;
-                    duration.setInterpolator(esVar).start();
-                    s6Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L).setInterpolator(esVar).start();
-                    s6Var.setTextColor(!limitPreviewView.L ? -1 : g6.w0(g6.G6, c6Var));
-                    s6Var2.setTextColor(-1);
+                    ViewPropertyAnimator duration = q6Var2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L);
+                    bs bsVar = bs.h;
+                    duration.setInterpolator(bsVar).start();
+                    q6Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L).setInterpolator(bsVar).start();
+                    q6Var.setTextColor(!limitPreviewView.L ? -1 : h6.w0(h6.G6, d6Var));
+                    q6Var2.setTextColor(-1);
                     limitPreviewView.f((int) tl_starsRating.stars, (int) tl_starsRating.next_level_stars);
                 }
                 limitPreviewView.a = 1.0f;
-                s6Var2.setText(LocaleController.formatString(R.string.StarRatingLevel, Integer.valueOf(tl_starsRating.level - 1)));
-                s6Var.setText(LocaleController.formatString(R.string.StarRatingLevel, Integer.valueOf(tl_starsRating.level)));
+                q6Var2.setText(LocaleController.formatString(R.string.StarRatingLevel, Integer.valueOf(tl_starsRating.level - 1)));
+                q6Var.setText(LocaleController.formatString(R.string.StarRatingLevel, Integer.valueOf(tl_starsRating.level)));
             }
             sVar = sVar2;
             z10 = false;
@@ -166,12 +166,12 @@ public class LimitPreviewView extends LinearLayout {
             limitPreviewView.a0 = limitPreviewView.n;
             limitPreviewView.I.requestLayout();
             limitPreviewView.requestLayout();
-            ViewPropertyAnimator duration2 = s6Var2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L);
-            es esVar2 = es.h;
-            duration2.setInterpolator(esVar2).start();
-            s6Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L).setInterpolator(esVar2).start();
-            s6Var.setTextColor(!limitPreviewView.L ? -1 : g6.w0(g6.G6, c6Var));
-            s6Var2.setTextColor(-1);
+            ViewPropertyAnimator duration2 = q6Var2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L);
+            bs bsVar2 = bs.h;
+            duration2.setInterpolator(bsVar2).start();
+            q6Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L).setInterpolator(bsVar2).start();
+            q6Var.setTextColor(!limitPreviewView.L ? -1 : h6.w0(h6.G6, d6Var));
+            q6Var2.setTextColor(-1);
             limitPreviewView.f((int) tl_starsRating.stars, (int) tl_starsRating.next_level_stars);
         }
     }
@@ -186,9 +186,9 @@ public class LimitPreviewView extends LinearLayout {
         s sVar;
         Paint paint = limitPreviewView.K;
         s sVar2 = limitPreviewView.e;
-        c6 c6Var = limitPreviewView.S;
-        s6 s6Var = limitPreviewView.v;
-        s6 s6Var2 = limitPreviewView.N;
+        d6 d6Var = limitPreviewView.S;
+        q6 q6Var = limitPreviewView.v;
+        q6 q6Var2 = limitPreviewView.N;
         limitPreviewView.k0 = null;
         if (limitPreviewView.isAttachedToWindow()) {
             ValueAnimator valueAnimator = limitPreviewView.i0;
@@ -196,12 +196,12 @@ public class LimitPreviewView extends LinearLayout {
                 valueAnimator.cancel();
             }
             limitPreviewView.L = false;
-            paint.setColor(g6.w0(g6.Oh, c6Var));
+            paint.setColor(h6.w0(h6.Oh, d6Var));
             if (tl_starsRating.stars <= 0) {
                 limitPreviewView.a = 0.0f;
-                s6Var2.setText("");
-                s6Var.setText(LocaleController.getString(R.string.StarRatingLevelNegative));
-                paint.setColor(g6.w0(g6.wj, c6Var));
+                q6Var2.setText("");
+                q6Var.setText(LocaleController.getString(R.string.StarRatingLevelNegative));
+                paint.setColor(h6.w0(h6.wj, d6Var));
                 limitPreviewView.L = true;
             } else {
                 if (tl_starsRating.next_level_stars != 0) {
@@ -209,8 +209,8 @@ public class LimitPreviewView extends LinearLayout {
                     z10 = false;
                     sVar = sVar2;
                     limitPreviewView.a = r.a((r8 - j10) / (r10 - j10), 0.0f, 1.0f);
-                    s6Var2.setText(LocaleController.formatString(R.string.StarRatingLevel, Integer.valueOf(tl_starsRating.level)));
-                    s6Var.setText(LocaleController.formatString(R.string.StarRatingLevel, Integer.valueOf(tl_starsRating.level + 1)));
+                    q6Var2.setText(LocaleController.formatString(R.string.StarRatingLevel, Integer.valueOf(tl_starsRating.level)));
+                    q6Var.setText(LocaleController.formatString(R.string.StarRatingLevel, Integer.valueOf(tl_starsRating.level + 1)));
                     limitPreviewView.setArrowX(0.0f);
                     sVar.setScaleX(0.6f);
                     sVar.setScaleY(0.6f);
@@ -221,17 +221,17 @@ public class LimitPreviewView extends LinearLayout {
                     limitPreviewView.a0 = limitPreviewView.n;
                     limitPreviewView.I.requestLayout();
                     limitPreviewView.requestLayout();
-                    ViewPropertyAnimator duration = s6Var2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L);
-                    es esVar = es.h;
-                    duration.setInterpolator(esVar).start();
-                    s6Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L).setInterpolator(esVar).start();
-                    s6Var.setTextColor(!limitPreviewView.L ? -1 : g6.w0(g6.G6, c6Var));
-                    s6Var2.setTextColor(-1);
+                    ViewPropertyAnimator duration = q6Var2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L);
+                    bs bsVar = bs.h;
+                    duration.setInterpolator(bsVar).start();
+                    q6Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L).setInterpolator(bsVar).start();
+                    q6Var.setTextColor(!limitPreviewView.L ? -1 : h6.w0(h6.G6, d6Var));
+                    q6Var2.setTextColor(-1);
                     limitPreviewView.f((int) tl_starsRating.stars, (int) tl_starsRating.next_level_stars);
                 }
                 limitPreviewView.a = 1.0f;
-                s6Var2.setText(LocaleController.formatString(R.string.StarRatingLevel, Integer.valueOf(tl_starsRating.level - 1)));
-                s6Var.setText(LocaleController.formatString(R.string.StarRatingLevel, Integer.valueOf(tl_starsRating.level)));
+                q6Var2.setText(LocaleController.formatString(R.string.StarRatingLevel, Integer.valueOf(tl_starsRating.level - 1)));
+                q6Var.setText(LocaleController.formatString(R.string.StarRatingLevel, Integer.valueOf(tl_starsRating.level)));
             }
             sVar = sVar2;
             z10 = false;
@@ -245,12 +245,12 @@ public class LimitPreviewView extends LinearLayout {
             limitPreviewView.a0 = limitPreviewView.n;
             limitPreviewView.I.requestLayout();
             limitPreviewView.requestLayout();
-            ViewPropertyAnimator duration2 = s6Var2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L);
-            es esVar2 = es.h;
-            duration2.setInterpolator(esVar2).start();
-            s6Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L).setInterpolator(esVar2).start();
-            s6Var.setTextColor(!limitPreviewView.L ? -1 : g6.w0(g6.G6, c6Var));
-            s6Var2.setTextColor(-1);
+            ViewPropertyAnimator duration2 = q6Var2.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L);
+            bs bsVar2 = bs.h;
+            duration2.setInterpolator(bsVar2).start();
+            q6Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(320L).setInterpolator(bsVar2).start();
+            q6Var.setTextColor(!limitPreviewView.L ? -1 : h6.w0(h6.G6, d6Var));
+            q6Var2.setTextColor(-1);
             limitPreviewView.f((int) tl_starsRating.stars, (int) tl_starsRating.next_level_stars);
         }
     }
@@ -281,31 +281,31 @@ public class LimitPreviewView extends LinearLayout {
         boolean z13;
         AndroidUtilities.cancelRunOnUIThread(this.k0);
         this.k0 = null;
-        int i10 = g6.Oh;
-        c6 c6Var = this.S;
-        int w02 = g6.w0(i10, c6Var);
+        int i10 = h6.Oh;
+        d6 d6Var = this.S;
+        int w02 = h6.w0(i10, d6Var);
         Paint paint = this.K;
         paint.setColor(w02);
         this.L = false;
         int i11 = tl_starsRating.level;
         int i12 = tl_starsRating2.level;
-        x5 x5Var = this.I;
-        s6 s6Var = this.v;
-        s6 s6Var2 = this.N;
+        n5 n5Var = this.I;
+        q6 q6Var = this.v;
+        q6 q6Var2 = this.N;
         if (i11 == i12) {
             if (tl_starsRating2.stars <= 0) {
                 this.a = 0.0f;
-                s6Var2.setText("");
-                s6Var.setText(LocaleController.getString(R.string.StarRatingLevelNegative));
-                paint.setColor(g6.w0(g6.wj, c6Var));
+                q6Var2.setText("");
+                q6Var.setText(LocaleController.getString(R.string.StarRatingLevelNegative));
+                paint.setColor(h6.w0(h6.wj, d6Var));
                 this.L = true;
                 z12 = false;
                 z13 = true;
             } else {
                 if (tl_starsRating2.next_level_stars == 0) {
                     this.a = 1.0f;
-                    s6Var2.setText(LocaleController.formatString(R.string.StarRatingLevel, Integer.valueOf(i12 - 1)));
-                    s6Var.setText(LocaleController.formatString(R.string.StarRatingLevel, Integer.valueOf(tl_starsRating2.level)));
+                    q6Var2.setText(LocaleController.formatString(R.string.StarRatingLevel, Integer.valueOf(i12 - 1)));
+                    q6Var.setText(LocaleController.formatString(R.string.StarRatingLevel, Integer.valueOf(tl_starsRating2.level)));
                     z12 = false;
                     z13 = true;
                 } else {
@@ -313,8 +313,8 @@ public class LimitPreviewView extends LinearLayout {
                     long j10 = tl_starsRating2.current_level_stars;
                     this.a = r.a((r12 - j10) / (r6 - j10), 0.0f, 1.0f);
                     z13 = true;
-                    s6Var2.setText(LocaleController.formatString(R.string.StarRatingLevel, Integer.valueOf(tl_starsRating2.level)));
-                    s6Var.setText(LocaleController.formatString(R.string.StarRatingLevel, Integer.valueOf(tl_starsRating2.level + 1)));
+                    q6Var2.setText(LocaleController.formatString(R.string.StarRatingLevel, Integer.valueOf(tl_starsRating2.level)));
+                    q6Var.setText(LocaleController.formatString(R.string.StarRatingLevel, Integer.valueOf(tl_starsRating2.level + 1)));
                 }
             }
             this.T = z13;
@@ -322,10 +322,10 @@ public class LimitPreviewView extends LinearLayout {
             this.U = z14;
             this.V = z14;
             this.a0 = this.n;
-            x5Var.requestLayout();
+            n5Var.requestLayout();
             requestLayout();
-            s6Var.setTextColor(this.L ? -1 : g6.w0(g6.G6, c6Var));
-            s6Var2.setTextColor(-1);
+            q6Var.setTextColor(this.L ? -1 : h6.w0(h6.G6, d6Var));
+            q6Var2.setTextColor(-1);
             f((int) tl_starsRating2.stars, (int) tl_starsRating2.next_level_stars);
             return;
         }
@@ -341,14 +341,14 @@ public class LimitPreviewView extends LinearLayout {
             this.U = false;
             this.V = z11;
             this.a0 = this.n;
-            x5Var.requestLayout();
+            n5Var.requestLayout();
             requestLayout();
-            s6Var.setTextColor(this.L ? -1 : g6.w0(g6.G6, c6Var));
-            s6Var2.setTextColor(-1);
-            ViewPropertyAnimator duration = s6Var2.animate().alpha(0.0f).scaleX(0.7f).scaleY(0.7f).setDuration(320L);
-            es esVar = es.h;
-            duration.setInterpolator(esVar).start();
-            s6Var.animate().alpha(0.0f).scaleX(0.7f).scaleY(0.7f).setDuration(320L).setInterpolator(esVar).start();
+            q6Var.setTextColor(this.L ? -1 : h6.w0(h6.G6, d6Var));
+            q6Var2.setTextColor(-1);
+            ViewPropertyAnimator duration = q6Var2.animate().alpha(0.0f).scaleX(0.7f).scaleY(0.7f).setDuration(320L);
+            bs bsVar = bs.h;
+            duration.setInterpolator(bsVar).start();
+            q6Var.animate().alpha(0.0f).scaleX(0.7f).scaleY(0.7f).setDuration(320L).setInterpolator(bsVar).start();
             f((int) tl_starsRating.stars, (int) tl_starsRating.next_level_stars);
             final int i13 = 0;
             Runnable runnable = new Runnable(this) { // from class: sg.o
@@ -375,7 +375,7 @@ public class LimitPreviewView extends LinearLayout {
             return;
         }
         if (i12 < i11) {
-            paint.setColor(g6.w0(i10, c6Var));
+            paint.setColor(h6.w0(i10, d6Var));
             this.L = false;
             if (tl_starsRating.stars <= 0) {
                 z10 = true;
@@ -388,14 +388,14 @@ public class LimitPreviewView extends LinearLayout {
             this.U = false;
             this.V = z10;
             this.a0 = this.n;
-            x5Var.requestLayout();
+            n5Var.requestLayout();
             requestLayout();
-            ViewPropertyAnimator duration2 = s6Var2.animate().alpha(0.0f).scaleX(0.7f).scaleY(0.7f).setDuration(320L);
-            es esVar2 = es.h;
-            duration2.setInterpolator(esVar2).start();
-            s6Var.animate().alpha(0.0f).scaleX(0.7f).scaleY(0.7f).setDuration(320L).setInterpolator(esVar2).start();
-            s6Var.setTextColor(this.L ? -1 : g6.w0(g6.G6, c6Var));
-            s6Var2.setTextColor(-1);
+            ViewPropertyAnimator duration2 = q6Var2.animate().alpha(0.0f).scaleX(0.7f).scaleY(0.7f).setDuration(320L);
+            bs bsVar2 = bs.h;
+            duration2.setInterpolator(bsVar2).start();
+            q6Var.animate().alpha(0.0f).scaleX(0.7f).scaleY(0.7f).setDuration(320L).setInterpolator(bsVar2).start();
+            q6Var.setTextColor(this.L ? -1 : h6.w0(h6.G6, d6Var));
+            q6Var2.setTextColor(-1);
             f((int) tl_starsRating.stars, (int) tl_starsRating.next_level_stars);
             final int i14 = 1;
             Runnable runnable2 = new Runnable(this) { // from class: sg.o
@@ -447,23 +447,23 @@ public class LimitPreviewView extends LinearLayout {
         int i10;
         int i11 = tL_premium_boostsStatus.current_level_boosts;
         int i12 = tL_premium_boostsStatus.boosts;
-        s6 s6Var = this.N;
-        s6 s6Var2 = this.v;
+        q6 q6Var = this.N;
+        q6 q6Var2 = this.v;
         if ((i11 == i12 && z10) || (i10 = tL_premium_boostsStatus.next_level_boosts) == 0) {
             this.a = 1.0f;
-            s6Var.setText(LocaleController.formatString("BoostsLevel", R.string.BoostsLevel, Integer.valueOf(tL_premium_boostsStatus.level - 1)));
-            s6Var2.setText(LocaleController.formatString("BoostsLevel", R.string.BoostsLevel, Integer.valueOf(tL_premium_boostsStatus.level)));
+            q6Var.setText(LocaleController.formatString("BoostsLevel", R.string.BoostsLevel, Integer.valueOf(tL_premium_boostsStatus.level - 1)));
+            q6Var2.setText(LocaleController.formatString("BoostsLevel", R.string.BoostsLevel, Integer.valueOf(tL_premium_boostsStatus.level)));
         } else {
             this.a = r.a((i12 - i11) / (i10 - i11), 0.0f, 1.0f);
-            s6Var.setText(LocaleController.formatString("BoostsLevel", R.string.BoostsLevel, Integer.valueOf(tL_premium_boostsStatus.level)));
-            s6Var2.setText(LocaleController.formatString("BoostsLevel", R.string.BoostsLevel, Integer.valueOf(tL_premium_boostsStatus.level + 1)));
+            q6Var.setText(LocaleController.formatString("BoostsLevel", R.string.BoostsLevel, Integer.valueOf(tL_premium_boostsStatus.level)));
+            q6Var2.setText(LocaleController.formatString("BoostsLevel", R.string.BoostsLevel, Integer.valueOf(tL_premium_boostsStatus.level + 1)));
         }
-        ((FrameLayout.LayoutParams) s6Var2.getLayoutParams()).gravity = 5;
+        ((FrameLayout.LayoutParams) q6Var2.getLayoutParams()).gravity = 5;
         setType(17);
         this.w.setVisibility(8);
         this.O.setVisibility(8);
-        s6Var2.setTextColor(g6.w0(g6.G6, this.S));
-        s6Var.setTextColor(-1);
+        q6Var2.setTextColor(h6.w0(h6.G6, this.S));
+        q6Var.setTextColor(-1);
         g(tL_premium_boostsStatus.boosts, false);
         this.P = true;
     }
@@ -474,13 +474,13 @@ public class LimitPreviewView extends LinearLayout {
             return;
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        spannableStringBuilder.append((CharSequence) "d").setSpan(new br(this.r, 0), 0, 1, 0);
+        spannableStringBuilder.append((CharSequence) "d").setSpan(new yq(this.r, 0), 0, 1, 0);
         spannableStringBuilder.append((CharSequence) " ").setSpan(new RelativeSizeSpan(0.8f), 1, 2, 0);
         spannableStringBuilder.append((CharSequence) (i10 > 1200 ? LocaleController.formatShortNumber(i10, null) : LocaleController.formatNumber(i10, ',')));
         int length = spannableStringBuilder.length();
         spannableStringBuilder.append((CharSequence) "\u200a/\u200a");
         spannableStringBuilder.append((CharSequence) (i11 > 1200 ? LocaleController.formatShortNumber(i11, null) : LocaleController.formatNumber(i11, ',')));
-        spannableStringBuilder.setSpan(new xu(170, 0), length, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new su(170, 0), length, spannableStringBuilder.length(), 33);
         spannableStringBuilder.setSpan(new RelativeSizeSpan(0.65f), length, spannableStringBuilder.length(), 33);
         s sVar = this.e;
         sVar.f = spannableStringBuilder;
@@ -491,19 +491,19 @@ public class LimitPreviewView extends LinearLayout {
     /* JADX WARN: Type inference failed for: r6v1, types: [boolean] */
     /* JADX WARN: Type inference failed for: r6v5 */
     public final void g(int i10, boolean z10) {
-        br brVar;
+        yq yqVar;
         int i11;
         int i12 = 0;
         if (i10 < 0) {
-            brVar = new br(R.drawable.warning_sign, 0);
+            yqVar = new yq(R.drawable.warning_sign, 0);
         } else {
-            brVar = new br(this.r, 0);
+            yqVar = new yq(this.r, 0);
             float f7 = this.s;
-            brVar.setScale(f7, f7);
+            yqVar.setScale(f7, f7);
         }
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         ?? r62 = 1;
-        spannableStringBuilder.append((CharSequence) "d").setSpan(brVar, 0, 1, 0);
+        spannableStringBuilder.append((CharSequence) "d").setSpan(yqVar, 0, 1, 0);
         if (i10 >= 0 || !this.h0) {
             spannableStringBuilder.append((CharSequence) " ").setSpan(new RelativeSizeSpan(0.8f), 1, 2, 0);
             spannableStringBuilder.append((CharSequence) LocaleController.formatNumber(i10, ','));
@@ -538,7 +538,7 @@ public class LimitPreviewView extends LinearLayout {
                         ArrayList arrayList2 = rVar.b;
                         arrayList2.add(staticLayout);
                         arrayList2.add(new StaticLayout("" + sVar.f.charAt(i11), textPaint, (int) sVar.e, alignment, 1.0f, 0.0f, false));
-                        spannableStringBuilder3.setSpan(new xz(false), i11, i11 + 1, 0);
+                        spannableStringBuilder3.setSpan(new uz(false), i11, i11 + 1, 0);
                         i13++;
                     }
                     length = i11 - 1;
@@ -553,7 +553,7 @@ public class LimitPreviewView extends LinearLayout {
                     rVar2.f = ofFloat;
                     ofFloat.addUpdateListener(new p(sVar, rVar2, 0));
                     rVar2.f.addListener(new q(sVar, rVar2, 1));
-                    rVar2.f.setInterpolator(es.g);
+                    rVar2.f.setInterpolator(bs.g);
                     rVar2.f.setDuration(250L);
                     rVar2.f.setStartDelay(((arrayList.size() - 1) - i15) * 60);
                     rVar2.f.start();
@@ -716,12 +716,12 @@ public class LimitPreviewView extends LinearLayout {
                                 i15 = i22;
                                 i16 = i15;
                             }
-                            rVar.b.add(new StaticLayout(d.j(i15, ""), textPaint2, (int) sVar.e, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false));
+                            rVar.b.add(new StaticLayout(a.j(i15, ""), textPaint2, (int) sVar.e, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false));
                             i22 = i16 + 1;
                             i21 = i23;
                         }
                         textPaint = textPaint2;
-                        spannableStringBuilder.setSpan(new xz(false), i20, i20 + 1, 0);
+                        spannableStringBuilder.setSpan(new uz(false), i20, i20 + 1, 0);
                     } else {
                         f15 = f11;
                         z12 = z15;
@@ -742,7 +742,7 @@ public class LimitPreviewView extends LinearLayout {
                     rVar2.f = ofFloat;
                     ofFloat.addUpdateListener(new p(sVar, rVar2, 1));
                     rVar2.f.addListener(new q(sVar, rVar2, 0));
-                    rVar2.f.setInterpolator(es.g);
+                    rVar2.f.setInterpolator(bs.g);
                     rVar2.f.setDuration(750L);
                     rVar2.f.setStartDelay(((arrayList.size() - 1) - i24) * 60);
                     rVar2.f.start();
@@ -815,19 +815,19 @@ public class LimitPreviewView extends LinearLayout {
                 }
             }
         });
-        this.i0.addListener(new i50(16, this, z19));
+        this.i0.addListener(new n40(16, this, z19));
         this.i0.setInterpolator(new OvershootInterpolator());
         if (this.W) {
             ValueAnimator ofFloat3 = ValueAnimator.ofFloat(0.0f, 1.0f);
-            ofFloat3.addUpdateListener(new a(this, 15));
+            ofFloat3.addUpdateListener(new i6(this, 22));
             ofFloat3.setDuration(500L);
             ofFloat3.start();
             this.i0.setDuration(600L);
         } else if (z17) {
-            this.i0.setInterpolator(es.i);
+            this.i0.setInterpolator(bs.i);
             this.i0.setDuration(320L);
         } else if (z16) {
-            this.i0.setInterpolator(es.h);
+            this.i0.setInterpolator(bs.h);
             this.i0.setDuration(500L);
         } else {
             this.i0.setDuration(1000L);
@@ -859,46 +859,46 @@ public class LimitPreviewView extends LinearLayout {
 
     public void setStarRating(TL_stars.Tl_starsRating tl_starsRating) {
         this.L = false;
-        int i10 = g6.Oh;
-        c6 c6Var = this.S;
-        int w02 = g6.w0(i10, c6Var);
+        int i10 = h6.Oh;
+        d6 d6Var = this.S;
+        int w02 = h6.w0(i10, d6Var);
         Paint paint = this.K;
         paint.setColor(w02);
         long j10 = tl_starsRating.current_level_stars;
         long j11 = tl_starsRating.stars;
-        s6 s6Var = this.N;
-        s6 s6Var2 = this.v;
+        q6 q6Var = this.N;
+        q6 q6Var2 = this.v;
         if (j11 <= 0) {
             this.a = 0.5f;
-            s6Var.setText("");
-            s6Var2.setText(LocaleController.getString(R.string.StarRatingLevelNegative));
-            paint.setColor(g6.w0(g6.wj, c6Var));
+            q6Var.setText("");
+            q6Var2.setText(LocaleController.getString(R.string.StarRatingLevelNegative));
+            paint.setColor(h6.w0(h6.wj, d6Var));
             this.L = true;
         } else {
             if (tl_starsRating.next_level_stars == 0) {
                 this.a = 1.0f;
-                s6Var.setText(LocaleController.formatString(R.string.StarRatingLevel, Integer.valueOf(tl_starsRating.level - 1)));
-                s6Var2.setText(LocaleController.formatString(R.string.StarRatingLevel, Integer.valueOf(tl_starsRating.level)));
+                q6Var.setText(LocaleController.formatString(R.string.StarRatingLevel, Integer.valueOf(tl_starsRating.level - 1)));
+                q6Var2.setText(LocaleController.formatString(R.string.StarRatingLevel, Integer.valueOf(tl_starsRating.level)));
             } else {
                 this.a = r.a((j11 - j10) / (r1 - j10), 0.0f, 1.0f);
-                s6Var.setText(LocaleController.formatString(R.string.StarRatingLevel, Integer.valueOf(tl_starsRating.level)));
-                s6Var2.setText(LocaleController.formatString(R.string.StarRatingLevel, Integer.valueOf(tl_starsRating.level + 1)));
+                q6Var.setText(LocaleController.formatString(R.string.StarRatingLevel, Integer.valueOf(tl_starsRating.level)));
+                q6Var2.setText(LocaleController.formatString(R.string.StarRatingLevel, Integer.valueOf(tl_starsRating.level + 1)));
             }
         }
-        ((FrameLayout.LayoutParams) s6Var2.getLayoutParams()).gravity = 5;
+        ((FrameLayout.LayoutParams) q6Var2.getLayoutParams()).gravity = 5;
         setType(17);
         this.w.setVisibility(8);
         this.O.setVisibility(8);
-        s6Var2.setTextColor(this.L ? -1 : g6.w0(g6.G6, c6Var));
-        s6Var.setTextColor(-1);
+        q6Var2.setTextColor(this.L ? -1 : h6.w0(h6.G6, d6Var));
+        q6Var.setTextColor(-1);
         f((int) tl_starsRating.stars, (int) tl_starsRating.next_level_stars);
         this.P = true;
         this.Q = true;
         this.R = true;
     }
 
-    public void setStaticGradinet(a1 a1Var) {
-        this.E = a1Var;
+    public void setStaticGradinet(z0 z0Var) {
+        this.E = z0Var;
     }
 
     public void setStatus(int i10, int i11, boolean z10) {
@@ -913,48 +913,48 @@ public class LimitPreviewView extends LinearLayout {
             this.I.requestLayout();
             requestLayout();
         }
-        s6 s6Var = this.v;
-        ((FrameLayout.LayoutParams) s6Var.getLayoutParams()).gravity = 5;
+        q6 q6Var = this.v;
+        ((FrameLayout.LayoutParams) q6Var.getLayoutParams()).gravity = 5;
         this.w.setVisibility(8);
         this.O.setVisibility(8);
         this.N.setText("0");
-        s6Var.setText("" + i11);
+        q6Var.setText("" + i11);
         g(i10, false);
         this.P = true;
         this.Q = true;
     }
 
     public void setType(int i10) {
-        s6 s6Var = this.v;
+        q6 q6Var = this.v;
         int i11 = this.r;
         s sVar = this.e;
         if (i10 == 6) {
             if (sVar != null) {
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                spannableStringBuilder.append((CharSequence) "d ").setSpan(new br(i11, 0), 0, 1, 0);
+                spannableStringBuilder.append((CharSequence) "d ").setSpan(new yq(i11, 0), 0, 1, 0);
                 spannableStringBuilder.append((CharSequence) (UserConfig.getInstance(UserConfig.selectedAccount).isPremium() ? "4 GB" : "2 GB"));
                 sVar.f = spannableStringBuilder;
             }
-            s6Var.setText("4 GB");
+            q6Var.setText("4 GB");
             return;
         }
         if (i10 == 11) {
             if (sVar != null) {
                 SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
-                spannableStringBuilder2.append((CharSequence) "d").setSpan(new br(i11, 0), 0, 1, 0);
+                spannableStringBuilder2.append((CharSequence) "d").setSpan(new yq(i11, 0), 0, 1, 0);
                 sVar.f = spannableStringBuilder2;
             }
-            s6Var.setText("");
+            q6Var.setText("");
         }
     }
 
-    public LimitPreviewView(Context context, int i10, int i11, int i12, float f7, c6 c6Var) {
+    public LimitPreviewView(Context context, int i10, int i11, int i12, float f7, d6 d6Var) {
         super(context);
         this.s = 1.0f;
         this.H = true;
         this.K = new Paint(1);
         this.d0 = true;
-        this.S = c6Var;
+        this.S = d6Var;
         this.a = r.a(f7, 0.1f, 0.9f);
         this.r = i10;
         this.b = i11;
@@ -969,55 +969,55 @@ public class LimitPreviewView extends LinearLayout {
             sVar.setPadding(AndroidUtilities.dp(19.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(19.0f), AndroidUtilities.dp(14.0f));
             addView(sVar, z5.o(-2, -2, 0.0f, 3));
         }
-        jh0 jh0Var = new jh0(this, context, true);
-        this.f0 = jh0Var;
-        s6 s6Var = new s6(context, false, false, false);
-        this.N = s6Var;
-        s6Var.setTextSize(AndroidUtilities.dp(14.0f));
-        s6Var.setTypeface(AndroidUtilities.bold());
-        s6Var.setText(LocaleController.getString(R.string.LimitFree));
-        s6Var.setGravity(16);
-        int i13 = g6.G6;
-        s6Var.setTextColor(g6.w0(i13, c6Var));
+        dh0 dh0Var = new dh0(this, context, true);
+        this.f0 = dh0Var;
+        q6 q6Var = new q6(context, false, false, false);
+        this.N = q6Var;
+        q6Var.setTextSize(AndroidUtilities.dp(14.0f));
+        q6Var.setTypeface(AndroidUtilities.bold());
+        q6Var.setText(LocaleController.getString(R.string.LimitFree));
+        q6Var.setGravity(16);
+        int i13 = h6.G6;
+        q6Var.setTextColor(h6.w0(i13, d6Var));
         TextView textView = new TextView(context);
         this.w = textView;
         textView.setTypeface(AndroidUtilities.bold());
         textView.setText(String.format("%d", Integer.valueOf(i12)));
         textView.setGravity(16);
-        textView.setTextColor(g6.w0(i13, c6Var));
+        textView.setTextColor(h6.w0(i13, d6Var));
         if (LocaleController.isRTL) {
-            jh0Var.addView(s6Var, z5.a(30.0f, 12.0f, 0.0f, 12.0f, 0.0f, -1, 5));
-            jh0Var.addView(textView, z5.a(30.0f, 12.0f, 0.0f, 12.0f, 0.0f, -2, 3));
+            dh0Var.addView(q6Var, z5.a(30.0f, 12.0f, 0.0f, 12.0f, 0.0f, -1, 5));
+            dh0Var.addView(textView, z5.a(30.0f, 12.0f, 0.0f, 12.0f, 0.0f, -2, 3));
         } else {
-            jh0Var.addView(s6Var, z5.a(30.0f, 12.0f, 0.0f, 12.0f, 0.0f, -1, 3));
-            jh0Var.addView(textView, z5.a(30.0f, 12.0f, 0.0f, 12.0f, 0.0f, -2, 5));
+            dh0Var.addView(q6Var, z5.a(30.0f, 12.0f, 0.0f, 12.0f, 0.0f, -1, 3));
+            dh0Var.addView(textView, z5.a(30.0f, 12.0f, 0.0f, 12.0f, 0.0f, -2, 5));
         }
-        jh0 jh0Var2 = new jh0(this, context, false);
-        this.g0 = jh0Var2;
+        dh0 dh0Var2 = new dh0(this, context, false);
+        this.g0 = dh0Var2;
         TextView textView2 = new TextView(context);
         this.O = textView2;
         textView2.setTypeface(AndroidUtilities.bold());
         textView2.setText(LocaleController.getString(R.string.LimitPremium));
         textView2.setGravity(16);
         textView2.setTextColor(-1);
-        s6 s6Var2 = new s6(context, false, false, false);
-        this.v = s6Var2;
-        s6Var2.setTextSize(AndroidUtilities.dp(14.0f));
-        s6Var2.setTypeface(AndroidUtilities.bold());
-        s6Var2.setText(String.format("%d", Integer.valueOf(i12)));
-        s6Var2.setGravity(21);
-        s6Var2.setTextColor(-1);
+        q6 q6Var2 = new q6(context, false, false, false);
+        this.v = q6Var2;
+        q6Var2.setTextSize(AndroidUtilities.dp(14.0f));
+        q6Var2.setTypeface(AndroidUtilities.bold());
+        q6Var2.setText(String.format("%d", Integer.valueOf(i12)));
+        q6Var2.setGravity(21);
+        q6Var2.setTextColor(-1);
         if (LocaleController.isRTL) {
-            jh0Var2.addView(textView2, z5.a(30.0f, 12.0f, 0.0f, 12.0f, 0.0f, -1, 5));
-            jh0Var2.addView(s6Var2, z5.a(30.0f, 12.0f, 0.0f, 12.0f, 0.0f, -2, 3));
+            dh0Var2.addView(textView2, z5.a(30.0f, 12.0f, 0.0f, 12.0f, 0.0f, -1, 5));
+            dh0Var2.addView(q6Var2, z5.a(30.0f, 12.0f, 0.0f, 12.0f, 0.0f, -2, 3));
         } else {
-            jh0Var2.addView(textView2, z5.a(30.0f, 12.0f, 0.0f, 12.0f, 0.0f, -1, 3));
-            jh0Var2.addView(s6Var2, z5.a(30.0f, 12.0f, 0.0f, 12.0f, 0.0f, -2, 5));
+            dh0Var2.addView(textView2, z5.a(30.0f, 12.0f, 0.0f, 12.0f, 0.0f, -1, 3));
+            dh0Var2.addView(q6Var2, z5.a(30.0f, 12.0f, 0.0f, 12.0f, 0.0f, -2, 5));
         }
-        x5 x5Var = new x5(this, context, c6Var);
-        this.I = x5Var;
-        x5Var.addView(jh0Var, z5.d(30.0f, -1));
-        x5Var.addView(jh0Var2, z5.d(30.0f, -1));
-        addView(x5Var, z5.p(-1, 30, 0.0f, 0, 14, i10 != 0 ? 12 : 0, 14, 0));
+        n5 n5Var = new n5(this, context, d6Var);
+        this.I = n5Var;
+        n5Var.addView(dh0Var, z5.d(30.0f, -1));
+        n5Var.addView(dh0Var2, z5.d(30.0f, -1));
+        addView(n5Var, z5.p(-1, 30, 0.0f, 0, 14, i10 != 0 ? 12 : 0, 14, 0));
     }
 }

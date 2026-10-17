@@ -9,11 +9,11 @@ import android.os.Handler;
 import android.os.Process;
 import android.text.TextUtils;
 import androidx.biometric.o;
-import e0.l0;
+import e0.k0;
 import j$.util.Objects;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final Object a = null;
@@ -53,7 +53,7 @@ public abstract class c {
 
     public static int b(Context context, String str) {
         if (str != null) {
-            return (Build.VERSION.SDK_INT >= 33 || !TextUtils.equals("android.permission.POST_NOTIFICATIONS", str)) ? context.checkPermission(str, Process.myPid(), Process.myUid()) : new l0(context).a() ? 0 : -1;
+            return (Build.VERSION.SDK_INT >= 33 || !TextUtils.equals("android.permission.POST_NOTIFICATIONS", str)) ? context.checkPermission(str, Process.myPid(), Process.myUid()) : new k0(context).a() ? 0 : -1;
         }
         throw new NullPointerException("permission must be non-null");
     }

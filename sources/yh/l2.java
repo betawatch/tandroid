@@ -1,51 +1,52 @@
 package yh;
 
+import ai.k7;
 import android.content.Context;
 import android.view.View;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.Components.zc;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class l2 extends zh.r3 {
-    public final /* synthetic */ int s1;
-    public final /* synthetic */ Object t1;
+public final class l2 extends k7 {
+    public final /* synthetic */ int B1;
+    public final /* synthetic */ Object C1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ l2(m2 m2Var, Context context, int i10, long j10, c6 c6Var, int i11) {
-        super(context, i10, j10, c6Var, null);
-        this.s1 = i11;
-        this.t1 = m2Var;
+    public /* synthetic */ l2(m2 m2Var, Context context, int i10, long j10, d6 d6Var, int i11) {
+        super(context, i10, j10, d6Var, null);
+        this.B1 = i11;
+        this.C1 = m2Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.e3
+    @Override // org.telegram.ui.ActionBar.f3
     public int getBottomInset() {
-        switch (this.s1) {
+        switch (this.B1) {
             case 3:
-                return ((zh.r3) this.t1).getBottomInset();
+                return ((k7) this.C1).getBottomInset();
             default:
                 return super.getBottomInset();
         }
     }
 
-    @Override // zh.r3, org.telegram.ui.ActionBar.e3, org.telegram.ui.ActionBar.i2
-    public zc getBulletinFactory() {
-        switch (this.s1) {
+    @Override // ai.k7, org.telegram.ui.ActionBar.f3, org.telegram.ui.ActionBar.j2
+    public xc getBulletinFactory() {
+        switch (this.B1) {
             case 0:
-                return zc.a0(((m2) this.t1).a.a);
+                return xc.a0(((m2) this.C1).a.a);
             case 1:
-                return zc.a0(((m2) this.t1).a.a);
+                return xc.a0(((m2) this.C1).a.a);
             case 2:
-                return zc.a0(((m2) this.t1).a.a);
+                return xc.a0(((m2) this.C1).a.a);
             default:
                 return super.getBulletinFactory();
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l2(zh.r3 r3Var, Context context, int i10, long j10, c6 c6Var, View view) {
-        super(context, i10, j10, c6Var, view);
-        this.s1 = 3;
-        this.t1 = r3Var;
+    public l2(k7 k7Var, Context context, int i10, long j10, d6 d6Var, View view) {
+        super(context, i10, j10, d6Var, view);
+        this.B1 = 3;
+        this.C1 = k7Var;
     }
 }

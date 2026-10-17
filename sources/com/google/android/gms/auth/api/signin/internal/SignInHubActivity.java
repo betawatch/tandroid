@@ -11,7 +11,8 @@ import android.os.Looper;
 import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
 import androidx.biometric.e;
-import androidx.fragment.app.u;
+import androidx.fragment.app.v;
+import b2.t;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.SignInAccount;
@@ -20,9 +21,9 @@ import java.lang.reflect.Modifier;
 import java.util.Set;
 import w1.a;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public class SignInHubActivity extends u {
+public class SignInHubActivity extends v {
     public static boolean T = false;
     public boolean O = false;
     public SignInConfiguration P;
@@ -35,7 +36,7 @@ public class SignInHubActivity extends u {
         return true;
     }
 
-    @Override // androidx.fragment.app.u, androidx.activity.m, android.app.Activity
+    @Override // androidx.fragment.app.v, androidx.activity.m, android.app.Activity
     public final void onActivityResult(int i10, int i11, Intent intent) {
         GoogleSignInAccount googleSignInAccount;
         if (this.O) {
@@ -48,11 +49,11 @@ public class SignInHubActivity extends u {
         if (intent != null) {
             SignInAccount signInAccount = (SignInAccount) intent.getParcelableExtra("signInAccount");
             if (signInAccount != null && (googleSignInAccount = signInAccount.b) != null) {
-                i o10 = i.o(this);
+                i F = i.F(this);
                 GoogleSignInOptions googleSignInOptions = this.P.b;
-                synchronized (o10) {
-                    synchronized (o10) {
-                        ((b) o10.b).c(googleSignInAccount, googleSignInOptions);
+                synchronized (F) {
+                    synchronized (F) {
+                        ((b) F.b).c(googleSignInAccount, googleSignInOptions);
                     }
                     intent.removeExtra("signInAccount");
                     intent.putExtra("googleSignInAccount", googleSignInAccount);
@@ -82,7 +83,7 @@ public class SignInHubActivity extends u {
         v(8);
     }
 
-    @Override // androidx.fragment.app.u, androidx.activity.m, e0.f, android.app.Activity
+    @Override // androidx.fragment.app.v, androidx.activity.m, e0.e, android.app.Activity
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         Intent intent = getIntent();
@@ -158,13 +159,13 @@ public class SignInHubActivity extends u {
         }
     }
 
-    @Override // androidx.fragment.app.u, android.app.Activity
+    @Override // androidx.fragment.app.v, android.app.Activity
     public final void onDestroy() {
         super.onDestroy();
         T = false;
     }
 
-    @Override // androidx.activity.m, e0.f, android.app.Activity
+    @Override // androidx.activity.m, e0.e, android.app.Activity
     public final void onSaveInstanceState(Bundle bundle) {
         super.onSaveInstanceState(bundle);
         bundle.putBoolean("signingInGoogleApiClients", this.Q);
@@ -175,7 +176,7 @@ public class SignInHubActivity extends u {
     }
 
     public final void u() {
-        w1.b bVar = (w1.b) new e(f(), w1.b.f).k(w1.b.class);
+        w1.b bVar = (w1.b) new e(f(), w1.b.f).m(w1.b.class);
         m mVar = new m(this, 0);
         boolean z10 = bVar.e;
         a0.m mVar2 = bVar.d;
@@ -199,27 +200,27 @@ public class SignInHubActivity extends u {
                 a aVar2 = new a(dVar);
                 mVar2.d(0, aVar2);
                 bVar.e = false;
-                b2.u uVar = new b2.u(aVar2.l, mVar);
-                aVar2.d(this, uVar);
-                b2.u uVar2 = aVar2.n;
-                if (uVar2 != null) {
-                    aVar2.i(uVar2);
+                t tVar = new t(aVar2.l, mVar);
+                aVar2.d(this, tVar);
+                t tVar2 = aVar2.n;
+                if (tVar2 != null) {
+                    aVar2.i(tVar2);
                 }
                 aVar2.m = this;
-                aVar2.n = uVar;
+                aVar2.n = tVar;
             } catch (Throwable th2) {
                 bVar.e = false;
                 throw th2;
             }
         } else {
-            b2.u uVar3 = new b2.u(aVar.l, mVar);
-            aVar.d(this, uVar3);
-            b2.u uVar4 = aVar.n;
-            if (uVar4 != null) {
-                aVar.i(uVar4);
+            t tVar3 = new t(aVar.l, mVar);
+            aVar.d(this, tVar3);
+            t tVar4 = aVar.n;
+            if (tVar4 != null) {
+                aVar.i(tVar4);
             }
             aVar.m = this;
-            aVar.n = uVar3;
+            aVar.n = tVar3;
         }
         T = false;
     }

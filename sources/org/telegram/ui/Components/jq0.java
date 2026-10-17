@@ -1,57 +1,50 @@
 package org.telegram.ui.Components;
 
-import android.os.Build;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class jq0 extends s4.r0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ir0 b;
+public final class jq0 implements hg.f0 {
+    public final /* synthetic */ dr0 a;
 
-    public /* synthetic */ jq0(ir0 ir0Var, int i10) {
-        this.a = i10;
-        this.b = ir0Var;
+    public jq0(dr0 dr0Var) {
+        this.a = dr0Var;
     }
 
-    @Override // s4.r0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        bh.f fVar;
-        wb wbVar;
-        switch (this.a) {
-            case 0:
-                if (i11 != 0) {
-                    ir0 ir0Var = this.b;
-                    ir0.t0(ir0Var);
-                    ir0Var.q0 = ir0Var.p0;
-                    break;
-                }
-                break;
-            case 1:
-                ir0 ir0Var2 = this.b;
-                if (i11 != 0) {
-                    ir0.t0(ir0Var2);
-                    ir0Var2.q0 = ir0Var2.p0;
-                }
-                sc scVar = sc.w;
-                if (scVar != null && (wbVar = scVar.e) != null && (wbVar.getParent() instanceof View) && ((View) sc.w.e.getParent()).getParent() == ir0Var2.w) {
-                    sc.e();
-                }
-                if (Build.VERSION.SDK_INT >= 31 && (fVar = ir0Var2.O0) != null) {
-                    fVar.f(i10, i11);
-                    ir0.B0(ir0Var2);
-                    break;
-                }
-                break;
-            default:
-                if (i11 != 0) {
-                    ir0 ir0Var3 = this.b;
-                    ir0.t0(ir0Var3);
-                    ir0Var3.q0 = ir0Var3.p0;
-                    break;
-                }
-                break;
+    @Override // hg.f0
+    public final void b(a0.h hVar, ArrayList arrayList) {
+        int i10;
+        int i11;
+        int i12;
+        int i13 = 0;
+        while (i13 < arrayList.size()) {
+            TLObject tLObject = ((hg.g0) arrayList.get(i13)).a;
+            if ((tLObject instanceof TLRPC.Chat) && !ChatObject.canWriteToChat((TLRPC.Chat) tLObject)) {
+                arrayList.remove(i13);
+                i13--;
+            }
+            i13++;
         }
+        dr0 dr0Var = this.a;
+        dr0Var.E0 = arrayList;
+        for (int i14 = 0; i14 < dr0Var.E0.size(); i14++) {
+            hg.g0 g0Var = (hg.g0) dr0Var.E0.get(i14);
+            TLObject tLObject2 = g0Var.a;
+            if (tLObject2 instanceof TLRPC.User) {
+                i12 = ((org.telegram.ui.ActionBar.f3) dr0Var).currentAccount;
+                MessagesController.getInstance(i12).putUser((TLRPC.User) g0Var.a, true);
+            } else if (tLObject2 instanceof TLRPC.Chat) {
+                i11 = ((org.telegram.ui.ActionBar.f3) dr0Var).currentAccount;
+                MessagesController.getInstance(i11).putChat((TLRPC.Chat) g0Var.a, true);
+            } else if (tLObject2 instanceof TLRPC.EncryptedChat) {
+                i10 = ((org.telegram.ui.ActionBar.f3) dr0Var).currentAccount;
+                MessagesController.getInstance(i10).putEncryptedChat((TLRPC.EncryptedChat) g0Var.a, true);
+            }
+        }
+        dr0Var.M.l();
     }
 }

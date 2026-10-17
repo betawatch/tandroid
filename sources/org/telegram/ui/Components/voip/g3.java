@@ -1,32 +1,7 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes4.dex */
-public final class g3 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ i3 b;
-
-    public /* synthetic */ g3(i3 i3Var, int i10) {
-        this.a = i10;
-        this.b = i3Var;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                i3 i3Var = this.b;
-                i3Var.r = 0;
-                i3Var.invalidate();
-                break;
-            default:
-                i3 i3Var2 = this.b;
-                i3Var2.s = 0;
-                i3Var2.invalidate();
-                break;
-        }
-    }
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes.dex */
+public interface g3 {
+    void c(h3 h3Var);
 }

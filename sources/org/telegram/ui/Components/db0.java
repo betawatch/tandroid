@@ -1,54 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class db0 extends xh.l {
-    public final /* synthetic */ int E = 1;
-    public final /* synthetic */ Object F;
+public final class db0 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 a;
+    public final /* synthetic */ ib0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public db0(org.telegram.ui.ei0 ei0Var, org.telegram.ui.ei0 ei0Var2, FrameLayout frameLayout, long j10) {
-        super(ei0Var2, frameLayout, j10, true);
-        this.F = ei0Var;
+    public db0(ib0 ib0Var, org.telegram.ui.ActionBar.n2 n2Var) {
+        this.b = ib0Var;
+        this.a = n2Var;
     }
 
-    @Override // xh.l
-    public final void f(String str, boolean z10, boolean z11) {
-        org.telegram.ui.ActionBar.k kVar;
-        switch (this.E) {
-            case 0:
-                xh.b bVar = (xh.b) this.F;
-                wx0 wx0Var = bVar.W;
-                if (!this.e.isEmpty()) {
-                    if (!z11) {
-                        super.f(str, z10, z11);
-                        break;
-                    } else {
-                        bVar.w.J.setText("");
-                        break;
-                    }
-                } else if (wx0Var.getVisibility() != 4) {
-                    wx0Var.setVisibility(4);
-                    break;
-                }
-                break;
-            default:
-                if (!z11) {
-                    super.f(str, z10, z11);
-                    break;
-                } else {
-                    kVar = ((org.telegram.ui.ActionBar.m2) ((org.telegram.ui.ei0) this.F)).actionBar;
-                    kVar.setSearchFieldText("");
-                    break;
-                }
+    public final void a(boolean z10) {
+        ib0 ib0Var = this.b;
+        if (ib0Var.getNeededLayoutManager() != ib0Var.getCurrentLayoutManager() && ib0Var.a()) {
+            if (ib0Var.f.M0 > 0) {
+                ib0Var.N = true;
+                ib0Var.o(false);
+                return;
+            }
+            ib0Var.b.setLayoutManager(ib0Var.getNeededLayoutManager());
         }
+        if (z10 && !ib0Var.a()) {
+            z10 = false;
+        }
+        ib0Var.o((!z10 || ib0Var.f.K() > 0) ? z10 : false);
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public db0(xh.b bVar, org.telegram.ui.ActionBar.m2 m2Var, FrameLayout frameLayout, long j10) {
-        super(m2Var, frameLayout, j10, false);
-        this.F = bVar;
+    public final void b(boolean z10) {
+        this.b.l(z10);
+    }
+
+    public final void c() {
+        ib0 ib0Var = this.b;
+        hq hqVar = ib0Var.J;
+        if (ib0Var.b.getLayoutManager() == ib0Var.d || !ib0Var.I) {
+            return;
+        }
+        AndroidUtilities.cancelRunOnUIThread(hqVar);
+        AndroidUtilities.runOnUIThread(hqVar, this.a.getFragmentBeginToShow() ? 0L : 100L);
     }
 }

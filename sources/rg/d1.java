@@ -1,55 +1,52 @@
 package rg;
 
+import android.graphics.Point;
+import android.graphics.Rect;
 import android.view.View;
-import di.a6;
-import java.util.ArrayList;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class d1 extends s4.t {
-    public final /* synthetic */ a6 S;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d1(a6 a6Var) {
-        super(true);
-        this.S = a6Var;
-    }
-
-    @Override // s4.t
-    public final boolean B1(int i10) {
-        MessageObject.GroupedMessagePosition position;
-        byte b10;
-        a6 a6Var = this.S;
-        ArrayList arrayList = a6Var.s0;
-        int size = (arrayList.size() - 1) - i10;
-        MessageObject.GroupedMessages groupedMessages = a6Var.t0;
-        if (groupedMessages != null && size >= 0 && size < arrayList.size() && (position = groupedMessages.getPosition((MessageObject) arrayList.get(size))) != null && position.minX != position.maxX && (b10 = position.minY) == position.maxY && b10 != 0) {
-            int size2 = groupedMessages.posArray.size();
-            for (int i11 = 0; i11 < size2; i11++) {
-                MessageObject.GroupedMessagePosition groupedMessagePosition = groupedMessages.posArray.get(i11);
-                if (groupedMessagePosition != position) {
-                    byte b11 = groupedMessagePosition.minY;
-                    byte b12 = position.minY;
-                    if (b11 <= b12 && groupedMessagePosition.maxY >= b12) {
-                        return true;
-                    }
+public final class d1 extends s4.m0 {
+    @Override // s4.m0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.y0 y0Var) {
+        org.telegram.ui.Cells.u1 u1Var;
+        MessageObject.GroupedMessages currentMessagesGroup;
+        MessageObject.GroupedMessagePosition currentPosition;
+        int i10 = 0;
+        rect.bottom = 0;
+        if (!(view instanceof org.telegram.ui.Cells.u1) || (currentMessagesGroup = (u1Var = (org.telegram.ui.Cells.u1) view).getCurrentMessagesGroup()) == null || (currentPosition = u1Var.getCurrentPosition()) == null || currentPosition.siblingHeights == null) {
+            return;
+        }
+        Point point = AndroidUtilities.displaySize;
+        float max = Math.max(point.x, point.y) * 0.5f;
+        int extraInsetHeight = u1Var.getExtraInsetHeight();
+        int i11 = 0;
+        while (true) {
+            if (i11 >= currentPosition.siblingHeights.length) {
+                break;
+            }
+            extraInsetHeight += (int) Math.ceil(r3[i11] * max);
+            i11++;
+        }
+        int round = (Math.round(AndroidUtilities.density * 7.0f) * (currentPosition.maxY - currentPosition.minY)) + extraInsetHeight;
+        int size = currentMessagesGroup.posArray.size();
+        while (true) {
+            if (i10 < size) {
+                MessageObject.GroupedMessagePosition groupedMessagePosition = currentMessagesGroup.posArray.get(i10);
+                byte b10 = groupedMessagePosition.minY;
+                byte b11 = currentPosition.minY;
+                if (b10 == b11 && ((groupedMessagePosition.minX != currentPosition.minX || groupedMessagePosition.maxX != currentPosition.maxX || b10 != b11 || groupedMessagePosition.maxY != currentPosition.maxY) && b10 == b11)) {
+                    round = org.telegram.messenger.q.A(4.0f, (int) Math.ceil(max * groupedMessagePosition.ph), round);
+                    break;
                 }
+                i10++;
+            } else {
+                break;
             }
         }
-        return false;
-    }
-
-    @Override // s4.t
-    public final boolean C1(View view) {
-        if (view instanceof org.telegram.ui.Cells.u1) {
-            return !((org.telegram.ui.Cells.u1) view).getMessageObject().isOutOwner();
-        }
-        return false;
-    }
-
-    @Override // s4.s, s4.b0, s4.n0
-    public final boolean y0() {
-        return false;
+        rect.bottom = -round;
     }
 }

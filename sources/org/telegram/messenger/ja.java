@@ -1,51 +1,41 @@
 package org.telegram.messenger;
 
-import j$.util.function.Function$-CC;
-import java.util.function.Function;
-import org.telegram.messenger.TranslateController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ja implements Function {
+public final /* synthetic */ class ja implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ TLRPC.Chat c;
 
-    public /* synthetic */ ja(int i10) {
+    public /* synthetic */ ja(MessagesController messagesController, TLRPC.Chat chat, int i10) {
         this.a = i10;
+        this.b = messagesController;
+        this.c = chat;
     }
 
-    public /* synthetic */ Function andThen(Function function) {
-        int i10 = this.a;
-        return Function$-CC.$default$andThen(this, function);
-    }
-
-    @Override // java.util.function.Function
-    public final Object apply(Object obj) {
-        String valueOf;
-        String lambda$applyAppConfig$34;
-        Long lambda$new$14;
-        int[] lambda$new$15;
-        String str;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                valueOf = String.valueOf((Long) obj);
-                return valueOf;
+                this.b.lambda$processUpdateArray$416(this.c);
+                break;
             case 1:
-                lambda$applyAppConfig$34 = MessagesController.lambda$applyAppConfig$34((int[]) obj);
-                return lambda$applyAppConfig$34;
+                this.b.lambda$processLoadedDialogs$217(this.c);
+                break;
             case 2:
-                lambda$new$14 = MessagesController.lambda$new$14((String) obj);
-                return lambda$new$14;
+                this.b.lambda$addOrRemoveActiveVoiceChat$60(this.c);
+                break;
             case 3:
-                lambda$new$15 = MessagesController.lambda$new$15((String) obj);
-                return lambda$new$15;
+                this.b.lambda$putChat$57(this.c);
+                break;
+            case 4:
+                this.b.lambda$putChat$58(this.c);
+                break;
             default:
-                str = ((TranslateController.Language) obj).displayName;
-                return str;
+                this.b.lambda$putChat$59(this.c);
+                break;
         }
-    }
-
-    public /* synthetic */ Function compose(Function function) {
-        int i10 = this.a;
-        return Function$-CC.$default$compose(this, function);
     }
 }

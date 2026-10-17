@@ -1,37 +1,35 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class q9 implements o1.f {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+import android.animation.ValueAnimator;
 
-    public /* synthetic */ q9(Object obj, int i10) {
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class q9 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ y9 b;
+
+    public /* synthetic */ q9(y9 y9Var, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = y9Var;
     }
 
-    @Override // o1.f
-    public final void a(o1.h hVar, boolean z10, float f7, float f10) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                z9 z9Var = (z9) this.b;
-                o1.k kVar = z9Var.y;
-                if (kVar != null) {
-                    kVar.c();
-                    z9Var.y = null;
-                    break;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                y9 y9Var = this.b;
+                y9Var.a0 = floatValue;
+                y9Var.b.setAlpha(1.0f - floatValue);
+                if (y9Var.Y == 3) {
+                    y9Var.c.setAlpha(1.0f - y9Var.a0);
                 }
-                break;
-            case 1:
-                wo0 wo0Var = (wo0) this.b;
-                if (hVar == wo0Var.c) {
-                    wo0Var.c = null;
-                    break;
-                }
+                y9Var.v.setAlpha(1.0f - y9Var.a0);
+                y9Var.x = (y9Var.a0 * 0.25f) + 0.5f;
+                y9Var.fragmentView.invalidate();
                 break;
             default:
-                ((uu0) this.b).D();
+                this.b.v.invalidate();
                 break;
         }
     }

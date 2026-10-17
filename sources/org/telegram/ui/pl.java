@@ -1,85 +1,69 @@
 package org.telegram.ui;
 
-import android.animation.AnimatorSet;
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class pl extends FrameLayout {
-    public float a;
-    public float b;
-    public final /* synthetic */ fo c;
+public final class pl extends bu0 {
+    public final /* synthetic */ MessageObject a;
+    public final /* synthetic */ MediaController.PhotoEntry b;
+    public final /* synthetic */ sn c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pl(fo foVar, Activity activity) {
-        super(activity);
-        this.c = foVar;
-        setOnLongClickListener(new u(this, 2));
+    public pl(sn snVar, MessageObject messageObject, MediaController.PhotoEntry photoEntry) {
+        this.c = snVar;
+        this.a = messageObject;
+        this.b = photoEntry;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        fo foVar = this.c;
-        if (view == foVar.z2) {
-            canvas.save();
-            canvas.clipRect(0, 0, getMeasuredWidth(), AndroidUtilities.dp(48.0f));
-        }
-        org.telegram.ui.ActionBar.h5[] h5VarArr = foVar.D2;
-        if (view != h5VarArr[0] && view != h5VarArr[1]) {
-            boolean drawChild = super.drawChild(canvas, view, j10);
-            if (view == foVar.z2) {
-                canvas.restore();
-            }
-            return drawChild;
-        }
-        canvas.save();
-        canvas.clipRect(0, 0, getMeasuredWidth() - AndroidUtilities.dp(38.0f), getMeasuredHeight());
-        boolean drawChild2 = super.drawChild(canvas, view, j10);
-        canvas.restore();
-        return drawChild2;
+    @Override // org.telegram.ui.bu0, org.telegram.ui.ju0
+    public final lu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        return sn.E1(this.c, this.a, null, i10, z10, true);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        fo foVar = this.c;
-        if (!foVar.A2) {
+    @Override // org.telegram.ui.bu0, org.telegram.ui.ju0
+    public final boolean P() {
+        sn snVar = this.c;
+        if (snVar.Y == null || !snVar.C9()) {
+            return false;
+        }
+        snVar.Y.N();
+        return true;
+    }
+
+    @Override // org.telegram.ui.bu0, org.telegram.ui.ju0
+    public final MessageObject V() {
+        MessageObject messageObject = this.c.p5;
+        MessageObject messageObject2 = this.a;
+        if (messageObject == messageObject2) {
+            return messageObject2;
+        }
+        return null;
+    }
+
+    @Override // org.telegram.ui.bu0, org.telegram.ui.ju0
+    public final void e(CharSequence charSequence) {
+        this.c.Y.c1(charSequence, false);
+    }
+
+    @Override // org.telegram.ui.bu0, org.telegram.ui.ju0
+    public final boolean g() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.bu0, org.telegram.ui.ju0
+    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
+        sn snVar = this.c;
+        if (snVar.p5 != this.a) {
             return;
         }
-        int i12 = 0;
-        while (true) {
-            AnimatorSet[] animatorSetArr = foVar.H2;
-            if (i12 >= animatorSetArr.length) {
-                foVar.A2 = false;
-                return;
-            }
-            AnimatorSet animatorSet = animatorSetArr[i12];
-            if (animatorSet != null) {
-                animatorSet.start();
-            }
-            i12++;
+        MediaController.PhotoEntry photoEntry = this.b;
+        if (photoEntry.isCropped || photoEntry.isPainted || photoEntry.isFiltered || videoEditedInfo != null) {
+            snVar.r(photoEntry, videoEditedInfo, z10, i11, 0, z11, 0L);
+        } else {
+            snVar.Y.b0();
         }
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        this.a = motionEvent.getY();
-        int action = motionEvent.getAction();
-        fo foVar = this.c;
-        if (action == 1) {
-            foVar.finishPreviewFragment();
-        } else if (motionEvent.getAction() == 2) {
-            float f7 = this.b - this.a;
-            foVar.movePreviewFragment(f7);
-            if (f7 < 0.0f) {
-                this.b = this.a;
-            }
-        }
-        return super.onTouchEvent(motionEvent);
     }
 }

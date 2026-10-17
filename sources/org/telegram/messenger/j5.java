@@ -2,27 +2,29 @@ package org.telegram.messenger;
 
 import org.telegram.messenger.ImageLoader;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class j5 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ ImageLoader.HttpImageTask b;
-    public final /* synthetic */ Boolean c;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ j5(ImageLoader.HttpImageTask httpImageTask, Boolean bool, int i10) {
+    public /* synthetic */ j5(ImageLoader.HttpImageTask httpImageTask, long j10, long j11, int i10) {
         this.a = i10;
         this.b = httpImageTask;
-        this.c = bool;
+        this.c = j10;
+        this.d = j11;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$onPostExecute$3(this.c);
+                this.b.lambda$reportProgress$0(this.c, this.d);
                 break;
             default:
-                this.b.lambda$onPostExecute$4(this.c);
+                this.b.lambda$reportProgress$1(this.c, this.d);
                 break;
         }
     }

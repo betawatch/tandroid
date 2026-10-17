@@ -2,70 +2,29 @@ package org.telegram.ui.Components;
 
 import android.app.Activity;
 import android.graphics.Canvas;
-import android.view.View;
-import android.widget.FrameLayout;
+import android.graphics.Paint;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class ne extends FrameLayout {
-    public final /* synthetic */ ChatActivityEnterView a;
+public final class ne extends ah {
+    public final /* synthetic */ ChatActivityEnterView x;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ne(ChatActivityEnterView chatActivityEnterView, Activity activity) {
         super(activity);
-        this.a = chatActivityEnterView;
+        this.x = chatActivityEnterView;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(final Canvas canvas, final View view, final long j10) {
-        ChatActivityEnterView chatActivityEnterView = this.a;
-        if (view != null && view == chatActivityEnterView.E0) {
-            return chatActivityEnterView.d0(canvas, new Utilities.Callback0Return() { // from class: org.telegram.ui.Components.me
-                @Override // org.telegram.messenger.Utilities.Callback0Return
-                public final Object run() {
-                    Boolean valueOf;
-                    valueOf = Boolean.valueOf(super/*android.widget.FrameLayout*/.drawChild(canvas, view, j10));
-                    return valueOf;
-                }
-            });
-        }
-        if (chatActivityEnterView.z4 && view == chatActivityEnterView.e1) {
-            return true;
-        }
-        return super.drawChild(canvas, view, j10);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        ChatActivityEnterView chatActivityEnterView = this.a;
-        if (chatActivityEnterView.B0.isEmpty()) {
+    @Override // android.widget.ImageView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        ChatActivityEnterView chatActivityEnterView = this.x;
+        Paint paint = chatActivityEnterView.Q1;
+        super.onDraw(canvas);
+        if (getTag() == null || chatActivityEnterView.p1 == null || chatActivityEnterView.W0 || MediaDataController.getInstance(chatActivityEnterView.Q).getUnreadStickerSets().isEmpty() || paint == null) {
             return;
         }
-        for (int i14 = 0; i14 < getChildCount(); i14++) {
-            View childAt = getChildAt(i14);
-            Float f7 = (Float) chatActivityEnterView.B0.get(childAt);
-            if (f7 != null) {
-                childAt.setTranslationX(f7.floatValue() - childAt.getLeft());
-                childAt.animate().translationX(0.0f).setDuration(150L).setInterpolator(es.f).start();
-            }
-        }
-        chatActivityEnterView.B0.clear();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        int max = Math.max(AndroidUtilities.dp(44.0f), getMeasuredHeight());
-        ChatActivityEnterView chatActivityEnterView = this.a;
-        ne.e eVar = chatActivityEnterView.f5;
-        if (eVar.e > 0.0f) {
-            eVar.a(max);
-        } else {
-            eVar.c(max);
-        }
-        chatActivityEnterView.L();
+        canvas.drawCircle(AndroidUtilities.dp(9.0f) + (getWidth() / 2), (getHeight() / 2) - AndroidUtilities.dp(8.0f), AndroidUtilities.dp(5.0f), paint);
     }
 }

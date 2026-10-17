@@ -4,22 +4,22 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 import b5.g;
-import c5.y;
+import c5.x;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import com.google.firebase.messaging.s;
+import com.google.firebase.messaging.r;
 import com.google.firebase.messaging.u;
 import java.util.concurrent.atomic.AtomicMarkableReference;
-import m.t3;
-import x9.n;
-import x9.p;
+import m.s3;
+import x9.m;
+import x9.o;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class c {
-    public final p a;
+    public final o a;
 
-    public c(p pVar) {
-        this.a = pVar;
+    public c(o oVar) {
+        this.a = oVar;
     }
 
     public final void a(Throwable th2) {
@@ -27,36 +27,36 @@ public final class c {
             Log.w("FirebaseCrashlytics", "A null value was passed to recordException. Ignoring.", null);
             return;
         }
-        n nVar = this.a.f;
+        m mVar = this.a.f;
         Thread currentThread = Thread.currentThread();
-        nVar.getClass();
+        mVar.getClass();
         long currentTimeMillis = System.currentTimeMillis();
-        s sVar = nVar.e;
-        u uVar = new u(nVar, currentTimeMillis, th2, currentThread);
-        sVar.getClass();
-        sVar.v(new y(uVar, 9));
+        r rVar = mVar.e;
+        u uVar = new u(mVar, currentTimeMillis, th2, currentThread);
+        rVar.getClass();
+        rVar.v(new x(uVar, 9));
     }
 
     public final void b() {
-        p pVar = this.a;
+        o oVar = this.a;
         Boolean bool = Boolean.TRUE;
-        x9.s sVar = pVar.b;
-        synchronized (sVar) {
-            sVar.f = false;
-            sVar.g = bool;
-            SharedPreferences.Editor edit = sVar.a.edit();
+        x9.r rVar = oVar.b;
+        synchronized (rVar) {
+            rVar.f = false;
+            rVar.g = bool;
+            SharedPreferences.Editor edit = rVar.a.edit();
             edit.putBoolean("firebase_crashlytics_collection_enabled", true);
             edit.apply();
-            synchronized (sVar.c) {
+            synchronized (rVar.c) {
                 try {
-                    if (sVar.a()) {
-                        if (!sVar.e) {
-                            sVar.d.trySetResult(null);
-                            sVar.e = true;
+                    if (rVar.a()) {
+                        if (!rVar.e) {
+                            rVar.d.trySetResult(null);
+                            rVar.e = true;
                         }
-                    } else if (sVar.e) {
-                        sVar.d = new TaskCompletionSource();
-                        sVar.e = false;
+                    } else if (rVar.e) {
+                        rVar.d = new TaskCompletionSource();
+                        rVar.e = false;
                     }
                 } finally {
                 }
@@ -65,12 +65,12 @@ public final class c {
     }
 
     public final void c(String str, String str2) {
-        n nVar = this.a.f;
-        nVar.getClass();
+        m mVar = this.a.f;
+        mVar.getClass();
         try {
-            ((c2.b) nVar.d.d).x(str, str2);
+            ((c2.b) mVar.d.d).x(str, str2);
         } catch (IllegalArgumentException e) {
-            Context context = nVar.a;
+            Context context = mVar.a;
             if (context != null && (context.getApplicationInfo().flags & 2) != 0) {
                 throw e;
             }
@@ -79,17 +79,17 @@ public final class c {
     }
 
     public final void d(String str) {
-        t3 t3Var = this.a.f.d;
-        t3Var.getClass();
+        s3 s3Var = this.a.f.d;
+        s3Var.getClass();
         String b10 = y9.d.b(1024, str);
-        synchronized (((AtomicMarkableReference) t3Var.h)) {
+        synchronized (((AtomicMarkableReference) s3Var.h)) {
             try {
-                String str2 = (String) ((AtomicMarkableReference) t3Var.h).getReference();
+                String str2 = (String) ((AtomicMarkableReference) s3Var.h).getReference();
                 if (b10 == null ? str2 == null : b10.equals(str2)) {
                     return;
                 }
-                ((AtomicMarkableReference) t3Var.h).set(b10, true);
-                ((s) t3Var.b).v(new g(t3Var, 1));
+                ((AtomicMarkableReference) s3Var.h).set(b10, true);
+                ((r) s3Var.b).v(new g(s3Var, 1));
             } finally {
             }
         }

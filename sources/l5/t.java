@@ -1,0 +1,74 @@
+package l5;
+
+import android.content.Context;
+import com.google.android.gms.internal.cast.a6;
+import j$.util.DesugarCollections;
+import java.nio.charset.Charset;
+import java.util.Collections;
+import java.util.Set;
+import java.util.concurrent.Executor;
+import org.telegram.ui.web.z1;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes.dex */
+public final class t {
+    public static volatile k e;
+    public final u5.a a;
+    public final u5.a b;
+    public final q5.b c;
+    public final ea.b d;
+
+    public t(u5.a aVar, u5.a aVar2, q5.b bVar, ea.b bVar2, com.google.firebase.messaging.r rVar) {
+        this.a = aVar;
+        this.b = aVar2;
+        this.c = bVar;
+        this.d = bVar2;
+        ((Executor) rVar.b).execute(new z1(rVar, 11));
+    }
+
+    public static t a() {
+        k kVar = e;
+        if (kVar != null) {
+            return (t) kVar.f.get();
+        }
+        throw new IllegalStateException("Not initialized!");
+    }
+
+    public static void b(Context context) {
+        if (e == null) {
+            synchronized (t.class) {
+                try {
+                    if (e == null) {
+                        j jVar = new j();
+                        context.getClass();
+                        jVar.a = context;
+                        e = jVar.a();
+                    }
+                } catch (Throwable th2) {
+                    throw th2;
+                }
+            }
+        }
+    }
+
+    public final r c(l lVar) {
+        byte[] bytes;
+        Set unmodifiableSet = lVar != null ? DesugarCollections.unmodifiableSet(j5.a.d) : Collections.singleton(new i5.c("proto"));
+        androidx.biometric.e a2 = i.a();
+        lVar.getClass();
+        a2.b = "cct";
+        j5.a aVar = (j5.a) lVar;
+        String str = aVar.a;
+        String str2 = aVar.b;
+        if (str2 == null && str == null) {
+            bytes = null;
+        } else {
+            if (str2 == null) {
+                str2 = "";
+            }
+            bytes = a6.k("1$", str, "\\", str2).getBytes(Charset.forName("UTF-8"));
+        }
+        a2.c = bytes;
+        return new r(unmodifiableSet, a2.g(), this);
+    }
+}

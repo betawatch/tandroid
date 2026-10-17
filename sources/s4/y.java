@@ -10,16 +10,15 @@ import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewParent;
 import androidx.recyclerview.widget.RecyclerView;
-import com.google.android.gms.internal.play_billing.k3;
+import com.google.android.gms.internal.cast.a6;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
-import ji.h5;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.Components.hm0;
-import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.dm0;
+import org.telegram.ui.Components.im0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public class y extends m0 {
     public int E;
@@ -28,7 +27,7 @@ public class y extends m0 {
     public VelocityTracker J;
     public ArrayList K;
     public ArrayList L;
-    public h5 N;
+    public k0.b N;
     public w O;
     public Rect Q;
     public long R;
@@ -47,9 +46,9 @@ public class y extends m0 {
     public int w = -1;
     public int y = 0;
     public final ArrayList F = new ArrayList();
-    public final p4.s0 I = new p4.s0(this, 5);
+    public final p4.s0 I = new p4.s0(this, 4);
     public View M = null;
-    public final hm0 P = new hm0(this);
+    public final dm0 P = new dm0(this);
 
     public y(v vVar) {
         this.x = vVar;
@@ -92,14 +91,14 @@ public class y extends m0 {
             if (f12 == f13) {
                 uVar.r = b1Var2.a.getTranslationX();
             } else {
-                uVar.r = k3.y(f13, f12, uVar.x, f12);
+                uVar.r = a6.x(f13, f12, uVar.x, f12);
             }
             float f14 = uVar.b;
             float f15 = uVar.d;
             if (f14 == f15) {
                 uVar.s = b1Var2.a.getTranslationY();
             } else {
-                uVar.s = k3.y(f15, f14, uVar.x, f14);
+                uVar.s = a6.x(f15, f14, uVar.x, f14);
             }
             int save = canvas.save();
             vVar.m(canvas, recyclerView, uVar.e, uVar.r, uVar.s, uVar.f, false);
@@ -148,17 +147,17 @@ public class y extends m0 {
         }
     }
 
-    public final void d(mm0 mm0Var) {
+    public final void d(im0 im0Var) {
         RecyclerView recyclerView = this.H;
-        if (recyclerView == mm0Var) {
+        if (recyclerView == im0Var) {
             return;
         }
-        hm0 hm0Var = this.P;
+        dm0 dm0Var = this.P;
         if (recyclerView != null) {
             recyclerView.p0(this);
             RecyclerView recyclerView2 = this.H;
-            recyclerView2.E.remove(hm0Var);
-            if (recyclerView2.F == hm0Var) {
+            recyclerView2.E.remove(dm0Var);
+            if (recyclerView2.F == dm0Var) {
                 recyclerView2.F = null;
             }
             ArrayList arrayList = this.H.P;
@@ -190,21 +189,21 @@ public class y extends m0 {
                 this.N = null;
             }
         }
-        this.H = mm0Var;
-        if (mm0Var != null) {
-            mm0Var.getResources();
+        this.H = im0Var;
+        if (im0Var != null) {
+            im0Var.getResources();
             this.f = AndroidUtilities.dp(120.0f);
             this.h = AndroidUtilities.dp(800.0f);
             this.G = ViewConfiguration.get(this.H.getContext()).getScaledTouchSlop();
             this.H.i(this);
-            this.H.E.add(hm0Var);
+            this.H.E.add(dm0Var);
             RecyclerView recyclerView3 = this.H;
             if (recyclerView3.P == null) {
                 recyclerView3.P = new ArrayList();
             }
             recyclerView3.P.add(this);
             this.O = new w(this);
-            this.N = new h5(this.H.getContext(), this.O);
+            this.N = new k0.b(this.H.getContext(), this.O);
         }
     }
 

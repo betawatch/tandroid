@@ -9,12 +9,11 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import i2.d;
 import j7.c;
 import n7.k;
 import v7.h5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class b extends Binder implements IInterface {
     public final /* synthetic */ int a;
@@ -73,7 +72,7 @@ public final class b extends Binder implements IInterface {
                 PendingIntent pendingIntent = (PendingIntent) (parcel.readInt() != 0 ? (Parcelable) PendingIntent.CREATOR.createFromParcel(parcel) : null);
                 int dataAvail = parcel.dataAvail();
                 if (dataAvail > 0) {
-                    throw new BadParcelableException(d.j(dataAvail, "Parcel data not fully consumed, unread size: "));
+                    throw new BadParcelableException(i0.a.j(dataAvail, "Parcel data not fully consumed, unread size: "));
                 }
                 h5.a(createFromParcel, pendingIntent, (TaskCompletionSource) this.b);
                 return true;
@@ -91,7 +90,7 @@ public final class b extends Binder implements IInterface {
                 Status createFromParcel2 = parcel.readInt() == 0 ? null : creator2.createFromParcel(parcel);
                 int dataAvail2 = parcel.dataAvail();
                 if (dataAvail2 > 0) {
-                    throw new BadParcelableException(d.j(dataAvail2, "Parcel data not fully consumed, unread size: "));
+                    throw new BadParcelableException(i0.a.j(dataAvail2, "Parcel data not fully consumed, unread size: "));
                 }
                 h5.a(createFromParcel2, null, (TaskCompletionSource) this.b);
                 return true;

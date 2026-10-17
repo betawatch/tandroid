@@ -11,7 +11,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class c extends k {
     public final int i;
@@ -30,8 +30,8 @@ public final class c extends k {
     public static final int[] z = {11, 1, 3, 12, 14, 5, 7, 9};
     public static final int[] A = {0, 4, 8, 12, 16, 20, 24, 28};
     public static final int[] B = {-1, -16711936, -16776961, -16711681, -65536, -256, -65281};
-    public static final int[] C = {32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 225, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 233, 93, 237, 243, MediaDataController.MAX_LINKS_COUNT, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, TLRPC.LAYER, 247, 209, 241, 9632};
-    public static final int[] D = {174, 176, 189, 191, 8482, 162, 163, 9834, 224, 32, 232, 226, 234, 238, 244, 251};
+    public static final int[] C = {32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 225, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 233, 93, 237, 243, MediaDataController.MAX_LINKS_COUNT, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 231, 247, 209, 241, 9632};
+    public static final int[] D = {174, 176, 189, 191, 8482, 162, 163, 9834, 224, 32, TLRPC.LAYER, 226, 234, 238, 244, 251};
     public static final int[] E = {193, 201, 211, 218, 220, 252, 8216, 161, 42, 39, 8212, 169, 8480, 8226, 8220, 8221, 192, 194, 199, 200, 202, VoIPService.ID_INCOMING_CALL_PRENOTIFICATION, 235, 206, 207, 239, 212, 217, 249, 219, 171, 187};
     public static final int[] F = {195, 227, 205, 204, 236, 210, 242, 213, 245, 123, 125, 92, 94, 95, 124, 126, 196, 228, 214, 246, 223, 165, 164, 9474, 197, 229, 216, 248, 9484, 9488, 9492, 9496};
     public static final boolean[] G = {false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false, false, true, true, false, true, false, false, true, false, true, true, false, true, false, false, true, true, false, false, true, false, true, true, false};
@@ -71,7 +71,7 @@ public final class c extends k {
         List list = this.o;
         this.p = list;
         list.getClass();
-        return new l(list, 0);
+        return new l(list);
     }
 
     @Override // a4.k, h2.e
@@ -311,9 +311,9 @@ public final class c extends k {
 
     @Override // a4.k, h2.e
     /* renamed from: h */
-    public final z3.k c() {
-        z3.k kVar;
-        z3.k c10 = super.c();
+    public final z3.j c() {
+        z3.j jVar;
+        z3.j c10 = super.c();
         if (c10 != null) {
             return c10;
         }
@@ -322,17 +322,17 @@ public final class c extends k {
             return null;
         }
         long j11 = this.y;
-        if (j11 == -9223372036854775807L || this.e - j11 < j10 || (kVar = (z3.k) this.b.pollFirst()) == null) {
+        if (j11 == -9223372036854775807L || this.e - j11 < j10 || (jVar = (z3.j) this.b.pollFirst()) == null) {
             return null;
         }
         this.o = Collections.EMPTY_LIST;
         this.y = -9223372036854775807L;
         l f7 = f();
         long j12 = this.e;
-        kVar.timeUs = j12;
-        kVar.a = f7;
-        kVar.b = j12;
-        return kVar;
+        jVar.timeUs = j12;
+        jVar.a = f7;
+        jVar.b = j12;
+        return jVar;
     }
 
     @Override // a4.k

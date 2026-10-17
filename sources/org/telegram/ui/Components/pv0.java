@@ -1,582 +1,272 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.text.TextUtils;
+import android.view.View;
+import android.view.ViewGroup;
 import java.util.ArrayList;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ProfileActivity;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class pv0 implements NotificationCenter.NotificationCenterDelegate {
-    public final NotificationCenter.ObserversGroup E;
-    public boolean f;
-    public boolean h;
-    public final mv0[] n;
-    public final long r;
-    public final long s;
-    public long v;
-    public final org.telegram.ui.ActionBar.m2 w;
-    public boolean y;
-    public int[] a = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
-    public int[] b = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
-    public final int[] c = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
-    public final int[] d = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
-    public final int[] e = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
-    public final ArrayList x = new ArrayList();
+public class pv0 extends mv0 {
+    public boolean E;
+    public final /* synthetic */ sv0 F;
+    public final boolean h;
+    public final int n;
+    public final ArrayList r;
+    public ci.a7 s;
+    public final int v;
+    public final nv0 w;
+    public boolean x;
+    public final ArrayList y;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public pv0(org.telegram.ui.ActionBar.m2 m2Var) {
-        TLRPC.ChatFull chatFull;
-        this.w = m2Var;
-        final int i10 = 1;
-        final int i11 = 0;
-        if (m2Var instanceof ch) {
-            ch chVar = (ch) m2Var;
-            long a2 = chVar.a();
-            this.r = a2;
-            this.v = chVar.I();
-            this.s = chVar.d();
-            if (a2 != m2Var.getUserConfig().getClientUserId()) {
-                m2Var.getMessagesController().getSavedMessagesController().hasSavedMessages(a2, new Utilities.Callback(this) { // from class: org.telegram.ui.Components.ov0
-                    public final /* synthetic */ pv0 b;
+    public pv0(sv0 sv0Var, Context context, boolean z10) {
+        this(sv0Var, context, 0, z10);
+    }
 
-                    {
-                        this.b = this;
-                    }
+    @Override // org.telegram.ui.Components.mv0, org.telegram.ui.Components.hm0
+    public final boolean D(s4.b1 b1Var) {
+        return false;
+    }
 
-                    @Override // org.telegram.messenger.Utilities.Callback
-                    public final void run(Object obj) {
-                        Boolean bool = (Boolean) obj;
-                        switch (i11) {
-                            case 0:
-                                pv0 pv0Var = this.b;
-                                ArrayList arrayList = pv0Var.x;
-                                boolean booleanValue = bool.booleanValue();
-                                pv0Var.f = booleanValue;
-                                pv0Var.h = true;
-                                if (booleanValue) {
-                                    int size = arrayList.size();
-                                    for (int i12 = 0; i12 < size; i12++) {
-                                        ((qv0) arrayList.get(i12)).M();
-                                    }
-                                    break;
-                                }
-                                break;
-                            default:
-                                pv0 pv0Var2 = this.b;
-                                ArrayList arrayList2 = pv0Var2.x;
-                                boolean booleanValue2 = bool.booleanValue();
-                                pv0Var2.f = booleanValue2;
-                                pv0Var2.h = true;
-                                if (booleanValue2) {
-                                    int size2 = arrayList2.size();
-                                    for (int i13 = 0; i13 < size2; i13++) {
-                                        ((qv0) arrayList2.get(i13)).M();
-                                    }
-                                    break;
-                                }
-                                break;
-                        }
-                    }
-                });
+    @Override // org.telegram.ui.Components.mv0, org.telegram.ui.Components.ql0
+    public final String F(int i10) {
+        MessageObject messageObject;
+        TL_stories.StoryItem storyItem;
+        ci.a7 a7Var = this.s;
+        if (a7Var == null || i10 < 0 || i10 >= a7Var.i.size() || (messageObject = (MessageObject) this.s.i.get(i10)) == null || (storyItem = messageObject.storyItem) == null) {
+            return null;
+        }
+        return LocaleController.formatYearMont(storyItem.date, true);
+    }
+
+    @Override // org.telegram.ui.Components.mv0, org.telegram.ui.Components.ql0
+    public final void I() {
+        this.F.e1(this.h ? 9 : 8, true);
+    }
+
+    public final boolean M(int i10) {
+        ci.a7 a7Var;
+        if (this.h || (a7Var = this.s) == null) {
+            return false;
+        }
+        if (a7Var instanceof ci.t6) {
+            sv0 sv0Var = this.F;
+            TLRPC.User user = MessagesController.getInstance(sv0Var.v1.getCurrentAccount()).getUser(Long.valueOf(sv0Var.j1));
+            return user != null && user.bot && user.bot_has_main_app && user.bot_can_edit;
+        }
+        if (i10 < 0 || i10 >= a7Var.i.size()) {
+            return false;
+        }
+        MessageObject messageObject = (MessageObject) this.s.i.get(i10);
+        ci.a7 a7Var2 = this.s;
+        if (a7Var2.f > 0) {
+            return true;
+        }
+        return a7Var2.m(messageObject.getId());
+    }
+
+    public final void N() {
+        lu0 lu0Var;
+        lu0 lu0Var2;
+        lu0 lu0Var3;
+        lu0 lu0Var4;
+        ci.a7 a7Var = this.s;
+        if (a7Var == null || this.h) {
+            return;
+        }
+        sv0 sv0Var = this.F;
+        boolean z10 = sv0Var.l1;
+        lu0[] lu0VarArr = sv0Var.k0;
+        int[] iArr = sv0Var.m1;
+        if ((!z10 || (sv0Var.k1 && a7Var.g() > 1)) && this.s.g() > 0 && !sv0Var.x0()) {
+            if (this.s.g() < 5) {
+                iArr[1] = this.s.g();
+                if (lu0VarArr != null && (lu0Var3 = lu0VarArr[0]) != null && (lu0Var4 = lu0VarArr[1]) != null && lu0Var3.h != null && lu0Var4.h != null) {
+                    sv0Var.o1(false);
+                }
+                sv0Var.k1 = iArr[1] == 1;
+            } else if (sv0Var.k1) {
+                sv0Var.k1 = false;
+                iArr[1] = Math.max(2, SharedConfig.storiesColumnsCount);
+                if (lu0VarArr != null && (lu0Var = lu0VarArr[0]) != null && (lu0Var2 = lu0VarArr[1]) != null && lu0Var.h != null && lu0Var2.h != null) {
+                    sv0Var.o1(false);
+                }
             }
-        } else if (m2Var instanceof ProfileActivity) {
-            ProfileActivity profileActivity = (ProfileActivity) m2Var;
-            if (profileActivity.h1) {
-                this.r = profileActivity.getUserConfig().getClientUserId();
-                this.s = profileActivity.a();
+            sv0Var.l1 = true;
+        }
+    }
+
+    public final int O() {
+        sv0 sv0Var = this.F;
+        xt0 xt0Var = sv0Var.H;
+        int[] iArr = sv0Var.m1;
+        return this == xt0Var ? iArr[0] : sv0.v(sv0Var, this) != -1 ? iArr[1] : sv0Var.q1;
+    }
+
+    public final void P() {
+        if (this.s == null) {
+            return;
+        }
+        int O = O();
+        this.s.p(Math.min(100, Math.max(1, O / 2) * O * O), false);
+    }
+
+    @Override // org.telegram.ui.Components.mv0, s4.g0
+    public final int h() {
+        if (this.s == null) {
+            return 0;
+        }
+        return this.r.size() + ((this.s.l() && this.F.j0()) ? 0 : this.s.g());
+    }
+
+    @Override // org.telegram.ui.Components.mv0, s4.g0
+    public final int j(int i10) {
+        return 19;
+    }
+
+    @Override // org.telegram.ui.Components.mv0, s4.g0
+    public final int k() {
+        return h();
+    }
+
+    @Override // s4.g0
+    public void l() {
+        if (this.s != null) {
+            sv0 sv0Var = this.F;
+            if (sv0Var.s0()) {
+                ArrayList arrayList = this.r;
+                arrayList.clear();
+                ArrayList E = MessagesController.getInstance(this.s.c).getStoriesController().E(sv0Var.j1);
+                if (E != null) {
+                    arrayList.addAll(E);
+                }
+            }
+        }
+        super.l();
+        N();
+    }
+
+    @Override // org.telegram.ui.Components.mv0, s4.g0
+    public final void v(s4.b1 b1Var, int i10) {
+        if (this.s != null && b1Var.f == 19) {
+            View view = b1Var.a;
+            if (view instanceof org.telegram.ui.Cells.s7) {
+                org.telegram.ui.Cells.s7 s7Var = (org.telegram.ui.Cells.s7) view;
+                s7Var.d0 = true;
+                ArrayList arrayList = this.r;
+                if (i10 >= 0 && i10 < arrayList.size()) {
+                    ci.h7 h7Var = (ci.h7) arrayList.get(i10);
+                    s7Var.f0 = false;
+                    if (h7Var.K == null) {
+                        TL_stories.TL_storyItem tL_storyItem = new TL_stories.TL_storyItem();
+                        long j10 = h7Var.a;
+                        int i11 = (int) (j10 ^ (j10 >>> 32));
+                        tL_storyItem.messageId = i11;
+                        tL_storyItem.id = i11;
+                        tL_storyItem.attachPath = h7Var.f;
+                        ov0 ov0Var = new ov0(this.s.c, tL_storyItem);
+                        h7Var.K = ov0Var;
+                        ov0Var.uploadingStory = h7Var;
+                    }
+                    s7Var.k(h7Var.K, O(), false);
+                    s7Var.d0 = true;
+                    s7Var.setReorder(false);
+                    s7Var.i(false, false);
+                    return;
+                }
+                int size = i10 - arrayList.size();
+                if (size < 0 || size >= this.s.i.size()) {
+                    s7Var.f0 = false;
+                    s7Var.k(null, O(), false);
+                    s7Var.d0 = true;
+                    return;
+                }
+                MessageObject messageObject = (MessageObject) this.s.i.get(size);
+                s7Var.f0 = messageObject != null && this.s.m(messageObject.getId());
+                sv0 sv0Var = this.F;
+                s7Var.setReorder(sv0Var.s0() || s7Var.f0);
+                s7Var.h = sv0Var.v0();
+                s7Var.k(messageObject, O(), false);
+                if (!sv0Var.C1 || messageObject == null) {
+                    s7Var.i(false, false);
+                } else {
+                    s7Var.i(sv0Var.Z0[(messageObject.getDialogId() > sv0Var.j1 ? 1 : (messageObject.getDialogId() == sv0Var.j1 ? 0 : -1)) == 0 ? (char) 0 : (char) 1].indexOfKey(messageObject.getId()) >= 0, true);
+                }
+                s7Var.l(this.x, false);
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.Components.mv0, s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        s4.b1 x10 = super.x(viewGroup, i10);
+        View view = x10.a;
+        if (view instanceof org.telegram.ui.Cells.s7) {
+            ((org.telegram.ui.Cells.s7) view).d0 = true;
+        }
+        return x10;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pv0(sv0 sv0Var, Context context, int i10, boolean z10) {
+        super(sv0Var, context);
+        int i11;
+        TLRPC.User user;
+        this.F = sv0Var;
+        this.r = new ArrayList();
+        this.y = new ArrayList();
+        this.h = z10;
+        this.n = i10;
+        org.telegram.ui.ActionBar.n2 n2Var = sv0Var.v1;
+        long j10 = sv0Var.j1;
+        int currentAccount = n2Var.getCurrentAccount();
+        if (!TextUtils.isEmpty(sv0Var.getStoriesHashtag())) {
+            if (sv0Var.T1 == null) {
+                sv0Var.T1 = new ci.u6(currentAccount, TextUtils.isEmpty(sv0Var.getStoriesHashtagUsername()) ? null : sv0Var.getStoriesHashtagUsername(), sv0Var.getStoriesHashtag());
+            }
+            this.s = sv0Var.T1;
+        } else if (sv0Var.getStoriesArea() != null) {
+            if (sv0Var.T1 == null) {
+                sv0Var.T1 = new ci.u6(currentAccount, sv0Var.getStoriesArea());
+            }
+            this.s = sv0Var.T1;
+        } else if ((!z10 || sv0Var.x0()) && (z10 || !sv0Var.r0())) {
+            int i12 = 1;
+            boolean z11 = j10 > 0 && (user = MessagesController.getInstance(currentAccount).getUser(Long.valueOf(j10))) != null && user.bot;
+            if (i10 > 0) {
+                this.s = n2Var.getMessagesController().getStoriesController().A(sv0Var.j1, 0, i10, true);
             } else {
-                long a10 = profileActivity.a();
-                this.r = a10;
-                this.s = profileActivity.g1;
-                TLRPC.ChatFull chatFull2 = profileActivity.u2;
-                if (chatFull2 != null) {
-                    c(chatFull2);
-                }
-                if (a10 != m2Var.getUserConfig().getClientUserId()) {
-                    m2Var.getMessagesController().getSavedMessagesController().hasSavedMessages(a10, new Utilities.Callback(this) { // from class: org.telegram.ui.Components.ov0
-                        public final /* synthetic */ pv0 b;
-
-                        {
-                            this.b = this;
-                        }
-
-                        @Override // org.telegram.messenger.Utilities.Callback
-                        public final void run(Object obj) {
-                            Boolean bool = (Boolean) obj;
-                            switch (i10) {
-                                case 0:
-                                    pv0 pv0Var = this.b;
-                                    ArrayList arrayList = pv0Var.x;
-                                    boolean booleanValue = bool.booleanValue();
-                                    pv0Var.f = booleanValue;
-                                    pv0Var.h = true;
-                                    if (booleanValue) {
-                                        int size = arrayList.size();
-                                        for (int i12 = 0; i12 < size; i12++) {
-                                            ((qv0) arrayList.get(i12)).M();
-                                        }
-                                        break;
-                                    }
-                                    break;
-                                default:
-                                    pv0 pv0Var2 = this.b;
-                                    ArrayList arrayList2 = pv0Var2.x;
-                                    boolean booleanValue2 = bool.booleanValue();
-                                    pv0Var2.f = booleanValue2;
-                                    pv0Var2.h = true;
-                                    if (booleanValue2) {
-                                        int size2 = arrayList2.size();
-                                        for (int i13 = 0; i13 < size2; i13++) {
-                                            ((qv0) arrayList2.get(i13)).M();
-                                        }
-                                        break;
-                                    }
-                                    break;
-                            }
-                        }
-                    });
-                }
-            }
-        } else if (m2Var instanceof cb0) {
-            this.r = ((cb0) m2Var).e;
-        } else if (m2Var instanceof org.telegram.ui.yy) {
-            this.r = m2Var.getUserConfig().getClientUserId();
-        }
-        if (this.v == 0 && DialogObject.isChatDialog(this.r) && (chatFull = m2Var.getMessagesController().getChatFull(-this.r)) != null) {
-            long j10 = chatFull.migrated_from_chat_id;
-            if (j10 != 0) {
-                this.v = -j10;
-            }
-        }
-        this.n = new mv0[9];
-        int i12 = 0;
-        while (true) {
-            mv0[] mv0VarArr = this.n;
-            if (i12 >= mv0VarArr.length) {
-                break;
-            }
-            mv0VarArr[i12] = new mv0();
-            this.n[i12].j[0] = DialogObject.isEncryptedDialog(this.r) ? TLObject.FLAG_31 : Integer.MAX_VALUE;
-            this.n[i12].j[1] = Integer.MAX_VALUE;
-            i12++;
-        }
-        a();
-        org.telegram.ui.ActionBar.m2 m2Var2 = this.w;
-        if (m2Var2 == null) {
-            this.E = null;
-        } else {
-            this.E = m2Var2.getNotificationCenter().createObserversGroup(this).add(NotificationCenter.mediaCountsDidLoad).add(NotificationCenter.mediaCountDidLoad).add(NotificationCenter.didReceiveNewMessages).add(NotificationCenter.messageReceivedByServer).add(NotificationCenter.mediaDidLoad).add(NotificationCenter.messagesDeleted).add(NotificationCenter.replaceMessagesObjects).add(NotificationCenter.chatInfoDidLoad).add(NotificationCenter.fileLoaded).add(NotificationCenter.storiesListUpdated).add(NotificationCenter.savedMessagesDialogsUpdate);
-        }
-    }
-
-    public final void a() {
-        org.telegram.ui.ActionBar.m2 m2Var = this.w;
-        if (m2Var == null) {
-            return;
-        }
-        m2Var.getMediaDataController().getMediaCounts(this.r, this.s, m2Var.getClassGuid());
-        if (this.v != 0) {
-            m2Var.getMediaDataController().getMediaCounts(this.v, this.s, m2Var.getClassGuid());
-        }
-    }
-
-    public final void b(org.telegram.ui.ActionBar.m2 m2Var) {
-        if (m2Var != this.w) {
-            return;
-        }
-        this.x.clear();
-        NotificationCenter.ObserversGroup observersGroup = this.E;
-        if (observersGroup != null) {
-            observersGroup.removeAllObservers();
-        }
-    }
-
-    public final void c(TLRPC.ChatFull chatFull) {
-        org.telegram.ui.ActionBar.m2 m2Var = this.w;
-        if (m2Var == null || chatFull == null) {
-            return;
-        }
-        long j10 = chatFull.migrated_from_chat_id;
-        if (j10 == 0 || this.v != 0) {
-            return;
-        }
-        this.v = -j10;
-        m2Var.getMediaDataController().getMediaCounts(this.v, this.s, m2Var.getClassGuid());
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:34:0x009b  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x00f1  */
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        int i12;
-        int mediaType;
-        int i13;
-        int i14;
-        int i15;
-        int i16;
-        int i17 = 0;
-        boolean z10 = true;
-        if (i10 == NotificationCenter.mediaCountsDidLoad) {
-            long longValue = ((Long) objArr[0]).longValue();
-            long longValue2 = ((Long) objArr[1]).longValue();
-            if (this.s == longValue2) {
-                long j10 = this.r;
-                if (longValue == j10 || longValue == this.v) {
-                    int[] iArr = (int[]) objArr[2];
-                    if (longValue == j10) {
-                        this.a = iArr;
-                    } else {
-                        this.b = iArr;
-                    }
-                    for (int i18 = 0; i18 < iArr.length; i18++) {
-                        int i19 = this.a[i18];
-                        if (i19 >= 0 && (i16 = this.b[i18]) >= 0) {
-                            this.c[i18] = i19 + i16;
-                        } else if (i19 >= 0) {
-                            this.c[i18] = i19;
-                        } else {
-                            this.c[i18] = Math.max(this.b[i18], 0);
-                        }
-                        if (longValue == this.r && this.c[i18] != 0 && this.d[i18] != this.a[i18]) {
-                            if (i18 == 0) {
-                                int i20 = this.n[0].q;
-                                if (i20 == 1) {
-                                    i15 = 6;
-                                } else if (i20 == 2) {
-                                    i15 = 7;
-                                }
-                                this.w.getMediaDataController().loadMedia(longValue, this.d[i18] == -1 ? 30 : 20, 0, 0, i15, longValue2, 1, this.w.getClassGuid(), this.n[i18].p, null, null);
-                                this.d[i18] = this.a[i18];
-                            }
-                            i15 = i18;
-                            this.w.getMediaDataController().loadMedia(longValue, this.d[i18] == -1 ? 30 : 20, 0, 0, i15, longValue2, 1, this.w.getClassGuid(), this.n[i18].p, null, null);
-                            this.d[i18] = this.a[i18];
-                        } else if (longValue == this.v && this.c[i18] != 0 && this.e[i18] != this.b[i18]) {
-                            if (i18 == 0) {
-                                int i21 = this.n[0].q;
-                                if (i21 == 1) {
-                                    i14 = 6;
-                                } else if (i21 == 2) {
-                                    i14 = 7;
-                                }
-                                this.w.getMediaDataController().loadMedia(longValue, this.e[i18] == -1 ? 30 : 20, 0, 0, i14, longValue2, 1, this.w.getClassGuid(), this.n[i18].p, null, null);
-                                this.e[i18] = this.b[i18];
-                            }
-                            i14 = i18;
-                            this.w.getMediaDataController().loadMedia(longValue, this.e[i18] == -1 ? 30 : 20, 0, 0, i14, longValue2, 1, this.w.getClassGuid(), this.n[i18].p, null, null);
-                            this.e[i18] = this.b[i18];
-                        }
-                    }
-                    this.y = true;
-                    int size = this.x.size();
-                    while (i17 < size) {
-                        ((qv0) this.x.get(i17)).M();
-                        i17++;
-                    }
-                    return;
-                }
-                return;
-            }
-            return;
-        }
-        if (i10 == NotificationCenter.mediaCountDidLoad) {
-            long longValue3 = ((Long) objArr[0]).longValue();
-            long longValue4 = ((Long) objArr[1]).longValue();
-            if ((longValue3 == this.r || longValue3 == this.v) && this.s == longValue4) {
-                int intValue = ((Integer) objArr[4]).intValue();
-                int intValue2 = ((Integer) objArr[2]).intValue();
-                if (longValue3 == this.r) {
-                    this.a[intValue] = intValue2;
-                } else {
-                    this.b[intValue] = intValue2;
-                }
-                int i22 = this.a[intValue];
-                if (i22 >= 0 && (i13 = this.b[intValue]) >= 0) {
-                    this.c[intValue] = i22 + i13;
-                } else if (i22 >= 0) {
-                    this.c[intValue] = i22;
-                } else {
-                    this.c[intValue] = Math.max(this.b[intValue], 0);
-                }
-                int size2 = this.x.size();
-                while (i17 < size2) {
-                    ((qv0) this.x.get(i17)).M();
-                    i17++;
-                }
-                return;
-            }
-            return;
-        }
-        if (i10 == NotificationCenter.didReceiveNewMessages) {
-            if (((Boolean) objArr[2]).booleanValue()) {
-                return;
-            }
-            long longValue5 = ((Long) objArr[0]).longValue();
-            long j11 = this.r;
-            if (longValue5 == j11 || longValue5 == this.v) {
-                int i23 = longValue5 == j11 ? 0 : 1;
-                boolean isEncryptedDialog = DialogObject.isEncryptedDialog(longValue5);
-                ArrayList arrayList = (ArrayList) objArr[1];
-                org.telegram.ui.ActionBar.m2 m2Var = this.w;
-                int currentAccount = m2Var != null ? m2Var.getCurrentAccount() : -1;
-                for (int i24 = 0; i24 < arrayList.size(); i24++) {
-                    MessageObject messageObject = (MessageObject) arrayList.get(i24);
-                    if (!messageObject.isEphemeral()) {
-                        long j12 = this.s;
-                        if ((j12 == 0 || j12 == MessageObject.getTopicId(currentAccount, messageObject.messageOwner, true)) && MessageObject.getMedia(messageObject.messageOwner) != null && !messageObject.needDrawBluredPreview() && (mediaType = MediaDataController.getMediaType(messageObject.messageOwner)) != -1 && ((mediaType != 0 || this.n[0].q != 2 || messageObject.isVideo()) && (mediaType != 0 || this.n[0].q != 1 || !messageObject.isVideo()))) {
-                            mv0 mv0Var = this.n[mediaType];
-                            if (mv0Var.l) {
-                                mv0Var.a(messageObject, i23, true, isEncryptedDialog);
-                            }
-                            if (this.s == 0) {
-                                int[] iArr2 = this.n[mediaType].f;
-                                iArr2[i23] = iArr2[i23] + 1;
-                            }
-                            if (i23 == 0) {
-                                for (int i25 = 0; i25 < this.n[mediaType].e.size(); i25++) {
-                                    ((vu0) this.n[mediaType].e.get(i25)).b++;
-                                }
-                            }
-                        }
-                    }
-                }
-                a();
-                return;
-            }
-            return;
-        }
-        if (i10 != NotificationCenter.messageReceivedByServer) {
-            if (i10 == NotificationCenter.mediaDidLoad) {
-                long longValue6 = ((Long) objArr[0]).longValue();
-                if (((Integer) objArr[3]).intValue() == this.w.getClassGuid()) {
-                    int intValue3 = ((Integer) objArr[4]).intValue();
-                    ArrayList arrayList2 = (ArrayList) objArr[2];
-                    boolean isEncryptedDialog2 = DialogObject.isEncryptedDialog(longValue6);
-                    int i26 = longValue6 == this.r ? 0 : 1;
-                    if (intValue3 == 0 || intValue3 == 6 || intValue3 == 7) {
-                        if (intValue3 != this.n[0].q) {
-                            return;
-                        } else {
-                            intValue3 = 0;
-                        }
-                    }
-                    if (intValue3 != 0 && intValue3 != 1 && intValue3 != 2 && intValue3 != 4) {
-                        this.n[intValue3].f[i26] = ((Integer) objArr[1]).intValue();
-                    }
-                    this.n[intValue3].i[i26] = ((Boolean) objArr[5]).booleanValue();
-                    for (int i27 = 0; i27 < arrayList2.size(); i27++) {
-                        this.n[intValue3].a((MessageObject) arrayList2.get(i27), i26, false, isEncryptedDialog2);
-                    }
-                    return;
-                }
-                return;
-            }
-            if (i10 == NotificationCenter.messagesDeleted) {
-                if (((Boolean) objArr[2]).booleanValue()) {
-                    return;
-                }
-                long longValue7 = ((Long) objArr[1]).longValue();
-                TLRPC.Chat chat = DialogObject.isChatDialog(this.r) ? this.w.getMessagesController().getChat(Long.valueOf(-this.r)) : null;
-                if (ChatObject.isChannel(chat)) {
-                    if ((longValue7 != 0 || this.v == 0) && longValue7 != chat.id) {
-                        return;
-                    }
-                } else if (longValue7 != 0) {
-                    return;
-                }
-                ArrayList arrayList3 = (ArrayList) objArr[0];
-                org.telegram.ui.ActionBar.m2 m2Var2 = this.w;
-                int currentAccount2 = m2Var2 != null ? m2Var2.getCurrentAccount() : -1;
-                int size3 = arrayList3.size();
-                int i28 = 0;
-                boolean z11 = false;
-                while (i28 < size3) {
-                    int i29 = 0;
-                    boolean z12 = z11;
-                    while (true) {
-                        mv0[] mv0VarArr = this.n;
-                        if (i29 < mv0VarArr.length) {
-                            MessageObject b10 = mv0VarArr[i29].b(((Integer) arrayList3.get(i28)).intValue(), 0);
-                            if (b10 != null) {
-                                if (b10.getDialogId() == this.r && (this.s == 0 || MessageObject.getTopicId(currentAccount2, b10.messageOwner, true) == this.s)) {
-                                    int[] iArr3 = this.a;
-                                    int i30 = iArr3[i29];
-                                    if (i30 > 0) {
-                                        iArr3[i29] = i30 - 1;
-                                    }
-                                } else {
-                                    int[] iArr4 = this.b;
-                                    int i31 = iArr4[i29];
-                                    if (i31 > 0) {
-                                        iArr4[i29] = i31 - 1;
-                                    }
-                                }
-                                z12 = true;
-                            }
-                            i29++;
-                            z12 = z12;
-                        }
-                    }
-                    i28++;
-                    z11 = z12;
-                }
+                ci.i7 storiesController = n2Var.getMessagesController().getStoriesController();
+                long j11 = sv0Var.j1;
                 if (z11) {
-                    int i32 = 0;
-                    while (true) {
-                        int[] iArr5 = this.a;
-                        if (i32 >= iArr5.length) {
-                            break;
-                        }
-                        int i33 = iArr5[i32];
-                        if (i33 >= 0 && (i12 = this.b[i32]) >= 0) {
-                            this.c[i32] = i33 + i12;
-                        } else if (i33 >= 0) {
-                            this.c[i32] = i33;
-                        } else {
-                            this.c[i32] = Math.max(this.b[i32], 0);
-                        }
-                        i32++;
-                    }
-                    int size4 = this.x.size();
-                    while (i17 < size4) {
-                        ((qv0) this.x.get(i17)).M();
-                        i17++;
-                    }
+                    i12 = 4;
+                } else if (!z10) {
+                    i11 = 0;
+                    this.s = storiesController.A(j11, i11, -1, true);
                 }
-                a();
-                return;
+                i11 = i12;
+                this.s = storiesController.A(j11, i11, -1, true);
             }
-            if (i10 != NotificationCenter.replaceMessagesObjects) {
-                if (i10 == NotificationCenter.chatInfoDidLoad) {
-                    TLRPC.ChatFull chatFull = (TLRPC.ChatFull) objArr[0];
-                    long j13 = this.r;
-                    if (j13 >= 0 || chatFull.id != (-j13)) {
-                        return;
-                    }
-                    c(chatFull);
-                    return;
-                }
-                if (i10 == NotificationCenter.fileLoaded) {
-                    ArrayList arrayList4 = new ArrayList();
-                    int i34 = 0;
-                    while (true) {
-                        mv0[] mv0VarArr2 = this.n;
-                        if (i34 >= mv0VarArr2.length) {
-                            break;
-                        }
-                        arrayList4.addAll(mv0VarArr2[i34].a);
-                        i34++;
-                    }
-                    String str = (String) objArr[0];
-                    if (str != null) {
-                        Utilities.globalQueue.postRunnable(new androidx.activity.g(arrayList4, str, i11, 5));
-                        return;
-                    }
-                    return;
-                }
-                if (i10 == NotificationCenter.savedMessagesDialogsUpdate) {
-                    org.telegram.ui.ActionBar.m2 m2Var3 = this.w;
-                    boolean z13 = m2Var3 != null && m2Var3.getMessagesController().getSavedMessagesController().containsDialog(this.r);
-                    if (!this.h || this.f == z13) {
-                        return;
-                    }
-                    this.f = z13;
-                    int size5 = this.x.size();
-                    for (int i35 = 0; i35 < size5; i35++) {
-                        ((qv0) this.x.get(i35)).M();
-                    }
-                    return;
-                }
-                return;
-            }
-            long longValue8 = ((Long) objArr[0]).longValue();
-            long j14 = this.r;
-            if (longValue8 == j14 || longValue8 == this.v) {
-                int i36 = longValue8 == j14 ? 0 : 1;
-                ArrayList arrayList5 = (ArrayList) objArr[1];
-                org.telegram.ui.ActionBar.m2 m2Var4 = this.w;
-                int currentAccount3 = m2Var4 != null ? m2Var4.getCurrentAccount() : -1;
-                int size6 = arrayList5.size();
-                int i37 = 0;
-                while (i37 < size6) {
-                    MessageObject messageObject2 = (MessageObject) arrayList5.get(i37);
-                    int id2 = messageObject2.getId();
-                    long topicId = MessageObject.getTopicId(currentAccount3, messageObject2.messageOwner, z10);
-                    int mediaType2 = MediaDataController.getMediaType(messageObject2.messageOwner);
-                    int i38 = i17;
-                    long j15 = this.s;
-                    if (j15 == 0 || topicId == j15) {
-                        int i39 = i38;
-                        while (true) {
-                            mv0[] mv0VarArr3 = this.n;
-                            if (i39 >= mv0VarArr3.length) {
-                                break;
-                            }
-                            MessageObject messageObject3 = (MessageObject) mv0VarArr3[i39].b[i36].get(id2);
-                            if (messageObject3 != null) {
-                                int mediaType3 = MediaDataController.getMediaType(messageObject2.messageOwner);
-                                if (mediaType2 == -1 || mediaType3 != mediaType2) {
-                                    this.n[i39].b(id2, i36);
-                                    if (i36 == 0) {
-                                        int[] iArr6 = this.a;
-                                        int i40 = iArr6[i39];
-                                        if (i40 > 0) {
-                                            iArr6[i39] = i40 - 1;
-                                        }
-                                    } else {
-                                        int[] iArr7 = this.b;
-                                        int i41 = iArr7[i39];
-                                        if (i41 > 0) {
-                                            iArr7[i39] = i41 - 1;
-                                        }
-                                    }
-                                } else {
-                                    int indexOf = this.n[i39].a.indexOf(messageObject3);
-                                    if (indexOf >= 0) {
-                                        this.n[i39].b[i36].put(id2, messageObject2);
-                                        this.n[i39].a.set(indexOf, messageObject2);
-                                    }
-                                }
-                            } else {
-                                i39++;
-                            }
-                        }
-                    }
-                    i37++;
-                    i17 = i38;
-                    z10 = true;
-                }
-                return;
-            }
-            return;
+        } else {
+            this.s = null;
         }
-        if (((Boolean) objArr[6]).booleanValue()) {
-            return;
+        ci.a7 a7Var = this.s;
+        if (a7Var != null) {
+            this.v = a7Var.o();
+            this.w = new nv0(this, n2Var.getMessagesController().getStoriesController(), sv0Var.j1, this.s.c);
         }
-        Integer num = (Integer) objArr[0];
-        Integer num2 = (Integer) objArr[1];
-        Long l4 = (Long) objArr[3];
-        if (l4.longValue() != this.r && l4.longValue() != this.v) {
-            return;
-        }
-        int i42 = l4.longValue() == this.r ? 0 : 1;
-        while (true) {
-            mv0[] mv0VarArr4 = this.n;
-            if (i17 >= mv0VarArr4.length) {
-                return;
-            }
-            mv0VarArr4[i17].f(i42, num.intValue(), num2.intValue());
-            i17++;
-        }
+        N();
+    }
+
+    @Override // org.telegram.ui.Components.mv0
+    public final int L(int i10) {
+        return i10;
     }
 }

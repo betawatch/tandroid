@@ -1,86 +1,53 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.ShapeDrawable;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class qs0 extends Drawable {
-    public final /* synthetic */ int a;
-    public final ShapeDrawable b;
-    public final Rect c;
+public final class qs0 extends g.o {
+    public final /* synthetic */ os0 c;
+    public final /* synthetic */ sv0 d;
 
-    public qs0(ns0 ns0Var) {
-        this.a = 1;
-        this.b = org.telegram.ui.ActionBar.g6.d0(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), 0);
-        this.c = new Rect();
+    public qs0(sv0 sv0Var, os0 os0Var) {
+        this.d = sv0Var;
+        this.c = os0Var;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                Rect bounds = getBounds();
-                Rect rect = this.c;
-                rect.set(bounds);
-                rect.inset(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(8.0f));
-                ShapeDrawable shapeDrawable = this.b;
-                shapeDrawable.setBounds(rect);
-                shapeDrawable.draw(canvas);
-                break;
-            default:
-                Rect bounds2 = getBounds();
-                Rect rect2 = this.c;
-                rect2.set(bounds2);
-                rect2.inset(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(8.0f));
-                ShapeDrawable shapeDrawable2 = this.b;
-                shapeDrawable2.setBounds(rect2);
-                shapeDrawable2.draw(canvas);
-                break;
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x003c, code lost:
+    
+        if (r3.h.getAdapter().j(r9) == 2) goto L22;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:4:0x0020, code lost:
+    
+        if (r5.j(r9) == 2) goto L22;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:5:0x0023, code lost:
+    
+        r1 = 1;
+     */
+    @Override // g.o
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final int i(int i10) {
+        sv0 sv0Var = this.d;
+        int[] iArr = sv0Var.m1;
+        gu0 gu0Var = sv0Var.O;
+        os0 os0Var = this.c;
+        int i11 = iArr[sv0.q0(os0Var.F) ? 1 : 0];
+        s4.g0 adapter = os0Var.h.getAdapter();
+        xt0 xt0Var = sv0Var.H;
+        if (adapter != xt0Var) {
+            if (sv0.v(sv0Var, os0Var.h.getAdapter()) == -1) {
+                if (os0Var.h.getAdapter() != gu0Var) {
+                    i11 = os0Var.x.J;
+                } else if (os0Var.h.getAdapter() == gu0Var && sv0Var.t1[5].a.isEmpty()) {
+                    i11 = os0Var.x.J;
+                } else {
+                    ps0 ps0Var = os0Var.x;
+                    ps0Var.B1();
+                    i11 = ps0Var.R.get(i10);
+                }
+            }
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        switch (this.a) {
-        }
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        switch (this.a) {
-            case 0:
-                this.b.setAlpha(i10);
-                break;
-            default:
-                this.b.setAlpha(i10);
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        int i10 = this.a;
-    }
-
-    public qs0(rs0 rs0Var) {
-        this.a = 0;
-        int dp = AndroidUtilities.dp(16.0f);
-        int dp2 = AndroidUtilities.dp(16.0f);
-        int i10 = org.telegram.ui.ActionBar.g6.d6;
-        org.telegram.ui.ActionBar.c6 c6Var = rs0Var.c;
-        this.b = org.telegram.ui.ActionBar.g6.d0(dp, dp2, org.telegram.ui.ActionBar.g6.v(org.telegram.ui.ActionBar.g6.w0(i10, c6Var), org.telegram.ui.ActionBar.g6.m1(0.04f, org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.G6, c6Var))));
-        this.c = new Rect();
-    }
-
-    private final void a(ColorFilter colorFilter) {
-    }
-
-    private final void b(ColorFilter colorFilter) {
+        return Math.min(i11, os0Var.x.J);
     }
 }

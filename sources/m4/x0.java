@@ -3,7 +3,7 @@ package m4;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -15,11 +15,11 @@ public final /* synthetic */ class x0 implements Runnable {
     public final /* synthetic */ Object h;
     public final /* synthetic */ Object n;
 
-    public /* synthetic */ x0(i1 i1Var, v vVar, o1 o1Var, e0 e0Var, int i10, int i11, g1 g1Var) {
+    public /* synthetic */ x0(i1 i1Var, v vVar, o1 o1Var, f0 f0Var, int i10, int i11, g1 g1Var) {
         this.d = i1Var;
         this.e = vVar;
         this.f = o1Var;
-        this.h = e0Var;
+        this.h = f0Var;
         this.b = i10;
         this.c = i11;
         this.n = g1Var;
@@ -32,21 +32,21 @@ public final /* synthetic */ class x0 implements Runnable {
                 i1 i1Var = (i1) this.d;
                 v vVar = (v) this.e;
                 o1 o1Var = (o1) this.f;
-                e0 e0Var = (e0) this.h;
+                f0 f0Var = (f0) this.h;
                 g1 g1Var = (g1) this.n;
-                pi.e eVar = i1Var.b;
-                if (eVar.t(vVar)) {
+                qi.e eVar = i1Var.b;
+                if (eVar.w(vVar)) {
                     int i10 = this.b;
                     if (o1Var == null) {
-                        if (!eVar.v(vVar, this.c)) {
-                            i1.P0(e0Var, vVar, i10, new s1(-4));
+                        if (!eVar.y(vVar, this.c)) {
+                            i1.P0(f0Var, vVar, i10, new s1(-4));
                             break;
                         }
-                    } else if (!eVar.w(vVar, o1Var)) {
-                        i1.P0(e0Var, vVar, i10, new s1(-4));
+                    } else if (!eVar.z(vVar, o1Var)) {
+                        i1.P0(f0Var, vVar, i10, new s1(-4));
                         break;
                     }
-                    g1Var.c(e0Var, vVar, i10);
+                    g1Var.e(f0Var, vVar, i10);
                     break;
                 }
                 break;

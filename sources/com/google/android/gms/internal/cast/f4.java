@@ -11,9 +11,8 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class f4 extends v7.s5 implements j9.y {
     public static final boolean d;
@@ -116,7 +115,7 @@ public abstract class f4 extends v7.s5 implements j9.y {
         try {
             executor.execute(runnable);
         } catch (RuntimeException e7) {
-            e.logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "executeListener", com.google.android.gms.internal.play_billing.k3.k("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e7);
+            e.logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "executeListener", a6.k("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e7);
         }
     }
 
@@ -157,7 +156,7 @@ public abstract class f4 extends v7.s5 implements j9.y {
     /* JADX WARN: Multi-variable type inference failed */
     public String c() {
         if (this instanceof ScheduledFuture) {
-            return org.telegram.ui.Cells.c1.h(((ScheduledFuture) this).getDelay(TimeUnit.MILLISECONDS), "remaining delay=[", " ms]");
+            return r.c.f(((ScheduledFuture) this).getDelay(TimeUnit.MILLISECONDS), "remaining delay=[", " ms]");
         }
         return null;
     }
@@ -187,7 +186,7 @@ public abstract class f4 extends v7.s5 implements j9.y {
             Object f7 = f(this);
             sb2.append("SUCCESS, result=[");
             if (f7 == null) {
-                sb2.append(BuildConfig.BETA_URL);
+                sb2.append("null");
             } else if (f7 == this) {
                 sb2.append("this future");
             } else {

@@ -1,39 +1,61 @@
 package org.telegram.ui.web;
 
-import android.os.Bundle;
-import bi.n9;
-import org.json.JSONObject;
-import org.telegram.ui.yy;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class g0 extends yy {
-    public final /* synthetic */ boolean[] B4;
-    public final /* synthetic */ n9 C4;
-    public final /* synthetic */ c1 D4;
+public interface g0 {
+    void a();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g0(c1 c1Var, Bundle bundle, boolean[] zArr, n9 n9Var) {
-        super(bundle);
-        this.D4 = c1Var;
-        this.B4 = zArr;
-        this.C4 = n9Var;
-    }
+    void b();
 
-    @Override // org.telegram.ui.yy, org.telegram.ui.ActionBar.m2
-    public final void onFragmentDestroy() {
-        JSONObject jSONObject;
-        super.onFragmentDestroy();
-        boolean[] zArr = this.B4;
-        if (zArr[0]) {
-            return;
-        }
-        zArr[0] = true;
-        try {
-            jSONObject = new JSONObject();
-        } catch (Exception unused) {
-            jSONObject = null;
-        }
-        this.D4.x(this.C4, "requested_chat_failed", jSONObject);
-    }
+    void c();
+
+    void d(TLRPC.Document document);
+
+    void e(String str);
+
+    void f(ArrayList arrayList);
+
+    String g(boolean z10, boolean z11);
+
+    boolean h();
+
+    void i(boolean z10);
+
+    void j();
+
+    void k(boolean z10);
+
+    void l(boolean z10, boolean z11, String str, long j10, int i10, int i11, boolean z12, boolean z13, String str2);
+
+    void m(int i10);
+
+    void n(TLRPC.InputInvoice inputInvoice, String str, TLObject tLObject);
+
+    void o(int i10, boolean z10);
+
+    void p(boolean z10);
+
+    void q(boolean z10, boolean z11, String str, long j10, int i10, int i11, boolean z12, boolean z13);
+
+    void r(int i10);
+
+    void s();
+
+    void t(boolean z10);
+
+    void u(int i10, int i11, boolean z10);
+
+    void v(TLRPC.User user, String str, ArrayList arrayList);
+
+    void w(boolean z10);
+
+    void x(boolean z10);
+
+    void y();
+
+    gi.y0 z();
 }

@@ -1,60 +1,62 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.view.View;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.ViewGroup;
+import java.lang.reflect.Method;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class p31 extends r71 {
-    public final /* synthetic */ r31 d2;
-    public final /* synthetic */ i71[] e2;
-    public final /* synthetic */ s31 f2;
+public final class p31 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.Components.cn0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p31(s31 s31Var, s31 s31Var2, Activity activity, Integer num, r31 r31Var, i71[] i71VarArr) {
-        super(s31Var2, activity, false, num, 2, null);
-        this.f2 = s31Var;
-        this.d2 = r31Var;
-        this.e2 = i71VarArr;
+    public /* synthetic */ p31(org.telegram.ui.Components.cn0 cn0Var, int i10) {
+        this.a = i10;
+        this.b = cn0Var;
     }
 
-    @Override // org.telegram.ui.r71
-    public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        int i10;
-        if (l4 == null) {
-            return;
-        }
-        s31 s31Var = this.f2;
-        i10 = ((org.telegram.ui.ActionBar.m2) s31Var).currentAccount;
-        MediaDataController.getInstance(i10).setDoubleTapReaction("animated_" + l4);
-        r31 r31Var = this.d2;
-        if (r31Var != null) {
-            r31Var.a(true);
-        }
-        i71 i71Var = this.e2[0];
-        if (i71Var != null) {
-            s31Var.n = null;
-            i71Var.dismiss();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b.b;
+                secretMediaViewer.Z.getNextView().setText((CharSequence) null);
+                jt0 jt0Var = secretMediaViewer.a0;
+                jt0Var.l0 = false;
+                if (jt0Var.m0 >= 0) {
+                    ((ViewGroup.MarginLayoutParams) jt0Var.o0.getLayoutParams()).topMargin = jt0Var.m0;
+                    jt0Var.m0 = -1;
+                    jt0Var.requestLayout();
+                    break;
+                }
+                break;
+            default:
+                ((SecretMediaViewer) this.b.b).Z.setTranslationY(0.0f);
+                break;
         }
     }
 
-    @Override // org.telegram.ui.r71
-    public final void r(a71 a71Var, ah.i1 i1Var) {
-        int i10;
-        s31 s31Var = this.f2;
-        i10 = ((org.telegram.ui.ActionBar.m2) s31Var).currentAccount;
-        MediaDataController.getInstance(i10).setDoubleTapReaction(i1Var.f);
-        r31 r31Var = this.d2;
-        if (r31Var != null) {
-            r31Var.a(true);
-        }
-        i71 i71Var = this.e2[0];
-        if (i71Var != null) {
-            s31Var.n = null;
-            i71Var.dismiss();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                jt0 jt0Var = ((SecretMediaViewer) this.b.b).a0;
+                Method method = jt0Var.f0;
+                if (method != null) {
+                    try {
+                        method.invoke(jt0Var, null);
+                        break;
+                    } catch (Exception e) {
+                        FileLog.e(e);
+                        return;
+                    }
+                }
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
         }
     }
 }

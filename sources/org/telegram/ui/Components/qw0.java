@@ -1,37 +1,46 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+import org.telegram.messenger.DownloadController;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class qw0 extends v60 {
-    public final /* synthetic */ sw0 d;
+public final /* synthetic */ class qw0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TLRPC.Document b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ MessageObject d;
+    public final /* synthetic */ org.telegram.ui.Cells.u1 e;
+    public final /* synthetic */ TLRPC.TL_messages_stickerSet f;
 
-    public qw0(sw0 sw0Var) {
-        this.d = sw0Var;
+    public /* synthetic */ qw0(TLRPC.Document document, int i10, MessageObject messageObject, org.telegram.ui.Cells.u1 u1Var, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, int i11) {
+        this.a = i11;
+        this.b = document;
+        this.c = i10;
+        this.d = messageObject;
+        this.e = u1Var;
+        this.f = tL_messages_stickerSet;
     }
 
-    @Override // org.telegram.ui.Components.dp0
-    public final CharSequence d() {
-        sw0 sw0Var = this.d;
-        int i10 = sw0Var.I;
-        String[] strArr = sw0Var.F;
-        if (i10 < strArr.length) {
-            return strArr[i10];
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                TLRPC.Document document = this.b;
+                String attachFileName = FileLoader.getAttachFileName(document);
+                int i10 = this.c;
+                DownloadController.getInstance(i10).addLoadingFileObserver(attachFileName, this.d, this.e);
+                FileLoader.getInstance(i10).loadFile(document, this.f, 1, 1);
+                break;
+            default:
+                TLRPC.Document document2 = this.b;
+                String attachFileName2 = FileLoader.getAttachFileName(document2);
+                int i11 = this.c;
+                DownloadController.getInstance(i11).addLoadingFileObserver(attachFileName2, this.d, this.e);
+                FileLoader.getInstance(i11).loadFile(document2, this.f, 1, 1);
+                break;
         }
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.v60
-    public final int i() {
-        return this.d.F.length - 1;
-    }
-
-    @Override // org.telegram.ui.Components.v60
-    public final int j() {
-        return this.d.I;
-    }
-
-    @Override // org.telegram.ui.Components.v60
-    public final void k(int i10) {
-        this.d.setOption(i10);
     }
 }

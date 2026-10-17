@@ -1,113 +1,83 @@
 package org.telegram.ui;
 
-import android.util.LongSparseArray;
-import android.view.View;
-import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.SaveToGallerySettingsHelper;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.ColorFilter;
+import android.util.SparseIntArray;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v41 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class v41 extends org.telegram.ui.Components.kw {
+    public final /* synthetic */ int g0;
+    public final /* synthetic */ z51 h0;
 
-    public /* synthetic */ v41(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v41(z51 z51Var, Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10, boolean z11, int i10, lv0 lv0Var, int i11, int i12) {
+        super(context, d6Var, z10, z11, false, true, i10, lv0Var, i11, false);
+        this.h0 = z51Var;
+        this.g0 = i12;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                SaveToGallerySettingsActivity saveToGallerySettingsActivity = (SaveToGallerySettingsActivity) this.b;
-                if (saveToGallerySettingsActivity.d) {
-                    LongSparseArray<SaveToGallerySettingsHelper.DialogException> saveGalleryExceptions = saveToGallerySettingsActivity.getUserConfig().getSaveGalleryExceptions(saveToGallerySettingsActivity.a);
-                    SaveToGallerySettingsHelper.DialogException dialogException = saveToGallerySettingsActivity.c;
-                    saveGalleryExceptions.put(dialogException.dialogId, dialogException);
-                    saveToGallerySettingsActivity.getUserConfig().updateSaveGalleryExceptions(saveToGallerySettingsActivity.a, saveGalleryExceptions);
+    @Override // org.telegram.ui.Components.kw
+    public final ColorFilter getEmojiColorFilter() {
+        return this.h0.k1;
+    }
+
+    @Override // org.telegram.ui.Components.kw
+    public final boolean h(int i10) {
+        int i11;
+        n51 n51Var;
+        z51 z51Var = this.h0;
+        SparseIntArray sparseIntArray = z51Var.x0;
+        if (z51Var.w1) {
+            return false;
+        }
+        int i12 = this.g0;
+        if (i12 == 4 && i10 == 0) {
+            z51Var.Q = !z51Var.Q;
+            z51Var.d0.setVisibility(8);
+            org.telegram.ui.Components.kw kwVar = z51Var.c0[z51Var.Q ? 1 : 0];
+            z51Var.d0 = kwVar;
+            kwVar.setVisibility(0);
+            z51Var.d0.x.setDrawable(getContext().getDrawable(z51Var.Q ? R.drawable.msg_emoji_stickers : R.drawable.msg_emoji_smiles));
+            z51Var.d0.x.setContentDescription(LocaleController.getString(z51Var.Q ? R.string.AccDescrStickers : R.string.Emoji));
+            z51Var.B(true, false, false);
+            z51Var.r0.h1(0, 0);
+            return true;
+        }
+        org.telegram.ui.Components.gw gwVar = this.E;
+        int i13 = ((gwVar == null || !this.b0) ? 0 : 1) + 1;
+        if (gwVar != null && this.b0 && i10 == 1) {
+            i11 = z51Var.n;
+        } else {
+            if ((i12 != 4 || i10 != 0) && i10 > 0) {
+                int i14 = i10 - i13;
+                if (sparseIntArray.indexOfKey(i14) >= 0) {
+                    i11 = sparseIntArray.get(i14);
                 }
-                saveToGallerySettingsActivity.finishFragment();
-                break;
-            case 1:
-                ((b51) this.b).dismiss();
-                break;
-            case 2:
-                SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b;
-                MessageObject messageObject = secretMediaViewer.h0;
-                if (messageObject != null) {
-                    TLRPC.Message message = messageObject.messageOwner;
-                    if (message.destroyTime != 0 || message.ttl == Integer.MAX_VALUE) {
-                        di.d4 d4Var = secretMediaViewer.r;
-                        if (d4Var.V) {
-                            d4Var.e(true);
-                            break;
-                        } else {
-                            secretMediaViewer.l();
-                            break;
-                        }
-                    }
-                }
-                break;
-            case 3:
-                b81 b81Var = (b81) this.b;
-                if (b81Var.a0 instanceof TLRPC.User) {
-                    di.d dVar = b81Var.h0;
-                    if (!dVar.N) {
-                        dVar.setLoading(true);
-                        b81Var.U((TLRPC.User) b81Var.a0, null, null);
-                        break;
-                    }
-                }
-                break;
-            case 4:
-                SessionsActivity sessionsActivity = ((b91) this.b).d;
-                if (sessionsActivity.getParentActivity() != null) {
-                    if (sessionsActivity.getParentActivity().checkSelfPermission("android.permission.CAMERA") != 0) {
-                        sessionsActivity.getParentActivity().requestPermissions(new String[]{"android.permission.CAMERA"}, 34);
-                        break;
-                    } else {
-                        z9.e0(sessionsActivity.getParentActivity(), false, 2, new z81(sessionsActivity));
-                        break;
-                    }
-                }
-                break;
-            case 5:
-                ((re1) this.b).c(true);
-                break;
-            case 6:
-                ((re1) ((nw0) this.b).c).c(true);
-                break;
-            case 7:
-                ze1 ze1Var = (ze1) this.b;
-                ArrayList arrayList = ze1Var.f;
-                HashSet hashSet = ze1Var.w;
-                if (!hashSet.isEmpty()) {
-                    TLRPC.User user = ze1Var.getMessagesController().getUser(Long.valueOf(ze1Var.getUserConfig().getClientUserId()));
-                    ArrayList arrayList2 = new ArrayList();
-                    for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                        if (hashSet.contains(Long.valueOf(((TLRPC.Chat) arrayList.get(i10)).id))) {
-                            arrayList2.add((TLRPC.Chat) arrayList.get(i10));
-                        }
-                    }
-                    for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-                        TLRPC.Chat chat = (TLRPC.Chat) arrayList2.get(i11);
-                        ze1Var.getMessagesController().putChat(chat, false);
-                        ze1Var.getMessagesController().deleteParticipantFromChat(chat.id, user);
-                    }
-                    ze1Var.finishFragment();
-                    break;
-                }
-                break;
-            default:
-                uj1 uj1Var = (uj1) this.b;
-                uj1Var.a.c(!r0.b(), true);
-                uj1Var.c.setEnabled(uj1Var.a.b());
-                uj1Var.c.animate().alpha(uj1Var.a.b() ? 1.0f : 0.5f).start();
-                break;
+            }
+            i11 = 0;
+        }
+        z51.a(z51Var, i11, AndroidUtilities.dp((i12 == 6 ? 7 : 0) - 2));
+        z51Var.d0.j(i10, true);
+        z51Var.h0.J1 = true;
+        z51Var.v(null, true, true);
+        q41 q41Var = z51Var.f0;
+        if (q41Var != null && (n51Var = q41Var.n) != null) {
+            n51Var.G1(null);
+        }
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.kw
+    public final void i(org.telegram.ui.Components.gw gwVar) {
+        ValueAnimator valueAnimator = this.h0.U1;
+        if (valueAnimator == null || valueAnimator.isRunning()) {
+            gwVar.setScaleX(0.0f);
+            gwVar.setScaleY(0.0f);
         }
     }
 }

@@ -1,85 +1,116 @@
 package org.telegram.ui.Cells;
 
-import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.graphics.Canvas;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.fp0;
-import org.telegram.ui.Components.v61;
-import org.telegram.ui.lu;
+import org.telegram.messenger.SaveToGallerySettingsHelper;
+import org.telegram.messenger.wh;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class c5 implements fp0 {
-    public final /* synthetic */ lu a;
+public abstract class c5 extends FrameLayout {
+    public TextView a;
+    public TextView b;
+    public j0 c;
+    public long d;
 
-    public c5(lu luVar) {
-        this.a = luVar;
-    }
-
-    @Override // org.telegram.ui.Components.fp0
-    public final void X(float f7, boolean z10) {
-        float d;
-        int i10;
-        if (f7 <= 0.25f) {
-            d = a1.g.d(f7, 0.25f, 536576.0f, 512000);
+    public final void a(ArrayList arrayList, boolean z10) {
+        TextView textView = this.b;
+        j0 j0Var = this.c;
+        TextView textView2 = this.a;
+        super.setEnabled(z10);
+        if (arrayList != null) {
+            arrayList.add(ObjectAnimator.ofFloat(textView2, "alpha", z10 ? 1.0f : 0.5f));
+            arrayList.add(ObjectAnimator.ofFloat(j0Var, "alpha", z10 ? 1.0f : 0.5f));
+            arrayList.add(ObjectAnimator.ofFloat(textView, "alpha", z10 ? 1.0f : 0.5f));
         } else {
-            float f10 = f7 - 0.25f;
-            if (f10 < 0.25f) {
-                d = a1.g.d(f10, 0.25f, 9437184.0f, 1048576);
+            textView2.setAlpha(z10 ? 1.0f : 0.5f);
+            j0Var.setAlpha(z10 ? 1.0f : 0.5f);
+            textView.setAlpha(z10 ? 1.0f : 0.5f);
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (isEnabled()) {
+            return super.dispatchTouchEvent(motionEvent);
+        }
+        return true;
+    }
+
+    public long getSize() {
+        return this.d;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.h6.k0);
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (isEnabled()) {
+            return super.onInterceptTouchEvent(motionEvent);
+        }
+        return true;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(80.0f));
+        int measuredWidth = getMeasuredWidth() - AndroidUtilities.dp(42.0f);
+        TextView textView = this.b;
+        textView.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30));
+        this.a.measure(View.MeasureSpec.makeMeasureSpec(org.telegram.messenger.q.b(8.0f, measuredWidth - textView.getMeasuredWidth(), AndroidUtilities.dp(10.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30));
+        this.c.measure(wh.c(20.0f, getMeasuredWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30));
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (isEnabled()) {
+            return super.onTouchEvent(motionEvent);
+        }
+        return true;
+    }
+
+    public void setSize(long j10) {
+        float max;
+        float f7;
+        float f10;
+        this.d = j10;
+        this.b.setText(LocaleController.formatString("AutodownloadSizeLimitUpTo", R.string.AutodownloadSizeLimitUpTo, AndroidUtilities.formatFileSize(j10)));
+        long j11 = j10 - 512000;
+        if (j11 < 536576) {
+            f10 = Math.max(0.0f, j11 / 536576.0f) * 0.25f;
+        } else {
+            long j12 = j10 - 1048576;
+            if (j12 < 9437184) {
+                f10 = (Math.max(0.0f, j12 / 9437184.0f) * 0.25f) + 0.25f;
             } else {
-                float f11 = f10 - 0.25f;
-                d = f11 <= 0.25f ? a1.g.d(f11, 0.25f, 9.437184E7f, 10485760) : a1.g.d(f11 - 0.25f, 0.25f, FileLoader.DEFAULT_MAX_FILE_SIZE - 104857600, 104857600);
-            }
-        }
-        int i11 = (int) d;
-        lu luVar = this.a;
-        long j10 = i11;
-        luVar.b.setText(LocaleController.formatString("AutodownloadSizeLimitUpTo", R.string.AutodownloadSizeLimitUpTo, AndroidUtilities.formatFileSize(j10)));
-        luVar.d = j10;
-        w8[] w8VarArr = luVar.h;
-        AnimatorSet[] animatorSetArr = luVar.n;
-        int i12 = luVar.e;
-        i10 = luVar.r.videosRow;
-        if (i12 == i10) {
-            luVar.f.setText(LocaleController.formatString("AutoDownloadPreloadVideoInfo", R.string.AutoDownloadPreloadVideoInfo, AndroidUtilities.formatFileSize(j10)));
-            boolean z11 = i11 > 2097152;
-            if (z11 != w8VarArr[0].isEnabled()) {
-                ArrayList arrayList = new ArrayList();
-                w8VarArr[0].e(arrayList, z11);
-                AnimatorSet animatorSet = animatorSetArr[0];
-                if (animatorSet != null) {
-                    animatorSet.cancel();
-                    animatorSetArr[0] = null;
+                long j13 = j10 - 10485760;
+                if (j13 < 94371840) {
+                    max = Math.max(0.0f, j13 / 9.437184E7f) * 0.25f;
+                    f7 = 0.5f;
+                } else {
+                    max = Math.max(0.0f, (j10 - SaveToGallerySettingsHelper.DEFAULT_VIDEO_LIMIT) / 1.9922944E9f) * 0.25f;
+                    f7 = 0.75f;
                 }
-                AnimatorSet animatorSet2 = new AnimatorSet();
-                animatorSetArr[0] = animatorSet2;
-                animatorSet2.playTogether(arrayList);
-                animatorSetArr[0].addListener(new v61(luVar, 18));
-                animatorSetArr[0].setDuration(150L);
-                animatorSetArr[0].start();
+                f10 = max + f7;
             }
         }
+        this.c.setProgress(Math.min(1.0f, f10));
     }
 
-    @Override // org.telegram.ui.Components.fp0
-    public final CharSequence getContentDescription() {
-        StringBuilder sb2 = new StringBuilder();
-        lu luVar = this.a;
-        sb2.append((Object) luVar.a.getText());
-        sb2.append(" ");
-        sb2.append((Object) luVar.b.getText());
-        return sb2.toString();
-    }
-
-    @Override // org.telegram.ui.Components.fp0
-    public final /* synthetic */ int k0() {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.Components.fp0
-    public final void z() {
+    public void setText(String str) {
+        this.a.setText(str);
     }
 }

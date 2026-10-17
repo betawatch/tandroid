@@ -1,72 +1,53 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_fragment;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class wz0 extends org.telegram.ui.Components.y90 {
-    public final /* synthetic */ ProfileActivity P0;
+public final class wz0 extends ClickableSpan {
+    public final /* synthetic */ TLRPC.TL_username a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ d01 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wz0(ProfileActivity profileActivity, Context context) {
-        super(context);
-        this.P0 = profileActivity;
+    public wz0(d01 d01Var, TLRPC.TL_username tL_username, String str) {
+        this.c = d01Var;
+        this.a = tL_username;
+        this.b = str;
     }
 
-    @Override // android.view.View
-    public final void setAlpha(float f7) {
-        super.setAlpha(f7);
-        this.P0.B3();
-    }
-
-    @Override // org.telegram.ui.ActionBar.h5
-    public final void setTextColor(int i10) {
-        int m12;
-        super.setTextColor(i10);
-        ProfileActivity profileActivity = this.P0;
-        org.telegram.ui.ActionBar.h5[] h5VarArr = profileActivity.r;
-        org.telegram.ui.ActionBar.h5 h5Var = h5VarArr[2];
-        if (h5Var != null) {
-            h5Var.setTextColor(i10);
-            h5VarArr[3].setTextColor(i10);
-        }
-        q11 q11Var = profileActivity.b6;
-        if (q11Var == null || q11Var.c == (m12 = org.telegram.ui.ActionBar.g6.m1(1.4f, org.telegram.ui.ActionBar.g6.b(-0.02f, 0.15f, i10)))) {
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        ProfileActivity profileActivity = this.c.e;
+        TLRPC.TL_username tL_username = this.a;
+        if (!tL_username.editable) {
+            if (profileActivity.k5 == this) {
+                return;
+            }
+            profileActivity.M4(this);
+            TL_fragment.TL_getCollectibleInfo tL_getCollectibleInfo = new TL_fragment.TL_getCollectibleInfo();
+            TL_fragment.TL_inputCollectibleUsername tL_inputCollectibleUsername = new TL_fragment.TL_inputCollectibleUsername();
+            tL_inputCollectibleUsername.username = tL_username.username;
+            tL_getCollectibleInfo.collectible = tL_inputCollectibleUsername;
+            profileActivity.getConnectionsManager().bindRequestToGuid(profileActivity.getConnectionsManager().sendRequest(tL_getCollectibleInfo, new z40(25, this, tL_username)), profileActivity.getClassGuid());
             return;
         }
-        q11Var.c = m12;
-        q11Var.invalidateSelf();
-    }
-
-    @Override // android.view.View
-    public final void setTranslationX(float f7) {
-        super.setTranslationX(f7);
-        ProfileActivity profileActivity = this.P0;
-        profileActivity.Z3();
-        profileActivity.getClass();
-        profileActivity.r[2].setTranslationX(f7);
-        profileActivity.r[3].setTranslationX(f7);
-        org.telegram.ui.Components.hx0 hx0Var = profileActivity.T;
-        if (hx0Var != null) {
-            hx0Var.setTranslationX(f7 - profileActivity.Z3());
+        profileActivity.M4(null);
+        String str = profileActivity.getMessagesController().linkPrefix + "/" + this.b;
+        TLRPC.Chat chat = profileActivity.F2;
+        if (chat == null || !chat.noforwards) {
+            AndroidUtilities.addToClipboard(str);
+            profileActivity.M.j(56, 0L, null);
         }
     }
 
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        super.setTranslationY(f7);
-        ProfileActivity profileActivity = this.P0;
-        org.telegram.ui.ActionBar.h5[] h5VarArr = profileActivity.r;
-        if (profileActivity.T != null) {
-            AndroidUtilities.dp(3.0f);
-            profileActivity.T.getVisibilityFactor();
-        }
-        h5VarArr[2].setTranslationY(f7);
-        h5VarArr[3].setTranslationY(f7);
-        org.telegram.ui.Components.hx0 hx0Var = profileActivity.T;
-        if (hx0Var != null) {
-            hx0Var.setTranslationY(f7 - AndroidUtilities.dp(5.0f));
-        }
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setUnderlineText(false);
+        textPaint.setColor(textPaint.linkColor);
     }
 }

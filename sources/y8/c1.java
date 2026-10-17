@@ -3,9 +3,9 @@ package y8;
 import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.Arrays;
-import w7.v8;
+import w7.w8;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class c1 extends o6.a {
     public static final Parcelable.Creator<c1> CREATOR = new n0(10);
@@ -33,7 +33,7 @@ public final class c1 extends o6.a {
         }
         if (obj != null && c1.class == obj.getClass()) {
             c1 c1Var = (c1) obj;
-            if (v8.a(this.a, c1Var.a) && v8.a(this.b, c1Var.b) && v8.a(this.c, c1Var.c) && v8.a(this.d, c1Var.d) && v8.a(this.e, c1Var.e) && v8.a(this.f, c1Var.f) && v8.a(this.h, c1Var.h)) {
+            if (w8.a(this.a, c1Var.a) && w8.a(this.b, c1Var.b) && w8.a(this.c, c1Var.c) && w8.a(this.d, c1Var.d) && w8.a(this.e, c1Var.e) && w8.a(this.f, c1Var.f) && w8.a(this.h, c1Var.h)) {
                 return true;
             }
         }

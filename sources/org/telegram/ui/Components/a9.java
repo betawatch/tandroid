@@ -1,21 +1,39 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class a9 extends g9 {
-    public final /* synthetic */ z8 G;
+public final class a9 {
+    public int a;
+    public boolean b;
+    public int c;
+    public int d;
+    public int e;
+    public int f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a9(h9 h9Var, Activity activity, z8 z8Var) {
-        super(h9Var, activity);
-        this.G = z8Var;
+    public final a9 a() {
+        a9 a9Var = new a9();
+        a9Var.c = this.c;
+        a9Var.d = this.d;
+        a9Var.e = this.e;
+        a9Var.f = this.f;
+        a9Var.b = this.b;
+        return a9Var;
     }
 
-    @Override // org.telegram.ui.Components.g9, android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        this.G.invalidate();
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof a9)) {
+            return false;
+        }
+        a9 a9Var = (a9) obj;
+        return this.c == a9Var.c && this.d == a9Var.d && this.e == a9Var.e && this.f == a9Var.f;
+    }
+
+    public final int hashCode() {
+        return Objects.hash(Integer.valueOf(this.a), Integer.valueOf(this.c), Integer.valueOf(this.d), Integer.valueOf(this.e), Integer.valueOf(this.f));
     }
 }

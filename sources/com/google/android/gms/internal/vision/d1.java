@@ -2,7 +2,7 @@ package com.google.android.gms.internal.vision;
 
 import java.io.IOException;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class d1 implements Cloneable {
     public final f1 a;
@@ -39,9 +39,9 @@ public abstract class d1 implements Cloneable {
             k2Var.getClass();
             n2 a2 = k2Var.a(f1Var.getClass());
             f1 f1Var2 = this.b;
-            com.google.android.gms.internal.clearcut.l lVar = new com.google.android.gms.internal.clearcut.l();
+            com.google.android.gms.internal.clearcut.m mVar = new com.google.android.gms.internal.clearcut.m();
             u0Var.getClass();
-            a2.f(f1Var2, bArr, 0, i10, lVar);
+            a2.f(f1Var2, bArr, 0, i10, mVar);
         } catch (n1 e) {
             throw e;
         } catch (IOException e7) {

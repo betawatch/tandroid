@@ -15,25 +15,25 @@ import org.telegram.messenger.WebFile;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.z9;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class c extends FrameLayout implements org.telegram.ui.ActionBar.x5 {
-    public final org.telegram.ui.ActionBar.c6 a;
-    public final z9 b;
+public final class c extends FrameLayout implements org.telegram.ui.ActionBar.y5 {
+    public final org.telegram.ui.ActionBar.d6 a;
+    public final org.telegram.ui.Components.w9 b;
     public final TextView c;
     public final TextView d;
     public boolean e;
+    public boolean f;
 
-    public c(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
+    public c(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
-        this.a = c6Var;
+        this.a = d6Var;
         setWillNotDraw(false);
-        z9 z9Var = new z9(context);
-        this.b = z9Var;
-        z9Var.setRoundRadius(AndroidUtilities.dp(8.0f));
-        addView(z9Var, w7.z5.a(46.0f, 15.0f, 0.0f, 0.0f, 0.0f, 46, 19));
+        org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
+        this.b = w9Var;
+        w9Var.setRoundRadius(AndroidUtilities.dp(8.0f));
+        addView(w9Var, w7.z5.a(46.0f, 15.0f, 0.0f, 0.0f, 0.0f, 46, 19));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         linearLayout.setGravity(16);
@@ -59,7 +59,7 @@ public final class c extends FrameLayout implements org.telegram.ui.ActionBar.x5
         d();
     }
 
-    public static String a(TL_wallet.nftItem nftitem, String str) {
+    public static String b(TL_wallet.nftItem nftitem, String str) {
         ArrayList<TL_wallet.nftAttribute> arrayList = nftitem.attributes;
         int size = arrayList.size();
         int i10 = 0;
@@ -74,7 +74,7 @@ public final class c extends FrameLayout implements org.telegram.ui.ActionBar.x5
         return null;
     }
 
-    public static ImageLocation b(TL_wallet.nftItem nftitem, boolean z10) {
+    public static ImageLocation c(TL_wallet.nftItem nftitem, boolean z10) {
         TLRPC.WebDocument webDocument;
         if ((!z10 || (webDocument = nftitem.image_small) == null) && (webDocument = nftitem.image) == null) {
             webDocument = nftitem.image_small;
@@ -85,13 +85,26 @@ public final class c extends FrameLayout implements org.telegram.ui.ActionBar.x5
         return ImageLocation.getForWebFile(WebFile.createWithWebDocument(webDocument));
     }
 
-    @Override // org.telegram.ui.ActionBar.x5
+    /* JADX INFO: Access modifiers changed from: private */
+    public void setGrid(boolean z10) {
+        if (this.f == z10) {
+            return;
+        }
+        this.f = z10;
+        FrameLayout.LayoutParams a2 = z10 ? w7.z5.a(-1.0f, 3.33f, 4.0f, 3.33f, 4.0f, -1, 119) : w7.z5.a(46.0f, 15.0f, 0.0f, 0.0f, 0.0f, 46, 19);
+        org.telegram.ui.Components.w9 w9Var = this.b;
+        w9Var.setLayoutParams(a2);
+        w9Var.setRoundRadius(AndroidUtilities.dp(z10 ? 11.0f : 8.0f));
+        ((View) this.c.getParent()).setVisibility(z10 ? 8 : 0);
+    }
+
+    @Override // org.telegram.ui.ActionBar.y5
     public final void d() {
         setBackgroundColor(0);
-        int i10 = org.telegram.ui.ActionBar.g6.G6;
-        org.telegram.ui.ActionBar.c6 c6Var = this.a;
-        this.c.setTextColor(org.telegram.ui.ActionBar.g6.w0(i10, c6Var));
-        this.d.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.z6, c6Var));
+        int i10 = org.telegram.ui.ActionBar.h6.G6;
+        org.telegram.ui.ActionBar.d6 d6Var = this.a;
+        this.c.setTextColor(org.telegram.ui.ActionBar.h6.w0(i10, d6Var));
+        this.d.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.z6, d6Var));
     }
 
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
@@ -102,12 +115,12 @@ public final class c extends FrameLayout implements org.telegram.ui.ActionBar.x5
     public final void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.e) {
-            canvas.drawRect(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(71.0f), getHeight() - 1, getWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(71.0f) : 0), getHeight(), org.telegram.ui.ActionBar.g6.k0);
+            canvas.drawRect(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(71.0f), getHeight() - 1, getWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(71.0f) : 0), getHeight(), org.telegram.ui.ActionBar.h6.k0);
         }
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(58.0f), TLObject.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.f ? 112.0f : 58.0f), TLObject.FLAG_30));
     }
 }

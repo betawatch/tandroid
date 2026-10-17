@@ -1,45 +1,63 @@
 package d9;
 
-import e2.x;
+import android.text.TextUtils;
+import android.util.Log;
 import j$.util.Objects;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import org.json.JSONObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public class l implements gb.p {
+public class l {
     public String a;
 
-    public /* synthetic */ l(String str, boolean z10) {
+    public l(String str) {
+        str.getClass();
         this.a = str;
     }
 
-    public static l c(x xVar) {
-        String str;
-        xVar.O(2);
-        int A = xVar.A();
-        int i10 = A >> 1;
-        int A2 = ((xVar.A() >> 3) & 31) | ((A & 1) << 5);
-        if (i10 == 4 || i10 == 5 || i10 == 7 || i10 == 8) {
-            str = "dvhe";
-        } else if (i10 == 9) {
-            str = "dvav";
-        } else {
-            if (i10 != 10) {
-                return null;
-            }
-            str = "dav1";
+    public static void b(androidx.biometric.e eVar, ea.d dVar) {
+        String str = dVar.a;
+        if (str != null) {
+            eVar.s("X-CRASHLYTICS-GOOGLE-APP-ID", str);
         }
-        StringBuilder u10 = a1.g.u(str);
-        u10.append(i10 < 10 ? ".0" : ".");
-        u10.append(i10);
-        u10.append(A2 < 10 ? ".0" : ".");
-        u10.append(A2);
-        return new l(u10.toString(), false);
+        eVar.s("X-CRASHLYTICS-API-CLIENT-TYPE", "android");
+        eVar.s("X-CRASHLYTICS-API-CLIENT-VERSION", "18.6.0");
+        eVar.s("Accept", "application/json");
+        String str2 = dVar.b;
+        if (str2 != null) {
+            eVar.s("X-CRASHLYTICS-DEVICE-MODEL", str2);
+        }
+        String str3 = dVar.c;
+        if (str3 != null) {
+            eVar.s("X-CRASHLYTICS-OS-BUILD-VERSION", str3);
+        }
+        String str4 = dVar.d;
+        if (str4 != null) {
+            eVar.s("X-CRASHLYTICS-OS-DISPLAY-VERSION", str4);
+        }
+        String str5 = dVar.e.b().a;
+        if (str5 != null) {
+            eVar.s("X-CRASHLYTICS-INSTALLATION-ID", str5);
+        }
     }
 
-    public static CharSequence d(Object obj) {
+    public static HashMap c(ea.d dVar) {
+        HashMap hashMap = new HashMap();
+        hashMap.put("build_version", dVar.h);
+        hashMap.put("display_version", dVar.g);
+        hashMap.put("source", Integer.toString(dVar.i));
+        String str = dVar.f;
+        if (!TextUtils.isEmpty(str)) {
+            hashMap.put("instance", str);
+        }
+        return hashMap;
+    }
+
+    public static CharSequence f(Object obj) {
         Objects.requireNonNull(obj);
         return obj instanceof CharSequence ? (CharSequence) obj : obj.toString();
     }
@@ -47,10 +65,10 @@ public class l implements gb.p {
     public void a(StringBuilder sb2, Iterator it) {
         try {
             if (it.hasNext()) {
-                sb2.append(d(it.next()));
+                sb2.append(f(it.next()));
                 while (it.hasNext()) {
                     sb2.append((CharSequence) this.a);
-                    sb2.append(d(it.next()));
+                    sb2.append(f(it.next()));
                 }
             }
         } catch (IOException e) {
@@ -58,20 +76,32 @@ public class l implements gb.p {
         }
     }
 
-    public String b(List list) {
+    public JSONObject d(ba.a aVar) {
+        String str = this.a;
+        int i10 = aVar.c;
+        u9.b bVar = u9.b.a;
+        bVar.c("Settings response code was: " + i10);
+        if (i10 != 200 && i10 != 201 && i10 != 202 && i10 != 203) {
+            String str2 = "Settings request failed; (status: " + i10 + ") from " + str;
+            if (bVar.a(6)) {
+                Log.e("FirebaseCrashlytics", str2, null);
+            }
+            return null;
+        }
+        String str3 = aVar.b;
+        try {
+            return new JSONObject(str3);
+        } catch (Exception e) {
+            bVar.d("Failed to parse settings JSON from " + str, e);
+            bVar.d("Settings response " + str3, null);
+            return null;
+        }
+    }
+
+    public String e(List list) {
         Iterator it = list.iterator();
         StringBuilder sb2 = new StringBuilder();
         a(sb2, it);
         return sb2.toString();
-    }
-
-    @Override // gb.p
-    public Object i2() {
-        throw new eb.j(this.a);
-    }
-
-    public l(String str) {
-        str.getClass();
-        this.a = str;
     }
 }

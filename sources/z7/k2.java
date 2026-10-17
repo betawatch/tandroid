@@ -1,12 +1,12 @@
 package z7;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class k2 implements ja.d {
     public static final k2 a = new k2();
 
     static {
-        t8.b.s(t8.b.n(w.class, t8.b.r(3, t8.b.n(w.class, t8.b.r(2, t8.b.n(w.class, new s(1)))))));
+        r.c.s(r.c.n(w.class, r.c.r(3, r.c.n(w.class, r.c.r(2, r.c.n(w.class, new s(1)))))));
     }
 
     @Override // ja.a

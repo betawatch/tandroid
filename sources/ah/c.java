@@ -11,10 +11,10 @@ import android.text.style.ReplacementSpan;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class c extends ReplacementSpan {
     public final TextPaint a;
@@ -24,12 +24,12 @@ public final class c extends ReplacementSpan {
     public float e;
     public int f;
 
-    public c(c6 c6Var) {
+    public c(d6 d6Var) {
         TextPaint textPaint = new TextPaint(1);
         this.a = textPaint;
         this.b = new RectF();
         textPaint.setTextSize(AndroidUtilities.dp(15.0f));
-        textPaint.setColor(g6.w0(g6.C6, c6Var));
+        textPaint.setColor(h6.w0(h6.C6, d6Var));
     }
 
     public final void a() {

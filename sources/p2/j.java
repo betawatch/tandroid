@@ -1,25 +1,17 @@
 package p2;
 
-import e9.l0;
-import e9.n0;
-import e9.x1;
-import java.util.List;
+import android.net.Uri;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class j extends k {
-    public final String w;
-    public final n0 x;
+public final class j {
+    public final Uri a;
+    public final long b;
+    public final int c;
 
-    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public j(String str, long j10, long j11, String str2, String str3) {
-        this(str, null, "", 0L, -1, -9223372036854775807L, null, str2, str3, j10, j11, false, x1.e);
-        l0 l0Var = n0.b;
-    }
-
-    public j(String str, j jVar, String str2, long j10, int i10, long j11, b2.t tVar, String str3, String str4, long j12, long j13, boolean z10, List list) {
-        super(str, jVar, j10, i10, j11, tVar, str3, str4, j12, j13, z10);
-        this.w = str2;
-        this.x = n0.u(list);
+    public j(Uri uri, long j10, int i10) {
+        this.a = uri;
+        this.b = j10;
+        this.c = i10;
     }
 }

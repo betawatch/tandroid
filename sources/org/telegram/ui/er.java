@@ -1,33 +1,54 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class er implements qq {
-    public final /* synthetic */ TLObject a;
-    public final /* synthetic */ yr b;
+public final /* synthetic */ class er implements org.telegram.ui.Cells.z4, org.telegram.ui.Components.mw0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ fr b;
 
-    public er(yr yrVar, TLObject tLObject) {
-        this.b = yrVar;
-        this.a = tLObject;
+    public /* synthetic */ er(fr frVar, int i10) {
+        this.a = i10;
+        this.b = frVar;
     }
 
-    @Override // org.telegram.ui.qq
-    public final void a(TLRPC.User user) {
-        yr.c0(this.b, user);
+    @Override // org.telegram.ui.Cells.z4
+    public boolean d(org.telegram.ui.Cells.a5 a5Var, boolean z10) {
+        jr jrVar = this.b.d;
+        return jrVar.h0(jrVar.a.E(((Integer) a5Var.getTag()).intValue()), !z10, a5Var);
     }
 
-    @Override // org.telegram.ui.qq
-    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
-        TLObject tLObject = this.a;
-        if (tLObject instanceof TLRPC.ChannelParticipant) {
-            TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) tLObject;
-            channelParticipant.admin_rights = tL_chatAdminRights;
-            channelParticipant.banned_rights = tL_chatBannedRights;
-            channelParticipant.rank = str;
-            yr.W(this.b, channelParticipant, tL_chatAdminRights, tL_chatBannedRights);
+    @Override // org.telegram.ui.Components.mw0
+    public void h(int i10) {
+        switch (this.a) {
+            case 1:
+                jr jrVar = this.b.d;
+                if (jrVar.s != null) {
+                    int i11 = jrVar.p1;
+                    boolean z10 = (i11 > 0 && i10 == 0) || (i11 == 0 && i10 > 0);
+                    jrVar.p1 = i10;
+                    if (z10) {
+                        dr w02 = jrVar.w0();
+                        jrVar.B0();
+                        jrVar.A0(w02);
+                    }
+                    jrVar.a.m(jrVar.P0);
+                    break;
+                }
+                break;
+            default:
+                this.b.d.s1 = i10 + 1;
+                break;
         }
+    }
+
+    @Override // org.telegram.ui.Components.mw0
+    public /* synthetic */ void m() {
+        int i10 = this.a;
+    }
+
+    private final /* synthetic */ void a() {
+    }
+
+    private final /* synthetic */ void b() {
     }
 }

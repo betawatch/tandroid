@@ -1,408 +1,323 @@
 package hg;
 
+import ai.ld;
+import android.app.Activity;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.text.TextUtils;
-import android.view.MotionEvent;
+import android.content.Intent;
+import android.media.projection.MediaProjectionManager;
+import android.util.LongSparseArray;
 import android.view.View;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.Locale;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import ki.d3;
+import ki.h2;
+import ki.m4;
+import ki.o4;
+import ki.s3;
+import ki.w3;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.i6;
-import org.telegram.ui.Components.mm0;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.l2;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Cells.r3;
+import org.telegram.ui.Components.q6;
+import org.telegram.ui.Components.w31;
+import org.telegram.ui.Components.x90;
+import org.telegram.ui.Components.xc;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PremiumPreviewFragment;
+import org.telegram.ui.ch1;
+import org.telegram.ui.mg;
+import org.telegram.ui.oi0;
+import rg.t2;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class r0 extends mm0 {
-    public static final p0[] a3 = {new p0(R.drawable.search_media_filled, R.string.SharedMediaTab2, new TLRPC.TL_inputMessagesFilterPhotoVideo(), 0), new p0(R.drawable.search_links_filled, R.string.SharedLinksTab2, new TLRPC.TL_inputMessagesFilterUrl(), 2), new p0(R.drawable.search_files_filled, R.string.SharedFilesTab2, new TLRPC.TL_inputMessagesFilterDocument(), 1), new p0(R.drawable.search_music_filled, R.string.SharedMusicTab2, new TLRPC.TL_inputMessagesFilterMusic(), 3), new p0(R.drawable.search_voice_filled, R.string.SharedVoiceTab2, new TLRPC.TL_inputMessagesFilterRoundVoice(), 5)};
-    public static final Pattern b3 = Pattern.compile("20[0-9]{1,2}");
-    public static final Pattern c3 = Pattern.compile("(\\w{3,}) ([0-9]{0,4})");
-    public static final Pattern d3 = Pattern.compile("([0-9]{0,4}) (\\w{2,})");
-    public static final Pattern e3 = Pattern.compile("^([0-9]{1,4})(\\.| |/|\\-)([0-9]{1,4})$");
-    public static final Pattern f3 = Pattern.compile("^([0-9]{1,2})(\\.| |/|\\-)([0-9]{1,2})(\\.| |/|\\-)([0-9]{1,4})$");
-    public static final int[] g3 = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-    public final ArrayList V2;
-    public final ArrayList W2;
-    public final i0 X2;
-    public boolean Y2;
-    public final l0 Z2;
+public final /* synthetic */ class r0 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public r0(Context context, c6 c6Var) {
-        super(context, c6Var);
-        this.V2 = new ArrayList();
-        this.W2 = new ArrayList();
-        this.Y2 = true;
-        this.Z2 = new l0(this);
-        i0 i0Var = new i0((Object) this, 0);
-        this.X2 = i0Var;
-        i0Var.j1(0);
-        setLayoutManager(i0Var);
-        setAdapter(new m0(this, 0));
-        i(new bi.o(1));
-        setItemAnimator(new k0());
-        setWillNotDraw(false);
-        setHideIfEmpty(false);
-        setSelectorRadius(AndroidUtilities.dp(28.0f));
-        setSelectorDrawableColor(g6.w0(g6.i6, this.n2));
+    public /* synthetic */ r0(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    public static int A1(String str) {
-        String[] strArr = {LocaleController.getString(R.string.January).toLowerCase(), LocaleController.getString(R.string.February).toLowerCase(), LocaleController.getString(R.string.March).toLowerCase(), LocaleController.getString(R.string.April).toLowerCase(), LocaleController.getString(R.string.May).toLowerCase(), LocaleController.getString(R.string.June).toLowerCase(), LocaleController.getString(R.string.July).toLowerCase(), LocaleController.getString(R.string.August).toLowerCase(), LocaleController.getString(R.string.September).toLowerCase(), LocaleController.getString(R.string.October).toLowerCase(), LocaleController.getString(R.string.November).toLowerCase(), LocaleController.getString(R.string.December).toLowerCase()};
-        String[] strArr2 = new String[12];
-        Calendar calendar = Calendar.getInstance();
-        for (int i10 = 1; i10 <= 12; i10++) {
-            calendar.set(0, 0, 0, 0, 0, 0);
-            calendar.set(2, i10);
-            strArr2[i10 - 1] = calendar.getDisplayName(2, 2, Locale.ENGLISH).toLowerCase();
-        }
-        for (int i11 = 0; i11 < 12; i11++) {
-            if (strArr2[i11].startsWith(str) || strArr[i11].startsWith(str)) {
-                return i11;
-            }
-        }
-        return -1;
-    }
-
-    public static void x1(int i10, int i11, ArrayList arrayList) {
-        int i12 = i11;
-        if (i12 < 0 || i12 >= 12 || i10 < 0 || i10 >= g3[i12]) {
-            return;
-        }
-        int i13 = Calendar.getInstance().get(1);
-        long timeInMillis = Calendar.getInstance().getTimeInMillis();
-        GregorianCalendar gregorianCalendar = (GregorianCalendar) Calendar.getInstance();
-        int i14 = i13;
-        while (i14 >= 2013) {
-            if (i12 != 1 || i10 != 28 || gregorianCalendar.isLeapYear(i14)) {
-                Calendar calendar = Calendar.getInstance();
-                calendar.set(i14, i12, i10 + 1, 0, 0, 0);
-                long timeInMillis2 = calendar.getTimeInMillis();
-                if (timeInMillis2 <= timeInMillis) {
-                    calendar.set(i14, i11, i10 + 2, 0, 0, 0);
-                    long timeInMillis3 = calendar.getTimeInMillis() - 1;
-                    if (i14 == i13) {
-                        arrayList.add(new n0(timeInMillis2, timeInMillis3, LocaleController.getInstance().getFormatterDayMonth().format(timeInMillis2)));
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        ki.a aVar;
+        m4 m4Var;
+        n2 R;
+        switch (this.a) {
+            case 0:
+                ((s0) this.b).K();
+                break;
+            case 1:
+                e2 e2Var = (e2) this.b;
+                LongSparseArray longSparseArray = e2Var.n;
+                r3 r3Var = (r3) view.getParent();
+                TLRPC.StickerSetCovered stickerSet = r3Var.getStickerSet();
+                if (stickerSet != null && e2Var.h.indexOfKey(stickerSet.set.id) < 0 && longSparseArray.indexOfKey(stickerSet.set.id) < 0) {
+                    if (!r3Var.r) {
+                        e2Var.F(stickerSet, r3Var);
+                        break;
                     } else {
-                        arrayList.add(new n0(timeInMillis2, timeInMillis3, LocaleController.getInstance().getFormatterYearMax().format(timeInMillis2)));
+                        longSparseArray.put(stickerSet.set.id, stickerSet);
+                        e2Var.e.a.h(r3Var.getStickerSet());
+                        break;
                     }
                 }
-            }
-            i14--;
-            i12 = i11;
-        }
-    }
-
-    public static void y1(int i10, int i11, ArrayList arrayList) {
-        int i12 = Calendar.getInstance().get(1);
-        long timeInMillis = Calendar.getInstance().getTimeInMillis();
-        if (i11 < 2013 || i11 > i12) {
-            return;
-        }
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(i11, i10, 1, 0, 0, 0);
-        long timeInMillis2 = calendar.getTimeInMillis();
-        if (timeInMillis2 > timeInMillis) {
-            return;
-        }
-        calendar.add(2, 1);
-        arrayList.add(new n0(timeInMillis2, calendar.getTimeInMillis() - 1, LocaleController.getInstance().getFormatterMonthYear().format(timeInMillis2)));
-    }
-
-    public static void z1(String str, ArrayList arrayList) {
-        arrayList.clear();
-        if (str == null) {
-            return;
-        }
-        String trim = str.trim();
-        if (trim.length() < 3) {
-            return;
-        }
-        if (LocaleController.getString(R.string.SearchTipToday).toLowerCase().startsWith(trim) || "today".startsWith(trim)) {
-            Calendar calendar = Calendar.getInstance();
-            int i10 = calendar.get(1);
-            int i11 = calendar.get(2);
-            int i12 = calendar.get(5);
-            calendar.set(i10, i11, i12, 0, 0, 0);
-            long timeInMillis = calendar.getTimeInMillis();
-            calendar.set(i10, i11, i12 + 1, 0, 0, 0);
-            arrayList.add(new n0(timeInMillis, calendar.getTimeInMillis() - 1, LocaleController.getString(R.string.SearchTipToday)));
-            return;
-        }
-        if (LocaleController.getString(R.string.SearchTipYesterday).toLowerCase().startsWith(trim) || "yesterday".startsWith(trim)) {
-            Calendar calendar2 = Calendar.getInstance();
-            int i13 = calendar2.get(1);
-            int i14 = calendar2.get(2);
-            int i15 = calendar2.get(5);
-            calendar2.set(i13, i14, i15, 0, 0, 0);
-            long timeInMillis2 = calendar2.getTimeInMillis() - 86400000;
-            calendar2.set(i13, i14, i15 + 1, 0, 0, 0);
-            arrayList.add(new n0(timeInMillis2, calendar2.getTimeInMillis() - 86400001, LocaleController.getString(R.string.SearchTipYesterday)));
-            return;
-        }
-        Calendar calendar3 = Calendar.getInstance();
-        int i16 = -1;
-        if (trim.length() > 3) {
-            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("EEEE", Locale.ENGLISH);
-            for (int i17 = 0; i17 < 7; i17++) {
-                calendar3.set(7, i17);
-                if (LocaleController.getInstance().getFormatterWeekLong().format(calendar3.getTime()).toLowerCase().startsWith(trim) || simpleDateFormat.format(calendar3.getTime()).toLowerCase().startsWith(trim)) {
-                    i16 = i17;
+                break;
+            case 2:
+                hi.o oVar = (hi.o) this.b;
+                TLRPC.Chat chat = oVar.H;
+                if (chat != null && !chat.title.equals(((ai.t) oVar.n.b).getText().toString())) {
+                    oVar.getMessagesController().changeChatTitle(oVar.H.id, ((ai.t) oVar.n.b).getText().toString(), new hi.h(oVar, 1));
+                }
+                TLRPC.Chat chat2 = oVar.H;
+                if (chat2 != null && oVar.h != oVar.f) {
+                    if (chat2.default_banned_rights == null) {
+                        chat2.default_banned_rights = new TLRPC.TL_chatBannedRights();
+                    }
+                    oVar.H.default_banned_rights.manage_linked_peers = !oVar.h;
+                    oVar.getMessagesController().setDefaultBannedRole(oVar.b, oVar.H.default_banned_rights, false, oVar);
+                }
+                oVar.finishFragment();
+                break;
+            case 3:
+                ((hi.e0) this.b).h.d.D(0);
+                break;
+            case 4:
+                hi.k0.z(((hi.f0) this.b).r);
+                break;
+            case 5:
+                ig.e eVar = (ig.e) this.b;
+                q6 q6Var = eVar.f;
+                int i10 = eVar.a;
+                boolean z10 = eVar.r;
+                eVar.r = !z10;
+                eVar.h.c(LocaleController.getString(!z10 ? R.string.BizBotStart : R.string.BizBotStop), true, true);
+                q6Var.a();
+                q6Var.c(LocaleController.getString(eVar.r ? R.string.BizBotStatusStopped : R.string.BizBotStatusManages), true, true);
+                if (eVar.r) {
+                    eVar.w |= 1;
+                } else {
+                    eVar.w &= -2;
+                }
+                MessagesController.getNotificationsSettings(i10).edit().putInt("dialog_botflags" + eVar.s, eVar.w).apply();
+                TL_account.toggleConnectedBotPaused toggleconnectedbotpaused = new TL_account.toggleConnectedBotPaused();
+                toggleconnectedbotpaused.peer = MessagesController.getInstance(i10).getInputPeer(eVar.s);
+                toggleconnectedbotpaused.paused = eVar.r;
+                ConnectionsManager.getInstance(i10).sendRequest(toggleconnectedbotpaused, null);
+                break;
+            case 6:
+                TL_account.TL_businessChatLink tL_businessChatLink = ((ig.t) this.b).f;
+                if (tL_businessChatLink != null) {
+                    AndroidUtilities.addToClipboard(tL_businessChatLink.link);
+                    xc.a0(LaunchActivity.R()).k(false).j();
                     break;
                 }
-            }
-        }
-        if (i16 >= 0) {
-            Calendar calendar4 = Calendar.getInstance();
-            long timeInMillis3 = calendar4.getTimeInMillis();
-            calendar4.set(7, i16);
-            if (calendar4.getTimeInMillis() > timeInMillis3) {
-                calendar4.setTimeInMillis(calendar4.getTimeInMillis() - 604800000);
-            }
-            int i18 = calendar4.get(1);
-            int i19 = calendar4.get(2);
-            int i20 = calendar4.get(5);
-            calendar4.set(i18, i19, i20, 0, 0, 0);
-            long timeInMillis4 = calendar4.getTimeInMillis();
-            calendar4.set(i18, i19, i20 + 1, 0, 0, 0);
-            arrayList.add(new n0(timeInMillis4, calendar4.getTimeInMillis() - 1, LocaleController.getInstance().getFormatterWeekLong().format(timeInMillis4)));
-            return;
-        }
-        Matcher matcher = e3.matcher(trim);
-        if (matcher.matches()) {
-            String group = matcher.group(1);
-            String group2 = matcher.group(3);
-            int parseInt = Integer.parseInt(group);
-            int parseInt2 = Integer.parseInt(group2);
-            if (parseInt <= 0 || parseInt > 31) {
-                if (parseInt < 2013 || parseInt2 > 12) {
-                    return;
+                break;
+            case 7:
+                ((ji.b) this.b).dismiss();
+                break;
+            case 8:
+                ki.q qVar = (ki.q) this.b;
+                qVar.K(0, true, 0, false, 0L);
+                oi0 oi0Var = qVar.O;
+                if (oi0Var != null) {
+                    oi0Var.h(true);
+                    qVar.O = null;
+                    break;
                 }
-                y1(parseInt2 - 1, parseInt, arrayList);
-                return;
-            }
-            if (parseInt2 >= 2013 && parseInt <= 12) {
-                y1(parseInt - 1, parseInt2, arrayList);
-                return;
-            } else {
-                if (parseInt2 <= 12) {
-                    x1(parseInt - 1, parseInt2 - 1, arrayList);
-                    return;
-                }
-                return;
-            }
-        }
-        Matcher matcher2 = f3.matcher(trim);
-        if (matcher2.matches()) {
-            String group3 = matcher2.group(1);
-            String group4 = matcher2.group(3);
-            String group5 = matcher2.group(5);
-            if (matcher2.group(2).equals(matcher2.group(4))) {
-                int parseInt3 = Integer.parseInt(group3);
-                int parseInt4 = Integer.parseInt(group4) - 1;
-                int parseInt5 = Integer.parseInt(group5);
-                if (parseInt5 >= 10 && parseInt5 <= 99) {
-                    parseInt5 += 2000;
-                }
-                int i21 = parseInt5;
-                int i22 = Calendar.getInstance().get(1);
-                int i23 = parseInt3 - 1;
-                if (parseInt4 < 0 || parseInt4 >= 12 || i23 < 0 || i23 >= g3[parseInt4] || i21 < 2013 || i21 > i22) {
-                    return;
-                }
-                Calendar calendar5 = Calendar.getInstance();
-                calendar5.set(i21, parseInt4, parseInt3, 0, 0, 0);
-                long timeInMillis5 = calendar5.getTimeInMillis();
-                calendar5.set(i21, parseInt4, parseInt3 + 1, 0, 0, 0);
-                arrayList.add(new n0(timeInMillis5, calendar5.getTimeInMillis() - 1, LocaleController.getInstance().getFormatterYearMax().format(timeInMillis5)));
-                return;
-            }
-            return;
-        }
-        if (b3.matcher(trim).matches()) {
-            int intValue = Integer.valueOf(trim).intValue();
-            int i24 = Calendar.getInstance().get(1);
-            if (intValue < 2013) {
-                while (i24 >= 2013) {
-                    Calendar calendar6 = Calendar.getInstance();
-                    calendar6.set(i24, 0, 1, 0, 0, 0);
-                    long timeInMillis6 = calendar6.getTimeInMillis();
-                    calendar6.set(i24 + 1, 0, 1, 0, 0, 0);
-                    arrayList.add(new n0(timeInMillis6, calendar6.getTimeInMillis() - 1, Integer.toString(i24)));
-                    i24--;
-                }
-                return;
-            }
-            if (intValue <= i24) {
-                Calendar calendar7 = Calendar.getInstance();
-                calendar7.set(intValue, 0, 1, 0, 0, 0);
-                long timeInMillis7 = calendar7.getTimeInMillis();
-                calendar7.set(intValue + 1, 0, 1, 0, 0, 0);
-                arrayList.add(new n0(timeInMillis7, calendar7.getTimeInMillis() - 1, Integer.toString(intValue)));
-                return;
-            }
-            return;
-        }
-        Matcher matcher3 = c3.matcher(trim);
-        if (matcher3.matches()) {
-            String group6 = matcher3.group(1);
-            String group7 = matcher3.group(2);
-            int A1 = A1(group6);
-            if (A1 >= 0) {
-                int intValue2 = Integer.valueOf(group7).intValue();
-                if (intValue2 > 0 && intValue2 <= 31) {
-                    x1(intValue2 - 1, A1, arrayList);
-                    return;
-                } else if (intValue2 >= 2013) {
-                    y1(A1, intValue2, arrayList);
-                    return;
-                }
-            }
-        }
-        Matcher matcher4 = d3.matcher(trim);
-        if (matcher4.matches()) {
-            String group8 = matcher4.group(1);
-            int A12 = A1(matcher4.group(2));
-            if (A12 >= 0) {
-                int intValue3 = Integer.valueOf(group8).intValue();
-                if (intValue3 > 0 && intValue3 <= 31) {
-                    x1(intValue3 - 1, A12, arrayList);
-                    return;
-                } else if (intValue3 >= 2013) {
-                    y1(A12, intValue3, arrayList);
-                }
-            }
-        }
-        if (TextUtils.isEmpty(trim) || trim.length() <= 2) {
-            return;
-        }
-        int A13 = A1(trim);
-        long timeInMillis8 = Calendar.getInstance().getTimeInMillis();
-        if (A13 >= 0) {
-            for (int i25 = Calendar.getInstance().get(1); i25 >= 2013; i25--) {
-                Calendar calendar8 = Calendar.getInstance();
-                calendar8.set(i25, A13, 1, 0, 0, 0);
-                long timeInMillis9 = calendar8.getTimeInMillis();
-                if (timeInMillis9 <= timeInMillis8) {
-                    calendar8.add(2, 1);
-                    arrayList.add(new n0(timeInMillis9, calendar8.getTimeInMillis() - 1, LocaleController.getInstance().getFormatterMonthYear().format(timeInMillis9)));
-                }
-            }
-        }
-    }
-
-    public final void B1(ArrayList arrayList, ArrayList arrayList2, boolean z10) {
-        ArrayList arrayList3 = this.W2;
-        arrayList3.clear();
-        ArrayList arrayList4 = this.V2;
-        arrayList3.addAll(arrayList4);
-        arrayList4.clear();
-        if (arrayList != null) {
-            for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                Object obj = arrayList.get(i10);
-                if (obj instanceof TLRPC.User) {
-                    TLRPC.User user = (TLRPC.User) obj;
-                    p0 p0Var = new p0(R.drawable.search_users_filled, 4, UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser().id == user.id ? LocaleController.getString(R.string.SavedMessages) : ContactsController.formatName(user.first_name, user.last_name, 10));
-                    p0Var.f = user;
-                    arrayList4.add(p0Var);
-                } else if (obj instanceof TLRPC.Chat) {
-                    TLRPC.Chat chat = (TLRPC.Chat) obj;
-                    String str = chat.title;
-                    if (str.length() > 12) {
-                        str = t8.b.u(str.substring(0, 10), "...");
+                break;
+            case 9:
+                ki.t0 t0Var = (ki.t0) this.b;
+                d3 d3Var = t0Var.h;
+                if (d3Var != null && (aVar = t0Var.f) != null) {
+                    w3 w3Var = d3Var.a;
+                    w3Var.getClass();
+                    if (w3.y3(aVar)) {
+                        TL_iv.pageBlockDetails pageblockdetails = (TL_iv.pageBlockDetails) aVar.b;
+                        h2 h2Var = w3Var.H3;
+                        if (h2Var != null) {
+                            h2Var.d();
+                        }
+                        pageblockdetails.open = !pageblockdetails.open;
+                        w3Var.W2.N(true);
+                        h2 h2Var2 = w3Var.H3;
+                        if (h2Var2 != null) {
+                            h2Var2.h();
+                            break;
+                        }
                     }
-                    p0 p0Var2 = new p0(R.drawable.search_users_filled, 4, str);
-                    p0Var2.f = chat;
-                    arrayList4.add(p0Var2);
                 }
-            }
+                break;
+            case 10:
+                o4 o4Var = (o4) this.b;
+                ki.a aVar2 = o4Var.a;
+                if (aVar2 != null && (m4Var = o4Var.G) != null) {
+                    ((s3) m4Var).a.f3.h(aVar2);
+                    break;
+                }
+                break;
+            case 11:
+                org.telegram.ui.Components.voip.t tVar = (org.telegram.ui.Components.voip.t) this.b;
+                if (VoIPService.getSharedInstance() != null) {
+                    VoIPService.getSharedInstance().stopScreenCapture();
+                }
+                tVar.N.animate().alpha(0.0f).scaleX(0.0f).scaleY(0.0f).setDuration(180L).start();
+                break;
+            case 12:
+                org.telegram.ui.Components.voip.v0 v0Var = (org.telegram.ui.Components.voip.v0) this.b;
+                if (!v0Var.a) {
+                    if (v0Var.x != 0 || !v0Var.y) {
+                        v0Var.b(false, true);
+                        break;
+                    } else {
+                        ((Activity) v0Var.getContext()).startActivityForResult(((MediaProjectionManager) v0Var.getContext().getSystemService("media_projection")).createScreenCaptureIntent(), 520);
+                        break;
+                    }
+                }
+                break;
+            case 13:
+                ch1 ch1Var = (ch1) this.b;
+                if (!ch1Var.a) {
+                    if (ch1Var.w != 0) {
+                        ch1Var.a(false, true);
+                        break;
+                    } else {
+                        ((Activity) ch1Var.getContext()).startActivityForResult(((MediaProjectionManager) ch1Var.getContext().getSystemService("media_projection")).createScreenCaptureIntent(), 520);
+                        break;
+                    }
+                }
+                break;
+            case 14:
+                Context context = (Context) this.b;
+                if (VoIPService.getSharedInstance() != null) {
+                    Intent action = new Intent(context, (Class<?>) LaunchActivity.class).setAction("voip_chat");
+                    action.putExtra("currentAccount", VoIPService.getSharedInstance().getAccount());
+                    if (!(context instanceof Activity)) {
+                        action.addFlags(TLObject.FLAG_28);
+                    }
+                    context.startActivity(action);
+                    org.telegram.ui.Components.voip.h1.j();
+                    break;
+                }
+                break;
+            case 15:
+                org.telegram.ui.web.k kVar = (org.telegram.ui.web.k) this.b;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(kVar.getContext());
+                alertDialog$Builder.a.R = LocaleController.getString(R.string.WebRecentClearTitle);
+                alertDialog$Builder.a.T = LocaleController.getString(R.string.WebRecentClearText);
+                alertDialog$Builder.k(LocaleController.getString(R.string.OK), new org.telegram.ui.web.a(kVar));
+                i0.a.r(R.string.Cancel, alertDialog$Builder, null);
+                break;
+            case 16:
+                ((qg.y) this.b).dismiss();
+                break;
+            case 17:
+                ((w31) this.b).run();
+                break;
+            case 18:
+                ((t2) this.b).onBackPressed();
+                break;
+            case 19:
+                ((mg) this.b).run();
+                break;
+            case 20:
+                ((x90) this.b).performClick();
+                break;
+            case 21:
+                sg.l1 l1Var = (sg.l1) this.b;
+                PremiumPreviewFragment.p0();
+                PremiumPreviewFragment.k0(l1Var.t0, null, "profile", null);
+                break;
+            case 22:
+                final ug.e0 e0Var = (ug.e0) this.b;
+                wg.a aVar3 = e0Var.Q0;
+                if (!aVar3.a.N) {
+                    aVar3.b(true);
+                    String str = e0Var.R0;
+                    final int i11 = 0;
+                    Utilities.Callback callback = new Utilities.Callback() { // from class: ug.d0
+                        @Override // org.telegram.messenger.Utilities.Callback
+                        public final void run(Object obj) {
+                            switch (i11) {
+                                case 0:
+                                    e0 e0Var2 = e0Var;
+                                    e0Var2.Q0.b(false);
+                                    e0Var2.dismiss();
+                                    AndroidUtilities.runOnUIThread(new c0(e0Var2, 1), 200L);
+                                    break;
+                                default:
+                                    e0.d0(e0Var, (TLRPC.TL_error) obj);
+                                    break;
+                            }
+                        }
+                    };
+                    final int i12 = 1;
+                    Utilities.Callback callback2 = new Utilities.Callback() { // from class: ug.d0
+                        @Override // org.telegram.messenger.Utilities.Callback
+                        public final void run(Object obj) {
+                            switch (i12) {
+                                case 0:
+                                    e0 e0Var2 = e0Var;
+                                    e0Var2.Q0.b(false);
+                                    e0Var2.dismiss();
+                                    AndroidUtilities.runOnUIThread(new c0(e0Var2, 1), 200L);
+                                    break;
+                                default:
+                                    e0.d0(e0Var, (TLRPC.TL_error) obj);
+                                    break;
+                            }
+                        }
+                    };
+                    ConnectionsManager connectionsManager = ConnectionsManager.getInstance(UserConfig.selectedAccount);
+                    TLRPC.TL_payments_applyGiftCode tL_payments_applyGiftCode = new TLRPC.TL_payments_applyGiftCode();
+                    tL_payments_applyGiftCode.slug = str;
+                    connectionsManager.sendRequest(tL_payments_applyGiftCode, new ug.n(callback2, callback, 0), 2);
+                    break;
+                }
+                break;
+            case 23:
+                ((ug.h0) this.b).dismiss();
+                break;
+            case 24:
+                ((ug.z) ((vg.e) this.b)).r.dismiss();
+                break;
+            case 25:
+                Runnable runnable = ((yg.c) this.b).d;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
+            case 26:
+                ((yh.c) this.b).dismiss();
+                break;
+            case 27:
+                ((yh.d0) this.b).dismiss();
+                break;
+            case 28:
+                if (((yh.p1) this.b).f0.f > 0 && (R = LaunchActivity.R()) != null) {
+                    l2 l2Var = new l2();
+                    l2Var.a = true;
+                    R.showAsSheet(new ld(), l2Var);
+                    break;
+                }
+                break;
+            default:
+                ((zh.t) this.b).c.b.a.presentFragment(new PremiumPreviewFragment(0, "qr_emoji"));
+                break;
         }
-        if (arrayList2 != null) {
-            for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-                n0 n0Var = (n0) arrayList2.get(i11);
-                p0 p0Var3 = new p0(R.drawable.search_date_filled, 6, n0Var.a);
-                p0Var3.g = n0Var;
-                arrayList4.add(p0Var3);
-            }
-        }
-        if (z10) {
-            arrayList4.add(new p0(R.drawable.chats_archive, R.string.ArchiveSearchFilter, null, 7));
-        }
-        if (getAdapter() != null) {
-            b2.u uVar = new b2.u(getAdapter(), 2);
-            s4.o.c(this.Z2, true).b(uVar);
-            if (arrayList4.isEmpty() || !uVar.b) {
-                return;
-            }
-            this.X2.h1(0, 0);
-        }
-    }
-
-    public final void C1() {
-        getRecycledViewPool().a();
-        for (int i10 = 0; i10 < getChildCount(); i10++) {
-            View childAt = getChildAt(i10);
-            if (childAt instanceof o0) {
-                int i11 = o0.f;
-                ((o0) childAt).a();
-            }
-        }
-        for (int i12 = 0; i12 < getCachedChildCount(); i12++) {
-            View P = P(i12);
-            if (P instanceof o0) {
-                int i13 = o0.f;
-                ((o0) P).a();
-            }
-        }
-        for (int i14 = 0; i14 < getAttachedScrapChildCount(); i14++) {
-            View O = O(i14);
-            if (O instanceof o0) {
-                int i15 = o0.f;
-                ((o0) O).a();
-            }
-        }
-        setSelectorDrawableColor(g6.w0(g6.i6, this.n2));
-    }
-
-    public ArrayList<i6> getThemeDescriptions() {
-        ArrayList<i6> arrayList = new ArrayList<>();
-        arrayList.add(new i6(this, 0, null, null, null, null, g6.e7));
-        arrayList.add(new i6(this, 0, null, null, null, null, g6.f7));
-        return arrayList;
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if (this.Y2) {
-            canvas.drawRect(0.0f, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight(), g6.k0);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (isEnabled()) {
-            return super.onInterceptTouchEvent(motionEvent);
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (isEnabled()) {
-            return super.onTouchEvent(motionEvent);
-        }
-        return false;
     }
 }

@@ -1,44 +1,20 @@
 package org.telegram.ui;
 
-import android.graphics.Rect;
 import android.view.View;
-import android.widget.ImageView;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.widget.FrameLayout;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class dz implements org.telegram.ui.Components.dm0 {
-    public final Rect a = new Rect();
-    public final /* synthetic */ hz b;
+public final class dz extends FrameLayout {
+    public wh.n a;
 
-    public dz(hz hzVar) {
-        this.b = hzVar;
+    public wh.n getSubtitleTextView() {
+        return this.a;
     }
 
-    @Override // org.telegram.ui.Components.dm0
-    public final boolean d(float f7, float f10, int i10, View view) {
-        hz hzVar = this.b;
-        if (hzVar.getParentActivity() != null && (view instanceof org.telegram.ui.Cells.g4)) {
-            ImageView imageView = (ImageView) view.getTag(R.id.object_tag);
-            Rect rect = this.a;
-            imageView.getHitRect(rect);
-            if (!rect.contains((int) f7, (int) f10)) {
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(hzVar.getParentActivity());
-                alertDialog$Builder.f(new CharSequence[]{LocaleController.getString(R.string.Delete)}, new cz(this, i10, 0));
-                hzVar.showDialog(alertDialog$Builder.a);
-                return true;
-            }
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.dm0
-    public final void h() {
-    }
-
-    @Override // org.telegram.ui.Components.dm0
-    public final void q(float f7) {
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
     }
 }

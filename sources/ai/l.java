@@ -1,0 +1,74 @@
+package ai;
+
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.a90;
+import org.telegram.ui.TwoStepVerificationActivity;
+import org.telegram.ui.kb0;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class l implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+
+    public /* synthetic */ l(MessagesController messagesController, boolean z10, TLRPC.User user, long j10) {
+        this.a = 1;
+        this.d = messagesController;
+        this.b = z10;
+        this.e = user;
+        this.c = j10;
+    }
+
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new m((x) this.d, tL_error, tLObject, (TwoStepVerificationActivity) this.e, this.b, this.c));
+                break;
+            case 1:
+                ((MessagesController) this.d).lambda$deleteParticipantFromChat$315(this.b, (TLRPC.User) this.e, this.c, tLObject, tL_error);
+                break;
+            case 2:
+                ((MessagesController) this.d).lambda$checkChatInviter$374((TLRPC.Chat) this.e, this.b, this.c, tLObject, tL_error);
+                break;
+            case 3:
+                a90.t((a90) this.d, this.c, this.b, (TLRPC.TL_messages_importChatInvite) this.e, tLObject, tL_error);
+                break;
+            default:
+                AndroidUtilities.runOnUIThread(new m((kb0) this.d, tLObject, this.c, (String) this.e, this.b, tL_error));
+                break;
+        }
+    }
+
+    public /* synthetic */ l(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Object obj, boolean z10, long j10, int i10) {
+        this.a = i10;
+        this.d = notificationCenterDelegate;
+        this.e = obj;
+        this.b = z10;
+        this.c = j10;
+    }
+
+    public /* synthetic */ l(a90 a90Var, long j10, boolean z10, TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite) {
+        this.a = 3;
+        this.d = a90Var;
+        this.c = j10;
+        this.b = z10;
+        this.e = tL_messages_importChatInvite;
+    }
+
+    public /* synthetic */ l(kb0 kb0Var, long j10, String str, boolean z10) {
+        this.a = 4;
+        this.d = kb0Var;
+        this.c = j10;
+        this.e = str;
+        this.b = z10;
+    }
+}

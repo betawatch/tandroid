@@ -1,39 +1,63 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.View;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class o81 extends org.telegram.ui.ActionBar.e3 {
-    public static final /* synthetic */ int e = 0;
-    public TLRPC.TL_authorization b;
-    public SessionsActivity c;
-    public org.telegram.ui.Components.bk0 d;
+public final class o81 implements ch.a {
+    public final RectF a = new RectF();
+    public final /* synthetic */ y8 b;
+    public final /* synthetic */ r91 c;
 
-    public static void n(o81 o81Var, String str) {
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(o81Var.getContext());
-        alertDialog$Builder.f(new CharSequence[]{LocaleController.getString(R.string.Copy)}, new mg.j(12, o81Var, str));
-        alertDialog$Builder.o();
+    public o81(r91 r91Var, y8 y8Var) {
+        this.c = r91Var;
+        this.b = y8Var;
     }
 
-    public static void o(o81 o81Var) {
-        TL_account.changeAuthorizationSettings changeauthorizationsettings = new TL_account.changeAuthorizationSettings();
-        TLRPC.TL_authorization tL_authorization = o81Var.b;
-        changeauthorizationsettings.encrypted_requests_disabled = tL_authorization.encrypted_requests_disabled;
-        changeauthorizationsettings.call_requests_disabled = tL_authorization.call_requests_disabled;
-        changeauthorizationsettings.flags = 3;
-        changeauthorizationsettings.hash = tL_authorization.hash;
-        ConnectionsManager.getInstance(o81Var.currentAccount).sendRequest(changeauthorizationsettings, new bi.g7(21));
+    @Override // ch.a
+    public final void e(bh.a aVar, RectF rectF) {
+        aVar.a = true;
     }
 
-    @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog
-    public final void show() {
-        super.show();
-        this.d.d();
+    @Override // ch.a
+    public final void f(Canvas canvas, RectF rectF) {
+        bh.l lVar;
+        View view;
+        ec ecVar;
+        r91 r91Var = this.c;
+        r91Var.fragmentView.getMeasuredWidth();
+        r91Var.fragmentView.getMeasuredHeight();
+        canvas.drawColor(r91Var.getThemedColor(org.telegram.ui.ActionBar.h6.d6));
+        for (int i10 = 0; i10 < 3; i10++) {
+            if (i10 == 0) {
+                lVar = r91Var.T;
+                view = r91Var.S;
+            } else if (i10 != 1 || (ecVar = r91Var.j0) == null) {
+                ke keVar = r91Var.k0;
+                if (keVar != null) {
+                    lVar = keVar.b1;
+                    view = keVar;
+                } else {
+                    lVar = null;
+                    view = null;
+                }
+            } else {
+                lVar = ecVar.G;
+                view = ecVar;
+            }
+            if (lVar != null && view != null) {
+                y8 y8Var = this.b;
+                RectF rectF2 = this.a;
+                ih.j.c(view, y8Var, rectF2);
+                if (rectF2.right > 0.0f) {
+                    r91Var.fragmentView.getMeasuredWidth();
+                }
+                canvas.save();
+                lVar.f(canvas, rectF);
+                canvas.restore();
+            }
+        }
     }
 }

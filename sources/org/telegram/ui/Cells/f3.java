@@ -1,63 +1,144 @@
 package org.telegram.ui.Cells;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.ui.Components.nu;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.bs;
+import org.telegram.ui.Components.iu;
+import org.telegram.ui.Components.jw0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class f3 implements TextWatcher {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ nu b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ g3 d;
+public abstract class f3 extends FrameLayout {
+    public boolean a;
+    public final d3 b;
+    public final int c;
+    public boolean d;
+    public int e;
+    public boolean f;
+    public boolean h;
+    public boolean n;
+    public final org.telegram.ui.Components.i5 r;
+    public int s;
+    public final org.telegram.ui.Components.p6 v;
+    public boolean w;
 
-    public f3(g3 g3Var, int i10, nu nuVar, boolean z10) {
-        this.d = g3Var;
-        this.a = i10;
-        this.b = nuVar;
-        this.c = z10;
+    public f3(Context context, jw0 jw0Var, String str, boolean z10, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context);
+        this.e = -1;
+        this.n = true;
+        org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(false, true, true);
+        this.v = p6Var;
+        p6Var.n(0.2f, 160L, bs.h);
+        p6Var.w(AndroidUtilities.dp(15.33f));
+        p6Var.b = 5;
+        this.c = i10;
+        d3 d3Var = new d3(this, context, jw0Var, d6Var, z10);
+        this.b = d3Var;
+        iu editText = d3Var.getEditText();
+        editText.setDelegate(new mi.q(this, editText, false, 9));
+        d3Var.setWillNotDraw(false);
+        this.r = new org.telegram.ui.Components.i5(d3Var);
+        p6Var.setCallback(d3Var);
+        editText.setTextSize(1, 17.0f);
+        editText.setHintTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.H6, d6Var));
+        int i11 = org.telegram.ui.ActionBar.h6.G6;
+        editText.setTextColor(org.telegram.ui.ActionBar.h6.w0(i11, d6Var));
+        editText.setBackground(null);
+        if (z10) {
+            editText.setMaxLines(5);
+            editText.setSingleLine(false);
+        } else {
+            editText.setMaxLines(1);
+            editText.setSingleLine(true);
+        }
+        editText.setPadding(editText.getPaddingLeft(), editText.getPaddingTop(), AndroidUtilities.dp(0.0f), editText.getPaddingBottom());
+        editText.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
+        editText.setInputType((z10 ? 131072 : 0) | 573441);
+        editText.setRawInputType(573441);
+        editText.setHint(str);
+        editText.setCursorColor(org.telegram.ui.ActionBar.h6.w0(i11, d6Var));
+        editText.setCursorSize(AndroidUtilities.dp(19.0f));
+        editText.setCursorWidth(1.5f);
+        editText.addTextChangedListener(new e3(this, i10, editText, z10));
+        editText.setOnFocusChangeListener(new m.s2(this, 1));
+        addView(d3Var, w7.z5.e(-1, -1, 48));
+        c();
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        g3 g3Var = this.d;
-        boolean z10 = g3Var.a;
-        int i10 = this.a;
-        if (!z10) {
-            if (i10 > 0 && editable != null && editable.length() > i10) {
-                g3Var.a = true;
-                CharSequence subSequence = editable.subSequence(0, i10);
-                nu nuVar = this.b;
-                nuVar.setText(subSequence);
-                nuVar.setSelection(nuVar.length());
-                g3Var.a = false;
-            }
-            g3Var.b();
-        }
-        if (this.c) {
-            while (true) {
-                int indexOf = editable.toString().indexOf("\n");
-                if (indexOf < 0) {
-                    break;
-                } else {
-                    editable.delete(indexOf, indexOf + 1);
-                }
-            }
-        }
-        org.telegram.ui.Components.r6 r6Var = g3Var.v;
-        if (r6Var == null || i10 <= 0) {
+    public int a() {
+        return org.telegram.ui.Components.r5.g();
+    }
+
+    public final void c() {
+        int i10;
+        d3 d3Var = this.b;
+        if (d3Var == null || d3Var.getEditText() == null) {
             return;
         }
-        r6Var.a();
-        g3Var.c();
+        this.s = this.c - getText().length();
+        String str = "";
+        if ((!TextUtils.isEmpty(getText()) || this.d) && ((!this.f || this.h) && ((i10 = this.e) == -1 || this.s <= i10))) {
+            str = "" + this.s;
+        }
+        this.v.t(str, true, true);
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    public CharSequence getText() {
+        return this.b.getText();
     }
 
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.w) {
+            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(22.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(22.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.h6.k0);
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    }
+
+    public void setDivider(boolean z10) {
+        this.w = z10;
+        setWillNotDraw(!z10);
+    }
+
+    public void setEmojiViewCacheType(int i10) {
+        this.b.setEmojiViewCacheType(i10);
+    }
+
+    public void setShowLimitOnFocus(boolean z10) {
+        this.f = z10;
+    }
+
+    public void setShowLimitWhenEmpty(boolean z10) {
+        this.d = z10;
+        if (z10) {
+            c();
+        }
+    }
+
+    public void setShowLimitWhenNear(int i10) {
+        this.e = i10;
+        c();
+    }
+
+    public void setText(CharSequence charSequence) {
+        this.a = true;
+        d3 d3Var = this.b;
+        d3Var.setText(charSequence);
+        d3Var.setSelection(d3Var.getText().length());
+        this.a = false;
+    }
+
+    public void b() {
     }
 }

@@ -1,75 +1,10 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public abstract class pb extends wb {
-    private ob button;
-    private int childrenMeasuredWidth;
-    org.telegram.ui.ActionBar.c6 resourcesProvider;
-    public lc timerView;
-    private boolean wrapWidth;
-
-    public pb(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, c6Var);
-        this.resourcesProvider = c6Var;
-    }
-
-    public ob getButton() {
-        return this.button;
-    }
-
-    @Override // android.view.ViewGroup
-    public void measureChildWithMargins(View view, int i10, int i11, int i12, int i13) {
-        ob obVar = this.button;
-        if (obVar != null && view != obVar) {
-            i11 = org.telegram.messenger.sk.D(12.0f, obVar.getMeasuredWidth(), i11);
-        }
-        super.measureChildWithMargins(view, i10, i11, i12, i13);
-        if (view != this.button) {
-            ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
-            this.childrenMeasuredWidth = Math.max(this.childrenMeasuredWidth, view.getMeasuredWidth() + marginLayoutParams.leftMargin + marginLayoutParams.rightMargin);
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
-        this.childrenMeasuredWidth = 0;
-        if (this.wrapWidth) {
-            i10 = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_31);
-        }
-        super.onMeasure(i10, i11);
-        if (this.button == null || View.MeasureSpec.getMode(i10) != Integer.MIN_VALUE) {
-            return;
-        }
-        setMeasuredDimension(this.button.getMeasuredWidth() + this.childrenMeasuredWidth, getMeasuredHeight());
-    }
-
-    public void setButton(ob obVar) {
-        ob obVar2 = this.button;
-        if (obVar2 != null) {
-            removeCallback(obVar2);
-            removeView(this.button);
-        }
-        this.button = obVar;
-        if (obVar != null) {
-            addCallback(obVar);
-            addView(obVar, 0, w7.z5.h(-2.0f, -2.0f, 8388629));
-        }
-    }
-
-    public void setTimer() {
-        lc lcVar = new lc(getContext(), this.resourcesProvider);
-        this.timerView = lcVar;
-        lcVar.b = 5000L;
-        addView(lcVar, w7.z5.i(20.0f, 20.0f, 8388627, 21.0f, 0.0f, 21.0f, 0.0f));
-    }
-
-    public void setWrapWidth() {
-        this.wrapWidth = true;
+public final class pb extends qc {
+    @Override // org.telegram.ui.Components.qc
+    public final qc j() {
+        return this;
     }
 }

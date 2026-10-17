@@ -1,29 +1,36 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.LanguageDetector;
-import org.telegram.messenger.TranslateController;
-import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.messenger.UnconfirmedAuthController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ol implements LanguageDetector.StringCallback, LanguageDetector.ExceptionCallback {
-    public final /* synthetic */ TranslateController a;
-    public final /* synthetic */ TL_stories.StoryItem b;
-    public final /* synthetic */ TranslateController.StoryKey c;
+public final /* synthetic */ class ol implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ UnconfirmedAuthController.UnconfirmedAuth b;
+    public final /* synthetic */ Utilities.Callback c;
 
-    public /* synthetic */ ol(TranslateController translateController, TL_stories.StoryItem storyItem, TranslateController.StoryKey storyKey) {
-        this.a = translateController;
-        this.b = storyItem;
-        this.c = storyKey;
+    public /* synthetic */ ol(UnconfirmedAuthController.UnconfirmedAuth unconfirmedAuth, Utilities.Callback callback, int i10) {
+        this.a = i10;
+        this.b = unconfirmedAuth;
+        this.c = callback;
     }
 
-    @Override // org.telegram.messenger.LanguageDetector.ExceptionCallback
-    public void run(Exception exc) {
-        this.a.lambda$detectStoryLanguage$34(this.b, this.c, exc);
-    }
-
-    @Override // org.telegram.messenger.LanguageDetector.StringCallback
-    public void run(String str) {
-        this.a.lambda$detectStoryLanguage$32(this.b, this.c, str);
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                this.b.lambda$deny$4(this.c, tLObject, tL_error);
+                break;
+            case 1:
+                this.b.lambda$deny$6(this.c, tLObject, tL_error);
+                break;
+            default:
+                this.b.lambda$confirm$2(this.c, tLObject, tL_error);
+                break;
+        }
     }
 }

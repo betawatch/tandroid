@@ -1,9 +1,9 @@
 package qf;
 
 import a3.z;
-import ad.h;
 import ad.i;
-import ad.l;
+import ad.j;
+import ad.m;
 import android.net.Uri;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
@@ -11,7 +11,8 @@ import android.text.TextUtils;
 import android.util.Base64;
 import android.util.Log;
 import android.util.Pair;
-import g2.m;
+import c6.l;
+import g2.h;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -27,21 +28,19 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Level;
-import m1.j;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.secretmedia.ExtendedDefaultDataSourceFactory;
-import org.telegram.ui.ps0;
+import org.telegram.ui.hk0;
 import t7.u;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class d extends l {
+public final class d extends m {
     public static final f l;
     public static final HashMap m;
     public final ExtendedDefaultDataSourceFactory e;
-    public final ps0 f;
+    public final hk0 f;
     public final u g;
     public final HashMap h;
     public Pair i;
@@ -64,7 +63,7 @@ public final class d extends l {
         this.i = null;
         this.j = false;
         this.k = new AtomicInteger();
-        this.f = new ps0(20);
+        this.f = new hk0(23);
         this.g = new u(8);
         this.e = new ExtendedDefaultDataSourceFactory(ApplicationLoader.applicationContext, "Mozilla/5.0 (X11; Linux x86_64; rv:10.0) Gecko/20150101 Firefox/47.0 (Chrome)");
     }
@@ -98,12 +97,12 @@ public final class d extends l {
         return a1.g.p("http://", str, str2);
     }
 
-    @Override // ad.l
-    public final i e(ad.e eVar) {
+    @Override // ad.m
+    public final j e(ad.f fVar) {
         String str;
         int incrementAndGet = this.k.incrementAndGet();
-        StringBuilder l4 = i2.d.l(incrementAndGet, "Request ", " ");
-        switch (eVar.g) {
+        StringBuilder l4 = i0.a.l(incrementAndGet, "Request ", " ");
+        switch (fVar.g) {
             case 1:
                 str = "GET";
                 break;
@@ -153,31 +152,31 @@ public final class d extends l {
                 str = "UNLOCK";
                 break;
             default:
-                str = BuildConfig.BETA_URL;
+                str = "null";
                 break;
         }
         l4.append(str);
         l4.append(" ");
-        l4.append(eVar.f);
+        l4.append(fVar.f);
         l4.append(" ");
-        l4.append((String) eVar.i.get("range"));
+        l4.append((String) fVar.i.get("range"));
         Log.d("CAST_SERVER", l4.toString());
         try {
-            i k10 = k(eVar);
-            ad.f fVar = k10.e;
-            fVar.put("Access-Control-Allow-Origin", "*");
-            fVar.put("Access-Control-Max-Age", "3628800");
-            fVar.put("Access-Control-Allow-Methods", "*");
-            fVar.put("Access-Control-Allow-Headers", "*");
+            j k10 = k(fVar);
+            ad.g gVar = k10.e;
+            gVar.put("Access-Control-Allow-Origin", "*");
+            gVar.put("Access-Control-Max-Age", "3628800");
+            gVar.put("Access-Control-Allow-Methods", "*");
+            gVar.put("Access-Control-Allow-Headers", "*");
             return k10;
         } catch (Throwable unused) {
             Log.d("CAST_SERVER", "Error " + incrementAndGet);
-            i c10 = l.c(h.n, "text/plain", "Error reading file");
-            ad.f fVar2 = c10.e;
-            fVar2.put("Access-Control-Allow-Origin", "*");
-            fVar2.put("Access-Control-Max-Age", "3628800");
-            fVar2.put("Access-Control-Allow-Methods", "*");
-            fVar2.put("Access-Control-Allow-Headers", "*");
+            j c10 = m.c(i.n, "text/plain", "Error reading file");
+            ad.g gVar2 = c10.e;
+            gVar2.put("Access-Control-Allow-Origin", "*");
+            gVar2.put("Access-Control-Max-Age", "3628800");
+            gVar2.put("Access-Control-Allow-Methods", "*");
+            gVar2.put("Access-Control-Allow-Headers", "*");
             return c10;
         }
     }
@@ -197,7 +196,7 @@ public final class d extends l {
         }
         if (this.j) {
             try {
-                l.d(this.a);
+                m.d(this.a);
                 ad.d dVar = this.c;
                 dVar.getClass();
                 ArrayList arrayList = new ArrayList((List) dVar.c);
@@ -207,15 +206,15 @@ public final class d extends l {
                     Object obj = arrayList.get(i10);
                     i10++;
                     ad.a aVar = (ad.a) obj;
-                    l.d(aVar.a);
-                    l.d(aVar.b);
+                    m.d(aVar.a);
+                    m.d(aVar.b);
                 }
                 Thread thread = this.b;
                 if (thread != null) {
                     thread.join();
                 }
             } catch (Exception e7) {
-                l.d.log(Level.SEVERE, "Could not stop all connections", (Throwable) e7);
+                m.d.log(Level.SEVERE, "Could not stop all connections", (Throwable) e7);
             }
             this.j = false;
         }
@@ -229,20 +228,20 @@ public final class d extends l {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final i k(ad.e eVar) {
+    public final j k(ad.f fVar) {
         boolean z10;
         long j10;
         z zVar;
         long j11;
-        i c10;
+        j c10;
         long parseLong;
         long parseLong2;
-        String str = (String) eVar.i.get("host");
-        String path = Uri.parse("http://" + str + eVar.f).getPath();
-        boolean b10 = j.b(6, eVar.g);
-        h hVar = h.c;
+        String str = (String) fVar.i.get("host");
+        String path = Uri.parse("http://" + str + fVar.f).getPath();
+        boolean b10 = m1.j.b(6, fVar.g);
+        i iVar = i.c;
         if (b10) {
-            return l.c(hVar, "text/plain", "");
+            return m.c(iVar, "text/plain", "");
         }
         boolean equals = TextUtils.equals(path, "/");
         HashMap hashMap = this.h;
@@ -262,12 +261,12 @@ public final class d extends l {
                         sb2.append('\n');
                     }
                     sb2.append(j(str, (String) entry.getKey()));
-                    c6.l lVar = ((f) entry.getValue()).b;
+                    l lVar = ((f) entry.getValue()).b;
                     if (lVar != null) {
                         Bundle bundle = lVar.b;
-                        c6.l.c(1, "com.google.android.gms.cast.metadata.TITLE");
+                        l.c(1, "com.google.android.gms.cast.metadata.TITLE");
                         String string = bundle.getString("com.google.android.gms.cast.metadata.TITLE");
-                        c6.l.c(1, "com.google.android.gms.cast.metadata.SUBTITLE");
+                        l.c(1, "com.google.android.gms.cast.metadata.SUBTITLE");
                         String string2 = bundle.getString("com.google.android.gms.cast.metadata.SUBTITLE");
                         if (string != null) {
                             sb2.append(' ');
@@ -282,32 +281,32 @@ public final class d extends l {
                 }
                 i10++;
             }
-            return l.c(hVar, "text/plain", sb2.toString());
+            return m.c(iVar, "text/plain", sb2.toString());
         }
-        f fVar = (f) hashMap2.get(path);
-        if (fVar == null) {
-            fVar = (f) hashMap.get(path);
+        f fVar2 = (f) hashMap2.get(path);
+        if (fVar2 == null) {
+            fVar2 = (f) hashMap.get(path);
         }
-        if (fVar == null) {
+        if (fVar2 == null) {
             Pair pair = this.i;
             File file = (pair == null || !((String) pair.first).equalsIgnoreCase(path)) ? null : (File) this.i.second;
-            return file != null ? new i(hVar, "image/jpeg", new BufferedInputStream(new FileInputStream(file)), file.length()) : l.c(h.h, "text/plain", "file not found");
+            return file != null ? new j(iVar, "image/jpeg", new BufferedInputStream(new FileInputStream(file)), file.length()) : m.c(i.h, "text/plain", "file not found");
         }
-        Uri uri = fVar.c;
-        String str2 = (String) eVar.i.get("host");
-        String str3 = fVar.a;
+        Uri uri = fVar2.c;
+        String str2 = (String) fVar.i.get("host");
+        String str3 = fVar2.a;
         if (uri.toString().startsWith("data:application/x-mpegurl;base64,")) {
-            return l.c(hVar, str3, new String(Base64.decode(uri.toString().substring(34), 0)).replaceAll("mtproto:", j(str2, "/mtproto_")));
+            return m.c(iVar, str3, new String(Base64.decode(uri.toString().substring(34), 0)).replaceAll("mtproto:", j(str2, "/mtproto_")));
         }
-        g2.h createDataSource = (uri.toString().startsWith("file://") ? uri.toString().startsWith("file:///android_asset/") ? this.f : this.g : this.e).createDataSource();
+        h createDataSource = (uri.toString().startsWith("file://") ? uri.toString().startsWith("file:///android_asset/") ? this.f : this.g : this.e).createDataSource();
         Map map = Collections.EMPTY_MAP;
         long j12 = 0;
         long j13 = -1;
-        long open = createDataSource.open(new m(uri, 1, null, map, 0L, -1L, null, 0));
+        long open = createDataSource.open(new g2.m(uri, 1, null, map, 0L, -1L, null, 0));
         createDataSource.close();
         boolean equals2 = TextUtils.equals(str3, "application/x-mpegURL");
         if (!equals2) {
-            String str4 = (String) eVar.i.get("range");
+            String str4 = (String) fVar.i.get("range");
             if (!TextUtils.isEmpty(str4)) {
                 String substring = str4.trim().substring(6);
                 if (substring.startsWith("-")) {
@@ -332,27 +331,27 @@ public final class d extends l {
                 if (!z10) {
                     int i11 = (int) j16;
                     byte[] bArr = new byte[i11];
-                    createDataSource.open(new m(uri, 1, null, map, j12, j13, null, 0));
+                    createDataSource.open(new g2.m(uri, 1, null, map, j12, j13, null, 0));
                     createDataSource.read(bArr, 0, i11);
                     createDataSource.close();
-                    return l.c(hVar, str3, new String(bArr).replaceAll("mtproto:", j(str2, "/mtproto_")));
+                    return m.c(iVar, str3, new String(bArr).replaceAll("mtproto:", j(str2, "/mtproto_")));
                 }
                 if (j16 != 0) {
                     j11 = j10;
-                    c cVar = new c(createDataSource, new m(uri, 1, null, map, j12, j13, null, 0));
+                    c cVar = new c(createDataSource, new g2.m(uri, 1, null, map, j12, j13, null, 0));
                     if (zVar != null) {
-                        hVar = h.e;
+                        iVar = i.e;
                     }
-                    c10 = new i(hVar, fVar.a, cVar, j16);
+                    c10 = new j(iVar, fVar2.a, cVar, j16);
                 } else {
                     j11 = j10;
-                    c10 = l.c(h.d, str3, "");
+                    c10 = m.c(i.d, str3, "");
                 }
-                i iVar = c10;
+                j jVar = c10;
                 if (zVar != null) {
-                    iVar.e.put("Content-Range", "bytes " + zVar.a + "-" + zVar.b + "/" + j11);
+                    jVar.e.put("Content-Range", "bytes " + zVar.a + "-" + zVar.b + "/" + j11);
                 }
-                return iVar;
+                return jVar;
             }
         }
         z10 = equals2;

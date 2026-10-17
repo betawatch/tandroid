@@ -2,7 +2,7 @@ package y2;
 
 import android.content.Context;
 import android.os.SystemClock;
-import di.x8;
+import com.google.firebase.messaging.s;
 import e2.g0;
 import e2.v;
 import e2.w;
@@ -14,10 +14,9 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.Executor;
-import k2.s;
 import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class f implements c, c0 {
     public static final x1 p = n0.x(4300000L, 3200000L, 2400000L, 1700000L, 860000L);
@@ -29,7 +28,7 @@ public final class f implements c, c0 {
     public static f v;
     public final Context a;
     public final q0 b;
-    public final v0.k c;
+    public final le.b c;
     public final g0 d;
     public final boolean e;
     public final q f;
@@ -48,7 +47,7 @@ public final class f implements c, c0 {
         g0 g0Var = g0.a;
         this.a = context == null ? null : context.getApplicationContext();
         this.b = q0.a(hashMap);
-        this.c = new v0.k(5);
+        this.c = new le.b(28);
         this.f = new q();
         this.d = g0Var;
         this.e = true;
@@ -77,7 +76,7 @@ public final class f implements c, c0 {
             z10 = a2.a;
         }
         if (z10) {
-            vVar2.b.execute(new x8(vVar2, 10));
+            vVar2.b.execute(new s(vVar2, 4));
         }
     }
 
@@ -722,7 +721,7 @@ public final class f implements c, c0 {
             return;
         }
         this.m = j11;
-        Iterator it = ((CopyOnWriteArrayList) this.c.a).iterator();
+        Iterator it = ((CopyOnWriteArrayList) this.c.b).iterator();
         while (it.hasNext()) {
             b bVar = (b) it.next();
             if (bVar.c) {
@@ -733,7 +732,7 @@ public final class f implements c, c0 {
                 i11 = i10;
                 j12 = j10;
                 j13 = j11;
-                bVar.a.post(new s(bVar, i11, j12, j13, 1));
+                bVar.a.post(new k2.s(bVar, i11, j12, j13, 1));
             }
             i10 = i11;
             j10 = j12;

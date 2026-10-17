@@ -1,22 +1,171 @@
 package org.telegram.ui.Components;
 
-import android.graphics.drawable.Drawable;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.view.View;
+import android.widget.ImageView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public abstract class kx0 extends Drawable {
-    public final void a() {
-        zf.i d = zf.i.d();
-        d.getClass();
-        zf.i.c();
-        d.e.add(this);
+public final class kx0 extends xj0 {
+    public float E;
+    public ValueAnimator F;
+    public ValueAnimator G;
+    public final /* synthetic */ px0 H;
+    public int r;
+    public float s;
+    public ValueAnimator v;
+    public boolean w;
+    public long x;
+    public float y;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public kx0(px0 px0Var, Context context) {
+        super(context);
+        org.telegram.ui.ActionBar.d6 d6Var = px0Var.n2;
+        this.H = px0Var;
+        this.w = false;
+        this.y = 1.0f;
+        k(px0Var.u3 ? i0.b.o(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Wk, d6Var), (int) 102.0f) : org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Me, d6Var));
+        setScaleType(ImageView.ScaleType.CENTER);
+        setLayerNum(null);
     }
 
-    public abstract void b(int i10);
+    @Override // org.telegram.ui.Components.xj0
+    public final void c() {
+        this.w = true;
+        if (this.y < 1.0f) {
+            ValueAnimator valueAnimator = this.G;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+                this.G = null;
+            }
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.y, 1.0f);
+            this.G = ofFloat;
+            ofFloat.addUpdateListener(new hx0(this, 2));
+            this.G.addListener(new jx0(this, 0));
+            this.G.setDuration(320L);
+            this.G.setInterpolator(bs.h);
+            this.G.start();
+        }
+    }
 
-    public abstract void c(boolean z10);
+    @Override // android.view.View
+    public final void draw(Canvas canvas) {
+        if (isPressed()) {
+            float f7 = this.E;
+            if (f7 != 1.0f) {
+                this.E = Utilities.clamp(((1000.0f / AndroidUtilities.screenRefreshRate) / 100.0f) + f7, 1.0f, 0.0f);
+                invalidate();
+                this.H.invalidate();
+            }
+        }
+        float x10 = com.google.android.gms.internal.cast.a6.x(1.0f, this.E, 0.15f, 0.85f) * this.y;
+        if (x10 != 1.0f) {
+            canvas.save();
+            canvas.scale(x10, x10, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
+        }
+        super.draw(canvas);
+        if (x10 != 1.0f) {
+            canvas.restore();
+        }
+    }
 
-    public abstract void d();
+    public final void j() {
+        if (System.currentTimeMillis() - this.x <= 250) {
+            return;
+        }
+        this.x = System.currentTimeMillis();
+        uj0 animatedDrawable = getAnimatedDrawable();
+        if (animatedDrawable == null && getImageReceiver() != null) {
+            animatedDrawable = getImageReceiver().getLottieAnimation();
+        }
+        if (animatedDrawable != null) {
+            animatedDrawable.stop();
+            animatedDrawable.M(0);
+            animatedDrawable.H(true);
+        } else if (animatedDrawable == null) {
+            setProgress(0.0f);
+            d();
+        }
+    }
 
-    public abstract void e();
+    public final void k(int i10) {
+        if (this.r != i10) {
+            this.r = i10;
+            setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN));
+        }
+    }
+
+    public final void l(boolean z10, boolean z11) {
+        if (Math.abs(this.s - (z10 ? 1.0f : 0.0f)) > 0.01f) {
+            ValueAnimator valueAnimator = this.v;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+                this.v = null;
+            }
+            if (!z11) {
+                m(z10 ? 1.0f : 0.0f);
+                return;
+            }
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.s, z10 ? 1.0f : 0.0f);
+            this.v = ofFloat;
+            ofFloat.addUpdateListener(new hx0(this, 1));
+            this.v.addListener(new jx0(this, 1));
+            this.v.setDuration(350L);
+            this.v.setInterpolator(bs.h);
+            this.v.start();
+        }
+    }
+
+    public final void m(float f7) {
+        this.s = f7;
+        px0 px0Var = this.H;
+        org.telegram.ui.ActionBar.d6 d6Var = px0Var.n2;
+        if (px0Var.u3) {
+            k(i0.b.o(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Wk, d6Var), (int) (AndroidUtilities.lerp(0.4f, 0.8f, f7) * 255.0f)));
+        } else {
+            k(i0.b.f(this.s, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Me, d6Var), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Oe, d6Var)));
+        }
+        invalidate();
+    }
+
+    @Override // android.widget.ImageView, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i11);
+        super.onMeasure(org.telegram.messenger.wh.c(4.0f, size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
+    }
+
+    @Override // android.view.View
+    public final void setPressed(boolean z10) {
+        ValueAnimator valueAnimator;
+        if (isPressed() != z10) {
+            super.setPressed(z10);
+            invalidate();
+            this.H.invalidate();
+            if (z10 && (valueAnimator = this.F) != null) {
+                valueAnimator.removeAllListeners();
+                this.F.cancel();
+            }
+            if (z10) {
+                return;
+            }
+            float f7 = this.E;
+            if (f7 != 0.0f) {
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, 0.0f);
+                this.F = ofFloat;
+                ofFloat.addUpdateListener(new hx0(this, 0));
+                this.F.addListener(new jx0(this, 2));
+                org.telegram.messenger.wh.l(3.0f, this.F);
+                this.F.setDuration(350L);
+                this.F.start();
+            }
+        }
+    }
 }

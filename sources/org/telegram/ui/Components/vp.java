@@ -1,41 +1,24 @@
 package org.telegram.ui.Components;
 
-import android.widget.Toast;
-import java.util.List;
-import org.telegram.messenger.ChatThemeController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.ResultCallback;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class vp implements ResultCallback {
-    public final /* synthetic */ ChatThemeController a;
-    public final /* synthetic */ zp b;
+public final class vp {
+    public final org.telegram.ui.ActionBar.c4 a;
+    public Drawable b;
+    public int c;
+    public boolean d;
 
-    public vp(zp zpVar, ChatThemeController chatThemeController) {
-        this.b = zpVar;
-        this.a = chatThemeController;
+    public vp(org.telegram.ui.ActionBar.c4 c4Var) {
+        this.a = c4Var;
     }
 
-    @Override // org.telegram.tgnet.ResultCallback
-    public final void onComplete(Object obj) {
-        int i10;
-        ChatThemeController chatThemeController = this.a;
-        List<org.telegram.ui.ActionBar.b4> emojiThemes = chatThemeController.getEmojiThemes((chatThemeController.isGiftThemesFullyLoaded() ? 2 : 0) | 5);
-        zp zpVar = this.b;
-        i10 = ((org.telegram.ui.ActionBar.e3) zpVar).currentAccount;
-        NotificationCenter.getInstance(i10).doOnIdle(new vm(3, this, emojiThemes));
-        zpVar.b0 = false;
-    }
-
-    @Override // org.telegram.tgnet.ResultCallback
-    public final /* synthetic */ void onError(Throwable th2) {
-        org.telegram.tgnet.l.a(this, th2);
-    }
-
-    @Override // org.telegram.tgnet.ResultCallback
-    public final void onError(TLRPC.TL_error tL_error) {
-        Toast.makeText(this.b.getContext(), tL_error.text, 0).show();
+    public final String a() {
+        org.telegram.ui.ActionBar.c4 c4Var = this.a;
+        if (c4Var == null || c4Var.a) {
+            return null;
+        }
+        return c4Var.e;
     }
 }

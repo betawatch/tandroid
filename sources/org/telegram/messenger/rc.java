@@ -1,35 +1,24 @@
 package org.telegram.messenger;
 
-import j$.util.concurrent.ConcurrentHashMap;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class rc implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ zf.s c;
-    public final /* synthetic */ ConcurrentHashMap d;
-    public final /* synthetic */ ConcurrentHashMap e;
+    public final /* synthetic */ boolean[] b;
 
-    public /* synthetic */ rc(MessagesController messagesController, zf.s sVar, ConcurrentHashMap concurrentHashMap, ConcurrentHashMap concurrentHashMap2, int i10) {
+    public /* synthetic */ rc(int i10, boolean[] zArr) {
         this.a = i10;
-        this.b = messagesController;
-        this.c = sVar;
-        this.d = concurrentHashMap;
-        this.e = concurrentHashMap2;
+        this.b = zArr;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$processUpdateArray$404(this.c, this.d, this.e);
-                break;
-            case 1:
-                this.b.lambda$processUpdateArray$408(this.c, this.d, this.e);
+                MessagesController.lambda$openByUserName$459(this.b);
                 break;
             default:
-                this.b.lambda$processUpdateArray$403(this.c, this.d, this.e);
+                MessagesController.lambda$openApp$500(this.b);
                 break;
         }
     }

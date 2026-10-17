@@ -1,60 +1,34 @@
 package zh;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.da0;
+import android.graphics.Canvas;
+import org.telegram.ui.Components.im0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class s extends LinearLayout {
-    public final ImageView a;
-    public final da0 b;
-    public final da0 c;
+public final class s extends im0 {
+    public g0 V2;
+    public f0 W2;
 
-    public s(Context context, int i10, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context);
-        setOrientation(0);
-        setPadding(AndroidUtilities.dp(i10 == 1 ? 11.0f : 32.0f), 0, AndroidUtilities.dp(i10 == 1 ? 11.0f : 32.0f), AndroidUtilities.dp(i10 == 1 ? 8.0f : 12.0f));
-        ImageView imageView = new ImageView(context);
-        this.a = imageView;
-        int i11 = org.telegram.ui.ActionBar.g6.G6;
-        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.x0(null, i11, false), PorterDuff.Mode.SRC_IN));
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView, w7.z5.t(24, 24, 51, 0, 6, 16, 0));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        da0 da0Var = new da0(context, null);
-        this.b = da0Var;
-        da0Var.setTypeface(AndroidUtilities.bold());
-        da0Var.setTextSize(1, 14.0f);
-        da0Var.setTextColor(org.telegram.ui.ActionBar.g6.w0(i11, c6Var));
-        int i12 = org.telegram.ui.ActionBar.g6.gc;
-        da0Var.setLinkTextColor(org.telegram.ui.ActionBar.g6.w0(i12, c6Var));
-        linearLayout.addView(da0Var, w7.z5.t(-1, -2, 7, 0, 0, 0, 3));
-        da0 da0Var2 = new da0(context, null);
-        this.c = da0Var2;
-        da0Var2.setTextSize(1, 14.0f);
-        da0Var2.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.z6, c6Var));
-        da0Var2.setLinkTextColor(org.telegram.ui.ActionBar.g6.w0(i12, c6Var));
-        linearLayout.addView(da0Var2, w7.z5.q(-1, -2, 7));
-        addView(linearLayout, w7.z5.p(-1, -2, 1.0f, 55, 0, 0, 0, 0));
-    }
-
-    public final void a(CharSequence charSequence, CharSequence charSequence2, int i10) {
-        this.a.setImageResource(i10);
-        this.b.setText(charSequence);
-        this.c.setText(charSequence2);
-    }
-
-    public void setSubtitle(CharSequence charSequence) {
-        this.c.setText(charSequence);
-    }
-
-    public void setTitle(CharSequence charSequence) {
-        this.b.setText(charSequence);
+    @Override // org.telegram.ui.Components.im0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        Canvas canvas2;
+        int i10;
+        if (this.W2 != null) {
+            canvas2 = canvas;
+            i10 = canvas2.saveLayer(0.0f, 0.0f, getWidth(), getHeight(), null);
+        } else {
+            canvas2 = canvas;
+            i10 = -1;
+        }
+        g0 g0Var = this.V2;
+        if (g0Var != null) {
+            g0Var.x(canvas2);
+        }
+        super.dispatchDraw(canvas2);
+        f0 f0Var = this.W2;
+        if (f0Var != null) {
+            f0Var.x(canvas2);
+            canvas2.restoreToCount(i10);
+        }
     }
 }

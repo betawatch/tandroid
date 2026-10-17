@@ -1,211 +1,153 @@
 package hg;
 
-import android.widget.TextView;
+import ai.tb;
 import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLMethod;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ky;
+import org.telegram.ui.px;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ h0 b;
+    public final /* synthetic */ String c;
     public final /* synthetic */ int d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ TLObject h;
-    public final /* synthetic */ ArrayList n;
-    public final /* synthetic */ TLObject r;
+    public final /* synthetic */ String e;
 
-    public /* synthetic */ s(h0 h0Var, int i10, int i11, TLRPC.TL_error tL_error, String str, TLObject tLObject, TLMethod tLMethod, ArrayList arrayList, int i12) {
-        this.a = i12;
+    public /* synthetic */ s(h0 h0Var, int i10, String str, String str2) {
+        this.a = 0;
         this.b = h0Var;
-        this.c = i10;
-        this.d = i11;
-        this.e = tL_error;
-        this.f = str;
-        this.h = tLObject;
-        this.r = tLMethod;
-        this.n = arrayList;
+        this.d = i10;
+        this.c = str;
+        this.e = str2;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r3v5 */
-    /* JADX WARN: Type inference failed for: r3v9 */
+    /* JADX WARN: Removed duplicated region for block: B:11:0x006a  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0064  */
     @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final void run() {
+        long j10;
+        boolean z10;
+        boolean z11;
+        String str;
         int i10;
-        int i11;
-        int i12 = this.a;
-        ArrayList arrayList = this.n;
-        TLObject tLObject = this.h;
-        int i13 = this.d;
-        int i14 = this.c;
-        boolean z10 = true;
-        int i15 = 0;
-        TLObject tLObject2 = this.r;
-        Object obj = this.f;
-        Object obj2 = this.e;
-        Object obj3 = this.b;
-        switch (i12) {
+        switch (this.a) {
             case 0:
-                h0 h0Var = (h0) obj3;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                String str = (String) obj;
-                TLRPC.TL_messages_search tL_messages_search = (TLRPC.TL_messages_search) tLObject2;
-                y yVar = h0Var.j0;
-                ArrayList arrayList2 = h0Var.H;
-                int i16 = h0Var.s0;
-                if (i14 == h0Var.T && (i13 <= 0 || i13 == h0Var.d0)) {
-                    h0Var.D0--;
-                    if (tL_error == null) {
-                        h0Var.b0 = str;
-                        TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
-                        MessagesStorage.getInstance(i16).putUsersAndChats(messages_messages.users, messages_messages.chats, true, true);
-                        MessagesController.getInstance(i16).putUsers(messages_messages.users, false);
-                        MessagesController.getInstance(i16).putChats(messages_messages.chats, false);
-                        if (tL_messages_search.add_offset == 0) {
-                            arrayList2.clear();
-                        }
-                        h0Var.c0 = messages_messages.next_rate;
-                        for (int i17 = 0; i17 < messages_messages.messages.size(); i17++) {
-                            TLRPC.Message message = messages_messages.messages.get(i17);
-                            int i18 = MessagesController.getInstance(i16).deletedHistory.get(MessageObject.getDialogId(message));
-                            if (i18 == 0 || message.id > i18) {
-                                arrayList2.add((MessageObject) arrayList.get(i17));
-                            }
-                        }
-                        h0Var.N = true;
-                        h0Var.X = messages_messages.messages.size() != 20;
-                        if (i13 > 0) {
-                            h0Var.g0 = i13;
-                            if (h0Var.f0 != i13) {
-                                h0Var.s.clear();
-                            }
-                            if (h0Var.e0 != i13) {
-                                yVar.b();
-                            }
-                        }
-                        yVar.f(h0Var.s, h0Var.v0);
-                        ky kyVar = h0Var.U;
-                        if (kyVar != null) {
-                            kyVar.d(h0Var.D0 > 0, true);
-                            h0Var.U.c();
-                        }
-                        h0Var.l();
-                    }
-                }
-                h0Var.Q = 0;
-                break;
-            case 1:
-                h0 h0Var2 = (h0) obj3;
-                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
-                String str2 = (String) obj;
-                TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal = (TLRPC.TL_messages_searchGlobal) tLObject2;
-                y yVar2 = h0Var2.j0;
-                ArrayList arrayList3 = h0Var2.I;
-                ArrayList arrayList4 = h0Var2.H;
-                int i19 = h0Var2.s0;
-                if (i14 == h0Var2.P && (i13 <= 0 || i13 == h0Var2.d0)) {
-                    h0Var2.D0--;
-                    if (tL_error2 == null) {
-                        h0Var2.b0 = str2;
-                        TLRPC.messages_Messages messages_messages2 = (TLRPC.messages_Messages) tLObject;
-                        MessagesStorage.getInstance(i19).putUsersAndChats(messages_messages2.users, messages_messages2.chats, true, true);
-                        MessagesController.getInstance(i19).putUsers(messages_messages2.users, false);
-                        MessagesController.getInstance(i19).putChats(messages_messages2.chats, false);
-                        if (tL_messages_searchGlobal.offset_id == 0) {
-                            arrayList3.clear();
-                        }
-                        h0Var2.c0 = messages_messages2.next_rate;
-                        int i20 = 0;
-                        while (i20 < messages_messages2.messages.size()) {
-                            TLRPC.Message message2 = messages_messages2.messages.get(i20);
-                            int i21 = MessagesController.getInstance(i19).deletedHistory.get(MessageObject.getDialogId(message2));
-                            if (i21 == 0 || message2.id > i21) {
-                                MessageObject messageObject = (MessageObject) arrayList.get(i20);
-                                if (!arrayList4.isEmpty()) {
-                                    for (int i22 = i15; i22 < arrayList4.size(); i22++) {
-                                        MessageObject messageObject2 = (MessageObject) arrayList4.get(i22);
-                                        if (messageObject2 == null || messageObject == null || messageObject.getId() != messageObject2.getId() || messageObject.getDialogId() != messageObject2.getDialogId()) {
-                                        }
-                                    }
-                                }
-                                arrayList3.add(messageObject);
-                                Integer num = (message2.out ? MessagesController.getInstance(i19).dialogs_read_outbox_max : MessagesController.getInstance(i19).dialogs_read_inbox_max).get(Long.valueOf(MessageObject.getDialogId(message2)));
-                                if (num != null) {
-                                    message2.unread = num.intValue() < message2.id;
-                                }
-                            }
-                            i20++;
-                            z10 = true;
-                            i15 = 0;
-                        }
-                        h0Var2.N = z10;
-                        h0Var2.W = messages_messages2.messages.size() != 20;
-                        if (i13 > 0) {
-                            h0Var2.g0 = i13;
-                            if (h0Var2.f0 != i13) {
-                                h0Var2.s.clear();
-                            }
-                            if (h0Var2.e0 != i13) {
-                                yVar2.b();
-                            }
-                        }
-                        yVar2.f(h0Var2.s, h0Var2.v0);
-                        ky kyVar2 = h0Var2.U;
-                        if (kyVar2 != null) {
-                            i11 = 1;
-                            kyVar2.d(h0Var2.D0 > 0, true);
-                            h0Var2.U.c();
+                h0 h0Var = this.b;
+                int i11 = h0Var.V;
+                int i12 = h0Var.h0;
+                h0Var.h = null;
+                int i13 = h0Var.d0;
+                int i14 = this.d;
+                if (i14 == i13) {
+                    if (i11 == 2 || i12 == 6 || i12 == 5 || h0Var.U.a() != 0) {
+                        h0Var.D0 -= 2;
+                    } else {
+                        y yVar = h0Var.j0;
+                        boolean z12 = false;
+                        boolean z13 = i12 != 4;
+                        if (i12 == 4 || i12 == 11) {
+                            j10 = 0;
+                            z10 = false;
                         } else {
-                            i11 = 1;
+                            j10 = 0;
+                            z10 = true;
                         }
-                        h0Var2.G0 = i11;
-                        h0Var2.H0 = i11;
-                        i10 = 0;
-                        h0Var2.d = false;
-                        d0 d0Var = h0Var2.E0;
-                        if (d0Var != null) {
-                            String str3 = h0Var2.Z;
-                            TextView textView = d0Var.a;
-                            int i23 = R.string.SearchMessagesFilterEmptyText;
-                            Object[] objArr = new Object[i11];
-                            objArr[0] = str3;
-                            textView.setText(LocaleController.formatString(i23, objArr));
+                        if (i12 == 2 || i12 == 1) {
+                            z11 = false;
+                            z12 = true;
+                        } else {
+                            z11 = false;
                         }
-                        h0Var2.l();
-                        h0Var2.O = i10;
+                        boolean z14 = i12 == 0 ? true : z11;
+                        px pxVar = h0Var.U;
+                        if (pxVar != null) {
+                            j10 = pxVar.a();
+                        }
+                        yVar.h(this.c, true, z13, true, z10, z12, 0L, z14, 0, i14, j10, null);
+                        i14 = i14;
+                    }
+                    if (i11 != 0 && i12 != 15) {
+                        String str2 = this.e;
+                        h0Var.X(str2);
+                        h0Var.W(i14, str2);
+                        h0Var.V(i14, str2);
+                        break;
+                    } else {
+                        h0Var.D0--;
                         break;
                     }
                 }
-                i10 = 0;
-                h0Var2.O = i10;
+                break;
+            case 1:
+                h0 h0Var2 = this.b;
+                h0Var2.getClass();
+                ArrayList<Object> arrayList = new ArrayList<>();
+                ArrayList<CharSequence> arrayList2 = new ArrayList<>();
+                ArrayList<TLRPC.User> arrayList3 = new ArrayList<>();
+                new ArrayList();
+                MessagesStorage messagesStorage = MessagesStorage.getInstance(h0Var2.s0);
+                int i15 = h0Var2.h0;
+                ArrayList<Long> arrayList4 = h0Var2.q0;
+                String str3 = this.c;
+                messagesStorage.localSearch(i15, str3, arrayList, arrayList2, arrayList3, arrayList4, -1);
+                AndroidUtilities.runOnUIThread(new tb(h0Var2, this.d, arrayList, arrayList2, arrayList3, 3));
+                q0.z1(str3, h0Var2.y0);
+                h0Var2.z0 = false;
+                if (str3.length() >= 3 && (LocaleController.getString(R.string.ArchiveSearchFilter).toLowerCase().startsWith(str3) || "archive".startsWith(this.e))) {
+                    h0Var2.z0 = true;
+                }
+                AndroidUtilities.runOnUIThread(new v(h0Var2, 0));
                 break;
             default:
-                ((MediaDataController) obj3).lambda$processLoadStickersResponse$73(this.h, this.n, this.c, (a0.h) obj2, (TLRPC.StickerSet) obj, (TLRPC.TL_messages_allStickers) tLObject2, this.d);
-                break;
+                h0 h0Var3 = this.b;
+                h0Var3.f = null;
+                int i16 = h0Var3.V;
+                String str4 = this.c;
+                int i17 = this.d;
+                if (i16 != 2) {
+                    String lowerCase = str4.trim().toLowerCase();
+                    if (lowerCase.length() != 0) {
+                        str = str4;
+                        i10 = i17;
+                        MessagesStorage.getInstance(h0Var3.s0).getStorageQueue().postRunnable(new s(h0Var3, lowerCase, i10, str, 1));
+                        if (h0Var3.h0 == 15) {
+                            s sVar = new s(h0Var3, i10, str, this.e);
+                            h0Var3.h = sVar;
+                            AndroidUtilities.runOnUIThread(sVar);
+                            break;
+                        } else {
+                            h0Var3.D0 -= 2;
+                            break;
+                        }
+                    } else {
+                        h0Var3.d0 = 0;
+                        ArrayList arrayList5 = new ArrayList();
+                        ArrayList arrayList6 = new ArrayList();
+                        ArrayList arrayList7 = new ArrayList();
+                        new ArrayList();
+                        AndroidUtilities.runOnUIThread(new tb(h0Var3, h0Var3.d0, arrayList5, arrayList6, arrayList7, 3));
+                    }
+                }
+                str = str4;
+                i10 = i17;
+                if (h0Var3.h0 == 15) {
+                }
         }
     }
 
-    public /* synthetic */ s(MediaDataController mediaDataController, TLObject tLObject, ArrayList arrayList, int i10, a0.h hVar, TLRPC.StickerSet stickerSet, TLRPC.TL_messages_allStickers tL_messages_allStickers, int i11) {
-        this.a = 2;
-        this.b = mediaDataController;
-        this.h = tLObject;
-        this.n = arrayList;
-        this.c = i10;
-        this.e = hVar;
-        this.f = stickerSet;
-        this.r = tL_messages_allStickers;
-        this.d = i11;
+    public /* synthetic */ s(h0 h0Var, String str, int i10, String str2, int i11) {
+        this.a = i11;
+        this.b = h0Var;
+        this.c = str;
+        this.d = i10;
+        this.e = str2;
     }
 }

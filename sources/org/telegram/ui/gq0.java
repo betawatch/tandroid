@@ -1,50 +1,49 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import java.util.ArrayList;
-import java.util.HashMap;
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class gq0 implements er0 {
-    public final /* synthetic */ HashMap a;
-    public final /* synthetic */ ArrayList b;
-    public final /* synthetic */ oq0 c;
+public final class gq0 extends org.telegram.ui.Components.b10 {
+    public final /* synthetic */ int U;
 
-    public gq0(oq0 oq0Var, HashMap hashMap, ArrayList arrayList) {
-        this.c = oq0Var;
-        this.a = hashMap;
-        this.b = arrayList;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ gq0(Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, d6Var);
+        this.U = i10;
     }
 
-    @Override // org.telegram.ui.er0
-    public final void b(Editable editable) {
-        oq0 oq0Var = this.c;
-        org.telegram.ui.Components.vu vuVar = oq0Var.M;
-        oq0Var.a = editable;
-        vuVar.setText(editable);
-    }
-
-    @Override // org.telegram.ui.er0
-    public final /* synthetic */ boolean e() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.er0
-    public final void h(int i10, boolean z10, boolean z11) {
-        oq0 oq0Var = this.c;
-        oq0Var.removeSelfFromStack();
-        if (z10) {
-            return;
+    @Override // org.telegram.ui.Components.b10
+    public int getColumnsCount() {
+        switch (this.U) {
+            case 0:
+                return 3;
+            default:
+                return super.getColumnsCount();
         }
-        oq0Var.V(this.a, this.b, z11, i10);
     }
 
-    @Override // org.telegram.ui.er0
-    public final void a() {
+    @Override // org.telegram.ui.Components.b10
+    public int getViewType() {
+        switch (this.U) {
+            case 0:
+                return 2;
+            default:
+                return super.getViewType();
+        }
     }
 
-    @Override // org.telegram.ui.er0
-    public final /* synthetic */ void g() {
+    @Override // org.telegram.ui.Components.b10, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.U) {
+            case 1:
+                setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(104.0f));
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
+        }
     }
 }

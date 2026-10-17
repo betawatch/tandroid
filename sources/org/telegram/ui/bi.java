@@ -1,81 +1,74 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.Utilities;
+import android.util.SparseIntArray;
+import android.widget.HorizontalScrollView;
+import android.widget.LinearLayout;
+import java.util.concurrent.atomic.AtomicBoolean;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bi implements Utilities.Callback0Return {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public final class bi implements z4.e {
+    public final /* synthetic */ AtomicBoolean a;
+    public final /* synthetic */ LinearLayout b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ HorizontalScrollView d;
+    public final /* synthetic */ SparseIntArray e;
+    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout f;
+    public final /* synthetic */ int[] g;
 
-    public /* synthetic */ bi(int i10, Object obj, Object obj2) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+    public bi(AtomicBoolean atomicBoolean, LinearLayout linearLayout, int i10, HorizontalScrollView horizontalScrollView, SparseIntArray sparseIntArray, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr) {
+        this.a = atomicBoolean;
+        this.b = linearLayout;
+        this.c = i10;
+        this.d = horizontalScrollView;
+        this.e = sparseIntArray;
+        this.f = actionBarPopupWindow$ActionBarPopupWindowLayout;
+        this.g = iArr;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:31:0x007b  */
-    /* JADX WARN: Removed duplicated region for block: B:33:? A[RETURN, SYNTHETIC] */
-    @Override // org.telegram.messenger.Utilities.Callback0Return
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Object run() {
-        View childAt;
-        switch (this.a) {
-            case 0:
-                return fo.p0((fo) this.b, (Context) this.c);
-            case 1:
-                org.telegram.ui.Components.a71 a71Var = (org.telegram.ui.Components.a71) this.b;
-                Object obj = ((org.telegram.ui.Components.m61) this.c).G;
-                org.telegram.ui.Components.mm0 mm0Var = a71Var.d;
-                int i10 = 0;
-                while (true) {
-                    if (i10 < a71Var.x.size()) {
-                        org.telegram.ui.Components.m61 G = a71Var.G(i10);
-                        if (G == null || G.G != obj) {
-                            i10++;
-                        }
-                    } else {
-                        i10 = -1;
-                    }
-                }
-                if (i10 != -1) {
-                    for (int i11 = 0; i11 < mm0Var.getChildCount(); i11++) {
-                        childAt = mm0Var.getChildAt(i11);
-                        int R = RecyclerView.R(childAt);
-                        if (R != -1 && R == i10) {
-                            if (childAt instanceof fb1) {
-                                return null;
-                            }
-                            return (fb1) childAt;
-                        }
-                    }
-                }
-                childAt = null;
-                if (childAt instanceof fb1) {
-                }
+    @Override // z4.e
+    public final void a(float f7, int i10, int i11) {
+        HorizontalScrollView horizontalScrollView;
+        if (this.a.get()) {
+            return;
+        }
+        float f10 = -1.0f;
+        float f11 = -1.0f;
+        int i12 = 0;
+        while (true) {
+            LinearLayout linearLayout = this.b;
+            int childCount = linearLayout.getChildCount();
+            horizontalScrollView = this.d;
+            if (i12 >= childCount) {
                 break;
-            default:
-                hb1 hb1Var = (hb1) this.b;
-                ta1 ta1Var = (ta1) this.c;
-                int childCount = hb1Var.S.getChildCount();
-                for (int i12 = 0; i12 < childCount; i12++) {
-                    View childAt2 = hb1Var.S.getChildAt(i12);
-                    if (childAt2 instanceof sa1) {
-                        sa1 sa1Var = (sa1) childAt2;
-                        if (sa1Var.r == ta1Var) {
-                            return sa1Var;
-                        }
-                    }
-                }
-                hb1Var.S.setItemAnimator(null);
-                hb1Var.y0.f();
-                return null;
+            }
+            org.telegram.ui.Components.nk0 nk0Var = (org.telegram.ui.Components.nk0) linearLayout.getChildAt(i12);
+            nk0Var.setOutlineProgress(i12 == i10 ? 1.0f - f7 : i12 == (i10 + 1) % this.c ? f7 : 0.0f);
+            if (i12 == i10) {
+                f10 = nk0Var.getX() - ((horizontalScrollView.getWidth() - nk0Var.getWidth()) / 2.0f);
+            }
+            if (i12 == i10 + 1) {
+                f11 = nk0Var.getX() - ((horizontalScrollView.getWidth() - nk0Var.getWidth()) / 2.0f);
+            }
+            i12++;
+        }
+        if (f10 != -1.0f && f11 != -1.0f) {
+            horizontalScrollView.setScrollX((int) com.google.android.gms.internal.cast.a6.x(f11, f10, f7, f10));
+        }
+        SparseIntArray sparseIntArray = this.e;
+        this.f.getSwipeBack().f(this.g[0], (int) ((sparseIntArray.get(i10 + 1, 0) * f7) + ((1.0f - f7) * sparseIntArray.get(i10, 0))), false);
+    }
+
+    @Override // z4.e
+    public final void b(int i10) {
+        this.f.getSwipeBack().f(this.g[0], this.e.get(i10), true);
+    }
+
+    @Override // z4.e
+    public final void c(int i10) {
+        if (i10 == 0) {
+            this.a.set(false);
         }
     }
 }

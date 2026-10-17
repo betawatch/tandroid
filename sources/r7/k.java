@@ -4,17 +4,17 @@ import android.content.Context;
 import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Looper;
-import m.t3;
+import m.s3;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class k extends n6.g {
     public final a0.l U;
     public final a0.l V;
     public final a0.l W;
 
-    public k(Context context, Looper looper, com.google.android.gms.common.api.k kVar, com.google.android.gms.common.api.l lVar, t3 t3Var) {
-        super(context, looper, 23, t3Var, kVar, lVar, 0);
+    public k(Context context, Looper looper, com.google.android.gms.common.api.k kVar, com.google.android.gms.common.api.l lVar, s3 s3Var) {
+        super(context, looper, 23, s3Var, kVar, lVar, 0);
         this.U = new a0.l(0);
         this.V = new a0.l(0);
         this.W = new a0.l(0);

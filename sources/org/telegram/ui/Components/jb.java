@@ -1,73 +1,82 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class jb implements o1.f {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+import android.view.View;
+import android.widget.FrameLayout;
+import j$.util.Objects;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.ui.qg1;
 
-    public /* synthetic */ jb(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes3.dex */
+public final class jb implements View.OnLayoutChangeListener {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ qc b;
+
+    public jb(qc qcVar, boolean z10) {
+        this.b = qcVar;
+        this.a = z10;
     }
 
-    @Override // o1.f
-    public final void a(o1.h hVar, boolean z10, float f7, float f10) {
-        switch (this.a) {
-            case 0:
-                sc scVar = (sc) this.b;
-                if (scVar.d == hVar) {
-                    scVar.d = null;
-                    break;
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
+        ob obVar;
+        qc qcVar = this.b;
+        ub ubVar = qcVar.e;
+        ubVar.removeOnLayoutChangeListener(this);
+        if (qcVar.l) {
+            ubVar.onShow();
+            org.telegram.ui.ActionBar.n2 n2Var = qcVar.g;
+            boolean z10 = this.a;
+            if (z10 && (n2Var instanceof qg1)) {
+                n2Var = ((qg1) n2Var).X();
+            }
+            FrameLayout frameLayout = qcVar.h;
+            if (n2Var == null || (obVar = n2Var.getBulletinDelegate()) == null) {
+                if (frameLayout != null) {
+                    Object tag = frameLayout.getTag(R.id.bulletin_delegate_tag);
+                    if (tag instanceof ob) {
+                        obVar = (ob) tag;
+                    }
                 }
-                break;
-            case 1:
-                fb fbVar = (fb) this.b;
-                if (!z10) {
-                    fbVar.run();
-                    break;
+                obVar = null;
+            }
+            qcVar.p = obVar;
+            if (obVar == null && n2Var != null) {
+                qcVar.p = new ah.m0(n2Var, 6);
+            }
+            o1.k kVar = qcVar.d;
+            if (kVar == null || !kVar.f) {
+                ob obVar2 = qcVar.p;
+                qcVar.o = obVar2 != null ? obVar2.f(qcVar.a) : 0;
+            }
+            ob obVar3 = qcVar.p;
+            if (obVar3 != null) {
+                obVar3.b(qcVar);
+            }
+            if (MessagesController.getGlobalMainSettings().getBoolean("view_animations", true) && !qcVar.s) {
+                if (ubVar != null && qcVar.q == null) {
+                    qcVar.q = ubVar.createTransition();
                 }
-                break;
-            case 2:
-                cl clVar = (cl) this.b;
-                clVar.i0 = null;
-                clVar.j0 = 1.0f;
-                clVar.k0();
-                break;
-            case 3:
-                wp0 wp0Var = (wp0) this.b;
-                wp0Var.q = false;
-                wp0Var.dismiss();
-                break;
-            case 4:
-                xp0 xp0Var = (xp0) this.b;
-                xp0Var.s = false;
-                xp0Var.r = false;
-                if (!z10) {
-                    hVar.c();
-                }
-                if (hVar == xp0Var.f) {
-                    xp0Var.f = null;
-                    break;
-                }
-                break;
-            case 5:
-                ir0 ir0Var = (ir0) this.b;
-                ir0Var.E.setVisibility(8);
-                ir0Var.z0.setVisibility(8);
-                fr0 fr0Var = ir0Var.L;
-                fr0Var.f = null;
-                fr0Var.l();
-                ir0Var.B0 = null;
-                ir0Var.M0 = false;
-                break;
-            default:
-                ir0 ir0Var2 = ((pq0) this.b).d;
-                ir0Var2.F.setVisibility(8);
-                ir0Var2.G.setVisibility(8);
-                ir0Var2.y0.setVisibility(8);
-                ir0Var2.B0 = null;
-                break;
+                ubVar.transitionRunningEnter = true;
+                ubVar.delegate = qcVar.p;
+                ubVar.invalidate();
+                tb tbVar = qcVar.q;
+                Objects.requireNonNull(ubVar);
+                tbVar.D0(ubVar, new fb(ubVar, 1), new pg(this, 15), new xl(2, this, z10));
+                return;
+            }
+            ob obVar4 = qcVar.p;
+            ubVar.delegate = obVar4;
+            if (obVar4 != null && !z10) {
+                obVar4.c(ubVar.getHeight());
+            }
+            qcVar.l();
+            ubVar.onEnterTransitionStart();
+            ubVar.onEnterTransitionEnd();
+            if (qcVar.u) {
+                qcVar.i(true);
+            }
         }
     }
 }

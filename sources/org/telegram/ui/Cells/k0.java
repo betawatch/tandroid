@@ -12,7 +12,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public abstract class k0 extends FrameLayout {
     public final int a;
@@ -28,7 +28,7 @@ public abstract class k0 extends FrameLayout {
         j0 j0Var = new j0(0, context, null, true);
         this.d = j0Var;
         j0Var.setReportChanges(true);
-        j0Var.setDelegate(new m.h(this, 5));
+        j0Var.setDelegate(new l2.f(this, 6));
         j0Var.setImportantForAccessibility(2);
         addView(j0Var, w7.z5.a(38.0f, 54.0f, 5.0f, 54.0f, 0.0f, -1, 51));
         ImageView imageView2 = new ImageView(context);
@@ -42,11 +42,11 @@ public abstract class k0 extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        int i10 = org.telegram.ui.ActionBar.g6.m6;
-        int x02 = org.telegram.ui.ActionBar.g6.x0(null, i10, false);
+        int i10 = org.telegram.ui.ActionBar.h6.m6;
+        int x02 = org.telegram.ui.ActionBar.h6.x0(null, i10, false);
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         this.b.setColorFilter(new PorterDuffColorFilter(x02, mode));
-        this.c.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.x0(null, i10, false), mode));
+        this.c.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.x0(null, i10, false), mode));
     }
 
     @Override // android.view.View

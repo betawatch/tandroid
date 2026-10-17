@@ -4,11 +4,11 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.c71;
-import org.telegram.ui.Components.i71;
-import org.telegram.ui.Components.zc;
+import org.telegram.ui.Components.a71;
+import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n implements Runnable {
     public final /* synthetic */ int a;
@@ -20,16 +20,16 @@ public final /* synthetic */ class n implements Runnable {
     }
 
     private final void a() {
-        a0 a0Var = (a0) this.b;
-        synchronized (a0Var) {
-            if (a0Var.a) {
+        c0 c0Var = (c0) this.b;
+        synchronized (c0Var) {
+            if (c0Var.a) {
                 return;
             }
-            a0Var.a = true;
-            Runnable runnable = a0Var.b;
+            c0Var.a = true;
+            Runnable runnable = c0Var.b;
             if (runnable != null) {
                 runnable.run();
-                a0Var.b = null;
+                c0Var.b = null;
             }
         }
     }
@@ -39,16 +39,16 @@ public final /* synthetic */ class n implements Runnable {
         View d;
         switch (this.a) {
             case 0:
-                y yVar = (y) this.b;
-                synchronized (yVar) {
-                    if (yVar.a) {
+                a0 a0Var = (a0) this.b;
+                synchronized (a0Var) {
+                    if (a0Var.a) {
                         return;
                     }
-                    yVar.a = true;
-                    Runnable runnable = yVar.b;
+                    a0Var.a = true;
+                    Runnable runnable = a0Var.b;
                     if (runnable != null) {
                         runnable.run();
-                        yVar.b = null;
+                        a0Var.b = null;
                     }
                     return;
                 }
@@ -56,77 +56,98 @@ public final /* synthetic */ class n implements Runnable {
                 a();
                 return;
             case 2:
-                ((h0) this.b).close();
+                ((j0) this.b).close();
                 return;
             case 3:
-                v0 v0Var = (v0) this.b;
-                v0Var.c("AUTH_CANCELED");
-                v0Var.e();
-                if (w7.h6.b == v0Var) {
+                ((boolean[]) this.b)[0] = true;
+                return;
+            case 4:
+                w0 w0Var = (w0) this.b;
+                w0Var.c("AUTH_CANCELED");
+                w0Var.e();
+                if (w7.h6.b == w0Var) {
                     w7.h6.b = null;
                     return;
                 }
                 return;
-            case 4:
-                ((i2) this.b).dismiss();
-                return;
             case 5:
-                ((org.telegram.ui.Cells.w0) this.b).invalidate();
+                ((j2) this.b).dismiss();
                 return;
             case 6:
-                AndroidUtilities.removeFromParent((di.d4) this.b);
-                return;
-            case 7:
-                w4 w4Var = (w4) this.b;
-                c71 c71Var = w4Var.c;
-                if (c71Var == null || c71Var.getScrollState() != 0) {
+                x2 x2Var = (x2) this.b;
+                if (x2Var.N || x2Var.M) {
                     return;
                 }
-                i71 n02 = w4Var.j.n0();
-                if ((n02 == null || n02.getScrollState() == 0) && (d = w4Var.d(w4Var.c.V2)) != null) {
-                    s4.b0 b0Var = w4Var.c.V2;
+                hh.d.c(x2Var.x, x2Var.f);
+                x2Var.y.d();
+                x2Var.a(1.0f);
+                return;
+            case 7:
+                ((org.telegram.ui.Cells.x0) this.b).invalidate();
+                return;
+            case 8:
+                AndroidUtilities.removeFromParent((ei.x3) this.b);
+                return;
+            case 9:
+                h5 h5Var = (h5) this.b;
+                u61 u61Var = h5Var.c;
+                if (u61Var == null || u61Var.getScrollState() != 0) {
+                    return;
+                }
+                a71 t02 = h5Var.j.t0();
+                if ((t02 == null || t02.getScrollState() == 0) && (d = h5Var.d(h5Var.c.V2)) != null) {
+                    s4.b0 b0Var = h5Var.c.V2;
                     b0Var.getClass();
                     int i10 = new int[]{0, s4.n0.z(d) - b0Var.F()}[1];
                     if (i10 != 0) {
-                        w4Var.c.v0(0, i10, null);
+                        h5Var.c.v0(0, i10, null);
                         return;
                     }
                     return;
                 }
                 return;
-            case 8:
-                ((d5) this.b).performClick();
-                return;
-            case 9:
-                ((q5) this.b).performClick();
-                return;
             case 10:
-                ((WalletEngine2) this.b).lambda$close$53();
+                ((o5) this.b).performClick();
                 return;
             case 11:
-                org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) this.b;
-                if (zc.a(m2Var)) {
-                    zc.a0(m2Var).M(LocaleController.getString(R.string.WalletCreated), LocaleController.getString(R.string.WalletCreatedInfo), R.raw.contact_check).j();
-                    return;
-                }
+                ((c6) this.b).performClick();
                 return;
             case 12:
-                p7 p7Var = (p7) this.b;
-                p7Var.removeSelfFromStack();
-                Runnable runnable2 = p7Var.f;
+                ((WalletEngine2) this.b).lambda$close$53();
+                return;
+            case 13:
+                l8 l8Var = (l8) this.b;
+                boolean z10 = l8Var.h != -1;
+                if (!z10 && !l8Var.s) {
+                    l8Var.c = l8Var.c();
+                    l8Var.d = 0.0f;
+                }
+                boolean z11 = z10 || l8Var.s || l8Var.e > 1.001f;
+                j3 j3Var = l8Var.b;
+                float f7 = l8Var.c;
+                float f10 = l8Var.d;
+                j3Var.r = f7;
+                j3Var.s = f10;
+                j3Var.v = z11;
+                j3Var.w = z11;
+                return;
+            case 14:
+                s8 s8Var = (s8) this.b;
+                s8Var.removeSelfFromStack();
+                Runnable runnable2 = s8Var.f;
                 if (runnable2 != null) {
                     runnable2.run();
                     return;
                 }
                 return;
-            case 13:
-                ((org.telegram.ui.Cells.u3) this.b).requestLayout();
+            case 15:
+                ((org.telegram.ui.Cells.t3) this.b).requestLayout();
                 return;
-            case 14:
-                zc.a0((s8) this.b).N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
+            case 16:
+                xc.a0((t9) this.b).N(LocaleController.getString(R.string.ScanQrCode), LocaleController.getString(R.string.ErrorOccurred)).j();
                 return;
             default:
-                ((z8) this.b).U();
+                ((aa) this.b).U();
                 return;
         }
     }

@@ -1,26 +1,18 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.TextView;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class yc extends cq0 {
-    public final /* synthetic */ zc F;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yc(zc zcVar, Context context, int i10, long j10, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(i10, j10, context, c6Var);
-        this.F = zcVar;
+public final class yc extends org.telegram.ui.Components.p21 {
+    @Override // org.telegram.ui.Components.p21
+    public final String b() {
+        return LocaleController.getString(R.string.ChannelNoWallpaper);
     }
 
-    @Override // org.telegram.ui.cq0
-    public final void b(int i10, boolean z10) {
-        super.b(i10, z10);
-        zc zcVar = this.F;
-        TextView textView = zcVar.d;
-        if (textView != null) {
-            textView.setTextColor(zcVar.b.h.getTextColor());
-        }
+    @Override // org.telegram.ui.Components.p21
+    public final int c() {
+        return 13;
     }
 }

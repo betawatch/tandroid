@@ -10,7 +10,7 @@ import android.graphics.PorterDuff;
 import android.graphics.Shader;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class l {
     public static final Matrix p = new Matrix();
@@ -83,9 +83,9 @@ public final class l {
                 if (abs != 0.0f) {
                     Path path = this.a;
                     path.reset();
-                    i0.d[] dVarArr = kVar.a;
-                    if (dVarArr != null) {
-                        i0.d.b(dVarArr, path);
+                    i0.e[] eVarArr = kVar.a;
+                    if (eVarArr != null) {
+                        i0.e.b(eVarArr, path);
                     }
                     Path path2 = this.b;
                     path2.reset();

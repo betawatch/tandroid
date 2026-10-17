@@ -1,37 +1,39 @@
 package org.telegram.ui.web;
 
 import android.os.Bundle;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.zc;
-import org.telegram.ui.fo;
+import ci.z7;
+import org.json.JSONObject;
+import org.telegram.ui.ey;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class f0 extends fo {
-    public boolean Qc;
-    public final /* synthetic */ TLRPC.User Rc;
-    public final /* synthetic */ long Sc;
-    public final /* synthetic */ c1 Tc;
+public final class f0 extends ey {
+    public final /* synthetic */ boolean[] B4;
+    public final /* synthetic */ z7 C4;
+    public final /* synthetic */ a1 D4;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f0(c1 c1Var, Bundle bundle, TLRPC.User user, long j10) {
+    public f0(a1 a1Var, Bundle bundle, boolean[] zArr, z7 z7Var) {
         super(bundle);
-        this.Tc = c1Var;
-        this.Rc = user;
-        this.Sc = j10;
+        this.D4 = a1Var;
+        this.B4 = zArr;
+        this.C4 = z7Var;
     }
 
-    @Override // org.telegram.ui.fo, org.telegram.ui.ActionBar.m2
-    public final void onBecomeFullyVisible() {
-        super.onBecomeFullyVisible();
-        if (this.Qc) {
+    @Override // org.telegram.ui.ey, org.telegram.ui.ActionBar.n2
+    public final void onFragmentDestroy() {
+        JSONObject jSONObject;
+        super.onFragmentDestroy();
+        boolean[] zArr = this.B4;
+        if (zArr[0]) {
             return;
         }
-        this.Qc = true;
-        zc.a0(this).M(LocaleController.formatString(R.string.CreateManagedBotCreatedTitle, UserObject.getUserName(this.Rc)), AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.CreateManagedBotCreatedText, UserObject.getUserName(this.Tc.U)), new e0(this, this.Sc, 0)), R.raw.contact_check).j();
+        zArr[0] = true;
+        try {
+            jSONObject = new JSONObject();
+        } catch (Exception unused) {
+            jSONObject = null;
+        }
+        this.D4.x(this.C4, "requested_chat_failed", jSONObject);
     }
 }

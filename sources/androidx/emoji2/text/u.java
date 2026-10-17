@@ -4,9 +4,9 @@ import android.text.Editable;
 import android.text.SpannableStringBuilder;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
-import w7.m6;
+import w7.n6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class u extends SpannableStringBuilder {
     public final Class a;
@@ -15,7 +15,7 @@ public final class u extends SpannableStringBuilder {
     public u(CharSequence charSequence, Class cls) {
         super(charSequence);
         this.b = new ArrayList();
-        m6.a(cls, "watcherClass cannot be null");
+        n6.a(cls, "watcherClass cannot be null");
         this.a = cls;
     }
 
@@ -241,7 +241,7 @@ public final class u extends SpannableStringBuilder {
     public u(Class cls, u uVar, int i10, int i11) {
         super(uVar, i10, i11);
         this.b = new ArrayList();
-        m6.a(cls, "watcherClass cannot be null");
+        n6.a(cls, "watcherClass cannot be null");
         this.a = cls;
     }
 

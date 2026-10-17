@@ -8,8 +8,9 @@ import android.os.Handler;
 import android.view.Surface;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
+import ki.t1;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class x implements l {
     public final MediaCodec a;
@@ -25,23 +26,33 @@ public final class x implements l {
     }
 
     @Override // r2.l
-    public final void b(long j10, int i10, int i11, int i12) {
+    public final void a(long j10, int i10, int i11, int i12) {
         this.a.queueInputBuffer(i10, 0, i11, j10, i12);
     }
 
     @Override // r2.l
-    public final void d(int i10, h2.d dVar, long j10, int i11) {
+    public final void b(int i10, h2.d dVar, long j10, int i11) {
         this.a.queueSecureInputBuffer(i10, 0, dVar.i, j10, i11);
     }
 
     @Override // r2.l
-    public final void e(int i10) {
+    public final /* synthetic */ boolean c(t1 t1Var) {
+        return false;
+    }
+
+    @Override // r2.l
+    public final void d(int i10) {
         this.a.releaseOutputBuffer(i10, false);
     }
 
     @Override // r2.l
-    public final void f(a3.m mVar, Handler handler) {
+    public final void e(a3.m mVar, Handler handler) {
         this.a.setOnFrameRenderedListener(new a(this, mVar, 1), handler);
+    }
+
+    @Override // r2.l
+    public final void f(p2.b bVar) {
+        bVar.run();
     }
 
     @Override // r2.l
@@ -94,27 +105,17 @@ public final class x implements l {
     }
 
     @Override // r2.l
-    public final void l(org.telegram.ui.web.v vVar) {
-        vVar.run();
-    }
-
-    @Override // r2.l
-    public final void m(Surface surface) {
+    public final void l(Surface surface) {
         this.a.setOutputSurface(surface);
     }
 
     @Override // r2.l
-    public final void n(ArrayList arrayList) {
+    public final void m(ArrayList arrayList) {
         this.a.subscribeToVendorParameters(arrayList);
     }
 
     @Override // r2.l
-    public final /* synthetic */ boolean o(m.l lVar) {
-        return false;
-    }
-
-    @Override // r2.l
-    public final void p(ArrayList arrayList) {
+    public final void n(ArrayList arrayList) {
         this.a.unsubscribeFromVendorParameters(arrayList);
     }
 

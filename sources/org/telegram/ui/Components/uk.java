@@ -1,0 +1,75 @@
+package org.telegram.ui.Components;
+
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class uk implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ al b;
+
+    public /* synthetic */ uk(al alVar, int i10) {
+        this.a = i10;
+        this.b = alVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.Z();
+                break;
+            case 1:
+                al alVar = this.b;
+                EditTextBoldCursor editTextBoldCursor = alVar.P;
+                if (!alVar.H && !alVar.K0 && !alVar.b.isDismissed() && alVar.I0 && alVar.Q0 == null && editTextBoldCursor.hasFocus() && alVar.isShown()) {
+                    AndroidUtilities.showKeyboard(editTextBoldCursor);
+                    break;
+                }
+                break;
+            case 2:
+                al alVar2 = this.b;
+                if (!alVar2.H && alVar2.I0 && alVar2.isShown()) {
+                    alVar2.c0();
+                    break;
+                }
+                break;
+            case 3:
+                al alVar3 = this.b;
+                if (!alVar3.H) {
+                    float f7 = alVar3.j0;
+                    if (f7 < 1.0f && alVar3.i0 == null) {
+                        o1.k kVar = new o1.k(new o1.j(f7));
+                        alVar3.i0 = kVar;
+                        o1.l lVar = new o1.l(1.0f);
+                        lVar.a(0.55f);
+                        lVar.b(65.0f);
+                        kVar.u = lVar;
+                        alVar3.i0.e(0.001f);
+                        alVar3.i0.b(new l7(alVar3, 4));
+                        alVar3.i0.a(new hb(alVar3, 2));
+                        alVar3.i0.h();
+                        break;
+                    }
+                }
+                break;
+            case 4:
+                al alVar4 = this.b;
+                if (alVar4.I0 && !alVar4.H) {
+                    alVar4.b0();
+                    if (alVar4.J0) {
+                        alVar4.c0();
+                        break;
+                    }
+                }
+                break;
+            default:
+                al alVar5 = this.b;
+                if (!alVar5.m0) {
+                    alVar5.l0.setVisibility(4);
+                    break;
+                }
+                break;
+        }
+    }
+}

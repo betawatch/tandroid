@@ -3,17 +3,17 @@ package wg;
 import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.d6;
 import w7.z5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public class d extends c {
     public static final /* synthetic */ int v = 0;
     public int s;
 
-    public d(Context context, c6 c6Var) {
-        super(context, c6Var);
+    public d(Context context, d6 d6Var) {
+        super(context, d6Var);
         this.d.setTypeface(AndroidUtilities.bold());
     }
 

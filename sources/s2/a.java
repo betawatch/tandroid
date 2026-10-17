@@ -1,17 +1,17 @@
 package s2;
 
-import b2.x;
+import b2.w;
 import q3.h;
 import s3.c;
 import w7.m;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class a {
     public static final a a = new a();
 
-    public final m a(x xVar) {
-        String str = xVar.s;
+    public final m a(w wVar) {
+        String str = wVar.s;
         if (str != null) {
             switch (str) {
                 case "application/vnd.dvb.ait":
@@ -26,11 +26,11 @@ public final class a {
                     return new c();
             }
         }
-        throw new IllegalArgumentException(t8.b.h("Attempted to create decoder for unsupported MIME type: ", str));
+        throw new IllegalArgumentException(r.c.g("Attempted to create decoder for unsupported MIME type: ", str));
     }
 
-    public final boolean b(x xVar) {
-        String str = xVar.s;
+    public final boolean b(w wVar) {
+        String str = wVar.s;
         return "application/id3".equals(str) || "application/x-emsg".equals(str) || "application/x-scte35".equals(str) || "application/x-icy".equals(str) || "application/vnd.dvb.ait".equals(str);
     }
 }

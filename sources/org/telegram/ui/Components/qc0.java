@@ -1,138 +1,70 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.LinearGradient;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class qc0 extends Drawable {
-    public final /* synthetic */ int a;
-    public boolean b;
-    public Object c;
-    public Object d;
-    public Object e;
+public final /* synthetic */ class qc0 implements View.OnClickListener {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public qc0(int i10) {
-        this.a = i10;
-        switch (i10) {
-            case 1:
-                this.c = new Paint(1);
-                Paint paint = new Paint(1);
-                this.d = paint;
-                this.e = new Matrix();
-                paint.setStyle(Paint.Style.STROKE);
-                paint.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(28.0f), new int[]{1308622847, 0, 452984831}, new float[]{0.0f, 0.5f, 1.0f}, Shader.TileMode.CLAMP));
-                break;
-        }
+    public /* synthetic */ qc0(org.telegram.ui.ct ctVar, ArrayList arrayList, boolean z10) {
+        this.c = ctVar;
+        this.d = arrayList;
+        this.b = z10;
     }
 
-    public void b(int i10, int i11) {
-        ((Paint) this.c).setShader(new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(28.0f), new int[]{i10, i11}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                yj0 yj0Var = (yj0) this.d;
-                yj0 yj0Var2 = (yj0) this.c;
-                Rect rect = AndroidUtilities.rectTmp2;
-                rect.set(getBounds().centerX() - AndroidUtilities.dp(12.0f), getBounds().centerY() - AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f) + getBounds().centerX(), AndroidUtilities.dp(12.0f) + getBounds().centerY());
-                if (((yj0) this.e).A()) {
-                    yj0 yj0Var3 = (yj0) this.e;
-                    boolean z10 = this.b;
-                    if (yj0Var3 != (z10 ? yj0Var2 : yj0Var)) {
-                        if (z10) {
-                            yj0Var = yj0Var2;
-                        }
-                        this.e = yj0Var;
-                        yj0Var.M(yj0Var.e[0] - 1);
+                org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.c;
+                Runnable runnable = (Runnable) this.d;
+                org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
+                if (R != null) {
+                    R.presentFragment(new PremiumPreviewFragment(0, this.b ? "lastseen" : "readtime"));
+                    f3Var.dismiss();
+                    if (runnable != null) {
+                        runnable.run();
+                        break;
                     }
                 }
-                ((yj0) this.e).setBounds(rect);
-                ((yj0) this.e).draw(canvas);
                 break;
             default:
-                Paint paint = (Paint) this.d;
-                float dp = AndroidUtilities.dp(10.0f);
-                RectF rectF = AndroidUtilities.rectTmp;
-                rectF.set(getBounds());
-                Matrix matrix = (Matrix) this.e;
-                matrix.reset();
-                matrix.postTranslate(rectF.left, rectF.top);
-                canvas.drawRoundRect(rectF, dp, dp, (Paint) this.c);
-                if (this.b) {
-                    float dp2 = AndroidUtilities.dp(1.0f);
-                    paint.setStrokeWidth(dp2);
-                    matrix.reset();
-                    matrix.postTranslate(rectF.left, rectF.top);
-                    float f7 = dp2 / 2.0f;
-                    rectF.inset(f7, f7);
-                    canvas.drawRoundRect(rectF, dp, dp, paint);
+                org.telegram.ui.ct ctVar = (org.telegram.ui.ct) this.c;
+                ArrayList arrayList = (ArrayList) this.d;
+                org.telegram.ui.gt gtVar = ctVar.a;
+                if (gtVar.w != null && gtVar.l != null) {
+                    int intValue = ((Integer) arrayList.get(((Integer) view.getTag()).intValue())).intValue();
+                    if (intValue == 0) {
+                        gtVar.l.C(gtVar.W);
+                    } else if (intValue == 1) {
+                        gtVar.l.v(gtVar.W);
+                    } else if (intValue == 2) {
+                        gtVar.l.v(null);
+                    } else if (intValue == 3) {
+                        gtVar.l.H(gtVar.W);
+                    } else if (intValue == 4) {
+                        gtVar.l.p(gtVar.W);
+                    } else if (intValue == 5) {
+                        MediaDataController.getInstance(gtVar.r).addRecentSticker(2, gtVar.b0, gtVar.W, (int) (System.currentTimeMillis() / 1000), this.b);
+                    }
+                    gtVar.p();
                     break;
                 }
                 break;
         }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public int getIntrinsicHeight() {
-        switch (this.a) {
-            case 0:
-                return AndroidUtilities.dp(24.0f);
-            default:
-                return super.getIntrinsicHeight();
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public int getIntrinsicWidth() {
-        switch (this.a) {
-            case 0:
-                return AndroidUtilities.dp(24.0f);
-            default:
-                return super.getIntrinsicWidth();
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        switch (this.a) {
-        }
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        switch (this.a) {
-            case 0:
-                ((yj0) this.c).setAlpha(i10);
-                ((yj0) this.d).setAlpha(i10);
-                break;
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        switch (this.a) {
-            case 0:
-                ((yj0) this.c).setColorFilter(colorFilter);
-                ((yj0) this.d).setColorFilter(colorFilter);
-                break;
-        }
-    }
-
-    private final void a(int i10) {
-    }
-
-    private final void c(ColorFilter colorFilter) {
+    public /* synthetic */ qc0(boolean z10, org.telegram.ui.ActionBar.f3 f3Var, Runnable runnable) {
+        this.b = z10;
+        this.c = f3Var;
+        this.d = runnable;
     }
 }

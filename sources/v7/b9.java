@@ -2,7 +2,7 @@ package v7;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class b9 implements x8 {
     public final r9.n a;
@@ -11,8 +11,8 @@ public final class b9 implements x8 {
     public b9(Context context, v8 v8Var) {
         this.b = v8Var;
         j5.a aVar = j5.a.e;
-        l5.s.b(context);
-        l5.q c10 = l5.s.a().c(aVar);
+        l5.t.b(context);
+        l5.r c10 = l5.t.a().c(aVar);
         if (j5.a.d.contains(new i5.c("json"))) {
             new r9.n(new a9(c10, 0));
         }
@@ -22,6 +22,6 @@ public final class b9 implements x8 {
     @Override // v7.x8
     public final void a(a5.a aVar) {
         this.b.getClass();
-        ((l5.r) this.a.get()).a(aVar.b != 0 ? new i5.a(null, aVar.F(), i5.d.a, null) : new i5.a(null, aVar.F(), i5.d.b, null), new k2.y0(2));
+        ((l5.s) this.a.get()).a(aVar.b != 0 ? new i5.a(null, aVar.F(), i5.d.a, null) : new i5.a(null, aVar.F(), i5.d.b, null), new k2.f0(4));
     }
 }

@@ -1,14 +1,7 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class iw0 {
-    public float a;
-    public float b;
-    public boolean c;
-
-    public iw0(float f7, float f10) {
-        this.a = f7;
-        this.b = f10;
-    }
+public interface iw0 {
+    void H(int i10, boolean z10);
 }

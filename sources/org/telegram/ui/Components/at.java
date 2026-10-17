@@ -1,65 +1,142 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.text.SpannableStringBuilder;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import android.text.TextUtils;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class at implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.c6 c;
+public class at extends s61 {
+    public final int N;
+    public final int O;
+    public final boolean P;
+    public final zs Q;
+    public final ArrayList R;
+    public final ArrayList S;
+    public final ArrayList T;
+    public boolean U;
+    public boolean V;
+    public final CharSequence W;
+    public int X;
+    public int Y;
+    public boolean Z;
+    public boolean a0;
+    public boolean b0;
+    public int c0;
+    public int d0;
+    public String e0;
+    public final ws f0;
+    public boolean g0;
+    public final z2 h0;
 
-    public /* synthetic */ at(Context context, int i10, org.telegram.ui.ActionBar.c6 c6Var) {
-        this.a = i10;
-        this.b = context;
-        this.c = c6Var;
+    public at(im0 im0Var, Context context, int i10, int i11, boolean z10, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(im0Var, context, i10, 0, true, null, d6Var);
+        this.R = new ArrayList();
+        this.S = new ArrayList();
+        this.T = new ArrayList();
+        this.f0 = new ws(this, 0);
+        this.g0 = true;
+        this.h0 = new z2(this, 3);
+        this.s = new d(this, 8);
+        this.N = i10;
+        this.O = i11;
+        this.P = z10;
+        this.Q = new zs(i10, new ws(this, 1));
+        this.W = AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AppsTabInfo), new ai.b(this, d6Var, context)), true);
+        N(false);
+        MediaDataController.getInstance(i10).loadHints(true);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.ActionBar.a2[] a2VarArr = new org.telegram.ui.ActionBar.a2[1];
-                String string = LocaleController.getString(R.string.AppsTabInfoText);
-                ys ysVar = new ys(a2VarArr, 0);
-                org.telegram.ui.ActionBar.c6 c6Var = this.c;
-                SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(AndroidUtilities.replaceLinks(string, c6Var, ysVar));
-                Matcher matcher = Pattern.compile("@([a-zA-Z0-9_-]+)").matcher(replaceTags);
-                while (true) {
-                    boolean find = matcher.find();
-                    Context context = this.b;
-                    if (!find) {
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, c6Var);
-                        String string2 = LocaleController.getString(R.string.AppsTabInfoTitle);
-                        org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
-                        a2Var.R = string2;
-                        a2Var.T = replaceTags;
-                        alertDialog$Builder.k(LocaleController.getString(R.string.AppsTabInfoButton), null);
-                        a2VarArr[0] = alertDialog$Builder.o();
-                        break;
-                    } else {
-                        replaceTags.setSpan(new org.telegram.ui.p0(a2VarArr, context, matcher.group(1), 1), matcher.start(), matcher.end(), 33);
+    public final void V() {
+        boolean isEmpty = TextUtils.isEmpty(this.e0);
+        im0 im0Var = this.d;
+        if (isEmpty) {
+            if (!this.g0) {
+                if (im0Var != null) {
+                    for (int i10 = 0; i10 < im0Var.getChildCount(); i10++) {
+                        if (!(im0Var.getChildAt(i10) instanceof b10)) {
+                        }
                     }
                 }
-            case 1:
-                org.telegram.ui.Wallet.a5.t0(this.b, this.c);
-                break;
-            default:
-                new zh.f7(this.b, this.c).show();
-                break;
+            }
+            this.Q.a();
+            break;
         }
+        if (this.b0 && !this.Z && im0Var != null) {
+            int i11 = 0;
+            while (true) {
+                if (i11 >= im0Var.getChildCount()) {
+                    break;
+                }
+                if (!(im0Var.getChildAt(i11) instanceof b10)) {
+                    i11++;
+                } else if (this.b0 && !this.Z && !TextUtils.isEmpty(this.e0)) {
+                    W(true);
+                }
+            }
+        }
+        this.g0 = false;
     }
 
-    public /* synthetic */ at(et etVar, org.telegram.ui.ActionBar.c6 c6Var, Context context) {
-        this.a = 0;
-        this.c = c6Var;
-        this.b = context;
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0079  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0083  */
+    /* JADX WARN: Removed duplicated region for block: B:19:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x007c  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void W(boolean z10) {
+        this.Z = true;
+        int i10 = this.d0 + 1;
+        this.d0 = i10;
+        TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal = new TLRPC.TL_messages_searchGlobal();
+        tL_messages_searchGlobal.broadcasts_only = false;
+        int i11 = this.O;
+        if (i11 != 0) {
+            tL_messages_searchGlobal.flags |= 1;
+            tL_messages_searchGlobal.folder_id = i11;
+        }
+        tL_messages_searchGlobal.q = this.e0;
+        tL_messages_searchGlobal.limit = 25;
+        tL_messages_searchGlobal.filter = new TLRPC.TL_inputMessagesFilterEmpty();
+        int i12 = this.N;
+        if (z10) {
+            ArrayList arrayList = this.T;
+            if (!arrayList.isEmpty()) {
+                MessageObject messageObject = (MessageObject) i0.a.h(1, arrayList);
+                tL_messages_searchGlobal.offset_rate = this.c0;
+                tL_messages_searchGlobal.offset_id = messageObject.getId();
+                if (messageObject.messageOwner.peer_id == null) {
+                    tL_messages_searchGlobal.offset_peer = new TLRPC.TL_inputPeerEmpty();
+                } else {
+                    tL_messages_searchGlobal.offset_peer = MessagesController.getInstance(i12).getInputPeer(messageObject.messageOwner.peer_id);
+                }
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.l0(this, i10, tL_messages_searchGlobal, z10, 3), !z10 ? 800L : 0L);
+                if (z10) {
+                    this.a0 = true;
+                    TLRPC.TL_contacts_search tL_contacts_search = new TLRPC.TL_contacts_search();
+                    tL_contacts_search.limit = 30;
+                    tL_contacts_search.bots = true;
+                    tL_contacts_search.q = this.e0;
+                    ConnectionsManager.getInstance(i12).sendRequestTyped(tL_contacts_search, new org.telegram.messenger.a(), new ai.q5(15, this, tL_contacts_search));
+                    return;
+                }
+                return;
+            }
+        }
+        tL_messages_searchGlobal.offset_rate = 0;
+        tL_messages_searchGlobal.offset_id = 0;
+        tL_messages_searchGlobal.offset_peer = new TLRPC.TL_inputPeerEmpty();
+        AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.l0(this, i10, tL_messages_searchGlobal, z10, 3), !z10 ? 800L : 0L);
+        if (z10) {
+        }
     }
 }

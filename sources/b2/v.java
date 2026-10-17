@@ -1,59 +1,85 @@
 package b2;
 
-import android.os.Build;
-import android.util.SparseBooleanArray;
-import v7.u6;
+import java.util.List;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class v {
-    public final SparseBooleanArray a;
+    public int A;
+    public int B;
+    public float C;
+    public int D;
+    public float E;
+    public byte[] F;
+    public int G;
+    public n H;
+    public int I;
+    public int J;
+    public int K;
+    public int L;
+    public int M;
+    public int N;
+    public int O;
+    public int P;
+    public int Q;
+    public int R;
+    public int S;
+    public String a;
+    public String b;
+    public e9.n0 c;
+    public String d;
+    public int e;
+    public int f;
+    public int g;
+    public int h;
+    public int i;
+    public String j;
+    public t0 k;
+    public String l;
+    public boolean m;
+    public long n;
+    public String o;
+    public int p;
+    public String q;
+    public String r;
+    public int s;
+    public int t;
+    public List u;
+    public s v;
+    public long w;
+    public boolean x;
+    public int y;
+    public int z;
 
-    public v(SparseBooleanArray sparseBooleanArray) {
-        this.a = sparseBooleanArray;
+    public v() {
+        e9.l0 l0Var = e9.n0.b;
+        this.c = e9.x1.e;
+        this.h = -1;
+        this.i = -1;
+        this.s = -1;
+        this.t = -1;
+        this.w = Long.MAX_VALUE;
+        this.y = -1;
+        this.z = -1;
+        this.A = -1;
+        this.B = -1;
+        this.C = -1.0f;
+        this.E = 1.0f;
+        this.G = -1;
+        this.I = -1;
+        this.J = -1;
+        this.K = -1;
+        this.L = -1;
+        this.O = -1;
+        this.P = 1;
+        this.Q = -1;
+        this.R = -1;
+        this.S = 0;
+        this.g = 0;
+        this.m = false;
     }
 
-    public final int a(int i10) {
-        SparseBooleanArray sparseBooleanArray = this.a;
-        u6.j(i10, sparseBooleanArray.size());
-        return sparseBooleanArray.keyAt(i10);
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof v)) {
-            return false;
-        }
-        v vVar = (v) obj;
-        SparseBooleanArray sparseBooleanArray = vVar.a;
-        int i10 = Build.VERSION.SDK_INT;
-        SparseBooleanArray sparseBooleanArray2 = this.a;
-        if (i10 >= 24) {
-            return sparseBooleanArray2.equals(sparseBooleanArray);
-        }
-        if (sparseBooleanArray2.size() != sparseBooleanArray.size()) {
-            return false;
-        }
-        for (int i11 = 0; i11 < sparseBooleanArray2.size(); i11++) {
-            if (a(i11) != vVar.a(i11)) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    public final int hashCode() {
-        int i10 = Build.VERSION.SDK_INT;
-        SparseBooleanArray sparseBooleanArray = this.a;
-        if (i10 >= 24) {
-            return sparseBooleanArray.hashCode();
-        }
-        int size = sparseBooleanArray.size();
-        for (int i11 = 0; i11 < sparseBooleanArray.size(); i11++) {
-            size = (size * 31) + a(i11);
-        }
-        return size;
+    public final w a() {
+        return new w(this);
     }
 }

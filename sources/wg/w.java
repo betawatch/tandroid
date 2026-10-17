@@ -12,67 +12,68 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.sk;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.RadioButton;
-import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.g6;
-import org.telegram.ui.Components.ia0;
-import org.telegram.ui.Components.s6;
+import org.telegram.ui.Components.bs;
+import org.telegram.ui.Components.ca0;
+import org.telegram.ui.Components.f6;
+import org.telegram.ui.Components.q6;
 import w7.z5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class w extends FrameLayout {
     public final RadioButton a;
     public final Drawable b;
     public final Drawable c;
-    public final s6 d;
-    public final s6 e;
+    public final q6 d;
+    public final q6 e;
     public final TextView f;
     public final SpannableString h;
     public final SpannableString n;
     public TL_stars.TL_starsGiveawayOption r;
     public int s;
-    public final g6 v;
+    public final f6 v;
 
-    public w(Context context, c6 c6Var) {
+    public w(Context context, d6 d6Var) {
         super(context);
-        this.v = new g6(this, 0L, 500L, es.h);
+        this.v = new f6(this, 0L, 500L, bs.h);
         Drawable mutate = context.getResources().getDrawable(R.drawable.star_small_outline).mutate();
         this.b = mutate;
-        mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.h5, c6Var), PorterDuff.Mode.SRC_IN));
+        mutate.setColorFilter(new PorterDuffColorFilter(h6.w0(h6.h5, d6Var), PorterDuff.Mode.SRC_IN));
         this.c = context.getResources().getDrawable(R.drawable.star_small_inner).mutate();
         setWillNotDraw(false);
-        s6 s6Var = new s6(context, false, false, false);
-        this.d = s6Var;
-        s6Var.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.G6, c6Var));
-        s6Var.setTypeface(AndroidUtilities.bold());
-        s6Var.setTextSize(AndroidUtilities.dp(16.0f));
-        addView(s6Var, z5.a(20.0f, 64.0f, 8.0f, 80.0f, 0.0f, -1, 51));
+        q6 q6Var = new q6(context, false, false, false);
+        this.d = q6Var;
+        q6Var.setTextColor(h6.w0(h6.G6, d6Var));
+        q6Var.setTypeface(AndroidUtilities.bold());
+        q6Var.setTextSize(AndroidUtilities.dp(16.0f));
+        addView(q6Var, z5.a(20.0f, 64.0f, 8.0f, 80.0f, 0.0f, -1, 51));
         SpannableString spannableString = new SpannableString("x");
         this.h = spannableString;
-        spannableString.setSpan(new ia0(AndroidUtilities.dp(90.0f), s6Var), 0, 1, 33);
-        s6 s6Var2 = new s6(context, false, true, true);
-        this.e = s6Var2;
-        int i10 = org.telegram.ui.ActionBar.g6.z6;
-        s6Var2.setTextColor(org.telegram.ui.ActionBar.g6.w0(i10, c6Var));
-        s6Var2.setTextSize(AndroidUtilities.dp(13.0f));
-        addView(s6Var2, z5.a(14.0f, 64.0f, 31.0f, 80.0f, 0.0f, -1, 51));
+        spannableString.setSpan(new ca0(AndroidUtilities.dp(90.0f), q6Var), 0, 1, 33);
+        q6 q6Var2 = new q6(context, false, true, true);
+        this.e = q6Var2;
+        int i10 = h6.z6;
+        q6Var2.setTextColor(h6.w0(i10, d6Var));
+        q6Var2.setTextSize(AndroidUtilities.dp(13.0f));
+        addView(q6Var2, z5.a(14.0f, 64.0f, 31.0f, 80.0f, 0.0f, -1, 51));
         SpannableString spannableString2 = new SpannableString("x");
         this.n = spannableString2;
-        spannableString2.setSpan(new ia0(AndroidUtilities.dp(70.0f), s6Var2), 0, 1, 33);
+        spannableString2.setSpan(new ca0(AndroidUtilities.dp(70.0f), q6Var2), 0, 1, 33);
         TextView textView = new TextView(context);
         this.f = textView;
-        sk.o(i10, c6Var, textView, 1, 16.0f);
+        wh.o(i10, d6Var, textView, 1, 16.0f);
         textView.setGravity(5);
         addView(textView, z5.a(-2.0f, 0.0f, 0.0f, 19.0f, 0.0f, -2, 21));
         RadioButton radioButton = new RadioButton(context);
         this.a = radioButton;
         radioButton.setSize(AndroidUtilities.dp(20.0f));
-        radioButton.b(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.j7, c6Var), org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.E5, c6Var));
+        radioButton.b(h6.w0(h6.j7, d6Var), h6.w0(h6.E5, d6Var));
         addView(radioButton, z5.a(20.0f, 22.0f, 0.0f, 0.0f, 0.0f, 20, 19));
     }
 

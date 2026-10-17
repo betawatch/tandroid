@@ -1,18 +1,33 @@
 package w7;
 
-import android.os.Build;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.pm0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class i {
-    public static boolean a(int i10) {
-        if (i10 == 8 || i10 == 7) {
-            return true;
+    public static void a(pm0 pm0Var, org.telegram.ui.ActionBar.d6 d6Var) {
+        pm0Var.q(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Oh, d6Var), d6Var != null ? d6Var.a() : org.telegram.ui.ActionBar.h6.I.q());
+    }
+
+    public static int b(ki.a aVar) {
+        if (aVar == null) {
+            return 0;
         }
-        int i11 = Build.VERSION.SDK_INT;
-        if (i11 < 31 || !(i10 == 26 || i10 == 27)) {
-            return i11 >= 33 && i10 == 30;
+        return c(aVar) + (Math.max(0, aVar.c) > 0 ? AndroidUtilities.dp(i0.a.g(r4, 1, 24, 28)) : 0);
+    }
+
+    public static int c(ki.a aVar) {
+        if ((aVar == null ? 0 : aVar.k.size()) <= 0) {
+            return 0;
         }
-        return true;
+        return AndroidUtilities.dp(i0.a.g(r3, 1, 16, 12));
+    }
+
+    public static int d(ki.a aVar) {
+        if ((aVar == null ? 0 : aVar.k.size()) <= 0) {
+            return 0;
+        }
+        return AndroidUtilities.dp(i0.a.g(r3, 1, 16, 8));
     }
 }

@@ -1,28 +1,28 @@
 package org.telegram.ui.ActionBar;
 
-import org.telegram.ui.Components.r6;
+import org.telegram.ui.Components.p6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class x0 extends r6 {
-    public final /* synthetic */ int d0;
-    public final /* synthetic */ b1 e0;
+public final class x0 extends p6 {
+    public final /* synthetic */ int e0;
+    public final /* synthetic */ b1 f0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public /* synthetic */ x0(b1 b1Var, int i10) {
         super(false, true, true);
-        this.d0 = i10;
-        this.e0 = b1Var;
+        this.e0 = i10;
+        this.f0 = b1Var;
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void invalidateSelf() {
-        switch (this.d0) {
+        switch (this.e0) {
             case 0:
-                this.e0.invalidate();
+                this.f0.invalidate();
                 break;
             default:
-                this.e0.invalidate();
+                this.f0.invalidate();
                 break;
         }
     }

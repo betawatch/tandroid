@@ -12,11 +12,11 @@ import java.util.Locale;
 import java.util.concurrent.Executor;
 import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class r implements p0 {
     public e9.n0 a;
-    public b2.x b;
+    public b2.w b;
     public long c;
     public long d;
     public int e;
@@ -51,30 +51,30 @@ public final class r implements p0 {
     }
 
     @Override // a3.p0
-    public final boolean d(b2.x xVar) {
-        w wVar = this.g;
+    public final boolean d(b2.w wVar) {
+        w wVar2 = this.g;
         boolean z10 = true;
-        u6.p(wVar.n == 0);
-        b2.o oVar = xVar.I;
-        if (oVar == null || !oVar.d()) {
-            oVar = b2.o.h;
+        u6.p(wVar2.n == 0);
+        b2.n nVar = wVar.I;
+        if (nVar == null || !nVar.d()) {
+            nVar = b2.n.h;
         }
-        int i10 = oVar.c;
+        int i10 = nVar.c;
         if (i10 == 7) {
             try {
                 int i11 = Build.VERSION.SDK_INT;
                 if (i11 < 34) {
                     if (i11 >= 33 && e2.e.d("EGL_EXT_gl_colorspace_bt2020_pq")) {
-                        e2.g0 g0Var = wVar.f;
+                        e2.g0 g0Var = wVar2.f;
                         Looper myLooper = Looper.myLooper();
                         myLooper.getClass();
-                        wVar.k = g0Var.a(myLooper, null);
-                        wVar.b.a();
+                        wVar2.k = g0Var.a(myLooper, null);
+                        wVar2.b.a();
                         throw null;
                     }
                 }
             } catch (e2.m e) {
-                throw new o0(e, xVar);
+                throw new o0(e, wVar);
             }
         }
         if (i10 == 6) {
@@ -87,22 +87,22 @@ public final class r implements p0 {
         if (!z10 && Build.VERSION.SDK_INT >= 29) {
             Locale locale = Locale.US;
             e2.a.l("PlaybackVidGraphWrapper", "Color transfer " + i10 + " is not supported. Falling back to OpenGl tone mapping.");
-            b2.o oVar2 = b2.o.h;
-            e2.g0 g0Var2 = wVar.f;
+            b2.n nVar2 = b2.n.h;
+            e2.g0 g0Var2 = wVar2.f;
             Looper myLooper2 = Looper.myLooper();
             myLooper2.getClass();
-            wVar.k = g0Var2.a(myLooper2, null);
-            wVar.b.a();
+            wVar2.k = g0Var2.a(myLooper2, null);
+            wVar2.b.a();
             throw null;
         }
         if (i10 == 2 || i10 == 10) {
-            b2.o oVar3 = b2.o.h;
+            b2.n nVar3 = b2.n.h;
         }
-        e2.g0 g0Var22 = wVar.f;
+        e2.g0 g0Var22 = wVar2.f;
         Looper myLooper22 = Looper.myLooper();
         myLooper22.getClass();
-        wVar.k = g0Var22.a(myLooper22, null);
-        wVar.b.a();
+        wVar2.k = g0Var22.a(myLooper22, null);
+        wVar2.b.a();
         throw null;
     }
 
@@ -155,16 +155,16 @@ public final class r implements p0 {
     }
 
     @Override // a3.p0
-    public final void l(b2.x xVar, long j10, int i10, List list) {
+    public final void l(b2.w wVar, long j10, int i10, List list) {
         u6.p(false);
         this.a = e9.n0.u(list);
-        this.b = xVar;
-        b2.w a2 = xVar.a();
-        b2.o oVar = xVar.I;
-        if (oVar == null || !oVar.d()) {
-            oVar = b2.o.h;
+        this.b = wVar;
+        b2.v a2 = wVar.a();
+        b2.n nVar = wVar.I;
+        if (nVar == null || !nVar.d()) {
+            nVar = b2.n.h;
         }
-        a2.H = oVar;
+        a2.H = nVar;
         a2.a();
         throw null;
     }
@@ -177,11 +177,11 @@ public final class r implements p0 {
         if (wVar.n == 1) {
             wVar.m++;
             fVar.m(z10);
-            while (wVar.j.m() > 1) {
-                wVar.j.h();
+            while (wVar.j.j() > 1) {
+                wVar.j.f();
             }
-            if (wVar.j.m() == 1) {
-                ((v) wVar.j.h()).getClass();
+            if (wVar.j.j() == 1) {
+                ((v) wVar.j.f()).getClass();
                 throw null;
             }
             wVar.o = -9223372036854775807L;
@@ -207,7 +207,7 @@ public final class r implements p0 {
                 r2.l lVar = jVar.a;
                 int i11 = jVar.b;
                 Trace.beginSection("dropVideoBuffer");
-                lVar.e(i11);
+                lVar.d(i11);
                 Trace.endSection();
                 nVar.R0(0, 1);
                 return true;
@@ -226,16 +226,16 @@ public final class r implements p0 {
             return;
         }
         this.a = e9.n0.u(list);
-        b2.x xVar = this.b;
-        if (xVar == null) {
+        b2.w wVar = this.b;
+        if (wVar == null) {
             return;
         }
-        b2.w a2 = xVar.a();
-        b2.o oVar = xVar.I;
-        if (oVar == null || !oVar.d()) {
-            oVar = b2.o.h;
+        b2.v a2 = wVar.a();
+        b2.n nVar = wVar.I;
+        if (nVar == null || !nVar.d()) {
+            nVar = b2.n.h;
         }
-        a2.H = oVar;
+        a2.H = nVar;
         a2.a();
         throw null;
     }
@@ -296,15 +296,15 @@ public final class r implements p0 {
     @Override // a3.p0
     public final void w() {
         w wVar = this.g;
-        if (wVar.j.m() == 0) {
+        if (wVar.j.j() == 0) {
             wVar.e.w();
             return;
         }
-        e2.j0 j0Var = new e2.j0(0, (byte) 0);
-        if (wVar.j.m() <= 0) {
+        e2.j0 j0Var = new e2.j0();
+        if (wVar.j.j() <= 0) {
             wVar.j = j0Var;
         } else {
-            ((v) wVar.j.h()).getClass();
+            ((v) wVar.j.f()).getClass();
             throw null;
         }
     }

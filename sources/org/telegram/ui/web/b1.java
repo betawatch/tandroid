@@ -1,6 +1,36 @@
 package org.telegram.ui.web;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.OutputSerializedData;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public interface b1 {
+public final class b1 extends TLObject {
+    public long a;
+    public long b;
+    public String c;
+    public l2 d;
+
+    @Override // org.telegram.tgnet.TLObject
+    public final void readParams(InputSerializedData inputSerializedData, boolean z10) {
+        this.a = inputSerializedData.readInt64(z10);
+        this.b = inputSerializedData.readInt64(z10);
+        this.c = inputSerializedData.readString(z10);
+        l2 l2Var = new l2();
+        this.d = l2Var;
+        l2Var.readParams(inputSerializedData, z10);
+    }
+
+    @Override // org.telegram.tgnet.TLObject
+    public final void serializeToStream(OutputSerializedData outputSerializedData) {
+        outputSerializedData.writeInt64(this.a);
+        outputSerializedData.writeInt64(this.b);
+        String str = this.c;
+        if (str == null) {
+            str = "";
+        }
+        outputSerializedData.writeString(str);
+        this.d.serializeToStream(outputSerializedData);
+    }
 }

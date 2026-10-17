@@ -6,7 +6,7 @@ import android.util.SparseArray;
 import e9.x1;
 import java.util.concurrent.CopyOnWriteArraySet;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class w {
     public static final b q = new b(0);
@@ -19,7 +19,7 @@ public final class w {
     public final CopyOnWriteArraySet g;
     public final long h;
     public final b0 i;
-    public e2.j0 j = new e2.j0(0, (byte) 0);
+    public e2.j0 j = new e2.j0();
     public e2.i0 k;
     public Pair l;
     public int m;
@@ -44,7 +44,7 @@ public final class w {
         this.i = b0Var;
         this.e = new f(qVar.b, b0Var, g0Var);
         this.g = new CopyOnWriteArraySet();
-        new b2.w().a();
+        new b2.v().a();
         this.o = -9223372036854775807L;
         this.p = -1;
         this.n = 0;

@@ -1,23 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class q41 extends x41 {
-    public final /* synthetic */ org.telegram.ui.wf T;
+public final class q41 extends s4.g0 {
+    public Context c;
+    public View d;
+    public int e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q41(Activity activity, String str, String str2, TLRPC.InputPeer inputPeer, int i10, TL_iv.RichMessage richMessage, org.telegram.ui.wf wfVar) {
-        super(activity, str, str2, null, inputPeer, i10, false, richMessage);
-        this.T = wfVar;
+    public final void D(View view) {
+        if (this.d == view) {
+            return;
+        }
+        this.e++;
+        this.d = view;
+        m(1);
     }
 
-    @Override // org.telegram.ui.Components.x41, org.telegram.ui.ActionBar.e3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.i2
-    public final void dismiss() {
-        super.dismiss();
-        this.T.run();
+    @Override // s4.g0
+    public final int h() {
+        return 2;
+    }
+
+    @Override // s4.g0
+    public final int j(int i10) {
+        if (i10 == 0) {
+            return 0;
+        }
+        return this.e;
+    }
+
+    @Override // s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        return i10 == 0 ? new sl0(new un(this.c, 13)) : new sl0(this.d);
+    }
+
+    @Override // s4.g0
+    public final void v(s4.b1 b1Var, int i10) {
     }
 }

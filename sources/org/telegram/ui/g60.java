@@ -1,30 +1,87 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.view.KeyEvent;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class g60 extends org.telegram.ui.Components.voip.l {
-    public final /* synthetic */ h60 h;
+public final class g60 implements View.OnKeyListener {
+    public final /* synthetic */ int a;
+    public boolean b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g60(h60 h60Var, Context context) {
-        super(context, false);
-        this.h = h60Var;
+    public /* synthetic */ g60(int i10, org.telegram.ui.ActionBar.n2 n2Var) {
+        this.a = i10;
+        this.c = n2Var;
     }
 
-    @Override // org.telegram.ui.Components.voip.l, android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        n60 n60Var = this.h.M;
-        if (n60Var.Q.getVisibility() == 0 && n60Var.P2) {
-            n60.O(n60Var, this, true);
+    @Override // android.view.View.OnKeyListener
+    public final boolean onKey(View view, int i10, KeyEvent keyEvent) {
+        switch (this.a) {
+            case 0:
+                n60 n60Var = (n60) this.c;
+                if (i10 == 67) {
+                    if (keyEvent.getAction() != 0) {
+                        if (keyEvent.getAction() == 1 && this.b && !n60Var.a0.isEmpty()) {
+                            n60Var.h.c((org.telegram.ui.Components.v30) i0.a.h(1, n60Var.a0));
+                            n60Var.s0();
+                            n60Var.k0();
+                            break;
+                        }
+                    } else {
+                        this.b = n60Var.f.r.length() == 0;
+                        break;
+                    }
+                }
+                break;
+            default:
+                UsersSelectActivity usersSelectActivity = (UsersSelectActivity) this.c;
+                ArrayList arrayList = usersSelectActivity.O;
+                if (i10 == 67) {
+                    if (keyEvent.getAction() != 0) {
+                        if (keyEvent.getAction() == 1 && this.b && !arrayList.isEmpty()) {
+                            org.telegram.ui.Components.v30 v30Var = (org.telegram.ui.Components.v30) i0.a.h(1, arrayList);
+                            usersSelectActivity.b.b(v30Var);
+                            if (usersSelectActivity.x == 2) {
+                                if (v30Var.getUid() == -9223372036854775800L) {
+                                    usersSelectActivity.J &= -2;
+                                } else if (v30Var.getUid() == -9223372036854775799L) {
+                                    usersSelectActivity.J &= -3;
+                                } else if (v30Var.getUid() == Long.MIN_VALUE) {
+                                    usersSelectActivity.J &= -5;
+                                } else if (v30Var.getUid() == -9223372036854775807L) {
+                                    usersSelectActivity.J &= -9;
+                                }
+                            } else if (v30Var.getUid() == Long.MIN_VALUE) {
+                                usersSelectActivity.J = (~MessagesController.DIALOG_FILTER_FLAG_CONTACTS) & usersSelectActivity.J;
+                            } else if (v30Var.getUid() == -9223372036854775807L) {
+                                usersSelectActivity.J = (~MessagesController.DIALOG_FILTER_FLAG_NON_CONTACTS) & usersSelectActivity.J;
+                            } else if (v30Var.getUid() == -9223372036854775806L) {
+                                usersSelectActivity.J = (~MessagesController.DIALOG_FILTER_FLAG_GROUPS) & usersSelectActivity.J;
+                            } else if (v30Var.getUid() == -9223372036854775805L) {
+                                usersSelectActivity.J = (~MessagesController.DIALOG_FILTER_FLAG_CHANNELS) & usersSelectActivity.J;
+                            } else if (v30Var.getUid() == -9223372036854775804L) {
+                                usersSelectActivity.J = (~MessagesController.DIALOG_FILTER_FLAG_BOTS) & usersSelectActivity.J;
+                            } else if (v30Var.getUid() == -9223372036854775803L) {
+                                usersSelectActivity.J = (~MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_MUTED) & usersSelectActivity.J;
+                            } else if (v30Var.getUid() == -9223372036854775802L) {
+                                usersSelectActivity.J = (~MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_READ) & usersSelectActivity.J;
+                            } else if (v30Var.getUid() == -9223372036854775801L) {
+                                usersSelectActivity.J = (~MessagesController.DIALOG_FILTER_FLAG_EXCLUDE_ARCHIVED) & usersSelectActivity.J;
+                            }
+                            usersSelectActivity.Y();
+                            usersSelectActivity.W();
+                            break;
+                        }
+                    } else {
+                        this.b = usersSelectActivity.c.length() == 0;
+                        break;
+                    }
+                }
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.voip.l, android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        n60.O(this.h.M, this, false);
+        return true;
     }
 }

@@ -1,39 +1,48 @@
 package yh;
 
-import org.telegram.messenger.Utilities;
+import ai.v9;
+import java.util.ArrayList;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.k91;
-import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.Components.is0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class r1 implements Utilities.Callback {
+public final /* synthetic */ class r1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ q2 b;
+    public final /* synthetic */ is0 b;
 
-    public /* synthetic */ r1(q2 q2Var, int i10) {
+    public /* synthetic */ r1(is0 is0Var, int i10) {
         this.a = i10;
-        this.b = q2Var;
+        this.b = is0Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                q2 q2Var = this.b;
-                q2Var.e.b((String) obj, new r1(q2Var, 1));
+                this.b.a();
+                break;
+            case 1:
+                this.b.setReorderingCollections(true);
                 break;
             default:
-                q2 q2Var2 = this.b;
-                q2Var2.f(true);
-                k91 k91Var = q2Var2.n;
-                int i10 = ((TL_stars.TL_starGiftCollection) obj).collection_id;
-                k91Var.d(i10, q2Var2.e.f(i10) + 1);
-                org.telegram.ui.ActionBar.m2 m2Var = q2Var2.a;
-                if (m2Var instanceof ProfileActivity) {
-                    ((ProfileActivity) m2Var).G4(true);
+                v9 v9Var = this.b.e;
+                v9Var.getClass();
+                TL_stars.reorderStarGiftCollections reorderstargiftcollections = new TL_stars.reorderStarGiftCollections();
+                int i10 = v9Var.a;
+                reorderstargiftcollections.peer = MessagesController.getInstance(i10).getInputPeer(v9Var.b);
+                ArrayList arrayList = v9Var.e;
+                int size = arrayList.size();
+                int i11 = 0;
+                while (i11 < size) {
+                    Object obj = arrayList.get(i11);
+                    i11++;
+                    reorderstargiftcollections.order.add(Integer.valueOf(((TL_stars.TL_starGiftCollection) obj).collection_id));
                 }
-                q2Var2.n();
+                ConnectionsManager.getInstance(i10).sendRequest(reorderstargiftcollections, null);
+                v9Var.j();
                 break;
         }
     }

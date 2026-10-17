@@ -1,88 +1,127 @@
 package org.telegram.ui;
 
+import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.text.style.ReplacementSpan;
+import android.view.MotionEvent;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public class i10 extends ReplacementSpan {
-    public final TextPaint a;
-    public final Paint b;
-    public StaticLayout c;
-    public float d;
-    public float e;
-    public int f;
-    public final int h;
-    public CharSequence n;
+public final class i10 extends org.telegram.ui.Components.im0 {
+    public final /* synthetic */ int V2;
+    public final /* synthetic */ Object W2;
 
-    public i10(int i10) {
-        TextPaint textPaint = new TextPaint(1);
-        this.a = textPaint;
-        Paint paint = new Paint(1);
-        this.b = paint;
-        this.n = "NEW";
-        this.h = i10;
-        textPaint.setTypeface(AndroidUtilities.bold());
-        paint.setStyle(Paint.Style.FILL);
-        textPaint.setTextSize(AndroidUtilities.dp(i10 < 0 ? 12.0f : i10));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ i10(int i10, Context context, org.telegram.ui.ActionBar.n2 n2Var) {
+        super(context, null);
+        this.V2 = i10;
+        this.W2 = n2Var;
     }
 
-    public final void a() {
-        if (this.c == null) {
-            StaticLayout staticLayout = new StaticLayout(this.n, this.a, AndroidUtilities.displaySize.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-            this.c = staticLayout;
-            this.d = staticLayout.getLineWidth(0);
-            this.e = this.c.getHeight();
+    @Override // org.telegram.ui.Components.im0
+    public Integer W0(int i10) {
+        int i11;
+        switch (this.V2) {
+            case 3:
+                i11 = ((SessionsActivity) this.W2).terminateAllSessionsRow;
+                org.telegram.ui.ActionBar.d6 d6Var = this.n2;
+                return i10 == i11 ? Integer.valueOf(org.telegram.ui.ActionBar.h6.m1(0.1f, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.p7, d6Var))) : Integer.valueOf(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.i6, d6Var));
+            default:
+                return super.W0(i10);
         }
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        a();
-        int i15 = this.f;
-        if (i15 == 0) {
-            i15 = paint.getColor();
+    @Override // org.telegram.ui.Components.im0, android.view.ViewGroup, android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        org.telegram.ui.ActionBar.k kVar;
+        switch (this.V2) {
+            case 1:
+                super.dispatchDraw(canvas);
+                b60 b60Var = (b60) this.W2;
+                if (b60Var.z0 != null && b60Var.A0 >= 1.0f) {
+                    canvas.save();
+                    int measuredHeight = b60Var.z0.getMeasuredHeight();
+                    kVar = ((org.telegram.ui.ActionBar.n2) b60Var).actionBar;
+                    canvas.translate(0.0f, -(measuredHeight - kVar.getMeasuredHeight()));
+                    b60Var.z0.draw(canvas);
+                    canvas.restore();
+                    break;
+                }
+                break;
+            case 2:
+                ip0 ip0Var = (ip0) this.W2;
+                Paint paint = ip0Var.w;
+                RectF rectF = ip0Var.s;
+                RectF rectF2 = ip0Var.r;
+                RectF rectF3 = ip0Var.n;
+                s4.b0 b0Var = ip0Var.b;
+                if (!ip0Var.f.isEmpty()) {
+                    float d = ip0Var.e.d(ip0Var.d, false);
+                    double d10 = d;
+                    int clamp = Utilities.clamp((int) Math.floor(d10), r6.size() - 1, 0);
+                    int clamp2 = Utilities.clamp((int) Math.ceil(d10), r6.size() - 1, 0);
+                    View m10 = b0Var.m(clamp);
+                    View m11 = b0Var.m(clamp2);
+                    if (m10 != null || m11 != null) {
+                        View view = m10 != null ? m10 : m11;
+                        rectF3.set(view.getLeft(), view.getTop(), view.getRight(), view.getBottom());
+                        if (m11 != null) {
+                            m10 = m11;
+                        }
+                        rectF2.set(m10.getLeft(), m10.getTop(), m10.getRight(), m10.getBottom());
+                        AndroidUtilities.lerp(rectF3, rectF2, d - clamp, rectF);
+                        paint.setColor(ip0Var.x);
+                        float height = rectF.height() / 2.0f;
+                        canvas.drawRoundRect(rectF, height, height, paint);
+                        super.dispatchDraw(canvas);
+                        break;
+                    }
+                }
+                super.dispatchDraw(canvas);
+                break;
+            default:
+                super.dispatchDraw(canvas);
+                break;
         }
-        Paint paint2 = this.b;
-        paint2.setColor(i15);
-        int i16 = AndroidUtilities.computePerceivedBrightness(i15) > 0.721f ? -16777216 : -1;
-        TextPaint textPaint = this.a;
-        textPaint.setColor(i16);
-        paint2.setAlpha((int) (paint2.getAlpha() * 1.0f));
-        textPaint.setAlpha((int) (textPaint.getAlpha() * 1.0f));
-        float dp = f7 + AndroidUtilities.dp(2.0f);
-        float dp2 = (i13 - this.e) + AndroidUtilities.dp(1.0f);
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(dp, dp2, this.d + dp, this.e + dp2);
-        float dp3 = AndroidUtilities.dp(4.4f);
-        rectF.inset(AndroidUtilities.dp(-4.0f), AndroidUtilities.dp(this.h == 8 ? -3.66f : -2.33f));
-        canvas.drawRoundRect(rectF, dp3, dp3, paint2);
-        canvas.save();
-        canvas.translate(dp, dp2);
-        this.c.draw(canvas);
-        canvas.restore();
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        a();
-        return (int) (AndroidUtilities.dp(10.0f) + this.d);
+    @Override // android.view.View
+    public void invalidate() {
+        switch (this.V2) {
+            case 2:
+                super.invalidate();
+                to0 to0Var = ((ip0) this.W2).F;
+                if (to0Var != null) {
+                    to0Var.run();
+                    break;
+                }
+                break;
+            default:
+                super.invalidate();
+                break;
+        }
     }
 
-    public i10() {
-        TextPaint textPaint = new TextPaint(1);
-        this.a = textPaint;
-        Paint paint = new Paint(1);
-        this.b = paint;
-        this.n = "NEW";
-        textPaint.setTypeface(AndroidUtilities.bold());
-        paint.setStyle(Paint.Style.FILL);
-        textPaint.setTextSize(AndroidUtilities.dp(10.0f));
+    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.V2) {
+            case 0:
+                if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+                    AndroidUtilities.runOnUIThread(new fz(this, 3), 250L);
+                }
+                break;
+        }
+        return super.onTouchEvent(motionEvent);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ i10(Object obj, Context context, org.telegram.ui.ActionBar.d6 d6Var, int i10) {
+        super(context, d6Var);
+        this.V2 = i10;
+        this.W2 = obj;
     }
 }

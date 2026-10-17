@@ -1,90 +1,176 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ValueAnimator;
+import android.util.SparseIntArray;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.fi1;
+import j$.util.Objects;
+import java.util.ArrayList;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class em0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ Object d;
+public abstract class em0 extends ql0 {
+    public SparseIntArray c;
+    public SparseIntArray d;
+    public SparseIntArray e;
+    public int f;
+    public int h;
+    public final ArrayList n = new ArrayList();
 
-    public /* synthetic */ em0(Object obj, float f7, float f10, int i10) {
-        this.a = i10;
-        this.d = obj;
-        this.b = f7;
-        this.c = f10;
+    public em0() {
+        L();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        View view;
-        int i10 = this.a;
-        float f7 = this.c;
-        float f10 = this.b;
-        Object obj = this.d;
-        switch (i10) {
-            case 0:
-                mm0 mm0Var = (mm0) ((hm0) obj).b;
-                if (mm0Var.c1 != null && (view = mm0Var.L1) != null) {
-                    mm0Var.h1(view, f10, f7, true);
-                    mm0Var.c1 = null;
-                    break;
-                }
-                break;
-            default:
-                tg.i iVar = (tg.i) obj;
-                tg.n nVar = iVar.b;
-                ValueAnimator valueAnimator = nVar.W;
-                tg.h hVar = nVar.e0;
-                tg.h hVar2 = nVar.d0;
-                if (valueAnimator != null) {
-                    valueAnimator.removeAllListeners();
-                    nVar.W.cancel();
-                    nVar.W = null;
-                }
-                AnimatorSet animatorSet = nVar.a0;
-                if (animatorSet != null) {
-                    animatorSet.removeAllListeners();
-                    nVar.a0.cancel();
-                    nVar.a0 = null;
-                }
-                if (Math.abs(nVar.b.d) <= 10.0f) {
-                    AndroidUtilities.cancelRunOnUIThread(nVar.b0);
-                    nVar.a0 = new AnimatorSet();
-                    ValueAnimator ofFloat = ValueAnimator.ofFloat(nVar.b.d, f10);
-                    ofFloat.addUpdateListener(hVar2);
-                    long j10 = 220;
-                    ofFloat.setDuration(j10);
-                    es esVar = es.h;
-                    ofFloat.setInterpolator(esVar);
-                    ValueAnimator ofFloat2 = ValueAnimator.ofFloat(f10, 0.0f);
-                    ofFloat2.addUpdateListener(hVar2);
-                    ofFloat2.setStartDelay(j10);
-                    ofFloat2.setDuration(600L);
-                    ofFloat2.setInterpolator(AndroidUtilities.overshootInterpolator);
-                    ValueAnimator ofFloat3 = ValueAnimator.ofFloat(nVar.b.i, f7);
-                    ofFloat3.addUpdateListener(hVar);
-                    ofFloat3.setDuration(j10);
-                    ofFloat3.setInterpolator(esVar);
-                    ValueAnimator ofFloat4 = ValueAnimator.ofFloat(f7, 0.0f);
-                    ofFloat4.addUpdateListener(hVar);
-                    ofFloat4.setStartDelay(j10);
-                    ofFloat4.setDuration(600L);
-                    ofFloat4.setInterpolator(AndroidUtilities.overshootInterpolator);
-                    nVar.a0.playTogether(ofFloat, ofFloat2, ofFloat3, ofFloat4);
-                    nVar.a0.addListener(new fi1(iVar, 17));
-                    nVar.a0.start();
-                    break;
-                } else {
-                    nVar.l();
-                    break;
-                }
+    @Override // org.telegram.ui.Components.hm0
+    public final boolean D(s4.b1 b1Var) {
+        int b10 = b1Var.b();
+        return V(S(b10), Q(b10), b1Var);
+    }
+
+    public final void L() {
+        SparseIntArray sparseIntArray = this.d;
+        if (sparseIntArray == null) {
+            this.d = new SparseIntArray();
+            this.c = new SparseIntArray();
+            this.e = new SparseIntArray();
+        } else {
+            sparseIntArray.clear();
+            this.c.clear();
+            this.e.clear();
         }
+        this.h = -1;
+        this.f = -1;
+    }
+
+    public abstract int M(int i10);
+
+    public int N(int i10, int i11) {
+        return Objects.hash(Integer.valueOf((-49612) * i10), O(i10, i11));
+    }
+
+    public abstract Object O(int i10, int i11);
+
+    public abstract int P(int i10, int i11);
+
+    public final int Q(int i10) {
+        int i11 = this.c.get(i10, ConnectionsManager.DEFAULT_DATACENTER_ID);
+        if (i11 != Integer.MAX_VALUE) {
+            return i11;
+        }
+        int i12 = this.f;
+        if (i12 < 0) {
+            i12 = R();
+            this.f = i12;
+        }
+        int i13 = 0;
+        int i14 = 0;
+        while (i13 < i12) {
+            int U = U(i13) + i14;
+            if (i10 >= i14 && i10 < U) {
+                int i15 = i10 - i14;
+                this.c.put(i10, i15);
+                return i15;
+            }
+            i13++;
+            i14 = U;
+        }
+        return -1;
+    }
+
+    public abstract int R();
+
+    public final int S(int i10) {
+        int i11 = this.d.get(i10, ConnectionsManager.DEFAULT_DATACENTER_ID);
+        if (i11 != Integer.MAX_VALUE) {
+            return i11;
+        }
+        int i12 = this.f;
+        if (i12 < 0) {
+            i12 = R();
+            this.f = i12;
+        }
+        int i13 = 0;
+        int i14 = 0;
+        while (i13 < i12) {
+            int U = U(i13) + i14;
+            if (i10 >= i14 && i10 < U) {
+                this.d.put(i10, i13);
+                return i13;
+            }
+            i13++;
+            i14 = U;
+        }
+        return -1;
+    }
+
+    public abstract View T(int i10, View view);
+
+    public final int U(int i10) {
+        int i11 = this.e.get(i10, ConnectionsManager.DEFAULT_DATACENTER_ID);
+        if (i11 != Integer.MAX_VALUE) {
+            return i11;
+        }
+        int M = M(i10);
+        this.e.put(i10, M);
+        return M;
+    }
+
+    public abstract boolean V(int i10, int i11, s4.b1 b1Var);
+
+    public abstract void W(int i10, int i11, s4.b1 b1Var);
+
+    public final void X(boolean z10) {
+        ArrayList arrayList = this.n;
+        ArrayList arrayList2 = new ArrayList(arrayList);
+        L();
+        arrayList.clear();
+        int i10 = this.f;
+        if (i10 < 0) {
+            i10 = R();
+            this.f = i10;
+        }
+        for (int i11 = 0; i11 < i10; i11++) {
+            int U = U(i11);
+            for (int i12 = 0; i12 < U; i12++) {
+                arrayList.add(Integer.valueOf(N(i11, i12)));
+            }
+        }
+        if (z10) {
+            s4.o.c(new hg.g(this, arrayList2, 2), true).c(this);
+        } else {
+            super.l();
+        }
+    }
+
+    @Override // s4.g0
+    public final int h() {
+        int i10 = this.h;
+        if (i10 >= 0) {
+            return i10;
+        }
+        this.h = 0;
+        int i11 = this.f;
+        if (i11 < 0) {
+            i11 = R();
+            this.f = i11;
+        }
+        for (int i12 = 0; i12 < i11; i12++) {
+            this.h = U(i12) + this.h;
+        }
+        return this.h;
+    }
+
+    @Override // s4.g0
+    public final int j(int i10) {
+        return P(S(i10), Q(i10));
+    }
+
+    @Override // s4.g0
+    public void l() {
+        X(false);
+    }
+
+    @Override // s4.g0
+    public final void v(s4.b1 b1Var, int i10) {
+        W(S(i10), Q(i10), b1Var);
     }
 }

@@ -1,21 +1,60 @@
 package ug;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.text.TextPaint;
+import android.text.style.ReplacementSpan;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class k1 extends s4.r0 {
-    public final /* synthetic */ m1 a;
+public final class k1 extends ReplacementSpan {
+    public final TextPaint a;
+    public final Paint b;
+    public final RectF c;
+    public final boolean d;
 
-    public k1(m1 m1Var) {
-        this.a = m1Var;
+    public k1(int i10, boolean z10) {
+        TextPaint textPaint = new TextPaint(1);
+        this.a = textPaint;
+        Paint paint = new Paint(1);
+        this.b = paint;
+        this.c = new RectF();
+        this.d = z10;
+        textPaint.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO));
+        textPaint.setTextSize(AndroidUtilities.dp(13.0f));
+        textPaint.setColor(i10);
+        paint.setColor(h6.m1(0.08f, i10));
     }
 
-    @Override // s4.r0
-    public final void a(RecyclerView recyclerView, int i10) {
-        if (i10 == 1) {
-            AndroidUtilities.hideKeyboard(this.a.Z.getEditText());
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        TextPaint textPaint = this.a;
+        float measureText = textPaint.measureText(charSequence, i10, i11);
+        float f10 = (i12 + i14) / 2.0f;
+        RectF rectF = this.c;
+        rectF.set(f7, f10 - AndroidUtilities.dp(9.5f), f7 + measureText + AndroidUtilities.dp(8.0f), AndroidUtilities.dp(9.5f) + f10);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), this.b);
+        if (this.d) {
+            int color = textPaint.getColor();
+            int m12 = h6.m1(0.0f, color);
+            float dp = f7 + AndroidUtilities.dp(4.0f);
+            textPaint.setShader(new LinearGradient(dp, 0.0f, dp + measureText, 0.0f, new int[]{color, m12, m12, color}, new float[]{0.17f, 0.41f, 0.59f, 0.87f}, Shader.TileMode.CLAMP));
         }
+        Paint.FontMetrics fontMetrics = textPaint.getFontMetrics();
+        canvas.drawText(charSequence, i10, i11, f7 + AndroidUtilities.dp(4.0f), f10 - ((fontMetrics.ascent + fontMetrics.descent) / 2.0f), textPaint);
+        textPaint.setShader(null);
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+        if (fontMetricsInt != null) {
+            paint.getFontMetricsInt(fontMetricsInt);
+        }
+        return AndroidUtilities.dp(11.0f) + ((int) Math.ceil(this.a.measureText(charSequence, i10, i11)));
     }
 }

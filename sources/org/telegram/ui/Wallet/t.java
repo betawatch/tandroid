@@ -7,29 +7,28 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.kf;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t implements Utilities.Callback3 {
-    public final /* synthetic */ k0 a;
-    public final /* synthetic */ m6 b;
+    public final /* synthetic */ m0 a;
+    public final /* synthetic */ z6 b;
     public final /* synthetic */ SendMessagesHelper c;
     public final /* synthetic */ MessageObject d;
     public final /* synthetic */ TL_wallet.walletTransaction e;
     public final /* synthetic */ String f;
-    public final /* synthetic */ j0 g;
+    public final /* synthetic */ l0 g;
     public final /* synthetic */ long h;
     public final /* synthetic */ TLRPC.User i;
 
-    public /* synthetic */ t(k0 k0Var, m6 m6Var, SendMessagesHelper sendMessagesHelper, MessageObject messageObject, TL_wallet.walletTransaction wallettransaction, String str, j0 j0Var, long j10, TLRPC.User user) {
-        this.a = k0Var;
-        this.b = m6Var;
+    public /* synthetic */ t(m0 m0Var, z6 z6Var, SendMessagesHelper sendMessagesHelper, MessageObject messageObject, TL_wallet.walletTransaction wallettransaction, String str, l0 l0Var, long j10, TLRPC.User user) {
+        this.a = m0Var;
+        this.b = z6Var;
         this.c = sendMessagesHelper;
         this.d = messageObject;
         this.e = wallettransaction;
         this.f = str;
-        this.g = j0Var;
+        this.g = l0Var;
         this.h = j10;
         this.i = user;
     }
@@ -39,18 +38,18 @@ public final /* synthetic */ class t implements Utilities.Callback3 {
         TL_wallet.sendTransfer sendtransfer = (TL_wallet.sendTransfer) obj;
         String str = (String) obj2;
         String str2 = (String) obj3;
-        k0 k0Var = this.a;
-        int i10 = k0Var.a;
-        m6 m6Var = this.b;
+        m0 m0Var = this.a;
+        int i10 = m0Var.a;
+        z6 z6Var = this.b;
         SendMessagesHelper sendMessagesHelper = this.c;
         MessageObject messageObject = this.d;
         if (sendtransfer == null) {
-            m6Var.run();
+            z6Var.run();
             sendMessagesHelper.completeSendingGramTransfer(messageObject, null, false);
             if (str2 == null) {
                 str2 = "NULL_ERROR";
             }
-            k0.i("failed sending: ".concat(str2));
+            m0.i("failed sending: ".concat(str2));
             return;
         }
         TL_wallet.walletTransaction wallettransaction = this.e;
@@ -58,7 +57,7 @@ public final /* synthetic */ class t implements Utilities.Callback3 {
             wallettransaction.comment = str;
             wallettransaction.comment_encrypted = true;
         }
-        if (k0.b(k0Var.r(), this.f)) {
+        if (m0.a(m0Var.s(), this.f)) {
             sendtransfer.data_gasless = null;
         }
         wallettransaction.comment_encrypted_preparing = false;
@@ -66,13 +65,13 @@ public final /* synthetic */ class t implements Utilities.Callback3 {
         wallettransaction.gasless = sendtransfer.data_gasless != null;
         wallettransaction.gaslessMessageBodyHash = sendtransfer.gaslessMessageBodyHash;
         wallettransaction.normalMessageBodyHash = sendtransfer.normalMessageBodyHash;
-        j0 j0Var = this.g;
-        j0Var.h();
-        j0Var.f();
+        l0 l0Var = this.g;
+        l0Var.j();
+        l0Var.h();
         sendtransfer.random_id = this.h;
         sendtransfer.user_id = MessagesController.getInstance(i10).getInputUser(this.i);
-        k0Var.P();
-        k0.E("prepared sendTransfer, sending");
-        ConnectionsManager.getInstance(i10).sendRequestTyped(sendtransfer, new org.telegram.messenger.a(), new kf(k0Var, wallettransaction, sendMessagesHelper, messageObject, m6Var, 4));
+        m0Var.Q();
+        m0.F("prepared sendTransfer, sending");
+        ConnectionsManager.getInstance(i10).sendRequestTyped(sendtransfer, new org.telegram.messenger.a(), new ai.t3(m0Var, wallettransaction, sendMessagesHelper, messageObject, z6Var, 5));
     }
 }

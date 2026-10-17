@@ -1,126 +1,50 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class f9 extends View {
-    public d9 a;
-    public final g6 b;
-    public boolean c;
-    public boolean d;
-    public final b30 e;
-    public Drawable f;
-    public Drawable h;
-    public boolean n;
-    public Paint r;
-    public Paint s;
-    public boolean v;
-    public final /* synthetic */ h9 w;
+public final class f9 implements Runnable {
+    public final /* synthetic */ rm a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f9(h9 h9Var, Context context) {
-        super(context);
-        this.w = h9Var;
-        g6 g6Var = new g6(400L, AndroidUtilities.overshootInterpolator);
-        this.b = g6Var;
-        this.e = new b30();
-        g6Var.a = this;
+    public f9(rm rmVar) {
+        this.a = rmVar;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x00b3, code lost:
-    
-        if (r14.n != (r14.d && r14.a == null)) goto L28;
-     */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onDraw(Canvas canvas) {
-        Paint paint;
-        super.onDraw(canvas);
-        float f7 = this.c ? 1.0f : 0.0f;
-        g6 g6Var = this.b;
-        g6Var.d(f7, false);
-        float measuredWidth = getMeasuredWidth() / 2.0f;
-        float measuredHeight = getMeasuredHeight() / 2.0f;
-        d9 d9Var = this.a;
-        if (d9Var != null) {
-            int i10 = d9Var.c;
-            int i11 = d9Var.d;
-            int i12 = d9Var.e;
-            int i13 = d9Var.f;
-            b30 b30Var = this.e;
-            b30Var.d(i10, i11, i12, i13);
-            b30Var.b(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-            paint = b30Var.c;
-        } else {
-            if (this.s == null) {
-                Paint paint2 = new Paint(1);
-                this.s = paint2;
-                paint2.setColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.He, false));
-            }
-            paint = this.s;
-        }
-        if (g6Var.c == 0.0f) {
-            canvas.drawCircle(measuredWidth, measuredHeight, AndroidUtilities.dp(15.0f), paint);
-        } else {
-            paint.setStyle(Paint.Style.STROKE);
-            paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
-            canvas.drawCircle(measuredWidth, measuredHeight, AndroidUtilities.dpf2(13.5f), paint);
-            paint.setStyle(Paint.Style.FILL);
-            canvas.drawCircle(measuredWidth, measuredHeight, com.google.android.gms.internal.play_billing.k3.y(1.0f, g6Var.c, AndroidUtilities.dp(5.0f), AndroidUtilities.dp(10.0f)), paint);
-        }
-        if (this.v) {
-            if (this.h != null) {
-            }
-            this.h = getContext().getResources().getDrawable(R.drawable.msg_mini_lock2).mutate();
-            boolean z10 = this.d && this.a == null;
-            this.n = z10;
-            this.h.setColorFilter(new PorterDuffColorFilter(z10 ? org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Je, false) : -1, PorterDuff.Mode.SRC_IN));
-            this.h.setBounds((int) (measuredWidth - (r1.getIntrinsicWidth() / 2.0f)), (int) (measuredHeight - (this.h.getIntrinsicHeight() / 2.0f)), (int) ((this.h.getIntrinsicWidth() / 2.0f) + measuredWidth), (int) ((this.h.getIntrinsicHeight() / 2.0f) + measuredHeight));
-            float lerp = AndroidUtilities.lerp(1.05f, 0.92f, g6Var.c);
-            canvas.save();
-            canvas.scale(lerp, lerp, measuredWidth, measuredHeight);
-            this.h.draw(canvas);
-            canvas.restore();
+    @Override // java.lang.Runnable
+    public final void run() {
+        ci.g3 g3Var;
+        rm rmVar = this.a;
+        AndroidUtilities.runOnUIThread(rmVar.y, 1000L);
+        TLRPC.TL_emojiList tL_emojiList = rmVar.n;
+        if (tL_emojiList == null || tL_emojiList.document_id.isEmpty() || rmVar.w != 1.0f) {
             return;
         }
-        if (this.d) {
-            if (this.a == null) {
-                if (this.f == null) {
-                    Drawable drawable = getContext().getDrawable(R.drawable.msg_filled_plus);
-                    this.f = drawable;
-                    drawable.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Je, false), PorterDuff.Mode.MULTIPLY));
-                }
-                this.f.setBounds((int) (measuredWidth - (r1.getIntrinsicWidth() / 2.0f)), (int) (measuredHeight - (this.f.getIntrinsicHeight() / 2.0f)), (int) ((this.f.getIntrinsicWidth() / 2.0f) + measuredWidth), (int) ((this.f.getIntrinsicHeight() / 2.0f) + measuredHeight));
-                this.f.draw(canvas);
-                return;
+        if (rmVar.x || ((g3Var = rmVar.b.k) != null && g3Var.hasImageLoaded())) {
+            int i10 = rmVar.v + 1;
+            rmVar.v = i10;
+            rmVar.s++;
+            if (i10 > tL_emojiList.document_id.size() - 1) {
+                rmVar.v = 0;
             }
-            if (this.r == null) {
-                Paint paint3 = new Paint(1);
-                this.r = paint3;
-                paint3.setColor(-1);
+            if (rmVar.s > 6) {
+                rmVar.s = 0;
             }
-            this.r.setAlpha(Math.round(Utilities.clamp(g6Var.c, 1.0f, 0.0f) * 255.0f));
-            canvas.drawCircle(measuredWidth, measuredHeight, AndroidUtilities.dp(1.5f), this.r);
-            canvas.drawCircle(measuredWidth - (AndroidUtilities.dp(5.0f) * g6Var.c), measuredHeight, AndroidUtilities.dp(1.5f), this.r);
-            canvas.drawCircle((AndroidUtilities.dp(5.0f) * g6Var.c) + measuredWidth, measuredHeight, AndroidUtilities.dp(1.5f), this.r);
+            r5 r5Var = new r5(4, rmVar.r, tL_emojiList.document_id.get(rmVar.v).longValue());
+            rmVar.a = r5Var;
+            rmVar.d.setAnimatedEmojiDrawable(r5Var);
+            int[] iArr = e9.c0[rmVar.s];
+            int i11 = iArr[0];
+            int i12 = iArr[1];
+            int i13 = iArr[2];
+            int i14 = iArr[3];
+            x20 x20Var = new x20();
+            rmVar.f = x20Var;
+            x20Var.d(i11, i12, i13, i14);
+            rmVar.w = 0.0f;
+            rmVar.b();
+            rmVar.invalidate();
         }
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.w.P, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
     }
 }

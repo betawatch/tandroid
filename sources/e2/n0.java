@@ -4,9 +4,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.video.VideoPlayerHolderBase;
 import org.telegram.messenger.voip.NativeInstance;
 import org.telegram.messenger.voip.VoipAudioManager;
-import org.telegram.ui.Components.wz;
+import org.telegram.ui.Components.tz;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class n0 implements Runnable {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final /* synthetic */ class n0 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                qf.b.q((qf.b) ((ac.a) this.d).c, this.b, this.c);
+                qf.b.o((qf.b) ((ac.a) this.d).c, this.b, this.c);
                 break;
             case 1:
                 ((VideoPlayerHolderBase) this.d).lambda$setAudioEnabled$8(this.b, this.c);
@@ -37,7 +37,7 @@ public final /* synthetic */ class n0 implements Runnable {
                 VoipAudioManager.lambda$isBluetoothAndSpeakerOnAsync$3((Utilities.Callback2) this.d, this.b, this.c);
                 break;
             default:
-                ((wz) this.d).P(false, this.b, this.c);
+                ((tz) this.d).P(false, this.b, this.c);
                 break;
         }
     }

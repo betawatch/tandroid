@@ -6,17 +6,17 @@ import android.view.View;
 import android.widget.HorizontalScrollView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class v2 extends HorizontalScrollView {
-    public final /* synthetic */ z70 a;
+    public final /* synthetic */ d70 a;
     public final /* synthetic */ w2 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v2(w2 w2Var, Context context, z70 z70Var) {
+    public v2(w2 w2Var, Context context, d70 d70Var) {
         super(context);
         this.b = w2Var;
-        this.a = z70Var;
+        this.a = d70Var;
     }
 
     @Override // android.widget.HorizontalScrollView, android.view.ViewGroup
@@ -38,17 +38,17 @@ public final class v2 extends HorizontalScrollView {
     @Override // android.view.View
     public final void onScrollChanged(int i10, int i11, int i12, int i13) {
         super.onScrollChanged(i10, i11, i12, i13);
-        z70 z70Var = this.a;
-        if (z70Var.d != null) {
-            z70Var.d = null;
-            z70Var.f = null;
+        d70 d70Var = this.a;
+        if (d70Var.d != null) {
+            d70Var.d = null;
+            d70Var.f = null;
         }
         this.b.a();
-        org.telegram.ui.Cells.o9 o9Var = ((k4) z70Var).O0;
-        if (o9Var == null || !o9Var.x()) {
+        org.telegram.ui.Cells.n9 n9Var = ((l4) d70Var).O0;
+        if (n9Var == null || !n9Var.x()) {
             return;
         }
-        o9Var.w();
+        n9Var.w();
     }
 
     @Override // android.widget.HorizontalScrollView, android.view.View
@@ -61,7 +61,7 @@ public final class v2 extends HorizontalScrollView {
 
     @Override // android.view.View
     public final boolean overScrollBy(int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17, boolean z10) {
-        k4.T(this.a);
+        l4.T(this.a);
         return super.overScrollBy(i10, i11, i12, i13, i14, i15, i16, i17, z10);
     }
 }

@@ -1,48 +1,46 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.widget.LinearLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class a40 extends org.telegram.ui.Components.mm0 {
-    public final /* synthetic */ n60 V2;
+public final class a40 extends LinearLayout {
+    public boolean a;
+    public final /* synthetic */ org.telegram.ui.Components.od0 b;
+    public final /* synthetic */ w30 c;
+    public final /* synthetic */ x30 d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a40(n60 n60Var, LaunchActivity launchActivity) {
-        super(launchActivity, null);
-        this.V2 = n60Var;
+    public a40(LaunchActivity launchActivity, org.telegram.ui.Components.od0 od0Var, w30 w30Var, x30 x30Var) {
+        super(launchActivity);
+        this.b = od0Var;
+        this.c = w30Var;
+        this.d = x30Var;
+        this.a = false;
     }
 
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        org.telegram.ui.Components.e30 e30Var = (org.telegram.ui.Components.e30) view;
-        n60 n60Var = this.V2;
-        t50 t50Var = n60Var.Q;
-        e40 e40Var = n60Var.a2;
-        if (e40Var.r == null && !n60Var.N2.k()) {
-            e30Var.setAlpha(1.0f);
-            e30Var.setTranslationX(0.0f);
-            e30Var.setTranslationY(0.0f);
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        this.a = true;
+        org.telegram.ui.Components.od0 od0Var = this.b;
+        od0Var.setItemCount(5);
+        w30 w30Var = this.c;
+        w30Var.setItemCount(5);
+        x30 x30Var = this.d;
+        x30Var.setItemCount(5);
+        od0Var.getLayoutParams().height = AndroidUtilities.dp(54.0f) * 5;
+        w30Var.getLayoutParams().height = AndroidUtilities.dp(54.0f) * 5;
+        x30Var.getLayoutParams().height = AndroidUtilities.dp(54.0f) * 5;
+        this.a = false;
+        super.onMeasure(i10, i11);
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.a) {
+            return;
         }
-        a40 a40Var = n60Var.m2;
-        e30Var.getClass();
-        a40Var.getClass();
-        if (RecyclerView.R(e30Var) == -1 && e30Var.getRenderer() != null) {
-            return true;
-        }
-        if (e30Var.getTranslationY() == 0.0f || e30Var.getRenderer() == null || e30Var.getRenderer().c == null) {
-            return super.drawChild(canvas, view, j10);
-        }
-        float top = t50Var.getTop() - getTop();
-        float measuredHeight = t50Var.getMeasuredHeight() + top;
-        float f7 = e40Var.c;
-        canvas.save();
-        float f10 = 1.0f - f7;
-        canvas.clipRect(0.0f, top * f10, getMeasuredWidth(), (getMeasuredHeight() * f7) + (measuredHeight * f10));
-        boolean drawChild = super.drawChild(canvas, view, j10);
-        canvas.restore();
-        return drawChild;
+        super.requestLayout();
     }
 }

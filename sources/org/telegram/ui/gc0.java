@@ -1,18 +1,33 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.messenger.AndroidUtilities;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class gc0 extends l31 {
-    public gc0(Bundle bundle) {
-        super(bundle);
+public final class gc0 extends s4.r0 {
+    public final /* synthetic */ pc0 a;
+
+    public gc0(pc0 pc0Var) {
+        this.a = pc0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.m2
-    public final void onBecomeFullyVisible() {
-        super.onBecomeFullyVisible();
-        AndroidUtilities.runOnUIThread(new zz(this, 17));
+    @Override // s4.r0
+    public final void a(RecyclerView recyclerView, int i10) {
+        boolean z10 = i10 != 0;
+        pc0 pc0Var = this.a;
+        pc0Var.Q = z10;
+        if (z10 || pc0Var.L == null) {
+            return;
+        }
+        pc0Var.L = null;
+    }
+
+    @Override // s4.r0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        pc0 pc0Var = this.a;
+        pc0Var.z0(false);
+        if (pc0Var.L != null) {
+            pc0Var.N += i11;
+        }
     }
 }

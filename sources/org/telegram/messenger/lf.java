@@ -1,44 +1,32 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class lf implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ a0.h c;
 
-    public /* synthetic */ lf(MessagesStorage messagesStorage, int i10, int i11) {
-        this.a = i11;
+    public /* synthetic */ lf(MessagesStorage messagesStorage, a0.h hVar, int i10) {
+        this.a = i10;
         this.b = messagesStorage;
-        this.c = i10;
+        this.c = hVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$readAllDialogs$65(this.c);
+                this.b.lambda$getDialogs$239(this.c);
                 break;
             case 1:
-                this.b.lambda$checkIfFolderEmptyInternal$245(this.c);
+                this.b.lambda$markMessagesAsDeletedInternal$225(this.c);
                 break;
             case 2:
-                this.b.lambda$clearDownloadQueue$184(this.c);
-                break;
-            case 3:
-                this.b.lambda$putMessagesInternal$196(this.c);
-                break;
-            case 4:
-                this.b.lambda$getDownloadQueue$186(this.c);
-                break;
-            case 5:
-                this.b.lambda$getUnsentMessages$152(this.c);
-                break;
-            case 6:
-                this.b.lambda$checkIfFolderEmpty$246(this.c);
+                this.b.lambda$putWebPages$188(this.c);
                 break;
             default:
-                this.b.lambda$clearWidgetDialogs$167(this.c);
+                this.b.lambda$deleteEphemeralMessages$205(this.c);
                 break;
         }
     }

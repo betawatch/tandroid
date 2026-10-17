@@ -9,13 +9,13 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class o0 extends m {
-    public static final b2.p0 s;
+    public static final b2.o0 s;
     public final a[] k;
     public final ArrayList l;
-    public final b2.p1[] m;
+    public final b2.o1[] m;
     public final ArrayList n;
     public final oa.d o;
     public int p;
@@ -23,13 +23,13 @@ public final class o0 extends m {
     public z4 r;
 
     static {
-        b2.d0 d0Var = new b2.d0();
+        b2.c0 c0Var = new b2.c0();
         e9.l0 l0Var = e9.n0.b;
         x1 x1Var = x1.e;
         List list = Collections.EMPTY_LIST;
         x1 x1Var2 = x1.e;
-        b2.i0 i0Var = new b2.i0();
-        s = new b2.p0("MergingMediaSource", new b2.f0(d0Var), null, new b2.j0(i0Var), b2.s0.L, b2.l0.d);
+        b2.h0 h0Var = new b2.h0();
+        s = new b2.o0("MergingMediaSource", new b2.e0(c0Var), null, new b2.i0(h0Var), b2.r0.L, b2.k0.d);
     }
 
     public o0(a... aVarArr) {
@@ -42,7 +42,7 @@ public final class o0 extends m {
         for (int i10 = 0; i10 < aVarArr.length; i10++) {
             this.l.add(new ArrayList());
         }
-        this.m = new b2.p1[aVarArr.length];
+        this.m = new b2.o1[aVarArr.length];
         this.q = new long[0][];
         new HashMap();
         e9.s.f(8, "expectedKeys");
@@ -51,9 +51,9 @@ public final class o0 extends m {
     }
 
     @Override // u2.a
-    public final boolean a(b2.p0 p0Var) {
+    public final boolean a(b2.o0 o0Var) {
         a[] aVarArr = this.k;
-        return aVarArr.length > 0 && aVarArr[0].a(p0Var);
+        return aVarArr.length > 0 && aVarArr[0].a(o0Var);
     }
 
     @Override // u2.a
@@ -61,10 +61,10 @@ public final class o0 extends m {
         a[] aVarArr = this.k;
         int length = aVarArr.length;
         e0[] e0VarArr = new e0[length];
-        b2.p1[] p1VarArr = this.m;
-        int b10 = p1VarArr[0].b(g0Var.a);
+        b2.o1[] o1VarArr = this.m;
+        int b10 = o1VarArr[0].b(g0Var.a);
         for (int i10 = 0; i10 < length; i10++) {
-            g0 a2 = g0Var.a(p1VarArr[i10].l(b10));
+            g0 a2 = g0Var.a(o1VarArr[i10].l(b10));
             e0VarArr[i10] = aVarArr[i10].c(a2, eVar, j10 - this.q[b10][i10]);
             ((List) this.l.get(i10)).add(new n0(a2, e0VarArr[i10]));
         }
@@ -72,7 +72,7 @@ public final class o0 extends m {
     }
 
     @Override // u2.a
-    public final b2.p0 i() {
+    public final b2.o0 i() {
         a[] aVarArr = this.k;
         return aVarArr.length > 0 ? aVarArr[0].i() : s;
     }
@@ -144,8 +144,8 @@ public final class o0 extends m {
     }
 
     @Override // u2.a
-    public final void t(b2.p0 p0Var) {
-        this.k[0].t(p0Var);
+    public final void t(b2.o0 o0Var) {
+        this.k[0].t(o0Var);
     }
 
     @Override // u2.m
@@ -162,27 +162,27 @@ public final class o0 extends m {
     }
 
     @Override // u2.m
-    public final void x(Object obj, a aVar, b2.p1 p1Var) {
+    public final void x(Object obj, a aVar, b2.o1 o1Var) {
         Integer num = (Integer) obj;
         if (this.r != null) {
             return;
         }
         if (this.p == -1) {
-            this.p = p1Var.h();
-        } else if (p1Var.h() != this.p) {
+            this.p = o1Var.h();
+        } else if (o1Var.h() != this.p) {
             this.r = new z4();
             return;
         }
         int length = this.q.length;
-        b2.p1[] p1VarArr = this.m;
+        b2.o1[] o1VarArr = this.m;
         if (length == 0) {
-            this.q = (long[][]) Array.newInstance((Class<?>) Long.TYPE, this.p, p1VarArr.length);
+            this.q = (long[][]) Array.newInstance((Class<?>) Long.TYPE, this.p, o1VarArr.length);
         }
         ArrayList arrayList = this.n;
         arrayList.remove(aVar);
-        p1VarArr[num.intValue()] = p1Var;
+        o1VarArr[num.intValue()] = o1Var;
         if (arrayList.isEmpty()) {
-            n(p1VarArr[0]);
+            n(o1VarArr[0]);
         }
     }
 }

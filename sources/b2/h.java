@@ -1,446 +1,77 @@
 package b2;
 
+import android.os.Binder;
 import android.os.Bundle;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
+import android.os.IBinder;
+import android.os.Parcel;
+import android.os.RemoteException;
 import java.util.List;
-import org.telegram.tgnet.ConnectionsManager;
-import v7.b8;
-import v7.n7;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public abstract class h implements g1 {
-    public Object a;
+public final class h extends Binder {
+    public final e9.n0 a;
 
-    @Override // b2.g1
-    public void E() {
-        b1(6);
+    public h(List list) {
+        this.a = e9.n0.u(list);
     }
 
-    @Override // b2.g1
-    public void G() {
-        Y0(((i2.h0) this).n0(), -9223372036854775807L, false);
-    }
-
-    @Override // b2.g1
-    public void H0() {
-        int e;
-        i2.h0 h0Var = (i2.h0) this;
-        if (h0Var.y0().p() || h0Var.n()) {
-            U0();
-            return;
+    public static e9.n0 a(IBinder iBinder) {
+        int readInt;
+        if (iBinder instanceof h) {
+            return ((h) iBinder).a;
         }
-        if (!S0()) {
-            if (P0() && v0()) {
-                Y0(h0Var.n0(), -9223372036854775807L, false);
-                return;
-            } else {
-                U0();
-                return;
-            }
-        }
-        p1 y02 = h0Var.y0();
-        if (y02.p()) {
-            e = -1;
-        } else {
-            int n02 = h0Var.n0();
-            h0Var.F1();
-            int i10 = h0Var.H;
-            if (i10 == 1) {
-                i10 = 0;
-            }
-            h0Var.F1();
-            e = y02.e(n02, i10, h0Var.I);
-        }
-        if (e == -1) {
-            U0();
-        } else if (e == h0Var.n0()) {
-            Y0(h0Var.n0(), -9223372036854775807L, true);
-        } else {
-            Y0(e, -9223372036854775807L, false);
-        }
-    }
-
-    @Override // b2.g1
-    public void I0() {
-        i2.h0 h0Var = (i2.h0) this;
-        h0Var.F1();
-        a1(12, h0Var.m0);
-    }
-
-    @Override // b2.g1
-    public void J0() {
-        i2.h0 h0Var = (i2.h0) this;
-        h0Var.F1();
-        a1(11, -h0Var.l0);
-    }
-
-    @Override // b2.g1
-    public boolean P() {
-        return true;
-    }
-
-    @Override // b2.g1
-    public boolean P0() {
-        i2.h0 h0Var = (i2.h0) this;
-        p1 y02 = h0Var.y0();
-        return !y02.p() && y02.m(h0Var.n0(), (o1) this.a, 0L).a();
-    }
-
-    @Override // b2.g1
-    public void Q(int i10) {
-        ((i2.h0) this).R(i10, i10 + 1);
-    }
-
-    public abstract Object Q0(Object obj);
-
-    public Object R0(Object obj) {
-        synchronized (((HashMap) this.a)) {
+        e9.k0 t10 = e9.n0.t();
+        int i10 = 0;
+        int i11 = 1;
+        while (i11 != 0) {
+            Parcel obtain = Parcel.obtain();
+            Parcel obtain2 = Parcel.obtain();
             try {
-                if (((HashMap) this.a).containsKey(obj)) {
-                    return ((HashMap) this.a).get(obj);
+                obtain.writeInt(i10);
+                try {
+                    iBinder.transact(1, obtain, obtain2, 0);
+                    while (true) {
+                        readInt = obtain2.readInt();
+                        if (readInt == 1) {
+                            Bundle readBundle = obtain2.readBundle();
+                            readBundle.getClass();
+                            t10.c(readBundle);
+                            i10++;
+                        }
+                    }
+                    obtain2.recycle();
+                    obtain.recycle();
+                    i11 = readInt;
+                } catch (RemoteException e) {
+                    throw new RuntimeException(e);
                 }
-                Object Q0 = Q0(obj);
-                ((HashMap) this.a).put(obj, Q0);
-                return Q0;
             } catch (Throwable th2) {
+                obtain2.recycle();
+                obtain.recycle();
                 throw th2;
             }
         }
+        return t10.f();
     }
 
-    public boolean S0() {
-        int e;
-        i2.h0 h0Var = (i2.h0) this;
-        p1 y02 = h0Var.y0();
-        if (y02.p()) {
-            e = -1;
-        } else {
-            int n02 = h0Var.n0();
-            h0Var.F1();
-            int i10 = h0Var.H;
-            if (i10 == 1) {
-                i10 = 0;
-            }
-            h0Var.F1();
-            e = y02.e(n02, i10, h0Var.I);
+    @Override // android.os.Binder
+    public final boolean onTransact(int i10, Parcel parcel, Parcel parcel2, int i11) {
+        if (i10 != 1) {
+            return super.onTransact(i10, parcel, parcel2, i11);
         }
-        return e != -1;
-    }
-
-    public boolean T0() {
-        int k10;
-        i2.h0 h0Var = (i2.h0) this;
-        p1 y02 = h0Var.y0();
-        if (y02.p()) {
-            k10 = -1;
-        } else {
-            int n02 = h0Var.n0();
-            h0Var.F1();
-            int i10 = h0Var.H;
-            if (i10 == 1) {
-                i10 = 0;
-            }
-            h0Var.F1();
-            k10 = y02.k(n02, i10, h0Var.I);
+        if (parcel2 == null) {
+            return false;
         }
-        return k10 != -1;
-    }
-
-    public void U0() {
-        ((i2.h0) this).F1();
-    }
-
-    @Override // b2.g1
-    public void V() {
-        i2.h0 h0Var = (i2.h0) this;
-        if (h0Var.y0().p() || h0Var.n()) {
-            U0();
-            return;
+        e9.n0 n0Var = this.a;
+        int size = n0Var.size();
+        int readInt = parcel.readInt();
+        while (readInt < size && parcel2.dataSize() < m.a) {
+            parcel2.writeInt(1);
+            parcel2.writeBundle((Bundle) n0Var.get(readInt));
+            readInt++;
         }
-        boolean T0 = T0();
-        if (P0() && !e0()) {
-            if (T0) {
-                b1(7);
-                return;
-            } else {
-                U0();
-                return;
-            }
-        }
-        if (T0) {
-            long M0 = h0Var.M0();
-            h0Var.F1();
-            if (M0 <= h0Var.n0) {
-                b1(7);
-                return;
-            }
-        }
-        Z0(7, 0L);
-    }
-
-    public abstract void V0();
-
-    public abstract r0.l1 W0(r0.l1 l1Var, List list);
-
-    public void X0() {
-        synchronized (this.a) {
-        }
-    }
-
-    @Override // b2.g1
-    public void Y(int i10) {
-        Y0(i10, -9223372036854775807L, false);
-    }
-
-    public abstract void Y0(int i10, long j10, boolean z10);
-
-    public void Z0(int i10, long j10) {
-        Y0(((i2.h0) this).n0(), j10, false);
-    }
-
-    @Override // b2.g1
-    public void a(float f7) {
-        i2.h0 h0Var = (i2.h0) this;
-        h0Var.f(new a1(f7, h0Var.h().b));
-    }
-
-    public void a1(int i10, long j10) {
-        i2.h0 h0Var = (i2.h0) this;
-        long M0 = h0Var.M0() + j10;
-        long duration = h0Var.getDuration();
-        if (duration != -9223372036854775807L) {
-            M0 = Math.min(M0, duration);
-        }
-        Z0(i10, Math.max(M0, 0L));
-    }
-
-    public void b1(int i10) {
-        int k10;
-        i2.h0 h0Var = (i2.h0) this;
-        p1 y02 = h0Var.y0();
-        if (y02.p()) {
-            k10 = -1;
-        } else {
-            int n02 = h0Var.n0();
-            h0Var.F1();
-            int i11 = h0Var.H;
-            if (i11 == 1) {
-                i11 = 0;
-            }
-            h0Var.F1();
-            k10 = y02.k(n02, i11, h0Var.I);
-        }
-        if (k10 == -1) {
-            U0();
-        } else if (k10 == h0Var.n0()) {
-            Y0(h0Var.n0(), -9223372036854775807L, true);
-        } else {
-            Y0(k10, -9223372036854775807L, false);
-        }
-    }
-
-    public void c1() {
-        synchronized (this) {
-        }
-    }
-
-    public void d1() {
-        synchronized (this) {
-        }
-        c1();
-    }
-
-    @Override // b2.g1
-    public void e() {
-        ((i2.h0) this).X(false);
-    }
-
-    @Override // b2.g1
-    public boolean e0() {
-        i2.h0 h0Var = (i2.h0) this;
-        p1 y02 = h0Var.y0();
-        return !y02.p() && y02.m(h0Var.n0(), (o1) this.a, 0L).h;
-    }
-
-    @Override // b2.g1
-    public void f0() {
-        int e;
-        i2.h0 h0Var = (i2.h0) this;
-        p1 y02 = h0Var.y0();
-        if (y02.p()) {
-            e = -1;
-        } else {
-            int n02 = h0Var.n0();
-            h0Var.F1();
-            int i10 = h0Var.H;
-            if (i10 == 1) {
-                i10 = 0;
-            }
-            h0Var.F1();
-            e = y02.e(n02, i10, h0Var.I);
-        }
-        if (e == -1) {
-            U0();
-        } else if (e == h0Var.n0()) {
-            Y0(h0Var.n0(), -9223372036854775807L, true);
-        } else {
-            Y0(e, -9223372036854775807L, false);
-        }
-    }
-
-    @Override // b2.g1
-    public void g(long j10) {
-        Z0(5, j10);
-    }
-
-    @Override // b2.g1
-    public void i() {
-        ((i2.h0) this).X(true);
-    }
-
-    @Override // b2.g1
-    public boolean j0() {
-        i2.h0 h0Var = (i2.h0) this;
-        return h0Var.d() == 3 && h0Var.t() && h0Var.w0() == 0;
-    }
-
-    @Override // b2.g1
-    public void k(p0 p0Var, long j10) {
-        ((i2.h0) this).S(j10, 0, e9.n0.y(p0Var));
-    }
-
-    @Override // b2.g1
-    public void l0(p0 p0Var) {
-        ((i2.h0) this).L0(e9.n0.y(p0Var));
-    }
-
-    @Override // b2.g1
-    public long o() {
-        o1 o1Var = (o1) this.a;
-        i2.h0 h0Var = (i2.h0) this;
-        p1 y02 = h0Var.y0();
-        if (y02.p() || y02.m(h0Var.n0(), o1Var, 0L).f == -9223372036854775807L) {
-            return -9223372036854775807L;
-        }
-        return (e2.m0.C(o1Var.g) - o1Var.f) - h0Var.a0();
-    }
-
-    @Override // b2.g1
-    public boolean o0(int i10) {
-        i2.h0 h0Var = (i2.h0) this;
-        h0Var.F1();
-        return h0Var.P.a(i10);
-    }
-
-    @Override // b2.g1
-    public void r(int i10, long j10) {
-        Y0(i10, j10, false);
-    }
-
-    @Override // b2.g1
-    public void r0(p0 p0Var) {
-        ((i2.h0) this).L0(e9.n0.y(p0Var));
-    }
-
-    @Override // b2.g1
-    public void s0(int i10, int i11) {
-        if (i10 != i11) {
-            ((i2.h0) this).t0(i10, i10 + 1, i11);
-        }
-    }
-
-    @Override // b2.g1
-    public void stop() {
-        synchronized (this) {
-        }
-    }
-
-    @Override // b2.g1
-    public void u() {
-        ((i2.h0) this).R(0, ConnectionsManager.DEFAULT_DATACENTER_ID);
-    }
-
-    @Override // b2.g1
-    public void u0(p0 p0Var, int i10) {
-        ((i2.h0) this).O(i10, i10 + 1, e9.n0.y(p0Var));
-    }
-
-    @Override // b2.g1
-    public p0 v() {
-        i2.h0 h0Var = (i2.h0) this;
-        p1 y02 = h0Var.y0();
-        if (y02.p()) {
-            return null;
-        }
-        return y02.m(h0Var.n0(), (o1) this.a, 0L).c;
-    }
-
-    @Override // b2.g1
-    public boolean v0() {
-        i2.h0 h0Var = (i2.h0) this;
-        p1 y02 = h0Var.y0();
-        return !y02.p() && y02.m(h0Var.n0(), (o1) this.a, 0L).i;
-    }
-
-    @Override // b2.g1
-    public int x() {
-        if (!o0(16)) {
-            return 0;
-        }
-        i2.h0 h0Var = (i2.h0) this;
-        long d02 = h0Var.d0();
-        long duration = h0Var.getDuration();
-        if (d02 == -9223372036854775807L || duration == -9223372036854775807L) {
-            return 0;
-        }
-        if (duration == 0) {
-            return 100;
-        }
-        String str = e2.m0.a;
-        long d = n7.d(d02, 100L);
-        return e2.m0.i(b8.e((d == Long.MAX_VALUE || d == Long.MIN_VALUE) ? d02 / (duration / 100) : d / duration), 0, 100);
-    }
-
-    @Override // b2.g1
-    public void x0(List list) {
-        ((i2.h0) this).b0(ConnectionsManager.DEFAULT_DATACENTER_ID, list);
-    }
-
-    @Override // b2.g1
-    public long z() {
-        i2.h0 h0Var = (i2.h0) this;
-        p1 y02 = h0Var.y0();
-        if (y02.p()) {
-            return -9223372036854775807L;
-        }
-        return e2.m0.h0(y02.m(h0Var.n0(), (o1) this.a, 0L).m);
-    }
-
-    public h(String str, Bundle data) {
-        kotlin.jvm.internal.i.e(data, "data");
-        this.a = data;
-    }
-
-    public h(int i10) {
-        switch (i10) {
-            case 3:
-                this.a = new Object();
-                break;
-            case 5:
-                this.a = new HashMap();
-                break;
-            case 8:
-                this.a = new LinkedHashMap();
-                break;
-            default:
-                this.a = new o1();
-                break;
-        }
-    }
-
-    public h(tc.u uVar, String str, rb.b bVar) {
-        this.a = uVar;
+        parcel2.writeInt(readInt < size ? 2 : 0);
+        return true;
     }
 }

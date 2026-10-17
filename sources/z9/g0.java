@@ -2,7 +2,7 @@ package z9;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class g0 {
     public String a;
@@ -24,16 +24,16 @@ public final class g0 {
             str = str.concat(" identifier");
         }
         if (this.d == null) {
-            str = t8.b.u(str, " startedAt");
+            str = r.c.u(str, " startedAt");
         }
         if (this.f == null) {
-            str = t8.b.u(str, " crashed");
+            str = r.c.u(str, " crashed");
         }
         if (this.g == null) {
-            str = t8.b.u(str, " app");
+            str = r.c.u(str, " app");
         }
         if (this.l == null) {
-            str = t8.b.u(str, " generatorType");
+            str = r.c.u(str, " generatorType");
         }
         if (str.isEmpty()) {
             return new h0(this.a, this.b, this.c, this.d.longValue(), this.e, this.f.booleanValue(), this.g, this.h, this.i, this.j, this.k, this.l.intValue());

@@ -2,46 +2,83 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.widget.TextView;
+import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.camera.CameraView;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class om extends TextView {
-    public float a;
+public final class om extends CameraView {
+    public final ah.m0 a;
     public boolean b;
-    public final /* synthetic */ Paint c;
+    public final /* synthetic */ ChatAttachAlertPhotoLayout c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public om(Context context, Paint paint) {
-        super(context);
-        this.c = paint;
-        this.a = 0.0f;
+    public om(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, Context context, boolean z10, boolean z11) {
+        super(context, z10, z11);
+        this.c = chatAttachAlertPhotoLayout;
+        this.a = new ah.m0(this, 8);
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        int i10 = (int) ((this.a * 130.0f) + 125.0f);
-        Paint paint = this.c;
-        paint.setAlpha(i10);
-        if (this.b) {
-            float f7 = this.a + 0.026666667f;
-            this.a = f7;
-            if (f7 >= 1.0f) {
-                this.a = 1.0f;
-                this.b = false;
-            }
-        } else {
-            float f10 = this.a - 0.026666667f;
-            this.a = f10;
-            if (f10 <= 0.0f) {
-                this.a = 0.0f;
-                this.b = true;
-            }
+    @Override // org.telegram.messenger.camera.CameraView, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.c;
+        ti tiVar = chatAttachAlertPhotoLayout.b;
+        if (AndroidUtilities.makingGlobalBlurBitmap) {
+            return;
         }
-        super.onDraw(canvas);
-        canvas.drawCircle(AndroidUtilities.dp(14.0f), getMeasuredHeight() / 2, AndroidUtilities.dp(4.0f), paint);
-        invalidate();
+        if (this.b || (!chatAttachAlertPhotoLayout.d0 && chatAttachAlertPhotoLayout.b0)) {
+            super.dispatchDraw(canvas);
+            return;
+        }
+        float translationY = (tiVar.getContainerView().getTranslationY() + (tiVar.J0[1] + chatAttachAlertPhotoLayout.W0)) - chatAttachAlertPhotoLayout.P.getTranslationY();
+        ei.i iVar = tiVar.E2;
+        int min = (int) Math.min(translationY - (iVar != null ? iVar.d() + AndroidUtilities.dp(8.0f) : 0.0f), getMeasuredHeight());
+        boolean z10 = chatAttachAlertPhotoLayout.d0;
+        if (z10) {
+            RectF rectF = AndroidUtilities.rectTmp;
+            float f7 = chatAttachAlertPhotoLayout.n1;
+            boolean z11 = ChatAttachAlertPhotoLayout.q1;
+            float f10 = 1.0f - chatAttachAlertPhotoLayout.e0;
+            rectF.set((0.0f * f10) + f7, (f10 * chatAttachAlertPhotoLayout.W) + chatAttachAlertPhotoLayout.k1, chatAttachAlertPhotoLayout.m1, AndroidUtilities.lerp(Math.min(min, chatAttachAlertPhotoLayout.l1), getMeasuredHeight(), chatAttachAlertPhotoLayout.e0));
+        } else {
+            if (!z10 && !chatAttachAlertPhotoLayout.b0) {
+                RectF rectF2 = AndroidUtilities.rectTmp;
+                boolean z12 = ChatAttachAlertPhotoLayout.q1;
+                rectF2.set(0.0f, chatAttachAlertPhotoLayout.W, getMeasuredWidth(), Math.min(min, getMeasuredHeight()));
+                return;
+            }
+            AndroidUtilities.rectTmp.set(0.0f, 0.0f, getMeasuredWidth(), Math.min(min, getMeasuredHeight()));
+        }
+        canvas.save();
+        canvas.clipRect(AndroidUtilities.rectTmp);
+        super.dispatchDraw(canvas);
+        canvas.restore();
+    }
+
+    @Override // org.telegram.messenger.camera.CameraView, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.c;
+        qc.a(chatAttachAlertPhotoLayout.P, this.a);
+        chatAttachAlertPhotoLayout.E.invalidate();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        qc.h(this.c.P);
+    }
+
+    @Override // android.view.View
+    public void setVisibility(int i10) {
+        super.setVisibility(i10);
+        this.c.E.invalidate();
+    }
+
+    @Override // org.telegram.messenger.camera.CameraView
+    public final void showTexture(boolean z10, boolean z11) {
+        super.showTexture(z10, z11);
+        this.c.E.invalidate();
     }
 }

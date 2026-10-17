@@ -1,56 +1,56 @@
 package m4;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class l1 extends b2.p1 {
+public final class l1 extends b2.o1 {
     public static final Object j = new Object();
-    public final b2.p0 e;
+    public final b2.o0 e;
     public final boolean f;
     public final boolean g;
-    public final b2.j0 h;
+    public final b2.i0 h;
     public final long i;
 
     public l1(m1 m1Var) {
         this.e = m1Var.v();
         this.f = m1Var.e0();
         this.g = m1Var.v0();
-        this.h = m1Var.P0() ? b2.j0.f : null;
+        this.h = m1Var.P0() ? b2.i0.f : null;
         this.i = e2.m0.S(m1Var.z());
     }
 
-    @Override // b2.p1
+    @Override // b2.o1
     public final int b(Object obj) {
         return j.equals(obj) ? 0 : -1;
     }
 
-    @Override // b2.p1
-    public final b2.m1 f(int i10, b2.m1 m1Var, boolean z10) {
-        m1Var.getClass();
+    @Override // b2.o1
+    public final b2.l1 f(int i10, b2.l1 l1Var, boolean z10) {
+        l1Var.getClass();
         b2.c cVar = b2.c.c;
         Object obj = j;
-        m1Var.h(obj, obj, 0, this.i, 0L, cVar, false);
-        m1Var.f = false;
-        return m1Var;
+        l1Var.h(obj, obj, 0, this.i, 0L, cVar, false);
+        l1Var.f = false;
+        return l1Var;
     }
 
-    @Override // b2.p1
+    @Override // b2.o1
     public final int h() {
         return 1;
     }
 
-    @Override // b2.p1
+    @Override // b2.o1
     public final Object l(int i10) {
         return j;
     }
 
-    @Override // b2.p1
-    public final b2.o1 m(int i10, b2.o1 o1Var, long j10) {
-        o1Var.b(j, this.e, null, -9223372036854775807L, -9223372036854775807L, -9223372036854775807L, this.f, this.g, this.h, 0L, this.i, 0, 0, 0L);
-        o1Var.k = false;
-        return o1Var;
+    @Override // b2.o1
+    public final b2.n1 m(int i10, b2.n1 n1Var, long j10) {
+        n1Var.b(j, this.e, null, -9223372036854775807L, -9223372036854775807L, -9223372036854775807L, this.f, this.g, this.h, 0L, this.i, 0, 0, 0L);
+        n1Var.k = false;
+        return n1Var;
     }
 
-    @Override // b2.p1
+    @Override // b2.o1
     public final int o() {
         return 1;
     }

@@ -30,11 +30,11 @@ import x7.fa;
 import x7.i9;
 import x7.o7;
 import x7.pa;
-import z7.hb;
-import z7.we;
-import z7.wf;
+import z7.jb;
+import z7.ye;
+import z7.yf;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p implements Runnable {
     public final /* synthetic */ int a;
@@ -65,7 +65,7 @@ public final /* synthetic */ class p implements Runnable {
         a5.a aVar = (a5.a) this.c;
         v7.j6 j6Var = (v7.j6) this.d;
         String str2 = (String) this.e;
-        pi.e eVar = (pi.e) aVar.c;
+        qi.e eVar = (qi.e) aVar.c;
         eVar.b = j6Var;
         e8 e8Var = (e8) eVar.a;
         if (e8Var != null) {
@@ -87,7 +87,7 @@ public final /* synthetic */ class p implements Runnable {
                 int i12 = 0;
                 while (i11 < a2.a.size()) {
                     Locale locale = a2.a.get(i11);
-                    c5.a aVar2 = rb.c.a;
+                    m2.t tVar = rb.c.a;
                     String languageTag = locale.toLanguageTag();
                     languageTag.getClass();
                     int i13 = i12 + 1;
@@ -137,9 +137,9 @@ public final /* synthetic */ class p implements Runnable {
         a5.a aVar = (a5.a) this.c;
         o7 o7Var = (o7) this.d;
         String str2 = (String) this.e;
-        com.google.firebase.messaging.m mVar = (com.google.firebase.messaging.m) aVar.c;
-        mVar.b = o7Var;
-        i9 i9Var = (i9) mVar.a;
+        com.google.firebase.messaging.l lVar = (com.google.firebase.messaging.l) aVar.c;
+        lVar.b = o7Var;
+        i9 i9Var = (i9) lVar.a;
         if (i9Var != null) {
             str = i9Var.d;
             int i10 = pa.a;
@@ -159,7 +159,7 @@ public final /* synthetic */ class p implements Runnable {
                 int i12 = 0;
                 while (i11 < a2.a.size()) {
                     Locale locale = a2.a.get(i11);
-                    c5.a aVar2 = rb.c.a;
+                    m2.t tVar = rb.c.a;
                     String languageTag = locale.toLanguageTag();
                     languageTag.getClass();
                     int i13 = i12 + 1;
@@ -179,7 +179,7 @@ public final /* synthetic */ class p implements Runnable {
                     i11++;
                     i12 = i13;
                 }
-                x7.m mVar2 = x7.o.b;
+                x7.m mVar = x7.o.b;
                 sVar = i12 == 0 ? x7.s.e : new x7.s(i12, objArr);
                 fa.k = sVar;
             }
@@ -195,9 +195,9 @@ public final /* synthetic */ class p implements Runnable {
         faVar.c.a(aVar);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:8:0x0033, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:8:0x0034, code lost:
     
-        if (r7.isEmpty() == false) goto L11;
+        if (r5.isEmpty() == false) goto L11;
      */
     @Override // java.lang.Runnable
     /*
@@ -267,8 +267,8 @@ public final /* synthetic */ class p implements Runnable {
                             a5.a aVar = new a5.a(10, 2);
                             z5 z5Var = (z5) y0Var.b;
                             aVar.d = Boolean.valueOf(((d) z5Var.c).d == 2);
-                            z5.E(z5Var, new x6(aVar));
-                            w6 F = z5Var.F();
+                            z5.D(z5Var, new y6(aVar));
+                            x6 F = z5Var.F();
                             b bVar2 = new b(new a(i12));
                             bVar2.c = F.h;
                             F.c.add(bVar2);
@@ -309,7 +309,7 @@ public final /* synthetic */ class p implements Runnable {
                 a0Var.postDelayed(tVar, 10000L);
                 return;
             case 1:
-                l.e eVar = (l.e) ((ji.w4) this.e).b;
+                l.e eVar = (l.e) ((ki.t1) this.e).b;
                 l.m mVar2 = (l.m) this.c;
                 l.d dVar = (l.d) this.b;
                 if (dVar != null) {
@@ -323,24 +323,24 @@ public final /* synthetic */ class p implements Runnable {
                 }
                 return;
             case 2:
-                ((m.h) this.b).f((p4.p) this.e, (p4.m) this.c, (Collection) this.d);
+                ((l2.f) this.b).A((p4.p) this.e, (p4.m) this.c, (Collection) this.d);
                 return;
             case 3:
-                ((m.h) this.b).f((p4.p) this.e, (p4.m) this.c, (ArrayList) this.d);
+                ((l2.f) this.b).A((p4.p) this.e, (p4.m) this.c, (ArrayList) this.d);
                 return;
             case 4:
-                r0.q0.h((View) this.b, (r0.w0) this.c, (m2.t) this.d);
+                r0.q0.h((View) this.b, (r0.v0) this.c, (mi.q) this.d);
                 ((ValueAnimator) this.e).start();
                 return;
             case 5:
                 Handler handler = (Handler) this.b;
                 if (((AtomicBoolean) this.e).compareAndSet(false, true)) {
-                    handler.removeCallbacks((s9.b) this.d);
+                    handler.removeCallbacks((uf.c) this.d);
                     if (Looper.myLooper() == handler.getLooper()) {
                         ((tf.b) this.c).a(false);
                         return;
                     } else {
-                        handler.post(new ri.h0(this, 12));
+                        handler.post(new tg.p(this, 2));
                         return;
                     }
                 }
@@ -352,15 +352,15 @@ public final /* synthetic */ class p implements Runnable {
                 b();
                 return;
             default:
-                wf wfVar = (wf) this.b;
+                yf yfVar = (yf) this.b;
                 a5.a aVar2 = (a5.a) this.c;
-                hb hbVar = (hb) this.d;
+                jb jbVar = (jb) this.d;
                 String str2 = (String) this.e;
-                m.t3 t3Var = (m.t3) aVar2.c;
-                t3Var.b = hbVar;
-                we weVar = (we) t3Var.a;
-                if (weVar != null) {
-                    str = weVar.d;
+                m.s3 s3Var = (m.s3) aVar2.c;
+                s3Var.b = jbVar;
+                ye yeVar = (ye) s3Var.a;
+                if (yeVar != null) {
+                    str = yeVar.d;
                     int i13 = z7.l4.a;
                     if (str != null) {
                         break;
@@ -368,17 +368,17 @@ public final /* synthetic */ class p implements Runnable {
                 }
                 str = "NA";
                 d8 d8Var = new d8();
-                d8Var.a = wfVar.a;
-                d8Var.b = wfVar.b;
-                synchronized (wf.class) {
-                    mVar = wf.k;
+                d8Var.a = yfVar.a;
+                d8Var.b = yfVar.b;
+                synchronized (yf.class) {
+                    mVar = yf.k;
                     if (mVar == null) {
                         n0.c a11 = w7.z.a(Resources.getSystem().getConfiguration());
                         Object[] objArr = new Object[4];
                         int i14 = 0;
                         while (i11 < a11.a.size()) {
                             Locale locale = a11.a.get(i11);
-                            c5.a aVar3 = rb.c.a;
+                            m2.t tVar2 = rb.c.a;
                             String languageTag = locale.toLanguageTag();
                             languageTag.getClass();
                             int i15 = i14 + 1;
@@ -399,18 +399,18 @@ public final /* synthetic */ class p implements Runnable {
                             i14 = i15;
                         }
                         mVar = z7.i.q(i14, objArr);
-                        wf.k = mVar;
+                        yf.k = mVar;
                     }
                 }
                 d8Var.k = mVar;
                 d8Var.g = Boolean.TRUE;
                 d8Var.d = str;
                 d8Var.c = str2;
-                d8Var.e = wfVar.f.isSuccessful() ? (String) wfVar.f.getResult() : wfVar.d.a();
+                d8Var.e = yfVar.f.isSuccessful() ? (String) yfVar.f.getResult() : yfVar.d.a();
                 d8Var.i = 10;
-                d8Var.j = Integer.valueOf(wfVar.h);
+                d8Var.j = Integer.valueOf(yfVar.h);
                 aVar2.d = d8Var;
-                wfVar.c.a(aVar2);
+                yfVar.c.a(aVar2);
                 return;
         }
     }
@@ -428,10 +428,10 @@ public final /* synthetic */ class p implements Runnable {
         this.e = new AtomicBoolean(false);
         this.b = handler;
         this.c = bVar;
-        s9.b bVar2 = new s9.b(9, this, bVar);
-        this.d = bVar2;
+        uf.c cVar = new uf.c(0, this, bVar);
+        this.d = cVar;
         if (j10 > 0) {
-            handler.postDelayed(bVar2, j10);
+            handler.postDelayed(cVar, j10);
         }
     }
 }

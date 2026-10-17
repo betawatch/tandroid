@@ -9,7 +9,7 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class o implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -44,13 +44,13 @@ public final class o implements View.OnClickListener {
                         if (bVar != null && (playbackStateCompat = tVar.k0) != null) {
                             i10 = playbackStateCompat.a != 3 ? 0 : 1;
                             if (i10 != 0 && (playbackStateCompat.e & 514) != 0) {
-                                bVar.Y().a.pause();
+                                bVar.Z().a.pause();
                                 i12 = R.string.mr_controller_pause;
                             } else if (i10 != 0 && (playbackStateCompat.e & 1) != 0) {
-                                bVar.Y().a.stop();
+                                bVar.Z().a.stop();
                                 i12 = R.string.mr_controller_stop;
                             } else if (i10 == 0 && (playbackStateCompat.e & 516) != 0) {
-                                bVar.Y().a.play();
+                                bVar.Z().a.play();
                                 i12 = R.string.mr_controller_play;
                             }
                             if (accessibilityManager != null && accessibilityManager.isEnabled() && i12 != 0) {

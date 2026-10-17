@@ -1,74 +1,55 @@
 package org.telegram.ui;
 
-import android.view.MotionEvent;
-import android.view.View;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import java.util.Comparator;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class em0 implements View.OnTouchListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ sn0 b;
+public final class em0 implements Comparator {
+    public final /* synthetic */ xm0 a;
 
-    public /* synthetic */ em0(sn0 sn0Var, int i10) {
-        this.a = i10;
-        this.b = sn0Var;
+    public em0(xm0 xm0Var) {
+        this.a = xm0Var;
     }
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        int i10 = this.a;
-        int i11 = 2;
-        int i12 = 3;
-        sn0 sn0Var = this.b;
-        switch (i10) {
-            case 0:
-                if (sn0Var.getParentActivity() != null) {
-                    if (motionEvent.getAction() == 1) {
-                        fu fuVar = new fu(null, false);
-                        fuVar.r = new qw(26, sn0Var, view);
-                        sn0Var.presentFragment(fuVar);
-                    }
-                    break;
-                }
-                break;
-            case 1:
-                if (sn0Var.getParentActivity() != null) {
-                    if (motionEvent.getAction() == 1) {
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(sn0Var.getParentActivity());
-                        String string = LocaleController.getString(R.string.PassportSelectGender);
-                        org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
-                        a2Var.R = string;
-                        alertDialog$Builder.f(new CharSequence[]{LocaleController.getString(R.string.PassportMale), LocaleController.getString(R.string.PassportFemale)}, new o4(sn0Var, i12));
-                        alertDialog$Builder.k(LocaleController.getString(R.string.Cancel), null);
-                        sn0Var.showDialog(a2Var);
-                    }
-                    break;
-                }
-                break;
-            case 2:
-                if (sn0Var.getParentActivity() != null) {
-                    if (motionEvent.getAction() == 1) {
-                        fu fuVar2 = new fu(null, false);
-                        fuVar2.r = new fm0(sn0Var, i11);
-                        sn0Var.presentFragment(fuVar2);
-                    }
-                    break;
-                }
-                break;
-            default:
-                if (sn0Var.getParentActivity() != null) {
-                    if (motionEvent.getAction() == 1) {
-                        fu fuVar3 = new fu(null, false);
-                        fuVar3.r = new fm0(sn0Var, i12);
-                        sn0Var.presentFragment(fuVar3);
-                    }
-                    break;
-                }
-                break;
+    public final int a(TLRPC.SecureValueError secureValueError) {
+        if (secureValueError instanceof TLRPC.TL_secureValueError) {
+            return 0;
         }
-        return true;
+        if (secureValueError instanceof TLRPC.TL_secureValueErrorFrontSide) {
+            return 1;
+        }
+        if (secureValueError instanceof TLRPC.TL_secureValueErrorReverseSide) {
+            return 2;
+        }
+        if (secureValueError instanceof TLRPC.TL_secureValueErrorSelfie) {
+            return 3;
+        }
+        if (secureValueError instanceof TLRPC.TL_secureValueErrorTranslationFile) {
+            return 4;
+        }
+        if (secureValueError instanceof TLRPC.TL_secureValueErrorTranslationFiles) {
+            return 5;
+        }
+        if (secureValueError instanceof TLRPC.TL_secureValueErrorFile) {
+            return 6;
+        }
+        if (secureValueError instanceof TLRPC.TL_secureValueErrorFiles) {
+            return 7;
+        }
+        if (secureValueError instanceof TLRPC.TL_secureValueErrorData) {
+            return xm0.B0(this.a, ((TLRPC.TL_secureValueErrorData) secureValueError).field);
+        }
+        return 100;
+    }
+
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int a2 = a((TLRPC.SecureValueError) obj);
+        int a10 = a((TLRPC.SecureValueError) obj2);
+        if (a2 < a10) {
+            return -1;
+        }
+        return a2 > a10 ? 1 : 0;
     }
 }

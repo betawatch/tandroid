@@ -1,52 +1,22 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.SurfaceView;
-import android.view.View;
+import android.content.DialogInterface;
 import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class ms0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
-    public final /* synthetic */ PhotoViewer c;
+public final class ms0 implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ PhotoViewer a;
 
-    public /* synthetic */ ms0(PhotoViewer photoViewer, View view, int i10) {
-        this.a = i10;
-        this.c = photoViewer;
-        this.b = view;
+    public ms0(PhotoViewer photoViewer) {
+        this.a = photoViewer;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                PhotoViewer photoViewer = this.c;
-                photoViewer.B3 = false;
-                this.b.setOutlineProvider(null);
-                ImageView imageView = photoViewer.x3;
-                if (imageView != null) {
-                    imageView.setOutlineProvider(null);
-                }
-                av0 av0Var = photoViewer.E2;
-                if (av0Var != null) {
-                    av0Var.setOutlineProvider(null);
-                }
-                SurfaceView surfaceView = photoViewer.C2;
-                if (surfaceView != null) {
-                    surfaceView.setVisibility(0);
-                    break;
-                }
-                break;
-            default:
-                PhotoViewer photoViewer2 = this.c;
-                photoViewer2.B3 = false;
-                photoViewer2.i4.run();
-                AndroidUtilities.runOnUIThread(new rr0(5, this, this.b), 100L);
-                break;
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
+        ImageView imageView = this.a.E3;
+        if (imageView != null) {
+            imageView.animate().alpha(0.0f).withEndAction(new ek0(this, 16)).setDuration(150L).start();
         }
     }
 }

@@ -6,7 +6,7 @@ import com.google.android.gms.tasks.TaskCompletionSource;
 import java.util.concurrent.TimeUnit;
 import v7.g5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class t implements com.google.android.gms.common.api.o {
     public final /* synthetic */ g5 a;
@@ -37,6 +37,6 @@ public final class t implements com.google.android.gms.common.api.o {
             basePendingResult.e(Status.f);
         }
         l.j("Result is not ready.", basePendingResult.g());
-        this.b.setResult(this.c.a(basePendingResult.j()));
+        this.b.setResult(this.c.b(basePendingResult.j()));
     }
 }

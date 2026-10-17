@@ -1,41 +1,47 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w31 implements Runnable {
+public final /* synthetic */ class w31 implements r0.n, org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.m2 b;
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.c6 d;
-    public final /* synthetic */ org.telegram.ui.Components.g90 e;
+    public final /* synthetic */ z31 b;
 
-    public /* synthetic */ w31(org.telegram.ui.ActionBar.m2 m2Var, Context context, org.telegram.ui.ActionBar.c6 c6Var, org.telegram.ui.Components.g90 g90Var, int i10) {
+    public /* synthetic */ w31(z31 z31Var, int i10) {
         this.a = i10;
-        this.b = m2Var;
-        this.c = context;
-        this.d = c6Var;
-        this.e = g90Var;
+        this.b = z31Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // r0.n
+    public r0.k1 B0(View view, r0.k1 k1Var) {
+        i0.c defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(k1Var, false);
+        z31 z31Var = this.b;
+        z31Var.e = defaultWindowInsets;
+        z31Var.c.setPadding(defaultWindowInsets.a, defaultWindowInsets.b, defaultWindowInsets.c, defaultWindowInsets.d);
+        z31Var.b.requestLayout();
+        return r0.k1.b;
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
-            case 0:
-                org.telegram.ui.Components.zc.a0(this.b).c(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new tv(this.c, 4), this.d)).j();
-                AndroidUtilities.runOnUIThread(this.e);
-                break;
             case 1:
-                org.telegram.ui.Components.zc.a0(this.b).c(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new tv(this.c, 3), this.d)).j();
-                AndroidUtilities.runOnUIThread(this.e);
+                org.telegram.ui.ActionBar.b2 b2Var2 = this.b.c0;
+                if (b2Var2 != null) {
+                    b2Var2.dismiss();
+                    break;
+                }
                 break;
             default:
-                org.telegram.ui.Components.zc.a0(this.b).c(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new tv(this.c, 7), this.d)).j();
-                AndroidUtilities.runOnUIThread(this.e);
+                z31 z31Var = this.b;
+                org.telegram.ui.ActionBar.b2 b2Var3 = z31Var.c0;
+                if (b2Var3 != null) {
+                    b2Var3.dismiss();
+                    z31Var.c0 = null;
+                }
+                z31Var.dismiss();
                 break;
         }
     }

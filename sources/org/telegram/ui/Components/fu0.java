@@ -1,30 +1,55 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.view.WindowManager;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class fu0 extends uv0 {
-    public final /* synthetic */ xv0 G;
+public final class fu0 extends LinearLayout {
+    public final TextView a;
+    public final ImageView b;
+    public boolean c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fu0(xv0 xv0Var, Context context) {
-        super(xv0Var, context, 0, false);
-        this.G = xv0Var;
+    public fu0(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context);
+        TextView textView = new TextView(context);
+        this.a = textView;
+        ImageView imageView = new ImageView(context);
+        this.b = imageView;
+        setOrientation(1);
+        setGravity(17);
+        addView(imageView, w7.z5.n(-2, -2));
+        org.telegram.ui.Cells.t0.q(org.telegram.ui.ActionBar.h6.z6, d6Var, textView, 17);
+        textView.setTextSize(1, 17.0f);
+        textView.setPadding(AndroidUtilities.dp(40.0f), 0, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(128.0f));
+        addView(textView, w7.z5.t(-2, -2, 17, 0, 24, 0, 0));
     }
 
-    @Override // org.telegram.ui.Components.uv0, s4.g0
-    public final void l() {
-        super.l();
-        xv0 xv0Var = this.G;
-        qu0 W = xv0Var.W(8);
-        if (W != null && W.r.getVisibility() == 0) {
-            xv0Var.d0.l();
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int rotation = ((WindowManager) ApplicationLoader.applicationContext.getSystemService("window")).getDefaultDisplay().getRotation();
+        this.c = true;
+        if (AndroidUtilities.isTablet()) {
+            this.a.setPadding(AndroidUtilities.dp(40.0f), 0, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(128.0f));
+        } else if (rotation == 3 || rotation == 1) {
+            this.a.setPadding(AndroidUtilities.dp(40.0f), 0, AndroidUtilities.dp(40.0f), 0);
+        } else {
+            this.a.setPadding(AndroidUtilities.dp(40.0f), 0, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(128.0f));
         }
-        if (W != null) {
-            ht0 ht0Var = W.w;
-            bi.o8 o8Var = this.s;
-            ht0Var.e(o8Var != null && (o8Var.k() || (xv0Var.i0() && this.s.g() > 0)), true);
+        this.c = false;
+        super.onMeasure(i10, i11);
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.c) {
+            return;
         }
+        super.requestLayout();
     }
 }

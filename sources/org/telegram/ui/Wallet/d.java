@@ -1,5 +1,6 @@
 package org.telegram.ui.Wallet;
 
+import android.graphics.Bitmap;
 import android.text.TextUtils;
 import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
@@ -7,14 +8,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_toncenter;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.a71;
-import org.telegram.ui.Components.c71;
-import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.Wallet.WalletEngine2;
-import org.telegram.ui.mt;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
 
     @Override // org.telegram.messenger.Utilities.Callback2
     public final void run(Object obj, Object obj2) {
-        a71 a71Var;
+        s61 s61Var;
         String str;
         switch (this.a) {
             case 0:
@@ -38,66 +38,77 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                     Utilities.stageQueue.postRunnable(new e(fVar, currencyrates, 0));
                     break;
                 } else {
-                    i2.d.v(tL_error.text, new StringBuilder("[gram-wallet] failed to load currency rates: "));
+                    i0.a.v(tL_error.text, new StringBuilder("[gram-wallet] failed to load currency rates: "));
                     break;
                 }
             case 1:
-                j jVar = (j) this.b;
+                k kVar = (k) this.b;
                 TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
                 String str2 = (String) obj2;
                 if (wallettransaction != null) {
-                    jVar.run(Long.valueOf(wallettransaction.fee), null);
+                    kVar.run(Long.valueOf(wallettransaction.fee), null);
                     break;
                 } else {
-                    k0.i("emulate disable backup, no transaction: ".concat(str2 != null ? str2 : "NULL_ERROR"));
+                    m0.i("emulate disable backup, no transaction: ".concat(str2 != null ? str2 : "NULL_ERROR"));
                     if (str2 == null) {
                         str2 = "NULL_ERROR";
                     }
-                    jVar.run(null, str2);
+                    kVar.run(null, str2);
                     break;
                 }
             case 2:
-                ((t) this.b).run((TL_wallet.sendTransfer) obj, null, (String) obj2);
+                ((Utilities.Callback2) this.b).run((j0) obj, (String) obj2);
                 break;
             case 3:
-                ((Utilities.Callback2) this.b).run((h0) obj, (String) obj2);
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
+                ((x) this.b).run((tL_error2 == null && (((TLRPC.Bool) obj) instanceof TLRPC.TL_boolTrue)) ? null : f2.x(tL_error2, "closeSession"));
                 break;
             case 4:
-                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
-                ((mt) this.b).run((tL_error2 == null && (((TLRPC.Bool) obj) instanceof TLRPC.TL_boolTrue)) ? null : e2.x(tL_error2, "closeSession"));
-                break;
-            case 5:
-                e2 e2Var = (e2) this.b;
+                f2 f2Var = (f2) this.b;
                 TL_wallet.tonConnectSessions tonconnectsessions = (TL_wallet.tonConnectSessions) obj;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj2;
-                k0 k0Var = e2Var.b;
-                ArrayList arrayList = e2Var.d;
-                e2Var.e = -1;
+                m0 m0Var = f2Var.b;
+                ArrayList arrayList = f2Var.d;
+                f2Var.e = -1;
                 if (tL_error3 == null && tonconnectsessions != null) {
                     arrayList.clear();
                     ArrayList<TL_wallet.tonConnectSession> arrayList2 = tonconnectsessions.sessions;
                     if (arrayList2 != null) {
                         arrayList.addAll(arrayList2);
                     }
-                    k0Var.I();
+                    m0Var.J();
                     break;
                 } else {
-                    e2.x(tL_error3, "getSessions");
-                    k0Var.I();
+                    f2.x(tL_error3, "getSessions");
+                    m0Var.J();
                     break;
                 }
-            case 6:
-                ((ArrayList) obj).add(m61.k(((j2) this.b).Y));
+            case 5:
+                ((ArrayList) obj).add(f61.k(((k2) this.b).Y));
                 break;
+            case 6:
+                x2 x2Var = (x2) this.b;
+                Bitmap bitmap = (Bitmap) obj;
+                Bitmap bitmap2 = (Bitmap) obj2;
+                if (!x2Var.N && !x2Var.M) {
+                    x2Var.E = bitmap;
+                    x2Var.x.a(bitmap2);
+                    x2Var.f.post(new n(x2Var, 6));
+                    break;
+                } else {
+                    bitmap.recycle();
+                    bitmap2.recycle();
+                    break;
+                }
             case 7:
-                a5 a5Var = (a5) this.b;
+                l5 l5Var = (l5) this.b;
                 TL_account.Password password = (TL_account.Password) obj;
                 if (password != null) {
-                    a5Var.F0 = true;
-                    a5Var.G0 = password.has_password;
-                    c71 c71Var = a5Var.a;
-                    if (c71Var != null && (a71Var = c71Var.W2) != null) {
-                        a71Var.N(true);
+                    l5Var.Q0 = true;
+                    l5Var.R0 = password.has_password;
+                    u61 u61Var = l5Var.a;
+                    if (u61Var != null && (s61Var = u61Var.W2) != null) {
+                        s61Var.N(true);
                         break;
                     }
                 }
@@ -108,7 +119,7 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                 TLRPC.TL_error tL_error4 = (TLRPC.TL_error) obj2;
                 if (onrampsession != null && !TextUtils.isEmpty(onrampsession.url)) {
                     callback.run(null);
-                    org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
+                    org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
                     if (U != null) {
                         pf.d.r(U.getContext(), onrampsession.url);
                         break;
@@ -122,16 +133,16 @@ public final /* synthetic */ class d implements Utilities.Callback2 {
                 }
                 break;
             case 9:
-                WalletEngine2.HttpTransport.lambda$execute$0((s6) this.b, (TL_toncenter.apiResponse) obj, (TLRPC.TL_error) obj2);
+                WalletEngine2.HttpTransport.lambda$execute$0((e7) this.b, (TL_toncenter.apiResponse) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
-                ((s8) this.b).f = false;
+                ((t9) this.b).f = false;
                 break;
         }
     }
 
-    public /* synthetic */ d(k0 k0Var, j jVar) {
+    public /* synthetic */ d(m0 m0Var, k kVar) {
         this.a = 1;
-        this.b = jVar;
+        this.b = kVar;
     }
 }

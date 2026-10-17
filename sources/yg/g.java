@@ -1,39 +1,62 @@
 package yg;
 
-import android.view.KeyEvent;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.view.View;
+import ei.n9;
 import java.util.ArrayList;
-import java.util.HashSet;
-import org.telegram.ui.Components.z30;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class g implements View.OnKeyListener {
-    public boolean a;
-    public final /* synthetic */ HashSet b;
-    public final /* synthetic */ Runnable c;
-    public final /* synthetic */ i d;
+public final class g extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ n9 c;
 
-    public g(i iVar, HashSet hashSet, Runnable runnable) {
-        this.d = iVar;
-        this.b = hashSet;
-        this.c = runnable;
+    public /* synthetic */ g(n9 n9Var, ArrayList arrayList, int i10) {
+        this.a = i10;
+        this.c = n9Var;
+        this.b = arrayList;
     }
 
-    @Override // android.view.View.OnKeyListener
-    public final boolean onKey(View view, int i10, KeyEvent keyEvent) {
-        i iVar = this.d;
-        ArrayList arrayList = iVar.e;
-        if (i10 == 67) {
-            if (keyEvent.getAction() == 0) {
-                this.a = iVar.b.length() == 0;
-                return false;
-            }
-            if (keyEvent.getAction() == 1 && this.a && !arrayList.isEmpty()) {
-                iVar.a((z30) i2.d.h(1, arrayList), this.b, this.c);
-                return true;
-            }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                int i10 = 0;
+                while (true) {
+                    ArrayList arrayList = this.b;
+                    int size = arrayList.size();
+                    n9 n9Var = this.c;
+                    if (i10 >= size) {
+                        n9Var.getClass();
+                        n9Var.h.clear();
+                        n9Var.b = null;
+                        n9Var.c = false;
+                        ((h) n9Var.n).b.setAllowDrawCursor(true);
+                        break;
+                    } else {
+                        n9Var.removeView((View) arrayList.get(i10));
+                        i10++;
+                    }
+                }
+            default:
+                int i11 = 0;
+                while (true) {
+                    ArrayList arrayList2 = this.b;
+                    int size2 = arrayList2.size();
+                    n9 n9Var2 = this.c;
+                    if (i11 >= size2) {
+                        n9Var2.h.clear();
+                        n9Var2.b = null;
+                        n9Var2.c = false;
+                        ((h) n9Var2.n).b.setAllowDrawCursor(true);
+                        break;
+                    } else {
+                        n9Var2.removeView((View) arrayList2.get(i11));
+                        i11++;
+                    }
+                }
         }
-        return false;
     }
 }

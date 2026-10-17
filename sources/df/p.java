@@ -1,12 +1,12 @@
 package df;
 
-import com.google.android.gms.internal.play_billing.k3;
+import com.google.android.gms.internal.cast.a6;
 import java.io.DataInputStream;
 import java.io.EOFException;
 import java.io.IOException;
 import v7.x6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class p {
     public final /* synthetic */ int a;
@@ -66,7 +66,7 @@ public abstract class p {
         if (str2.matches(str)) {
             return c10;
         }
-        throw new IOException(k3.k("atom type mismatch, expected ", str, ", got ", str2));
+        throw new IOException(a6.k("atom type mismatch, expected ", str, ", got ", str2));
     }
 
     public void e(p pVar) {

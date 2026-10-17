@@ -1,28 +1,49 @@
 package org.telegram.ui.Components;
 
-import android.location.Location;
-import org.telegram.messenger.IMapsProvider;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kl implements q0.a {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ tl b;
+public final class kl extends s4.r0 {
+    public final /* synthetic */ rl a;
 
-    public /* synthetic */ kl(tl tlVar, int i10) {
-        this.a = i10;
-        this.b = tlVar;
+    public kl(rl rlVar) {
+        this.a = rlVar;
     }
 
-    @Override // q0.a
-    public final void accept(Object obj) {
-        switch (this.a) {
-            case 0:
-                tl.N(this.b, (IMapsProvider.IMap) obj);
-                break;
-            default:
-                tl.U(this.b, (Location) obj);
-                break;
+    @Override // s4.r0
+    public final void a(RecyclerView recyclerView, int i10) {
+        sl0 sl0Var;
+        rl rlVar = this.a;
+        ai.u1 u1Var = rlVar.P;
+        ti tiVar = rlVar.b;
+        boolean z10 = i10 != 0;
+        rlVar.L = z10;
+        if (!z10 && rlVar.J != null) {
+            rlVar.J = null;
         }
+        if (i10 == 0) {
+            int dp = AndroidUtilities.dp(13.0f);
+            int backgroundPaddingTop = tiVar.getBackgroundPaddingTop();
+            if (((tiVar.e2[0] - backgroundPaddingTop) - dp) + backgroundPaddingTop >= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() || (sl0Var = (sl0) u1Var.K(0)) == null) {
+                return;
+            }
+            View view = sl0Var.a;
+            if (view.getTop() > rlVar.A0 - rlVar.z0) {
+                u1Var.v0(0, view.getTop() - (rlVar.A0 - rlVar.z0), null);
+            }
+        }
+    }
+
+    @Override // s4.r0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        rl rlVar = this.a;
+        rlVar.h0();
+        if (rlVar.J != null) {
+            rlVar.K += i11;
+        }
+        rlVar.b.b2(rlVar, i11);
     }
 }

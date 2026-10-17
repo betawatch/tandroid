@@ -34,7 +34,7 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public class ContactsController extends BaseController {
     public static final int PRIVACY_RULES_TYPE_ADDED_BY_PHONE = 7;
@@ -108,7 +108,7 @@ public class ContactsController extends BaseController {
     private static final String[] projectionNames = {"lookup", "data2", "data3", "data5"};
     private static volatile ContactsController[] Instance = new ContactsController[4];
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class Contact {
         public int contact_id;
         public String first_name;
@@ -133,7 +133,7 @@ public class ContactsController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public class MyContentObserver extends ContentObserver {
         private Runnable checkRunnable;
 
@@ -174,7 +174,7 @@ public class ContactsController extends BaseController {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public class PhoneBookContact {
         String id;
         String lookup_key;
@@ -949,7 +949,7 @@ public class ContactsController extends BaseController {
                 }
             }
         }
-        AndroidUtilities.runOnUIThread(new ek(this, arrayList2, z10, str, 4));
+        AndroidUtilities.runOnUIThread(new xj(this, arrayList2, z10, str, 4));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1391,7 +1391,7 @@ public class ContactsController extends BaseController {
             }
             zArr[0] = true;
             if (BuildVars.LOGS_ENABLED) {
-                i2.d.v(tL_error.text, new StringBuilder("import contacts error "));
+                i0.a.v(tL_error.text, new StringBuilder("import contacts error "));
             }
         }
         if (this.completedRequestsCount == i10) {
@@ -1888,7 +1888,7 @@ public class ContactsController extends BaseController {
                 i14 = 2;
             }
             if (BuildVars.LOGS_ENABLED) {
-                StringBuilder m10 = i2.d.m("new phone book contacts ", i12, " serverContactsInPhonebook ", i11, " totalContacts ");
+                StringBuilder m10 = i0.a.m("new phone book contacts ", i12, " serverContactsInPhonebook ", i11, " totalContacts ");
                 m10.append(this.contactsByPhone.size());
                 FileLog.d(m10.toString());
             }
@@ -2218,7 +2218,7 @@ public class ContactsController extends BaseController {
                 hVar.k(user, user.id);
             }
         }
-        Utilities.stageQueue.postRunnable(new ji.r2(this, i10, arrayList2, arrayList, hVar, isEmpty));
+        Utilities.stageQueue.postRunnable(new ki.r2(this, i10, arrayList2, arrayList, hVar, isEmpty));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2677,7 +2677,7 @@ public class ContactsController extends BaseController {
         int size = arrayList.size();
         for (int i10 = 0; i10 < size; i10++) {
             TLRPC.User user = arrayList.get(i10);
-            bi.x8 storiesController = getMessagesController().getStoriesController();
+            ci.i7 storiesController = getMessagesController().getStoriesController();
             long j10 = user.id;
             int i11 = storiesController.a;
             ArrayList arrayList3 = storiesController.h;
@@ -2704,8 +2704,8 @@ public class ContactsController extends BaseController {
                 }
                 i13++;
             }
-            bi.k9 k9Var = storiesController.k;
-            k9Var.b.getStorageQueue().postRunnable(new bi.g(k9Var, j10, 4));
+            ci.w7 w7Var = storiesController.k;
+            w7Var.b.getStorageQueue().postRunnable(new ai.s3(w7Var, j10, 6));
             MessagesController.getInstance(i11).checkArchiveFolder();
             NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesUpdated, new Object[0]);
             TLRPC.InputUser inputUser = getMessagesController().getInputUser(user);
@@ -2715,10 +2715,10 @@ public class ContactsController extends BaseController {
                 tL_contacts_deleteContacts.id.add(inputUser);
             }
         }
-        getConnectionsManager().sendRequest(tL_contacts_deleteContacts, new ig.n0(this, arrayList2, arrayList, z10, arrayList.get(0).first_name));
+        getConnectionsManager().sendRequest(tL_contacts_deleteContacts, new ai.j4(this, arrayList2, arrayList, z10, arrayList.get(0).first_name, 2));
     }
 
-    public void deleteContactsUndoable(Context context, org.telegram.ui.ActionBar.m2 m2Var, ArrayList<TLRPC.User> arrayList) {
+    public void deleteContactsUndoable(Context context, org.telegram.ui.ActionBar.n2 n2Var, ArrayList<TLRPC.User> arrayList) {
         if (arrayList == null || arrayList.isEmpty()) {
             return;
         }
@@ -2735,14 +2735,14 @@ public class ContactsController extends BaseController {
         buildContactsSectionsArrays(false);
         getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateInterfaces, Integer.valueOf(MessagesController.UPDATE_MASK_NAME));
         getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.contactsDidLoad, new Object[0]);
-        org.telegram.ui.Components.kc kcVar = new org.telegram.ui.Components.kc(context, m2Var.getResourceProvider());
-        kcVar.setTimer();
-        kcVar.b.setText(LocaleController.formatPluralString("ContactsDeletedUndo", hashMap.size(), new Object[0]));
-        org.telegram.ui.Components.qc qcVar = new org.telegram.ui.Components.qc(context, m2Var.getResourceProvider(), true, true);
-        qcVar.a = new g3(26, this, hashMap);
-        qcVar.b = new s1(this, arrayList, 2);
-        kcVar.setButton(qcVar);
-        org.telegram.ui.Components.sc.g(m2Var, kcVar, 5000).j();
+        org.telegram.ui.Components.ic icVar = new org.telegram.ui.Components.ic(context, n2Var.getResourceProvider());
+        icVar.setTimer();
+        icVar.b.setText(LocaleController.formatPluralString("ContactsDeletedUndo", hashMap.size(), new Object[0]));
+        org.telegram.ui.Components.oc ocVar = new org.telegram.ui.Components.oc(context, n2Var.getResourceProvider(), true, true);
+        ocVar.a = new g3(26, this, hashMap);
+        ocVar.b = new s1(this, arrayList, 2);
+        icVar.setButton(ocVar);
+        org.telegram.ui.Components.qc.g(n2Var, icVar, 5000).j();
     }
 
     public void deleteUnknownAppAccounts() {
@@ -2897,7 +2897,7 @@ public class ContactsController extends BaseController {
             }
             TLRPC.TL_contacts_getContacts tL_contacts_getContacts = new TLRPC.TL_contacts_getContacts();
             tL_contacts_getContacts.hash = j10;
-            getConnectionsManager().sendRequest(tL_contacts_getContacts, new bi.o7(this, j10, 1));
+            getConnectionsManager().sendRequest(tL_contacts_getContacts, new ci.k6(this, j10, 1));
         }
     }
 
@@ -3473,7 +3473,7 @@ public class ContactsController extends BaseController {
     }
 
     public void resetImportedContacts() {
-        getConnectionsManager().sendRequest(new TLRPC.TL_contacts_resetSaved(), new h5(2));
+        getConnectionsManager().sendRequest(new TLRPC.TL_contacts_resetSaved(), new g5(2));
     }
 
     public void setDeleteAccountTTL(int i10) {
@@ -3534,7 +3534,7 @@ public class ContactsController extends BaseController {
     }
 
     private void mergePhonebookAndTelegramContacts(HashMap<String, ArrayList<Object>> hashMap, ArrayList<String> arrayList, HashMap<String, Contact> hashMap2, boolean z10) {
-        Utilities.globalQueue.postRunnable(new i2.f1(this, z10, new ArrayList(this.contacts), hashMap2, hashMap, arrayList));
+        Utilities.globalQueue.postRunnable(new i2.d1(this, z10, new ArrayList(this.contacts), hashMap2, hashMap, arrayList));
     }
 
     public void addContact(TLRPC.User user, TLRPC.TL_textWithEntities tL_textWithEntities, boolean z10) {
@@ -3600,59 +3600,59 @@ public class ContactsController extends BaseController {
                 switch (i10) {
                     case 0:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyStatusTimestamp();
-                        getConnectionsManager().sendRequest(getprivacy, new ha(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new da(this, i10, 3));
                         break;
                     case 1:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyChatInvite();
-                        getConnectionsManager().sendRequest(getprivacy, new ha(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new da(this, i10, 3));
                         break;
                     case 2:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyPhoneCall();
-                        getConnectionsManager().sendRequest(getprivacy, new ha(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new da(this, i10, 3));
                         break;
                     case 3:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyPhoneP2P();
-                        getConnectionsManager().sendRequest(getprivacy, new ha(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new da(this, i10, 3));
                         break;
                     case 4:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyProfilePhoto();
-                        getConnectionsManager().sendRequest(getprivacy, new ha(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new da(this, i10, 3));
                         break;
                     case 5:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyForwards();
-                        getConnectionsManager().sendRequest(getprivacy, new ha(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new da(this, i10, 3));
                         break;
                     case 6:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyPhoneNumber();
-                        getConnectionsManager().sendRequest(getprivacy, new ha(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new da(this, i10, 3));
                         break;
                     case 7:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyAddedByPhone();
-                        getConnectionsManager().sendRequest(getprivacy, new ha(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new da(this, i10, 3));
                         break;
                     case 8:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyVoiceMessages();
-                        getConnectionsManager().sendRequest(getprivacy, new ha(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new da(this, i10, 3));
                         break;
                     case 9:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyAbout();
-                        getConnectionsManager().sendRequest(getprivacy, new ha(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new da(this, i10, 3));
                         break;
                     case 11:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyBirthday();
-                        getConnectionsManager().sendRequest(getprivacy, new ha(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new da(this, i10, 3));
                         break;
                     case 12:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyStarGiftsAutoSave();
-                        getConnectionsManager().sendRequest(getprivacy, new ha(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new da(this, i10, 3));
                         break;
                     case 13:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeyNoPaidMessages();
-                        getConnectionsManager().sendRequest(getprivacy, new ha(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new da(this, i10, 3));
                         break;
                     case 14:
                         getprivacy.key = new TLRPC.TL_inputPrivacyKeySavedMusic();
-                        getConnectionsManager().sendRequest(getprivacy, new ha(this, i10, 3));
+                        getConnectionsManager().sendRequest(getprivacy, new da(this, i10, 3));
                         break;
                 }
                 i10++;

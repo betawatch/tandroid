@@ -4,19 +4,19 @@ import android.animation.ValueAnimator;
 import android.view.ViewGroup;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.f91;
-import org.telegram.ui.Components.gl0;
-import org.telegram.ui.Components.k91;
-import org.telegram.ui.Components.l80;
-import org.telegram.ui.Components.m31;
-import org.telegram.ui.Components.ob0;
-import org.telegram.ui.Components.p00;
-import org.telegram.ui.Components.w00;
+import org.telegram.ui.Components.b91;
+import org.telegram.ui.Components.cl0;
+import org.telegram.ui.Components.d31;
+import org.telegram.ui.Components.i80;
+import org.telegram.ui.Components.ib0;
+import org.telegram.ui.Components.m00;
+import org.telegram.ui.Components.s00;
+import org.telegram.ui.Components.w81;
 import org.telegram.ui.StickersActivity;
-import org.telegram.ui.xw;
-import org.telegram.ui.yr;
+import org.telegram.ui.dw;
+import org.telegram.ui.jr;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class i0 extends s4.b0 {
     public final /* synthetic */ int I;
@@ -34,14 +34,14 @@ public final class i0 extends s4.b0 {
         switch (this.I) {
             case 0:
                 super.S(eVar, y0Var, cVar);
-                if (!((r0) this.J).isEnabled()) {
+                if (!((q0) this.J).isEnabled()) {
                     cVar.p(false);
                     break;
                 }
                 break;
             case 6:
                 super.S(eVar, y0Var, cVar);
-                if (((k91) this.J).V) {
+                if (((b91) this.J).V) {
                     cVar.p(false);
                     break;
                 }
@@ -56,7 +56,7 @@ public final class i0 extends s4.b0 {
     public int W0(s4.y0 y0Var) {
         switch (this.I) {
             case 5:
-                if (!((m31) this.J).Y2) {
+                if (!((d31) this.J).Y2) {
                     break;
                 } else {
                     break;
@@ -70,7 +70,7 @@ public final class i0 extends s4.b0 {
         switch (this.I) {
             case 3:
                 super.k1(z10);
-                ((ob0) this.J).b.setTranslationY(AndroidUtilities.dp(6.0f) * (z10 ? -1 : 1));
+                ((ib0) this.J).b.setTranslationY(AndroidUtilities.dp(6.0f) * (z10 ? -1 : 1));
                 break;
             default:
                 super.k1(z10);
@@ -82,8 +82,8 @@ public final class i0 extends s4.b0 {
     public int m0(int i10, qf.e eVar, s4.y0 y0Var) {
         switch (this.I) {
             case 2:
-                l80 l80Var = ((xw) ((w00) this.J).J).b.L0;
-                if (l80Var != null && l80Var.D()) {
+                i80 i80Var = ((dw) ((s00) this.J).J).b.L0;
+                if (i80Var != null && i80Var.D()) {
                     i10 = 0;
                 }
                 return super.m0(i10, eVar, y0Var);
@@ -91,50 +91,50 @@ public final class i0 extends s4.b0 {
             default:
                 return super.m0(i10, eVar, y0Var);
             case 4:
-                gl0 gl0Var = (gl0) this.J;
-                bi.o0 o0Var = gl0Var.b;
-                if (i10 < 0 && gl0Var.B0 != 0.0f) {
-                    float pullingLeftProgress = gl0Var.getPullingLeftProgress();
-                    gl0Var.B0 += i10;
-                    if ((pullingLeftProgress > 1.0f) != (gl0Var.getPullingLeftProgress() > 1.0f)) {
+                cl0 cl0Var = (cl0) this.J;
+                ai.u1 u1Var = cl0Var.b;
+                if (i10 < 0 && cl0Var.B0 != 0.0f) {
+                    float pullingLeftProgress = cl0Var.getPullingLeftProgress();
+                    cl0Var.B0 += i10;
+                    if ((pullingLeftProgress > 1.0f) != (cl0Var.getPullingLeftProgress() > 1.0f)) {
                         try {
-                            o0Var.performHapticFeedback(3);
+                            u1Var.performHapticFeedback(3);
                         } catch (Exception unused) {
                         }
                     }
-                    float f7 = gl0Var.B0;
+                    float f7 = cl0Var.B0;
                     if (f7 < 0.0f) {
                         i10 = (int) f7;
-                        gl0Var.B0 = 0.0f;
+                        cl0Var.B0 = 0.0f;
                     } else {
                         i10 = 0;
                     }
-                    ah.v vVar = gl0Var.S;
+                    ah.v vVar = cl0Var.S;
                     if (vVar != null) {
                         vVar.invalidate();
                     }
-                    o0Var.invalidate();
+                    u1Var.invalidate();
                 }
                 int m0 = super.m0(i10, eVar, y0Var);
-                if (i10 > 0 && m0 == 0 && o0Var.getScrollState() == 1 && gl0Var.q()) {
-                    ValueAnimator valueAnimator = gl0Var.y0;
+                if (i10 > 0 && m0 == 0 && u1Var.getScrollState() == 1 && cl0Var.q()) {
+                    ValueAnimator valueAnimator = cl0Var.y0;
                     if (valueAnimator != null) {
                         valueAnimator.removeAllListeners();
-                        gl0Var.y0.cancel();
+                        cl0Var.y0.cancel();
                     }
-                    float pullingLeftProgress2 = gl0Var.getPullingLeftProgress();
-                    gl0Var.B0 = (i10 * (pullingLeftProgress2 > 1.0f ? 0.05f : 0.6f)) + gl0Var.B0;
-                    if ((pullingLeftProgress2 > 1.0f) != (gl0Var.getPullingLeftProgress() > 1.0f)) {
+                    float pullingLeftProgress2 = cl0Var.getPullingLeftProgress();
+                    cl0Var.B0 = (i10 * (pullingLeftProgress2 > 1.0f ? 0.05f : 0.6f)) + cl0Var.B0;
+                    if ((pullingLeftProgress2 > 1.0f) != (cl0Var.getPullingLeftProgress() > 1.0f)) {
                         try {
-                            o0Var.performHapticFeedback(3);
+                            u1Var.performHapticFeedback(3);
                         } catch (Exception unused2) {
                         }
                     }
-                    ah.v vVar2 = gl0Var.S;
+                    ah.v vVar2 = cl0Var.S;
                     if (vVar2 != null) {
                         vVar2.invalidate();
                     }
-                    o0Var.invalidate();
+                    u1Var.invalidate();
                 }
                 return m0;
         }
@@ -144,8 +144,8 @@ public final class i0 extends s4.b0 {
     public int o0(int i10, qf.e eVar, s4.y0 y0Var) {
         switch (this.I) {
             case 1:
-                yr yrVar = (yr) this.J;
-                if (yrVar.R || yrVar.O != 0 || yrVar.F.size() != 0) {
+                jr jrVar = (jr) this.J;
+                if (jrVar.R || jrVar.O != 0 || jrVar.F.size() != 0) {
                     break;
                 }
                 break;
@@ -157,14 +157,14 @@ public final class i0 extends s4.b0 {
     public void v0(RecyclerView recyclerView, s4.y0 y0Var, int i10) {
         switch (this.I) {
             case 2:
-                p00 p00Var = new p00(this, recyclerView.getContext());
-                p00Var.a = i10;
-                w0(p00Var);
+                m00 m00Var = new m00(this, recyclerView.getContext());
+                m00Var.a = i10;
+                w0(m00Var);
                 break;
             case 6:
-                f91 f91Var = new f91(this, recyclerView.getContext());
-                f91Var.a = i10;
-                w0(f91Var);
+                w81 w81Var = new w81(this, recyclerView.getContext());
+                w81Var.a = i10;
+                w0(w81Var);
                 break;
             default:
                 super.v0(recyclerView, y0Var, i10);
@@ -206,9 +206,9 @@ public final class i0 extends s4.b0 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i0(yr yrVar) {
+    public i0(jr jrVar) {
         super(1, false);
         this.I = 1;
-        this.J = yrVar;
+        this.J = jrVar;
     }
 }

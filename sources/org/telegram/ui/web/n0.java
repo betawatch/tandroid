@@ -1,474 +1,82 @@
 package org.telegram.ui.web;
 
-import android.content.Context;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.net.Uri;
-import android.net.http.SslError;
-import android.os.Build;
-import android.text.TextUtils;
-import android.webkit.RenderProcessGoneDetail;
-import android.webkit.SslErrorHandler;
-import android.webkit.WebResourceError;
-import android.webkit.WebResourceRequest;
-import android.webkit.WebResourceResponse;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import bi.t4;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.e3;
+import android.webkit.PermissionRequest;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class n0 extends WebViewClient {
-    public boolean a = true;
-    public final m0 b = new m0(this, 0);
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ Context d;
-    public final /* synthetic */ z0 e;
+public final /* synthetic */ class n0 implements q0.a {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ u0 b;
+    public final /* synthetic */ PermissionRequest c;
+    public final /* synthetic */ String d;
 
-    public n0(z0 z0Var, boolean z10, Context context) {
-        this.e = z0Var;
-        this.c = z10;
-        this.d = context;
+    public /* synthetic */ n0(u0 u0Var, PermissionRequest permissionRequest, String str, int i10) {
+        this.a = i10;
+        this.b = u0Var;
+        this.c = permissionRequest;
+        this.d = str;
     }
 
-    @Override // android.webkit.WebViewClient
-    public final void doUpdateVisitedHistory(WebView webView, String str, boolean z10) {
-        d1 d1Var;
-        boolean z11 = this.c;
-        z0 z0Var = this.e;
-        if (!z11 && ((d1Var = z0Var.e) == null || !TextUtils.equals(d1Var.c, str))) {
-            d1 d1Var2 = new d1();
-            z0Var.e = d1Var2;
-            d1Var2.a = Utilities.fastRandom.nextLong();
-            z0Var.e.b = System.currentTimeMillis();
-            z0Var.e.c = c1.u(z0Var.getUrl());
-            z0Var.e.d = m2.a(z0Var);
-            e1.c(z0Var.e);
-        }
-        z0Var.c("doUpdateVisitedHistory " + str + " " + z10);
-        c1 c1Var = z0Var.Q;
-        if (c1Var != null) {
-            c1Var.I(!z0Var.canGoBack(), !z0Var.canGoForward());
-        }
-        super.doUpdateVisitedHistory(webView, str, z10);
-    }
-
-    @Override // android.webkit.WebViewClient
-    public final void onPageCommitVisible(WebView webView, String str) {
-        c1 c1Var;
-        z0 z0Var = this.e;
-        z0Var.c("onPageCommitVisible " + str);
-        boolean z10 = this.c;
-        if (z10 && !a.a.a("DOCUMENT_START_SCRIPT") && (c1Var = z0Var.Q) != null) {
-            boolean z11 = c1.P0;
-            if (c1Var.q()) {
-                z0Var.d("window.TelegramWebviewProxy={postEvent:function(eventType,eventData){window.TelegramWebviewProxyMessage.postMessage(JSON.stringify({eventType:eventType,eventData:eventData}));}};");
-            }
-        }
-        if (z10) {
-            z0Var.N = true;
-            z0Var.d(AndroidUtilities.readRes(R.raw.webview_app_ext).replace("$DEBUG$", "" + BuildVars.DEBUG_VERSION));
-        } else {
-            z0Var.N = true;
-            z0Var.d(AndroidUtilities.readRes(R.raw.webview_ext).replace("$DEBUG$", "" + BuildVars.DEBUG_VERSION));
-            z0Var.d(AndroidUtilities.readRes(R.raw.webview_share));
-        }
-        super.onPageCommitVisible(webView, str);
-    }
-
-    @Override // android.webkit.WebViewClient
-    public final void onPageFinished(WebView webView, String str) {
-        c1 c1Var;
-        z0 z0Var = this.e;
-        z0Var.b = true;
-        z0Var.c("onPageFinished");
-        boolean z10 = this.c;
-        if (z10 && !a.a.a("DOCUMENT_START_SCRIPT") && (c1Var = z0Var.Q) != null) {
-            boolean z11 = c1.P0;
-            if (c1Var.q()) {
-                z0Var.d("window.TelegramWebviewProxy={postEvent:function(eventType,eventData){window.TelegramWebviewProxyMessage.postMessage(JSON.stringify({eventType:eventType,eventData:eventData}));}};");
-            }
-        }
-        c1 c1Var2 = z0Var.Q;
-        if (c1Var2 != null) {
-            c1Var2.T(str, true);
-        } else {
-            z0Var.c("onPageFinished: no container");
-        }
-        if (z10) {
-            z0Var.N = true;
-            z0Var.d(AndroidUtilities.readRes(R.raw.webview_app_ext).replace("$DEBUG$", "" + BuildVars.DEBUG_VERSION));
-        } else {
-            z0Var.N = true;
-            z0Var.d(AndroidUtilities.readRes(R.raw.webview_ext).replace("$DEBUG$", "" + BuildVars.DEBUG_VERSION));
-            z0Var.d(AndroidUtilities.readRes(R.raw.webview_share));
-        }
-        z0.a(z0Var);
-        c1 c1Var3 = z0Var.Q;
-        if (c1Var3 != null) {
-            if (!z0Var.E) {
-                z0Var.getUrl();
-            }
-            c1Var3.I(!z0Var.canGoBack(), !z0Var.canGoForward());
-        }
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x001c, code lost:
-    
-        if (r0.r() == false) goto L11;
-     */
-    @Override // android.webkit.WebViewClient
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onPageStarted(WebView webView, String str, Bitmap bitmap) {
-        String str2;
-        c1 c1Var;
-        boolean z10 = this.c;
-        z0 z0Var = this.e;
-        if (z10 && (c1Var = z0Var.Q) != null) {
-            c1Var.s0++;
-        }
-        c1 c1Var2 = z0Var.Q;
-        if (c1Var2 != null) {
-            boolean z11 = c1.P0;
-        }
-        z0Var.getSettings().setMediaPlaybackRequiresUserGesture(true);
-        e3 e3Var = z0Var.F;
-        if (e3Var != null) {
-            e3Var.dismiss();
-            z0Var.F = null;
-        }
-        z0Var.e = null;
-        z0Var.r = null;
-        z0Var.s = false;
-        z0Var.v = false;
-        z0Var.M = false;
-        z0Var.c("onPageStarted " + str);
-        if (z0Var.Q != null && z0Var.h && ((str2 = z0Var.n) == null || !TextUtils.equals(str2, str))) {
-            AndroidUtilities.runOnUIThread(this.b, 40L);
-        }
-        c1 c1Var3 = z0Var.Q;
-        if (c1Var3 != null) {
-            c1Var3.I(!z0Var.canGoBack(), true ^ z0Var.canGoForward());
-        }
-        super.onPageStarted(webView, str, bitmap);
-        z0Var.N = false;
-    }
-
-    @Override // android.webkit.WebViewClient
-    public final void onReceivedError(WebView webView, WebResourceRequest webResourceRequest, WebResourceError webResourceError) {
-        String str = "onReceivedError: " + webResourceError.getErrorCode() + " " + ((Object) webResourceError.getDescription());
-        z0 z0Var = this.e;
-        z0Var.c(str);
-        if (z0Var.Q != null && (webResourceRequest == null || webResourceRequest.isForMainFrame())) {
-            AndroidUtilities.cancelRunOnUIThread(this.b);
-            z0Var.r = null;
-            z0Var.s = false;
-            z0Var.v = false;
-            z0Var.M = false;
-            z0Var.J = false;
-            z0Var.n = (webResourceRequest == null || webResourceRequest.getUrl() == null) ? z0Var.getUrl() : webResourceRequest.getUrl().toString();
-            c1 c1Var = z0Var.Q;
-            z0Var.K = null;
-            c1Var.H();
-            c1 c1Var2 = z0Var.Q;
-            z0Var.O = null;
-            c1Var2.getClass();
-            c1 c1Var3 = z0Var.Q;
-            z0Var.h = true;
-            webResourceError.getErrorCode();
-            c1Var3.D(true, webResourceError.getDescription() != null ? webResourceError.getDescription().toString() : null);
-        }
-        super.onReceivedError(webView, webResourceRequest, webResourceError);
-    }
-
-    @Override // android.webkit.WebViewClient
-    public final void onReceivedHttpError(WebView webView, WebResourceRequest webResourceRequest, WebResourceResponse webResourceResponse) {
-        super.onReceivedHttpError(webView, webResourceRequest, webResourceResponse);
-        StringBuilder sb2 = new StringBuilder("onReceivedHttpError: statusCode=");
-        sb2.append(webResourceResponse == null ? null : Integer.valueOf(webResourceResponse.getStatusCode()));
-        sb2.append(" request=");
-        sb2.append(webResourceRequest == null ? null : webResourceRequest.getUrl());
-        String sb3 = sb2.toString();
-        z0 z0Var = this.e;
-        z0Var.c(sb3);
-        if (z0Var.Q != null) {
-            if ((webResourceRequest == null || webResourceRequest.isForMainFrame()) && webResourceResponse != null && TextUtils.isEmpty(webResourceResponse.getMimeType())) {
-                AndroidUtilities.cancelRunOnUIThread(this.b);
-                z0Var.r = null;
-                z0Var.s = false;
-                z0Var.v = false;
-                z0Var.M = false;
-                z0Var.J = false;
-                z0Var.n = (webResourceRequest == null || webResourceRequest.getUrl() == null) ? z0Var.getUrl() : webResourceRequest.getUrl().toString();
-                c1 c1Var = z0Var.Q;
-                z0Var.K = null;
-                c1Var.H();
-                c1 c1Var2 = z0Var.Q;
-                z0Var.O = null;
-                c1Var2.getClass();
-                c1 c1Var3 = z0Var.Q;
-                z0Var.h = true;
-                webResourceResponse.getStatusCode();
-                c1Var3.D(true, webResourceResponse.getReasonPhrase());
-            }
-        }
-    }
-
-    @Override // android.webkit.WebViewClient
-    public final void onReceivedSslError(WebView webView, SslErrorHandler sslErrorHandler, SslError sslError) {
-        StringBuilder sb2 = new StringBuilder("onReceivedSslError: error=");
-        sb2.append(sslError);
-        sb2.append(" url=");
-        sb2.append(sslError == null ? null : sslError.getUrl());
-        this.e.c(sb2.toString());
-        sslErrorHandler.cancel();
-        super.onReceivedSslError(webView, sslErrorHandler, sslError);
-    }
-
-    @Override // android.webkit.WebViewClient
-    public final boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {
-        int i10 = Build.VERSION.SDK_INT;
-        z0 z0Var = this.e;
-        if (i10 >= 26) {
-            StringBuilder sb2 = new StringBuilder("onRenderProcessGone priority=");
-            sb2.append(renderProcessGoneDetail == null ? null : Integer.valueOf(renderProcessGoneDetail.rendererPriorityAtExit()));
-            sb2.append(" didCrash=");
-            sb2.append(renderProcessGoneDetail == null ? null : Boolean.valueOf(renderProcessGoneDetail.didCrash()));
-            z0Var.c(sb2.toString());
-        } else {
-            z0Var.c("onRenderProcessGone");
-        }
-        try {
-            if (!AndroidUtilities.isSafeToShow(z0Var.getContext())) {
-                return true;
-            }
-            Context context = z0Var.getContext();
-            c1 c1Var = z0Var.Q;
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, c1Var == null ? null : c1Var.e);
-            alertDialog$Builder.a.R = LocaleController.getString(R.string.ChromeCrashTitle);
-            alertDialog$Builder.a.T = AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ChromeCrashMessage), new m0(this, 2));
-            alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
-            alertDialog$Builder.a.setOnDismissListener(new t4(this, 7));
-            alertDialog$Builder.o();
-            return true;
-        } catch (Exception e) {
-            FileLog.e(e);
-            return false;
-        }
-    }
-
-    @Override // android.webkit.WebViewClient
-    public final WebResourceResponse shouldInterceptRequest(WebView webView, WebResourceRequest webResourceRequest) {
-        HttpURLConnection httpURLConnection;
-        int i10;
-        StringBuilder sb2 = new StringBuilder("shouldInterceptRequest ");
-        HttpURLConnection httpURLConnection2 = null;
-        sb2.append(webResourceRequest == null ? null : webResourceRequest.getUrl());
-        String sb3 = sb2.toString();
-        z0 z0Var = this.e;
-        z0Var.c(sb3);
-        if (webResourceRequest != null && c1.p(webResourceRequest.getUrl())) {
-            z0Var.c("proxying ton");
-            this.a = false;
-            return c1.M(webResourceRequest.getMethod(), webResourceRequest.getUrl().toString(), webResourceRequest.getRequestHeaders());
-        }
-        if (!this.c && z0Var.f != null && this.a) {
-            try {
-                httpURLConnection = (HttpURLConnection) new URL(webResourceRequest.getUrl().toString()).openConnection();
-            } catch (Exception e) {
-                e = e;
-            }
-            try {
-                httpURLConnection.setRequestMethod(webResourceRequest.getMethod());
-                if (webResourceRequest.getRequestHeaders() != null) {
-                    for (Map.Entry<String, String> entry : webResourceRequest.getRequestHeaders().entrySet()) {
-                        httpURLConnection.setRequestProperty(entry.getKey(), entry.getValue());
-                    }
-                }
-                httpURLConnection.connect();
-                HashMap hashMap = new HashMap();
-                Iterator<Map.Entry<String, List<String>>> it = httpURLConnection.getHeaderFields().entrySet().iterator();
-                while (true) {
-                    if (!it.hasNext()) {
+    @Override // q0.a
+    public final void accept(Object obj) {
+        Boolean bool = (Boolean) obj;
+        switch (this.a) {
+            case 0:
+                u0 u0Var = this.b;
+                if (u0Var.a != null) {
+                    u0Var.a = null;
+                    boolean booleanValue = bool.booleanValue();
+                    PermissionRequest permissionRequest = this.c;
+                    if (!booleanValue) {
+                        permissionRequest.deny();
+                        break;
+                    } else {
+                        a1.a(u0Var.e.Q, new String[]{"android.permission.RECORD_AUDIO"}, new n0(u0Var, permissionRequest, this.d, 2));
                         break;
                     }
-                    Map.Entry<String, List<String>> next = it.next();
-                    String key = next.getKey();
-                    if (key != null) {
-                        hashMap.put(key, TextUtils.join(", ", next.getValue()));
-                        if (!z0Var.E && ("cross-origin-resource-policy".equals(key.toLowerCase()) || "cross-origin-embedder-policy".equals(key.toLowerCase()))) {
-                            Iterator<String> it2 = next.getValue().iterator();
-                            while (true) {
-                                if (!it2.hasNext()) {
-                                    break;
-                                }
-                                String next2 = it2.next();
-                                if (next2 != null && !"unsafe-none".equals(next2.toLowerCase()) && !"same-site".equals(next2.toLowerCase())) {
-                                    z0Var.c("<!> dangerous header CORS policy: " + key + ": " + next2 + " from " + webResourceRequest.getMethod() + " " + webResourceRequest.getUrl());
-                                    z0Var.E = true;
-                                    AndroidUtilities.runOnUIThread(new m0(this, 1));
-                                    break;
-                                }
-                            }
-                        }
-                    }
                 }
-                String contentType = httpURLConnection.getContentType();
-                String contentEncoding = httpURLConnection.getContentEncoding();
-                if (contentType.indexOf("; ") >= 0) {
-                    String[] split = contentType.split("; ");
-                    if (!TextUtils.isEmpty(split[0])) {
-                        contentType = split[0];
-                    }
-                    for (i10 = 1; i10 < split.length; i10++) {
-                        if (split[i10].startsWith("charset=")) {
-                            contentEncoding = split[i10].substring(8);
-                        }
-                    }
-                }
-                this.a = false;
-                return new WebResourceResponse(contentType, contentEncoding, httpURLConnection.getResponseCode(), httpURLConnection.getResponseMessage(), hashMap, httpURLConnection.getInputStream());
-            } catch (Exception e7) {
-                e = e7;
-                httpURLConnection2 = httpURLConnection;
-                FileLog.e(e);
-                if (httpURLConnection2 != null) {
-                    httpURLConnection2.disconnect();
-                }
-                this.a = false;
-                return super.shouldInterceptRequest(webView, webResourceRequest);
-            }
-        }
-        this.a = false;
-        return super.shouldInterceptRequest(webView, webResourceRequest);
-    }
-
-    @Override // android.webkit.WebViewClient
-    public final boolean shouldOverrideUrlLoading(WebView webView, String str) {
-        h0 h0Var;
-        if (str != null && !str.trim().startsWith("sms:")) {
-            boolean startsWith = str.trim().startsWith("tel:");
-            Context context = this.d;
-            z0 z0Var = this.e;
-            if (startsWith) {
-                if (z0Var.f != null) {
-                    h0 h0Var2 = z0Var.Q.c;
-                    if (h0Var2 != null) {
-                        h0Var2.j();
+                break;
+            case 1:
+                u0 u0Var2 = this.b;
+                if (u0Var2.a != null) {
+                    u0Var2.a = null;
+                    boolean booleanValue2 = bool.booleanValue();
+                    PermissionRequest permissionRequest2 = this.c;
+                    if (!booleanValue2) {
+                        permissionRequest2.deny();
+                        break;
                     } else {
-                        Runnable runnable = z0Var.U;
-                        if (runnable != null) {
-                            runnable.run();
-                            z0Var.U = null;
-                        }
+                        a1.a(u0Var2.e.Q, new String[]{"android.permission.CAMERA"}, new n0(u0Var2, permissionRequest2, this.d, 3));
+                        break;
                     }
                 }
-                pf.d.r(context, str);
-                return true;
-            }
-            Uri parse = Uri.parse(str);
-            boolean z10 = this.c;
-            if (!z10) {
-                if (pf.d.k(context, str, true)) {
-                    z0Var.c("shouldOverrideUrlLoading(" + str + ") = true (openInExternalBrowser)");
-                    if (!z0Var.b && !z0Var.canGoBack()) {
-                        h0 h0Var3 = z0Var.Q.c;
-                        if (h0Var3 != null) {
-                            h0Var3.j();
-                            return true;
-                        }
-                        Runnable runnable2 = z0Var.U;
-                        if (runnable2 != null) {
-                            runnable2.run();
-                            z0Var.U = null;
-                        }
-                    }
-                    return true;
+                break;
+            case 2:
+                u0 u0Var3 = this.b;
+                u0Var3.getClass();
+                boolean booleanValue3 = bool.booleanValue();
+                PermissionRequest permissionRequest3 = this.c;
+                if (!booleanValue3) {
+                    permissionRequest3.deny();
+                    break;
+                } else {
+                    permissionRequest3.grant(new String[]{this.d});
+                    u0Var3.e.Q.T = true;
+                    break;
                 }
-                if (str.startsWith("intent://") || (parse != null && parse.getScheme() != null && parse.getScheme().equalsIgnoreCase("intent"))) {
-                    try {
-                        String stringExtra = Intent.parseUri(parse.toString(), 1).getStringExtra("browser_fallback_url");
-                        if (!TextUtils.isEmpty(stringExtra)) {
-                            z0Var.loadUrl(stringExtra);
-                            return true;
-                        }
-                    } catch (Exception e) {
-                        FileLog.e(e);
-                    }
+            default:
+                u0 u0Var4 = this.b;
+                u0Var4.getClass();
+                boolean booleanValue4 = bool.booleanValue();
+                PermissionRequest permissionRequest4 = this.c;
+                if (!booleanValue4) {
+                    permissionRequest4.deny();
+                    break;
+                } else {
+                    permissionRequest4.grant(new String[]{this.d});
+                    u0Var4.e.Q.T = true;
+                    break;
                 }
-                if (parse != null && parse.getScheme() != null && !"https".equals(parse.getScheme()) && !"http".equals(parse.getScheme()) && !"tonsite".equals(parse.getScheme())) {
-                    z0Var.c("shouldOverrideUrlLoading(" + str + ") = true (browser open)");
-                    pf.d.o(z0Var.getContext(), parse, true, true);
-                    return true;
-                }
-            }
-            if (z0Var.Q == null || !pf.d.e(parse, false, null)) {
-                if (parse != null) {
-                    parse.toString();
-                }
-                z0Var.c("shouldOverrideUrlLoading(" + str + ") = false");
-                return false;
-            }
-            if (z10 || !"1".equals(parse.getQueryParameter("embed")) || !"t.me".equals(parse.getAuthority())) {
-                if (MessagesController.getInstance(z0Var.Q.M).webAppAllowedProtocols != null && MessagesController.getInstance(z0Var.Q.M).webAppAllowedProtocols.contains(parse.getScheme())) {
-                    c1 c1Var = z0Var.Q;
-                    if (z0Var.f != null) {
-                        h0 h0Var4 = c1Var.c;
-                        if (h0Var4 != null) {
-                            h0Var4.j();
-                        } else {
-                            Runnable runnable3 = z0Var.U;
-                            if (runnable3 != null) {
-                                runnable3.run();
-                                z0Var.U = null;
-                            }
-                        }
-                        c1 c1Var2 = z0Var.f.Q;
-                        if (c1Var2 != null && (h0Var = c1Var2.c) != null) {
-                            h0Var.b();
-                        }
-                    }
-                    c1Var.G(parse, null, !c1Var.o0, false, false);
-                }
-                z0Var.c("shouldOverrideUrlLoading(" + str + ") = true");
-                return true;
-            }
         }
-        return false;
-    }
-
-    @Override // android.webkit.WebViewClient
-    public final void onReceivedError(WebView webView, int i10, String str, String str2) {
-        this.e.c("onReceivedError: " + i10 + " " + str + " url=" + str2);
-        super.onReceivedError(webView, i10, str, str2);
-    }
-
-    @Override // android.webkit.WebViewClient
-    public final WebResourceResponse shouldInterceptRequest(WebView webView, String str) {
-        z0 z0Var = this.e;
-        z0Var.c("shouldInterceptRequest " + str);
-        boolean z10 = c1.P0;
-        if (str != null && c1.p(Uri.parse(str))) {
-            z0Var.c("proxying ton");
-            return c1.M("GET", str, null);
-        }
-        return super.shouldInterceptRequest(webView, str);
     }
 }

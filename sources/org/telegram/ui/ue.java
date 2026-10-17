@@ -1,55 +1,105 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ue implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class ue implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ fo b;
+    public final /* synthetic */ sn b;
+    public final /* synthetic */ MessageObject c;
 
-    public /* synthetic */ ue(fo foVar, int i10) {
+    public /* synthetic */ ue(sn snVar, MessageObject messageObject, int i10) {
         this.a = i10;
-        this.b = foVar;
+        this.b = snVar;
+        this.c = messageObject;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        TLRPC.WebPage webPage;
         switch (this.a) {
             case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                fo foVar = this.b;
-                foVar.K8 = floatValue;
-                xm xmVar = foVar.X0;
-                if (xmVar != null) {
-                    xmVar.invalidate();
-                    foVar.x0.invalidate();
-                    break;
+                MessageObject messageObject = this.c;
+                TLRPC.MessageMedia messageMedia = messageObject.messageOwner.media;
+                if (messageMedia != null && (webPage = messageMedia.webpage) != null && webPage.cached_page != null) {
+                    LaunchActivity launchActivity = LaunchActivity.H1;
+                    if (launchActivity == null || launchActivity.P() == null || LaunchActivity.H1.P().l(messageObject) == null) {
+                        this.b.createArticleViewer(false).N(messageObject, null, null, null);
+                        break;
+                    }
                 }
                 break;
             case 1:
-                fo foVar2 = this.b;
-                foVar2.getClass();
-                foVar2.i3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                foVar2.pc();
-                break;
+                sn snVar = this.b;
+                snVar.getClass();
+                MessageObject messageObject2 = this.c;
+                TLRPC.Message message = messageObject2.messageOwner;
+                int i10 = message.ttl;
+                boolean z10 = i10 != Integer.MAX_VALUE;
+                int i11 = i10 == Integer.MAX_VALUE ? 0 : i10;
+                message.destroyTime = snVar.getConnectionsManager().getCurrentTime() + i11;
+                messageObject2.messageOwner.destroyTimeMillis = snVar.getConnectionsManager().getCurrentTimeMillis() + (i11 * 1000);
+                if (snVar.h == null) {
+                    snVar.getMessagesController().markMessageAsRead2(snVar.T5, messageObject2.getId(), null, i11, 0L, z10);
+                    break;
+                } else {
+                    snVar.getMessagesController().markMessageAsRead(snVar.T5, messageObject2.messageOwner.random_id, i11);
+                    break;
+                }
             case 2:
-                fo foVar3 = this.b;
-                foVar3.getClass();
-                foVar3.i3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                foVar3.pc();
+                sn snVar2 = this.b;
+                snVar2.getClass();
+                MessageObject messageObject3 = this.c;
+                snVar2.bb(messageObject3.getReplyMsgId(), messageObject3.messageOwner.id, true, messageObject3.getDialogId() == snVar2.L6 ? 1 : 0, false, 0, null, ((TLRPC.TL_messageActionPollAppendAnswer) messageObject3.messageOwner.action).answer.option, null);
                 break;
             case 3:
-                fo foVar4 = this.b;
-                foVar4.getClass();
-                foVar4.Ea = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                foVar4.t9();
+                sn snVar3 = this.b;
+                snVar3.getClass();
+                MessageObject messageObject4 = this.c;
+                snVar3.bb(messageObject4.getReplyMsgId(), messageObject4.messageOwner.id, true, messageObject4.getDialogId() == snVar3.L6 ? 1 : 0, false, 0, null, null, null);
+                break;
+            case 4:
+                sn snVar4 = this.b;
+                snVar4.getClass();
+                MessageObject messageObject5 = this.c;
+                snVar4.j(messageObject5.getReplyMsgId(), messageObject5.messageOwner.id, true, messageObject5.getDialogId() == snVar4.L6 ? 1 : 0, false, 0);
+                break;
+            case 5:
+                int id2 = this.c.getId();
+                sn snVar5 = this.b;
+                snVar5.bb(id2, 0, true, 0, true, 0, null, null, new mf(snVar5, 23));
+                if (snVar5.h6.isEmpty()) {
+                    snVar5.Pb(false);
+                    break;
+                }
+                break;
+            case 6:
+                sn snVar6 = this.b;
+                snVar6.getClass();
+                MessageObject messageObject6 = this.c;
+                if (!messageObject6.isVideo()) {
+                    MediaController.getInstance().playMessage(messageObject6);
+                    break;
+                } else {
+                    snVar6.ma(null, messageObject6);
+                    break;
+                }
+            case 7:
+                sn snVar7 = this.b;
+                snVar7.getMessagesController().pinMessage(snVar7.e, snVar7.f, this.c.getId(), true, false, false);
+                snVar7.A3 = null;
                 break;
             default:
-                fo foVar5 = this.b;
-                foVar5.getClass();
-                foVar5.Ea = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                foVar5.t9();
+                sn snVar8 = this.b;
+                org.telegram.ui.Components.xc.a0(snVar8).c(LocaleController.getString(R.string.AdHidden)).j();
+                MessageObject messageObject7 = this.c;
+                snVar8.Ja(messageObject7);
+                snVar8.La(messageObject7);
                 break;
         }
     }

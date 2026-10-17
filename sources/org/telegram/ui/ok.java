@@ -1,65 +1,24 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.os.Bundle;
-import android.view.View;
-import java.util.WeakHashMap;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class ok extends org.telegram.ui.Components.d91 {
-    public final /* synthetic */ Context a;
-    public final /* synthetic */ fo b;
+public final class ok extends org.telegram.ui.Components.ll0 {
+    public final /* synthetic */ sn l;
 
-    public ok(fo foVar, Context context) {
-        this.b = foVar;
-        this.a = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ok(sn snVar, pj pjVar, sj sjVar) {
+        super(pjVar, sjVar);
+        this.l = snVar;
     }
 
-    @Override // org.telegram.ui.Components.d91
-    public final void b(View view, int i10, int i11) {
-        if (view instanceof ho) {
-            ((ho) view).a.Nc(this.b.u3);
+    public final void e(int i10) {
+        if (this.l.Qa) {
+            if (i10 == 0) {
+                i10 = 1;
+            } else if (i10 == 1) {
+                i10 = 0;
+            }
         }
-        WeakHashMap weakHashMap = r0.i0.a;
-        r0.y.c(view);
-    }
-
-    @Override // org.telegram.ui.Components.d91
-    public final View d(int i10) {
-        Context context = this.a;
-        fo foVar = this.b;
-        if (i10 == 0) {
-            return new sn(foVar, context);
-        }
-        Bundle bundle = new Bundle();
-        bundle.putInt("chatMode", 7);
-        bundle.putInt("searchType", i10);
-        bundle.putString("searchHashtag", foVar.u3);
-        nk nkVar = new nk(context, foVar.getParentLayout(), bundle, 0);
-        nkVar.h = false;
-        go goVar = nkVar.a;
-        goVar.L.a = foVar.L;
-        goVar.ca = foVar.ea;
-        goVar.da = foVar;
-        goVar.V8 = new g(this, 13);
-        return nkVar;
-    }
-
-    @Override // org.telegram.ui.Components.d91
-    public final int e() {
-        return 3;
-    }
-
-    @Override // org.telegram.ui.Components.d91
-    public final CharSequence g(int i10) {
-        return i10 != 1 ? i10 != 2 ? LocaleController.getString(R.string.SearchThisChat) : LocaleController.getString(R.string.SearchPublicPosts) : LocaleController.getString(R.string.SearchMyMessages);
-    }
-
-    @Override // org.telegram.ui.Components.d91
-    public final int h(int i10) {
-        return i10;
+        this.b = i10;
     }
 }

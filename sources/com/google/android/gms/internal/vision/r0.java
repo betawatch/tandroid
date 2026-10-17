@@ -1,9 +1,9 @@
 package com.google.android.gms.internal.vision;
 
-import com.google.android.gms.internal.play_billing.k3;
+import com.google.android.gms.internal.cast.a6;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class r0 extends e1 {
     public static final Logger f = Logger.getLogger(r0.class.getName());
@@ -45,7 +45,7 @@ public final class r0 extends e1 {
     public static int J(int i10, q0 q0Var) {
         int T = T(i10 << 3);
         int m10 = q0Var.m();
-        return k3.d(m10, m10, T);
+        return a6.u(m10, m10, T);
     }
 
     public static int N(int i10, long j10) {

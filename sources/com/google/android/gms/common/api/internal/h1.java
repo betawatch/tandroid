@@ -2,63 +2,119 @@ package com.google.android.gms.common.api.internal;
 
 import android.os.DeadObjectException;
 import android.os.RemoteException;
-import android.util.Log;
 import com.google.android.gms.common.api.Status;
-import java.util.Map;
+import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class h1 extends k1 {
-    public final e b;
+public final class h1 extends v0 {
+    public final TaskCompletionSource b;
+    public final /* synthetic */ int c;
+    public final Object d;
 
-    public h1(int i10, e eVar) {
+    public h1(int i10, TaskCompletionSource taskCompletionSource) {
         super(i10);
-        this.b = eVar;
+        this.b = taskCompletionSource;
     }
 
-    @Override // com.google.android.gms.common.api.internal.k1
+    @Override // com.google.android.gms.common.api.internal.j1
     public final void a(Status status) {
-        try {
-            this.b.o(status);
-        } catch (IllegalStateException e) {
-            Log.w("ApiCallRunner", "Exception reporting failure", e);
-        }
+        this.b.trySetException(new com.google.android.gms.common.api.f(status));
     }
 
-    @Override // com.google.android.gms.common.api.internal.k1
+    @Override // com.google.android.gms.common.api.internal.j1
     public final void b(Exception exc) {
-        try {
-            this.b.o(new Status(10, a1.g.D(exc.getClass().getSimpleName(), ": ", exc.getLocalizedMessage()), null, null));
-        } catch (IllegalStateException e) {
-            Log.w("ApiCallRunner", "Exception reporting failure", e);
-        }
+        this.b.trySetException(exc);
     }
 
-    @Override // com.google.android.gms.common.api.internal.k1
-    public final void c(p0 p0Var) {
+    @Override // com.google.android.gms.common.api.internal.j1
+    public final void c(o0 o0Var) {
         try {
-            e eVar = this.b;
-            com.google.android.gms.common.api.c cVar = p0Var.b;
-            eVar.getClass();
-            try {
-                eVar.n(cVar);
-            } catch (DeadObjectException e) {
-                eVar.o(new Status(8, e.getLocalizedMessage(), null, null));
-                throw e;
-            } catch (RemoteException e7) {
-                eVar.o(new Status(8, e7.getLocalizedMessage(), null, null));
-            }
+            h(o0Var);
+        } catch (DeadObjectException e) {
+            a(j1.e(e));
+            throw e;
+        } catch (RemoteException e7) {
+            a(j1.e(e7));
         } catch (RuntimeException e10) {
-            b(e10);
+            this.b.trySetException(e10);
         }
     }
 
-    @Override // com.google.android.gms.common.api.internal.k1
-    public final void d(g1 g1Var, boolean z10) {
-        Boolean valueOf = Boolean.valueOf(z10);
-        Map map = (Map) g1Var.a;
-        e eVar = this.b;
-        map.put(eVar, valueOf);
-        eVar.b(new y(g1Var, eVar));
+    @Override // com.google.android.gms.common.api.internal.j1
+    public final /* bridge */ /* synthetic */ void d(f1 f1Var, boolean z10) {
+        int i10 = this.c;
+    }
+
+    @Override // com.google.android.gms.common.api.internal.v0
+    public final boolean f(o0 o0Var) {
+        switch (this.c) {
+            case 0:
+                return ((a1) this.d).a.a;
+            default:
+                a1 a1Var = (a1) o0Var.f.get((n) this.d);
+                return a1Var != null && a1Var.a.a;
+        }
+    }
+
+    @Override // com.google.android.gms.common.api.internal.v0
+    public final k6.c[] g(o0 o0Var) {
+        switch (this.c) {
+            case 0:
+                return (k6.c[]) ((a1) this.d).a.d;
+            default:
+                a1 a1Var = (a1) o0Var.f.get((n) this.d);
+                if (a1Var == null) {
+                    return null;
+                }
+                return (k6.c[]) a1Var.a.d;
+        }
+    }
+
+    public final void h(o0 o0Var) {
+        switch (this.c) {
+            case 0:
+                e2.w wVar = ((a1) this.d).a;
+                ((r) ((ai.a) wVar.e).c).accept(o0Var.b, this.b);
+                n nVar = ((p) ((a1) this.d).a.c).c;
+                if (nVar != null) {
+                    o0Var.f.put(nVar, (a1) this.d);
+                    break;
+                }
+                break;
+            default:
+                TaskCompletionSource taskCompletionSource = this.b;
+                a1 a1Var = (a1) o0Var.f.remove((n) this.d);
+                if (a1Var == null) {
+                    taskCompletionSource.trySetResult(Boolean.FALSE);
+                    break;
+                } else {
+                    ((r) ((ai.a) a1Var.b.b).d).accept(o0Var.b, taskCompletionSource);
+                    p pVar = (p) a1Var.a.c;
+                    pVar.b = null;
+                    pVar.c = null;
+                    break;
+                }
+        }
+    }
+
+    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
+    public h1(n nVar, TaskCompletionSource taskCompletionSource) {
+        this(4, taskCompletionSource);
+        this.c = 1;
+        this.d = nVar;
+    }
+
+    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
+    public h1(a1 a1Var, TaskCompletionSource taskCompletionSource) {
+        this(3, taskCompletionSource);
+        this.c = 0;
+        this.d = a1Var;
+    }
+
+    private final /* bridge */ /* synthetic */ void i(f1 f1Var, boolean z10) {
+    }
+
+    private final /* bridge */ /* synthetic */ void j(f1 f1Var, boolean z10) {
     }
 }

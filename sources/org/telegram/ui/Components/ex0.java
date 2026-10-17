@@ -1,39 +1,65 @@
 package org.telegram.ui.Components;
 
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ProfileActivity;
+import org.telegram.messenger.DialogObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ex0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ hx0 b;
+public final class ex0 {
+    public final p5 a;
+    public Drawable b;
 
-    public /* synthetic */ ex0(hx0 hx0Var, int i10) {
-        this.a = i10;
-        this.b = hx0Var;
+    public ex0(FrameLayout frameLayout) {
+        this(18, frameLayout);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                hx0 hx0Var = this.b;
-                hx0Var.invalidate();
-                AndroidUtilities.runOnUIThread(new ex0(hx0Var, 1));
-                break;
-            default:
-                hx0 hx0Var2 = this.b;
-                gx0 gx0Var = hx0Var2.e;
-                if (gx0Var != null) {
-                    hx0Var2.getVisibilityFactor();
-                    ProfileActivity profileActivity = ((org.telegram.ui.py0) gx0Var).b;
-                    org.telegram.ui.ActionBar.h5[] h5VarArr = profileActivity.r;
-                    h5VarArr[1].setTranslationX(profileActivity.W3(profileActivity.Z5));
-                    h5VarArr[1].setTranslationY(profileActivity.X3(profileActivity.a6));
-                    break;
-                }
-                break;
+    public final p5 a(TLRPC.User user, TLRPC.Chat chat, int i10, boolean z10) {
+        p5 p5Var = this.a;
+        if (chat != null && chat.verified) {
+            Drawable drawable = this.b;
+            if (drawable == null) {
+                drawable = new zq(org.telegram.ui.ActionBar.h6.f1, org.telegram.ui.ActionBar.h6.i1);
+            }
+            this.b = drawable;
+            p5Var.g(drawable, z10);
+            p5Var.k(null);
+            return p5Var;
         }
+        if (chat != null && DialogObject.getEmojiStatusDocumentId(chat.emoji_status) != 0) {
+            p5Var.j(DialogObject.getEmojiStatusDocumentId(chat.emoji_status), z10);
+            p5Var.k(Integer.valueOf(i10));
+            return p5Var;
+        }
+        if (user != null && user.verified) {
+            Drawable drawable2 = this.b;
+            if (drawable2 == null) {
+                drawable2 = new zq(org.telegram.ui.ActionBar.h6.f1, org.telegram.ui.ActionBar.h6.i1);
+            }
+            this.b = drawable2;
+            p5Var.g(drawable2, z10);
+            p5Var.k(null);
+            return p5Var;
+        }
+        if (user != null && DialogObject.getEmojiStatusDocumentId(user.emoji_status) != 0) {
+            p5Var.j(DialogObject.getEmojiStatusDocumentId(user.emoji_status), z10);
+            p5Var.k(Integer.valueOf(i10));
+            return p5Var;
+        }
+        if (user == null || !user.premium) {
+            p5Var.g(null, z10);
+            p5Var.k(null);
+            return p5Var;
+        }
+        p5Var.g(sg.a1.d().e, z10);
+        p5Var.k(Integer.valueOf(i10));
+        return p5Var;
+    }
+
+    public ex0(int i10, View view) {
+        this.a = new p5(AndroidUtilities.dp(i10), view);
     }
 }

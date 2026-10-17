@@ -1,10 +1,10 @@
 package j2;
 
+import b2.n1;
 import b2.o1;
-import b2.p1;
 import u2.g0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class g {
     public final String a;
@@ -28,7 +28,7 @@ public final class g {
 
     public final boolean a(a aVar) {
         g0 g0Var = aVar.d;
-        p1 p1Var = aVar.b;
+        o1 o1Var = aVar.b;
         if (g0Var == null) {
             return this.b != aVar.c;
         }
@@ -44,8 +44,8 @@ public final class g {
             return false;
         }
         int i10 = g0Var2.b;
-        int b10 = p1Var.b(g0Var.a);
-        int b11 = p1Var.b(g0Var2.a);
+        int b10 = o1Var.b(g0Var.a);
+        int b11 = o1Var.b(g0Var2.a);
         if (g0Var.d < g0Var2.d || b10 < b11) {
             return false;
         }
@@ -71,23 +71,23 @@ public final class g {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean b(p1 p1Var, p1 p1Var2) {
+    public final boolean b(o1 o1Var, o1 o1Var2) {
         g0 g0Var;
         int i10 = this.b;
-        if (i10 < p1Var.o()) {
+        if (i10 < o1Var.o()) {
             h hVar = this.g;
-            o1 o1Var = hVar.a;
-            p1Var.n(i10, o1Var);
-            for (int i11 = o1Var.n; i11 <= o1Var.o; i11++) {
-                int b10 = p1Var2.b(p1Var.l(i11));
+            n1 n1Var = hVar.a;
+            o1Var.n(i10, n1Var);
+            for (int i11 = n1Var.n; i11 <= n1Var.o; i11++) {
+                int b10 = o1Var2.b(o1Var.l(i11));
                 if (b10 != -1) {
-                    i10 = p1Var2.f(b10, hVar.b, false).c;
+                    i10 = o1Var2.f(b10, hVar.b, false).c;
                     break;
                 }
             }
             i10 = -1;
         }
         this.b = i10;
-        return i10 != -1 && ((g0Var = this.d) == null || p1Var2.b(g0Var.a) != -1);
+        return i10 != -1 && ((g0Var = this.d) == null || o1Var2.b(g0Var.a) != -1);
     }
 }

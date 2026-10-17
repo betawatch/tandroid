@@ -1,32 +1,58 @@
 package org.telegram.ui;
 
+import android.content.Context;
+import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class cj implements NotificationCenter.NotificationCenterDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ bi.n8 b;
-    public final /* synthetic */ fo c;
-    public final /* synthetic */ fo d;
+public final class cj extends org.telegram.ui.Components.r40 {
+    public final /* synthetic */ int I;
 
-    public cj(fo foVar, int i10, bi.n8 n8Var, fo foVar2) {
-        this.d = foVar;
-        this.a = i10;
-        this.b = n8Var;
-        this.c = foVar2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ cj(int i10, int i11, Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
+        super(i10, context, d6Var, z10);
+        this.I = i11;
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        int i12;
-        int i13 = NotificationCenter.messagesDidLoad;
-        if (i10 == i13 && ((Integer) objArr[10]).intValue() == this.a) {
-            this.b.run();
-            AndroidUtilities.runOnUIThread(new i2.z(this.c, i10, i11, objArr), 50L);
-            i12 = ((org.telegram.ui.ActionBar.m2) this.d).currentAccount;
-            NotificationCenter.getInstance(i12).removeObserver(this, i13);
+    @Override // org.telegram.ui.Components.r40
+    public int c() {
+        switch (this.I) {
+            case 0:
+                return AndroidUtilities.dp(56.0f) / 2;
+            default:
+                return super.c();
+        }
+    }
+
+    @Override // android.view.View
+    public void setVisibility(int i10) {
+        switch (this.I) {
+            case 1:
+                super.setVisibility(i10);
+                if (i10 != 0) {
+                    try {
+                        ((ViewGroup) getParent()).removeView(this);
+                        break;
+                    } catch (Exception unused) {
+                        return;
+                    }
+                }
+                break;
+            case 2:
+                super.setVisibility(i10);
+                if (i10 != 0) {
+                    try {
+                        ((ViewGroup) getParent()).removeView(this);
+                        break;
+                    } catch (Exception unused2) {
+                        return;
+                    }
+                }
+                break;
+            default:
+                super.setVisibility(i10);
+                break;
         }
     }
 }

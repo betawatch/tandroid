@@ -3,61 +3,40 @@ package e0;
 import android.app.PendingIntent;
 import android.os.Bundle;
 import androidx.core.graphics.drawable.IconCompat;
-import java.util.ArrayList;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class h {
-    public final IconCompat a;
-    public final CharSequence b;
-    public final PendingIntent c;
-    public boolean d;
-    public final Bundle e;
-    public ArrayList f;
-    public int g;
-    public boolean h;
+    public final Bundle a;
+    public IconCompat b;
+    public final o0[] c;
+    public final boolean d;
+    public final boolean e;
+    public final int f;
+    public final int g;
+    public final CharSequence h;
+    public final PendingIntent i;
 
-    public h(int i10, String str, PendingIntent pendingIntent) {
-        IconCompat e = i10 == 0 ? null : IconCompat.e(null, "", i10);
-        Bundle bundle = new Bundle();
-        this.d = true;
-        this.h = true;
-        this.a = e;
-        this.b = r.d(str);
-        this.c = pendingIntent;
-        this.e = bundle;
-        this.f = null;
-        this.d = true;
-        this.g = 0;
-        this.h = true;
-    }
-
-    public final void a(p0 p0Var) {
-        if (this.f == null) {
-            this.f = new ArrayList();
+    public h(IconCompat iconCompat, CharSequence charSequence, PendingIntent pendingIntent, Bundle bundle, o0[] o0VarArr, o0[] o0VarArr2, boolean z10, int i10, boolean z11) {
+        this.e = true;
+        this.b = iconCompat;
+        if (iconCompat != null && iconCompat.i() == 2) {
+            this.g = iconCompat.g();
         }
-        this.f.add(p0Var);
+        this.h = q.d(charSequence);
+        this.i = pendingIntent;
+        this.a = bundle == null ? new Bundle() : bundle;
+        this.c = o0VarArr;
+        this.d = z10;
+        this.f = i10;
+        this.e = z11;
     }
 
-    public final i b() {
-        ArrayList arrayList = new ArrayList();
-        ArrayList arrayList2 = new ArrayList();
-        ArrayList arrayList3 = this.f;
-        if (arrayList3 != null) {
-            int size = arrayList3.size();
-            int i10 = 0;
-            while (i10 < size) {
-                Object obj = arrayList3.get(i10);
-                i10++;
-                p0 p0Var = (p0) obj;
-                p0Var.getClass();
-                arrayList2.add(p0Var);
-            }
+    public final IconCompat a() {
+        int i10;
+        if (this.b == null && (i10 = this.g) != 0) {
+            this.b = IconCompat.e(null, "", i10);
         }
-        return new i(this.a, this.b, this.c, this.e, arrayList2.isEmpty() ? null : (p0[]) arrayList2.toArray(new p0[arrayList2.size()]), arrayList.isEmpty() ? null : (p0[]) arrayList.toArray(new p0[arrayList.size()]), this.d, this.g, this.h);
-    }
-
-    public final void c() {
-        this.d = true;
+        return this.b;
     }
 }

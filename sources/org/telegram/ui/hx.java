@@ -1,40 +1,78 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.ui.Components.FragmentContextView;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class hx extends FragmentContextView {
-    public final /* synthetic */ int R0;
-    public final /* synthetic */ yy S0;
+public final class hx extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ ey c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hx(yy yyVar, Context context, yy yyVar2, int i10) {
-        super(context, yyVar2, true);
-        this.R0 = i10;
-        switch (i10) {
-            case 1:
-                this.S0 = yyVar;
-                super(context, yyVar2, false);
-                break;
-            default:
-                this.S0 = yyVar;
-                break;
-        }
+    public /* synthetic */ hx(ey eyVar, float f7, int i10) {
+        this.a = i10;
+        this.c = eyVar;
+        this.b = f7;
     }
 
-    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
-    public final void setVisibility(int i10) {
-        switch (this.R0) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
             case 0:
-                yy yyVar = this.S0;
-                yyVar.J1.i(yyVar.G1, i10 == 0, true);
+                super.onAnimationEnd(animator);
+                ey eyVar = this.c;
+                eyVar.v3 = null;
+                int i10 = 0;
+                eyVar.O = false;
+                eyVar.Q = true;
+                eyVar.R = true;
+                eyVar.fragmentView.invalidate();
+                eyVar.y3 = -(AndroidUtilities.dp((eyVar.K ? 81 : 0) + 48) - this.b);
+                eyVar.e0[0].setTranslationY(0.0f);
+                while (true) {
+                    dy[] dyVarArr = eyVar.e0;
+                    if (i10 >= dyVarArr.length) {
+                        eyVar.fragmentView.requestLayout();
+                        tx txVar = eyVar.X;
+                        if (txVar != null && eyVar.b.f) {
+                            txVar.r.requestFocus();
+                            AndroidUtilities.showKeyboard(eyVar.X.r);
+                            break;
+                        }
+                    } else {
+                        dy dyVar = dyVarArr[i10];
+                        if (dyVar != null) {
+                            dyVar.a.requestLayout();
+                        }
+                        i10++;
+                    }
+                }
                 break;
             default:
-                yy yyVar2 = this.S0;
-                yyVar2.J1.i(yyVar2.I1, i10 == 0, true);
-                break;
+                super.onAnimationEnd(animator);
+                ey eyVar2 = this.c;
+                eyVar2.v3 = null;
+                eyVar2.P = 0;
+                eyVar2.O = true;
+                eyVar2.y3 = AndroidUtilities.dp((eyVar2.K ? 81 : 0) + 48) - this.b;
+                eyVar2.e0[0].setTranslationY(0.0f);
+                int i11 = 0;
+                while (true) {
+                    dy[] dyVarArr2 = eyVar2.e0;
+                    if (i11 >= dyVarArr2.length) {
+                        eyVar2.E0.l(1.0f, false);
+                        eyVar2.fragmentView.requestLayout();
+                        break;
+                    } else {
+                        dy dyVar2 = dyVarArr2[i11];
+                        if (dyVar2 != null) {
+                            dyVar2.a.requestLayout();
+                        }
+                        i11++;
+                    }
+                }
         }
     }
 }

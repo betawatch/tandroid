@@ -10,16 +10,16 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
+import mi.q;
 import w7.ga;
 import w7.ha;
 import w7.oa;
 import w7.pa;
-import x9.l;
-import x9.n;
-import x9.p;
-import x9.s;
+import x9.m;
+import x9.o;
+import x9.r;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class f implements Callable {
     public final /* synthetic */ int a;
@@ -36,51 +36,48 @@ public final class f implements Callable {
     public final Object call() {
         ha haVar;
         int i10 = this.a;
+        boolean z10 = false;
         Object obj = this.c;
         Object obj2 = this.b;
         switch (i10) {
             case 0:
                 return (g) ((ShortcutInfoCompatSaverImpl) obj).b.get((String) obj2);
             case 1:
-                n3.b bVar = (n3.b) obj;
-                n nVar = (n) bVar.c;
+                n2.e eVar = (n2.e) obj;
+                m mVar = (m) eVar.c;
                 Boolean bool = (Boolean) obj2;
-                if (!bool.booleanValue()) {
-                    if (Log.isLoggable("FirebaseCrashlytics", 2)) {
-                        Log.v("FirebaseCrashlytics", "Deleting cached crash reports...", null);
+                if (bool.booleanValue()) {
+                    if (Log.isLoggable("FirebaseCrashlytics", 3)) {
+                        Log.d("FirebaseCrashlytics", "Sending cached crash reports...", null);
                     }
-                    Iterator it = ca.c.e(nVar.g.b.listFiles(n.r)).iterator();
-                    while (it.hasNext()) {
-                        ((File) it.next()).delete();
+                    boolean booleanValue = bool.booleanValue();
+                    r rVar = mVar.b;
+                    if (!booleanValue) {
+                        rVar.getClass();
+                        throw new IllegalStateException("An invalid data collection token was used.");
                     }
-                    ca.c cVar = ((ca.b) nVar.m.b).b;
-                    ca.b.a(ca.c.e(cVar.d.listFiles()));
-                    ca.b.a(ca.c.e(cVar.e.listFiles()));
-                    ca.b.a(ca.c.e(cVar.f.listFiles()));
-                    nVar.q.trySetResult(null);
-                    return Tasks.forResult(null);
+                    rVar.h.trySetResult(null);
+                    Executor executor = (Executor) mVar.e.b;
+                    return ((Task) eVar.b).onSuccessTask(executor, new q(this, executor, z10, 28));
                 }
-                if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                    Log.d("FirebaseCrashlytics", "Sending cached crash reports...", null);
+                if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+                    Log.v("FirebaseCrashlytics", "Deleting cached crash reports...", null);
                 }
-                boolean booleanValue = bool.booleanValue();
-                s sVar = nVar.b;
-                if (!booleanValue) {
-                    sVar.getClass();
-                    throw new IllegalStateException("An invalid data collection token was used.");
+                Iterator it = ca.c.e(mVar.g.b.listFiles(m.r)).iterator();
+                while (it.hasNext()) {
+                    ((File) it.next()).delete();
                 }
-                sVar.h.trySetResult(null);
-                Executor executor = (Executor) nVar.e.b;
-                Task task = (Task) bVar.b;
-                l lVar = new l();
-                lVar.b = this;
-                lVar.a = executor;
-                return task.onSuccessTask(executor, lVar);
+                ca.c cVar = ((ca.b) mVar.m.b).b;
+                ca.b.a(ca.c.e(cVar.d.listFiles()));
+                ca.b.a(ca.c.e(cVar.e.listFiles()));
+                ca.b.a(ca.c.e(cVar.f.listFiles()));
+                mVar.q.trySetResult(null);
+                return Tasks.forResult(null);
             case 2:
-                n.a((n) obj, (String) obj2, Boolean.FALSE);
+                m.a((m) obj, (String) obj2, Boolean.FALSE);
                 return null;
             case 3:
-                return p.a((p) obj, (ea.b) obj2);
+                return o.a((o) obj, (ea.b) obj2);
             default:
                 MobileVisionBase mobileVisionBase = (MobileVisionBase) obj2;
                 wb.a aVar = (wb.a) obj;

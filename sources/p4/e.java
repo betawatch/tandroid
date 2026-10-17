@@ -10,8 +10,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
 import android.util.Log;
-import com.google.android.gms.internal.vision.g3;
-import i2.u1;
+import i2.s1;
 import j$.util.DesugarCollections;
 import j$.util.Objects;
 import java.lang.ref.WeakReference;
@@ -25,35 +24,33 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.Executor;
-import ji.d4;
-import ji.w4;
-import m.h3;
-import org.telegram.ui.Cells.c1;
-import org.telegram.ui.Components.pl0;
-import org.telegram.ui.Components.voip.r2;
+import ki.t1;
+import m.g3;
+import org.telegram.ui.Components.ll0;
+import org.telegram.ui.web.z1;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class e {
     public static final /* synthetic */ int F = 0;
     public n A;
     public int B;
-    public h3 C;
+    public g3 C;
     public android.support.v4.media.session.b0 D;
-    public final m.h E;
+    public final l2.f E;
     public final t0 c;
     public v d;
     public q e;
     public com.google.android.gms.internal.cast.q f;
-    public pl0 g;
+    public ll0 g;
     public final Context h;
     public final e2.s n;
-    public final w4 o;
+    public final le.b o;
     public final boolean p;
     public final boolean q;
     public k r;
     public final j0 s;
-    public final u1 t;
+    public final s1 t;
     public z u;
     public v v;
     public v w;
@@ -72,42 +69,43 @@ public final class e {
         Log.isLoggable("GlobalMediaRouter", 3);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x00bf  */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x00c1  */
     /* JADX WARN: Removed duplicated region for block: B:15:0x00e1  */
     /* JADX WARN: Removed duplicated region for block: B:18:0x00f3  */
     /* JADX WARN: Removed duplicated region for block: B:21:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x00c5  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x00c7  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public e(Context context) {
         boolean z10;
-        g3 g3Var;
+        com.google.android.gms.internal.vision.g3 g3Var;
         t0 t0Var;
         e2.s sVar = new e2.s();
         sVar.c = 0;
         sVar.d = 3;
         this.n = sVar;
-        this.o = new w4(this, 18);
-        this.E = new m.h(this, 12);
+        this.o = new le.b(this, 14);
+        this.E = new l2.f(this, 13);
         this.h = context;
         this.p = ((ActivityManager) context.getSystemService("activity")).isLowRamDevice();
         int i10 = Build.VERSION.SDK_INT;
+        int i11 = 1;
         if (i10 >= 30) {
-            int i11 = e0.b;
+            int i12 = e0.b;
             Intent intent = new Intent(context, (Class<?>) e0.class);
             intent.setPackage(context.getPackageName());
             if (context.getPackageManager().queryBroadcastReceivers(intent, 0).size() > 0) {
                 z10 = true;
                 this.q = z10;
-                int i12 = u0.b;
+                int i13 = u0.b;
                 Intent intent2 = new Intent(context, (Class<?>) u0.class);
                 intent2.setPackage(context.getPackageName());
                 context.getPackageManager().queryBroadcastReceivers(intent2, 0).size();
-                this.r = (i10 >= 30 || !z10) ? null : new k(context, new m.l(this));
+                this.r = (i10 >= 30 || !z10) ? null : new k(context, new t1(this, 20));
                 j0 f0Var = i10 < 24 ? new f0(context, this) : new j0(context, this);
                 this.s = f0Var;
-                this.t = new u1(new r2(this, 11));
+                this.t = new s1(new z1(this, i11));
                 a(f0Var, true);
                 g3Var = this.r;
                 if (g3Var != null) {
@@ -134,15 +132,15 @@ public final class e {
         }
         z10 = false;
         this.q = z10;
-        int i122 = u0.b;
+        int i132 = u0.b;
         Intent intent22 = new Intent(context, (Class<?>) u0.class);
         intent22.setPackage(context.getPackageName());
         context.getPackageManager().queryBroadcastReceivers(intent22, 0).size();
-        this.r = (i10 >= 30 || !z10) ? null : new k(context, new m.l(this));
+        this.r = (i10 >= 30 || !z10) ? null : new k(context, new t1(this, 20));
         if (i10 < 24) {
         }
         this.s = f0Var;
-        this.t = new u1(new r2(this, 11));
+        this.t = new s1(new z1(this, i11));
         a(f0Var, true);
         g3Var = this.r;
         if (g3Var != null) {
@@ -154,12 +152,12 @@ public final class e {
         }
     }
 
-    public final void a(g3 g3Var, boolean z10) {
+    public final void a(com.google.android.gms.internal.vision.g3 g3Var, boolean z10) {
         if (d(g3Var) == null) {
             u uVar = new u(g3Var, z10);
             this.l.add(uVar);
             this.a.b(513, uVar);
-            m(uVar, (b2.u) g3Var.n);
+            m(uVar, (b2.t) g3Var.n);
             x.b();
             g3Var.f = this.o;
             g3Var.h(this.z);
@@ -186,7 +184,7 @@ public final class e {
                 i10++;
             }
             if (i10 >= 0) {
-                Log.w("GlobalMediaRouter", c1.i("Either ", str, " isn't unique in ", flattenToShortString, " or we're trying to assign a unique ID for an already added route"));
+                Log.w("GlobalMediaRouter", r.c.h("Either ", str, " isn't unique in ", flattenToShortString, " or we're trying to assign a unique ID for an already added route"));
                 int i11 = 2;
                 while (true) {
                     Locale locale = Locale.US;
@@ -230,7 +228,7 @@ public final class e {
         return this.v;
     }
 
-    public final u d(g3 g3Var) {
+    public final u d(com.google.android.gms.internal.vision.g3 g3Var) {
         ArrayList arrayList = this.l;
         int size = arrayList.size();
         int i10 = 0;
@@ -292,43 +290,43 @@ public final class e {
 
     public final void h(e eVar, v vVar, q qVar, int i10, v vVar2, Collection collection) {
         final com.google.android.gms.internal.cast.q qVar2;
-        pl0 pl0Var = this.g;
-        if (pl0Var != null) {
-            pl0Var.a();
+        ll0 ll0Var = this.g;
+        if (ll0Var != null) {
+            ll0Var.a();
             this.g = null;
         }
-        pl0 pl0Var2 = new pl0(eVar, vVar, qVar, i10, vVar2, collection);
-        this.g = pl0Var2;
+        ll0 ll0Var2 = new ll0(eVar, vVar, qVar, i10, vVar2, collection);
+        this.g = ll0Var2;
         int i11 = 3;
-        if (pl0Var2.b != 3 || (qVar2 = this.f) == null) {
-            pl0Var2.b();
+        if (ll0Var2.b != 3 || (qVar2 = this.f) == null) {
+            ll0Var2.b();
             return;
         }
         final v vVar3 = this.d;
-        final v vVar4 = (v) pl0Var2.g;
+        final v vVar4 = (v) ll0Var2.g;
         com.google.android.gms.internal.cast.q.c.b("Prepare transfer from Route(%s) to Route(%s)", vVar3, vVar4);
         c0.l a2 = v7.h0.a(new c0.j() { // from class: com.google.android.gms.internal.cast.o
             @Override // c0.j
-            public final Object b(c0.i iVar) {
+            public final Object a(c0.i iVar) {
                 q qVar3 = q.this;
                 qVar3.getClass();
                 return Boolean.valueOf(qVar3.b.post(new p(qVar3, vVar3, vVar4, iVar, 0)));
             }
         });
-        pl0 pl0Var3 = this.g;
-        e eVar2 = (e) ((WeakReference) pl0Var3.j).get();
-        if (eVar2 == null || eVar2.g != pl0Var3) {
+        ll0 ll0Var3 = this.g;
+        e eVar2 = (e) ((WeakReference) ll0Var3.j).get();
+        if (eVar2 == null || eVar2.g != ll0Var3) {
             Log.w("AxMediaRouter", "Router is released. Cancel transfer");
-            pl0Var3.a();
+            ll0Var3.a();
         } else {
-            if (((c0.l) pl0Var3.k) != null) {
+            if (((c0.l) ll0Var3.k) != null) {
                 throw new IllegalStateException("future is already set");
             }
-            pl0Var3.k = a2;
-            r2 r2Var = new r2(pl0Var3, 13);
+            ll0Var3.k = a2;
+            z1 z1Var = new z1(ll0Var3, i11);
             b bVar = eVar2.a;
             Objects.requireNonNull(bVar);
-            a2.b.a(r2Var, new i2.f0(bVar, i11));
+            a2.b.a(z1Var, new i2.e0(bVar, i11));
         }
     }
 
@@ -341,7 +339,7 @@ public final class e {
                 return;
             }
             if (Build.VERSION.SDK_INT >= 30) {
-                g3 c10 = vVar.c();
+                com.google.android.gms.internal.vision.g3 c10 = vVar.c();
                 k kVar = this.r;
                 if (c10 == kVar && this.d != vVar) {
                     kVar.s(vVar.b);
@@ -353,7 +351,7 @@ public final class e {
     }
 
     public final void j(v vVar, int i10) {
-        b2.u uVar;
+        b2.t tVar;
         if (this.d == vVar) {
             return;
         }
@@ -366,28 +364,28 @@ public final class e {
                 this.y = null;
             }
         }
-        if (f() && (uVar = vVar.a.e) != null && uVar.b) {
+        if (f() && (tVar = vVar.a.e) != null && tVar.b) {
             p c10 = vVar.c().c(vVar.b);
             if (c10 != null) {
                 Executor d = f0.c.d(this.h);
-                m.h hVar = this.E;
+                l2.f fVar = this.E;
                 synchronized (c10.a) {
                     try {
                         if (d == null) {
                             throw new NullPointerException("Executor shouldn't be null");
                         }
-                        if (hVar == null) {
+                        if (fVar == null) {
                             throw new NullPointerException("Listener shouldn't be null");
                         }
                         c10.b = d;
-                        c10.c = hVar;
+                        c10.c = fVar;
                         ArrayList arrayList = c10.e;
                         if (arrayList != null && !arrayList.isEmpty()) {
                             m mVar = c10.d;
                             ArrayList arrayList2 = c10.e;
                             c10.d = null;
                             c10.e = null;
-                            c10.b.execute(new com.google.android.gms.internal.cast.p(c10, hVar, mVar, arrayList2, false, 2));
+                            c10.b.execute(new com.google.android.gms.internal.cast.p(c10, fVar, mVar, arrayList2, false, 2));
                         }
                     } catch (Throwable th2) {
                         throw th2;
@@ -424,16 +422,16 @@ public final class e {
     */
     public final void k() {
         long j10;
-        d4 d4Var;
+        ad.e eVar;
         ArrayList arrayList;
-        d4 d4Var2 = new d4();
-        u1 u1Var = this.t;
+        ad.e eVar2 = new ad.e();
+        s1 s1Var = this.t;
         long j11 = 0;
-        u1Var.a = 0L;
+        s1Var.a = 0L;
         int i10 = 0;
-        u1Var.c = false;
-        u1Var.b = SystemClock.elapsedRealtime();
-        ((Handler) u1Var.d).removeCallbacks((r2) u1Var.e);
+        s1Var.c = false;
+        s1Var.b = SystemClock.elapsedRealtime();
+        ((Handler) s1Var.d).removeCallbacks((z1) s1Var.e);
         ArrayList arrayList2 = this.i;
         int size = arrayList2.size();
         int i11 = 0;
@@ -442,19 +440,19 @@ public final class e {
             size--;
             boolean z11 = this.p;
             if (size < 0) {
-                d4 d4Var3 = d4Var2;
+                ad.e eVar3 = eVar2;
                 long j12 = j11;
-                u1 u1Var2 = this.t;
-                if (u1Var2.c) {
-                    long j13 = u1Var2.a;
+                s1 s1Var2 = this.t;
+                if (s1Var2.c) {
+                    long j13 = s1Var2.a;
                     if (j13 > j12) {
-                        ((Handler) u1Var2.d).postDelayed((r2) u1Var2.e, j13);
+                        ((Handler) s1Var2.d).postDelayed((z1) s1Var2.e, j13);
                     }
                 }
-                boolean z12 = u1Var2.c;
+                boolean z12 = s1Var2.c;
                 this.B = i11;
-                r a2 = z10 ? d4Var3.a() : r.c;
-                r a10 = d4Var3.a();
+                r a2 = z10 ? eVar3.a() : r.c;
+                r a10 = eVar3.a();
                 if (f()) {
                     n nVar = this.A;
                     if (nVar != null) {
@@ -492,7 +490,7 @@ public final class e {
                 while (i12 < size2) {
                     Object obj = arrayList3.get(i12);
                     i12++;
-                    g3 g3Var = ((u) obj).a;
+                    com.google.android.gms.internal.vision.g3 g3Var = ((u) obj).a;
                     if (g3Var != this.r) {
                         g3Var.h(this.z);
                     }
@@ -527,28 +525,28 @@ public final class e {
                             if (str == null) {
                                 throw new IllegalArgumentException("category must not be null");
                             }
-                            if (d4Var2.a == null) {
-                                d4Var2.a = new ArrayList();
+                            if (eVar2.a == null) {
+                                eVar2.a = new ArrayList();
                             }
-                            if (!d4Var2.a.contains(str)) {
-                                d4Var2.a.add(str);
+                            if (!eVar2.a.contains(str)) {
+                                eVar2.a.add(str);
                             }
                         }
                     }
                     boolean z13 = (tVar.d & 1) != 0;
                     long j14 = tVar.e;
-                    u1 u1Var3 = this.t;
+                    s1 s1Var3 = this.t;
                     if (z13) {
-                        d4Var = d4Var2;
+                        eVar = eVar2;
                         arrayList = arrayList2;
-                        long j15 = u1Var3.b;
+                        long j15 = s1Var3.b;
                         if (j15 - j14 < 30000) {
-                            u1Var3.a = Math.max(u1Var3.a, (j14 + 30000) - j15);
-                            u1Var3.c = true;
+                            s1Var3.a = Math.max(s1Var3.a, (j14 + 30000) - j15);
+                            s1Var3.c = true;
                         }
                     } else {
-                        u1Var3.getClass();
-                        d4Var = d4Var2;
+                        s1Var3.getClass();
+                        eVar = eVar2;
                         arrayList = arrayList2;
                     }
                     if (z13) {
@@ -563,12 +561,12 @@ public final class e {
                     }
                     i13++;
                     j11 = j10;
-                    d4Var2 = d4Var;
+                    eVar2 = eVar;
                     arrayList2 = arrayList;
                 }
             }
             j11 = j11;
-            d4Var2 = d4Var2;
+            eVar2 = eVar2;
             arrayList2 = arrayList2;
             i10 = 0;
         }
@@ -577,9 +575,9 @@ public final class e {
     public final void l() {
         v vVar = this.d;
         if (vVar == null) {
-            h3 h3Var = this.C;
-            if (h3Var != null) {
-                h3Var.t();
+            g3 g3Var = this.C;
+            if (g3Var != null) {
+                g3Var.v();
                 return;
             }
             return;
@@ -600,36 +598,36 @@ public final class e {
             ((d) arrayList.get(0)).getClass();
             throw null;
         }
-        h3 h3Var2 = this.C;
-        if (h3Var2 != null) {
+        g3 g3Var2 = this.C;
+        if (g3Var2 != null) {
             v vVar2 = this.d;
             v vVar3 = this.v;
             if (vVar3 == null) {
                 throw new IllegalStateException("There is no default route.  The media router has not yet been fully initialized.");
             }
             if (vVar2 == vVar3 || vVar2 == this.w) {
-                h3Var2.t();
+                g3Var2.v();
                 return;
             }
             int i11 = sVar.c == 1 ? 2 : 0;
             int i12 = sVar.b;
             int i13 = sVar.a;
             String str = (String) sVar.e;
-            android.support.v4.media.session.b0 b0Var = (android.support.v4.media.session.b0) h3Var2.b;
+            android.support.v4.media.session.b0 b0Var = (android.support.v4.media.session.b0) g3Var2.b;
             if (b0Var != null) {
-                androidx.emoji2.text.p pVar = (androidx.emoji2.text.p) h3Var2.c;
+                androidx.emoji2.text.p pVar = (androidx.emoji2.text.p) g3Var2.c;
                 if (pVar != null && i11 == 0 && i12 == 0) {
                     pVar.c = i13;
                     y1.g.a(pVar.c(), i13);
                     return;
                 }
                 androidx.emoji2.text.p pVar2 = new androidx.emoji2.text.p();
-                pVar2.f = h3Var2;
+                pVar2.f = g3Var2;
                 pVar2.a = i11;
                 pVar2.b = i12;
                 pVar2.c = i13;
                 pVar2.d = str;
-                h3Var2.c = pVar2;
+                g3Var2.c = pVar2;
                 b0Var.a.a.setPlaybackToRemote(pVar2.c());
             }
         }
@@ -637,28 +635,28 @@ public final class e {
 
     /* JADX WARN: Code restructure failed: missing block: B:14:0x0039, code lost:
     
-        if (r21 == ((b2.u) r19.s.n)) goto L18;
+        if (r21 == ((b2.t) r19.s.n)) goto L18;
      */
     /* JADX WARN: Removed duplicated region for block: B:78:0x0192 A[LOOP:5: B:77:0x0190->B:78:0x0192, LOOP_END] */
     /* JADX WARN: Removed duplicated region for block: B:82:0x01ad A[LOOP:6: B:81:0x01ab->B:82:0x01ad, LOOP_END] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void m(u uVar, b2.u uVar2) {
+    public final void m(u uVar, b2.t tVar) {
         boolean z10;
         int i10;
         int size;
         int size2;
         Iterator it;
         boolean z11;
-        b2.u uVar3 = uVar.e;
+        b2.t tVar2 = uVar.e;
         ArrayList arrayList = uVar.b;
-        if (uVar3 != uVar2) {
-            uVar.e = uVar2;
+        if (tVar2 != tVar) {
+            uVar.e = tVar;
             ArrayList arrayList2 = this.j;
             b bVar = this.a;
-            if (uVar2 != null) {
-                List list = (List) uVar2.c;
+            if (tVar != null) {
+                List list = (List) tVar.c;
                 int size3 = list.size();
                 for (int i11 = 0; i11 < size3; i11++) {
                     m mVar = (m) list.get(i11);
@@ -763,7 +761,7 @@ public final class e {
                 bVar.b(515, uVar);
             }
             z10 = false;
-            Log.w("GlobalMediaRouter", "Ignoring invalid provider descriptor: " + uVar2);
+            Log.w("GlobalMediaRouter", "Ignoring invalid provider descriptor: " + tVar);
             i10 = 0;
             while (size >= i10) {
             }

@@ -5,9 +5,9 @@ import android.graphics.BitmapFactory;
 import java.io.EOFException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import ji.h5;
+import m2.t;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class g extends lf.a {
     public static final Logger s = Logger.getLogger(g.class.getName());
@@ -30,10 +30,10 @@ public final class g extends lf.a {
         }
     }
 
-    public static c5.a c(e eVar) {
+    public static t c(e eVar) {
         b b10 = eVar.b();
         eVar.c(3, b.c);
-        return new c5.a(eVar.d(200, b10), eVar.c((int) eVar.a.e(), b10), false);
+        return new t(2, eVar.d(200, b10), eVar.c((int) eVar.a.e(), b10));
     }
 
     public static String e(e eVar) {
@@ -63,9 +63,9 @@ public final class g extends lf.a {
         switch (str2) {
             case "COM":
             case "COMM":
-                c5.a c10 = c(eVar);
-                if (this.i == null || (str = c10.a) == null || "".equals(str)) {
-                    this.i = c10.b;
+                t c10 = c(eVar);
+                if (this.i == null || (str = c10.b) == null || "".equals(str)) {
+                    this.i = c10.c;
                     return;
                 }
                 return;
@@ -73,25 +73,25 @@ public final class g extends lf.a {
             case "APIC":
                 if (this.o == null || this.r != 3) {
                     b b10 = eVar.b();
-                    h5 h5Var = eVar.d;
+                    k0.b bVar = eVar.d;
                     if (eVar.b.a == 2) {
                         eVar.c(3, b.c).toUpperCase().getClass();
                     } else {
                         eVar.d(20, b.c);
                     }
-                    byte c11 = h5Var.c();
+                    byte Z = bVar.Z();
                     eVar.d(200, b10);
                     int e = (int) eVar.a.e();
                     byte[] bArr = new byte[e];
                     int i13 = 0;
                     while (i13 < e) {
-                        int read = ((com.google.firebase.messaging.d) h5Var.b).read(bArr, i13, e - i13);
+                        int read = ((com.google.firebase.messaging.d) bVar.b).read(bArr, i13, e - i13);
                         if (read <= 0) {
                             throw new EOFException();
                         }
                         i13 += read;
                     }
-                    if (this.o == null || c11 == 3 || c11 == 0) {
+                    if (this.o == null || Z == 3 || Z == 0) {
                         try {
                             options = new BitmapFactory.Options();
                             options.inJustDecodeBounds = true;
@@ -118,7 +118,7 @@ public final class g extends lf.a {
                                     this.p = this.o;
                                 }
                             }
-                            this.r = c11;
+                            this.r = Z;
                             return;
                         }
                         for (int max2 = Math.max(i11, options.outHeight); max2 > 800; max2 /= 2) {
@@ -129,7 +129,7 @@ public final class g extends lf.a {
                         this.o = decodeByteArray;
                         if (decodeByteArray != null) {
                         }
-                        this.r = c11;
+                        this.r = Z;
                         return;
                     }
                     return;
@@ -151,14 +151,14 @@ public final class g extends lf.a {
                     try {
                         if (e7.charAt(0) == '(') {
                             int indexOf = e7.indexOf(41);
-                            if (indexOf > 1 && (i10 = i2.d.b(Integer.parseInt(e7.substring(1, indexOf)))) == 0 && e7.length() > (i12 = indexOf + 1)) {
+                            if (indexOf > 1 && (i10 = i0.a.b(Integer.parseInt(e7.substring(1, indexOf)))) == 0 && e7.length() > (i12 = indexOf + 1)) {
                                 this.h = e7.substring(i12);
                             }
                         } else {
-                            i10 = i2.d.b(Integer.parseInt(e7));
+                            i10 = i0.a.b(Integer.parseInt(e7));
                         }
                         if (i10 != 0) {
-                            this.h = i2.d.d(i10);
+                            this.h = i0.a.d(i10);
                             return;
                         }
                         return;
@@ -295,7 +295,7 @@ public final class g extends lf.a {
             case "ULT":
             case "USLT":
                 if (this.n == null) {
-                    this.n = c(eVar).b;
+                    this.n = c(eVar).c;
                     return;
                 }
                 return;

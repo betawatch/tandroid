@@ -1,45 +1,32 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.messenger.Utilities;
+import android.text.SpannableStringBuilder;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kw implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Activity b;
+public final class kw extends org.telegram.ui.Components.ej0 {
+    public final /* synthetic */ int f0 = 0;
+    public final /* synthetic */ Object g0;
 
-    public /* synthetic */ kw(Activity activity, int i10) {
-        this.a = i10;
-        this.b = activity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public kw(te1 te1Var, SpannableStringBuilder spannableStringBuilder, SpannableStringBuilder spannableStringBuilder2) {
+        super(spannableStringBuilder, spannableStringBuilder2);
+        this.g0 = te1Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        Boolean bool = (Boolean) obj;
-        switch (this.a) {
+    @Override // org.telegram.ui.Components.ej0
+    public final float d() {
+        switch (this.f0) {
             case 0:
-                if (bool.booleanValue()) {
-                    if (!org.telegram.ui.Components.df0.a()) {
-                        org.telegram.ui.Components.df0.f();
-                        break;
-                    } else {
-                        this.b.requestPermissions(new String[]{"android.permission.POST_NOTIFICATIONS"}, 1);
-                        break;
-                    }
-                }
-                break;
+                return ((dy) this.g0).a.getViewOffset();
             default:
-                if (bool.booleanValue()) {
-                    if (!org.telegram.ui.Components.df0.a()) {
-                        org.telegram.ui.Components.df0.f();
-                        break;
-                    } else {
-                        this.b.requestPermissions(new String[]{"android.permission.POST_NOTIFICATIONS"}, 1);
-                        break;
-                    }
-                }
-                break;
+                return ((te1) this.g0).N.d3;
         }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public kw(String str, String str2, dy dyVar) {
+        super(str, str2);
+        this.g0 = dyVar;
     }
 }

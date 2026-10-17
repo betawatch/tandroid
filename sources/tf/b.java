@@ -9,10 +9,10 @@ import j$.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.gd;
-import ri.h0;
+import org.telegram.ui.Components.ed;
+import org.telegram.ui.web.z1;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class b {
                             case 0:
                                 e eVar2 = eVar;
                                 if (eVar2.a == 4) {
-                                    eVar2.j.a.q().removeView(eVar2.f);
+                                    eVar2.j.a.v().removeView(eVar2.f);
                                     eVar2.i = null;
                                     eVar2.f = null;
                                     eVar2.g = null;
@@ -52,11 +52,11 @@ public final /* synthetic */ class b {
                                         eVar2.d = null;
                                     }
                                     z5 z5Var = eVar2.h;
-                                    if (((gd) z5Var.e) != null) {
+                                    if (((ed) z5Var.e) != null) {
                                         ((View) z5Var.b).setBackground(null);
                                         z5Var.e = null;
                                     }
-                                    if (((gd) z5Var.d) == null && ((gd) z5Var.e) == null && (bitmap2 = (Bitmap) z5Var.a) != null) {
+                                    if (((ed) z5Var.d) == null && ((ed) z5Var.e) == null && (bitmap2 = (Bitmap) z5Var.a) != null) {
                                         bitmap2.recycle();
                                         z5Var.a = null;
                                     }
@@ -75,7 +75,7 @@ public final /* synthetic */ class b {
                                 e eVar3 = eVar;
                                 if (eVar3.a == 1) {
                                     Log.i("PIP_DEBUG", "[HANDLER] attach");
-                                    eVar3.h.B();
+                                    eVar3.h.A();
                                     eVar3.j.g.a(new p(ApplicationLoader.applicationHandler, new b(eVar3, 2), 400L));
                                     eVar3.a = 2;
                                     if (!eVar3.n) {
@@ -116,7 +116,7 @@ public final /* synthetic */ class b {
                             case 0:
                                 e eVar22 = eVar2;
                                 if (eVar22.a == 4) {
-                                    eVar22.j.a.q().removeView(eVar22.f);
+                                    eVar22.j.a.v().removeView(eVar22.f);
                                     eVar22.i = null;
                                     eVar22.f = null;
                                     eVar22.g = null;
@@ -131,11 +131,11 @@ public final /* synthetic */ class b {
                                         eVar22.d = null;
                                     }
                                     z5 z5Var = eVar22.h;
-                                    if (((gd) z5Var.e) != null) {
+                                    if (((ed) z5Var.e) != null) {
                                         ((View) z5Var.b).setBackground(null);
                                         z5Var.e = null;
                                     }
-                                    if (((gd) z5Var.d) == null && ((gd) z5Var.e) == null && (bitmap2 = (Bitmap) z5Var.a) != null) {
+                                    if (((ed) z5Var.d) == null && ((ed) z5Var.e) == null && (bitmap2 = (Bitmap) z5Var.a) != null) {
                                         bitmap2.recycle();
                                         z5Var.a = null;
                                     }
@@ -154,7 +154,7 @@ public final /* synthetic */ class b {
                                 e eVar3 = eVar2;
                                 if (eVar3.a == 1) {
                                     Log.i("PIP_DEBUG", "[HANDLER] attach");
-                                    eVar3.h.B();
+                                    eVar3.h.A();
                                     eVar3.j.g.a(new p(ApplicationLoader.applicationHandler, new b(eVar3, 2), 400L));
                                     eVar3.a = 2;
                                     if (!eVar3.n) {
@@ -186,11 +186,11 @@ public final /* synthetic */ class b {
                 break;
             case 2:
                 z5 z5Var = this.b.h;
-                if (((gd) z5Var.e) != null) {
+                if (((ed) z5Var.e) != null) {
                     ((View) z5Var.b).setBackground(null);
                     z5Var.e = null;
                 }
-                if (((gd) z5Var.d) == null && ((gd) z5Var.e) == null && (bitmap = (Bitmap) z5Var.a) != null) {
+                if (((ed) z5Var.d) == null && ((ed) z5Var.e) == null && (bitmap = (Bitmap) z5Var.a) != null) {
                     bitmap.recycle();
                     z5Var.a = null;
                 }
@@ -200,7 +200,7 @@ public final /* synthetic */ class b {
                 Log.i("PIP_DEBUG", "[HANDLER] on old source render first frame " + z10);
                 z5 z5Var2 = this.b.h;
                 Objects.requireNonNull(z5Var2);
-                AndroidUtilities.runOnUIThread(new h0(z5Var2, 8));
+                AndroidUtilities.runOnUIThread(new z1(z5Var2, 28));
                 break;
             default:
                 final int i12 = 0;
@@ -213,7 +213,7 @@ public final /* synthetic */ class b {
                             case 0:
                                 e eVar22 = eVar3;
                                 if (eVar22.a == 4) {
-                                    eVar22.j.a.q().removeView(eVar22.f);
+                                    eVar22.j.a.v().removeView(eVar22.f);
                                     eVar22.i = null;
                                     eVar22.f = null;
                                     eVar22.g = null;
@@ -228,11 +228,11 @@ public final /* synthetic */ class b {
                                         eVar22.d = null;
                                     }
                                     z5 z5Var3 = eVar22.h;
-                                    if (((gd) z5Var3.e) != null) {
+                                    if (((ed) z5Var3.e) != null) {
                                         ((View) z5Var3.b).setBackground(null);
                                         z5Var3.e = null;
                                     }
-                                    if (((gd) z5Var3.d) == null && ((gd) z5Var3.e) == null && (bitmap2 = (Bitmap) z5Var3.a) != null) {
+                                    if (((ed) z5Var3.d) == null && ((ed) z5Var3.e) == null && (bitmap2 = (Bitmap) z5Var3.a) != null) {
                                         bitmap2.recycle();
                                         z5Var3.a = null;
                                     }
@@ -251,7 +251,7 @@ public final /* synthetic */ class b {
                                 e eVar32 = eVar3;
                                 if (eVar32.a == 1) {
                                     Log.i("PIP_DEBUG", "[HANDLER] attach");
-                                    eVar32.h.B();
+                                    eVar32.h.A();
                                     eVar32.j.g.a(new p(ApplicationLoader.applicationHandler, new b(eVar32, 2), 400L));
                                     eVar32.a = 2;
                                     if (!eVar32.n) {

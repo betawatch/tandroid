@@ -1,105 +1,134 @@
 package ig;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.LinearLayout;
+import android.os.Bundle;
+import android.view.KeyEvent;
 import android.widget.TextView;
+import ci.z2;
+import java.util.ArrayList;
+import java.util.regex.Pattern;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.WebFile;
-import org.telegram.messenger.sk;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.UserObject;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.ha0;
-import w7.z5;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ey;
+import org.telegram.ui.te1;
+import org.telegram.ui.xx;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class k1 extends LinearLayout {
-    public final c6 a;
-    public final ha0 b;
-    public final ImageReceiver c;
-    public final TextView d;
-    public boolean e;
+public final /* synthetic */ class k1 implements org.telegram.ui.ActionBar.a2, xx {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ KeyEvent.Callback b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public k1(Context context, c6 c6Var) {
-        super(context);
-        ImageReceiver imageReceiver = new ImageReceiver(this);
-        this.c = imageReceiver;
-        this.a = c6Var;
-        setOrientation(1);
-        ha0 ha0Var = new ha0();
-        this.b = ha0Var;
-        int i10 = g6.G6;
-        int w02 = g6.w0(i10, c6Var);
-        ha0Var.g(g6.m1(0.05f, w02), g6.m1(0.15f, w02), g6.m1(0.1f, w02), g6.m1(0.3f, w02));
-        ha0Var.k(4.0f);
-        ha0Var.x.setStrokeWidth(AndroidUtilities.dp(1.0f));
-        imageReceiver.setRoundRadius(AndroidUtilities.dp(4.0f));
-        TextView textView = new TextView(context);
-        this.d = textView;
-        textView.setGravity(LocaleController.isRTL ? 5 : 3);
-        textView.setTextColor(g6.w0(i10, c6Var));
-        textView.setTextSize(1, 16.0f);
-        boolean z10 = LocaleController.isRTL;
-        addView(textView, z5.t(-1, -2, 55, z10 ? 70 : 18, 10, z10 ? 18 : 70, 4));
-        TextView textView2 = new TextView(context);
-        textView2.setGravity(LocaleController.isRTL ? 5 : 3);
-        textView2.setTextColor(g6.w0(g6.z6, c6Var));
-        sk.j(13.0f, R.string.BusinessProfileLocation, 1, textView2);
-        boolean z11 = LocaleController.isRTL;
-        addView(textView2, z5.t(-1, -2, 55, z11 ? 70 : 18, 0, z11 ? 18 : 70, 8));
-        setWillNotDraw(false);
+    public /* synthetic */ k1(o1 o1Var, z2 z2Var, int i10, x1 x1Var, TextView textView, Utilities.Callback callback) {
+        this.b = o1Var;
+        this.c = z2Var;
+        this.a = i10;
+        this.d = x1Var;
+        this.e = textView;
+        this.f = callback;
     }
 
-    public final void a(TLRPC.TL_businessLocation tL_businessLocation, boolean z10) {
-        if (tL_businessLocation != null) {
-            this.d.setText(tL_businessLocation.address);
-            if (tL_businessLocation.geo_point != null) {
-                this.c.setImage(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(tL_businessLocation.geo_point, AndroidUtilities.dp(44.0f), AndroidUtilities.dp(44.0f), 15, Math.min(2, (int) Math.ceil(AndroidUtilities.density)))), "44_44", this.b, 0L, (String) null, (Object) null, 0);
-            } else {
-                this.c.setImageBitmap((Drawable) null);
-            }
+    @Override // org.telegram.ui.xx
+    public /* synthetic */ boolean D() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.xx
+    public /* synthetic */ boolean K(ey eyVar) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        o1 o1Var = (o1) this.b;
+        z2 z2Var = (z2) this.c;
+        x1 x1Var = (x1) this.d;
+        TextView textView = (TextView) this.e;
+        Utilities.Callback callback = (Utilities.Callback) this.f;
+        String obj = o1Var.getText().toString();
+        if (obj.length() <= 0 || obj.length() > 32) {
+            AndroidUtilities.shakeView(o1Var);
+            z2Var.run(Boolean.FALSE);
+            return;
         }
-        this.e = z10;
-        setPadding(0, 0, 0, z10 ? 1 : 0);
-        invalidate();
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onDraw(Canvas canvas) {
-        float dp = LocaleController.isRTL ? AndroidUtilities.dp(16.0f) : getWidth() - AndroidUtilities.dp(60.0f);
-        float dp2 = AndroidUtilities.dp(8.0f);
-        float dp3 = AndroidUtilities.dp(44.0f);
-        float dp4 = AndroidUtilities.dp(44.0f);
-        ImageReceiver imageReceiver = this.c;
-        imageReceiver.setImageCoords(dp, dp2, dp3, dp4);
-        imageReceiver.draw(canvas);
-        super.onDraw(canvas);
-        if (this.e) {
-            Paint U0 = g6.U0("paintDivider", this.a);
-            if (U0 == null) {
-                U0 = g6.k0;
-            }
-            canvas.drawRect(AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 21.33f), getMeasuredHeight() - 1, getWidth() - AndroidUtilities.dp(LocaleController.isRTL ? 21.33f : 0.0f), getMeasuredHeight(), U0);
+        y1 f7 = y1.f(this.a);
+        int i11 = x1Var == null ? -1 : x1Var.a;
+        x1 d = f7.d(obj);
+        if (d == null || d.a == i11) {
+            callback.run(obj);
+            b2Var.dismiss();
+        } else {
+            AndroidUtilities.shakeView(o1Var);
+            textView.setText(LocaleController.getString(R.string.BusinessRepliesNameBusy));
+            z2Var.run(Boolean.TRUE);
         }
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    @Override // org.telegram.ui.xx
+    public boolean w(ey eyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, te1 te1Var) {
+        TLRPC.TL_chatAdminRights tL_chatAdminRights;
+        final LaunchActivity launchActivity = (LaunchActivity) this.b;
+        final TLRPC.User user = (TLRPC.User) this.c;
+        final String str = (String) this.d;
+        final String str2 = (String) this.e;
+        final ey eyVar2 = (ey) this.f;
+        Pattern pattern = LaunchActivity.C1;
+        final long j10 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
+        final TLRPC.Chat chat = MessagesController.getInstance(launchActivity.O).getChat(Long.valueOf(-j10));
+        final int i12 = this.a;
+        if (chat == null || (!chat.creator && ((tL_chatAdminRights = chat.admin_rights) == null || !tL_chatAdminRights.add_admins))) {
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(launchActivity);
+            String string = LocaleController.getString(R.string.AddBot);
+            org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+            b2Var.R = string;
+            b2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("AddMembersAlertNamesText", R.string.AddMembersAlertNamesText, UserObject.getUserName(user), chat == null ? "" : chat.title));
+            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+            alertDialog$Builder.k(LocaleController.getString(R.string.AddBot), new org.telegram.ui.ActionBar.a2() { // from class: org.telegram.ui.y80
+                @Override // org.telegram.ui.ActionBar.a2
+                public final void g(org.telegram.ui.ActionBar.b2 b2Var2, int i13) {
+                    Pattern pattern2 = LaunchActivity.C1;
+                    Bundle h = a1.g.h("scrollToTopOnResume", true);
+                    long j11 = -j10;
+                    h.putLong("chat_id", j11);
+                    sn snVar = new sn(h);
+                    int i14 = i12;
+                    NotificationCenter.getInstance(i14).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
+                    MessagesController.getInstance(i14).addUserToChat(j11, user, 0, str2, snVar, null);
+                    ((ActionBarLayout) LaunchActivity.this.O()).S(snVar, true, false);
+                }
+            });
+            alertDialog$Builder.o();
+        } else {
+            MessagesController.getInstance(i12).checkIsInChat(false, chat, user, new MessagesController.IsInChatCheckedCallback() { // from class: org.telegram.ui.x80
+                @Override // org.telegram.messenger.MessagesController.IsInChatCheckedCallback
+                public final void run(boolean z12, TLRPC.TL_chatAdminRights tL_chatAdminRights2, String str3) {
+                    Pattern pattern2 = LaunchActivity.C1;
+                    AndroidUtilities.runOnUIThread(new org.telegram.messenger.i8(LaunchActivity.this, str, tL_chatAdminRights2, z12, str2, i12, chat, eyVar2, user, j10, str3));
+                }
+            });
+        }
+        return true;
     }
 
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.b || super.verifyDrawable(drawable);
+    public /* synthetic */ k1(LaunchActivity launchActivity, int i10, TLRPC.User user, String str, String str2, ey eyVar) {
+        this.b = launchActivity;
+        this.a = i10;
+        this.c = user;
+        this.d = str;
+        this.e = str2;
+        this.f = eyVar;
     }
 }

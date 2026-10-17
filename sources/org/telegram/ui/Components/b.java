@@ -4,7 +4,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -23,9 +23,9 @@ public final /* synthetic */ class b implements View.OnClickListener {
                 break;
             case 1:
                 e0 e0Var = this.b;
-                org.telegram.ui.Cells.j3 j3Var = e0Var.A0;
-                AndroidUtilities.hideKeyboard(j3Var.b);
-                e0Var.I0 = j3Var.getText().toString();
+                org.telegram.ui.Cells.i3 i3Var = e0Var.A0;
+                AndroidUtilities.hideKeyboard(i3Var.b);
+                e0Var.I0 = i3Var.getText().toString();
                 e0Var.r0();
                 e0Var.q0(true);
                 e0Var.l0();
@@ -50,7 +50,7 @@ public final /* synthetic */ class b implements View.OnClickListener {
                 e0Var3.P0 = false;
                 e0Var3.K();
                 e0Var3.O0.N(true);
-                e0Var3.u();
+                e0Var3.t();
                 break;
             case 5:
                 e0.Z(this.b, view);

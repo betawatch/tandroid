@@ -1,61 +1,30 @@
 package org.telegram.messenger;
 
-import java.util.HashMap;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class si implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ SendMessagesHelper b;
-    public final /* synthetic */ TLObject c;
-    public final /* synthetic */ MessageObject d;
-    public final /* synthetic */ String e;
-    public final /* synthetic */ SendMessagesHelper.DelayedMessage f;
-    public final /* synthetic */ boolean h;
-    public final /* synthetic */ SendMessagesHelper.DelayedMessage n;
-    public final /* synthetic */ Object r;
-    public final /* synthetic */ HashMap s;
-    public final /* synthetic */ boolean v;
+    public final /* synthetic */ TL_update.TL_updateNewChannelMessage c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ si(SendMessagesHelper sendMessagesHelper, TLObject tLObject, MessageObject messageObject, String str, SendMessagesHelper.DelayedMessage delayedMessage, boolean z10, SendMessagesHelper.DelayedMessage delayedMessage2, Object obj, HashMap hashMap, boolean z11, int i10) {
+    public /* synthetic */ si(SendMessagesHelper sendMessagesHelper, TL_update.TL_updateNewChannelMessage tL_updateNewChannelMessage, long j10, int i10) {
         this.a = i10;
         this.b = sendMessagesHelper;
-        this.c = tLObject;
-        this.d = messageObject;
-        this.e = str;
-        this.f = delayedMessage;
-        this.h = z10;
-        this.n = delayedMessage2;
-        this.r = obj;
-        this.s = hashMap;
-        this.v = z11;
+        this.c = tL_updateNewChannelMessage;
+        this.d = j10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                HashMap hashMap = this.s;
-                boolean z10 = this.v;
-                Object obj = this.r;
-                String str = this.e;
-                this.b.lambda$performSendMessageRequest$80(this.c, this.d, str, this.f, this.h, this.n, obj, hashMap, z10);
-                break;
-            case 1:
-                HashMap hashMap2 = this.s;
-                boolean z11 = this.v;
-                Object obj2 = this.r;
-                String str2 = this.e;
-                this.b.lambda$performSendMessageRequest$81(this.c, this.d, str2, this.f, this.h, this.n, obj2, hashMap2, z11);
+                this.b.lambda$performSendMessageRequest$96(this.c, this.d);
                 break;
             default:
-                HashMap hashMap3 = this.s;
-                boolean z12 = this.v;
-                Object obj3 = this.r;
-                String str3 = this.e;
-                this.b.lambda$performSendMessageRequest$85(this.c, this.d, str3, this.f, this.h, this.n, obj3, hashMap3, z12);
+                this.b.lambda$performSendMessageRequestMulti$71(this.c, this.d);
                 break;
         }
     }

@@ -1,45 +1,37 @@
 package org.telegram.ui;
 
-import java.util.HashMap;
 import java.util.regex.Pattern;
-import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d90 implements org.telegram.ui.ActionBar.z1 {
+public final /* synthetic */ class d90 implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ HashMap c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ boolean e;
+    public final /* synthetic */ Runnable b;
 
-    public /* synthetic */ d90(int i10, HashMap hashMap, boolean z10, boolean z11, int i11) {
-        this.a = i11;
-        this.b = i10;
-        this.c = hashMap;
-        this.d = z10;
-        this.e = z11;
+    public /* synthetic */ d90(yh.o4 o4Var, int i10) {
+        this.a = i10;
+        this.b = o4Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.z1
-    public final void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
-        int i11 = this.a;
-        boolean z10 = this.e;
-        boolean z11 = this.d;
-        HashMap<String, ContactsController.Contact> hashMap = this.c;
-        int i12 = this.b;
-        switch (i11) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        int i10 = this.a;
+        Runnable runnable = this.b;
+        String str = (String) obj;
+        switch (i10) {
             case 0:
-                Pattern pattern = LaunchActivity.B1;
-                ContactsController.getInstance(i12).syncPhoneBookByAlert(hashMap, z11, z10, true);
-                break;
-            case 1:
-                Pattern pattern2 = LaunchActivity.B1;
-                ContactsController.getInstance(i12).syncPhoneBookByAlert(hashMap, z11, z10, false);
+                Pattern pattern = LaunchActivity.C1;
+                if (runnable != null && "paid".equals(str)) {
+                    runnable.run();
+                    break;
+                }
                 break;
             default:
-                Pattern pattern3 = LaunchActivity.B1;
-                ContactsController.getInstance(i12).syncPhoneBookByAlert(hashMap, z11, z10, true);
+                if (runnable != null && "paid".equals(str)) {
+                    runnable.run();
+                    break;
+                }
                 break;
         }
     }

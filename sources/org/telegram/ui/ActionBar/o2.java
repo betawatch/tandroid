@@ -1,58 +1,39 @@
 package org.telegram.ui.ActionBar;
 
-import android.animation.ValueAnimator;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o2 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class o2 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ e3 b;
+    public final /* synthetic */ f3 b;
 
-    public /* synthetic */ o2(e3 e3Var, int i10) {
+    public /* synthetic */ o2(f3 f3Var, int i10) {
         this.a = i10;
-        this.b = e3Var;
+        this.b = f3Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                e3 e3Var = this.b;
-                e3Var.getClass();
-                e3Var.navigationBarAlpha = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                c3 c3Var = e3Var.container;
-                if (c3Var != null) {
-                    c3Var.invalidate();
+                f3 f3Var = this.b;
+                f3Var.getClass();
+                try {
+                    f3Var.dismissInternal();
                     break;
+                } catch (Exception e) {
+                    FileLog.e(e);
+                    return;
                 }
-                break;
             case 1:
-                e3 e3Var2 = this.b;
-                e3Var2.getClass();
-                e3Var2.navigationBarAlpha = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                c3 c3Var2 = e3Var2.container;
-                if (c3Var2 != null) {
-                    c3Var2.invalidate();
-                    break;
-                }
-                break;
-            case 2:
-                this.b.onContainerViewTranslation();
-                break;
-            case 3:
-                this.b.onContainerViewTranslation();
-                break;
-            case 4:
-                this.b.onContainerViewTranslation();
-                break;
-            case 5:
-                e3.k(this.b, valueAnimator);
-                break;
-            case 6:
-                this.b.onContainerViewTranslation();
+                f3 f3Var2 = this.b;
+                AndroidUtilities.removeFromParent(f3Var2.container);
+                f3Var2.attachedFragment.getLayoutContainer().addView(f3Var2.container);
                 break;
             default:
-                e3.j(this.b, valueAnimator);
+                this.b.dismiss();
                 break;
         }
     }

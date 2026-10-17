@@ -1,5 +1,6 @@
 package z4;
 
+import ai.ae;
 import android.R;
 import android.content.Context;
 import android.content.res.Resources;
@@ -22,30 +23,28 @@ import android.view.ViewParent;
 import android.view.accessibility.AccessibilityEvent;
 import android.widget.EdgeEffect;
 import android.widget.Scroller;
-import bi.ib;
-import bi.q5;
-import bi.w9;
-import gb.k;
+import ci.h8;
+import ci.q4;
+import ci.q9;
+import gb.i;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Cells.m2;
 import p4.s0;
 import r0.a0;
 import r0.i0;
 import s4.c1;
-import x9.l;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public class g extends ViewGroup {
     public static final int[] s0 = {R.attr.layout_gravity};
-    public static final k t0 = new k(7);
-    public static final m2 u0 = new m2(4);
-    public static final k v0 = new k(8);
+    public static final i t0 = new i(7);
+    public static final ae u0 = new ae(5);
+    public static final i v0 = new i(8);
     public int E;
     public float F;
     public float G;
@@ -131,10 +130,10 @@ public class g extends ViewGroup {
         if (getImportantForAccessibility() == 0) {
             setImportantForAccessibility(1);
         }
-        l lVar = new l();
-        lVar.b = this;
-        lVar.a = new Rect();
-        a0.i(this, lVar);
+        xf.c cVar = new xf.c();
+        cVar.b = this;
+        cVar.a = new Rect();
+        a0.i(this, cVar);
     }
 
     public static boolean d(int i10, int i11, int i12, View view, boolean z10) {
@@ -569,7 +568,7 @@ public class g extends ViewGroup {
         }
         ArrayList arrayList = this.b;
         if (arrayList.size() > 0) {
-            return Math.max(((c) arrayList.get(0)).b, Math.min(i10, ((c) i2.d.h(1, arrayList)).b));
+            return Math.max(((c) arrayList.get(0)).b, Math.min(i10, ((c) i0.a.h(1, arrayList)).b));
         }
         return i10;
     }
@@ -829,26 +828,26 @@ public class g extends ViewGroup {
                 View childAt2 = getChildAt(i17);
                 if (!((d) childAt2.getLayoutParams()).a) {
                     float left2 = (childAt2.getLeft() - scrollX2) / getClientWidth();
-                    ib ibVar = (ib) this.m0.b;
-                    w9 w9Var = (w9) childAt2;
+                    q9 q9Var = (q9) this.m0.b;
+                    h8 h8Var = (h8) childAt2;
                     if (Math.abs(left2) >= 1.0f) {
-                        w9Var.a(false);
-                        AndroidUtilities.runOnUIThread(new a3.d(w9Var, 28), 16L);
+                        h8Var.a(false);
+                        AndroidUtilities.runOnUIThread(new androidx.fragment.app.d(h8Var, 21), 16L);
                     } else {
-                        if (!w9Var.d) {
-                            w9Var.a(true);
-                            if (ibVar.x0 != null) {
-                                q5 q5Var = w9Var.a;
-                                long j10 = w9Var.b;
-                                ArrayList arrayList2 = w9Var.c;
-                                q5Var.B1 = j10;
-                                q5Var.z1 = arrayList2;
-                                q5Var.o0(-1);
+                        if (!h8Var.d) {
+                            h8Var.a(true);
+                            if (q9Var.x0 != null) {
+                                q4 q4Var = h8Var.a;
+                                long j10 = h8Var.b;
+                                ArrayList arrayList2 = h8Var.c;
+                                q4Var.B1 = j10;
+                                q4Var.z1 = arrayList2;
+                                q4Var.o0(-1);
                             } else {
-                                w9Var.a.U0(-1, w9Var.b);
+                                h8Var.a.U0(-1, h8Var.b);
                             }
                         }
-                        w9Var.a.setOffset(left2);
+                        h8Var.a.setOffset(left2);
                         childAt2.setCameraDistance(childAt2.getWidth() * 15);
                         childAt2.setPivotX(left2 < 0.0f ? childAt2.getWidth() : 0.0f);
                         childAt2.setPivotY(childAt2.getHeight() * 0.5f);
@@ -1426,7 +1425,7 @@ public class g extends ViewGroup {
         ArrayList arrayList = this.b;
         boolean z12 = false;
         c cVar = (c) arrayList.get(0);
-        c cVar2 = (c) i2.d.h(1, arrayList);
+        c cVar2 = (c) i0.a.h(1, arrayList);
         if (cVar.b != 0) {
             f11 = cVar.e * clientWidth;
             z10 = false;
@@ -1645,7 +1644,7 @@ public class g extends ViewGroup {
                 hexString = Integer.toHexString(getId());
             }
             StringBuilder sb2 = new StringBuilder("The application's PagerAdapter changed the adapter's contents without calling PagerAdapter#notifyDataSetChanged! Expected adapter item count: ");
-            i2.d.w(sb2, this.a, ", found: ", b10, " Pager id: ");
+            i0.a.w(sb2, this.a, ", found: ", b10, " Pager id: ");
             sb2.append(hexString);
             sb2.append(" Pager class: ");
             sb2.append(getClass());

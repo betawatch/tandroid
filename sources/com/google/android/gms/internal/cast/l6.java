@@ -1,6 +1,31 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class l6 {
+    public static final l6 e = new l6(new int[0], new Object[0], false);
+    public final int[] a;
+    public final Object[] b;
+    public int c = -1;
+    public boolean d;
+
+    public l6(int[] iArr, Object[] objArr, boolean z10) {
+        this.a = iArr;
+        this.b = objArr;
+        this.d = z10;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || !(obj instanceof l6)) {
+            return false;
+        }
+        return true;
+    }
+
+    public final int hashCode() {
+        return 506991;
+    }
 }

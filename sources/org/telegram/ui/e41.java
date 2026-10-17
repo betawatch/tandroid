@@ -1,11 +1,47 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+import android.animation.ValueAnimator;
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public interface e41 {
-    void a();
+public final /* synthetic */ class e41 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ z51 b;
+    public final /* synthetic */ boolean c;
 
-    void b();
+    public /* synthetic */ e41(z51 z51Var, boolean z10, int i10) {
+        this.a = i10;
+        this.b = z51Var;
+        this.c = z10;
+    }
 
-    void c();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                z51 z51Var = this.b;
+                w41 w41Var = z51Var.h0;
+                m41 m41Var = z51Var.i0;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                if (!this.c) {
+                    floatValue = 1.0f - floatValue;
+                }
+                float f7 = 1.0f - floatValue;
+                w41Var.setAlpha(f7);
+                w41Var.setTranslationY(AndroidUtilities.dp(8.0f) * floatValue);
+                m41Var.setAlpha(floatValue);
+                m41Var.setTranslationY(AndroidUtilities.dp(8.0f) * f7);
+                z51Var.j0.setAlpha(m41Var.getAlpha() * floatValue);
+                break;
+            default:
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                if (!this.c) {
+                    floatValue2 = 1.0f - floatValue2;
+                }
+                z51 z51Var2 = this.b;
+                z51Var2.j0.setAlpha(z51Var2.i0.getAlpha() * floatValue2);
+                break;
+        }
+    }
 }

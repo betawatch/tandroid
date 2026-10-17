@@ -1,66 +1,100 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.view.View;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* JADX WARN: Enum visitor error
+jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'e' uses external variables
+	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
+	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
+	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
+	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
+	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
+	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
+ */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class wc extends ClickableSpan {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Runnable b;
+public final class wc {
+    public static final wc E;
+    public static final wc F;
+    public static final wc G;
+    public static final wc H;
+    public static final wc I;
+    public static final /* synthetic */ wc[] J;
+    public static final wc e;
+    public static final wc f;
+    public static final wc h;
+    public static final wc n;
+    public static final wc r;
+    public static final wc s;
+    public static final wc v;
+    public static final wc w;
+    public static final wc x;
+    public static final wc y;
+    public final String a;
+    public final int b;
+    public final boolean c;
+    public final vc d;
 
-    public /* synthetic */ wc(int i10, Runnable runnable) {
-        this.a = i10;
-        this.b = runnable;
+    static {
+        int i10 = R.string.PhotoSavedHint;
+        vc vcVar = vc.e;
+        wc wcVar = new wc("PHOTO", 0, "PhotoSavedHint", i10, vcVar);
+        e = wcVar;
+        wc wcVar2 = new wc("PHOTOS", 1, "PhotosSavedHint", vcVar);
+        f = wcVar2;
+        wc wcVar3 = new wc("VIDEO", 2, "VideoSavedHint", R.string.VideoSavedHint, vcVar);
+        h = wcVar3;
+        wc wcVar4 = new wc("VIDEOS", 3, "VideosSavedHint", vcVar);
+        n = wcVar4;
+        wc wcVar5 = new wc("LIVEPHOTO", 4, "LivePhotoSavedHint", R.string.LivePhotoSavedHint, vcVar);
+        r = wcVar5;
+        wc wcVar6 = new wc("LIVEPHOTOS", 5, "LivePhotosSavedHint", vcVar);
+        s = wcVar6;
+        wc wcVar7 = new wc("MEDIA", 6, "MediaSavedHint", vcVar);
+        v = wcVar7;
+        int i11 = R.string.PhotoSavedToDownloadsHintLinked;
+        vc vcVar2 = vc.d;
+        wc wcVar8 = new wc("PHOTO_TO_DOWNLOADS", 7, "PhotoSavedToDownloadsHintLinked", i11, vcVar2);
+        w = wcVar8;
+        wc wcVar9 = new wc("VIDEO_TO_DOWNLOADS", 8, "VideoSavedToDownloadsHintLinked", R.string.VideoSavedToDownloadsHintLinked, vcVar2);
+        x = wcVar9;
+        wc wcVar10 = new wc("GIF", 9, "GifSavedHint", R.string.GifSavedHint, vc.h);
+        y = wcVar10;
+        wc wcVar11 = new wc("GIF_TO_DOWNLOADS", 10, "GifSavedToDownloadsHintLinked", R.string.GifSavedToDownloadsHintLinked, vcVar2);
+        E = wcVar11;
+        int i12 = R.string.AudioSavedHint;
+        vc vcVar3 = vc.f;
+        wc wcVar12 = new wc("AUDIO", 11, "AudioSavedHint", i12, vcVar3);
+        F = wcVar12;
+        wc wcVar13 = new wc("AUDIOS", 12, "AudiosSavedHint", vcVar3);
+        G = wcVar13;
+        wc wcVar14 = new wc("UNKNOWN", 13, "FileSavedHintLinked", R.string.FileSavedHintLinked, vcVar2);
+        H = wcVar14;
+        wc wcVar15 = new wc("UNKNOWNS", 14, "FilesSavedHintLinked", vcVar2);
+        I = wcVar15;
+        J = new wc[]{wcVar, wcVar2, wcVar3, wcVar4, wcVar5, wcVar6, wcVar7, wcVar8, wcVar9, wcVar10, wcVar11, wcVar12, wcVar13, wcVar14, wcVar15};
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                this.b.run();
-                break;
-            case 1:
-                Runnable runnable = this.b;
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            case 2:
-                Runnable runnable2 = this.b;
-                if (runnable2 != null) {
-                    runnable2.run();
-                    break;
-                }
-                break;
-            default:
-                Runnable runnable3 = this.b;
-                if (runnable3 != null) {
-                    runnable3.run();
-                    break;
-                }
-                break;
-        }
+    public wc(String str, int i10, String str2, int i11, vc vcVar) {
+        this.a = str2;
+        this.b = i11;
+        this.d = vcVar;
+        this.c = false;
     }
 
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        switch (this.a) {
-            case 0:
-                super.updateDrawState(textPaint);
-                textPaint.setUnderlineText(false);
-                break;
-            case 1:
-                textPaint.setUnderlineText(false);
-                break;
-            case 2:
-                textPaint.setUnderlineText(false);
-                break;
-            default:
-                textPaint.setUnderlineText(false);
-                break;
-        }
+    public static wc valueOf(String str) {
+        return (wc) Enum.valueOf(wc.class, str);
+    }
+
+    public static wc[] values() {
+        return (wc[]) J.clone();
+    }
+
+    public wc(String str, int i10, String str2, vc vcVar) {
+        this.a = str2;
+        this.d = vcVar;
+        this.b = 0;
+        this.c = true;
     }
 }

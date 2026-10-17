@@ -1,39 +1,31 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v50 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ w50 b;
+public final class v50 extends org.telegram.ui.Components.voip.l {
+    public final /* synthetic */ x50 h;
 
-    public /* synthetic */ v50(w50 w50Var, int i10) {
-        this.a = i10;
-        this.b = w50Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public v50(x50 x50Var, Context context) {
+        super(context, true);
+        this.h = x50Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                w50 w50Var = this.b;
-                x50 x50Var = w50Var.b;
-                if (x50Var != null) {
-                    x50Var.setVisibility(0);
-                }
-                AndroidUtilities.runOnUIThread(new v50(w50Var, 2), 16L);
-                break;
-            case 1:
-                x50 x50Var2 = this.b.b;
-                if (x50Var2 != null) {
-                    x50Var2.setVisibility(4);
-                    break;
-                }
-                break;
-            default:
-                super/*android.app.Dialog*/.dismiss();
-                break;
+    @Override // org.telegram.ui.Components.voip.l, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        x50 x50Var = this.h;
+        if (!x50Var.r || getParticipant() == null) {
+            return;
         }
+        x50Var.E(this, true);
+    }
+
+    @Override // org.telegram.ui.Components.voip.l, android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.h.E(this, false);
     }
 }

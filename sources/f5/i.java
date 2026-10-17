@@ -1,16 +1,15 @@
 package f5;
 
-import com.google.android.gms.internal.play_billing.k3;
+import com.google.android.gms.internal.cast.a6;
 import java.nio.ByteBuffer;
 import java.util.Iterator;
 import java.util.LinkedList;
-import ji.w4;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class i extends com.googlecode.mp4parser.a {
-    public static final /* synthetic */ w4 d;
-    public static final /* synthetic */ w4 e;
+    public static final /* synthetic */ le.b d;
+    public static final /* synthetic */ le.b e;
     public String a;
     public long b;
     public LinkedList c;
@@ -53,10 +52,10 @@ public final class i extends com.googlecode.mp4parser.a {
 
     public final String toString() {
         StringBuilder sb2 = new StringBuilder("FileTypeBox[majorBrand=");
-        k3.p(te.a.b(d, this, this));
+        a6.p(te.a.b(d, this, this));
         sb2.append(this.a);
         sb2.append(";minorVersion=");
-        k3.p(te.a.b(e, this, this));
+        a6.p(te.a.b(e, this, this));
         sb2.append(this.b);
         for (String str : this.c) {
             sb2.append(";compatibleBrand=");

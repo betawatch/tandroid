@@ -1,48 +1,41 @@
 package gi;
 
+import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.m61;
-import r0.l1;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.Components.a71;
+import org.telegram.ui.Components.e61;
+import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.s61;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class j implements Utilities.Callback5, Utilities.Callback5Return, r0.n, MessagesStorage.BooleanCallback {
-    public final /* synthetic */ p a;
-
-    public /* synthetic */ j(p pVar) {
-        this.a = pVar;
+public final class j extends e61 {
+    static {
+        e61.setup(new j());
     }
 
-    @Override // r0.n
-    public l1 Q0(View view, l1 l1Var) {
-        i0.b f7 = l1Var.a.f(519);
-        this.a.d.setPadding(0, f7.b, 0, f7.d);
-        return l1.b;
+    public static f61 a(int i10, String str, String str2) {
+        f61 J = f61.J(j.class);
+        J.k = i10;
+        J.l = str;
+        J.m = str2;
+        return J;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5Return
-    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        return Boolean.valueOf(p.U(this.a, (m61) obj, (View) obj2));
+    @Override // org.telegram.ui.Components.e61
+    public final void bindView(View view, f61 f61Var, boolean z10, s61 s61Var, a71 a71Var) {
+        ((k) view).a(f61Var.l, f61Var.m, f61Var.k);
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        p.V(this.a, (m61) obj);
+    @Override // org.telegram.ui.Components.e61
+    public final View createView(Context context, im0 im0Var, int i10, int i11, d6 d6Var) {
+        return new k(context, d6Var, false);
     }
 
-    @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
-    public void run(boolean z10) {
-        p pVar = this.a;
-        pVar.finishFragment();
-        pVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needDeleteDialog, Long.valueOf(-pVar.b), null, pVar.H, Boolean.valueOf(z10));
+    @Override // org.telegram.ui.Components.e61
+    public final boolean isClickable() {
+        return false;
     }
 }

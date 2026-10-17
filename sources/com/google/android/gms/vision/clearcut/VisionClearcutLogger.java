@@ -2,8 +2,7 @@ package com.google.android.gms.vision.clearcut;
 
 import android.content.Context;
 import android.util.Log;
-import com.google.android.gms.common.api.internal.r;
-import com.google.android.gms.internal.clearcut.w1;
+import com.google.android.gms.internal.clearcut.x1;
 import com.google.android.gms.internal.vision.c;
 import com.google.android.gms.internal.vision.e0;
 import com.google.android.gms.internal.vision.f0;
@@ -15,9 +14,9 @@ import com.google.android.gms.internal.vision.y1;
 import com.google.android.gms.internal.vision.z0;
 import i6.a;
 import java.io.IOException;
-import w7.o6;
+import w7.p6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public class VisionClearcutLogger {
     private final a zza;
@@ -58,9 +57,9 @@ public class VisionClearcutLogger {
                 if (this.zzb) {
                     a aVar = this.zza;
                     aVar.getClass();
-                    r rVar = new r(aVar, bArr);
-                    ((w1) rVar.e).c = i10;
-                    rVar.b();
+                    ai.a aVar2 = new ai.a(aVar, bArr);
+                    ((x1) aVar2.e).c = i10;
+                    aVar2.b();
                     return;
                 }
                 e0 k10 = f0.k();
@@ -85,11 +84,11 @@ public class VisionClearcutLogger {
                         Log.e("Vision", "Would have logged:\n" + obj);
                     }
                 } catch (Exception e) {
-                    o6.a(e, "Parsing error", new Object[0]);
+                    p6.a(e, "Parsing error", new Object[0]);
                 }
             } catch (Exception e7) {
                 c.a.q(e7);
-                o6.a(e7, "Failed to log", new Object[0]);
+                p6.a(e7, "Failed to log", new Object[0]);
             }
         } catch (IOException e10) {
             String name = f0.class.getName();

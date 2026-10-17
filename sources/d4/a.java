@@ -26,13 +26,12 @@ import org.telegram.tgnet.TLObject;
 import v7.b8;
 import v7.s6;
 import v7.u6;
-import z3.e;
+import z3.l;
 import z3.m;
-import z3.n;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class a implements n {
+public final class a implements m {
     public static final Pattern h = Pattern.compile("(?:(\\d+):)?(\\d+):(\\d+)[:.](\\d+)");
     public final boolean a;
     public final b4.b b;
@@ -53,10 +52,10 @@ public final class a implements n {
         b4.b a2 = b4.b.a(r10);
         a2.getClass();
         this.b = a2;
-        b(new x((byte[]) list.get(1)), StandardCharsets.UTF_8);
+        d(new x((byte[]) list.get(1)), StandardCharsets.UTF_8);
     }
 
-    public static int a(long j10, ArrayList arrayList, ArrayList arrayList2) {
+    public static int b(long j10, ArrayList arrayList, ArrayList arrayList2) {
         int i10;
         int size = arrayList.size() - 1;
         while (true) {
@@ -78,7 +77,7 @@ public final class a implements n {
         return i10;
     }
 
-    public static long c(String str) {
+    public static long e(String str) {
         Matcher matcher = h.matcher(str.trim());
         if (!matcher.matches()) {
             return -9223372036854775807L;
@@ -88,8 +87,13 @@ public final class a implements n {
         return (Long.parseLong(matcher.group(4)) * 10000) + (Long.parseLong(matcher.group(3)) * 1000000) + (Long.parseLong(matcher.group(2)) * 60000000) + (Long.parseLong(group) * 3600000000L);
     }
 
-    @Override // z3.n
-    public final int X() {
+    @Override // z3.m
+    public final /* synthetic */ z3.d a(int i10, int i11, byte[] bArr) {
+        return r.c.a(this, bArr, i11);
+    }
+
+    @Override // z3.m
+    public final int c() {
         return 1;
     }
 
@@ -98,7 +102,7 @@ public final class a implements n {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void b(x xVar, Charset charset) {
+    public final void d(x xVar, Charset charset) {
         int i10;
         d dVar;
         while (true) {
@@ -281,7 +285,7 @@ public final class a implements n {
                                         int length2 = split3.length;
                                         String str = m0.a;
                                         Locale locale = Locale.US;
-                                        StringBuilder m10 = i2.d.m("Skipping malformed 'Style:' line (expected ", i25, " values, found ", length2, "): '");
+                                        StringBuilder m10 = i0.a.m("Skipping malformed 'Style:' line (expected ", i25, " values, found ", length2, "): '");
                                         m10.append(n12);
                                         m10.append("'");
                                         e2.a.l("SsaStyle", m10.toString());
@@ -354,17 +358,17 @@ public final class a implements n {
 
     /* JADX WARN: Removed duplicated region for block: B:28:0x00c4  */
     /* JADX WARN: Removed duplicated region for block: B:33:0x00cc  */
-    @Override // z3.n
+    @Override // z3.m
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void m0(byte[] bArr, int i10, int i11, m mVar, j jVar) {
+    public final void g(byte[] bArr, int i10, int i11, l lVar, j jVar) {
         Charset charset;
         x xVar;
         b4.b bVar;
         long j10;
         int parseInt;
-        long c10;
+        long e;
         float f7;
         float f10;
         int i12;
@@ -389,7 +393,7 @@ public final class a implements n {
         int i22;
         int i23;
         a aVar = this;
-        long j11 = mVar.a;
+        long j11 = lVar.a;
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
         x xVar2 = aVar.c;
@@ -401,14 +405,14 @@ public final class a implements n {
         }
         boolean z11 = aVar.a;
         if (!z11) {
-            aVar.b(xVar2, J);
+            aVar.d(xVar2, J);
         }
         b4.b bVar2 = z11 ? aVar.b : null;
         while (true) {
             String n10 = xVar2.n(J);
             if (n10 == null) {
                 long j12 = j11;
-                ArrayList arrayList3 = (j12 == -9223372036854775807L || !mVar.b) ? null : new ArrayList();
+                ArrayList arrayList3 = (j12 == -9223372036854775807L || !lVar.b) ? null : new ArrayList();
                 for (int i24 = 0; i24 < arrayList.size(); i24++) {
                     List list = (List) arrayList.get(i24);
                     if (!list.isEmpty() || i24 == 0) {
@@ -417,11 +421,11 @@ public final class a implements n {
                         }
                         long longValue = ((Long) arrayList2.get(i24)).longValue();
                         long longValue2 = ((Long) arrayList2.get(i24 + 1)).longValue();
-                        z3.b bVar3 = new z3.b(longValue, longValue2 - longValue, list);
+                        z3.a aVar2 = new z3.a(longValue, longValue2 - longValue, list);
                         if (j12 == -9223372036854775807L || longValue2 >= j12) {
-                            jVar.accept(bVar3);
+                            jVar.accept(aVar2);
                         } else if (arrayList3 != null) {
-                            arrayList3.add(bVar3);
+                            arrayList3.add(aVar2);
                         }
                     }
                 }
@@ -431,7 +435,7 @@ public final class a implements n {
                     while (i25 < size) {
                         Object obj = arrayList3.get(i25);
                         i25++;
-                        jVar.accept((z3.b) obj);
+                        jVar.accept((z3.a) obj);
                     }
                     return;
                 }
@@ -458,9 +462,9 @@ public final class a implements n {
                                 } catch (RuntimeException unused) {
                                     e2.a.l("SsaParser", "Fail to parse layer: " + split[i27]);
                                 }
-                                c10 = c(split[bVar2.b]);
+                                e = e(split[bVar2.b]);
                                 charset = J;
-                                if (c10 != -9223372036854775807L) {
+                                if (e != -9223372036854775807L) {
                                     e2.a.l("SsaParser", "Skipping invalid timing: ".concat(n10));
                                     j10 = j11;
                                     bVar = bVar2;
@@ -472,8 +476,8 @@ public final class a implements n {
                                     xVar2 = xVar;
                                 } else {
                                     j10 = j11;
-                                    long c11 = c(split[bVar2.c]);
-                                    if (c11 == -9223372036854775807L || c11 <= c10) {
+                                    long e7 = e(split[bVar2.c]);
+                                    if (e7 == -9223372036854775807L || e7 <= e) {
                                         bVar = bVar2;
                                         xVar = xVar2;
                                         e2.a.l("SsaParser", "Skipping invalid timing: ".concat(n10));
@@ -684,10 +688,10 @@ public final class a implements n {
                                             f14 = pointF.x / f7;
                                             f13 = pointF.y / f10;
                                         }
-                                        d2.b bVar4 = new d2.b(spannableString, alignment2, null, null, f13, i12, i29, f14, i14, i13, f11, -3.4028235E38f, -3.4028235E38f, false, -16777216, TLObject.FLAG_31, 0.0f, parseInt);
-                                        int a10 = a(c11, arrayList2, arrayList);
-                                        for (int a11 = a(c10, arrayList2, arrayList); a11 < a10; a11++) {
-                                            ((List) arrayList.get(a11)).add(bVar4);
+                                        d2.b bVar3 = new d2.b(spannableString, alignment2, null, null, f13, i12, i29, f14, i14, i13, f11, -3.4028235E38f, -3.4028235E38f, false, -16777216, TLObject.FLAG_31, 0.0f, parseInt);
+                                        int b10 = b(e7, arrayList2, arrayList);
+                                        for (int b11 = b(e, arrayList2, arrayList); b11 < b10; b11++) {
+                                            ((List) arrayList.get(b11)).add(bVar3);
                                         }
                                     }
                                     aVar = this;
@@ -698,9 +702,9 @@ public final class a implements n {
                                 }
                             }
                             parseInt = 0;
-                            c10 = c(split[bVar2.b]);
+                            e = e(split[bVar2.b]);
                             charset = J;
-                            if (c10 != -9223372036854775807L) {
+                            if (e != -9223372036854775807L) {
                             }
                         }
                     }
@@ -718,12 +722,7 @@ public final class a implements n {
         }
     }
 
-    @Override // z3.n
-    public final /* synthetic */ e x(int i10, int i11, byte[] bArr) {
-        return t8.b.a(this, bArr, i11);
-    }
-
-    @Override // z3.n
+    @Override // z3.m
     public final /* synthetic */ void reset() {
     }
 }

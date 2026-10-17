@@ -2,48 +2,19 @@ package t0;
 
 import android.content.ClipDescription;
 import android.net.Uri;
-import android.view.inputmethod.InputContentInfo;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class h implements i {
-    public final InputContentInfo a;
+public interface h {
+    Uri c();
 
-    public h(Object obj) {
-        this.a = (InputContentInfo) obj;
-    }
+    void d();
 
-    @Override // t0.i
-    public final Uri c() {
-        return this.a.getContentUri();
-    }
+    Uri f();
 
-    @Override // t0.i
-    public final void d() {
-        this.a.requestPermission();
-    }
+    ClipDescription getDescription();
 
-    @Override // t0.i
-    public final Uri f() {
-        return this.a.getLinkUri();
-    }
+    Object i();
 
-    @Override // t0.i
-    public final ClipDescription getDescription() {
-        return this.a.getDescription();
-    }
-
-    @Override // t0.i
-    public final Object i() {
-        return this.a;
-    }
-
-    @Override // t0.i
-    public final void k() {
-        this.a.releasePermission();
-    }
-
-    public h(Uri uri, ClipDescription clipDescription, Uri uri2) {
-        this.a = new InputContentInfo(uri, clipDescription, uri2);
-    }
+    void n();
 }

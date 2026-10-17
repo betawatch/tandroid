@@ -12,9 +12,9 @@ import com.google.android.gms.common.internal.BinderWrapper;
 import d6.d0;
 import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicLong;
-import m.t3;
+import m.s3;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class v extends n6.g {
     public static final b n0 = new b("CastClientImpl", null);
@@ -40,8 +40,8 @@ public final class v extends n6.g {
     public Bundle l0;
     public final HashMap m0;
 
-    public v(Context context, Looper looper, t3 t3Var, CastDevice castDevice, long j10, d0 d0Var, Bundle bundle, com.google.android.gms.common.api.k kVar, com.google.android.gms.common.api.l lVar) {
-        super(context, looper, 10, t3Var, kVar, lVar, 0);
+    public v(Context context, Looper looper, s3 s3Var, CastDevice castDevice, long j10, d0 d0Var, Bundle bundle, com.google.android.gms.common.api.k kVar, com.google.android.gms.common.api.l lVar) {
+        super(context, looper, 10, s3Var, kVar, lVar, 0);
         this.V = castDevice;
         this.W = d0Var;
         this.Y = j10;

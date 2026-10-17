@@ -1,29 +1,19 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class h3 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Context b;
+public final class h3 extends yh.k1 {
+    public final /* synthetic */ org.telegram.ui.Cells.x0 y;
 
-    public /* synthetic */ h3(Context context, int i10) {
-        this.a = i10;
-        this.b = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h3(org.telegram.ui.Cells.x0 x0Var, org.telegram.ui.Cells.x0 x0Var2) {
+        super(x0Var);
+        this.y = x0Var2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                pf.d.t(this.b, LocaleController.getString(R.string.TermsOfServiceUrl));
-                break;
-            default:
-                pf.d.t(this.b, LocaleController.getString(R.string.TermsOfServiceUrl));
-                break;
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final void invalidateSelf() {
+        super.invalidateSelf();
+        this.y.invalidate();
     }
 }

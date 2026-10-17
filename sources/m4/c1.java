@@ -2,7 +2,7 @@ package m4;
 
 import v7.q8;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c1 implements g1, e2.j {
     public final /* synthetic */ d a;
@@ -17,11 +17,11 @@ public final /* synthetic */ class c1 implements g1, e2.j {
     }
 
     @Override // m4.g1
-    public Object c(e0 e0Var, v vVar, int i10) {
+    public Object e(f0 f0Var, v vVar, int i10) {
         Object obj = this.a.g;
         obj.getClass();
-        pb.a aVar = e0Var.e;
-        e0Var.s(vVar);
+        pb.a aVar = f0Var.e;
+        f0Var.s(vVar);
         aVar.getClass();
         return q8.b(new s1(-6));
     }

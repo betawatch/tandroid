@@ -1,15 +1,15 @@
 package x2;
 
-import b2.q1;
-import b2.x;
+import b2.p1;
+import b2.w;
 import java.util.List;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public interface p {
     boolean a(int i10, long j10);
 
-    q1 b();
+    p1 b();
 
     int c();
 
@@ -17,7 +17,7 @@ public interface p {
 
     void e(boolean z10);
 
-    x f(int i10);
+    w f(int i10);
 
     void g();
 
@@ -33,7 +33,7 @@ public interface p {
 
     int length();
 
-    x m();
+    w m();
 
     int n();
 
@@ -45,7 +45,7 @@ public interface p {
 
     void r();
 
-    int s(x xVar);
+    int s(w wVar);
 
     void t();
 

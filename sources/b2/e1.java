@@ -1,71 +1,127 @@
 package b2;
 
-import java.util.List;
+import android.os.Bundle;
+import j$.util.Objects;
+import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public interface e1 {
-    void onAudioAttributesChanged(f fVar);
+public final class e1 {
+    public static final String j;
+    public static final String k;
+    public static final String l;
+    public static final String m;
+    public static final String n;
+    public static final String o;
+    public static final String p;
+    public final Object a;
+    public final int b;
+    public final o0 c;
+    public final Object d;
+    public final int e;
+    public final long f;
+    public final long g;
+    public final int h;
+    public final int i;
 
-    void onAudioSessionIdChanged(int i10);
+    static {
+        String str = e2.m0.a;
+        j = Integer.toString(0, 36);
+        k = Integer.toString(1, 36);
+        l = Integer.toString(2, 36);
+        m = Integer.toString(3, 36);
+        n = Integer.toString(4, 36);
+        o = Integer.toString(5, 36);
+        p = Integer.toString(6, 36);
+    }
 
-    void onAvailableCommandsChanged(c1 c1Var);
+    public e1(Object obj, int i10, o0 o0Var, Object obj2, int i11, long j10, long j11, int i12, int i13) {
+        u6.g(i10 >= 0);
+        u6.g(i11 >= 0);
+        this.a = obj;
+        this.b = i10;
+        this.c = o0Var;
+        this.d = obj2;
+        this.e = i11;
+        this.f = j10;
+        this.g = j11;
+        this.h = i12;
+        this.i = i13;
+    }
 
-    void onCues(d2.c cVar);
+    public final boolean a(e1 e1Var) {
+        return this.b == e1Var.b && this.e == e1Var.e && this.f == e1Var.f && this.g == e1Var.g && this.h == e1Var.h && this.i == e1Var.i && Objects.equals(this.c, e1Var.c);
+    }
 
-    void onCues(List list);
+    public final e1 b(boolean z10, boolean z11) {
+        if (z10 && z11) {
+            return this;
+        }
+        return new e1(this.a, z11 ? this.b : 0, z10 ? this.c : null, this.d, z11 ? this.e : 0, z10 ? this.f : 0L, z10 ? this.g : 0L, z10 ? this.h : -1, z10 ? this.i : -1);
+    }
 
-    void onEvents(g1 g1Var, d1 d1Var);
+    public final Bundle c(int i10) {
+        Bundle bundle = new Bundle();
+        int i11 = this.b;
+        if (i10 < 3 || i11 != 0) {
+            bundle.putInt(j, i11);
+        }
+        o0 o0Var = this.c;
+        if (o0Var != null) {
+            bundle.putBundle(k, o0Var.c(i10, false));
+        }
+        int i12 = this.e;
+        if (i10 < 3 || i12 != 0) {
+            bundle.putInt(l, i12);
+        }
+        long j10 = this.f;
+        if (i10 < 3 || j10 != 0) {
+            bundle.putLong(m, j10);
+        }
+        long j11 = this.g;
+        if (i10 < 3 || j11 != 0) {
+            bundle.putLong(n, j11);
+        }
+        int i13 = this.h;
+        if (i13 != -1) {
+            bundle.putInt(o, i13);
+        }
+        int i14 = this.i;
+        if (i14 != -1) {
+            bundle.putInt(p, i14);
+        }
+        return bundle;
+    }
 
-    void onIsLoadingChanged(boolean z10);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && e1.class == obj.getClass()) {
+            e1 e1Var = (e1) obj;
+            if (a(e1Var) && Objects.equals(this.a, e1Var.a) && Objects.equals(this.d, e1Var.d)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
-    void onIsPlayingChanged(boolean z10);
+    public final int hashCode() {
+        return Objects.hash(this.a, Integer.valueOf(this.b), this.c, this.d, Integer.valueOf(this.e), Long.valueOf(this.f), Long.valueOf(this.g), Integer.valueOf(this.h), Integer.valueOf(this.i));
+    }
 
-    void onLoadingChanged(boolean z10);
-
-    void onMediaItemTransition(p0 p0Var, int i10);
-
-    void onMediaMetadataChanged(s0 s0Var);
-
-    void onMetadata(u0 u0Var);
-
-    void onPlayWhenReadyChanged(boolean z10, int i10);
-
-    void onPlaybackParametersChanged(a1 a1Var);
-
-    void onPlaybackStateChanged(int i10);
-
-    void onPlaybackSuppressionReasonChanged(int i10);
-
-    void onPlayerError(z0 z0Var);
-
-    void onPlayerErrorChanged(z0 z0Var);
-
-    void onPlayerStateChanged(boolean z10, int i10);
-
-    void onPlaylistMetadataChanged(s0 s0Var);
-
-    void onPositionDiscontinuity(int i10);
-
-    void onPositionDiscontinuity(f1 f1Var, f1 f1Var2, int i10);
-
-    void onRenderedFirstFrame();
-
-    void onRepeatModeChanged(int i10);
-
-    void onShuffleModeEnabledChanged(boolean z10);
-
-    void onSkipSilenceEnabledChanged(boolean z10);
-
-    void onSurfaceSizeChanged(int i10, int i11);
-
-    void onTimelineChanged(p1 p1Var, int i10);
-
-    void onTrackSelectionParametersChanged(u1 u1Var);
-
-    void onTracksChanged(w1 w1Var);
-
-    void onVideoSizeChanged(b2 b2Var);
-
-    void onVolumeChanged(float f7);
+    public final String toString() {
+        String str = "mediaItem=" + this.b + ", period=" + this.e + ", pos=" + this.f;
+        int i10 = this.h;
+        if (i10 == -1) {
+            return str;
+        }
+        StringBuilder i11 = r.c.i(str, ", contentPos=");
+        i11.append(this.g);
+        i11.append(", adGroup=");
+        i11.append(i10);
+        i11.append(", ad=");
+        i11.append(this.i);
+        return i11.toString();
+    }
 }

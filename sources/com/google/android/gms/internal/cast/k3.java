@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class k3 extends f5 {
     private static final k3 zzb;
@@ -11,7 +11,7 @@ public final class k3 extends f5 {
     private int zzh;
     private int zzi;
     private long zzj;
-    private k5 zzk = g6.d;
+    private k5 zzk = h6.d;
 
     static {
         k3 k3Var = new k3();
@@ -26,7 +26,7 @@ public final class k3 extends f5 {
             return (byte) 1;
         }
         if (i11 == 2) {
-            return new h6(zzb, "\u0001\u0007\u0000\u0001\u0001\u0007\u0007\u0000\u0001\u0000\u0001ဉ\u0000\u0002᠌\u0001\u0003᠌\u0002\u0004᠌\u0003\u0005᠌\u0004\u0006ဂ\u0005\u0007\u001b", new Object[]{"zzd", "zze", "zzf", z0.m, "zzg", z0.l, "zzh", z.O, "zzi", z.E, "zzj", "zzk", k2.class});
+            return new i6(zzb, "\u0001\u0007\u0000\u0001\u0001\u0007\u0007\u0000\u0001\u0000\u0001ဉ\u0000\u0002᠌\u0001\u0003᠌\u0002\u0004᠌\u0003\u0005᠌\u0004\u0006ဂ\u0005\u0007\u001b", new Object[]{"zzd", "zze", "zzf", z0.m, "zzg", z0.l, "zzh", z.O, "zzi", z.E, "zzj", "zzk", k2.class});
         }
         if (i11 == 3) {
             return new k3();

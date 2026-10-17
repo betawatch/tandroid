@@ -1,15 +1,15 @@
 package yh;
 
 import android.view.View;
-import org.telegram.ui.Components.q5;
+import org.telegram.ui.Components.p5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
 public final class t0 implements View.OnAttachStateChangeListener {
-    public final /* synthetic */ q5 a;
+    public final /* synthetic */ p5 a;
 
-    public t0(q5 q5Var) {
-        this.a = q5Var;
+    public t0(p5 p5Var) {
+        this.a = p5Var;
     }
 
     @Override // android.view.View.OnAttachStateChangeListener

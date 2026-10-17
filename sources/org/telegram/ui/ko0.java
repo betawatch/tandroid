@@ -1,89 +1,44 @@
 package org.telegram.ui;
 
-import android.content.ActivityNotFoundException;
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
-import android.webkit.RenderProcessGoneDetail;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class ko0 extends WebViewClient {
-    public final /* synthetic */ Context a;
-    public final /* synthetic */ ap0 b;
+public final /* synthetic */ class ko0 implements Utilities.Callback {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ ag.c b;
+    public final /* synthetic */ TL_stars.TL_starGiftUnique c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public ko0(ap0 ap0Var, Context context) {
-        this.b = ap0Var;
-        this.a = context;
+    public /* synthetic */ ko0(jp0 jp0Var, ag.c cVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10, ho0 ho0Var) {
+        this.e = jp0Var;
+        this.b = cVar;
+        this.c = tL_starGiftUnique;
+        this.d = j10;
+        this.f = ho0Var;
     }
 
-    @Override // android.webkit.WebViewClient
-    public final void onPageFinished(WebView webView, String str) {
-        super.onPageFinished(webView, str);
-        ap0 ap0Var = this.b;
-        ap0Var.z0 = false;
-        ap0Var.H0(true, false);
-        ap0Var.K0();
-    }
-
-    @Override // android.webkit.WebViewClient
-    public final boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {
-        ap0 ap0Var = this.b;
-        try {
-            if (!AndroidUtilities.isSafeToShow(ap0Var.getParentActivity())) {
-                return true;
-            }
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(ap0Var.getParentActivity(), 0, ap0Var.Y0);
-            alertDialog$Builder.a.R = LocaleController.getString(R.string.ChromeCrashTitle);
-            alertDialog$Builder.a.T = AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ChromeCrashMessage), new xk0(this, 8));
-            alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
-            alertDialog$Builder.o();
-            return true;
-        } catch (Exception e) {
-            FileLog.e(e);
-            return false;
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
+            case 0:
+                jp0.V((jp0) this.e, this.b, this.c, this.d, (ho0) this.f, (TLRPC.TL_payments_paymentFormStarGift) obj);
+                break;
+            default:
+                yh.g4.V((yh.g4) this.e, (org.telegram.ui.ActionBar.b2) this.f, this.b, this.c, this.d, (TLRPC.TL_payments_paymentFormStarGift) obj);
+                break;
         }
     }
 
-    @Override // android.webkit.WebViewClient
-    public final boolean shouldOverrideUrlLoading(WebView webView, String str) {
-        Uri parse;
-        boolean equals;
-        ap0 ap0Var;
-        try {
-            parse = Uri.parse(str);
-            equals = "t.me".equals(parse.getHost());
-            ap0Var = this.b;
-        } catch (Exception unused) {
-        }
-        if (equals) {
-            ap0Var.t0();
-            return true;
-        }
-        if (!ap0.h1.contains(parse.getScheme())) {
-            if (!ap0.g1.contains(parse.getScheme())) {
-                try {
-                    if (ap0Var.getParentActivity() != null) {
-                        ap0Var.getParentActivity().startActivityForResult(new Intent("android.intent.action.VIEW", parse), 210);
-                        return true;
-                    }
-                } catch (ActivityNotFoundException unused2) {
-                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this.a);
-                    alertDialog$Builder.a.R = ap0Var.p0;
-                    alertDialog$Builder.a.T = LocaleController.getString(R.string.PaymentAppNotFoundForDeeplink);
-                    alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
-                    alertDialog$Builder.o();
-                }
-            }
-            return false;
-        }
-        return true;
+    public /* synthetic */ ko0(yh.g4 g4Var, org.telegram.ui.ActionBar.b2 b2Var, ag.c cVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10) {
+        this.e = g4Var;
+        this.f = b2Var;
+        this.b = cVar;
+        this.c = tL_starGiftUnique;
+        this.d = j10;
     }
 }

@@ -1,12 +1,8 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class m7 implements RequestDelegate {
+public final /* synthetic */ class m7 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MediaDataController b;
 
@@ -15,38 +11,65 @@ public final /* synthetic */ class m7 implements RequestDelegate {
         this.b = mediaDataController;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$checkGenericAnimations$80(tLObject, tL_error);
+                this.b.lambda$processLoadedMenuBots$5();
                 break;
             case 1:
-                this.b.lambda$preloadPremiumPreviewStickers$207(tLObject, tL_error);
+                this.b.lambda$addRecentSticker$20();
                 break;
             case 2:
-                this.b.lambda$clearRecentStickers$19(tLObject, tL_error);
+                this.b.lambda$processLoadedReactions$15();
                 break;
             case 3:
-                this.b.lambda$loadPremiumPromo$8(tLObject, tL_error);
+                this.b.lambda$fetchNewEmojiKeywords$211();
                 break;
             case 4:
-                this.b.lambda$loadReactions$14(tLObject, tL_error);
+                this.b.lambda$clearRecentEmojiStatuses$230();
                 break;
             case 5:
-                this.b.lambda$checkPremiumGiftStickers$76(tLObject, tL_error);
+                this.b.lambda$clearRecentStickers$17();
                 break;
             case 6:
-                this.b.lambda$loadDraftsIfNeed$188(tLObject, tL_error);
+                this.b.lambda$loadReactions$12();
                 break;
             case 7:
-                this.b.lambda$checkDefaultTopicIcons$82(tLObject, tL_error);
+                this.b.lambda$loadPremiumPromo$7();
                 break;
             case 8:
-                this.b.lambda$loadGroupStickerSet$46(tLObject, tL_error);
+                this.b.lambda$processLoadedPremiumPromo$9();
+                break;
+            case 9:
+                this.b.lambda$cleanupStickerSetCache$39();
+                break;
+            case 10:
+                this.b.lambda$cleanup$2();
+                break;
+            case 11:
+                this.b.lambda$fetchEmojiStatuses$231();
+                break;
+            case 12:
+                this.b.lambda$loadDraftsIfNeed$186();
+                break;
+            case 13:
+                this.b.lambda$loadHints$145();
+                break;
+            case 14:
+                this.b.lambda$loadDraftsIfNeed$187();
+                break;
+            case 15:
+                this.b.lambda$loadAttachMenuBots$3();
+                break;
+            case 16:
+                this.b.lambda$loadHints$146();
+                break;
+            case 17:
+                this.b.lambda$clearTopPeers$149();
                 break;
             default:
-                this.b.lambda$checkTonGiftStickers$78(tLObject, tL_error);
+                this.b.lambda$fetchEmojiStatuses$233();
                 break;
         }
     }

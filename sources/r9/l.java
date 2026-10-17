@@ -1,12 +1,12 @@
 package r9;
 
-import bi.w2;
+import ci.i1;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.util.ArrayDeque;
 import java.util.HashMap;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class l implements na.b, na.a {
     public final HashMap a = new HashMap();
@@ -17,7 +17,7 @@ public final class l implements na.b, na.a {
         this.c = executor;
     }
 
-    public final void a(w2 w2Var) {
+    public final void a(i1 i1Var) {
         Executor executor = this.c;
         synchronized (this) {
             try {
@@ -25,7 +25,7 @@ public final class l implements na.b, na.a {
                 if (!this.a.containsKey(l9.b.class)) {
                     this.a.put(l9.b.class, new ConcurrentHashMap());
                 }
-                ((ConcurrentHashMap) this.a.get(l9.b.class)).put(w2Var, executor);
+                ((ConcurrentHashMap) this.a.get(l9.b.class)).put(i1Var, executor);
             } catch (Throwable th2) {
                 throw th2;
             }

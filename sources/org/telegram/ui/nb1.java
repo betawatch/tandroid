@@ -1,30 +1,35 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MediaDataController;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class nb1 extends org.telegram.ui.Components.f61 {
-    public final /* synthetic */ StickersActivity b;
+public final class nb1 extends FrameLayout {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Rect b;
+    public final /* synthetic */ mc1 c;
 
-    public nb1(StickersActivity stickersActivity) {
-        this.b = stickersActivity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public nb1(mc1 mc1Var, Context context, int i10, Rect rect) {
+        super(context);
+        this.c = mc1Var;
+        this.a = i10;
+        this.b = rect;
     }
 
-    @Override // org.telegram.ui.Components.f61
-    public final void g(TLRPC.StickerSetCovered stickerSetCovered, boolean z10) {
-        int i10;
-        StickersActivity stickersActivity = this.b;
-        i10 = ((org.telegram.ui.ActionBar.m2) stickersActivity).currentAccount;
-        MediaDataController.getInstance(i10).toggleStickerSet(stickersActivity.getParentActivity(), stickerSetCovered, 2, stickersActivity, false, false);
-    }
-
-    @Override // org.telegram.ui.Components.f61
-    public final void h(TLRPC.StickerSetCovered stickerSetCovered) {
-        int i10;
-        StickersActivity stickersActivity = this.b;
-        i10 = ((org.telegram.ui.ActionBar.m2) stickersActivity).currentAccount;
-        MediaDataController.getInstance(i10).toggleStickerSet(stickersActivity.getParentActivity(), stickerSetCovered, 0, stickersActivity, false, false);
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i10 = this.a;
+        Rect rect = this.b;
+        mc1 mc1Var = this.c;
+        if (i10 == 0) {
+            mc1Var.r.setBounds(mc1Var.V.getLeft() - rect.left, 0, mc1Var.V.getRight() + rect.right, getMeasuredHeight());
+        } else {
+            mc1Var.r.setBounds(-rect.left, 0, getMeasuredWidth() + rect.right, getMeasuredHeight());
+        }
+        mc1Var.r.draw(canvas);
     }
 }

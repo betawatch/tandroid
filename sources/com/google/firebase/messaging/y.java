@@ -14,25 +14,25 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class y {
     public static final long i = TimeUnit.HOURS.toSeconds(8);
     public static final /* synthetic */ int j = 0;
     public final Context a;
-    public final o b;
-    public final m c;
+    public final n b;
+    public final l c;
     public final FirebaseMessaging d;
     public final ScheduledThreadPoolExecutor f;
     public final w h;
     public final a0.f e = new a0.f(0);
     public boolean g = false;
 
-    public y(FirebaseMessaging firebaseMessaging, o oVar, w wVar, m mVar, Context context, ScheduledThreadPoolExecutor scheduledThreadPoolExecutor) {
+    public y(FirebaseMessaging firebaseMessaging, n nVar, w wVar, l lVar, Context context, ScheduledThreadPoolExecutor scheduledThreadPoolExecutor) {
         this.d = firebaseMessaging;
-        this.b = oVar;
+        this.b = nVar;
         this.h = wVar;
-        this.c = mVar;
+        this.c = lVar;
         this.a = context;
         this.f = scheduledThreadPoolExecutor;
     }
@@ -63,21 +63,21 @@ public final class y {
 
     public final void b(String str) {
         String a2 = this.d.a();
-        m mVar = this.c;
-        mVar.getClass();
+        l lVar = this.c;
+        lVar.getClass();
         Bundle bundle = new Bundle();
         bundle.putString("gcm.topic", "/topics/" + str);
-        a(mVar.o(mVar.D(a2, "/topics/" + str, bundle)));
+        a(lVar.q(lVar.J(a2, "/topics/" + str, bundle)));
     }
 
     public final void c(String str) {
         String a2 = this.d.a();
-        m mVar = this.c;
-        mVar.getClass();
+        l lVar = this.c;
+        lVar.getClass();
         Bundle bundle = new Bundle();
         bundle.putString("gcm.topic", "/topics/" + str);
         bundle.putString("delete", "1");
-        a(mVar.o(mVar.D(a2, "/topics/" + str, bundle)));
+        a(lVar.q(lVar.J(a2, "/topics/" + str, bundle)));
     }
 
     public final void e(v vVar) {

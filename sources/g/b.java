@@ -6,7 +6,7 @@ import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class b {
     public final ContextThemeWrapper a;
@@ -15,7 +15,7 @@ public final class b {
     public CharSequence d;
     public View e;
     public CharSequence f;
-    public androidx.biometric.y g;
+    public androidx.biometric.x g;
     public l.l h;
     public Object i;
     public DialogInterface.OnClickListener j;

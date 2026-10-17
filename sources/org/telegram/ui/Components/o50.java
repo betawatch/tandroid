@@ -1,42 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.opengl.GLES20;
-import org.telegram.messenger.R;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public class o50 {
-    public final int a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final int e;
-    public final int f;
+public final class o50 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ m60 b;
 
-    public o50(int i10) {
-        int a2 = p50.a(35633, R.raw.round_blur_vert);
-        this.b = a2;
-        int a10 = p50.a(35632, i10);
-        this.c = a10;
-        int glCreateProgram = GLES20.glCreateProgram();
-        GLES20.glAttachShader(glCreateProgram, a2);
-        GLES20.glAttachShader(glCreateProgram, a10);
-        GLES20.glLinkProgram(glCreateProgram);
-        int[] iArr = new int[1];
-        GLES20.glGetProgramiv(glCreateProgram, 35714, iArr, 0);
-        if (iArr[0] == 0) {
-            GLES20.glDeleteProgram(glCreateProgram);
-            glCreateProgram = 0;
-        }
-        this.a = glCreateProgram;
-        this.d = GLES20.glGetAttribLocation(glCreateProgram, "aPosition");
-        this.e = GLES20.glGetAttribLocation(glCreateProgram, "aTextureCoord");
-        this.f = GLES20.glGetUniformLocation(glCreateProgram, "sTexture");
+    public /* synthetic */ o50(m60 m60Var, int i10) {
+        this.a = i10;
+        this.b = m60Var;
     }
 
-    public final void a() {
-        GLES20.glDeleteProgram(this.a);
-        GLES20.glDeleteShader(this.b);
-        GLES20.glDeleteShader(this.c);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                m60 m60Var = this.b;
+                if (animator.equals(m60Var.L)) {
+                    m60Var.L = null;
+                    break;
+                }
+                break;
+            case 1:
+                m60 m60Var2 = this.b;
+                if (m60Var2.l1 != null) {
+                    m60Var2.l1 = null;
+                    break;
+                }
+                break;
+            default:
+                m60 m60Var3 = this.b;
+                if (animator.equals(m60Var3.e0)) {
+                    m60Var3.c(true);
+                    m60Var3.g1 = false;
+                    m60Var3.setVisibility(4);
+                    break;
+                }
+                break;
+        }
     }
 }

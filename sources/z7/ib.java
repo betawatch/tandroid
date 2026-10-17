@@ -1,23 +1,122 @@
 package z7;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes.dex */
-public final class ib {
-    public final we a;
-    public final hb b;
-    public final fb c;
-    public final ce d;
-    public final fe e;
-    public final ee f;
-    public final j1 g;
+import org.telegram.messenger.voip.VoIPService;
 
-    public /* synthetic */ ib(m.t3 t3Var) {
-        this.a = (we) t3Var.a;
-        this.b = (hb) t3Var.b;
-        this.c = (fb) t3Var.c;
-        this.d = (ce) t3Var.d;
-        this.e = (fe) t3Var.e;
-        this.f = (ee) t3Var.f;
-        this.g = (j1) t3Var.h;
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes.dex */
+public enum ib implements u {
+    b(0),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF1(1),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF3(2),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF5(3),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF7(4),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF9(6),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF11(7),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF14(8),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF2(9),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF6(5),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF4(100),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF8(101),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF10(102),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF12(103),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF13(104),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF0(105),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF1(106),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF2(107),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF0(108),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF1(109),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF2(110),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF0(111),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF1(112),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF0(113),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF1(114),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF0(115),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF1(116),
+    c(201),
+    d(202),
+    e(VoIPService.ID_INCOMING_CALL_PRENOTIFICATION),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF1(204),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF0(205),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF1(206),
+    f(207),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF452(301),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF465(302),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF478(303),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF491(304),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF504(305),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF517(400),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF530(401),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF543(402),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF556(403),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF569(404),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF582(405),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF595(406),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF608(407),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF621(500),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF634(501),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF647(600),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF660(601),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF673(602),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF686(603),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF699(9999);
+
+    public final int a;
+
+    ib(int i10) {
+        this.a = i10;
+    }
+
+    @Override // z7.u
+    public final int zza() {
+        return this.a;
     }
 }

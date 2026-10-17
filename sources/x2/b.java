@@ -1,8 +1,8 @@
 package x2;
 
 import android.os.SystemClock;
-import b2.q1;
-import b2.x;
+import b2.p1;
+import b2.w;
 import e2.g0;
 import e2.m0;
 import e9.k0;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class b extends c {
     public final y2.c g;
@@ -30,8 +30,8 @@ public final class b extends c {
     public long t;
     public v2.l u;
 
-    public b(q1 q1Var, int[] iArr, y2.c cVar, long j10, long j11, long j12, n0 n0Var) {
-        super(q1Var, iArr);
+    public b(p1 p1Var, int[] iArr, y2.c cVar, long j10, long j11, long j12, n0 n0Var) {
+        super(p1Var, iArr);
         if (j12 < j10) {
             e2.a.l("AdaptiveTrackSelection", "Adjusting minDurationToRetainAfterDiscardMs to be at least minDurationForQualityIncreaseMs");
             j12 = j10;
@@ -109,11 +109,11 @@ public final class b extends c {
         long j12 = this.j;
         if (F >= j12) {
             x(list);
-            x xVar = this.d[w(-1, elapsedRealtime)];
+            w wVar = this.d[w(-1, elapsedRealtime)];
             for (int i12 = 0; i12 < size; i12++) {
                 v2.l lVar = (v2.l) list.get(i12);
-                x xVar2 = lVar.d;
-                if (m0.F(lVar.h - j10, this.q) >= j12 && xVar2.j < xVar.j && (i10 = xVar2.A) != -1 && i10 <= this.l && (i11 = xVar2.z) != -1 && i11 <= this.k && i10 < xVar.A) {
+                w wVar2 = lVar.d;
+                if (m0.F(lVar.h - j10, this.q) >= j12 && wVar2.j < wVar.j && (i10 = wVar2.A) != -1 && i10 <= this.l && (i11 = wVar2.z) != -1 && i11 <= this.k && i10 < wVar.A) {
                     return i12;
                 }
             }
@@ -142,14 +142,14 @@ public final class b extends c {
                 }
                 v2.m mVar = mVarArr[i11];
                 if (mVar.next()) {
-                    x10 = mVar.v() - mVar.d();
+                    x10 = mVar.r() - mVar.b();
                     break;
                 }
                 i11++;
             }
         } else {
             v2.m mVar2 = mVarArr[this.r];
-            x10 = mVar2.v() - mVar2.d();
+            x10 = mVar2.r() - mVar2.b();
         }
         int i12 = this.s;
         if (i12 == 0) {
@@ -165,15 +165,15 @@ public final class b extends c {
         }
         int w9 = w(1, elapsedRealtime);
         if (w9 != i13 && !a(i13, elapsedRealtime)) {
-            x[] xVarArr = this.d;
-            x xVar = xVarArr[i13];
-            x xVar2 = xVarArr[w9];
+            w[] wVarArr = this.d;
+            w wVar = wVarArr[i13];
+            w wVar2 = wVarArr[w9];
             long j13 = this.h;
             if (j12 != -9223372036854775807L) {
                 j13 = Math.min((long) ((x10 != -9223372036854775807L ? j12 - x10 : j12) * this.n), j13);
             }
-            int i14 = xVar2.j;
-            int i15 = xVar.j;
+            int i14 = wVar2.j;
+            int i15 = wVar.j;
             if ((i14 > i15 && j11 < j13) || (i14 < i15 && j11 >= this.i)) {
                 w9 = i13;
             }
@@ -225,13 +225,13 @@ public final class b extends c {
         int i12 = 0;
         for (int i13 = 0; i13 < this.b; i13++) {
             if (j10 == Long.MIN_VALUE || !a(i13, j10)) {
-                x xVar = this.d[i13];
-                int max = Math.max(xVar.z, xVar.A);
+                w wVar = this.d[i13];
+                int max = Math.max(wVar.z, wVar.A);
                 if (hashMap.containsKey(Integer.valueOf(max))) {
                     Integer num = (Integer) hashMap.get(Integer.valueOf(max));
-                    x xVar2 = this.d[num.intValue()];
-                    boolean z10 = xVar2.n;
-                    if ((!z10 || xVar.n) && ((!z10 && xVar.n) || xVar.j < xVar2.j)) {
+                    w wVar2 = this.d[num.intValue()];
+                    boolean z10 = wVar2.n;
+                    if ((!z10 || wVar.n) && ((!z10 && wVar.n) || wVar.j < wVar2.j)) {
                         hashMap.put(Integer.valueOf(max), Integer.valueOf(i13));
                         arrayList.remove(num);
                         arrayList.add(Integer.valueOf(i13));
@@ -260,9 +260,9 @@ public final class b extends c {
             Object obj2 = arrayList.get(i15);
             i15++;
             i12 = ((Integer) obj2).intValue();
-            x xVar3 = this.d[i12];
-            int i16 = xVar3.j;
-            if (xVar3.n || i16 <= j13) {
+            w wVar3 = this.d[i12];
+            int i16 = wVar3.j;
+            if (wVar3.n || i16 <= j13) {
                 break;
             }
         }

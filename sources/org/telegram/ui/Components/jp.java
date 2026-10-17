@@ -1,32 +1,31 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.ChannelBoostsController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.lc1;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jp implements Utilities.Callback {
+public final /* synthetic */ class jp implements lc1 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ zp b;
+    public final /* synthetic */ ti b;
+    public final /* synthetic */ org.telegram.ui.hc c;
 
-    public /* synthetic */ jp(zp zpVar, int i10) {
+    public /* synthetic */ jp(ti tiVar, org.telegram.ui.hc hcVar, int i10) {
         this.a = i10;
-        this.b = zpVar;
+        this.b = tiVar;
+        this.c = hcVar;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // org.telegram.ui.lc1
+    public final void a(TLRPC.TL_wallPaper tL_wallPaper) {
         switch (this.a) {
             case 0:
-                zp zpVar = this.b;
-                zpVar.f0 = (TL_stories.TL_premium_boostsStatus) obj;
-                zpVar.e0 = true;
-                zpVar.G(true);
-                zpVar.d0 = false;
+                this.b.dismissInternal();
+                this.c.run(tL_wallPaper);
                 break;
             default:
-                zp.n(this.b, (ChannelBoostsController.CanApplyBoost) obj);
+                this.b.dismissInternal();
+                this.c.run(tL_wallPaper);
                 break;
         }
     }

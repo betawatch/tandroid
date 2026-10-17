@@ -1,37 +1,28 @@
 package v0;
 
-import android.os.Bundle;
-import org.json.JSONObject;
+import java.util.Collection;
+import java.util.List;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public class n extends b2.h {
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n(String str, int i10, Bundle data) {
-        super(str, data);
-        switch (i10) {
-            case 2:
-                super("android.credentials.TYPE_PASSWORD_CREDENTIAL", data);
-                if (str.length() <= 0) {
-                    throw new IllegalArgumentException("password should not be empty");
+public final class n {
+    public final List a;
+    public final boolean b;
+
+    public n(List list, boolean z10) {
+        this.a = list;
+        this.b = z10;
+        if (list.isEmpty()) {
+            throw new IllegalArgumentException("credentialOptions should not be empty");
+        }
+        if (list.size() > 1) {
+            List<p> list2 = list;
+            if (!(list2 instanceof Collection) || !list2.isEmpty()) {
+                for (p pVar : list2) {
                 }
-                return;
-            case 3:
-                super("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", data);
-                if (str.length() != 0) {
-                    try {
-                        new JSONObject(str);
-                        return;
-                    } catch (Exception unused) {
-                    }
-                }
-                throw new IllegalArgumentException("authenticationResponseJson must not be empty, and must be a valid JSON");
-            default:
-                kotlin.jvm.internal.i.e(data, "data");
-                if (str.length() <= 0) {
-                    throw new IllegalArgumentException("type should not be empty");
-                }
-                return;
+            }
+            for (p pVar2 : this.a) {
+            }
         }
     }
 }

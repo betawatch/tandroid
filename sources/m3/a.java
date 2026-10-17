@@ -1,13 +1,13 @@
 package m3;
 
 import a1.g;
-import b2.r0;
-import b2.t0;
-import b2.x;
+import b2.q0;
+import b2.s0;
+import b2.w;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class a implements t0 {
+public final class a implements s0 {
     public final int a;
     public final String b;
 
@@ -16,12 +16,12 @@ public final class a implements t0 {
         this.b = str;
     }
 
-    @Override // b2.t0
-    public final /* synthetic */ x a() {
+    @Override // b2.s0
+    public final /* synthetic */ w a() {
         return null;
     }
 
-    @Override // b2.t0
+    @Override // b2.s0
     public final /* synthetic */ byte[] c() {
         return null;
     }
@@ -33,7 +33,7 @@ public final class a implements t0 {
         return g.s(sb2, this.b, ")");
     }
 
-    @Override // b2.t0
-    public final /* synthetic */ void b(r0 r0Var) {
+    @Override // b2.s0
+    public final /* synthetic */ void b(q0 q0Var) {
     }
 }

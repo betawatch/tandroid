@@ -2,22 +2,22 @@ package a6;
 
 import android.util.Log;
 import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.api.internal.u;
+import com.google.android.gms.common.api.internal.t;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class c implements Runnable {
     public static final a5.a c = new a5.a("RevokeAccessOperation", new String[0]);
     public final String a;
-    public final u b;
+    public final t b;
 
     public c(String str) {
         n6.l.f(str);
         this.a = str;
-        this.b = new u(null, 0);
+        this.b = new t(null, 0);
     }
 
     @Override // java.lang.Runnable

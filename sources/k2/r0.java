@@ -1,35 +1,16 @@
 package k2;
 
-import android.os.SystemClock;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class r0 {
-    public Exception a;
-    public long b = -9223372036854775807L;
-    public long c = -9223372036854775807L;
+    public final b2.z0 a;
+    public final long b;
+    public final long c;
+    public long d;
 
-    public final void a(Exception exc) {
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        if (this.a == null) {
-            this.a = exc;
-        }
-        if (this.b == -9223372036854775807L && s0.c0.get() <= 0) {
-            this.b = 200 + elapsedRealtime;
-        }
-        long j10 = this.b;
-        if (j10 == -9223372036854775807L || elapsedRealtime < j10) {
-            this.c = elapsedRealtime + 50;
-            return;
-        }
-        Exception exc2 = this.a;
-        if (exc2 != exc) {
-            exc2.addSuppressed(exc);
-        }
-        Exception exc3 = this.a;
-        this.a = null;
-        this.b = -9223372036854775807L;
-        this.c = -9223372036854775807L;
-        throw exc3;
+    public r0(b2.z0 z0Var, long j10, long j11) {
+        this.a = z0Var;
+        this.b = j10;
+        this.c = j11;
     }
 }

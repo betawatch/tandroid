@@ -1,28 +1,40 @@
 package org.telegram.messenger;
 
-import android.util.SparseArray;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class gb implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ SparseArray c;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ boolean e;
+    public final /* synthetic */ int f;
+    public final /* synthetic */ int h;
 
-    public /* synthetic */ gb(MessagesController messagesController, SparseArray sparseArray, int i10) {
-        this.a = i10;
+    public /* synthetic */ gb(MessagesController messagesController, long j10, int i10, boolean z10, int i11, int i12, int i13) {
+        this.a = i13;
         this.b = messagesController;
-        this.c = sparseArray;
+        this.c = j10;
+        this.d = i10;
+        this.e = z10;
+        this.f = i11;
+        this.h = i12;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$getDifference$351(this.c);
+                int i10 = this.f;
+                int i11 = this.h;
+                int i12 = this.d;
+                this.b.lambda$markDialogAsRead$242(this.c, i12, this.e, i10, i11);
                 break;
             default:
-                this.b.lambda$getChannelDifference$338(this.c);
+                int i13 = this.f;
+                int i14 = this.h;
+                int i15 = this.d;
+                this.b.lambda$markDialogAsRead$243(this.c, i15, this.e, i13, i14);
                 break;
         }
     }

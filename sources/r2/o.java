@@ -6,7 +6,7 @@ import android.media.MediaCodecInfo;
 import android.os.Build;
 import android.util.Pair;
 import android.util.Range;
-import b2.w0;
+import b2.v0;
 import e2.m0;
 import e9.k0;
 import e9.n0;
@@ -15,9 +15,9 @@ import j$.util.Objects;
 import java.util.HashMap;
 import java.util.List;
 import org.telegram.messenger.MediaController;
-import w7.w6;
+import w7.x6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class o {
     public final String a;
@@ -43,7 +43,7 @@ public final class o {
         this.e = z13;
         this.f = z14;
         this.h = z15;
-        this.i = w0.m(str2);
+        this.i = v0.m(str2);
         this.l = -3.4028235E38f;
         this.j = -1;
         this.k = -1;
@@ -105,86 +105,86 @@ public final class o {
         return new o(str6, str4, str5, codecCapabilities2, z15, z16, z17, z18, z19, z14);
     }
 
-    public final i2.f b(b2.x xVar, b2.x xVar2) {
-        b2.x xVar3;
-        b2.x xVar4;
+    public final i2.e b(b2.w wVar, b2.w wVar2) {
+        b2.w wVar3;
+        b2.w wVar4;
         int i10;
-        String str = xVar.s;
-        b2.o oVar = xVar.I;
-        String str2 = xVar2.s;
-        b2.o oVar2 = xVar2.I;
+        String str = wVar.s;
+        b2.n nVar = wVar.I;
+        String str2 = wVar2.s;
+        b2.n nVar2 = wVar2.I;
         int i11 = !Objects.equals(str, str2) ? 8 : 0;
         if (this.i) {
-            if (xVar.E != xVar2.E) {
+            if (wVar.E != wVar2.E) {
                 i11 |= 1024;
             }
-            boolean z10 = (xVar.z == xVar2.z && xVar.A == xVar2.A) ? false : true;
+            boolean z10 = (wVar.z == wVar2.z && wVar.A == wVar2.A) ? false : true;
             if (!this.e && z10) {
                 i11 |= 512;
             }
-            if ((!b2.o.e(oVar) || !b2.o.e(oVar2)) && !Objects.equals(oVar, oVar2)) {
+            if ((!b2.n.e(nVar) || !b2.n.e(nVar2)) && !Objects.equals(nVar, nVar2)) {
                 i11 |= 2048;
             }
-            if (Build.MODEL.startsWith("SM-T230") && "OMX.MARVELL.VIDEO.HW.CODA7542DECODER".equals(this.a) && !xVar.b(xVar2)) {
+            if (Build.MODEL.startsWith("SM-T230") && "OMX.MARVELL.VIDEO.HW.CODA7542DECODER".equals(this.a) && !wVar.b(wVar2)) {
                 i11 |= 2;
             }
-            int i12 = xVar.B;
-            if (i12 != -1 && (i10 = xVar.C) != -1 && i12 == xVar2.B && i10 == xVar2.C && z10) {
+            int i12 = wVar.B;
+            if (i12 != -1 && (i10 = wVar.C) != -1 && i12 == wVar2.B && i10 == wVar2.C && z10) {
                 i11 |= 2;
             }
-            if (i11 == 0 && Objects.equals(xVar2.s, "video/dolby-vision")) {
-                Pair b10 = e2.g.b(xVar);
-                Pair b11 = e2.g.b(xVar2);
+            if (i11 == 0 && Objects.equals(wVar2.s, "video/dolby-vision")) {
+                Pair b10 = e2.g.b(wVar);
+                Pair b11 = e2.g.b(wVar2);
                 if (b10 == null || b11 == null || !((Integer) b10.first).equals(b11.first)) {
                     i11 |= 2;
                 }
             }
             if (i11 == 0) {
-                return new i2.f(this.a, xVar, xVar2, xVar.b(xVar2) ? 3 : 2, 0);
+                return new i2.e(this.a, wVar, wVar2, wVar.b(wVar2) ? 3 : 2, 0);
             }
-            xVar3 = xVar;
-            xVar4 = xVar2;
+            wVar3 = wVar;
+            wVar4 = wVar2;
         } else {
-            xVar3 = xVar;
-            xVar4 = xVar2;
-            if (xVar3.K != xVar4.K) {
+            wVar3 = wVar;
+            wVar4 = wVar2;
+            if (wVar3.K != wVar4.K) {
                 i11 |= 4096;
             }
-            if (xVar3.L != xVar4.L) {
+            if (wVar3.L != wVar4.L) {
                 i11 |= 8192;
             }
-            if (xVar3.M != xVar4.M) {
+            if (wVar3.M != wVar4.M) {
                 i11 |= 16384;
             }
             String str3 = this.b;
             if (i11 == 0 && (str3.equals(MediaController.AUDIO_MIME_TYPE) || str3.equals("audio/ac4"))) {
-                Pair b12 = e2.g.b(xVar3);
-                Pair b13 = e2.g.b(xVar4);
+                Pair b12 = e2.g.b(wVar3);
+                Pair b13 = e2.g.b(wVar4);
                 if (b12 != null && b13 != null) {
                     int intValue = ((Integer) b12.first).intValue();
                     int intValue2 = ((Integer) b13.first).intValue();
                     if (intValue == 42 && intValue2 == 42) {
-                        return new i2.f(this.a, xVar3, xVar4, 3, 0);
+                        return new i2.e(this.a, wVar3, wVar4, 3, 0);
                     }
                     if (str3.equals("audio/ac4") && b12.equals(b13)) {
-                        return new i2.f(this.a, xVar3, xVar4, 3, 0);
+                        return new i2.e(this.a, wVar3, wVar4, 3, 0);
                     }
                 }
             }
             if (i11 == 0 && (str3.equals("audio/eac3-joc") || str3.equals("audio/eac3"))) {
-                return new i2.f(this.a, xVar3, xVar4, 3, 0);
+                return new i2.e(this.a, wVar3, wVar4, 3, 0);
             }
-            if (!xVar3.b(xVar4)) {
+            if (!wVar3.b(wVar4)) {
                 i11 |= 32;
             }
             if ("audio/opus".equals(str3)) {
                 i11 |= 2;
             }
             if (i11 == 0) {
-                return new i2.f(this.a, xVar3, xVar4, 1, 0);
+                return new i2.e(this.a, wVar3, wVar4, 1, 0);
             }
         }
-        return new i2.f(this.a, xVar3, xVar4, 0, i11);
+        return new i2.e(this.a, wVar3, wVar4, 0, i11);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:156:? A[RETURN, SYNTHETIC] */
@@ -192,25 +192,25 @@ public final class o {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean c(Context context, b2.x xVar, boolean z10) {
+    public final boolean c(Context context, b2.w wVar, boolean z10) {
         MediaCodecInfo.CodecProfileLevel[] codecProfileLevelArr;
         int i10;
         MediaCodecInfo.VideoCapabilities videoCapabilities;
         MediaCodecInfo.AudioCapabilities audioCapabilities;
         Pair pair;
         String str;
-        Pair b10 = e2.g.b(xVar);
-        String str2 = xVar.s;
+        Pair b10 = e2.g.b(wVar);
+        String str2 = wVar.s;
         int i11 = 3;
         String str3 = this.c;
         if (str2 != null && str2.equals("video/mv-hevc")) {
-            String n10 = w0.n(str3);
+            String n10 = v0.n(str3);
             if (n10.equals("video/mv-hevc")) {
                 return true;
             }
             if (n10.equals("video/hevc")) {
                 HashMap hashMap = w.a;
-                List list = xVar.v;
+                List list = wVar.v;
                 int i12 = 0;
                 loop0: while (true) {
                     if (i12 >= list.size()) {
@@ -225,7 +225,7 @@ public final class o {
                         k0 t10 = n0.t();
                         int i13 = 0;
                         while (i13 < bArr.length) {
-                            int c10 = f2.p.c(bArr, i13, bArr.length, zArr);
+                            int c10 = f2.q.c(bArr, i13, bArr.length, zArr);
                             if (c10 != bArr.length) {
                                 t10.c(Integer.valueOf(c10));
                             }
@@ -235,14 +235,14 @@ public final class o {
                         int i14 = 0;
                         while (i14 < f7.d) {
                             if (((Integer) f7.get(i14)).intValue() + i11 < length) {
-                                f2.t tVar = new f2.t(bArr, ((Integer) f7.get(i14)).intValue() + i11, length);
-                                a3.l h = f2.p.h(tVar);
+                                f2.u uVar = new f2.u(bArr, ((Integer) f7.get(i14)).intValue() + i11, length);
+                                a3.l h = f2.q.h(uVar);
                                 if (h.a == 33 && h.b == 0) {
-                                    tVar.j(4);
-                                    int e = tVar.e(3);
-                                    tVar.i();
+                                    uVar.j(4);
+                                    int e = uVar.e(3);
+                                    uVar.i();
                                     pair = null;
-                                    f2.i i15 = f2.p.i(tVar, true, e, null);
+                                    f2.j i15 = f2.q.i(uVar, true, e, null);
                                     str = e2.g.a(i15.a, i15.c, i15.d, i15.f, i15.b, i15.e);
                                     break loop0;
                                 }
@@ -257,7 +257,7 @@ public final class o {
                 if (str != null) {
                     String trim = str.trim();
                     String str4 = m0.a;
-                    b10 = e2.g.c(str, trim.split("\\.", -1), xVar.I);
+                    b10 = e2.g.c(str, trim.split("\\.", -1), wVar.I);
                     if (b10 != null) {
                         return true;
                     }
@@ -313,7 +313,7 @@ public final class o {
                             }
                         }
                     }
-                    h("codec.profileLevel, " + xVar.k + ", " + str3);
+                    h("codec.profileLevel, " + wVar.k + ", " + str3);
                     return false;
                 }
                 b10 = pair;
@@ -323,24 +323,24 @@ public final class o {
         }
     }
 
-    public final boolean d(b2.x xVar) {
-        return (Objects.equals(xVar.s, "audio/flac") && xVar.M == 22 && Build.VERSION.SDK_INT < 34 && this.a.equals("c2.android.flac.decoder")) ? false : true;
+    public final boolean d(b2.w wVar) {
+        return (Objects.equals(wVar.s, "audio/flac") && wVar.M == 22 && Build.VERSION.SDK_INT < 34 && this.a.equals("c2.android.flac.decoder")) ? false : true;
     }
 
-    public final boolean e(Context context, b2.x xVar) {
+    public final boolean e(Context context, b2.w wVar) {
         int i10;
-        String str = xVar.s;
+        String str = wVar.s;
         String str2 = this.b;
-        if ((!str2.equals(str) && !str2.equals(w.c(xVar))) || !c(context, xVar, true) || !d(xVar)) {
+        if ((!str2.equals(str) && !str2.equals(w.c(wVar))) || !c(context, wVar, true) || !d(wVar)) {
             return false;
         }
         if (this.i) {
-            int i11 = xVar.z;
-            if (i11 > 0 && (i10 = xVar.A) > 0) {
-                return g(i11, i10, xVar.D);
+            int i11 = wVar.z;
+            if (i11 > 0 && (i10 = wVar.A) > 0) {
+                return g(i11, i10, wVar.D);
             }
         } else {
-            int i12 = xVar.L;
+            int i12 = wVar.L;
             MediaCodecInfo.CodecCapabilities codecCapabilities = this.d;
             if (i12 != -1) {
                 if (codecCapabilities == null) {
@@ -357,7 +357,7 @@ public final class o {
                     return false;
                 }
             }
-            int i13 = xVar.K;
+            int i13 = wVar.K;
             if (i13 != -1) {
                 if (codecCapabilities == null) {
                     h("channelCount.caps");
@@ -383,11 +383,11 @@ public final class o {
         return true;
     }
 
-    public final boolean f(b2.x xVar) {
+    public final boolean f(b2.w wVar) {
         if (this.i) {
             return this.e;
         }
-        Pair b10 = e2.g.b(xVar);
+        Pair b10 = e2.g.b(wVar);
         return b10 != null && ((Integer) b10.first).intValue() == 42;
     }
 
@@ -405,10 +405,10 @@ public final class o {
         }
         int i12 = Build.VERSION.SDK_INT;
         if (i12 >= 29) {
-            int c10 = (i12 < 29 || ((bool = w6.a) != null && bool.booleanValue())) ? 0 : b2.d.c(videoCapabilities, i10, i11, d);
+            int c10 = (i12 < 29 || ((bool = x6.a) != null && bool.booleanValue())) ? 0 : b2.d.c(videoCapabilities, i10, i11, d);
             if (c10 != 2) {
                 if (c10 == 1) {
-                    StringBuilder m10 = i2.d.m("sizeAndRate.cover, ", i10, "x", i11, "@");
+                    StringBuilder m10 = i0.a.m("sizeAndRate.cover, ", i10, "x", i11, "@");
                     m10.append(d);
                     h(m10.toString());
                     return false;
@@ -420,7 +420,7 @@ public final class o {
             if (i10 < i11) {
                 String str = this.a;
                 if ((!"OMX.MTK.VIDEO.DECODER.HEVC".equals(str) || !"mcv5a".equals(Build.DEVICE)) && a(videoCapabilities, i11, i10, d)) {
-                    StringBuilder m11 = i2.d.m("sizeAndRate.rotated, ", i10, "x", i11, "@");
+                    StringBuilder m11 = i0.a.m("sizeAndRate.rotated, ", i10, "x", i11, "@");
                     m11.append(d);
                     StringBuilder w9 = a1.g.w("AssumedSupport [", m11.toString(), "] [", str, ", ");
                     w9.append(this.b);
@@ -431,7 +431,7 @@ public final class o {
                     return true;
                 }
             }
-            StringBuilder m12 = i2.d.m("sizeAndRate.support, ", i10, "x", i11, "@");
+            StringBuilder m12 = i0.a.m("sizeAndRate.support, ", i10, "x", i11, "@");
             m12.append(d);
             h(m12.toString());
             return false;

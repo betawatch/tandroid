@@ -1,8 +1,9 @@
 package androidx.media3.decoder.ffmpeg;
 
 import androidx.media3.decoder.SimpleDecoderOutputBuffer;
-import b2.x;
+import b2.w;
 import e2.m0;
+import e2.x;
 import h2.f;
 import h2.h;
 import h2.j;
@@ -13,7 +14,7 @@ import java.util.List;
 import org.telegram.messenger.MediaController;
 import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class FfmpegAudioDecoder extends l {
     public static final byte[] w = {102, 76, 97, 67};
@@ -35,18 +36,18 @@ public final class FfmpegAudioDecoder extends l {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public FfmpegAudioDecoder(int i10, x xVar, boolean z10) {
+    public FfmpegAudioDecoder(int i10, w wVar, boolean z10) {
         super(new h[16], new SimpleDecoderOutputBuffer[16]);
         byte[] bArr;
         int i11;
         byte[] bArr2;
         String str = FfmpegLibrary.a;
-        xVar.s.getClass();
-        String str2 = xVar.s;
+        wVar.s.getClass();
+        String str2 = wVar.s;
         String a2 = FfmpegLibrary.a(str2);
         a2.getClass();
         this.o = a2;
-        List list = xVar.v;
+        List list = wVar.v;
         char c10 = 65535;
         switch (str2.hashCode()) {
             case -1003765268:
@@ -156,7 +157,7 @@ public final class FfmpegAudioDecoder extends l {
         this.p = bArr;
         this.q = z10 ? 4 : 2;
         this.r = z10 ? 131070 : 65535;
-        long ffmpegInitialize = ffmpegInitialize(this.o, bArr, z10, xVar.L, xVar.K);
+        long ffmpegInitialize = ffmpegInitialize(this.o, bArr, z10, wVar.L, wVar.K);
         this.s = ffmpegInitialize;
         if (ffmpegInitialize == 0) {
             throw new FfmpegDecoderException("Initialization failed.");
@@ -250,7 +251,7 @@ public final class FfmpegAudioDecoder extends l {
             this.v = ffmpegGetSampleRate(this.s);
             if (this.v == 0 && "alac".equals(this.o)) {
                 this.p.getClass();
-                e2.x xVar = new e2.x(this.p);
+                x xVar = new x(this.p);
                 xVar.N(this.p.length - 4);
                 this.v = xVar.E();
             }

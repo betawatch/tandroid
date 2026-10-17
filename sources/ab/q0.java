@@ -9,7 +9,7 @@ import android.os.Messenger;
 import android.util.Log;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class q0 extends Handler {
     public boolean a;
@@ -102,11 +102,11 @@ public final class q0 extends Handler {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:31:0x0122, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x0124, code lost:
     
         if (ae.a.b(r9) == false) goto L44;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:50:0x0151, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:50:0x0153, code lost:
     
         if (ae.a.b(r9) == false) goto L44;
      */
@@ -149,7 +149,7 @@ public final class q0 extends Handler {
             Object b10 = l9.h.c().b(cb.h.class);
             kotlin.jvm.internal.i.d(b10, "Firebase.app[SessionsSettings::class.java]");
             cb.h hVar = (cb.h) b10;
-            Bundle bundle = hVar.a.a;
+            Bundle bundle = (Bundle) hVar.a.b;
             ae.a aVar = null;
             ae.a aVar2 = bundle.containsKey("firebase_sessions_sessions_restart_timeout") ? new ae.a(i8.d.a(bundle.getInt("firebase_sessions_sessions_restart_timeout"), ae.c.d)) : null;
             if (aVar2 != null) {

@@ -3,6 +3,7 @@ package x4;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
+import android.content.res.XmlResourceParser;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
@@ -16,16 +17,18 @@ import android.os.Build;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
+import android.util.Xml;
+import java.io.IOException;
 import java.util.ArrayDeque;
-import org.telegram.ui.Components.er;
+import org.telegram.ui.Components.br;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import v7.j8;
 import v7.x7;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class o extends er {
+public final class o extends br {
     public static final PorterDuff.Mode v = PorterDuff.Mode.SRC_IN;
     public m c;
     public PorterDuffColorFilter d;
@@ -48,11 +51,37 @@ public final class o extends er {
         this.c = mVar;
     }
 
-    public final PorterDuffColorFilter c(ColorStateList colorStateList, PorterDuff.Mode mode) {
-        if (colorStateList == null || mode == null) {
+    public static o c(Resources resources, int i10, Resources.Theme theme) {
+        int next;
+        if (Build.VERSION.SDK_INT >= 24) {
+            o oVar = new o();
+            ThreadLocal threadLocal = h0.j.a;
+            oVar.b = resources.getDrawable(i10, theme);
+            new n(((Drawable) oVar.b).getConstantState());
+            return oVar;
+        }
+        try {
+            XmlResourceParser xml = resources.getXml(i10);
+            AttributeSet asAttributeSet = Xml.asAttributeSet(xml);
+            do {
+                next = xml.next();
+                if (next == 2) {
+                    break;
+                }
+            } while (next != 1);
+            if (next != 2) {
+                throw new XmlPullParserException("No start tag found");
+            }
+            o oVar2 = new o();
+            oVar2.inflate(resources, xml, asAttributeSet, theme);
+            return oVar2;
+        } catch (IOException e) {
+            Log.e("VectorDrawableCompat", "parser error", e);
+            return null;
+        } catch (XmlPullParserException e7) {
+            Log.e("VectorDrawableCompat", "parser error", e7);
             return null;
         }
-        return new PorterDuffColorFilter(colorStateList.getColorForState(getState(), 0), mode);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -63,6 +92,13 @@ public final class o extends er {
         }
         drawable.canApplyTheme();
         return false;
+    }
+
+    public final PorterDuffColorFilter d(ColorStateList colorStateList, PorterDuff.Mode mode) {
+        if (colorStateList == null || mode == null) {
+            return null;
+        }
+        return new PorterDuffColorFilter(colorStateList.getColorForState(getState(), 0), mode);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -191,7 +227,7 @@ public final class o extends er {
         return drawable != null ? drawable.getIntrinsicWidth() : (int) this.c.b.h;
     }
 
-    @Override // org.telegram.ui.Components.er, android.graphics.drawable.Drawable
+    @Override // org.telegram.ui.Components.br, android.graphics.drawable.Drawable
     public final int getOpacity() {
         Drawable drawable = (Drawable) this.b;
         if (drawable != null) {
@@ -303,7 +339,7 @@ public final class o extends er {
         if (colorStateList == null || (mode = mVar.d) == null) {
             z10 = false;
         } else {
-            this.d = c(colorStateList, mode);
+            this.d = d(colorStateList, mode);
             invalidateSelf();
             z10 = true;
         }
@@ -332,7 +368,7 @@ public final class o extends er {
         }
     }
 
-    @Override // org.telegram.ui.Components.er, android.graphics.drawable.Drawable
+    @Override // org.telegram.ui.Components.br, android.graphics.drawable.Drawable
     public final void setAlpha(int i10) {
         Drawable drawable = (Drawable) this.b;
         if (drawable != null) {
@@ -353,7 +389,7 @@ public final class o extends er {
         }
     }
 
-    @Override // org.telegram.ui.Components.er, android.graphics.drawable.Drawable
+    @Override // org.telegram.ui.Components.br, android.graphics.drawable.Drawable
     public final void setColorFilter(ColorFilter colorFilter) {
         Drawable drawable = (Drawable) this.b;
         if (drawable != null) {
@@ -384,7 +420,7 @@ public final class o extends er {
         m mVar = this.c;
         if (mVar.c != colorStateList) {
             mVar.c = colorStateList;
-            this.d = c(colorStateList, mVar.d);
+            this.d = d(colorStateList, mVar.d);
             invalidateSelf();
         }
     }
@@ -399,7 +435,7 @@ public final class o extends er {
         m mVar = this.c;
         if (mVar.d != mode) {
             mVar.d = mode;
-            this.d = c(mVar.c, mode);
+            this.d = d(mVar.c, mode);
             invalidateSelf();
         }
     }
@@ -712,7 +748,7 @@ public final class o extends er {
                     depth = i10;
                 }
                 if (!z11) {
-                    this.d = c(mVar.c, mVar.d);
+                    this.d = d(mVar.c, mVar.d);
                     return;
                 }
                 throw new XmlPullParserException("no path defined");
@@ -728,6 +764,6 @@ public final class o extends er {
         this.r = new Matrix();
         this.s = new Rect();
         this.c = mVar;
-        this.d = c(mVar.c, mVar.d);
+        this.d = d(mVar.c, mVar.d);
     }
 }

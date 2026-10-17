@@ -6,11 +6,10 @@ import android.view.animation.AlphaAnimation;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.WeakHashMap;
-import m.l2;
-import m.r0;
-import org.telegram.ui.Components.de0;
+import m.k2;
+import org.telegram.ui.Components.xd0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class i implements ViewTreeObserver.OnGlobalLayoutListener {
     public final /* synthetic */ int a;
@@ -77,11 +76,11 @@ public final class i implements ViewTreeObserver.OnGlobalLayoutListener {
                 break;
             case 2:
                 l.c0 c0Var = (l.c0) obj;
-                l2 l2Var = c0Var.n;
-                if (c0Var.a() && !l2Var.N) {
+                k2 k2Var = c0Var.n;
+                if (c0Var.a() && !k2Var.N) {
                     View view2 = c0Var.x;
                     if (view2 != null && view2.isShown()) {
-                        l2Var.g();
+                        k2Var.g();
                         break;
                     } else {
                         c0Var.dismiss();
@@ -90,35 +89,35 @@ public final class i implements ViewTreeObserver.OnGlobalLayoutListener {
                 }
                 break;
             case 3:
-                r0 r0Var = (r0) obj;
-                if (!r0Var.getInternalPopup().a()) {
-                    r0Var.f.l(m.i0.b(r0Var), m.i0.a(r0Var));
+                m.q0 q0Var = (m.q0) obj;
+                if (!q0Var.getInternalPopup().a()) {
+                    q0Var.f.m(m.h0.b(q0Var), m.h0.a(q0Var));
                 }
-                ViewTreeObserver viewTreeObserver = r0Var.getViewTreeObserver();
+                ViewTreeObserver viewTreeObserver = q0Var.getViewTreeObserver();
                 if (viewTreeObserver != null) {
-                    m.h0.a(viewTreeObserver, this);
+                    m.g0.a(viewTreeObserver, this);
                     break;
                 }
                 break;
             case 4:
-                m.o0 o0Var = (m.o0) obj;
-                r0 r0Var2 = o0Var.W;
-                o0Var.getClass();
+                m.n0 n0Var = (m.n0) obj;
+                m.q0 q0Var2 = n0Var.W;
+                n0Var.getClass();
                 WeakHashMap weakHashMap = r0.i0.a;
-                if (!r0Var2.isAttachedToWindow() || !r0Var2.getGlobalVisibleRect(o0Var.U)) {
-                    o0Var.dismiss();
+                if (!q0Var2.isAttachedToWindow() || !q0Var2.getGlobalVisibleRect(n0Var.U)) {
+                    n0Var.dismiss();
                     break;
                 } else {
-                    o0Var.q();
-                    o0Var.g();
+                    n0Var.s();
+                    n0Var.g();
                     break;
                 }
                 break;
             default:
-                de0 de0Var = (de0) obj;
-                de0Var.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                de0Var.h = de0Var.e.getCurrentItem();
-                de0.a(de0Var, de0Var.h, 0);
+                xd0 xd0Var = (xd0) obj;
+                xd0Var.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                xd0Var.h = xd0Var.e.getCurrentItem();
+                xd0.a(xd0Var, xd0Var.h, 0);
                 break;
         }
     }

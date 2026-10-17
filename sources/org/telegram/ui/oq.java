@@ -1,39 +1,33 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.DatePicker;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class oq implements DialogInterface.OnShowListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
+public final class oq implements aq {
+    public final /* synthetic */ TLObject a;
+    public final /* synthetic */ jr b;
 
-    public /* synthetic */ oq(int i10, View view) {
-        this.a = i10;
-        this.b = view;
+    public oq(jr jrVar, TLObject tLObject) {
+        this.b = jrVar;
+        this.a = tLObject;
     }
 
-    @Override // android.content.DialogInterface.OnShowListener
-    public final void onShow(DialogInterface dialogInterface) {
-        switch (this.a) {
-            case 0:
-                DatePicker datePicker = (DatePicker) this.b;
-                int childCount = datePicker.getChildCount();
-                for (int i10 = 0; i10 < childCount; i10++) {
-                    View childAt = datePicker.getChildAt(i10);
-                    ViewGroup.LayoutParams layoutParams = childAt.getLayoutParams();
-                    layoutParams.width = -1;
-                    childAt.setLayoutParams(layoutParams);
-                }
-                break;
-            default:
-                AndroidUtilities.runOnUIThread(new oh(1, (EditTextBoldCursor) this.b));
-                break;
+    @Override // org.telegram.ui.aq
+    public final void a(TLRPC.User user) {
+        jr.c0(this.b, user);
+    }
+
+    @Override // org.telegram.ui.aq
+    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
+        TLObject tLObject = this.a;
+        if (tLObject instanceof TLRPC.ChannelParticipant) {
+            TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) tLObject;
+            channelParticipant.admin_rights = tL_chatAdminRights;
+            channelParticipant.banned_rights = tL_chatBannedRights;
+            channelParticipant.rank = str;
+            jr.W(this.b, channelParticipant, tL_chatAdminRights, tL_chatBannedRights);
         }
     }
 }

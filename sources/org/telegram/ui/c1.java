@@ -23,9 +23,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class c1 extends View implements DownloadController.FileDownloadProgressListener, org.telegram.ui.Cells.n9 {
+public final class c1 extends View implements DownloadController.FileDownloadProgressListener, org.telegram.ui.Cells.m9 {
     public int E;
     public int F;
     public int G;
@@ -35,12 +35,12 @@ public final class c1 extends View implements DownloadController.FileDownloadPro
     public TL_iv.pageBlockAudio K;
     public TLRPC.Document L;
     public MessageObject M;
-    public final z70 a;
-    public final i4 b;
+    public final d70 a;
+    public final j4 b;
     public d3 c;
     public d3 d;
     public final RadialProgress2 e;
-    public final org.telegram.ui.Components.cp0 f;
+    public final org.telegram.ui.Components.yo0 f;
     public boolean h;
     public int n;
     public final int r;
@@ -50,18 +50,18 @@ public final class c1 extends View implements DownloadController.FileDownloadPro
     public StaticLayout x;
     public int y;
 
-    public c1(Context context, z70 z70Var, i4 i4Var) {
+    public c1(Context context, d70 d70Var, j4 j4Var) {
         super(context);
         this.r = AndroidUtilities.dp(58.0f);
-        this.a = z70Var;
-        this.b = i4Var;
+        this.a = d70Var;
+        this.b = j4Var;
         RadialProgress2 radialProgress2 = new RadialProgress2(this, null);
         this.e = radialProgress2;
         radialProgress2.setCircleRadius(AndroidUtilities.dp(24.0f));
-        this.J = DownloadController.getInstance(((k4) z70Var).X).generateObserverTag();
-        org.telegram.ui.Components.cp0 cp0Var = new org.telegram.ui.Components.cp0(this);
-        this.f = cp0Var;
-        cp0Var.h = new b1(this, 0);
+        this.J = DownloadController.getInstance(((l4) d70Var).X).generateObserverTag();
+        org.telegram.ui.Components.yo0 yo0Var = new org.telegram.ui.Components.yo0(this);
+        this.f = yo0Var;
+        yo0Var.h = new b1(this, 0);
     }
 
     private int getIconForCurrentState() {
@@ -76,7 +76,7 @@ public final class c1 extends View implements DownloadController.FileDownloadPro
     }
 
     public final void a(boolean z10) {
-        int i10 = ((k4) this.a).X;
+        int i10 = ((l4) this.a).X;
         String attachFileName = FileLoader.getAttachFileName(this.L);
         boolean exists = FileLoader.getInstance(i10).getPathToAttach(this.L, true).exists();
         boolean isEmpty = TextUtils.isEmpty(attachFileName);
@@ -120,9 +120,9 @@ public final class c1 extends View implements DownloadController.FileDownloadPro
         if (this.L == null || (messageObject = this.M) == null) {
             return;
         }
-        org.telegram.ui.Components.cp0 cp0Var = this.f;
-        if (!cp0Var.e) {
-            cp0Var.i(messageObject.audioProgress);
+        org.telegram.ui.Components.yo0 yo0Var = this.f;
+        if (!yo0Var.e) {
+            yo0Var.i(messageObject.audioProgress);
         }
         if (!MediaController.getInstance().isPlayingMessage(this.M)) {
             i10 = 0;
@@ -145,15 +145,15 @@ public final class c1 extends View implements DownloadController.FileDownloadPro
         String str = this.v;
         if (str == null || !str.equals(formatShortDuration)) {
             this.v = formatShortDuration;
-            TextPaint textPaint = k4.e1;
+            TextPaint textPaint = l4.e1;
             textPaint.setTextSize(AndroidUtilities.dp(16.0f));
             this.x = new StaticLayout(formatShortDuration, textPaint, (int) Math.ceil(textPaint.measureText(formatShortDuration)), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         }
-        k4.e1.setColor(this.a.b());
+        l4.e1.setColor(this.a.b());
         invalidate();
     }
 
-    @Override // org.telegram.ui.Cells.n9
+    @Override // org.telegram.ui.Cells.m9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         d3 d3Var = this.w;
         if (d3Var != null) {
@@ -199,7 +199,7 @@ public final class c1 extends View implements DownloadController.FileDownloadPro
     @Override // android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        DownloadController.getInstance(((k4) this.a).X).removeLoadingFileObserver(this);
+        DownloadController.getInstance(((l4) this.a).X).removeLoadingFileObserver(this);
         d3 d3Var = this.w;
         if (d3Var != null) {
             d3Var.detach(this);
@@ -219,17 +219,17 @@ public final class c1 extends View implements DownloadController.FileDownloadPro
         if (this.K == null) {
             return;
         }
-        int i10 = org.telegram.ui.ActionBar.g6.ie;
-        int i11 = org.telegram.ui.ActionBar.g6.je;
-        int i12 = org.telegram.ui.ActionBar.g6.uc;
-        int i13 = org.telegram.ui.ActionBar.g6.vc;
+        int i10 = org.telegram.ui.ActionBar.h6.ie;
+        int i11 = org.telegram.ui.ActionBar.h6.je;
+        int i12 = org.telegram.ui.ActionBar.h6.uc;
+        int i13 = org.telegram.ui.ActionBar.h6.vc;
         RadialProgress2 radialProgress2 = this.e;
         radialProgress2.g(i10, i11, i12, i13);
-        int i14 = org.telegram.ui.ActionBar.g6.Bd;
-        z70 z70Var = this.a;
-        ((k4) z70Var).getClass();
+        int i14 = org.telegram.ui.ActionBar.h6.Bd;
+        d70 d70Var = this.a;
+        ((l4) d70Var).getClass();
         int i15 = 0;
-        radialProgress2.d = org.telegram.ui.ActionBar.g6.x0(null, i14, false);
+        radialProgress2.d = org.telegram.ui.ActionBar.h6.x0(null, i14, false);
         radialProgress2.draw(canvas);
         canvas.save();
         canvas.translate(this.y, this.E);
@@ -247,7 +247,7 @@ public final class c1 extends View implements DownloadController.FileDownloadPro
             this.w.v = this.E - AndroidUtilities.dp(16.0f);
             d3 d3Var = this.w;
             canvas.translate(d3Var.s, d3Var.v);
-            k4.v(z70Var, canvas, this, 0);
+            l4.v(d70Var, canvas, this, 0);
             this.w.draw(canvas, this);
             canvas.restore();
             i15 = 1;
@@ -261,7 +261,7 @@ public final class c1 extends View implements DownloadController.FileDownloadPro
             d3Var3.s = i17;
             d3Var3.v = i16;
             canvas.translate(i17, i16);
-            k4.v(z70Var, canvas, this, i15);
+            l4.v(d70Var, canvas, this, i15);
             this.c.draw(canvas, this);
             canvas.restore();
             i15++;
@@ -273,11 +273,11 @@ public final class c1 extends View implements DownloadController.FileDownloadPro
             d3Var4.s = i18;
             d3Var4.v = i16 + this.s;
             canvas.translate(i18, i16 + r5);
-            k4.v(z70Var, canvas, this, i15);
+            l4.v(d70Var, canvas, this, i15);
             this.d.draw(canvas, this);
             canvas.restore();
         }
-        k4.u(canvas, z70Var, this.K, getMeasuredHeight());
+        l4.u(canvas, d70Var, this.K, getMeasuredHeight());
     }
 
     @Override // org.telegram.messenger.DownloadController.FileDownloadProgressListener
@@ -325,16 +325,16 @@ public final class c1 extends View implements DownloadController.FileDownloadPro
             int i13 = this.F;
             this.e.q(i13, dp4, i13 + dp3, dp4 + dp3);
             TL_iv.pageBlockAudio pageblockaudio2 = this.K;
-            d3 q6 = k4.q(this.a, this, null, pageblockaudio2.caption.text, dp2, this.r, pageblockaudio2, this.b);
+            d3 q6 = l4.q(this.a, this, null, pageblockaudio2.caption.text, dp2, this.r, pageblockaudio2, this.b);
             this.c = q6;
             if (q6 != null) {
                 int height = this.c.d.getHeight() + AndroidUtilities.dp(8.0f);
                 this.s = height;
-                dp = org.telegram.messenger.g0.C(8.0f, height, dp);
+                dp = org.telegram.messenger.q.C(8.0f, height, dp);
             }
             i12 = dp;
             TL_iv.pageBlockAudio pageblockaudio3 = this.K;
-            d3 p5 = k4.p(this.a, this, null, pageblockaudio3.caption.credit, dp2, this.r + this.s, pageblockaudio3, this.b.G ? org.telegram.ui.Components.ix0.a() : Layout.Alignment.ALIGN_NORMAL, 0, this.b);
+            d3 p5 = l4.p(this.a, this, null, pageblockaudio3.caption.credit, dp2, this.r + this.s, pageblockaudio3, this.b.G ? org.telegram.ui.Components.dx0.a() : Layout.Alignment.ALIGN_NORMAL, 0, this.b);
             this.d = p5;
             if (p5 != null) {
                 i12 += this.d.d.getHeight() + AndroidUtilities.dp(4.0f);
@@ -344,7 +344,7 @@ public final class c1 extends View implements DownloadController.FileDownloadPro
             }
             String musicAuthor = this.M.getMusicAuthor(false);
             String musicTitle = this.M.getMusicTitle(false);
-            int C = org.telegram.messenger.g0.C(50.0f, this.F, dp3);
+            int C = org.telegram.messenger.q.C(50.0f, this.F, dp3);
             this.y = C;
             int dp5 = (size - C) - AndroidUtilities.dp(18.0f);
             if (TextUtils.isEmpty(musicTitle) && TextUtils.isEmpty(musicAuthor)) {
@@ -353,12 +353,12 @@ public final class c1 extends View implements DownloadController.FileDownloadPro
             } else {
                 SpannableStringBuilder spannableStringBuilder = (TextUtils.isEmpty(musicTitle) || TextUtils.isEmpty(musicAuthor)) ? !TextUtils.isEmpty(musicTitle) ? new SpannableStringBuilder(musicTitle) : new SpannableStringBuilder(musicAuthor) : new SpannableStringBuilder(a1.g.D(musicAuthor, " - ", musicTitle));
                 if (!TextUtils.isEmpty(musicAuthor)) {
-                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.j61(AndroidUtilities.bold()), 0, musicAuthor.length(), 18);
+                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.c61(AndroidUtilities.bold()), 0, musicAuthor.length(), 18);
                 }
-                CharSequence ellipsize = TextUtils.ellipsize(spannableStringBuilder, org.telegram.ui.ActionBar.g6.O2, dp5, TextUtils.TruncateAt.END);
+                CharSequence ellipsize = TextUtils.ellipsize(spannableStringBuilder, org.telegram.ui.ActionBar.h6.O2, dp5, TextUtils.TruncateAt.END);
                 d3 d3Var = new d3(this.a);
                 this.w = d3Var;
-                d3Var.d = new StaticLayout(ellipsize, k4.e1, dp5, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                d3Var.d = new StaticLayout(ellipsize, l4.e1, dp5, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
                 this.w.n = this.K;
                 this.E = AndroidUtilities.dp(11.0f) + ((dp3 - AndroidUtilities.dp(30.0f)) / 2) + this.G;
             }
@@ -422,12 +422,12 @@ public final class c1 extends View implements DownloadController.FileDownloadPro
             if (this.I == 1) {
                 this.I = 0;
                 playSoundEffect(0);
-                int i10 = ((k4) this.a).X;
+                int i10 = ((l4) this.a).X;
                 int i11 = this.H;
-                i4 i4Var = this.b;
+                j4 j4Var = this.b;
                 RadialProgress2 radialProgress2 = this.e;
                 if (i11 == 0) {
-                    if (i4Var != null && MediaController.getInstance().setPlaylist(i4Var.v, this.M, 0L, false, null)) {
+                    if (j4Var != null && MediaController.getInstance().setPlaylist(j4Var.v, this.M, 0L, false, null)) {
                         this.H = 1;
                         radialProgress2.setIcon(getIconForCurrentState(), false, true);
                         invalidate();
@@ -440,7 +440,7 @@ public final class c1 extends View implements DownloadController.FileDownloadPro
                     }
                 } else if (i11 == 2) {
                     radialProgress2.o(0.0f, false);
-                    FileLoader.getInstance(i10).loadFile(this.L, i4Var == null ? null : i4Var.E, 1, 1);
+                    FileLoader.getInstance(i10).loadFile(this.L, j4Var == null ? null : j4Var.E, 1, 1);
                     this.H = 3;
                     radialProgress2.setIcon(getIconForCurrentState(), true, true);
                     invalidate();
@@ -456,8 +456,8 @@ public final class c1 extends View implements DownloadController.FileDownloadPro
             this.I = 0;
         }
         if (this.I == 0) {
-            if (!k4.l(this.a, this.b, motionEvent, this, this.c, this.n, this.r)) {
-                if (!k4.l(this.a, this.b, motionEvent, this, this.d, this.n, this.r + this.s) && !super.onTouchEvent(motionEvent)) {
+            if (!l4.l(this.a, this.b, motionEvent, this, this.c, this.n, this.r)) {
+                if (!l4.l(this.a, this.b, motionEvent, this, this.d, this.n, this.r + this.s) && !super.onTouchEvent(motionEvent)) {
                     return false;
                 }
             }

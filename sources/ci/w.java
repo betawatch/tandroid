@@ -1,51 +1,52 @@
 package ci;
 
 import android.content.Context;
-import android.graphics.Canvas;
 import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.g6;
-import w7.z5;
+import android.widget.FrameLayout;
+import java.util.HashSet;
+import java.util.Iterator;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class w extends LinearLayout {
-    public final TextView a;
-    public final TextView b;
-    public boolean c;
+public abstract class w extends FrameLayout {
+    public static final HashSet b = new HashSet();
+    public static boolean c = false;
+    public final boolean a;
 
     public w(Context context) {
         super(context);
-        setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), 0);
-        setOrientation(1);
-        TextView textView = new TextView(context);
-        this.a = textView;
-        textView.setTextSize(1, 16.0f);
-        textView.setTextColor(g6.x0(null, g6.j5, false));
-        textView.setGravity(LocaleController.isRTL ? 5 : 3);
-        addView(textView, z5.t(-1, -2, 51, 0, 7, 0, 0));
-        TextView textView2 = new TextView(context);
-        this.b = textView2;
-        textView2.setTextSize(1, 13.0f);
-        textView2.setTextColor(g6.x0(null, g6.q5, false));
-        textView2.setGravity(LocaleController.isRTL ? 5 : 3);
-        addView(textView2, z5.t(-1, -2, 51, 0, 4, 0, 0));
+        this.a = SharedConfig.getDevicePerformanceClass() == 2;
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if (this.c) {
-            canvas.drawRect(getPaddingLeft(), getHeight() - 1, getWidth(), getHeight(), g6.k0);
+    public final void a(boolean z10) {
+        c = false;
+        if (z10) {
+            setLayerType(0, null);
+        }
+        HashSet hashSet = b;
+        Iterator it = hashSet.iterator();
+        while (it.hasNext()) {
+            ((View) it.next()).invalidate();
+        }
+        hashSet.clear();
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        if (c) {
+            b.add(this);
+        } else {
+            super.invalidate();
         }
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), TLObject.FLAG_30));
+    @Override // android.view.View
+    public final void invalidate(int i10, int i11, int i12, int i13) {
+        if (c) {
+            b.add(this);
+        } else {
+            super.invalidate(i10, i11, i12, i13);
+        }
     }
 }

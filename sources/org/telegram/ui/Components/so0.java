@@ -1,35 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class so0 extends hg.h0 {
-    public final /* synthetic */ org.telegram.ui.yy I0;
-    public final /* synthetic */ Context J0;
-    public final /* synthetic */ org.telegram.ui.iy K0;
+public final class so0 extends s4.r0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ uo0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public so0(org.telegram.ui.iy iyVar, Context context, org.telegram.ui.yy yyVar, int i10, int i11, s4.k kVar, boolean z10, org.telegram.ui.yy yyVar2, Context context2) {
-        super(context, yyVar, i10, i11, kVar, z10);
-        this.K0 = iyVar;
-        this.I0 = yyVar2;
-        this.J0 = context2;
+    public /* synthetic */ so0(uo0 uo0Var, int i10) {
+        this.a = i10;
+        this.b = uo0Var;
     }
 
-    @Override // s4.g0
-    public final void l() {
-        bi.o0 o0Var;
-        int i10 = this.B0;
-        super.l();
-        org.telegram.ui.iy iyVar = this.K0;
-        if (!iyVar.I0 && (o0Var = iyVar.V) != null) {
-            o0Var.u0(0);
-            iyVar.I0 = true;
+    @Override // s4.r0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                this.b.b.S(i10, i11);
+                break;
+            default:
+                this.b.b.S(i10, i11);
+                break;
         }
-        if (h() != 0 || i10 == 0 || this.D0 > 0) {
-            return;
-        }
-        iyVar.W.e(false, false);
     }
 }

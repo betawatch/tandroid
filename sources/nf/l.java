@@ -7,11 +7,10 @@ import java.io.EOFException;
 import java.io.FilterInputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import ji.h5;
-import m.h3;
-import m2.t;
+import m.g3;
+import mi.q;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class l extends lf.a {
     public static final Logger r = Logger.getLogger(l.class.getName());
@@ -34,7 +33,7 @@ public final class l extends lf.a {
      */
     /* JADX WARN: Code restructure failed: missing block: B:108:0x024b, code lost:
     
-        r2.d.n(r2.a.e());
+        r2.d.c0(r2.a.e());
      */
     /* JADX WARN: Code restructure failed: missing block: B:111:0x0221, code lost:
     
@@ -42,7 +41,7 @@ public final class l extends lf.a {
      */
     /* JADX WARN: Code restructure failed: missing block: B:112:0x025a, code lost:
     
-        r2.d.n(r2.a.e());
+        r2.d.c0(r2.a.e());
      */
     /* JADX WARN: Code restructure failed: missing block: B:113:0x0265, code lost:
     
@@ -87,7 +86,7 @@ public final class l extends lf.a {
         byte b10;
         byte b11;
         byte b12;
-        h3 h3Var;
+        g3 g3Var;
         Logger logger;
         of.a aVar;
         int i10;
@@ -105,12 +104,12 @@ public final class l extends lf.a {
                 hVar.b = 0;
                 hVar.c = 0;
                 long j14 = dVar.b;
-                h5 h5Var = new h5(dVar, 8);
+                k0.b bVar = new k0.b(dVar, 9);
                 byte[] bArr = new byte[3];
                 int i11 = 0;
                 for (int i12 = 3; i11 < i12; i12 = 3) {
                     long j15 = j14;
-                    int read = ((com.google.firebase.messaging.d) h5Var.b).read(bArr, i11, 3 - i11);
+                    int read = ((com.google.firebase.messaging.d) bVar.b).read(bArr, i11, 3 - i11);
                     if (read <= 0) {
                         throw new EOFException();
                     }
@@ -122,106 +121,106 @@ public final class l extends lf.a {
                 if (!"ID3".equals(str5)) {
                     throw new c("Invalid ID3 identifier: ".concat(str5));
                 }
-                byte c10 = h5Var.c();
-                hVar.a = c10;
-                if (c10 != 2 && c10 != 3 && c10 != 4) {
-                    throw new c(i2.d.j(c10, "Unsupported ID3v2 version: "));
+                byte Z = bVar.Z();
+                hVar.a = Z;
+                if (Z != 2 && Z != 3 && Z != 4) {
+                    throw new c(i0.a.j(Z, "Unsupported ID3v2 version: "));
                 }
-                byte c11 = h5Var.c();
-                byte c12 = h5Var.c();
-                int i13 = h5Var.i();
-                hVar.b = i13 + 10;
-                if (c10 == 2) {
-                    hVar.d = (c12 & 128) != 0;
-                    hVar.e = (c12 & 64) != 0;
-                    b11 = c11;
+                byte Z2 = bVar.Z();
+                byte Z3 = bVar.Z();
+                int b02 = bVar.b0();
+                hVar.b = b02 + 10;
+                if (Z == 2) {
+                    hVar.d = (Z3 & 128) != 0;
+                    hVar.e = (Z3 & 64) != 0;
+                    b11 = Z2;
                 } else {
-                    hVar.d = (c12 & 128) != 0;
-                    if ((c12 & 64) == 0) {
-                        b11 = c11;
-                        b12 = c12;
-                    } else if (c10 == 3) {
-                        int g10 = h5Var.g();
-                        h5Var.c();
-                        h5Var.c();
-                        h5Var.g();
-                        b11 = c11;
-                        b12 = c12;
-                        h5Var.n(g10 - 6);
+                    hVar.d = (Z3 & 128) != 0;
+                    if ((Z3 & 64) == 0) {
+                        b11 = Z2;
+                        b12 = Z3;
+                    } else if (Z == 3) {
+                        int a02 = bVar.a0();
+                        bVar.Z();
+                        bVar.Z();
+                        bVar.a0();
+                        b11 = Z2;
+                        b12 = Z3;
+                        bVar.c0(a02 - 6);
                     } else {
-                        b11 = c11;
-                        b12 = c12;
-                        h5Var.n(h5Var.i() - 4);
+                        b11 = Z2;
+                        b12 = Z3;
+                        bVar.c0(bVar.b0() - 4);
                     }
-                    if (c10 >= 4 && (b12 & 16) != 0) {
+                    if (Z >= 4 && (b12 & 16) != 0) {
                         hVar.c = 10;
-                        hVar.b = i13 + 20;
+                        hVar.b = b02 + 20;
                     }
                 }
-                int i14 = (int) (dVar.b - j16);
+                int i13 = (int) (dVar.b - j16);
                 gVar.a = "ID3";
-                String.format("2.%d.%d", Integer.valueOf(c10), Integer.valueOf(b11));
-                int i15 = hVar.b;
+                String.format("2.%d.%d", Integer.valueOf(Z), Integer.valueOf(b11));
+                int i14 = hVar.b;
                 if (hVar.e) {
                     throw new c("Tag compression is not supported");
                 }
-                if (c10 >= 4 || !hVar.d) {
+                if (Z >= 4 || !hVar.d) {
                     logger = logger2;
-                    h3Var = new h3(mVar, i14, (i15 - i14) - hVar.c, hVar);
+                    g3Var = new g3(mVar, i13, (i14 - i13) - hVar.c, hVar);
                 } else {
-                    int i16 = i15 - i14;
-                    byte[] bArr2 = new byte[i16];
-                    int i17 = 0;
-                    while (i17 < i16) {
-                        int read2 = mVar.read(bArr2, i17, i16 - i17);
+                    int i15 = i14 - i13;
+                    byte[] bArr2 = new byte[i15];
+                    int i16 = 0;
+                    while (i16 < i15) {
+                        int read2 = mVar.read(bArr2, i16, i15 - i16);
                         if (read2 <= 0) {
                             throw new EOFException();
                         }
-                        i17 += read2;
+                        i16 += read2;
                     }
                     boolean z10 = false;
-                    int i18 = 0;
-                    for (int i19 = 0; i19 < i16; i19++) {
-                        byte b13 = bArr2[i19];
+                    int i17 = 0;
+                    for (int i18 = 0; i18 < i15; i18++) {
+                        byte b13 = bArr2[i18];
                         if (!z10 || b13 != 0) {
-                            bArr2[i18] = b13;
-                            i18++;
+                            bArr2[i17] = b13;
+                            i17++;
                         }
                         z10 = b13 == -1;
                     }
-                    h3Var = new h3(new ByteArrayInputStream(bArr2, 0, i18), i14, i18, hVar);
+                    g3Var = new g3(new ByteArrayInputStream(bArr2, 0, i17), i13, i17, hVar);
                     logger = logger2;
                 }
-                h5 h5Var2 = (h5) h3Var.d;
-                of.a aVar2 = (of.a) h3Var.b;
+                k0.b bVar2 = (k0.b) g3Var.d;
+                of.a aVar2 = (of.a) g3Var.b;
                 while (true) {
                     try {
                         if (aVar2.e() <= 10) {
                             aVar = aVar2;
                             break;
                         }
-                        f fVar = new f(h3Var);
+                        f fVar = new f(g3Var);
                         String str6 = fVar.a;
-                        int i20 = fVar.c;
+                        int i19 = fVar.c;
                         aVar = aVar2;
-                        int i21 = 0;
+                        int i20 = 0;
                         while (true) {
                             try {
-                                if (i21 >= str6.length()) {
-                                    if (i20 == 0) {
+                                if (i20 >= str6.length()) {
+                                    if (i19 == 0) {
                                         break;
                                     }
                                 } else if (str6.charAt(0) != 0) {
                                     break;
                                 } else {
-                                    i21++;
+                                    i20++;
                                 }
                             } catch (c e) {
                                 e = e;
                                 if (logger.isLoggable(level)) {
                                     logger.log(level, "ID3 exception occured: " + e.getMessage());
                                 }
-                                h5Var2.n(aVar.e());
+                                bVar2.c0(aVar.e());
                                 i10 = hVar.c;
                                 if (i10 > 0) {
                                 }
@@ -261,19 +260,19 @@ public final class l extends lf.a {
                                 }
                             }
                         }
-                        if (i20 <= aVar.e()) {
-                            int i22 = 0;
+                        if (i19 <= aVar.e()) {
+                            int i21 = 0;
                             while (true) {
-                                if (i22 >= str6.length()) {
+                                if (i21 >= str6.length()) {
                                     break;
                                 }
-                                if ((str6.charAt(i22) < 'A' || str6.charAt(i22) > 'Z') && (str6.charAt(i22) < '0' || str6.charAt(i22) > '9')) {
+                                if ((str6.charAt(i21) < 'A' || str6.charAt(i21) > 'Z') && (str6.charAt(i21) < '0' || str6.charAt(i21) > '9')) {
                                     break;
                                 } else {
-                                    i22++;
+                                    i21++;
                                 }
                             }
-                            h5Var2.n(i20);
+                            bVar2.c0(i19);
                             aVar2 = aVar;
                         } else if (logger.isLoggable(level)) {
                             logger.log(level, "ID3 frame claims to extend frames area");
@@ -283,7 +282,7 @@ public final class l extends lf.a {
                         aVar = aVar2;
                     }
                 }
-                h5Var2.n(aVar.e());
+                bVar2.c0(aVar.e());
                 i10 = hVar.c;
                 if (i10 > 0) {
                     mVar.skip(i10);
@@ -333,13 +332,13 @@ public final class l extends lf.a {
         }
         if (a.c(bufferedInputStream)) {
             byte[] bArr3 = new byte[128];
-            int i23 = 0;
-            while (i23 < 128) {
-                int read3 = bufferedInputStream.read(bArr3, i23, 128 - i23);
+            int i22 = 0;
+            while (i22 < 128) {
+                int read3 = bufferedInputStream.read(bArr3, i22, 128 - i22);
                 if (read3 <= 0) {
                     throw new EOFException();
                 }
-                i23 += read3;
+                i22 += read3;
             }
             str3 = a.b(3, 30, bArr3);
             str4 = a.b(33, 30, bArr3);
@@ -350,8 +349,8 @@ public final class l extends lf.a {
                 s10 = 0;
             }
             str = a.b(97, 30, bArr3);
-            int b15 = i2.d.b(bArr3[127]);
-            r2 = b15 != 0 ? i2.d.d(b15) : null;
+            int b15 = i0.a.b(bArr3[127]);
+            r2 = b15 != 0 ? i0.a.d(b15) : null;
             if (bArr3[125] == 0 && (b10 = bArr3[126]) != 0) {
                 s11 = (short) (b10 & 255);
                 str2 = r2;
@@ -406,7 +405,7 @@ public final class l extends lf.a {
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:161:0x00dc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:161:0x00db, code lost:
     
         if (((r5[5] & 255) | ((r5[4] & 255) << 8)) != r9.a) goto L81;
      */
@@ -420,10 +419,10 @@ public final class l extends lf.a {
     
         r18 = 2;
      */
-    /* JADX WARN: Removed duplicated region for block: B:104:0x0323  */
-    /* JADX WARN: Removed duplicated region for block: B:110:0x0319 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:149:0x0347  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0164  */
+    /* JADX WARN: Removed duplicated region for block: B:104:0x0321  */
+    /* JADX WARN: Removed duplicated region for block: B:110:0x0317 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:149:0x0345  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0163  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -435,7 +434,7 @@ public final class l extends lf.a {
         long j11;
         char c10;
         int i13;
-        t tVar;
+        q qVar;
         int i14;
         int i15;
         int read;
@@ -493,13 +492,13 @@ public final class l extends lf.a {
                     } catch (EOFException unused) {
                         i12 = 1;
                         i13 = 5;
-                        tVar = null;
-                        if (tVar != null) {
+                        qVar = null;
+                        if (qVar != null) {
                         }
                     }
                 }
                 c10 = 3;
-                tVar = new t(kVar2, bArr, false, 8);
+                qVar = new q(kVar2, bArr, false, 6);
                 if (kVar2.g == 0 && kVar2.b == 1) {
                     j jVar = new j();
                     jVar.a = (short) -1;
@@ -544,11 +543,11 @@ public final class l extends lf.a {
             i19 = read4;
             read4 = sVar2.a(mVar) ? -1 : mVar.read();
         }
-        if (tVar != null) {
+        if (qVar != null) {
             throw new i("No audio frame");
         }
-        byte[] bArr2 = (byte[]) tVar.b;
-        k kVar3 = (k) tVar.c;
+        byte[] bArr2 = (byte[]) qVar.b;
+        k kVar3 = (k) qVar.c;
         int i24 = iArr[kVar3.e][kVar3.a];
         int i25 = i24 + 4;
         if (bArr2.length >= i24 + 16 && i25 >= 0 && bArr2.length >= i24 + 12 && (((b10 = bArr2[i25]) == 88 && bArr2[i24 + 5] == 105 && bArr2[i24 + 6] == 110 && bArr2[i24 + 7] == 103) || (b10 == 73 && bArr2[i24 + 5] == 110 && bArr2[i24 + 6] == 102 && bArr2[i24 + 7] == 111))) {
@@ -573,7 +572,7 @@ public final class l extends lf.a {
         int i26 = 0;
         int i27 = i12;
         while (true) {
-            k kVar4 = (k) tVar.c;
+            k kVar4 = (k) qVar.c;
             if (i27 == c11 && i26 == 0 && j10 > j11) {
                 return kVar4.c(j10 - length);
             }
@@ -631,16 +630,16 @@ public final class l extends lf.a {
                                 } catch (EOFException unused2) {
                                 }
                             }
-                            tVar = new t(kVar, bArr3, false, 8);
-                            if (tVar == null) {
+                            qVar = new q(kVar, bArr3, false, 6);
+                            if (qVar == null) {
                                 return (((length2 * 1000) * i27) * 8) / j15;
                             }
-                            int a10 = ((k) tVar.c).a();
+                            int a10 = ((k) qVar.c).a();
                             if (a10 != a2) {
                                 i26 = i12;
                             }
                             j15 += a10;
-                            length2 += ((byte[]) tVar.b).length;
+                            length2 += ((byte[]) qVar.b).length;
                             i27++;
                             sVar2 = sVar;
                             i13 = i17;
@@ -655,13 +654,13 @@ public final class l extends lf.a {
                     i17 = i13;
                 }
                 mVar.reset();
-                tVar = null;
-                if (tVar == null) {
+                qVar = null;
+                if (qVar == null) {
                 }
             }
             i17 = i13;
-            tVar = null;
-            if (tVar == null) {
+            qVar = null;
+            if (qVar == null) {
             }
         }
     }

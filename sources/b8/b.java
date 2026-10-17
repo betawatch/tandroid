@@ -5,15 +5,15 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.os.IInterface;
 import android.os.Parcel;
-import c5.d0;
+import c5.c0;
 import com.google.android.gms.common.api.Status;
-import com.google.android.gms.internal.clearcut.s;
-import com.google.android.gms.internal.clearcut.y1;
+import com.google.android.gms.internal.clearcut.t;
+import com.google.android.gms.internal.clearcut.z1;
 import g7.l;
 import g7.q;
 import kotlin.jvm.internal.i;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class b extends Binder implements IInterface {
     public final /* synthetic */ int a;
@@ -121,10 +121,10 @@ public abstract class b extends Binder implements IInterface {
                     z10 = false;
                 }
                 if (!z10) {
-                    y1 y1Var = (y1) this;
+                    z1 z1Var = (z1) this;
                     switch (i10) {
                         case 1:
-                            y1Var.b.a((Status) s.a(parcel, Status.CREATOR));
+                            z1Var.b.a((Status) t.a(parcel, Status.CREATOR));
                             break;
                         case 2:
                             throw new UnsupportedOperationException();
@@ -155,7 +155,7 @@ public abstract class b extends Binder implements IInterface {
                 } else {
                     parcel.enforceInterface(getInterfaceDescriptor());
                 }
-                d0 d0Var = (d0) this;
+                c0 c0Var = (c0) this;
                 if (i10 != 1) {
                     return false;
                 }
@@ -163,9 +163,9 @@ public abstract class b extends Binder implements IInterface {
                 int i12 = com.google.android.gms.internal.play_billing.d.a;
                 int dataAvail = parcel.dataAvail();
                 if (dataAvail > 0) {
-                    throw new BadParcelableException(i2.d.j(dataAvail, "Parcel data not fully consumed, unread size: "));
+                    throw new BadParcelableException(i0.a.j(dataAvail, "Parcel data not fully consumed, unread size: "));
                 }
-                d0Var.b.a(Integer.valueOf(readInt));
+                c0Var.b.a(Integer.valueOf(readInt));
                 return true;
             case 4:
                 if (i10 <= 16777215) {

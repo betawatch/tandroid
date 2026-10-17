@@ -1,5 +1,6 @@
 package cb;
 
+import a6.m;
 import ab.f0;
 import android.content.Context;
 import android.os.Bundle;
@@ -7,12 +8,12 @@ import org.telegram.tgnet.TLObject;
 import v7.i8;
 import w7.s;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class h {
     public static final f c = new f();
     public static final m1.c d = s.a(ab.s.b);
-    public final android.support.v4.media.c a;
+    public final m a;
     public final d b;
 
     public h(l9.h hVar, kd.h hVar2, kd.h hVar3, ra.d dVar) {
@@ -21,16 +22,16 @@ public final class h {
         kotlin.jvm.internal.i.d(context, "firebaseApp.applicationContext");
         f0 f0Var = f0.a;
         ab.b a2 = f0.a(hVar);
-        android.support.v4.media.c cVar = new android.support.v4.media.c(context);
+        m mVar = new m(context);
         androidx.biometric.e eVar = new androidx.biometric.e(a2, hVar2);
         c.getClass();
         d dVar2 = new d(hVar3, dVar, a2, eVar, d.a(context, f.a[0]));
-        this.a = cVar;
+        this.a = mVar;
         this.b = dVar2;
     }
 
     public final double a() {
-        Bundle bundle = this.a.a;
+        Bundle bundle = (Bundle) this.a.b;
         Double valueOf = bundle.containsKey("firebase_sessions_sampling_rate") ? Double.valueOf(bundle.getDouble("firebase_sessions_sampling_rate")) : null;
         if (valueOf != null) {
             double doubleValue = valueOf.doubleValue();

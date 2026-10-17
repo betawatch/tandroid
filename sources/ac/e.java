@@ -1,20 +1,20 @@
 package ac;
 
+import ai.c1;
 import android.content.Context;
-import b2.h;
 import x7.ha;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class e extends h {
+public final class e extends c1 {
     public final rb.g b;
 
     public e(rb.g gVar) {
-        super(5);
+        super(6);
         this.b = gVar;
     }
 
-    @Override // b2.h
+    @Override // ai.c1
     public final Object Q0(Object obj) {
         zb.a aVar = (zb.a) obj;
         Context b10 = this.b.b();

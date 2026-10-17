@@ -1,121 +1,93 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.graphics.Rect;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.SharedConfig;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class ij extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ boolean b;
-    public int c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate e;
+public final class ij implements View.OnTouchListener {
+    public View a;
+    public org.telegram.ui.ActionBar.m1 b;
+    public final Rect c = new Rect();
+    public boolean d;
+    public boolean e;
+    public final org.telegram.ui.Components.s20 f;
+    public final int[] h;
+    public View n;
+    public float r;
+    public float s;
+    public final /* synthetic */ View v;
+    public final /* synthetic */ sn w;
 
-    public ij(org.telegram.ui.Components.xv0 xv0Var, boolean z10, int i10, org.telegram.ui.Components.qu0 qu0Var) {
-        this.e = xv0Var;
-        this.b = z10;
-        this.c = i10;
-        this.d = qu0Var;
+    public ij(sn snVar, ImageView imageView) {
+        this.w = snVar;
+        this.v = imageView;
+        org.telegram.ui.Components.s20 s20Var = new org.telegram.ui.Components.s20((Context) null, new g(this, 24));
+        this.f = s20Var;
+        this.h = new int[2];
+        s20Var.v = true;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        org.telegram.ui.ActionBar.k kVar;
-        View m10;
-        int i10;
-        s4.g0 adapter;
-        switch (this.a) {
-            case 0:
-                fo foVar = (fo) this.e;
-                foVar.O5 = true;
-                ((org.telegram.ui.ActionBar.m2) foVar).fragmentBeginToShow = true;
-                foVar.V9 = null;
-                if (this.b) {
-                    foVar.ka = false;
-                }
-                kVar = ((org.telegram.ui.ActionBar.m2) foVar).actionBar;
-                kVar.invalidate();
-                foVar.X0.invalidate();
-                AndroidUtilities.runOnUIThread(new gj(this, 1), 32L);
-                ((Runnable) this.d).run();
-                break;
-            default:
-                int i11 = this.c;
-                org.telegram.ui.Components.xv0 xv0Var = (org.telegram.ui.Components.xv0) this.e;
-                int[] iArr = xv0Var.m1;
-                org.telegram.ui.Components.qu0[] qu0VarArr = xv0Var.k0;
-                xv0Var.o1 = false;
-                boolean z10 = this.b;
-                if (z10) {
-                    int i12 = xv0Var.q1;
-                    iArr[i11] = i12;
-                    if (i11 == 0) {
-                        SharedConfig.setMediaColumnsCount(i12);
-                    } else if (xv0Var.c0(((org.telegram.ui.Components.qu0) this.d).F) >= 5) {
-                        SharedConfig.setStoriesColumnsCount(xv0Var.q1);
-                    }
-                }
-                for (int i13 = 0; i13 < qu0VarArr.length; i13++) {
-                    org.telegram.ui.Components.qu0 qu0Var = qu0VarArr[i13];
-                    if (qu0Var != null && qu0Var.h != null && (((i10 = qu0Var.F) == 0 || org.telegram.ui.Components.xv0.p0(i10)) && (adapter = qu0VarArr[i13].h.getAdapter()) != null)) {
-                        int h = adapter.h();
-                        if (i13 == 0) {
-                            xv0Var.t1[0].g(false);
-                        }
-                        if (z10) {
-                            qu0VarArr[i13].x.y1(iArr[i11]);
-                            qu0VarArr[i13].h.a0();
-                            if (adapter.h() == h) {
-                                AndroidUtilities.updateVisibleRows(qu0VarArr[i13].h);
-                            } else {
-                                adapter.l();
-                            }
-                        }
-                        qu0VarArr[i13].r.setVisibility(8);
-                    }
-                }
-                if (xv0Var.s >= 0) {
-                    for (int i14 = 0; i14 < qu0VarArr.length; i14++) {
-                        org.telegram.ui.Components.qu0 qu0Var2 = qu0VarArr[i14];
-                        if (qu0Var2.F == xv0Var.p1) {
-                            if (z10 && (m10 = qu0Var2.s.m(xv0Var.s)) != null) {
-                                xv0Var.v = m10.getTop();
-                            }
-                            org.telegram.ui.Components.qu0 qu0Var3 = qu0VarArr[i14];
-                            qu0Var3.x.h1(xv0Var.s, (-qu0Var3.h.getPaddingTop()) + xv0Var.v);
-                        }
-                    }
-                } else {
-                    xv0Var.Y0();
-                }
-                super.onAnimationEnd(animator);
-                break;
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        View view2;
+        this.a = view;
+        if (motionEvent.getAction() == 0) {
+            this.r = motionEvent.getX();
+            this.s = motionEvent.getY();
+            this.e = false;
         }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        int i10;
-        switch (this.a) {
-            case 0:
-                super.onAnimationStart(animator);
-                i10 = ((org.telegram.ui.ActionBar.m2) ((fo) this.e)).currentAccount;
-                this.c = NotificationCenter.getInstance(i10).setAnimationInProgress(this.c, null);
-                break;
-            default:
-                super.onAnimationStart(animator);
-                break;
+        this.f.a(motionEvent);
+        if (this.b != null && !this.d && motionEvent.getAction() == 2) {
+            View view3 = this.a;
+            int[] iArr = this.h;
+            view3.getLocationOnScreen(iArr);
+            float x10 = motionEvent.getX() + iArr[0];
+            float y3 = motionEvent.getY() + iArr[1];
+            this.b.getContentView().getLocationOnScreen(iArr);
+            float f7 = x10 - iArr[0];
+            float f10 = y3 - iArr[1];
+            this.n = null;
+            ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) this.b.getContentView();
+            for (int i10 = 0; i10 < actionBarPopupWindow$ActionBarPopupWindowLayout.getItemsCount(); i10++) {
+                View childAt = actionBarPopupWindow$ActionBarPopupWindowLayout.L.getChildAt(i10);
+                Rect rect = this.c;
+                childAt.getHitRect(rect);
+                childAt.getTag();
+                if (childAt.getVisibility() == 0 && childAt.isClickable()) {
+                    if (rect.contains((int) f7, (int) f10)) {
+                        childAt.setPressed(true);
+                        childAt.setSelected(true);
+                        childAt.drawableHotspotChanged(f7, f10 - childAt.getTop());
+                        this.n = childAt;
+                    } else {
+                        childAt.setPressed(false);
+                        childAt.setSelected(false);
+                    }
+                }
+            }
         }
-    }
-
-    public ij(fo foVar, boolean z10, Runnable runnable) {
-        this.e = foVar;
-        this.b = z10;
-        this.d = runnable;
+        if ((motionEvent.getAction() == 2 && Math.abs(motionEvent.getX() - this.r) > AndroidUtilities.touchSlop * 2.0f) || Math.abs(motionEvent.getY() - this.s) > AndroidUtilities.touchSlop * 2.0f) {
+            this.e = true;
+            this.a.setPressed(false);
+            this.a.setSelected(false);
+        }
+        if (motionEvent.getAction() == 1 && !this.d && !this.e) {
+            View view4 = this.n;
+            if (view4 != null) {
+                view4.callOnClick();
+                this.d = true;
+                return true;
+            }
+            if (this.b == null && (view2 = this.a) != null) {
+                view2.callOnClick();
+            }
+        }
+        return true;
     }
 }

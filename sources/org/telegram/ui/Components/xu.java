@@ -1,37 +1,67 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
-import android.text.style.CharacterStyle;
+import android.content.Context;
+import android.webkit.RenderProcessGoneDetail;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.ImageView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class xu extends CharacterStyle {
-    public final /* synthetic */ int a;
-    public int b;
+public final class xu extends WebViewClient {
+    public final /* synthetic */ cv a;
 
-    public /* synthetic */ xu(int i10, int i11) {
-        this.a = i11;
-        this.b = i10;
+    public xu(cv cvVar) {
+        this.a = cvVar;
     }
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        switch (this.a) {
-            case 0:
-                textPaint.setAlpha((int) ((this.b / 255.0f) * textPaint.getAlpha()));
-                break;
-            default:
-                textPaint.setColor(org.telegram.ui.ActionBar.g6.m1(textPaint.getAlpha() / 255.0f, this.b));
-                break;
+    @Override // android.webkit.WebViewClient
+    public final void onPageFinished(WebView webView, String str) {
+        super.onPageFinished(webView, str);
+        cv cvVar = this.a;
+        ImageView imageView = cvVar.x;
+        if (cvVar.y) {
+            return;
+        }
+        cvVar.n.setVisibility(4);
+        cvVar.h.setVisibility(4);
+        imageView.setEnabled(true);
+        imageView.setAlpha(1.0f);
+    }
+
+    @Override // android.webkit.WebViewClient
+    public final boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {
+        org.telegram.ui.ActionBar.d6 d6Var;
+        cv cvVar = this.a;
+        try {
+            if (!AndroidUtilities.isSafeToShow(cvVar.getContext())) {
+                return true;
+            }
+            Context context = cvVar.getContext();
+            d6Var = ((org.telegram.ui.ActionBar.f3) cvVar).resourcesProvider;
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, d6Var);
+            alertDialog$Builder.a.R = LocaleController.getString(R.string.ChromeCrashTitle);
+            alertDialog$Builder.a.T = AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ChromeCrashMessage), new hq(this, 10));
+            alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
+            alertDialog$Builder.o();
+            return true;
+        } catch (Exception e) {
+            FileLog.e(e);
+            return false;
         }
     }
 
-    public /* synthetic */ xu(boolean z10) {
-        this.a = 0;
-    }
-
-    public xu() {
-        this.a = 0;
-        this.b = 0;
+    @Override // android.webkit.WebViewClient
+    public final boolean shouldOverrideUrlLoading(WebView webView, String str) {
+        if (!this.a.y) {
+            return super.shouldOverrideUrlLoading(webView, str);
+        }
+        pf.d.r(webView.getContext(), str);
+        return true;
     }
 }

@@ -1,110 +1,55 @@
 package e0;
 
 import android.app.Activity;
-import android.content.res.Configuration;
-import android.os.Build;
-import android.os.Handler;
-import android.os.IBinder;
-import android.os.Looper;
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
-import java.util.List;
+import android.os.Bundle;
+import android.view.KeyEvent;
+import android.view.View;
+import w7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public abstract class e {
-    public static final Class a;
-    public static final Field b;
-    public static final Field c;
-    public static final Method d;
-    public static final Method e;
-    public static final Method f;
-    public static final Handler g = new Handler(Looper.getMainLooper());
+public abstract class e extends Activity implements androidx.lifecycle.t, r0.j {
+    public final androidx.lifecycle.v a = new androidx.lifecycle.v(this);
 
-    /* JADX WARN: Can't wrap try/catch for region: R(23:0|1|2|3|4|5|6|7|8|9|10|(12:33|34|13|(6:29|30|16|(3:24|25|26)|20|21)|15|16|(1:18)|24|25|26|20|21)|12|13|(0)|15|16|(0)|24|25|26|20|21) */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x0073  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x005c A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    static {
-        Class<?> cls;
-        Field field;
-        Field field2;
-        Method declaredMethod;
-        Class cls2;
-        Method declaredMethod2;
-        Class cls3;
-        int i10;
-        Method method = null;
-        try {
-            cls = Class.forName("android.app.ActivityThread");
-        } catch (Throwable unused) {
-            cls = null;
+    @Override // android.app.Activity, android.view.Window.Callback
+    public boolean dispatchKeyEvent(KeyEvent event) {
+        kotlin.jvm.internal.i.e(event, "event");
+        View decorView = getWindow().getDecorView();
+        kotlin.jvm.internal.i.d(decorView, "window.decorView");
+        if (u6.a(decorView, event)) {
+            return true;
         }
-        a = cls;
-        try {
-            field = Activity.class.getDeclaredField("mMainThread");
-            field.setAccessible(true);
-        } catch (Throwable unused2) {
-            field = null;
+        return u6.b(this, decorView, this, event);
+    }
+
+    @Override // android.app.Activity, android.view.Window.Callback
+    public final boolean dispatchKeyShortcutEvent(KeyEvent event) {
+        kotlin.jvm.internal.i.e(event, "event");
+        View decorView = getWindow().getDecorView();
+        kotlin.jvm.internal.i.d(decorView, "window.decorView");
+        if (u6.a(decorView, event)) {
+            return true;
         }
-        b = field;
-        try {
-            field2 = Activity.class.getDeclaredField("mToken");
-            field2.setAccessible(true);
-        } catch (Throwable unused3) {
-            field2 = null;
-        }
-        c = field2;
-        Class cls4 = a;
-        Class<?> cls5 = Boolean.TYPE;
-        if (cls4 != null) {
-            try {
-                declaredMethod = cls4.getDeclaredMethod("performStopActivity", IBinder.class, cls5, String.class);
-                declaredMethod.setAccessible(true);
-            } catch (Throwable unused4) {
-            }
-            d = declaredMethod;
-            cls2 = a;
-            if (cls2 != null) {
-                try {
-                    declaredMethod2 = cls2.getDeclaredMethod("performStopActivity", IBinder.class, cls5);
-                    declaredMethod2.setAccessible(true);
-                } catch (Throwable unused5) {
-                }
-                e = declaredMethod2;
-                cls3 = a;
-                i10 = Build.VERSION.SDK_INT;
-                if ((i10 != 26 || i10 == 27) && cls3 != null) {
-                    Method declaredMethod3 = cls3.getDeclaredMethod("requestRelaunchActivity", IBinder.class, List.class, List.class, Integer.TYPE, cls5, Configuration.class, Configuration.class, cls5, cls5);
-                    declaredMethod3.setAccessible(true);
-                    method = declaredMethod3;
-                }
-                f = method;
-            }
-            declaredMethod2 = null;
-            e = declaredMethod2;
-            cls3 = a;
-            i10 = Build.VERSION.SDK_INT;
-            if (i10 != 26) {
-            }
-            Method declaredMethod32 = cls3.getDeclaredMethod("requestRelaunchActivity", IBinder.class, List.class, List.class, Integer.TYPE, cls5, Configuration.class, Configuration.class, cls5, cls5);
-            declaredMethod32.setAccessible(true);
-            method = declaredMethod32;
-            f = method;
-        }
-        declaredMethod = null;
-        d = declaredMethod;
-        cls2 = a;
-        if (cls2 != null) {
-        }
-        declaredMethod2 = null;
-        e = declaredMethod2;
-        cls3 = a;
-        i10 = Build.VERSION.SDK_INT;
-        if (i10 != 26) {
-        }
-        Method declaredMethod322 = cls3.getDeclaredMethod("requestRelaunchActivity", IBinder.class, List.class, List.class, Integer.TYPE, cls5, Configuration.class, Configuration.class, cls5, cls5);
-        declaredMethod322.setAccessible(true);
-        method = declaredMethod322;
-        f = method;
+        return super.dispatchKeyShortcutEvent(event);
+    }
+
+    @Override // r0.j
+    public final boolean i(KeyEvent event) {
+        kotlin.jvm.internal.i.e(event, "event");
+        return super.dispatchKeyEvent(event);
+    }
+
+    @Override // android.app.Activity
+    public void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        int i10 = androidx.lifecycle.h0.b;
+        androidx.lifecycle.f0.b(this);
+    }
+
+    @Override // android.app.Activity
+    public void onSaveInstanceState(Bundle outState) {
+        kotlin.jvm.internal.i.e(outState, "outState");
+        this.a.g();
+        super.onSaveInstanceState(outState);
     }
 }

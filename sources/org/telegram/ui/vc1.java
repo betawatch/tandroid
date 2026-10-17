@@ -1,88 +1,74 @@
 package org.telegram.ui;
 
+import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vc1 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ce1 b;
+public final class vc1 implements View.OnClickListener {
+    public final /* synthetic */ sh0 a;
+    public final /* synthetic */ sn b;
+    public final /* synthetic */ org.telegram.ui.Components.im0 c;
+    public final /* synthetic */ LinearLayout d;
+    public final /* synthetic */ org.telegram.ui.Components.i80 e;
+    public final /* synthetic */ org.telegram.ui.Components.i80 f;
+    public final /* synthetic */ ad1 h;
 
-    public /* synthetic */ vc1(ce1 ce1Var, int i10) {
-        this.a = i10;
-        this.b = ce1Var;
+    public vc1(ad1 ad1Var, sh0 sh0Var, sn snVar, org.telegram.ui.Components.im0 im0Var, LinearLayout linearLayout, org.telegram.ui.Components.i80 i80Var, org.telegram.ui.Components.i80 i80Var2) {
+        this.h = ad1Var;
+        this.a = sh0Var;
+        this.b = snVar;
+        this.c = im0Var;
+        this.d = linearLayout;
+        this.e = i80Var;
+        this.f = i80Var2;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                final int i10 = 1;
-                final ce1 ce1Var = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.uc1
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                ce1.W(ce1Var, tLObject);
-                                break;
-                            default:
-                                TLObject tLObject2 = tLObject;
-                                if (tLObject2 instanceof TLRPC.TL_wallPaper) {
-                                    TLRPC.TL_wallPaper tL_wallPaper = (TLRPC.TL_wallPaper) tLObject2;
-                                    if (tL_wallPaper.pattern) {
-                                        ce1 ce1Var2 = ce1Var;
-                                        ce1Var2.W0 = tL_wallPaper;
-                                        ce1Var2.b1(false);
-                                        ce1Var2.j1();
-                                        ce1Var2.U0.add(0, ce1Var2.W0);
-                                        ae1 ae1Var = ce1Var2.Q0;
-                                        if (ae1Var != null) {
-                                            ae1Var.l();
-                                            break;
-                                        }
-                                    }
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
-            default:
-                final int i11 = 0;
-                final ce1 ce1Var2 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.uc1
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                ce1.W(ce1Var2, tLObject);
-                                break;
-                            default:
-                                TLObject tLObject2 = tLObject;
-                                if (tLObject2 instanceof TLRPC.TL_wallPaper) {
-                                    TLRPC.TL_wallPaper tL_wallPaper = (TLRPC.TL_wallPaper) tLObject2;
-                                    if (tL_wallPaper.pattern) {
-                                        ce1 ce1Var22 = ce1Var2;
-                                        ce1Var22.W0 = tL_wallPaper;
-                                        ce1Var22.b1(false);
-                                        ce1Var22.j1();
-                                        ce1Var22.U0.add(0, ce1Var22.W0);
-                                        ae1 ae1Var = ce1Var22.Q0;
-                                        if (ae1Var != null) {
-                                            ae1Var.l();
-                                            break;
-                                        }
-                                    }
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        sh0 sh0Var = this.a;
+        ArrayList arrayList = sh0Var.b;
+        ArrayList arrayList2 = sh0Var.c;
+        if (arrayList2.isEmpty()) {
+            return;
         }
+        int size = arrayList2.size();
+        ad1 ad1Var = this.h;
+        sn snVar = this.b;
+        if (size == 1 && (arrayList.size() <= 0 || ((Integer) arrayList.get(0)).intValue() <= 0)) {
+            TLObject tLObject = (TLObject) arrayList2.get(0);
+            if (tLObject == null) {
+                return;
+            }
+            Bundle bundle = new Bundle();
+            if (tLObject instanceof TLRPC.User) {
+                bundle.putLong("user_id", ((TLRPC.User) tLObject).id);
+            } else if (tLObject instanceof TLRPC.Chat) {
+                bundle.putLong("chat_id", ((TLRPC.Chat) tLObject).id);
+            }
+            snVar.presentFragment(new ProfileActivity(bundle, null));
+            ad1Var.c(false);
+            return;
+        }
+        if (SharedConfig.messageSeenHintCount > 0 && snVar.X0.getKeyboardHeight() < AndroidUtilities.dp(20.0f)) {
+            org.telegram.ui.Components.qc t10 = new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(ad1Var.getContext()), ad1Var.a).t(AndroidUtilities.replaceTags(LocaleController.getString(R.string.MessageSeenTooltipMessage)), null);
+            snVar.n1 = t10;
+            t10.j = 4000;
+            t10.j();
+            SharedConfig.updateMessageSeenHintCount(SharedConfig.messageSeenHintCount - 1);
+        }
+        org.telegram.ui.Components.im0 im0Var = this.c;
+        im0Var.requestLayout();
+        this.d.requestLayout();
+        im0Var.getAdapter().l();
+        this.e.K(this.f);
     }
 }

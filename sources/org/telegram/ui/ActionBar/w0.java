@@ -10,7 +10,7 @@ import android.graphics.Shader;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -50,29 +50,29 @@ public final /* synthetic */ class w0 implements Utilities.Callback {
                 b1Var.invalidate();
                 break;
             default:
-                a2 a2Var = (a2) this.b;
+                b2 b2Var = (b2) this.b;
                 Bitmap bitmap2 = (Bitmap) obj;
                 if (bitmap2 != null) {
-                    if (a2Var.F0 == null) {
-                        a2Var.F0 = new Paint(1);
+                    if (b2Var.F0 == null) {
+                        b2Var.F0 = new Paint(1);
                     }
-                    a2Var.C0 = bitmap2;
-                    Bitmap bitmap3 = a2Var.C0;
+                    b2Var.C0 = bitmap2;
+                    Bitmap bitmap3 = b2Var.C0;
                     Shader.TileMode tileMode2 = Shader.TileMode.CLAMP;
                     BitmapShader bitmapShader = new BitmapShader(bitmap3, tileMode2, tileMode2);
-                    a2Var.E0 = bitmapShader;
-                    a2Var.F0.setShader(bitmapShader);
+                    b2Var.E0 = bitmapShader;
+                    b2Var.F0.setShader(bitmapShader);
                     Matrix matrix3 = new Matrix();
-                    a2Var.D0 = matrix3;
+                    b2Var.D0 = matrix3;
                     matrix3.postScale(8.0f, 8.0f);
-                    Matrix matrix4 = a2Var.D0;
-                    int[] iArr2 = a2Var.x0;
+                    Matrix matrix4 = b2Var.D0;
+                    int[] iArr2 = b2Var.x0;
                     matrix4.postTranslate(-iArr2[0], -iArr2[1]);
-                    a2Var.E0.setLocalMatrix(a2Var.D0);
-                    a2Var.a1.invalidate();
+                    b2Var.E0.setLocalMatrix(b2Var.D0);
+                    b2Var.a1.invalidate();
                     break;
                 } else {
-                    a2Var.getClass();
+                    b2Var.getClass();
                     break;
                 }
         }

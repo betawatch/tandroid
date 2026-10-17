@@ -1,63 +1,115 @@
 package ig;
 
-import android.location.Address;
-import android.location.Geocoder;
-import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.wh;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ld0;
+import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x0 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ e1 b;
-    public final /* synthetic */ ld0 c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.a2 d;
+public final /* synthetic */ class x0 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ b1 b;
 
-    public /* synthetic */ x0(e1 e1Var, org.telegram.ui.ActionBar.a2 a2Var, ld0 ld0Var) {
-        this.b = e1Var;
-        this.d = a2Var;
-        this.c = ld0Var;
+    public /* synthetic */ x0(b1 b1Var, int i10) {
+        this.a = i10;
+        this.b = b1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                e1 e1Var = this.b;
-                e1Var.getClass();
-                this.d.dismiss();
-                e1Var.presentFragment(this.c);
+                final int i10 = 1;
+                final b1 b1Var = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: ig.v0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                b1 b1Var2 = b1Var;
+                                b1Var2.b.a(0.0f);
+                                TLRPC.TL_error tL_error2 = tL_error;
+                                if (tL_error2 == null) {
+                                    if (!(tLObject instanceof TLRPC.TL_boolFalse)) {
+                                        b1Var2.finishFragment();
+                                        break;
+                                    } else {
+                                        wh.q(R.string.UnknownError, xc.a0(b1Var2), null);
+                                        break;
+                                    }
+                                } else {
+                                    xc.d0(tL_error2);
+                                    break;
+                                }
+                            default:
+                                b1 b1Var3 = b1Var;
+                                TLRPC.TL_error tL_error3 = tL_error;
+                                if (tL_error3 == null) {
+                                    if (!(tLObject instanceof TLRPC.TL_boolFalse)) {
+                                        b1Var3.finishFragment();
+                                        break;
+                                    } else {
+                                        b1Var3.b.a(0.0f);
+                                        wh.q(R.string.UnknownError, xc.a0(b1Var3), null);
+                                        break;
+                                    }
+                                } else {
+                                    b1Var3.b.a(0.0f);
+                                    xc.d0(tL_error3);
+                                    break;
+                                }
+                        }
+                    }
+                });
                 break;
             default:
-                e1 e1Var2 = this.b;
-                ld0 ld0Var = this.c;
-                try {
-                    List<Address> fromLocationName = new Geocoder(e1Var2.getParentActivity(), LocaleController.getInstance().getCurrentLocale()).getFromLocationName(e1Var2.y, 1);
-                    if (!fromLocationName.isEmpty()) {
-                        Address address = fromLocationName.get(0);
-                        TLRPC.TL_channelLocation tL_channelLocation = new TLRPC.TL_channelLocation();
-                        tL_channelLocation.address = e1Var2.y;
-                        TLRPC.TL_geoPoint tL_geoPoint = new TLRPC.TL_geoPoint();
-                        tL_channelLocation.geo_point = tL_geoPoint;
-                        tL_geoPoint.lat = address.getLatitude();
-                        tL_channelLocation.geo_point._long = address.getLongitude();
-                        ld0Var.A0 = tL_channelLocation;
+                final int i11 = 0;
+                final b1 b1Var2 = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: ig.v0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                b1 b1Var22 = b1Var2;
+                                b1Var22.b.a(0.0f);
+                                TLRPC.TL_error tL_error2 = tL_error;
+                                if (tL_error2 == null) {
+                                    if (!(tLObject instanceof TLRPC.TL_boolFalse)) {
+                                        b1Var22.finishFragment();
+                                        break;
+                                    } else {
+                                        wh.q(R.string.UnknownError, xc.a0(b1Var22), null);
+                                        break;
+                                    }
+                                } else {
+                                    xc.d0(tL_error2);
+                                    break;
+                                }
+                            default:
+                                b1 b1Var3 = b1Var2;
+                                TLRPC.TL_error tL_error3 = tL_error;
+                                if (tL_error3 == null) {
+                                    if (!(tLObject instanceof TLRPC.TL_boolFalse)) {
+                                        b1Var3.finishFragment();
+                                        break;
+                                    } else {
+                                        b1Var3.b.a(0.0f);
+                                        wh.q(R.string.UnknownError, xc.a0(b1Var3), null);
+                                        break;
+                                    }
+                                } else {
+                                    b1Var3.b.a(0.0f);
+                                    xc.d0(tL_error3);
+                                    break;
+                                }
+                        }
                     }
-                } catch (Exception e) {
-                    FileLog.e(e);
-                }
-                AndroidUtilities.runOnUIThread(new x0(e1Var2, this.d, ld0Var));
+                });
                 break;
         }
-    }
-
-    public /* synthetic */ x0(e1 e1Var, ld0 ld0Var, org.telegram.ui.ActionBar.a2 a2Var) {
-        this.b = e1Var;
-        this.c = ld0Var;
-        this.d = a2Var;
     }
 }

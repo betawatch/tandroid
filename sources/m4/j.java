@@ -7,7 +7,7 @@ import e9.m2;
 import e9.x1;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class j {
     public static final String l;
@@ -26,8 +26,8 @@ public final class j {
     public static final String y;
     public final m a;
     public final p1 b;
-    public final b2.c1 c;
-    public final b2.c1 d;
+    public final b2.b1 c;
+    public final b2.b1 d;
     public final Bundle e;
     public final Bundle f;
     public final k1 g;
@@ -55,14 +55,14 @@ public final class j {
         y = Integer.toString(12, 36);
     }
 
-    public j(m mVar, e9.n0 n0Var, e9.n0 n0Var2, e9.n0 n0Var3, p1 p1Var, b2.c1 c1Var, b2.c1 c1Var2, Bundle bundle, Bundle bundle2, k1 k1Var, MediaSession.Token token) {
+    public j(m mVar, e9.n0 n0Var, e9.n0 n0Var2, e9.n0 n0Var3, p1 p1Var, b2.b1 b1Var, b2.b1 b1Var2, Bundle bundle, Bundle bundle2, k1 k1Var, MediaSession.Token token) {
         this.a = mVar;
         this.h = n0Var;
         this.i = n0Var2;
         this.k = n0Var3;
         this.b = p1Var;
-        this.c = c1Var;
-        this.d = c1Var2;
+        this.c = b1Var;
+        this.d = b1Var2;
         this.e = bundle;
         this.f = bundle2;
         this.g = k1Var;
@@ -133,14 +133,14 @@ public final class j {
         bundle2.putParcelableArrayList(p1.b, arrayList5);
         bundle.putBundle(r, bundle2);
         String str2 = s;
-        b2.c1 c1Var = this.c;
-        bundle.putBundle(str2, c1Var.b());
+        b2.b1 b1Var = this.c;
+        bundle.putBundle(str2, b1Var.b());
         String str3 = t;
-        b2.c1 c1Var2 = this.d;
-        bundle.putBundle(str3, c1Var2.b());
+        b2.b1 b1Var2 = this.d;
+        bundle.putBundle(str3, b1Var2.b());
         bundle.putBundle(u, this.e);
         bundle.putBundle(v, this.f);
-        bundle.putBundle(w, this.g.e(w7.v.a(c1Var, c1Var2), false, false).f(i10));
+        bundle.putBundle(w, this.g.e(w7.v.a(b1Var, b1Var2), false, false).f(i10));
         bundle.putInt(x, 9);
         MediaSession.Token token = this.j;
         if (token != null) {

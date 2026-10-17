@@ -1,47 +1,24 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.app.Activity;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zi implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ aj b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ org.telegram.ui.Components.gl0 e;
-    public final /* synthetic */ float f;
-    public final /* synthetic */ float h;
-    public final /* synthetic */ ah.i1 n;
+public final class zi extends org.telegram.ui.Components.aw {
+    public final /* synthetic */ sn W;
 
-    public /* synthetic */ zi(aj ajVar, int i10, boolean z10, org.telegram.ui.Components.gl0 gl0Var, float f7, float f10, ah.i1 i1Var, int i11) {
-        this.a = i11;
-        this.b = ajVar;
-        this.c = i10;
-        this.d = z10;
-        this.e = gl0Var;
-        this.f = f7;
-        this.h = f10;
-        this.n = i1Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zi(sn snVar, org.telegram.ui.ActionBar.n2 n2Var, Activity activity, org.telegram.ui.ActionBar.d6 d6Var, ArrayList arrayList) {
+        super(n2Var, activity, d6Var, arrayList);
+        this.W = snVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10;
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new zi(this.b, this.c, this.d, this.e, this.f, this.h, this.n, 1), 50L);
-                break;
-            default:
-                fo foVar = this.b.s;
-                org.telegram.ui.Cells.a0 t82 = foVar.t8(this.c, true);
-                if (this.d) {
-                    i10 = ((org.telegram.ui.ActionBar.m2) foVar).currentAccount;
-                    ah.d1.d(foVar, this.e, t82, null, this.f, this.h, this.n, i10, 1);
-                    ah.d1.f();
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.aw, org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
+    public final void dismiss() {
+        super.dismiss();
+        sn snVar = this.W;
+        snVar.getClass();
+        snVar.j8(false, true, 0.0f);
     }
 }

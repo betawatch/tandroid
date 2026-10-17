@@ -3,12 +3,12 @@ package u2;
 import android.util.Pair;
 import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class b0 extends t1 {
     public final boolean l;
-    public final b2.o1 m;
-    public final b2.m1 n;
+    public final b2.n1 m;
+    public final b2.l1 n;
     public z o;
     public y p;
     public boolean q;
@@ -18,11 +18,11 @@ public final class b0 extends t1 {
     public b0(a aVar, boolean z10) {
         super(aVar);
         this.l = z10 && aVar.j();
-        this.m = new b2.o1();
-        this.n = new b2.m1();
-        b2.p1 h = aVar.h();
+        this.m = new b2.n1();
+        this.n = new b2.l1();
+        b2.o1 h = aVar.h();
         if (h == null) {
-            this.o = new z(new a0(aVar.i()), b2.o1.q, z.h);
+            this.o = new z(new a0(aVar.i()), b2.n1.q, z.h);
         } else {
             this.o = new z(h, null, null);
             this.s = true;
@@ -37,7 +37,7 @@ public final class b0 extends t1 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void A(b2.p1 p1Var) {
+    public final void A(b2.o1 o1Var) {
         long j10;
         z zVar;
         y yVar;
@@ -46,43 +46,43 @@ public final class b0 extends t1 {
         z zVar2;
         if (this.r) {
             z zVar3 = this.o;
-            this.o = new z(p1Var, zVar3.f, zVar3.g);
+            this.o = new z(o1Var, zVar3.f, zVar3.g);
             y yVar2 = this.p;
             if (yVar2 != null) {
                 E(yVar2.h);
             }
-        } else if (p1Var.p()) {
+        } else if (o1Var.p()) {
             if (this.s) {
                 z zVar4 = this.o;
-                zVar2 = new z(p1Var, zVar4.f, zVar4.g);
+                zVar2 = new z(o1Var, zVar4.f, zVar4.g);
             } else {
-                zVar2 = new z(p1Var, b2.o1.q, z.h);
+                zVar2 = new z(o1Var, b2.n1.q, z.h);
             }
             this.o = zVar2;
         } else {
-            b2.o1 o1Var = this.m;
-            p1Var.n(0, o1Var);
-            long j11 = o1Var.l;
-            Object obj2 = o1Var.a;
+            b2.n1 n1Var = this.m;
+            o1Var.n(0, n1Var);
+            long j11 = n1Var.l;
+            Object obj2 = n1Var.a;
             y yVar3 = this.p;
             if (yVar3 != null) {
                 long j12 = yVar3.b;
                 z zVar5 = this.o;
                 Object obj3 = yVar3.a.a;
-                b2.m1 m1Var = this.n;
-                zVar5.g(obj3, m1Var);
-                long j13 = m1Var.e + j12;
-                this.o.m(0, o1Var, 0L);
-                if (j13 != o1Var.l) {
+                b2.l1 l1Var = this.n;
+                zVar5.g(obj3, l1Var);
+                long j13 = l1Var.e + j12;
+                this.o.m(0, n1Var, 0L);
+                if (j13 != n1Var.l) {
                     j10 = j13;
-                    Pair i10 = p1Var.i(this.m, this.n, 0, j10);
+                    Pair i10 = o1Var.i(this.m, this.n, 0, j10);
                     Object obj4 = i10.first;
                     long longValue = ((Long) i10.second).longValue();
                     if (this.s) {
-                        zVar = new z(p1Var, obj2, obj4);
+                        zVar = new z(o1Var, obj2, obj4);
                     } else {
                         z zVar6 = this.o;
-                        zVar = new z(p1Var, zVar6.f, zVar6.g);
+                        zVar = new z(o1Var, zVar6.f, zVar6.g);
                     }
                     this.o = zVar;
                     yVar = this.p;
@@ -107,7 +107,7 @@ public final class b0 extends t1 {
                 }
             }
             j10 = j11;
-            Pair i102 = p1Var.i(this.m, this.n, 0, j10);
+            Pair i102 = o1Var.i(this.m, this.n, 0, j10);
             Object obj42 = i102.first;
             long longValue2 = ((Long) i102.second).longValue();
             if (this.s) {
@@ -174,9 +174,9 @@ public final class b0 extends t1 {
             return false;
         }
         z zVar = this.o;
-        b2.m1 m1Var = this.n;
-        zVar.f(b10, m1Var, false);
-        long j11 = m1Var.d;
+        b2.l1 l1Var = this.n;
+        zVar.f(b10, l1Var, false);
+        long j11 = l1Var.d;
         if (j11 != -9223372036854775807L && j10 >= j11) {
             j10 = Math.max(0L, j11 - 1);
         }
@@ -185,8 +185,8 @@ public final class b0 extends t1 {
     }
 
     @Override // u2.t1, u2.a
-    public final boolean a(b2.p0 p0Var) {
-        return this.k.a(p0Var);
+    public final boolean a(b2.o0 o0Var) {
+        return this.k.a(o0Var);
     }
 
     @Override // u2.a
@@ -210,15 +210,15 @@ public final class b0 extends t1 {
     }
 
     @Override // u2.t1, u2.a
-    public final void t(b2.p0 p0Var) {
+    public final void t(b2.o0 o0Var) {
         if (this.s) {
             z zVar = this.o;
-            b2.p1 p1Var = zVar.e;
-            this.o = new z(p1Var instanceof q1 ? new q1(((q1) p1Var).e, p0Var) : new q1(p1Var, p0Var), zVar.f, zVar.g);
+            b2.o1 o1Var = zVar.e;
+            this.o = new z(o1Var instanceof q1 ? new q1(((q1) o1Var).e, o0Var) : new q1(o1Var, o0Var), zVar.f, zVar.g);
         } else {
-            this.o = new z(new a0(p0Var), b2.o1.q, z.h);
+            this.o = new z(new a0(o0Var), b2.n1.q, z.h);
         }
-        this.k.t(p0Var);
+        this.k.t(o0Var);
     }
 
     @Override // u2.t1

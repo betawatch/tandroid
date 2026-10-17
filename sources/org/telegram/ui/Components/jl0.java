@@ -1,8 +1,89 @@
 package org.telegram.ui.Components;
 
-import android.graphics.drawable.Drawable;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public abstract class jl0 extends Drawable {
+public abstract class jl0 extends hm0 {
+    public boolean c;
+    public boolean d;
+    public ArrayList e;
+    public ArrayList f;
+
+    public final void E() {
+        this.c = false;
+        if (!this.d && this.e.isEmpty() && this.f.isEmpty()) {
+            return;
+        }
+        ((org.telegram.ui.fm) this).O(false);
+    }
+
+    @Override // s4.g0
+    public void l() {
+        if (this.c) {
+            this.d = true;
+        } else {
+            super.l();
+        }
+    }
+
+    @Override // s4.g0
+    public void m(int i10) {
+        if (this.c) {
+            return;
+        }
+        super.m(i10);
+    }
+
+    @Override // s4.g0
+    public void o(int i10) {
+        ArrayList arrayList = this.e;
+        if (!this.c) {
+            super.o(i10);
+        } else {
+            arrayList.add(Integer.valueOf(i10));
+            arrayList.add(1);
+        }
+    }
+
+    @Override // s4.g0
+    public void q(int i10, int i11) {
+        if (this.c) {
+            return;
+        }
+        super.q(i10, i11);
+    }
+
+    @Override // s4.g0
+    public void s(int i10, int i11) {
+        ArrayList arrayList = this.e;
+        if (!this.c) {
+            super.s(i10, i11);
+        } else {
+            arrayList.add(Integer.valueOf(i10));
+            arrayList.add(Integer.valueOf(i11));
+        }
+    }
+
+    @Override // s4.g0
+    public void t(int i10, int i11) {
+        ArrayList arrayList = this.f;
+        if (!this.c) {
+            super.t(i10, i11);
+        } else {
+            arrayList.add(Integer.valueOf(i10));
+            arrayList.add(Integer.valueOf(i11));
+        }
+    }
+
+    @Override // s4.g0
+    public void u(int i10) {
+        ArrayList arrayList = this.f;
+        if (!this.c) {
+            super.u(i10);
+        } else {
+            arrayList.add(Integer.valueOf(i10));
+            arrayList.add(1);
+        }
+    }
 }

@@ -1,55 +1,29 @@
 package yh;
 
-import java.util.Comparator;
-import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class y3 implements Comparator {
+public final /* synthetic */ class y3 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ e4 b;
+    public final /* synthetic */ g4 b;
 
-    public /* synthetic */ y3(e4 e4Var, int i10) {
+    public /* synthetic */ y3(g4 g4Var, int i10) {
         this.a = i10;
-        this.b = e4Var;
+        this.b = g4Var;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                e4 e4Var = this.b;
-                Integer num = (Integer) e4Var.c.n.get(Integer.valueOf(((TL_stars.starGiftAttributeBackdrop) obj).backdrop_id));
-                Integer num2 = (Integer) e4Var.c.n.get(Integer.valueOf(((TL_stars.starGiftAttributeBackdrop) obj2).backdrop_id));
-                if (num == null) {
-                    return 1;
-                }
-                if (num2 == null) {
-                    return -1;
-                }
-                return num2.intValue() - num.intValue();
-            case 1:
-                e4 e4Var2 = this.b;
-                Integer num3 = (Integer) e4Var2.c.o.get(Long.valueOf(((TL_stars.starGiftAttributePattern) obj).document.id));
-                Integer num4 = (Integer) e4Var2.c.o.get(Long.valueOf(((TL_stars.starGiftAttributePattern) obj2).document.id));
-                if (num3 == null) {
-                    return 1;
-                }
-                if (num4 == null) {
-                    return -1;
-                }
-                return num4.intValue() - num3.intValue();
+                this.b.a0();
+                break;
             default:
-                e4 e4Var3 = this.b;
-                Integer num5 = (Integer) e4Var3.c.m.get(Long.valueOf(((TL_stars.starGiftAttributeModel) obj).document.id));
-                Integer num6 = (Integer) e4Var3.c.m.get(Long.valueOf(((TL_stars.starGiftAttributeModel) obj2).document.id));
-                if (num5 == null) {
-                    return 1;
-                }
-                if (num6 == null) {
-                    return -1;
-                }
-                return num6.intValue() - num5.intValue();
+                g4 g4Var = this.b;
+                g4Var.i0.N(true);
+                AndroidUtilities.runOnUIThread(new y3(g4Var, 0), 150L);
+                break;
         }
     }
 }

@@ -3,13 +3,13 @@ package q9;
 import android.os.Parcel;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.api.internal.f;
-import com.google.android.gms.common.api.internal.w;
+import com.google.android.gms.common.api.internal.v;
 import com.google.android.gms.common.api.q;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class c extends w implements f {
+public final class c extends v implements f {
     public TaskCompletionSource d;
     public final /* synthetic */ b[] e;
 
@@ -53,7 +53,7 @@ public final class c extends w implements f {
         taskCompletionSource.setException(aVar);
     }
 
-    @Override // com.google.android.gms.common.api.internal.w
+    @Override // com.google.android.gms.common.api.internal.v
     public final void c(com.google.android.gms.common.api.c cVar, TaskCompletionSource taskCompletionSource) {
         this.d = taskCompletionSource;
         p7.a aVar = (p7.a) ((p7.b) cVar).u();

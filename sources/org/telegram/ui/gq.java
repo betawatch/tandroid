@@ -1,112 +1,60 @@
 package org.telegram.ui;
 
-import android.content.Context;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class gq extends s4.g0 {
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ hq d;
+public final /* synthetic */ class gq implements MessagesStorage.LongCallback, org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.xl0, org.telegram.ui.Components.yl0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ jr b;
 
-    public gq(hq hqVar, Context context) {
-        this.d = hqVar;
-        this.c = context;
+    public /* synthetic */ gq(jr jrVar, int i10) {
+        this.a = i10;
+        this.b = jrVar;
     }
 
-    @Override // s4.g0
-    public final int h() {
-        hq hqVar = this.d;
-        ArrayList arrayList = hqVar.r;
-        if (hqVar.G) {
-            return (hqVar.d.isEmpty() ? 0 : arrayList.size() + 1) + 1;
-        }
-        return (hqVar.d.isEmpty() ? 0 : arrayList.size() + 1) + 2;
+    @Override // org.telegram.ui.Components.xl0
+    public /* synthetic */ boolean P0(View view) {
+        return false;
     }
 
-    @Override // s4.g0
-    public final int j(int i10) {
-        if (this.d.G) {
-            if (i10 == 0) {
-                return 0;
-            }
-            return i10 == 1 ? 1 : 2;
-        }
-        if (i10 == 0) {
-            return 3;
-        }
-        if (i10 == 1) {
-            return 0;
-        }
-        return i10 == 2 ? 1 : 2;
-    }
-
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
-        int i11;
-        View view = b1Var.a;
-        int j10 = j(i10);
-        hq hqVar = this.d;
-        if (j10 != 0) {
-            if (j10 == 1) {
-                org.telegram.ui.Cells.m4 m4Var = (org.telegram.ui.Cells.m4) view;
-                m4Var.setText(LocaleController.getString(R.string.OnlyAllowThisReactions));
-                m4Var.setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.d6, false));
-                return;
-            } else {
-                if (j10 != 2) {
-                    return;
-                }
-                org.telegram.ui.Cells.y yVar = (org.telegram.ui.Cells.y) view;
-                TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) hqVar.r.get(i10 - (hqVar.G ? 2 : 3));
-                boolean contains = hqVar.d.contains(tL_availableReaction.reaction);
-                i11 = ((org.telegram.ui.ActionBar.m2) hqVar).currentAccount;
-                yVar.a(tL_availableReaction, contains, i11);
-                return;
+    @Override // org.telegram.ui.Components.yl0
+    public boolean a(int i10, View view) {
+        jr jrVar = this.b;
+        if (jrVar.getParentActivity() != null) {
+            s4.g0 adapter = jrVar.c.getAdapter();
+            fr frVar = jrVar.a;
+            if (adapter == frVar) {
+                return jrVar.h0(frVar.E(i10), false, view);
             }
         }
-        org.telegram.ui.Cells.e9 e9Var = (org.telegram.ui.Cells.e9) view;
-        e9Var.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.B6, false));
-        if (hqVar.G) {
-            e9Var.setText(ChatObject.isChannelAndNotMegaGroup(hqVar.a) ? LocaleController.getString(R.string.EnableReactionsChannelInfo) : LocaleController.getString(R.string.EnableReactionsGroupInfo));
-            return;
-        }
-        int i12 = hqVar.v;
-        if (i12 == 1) {
-            e9Var.setText(LocaleController.getString(R.string.EnableSomeReactionsInfo));
-        } else if (i12 == 0) {
-            e9Var.setText(LocaleController.getString(R.string.EnableAllReactionsInfo));
-        } else if (i12 == 2) {
-            e9Var.setText(LocaleController.getString(R.string.DisableReactionsInfo));
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.xl0
+    public void d(float f7, float f10, int i10, View view) {
+        jr.V(this.b, view, i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        switch (this.a) {
+            case 1:
+                this.b.u0();
+                break;
+            default:
+                this.b.finishFragment();
+                break;
         }
     }
 
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        Context context = this.c;
-        if (i10 == 0) {
-            return new org.telegram.ui.Components.wl0(new org.telegram.ui.Cells.e9(context));
-        }
-        if (i10 == 1) {
-            return new org.telegram.ui.Components.wl0(new org.telegram.ui.Cells.m4(context, 23));
-        }
-        if (i10 != 3) {
-            return new org.telegram.ui.Components.wl0(new org.telegram.ui.Cells.y(context, false, false));
-        }
-        FrameLayout frameLayout = new FrameLayout(context);
-        hq hqVar = this.d;
-        if (hqVar.s.getParent() != null) {
-            ((ViewGroup) hqVar.s.getParent()).removeView(hqVar.s);
-        }
-        frameLayout.addView(hqVar.s);
-        frameLayout.setLayoutParams(new s4.o0(-1, -2));
-        return new org.telegram.ui.Components.wl0(frameLayout);
+    @Override // org.telegram.messenger.MessagesStorage.LongCallback
+    public void run(long j10) {
+        jr.U(this.b, j10);
+    }
+
+    @Override // org.telegram.ui.Components.xl0
+    public /* synthetic */ void a0(View view, float f7, float f10) {
     }
 }

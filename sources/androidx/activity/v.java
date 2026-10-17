@@ -1,14 +1,14 @@
 package androidx.activity;
 
-import androidx.fragment.app.z;
+import androidx.fragment.app.a0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class v implements c {
-    public final z a;
+    public final a0 a;
     public final /* synthetic */ x b;
 
-    public v(x xVar, z onBackPressedCallback) {
+    public v(x xVar, a0 onBackPressedCallback) {
         kotlin.jvm.internal.i.e(onBackPressedCallback, "onBackPressedCallback");
         this.b = xVar;
         this.a = onBackPressedCallback;
@@ -19,17 +19,17 @@ public final class v implements c {
     public final void cancel() {
         x xVar = this.b;
         jd.e eVar = xVar.b;
-        z zVar = this.a;
-        eVar.remove(zVar);
-        if (kotlin.jvm.internal.i.a(xVar.c, zVar)) {
-            zVar.a();
+        a0 a0Var = this.a;
+        eVar.remove(a0Var);
+        if (kotlin.jvm.internal.i.a(xVar.c, a0Var)) {
+            a0Var.a();
             xVar.c = null;
         }
-        zVar.b.remove(this);
-        ?? r02 = zVar.c;
+        a0Var.b.remove(this);
+        ?? r02 = a0Var.c;
         if (r02 != 0) {
             r02.invoke();
         }
-        zVar.c = null;
+        a0Var.c = null;
     }
 }

@@ -1,29 +1,41 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z6 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ String c;
 
-    public /* synthetic */ z6(MediaDataController mediaDataController, long j10, int i10) {
+    public /* synthetic */ z6(MediaDataController mediaDataController, String str, int i10) {
         this.a = i10;
         this.b = mediaDataController;
-        this.c = j10;
+        this.c = str;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$loadPinnedMessages$161(this.c);
+                this.b.lambda$fetchNewEmojiKeywords$208(this.c);
                 break;
             case 1:
-                this.b.lambda$increasePeerRaiting$157(this.c);
+                this.b.lambda$fetchNewEmojiKeywords$210(this.c);
+                break;
+            case 2:
+                this.b.lambda$fetchNewEmojiKeywords$212(this.c);
+                break;
+            case 3:
+                this.b.lambda$fetchNewEmojiKeywords$209(this.c);
+                break;
+            case 4:
+                this.b.lambda$fetchNewEmojiKeywords$214(this.c);
+                break;
+            case 5:
+                this.b.lambda$putEmojiKeywords$215(this.c);
                 break;
             default:
-                this.b.lambda$clearBotKeyboard$195(this.c);
+                this.b.lambda$processLoadedDiceStickers$86(this.c);
                 break;
         }
     }

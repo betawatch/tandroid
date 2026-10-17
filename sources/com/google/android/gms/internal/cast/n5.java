@@ -9,7 +9,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class n5 extends u4 implements RandomAccess, o5 {
     public final List b;
@@ -67,7 +67,7 @@ public final class n5 extends u4 implements RandomAccess, o5 {
         if (!(obj instanceof x4)) {
             byte[] bArr = (byte[]) obj;
             String str2 = new String(bArr, l5.a);
-            e1 e1Var = v6.a;
+            e1 e1Var = w6.a;
             int length = bArr.length;
             e1Var.getClass();
             if (e1.a(length, bArr)) {
@@ -84,7 +84,7 @@ public final class n5 extends u4 implements RandomAccess, o5 {
         }
         int n10 = x4Var.n();
         byte[] bArr2 = x4Var.b;
-        v6.a.getClass();
+        w6.a.getClass();
         if (e1.a(n10, bArr2)) {
             list.set(i10, str);
         }
@@ -135,7 +135,7 @@ public final class n5 extends u4 implements RandomAccess, o5 {
 
     @Override // com.google.android.gms.internal.cast.o5
     public final o5 zzd() {
-        return this.a ? new o6(this) : this;
+        return this.a ? new p6(this) : this;
     }
 
     @Override // com.google.android.gms.internal.cast.k5

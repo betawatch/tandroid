@@ -1,42 +1,25 @@
 package ci;
 
-import android.view.View;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class o implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Runnable b;
+public final class o extends pg.a {
+    public final long c;
 
-    public /* synthetic */ o(int i10, Runnable runnable) {
-        this.a = i10;
-        this.b = runnable;
+    public o(long j10) {
+        super(0, false);
+        this.c = j10;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                this.b.run();
-                break;
-            case 1:
-                this.b.run();
-                break;
-            case 2:
-                this.b.run();
-                break;
-            case 3:
-                this.b.run();
-                break;
-            case 4:
-                this.b.run();
-                break;
-            case 5:
-                this.b.run();
-                break;
-            default:
-                this.b.run();
-                break;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        return (obj instanceof o) && this.c == ((o) obj).c;
+    }
+
+    public final int hashCode() {
+        return Objects.hash(Long.valueOf(this.c));
     }
 }

@@ -15,7 +15,7 @@ import w7.xa;
 import w7.ya;
 import w7.za;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class j0 implements Map, Serializable, j$.util.Map {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public abstract class j0 implements Map, Serializable, j$.util.Map {
         */
     public static void a(java.util.Set r18) {
         /*
-            Method dump skipped, instructions count: 571
+            Method dump skipped, instructions count: 573
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.google.android.gms.internal.cast.j0.a(java.util.Set):void");
@@ -618,7 +618,7 @@ public abstract class j0 implements Map, Serializable, j$.util.Map {
             case 0:
                 int i10 = ((s0) this).h;
                 if (i10 < 0) {
-                    throw new IllegalArgumentException(i2.d.j(i10, "size cannot be negative but was: "));
+                    throw new IllegalArgumentException(i0.a.j(i10, "size cannot be negative but was: "));
                 }
                 StringBuilder sb2 = new StringBuilder((int) Math.min(i10 * 8, 1073741824L));
                 sb2.append('{');
@@ -639,7 +639,7 @@ public abstract class j0 implements Map, Serializable, j$.util.Map {
             case 1:
                 int i11 = ((com.google.android.gms.internal.play_billing.a0) this).h;
                 if (i11 < 0) {
-                    throw new IllegalArgumentException(i2.d.j(i11, "size cannot be negative but was: "));
+                    throw new IllegalArgumentException(i0.a.j(i11, "size cannot be negative but was: "));
                 }
                 StringBuilder sb3 = new StringBuilder((int) Math.min(i11 * 8, 1073741824L));
                 sb3.append('{');
@@ -660,7 +660,7 @@ public abstract class j0 implements Map, Serializable, j$.util.Map {
             case 2:
                 int i12 = ((t7.l) this).h;
                 if (i12 < 0) {
-                    throw new IllegalArgumentException(i2.d.j(i12, "size cannot be negative but was: "));
+                    throw new IllegalArgumentException(i0.a.j(i12, "size cannot be negative but was: "));
                 }
                 StringBuilder sb4 = new StringBuilder((int) Math.min(i12 * 8, 1073741824L));
                 sb4.append('{');

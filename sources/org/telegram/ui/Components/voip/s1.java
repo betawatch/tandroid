@@ -14,15 +14,17 @@ import android.view.ViewParent;
 import android.view.ViewPropertyAnimator;
 import android.view.WindowInsets;
 import android.widget.FrameLayout;
-import bi.w5;
+import ci.v4;
+import com.google.android.gms.internal.cast.a6;
+import ei.i6;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.es;
-import org.telegram.ui.ki1;
+import org.telegram.ui.Components.bs;
+import org.telegram.ui.rg1;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes.dex */
 public final class s1 extends FrameLayout {
     public float E;
     public float F;
@@ -52,10 +54,10 @@ public final class s1 extends FrameLayout {
     public float d;
     public ValueAnimator d0;
     public boolean e;
-    public final w5 e0;
+    public final v4 e0;
     public int f;
     public ValueAnimator f0;
-    public final ki.a g0;
+    public final i6 g0;
     public int h;
     public View.OnClickListener h0;
     public r1 i0;
@@ -81,13 +83,12 @@ public final class s1 extends FrameLayout {
         this.K = 0.0f;
         this.Q = -1.0f;
         this.R = true;
-        this.e0 = new w5(this, 10);
-        int i10 = 4;
-        this.g0 = new ki.a(this, i10);
+        this.e0 = new v4(this, 10);
+        this.g0 = new i6(this, 11);
         this.r = ViewConfiguration.get(activity).getScaledTouchSlop();
-        setOutlineProvider(new dh.b(this, i10));
+        setOutlineProvider(new dh.b(this, 4));
         setClipToOutline(true);
-        paint.setColor(i0.a.k(-16777216, 102));
+        paint.setColor(i0.b.o(-16777216, 102));
         this.x = activity.getDrawable(R.drawable.calls_mute_mini);
     }
 
@@ -188,8 +189,8 @@ public final class s1 extends FrameLayout {
         s1Var.d0.start();
         animate().setListener(null).cancel();
         ViewPropertyAnimator duration = animate().scaleX(0.23f).scaleY(0.23f).translationX(translationX2 - ((getMeasuredWidth() - (getMeasuredWidth() * 0.23f)) / 2.0f)).translationY(translationY2 - ((getMeasuredHeight() - (getMeasuredHeight() * 0.23f)) / 2.0f)).alpha(1.0f).setStartDelay(0L).setDuration(300L);
-        es esVar = es.f;
-        duration.setInterpolator(esVar).setListener(new ne.c(this, translationX2, translationY2, 1)).setInterpolator(esVar).start();
+        bs bsVar = bs.f;
+        duration.setInterpolator(bsVar).setListener(new ne.c(this, translationX2, translationY2, 1)).setInterpolator(bsVar).start();
     }
 
     public final void d(float f7, float f10) {
@@ -243,7 +244,7 @@ public final class s1 extends FrameLayout {
         canvas.scale((1.0f / getScaleX()) * s1Var.J * s1Var.K, (1.0f / getScaleY()) * s1Var.J * s1Var.K, f7, f10);
         canvas.drawCircle(f7, f10, AndroidUtilities.dp(14.0f), s1Var.w);
         Drawable drawable = s1Var.x;
-        drawable.setBounds(org.telegram.ui.Cells.c1.r(2, measuredWidth, drawable), org.telegram.ui.Cells.c1.c(2, measuredHeight, drawable), org.telegram.ui.Cells.c1.v(2, measuredWidth, drawable), org.telegram.ui.Cells.c1.u(2, measuredHeight, drawable));
+        drawable.setBounds(org.telegram.ui.Cells.t0.w(2, measuredWidth, drawable), org.telegram.ui.Cells.t0.g(2, measuredHeight, drawable), org.telegram.ui.Cells.t0.B(2, measuredWidth, drawable), org.telegram.ui.Cells.t0.A(2, measuredHeight, drawable));
         drawable.draw(canvas);
         canvas.restore();
         if (s1Var.O) {
@@ -259,11 +260,11 @@ public final class s1 extends FrameLayout {
         float systemWindowInsetTop = this.n == null ? 0.0f : r1.getSystemWindowInsetTop() + this.H;
         float systemWindowInsetBottom = this.n != null ? r3.getSystemWindowInsetBottom() + this.I : 0.0f;
         View view = (View) parent;
-        float y3 = com.google.android.gms.internal.play_billing.k3.y((view.getMeasuredWidth() - this.F) - this.G, i10, f7, this.F);
-        float y10 = com.google.android.gms.internal.play_billing.k3.y((view.getMeasuredHeight() - systemWindowInsetBottom) - systemWindowInsetTop, i11, f10, systemWindowInsetTop);
+        float x10 = a6.x((view.getMeasuredWidth() - this.F) - this.G, i10, f7, this.F);
+        float x11 = a6.x((view.getMeasuredHeight() - systemWindowInsetBottom) - systemWindowInsetTop, i11, f10, systemWindowInsetTop);
         if (z10) {
             animate().setListener(null).cancel();
-            animate().scaleX(1.0f).scaleY(1.0f).translationX(y3).translationY(y10).alpha(1.0f).setStartDelay(this.L ? 0L : 150L).setDuration(150L).setInterpolator(es.f).start();
+            animate().scaleX(1.0f).scaleY(1.0f).translationX(x10).translationY(x11).alpha(1.0f).setStartDelay(this.L ? 0L : 150L).setDuration(150L).setInterpolator(bs.f).start();
             return;
         }
         if (!this.S) {
@@ -272,8 +273,8 @@ public final class s1 extends FrameLayout {
             setScaleY(1.0f);
             animate().alpha(1.0f).setDuration(150L).start();
         }
-        setTranslationX(y3);
-        setTranslationY(y10);
+        setTranslationX(x10);
+        setTranslationY(x11);
     }
 
     public final void f() {
@@ -303,7 +304,7 @@ public final class s1 extends FrameLayout {
         }
         r1 r1Var = this.i0;
         if (r1Var != null) {
-            ((ki1) r1Var).b.d0.d(this.J, this.P);
+            ((rg1) r1Var).b.d0.d(this.J, this.P);
         }
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
         if (getMeasuredHeight() != this.f && getMeasuredWidth() != this.h) {
@@ -390,7 +391,7 @@ public final class s1 extends FrameLayout {
                 } else if (getY() + getMeasuredHeight() > measuredHeight - f12) {
                     startDelay.translationY((measuredHeight - getMeasuredHeight()) - f12);
                 }
-                startDelay.setDuration(150L).setInterpolator(es.f).start();
+                startDelay.setDuration(150L).setInterpolator(bs.f).start();
             }
             this.e = false;
             return true;

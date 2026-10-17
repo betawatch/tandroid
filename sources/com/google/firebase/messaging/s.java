@@ -1,825 +1,477 @@
 package com.google.firebase.messaging;
 
+import ah.i1;
+import ah.y0;
+import ai.s2;
+import ai.z4;
 import android.content.Context;
-import android.os.Bundle;
-import android.os.Message;
+import android.content.SharedPreferences;
+import android.media.MediaCodec;
+import android.media.MediaCrypto;
+import android.os.SystemClock;
+import android.telephony.TelephonyManager;
+import android.text.TextUtils;
 import android.util.Log;
-import android.view.View;
-import android.view.ViewTreeObserver;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import androidx.fragment.app.i0;
-import androidx.fragment.app.l0;
-import androidx.fragment.app.o0;
-import be.f0;
-import be.g1;
-import be.j2;
+import android.view.Surface;
+import android.view.ViewGroup;
+import ci.t6;
 import com.google.android.gms.internal.cast.z5;
-import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.Tasks;
-import di.f4;
+import e2.m0;
+import ei.a2;
+import ei.ac;
+import ei.b2;
+import ei.e1;
+import ei.ec;
+import ei.h2;
+import ei.k2;
+import ei.m3;
+import ei.ma;
+import ei.n9;
+import ei.o1;
+import ei.o5;
+import ei.o9;
+import ei.p3;
+import ei.qa;
+import ei.t1;
+import ei.ua;
+import ei.ub;
+import ei.v0;
+import ei.vb;
+import ei.x3;
+import ei.xa;
+import ei.y6;
+import ei.ya;
+import ei.yb;
+import ei.z6;
+import java.nio.ByteBuffer;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
+import java.util.Arrays;
 import java.util.Iterator;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.concurrent.Callable;
-import java.util.concurrent.Executor;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.LinkedBlockingDeque;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicLongFieldUpdater;
-import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
-import ji.w4;
+import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Components.a6;
-import p4.s0;
-import z9.t0;
-import z9.z0;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.f3;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Components.hs0;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.ti;
+import org.telegram.ui.Components.w9;
+import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
+import sg.x0;
+import v7.s6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class s {
-    public static s f;
+public final /* synthetic */ class s implements Runnable {
     public final /* synthetic */ int a;
-    public Object b;
-    public Object c;
-    public Object d;
-    public Object e;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ s(int i10, boolean z10) {
+    public /* synthetic */ s(Object obj, int i10) {
         this.a = i10;
+        this.b = obj;
     }
 
-    public static final Message a(s sVar, ArrayList arrayList, int i10) {
-        Object obj;
-        ArrayList arrayList2 = new ArrayList();
-        int size = arrayList.size();
-        int i11 = 0;
-        while (i11 < size) {
-            Object obj2 = arrayList.get(i11);
-            i11++;
-            if (((Message) obj2).what == i10) {
-                arrayList2.add(obj2);
-            }
-        }
-        Iterator it = arrayList2.iterator();
-        if (it.hasNext()) {
-            Object next = it.next();
-            if (it.hasNext()) {
-                long when = ((Message) next).getWhen();
-                do {
-                    Object next2 = it.next();
-                    long when2 = ((Message) next2).getWhen();
-                    if (when < when2) {
-                        next = next2;
-                        when = when2;
-                    }
-                } while (it.hasNext());
-            }
-            obj = next;
-        } else {
-            obj = null;
-        }
-        return (Message) obj;
-    }
-
-    public static synchronized s j() {
-        s sVar;
-        synchronized (s.class) {
-            try {
-                if (f == null) {
-                    f = new s(0);
-                }
-                sVar = f;
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-        return sVar;
-    }
-
-    public void b(androidx.fragment.app.r rVar) {
-        if (((ArrayList) this.b).contains(rVar)) {
-            throw new IllegalStateException("Fragment already added: " + rVar);
-        }
-        synchronized (((ArrayList) this.b)) {
-            ((ArrayList) this.b).add(rVar);
-        }
-        rVar.v = true;
-    }
-
-    public t0 c() {
-        String str = ((String) this.b) == null ? " processName" : "";
-        if (((Integer) this.d) == null) {
-            str = str.concat(" pid");
-        }
-        if (((Integer) this.e) == null) {
-            str = t8.b.u(str, " importance");
-        }
-        if (((Boolean) this.c) == null) {
-            str = t8.b.u(str, " defaultProcess");
-        }
-        if (str.isEmpty()) {
-            return new t0((String) this.b, ((Integer) this.d).intValue(), ((Integer) this.e).intValue(), ((Boolean) this.c).booleanValue());
-        }
-        throw new IllegalStateException("Missing required properties:".concat(str));
-    }
-
-    public z0 d() {
-        String str = ((Integer) this.d) == null ? " platform" : "";
-        if (((String) this.b) == null) {
-            str = str.concat(" version");
-        }
-        if (((String) this.e) == null) {
-            str = t8.b.u(str, " buildVersion");
-        }
-        if (((Boolean) this.c) == null) {
-            str = t8.b.u(str, " jailbroken");
-        }
-        if (str.isEmpty()) {
-            return new z0(((Integer) this.d).intValue(), (String) this.b, (String) this.e, ((Boolean) this.c).booleanValue());
-        }
-        throw new IllegalStateException("Missing required properties:".concat(str));
-    }
-
-    public androidx.fragment.app.r e(String str) {
-        o0 o0Var = (o0) ((HashMap) this.c).get(str);
-        if (o0Var != null) {
-            return o0Var.c;
-        }
-        return null;
-    }
-
-    public androidx.fragment.app.r f(String str) {
-        for (o0 o0Var : ((HashMap) this.c).values()) {
-            if (o0Var != null) {
-                androidx.fragment.app.r rVar = o0Var.c;
-                if (!str.equals(rVar.e)) {
-                    rVar = rVar.L.c.f(str);
-                }
-                if (rVar != null) {
-                    return rVar;
-                }
-            }
-        }
-        return null;
-    }
-
-    public ArrayList g() {
-        ArrayList arrayList = new ArrayList();
-        for (o0 o0Var : ((HashMap) this.c).values()) {
-            if (o0Var != null) {
-                arrayList.add(o0Var);
-            }
-        }
-        return arrayList;
-    }
-
-    public ArrayList h() {
-        ArrayList arrayList = new ArrayList();
-        for (o0 o0Var : ((HashMap) this.c).values()) {
-            if (o0Var != null) {
-                arrayList.add(o0Var.c);
-            } else {
-                arrayList.add(null);
-            }
-        }
-        return arrayList;
-    }
-
-    public List i() {
-        ArrayList arrayList;
-        if (((ArrayList) this.b).isEmpty()) {
-            return Collections.EMPTY_LIST;
-        }
-        synchronized (((ArrayList) this.b)) {
-            arrayList = new ArrayList((ArrayList) this.b);
-        }
-        return arrayList;
-    }
-
-    public boolean k(Context context) {
-        if (((Boolean) this.d) == null) {
-            this.d = Boolean.valueOf(context.checkCallingOrSelfPermission("android.permission.ACCESS_NETWORK_STATE") == 0);
-        }
-        if (!((Boolean) this.c).booleanValue() && Log.isLoggable("FirebaseMessaging", 3)) {
-            Log.d("FirebaseMessaging", "Missing Permission: android.permission.ACCESS_NETWORK_STATE this should normally be included by the manifest merger, but may needed to be manually added to your manifest");
-        }
-        return ((Boolean) this.d).booleanValue();
-    }
-
-    public boolean l(Context context) {
-        if (((Boolean) this.c) == null) {
-            this.c = Boolean.valueOf(context.checkCallingOrSelfPermission("android.permission.WAKE_LOCK") == 0);
-        }
-        if (!((Boolean) this.c).booleanValue() && Log.isLoggable("FirebaseMessaging", 3)) {
-            Log.d("FirebaseMessaging", "Missing Permission: android.permission.WAKE_LOCK this should normally be included by the manifest merger, but may needed to be manually added to your manifest");
-        }
-        return ((Boolean) this.c).booleanValue();
-    }
-
-    public void m(o0 o0Var) {
-        androidx.fragment.app.r rVar = o0Var.c;
-        String str = rVar.e;
-        HashMap hashMap = (HashMap) this.c;
-        if (hashMap.get(str) != null) {
-            return;
-        }
-        hashMap.put(rVar.e, o0Var);
-        if (i0.K(2)) {
-            Log.v("FragmentManager", "Added fragment to active set " + rVar);
-        }
-    }
-
-    public void n(o0 o0Var) {
-        HashMap hashMap = (HashMap) this.c;
-        androidx.fragment.app.r rVar = o0Var.c;
-        if (rVar.S) {
-            ((l0) this.e).f(rVar);
-        }
-        if (hashMap.get(rVar.e) == o0Var && ((o0) hashMap.put(rVar.e, null)) != null && i0.K(2)) {
-            Log.v("FragmentManager", "Removed fragment from active set " + rVar);
-        }
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:99:0x0269, code lost:
-    
-        r2 = r4;
-     */
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:100:0x026b A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x0169  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x0181  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x020d  */
-    /* JADX WARN: Type inference failed for: r2v19, types: [de.h, ge.d, ge.t] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void o(k1.k kVar) {
-        de.b bVar;
-        a6.i iVar;
-        int i10;
-        int i11;
-        boolean z10;
-        k1.k kVar2;
-        de.h hVar;
-        a6.i iVar2;
-        long j10;
-        boolean z11;
-        int i12;
-        int i13;
-        Object obj;
-        Object a2;
-        long j11;
-        de.h hVar2;
-        k1.k kVar3;
-        AtomicLongFieldUpdater atomicLongFieldUpdater;
-        de.c cVar;
-        k1.k kVar4 = kVar;
-        de.b bVar2 = (de.b) this.d;
-        bVar2.getClass();
-        AtomicLongFieldUpdater atomicLongFieldUpdater2 = de.b.b;
-        boolean z12 = false;
-        boolean z13 = true;
-        long j12 = 1152921504606846975L;
-        boolean z14 = bVar2.i(atomicLongFieldUpdater2.get(bVar2), false) ? false : !bVar2.a(r2 & 1152921504606846975L);
-        Object obj2 = de.g.a;
-        if (z14) {
-            obj = obj2;
-        } else {
-            a6.i iVar3 = de.d.j;
-            de.h hVar3 = (de.h) de.b.f.get(bVar2);
-            while (true) {
-                long andIncrement = atomicLongFieldUpdater2.getAndIncrement(bVar2);
-                long j13 = andIncrement & j12;
-                boolean i14 = bVar2.i(andIncrement, z12);
-                int i15 = de.d.b;
-                long j14 = i15;
-                long j15 = j12;
-                long j16 = j13 / j14;
-                int i16 = (int) (j13 % j14);
-                if (hVar3.c != j16) {
-                    AtomicLongFieldUpdater atomicLongFieldUpdater3 = de.b.c;
-                    AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = de.b.f;
-                    de.h hVar4 = de.d.a;
-                    de.c cVar2 = de.c.a;
-                    while (true) {
-                        a2 = ge.a.a(hVar3, j16, cVar2);
-                        if (!ge.a.d(a2)) {
-                            ge.t b10 = ge.a.b(a2);
-                            while (true) {
-                                ge.t tVar = (ge.t) atomicReferenceFieldUpdater.get(bVar2);
-                                z10 = z13;
-                                j11 = j16;
-                                iVar = iVar3;
-                                cVar = cVar2;
-                                if (tVar.c >= b10.c) {
-                                    break;
-                                }
-                                if (!b10.j()) {
-                                    break;
-                                }
-                                while (!atomicReferenceFieldUpdater.compareAndSet(bVar2, tVar, b10)) {
-                                    if (atomicReferenceFieldUpdater.get(bVar2) != tVar) {
-                                        if (b10.f()) {
-                                            b10.e();
+    private final void a() {
+        String d;
+        TelephonyManager telephonyManager;
+        e2.v vVar = (e2.v) this.b;
+        y2.e eVar = (y2.e) vVar.a.get();
+        if (eVar != null) {
+            int b10 = vVar.c.b();
+            y2.f fVar = eVar.a;
+            synchronized (fVar) {
+                synchronized (fVar) {
+                    int i10 = fVar.n;
+                    if (i10 == 0 || fVar.e) {
+                        if (i10 != b10 || fVar.o == null) {
+                            fVar.n = b10;
+                            if (b10 != 1 && b10 != 0 && b10 != 8) {
+                                if (fVar.o == null) {
+                                    Context context = fVar.a;
+                                    String str = m0.a;
+                                    if (context != null && (telephonyManager = (TelephonyManager) context.getSystemService("phone")) != null) {
+                                        String networkCountryIso = telephonyManager.getNetworkCountryIso();
+                                        if (!TextUtils.isEmpty(networkCountryIso)) {
+                                            d = s6.d(networkCountryIso);
+                                            fVar.o = d;
                                         }
-                                        iVar3 = iVar;
-                                        z13 = z10;
-                                        j16 = j11;
-                                        cVar2 = cVar;
                                     }
+                                    d = s6.d(Locale.getDefault().getCountry());
+                                    fVar.o = d;
                                 }
-                                if (tVar.f()) {
-                                    tVar.e();
+                                fVar.l = fVar.a(b10);
+                                fVar.d.getClass();
+                                long elapsedRealtime = SystemClock.elapsedRealtime();
+                                fVar.c(fVar.g > 0 ? (int) (elapsedRealtime - fVar.h) : 0, fVar.i, fVar.l);
+                                fVar.h = elapsedRealtime;
+                                fVar.i = 0L;
+                                fVar.k = 0L;
+                                fVar.j = 0L;
+                                y2.q qVar = fVar.f;
+                                qVar.a.clear();
+                                qVar.c = -1;
+                                qVar.d = 0;
+                                qVar.e = 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private final void b() {
+        MediaCodec.BufferInfo bufferInfo;
+        boolean z10;
+        long j10;
+        short s10;
+        yb ybVar = (yb) this.b;
+        try {
+            int round = Math.round(((ybVar.h * ybVar.g.getInteger("sample-rate")) / ybVar.b) / 5.0f);
+            MediaCodec createDecoderByType = MediaCodec.createDecoderByType(ybVar.g.getString("mime"));
+            if (createDecoderByType == null) {
+                return;
+            }
+            createDecoderByType.configure(ybVar.g, (Surface) null, (MediaCrypto) null, 0);
+            createDecoderByType.start();
+            createDecoderByType.getInputBuffers();
+            createDecoderByType.getOutputBuffers();
+            short[] sArr = new short[32];
+            boolean z11 = false;
+            int i10 = 0;
+            int i11 = 0;
+            int i12 = 0;
+            short s11 = 0;
+            int i13 = -1;
+            while (true) {
+                MediaCodec.BufferInfo bufferInfo2 = new MediaCodec.BufferInfo();
+                int dequeueInputBuffer = createDecoderByType.dequeueInputBuffer(2500L);
+                if (dequeueInputBuffer >= 0) {
+                    int readSampleData = ybVar.f.readSampleData(createDecoderByType.getInputBuffer(dequeueInputBuffer), 0);
+                    if (readSampleData < 0) {
+                        j10 = 2500;
+                        createDecoderByType.queueInputBuffer(dequeueInputBuffer, 0, 0, 0L, 4);
+                        bufferInfo = bufferInfo2;
+                        z10 = true;
+                    } else {
+                        z10 = z11;
+                        j10 = 2500;
+                        bufferInfo = bufferInfo2;
+                        createDecoderByType.queueInputBuffer(dequeueInputBuffer, 0, readSampleData, ybVar.f.getSampleTime(), 0);
+                        ybVar.f.advance();
+                    }
+                } else {
+                    bufferInfo = bufferInfo2;
+                    z10 = z11;
+                    j10 = 2500;
+                }
+                if (i13 >= 0) {
+                    createDecoderByType.getOutputBuffer(i13).position(0);
+                }
+                MediaCodec.BufferInfo bufferInfo3 = bufferInfo;
+                i13 = createDecoderByType.dequeueOutputBuffer(bufferInfo3, j10);
+                while (i13 != -1 && !z10) {
+                    if (i13 >= 0) {
+                        ByteBuffer outputBuffer = createDecoderByType.getOutputBuffer(i13);
+                        if (outputBuffer != null && bufferInfo3.size > 0) {
+                            int i14 = i12;
+                            while (outputBuffer.remaining() > 0) {
+                                short s12 = (short) ((outputBuffer.get() & 255) | ((outputBuffer.get() & 255) << 8));
+                                if (i14 >= round) {
+                                    sArr[i10 - i11] = s11;
+                                    i10++;
+                                    int i15 = i10 - i11;
+                                    if (i15 >= sArr.length || i10 >= ybVar.b) {
+                                        short[] sArr2 = new short[sArr.length];
+                                        AndroidUtilities.runOnUIThread(new ah.o(ybVar, sArr, i15, 13));
+                                        sArr = sArr2;
+                                        i11 = i10;
+                                    }
+                                    if (i10 >= ybVar.d.length) {
+                                        i12 = 0;
+                                        s11 = 0;
+                                        break;
+                                    } else {
+                                        i14 = 0;
+                                        s10 = 0;
+                                    }
+                                } else {
+                                    s10 = s11;
+                                }
+                                s11 = s10 < s12 ? s12 : s10;
+                                i14++;
+                                if (outputBuffer.remaining() < 8) {
+                                    break;
+                                } else {
+                                    outputBuffer.position(outputBuffer.position() + 8);
                                 }
                             }
-                        } else {
-                            z10 = z13;
-                            j11 = j16;
-                            iVar = iVar3;
+                            i12 = i14;
+                        }
+                        createDecoderByType.releaseOutputBuffer(i13, false);
+                        if ((bufferInfo3.flags & 4) != 0) {
+                            z11 = true;
                             break;
                         }
-                        iVar3 = iVar;
-                        z13 = z10;
-                        j16 = j11;
-                        cVar2 = cVar;
+                    } else if (i13 == -3) {
+                        createDecoderByType.getOutputBuffers();
                     }
-                    if (ge.a.d(a2)) {
-                        bVar2.c();
-                        if (hVar3.c * de.d.b < atomicLongFieldUpdater3.get(bVar2)) {
-                            hVar3.b();
-                            de.h hVar5 = hVar3;
-                            bVar = bVar2;
-                            hVar2 = hVar5;
-                            i10 = i15;
-                            i11 = i16;
-                            kVar3 = null;
-                            kVar2 = null;
-                            if (kVar3 == null) {
-                                hVar = kVar3;
-                            } else {
-                                if (i14) {
-                                    obj = new de.e(bVar.f());
-                                    break;
-                                }
-                                de.b bVar3 = bVar;
-                                hVar3 = hVar2;
-                                bVar2 = bVar3;
-                                iVar3 = iVar;
-                                j12 = j15;
-                                z13 = z10;
-                                z12 = false;
+                    i13 = createDecoderByType.dequeueOutputBuffer(bufferInfo3, 2500L);
+                }
+                z11 = z10;
+                synchronized (ybVar.i) {
+                    try {
+                        if (!ybVar.j) {
+                            if (z11 || i10 >= ybVar.b) {
+                                break;
                             }
                         } else {
-                            de.h hVar6 = hVar3;
-                            bVar = bVar2;
-                            hVar2 = hVar6;
-                            i10 = i15;
-                            i11 = i16;
-                            kVar2 = null;
-                            kVar3 = kVar2;
-                            if (kVar3 == null) {
-                            }
+                            break;
                         }
-                    } else {
-                        ?? r22 = (de.h) ge.a.b(a2);
-                        long j17 = r22.c;
-                        if (j17 > j11) {
-                            long j18 = de.d.b * j17;
-                            AtomicLongFieldUpdater atomicLongFieldUpdater4 = de.b.b;
-                            int i17 = i15;
-                            int i18 = i16;
-                            while (true) {
-                                long j19 = atomicLongFieldUpdater4.get(bVar2);
-                                long j20 = j19 & j15;
-                                if (j20 >= j18) {
-                                    de.h hVar7 = hVar3;
-                                    bVar = bVar2;
-                                    hVar2 = hVar7;
-                                    atomicLongFieldUpdater = atomicLongFieldUpdater3;
-                                    i11 = i18;
-                                    kVar2 = null;
-                                    i10 = i17;
-                                    break;
-                                }
-                                de.b bVar4 = bVar2;
-                                long j21 = j18;
-                                AtomicLongFieldUpdater atomicLongFieldUpdater5 = atomicLongFieldUpdater4;
-                                i11 = i18;
-                                kVar2 = null;
-                                i10 = i17;
-                                hVar2 = hVar3;
-                                atomicLongFieldUpdater = atomicLongFieldUpdater3;
-                                bVar = bVar4;
-                                if (de.b.b.compareAndSet(bVar, j19, (((int) (j19 >> 60)) << 60) + j20)) {
-                                    break;
-                                }
-                                hVar3 = hVar2;
-                                bVar2 = bVar;
-                                atomicLongFieldUpdater3 = atomicLongFieldUpdater;
-                                i17 = i10;
-                                atomicLongFieldUpdater4 = atomicLongFieldUpdater5;
-                                i18 = i11;
-                                j18 = j21;
-                            }
-                            if (j17 * de.d.b < atomicLongFieldUpdater.get(bVar)) {
-                                r22.b();
-                            }
-                            kVar3 = kVar2;
-                            if (kVar3 == null) {
-                            }
-                        } else {
-                            de.h hVar8 = hVar3;
-                            bVar = bVar2;
-                            hVar2 = hVar8;
-                            i10 = i15;
-                            i11 = i16;
-                            kVar2 = null;
-                            kVar3 = r22;
-                            if (kVar3 == null) {
-                            }
-                        }
-                    }
-                } else {
-                    de.h hVar9 = hVar3;
-                    bVar = bVar2;
-                    iVar = iVar3;
-                    i10 = i15;
-                    i11 = i16;
-                    z10 = z13;
-                    kVar2 = null;
-                    hVar = hVar9;
-                }
-                hVar.n(i11, kVar4);
-                if (i14) {
-                    bVar2 = bVar;
-                    iVar2 = iVar;
-                    j10 = j13;
-                    z11 = i14;
-                    i12 = 5;
-                    i13 = bVar2.p(hVar, i11, kVar4, j10, iVar2, z11);
-                } else {
-                    bVar2 = bVar;
-                    iVar2 = iVar;
-                    j10 = j13;
-                    z11 = i14;
-                    k1.k kVar5 = kVar2;
-                    i12 = 5;
-                    Object l4 = hVar.l(i11);
-                    if (l4 == null) {
-                        if (bVar2.a(j10)) {
-                            if (hVar.k(i11, kVar5, de.d.d)) {
-                                z13 = z10;
-                                i13 = z13;
-                                Object obj3 = id.i.a;
-                                if (i13 == 0) {
-                                    hVar.b();
-                                    break;
-                                }
-                                if (i13 == z13) {
-                                    break;
-                                }
-                                if (i13 != 2) {
-                                    if (i13 == 3) {
-                                        throw new IllegalStateException("unexpected");
-                                    }
-                                    if (i13 != 4) {
-                                        if (i13 == i12) {
-                                            hVar.b();
-                                        }
-                                        kVar4 = kVar;
-                                        hVar3 = hVar;
-                                        iVar3 = iVar2;
-                                        j12 = j15;
-                                        z12 = false;
-                                    } else {
-                                        if (j10 < de.b.c.get(bVar2)) {
-                                            hVar.b();
-                                        }
-                                        obj = new de.e(bVar2.f());
-                                    }
-                                } else if (z11) {
-                                    hVar.i();
-                                    obj = new de.e(bVar2.f());
-                                } else {
-                                    j2 j2Var = iVar2 instanceof j2 ? (j2) iVar2 : null;
-                                    if (j2Var != null) {
-                                        j2Var.a(hVar, i11 + i10);
-                                    }
-                                    hVar.i();
-                                    obj = obj2;
-                                }
-                            }
-                        } else if (iVar2 == null) {
-                            i13 = 3;
-                        } else if (hVar.k(i11, kVar5, iVar2)) {
-                            i13 = 2;
-                        }
-                        z13 = z10;
-                        i13 = bVar2.p(hVar, i11, kVar4, j10, iVar2, z11);
-                        Object obj32 = id.i.a;
-                        if (i13 == 0) {
-                        }
-                    } else {
-                        if (l4 instanceof j2) {
-                            hVar.n(i11, kVar5);
-                            if (bVar2.m(l4, kVar4)) {
-                                hVar.o(i11, de.d.i);
-                                z13 = z10;
-                                i13 = 0;
-                            } else {
-                                a6.i iVar4 = de.d.k;
-                                if (hVar.f.getAndSet((i11 * 2) + 1, iVar4) != iVar4) {
-                                    z13 = z10;
-                                    hVar.m(i11, z13);
-                                } else {
-                                    z13 = z10;
-                                }
-                                i13 = 5;
-                            }
-                            Object obj322 = id.i.a;
-                            if (i13 == 0) {
-                            }
-                        }
-                        z13 = z10;
-                        i13 = bVar2.p(hVar, i11, kVar4, j10, iVar2, z11);
-                        Object obj3222 = id.i.a;
-                        if (i13 == 0) {
-                        }
+                    } finally {
                     }
                 }
-                z13 = z10;
-                Object obj32222 = id.i.a;
-                if (i13 == 0) {
-                }
             }
-        }
-        i12 = 5;
-        if (obj instanceof de.e) {
-            Throwable th2 = ((de.e) obj).a;
-            if (th2 != null) {
-                throw th2;
-            }
-            throw new b2.a0("Channel was closed normally");
-        }
-        if (obj instanceof de.f) {
-            throw new IllegalStateException("Check failed.");
-        }
-        if (((AtomicInteger) this.e).getAndIncrement() == 0) {
-            f0.q((be.c0) this.b, new ab.l(this, null, i12));
+            createDecoderByType.stop();
+            createDecoderByType.release();
+            ybVar.f.release();
+        } catch (Exception e) {
+            FileLog.e(e);
         }
     }
 
-    public df.f p(String str) {
-        if (str == null) {
-            throw new NullPointerException("input must not be null");
-        }
-        af.h hVar = new af.h((ArrayList) this.b, (ef.b) this.d, (ArrayList) this.c);
-        int i10 = 0;
-        while (true) {
-            int length = str.length();
-            int i11 = i10;
-            while (true) {
-                if (i11 >= length) {
-                    i11 = -1;
-                    break;
-                }
-                char charAt = str.charAt(i11);
-                if (charAt == '\n' || charAt == '\r') {
-                    break;
-                }
-                i11++;
-            }
-            if (i11 == -1) {
-                break;
-            }
-            hVar.i(str.substring(i10, i11));
-            i10 = i11 + 1;
-            if (i10 < str.length() && str.charAt(i11) == '\r' && str.charAt(i10) == '\n') {
-                i10 = i11 + 2;
-            }
-        }
-        if (str.length() > 0 && (i10 == 0 || i10 < str.length())) {
-            hVar.i(str.substring(i10));
-        }
-        hVar.f(hVar.n);
-        ef.a F = hVar.j.F(new qf.b(3, hVar.k, hVar.m));
-        Iterator it = hVar.o.iterator();
-        while (it.hasNext()) {
-            ((ff.a) it.next()).g(F);
-        }
-        df.f fVar = (df.f) hVar.l.b;
-        Iterator it2 = ((ArrayList) this.e).iterator();
-        if (it2.hasNext()) {
-            throw a1.g.j(it2);
-        }
-        return fVar;
-    }
-
-    public void q(Message message) {
-        LinkedBlockingDeque linkedBlockingDeque = (LinkedBlockingDeque) this.d;
-        if (!linkedBlockingDeque.offer(message)) {
-            Log.d("SessionLifecycleClient", "Failed to enqueue message " + message.what + ". Dropping.");
-            return;
-        }
-        Log.d("SessionLifecycleClient", "Queued message " + message.what + ". Queue size " + linkedBlockingDeque.size());
-    }
-
-    public void r(int i10) {
-        ArrayList arrayList = new ArrayList();
-        ((LinkedBlockingDeque) this.d).drainTo(arrayList);
-        Message obtain = Message.obtain(null, i10, 0, 0);
-        kotlin.jvm.internal.i.d(obtain, "obtain(null, messageCode, 0, 0)");
-        arrayList.add(obtain);
-        f0.q(f0.b((kd.h) this.b), new ab.l(this, arrayList, null, 2));
-    }
-
-    public Bundle s(String str, Bundle bundle) {
-        HashMap hashMap = (HashMap) this.d;
-        return bundle != null ? (Bundle) hashMap.put(str, bundle) : (Bundle) hashMap.remove(str);
-    }
-
-    public void t(View view) {
-        bi.j2 j2Var = (bi.j2) this.e;
-        if (((View) this.c) == view) {
-            return;
-        }
-        u(null);
-        View view2 = (View) this.c;
-        if (view2 != null) {
-            view2.removeOnAttachStateChangeListener(j2Var);
-        }
-        if (view != null) {
-            view.addOnAttachStateChangeListener(j2Var);
-            if (view.isAttachedToWindow()) {
-                u(view.getViewTreeObserver());
-            }
-        }
-        this.c = view;
-    }
-
-    public String toString() {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10;
+        int i11;
+        int i12;
         switch (this.a) {
-            case 10:
-                return ((w4) this.e).toString();
-            default:
-                return super.toString();
-        }
-    }
-
-    public void u(ViewTreeObserver viewTreeObserver) {
-        f4 f4Var = (f4) this.b;
-        ViewTreeObserver viewTreeObserver2 = (ViewTreeObserver) this.d;
-        if (viewTreeObserver2 == viewTreeObserver) {
-            return;
-        }
-        if (viewTreeObserver2 != null && viewTreeObserver2.isAlive()) {
-            ((ViewTreeObserver) this.d).removeOnGlobalLayoutListener(f4Var);
-        }
-        if (viewTreeObserver != null) {
-            viewTreeObserver.addOnGlobalLayoutListener(f4Var);
-        }
-        this.d = viewTreeObserver;
-    }
-
-    public Task v(Callable callable) {
-        Task continueWith;
-        synchronized (this.d) {
-            continueWith = ((Task) this.c).continueWith((Executor) this.b, new v0.k(callable));
-            this.c = continueWith.continueWith((Executor) this.b, new rb.b(26));
-        }
-        return continueWith;
-    }
-
-    public Task w(Callable callable) {
-        Task continueWithTask;
-        synchronized (this.d) {
-            continueWithTask = ((Task) this.c).continueWithTask((Executor) this.b, new v0.k(callable));
-            this.c = continueWithTask.continueWith((Executor) this.b, new rb.b(26));
-        }
-        return continueWithTask;
-    }
-
-    public /* synthetic */ s(Object obj, Object obj2, Object obj3, Object obj4, int i10) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
-        this.e = obj4;
-    }
-
-    public s(f4 f4Var) {
-        this.a = 11;
-        this.e = new bi.j2(this, 11);
-        this.b = f4Var;
-    }
-
-    public s(be.c0 c0Var, k1.m mVar, k1.n nVar) {
-        this.a = 5;
-        this.b = c0Var;
-        this.c = nVar;
-        de.a[] aVarArr = de.a.a;
-        this.d = new de.b(ConnectionsManager.DEFAULT_DATACENTER_ID);
-        this.e = new AtomicInteger(0);
-        g1 g1Var = (g1) c0Var.c().get(be.b0.b);
-        if (g1Var == null) {
-            return;
-        }
-        g1Var.invokeOnCompletion(new ce.d(1, mVar, this));
-    }
-
-    public s(z5 z5Var) {
-        int i10 = 3;
-        this.a = 3;
-        ArrayList arrayList = (ArrayList) z5Var.b;
-        LinkedHashSet linkedHashSet = (LinkedHashSet) z5Var.d;
-        LinkedHashSet linkedHashSet2 = af.h.p;
-        ArrayList arrayList2 = new ArrayList();
-        arrayList2.addAll(arrayList);
-        Iterator it = linkedHashSet.iterator();
-        while (it.hasNext()) {
-            arrayList2.add(af.h.q.get((Class) it.next()));
-        }
-        this.b = arrayList2;
-        ef.b bVar = (n4.s) z5Var.e;
-        bVar = bVar == null ? new pb.a(8) : bVar;
-        this.d = bVar;
-        this.e = (ArrayList) z5Var.a;
-        ArrayList arrayList3 = (ArrayList) z5Var.c;
-        this.c = arrayList3;
-        bVar.F(new qf.b(i10, arrayList3, Collections.EMPTY_MAP));
-    }
-
-    public s(kd.h hVar) {
-        this.a = 1;
-        this.b = hVar;
-        this.d = new LinkedBlockingDeque(20);
-        this.e = new a9.d(this, 1);
-    }
-
-    public s(ExecutorService executorService) {
-        this.a = 12;
-        this.c = Tasks.forResult(null);
-        this.d = new Object();
-        this.e = new ThreadLocal();
-        this.b = executorService;
-        executorService.execute(new s0(this, 11));
-    }
-
-    public s(w4 w4Var, Object obj, Object obj2, Object[] objArr) {
-        this.a = 10;
-        this.e = w4Var;
-        this.b = obj;
-        this.c = obj2;
-        this.d = objArr;
-    }
-
-    public s(int i10) {
-        this.a = i10;
-        switch (i10) {
+            case 0:
+                z5 z5Var = (z5) this.b;
+                synchronized (((ArrayDeque) z5Var.d)) {
+                    SharedPreferences.Editor edit = ((SharedPreferences) z5Var.b).edit();
+                    String str = (String) z5Var.a;
+                    StringBuilder sb2 = new StringBuilder();
+                    Iterator it = ((ArrayDeque) z5Var.d).iterator();
+                    while (it.hasNext()) {
+                        sb2.append((String) it.next());
+                        sb2.append((String) z5Var.c);
+                    }
+                    edit.putString(str, sb2.toString()).commit();
+                }
+                return;
+            case 1:
+                d0 d0Var = (d0) this.b;
+                Log.w("FirebaseMessaging", "Service took too long to process intent: " + d0Var.a.getAction() + " finishing.");
+                d0Var.b.trySetResult(null);
+                return;
             case 2:
-                this.b = new ArrayList();
-                this.c = new HashMap();
-                this.d = new HashMap();
-                break;
+                ((ti) this.b).hide();
+                return;
+            case 3:
+                di.r rVar = (di.r) this.b;
+                hs0 hs0Var = rVar.W;
+                t6 t6Var = rVar.a;
+                hs0Var.a(t6Var == null ? "" : t6Var.E);
+                return;
+            case 4:
+                a();
+                return;
+            case 5:
+                ((ei.h) this.b).c.W = false;
+                return;
+            case 6:
+                ((ei.l) this.b).invalidateSelf();
+                return;
+            case 7:
+                ((ei.d0) this.b).g = -1L;
+                return;
+            case 8:
+                ei.m0 m0Var = (ei.m0) this.b;
+                rg.i iVar = m0Var.b.H;
+                if (iVar != null) {
+                    iVar.b();
+                }
+                m0Var.b.k();
+                return;
+            case 9:
+                ((v0) this.b).a(false);
+                return;
+            case 10:
+                o5 o5Var = (o5) this.b;
+                qc.e();
+                x0 x0Var = new x0((n2) new z4(o5Var), 14, false);
+                x0Var.setOnDismissListener(new e1(0));
+                x0Var.show();
+                return;
+            case 11:
+                ((t1) this.b).G();
+                return;
+            case 12:
+                a2 a2Var = (a2) this.b;
+                ArrayList arrayList = a2Var.v;
+                ArrayList arrayList2 = a2Var.s;
+                b2 b2Var = a2Var.N;
+                ei.n2 n2Var = b2Var.s;
+                i10 = ((f3) n2Var).currentAccount;
+                MediaDataController mediaDataController = MediaDataController.getInstance(i10);
+                String str2 = a2Var.H;
+                if ("premium".equalsIgnoreCase(str2)) {
+                    ArrayList<TLRPC.Document> recentStickers = mediaDataController.getRecentStickers(7);
+                    a2Var.x = 0;
+                    arrayList2.clear();
+                    arrayList.clear();
+                    a2Var.y.clear();
+                    a2Var.n.clear();
+                    a2Var.x++;
+                    arrayList2.add(null);
+                    arrayList.add(0L);
+                    arrayList2.addAll(recentStickers);
+                    a2Var.x = recentStickers.size() + a2Var.x;
+                    a2Var.I = a2Var.H;
+                    a2Var.l();
+                    o1.x1(b2Var.b, 0, 0);
+                    b2Var.f.c(false);
+                    b2Var.e.n(false);
+                    return;
+                }
+                if (b2Var.a == 1 && Emoji.fullyConsistsOfEmojis(a2Var.H)) {
+                    TLRPC.TL_messages_getStickers tL_messages_getStickers = new TLRPC.TL_messages_getStickers();
+                    tL_messages_getStickers.emoticon = a2Var.H;
+                    tL_messages_getStickers.hash = 0L;
+                    i12 = ((f3) n2Var).currentAccount;
+                    ConnectionsManager.getInstance(i12).sendRequest(tL_messages_getStickers, new ai.g(12, a2Var, str2));
+                    return;
+                }
+                String[] currentKeyboardLanguage = AndroidUtilities.getCurrentKeyboardLanguage();
+                String[] strArr = a2Var.J;
+                if (strArr == null || !Arrays.equals(currentKeyboardLanguage, strArr)) {
+                    i11 = ((f3) n2Var).currentAccount;
+                    MediaDataController.getInstance(i11).fetchNewEmojiKeywords(currentKeyboardLanguage);
+                }
+                a2Var.J = currentKeyboardLanguage;
+                mediaDataController.getEmojiSuggestions(currentKeyboardLanguage, a2Var.H, false, new s2(a2Var, str2, mediaDataController, 6), null, false, false, false, true, 50, false);
+                return;
+            case 13:
+                h2 h2Var = (h2) ((ai.u) this.b).b;
+                if (h2Var.h) {
+                    return;
+                }
+                h2Var.n.setVisibility(8);
+                return;
+            case 14:
+                k2 k2Var = (k2) ((e6.r) this.b).b;
+                ArrayList arrayList3 = k2Var.o;
+                if (arrayList3.isEmpty()) {
+                    return;
+                }
+                k2Var.l.d(0.0f, true);
+                int i13 = k2Var.k + 1;
+                k2Var.k = i13;
+                if (i13 > arrayList3.size() - 1) {
+                    k2Var.k = 0;
+                }
+                y0 y0Var = k2Var.j;
+                y0Var.e((i1) arrayList3.get(k2Var.k));
+                k2Var.j = k2Var.i;
+                k2Var.i = y0Var;
+                k2Var.p.invalidate();
+                return;
+            case 15:
+                ((FfmpegAudioWaveformLoader) this.b).lambda$destroy$2();
+                return;
+            case 16:
+                ((m3) this.b).b(null);
+                return;
+            case 17:
+                ((p3) this.b).E();
+                return;
+            case 18:
+                ma maVar = (ma) this.b;
+                if (maVar.I) {
+                    maVar.I = false;
+                    maVar.invalidate();
+                    return;
+                }
+                return;
+            case 19:
+                z6 z6Var = ((y6) this.b).p;
+                z6Var.Q = System.currentTimeMillis();
+                z6Var.R = 0L;
+                z6Var.r0 = true;
+                ((qa) z6Var.a).a.J0.a(0L, true);
+                z6Var.invalidate();
+                return;
+            case 20:
+                ei.p pVar = (ei.p) this.b;
+                if (pVar.getParent() instanceof ViewGroup) {
+                    ((ViewGroup) pVar.getParent()).removeView(pVar);
+                    return;
+                }
+                return;
+            case 21:
+                ei.d dVar = (ei.d) this.b;
+                if (dVar != null) {
+                    dVar.setLoading(false);
+                    return;
+                }
+                return;
+            case 22:
+                ((o9) ((n9) this.b).n).fullScroll(130);
+                return;
+            case 23:
+                ub ubVar = (ub) this.b;
+                ubVar.x0.onTouchEvent(AndroidUtilities.emptyMotionEvent());
+                ubVar.w0.j0(AndroidUtilities.emptyMotionEvent());
+                return;
+            case 24:
+                vb vbVar = ((ua) this.b).k0;
+                vbVar.u(true);
+                vbVar.A0.setCameraThumb(vbVar.z());
+                return;
+            case 25:
+                ((xa) this.b).A2.p1.setVisibility(8);
+                return;
+            case 26:
+                ya yaVar = (ya) this.b;
+                vb vbVar2 = yaVar.b0;
+                if (vbVar2.Q1 || vbVar2.P1 || vbVar2.B0 == null || vbVar2.f0 != 0 || vbVar2.m1 == null) {
+                    return;
+                }
+                String string = LocaleController.getString(yaVar.isFrontface() ? R.string.StoryCameraSavedDualBackHint : R.string.StoryCameraSavedDualFrontHint);
+                x3 x3Var = vbVar2.m1;
+                x3Var.h = x3.a(string, x3Var.getTextPaint());
+                vbVar2.m1.s(string);
+                vbVar2.m1.u();
+                MessagesController.getGlobalMainSettings().edit().putInt("storysvddualhint", MessagesController.getGlobalMainSettings().getInt("storysvddualhint", 0) + 1).apply();
+                return;
+            case 27:
+                ((w9) this.b).setVisibility(8);
+                return;
+            case 28:
+                b();
+                return;
             default:
-                this.b = null;
-                this.c = null;
-                this.d = null;
-                this.e = new ArrayDeque();
-                break;
+                ac acVar = (ac) this.b;
+                ec ecVar = acVar.c;
+                if (ecVar != null) {
+                    long j10 = ecVar.a;
+                    if (j10 > 0) {
+                        acVar.e = j10;
+                        acVar.l.q();
+                        return;
+                    }
+                    return;
+                }
+                return;
         }
-    }
-
-    public s(lg.e eVar) {
-        this.a = 6;
-        LinearLayout linearLayout = new LinearLayout(eVar.getContext());
-        this.e = linearLayout;
-        linearLayout.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(2.0f));
-        if (eVar.E) {
-            TextView textView = new TextView(eVar.getContext());
-            this.d = textView;
-            linearLayout.addView(textView);
-            textView.getLayoutParams().width = AndroidUtilities.dp(36.0f);
-            textView.setVisibility(8);
-            textView.setTypeface(AndroidUtilities.bold());
-            textView.setTextSize(1, 13.0f);
-        }
-        TextView textView2 = new TextView(eVar.getContext());
-        this.c = textView2;
-        linearLayout.addView(textView2, w7.z5.k(0.0f, 0.0f, 20.0f, 0.0f, -2, -2));
-        a6 a6Var = new a6(eVar.getContext());
-        this.b = a6Var;
-        linearLayout.addView(a6Var, w7.z5.n(-1, -2));
-        textView2.setGravity(8388611);
-        a6Var.setGravity(8388613);
-        a6Var.setTypeface(AndroidUtilities.bold());
-        a6Var.setTextSize(1, 13.0f);
-        textView2.setTextSize(1, 13.0f);
     }
 }

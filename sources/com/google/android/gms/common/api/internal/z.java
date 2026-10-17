@@ -1,32 +1,79 @@
 package com.google.android.gms.common.api.internal;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes.dex */
-public final class z extends l0 {
-    public final /* synthetic */ int b = 0;
-    public final /* synthetic */ Object c;
+import android.os.Bundle;
+import android.os.DeadObjectException;
+import android.os.RemoteException;
+import com.google.android.gms.common.api.Status;
+import java.util.Set;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z(a0 a0Var, a0 a0Var2) {
-        super(a0Var2);
-        this.c = a0Var;
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes.dex */
+public final class z implements j0 {
+    public final l0 a;
+
+    public z(l0 l0Var) {
+        this.a = l0Var;
     }
 
-    @Override // com.google.android.gms.common.api.internal.l0
-    public final void a() {
-        switch (this.b) {
-            case 0:
-                ((a0) this.c).o(1);
-                break;
-            default:
-                ((n6.b) this.c).a(new k6.a(16, null));
-                break;
+    @Override // com.google.android.gms.common.api.internal.j0
+    public final e B(e eVar) {
+        l0 l0Var = this.a;
+        try {
+            f1 f1Var = l0Var.o.M;
+            ((Set) f1Var.a).add(eVar);
+            eVar.g.set((e1) f1Var.b);
+            com.google.android.gms.common.api.d dVar = eVar.o;
+            com.google.android.gms.common.api.c cVar = (com.google.android.gms.common.api.c) l0Var.o.E.get(dVar);
+            n6.l.i(cVar, "Appropriate Api was not requested.");
+            if (!cVar.j() && l0Var.i.containsKey(dVar)) {
+                eVar.o(new Status(17, null, null, null));
+                return eVar;
+            }
+            try {
+                eVar.n(cVar);
+            } catch (DeadObjectException e) {
+                eVar.o(new Status(8, e.getLocalizedMessage(), null, null));
+                throw e;
+            } catch (RemoteException e7) {
+                eVar.o(new Status(8, e7.getLocalizedMessage(), null, null));
+            }
+            return eVar;
+        } catch (DeadObjectException unused) {
+            y yVar = new y(this, this);
+            g0 g0Var = l0Var.e;
+            g0Var.sendMessage(g0Var.obtainMessage(1, yVar));
+            return eVar;
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z(k0 k0Var, n6.b bVar) {
-        super(k0Var);
-        this.c = bVar;
+    @Override // com.google.android.gms.common.api.internal.j0
+    public final void t(int i10) {
+        l0 l0Var = this.a;
+        l0Var.h();
+        l0Var.p.n(i10);
+    }
+
+    @Override // com.google.android.gms.common.api.internal.j0
+    public final boolean y() {
+        l0 l0Var = this.a;
+        l0Var.o.getClass();
+        l0Var.h();
+        return true;
+    }
+
+    @Override // com.google.android.gms.common.api.internal.j0
+    public final void e() {
+    }
+
+    @Override // com.google.android.gms.common.api.internal.j0
+    public final void x() {
+    }
+
+    @Override // com.google.android.gms.common.api.internal.j0
+    public final void a(Bundle bundle) {
+    }
+
+    @Override // com.google.android.gms.common.api.internal.j0
+    public final void s(k6.a aVar, com.google.android.gms.common.api.e eVar, boolean z10) {
     }
 }

@@ -1,71 +1,36 @@
 package b2;
 
-import java.util.Arrays;
-import java.util.List;
-import v7.c8;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class u0 {
-    public final t0[] a;
-    public final long b;
+public class u0 {
+    public int a;
+    public int b;
 
-    public u0(t0... t0VarArr) {
-        this(-9223372036854775807L, t0VarArr);
+    public /* synthetic */ u0(int i10, int i11) {
+        this.a = i10;
+        this.b = i11;
     }
 
-    public final u0 a(t0... t0VarArr) {
-        if (t0VarArr.length == 0) {
-            return this;
+    public int a() {
+        int i10 = this.b;
+        if (i10 == 2) {
+            return 10;
         }
-        String str = e2.m0.a;
-        t0[] t0VarArr2 = this.a;
-        Object[] copyOf = Arrays.copyOf(t0VarArr2, t0VarArr2.length + t0VarArr.length);
-        System.arraycopy(t0VarArr, 0, copyOf, t0VarArr2.length, t0VarArr.length);
-        return new u0(this.b, (t0[]) copyOf);
-    }
-
-    public final u0 b(u0 u0Var) {
-        return u0Var == null ? this : a(u0Var.a);
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+        if (i10 == 5) {
+            return 11;
         }
-        if (obj != null && u0.class == obj.getClass()) {
-            u0 u0Var = (u0) obj;
-            if (Arrays.equals(this.a, u0Var.a) && this.b == u0Var.b) {
-                return true;
-            }
+        if (i10 == 29) {
+            return 12;
         }
-        return false;
-    }
-
-    public final int hashCode() {
-        return c8.b(this.b) + (Arrays.hashCode(this.a) * 31);
-    }
-
-    public final String toString() {
-        String str;
-        StringBuilder sb2 = new StringBuilder("entries=");
-        sb2.append(Arrays.toString(this.a));
-        long j10 = this.b;
-        if (j10 == -9223372036854775807L) {
-            str = "";
-        } else {
-            str = ", presentationTimeUs=" + j10;
+        if (i10 != 42) {
+            return i10 != 22 ? i10 != 23 ? 0 : 15 : TLObject.FLAG_30;
         }
-        sb2.append(str);
-        return sb2.toString();
+        return 16;
     }
 
-    public u0(long j10, t0... t0VarArr) {
-        this.b = j10;
-        this.a = t0VarArr;
-    }
-
-    public u0(List list) {
-        this((t0[]) list.toArray(new t0[0]));
+    public int b() {
+        return this.a | this.b;
     }
 }

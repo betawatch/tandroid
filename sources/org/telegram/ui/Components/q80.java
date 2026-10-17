@@ -1,89 +1,92 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class q80 extends FrameLayout {
-    public final /* synthetic */ v80 a;
+public final class q80 extends hm0 {
+    public final Context c;
+    public final /* synthetic */ r80 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q80(v80 v80Var, Context context) {
-        super(context);
-        this.a = v80Var;
+    public q80(r80 r80Var, Context context) {
+        this.d = r80Var;
+        this.c = context;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        int i10;
-        v80 v80Var = this.a;
-        Drawable drawable = v80Var.b;
-        int i11 = v80Var.r;
-        i10 = ((org.telegram.ui.ActionBar.e3) v80Var).backgroundPaddingTop;
-        drawable.setBounds(0, i11 - i10, getMeasuredWidth(), getMeasuredHeight());
-        drawable.draw(canvas);
+    @Override // org.telegram.ui.Components.hm0
+    public final boolean D(s4.b1 b1Var) {
+        return true;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            v80 v80Var = this.a;
-            if (v80Var.r != 0 && motionEvent.getY() < v80Var.r) {
-                v80Var.dismiss();
-                return true;
-            }
-        }
-        return super.onInterceptTouchEvent(motionEvent);
+    @Override // s4.g0
+    public final int h() {
+        return this.d.h.size();
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        v80.q(this.a);
+    @Override // s4.g0
+    public final int j(int i10) {
+        return 0;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
+    @Override // s4.g0
+    public final void v(s4.b1 b1Var, int i10) {
+        int i11;
+        TLObject chat;
+        String str;
         int i12;
-        int size = View.MeasureSpec.getSize(i11) - AndroidUtilities.statusBarHeight;
-        v80 v80Var = this.a;
-        TextView textView = v80Var.f;
-        measureChildWithMargins(textView, i10, 0, i11, 0);
-        int measuredHeight = textView.getMeasuredHeight();
-        r80 r80Var = v80Var.d;
-        ((FrameLayout.LayoutParams) r80Var.getLayoutParams()).topMargin = AndroidUtilities.dp(65.0f) + measuredHeight;
-        getMeasuredWidth();
-        int D = org.telegram.messenger.g0.D(58.0f, v80Var.h.size(), AndroidUtilities.dp(80.0f));
-        i12 = ((org.telegram.ui.ActionBar.e3) v80Var).backgroundPaddingTop;
-        int C = org.telegram.messenger.g0.C(55.0f, i12 + D, measuredHeight);
-        int i13 = size / 5;
-        int i14 = C < i13 * 3 ? size - C : i13 * 2;
-        if (r80Var.getPaddingTop() != i14) {
-            v80Var.n = true;
-            r80Var.setPadding(0, i14, 0, 0);
-            v80Var.n = false;
+        View view = b1Var.a;
+        r80 r80Var = this.d;
+        long peerId = MessageObject.getPeerId((TLRPC.Peer) r80Var.h.get(i10));
+        if (peerId > 0) {
+            i12 = ((org.telegram.ui.ActionBar.f3) r80Var).currentAccount;
+            chat = MessagesController.getInstance(i12).getUser(Long.valueOf(peerId));
+            str = LocaleController.getString(R.string.VoipGroupPersonalAccount);
+        } else {
+            i11 = ((org.telegram.ui.ActionBar.f3) r80Var).currentAccount;
+            chat = MessagesController.getInstance(i11).getChat(Long.valueOf(-peerId));
+            str = null;
         }
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
+        if (r80Var.s == 0) {
+            ((org.telegram.ui.Cells.e7) view).c(peerId, peerId == MessageObject.getPeerId(r80Var.v), null);
+        } else {
+            ((org.telegram.ui.Cells.f4) view).e(chat, null, str, i10 != h() - 1);
+        }
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return !this.a.isDismissed() && super.onTouchEvent(motionEvent);
+    @Override // s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        View f4Var;
+        r80 r80Var = this.d;
+        if (r80Var.s == 0) {
+            f4Var = new org.telegram.ui.Cells.e7(this.c, 2, null);
+            f4Var.setLayoutParams(new s4.o0(AndroidUtilities.dp(80.0f), AndroidUtilities.dp(100.0f)));
+        } else {
+            f4Var = new org.telegram.ui.Cells.f4(2, 0, this.c, null, false, r80Var.s == 2);
+        }
+        return new sl0(f4Var);
     }
 
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.a.n) {
-            return;
+    @Override // s4.g0
+    public final void y(s4.b1 b1Var) {
+        b1Var.b();
+        long peerId = MessageObject.getPeerId(this.d.v);
+        View view = b1Var.a;
+        if (!(view instanceof org.telegram.ui.Cells.f4)) {
+            org.telegram.ui.Cells.e7 e7Var = (org.telegram.ui.Cells.e7) view;
+            e7Var.b(peerId == e7Var.getCurrentDialog(), false);
+        } else {
+            org.telegram.ui.Cells.f4 f4Var = (org.telegram.ui.Cells.f4) view;
+            Object object = f4Var.getObject();
+            f4Var.c(peerId == (object != null ? object instanceof TLRPC.Chat ? -((TLRPC.Chat) object).id : ((TLRPC.User) object).id : 0L), false);
         }
-        super.requestLayout();
     }
 }

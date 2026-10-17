@@ -1,28 +1,39 @@
 package com.google.android.gms.common.api.internal;
 
-import android.os.Looper;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+import v7.i5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class t0 extends com.google.android.gms.common.api.m {
-    public final com.google.android.gms.common.api.j b;
+public final class t0 extends BroadcastReceiver {
+    public Context a;
+    public final i5 b;
 
-    public t0(com.google.android.gms.common.api.j jVar) {
-        this.b = jVar;
+    public t0(i5 i5Var) {
+        this.b = i5Var;
     }
 
-    @Override // com.google.android.gms.common.api.m
-    public final void a() {
-        throw new UnsupportedOperationException("Method is not supported by connectionless client. APIs supporting connectionless client must not call this method.");
+    public final synchronized void a() {
+        try {
+            Context context = this.a;
+            if (context != null) {
+                context.unregisterReceiver(this);
+            }
+            this.a = null;
+        } catch (Throwable th2) {
+            throw th2;
+        }
     }
 
-    @Override // com.google.android.gms.common.api.m
-    public final void b() {
-        throw new UnsupportedOperationException("Method is not supported by connectionless client. APIs supporting connectionless client must not call this method.");
-    }
-
-    @Override // com.google.android.gms.common.api.m
-    public final Looper c() {
-        return this.b.f;
+    @Override // android.content.BroadcastReceiver
+    public final void onReceive(Context context, Intent intent) {
+        Uri data = intent.getData();
+        if ("com.google.android.gms".equals(data != null ? data.getSchemeSpecificPart() : null)) {
+            this.b.a();
+            a();
+        }
     }
 }

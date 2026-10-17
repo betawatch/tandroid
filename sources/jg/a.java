@@ -3,9 +3,9 @@ package jg;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import java.util.ArrayList;
-import org.telegram.messenger.sk;
+import org.telegram.messenger.wh;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class a extends g {
     @Override // jg.g
@@ -132,11 +132,11 @@ public final class a extends g {
                     Paint paint3 = (i22 != 0 || this.f0) ? paint : paint2;
                     paint3.setStrokeWidth(f25);
                     if (i22 != 0) {
-                        paint.setColor(i0.a.d(f24 - this.v0, aVar.m, aVar.s));
+                        paint.setColor(i0.b.f(f24 - this.v0, aVar.m, aVar.s));
                     }
                     if (this.f0) {
                         f14 = 0.0f;
-                        paint.setColor(i0.a.d(0.0f, aVar.m, aVar.s));
+                        paint.setColor(i0.b.f(0.0f, aVar.m, aVar.s));
                     } else {
                         f14 = 0.0f;
                     }
@@ -239,9 +239,9 @@ public final class a extends g {
                                 arrayList2 = arrayList3;
                                 f10 = bVar.e;
                             }
-                            float b10 = sk.b(j10, f10, f12, 1.0f) * (i12 - measuredHeight2);
+                            float y3 = wh.y(j10, f10, f12, 1.0f) * (i12 - measuredHeight2);
                             fArr[i17] = f7;
-                            fArr[i17 + 1] = b10;
+                            fArr[i17 + 1] = y3;
                             int i19 = i17 + 3;
                             fArr[i17 + 2] = f7;
                             i17 += 4;

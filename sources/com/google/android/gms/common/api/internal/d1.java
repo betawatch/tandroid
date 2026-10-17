@@ -1,55 +1,20 @@
 package com.google.android.gms.common.api.internal;
 
-import android.content.Context;
-import android.os.Bundle;
-import android.os.Handler;
-import java.util.Set;
-import m.t3;
+import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class d1 extends o8.c implements com.google.android.gms.common.api.k, com.google.android.gms.common.api.l {
-    public static final a8.d k = n8.b.a;
-    public final Context b;
-    public final Handler c;
-    public final a8.d d = k;
-    public final Set e;
-    public final t3 f;
-    public o8.a i;
-    public s0 j;
+public final class d1 extends v {
+    public final /* synthetic */ u d;
 
-    public d1(Context context, com.google.android.gms.internal.cast.a0 a0Var, t3 t3Var) {
-        this.b = context;
-        this.c = a0Var;
-        this.f = t3Var;
-        this.e = (Set) t3Var.a;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d1(u uVar, k6.c[] cVarArr, boolean z10, int i10) {
+        super(cVarArr, z10, i10);
+        this.d = uVar;
     }
 
-    @Override // o8.d
-    public final void B(o8.h hVar) {
-        this.c.post(new r0(this, hVar, 2));
-    }
-
-    @Override // com.google.android.gms.common.api.k
-    public final void onConnected(Bundle bundle) {
-        this.i.H(this);
-    }
-
-    @Override // com.google.android.gms.common.api.l
-    public final void onConnectionFailed(k6.a aVar) {
-        this.j.b(aVar);
-    }
-
-    @Override // com.google.android.gms.common.api.k
-    public final void onConnectionSuspended(int i10) {
-        s0 s0Var = this.j;
-        p0 p0Var = (p0) s0Var.f.s.get(s0Var.b);
-        if (p0Var != null) {
-            if (p0Var.k) {
-                p0Var.n(new k6.a(17));
-            } else {
-                p0Var.onConnectionSuspended(i10);
-            }
-        }
+    @Override // com.google.android.gms.common.api.internal.v
+    public final void c(com.google.android.gms.common.api.c cVar, TaskCompletionSource taskCompletionSource) {
+        ((r) this.d.c).accept(cVar, taskCompletionSource);
     }
 }

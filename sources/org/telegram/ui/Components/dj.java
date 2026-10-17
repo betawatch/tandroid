@@ -1,35 +1,33 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class dj extends i71 {
-    public final /* synthetic */ hj d3;
+public final class dj extends e61 {
+    public static final /* synthetic */ int a = 0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dj(hj hjVar, Context context, int i10, d dVar, zi ziVar, zi ziVar2, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, i10, 0, false, dVar, ziVar, ziVar2, c6Var);
-        this.d3 = hjVar;
+    static {
+        e61.setup(new dj());
     }
 
-    @Override // org.telegram.ui.Components.i71
-    public final void D1() {
-        hj hjVar = this.d3;
-        hjVar.b.b2(hjVar, 0);
+    @Override // org.telegram.ui.Components.e61
+    public final void bindView(View view, f61 f61Var, boolean z10, s61 s61Var, a71 a71Var) {
+        ej ejVar = (ej) view;
+        CharSequence charSequence = f61Var.l;
+        CharSequence charSequence2 = f61Var.m;
+        ejVar.b.setText(charSequence);
+        ejVar.c.setText(charSequence2);
     }
 
-    @Override // org.telegram.ui.Components.mm0
-    public final boolean E0(float f7) {
-        vi viVar = this.d3.b;
-        return f7 >= ((float) ((AndroidUtilities.dp(30.0f) + viVar.e2[0]) + (!viVar.g0 ? AndroidUtilities.statusBarHeight : 0)));
+    @Override // org.telegram.ui.Components.e61
+    public final View createView(Context context, im0 im0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
+        return new ej(context, d6Var);
     }
 
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        hj hjVar = this.d3;
-        hjVar.b.b2(hjVar, 0);
+    @Override // org.telegram.ui.Components.e61
+    public final boolean isShadow() {
+        return true;
     }
 }

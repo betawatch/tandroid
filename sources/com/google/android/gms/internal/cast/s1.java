@@ -2,7 +2,7 @@ package com.google.android.gms.internal.cast;
 
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class s1 extends f5 {
     private static final s1 zzb;
@@ -81,15 +81,15 @@ public final class s1 extends f5 {
     }
 
     public s1() {
-        g6 g6Var = g6.d;
-        this.zzz = g6Var;
-        this.zzA = g6Var;
-        this.zzB = g6Var;
-        this.zzC = g6Var;
-        this.zzJ = g6Var;
-        this.zzY = g6Var;
-        this.zzab = g6Var;
-        this.zzap = g6Var;
+        h6 h6Var = h6.d;
+        this.zzz = h6Var;
+        this.zzA = h6Var;
+        this.zzB = h6Var;
+        this.zzC = h6Var;
+        this.zzJ = h6Var;
+        this.zzY = h6Var;
+        this.zzab = h6Var;
+        this.zzap = h6Var;
     }
 
     public static r1 m() {
@@ -102,11 +102,11 @@ public final class s1 extends f5 {
         if (!f5Var.equals(s1Var)) {
             if (!j10.b.g()) {
                 f5 f5Var2 = (f5) f5Var.h(4, null);
-                f6.c.a(f5Var2.getClass()).d(f5Var2, j10.b);
+                g6.c.a(f5Var2.getClass()).d(f5Var2, j10.b);
                 j10.b = f5Var2;
             }
             f5 f5Var3 = j10.b;
-            f6.c.a(f5Var3.getClass()).d(f5Var3, s1Var);
+            g6.c.a(f5Var3.getClass()).d(f5Var3, s1Var);
         }
         return (r1) j10;
     }
@@ -178,7 +178,7 @@ public final class s1 extends f5 {
             return Byte.valueOf(this.zzar);
         }
         if (i11 == 2) {
-            return new h6(zzb, "\u0001@\u0000\u0002\u0001@@\u0000\t\u0001\u0001ဂ\u0000\u0002ဂ\u0001\u0003᠌\u0002\u0004ဉ\u0003\u0005ဉ\u0004\u0006ဉ\u0005\u0007ဉ\u0006\bဉ\u0007\tဈ\u000e\nဉ\b\u000bဉ\t\fဉ\n\rဈ\u000b\u000eဉ\f\u000fဉ\r\u0010ဉ\u0011\u0011ဈ\u0012\u0012\u0016\u0013\u001b\u0014\u001b\u0015\u001b\u0016\u001b\u0017᠌\u0014\u0018ဉ\u0018\u0019\u001b\u001aဉ\u0019\u001b᠌\u001b\u001cင\u001c\u001dင\u001d\u001eင\u001e\u001fဆ\u001f ဉ !ဉ!\"ဉ##᠌\u0015$ဉ\u0016%ᐉ$&ဉ%'ဉ&(\u001b)᠌'*ဉ(+\u001b,᠌\u001a-ဇ).ဇ*/᠌+0ဉ,1င\u00172ဉ-3ဉ.4ဉ05ဉ16ဉ27᠌38᠌49᠌5:\u001b;ဈ\u000f<ဉ6=ဉ/>ဉ\u0013?ဉ\"@င\u0010", new Object[]{"zzd", "zze", "zzf", "zzg", "zzh", z0.u, "zzi", "zzj", "zzk", "zzl", "zzm", "zzt", "zzn", "zzo", "zzp", "zzq", "zzr", "zzs", "zzw", "zzx", "zzy", "zzz", r2.class, "zzA", u2.class, "zzB", h2.class, "zzC", m3.class, "zzE", z0.p, "zzI", "zzJ", k2.class, "zzK", "zzM", z0.a, "zzN", "zzO", "zzP", "zzQ", "zzR", "zzS", "zzU", "zzF", z0.n, "zzG", "zzV", "zzW", "zzX", "zzY", l1.class, "zzZ", z0.o, "zzaa", "zzab", o1.class, "zzL", z.T, "zzac", "zzad", "zzae", z.R, "zzaf", "zzH", "zzag", "zzah", "zzaj", "zzak", "zzal", "zzam", z.H, "zzan", z0.g, "zzao", z.G, "zzap", p3.class, "zzu", "zzaq", "zzai", "zzD", "zzT", "zzv"});
+            return new i6(zzb, "\u0001@\u0000\u0002\u0001@@\u0000\t\u0001\u0001ဂ\u0000\u0002ဂ\u0001\u0003᠌\u0002\u0004ဉ\u0003\u0005ဉ\u0004\u0006ဉ\u0005\u0007ဉ\u0006\bဉ\u0007\tဈ\u000e\nဉ\b\u000bဉ\t\fဉ\n\rဈ\u000b\u000eဉ\f\u000fဉ\r\u0010ဉ\u0011\u0011ဈ\u0012\u0012\u0016\u0013\u001b\u0014\u001b\u0015\u001b\u0016\u001b\u0017᠌\u0014\u0018ဉ\u0018\u0019\u001b\u001aဉ\u0019\u001b᠌\u001b\u001cင\u001c\u001dင\u001d\u001eင\u001e\u001fဆ\u001f ဉ !ဉ!\"ဉ##᠌\u0015$ဉ\u0016%ᐉ$&ဉ%'ဉ&(\u001b)᠌'*ဉ(+\u001b,᠌\u001a-ဇ).ဇ*/᠌+0ဉ,1င\u00172ဉ-3ဉ.4ဉ05ဉ16ဉ27᠌38᠌49᠌5:\u001b;ဈ\u000f<ဉ6=ဉ/>ဉ\u0013?ဉ\"@င\u0010", new Object[]{"zzd", "zze", "zzf", "zzg", "zzh", z0.u, "zzi", "zzj", "zzk", "zzl", "zzm", "zzt", "zzn", "zzo", "zzp", "zzq", "zzr", "zzs", "zzw", "zzx", "zzy", "zzz", r2.class, "zzA", u2.class, "zzB", h2.class, "zzC", m3.class, "zzE", z0.p, "zzI", "zzJ", k2.class, "zzK", "zzM", z0.a, "zzN", "zzO", "zzP", "zzQ", "zzR", "zzS", "zzU", "zzF", z0.n, "zzG", "zzV", "zzW", "zzX", "zzY", l1.class, "zzZ", z0.o, "zzaa", "zzab", o1.class, "zzL", z.T, "zzac", "zzad", "zzae", z.R, "zzaf", "zzH", "zzag", "zzah", "zzaj", "zzak", "zzal", "zzam", z.H, "zzan", z0.g, "zzao", z.G, "zzap", p3.class, "zzu", "zzaq", "zzai", "zzD", "zzT", "zzv"});
         }
         if (i11 == 3) {
             return new s1();

@@ -7,7 +7,7 @@ import java.lang.ref.WeakReference;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class w {
     public static WeakReference d;
@@ -22,11 +22,11 @@ public final class w {
 
     public final synchronized v a() {
         v vVar;
-        String t10 = this.b.t();
+        String w9 = this.b.w();
         Pattern pattern = v.d;
         vVar = null;
-        if (!TextUtils.isEmpty(t10)) {
-            String[] split = t10.split("!", -1);
+        if (!TextUtils.isEmpty(w9)) {
+            String[] split = w9.split("!", -1);
             if (split.length == 2) {
                 vVar = new v(split[0], split[1]);
             }
@@ -35,10 +35,10 @@ public final class w {
     }
 
     public final synchronized void b() {
-        this.b = z5.q(this.a, this.c);
+        this.b = z5.t(this.a, this.c);
     }
 
     public final synchronized void c(v vVar) {
-        this.b.v(vVar.c);
+        this.b.x(vVar.c);
     }
 }

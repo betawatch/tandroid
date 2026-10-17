@@ -1,121 +1,230 @@
 package i2;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class p1 extends a {
-    public final int h;
-    public final int i;
-    public final int[] j;
-    public final int[] k;
-    public final b2.p1[] l;
-    public final Object[] m;
-    public final HashMap n;
+public final class p1 {
+    public final b a;
+    public final int b;
+    public final b c;
+    public int d = 0;
+    public boolean e = false;
+    public boolean f = false;
 
-    public p1(b2.p1[] p1VarArr, Object[] objArr, u2.i1 i1Var) {
-        super(i1Var);
-        int length = p1VarArr.length;
-        this.l = p1VarArr;
-        this.j = new int[length];
-        this.k = new int[length];
-        this.m = objArr;
-        this.n = new HashMap();
-        int length2 = p1VarArr.length;
-        int i10 = 0;
-        int i11 = 0;
-        int i12 = 0;
-        int i13 = 0;
-        while (i10 < length2) {
-            b2.p1 p1Var = p1VarArr[i10];
-            this.l[i13] = p1Var;
-            this.k[i13] = i11;
-            this.j[i13] = i12;
-            i11 += p1Var.o();
-            i12 += this.l[i13].h();
-            this.n.put(objArr[i13], Integer.valueOf(i13));
-            i10++;
-            i13++;
+    public p1(b bVar, b bVar2, int i10) {
+        this.a = bVar;
+        this.b = i10;
+        this.c = bVar2;
+    }
+
+    public static void b(b bVar) {
+        int i10 = bVar.n;
+        if (i10 == 2) {
+            u6.p(i10 == 2);
+            bVar.n = 1;
+            bVar.t();
         }
-        this.h = i11;
-        this.i = i12;
     }
 
-    @Override // b2.p1
-    public final int h() {
-        return this.i;
+    public static boolean h(b bVar) {
+        return bVar.n != 0;
     }
 
-    @Override // b2.p1
-    public final int o() {
-        return this.h;
-    }
-
-    @Override // i2.a
-    public final int q(Object obj) {
-        Integer num = (Integer) this.n.get(obj);
-        if (num == null) {
-            return -1;
+    public static void l(b bVar, long j10) {
+        bVar.y = true;
+        if (bVar instanceof w2.e) {
+            w2.e eVar = (w2.e) bVar;
+            u6.p(eVar.y);
+            eVar.a0 = j10;
         }
-        return num.intValue();
     }
 
-    @Override // i2.a
-    public final int r(int i10) {
-        return e2.m0.e(this.j, i10 + 1, false, false);
+    public final void a(b bVar, i iVar) {
+        u6.p(this.a == bVar || this.c == bVar);
+        if (h(bVar)) {
+            if (bVar == iVar.c) {
+                iVar.d = null;
+                iVar.c = null;
+                iVar.e = true;
+            }
+            b(bVar);
+            u6.p(bVar.n == 1);
+            bVar.c.z();
+            bVar.n = 0;
+            bVar.r = null;
+            bVar.s = null;
+            bVar.y = false;
+            bVar.n();
+            bVar.G = null;
+        }
     }
 
-    @Override // i2.a
-    public final int s(int i10) {
-        return e2.m0.e(this.k, i10 + 1, false, false);
+    public final int c() {
+        boolean h = h(this.a);
+        b bVar = this.c;
+        return (h ? 1 : 0) + ((bVar == null || !h(bVar)) ? 0 : 1);
     }
 
-    @Override // i2.a
-    public final Object t(int i10) {
-        return this.m[i10];
+    public final b d(v0 v0Var) {
+        u2.d1 d1Var;
+        if (v0Var != null && (d1Var = v0Var.c[this.b]) != null) {
+            b bVar = this.a;
+            if (bVar.r == d1Var) {
+                return bVar;
+            }
+            b bVar2 = this.c;
+            if (bVar2 != null && bVar2.r == d1Var) {
+                return bVar2;
+            }
+        }
+        return null;
     }
 
-    @Override // i2.a
-    public final int u(int i10) {
-        return this.j[i10];
-    }
-
-    @Override // i2.a
-    public final int v(int i10) {
-        return this.k[i10];
-    }
-
-    @Override // i2.a
-    public final b2.p1 x(int i10) {
-        return this.l[i10];
-    }
-
-    /* JADX WARN: Illegal instructions before constructor call */
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x0036, code lost:
+    
+        if (r9.x >= r1.e()) goto L31;
+     */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public p1(ArrayList arrayList, u2.i1 i1Var) {
-        this(r0, r1, i1Var);
-        b2.p1[] p1VarArr = new b2.p1[arrayList.size()];
-        int size = arrayList.size();
-        int i10 = 0;
-        int i11 = 0;
-        int i12 = 0;
-        while (i12 < size) {
-            Object obj = arrayList.get(i12);
-            i12++;
-            p1VarArr[i11] = ((a1) obj).b();
-            i11++;
+    public final boolean e(v0 v0Var, b bVar) {
+        if (bVar != null) {
+            u2.d1[] d1VarArr = v0Var.c;
+            int i10 = this.b;
+            u2.d1 d1Var = d1VarArr[i10];
+            u2.d1 d1Var2 = bVar.r;
+            if (d1Var2 != null) {
+                if (d1Var2 == d1Var) {
+                    if (d1Var != null && !bVar.k()) {
+                        v0 v0Var2 = v0Var.m;
+                        if (v0Var.g.h) {
+                            if (v0Var2 != null) {
+                                if (v0Var2.e) {
+                                    if (!(bVar instanceof w2.e)) {
+                                        if (!(bVar instanceof s2.b)) {
+                                        }
+                                    }
+                                    return true;
+                                }
+                            }
+                        }
+                    }
+                }
+                v0 v0Var3 = v0Var.m;
+                if (v0Var3 == null || v0Var3.c[i10] != bVar.r) {
+                    return false;
+                }
+            }
         }
-        Object[] objArr = new Object[arrayList.size()];
-        int size2 = arrayList.size();
-        int i13 = 0;
-        while (i13 < size2) {
-            Object obj2 = arrayList.get(i13);
-            i13++;
-            objArr[i10] = ((a1) obj2).a();
-            i10++;
+        return true;
+    }
+
+    public final boolean f() {
+        int i10 = this.d;
+        return i10 == 2 || i10 == 4 || i10 == 3;
+    }
+
+    public final boolean g() {
+        int i10 = this.d;
+        if (i10 == 0 || i10 == 2 || i10 == 4) {
+            return h(this.a);
         }
+        b bVar = this.c;
+        bVar.getClass();
+        return bVar.n != 0;
+    }
+
+    public final void i(boolean z10) {
+        if (z10) {
+            if (this.e) {
+                b bVar = this.a;
+                u6.p(bVar.n == 0);
+                bVar.c.z();
+                bVar.r();
+                this.e = false;
+                return;
+            }
+            return;
+        }
+        if (this.f) {
+            b bVar2 = this.c;
+            bVar2.getClass();
+            u6.p(bVar2.n == 0);
+            bVar2.c.z();
+            bVar2.r();
+            this.f = false;
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public final int j(b bVar, v0 v0Var, x2.t tVar, i iVar) {
+        b bVar2;
+        int i10;
+        if (bVar == null || bVar.n == 0 || (bVar == (bVar2 = this.a) && ((i10 = this.d) == 2 || i10 == 4))) {
+            return 1;
+        }
+        if (bVar == this.c && this.d == 3) {
+            return 1;
+        }
+        u2.d1 d1Var = bVar.r;
+        u2.d1[] d1VarArr = v0Var.c;
+        int i11 = this.b;
+        Object[] objArr = d1Var != d1VarArr[i11];
+        boolean b10 = tVar.b(i11);
+        if (!b10 || objArr != false) {
+            if (!bVar.y) {
+                x2.p pVar = tVar.c[i11];
+                int length = pVar != null ? pVar.length() : 0;
+                b2.w[] wVarArr = new b2.w[length];
+                for (int i12 = 0; i12 < length; i12++) {
+                    pVar.getClass();
+                    wVarArr[i12] = pVar.f(i12);
+                }
+                u2.d1 d1Var2 = v0Var.c[i11];
+                d1Var2.getClass();
+                bVar.y(wVarArr, d1Var2, v0Var.e(), v0Var.p, v0Var.g.a);
+                return 3;
+            }
+            if (!bVar.l()) {
+                return 0;
+            }
+            a(bVar, iVar);
+            if (!b10 || f()) {
+                i(bVar == bVar2);
+                return 1;
+            }
+        }
+        return 1;
+    }
+
+    public final void k() {
+        if (!h(this.a)) {
+            i(true);
+        }
+        b bVar = this.c;
+        if (bVar == null || bVar.n != 0) {
+            return;
+        }
+        i(false);
+    }
+
+    public final void m() {
+        int i10;
+        b bVar = this.a;
+        int i11 = bVar.n;
+        if (i11 == 1 && this.d != 4) {
+            u6.p(i11 == 1);
+            bVar.n = 2;
+            bVar.s();
+            return;
+        }
+        b bVar2 = this.c;
+        if (bVar2 == null || (i10 = bVar2.n) != 1 || this.d == 3) {
+            return;
+        }
+        u6.p(i10 == 1);
+        bVar2.n = 2;
+        bVar2.s();
     }
 }

@@ -1,45 +1,37 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.messenger.voip.GroupCallMessage;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class l40 implements mh.a {
-    public final /* synthetic */ n60 a;
+public final class l40 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ s50 b;
 
-    public l40(n60 n60Var) {
-        this.a = n60Var;
+    public /* synthetic */ l40(s50 s50Var, int i10) {
+        this.a = i10;
+        this.b = s50Var;
     }
 
-    public final void a(GroupCallMessage groupCallMessage) {
-        org.telegram.ui.ActionBar.m2 R = LaunchActivity.R();
-        if (R == null) {
-            return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                s50 s50Var = this.b;
+                s50Var.V.setVisibility(4);
+                s50Var.W.setVisibility(4);
+                s50Var.U.setVisibility(4);
+                break;
+            case 1:
+                this.b.h0 = null;
+                break;
+            default:
+                s50 s50Var2 = this.b;
+                s50Var2.h1 = null;
+                s50Var2.g1.setColor(s50Var2.T1 == 3 ? -1163700 : -12761513);
+                s50Var2.f1.invalidate();
+                break;
         }
-        boolean z10 = R instanceof ProfileActivity;
-        n60 n60Var = this.a;
-        if (z10 && ((ProfileActivity) R).a() == groupCallMessage.fromId) {
-            n60Var.dismiss();
-            return;
-        }
-        int Q0 = n60Var.Q0();
-        Bundle bundle = new Bundle();
-        long j10 = groupCallMessage.fromId;
-        if (j10 > 0) {
-            bundle.putLong("user_id", j10);
-        } else {
-            bundle.putLong("chat_id", -j10);
-        }
-        boolean z11 = true;
-        if (groupCallMessage.fromId == n60Var.d.getUserConfig().getClientUserId()) {
-            bundle.putBoolean("my_profile", true);
-        }
-        ProfileActivity profileActivity = new ProfileActivity(bundle, null);
-        if (Q0 > 0 && Q0 != Integer.MAX_VALUE) {
-            z11 = false;
-        }
-        R.presentFragment(profileActivity, false, z11);
-        n60Var.dismiss();
     }
 }

@@ -13,14 +13,15 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.zip.Inflater;
 import org.telegram.tgnet.TLObject;
-import z3.e;
+import r.c;
+import z3.d;
+import z3.l;
 import z3.m;
-import z3.n;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class b implements n {
-    public static final z3.b e;
+public final class b implements m {
+    public static final z3.a e;
     public final x a = new x();
     public final x b = new x();
     public final a c;
@@ -28,7 +29,7 @@ public final class b implements n {
 
     static {
         l0 l0Var = n0.b;
-        e = new z3.b(-9223372036854775807L, -9223372036854775807L, x1.e);
+        e = new z3.a(-9223372036854775807L, -9223372036854775807L, x1.e);
     }
 
     public b(List list) {
@@ -68,8 +69,13 @@ public final class b implements n {
         }
     }
 
-    @Override // z3.n
-    public final int X() {
+    @Override // z3.m
+    public final /* synthetic */ d a(int i10, int i11, byte[] bArr) {
+        return c.a(this, bArr, i11);
+    }
+
+    @Override // z3.m
+    public final int c() {
         return 2;
     }
 
@@ -79,17 +85,17 @@ public final class b implements n {
     /* JADX WARN: Removed duplicated region for block: B:41:0x028c  */
     /* JADX WARN: Removed duplicated region for block: B:48:0x0292  */
     /* JADX WARN: Removed duplicated region for block: B:50:0x0286  */
-    @Override // z3.n
+    @Override // z3.m
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void m0(byte[] bArr, int i10, int i11, m mVar, j jVar) {
-        z3.b bVar;
+    public final void g(byte[] bArr, int i10, int i11, l lVar, j jVar) {
+        z3.a aVar;
         boolean z10;
         long j10;
         int i12;
         boolean z11;
-        d2.b bVar2;
+        d2.b bVar;
         long j11;
         long j12;
         Rect rect;
@@ -104,22 +110,22 @@ public final class b implements n {
         if (m0.Q(xVar, xVar2, inflater)) {
             xVar.L(xVar2.c, xVar2.a);
         }
-        a aVar = this.c;
+        a aVar2 = this.c;
         long j13 = -9223372036854775807L;
-        aVar.b = -9223372036854775807L;
-        aVar.c = -9223372036854775807L;
+        aVar2.b = -9223372036854775807L;
+        aVar2.c = -9223372036854775807L;
         boolean z12 = false;
-        aVar.e = false;
-        aVar.i = null;
-        aVar.j = -1;
-        aVar.k = -1;
+        aVar2.e = false;
+        aVar2.i = null;
+        aVar2.j = -1;
+        aVar2.k = -1;
         int a2 = xVar.a();
         if (a2 < 2 || xVar.H() != a2) {
-            bVar = e;
+            aVar = e;
         } else {
-            if (aVar.f == null) {
+            if (aVar2.f == null) {
                 e2.a.l("VobsubParser", "Skipping SPU (no palette)");
-            } else if (aVar.d) {
+            } else if (aVar2.d) {
                 int i13 = xVar.b - 2;
                 xVar.N(xVar.H() + i13);
                 while (true) {
@@ -143,7 +149,7 @@ public final class b implements n {
                         while (xVar.b < i12 && z13) {
                             long j14 = H;
                             boolean z14 = z12;
-                            int[] iArr = aVar.a;
+                            int[] iArr = aVar2.a;
                             int A = xVar.A();
                             if (A != 255) {
                                 switch (A) {
@@ -151,22 +157,22 @@ public final class b implements n {
                                         z13 = true;
                                         break;
                                     case 1:
-                                        aVar.b = j14;
+                                        aVar2.b = j14;
                                         z13 = true;
                                         break;
                                     case 2:
-                                        aVar.c = j14;
+                                        aVar2.c = j14;
                                         z13 = true;
                                         break;
                                     case 3:
                                         if (xVar.a() >= 2) {
                                             int A2 = xVar.A();
                                             int A3 = xVar.A();
-                                            iArr[3] = a.a(A2 >> 4, aVar.f);
-                                            iArr[2] = a.a(A2 & 15, aVar.f);
-                                            iArr[1] = a.a(A3 >> 4, aVar.f);
-                                            iArr[z14 ? 1 : 0] = a.a(A3 & 15, aVar.f);
-                                            aVar.e = true;
+                                            iArr[3] = a.a(A2 >> 4, aVar2.f);
+                                            iArr[2] = a.a(A2 & 15, aVar2.f);
+                                            iArr[1] = a.a(A3 >> 4, aVar2.f);
+                                            iArr[z14 ? 1 : 0] = a.a(A3 & 15, aVar2.f);
+                                            aVar2.e = true;
                                             z13 = true;
                                             break;
                                         } else {
@@ -175,7 +181,7 @@ public final class b implements n {
                                         }
                                     case 4:
                                         if (xVar.a() >= 2) {
-                                            if (!aVar.e) {
+                                            if (!aVar2.e) {
                                                 e2.a.l("VobsubParser", "Ignoring alpha command before color command");
                                                 break;
                                             } else {
@@ -200,7 +206,7 @@ public final class b implements n {
                                             int A8 = ((A7 & 15) << 8) | xVar.A();
                                             int A9 = xVar.A();
                                             int A10 = xVar.A();
-                                            aVar.i = new Rect(i15, (A9 << 4) | (A10 >> 4), A8 + 1, (((A10 & 15) << 8) | xVar.A()) + 1);
+                                            aVar2.i = new Rect(i15, (A9 << 4) | (A10 >> 4), A8 + 1, (((A10 & 15) << 8) | xVar.A()) + 1);
                                             z13 = true;
                                             break;
                                         } else {
@@ -209,8 +215,8 @@ public final class b implements n {
                                         }
                                     case 6:
                                         if (xVar.a() >= 4) {
-                                            aVar.j = xVar.H();
-                                            aVar.k = xVar.H();
+                                            aVar2.j = xVar.H();
+                                            aVar2.k = xVar.H();
                                             z13 = true;
                                             break;
                                         } else {
@@ -235,28 +241,28 @@ public final class b implements n {
                         j13 = j10;
                         z12 = z11;
                     } else {
-                        if (aVar.f != null || !aVar.d || !aVar.e || (rect = aVar.i) == null || aVar.j == -1 || aVar.k == -1 || rect.width() < 2 || aVar.i.height() < 2) {
-                            bVar2 = null;
+                        if (aVar2.f != null || !aVar2.d || !aVar2.e || (rect = aVar2.i) == null || aVar2.j == -1 || aVar2.k == -1 || rect.width() < 2 || aVar2.i.height() < 2) {
+                            bVar = null;
                         } else {
-                            Rect rect2 = aVar.i;
+                            Rect rect2 = aVar2.i;
                             int[] iArr2 = new int[rect2.height() * rect2.width()];
                             a4.g gVar = new a4.g();
-                            xVar.N(aVar.j);
+                            xVar.N(aVar2.j);
                             gVar.l(xVar);
-                            aVar.b(gVar, true, rect2, iArr2);
-                            xVar.N(aVar.k);
+                            aVar2.b(gVar, true, rect2, iArr2);
+                            xVar.N(aVar2.k);
                             gVar.l(xVar);
-                            aVar.b(gVar, z11, rect2, iArr2);
-                            bVar2 = new d2.b(null, null, null, Bitmap.createBitmap(iArr2, rect2.width(), rect2.height(), Bitmap.Config.ARGB_8888), rect2.top / aVar.h, 0, 0, rect2.left / aVar.g, 0, TLObject.FLAG_31, -3.4028235E38f, rect2.width() / aVar.g, rect2.height() / aVar.h, false, -16777216, TLObject.FLAG_31, 0.0f, 0);
+                            aVar2.b(gVar, z11, rect2, iArr2);
+                            bVar = new d2.b(null, null, null, Bitmap.createBitmap(iArr2, rect2.width(), rect2.height(), Bitmap.Config.ARGB_8888), rect2.top / aVar2.h, 0, 0, rect2.left / aVar2.g, 0, TLObject.FLAG_31, -3.4028235E38f, rect2.width() / aVar2.g, rect2.height() / aVar2.h, false, -16777216, TLObject.FLAG_31, 0.0f, 0);
                         }
-                        j11 = aVar.c;
+                        j11 = aVar2.c;
                         if (j11 == j10) {
-                            long j15 = aVar.b;
+                            long j15 = aVar2.b;
                             j12 = (j15 == j10 || j11 <= j15) ? j11 : j11 - j15;
                         } else {
                             j12 = j10;
                         }
-                        bVar = new z3.b(aVar.b, j12, bVar2 == null ? n0.y(bVar2) : x1.e);
+                        aVar = new z3.a(aVar2.b, j12, bVar == null ? n0.y(bVar) : x1.e);
                     }
                 }
             } else {
@@ -264,23 +270,18 @@ public final class b implements n {
             }
             z11 = false;
             j10 = -9223372036854775807L;
-            if (aVar.f != null) {
+            if (aVar2.f != null) {
             }
-            bVar2 = null;
-            j11 = aVar.c;
+            bVar = null;
+            j11 = aVar2.c;
             if (j11 == j10) {
             }
-            bVar = new z3.b(aVar.b, j12, bVar2 == null ? n0.y(bVar2) : x1.e);
+            aVar = new z3.a(aVar2.b, j12, bVar == null ? n0.y(bVar) : x1.e);
         }
-        jVar.accept(bVar);
+        jVar.accept(aVar);
     }
 
-    @Override // z3.n
-    public final /* synthetic */ e x(int i10, int i11, byte[] bArr) {
-        return t8.b.a(this, bArr, i11);
-    }
-
-    @Override // z3.n
+    @Override // z3.m
     public final /* synthetic */ void reset() {
     }
 }

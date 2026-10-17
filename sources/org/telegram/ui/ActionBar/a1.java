@@ -4,14 +4,14 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class a1 extends b1 {
     public final z0 e0;
     public String f0;
 
-    public a1(Context context, c6 c6Var) {
-        super(context, c6Var);
+    public a1(Context context, d6 d6Var) {
+        super(context, d6Var);
         this.f0 = null;
         setFocusable(true);
         setFocusableInTouchMode(true);

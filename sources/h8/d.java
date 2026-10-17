@@ -8,7 +8,7 @@ import android.os.StrictMode;
 import android.widget.FrameLayout;
 import n6.l;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class d extends FrameLayout {
     private final j zza;
@@ -25,7 +25,7 @@ public abstract class d extends FrameLayout {
         j jVar = this.zza;
         androidx.biometric.e eVar = jVar.a;
         if (eVar != null) {
-            eVar.n(fVar);
+            eVar.p(fVar);
         } else {
             jVar.h.add(fVar);
         }

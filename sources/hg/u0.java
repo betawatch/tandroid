@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.z5;
+import org.telegram.ui.ActionBar.a6;
+import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u0 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -38,7 +38,7 @@ public final /* synthetic */ class u0 implements Runnable {
                 ((MediaDataController) this.e).lambda$processLoadedDiceStickers$89(this.b, (TLRPC.TL_messages_stickerSet) this.f, this.c, (String) this.h, this.d);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.p(g6.l1((z5) this.e, (File) this.f, this.c, this.b, (TLRPC.Document) this.h, this.d), 15));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.p(h6.l1((a6) this.e, (File) this.f, this.c, this.b, (TLRPC.Document) this.h, this.d), 15));
                 break;
         }
     }
@@ -52,8 +52,8 @@ public final /* synthetic */ class u0 implements Runnable {
         this.d = z11;
     }
 
-    public /* synthetic */ u0(z5 z5Var, File file, int i10, boolean z10, TLRPC.Document document, boolean z11) {
-        this.e = z5Var;
+    public /* synthetic */ u0(a6 a6Var, File file, int i10, boolean z10, TLRPC.Document document, boolean z11) {
+        this.e = a6Var;
         this.f = file;
         this.c = i10;
         this.b = z10;

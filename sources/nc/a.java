@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class a extends b {
     public static final HashMap U;
@@ -84,20 +84,20 @@ public final class a extends b {
         hashMap2.put(10, "(reserved)");
         hashMap2.put(11, "(reserved)");
         hashMap2.put(12, "TTSI");
-        i2.d.q(13, hashMap2, "Main synthetic", 14, "Wavetable synthesis");
-        i2.d.q(15, hashMap2, "General MIDI", 16, "Algorithmic Synthesis and Audio FX");
-        i2.d.q(17, hashMap2, "ER AAC LC", 18, "(reserved)");
-        i2.d.q(19, hashMap2, "ER AAC LTP", 20, "ER AAC Scalable");
-        i2.d.q(21, hashMap2, "ER TwinVQ", 22, "ER BSAC");
-        i2.d.q(23, hashMap2, "ER AAC LD", 24, "ER CELP");
-        i2.d.q(25, hashMap2, "ER HVXC", 26, "ER HILN");
-        i2.d.q(27, hashMap2, "ER Parametric", 28, "SSC");
-        i2.d.q(29, hashMap2, "PS", 30, "MPEG Surround");
-        i2.d.q(31, hashMap2, "(escape)", 32, "Layer-1");
-        i2.d.q(33, hashMap2, "Layer-2", 34, "Layer-3");
-        i2.d.q(35, hashMap2, "DST", 36, "ALS");
-        i2.d.q(37, hashMap2, "SLS", 38, "SLS non-core");
-        i2.d.q(39, hashMap2, "ER AAC ELD", 40, "SMR Simple");
+        i0.a.q(13, hashMap2, "Main synthetic", 14, "Wavetable synthesis");
+        i0.a.q(15, hashMap2, "General MIDI", 16, "Algorithmic Synthesis and Audio FX");
+        i0.a.q(17, hashMap2, "ER AAC LC", 18, "(reserved)");
+        i0.a.q(19, hashMap2, "ER AAC LTP", 20, "ER AAC Scalable");
+        i0.a.q(21, hashMap2, "ER TwinVQ", 22, "ER BSAC");
+        i0.a.q(23, hashMap2, "ER AAC LD", 24, "ER CELP");
+        i0.a.q(25, hashMap2, "ER HVXC", 26, "ER HILN");
+        i0.a.q(27, hashMap2, "ER Parametric", 28, "SSC");
+        i0.a.q(29, hashMap2, "PS", 30, "MPEG Surround");
+        i0.a.q(31, hashMap2, "(escape)", 32, "Layer-1");
+        i0.a.q(33, hashMap2, "Layer-2", 34, "Layer-3");
+        i0.a.q(35, hashMap2, "DST", 36, "ALS");
+        i0.a.q(37, hashMap2, "SLS", 38, "SLS non-core");
+        i0.a.q(39, hashMap2, "ER AAC ELD", 40, "SMR Simple");
         hashMap2.put(41, "SMR Main");
     }
 

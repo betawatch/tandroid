@@ -1,68 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.graphics.Point;
 import android.view.View;
-import androidx.core.widget.NestedScrollView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class m71 extends NestedScrollView {
-    public boolean W;
-    public final /* synthetic */ n71 a0;
+public final class m71 implements View.OnLayoutChangeListener {
+    public Boolean a;
+    public boolean b;
+    public final /* synthetic */ m.g3 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m71(n71 n71Var, Context context) {
-        super(context);
-        this.a0 = n71Var;
+    public m71(m.g3 g3Var, View view) {
+        this.c = g3Var;
+        o1.k kVar = new o1.k(view, o1.h.n, 0.0f);
+        g3Var.c = kVar;
+        kVar.u.a(1.0f);
+        ((o1.k) g3Var.c).u.b(350.0f);
     }
 
-    @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        n71.n(this.a0);
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:4:0x002d, code lost:
-    
-        if (r9 < (org.telegram.messenger.AndroidUtilities.dp(90.0f) + (r0 / 2))) goto L6;
-     */
-    @Override // androidx.core.widget.NestedScrollView, android.widget.FrameLayout, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onMeasure(int i10, int i11) {
-        int size = View.MeasureSpec.getSize(i11);
-        n71 n71Var = this.a0;
-        measureChildWithMargins(n71Var.f, i10, 0, i11, 0);
-        int measuredHeight = n71Var.f.getMeasuredHeight();
-        int i12 = (size / 5) * 2;
-        if (measuredHeight - (size - i12) >= AndroidUtilities.dp(90.0f)) {
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
+        Point point = AndroidUtilities.displaySize;
+        boolean z10 = point.x > point.y;
+        Boolean bool = this.a;
+        if (bool == null || bool.booleanValue() != z10) {
+            this.a = Boolean.valueOf(z10);
+            this.b = true;
         }
-        i12 = size - measuredHeight;
-        if (i12 < 0) {
-            i12 = 0;
-        }
-        if (getPaddingTop() != i12) {
-            this.W = true;
-            setPadding(0, i12, 0, 0);
-            this.W = false;
-        }
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
-    }
-
-    @Override // androidx.core.widget.NestedScrollView, android.view.View
-    public final void onScrollChanged(int i10, int i11, int i12, int i13) {
-        super.onScrollChanged(i10, i11, i12, i13);
-        n71.n(this.a0);
-    }
-
-    @Override // androidx.core.widget.NestedScrollView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.W) {
+        if (i15 == 0 || i15 == i11 || this.b) {
+            this.b = false;
             return;
         }
-        super.requestLayout();
+        m.g3 g3Var = this.c;
+        ((o1.k) g3Var.c).c();
+        if (view.getVisibility() != 0) {
+            view.setTranslationY(0.0f);
+            return;
+        }
+        ((o1.k) g3Var.c).u.i = 0.0f;
+        view.setTranslationY((i15 - i11) + 0.0f);
+        ((o1.k) g3Var.c).h();
     }
 }

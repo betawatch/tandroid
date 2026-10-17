@@ -1,6 +1,6 @@
 package k3;
 
-import b2.x0;
+import b2.w0;
 import e9.k0;
 import e9.l0;
 import e9.n0;
@@ -9,7 +9,7 @@ import java.io.StringReader;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserFactory;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final String[] a = {"Camera:MotionPhoto", "GCamera:MotionPhoto", "Camera:MicroVideo", "GCamera:MicroVideo"};
@@ -28,7 +28,7 @@ public abstract class d {
         newPullParser.setInput(new StringReader(str));
         newPullParser.next();
         if (!e2.a.i(newPullParser, "x:xmpmeta")) {
-            throw x0.a(null, "Couldn't find xmp metadata");
+            throw w0.a(null, "Couldn't find xmp metadata");
         }
         l0 l0Var = n0.b;
         x1 x1Var = x1.e;

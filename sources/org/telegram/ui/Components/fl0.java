@@ -1,21 +1,8 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public interface fl0 {
-    boolean j();
-
-    boolean m();
-
-    void n(View view, ah.i1 i1Var, boolean z10, boolean z11);
-
-    void r(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10);
-
-    void y();
-
-    boolean z();
+public abstract class fl0 extends Drawable {
 }

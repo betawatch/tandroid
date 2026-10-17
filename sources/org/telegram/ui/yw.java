@@ -1,206 +1,185 @@
 package org.telegram.ui;
 
-import android.text.SpannableStringBuilder;
-import android.widget.TextView;
+import android.content.Context;
+import android.graphics.Paint;
+import android.view.View;
 import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.UndoView;
+import org.telegram.messenger.AnimationNotificationsLocker;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class yw extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ yy a;
+public final class yw extends z21 {
+    public boolean S;
+    public dy T;
+    public final /* synthetic */ wx U;
+    public final /* synthetic */ Context V;
+    public final /* synthetic */ ey W;
 
-    public yw(yy yyVar) {
-        this.a = yyVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public yw(ey eyVar, Context context, wx wxVar, Context context2) {
+        super(context);
+        this.W = eyVar;
+        this.U = wxVar;
+        this.V = context2;
+        this.e = 0.0f;
+        this.n = new AnimationNotificationsLocker();
+        this.M = true;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        iy iyVar;
-        ArrayList arrayList;
-        MessagesController.DialogFilter dialogFilter;
-        int i11;
-        ArrayList arrayList2;
-        boolean z10;
+    @Override // org.telegram.ui.z21
+    public final void d(boolean z10) {
+        dy dyVar = this.T;
+        dyVar.c.G = true;
+        dyVar.d.O(this.T.a, c());
+        dy dyVar2 = this.T;
+        dyVar2.d.G = false;
+        dyVar2.G.G = false;
+        ey eyVar = this.W;
+        eyVar.y4(false, true);
+        this.T.a.setClipChildren(true);
+        this.T.a.invalidate();
+        this.T.d.l();
+        this.T.G.l();
+        this.T.a.z1(null, 0.0f, z10);
+        eyVar.y = false;
+        this.U.requestLayout();
+        if (!c()) {
+            eyVar.Q = true;
+            eyVar.R = true;
+            View view = eyVar.fragmentView;
+            if (view != null) {
+                view.invalidate();
+            }
+        }
+        nx nxVar = eyVar.C0;
+        if (nxVar != null) {
+            nxVar.R();
+        }
+        eyVar.T4(false, true);
+        eyVar.B3();
+        eyVar.S4();
+    }
+
+    @Override // org.telegram.ui.z21
+    public final void e(boolean z10) {
+        int i10;
+        ey eyVar = this.W;
+        eyVar.y = true;
+        eyVar.E = z10;
+        this.U.requestLayout();
+        dy dyVar = eyVar.e0[0];
+        this.T = dyVar;
+        if (dyVar.F == null) {
+            dyVar.F = new ww(this.V, null);
+            this.T.F.setLayoutManager(new xw(this, this.T));
+            dy dyVar2 = this.T;
+            int i11 = this.T.s;
+            int i12 = eyVar.W2;
+            boolean z11 = eyVar.l2;
+            ArrayList arrayList = eyVar.I2;
+            i10 = ((org.telegram.ui.ActionBar.n2) eyVar).currentAccount;
+            dyVar2.G = new hg.m(eyVar, this.V, i11, i12, z11, arrayList, i10, eyVar.G);
+            dy dyVar3 = this.T;
+            hg.m mVar = dyVar3.G;
+            mVar.S = true;
+            dyVar3.F.setAdapter(mVar);
+            dy dyVar4 = this.T;
+            dyVar4.addView(dyVar4.F);
+        }
+        if (!z10) {
+            eyVar.Q = false;
+            eyVar.A4(-eyVar.R3());
+        }
+        this.T.a.B0();
+        dy dyVar5 = this.T;
+        hg.m mVar2 = dyVar5.G;
+        mVar2.h = dyVar5.s;
+        mVar2.l();
+        dy dyVar6 = this.T;
+        dyVar6.d.O(dyVar6.a, false);
+        dy dyVar7 = this.T;
+        dyVar7.d.G = true;
+        dyVar7.G.G = true;
+        dyVar7.c.H = false;
+        eyVar.y4(true, true);
+        eyVar.a4(this.S);
+        this.T.d.l();
+        this.T.G.l();
+        float f7 = !z10 ? eyVar.N : -eyVar.N;
+        dy dyVar8 = this.T;
+        dyVar8.a.z1(dyVar8.F, f7, false);
+        this.T.a.setClipChildren(false);
+        this.T.a.B0();
+        eyVar.B3();
+        eyVar.S4();
+    }
+
+    @Override // org.telegram.ui.z21
+    public final boolean getOccupyStatusbar() {
         org.telegram.ui.ActionBar.k kVar;
         org.telegram.ui.ActionBar.k kVar2;
-        yy yyVar = this.a;
-        ArrayList arrayList3 = yyVar.I2;
-        if ((i10 == 201 || i10 == 200 || i10 == 202 || i10 == 203) && (iyVar = yyVar.C0) != null) {
-            HashMap hashMap = iyVar.z0;
-            yy yyVar2 = iyVar.J0;
-            if (i10 == 202) {
-                if (yyVar2 == null || yyVar2.getParentActivity() == null) {
-                    return;
-                }
-                ArrayList arrayList4 = new ArrayList(hashMap.values());
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(yyVar2.getParentActivity());
-                alertDialog$Builder.a.R = LocaleController.formatPluralString("RemoveDocumentsTitle", hashMap.size(), new Object[0]);
-                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                spannableStringBuilder.append((CharSequence) AndroidUtilities.replaceTags(LocaleController.formatPluralString("RemoveDocumentsMessage", hashMap.size(), new Object[0]))).append((CharSequence) "\n\n").append((CharSequence) LocaleController.getString(R.string.RemoveDocumentsAlertMessage));
-                alertDialog$Builder.a.T = spannableStringBuilder;
-                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new org.telegram.ui.Components.co0(1));
-                alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new org.telegram.ui.Components.u2(17, iyVar, arrayList4));
-                TextView textView = (TextView) alertDialog$Builder.o().d(-1);
-                if (textView != null) {
-                    textView.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.q7, false));
-                    return;
-                }
-                return;
-            }
-            if (i10 == 203) {
-                if (iyVar.N()) {
-                    yyVar2.showDialog(new sg.y0((org.telegram.ui.ActionBar.m2) yyVar2, 2, true));
-                    return;
-                }
-                return;
-            } else if (i10 == 200) {
-                if (hashMap.size() != 1) {
-                    return;
-                }
-                iyVar.c((MessageObject) hashMap.values().iterator().next());
-                return;
-            } else {
-                if (i10 == 201) {
-                    yy yyVar3 = new yy(org.telegram.messenger.sk.d(3, "onlySelect", "dialogsType", true));
-                    yyVar3.C2 = new org.telegram.ui.Components.xv(iyVar, 18);
-                    yyVar2.presentFragment(yyVar3);
-                    return;
-                }
-                return;
+        ey eyVar = this.W;
+        kVar = ((org.telegram.ui.ActionBar.n2) eyVar).actionBar;
+        if (kVar == null) {
+            return false;
+        }
+        kVar2 = ((org.telegram.ui.ActionBar.n2) eyVar).actionBar;
+        return kVar2.getOccupyStatusBar();
+    }
+
+    @Override // org.telegram.ui.z21
+    public final void setOpenProgress(float f7) {
+        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.k kVar2;
+        zx zxVar;
+        org.telegram.ui.ActionBar.k kVar3;
+        org.telegram.ui.ActionBar.k kVar4;
+        org.telegram.ui.ActionBar.k kVar5;
+        org.telegram.ui.ActionBar.k kVar6;
+        boolean z10 = f7 > 0.0f;
+        if (this.S != z10) {
+            this.S = z10;
+        }
+        ey eyVar = this.W;
+        View view = eyVar.fragmentView;
+        if (view != null) {
+            view.invalidate();
+        }
+        kVar = ((org.telegram.ui.ActionBar.n2) eyVar).actionBar;
+        if (kVar.getTitleTextView() != null) {
+            kVar4 = ((org.telegram.ui.ActionBar.n2) eyVar).actionBar;
+            kVar4.getTitleTextView().setAlpha(1.0f - f7);
+            kVar5 = ((org.telegram.ui.ActionBar.n2) eyVar).actionBar;
+            if (kVar5.getTitleTextView().getAlpha() > 0.0f) {
+                kVar6 = ((org.telegram.ui.ActionBar.n2) eyVar).actionBar;
+                kVar6.getTitleTextView().setVisibility(0);
             }
         }
-        long j10 = 0;
-        if (i10 == -1) {
-            sx sxVar = yyVar.G3;
-            if (sxVar != null && sxVar.c()) {
-                kVar2 = ((org.telegram.ui.ActionBar.m2) yyVar).actionBar;
-                if (!kVar2.t()) {
-                    yyVar.G3.a();
-                    iy iyVar2 = yyVar.C0;
-                    if (iyVar2 != null) {
-                        iyVar2.R();
-                        return;
-                    }
-                    return;
-                }
-                iy iyVar3 = yyVar.C0;
-                if (iyVar3 != null && iyVar3.getVisibility() == 0) {
-                    iy iyVar4 = yyVar.C0;
-                    if (iyVar4.y0) {
-                        iyVar4.Q(false);
-                        return;
-                    }
-                }
-                yyVar.Z3(true);
-                return;
-            }
-            ww wwVar = yyVar.z0;
-            if (wwVar != null && wwVar.n) {
-                wwVar.setIsEditing(false);
-                yyVar.G4(false);
-                return;
-            }
-            kVar = ((org.telegram.ui.ActionBar.m2) yyVar).actionBar;
-            if (!kVar.t()) {
-                if (!yyVar.l2 && yyVar.W2 == 0 && yyVar.Y2 == 0) {
-                    return;
-                }
-                yyVar.finishFragment();
-                return;
-            }
-            iy iyVar5 = yyVar.C0;
-            if (iyVar5 != null && iyVar5.getVisibility() == 0) {
-                iy iyVar6 = yyVar.C0;
-                if (iyVar6.y0) {
-                    iyVar6.Q(false);
-                    return;
-                }
-            }
-            yyVar.Z3(true);
-            return;
+        kVar2 = ((org.telegram.ui.ActionBar.n2) eyVar).actionBar;
+        if (kVar2.getBackButton() != null) {
+            kVar3 = ((org.telegram.ui.ActionBar.n2) eyVar).actionBar;
+            kVar3.getBackButton().setAlpha(f7 != 1.0f ? 1.0f : 0.0f);
         }
-        if (i10 == 1) {
-            if (yyVar.getParentActivity() == null) {
-                return;
-            }
-            SharedConfig.appLocked = true;
-            SharedConfig.saveConfig();
-            int[] iArr = new int[2];
-            yyVar.f0.getLocationInWindow(iArr);
-            ((LaunchActivity) yyVar.getParentActivity()).G0(false, true, (yyVar.f0.getMeasuredWidth() / 2) + iArr[0], (yyVar.f0.getMeasuredHeight() / 2) + iArr[1], new gj(this, 25));
-            yyVar.getNotificationsController().showNotifications();
-            yyVar.w3();
-            return;
+        if (eyVar.W2 != 0 || eyVar.Y2 != 0) {
+            Paint paint = eyVar.f1;
+            int i10 = org.telegram.ui.ActionBar.h6.d6;
+            paint.setColor(i0.b.f(f7, eyVar.getThemedColor(i10), eyVar.getThemedColor(i10)));
         }
-        if (i10 == 3) {
-            yyVar.M4(true, true, true, false);
-            yyVar.Y.b(true);
-            return;
+        dy dyVar = this.T;
+        if (dyVar != null) {
+            dyVar.a.setOpenRightFragmentProgress(f7);
         }
-        if (i10 == 11) {
-            yyVar.n4(yyVar.D1);
-            return;
+        eyVar.A3();
+        eyVar.F3();
+        eyVar.s3();
+        eyVar.C3();
+        dy dyVar2 = eyVar.e0[0];
+        if (dyVar2 != null && (zxVar = dyVar2.a) != null) {
+            zxVar.requestLayout();
         }
-        if (i10 == 109) {
-            org.telegram.ui.Components.z00 z00Var = new org.telegram.ui.Components.z00(yyVar, arrayList3);
-            z00Var.r = new mu(this, 4);
-            yyVar.showDialog(z00Var);
-            return;
+        View view2 = eyVar.fragmentView;
+        if (view2 != null) {
+            view2.invalidate();
         }
-        if (i10 != 110) {
-            if (i10 == 100 || i10 == 101 || i10 == 102 || i10 == 103 || i10 == 104 || i10 == 105 || i10 == 106 || i10 == 107 || i10 == 108) {
-                yyVar.p4(yyVar.I2, i10, true, false, null);
-                return;
-            }
-            return;
-        }
-        MessagesController.DialogFilter dialogFilter2 = yyVar.getMessagesController().getDialogFilters().get(yyVar.e0[0].h);
-        ArrayList J = org.telegram.ui.Components.z00.J(yyVar, dialogFilter2, arrayList3, false, false);
-        if (J.size() + (dialogFilter2 != null ? dialogFilter2.neverShow.size() : 0) > 100) {
-            yyVar.showDialog(org.telegram.ui.Components.g5.M(yyVar.getParentActivity(), LocaleController.getString(R.string.FilterAddToAlertFullTitle), LocaleController.getString(R.string.FilterAddToAlertFullText)).a);
-            return;
-        }
-        if (J.isEmpty()) {
-            arrayList = J;
-            dialogFilter = dialogFilter2;
-            i11 = 1;
-        } else {
-            dialogFilter2.neverShow.addAll(J);
-            for (int i12 = 0; i12 < J.size(); i12++) {
-                Long l4 = (Long) J.get(i12);
-                dialogFilter2.alwaysShow.remove(l4);
-                dialogFilter2.pinnedDialogs.delete(l4.longValue());
-            }
-            if (dialogFilter2.isChatlist()) {
-                dialogFilter2.neverShow.clear();
-            }
-            dialogFilter = dialogFilter2;
-            arrayList = J;
-            i11 = 1;
-            k10.t0(dialogFilter, dialogFilter2.flags, dialogFilter2.name, dialogFilter2.entities, dialogFilter2.title_noanimate, dialogFilter2.color, dialogFilter2.alwaysShow, dialogFilter2.neverShow, dialogFilter2.pinnedDialogs, false, false, true, false, false, yyVar, null);
-        }
-        if (arrayList.size() == i11) {
-            arrayList2 = arrayList;
-            z10 = false;
-            j10 = ((Long) arrayList2.get(0)).longValue();
-        } else {
-            arrayList2 = arrayList;
-            z10 = false;
-        }
-        long j11 = j10;
-        UndoView W3 = yyVar.W3();
-        if (W3 != null) {
-            W3.k(j11, 21, Integer.valueOf(arrayList2.size()), dialogFilter, null, null);
-        }
-        yyVar.Z3(z10);
     }
 }

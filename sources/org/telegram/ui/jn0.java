@@ -1,29 +1,11 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+import android.content.Context;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jn0 implements org.telegram.ui.ActionBar.z1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ on0 b;
-
-    public /* synthetic */ jn0(on0 on0Var, int i10) {
-        this.a = i10;
-        this.b = on0Var;
-    }
-
-    @Override // org.telegram.ui.ActionBar.z1
-    public final void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
-        switch (this.a) {
-            case 0:
-                on0 on0Var = this.b;
-                on0Var.c(true);
-                on0Var.Q.finishFragment();
-                break;
-            default:
-                on0 on0Var2 = this.b;
-                on0Var2.c(true);
-                on0Var2.Q.J1(null, 0, true);
-                break;
-        }
+public final class jn0 extends org.telegram.ui.Cells.c9 {
+    public jn0(Context context) {
+        super(context);
     }
 }

@@ -7,11 +7,11 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import v7.t6;
-import w7.g9;
-import w7.m8;
-import z7.mg;
+import w7.h9;
+import w7.n8;
+import z7.ng;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public class o extends AbstractCollection {
     public final /* synthetic */ int a;
@@ -115,13 +115,13 @@ public class o extends AbstractCollection {
                 Map a2 = jVar.a();
                 return a2 != null ? a2.values().iterator() : new x7.g(jVar, 2);
             case 5:
-                return new com.google.android.gms.internal.clearcut.f1(((e) this.b).entrySet().iterator(), 1);
+                return new com.google.android.gms.internal.clearcut.g1(((e) this.b).entrySet().iterator(), 1);
             case 6:
                 z7.d dVar = (z7.d) this.b;
                 Map a10 = dVar.a();
                 return a10 != null ? a10.values().iterator() : new z7.a(dVar, 2);
             default:
-                return new com.google.android.gms.internal.clearcut.f1(((e) this.b).entrySet().iterator(), 2);
+                return new com.google.android.gms.internal.clearcut.g1(((e) this.b).entrySet().iterator(), 2);
         }
     }
 
@@ -153,7 +153,7 @@ public class o extends AbstractCollection {
                     return super.remove(obj);
                 } catch (UnsupportedOperationException unused2) {
                     for (Map.Entry entry3 : eVar.entrySet()) {
-                        if (m8.a(obj, entry3.getValue())) {
+                        if (n8.a(obj, entry3.getValue())) {
                             eVar.remove(entry3.getKey());
                             return true;
                         }
@@ -166,7 +166,7 @@ public class o extends AbstractCollection {
                     return super.remove(obj);
                 } catch (UnsupportedOperationException unused3) {
                     for (Map.Entry entry4 : eVar2.entrySet()) {
-                        if (g9.a(obj, entry4.getValue())) {
+                        if (h9.a(obj, entry4.getValue())) {
                             eVar2.remove(entry4.getKey());
                             return true;
                         }
@@ -229,7 +229,7 @@ public class o extends AbstractCollection {
                             hashSet3.add(entry3.getKey());
                         }
                     }
-                    return ((mg) eVar2.e).b().removeAll(hashSet3);
+                    return ((ng) eVar2.e).b().removeAll(hashSet3);
                 }
         }
     }
@@ -285,7 +285,7 @@ public class o extends AbstractCollection {
                             hashSet3.add(entry3.getKey());
                         }
                     }
-                    return ((mg) eVar2.e).b().retainAll(hashSet3);
+                    return ((ng) eVar2.e).b().retainAll(hashSet3);
                 }
         }
     }

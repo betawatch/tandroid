@@ -1,13 +1,13 @@
 package i3;
 
-import b2.h;
-import c3.i0;
+import ai.c1;
+import c3.j0;
 import e2.x;
-import f2.p;
+import f2.q;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class e extends h {
+public final class e extends c1 {
     public final x b;
     public final x c;
     public int d;
@@ -15,9 +15,9 @@ public final class e extends h {
     public boolean f;
     public int g;
 
-    public e(i0 i0Var) {
-        super(i0Var);
-        this.b = new x(p.a);
+    public e(j0 j0Var) {
+        super(j0Var);
+        this.b = new x(q.a);
         this.c = new x(4);
     }
 }

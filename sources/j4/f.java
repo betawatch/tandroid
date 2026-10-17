@@ -1,12 +1,12 @@
 package j4;
 
-import b2.w0;
+import b2.v0;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class f {
     public final int a;
@@ -138,12 +138,12 @@ public final class f {
                     } else {
                         list = null;
                     }
-                    b2.w wVar = new b2.w();
-                    wVar.r = w0.n(str);
-                    wVar.d = y3;
-                    wVar.O = i10;
-                    wVar.u = list;
-                    arrayList.add(new b2.x(wVar));
+                    b2.v vVar = new b2.v();
+                    vVar.r = v0.n(str);
+                    vVar.d = y3;
+                    vVar.O = i10;
+                    vVar.u = list;
+                    arrayList.add(new b2.w(vVar));
                 }
                 list2 = arrayList;
             }

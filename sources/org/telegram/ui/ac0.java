@@ -1,57 +1,151 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.os.Bundle;
+import java.io.File;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ac0 implements Utilities.Callback2 {
+public final /* synthetic */ class ac0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ic0 b;
-    public final /* synthetic */ String c;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ ac0(ic0 ic0Var, String str, int i10) {
+    public /* synthetic */ ac0(Object obj, long j10, Object obj2, int i10) {
         this.a = i10;
-        this.b = ic0Var;
-        this.c = str;
+        this.c = obj;
+        this.b = j10;
+        this.d = obj2;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                TL_account.Passkeys passkeys = (TL_account.Passkeys) obj;
-                ic0 ic0Var = this.b;
-                ic0Var.c();
-                if (passkeys != null) {
-                    ic0Var.u(new PasskeysActivity(passkeys.passkeys), false);
-                    if ("create".equalsIgnoreCase(this.c)) {
-                        ic0Var.x("addPasskeyRow");
-                        break;
-                    }
+                pc0 pc0Var = (pc0) this.c;
+                TLObject tLObject = (TLObject) this.d;
+                long j10 = this.b;
+                if (pc0Var.I == null) {
+                    return;
                 }
-                break;
-            default:
-                org.telegram.ui.Wallet.z1 z1Var = (org.telegram.ui.Wallet.z1) obj;
-                String str = (String) obj2;
-                ic0 ic0Var2 = this.b;
-                ic0Var2.c();
-                if (z1Var != null) {
-                    org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
-                    if (U != null && U.getContext() != null) {
-                        org.telegram.ui.Wallet.e2.B(U.getContext(), ic0Var2.b, z1Var, null, U.getResourceProvider(), null, new dc0(ic0Var2, this.c, 1));
-                        break;
+                TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
+                int i10 = 0;
+                while (i10 < messages_messages.messages.size()) {
+                    if (!(messages_messages.messages.get(i10).media instanceof TLRPC.TL_messageMediaGeoLive)) {
+                        messages_messages.messages.remove(i10);
+                        i10--;
                     }
+                    i10++;
+                }
+                pc0Var.getMessagesStorage().putUsersAndChats(messages_messages.users, messages_messages.chats, true, true);
+                pc0Var.getMessagesController().putUsers(messages_messages.users, false);
+                pc0Var.getMessagesController().putChats(messages_messages.chats, false);
+                pc0Var.getLocationController().locationsCache.k(messages_messages.messages, j10);
+                pc0Var.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveLocationsCacheChanged, Long.valueOf(j10));
+                pc0Var.h0(messages_messages.messages);
+                pc0Var.getLocationController().markLiveLoactionsAsRead(pc0Var.e0);
+                if (pc0Var.J0 == null) {
+                    xb0 xb0Var = new xb0(pc0Var, 4);
+                    pc0Var.J0 = xb0Var;
+                    AndroidUtilities.runOnUIThread(xb0Var, 5000L);
+                    return;
+                }
+                return;
+            case 1:
+                sv0 sv0Var = (sv0) this.c;
+                long j11 = this.b;
+                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.d;
+                sv0Var.getClass();
+                Bundle bundle = new Bundle();
+                if (j11 > 0) {
+                    bundle.putLong("user_id", j11);
                 } else {
-                    if (str == null) {
-                        str = LocaleController.getString(R.string.WalletTonConnectSessionResponseEmpty);
-                    }
-                    org.telegram.ui.Components.zc.b0(str);
-                    break;
+                    bundle.putLong("chat_id", -j11);
                 }
-                break;
+                n2Var.presentFragment(new ProfileActivity(bundle, null));
+                sv0Var.c(false);
+                return;
+            case 2:
+                qi.e eVar = (qi.e) this.c;
+                qi.d dVar = (qi.d) this.d;
+                long j12 = this.b;
+                if (((qi.d) eVar.b) != dVar) {
+                    return;
+                }
+                qi.b bVar = (qi.b) eVar.d;
+                if (bVar != null) {
+                    AndroidUtilities.cancelRunOnUIThread(bVar);
+                    eVar.d = null;
+                }
+                synchronized (qi.i.y) {
+                    try {
+                        qi.i iVar = qi.i.A;
+                        if (iVar != null) {
+                            iVar.o();
+                            qi.i.A = null;
+                        }
+                    } catch (Throwable th2) {
+                        throw th2;
+                    }
+                }
+                eVar.b = null;
+                dVar.c.run(j12);
+                eVar.D();
+                return;
+            case 3:
+                ri.p pVar = (ri.p) this.c;
+                long j13 = this.b;
+                File file = (File) this.d;
+                if (pVar.m != ri.n.f) {
+                    return;
+                }
+                pVar.p = j13;
+                pVar.r = 0L;
+                pVar.s = ri.p.q(j13);
+                pVar.d();
+                pVar.t(file);
+                return;
+            case 4:
+                cc.e eVar2 = (cc.e) this.c;
+                long j14 = this.b;
+                Exception exc = (Exception) this.d;
+                ri.p pVar2 = (ri.p) eVar2.c;
+                if (j14 != pVar2.o) {
+                    return;
+                }
+                pVar2.n = null;
+                pVar2.g(exc);
+                return;
+            default:
+                yh.p1 p1Var = (yh.p1) this.c;
+                Utilities.Callback callback = (Utilities.Callback) this.d;
+                long j15 = this.b;
+                p1Var.getClass();
+                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                if (U == null) {
+                    return;
+                }
+                p1Var.dismiss();
+                if (callback != null) {
+                    callback.run(Boolean.FALSE);
+                }
+                Bundle bundle2 = new Bundle();
+                bundle2.putLong("user_id", j15);
+                bundle2.putBoolean("open_gifts", true);
+                U.presentFragment(new ProfileActivity(bundle2, null));
+                return;
         }
+    }
+
+    public /* synthetic */ ac0(Object obj, Object obj2, long j10, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.d = obj2;
+        this.b = j10;
     }
 }

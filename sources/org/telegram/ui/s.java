@@ -10,56 +10,56 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ k4 b;
+    public final /* synthetic */ l4 b;
 
-    public /* synthetic */ s(k4 k4Var, int i10) {
+    public /* synthetic */ s(l4 l4Var, int i10) {
         this.a = i10;
-        this.b = k4Var;
+        this.b = l4Var;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                k4 k4Var = this.b;
-                if (k4Var.u0[0].f()) {
-                    if (k4Var.u0[0].getWebView() != null) {
-                        k4Var.u0[0].getWebView().findNext(false);
+                l4 l4Var = this.b;
+                if (l4Var.u0[0].f()) {
+                    if (l4Var.u0[0].getWebView() != null) {
+                        l4Var.u0[0].getWebView().findNext(false);
                         break;
                     }
                 } else {
-                    k4Var.W(k4Var.G - 1);
+                    l4Var.W(l4Var.G - 1);
                     break;
                 }
                 break;
             case 1:
-                k4 k4Var2 = this.b;
-                if (k4Var2.u0[0].f()) {
-                    if (k4Var2.u0[0].getWebView() != null) {
-                        k4Var2.u0[0].getWebView().findNext(true);
+                l4 l4Var2 = this.b;
+                if (l4Var2.u0[0].f()) {
+                    if (l4Var2.u0[0].getWebView() != null) {
+                        l4Var2.u0[0].getWebView().findNext(true);
                         break;
                     }
                 } else {
-                    k4Var2.W(k4Var2.G + 1);
+                    l4Var2.W(l4Var2.G + 1);
                     break;
                 }
                 break;
             case 2:
-                k4 k4Var3 = this.b;
-                m0 m0Var = k4Var3.h0;
-                if (m0Var.T) {
-                    m0Var.h(false);
+                l4 l4Var3 = this.b;
+                n0 n0Var = l4Var3.h0;
+                if (n0Var.T) {
+                    n0Var.h(false);
                     break;
-                } else if (m0Var.W) {
-                    m0Var.k(false);
+                } else if (n0Var.W) {
+                    n0Var.k(false);
                     break;
                 } else {
-                    if (k4Var3.J()) {
-                        o3 o3Var = k4Var3.u0[0];
+                    if (l4Var3.J()) {
+                        o3 o3Var = l4Var3.u0[0];
                         if (o3Var.s) {
                             if (o3Var.f() && o3Var.getWebView() != null) {
                                 o3Var.getWebView().goBack();
@@ -67,16 +67,16 @@ public final /* synthetic */ class s implements View.OnClickListener {
                             }
                         }
                     }
-                    if (k4Var3.d0.size() > 1) {
-                        k4Var3.G();
+                    if (l4Var3.d0.size() > 1) {
+                        l4Var3.G();
                         break;
                     } else {
-                        x3 x3Var = k4Var3.K;
+                        x3 x3Var = l4Var3.K;
                         if (x3Var != null) {
                             x3Var.dismiss(false);
                             break;
                         } else {
-                            k4Var3.o(true, true);
+                            l4Var3.o(true, true);
                             break;
                         }
                     }
@@ -90,17 +90,17 @@ public final /* synthetic */ class s implements View.OnClickListener {
                 }
                 break;
             case 4:
-                k4 k4Var4 = this.b;
+                l4 l4Var4 = this.b;
                 int intValue = ((Integer) view.getTag()).intValue();
-                k4Var4.a = intValue;
+                l4Var4.a = intValue;
                 int i10 = 0;
                 int i11 = 0;
                 while (i11 < 2) {
-                    ((RadioButton) k4Var4.S0[i11].b).a(i11 == intValue, true);
+                    ((RadioButton) l4Var4.S0[i11].b).a(i11 == intValue, true);
                     i11++;
                 }
-                s3 s3Var = k4.f1;
-                int i12 = k4Var4.a;
+                s3 s3Var = l4.f1;
+                int i12 = l4Var4.a;
                 s3Var.getClass();
                 ApplicationLoader.applicationContext.getSharedPreferences("articles", 0).edit().putInt("font_type", i12).commit();
                 Typeface typeface = i12 == 0 ? Typeface.DEFAULT : Typeface.SERIF;
@@ -153,7 +153,7 @@ public final /* synthetic */ class s implements View.OnClickListener {
                     s3.b(s3Var.A.keyAt(i27), (TextPaint) s3Var.A.valueAt(i27), typeface, typeface3, bold, typeface2);
                 }
                 while (true) {
-                    o3[] o3VarArr = k4Var4.u0;
+                    o3[] o3VarArr = l4Var4.u0;
                     if (i10 >= o3VarArr.length) {
                         break;
                     } else {
@@ -162,17 +162,17 @@ public final /* synthetic */ class s implements View.OnClickListener {
                     }
                 }
             default:
-                k4 k4Var5 = this.b;
-                d3 d3Var = k4Var5.d;
+                l4 l4Var5 = this.b;
+                d3 d3Var = l4Var5.d;
                 if (d3Var != null) {
                     AndroidUtilities.addToClipboard(d3Var.d.getText());
                     if (AndroidUtilities.shouldShowClipboardToast()) {
-                        Toast.makeText(k4Var5.L, LocaleController.getString(R.string.TextCopied), 0).show();
+                        Toast.makeText(l4Var5.L, LocaleController.getString(R.string.TextCopied), 0).show();
                     }
                 }
-                org.telegram.ui.ActionBar.m1 m1Var = k4Var5.H;
+                org.telegram.ui.ActionBar.m1 m1Var = l4Var5.H;
                 if (m1Var != null && m1Var.isShowing()) {
-                    k4Var5.H.d(true);
+                    l4Var5.H.d(true);
                     break;
                 }
                 break;

@@ -1,33 +1,23 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
-import android.view.WindowManager;
+import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class l30 extends AnimatorListenerAdapter {
-    public final /* synthetic */ View a;
-    public final /* synthetic */ View b;
-    public final /* synthetic */ WindowManager c;
-    public final /* synthetic */ View d;
-    public final /* synthetic */ View e;
-    public final /* synthetic */ m30 f;
-
-    public l30(m30 m30Var, k30 k30Var, ah.x xVar, WindowManager windowManager, FrameLayout frameLayout, org.telegram.ui.y7 y7Var) {
-        this.f = m30Var;
-        this.a = k30Var;
-        this.b = xVar;
-        this.c = windowManager;
-        this.d = frameLayout;
-        this.e = y7Var;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        NotificationCenter.getInstance(this.f.h).doOnIdle(new bi.c3(this.a, this.b, this.c, this.d, this.e, 22));
+public final class l30 extends FrameLayout {
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        VoIPService sharedInstance = VoIPService.getSharedInstance();
+        if (sharedInstance == null || !ChatObject.isChannelOrGiga(sharedInstance.getChat())) {
+            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, LocaleController.getString(R.string.VoipGroupOpenVoiceChat)));
+        } else {
+            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, LocaleController.getString(R.string.VoipChannelOpenVoiceChat)));
+        }
     }
 }

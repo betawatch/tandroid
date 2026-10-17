@@ -1,173 +1,132 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.text.TextUtils;
+import android.R;
+import android.content.Context;
+import android.view.ActionMode;
+import android.view.Menu;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class ev0 extends View {
-    public final Paint a;
-    public final org.telegram.ui.Components.r6 b;
-    public final TextPaint c;
-    public StaticLayout d;
-    public float e;
-    public float f;
-    public final org.telegram.ui.Components.r6 h;
-    public String n;
-    public boolean r;
-    public final org.telegram.ui.Components.g6 s;
-    public boolean v;
-    public int w;
+public final class ev0 extends org.telegram.ui.Cells.c6 {
+    public final /* synthetic */ fv0 F;
 
-    public ev0(Activity activity) {
-        super(activity);
-        Paint paint = new Paint(1);
-        this.a = paint;
-        TextPaint textPaint = new TextPaint(1);
-        this.c = textPaint;
-        this.r = false;
-        org.telegram.ui.Components.es esVar = org.telegram.ui.Components.es.h;
-        this.s = new org.telegram.ui.Components.g6(this, 0L, 350L, esVar);
-        paint.setColor(2130706432);
-        org.telegram.ui.Components.r6 r6Var = new org.telegram.ui.Components.r6(false, true, true);
-        this.b = r6Var;
-        r6Var.n(0.3f, 320L, esVar);
-        r6Var.u(-1);
-        r6Var.w(AndroidUtilities.dp(14.0f));
-        r6Var.x(AndroidUtilities.bold());
-        r6Var.setCallback(this);
-        r6Var.t("0", true, true);
-        r6Var.M = AndroidUtilities.displaySize.x;
-        textPaint.setColor(-1);
-        textPaint.setTextSize(AndroidUtilities.dp(14.0f));
-        textPaint.setTypeface(AndroidUtilities.bold());
-        c();
-        org.telegram.ui.Components.r6 r6Var2 = new org.telegram.ui.Components.r6(false, true, true);
-        this.h = r6Var2;
-        r6Var2.n(0.3f, 320L, esVar);
-        r6Var2.u(-1);
-        r6Var2.w(AndroidUtilities.dp(14.0f));
-        r6Var2.x(AndroidUtilities.bold());
-        r6Var2.setCallback(this);
-        r6Var2.t("0", true, true);
-        r6Var2.M = AndroidUtilities.displaySize.x;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ev0(fv0 fv0Var, Context context, int i10, y50 y50Var) {
+        super(context, i10, y50Var, null);
+        this.F = fv0Var;
     }
 
-    public final void a(int i10, int i11) {
-        b(i10, i11, true);
-    }
-
-    public final void b(int i10, int i11, boolean z10) {
-        boolean z11 = false;
-        int max = Math.max(0, i10);
-        int max2 = Math.max(max, i11);
-        if (LocaleController.getInstance().getCurrentLocaleInfo() != null && !TextUtils.equals(this.n, LocaleController.getInstance().getCurrentLocaleInfo().shortName)) {
-            c();
-        }
-        this.b.t(String.format("%d", Integer.valueOf(LocaleController.isRTL ? max2 : max)), (!z10 || this.v || LocaleController.isRTL) ? false : true, true);
-        if (!LocaleController.isRTL) {
-            max = max2;
-        }
-        String format = String.format("%d", Integer.valueOf(max));
-        if (z10 && !this.v && !LocaleController.isRTL) {
-            z11 = true;
-        }
-        this.h.t(format, z11, true);
-        this.v = !z10;
-    }
-
-    public final void c() {
-        this.n = LocaleController.getInstance().getCurrentLocaleInfo().shortName;
-        StaticLayout staticLayout = new StaticLayout(LocaleController.getString(R.string.Of).replace("%1$d", "").replace("%2$d", ""), this.c, AndroidUtilities.dp(200.0f), Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
-        this.d = staticLayout;
-        if (staticLayout.getLineCount() >= 1) {
-            this.e = this.d.getLineWidth(0);
-            this.f = this.d.getLineDescent(0);
-        } else {
-            this.e = 0.0f;
-            this.f = 0.0f;
-        }
-    }
-
-    public final void d(boolean z10, boolean z11) {
-        if (this.r != z10) {
-            this.r = z10;
-            if (!z10) {
-                this.v = true;
+    @Override // org.telegram.ui.Cells.c6
+    public final boolean e() {
+        hv0 hv0Var = this.F.d;
+        ua1 ua1Var = hv0Var.c;
+        View F = ua1Var.F(this);
+        s4.b1 T = F == null ? null : ua1Var.T(F);
+        if (T != null) {
+            int b10 = T.b();
+            int i10 = hv0Var.y;
+            if (i10 == hv0Var.n && b10 == (hv0Var.n0 + i10) - 1) {
+                return false;
             }
-            if (!z11) {
-                this.s.d(z10 ? 1.0f : 0.0f, true);
+        }
+        return true;
+    }
+
+    @Override // org.telegram.ui.Cells.c6
+    public final boolean f(org.telegram.ui.Cells.c6 c6Var) {
+        int b10;
+        hv0 hv0Var = this.F.d;
+        ua1 ua1Var = hv0Var.c;
+        View F = ua1Var.F(c6Var);
+        s4.b1 T = F == null ? null : ua1Var.T(F);
+        if (T == null || (b10 = T.b()) == -1) {
+            return false;
+        }
+        return hv0Var.w[b10 - hv0Var.n0];
+    }
+
+    @Override // org.telegram.ui.Cells.c6
+    public final void g(org.telegram.ui.Cells.b6 b6Var, ActionMode actionMode) {
+        if (b6Var.isFocused() && b6Var.hasSelection()) {
+            Menu menu = actionMode.getMenu();
+            if (menu.findItem(R.id.copy) == null) {
+                return;
             }
-            invalidate();
+            sn.n8(menu, this.F.d.f.h, false, true, true, true);
         }
     }
 
-    @Override // android.view.View
-    public final boolean isShown() {
-        return this.r;
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        float d = this.s.d(this.r ? 1.0f : 0.0f, false);
-        if (d <= 0.0f) {
-            return;
+    @Override // org.telegram.ui.Cells.c6
+    public final void h(org.telegram.ui.Cells.c6 c6Var, boolean z10) {
+        int b10;
+        hv0 hv0Var = this.F.d;
+        if (z10 && hv0Var.L) {
+            Arrays.fill(hv0Var.w, false);
+            hv0Var.c.getChildCount();
+            for (int i10 = hv0Var.n0; i10 < hv0Var.n0 + hv0Var.y; i10++) {
+                s4.b1 K = hv0Var.c.K(i10);
+                if (K != null) {
+                    View view = K.a;
+                    if (view instanceof org.telegram.ui.Cells.c6) {
+                        ((org.telegram.ui.Cells.c6) view).r.a(false, true);
+                    }
+                }
+            }
         }
-        org.telegram.ui.Components.r6 r6Var = this.b;
-        float c10 = r6Var.c() + this.e;
-        org.telegram.ui.Components.r6 r6Var2 = this.h;
-        float c11 = r6Var2.c() + c10 + AndroidUtilities.dp(18.0f);
-        float f7 = ((1.0f - d) * (-AndroidUtilities.dp(8.0f))) + this.w;
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set((getWidth() - c11) / 2.0f, AndroidUtilities.dpf2(10.0f) + f7, (getWidth() + c11) / 2.0f, AndroidUtilities.dpf2(33.0f) + f7);
-        Paint paint = this.a;
-        int alpha = paint.getAlpha();
-        paint.setAlpha((int) (alpha * d));
-        canvas.drawRoundRect(rectF, AndroidUtilities.dpf2(12.0f), AndroidUtilities.dpf2(12.0f), paint);
-        paint.setAlpha(alpha);
-        canvas.save();
-        canvas.translate(((getWidth() - c11) / 2.0f) + AndroidUtilities.dp(9.0f), f7 + AndroidUtilities.dp(9.5f));
-        r6Var.setBounds(0, 0, (int) r6Var.c(), AndroidUtilities.dp(23.0f));
-        int i10 = (int) (d * 255.0f);
-        r6Var.B = i10;
-        r6Var.draw(canvas);
-        canvas.translate(r6Var.c(), 0.0f);
-        canvas.save();
-        canvas.translate((-(this.d.getWidth() - this.e)) / 2.0f, ((this.f / 2.0f) + (AndroidUtilities.dp(23.0f) - this.d.getHeight())) / 2.0f);
-        this.c.setAlpha(i10);
-        this.d.draw(canvas);
-        canvas.restore();
-        canvas.translate(this.e, 0.0f);
-        r6Var2.setBounds(0, 0, (int) r6Var2.c(), AndroidUtilities.dp(23.0f));
-        r6Var2.B = i10;
-        r6Var2.draw(canvas);
-        canvas.restore();
+        super.h(c6Var, z10);
+        ua1 ua1Var = hv0Var.c;
+        View F = ua1Var.F(c6Var);
+        s4.b1 T = F == null ? null : ua1Var.T(F);
+        if (T != null && (b10 = T.b()) != -1) {
+            hv0Var.w[b10 - hv0Var.n0] = z10;
+        }
+        hv0Var.i0();
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int size = View.MeasureSpec.getSize(i10);
-        this.w = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight;
-        this.b.M = size;
-        this.h.M = size;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), org.telegram.messenger.sk.C(43.0f, this.w, TLObject.FLAG_30));
+    @Override // org.telegram.ui.Cells.c6
+    public final void i(boolean z10) {
+        hv0.d0(this.F.d, this, z10);
     }
 
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return this.b == drawable || this.h == drawable || super.verifyDrawable(drawable);
+    @Override // org.telegram.ui.Cells.c6
+    public final void j(org.telegram.ui.Cells.c6 c6Var) {
+        hv0.e0(this.F.d, c6Var);
+    }
+
+    @Override // org.telegram.ui.Cells.c6
+    public final boolean l(ArrayList arrayList) {
+        hv0 hv0Var = this.F.d;
+        if (!arrayList.isEmpty()) {
+            hv0Var.c.getClass();
+            int R = RecyclerView.R(this) - hv0Var.n0;
+            if (R >= 0) {
+                org.telegram.ui.Cells.b6 b6Var = this.d;
+                b6Var.getText().replace(b6Var.getSelectionStart(), b6Var.getSelectionEnd(), (CharSequence) arrayList.remove(0));
+                int i10 = R + 1;
+                while (!arrayList.isEmpty() && i10 < hv0Var.n) {
+                    for (int length = hv0Var.v.length - 1; length > i10; length--) {
+                        CharSequence[] charSequenceArr = hv0Var.v;
+                        charSequenceArr[length] = charSequenceArr[length - 1];
+                    }
+                    hv0Var.v[i10] = (CharSequence) arrayList.remove(0);
+                    hv0Var.y++;
+                    i10++;
+                }
+                hv0Var.r0();
+                hv0Var.g0 = (hv0Var.n0 + i10) - 1;
+                hv0Var.b.l();
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.Cells.c6
+    public final boolean o() {
+        return this.F.d.L;
     }
 }

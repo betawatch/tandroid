@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.text.TextUtils;
 import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.api.internal.t0;
+import com.google.android.gms.common.api.internal.s0;
 import com.google.android.gms.common.api.m;
 import com.google.android.gms.common.api.q;
 import x8.j;
@@ -16,7 +16,7 @@ import y8.i0;
 import y8.x0;
 import y8.y0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class e extends com.google.android.gms.common.api.internal.e {
     public final /* synthetic */ int q = 1;
@@ -122,8 +122,8 @@ public final class e extends com.google.android.gms.common.api.internal.e {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e(t0 t0Var, String str, String str2, byte[] bArr) {
-        super(j.a, t0Var);
+    public e(s0 s0Var, String str, String str2, byte[] bArr) {
+        super(j.a, s0Var);
         this.r = str;
         this.t = str2;
         this.s = bArr;

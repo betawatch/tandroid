@@ -2,17 +2,18 @@ package j2;
 
 import android.media.AudioDescriptor;
 import android.os.SystemClock;
+import b2.o0;
+import b2.w;
 import e2.m0;
 import e2.o;
-import k2.h0;
-import k2.n0;
-import k2.o0;
+import k2.i0;
 import k2.p0;
-import k2.s0;
+import k2.q0;
 import k2.t0;
+import k2.u0;
 import k2.x;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements o {
     public final /* synthetic */ int a;
@@ -94,58 +95,49 @@ public final /* synthetic */ class e implements o {
                 ((b) obj).getClass();
                 break;
             case 21:
+                ((b) obj).getClass();
+                break;
             case 22:
+                ((b) obj).getClass();
+                break;
             case 23:
             case 24:
-            default:
-                x xVar2 = ((n0) obj).a.n;
-                if (xVar2 != null) {
-                    xVar2.w();
-                    break;
-                }
-                break;
             case 25:
-                o0 o0Var = (o0) obj;
-                s0 s0Var = o0Var.b;
-                if (o0Var.equals(s0Var.j) && s0Var.n != null) {
-                    p0 p0Var = s0Var.p;
-                    int i10 = p0Var.b;
-                    if (i10 != -1) {
-                        long j11 = ((k2.o) p0Var.e).f / i10;
-                        h0 h0Var = s0Var.t;
-                        h0Var.getClass();
-                        j10 = m0.Y(h0Var.a.getSampleRate(), j11);
-                    } else {
-                        j10 = -9223372036854775807L;
-                    }
-                    s0Var.n.t(((k2.o) s0Var.p.e).f, m0.h0(j10), SystemClock.elapsedRealtime() - s0Var.W);
-                    break;
-                }
-                break;
             case 26:
-                o0 o0Var2 = (o0) obj;
-                o0Var2.getClass();
-                s0.c0.getAndDecrement();
-                x xVar3 = o0Var2.b.n;
-                if (xVar3 != null) {
-                    int i11 = o0Var2.a.a;
-                    xVar3.F(new t0());
+            default:
+                p0 p0Var = (p0) obj;
+                t0 t0Var = p0Var.b;
+                if (p0Var.equals(t0Var.j) && (xVar = t0Var.n) != null && t0Var.O) {
+                    xVar.T();
                     break;
                 }
                 break;
             case 27:
-                o0 o0Var3 = (o0) obj;
-                s0 s0Var2 = o0Var3.b;
-                if (o0Var3.equals(s0Var2.j) && (xVar = s0Var2.n) != null && s0Var2.O) {
-                    xVar.G();
+                p0 p0Var2 = (p0) obj;
+                t0 t0Var2 = p0Var2.b;
+                if (p0Var2.equals(t0Var2.j) && t0Var2.n != null) {
+                    q0 q0Var = t0Var2.p;
+                    int i10 = q0Var.b;
+                    if (i10 != -1) {
+                        long j11 = ((k2.o) q0Var.e).f / i10;
+                        i0 i0Var = t0Var2.t;
+                        i0Var.getClass();
+                        j10 = m0.Y(i0Var.a.getSampleRate(), j11);
+                    } else {
+                        j10 = -9223372036854775807L;
+                    }
+                    t0Var2.n.s(((k2.o) t0Var2.p.e).f, m0.h0(j10), SystemClock.elapsedRealtime() - t0Var2.W);
                     break;
                 }
                 break;
             case 28:
-                o0 o0Var4 = (o0) obj;
-                s0 s0Var3 = o0Var4.b;
-                if (o0Var4.equals(s0Var3.j) && s0Var3.M) {
-                    s0Var3.N = true;
+                p0 p0Var3 = (p0) obj;
+                p0Var3.getClass();
+                t0.c0.getAndDecrement();
+                x xVar2 = p0Var3.b.n;
+                if (xVar2 != null) {
+                    int i11 = p0Var3.a.a;
+                    xVar2.S(new u0());
                     break;
                 }
                 break;
@@ -153,7 +145,7 @@ public final /* synthetic */ class e implements o {
     }
 
     public /* synthetic */ e(a aVar, float f7) {
-        this.a = 20;
+        this.a = 22;
     }
 
     public /* synthetic */ e(a aVar, int i10) {
@@ -165,15 +157,15 @@ public final /* synthetic */ class e implements o {
     }
 
     public /* synthetic */ e(a aVar, long j10) {
-        this.a = 11;
+        this.a = 13;
     }
 
-    public /* synthetic */ e(a aVar, b2.x xVar, i2.f fVar) {
-        this.a = 2;
+    public /* synthetic */ e(a aVar, w wVar, i2.e eVar, int i10) {
+        this.a = i10;
     }
 
-    public /* synthetic */ e(a aVar, b2.p0 p0Var, int i10) {
-        this.a = 19;
+    public /* synthetic */ e(a aVar, o0 o0Var, int i10) {
+        this.a = 21;
     }
 
     public /* synthetic */ e(a aVar, Object obj, int i10) {

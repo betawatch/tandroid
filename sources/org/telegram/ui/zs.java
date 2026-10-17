@@ -1,76 +1,38 @@
 package org.telegram.ui;
 
 import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zs implements org.telegram.ui.ActionBar.z1, org.telegram.ui.Components.ol0, org.telegram.ui.Components.cm0, r0.n {
-    public final /* synthetic */ ContactsActivity a;
+public final class zs extends org.telegram.ui.ActionBar.m1 {
+    public final /* synthetic */ ct o;
 
-    public /* synthetic */ zs(ContactsActivity contactsActivity) {
-        this.a = contactsActivity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zs(ct ctVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
+        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
+        this.o = ctVar;
     }
 
-    @Override // r0.n
-    public r0.l1 Q0(View view, r0.l1 l1Var) {
-        int i10 = AndroidUtilities.getDefaultWindowInsets(l1Var, false).d;
-        ContactsActivity contactsActivity = this.a;
-        contactsActivity.q0 = i10;
-        contactsActivity.j0();
-        contactsActivity.i0();
-        contactsActivity.h0();
-        return r0.l1.b;
-    }
-
-    @Override // org.telegram.ui.Components.cm0
-    public boolean a(int i10, View view) {
-        ContactsActivity contactsActivity = this.a;
-        s4.g0 adapter = contactsActivity.f.getAdapter();
-        et etVar = contactsActivity.d;
-        if (adapter == etVar) {
-            int S = etVar.S(i10);
-            int Q = contactsActivity.d.Q(i10);
-            org.telegram.ui.Components.sc scVar = org.telegram.ui.Components.sc.w;
-            if (scVar != null) {
-                scVar.b();
+    @Override // org.telegram.ui.ActionBar.m1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        gt gtVar = this.o.a;
+        gtVar.k = null;
+        gtVar.K = false;
+        if (gtVar.R) {
+            gtVar.n();
+        }
+        View view = gtVar.h;
+        if (view != null) {
+            if (view instanceof org.telegram.ui.Cells.e8) {
+                ((org.telegram.ui.Cells.e8) view).setScaled(false);
+            } else if (view instanceof org.telegram.ui.Cells.c8) {
+                ((org.telegram.ui.Cells.c8) view).setScaled(false);
+            } else if (view instanceof org.telegram.ui.Cells.f2) {
+                ((org.telegram.ui.Cells.f2) view).setScaled(false);
             }
-            if (Q < 0 || S < 0) {
-                return false;
-            }
+            gtVar.h = null;
         }
-        boolean z10 = contactsActivity.K;
-        if (!z10 && !contactsActivity.L && (view instanceof org.telegram.ui.Cells.xa)) {
-            contactsActivity.r0((org.telegram.ui.Cells.xa) view);
-            return true;
-        }
-        if (z10 || contactsActivity.L || !(view instanceof org.telegram.ui.Cells.i6)) {
-            return false;
-        }
-        org.telegram.ui.Cells.i6 i6Var = (org.telegram.ui.Cells.i6) view;
-        if (i6Var.getUser() != null && i6Var.getUser().contact) {
-            contactsActivity.r0(i6Var);
-        }
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.ol0
-    public void c() {
-        this.a.g0();
-    }
-
-    @Override // org.telegram.ui.ActionBar.z1
-    public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
-        ContactsActivity contactsActivity = this.a;
-        contactsActivity.getClass();
-        a0.h hVar = contactsActivity.d0;
-        ArrayList<TLRPC.User> arrayList = new ArrayList<>(hVar.m());
-        for (int i11 = 0; i11 < hVar.m(); i11++) {
-            arrayList.add((TLRPC.User) hVar.f(hVar.j(i11)));
-        }
-        contactsActivity.getContactsController().deleteContactsUndoable(contactsActivity.getParentActivity(), contactsActivity, arrayList);
-        contactsActivity.o0();
     }
 }

@@ -1,38 +1,30 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class ox extends ew {
-    public final /* synthetic */ TLRPC.StickerSet W;
-    public final /* synthetic */ wz X;
+public final class ox extends s4.c0 {
+    public final /* synthetic */ int r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ox(wz wzVar, org.telegram.ui.ActionBar.m2 m2Var, Context context, org.telegram.ui.ActionBar.c6 c6Var, ArrayList arrayList, TLRPC.StickerSet stickerSet) {
-        super(m2Var, context, c6Var, arrayList);
-        this.X = wzVar;
-        this.W = stickerSet;
+    public ox(Context context, int i10) {
+        super(context);
+        this.r = i10;
     }
 
-    @Override // org.telegram.ui.Components.ew
-    public final void Y(boolean z10) {
-        wz wzVar = this.X;
-        ArrayList arrayList = wzVar.p1;
-        TLRPC.StickerSet stickerSet = this.W;
-        if (!z10) {
-            arrayList.remove(Long.valueOf(stickerSet.id));
-        } else if (!arrayList.contains(Long.valueOf(stickerSet.id))) {
-            arrayList.add(Long.valueOf(stickerSet.id));
-        }
-        wzVar.T();
+    @Override // s4.c0
+    public final int i(int i10, int i11, int i12, int i13, int i14) {
+        return super.i(i10, i11, i12, i13, i14) + this.r;
     }
 
-    @Override // org.telegram.ui.Components.ew, org.telegram.ui.ActionBar.e3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.i2
-    public final void dismiss() {
-        this.X.v2 = false;
-        super.dismiss();
+    @Override // s4.c0
+    public final int m(int i10) {
+        return super.m(i10) * 16;
+    }
+
+    @Override // s4.c0
+    public final int p() {
+        return -1;
     }
 }

@@ -1,5 +1,6 @@
 package qh;
 
+import ai.c1;
 import android.graphics.PointF;
 import android.graphics.Rect;
 import android.graphics.RectF;
@@ -13,16 +14,16 @@ import java.util.List;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 import r0.i0;
-import r0.l1;
+import r0.k1;
 import r0.p0;
 import r0.q0;
-import r0.u0;
-import r0.w0;
-import w7.l6;
+import r0.t0;
+import r0.v0;
+import w7.m6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class e extends b2.h {
+public final class e extends c1 {
     public static final RectF e;
     public static final Rect f;
     public final ViewGroup b;
@@ -39,7 +40,7 @@ public final class e extends b2.h {
         this.b = viewGroup;
         WeakHashMap weakHashMap = i0.a;
         if (Build.VERSION.SDK_INT >= 30) {
-            u0.g(viewGroup, this);
+            t0.g(viewGroup, this);
             return;
         }
         PathInterpolator pathInterpolator = q0.e;
@@ -50,8 +51,8 @@ public final class e extends b2.h {
         }
     }
 
-    public static l1 e1(l1 l1Var, View view, View view2) {
-        if (view == null || view2 == null || l1Var == null) {
+    public static k1 e1(k1 k1Var, View view, View view2) {
+        if (view == null || view2 == null || k1Var == null) {
             return null;
         }
         RectF rectF = e;
@@ -65,40 +66,40 @@ public final class e extends b2.h {
         int width = view2.getWidth() - rect.right;
         int height = view2.getHeight() - rect.bottom;
         if (i10 == 0 && i11 == 0 && width == 0 && height == 0) {
-            return l1Var;
+            return k1Var;
         }
-        return l1Var.a.m(Math.max(0, i10), Math.max(0, i11), Math.max(0, width), Math.max(0, height));
+        return k1Var.a.m(Math.max(0, i10), Math.max(0, i11), Math.max(0, width), Math.max(0, height));
     }
 
-    @Override // b2.h
+    @Override // ai.c1
     public final void V0() {
         int i10 = this.c - 1;
         this.c = i10;
         if (i10 == 0) {
             Iterator it = this.d.iterator();
             while (it.hasNext()) {
-                ((d) it.next()).J();
+                ((d) it.next()).L();
             }
         }
     }
 
-    @Override // b2.h
-    public final l1 W0(l1 l1Var, List list) {
+    @Override // ai.c1
+    public final k1 W0(k1 k1Var, List list) {
         Iterator it = list.iterator();
         int i10 = 0;
         while (it.hasNext()) {
-            i10 |= ((w0) it.next()).a.c();
+            i10 |= ((v0) it.next()).a.c();
         }
-        if (l6.a(i10, 8)) {
+        if (m6.a(i10, 8)) {
             Iterator it2 = this.d.iterator();
             while (it2.hasNext()) {
                 d dVar = (d) it2.next();
-                l1 e12 = e1(l1Var, dVar.N(), this.b);
+                k1 e12 = e1(k1Var, dVar.N(), this.b);
                 if (e12 != null) {
                     dVar.k(e12);
                 }
             }
         }
-        return l1Var;
+        return k1Var;
     }
 }

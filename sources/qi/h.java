@@ -1,23 +1,18 @@
 package qi;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+import java.net.Socket;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public interface h {
-    void onCompleted(n nVar);
+public final class h {
+    public final int a;
+    public final Socket b;
+    public long c = 4194304;
+    public long d = 4194304;
+    public boolean e;
 
-    void onError(Exception exc);
-
-    void onMaximumDurationReached();
-
-    void onPreviewPlaybackChanged(boolean z10);
-
-    void onPreviewProgress(long j10, long j11);
-
-    void onPreviewReady(long j10, long j11, long j12, byte[] bArr);
-
-    void onRecordingProgress(long j10, double d);
-
-    void onRecordingTooShort(long j10);
-
-    void onStateChanged(p pVar);
+    public h(int i10, Socket socket) {
+        this.a = i10;
+        this.b = socket;
+    }
 }

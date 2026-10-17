@@ -1,49 +1,53 @@
 package org.telegram.ui.Wallet;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ha0;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class c3 extends ha0 {
-    public final Paint M;
-    public final /* synthetic */ e3 N;
+public final class c3 {
+    public final HashSet a = new HashSet();
+    public final HashMap b = new HashMap();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c3(e3 e3Var, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(c6Var);
-        this.N = e3Var;
-        Paint paint = new Paint(1);
-        this.M = paint;
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
-    }
-
-    @Override // org.telegram.ui.Components.ha0
-    public final void b(Canvas canvas, Path path) {
-        super.b(canvas, path);
-        e3 e3Var = this.N;
-        RectF rectF = e3Var.f;
-        if (e3Var.o0 != null) {
-            canvas.saveLayer(rectF, null);
-            e3Var.o0.c((AndroidUtilities.dp(206.0f) - e3Var.o0.l()) / 2.0f, (rectF.bottom - AndroidUtilities.dp(7.0f)) - e3Var.o0.j(), 1.0f, -1, canvas);
-            Shader shader = this.x.getShader();
-            Paint paint = this.M;
-            paint.setShader(shader);
-            canvas.drawRect(rectF, paint);
-            canvas.restore();
+    public static String c(int i10, String str) {
+        if (str.length() <= (i10 * 2) + 1) {
+            return str;
         }
+        return str.substring(0, i10) + "…" + str.substring(str.length() - i10);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void invalidateSelf() {
-        super.invalidateSelf();
-        this.N.a.invalidate();
+    public final String a(String str) {
+        if (str == null) {
+            return null;
+        }
+        String str2 = (String) this.b.get(str);
+        return str2 == null ? str : str2;
+    }
+
+    public final void b(int i10, ArrayList arrayList) {
+        HashMap hashMap = new HashMap();
+        int size = arrayList.size();
+        int i11 = 0;
+        while (i11 < size) {
+            Object obj = arrayList.get(i11);
+            i11++;
+            String str = (String) obj;
+            String c10 = c(i10, str);
+            ArrayList arrayList2 = (ArrayList) hashMap.get(c10);
+            if (arrayList2 == null) {
+                arrayList2 = new ArrayList();
+                hashMap.put(c10, arrayList2);
+            }
+            arrayList2.add(str);
+        }
+        for (ArrayList arrayList3 : hashMap.values()) {
+            if (arrayList3.size() == 1) {
+                String str2 = (String) arrayList3.get(0);
+                this.b.put(str2, c(i10, str2));
+            } else {
+                b(i10 + 1, arrayList3);
+            }
+        }
     }
 }

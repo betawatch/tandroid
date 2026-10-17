@@ -1,13 +1,20 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class pn extends MessageObject {
-    @Override // org.telegram.messenger.MessageObject
-    public final boolean canDeleteMessage(boolean z10, TLRPC.Chat chat) {
-        return false;
+public final class pn extends AnimatorListenerAdapter {
+    public final /* synthetic */ org.telegram.ui.Components.wc0 a;
+
+    public pn(org.telegram.ui.Components.wc0 wc0Var) {
+        this.a = wc0Var;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        super.onAnimationEnd(animator);
+        this.a.r(1.0f);
     }
 }

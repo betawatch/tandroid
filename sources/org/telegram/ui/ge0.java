@@ -1,41 +1,65 @@
 package org.telegram.ui;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class ge0 extends hs {
-    public final /* synthetic */ int h;
-    public final /* synthetic */ Object n;
+public final /* synthetic */ class ge0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ie0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ ge0(Object obj, Context context, int i10) {
-        super(context);
-        this.h = i10;
-        this.n = obj;
+    public /* synthetic */ ge0(ie0 ie0Var, int i10) {
+        this.a = i10;
+        this.b = ie0Var;
     }
 
-    @Override // org.telegram.ui.hs
-    public final void a() {
-        switch (this.h) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                ((je0) this.n).h(null);
-                break;
-            case 1:
-                ((ef0) this.n).h(null);
-                break;
-            case 2:
-                PasscodeActivity passcodeActivity = (PasscodeActivity) this.n;
-                if (passcodeActivity.E != 0) {
-                    passcodeActivity.j0();
-                    break;
-                } else {
-                    postDelayed(new xk0(this, 1), 260L);
+                ie0 ie0Var = this.b;
+                org.telegram.ui.Components.xj0 xj0Var = ie0Var.e;
+                xj0Var.getAnimatedDrawable().N(0, false, false);
+                xj0Var.d();
+                kd0 kd0Var = ie0Var.a;
+                if (kd0Var != null) {
+                    kd0Var.f[0].requestFocus();
                     break;
                 }
-            default:
-                ((oh1) this.n).C0();
                 break;
+            case 1:
+                ie0 ie0Var2 = this.b;
+                int i10 = 0;
+                ie0Var2.w = false;
+                while (true) {
+                    vr[] vrVarArr = ie0Var2.a.f;
+                    if (i10 >= vrVarArr.length) {
+                        break;
+                    } else {
+                        vrVarArr[i10].i(0.0f);
+                        i10++;
+                    }
+                }
+            case 2:
+                ie0 ie0Var3 = this.b;
+                ie0Var3.postDelayed(new ge0(ie0Var3, 3), 150L);
+                ge0 ge0Var = ie0Var3.x;
+                ie0Var3.removeCallbacks(ge0Var);
+                ie0Var3.postDelayed(ge0Var, 3000L);
+                ie0Var3.w = true;
+                break;
+            default:
+                kd0 kd0Var2 = this.b.a;
+                int i11 = 0;
+                kd0Var2.e = false;
+                kd0Var2.f[0].requestFocus();
+                while (true) {
+                    vr[] vrVarArr2 = kd0Var2.f;
+                    if (i11 >= vrVarArr2.length) {
+                        break;
+                    } else {
+                        vrVarArr2[i11].i(0.0f);
+                        i11++;
+                    }
+                }
         }
     }
 }

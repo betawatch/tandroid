@@ -1,27 +1,41 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class p10 extends org.telegram.ui.Components.f10 {
-    public final /* synthetic */ int U;
-    public final /* synthetic */ Object V;
+public final class p10 extends FrameLayout {
+    public org.telegram.ui.ActionBar.j5 a;
+    public ImageView b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ p10(Object obj, Context context, int i10) {
-        super(context, null);
-        this.U = i10;
-        this.V = obj;
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        int dp;
+        ImageView imageView = this.b;
+        int i14 = i12 - i10;
+        org.telegram.ui.ActionBar.j5 j5Var = this.a;
+        int textHeight = ((i13 - i11) - j5Var.getTextHeight()) / 2;
+        if (LocaleController.isRTL) {
+            dp = (getMeasuredWidth() - j5Var.getMeasuredWidth()) - AndroidUtilities.dp(imageView.getVisibility() == 0 ? 64.0f : 23.0f);
+        } else {
+            dp = AndroidUtilities.dp(imageView.getVisibility() == 0 ? 64.0f : 23.0f);
+        }
+        j5Var.layout(dp, textHeight, j5Var.getMeasuredWidth() + dp, j5Var.getMeasuredHeight() + textHeight);
+        int dp2 = !LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : (i14 - imageView.getMeasuredWidth()) - AndroidUtilities.dp(20.0f);
+        imageView.layout(dp2, 0, imageView.getMeasuredWidth() + dp2, imageView.getMeasuredHeight());
     }
 
-    @Override // org.telegram.ui.Components.f10
-    public final int getColumnsCount() {
-        switch (this.U) {
-            case 0:
-                return ((b20) this.V).s;
-            default:
-                return ((z10) this.V).d.s;
-        }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        AndroidUtilities.dp(48.0f);
+        this.a.measure(org.telegram.messenger.wh.c(94.0f, size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_30));
+        this.b.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
+        setMeasuredDimension(size, AndroidUtilities.dp(50.0f));
     }
 }

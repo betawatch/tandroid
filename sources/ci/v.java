@@ -2,38 +2,63 @@ package ci;
 
 import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.TranslateController;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.Components.a71;
-import org.telegram.ui.Components.i71;
-import org.telegram.ui.Components.l61;
-import org.telegram.ui.Components.m61;
-import org.telegram.ui.Components.mm0;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class v extends l61 {
-    public static final /* synthetic */ int a = 0;
+public final class v extends org.telegram.ui.Components.k9 {
+    public final /* synthetic */ int e;
 
-    static {
-        l61.setup(new v());
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ v(int i10, Context context, boolean z10) {
+        super(context, z10);
+        this.e = i10;
     }
 
-    @Override // org.telegram.ui.Components.l61
-    public final void bindView(View view, m61 m61Var, boolean z10, a71 a71Var, i71 i71Var) {
-        w wVar = (w) view;
-        TranslateController.Language language = (TranslateController.Language) m61Var.G;
-        wVar.a.setText(language.displayName);
-        wVar.b.setText(language.ownDisplayName);
-        if (wVar.c != z10) {
-            wVar.invalidate();
+    @Override // android.view.View
+    public void invalidate() {
+        switch (this.e) {
+            case 0:
+                if (!w.c) {
+                    super.invalidate();
+                    break;
+                } else {
+                    w.b.add(this);
+                    break;
+                }
+            default:
+                super.invalidate();
+                break;
         }
-        wVar.c = z10;
-        wVar.setWillNotDraw(!z10);
     }
 
-    @Override // org.telegram.ui.Components.l61
-    public final View createView(Context context, mm0 mm0Var, int i10, int i11, c6 c6Var) {
-        return new w(context);
+    @Override // org.telegram.ui.Components.k9, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.e) {
+            case 1:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.a.n == 0 ? 0 : i0.a.g(r4, 1, 20, 24)), TLObject.FLAG_30), i11);
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public void invalidate(int i10, int i11, int i12, int i13) {
+        switch (this.e) {
+            case 0:
+                if (w.c) {
+                    w.b.add(this);
+                    break;
+                } else {
+                    super.invalidate(i10, i11, i12, i13);
+                    break;
+                }
+            default:
+                super.invalidate(i10, i11, i12, i13);
+                break;
+        }
     }
 }

@@ -1,42 +1,27 @@
 package org.telegram.ui.Components;
 
-import j$.util.Objects;
 import org.telegram.messenger.ContactsController;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class pj {
-    public final int a;
-    public final long b;
+public final /* synthetic */ class pj implements vj {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ContactsController.Contact b;
 
-    public pj(int i10, long j10) {
+    public /* synthetic */ pj(ContactsController.Contact contact, int i10) {
         this.a = i10;
-        this.b = j10;
+        this.b = contact;
     }
 
-    public static pj a(Object obj) {
-        if (obj instanceof ContactsController.Contact) {
-            return new pj(2, ((ContactsController.Contact) obj).contact_id);
+    @Override // org.telegram.ui.Components.vj
+    public final String run() {
+        switch (this.a) {
+            case 0:
+                ContactsController.Contact contact = this.b;
+                return contact.phones.isEmpty() ? "" : jf.b.c().b(contact.phones.get(0));
+            default:
+                ContactsController.Contact contact2 = this.b;
+                return contact2.phones.isEmpty() ? "" : jf.b.c().b(contact2.phones.get(0));
         }
-        if (obj instanceof TLRPC.User) {
-            return new pj(1, ((TLRPC.User) obj).id);
-        }
-        return null;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || pj.class != obj.getClass()) {
-            return false;
-        }
-        pj pjVar = (pj) obj;
-        return this.b == pjVar.b && this.a == pjVar.a;
-    }
-
-    public final int hashCode() {
-        return Objects.hash(m1.j.a(this.a), Long.valueOf(this.b));
     }
 }

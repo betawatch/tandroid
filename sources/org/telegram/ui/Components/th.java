@@ -1,76 +1,85 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.Editable;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class th extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ bi c;
+public final class th implements org.telegram.ui.jq0 {
+    public boolean a;
+    public final /* synthetic */ HashMap b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ ti d;
 
-    public /* synthetic */ th(bi biVar, boolean z10, int i10) {
-        this.a = i10;
-        this.c = biVar;
-        this.b = z10;
+    public th(ti tiVar, HashMap hashMap, ArrayList arrayList) {
+        this.d = tiVar;
+        this.b = hashMap;
+        this.c = arrayList;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                bi biVar = this.c;
-                vi viVar = biVar.e;
-                boolean z10 = this.b;
-                if (z10) {
-                    viVar.A1.setVisibility(8);
-                } else {
-                    viVar.H1.setVisibility(8);
-                }
-                int dp = z10 ? AndroidUtilities.dp(36.0f) : 0;
-                for (int i10 = 0; i10 < viVar.A0.size(); i10++) {
-                    ((fi.q4) viVar.A0.valueAt(i10)).setMeasureOffsetY(dp);
-                }
-                if (biVar.a == animator) {
-                    biVar.a = null;
-                    break;
-                }
-                break;
-            default:
-                vi viVar2 = this.c.e;
-                boolean z11 = this.b;
-                viVar2.E1 = z11;
-                if (!z11) {
-                    viVar2.F1.setVisibility(8);
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.jq0
+    public final /* synthetic */ boolean e() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.jq0
+    public final void h(int i10, boolean z10, boolean z11) {
+        if (z10) {
+            return;
+        }
+        HashMap hashMap = this.b;
+        if (hashMap.isEmpty() || this.a) {
+            return;
+        }
+        this.a = true;
+        ArrayList arrayList = new ArrayList();
+        int i11 = 0;
+        while (true) {
+            ArrayList arrayList2 = this.c;
+            if (i11 >= arrayList2.size()) {
+                ((org.telegram.ui.sn) this.d.f0).g8(i10, arrayList, z11);
+                return;
+            }
+            Object obj = hashMap.get(arrayList2.get(i11));
+            SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
+            arrayList.add(sendingMediaInfo);
+            MediaController.SearchImage searchImage = (MediaController.SearchImage) obj;
+            String str = searchImage.imagePath;
+            if (str != null) {
+                sendingMediaInfo.path = str;
+            } else {
+                sendingMediaInfo.searchImage = searchImage;
+            }
+            sendingMediaInfo.thumbPath = searchImage.thumbPath;
+            sendingMediaInfo.videoEditedInfo = searchImage.editedInfo;
+            CharSequence charSequence = searchImage.caption;
+            sendingMediaInfo.caption = charSequence != null ? charSequence.toString() : null;
+            sendingMediaInfo.entities = searchImage.entities;
+            sendingMediaInfo.masks = searchImage.stickers;
+            sendingMediaInfo.ttl = searchImage.ttl;
+            TLRPC.BotInlineResult botInlineResult = searchImage.inlineResult;
+            if (botInlineResult != null && searchImage.type == 1) {
+                sendingMediaInfo.inlineResult = botInlineResult;
+                sendingMediaInfo.params = searchImage.params;
+            }
+            searchImage.date = (int) (System.currentTimeMillis() / 1000);
+            i11++;
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                vi viVar = this.c.e;
-                if (this.b) {
-                    viVar.H1.setAlpha(0.0f);
-                    viVar.H1.setVisibility(0);
-                    int dp = AndroidUtilities.dp(36.0f);
-                    for (int i10 = 0; i10 < viVar.A0.size(); i10++) {
-                        ((fi.q4) viVar.A0.valueAt(i10)).setMeasureOffsetY(dp);
-                    }
-                    break;
-                } else {
-                    viVar.A1.setAlpha(0.0f);
-                    viVar.A1.setVisibility(0);
-                    break;
-                }
-            default:
-                super.onAnimationStart(animator);
-                break;
-        }
+    @Override // org.telegram.ui.jq0
+    public final void a() {
+    }
+
+    @Override // org.telegram.ui.jq0
+    public final void b(Editable editable) {
+    }
+
+    @Override // org.telegram.ui.jq0
+    public final /* synthetic */ void g() {
     }
 }

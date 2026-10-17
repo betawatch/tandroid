@@ -1,51 +1,71 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.PhotoViewer;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class w7 extends nd {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
+public final class w7 extends s4.v {
+    public final /* synthetic */ k8 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ w7(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Context context, int i10) {
-        super(context);
-        this.b = i10;
-        this.c = notificationCenterDelegate;
+    public w7(k8 k8Var) {
+        this.d = k8Var;
     }
 
-    @Override // org.telegram.ui.Components.nd
-    public final void c(boolean z10) {
-        switch (this.b) {
-            case 0:
-                m8 m8Var = (m8) this.c;
-                m8Var.d();
-                org.telegram.ui.cs csVar = m8Var.O;
-                if (csVar != null) {
-                    csVar.a(b5.d.u());
-                    break;
-                }
-                break;
-            default:
-                PhotoViewer photoViewer = (PhotoViewer) this.c;
-                org.telegram.ui.ActionBar.e1 e1Var = photoViewer.F0;
-                if (e1Var != null) {
-                    e1Var.d(z10);
-                    photoViewer.F0.setSelectorColor(z10 ? 259241196 : 268435455);
-                }
-                i81 i81Var = photoViewer.F2;
-                if (i81Var != null) {
-                    i81Var.O(b5.d.u() || photoViewer.r);
-                }
-                org.telegram.ui.cs csVar2 = photoViewer.w0;
-                if (csVar2 != null) {
-                    csVar2.a(b5.d.u());
-                    break;
-                }
-                break;
+    @Override // s4.v
+    public final void a(RecyclerView recyclerView, s4.b1 b1Var) {
+        super.a(recyclerView, b1Var);
+        View view = b1Var.a;
+        view.setPressed(false);
+        view.setTag(R.id.dragging, null);
+    }
+
+    @Override // s4.v
+    public final int e(RecyclerView recyclerView, s4.b1 b1Var) {
+        if (b1Var.f != 0) {
+            return 0;
         }
+        return s4.v.l(3, 0);
+    }
+
+    @Override // s4.v
+    public final boolean n(RecyclerView recyclerView, s4.b1 b1Var, s4.b1 b1Var2) {
+        int b10 = b1Var.b();
+        int b11 = b1Var2.b();
+        k8 k8Var = this.d;
+        if (!k8Var.v0) {
+            k8Var.w0.move(b10, b11);
+        } else {
+            if (b10 <= 0 || b11 <= 0) {
+                return false;
+            }
+            k8Var.w0.move(b10 - 1, b11 - 1);
+        }
+        k8Var.x0.clear();
+        k8Var.x0.addAll(k8Var.w0.list);
+        k8Var.s.p(b10, b11);
+        return true;
+    }
+
+    @Override // s4.v
+    public final void p(s4.b1 b1Var, int i10) {
+        v7 v7Var = this.d.n;
+        if (b1Var != null) {
+            v7Var.d1(false);
+        }
+        if (i10 != 0) {
+            v7Var.I0(false);
+            if (b1Var != null) {
+                b1Var.a.setPressed(true);
+            }
+        }
+        if (b1Var != null) {
+            b1Var.a.setTag(R.id.dragging, i10 == 2 ? Boolean.TRUE : null);
+        }
+    }
+
+    @Override // s4.v
+    public final void q(s4.b1 b1Var) {
     }
 }

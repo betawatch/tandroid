@@ -1,12 +1,38 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.widget.LinearLayout;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class s3 extends ud0 {
-    @Override // org.telegram.ui.Components.ud0
-    public final CharSequence d(int i10) {
-        return LocaleController.formatPluralString("Hours", i10, new Object[0]);
+public final class s3 extends LinearLayout {
+    public final d11 a;
+    public boolean b;
+    public d11 c;
+    public final /* synthetic */ r3 d;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public s3(Context context, r3 r3Var) {
+        super(context);
+        this.d = r3Var;
+        this.a = new d11(":", 18.0f, null);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        int i10 = org.telegram.ui.ActionBar.h6.G6;
+        this.a.c((getWidth() - this.a.c) / 2.0f, getHeight() / 2.0f, 1.0f, org.telegram.ui.ActionBar.h6.x0(null, i10, false), canvas);
+        if (!LocaleController.is24HourFormat) {
+            boolean z10 = this.d.getValue() % 24 < 12;
+            if (this.b != z10 || this.c == null) {
+                this.b = z10;
+                this.c = new d11(z10 ? "AM" : "PM", 18.0f, null);
+            }
+            this.c.c((getWidth() / 2.0f) + AndroidUtilities.dp(43.0f), (getHeight() / 2.0f) + AndroidUtilities.dp(1.0f), 1.0f, org.telegram.ui.ActionBar.h6.x0(null, i10, false), canvas);
+        }
+        super.dispatchDraw(canvas);
     }
 }

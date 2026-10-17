@@ -7,18 +7,19 @@ import android.os.SystemClock;
 import java.io.File;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
-import org.telegram.ui.uo;
-import qi.j;
-import qi.k;
-import qi.q;
+import org.telegram.ui.ac0;
+import org.telegram.ui.go;
+import ri.i;
+import ri.j;
+import ri.p;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
 public final class b {
     public final File a;
     public final File b;
-    public final j c;
-    public final qi.b d;
+    public final i c;
+    public final ri.b d;
     public final cc.e e;
     public final HandlerThread f;
     public final Handler g;
@@ -38,10 +39,10 @@ public final class b {
     public final ByteBuffer i = ByteBuffer.allocateDirect(1920).order(ByteOrder.nativeOrder());
     public double s = -1.0d;
 
-    public b(File file, File file2, j jVar, qi.b bVar, cc.e eVar) {
+    public b(File file, File file2, i iVar, ri.b bVar, cc.e eVar) {
         this.a = file;
         this.b = file2;
-        this.c = jVar;
+        this.c = iVar;
         this.d = bVar;
         this.e = eVar;
         HandlerThread handlerThread = new HandlerThread("AudioRecorderCapture", -16);
@@ -90,22 +91,22 @@ public final class b {
                 final double d10 = d >= 0.0d ? d : sqrt;
                 final cc.e eVar = bVar.e;
                 final long j13 = bVar.p;
-                q qVar = (q) eVar.c;
+                p pVar = (p) eVar.c;
                 if (j10 >= 0) {
-                    qVar.a((k) eVar.b, j10);
+                    pVar.a((j) eVar.b, j10);
                 }
-                Handler handler = qVar.h;
+                Handler handler = pVar.h;
                 final long j14 = eVar.a;
-                handler.post(new Runnable() { // from class: qi.g
+                handler.post(new Runnable() { // from class: ri.f
                     @Override // java.lang.Runnable
                     public final void run() {
-                        q qVar2 = (q) cc.e.this.c;
-                        if (j14 == qVar2.o && qVar2.m == o.c) {
-                            qVar2.q = j13;
-                            long j15 = qVar2.j();
+                        p pVar2 = (p) cc.e.this.c;
+                        if (j14 == pVar2.o && pVar2.m == n.c) {
+                            pVar2.q = j13;
+                            long j15 = pVar2.j();
                             double d11 = d10;
                             if (d11 >= 0.0d) {
-                                qVar2.e.onRecordingProgress(j15, d11);
+                                pVar2.e.onRecordingProgress(j15, d11);
                             }
                         }
                     }
@@ -114,29 +115,29 @@ public final class b {
             } else if (j10 >= 0) {
                 final cc.e eVar2 = bVar.e;
                 final long j15 = bVar.p;
-                q qVar2 = (q) eVar2.c;
+                p pVar2 = (p) eVar2.c;
                 if (j10 >= 0) {
-                    qVar2.a((k) eVar2.b, j10);
+                    pVar2.a((j) eVar2.b, j10);
                 }
-                Handler handler2 = qVar2.h;
+                Handler handler2 = pVar2.h;
                 final long j16 = eVar2.a;
                 final double d11 = -1.0d;
-                handler2.post(new Runnable() { // from class: qi.g
+                handler2.post(new Runnable() { // from class: ri.f
                     @Override // java.lang.Runnable
                     public final void run() {
-                        q qVar22 = (q) cc.e.this.c;
-                        if (j16 == qVar22.o && qVar22.m == o.c) {
-                            qVar22.q = j15;
-                            long j152 = qVar22.j();
+                        p pVar22 = (p) cc.e.this.c;
+                        if (j16 == pVar22.o && pVar22.m == n.c) {
+                            pVar22.q = j15;
+                            long j152 = pVar22.j();
                             double d112 = d11;
                             if (d112 >= 0.0d) {
-                                qVar22.e.onRecordingProgress(j152, d112);
+                                pVar22.e.onRecordingProgress(j152, d112);
                             }
                         }
                     }
                 });
             }
-            bVar.g.post(new qi.a(bVar, 1));
+            bVar.g.post(new ri.a(bVar, 1));
         } catch (Throwable th2) {
             if (bVar.j) {
                 bVar.e();
@@ -187,7 +188,7 @@ public final class b {
             this.t++;
             this.u += nanoTime2;
             this.v = Math.max(this.v, nanoTime2);
-            qi.b bVar = this.d;
+            ri.b bVar = this.d;
             if (b10) {
                 long j10 = 0;
                 for (int i12 = 0; i12 + 1 < i10; i12 += 2) {
@@ -281,7 +282,7 @@ public final class b {
         File file = this.a;
         long length = file.isFile() ? file.length() : 0L;
         long j10 = this.t;
-        qi.b bVar = this.d;
+        ri.b bVar = this.d;
         if (j10 > 0) {
             bVar.b("RNNoise summary: frames=" + this.t + ", averageMs=" + ((this.u / this.t) / 1000000.0d) + ", maxMs=" + (this.v / 1000000.0d));
         }
@@ -289,17 +290,17 @@ public final class b {
         cc.e eVar = this.e;
         if (exc2 == null) {
             long j11 = this.p;
-            q qVar = (q) eVar.c;
-            qVar.a((k) eVar.b, length);
-            qVar.h.post(new uo(eVar, eVar.a, j11, 3));
+            p pVar = (p) eVar.c;
+            pVar.a((j) eVar.b, length);
+            pVar.h.post(new go(eVar, eVar.a, j11, 3));
         } else {
-            ((q) eVar.c).h.post(new qi.e(eVar, eVar.a, exc2, 1));
+            ((p) eVar.c).h.post(new ac0(eVar, eVar.a, exc2, 4));
         }
         this.f.quitSafely();
     }
 
     public final void f() {
         this.j = true;
-        this.g.postAtFrontOfQueue(new qi.a(this, 0));
+        this.g.postAtFrontOfQueue(new ri.a(this, 0));
     }
 }

@@ -1,67 +1,86 @@
 package gb;
 
-import java.util.ConcurrentModificationException;
-import java.util.Iterator;
-import java.util.NoSuchElementException;
+import java.util.Map;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class l implements Iterator {
-    public n a;
-    public n b = null;
-    public int c;
-    public final /* synthetic */ o d;
-    public final /* synthetic */ int e;
+public final class l implements Map.Entry {
+    public l a;
+    public l b;
+    public l c;
+    public l d;
+    public l e;
+    public final Object f;
+    public final boolean h;
+    public Object n;
+    public int r;
 
-    public l(o oVar, int i10) {
-        this.e = i10;
-        this.d = oVar;
-        this.a = oVar.f.d;
-        this.c = oVar.e;
+    public l(boolean z10) {
+        this.f = null;
+        this.h = z10;
+        this.e = this;
+        this.d = this;
     }
 
-    public final Object a() {
-        return b();
-    }
-
-    public final n b() {
-        n nVar = this.a;
-        o oVar = this.d;
-        if (nVar == oVar.f) {
-            throw new NoSuchElementException();
+    @Override // java.util.Map.Entry
+    public final boolean equals(Object obj) {
+        if (obj instanceof Map.Entry) {
+            Map.Entry entry = (Map.Entry) obj;
+            Object obj2 = this.f;
+            if (obj2 != null ? obj2.equals(entry.getKey()) : entry.getKey() == null) {
+                Object obj3 = this.n;
+                if (obj3 == null) {
+                    if (entry.getValue() == null) {
+                        return true;
+                    }
+                } else if (obj3.equals(entry.getValue())) {
+                    return true;
+                }
+            }
         }
-        if (oVar.e != this.c) {
-            throw new ConcurrentModificationException();
-        }
-        this.a = nVar.d;
-        this.b = nVar;
-        return nVar;
+        return false;
     }
 
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        return this.a != this.d.f;
+    @Override // java.util.Map.Entry
+    public final Object getKey() {
+        return this.f;
     }
 
-    @Override // java.util.Iterator
-    public Object next() {
-        switch (this.e) {
-            case 1:
-                return b().f;
-            default:
-                return a();
-        }
+    @Override // java.util.Map.Entry
+    public final Object getValue() {
+        return this.n;
     }
 
-    @Override // java.util.Iterator
-    public final void remove() {
-        n nVar = this.b;
-        if (nVar == null) {
-            throw new IllegalStateException();
+    @Override // java.util.Map.Entry
+    public final int hashCode() {
+        Object obj = this.f;
+        int hashCode = obj == null ? 0 : obj.hashCode();
+        Object obj2 = this.n;
+        return (obj2 != null ? obj2.hashCode() : 0) ^ hashCode;
+    }
+
+    @Override // java.util.Map.Entry
+    public final Object setValue(Object obj) {
+        if (obj == null && !this.h) {
+            throw new NullPointerException("value == null");
         }
-        o oVar = this.d;
-        oVar.c(nVar, true);
-        this.b = null;
-        this.c = oVar.e;
+        Object obj2 = this.n;
+        this.n = obj;
+        return obj2;
+    }
+
+    public final String toString() {
+        return this.f + "=" + this.n;
+    }
+
+    public l(boolean z10, l lVar, Object obj, l lVar2, l lVar3) {
+        this.a = lVar;
+        this.f = obj;
+        this.h = z10;
+        this.r = 1;
+        this.d = lVar2;
+        this.e = lVar3;
+        lVar3.d = this;
+        lVar2.e = this;
     }
 }

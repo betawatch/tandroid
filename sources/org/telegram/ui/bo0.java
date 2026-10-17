@@ -1,40 +1,68 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class bo0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 
-    public /* synthetic */ bo0(long j10, int i10) {
-        this.a = i10;
-        this.b = j10;
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes3.dex */
+public final class bo0 extends FrameLayout {
+    public final Paint a;
+    public float b;
+    public o1.k c;
+    public final /* synthetic */ fo0 d;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bo0(fo0 fo0Var, Context context) {
+        super(context);
+        this.d = fo0Var;
+        this.a = new Paint(1);
+        setWillNotDraw(false);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
-                if (U != null) {
-                    U.presentFragment(fo.W9(this.b));
-                    break;
-                }
-                break;
-            case 1:
-                org.telegram.ui.ActionBar.m2 U2 = LaunchActivity.U();
-                if (U2 != null) {
-                    U2.presentFragment(fo.W9(this.b));
-                    break;
-                }
-                break;
-            default:
-                org.telegram.ui.ActionBar.m2 U3 = LaunchActivity.U();
-                if (U3 != null) {
-                    U3.presentFragment(fo.W9(this.b));
-                    break;
-                }
-                break;
+    public final void a(boolean z10, boolean z11) {
+        o1.k kVar = this.c;
+        if (kVar != null) {
+            kVar.c();
         }
+        float f7 = z10 ? 1.0f : 0.0f;
+        if (!z11) {
+            this.b = f7;
+            TextView textView = this.d.U;
+            if (textView != null) {
+                textView.setAlpha((f7 * 0.2f) + 0.8f);
+            }
+            invalidate();
+            return;
+        }
+        float f10 = this.b;
+        if (f10 == f7) {
+            return;
+        }
+        o1.k kVar2 = new o1.k(new o1.j(f10 * 100.0f));
+        o1.l lVar = new o1.l(f7 * 100.0f);
+        lVar.b(z10 ? 500.0f : 650.0f);
+        lVar.a(1.0f);
+        kVar2.u = lVar;
+        this.c = kVar2;
+        kVar2.b(new ad0(this, 1));
+        this.c.a(new p9(this, 1));
+        this.c.h();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        int i10 = org.telegram.ui.ActionBar.h6.O6;
+        fo0 fo0Var = this.d;
+        canvas.drawColor(fo0Var.getThemedColor(i10));
+        int themedColor = fo0Var.getThemedColor(org.telegram.ui.ActionBar.h6.ei);
+        Paint paint = this.a;
+        paint.setColor(themedColor);
+        canvas.drawCircle(LocaleController.isRTL ? getWidth() - AndroidUtilities.dp(28.0f) : AndroidUtilities.dp(28.0f), -AndroidUtilities.dp(28.0f), Math.max(getWidth(), getHeight()) * this.b, paint);
     }
 }

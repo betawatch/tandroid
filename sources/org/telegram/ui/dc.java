@@ -1,48 +1,53 @@
 package org.telegram.ui;
 
-import java.util.concurrent.CountDownLatch;
-import org.telegram.messenger.AndroidUtilities;
+import j$.util.Objects;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dc implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ hc b;
+public final class dc extends pg.a {
+    public final String c;
+    public final TL_stories.Boost d;
+    public TL_stories.PrepaidGiveaway e;
+    public boolean f;
+    public final int g;
 
-    public /* synthetic */ dc(hc hcVar, int i10) {
-        this.a = i10;
-        this.b = hcVar;
+    public dc(int i10, String str) {
+        super(i10, false);
+        this.c = str;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                CountDownLatch countDownLatch = new CountDownLatch(2);
-                hc hcVar = this.b;
-                hcVar.a(countDownLatch, null);
-                hcVar.b(countDownLatch, null);
-                try {
-                    countDownLatch.await();
-                } catch (InterruptedException unused) {
-                }
-                AndroidUtilities.runOnUIThread(new dc(hcVar, 3));
-                break;
-            case 1:
-                hc hcVar2 = this.b;
-                hcVar2.H = false;
-                hcVar2.d(true);
-                break;
-            case 2:
-                hc hcVar3 = this.b;
-                hcVar3.H = false;
-                hcVar3.d(true);
-                break;
-            default:
-                hc hcVar4 = this.b;
-                hcVar4.H = false;
-                hcVar4.d(true);
-                break;
+    public final boolean equals(Object obj) {
+        TL_stories.PrepaidGiveaway prepaidGiveaway;
+        boolean z10 = this.f;
+        if (this == obj) {
+            return true;
         }
+        if (obj == null || dc.class != obj.getClass()) {
+            return false;
+        }
+        dc dcVar = (dc) obj;
+        TL_stories.Boost boost = dcVar.d;
+        boolean z11 = dcVar.f;
+        TL_stories.PrepaidGiveaway prepaidGiveaway2 = this.e;
+        if (prepaidGiveaway2 != null && (prepaidGiveaway = dcVar.e) != null) {
+            return prepaidGiveaway2.id == prepaidGiveaway.id && z10 == z11;
+        }
+        TL_stories.Boost boost2 = this.d;
+        if (boost2 == null || boost == null) {
+            return true;
+        }
+        return boost2.id.hashCode() == boost.id.hashCode() && z10 == z11 && this.g == dcVar.g;
+    }
+
+    public final int hashCode() {
+        return Objects.hash(this.c, this.d, this.e, Boolean.valueOf(this.f), Integer.valueOf(this.g));
+    }
+
+    public dc(TL_stories.Boost boost, boolean z10, int i10) {
+        super(5, true);
+        this.d = boost;
+        this.f = z10;
+        this.g = i10;
     }
 }

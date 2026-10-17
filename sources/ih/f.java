@@ -1,6 +1,7 @@
 package ih;
 
 import ah.x;
+import ai.hc;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Path;
@@ -13,13 +14,12 @@ import android.view.RoundedCorner;
 import android.view.View;
 import android.view.WindowInsets;
 import android.widget.FrameLayout;
-import di.ab;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.g0;
-import r0.l1;
+import org.telegram.messenger.q;
+import r0.k1;
 import w7.z5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class f extends FrameLayout {
     public float E;
@@ -31,7 +31,7 @@ public final class f extends FrameLayout {
     public float K;
     public boolean L;
     public qh.g a;
-    public final ab b;
+    public final hc b;
     public final FrameLayout c;
     public final x d;
     public boolean e;
@@ -54,10 +54,10 @@ public final class f extends FrameLayout {
         FrameLayout frameLayout = new FrameLayout(context);
         this.c = frameLayout;
         addView(frameLayout, z5.e(-1, -2, 80));
-        x xVar = new x(this, context, 6);
+        x xVar = new x(this, context, 8);
         this.d = xVar;
         addView(xVar, z5.e(-1, -2, 80));
-        this.b = new ab(this, context, 5);
+        this.b = new hc(this, context, 6);
     }
 
     public final void a(boolean z10) {
@@ -93,8 +93,8 @@ public final class f extends FrameLayout {
     }
 
     public final void c() {
-        l1 l1Var = ((qh.i) this.a).r;
-        int i10 = l1Var != null ? l1Var.a.f(2).d : 0;
+        k1 k1Var = ((qh.i) this.a).r;
+        int i10 = k1Var != null ? k1Var.a.f(2).d : 0;
         float c10 = ((qh.i) this.a).c();
         x xVar = this.d;
         int childCount = xVar.getChildCount();
@@ -147,7 +147,7 @@ public final class f extends FrameLayout {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        this.h.setBounds(0, getMeasuredHeight() - ((int) this.v), getMeasuredWidth(), g0.y(58.0f, getMeasuredHeight() - ((int) this.v), getMeasuredHeight()));
+        this.h.setBounds(0, getMeasuredHeight() - ((int) this.v), getMeasuredWidth(), q.y(58.0f, getMeasuredHeight() - ((int) this.v), getMeasuredHeight()));
         int measuredHeight = getMeasuredHeight() - this.r;
         int round = Math.round(this.x);
         int measuredWidth = getMeasuredWidth() - Math.round(this.y);

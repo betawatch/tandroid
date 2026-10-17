@@ -1,26 +1,43 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class mf implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ boolean c;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ mf(MessagesStorage messagesStorage, boolean z10, int i10) {
-        this.a = i10;
+    public /* synthetic */ mf(MessagesStorage messagesStorage, int i10, long j10, int i11) {
+        this.a = i11;
         this.b = messagesStorage;
-        this.c = z10;
+        this.c = i10;
+        this.d = j10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$getCachedPhoneBook$150(this.c);
+                this.b.lambda$saveChannelPts$34(this.c, this.d);
+                break;
+            case 1:
+                this.b.lambda$markMessageAsMention$113(this.c, this.d);
+                break;
+            case 2:
+                this.b.lambda$setDialogPinned$251(this.c, this.d);
+                break;
+            case 3:
+                this.b.lambda$setDialogTtl$60(this.c, this.d);
+                break;
+            case 4:
+                this.b.lambda$deleteDialog$90(this.c, this.d);
+                break;
+            case 5:
+                this.b.lambda$updateChatOnlineCount$135(this.c, this.d);
                 break;
             default:
-                this.b.lambda$cleanup$6(this.c);
+                this.b.lambda$saveChatLinksCount$133(this.c, this.d);
                 break;
         }
     }

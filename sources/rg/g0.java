@@ -1,23 +1,13 @@
 package rg;
 
-import org.telegram.ui.gu0;
+import android.view.MotionEvent;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class g0 implements c {
-    public final /* synthetic */ gu0 a;
-
-    public g0(gu0 gu0Var) {
-        this.a = gu0Var;
-    }
-
-    @Override // rg.c
-    public final void a() {
-        this.a.s0(null, true);
-    }
-
-    @Override // rg.c
-    public final j b() {
-        return this.a.S0;
+public final class g0 extends FrameLayout {
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return false;
     }
 }

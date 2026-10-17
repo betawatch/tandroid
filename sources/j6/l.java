@@ -10,9 +10,9 @@ import android.os.Looper;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.util.Log;
-import c5.e0;
-import c5.h0;
-import c5.x;
+import c5.d0;
+import c5.g0;
+import c5.w;
 import com.google.android.gms.internal.cast.a1;
 import com.google.android.gms.internal.cast.o4;
 import com.google.android.gms.internal.cast.p0;
@@ -35,13 +35,13 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeoutException;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Cells.q2;
-import org.telegram.ui.Components.r6;
-import org.telegram.ui.xg;
+import org.telegram.ui.Cells.p2;
+import org.telegram.ui.Components.p6;
+import org.telegram.ui.mg;
 import v7.u6;
-import w7.l6;
+import w7.m6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class l implements OnSuccessListener, ne.k {
     public static l e;
@@ -71,7 +71,7 @@ public final class l implements OnSuccessListener, ne.k {
         synchronized (l.class) {
             try {
                 if (e == null) {
-                    ScheduledExecutorService unconfigurableScheduledExecutorService = Executors.unconfigurableScheduledExecutorService(Executors.newScheduledThreadPool(1, new x("MessengerIpcClient")));
+                    ScheduledExecutorService unconfigurableScheduledExecutorService = Executors.unconfigurableScheduledExecutorService(Executors.newScheduledThreadPool(1, new w("MessengerIpcClient")));
                     l lVar2 = new l();
                     lVar2.d = new j(lVar2);
                     lVar2.a = 1;
@@ -156,7 +156,7 @@ public final class l implements OnSuccessListener, ne.k {
             ne.g gVar = (ne.g) it.next();
             fArr[((Integer) gVar.a).intValue()] = gVar.c();
         }
-        ((xg) this.c).run();
+        ((mg) this.c).run();
     }
 
     public void h() {
@@ -179,7 +179,7 @@ public final class l implements OnSuccessListener, ne.k {
 
     public void i(int i10, boolean z10, boolean z11) {
         int numberOfLeadingZeros = 31 - Integer.numberOfLeadingZeros(this.a);
-        int b10 = l6.b(this.a, 1 << i10, z10);
+        int b10 = m6.b(this.a, 1 << i10, z10);
         this.a = b10;
         int numberOfLeadingZeros2 = 31 - Integer.numberOfLeadingZeros(b10);
         if (numberOfLeadingZeros != numberOfLeadingZeros2) {
@@ -188,12 +188,12 @@ public final class l implements OnSuccessListener, ne.k {
     }
 
     public void j(Throwable th2) {
-        e0 e0Var = (e0) this.d;
+        d0 d0Var = (d0) this.d;
         if (th2 instanceof TimeoutException) {
-            e0Var.F(102, 28, h0.p);
+            d0Var.F(102, 28, g0.p);
             u.i("BillingClientTesting", "Asynchronous call to Billing Override Service timed out.", th2);
         } else {
-            e0Var.F(95, 28, h0.p);
+            d0Var.F(95, 28, g0.p);
             u.i("BillingClientTesting", "An error occurred while retrieving billing override.", th2);
         }
         ((Runnable) this.c).run();
@@ -354,29 +354,30 @@ public final class l implements OnSuccessListener, ne.k {
 
     public l(int i10) {
         switch (i10) {
-            case 3:
-                r6 r6Var = new r6(true, true, true);
-                this.d = r6Var;
+            case 5:
+                p6 p6Var = new p6(true, true, true);
+                this.d = p6Var;
                 Paint paint = new Paint(1);
-                r6Var.w(AndroidUtilities.dp(13.0f));
-                r6Var.u(-1);
-                r6Var.x(AndroidUtilities.bold());
-                paint.setColor(i0.a.k(-16777216, 58));
+                p6Var.w(AndroidUtilities.dp(13.0f));
+                p6Var.u(-1);
+                p6Var.x(AndroidUtilities.bold());
+                paint.setColor(i0.b.o(-16777216, 58));
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                 this.b = spannableStringBuilder;
-                spannableStringBuilder.append((CharSequence) " ").setSpan(new q2(AndroidUtilities.dp(1.0f)), 0, 1, 0);
+                spannableStringBuilder.append((CharSequence) " ").setSpan(new p2(AndroidUtilities.dp(1.0f)), 0, 1, 0);
                 SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
                 this.c = spannableStringBuilder2;
-                spannableStringBuilder2.append((CharSequence) " ").setSpan(new q2(AndroidUtilities.dp(1.0f)), 0, 1, 0);
+                spannableStringBuilder2.append((CharSequence) " ").setSpan(new p2(AndroidUtilities.dp(1.0f)), 0, 1, 0);
                 break;
-            case 7:
-                this.b = new Object();
+            case 6:
+            default:
+                this.b = null;
                 this.c = null;
                 this.d = null;
                 this.a = 0;
                 break;
-            default:
-                this.b = null;
+            case 7:
+                this.b = new Object();
                 this.c = null;
                 this.d = null;
                 this.a = 0;

@@ -4,7 +4,7 @@ import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class i0 implements TextWatcher {
     public final /* synthetic */ u0 a;
@@ -16,9 +16,9 @@ public final class i0 implements TextWatcher {
     @Override // android.text.TextWatcher
     public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
         u0 u0Var = this.a;
-        e5 e5Var = u0Var.H;
-        if (e5Var != null) {
-            e5Var.q(u0Var.e);
+        g5 g5Var = u0Var.H;
+        if (g5Var != null) {
+            g5Var.q(u0Var.e);
         }
         u0Var.j();
         if (u0Var.g0.isEmpty() || TextUtils.isEmpty(u0Var.e.getText()) || u0Var.h0 < 0) {

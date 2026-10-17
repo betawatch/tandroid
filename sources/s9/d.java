@@ -1,36 +1,145 @@
 package s9;
 
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.ExecutorService;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d implements h {
+public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ g b;
+    public final /* synthetic */ f b;
     public final /* synthetic */ Runnable c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ TimeUnit f;
+    public final /* synthetic */ k0.b d;
 
-    public /* synthetic */ d(g gVar, Runnable runnable, long j10, long j11, TimeUnit timeUnit, int i10) {
+    public /* synthetic */ d(f fVar, Runnable runnable, k0.b bVar, int i10) {
         this.a = i10;
-        this.b = gVar;
+        this.b = fVar;
         this.c = runnable;
-        this.d = j10;
-        this.e = j11;
-        this.f = timeUnit;
+        this.d = bVar;
     }
 
-    @Override // s9.h
-    public final ScheduledFuture a(m.h hVar) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                g gVar = this.b;
-                return gVar.b.scheduleAtFixedRate(new e(gVar, this.c, hVar, 0), this.d, this.e, this.f);
+                ExecutorService executorService = this.b.a;
+                final int i10 = 0;
+                final Runnable runnable = this.c;
+                final k0.b bVar = this.d;
+                executorService.execute(new Runnable() { // from class: s9.b
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                try {
+                                    runnable.run();
+                                    return;
+                                } catch (Exception e) {
+                                    ((h) bVar.b).l(e);
+                                    throw e;
+                                }
+                            case 1:
+                                try {
+                                    runnable.run();
+                                    return;
+                                } catch (Exception e7) {
+                                    ((h) bVar.b).l(e7);
+                                    return;
+                                }
+                            default:
+                                Runnable runnable2 = runnable;
+                                h hVar = (h) bVar.b;
+                                try {
+                                    runnable2.run();
+                                    hVar.k(null);
+                                    return;
+                                } catch (Exception e10) {
+                                    hVar.l(e10);
+                                    return;
+                                }
+                        }
+                    }
+                });
+                break;
+            case 1:
+                ExecutorService executorService2 = this.b.a;
+                final int i11 = 2;
+                final Runnable runnable2 = this.c;
+                final k0.b bVar2 = this.d;
+                executorService2.execute(new Runnable() { // from class: s9.b
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                try {
+                                    runnable2.run();
+                                    return;
+                                } catch (Exception e) {
+                                    ((h) bVar2.b).l(e);
+                                    throw e;
+                                }
+                            case 1:
+                                try {
+                                    runnable2.run();
+                                    return;
+                                } catch (Exception e7) {
+                                    ((h) bVar2.b).l(e7);
+                                    return;
+                                }
+                            default:
+                                Runnable runnable22 = runnable2;
+                                h hVar = (h) bVar2.b;
+                                try {
+                                    runnable22.run();
+                                    hVar.k(null);
+                                    return;
+                                } catch (Exception e10) {
+                                    hVar.l(e10);
+                                    return;
+                                }
+                        }
+                    }
+                });
+                break;
             default:
-                g gVar2 = this.b;
-                return gVar2.b.scheduleWithFixedDelay(new e(gVar2, this.c, hVar, 2), this.d, this.e, this.f);
+                ExecutorService executorService3 = this.b.a;
+                final int i12 = 1;
+                final Runnable runnable3 = this.c;
+                final k0.b bVar3 = this.d;
+                executorService3.execute(new Runnable() { // from class: s9.b
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i12) {
+                            case 0:
+                                try {
+                                    runnable3.run();
+                                    return;
+                                } catch (Exception e) {
+                                    ((h) bVar3.b).l(e);
+                                    throw e;
+                                }
+                            case 1:
+                                try {
+                                    runnable3.run();
+                                    return;
+                                } catch (Exception e7) {
+                                    ((h) bVar3.b).l(e7);
+                                    return;
+                                }
+                            default:
+                                Runnable runnable22 = runnable3;
+                                h hVar = (h) bVar3.b;
+                                try {
+                                    runnable22.run();
+                                    hVar.k(null);
+                                    return;
+                                } catch (Exception e10) {
+                                    hVar.l(e10);
+                                    return;
+                                }
+                        }
+                    }
+                });
+                break;
         }
     }
 }

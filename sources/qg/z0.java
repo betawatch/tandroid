@@ -1,8 +1,6 @@
 package qg;
 
-import android.os.Looper;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z0 implements Runnable {
     public final /* synthetic */ int a;
@@ -17,28 +15,25 @@ public final /* synthetic */ class z0 implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                a1 a1Var = this.b;
-                p4.s0 s0Var = a1Var.w;
-                z0 z0Var = a1Var.s;
-                if (z0Var != null) {
-                    a1Var.cancelRunnable(z0Var);
-                    a1Var.s = null;
-                }
-                a1Var.cancelRunnable(s0Var);
-                a1Var.postRunnable(s0Var);
-                break;
-            case 1:
-                a1 a1Var2 = this.b;
-                a1Var2.s = null;
-                a1Var2.w.run();
-                break;
-            default:
-                this.b.finish();
-                Looper myLooper = Looper.myLooper();
-                if (myLooper != null) {
-                    myLooper.quit();
+                c1 c1Var = this.b.b.d;
+                if (c1Var != null) {
+                    c1Var.postRunnable(c1Var.w);
                     break;
                 }
+                break;
+            case 1:
+                c1 c1Var2 = this.b.b.d;
+                if (c1Var2 != null) {
+                    c1Var2.postRunnable(c1Var2.w);
+                    break;
+                }
+                break;
+            default:
+                e1 e1Var = this.b.b;
+                c1 c1Var3 = e1Var.d;
+                c1Var3.getClass();
+                c1Var3.postRunnable(new b1(c1Var3, 2));
+                e1Var.d = null;
                 break;
         }
     }

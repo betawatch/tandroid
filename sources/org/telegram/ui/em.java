@@ -1,24 +1,60 @@
 package org.telegram.ui;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.view.ViewTreeObserver;
+import android.view.animation.DecelerateInterpolator;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class em extends zu0 {
-    public final /* synthetic */ fo a;
+public final class em implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ org.telegram.ui.Cells.u1 a;
+    public final /* synthetic */ fm b;
 
-    public em(fo foVar) {
-        this.a = foVar;
+    public em(fm fmVar, org.telegram.ui.Cells.u1 u1Var) {
+        this.b = fmVar;
+        this.a = u1Var;
     }
 
-    @Override // org.telegram.ui.zu0, org.telegram.ui.hv0
-    public final jv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        return fo.E1(this.a, messageObject, fileLocation, i10, z10, false);
-    }
-
-    @Override // org.telegram.ui.zu0, org.telegram.ui.hv0
-    public final boolean L() {
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        sn snVar = this.b.Q;
+        org.telegram.ui.Cells.u1 u1Var = this.a;
+        u1Var.getViewTreeObserver().removeOnPreDrawListener(this);
+        MessageObject.SendAnimationData sendAnimationData = u1Var.getMessageObject().sendAnimationData;
+        if (sendAnimationData == null) {
+            return true;
+        }
+        snVar.n6.add(u1Var);
+        ImageReceiver photoImage = u1Var.getPhotoImage();
+        float imageWidth = sendAnimationData.fromPreview ? 1.0f : sendAnimationData.width / photoImage.getImageWidth();
+        int[] iArr = new int[2];
+        u1Var.getTransitionParams().x0 = true;
+        u1Var.getLocationInWindow(iArr);
+        iArr[1] = (int) (iArr[1] - u1Var.getTranslationY());
+        if (snVar.Y.x0()) {
+            iArr[1] = AndroidUtilities.dp(48.0f) + iArr[1];
+        }
+        AnimatorSet animatorSet = new AnimatorSet();
+        am amVar = new am("p1", 0);
+        bm bmVar = new bm(this);
+        AnimatorSet animatorSet2 = new AnimatorSet();
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(sendAnimationData, amVar, imageWidth, 1.0f), ObjectAnimator.ofFloat(sendAnimationData, new cm(this), 0.0f, 1.0f));
+        animatorSet.playTogether(ObjectAnimator.ofFloat(sendAnimationData, bmVar, sendAnimationData.x, iArr[0] + (sendAnimationData.fromPreview ? 0.0f : photoImage.getCenterX())), animatorSet2);
+        animatorSet.setInterpolator(org.telegram.ui.Components.bs.h);
+        animatorSet.setDuration(460L);
+        animatorSet.addListener(new m.a(this, 27));
+        animatorSet.start();
+        dm dmVar = new dm(this);
+        AnimatorSet animatorSet3 = new AnimatorSet();
+        animatorSet3.playTogether(ObjectAnimator.ofFloat(sendAnimationData, dmVar, 0.0f, 1.0f));
+        animatorSet3.setDuration(100L);
+        animatorSet3.setStartDelay(150L);
+        animatorSet3.setInterpolator(new DecelerateInterpolator());
+        animatorSet3.start();
         return true;
     }
 }

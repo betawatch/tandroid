@@ -6,10 +6,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Cells.w8;
-import org.telegram.ui.Components.b6;
+import org.telegram.ui.Cells.v8;
+import org.telegram.ui.Components.a6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -22,7 +22,7 @@ public final /* synthetic */ class m implements Utilities.Callback {
 
     @Override // org.telegram.messenger.Utilities.Callback
     public final void run(Object obj) {
-        w8 w8Var;
+        v8 v8Var;
         switch (this.a) {
             case 0:
                 a0 a0Var = this.b;
@@ -39,13 +39,13 @@ public final /* synthetic */ class m implements Utilities.Callback {
                 if (!a0Var2.a0()) {
                     int editTextSelectionEnd = a0Var2.n.getEditTextSelectionEnd();
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(a0Var2.n.getText());
-                    for (b6 b6Var : (b6[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), b6.class)) {
-                        if (spannableStringBuilder.getSpanEnd(b6Var) == editTextSelectionEnd) {
-                            a0Var2.E.remove(Long.valueOf(b6Var.documentId));
-                            a0Var2.F.remove(Long.valueOf(b6Var.documentId));
-                            a0Var2.b.A(Long.valueOf(b6Var.documentId));
-                            if (b6Var.documentId == -1 && (w8Var = a0Var2.s) != null) {
-                                w8Var.setChecked(false);
+                    for (a6 a6Var : (a6[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), a6.class)) {
+                        if (spannableStringBuilder.getSpanEnd(a6Var) == editTextSelectionEnd) {
+                            a0Var2.E.remove(Long.valueOf(a6Var.documentId));
+                            a0Var2.F.remove(Long.valueOf(a6Var.documentId));
+                            a0Var2.b.A(Long.valueOf(a6Var.documentId));
+                            if (a6Var.documentId == -1 && (v8Var = a0Var2.s) != null) {
+                                v8Var.setChecked(false);
                                 a0Var2.n.setMaxLength(a0Var2.J);
                             }
                             if (bool.booleanValue()) {
@@ -54,8 +54,8 @@ public final /* synthetic */ class m implements Utilities.Callback {
                                 AndroidUtilities.runOnUIThread(lVar, 350L);
                                 break;
                             } else {
-                                b6Var.setRemoved(new o(a0Var2, b6Var, editTextSelectionEnd, 0));
-                                a0Var2.W(b6Var);
+                                a6Var.setRemoved(new o(a0Var2, a6Var, editTextSelectionEnd, 0));
+                                a0Var2.W(a6Var);
                                 a0Var2.Y(false);
                                 break;
                             }

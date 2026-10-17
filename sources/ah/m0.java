@@ -1,29 +1,28 @@
 package ah;
 
 import android.widget.FrameLayout;
-import bi.h7;
-import bi.j5;
-import bi.jb;
-import bi.o4;
-import bi.sb;
-import bi.w2;
-import bi.w6;
-import di.kc;
-import fi.p4;
+import ci.aa;
+import ci.f6;
+import ci.j4;
+import ci.r3;
+import ci.r9;
+import ci.u5;
+import ei.vb;
+import gi.e4;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.e3;
-import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.Components.a8;
-import org.telegram.ui.Components.qb;
-import org.telegram.ui.Components.qm;
-import org.telegram.ui.Components.sc;
-import org.telegram.ui.Components.uy0;
-import org.telegram.ui.Components.wb;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.f3;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Components.ob;
+import org.telegram.ui.Components.om;
+import org.telegram.ui.Components.oy0;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.ub;
+import org.telegram.ui.Components.y7;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class m0 implements qb {
+public final class m0 implements ob {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -32,25 +31,25 @@ public final class m0 implements qb {
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.qb
+    @Override // org.telegram.ui.Components.ob
     public final /* synthetic */ boolean a() {
         switch (this.a) {
         }
         return true;
     }
 
-    @Override // org.telegram.ui.Components.qb
-    public final void b(sc scVar) {
-        j5 j5Var;
-        c6 c6Var;
+    @Override // org.telegram.ui.Components.ob
+    public final void b(qc qcVar) {
+        j4 j4Var;
+        d6 d6Var;
         switch (this.a) {
             case 0:
                 break;
             case 1:
-                if (scVar.a == 2 && (j5Var = ((o4) this.b).x.Q1) != null) {
-                    sb sbVar = ((jb) j5Var).d;
-                    sbVar.Y0 = true;
-                    sbVar.P();
+                if (qcVar.a == 2 && (j4Var = ((r3) this.b).x.Q1) != null) {
+                    aa aaVar = ((r9) j4Var).d;
+                    aaVar.Y0 = true;
+                    aaVar.P();
                     break;
                 }
                 break;
@@ -65,51 +64,51 @@ public final class m0 implements qb {
             case 10:
                 break;
             default:
-                wb wbVar = scVar.e;
-                yh.k0 k0Var = (yh.k0) this.b;
-                dh.d c10 = k0Var.e.c(wbVar, null, true);
-                c6Var = ((e3) k0Var).resourcesProvider;
-                eh.e eVar = new eh.e(c6Var);
-                eVar.e = new w2(18);
+                ub ubVar = qcVar.e;
+                yh.j0 j0Var = (yh.j0) this.b;
+                dh.d c10 = j0Var.e.c(ubVar, null, true);
+                d6Var = ((f3) j0Var).resourcesProvider;
+                eh.e eVar = new eh.e(d6Var);
+                eVar.e = new ci.i1(20);
                 float dpf2 = AndroidUtilities.dpf2(0.5f);
                 float dpf22 = AndroidUtilities.dpf2(0.5f);
                 eVar.f = dpf2;
                 eVar.h = dpf22;
                 c10.o(eVar);
                 c10.q(AndroidUtilities.dp(16.0f));
-                wbVar.setCustomBackground(c10);
+                ubVar.setCustomBackground(c10);
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.qb
+    @Override // org.telegram.ui.Components.ob
     public final /* synthetic */ void c(float f7) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.qb
-    public final void d(sc scVar) {
-        j5 j5Var;
+    @Override // org.telegram.ui.Components.ob
+    public final void d(qc qcVar) {
+        j4 j4Var;
         switch (this.a) {
             case 1:
-                if (scVar.a == 2 && (j5Var = ((o4) this.b).x.Q1) != null) {
-                    sb sbVar = ((jb) j5Var).d;
-                    sbVar.Y0 = false;
-                    sbVar.P();
+                if (qcVar.a == 2 && (j4Var = ((r3) this.b).x.Q1) != null) {
+                    aa aaVar = ((r9) j4Var).d;
+                    aaVar.Y0 = false;
+                    aaVar.P();
                     break;
                 }
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.qb
+    @Override // org.telegram.ui.Components.ob
     public final /* synthetic */ boolean e() {
         switch (this.a) {
         }
         return true;
     }
 
-    @Override // org.telegram.ui.Components.qb
+    @Override // org.telegram.ui.Components.ob
     public final int f(int i10) {
         int editTextHeight;
         int dp;
@@ -117,52 +116,52 @@ public final class m0 implements qb {
             case 0:
                 return (int) ((t0) ((v) this.b).c).u;
             case 1:
-                if (((o4) this.b).x.x2) {
+                if (((r3) this.b).x.x2) {
                     return 0;
                 }
                 return AndroidUtilities.dp(64.0f);
             case 2:
-                return ((w6) this.b).r.getPaddingBottom();
+                return ((u5) this.b).r.getPaddingBottom();
             case 3:
                 return 0;
             case 4:
-                editTextHeight = ((kc) this.b).c1.getEditTextHeight();
+                editTextHeight = ((vb) this.b).c1.getEditTextHeight();
                 dp = AndroidUtilities.dp(12.0f);
                 break;
             case 5:
-                return ((a8) this.b).e.E.getHeight();
+                return ((y7) this.b).e.E.getHeight();
             case 6:
-                return ((m2) this.b).getBottomInset();
+                return ((n2) this.b).getBottomInset();
             case 7:
-                qb qbVar = (qb) this.b;
-                if (qbVar == null) {
+                ob obVar = (ob) this.b;
+                if (obVar == null) {
                     return 0;
                 }
-                return qbVar.f(i10);
+                return obVar.f(i10);
             case 8:
                 editTextHeight = AndroidUtilities.dp(126.0f);
-                dp = ((qm) this.b).c.b.getBottomInset();
+                dp = ((om) this.b).c.b.getBottomInset();
                 break;
             case 9:
-                FrameLayout frameLayout = ((uy0) this.b).w;
+                FrameLayout frameLayout = ((oy0) this.b).w;
                 if (frameLayout != null) {
                     return frameLayout.getHeight();
                 }
                 return 0;
             case 10:
-                org.telegram.ui.web.c1 c1Var = (org.telegram.ui.web.c1) this.b;
-                if (!(c1Var.getParent() instanceof p4)) {
+                org.telegram.ui.web.a1 a1Var = (org.telegram.ui.web.a1) this.b;
+                if (!(a1Var.getParent() instanceof e4)) {
                     return 0;
                 }
-                p4 p4Var = (p4) c1Var.getParent();
-                return (int) ((p4Var.getSwipeOffsetY() + p4Var.getOffsetY()) - p4Var.getTopActionBarOffsetY());
+                e4 e4Var = (e4) a1Var.getParent();
+                return (int) ((e4Var.getSwipeOffsetY() + e4Var.getOffsetY()) - e4Var.getTopActionBarOffsetY());
             default:
                 return 0;
         }
         return dp + editTextHeight;
     }
 
-    @Override // org.telegram.ui.Components.qb
+    @Override // org.telegram.ui.Components.ob
     public final boolean g(int i10) {
         switch (this.a) {
             case 1:
@@ -170,15 +169,15 @@ public final class m0 implements qb {
                 }
                 break;
             case 7:
-                qb qbVar = (qb) this.b;
-                if (qbVar == null || !qbVar.g(i10)) {
+                ob obVar = (ob) this.b;
+                if (obVar == null || !obVar.g(i10)) {
                 }
                 break;
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Components.qb
+    @Override // org.telegram.ui.Components.ob
     public final int h(int i10) {
         switch (this.a) {
             case 0:
@@ -188,7 +187,7 @@ public final class m0 implements qb {
             case 2:
                 return 0;
             case 3:
-                return (int) (((h7) this.b).a + AndroidUtilities.dp(58.0f));
+                return (int) (((f6) this.b).a + AndroidUtilities.dp(58.0f));
             case 4:
                 return 0;
             case 5:
@@ -196,8 +195,8 @@ public final class m0 implements qb {
             case 6:
                 return 0;
             case 7:
-                qb qbVar = (qb) this.b;
-                return qbVar == null ? AndroidUtilities.statusBarHeight : qbVar.h(i10);
+                ob obVar = (ob) this.b;
+                return obVar == null ? AndroidUtilities.statusBarHeight : obVar.h(i10);
             case 8:
                 return 0;
             case 9:
@@ -209,49 +208,49 @@ public final class m0 implements qb {
         }
     }
 
-    private final /* synthetic */ void A(sc scVar) {
+    private final /* synthetic */ void A(qc qcVar) {
     }
 
-    private final /* synthetic */ void B(sc scVar) {
+    private final /* synthetic */ void B(qc qcVar) {
     }
 
-    private final /* synthetic */ void C(sc scVar) {
+    private final /* synthetic */ void C(qc qcVar) {
     }
 
-    private final /* synthetic */ void D(sc scVar) {
+    private final /* synthetic */ void D(qc qcVar) {
     }
 
-    private final /* synthetic */ void E(sc scVar) {
+    private final /* synthetic */ void E(qc qcVar) {
     }
 
-    private final /* synthetic */ void F(sc scVar) {
+    private final /* synthetic */ void F(qc qcVar) {
     }
 
-    private final /* synthetic */ void G(sc scVar) {
+    private final /* synthetic */ void G(qc qcVar) {
     }
 
-    private final /* synthetic */ void H(sc scVar) {
+    private final /* synthetic */ void H(qc qcVar) {
     }
 
-    private final /* synthetic */ void I(sc scVar) {
+    private final /* synthetic */ void I(qc qcVar) {
     }
 
-    private final /* synthetic */ void J(sc scVar) {
+    private final /* synthetic */ void J(qc qcVar) {
     }
 
-    private final /* synthetic */ void K(sc scVar) {
+    private final /* synthetic */ void K(qc qcVar) {
     }
 
-    private final /* synthetic */ void L(sc scVar) {
+    private final /* synthetic */ void L(qc qcVar) {
     }
 
-    private final /* synthetic */ void M(sc scVar) {
+    private final /* synthetic */ void M(qc qcVar) {
     }
 
-    private final /* synthetic */ void N(sc scVar) {
+    private final /* synthetic */ void N(qc qcVar) {
     }
 
-    private final /* synthetic */ void O(sc scVar) {
+    private final /* synthetic */ void O(qc qcVar) {
     }
 
     private final /* synthetic */ void i(float f7) {
@@ -290,21 +289,21 @@ public final class m0 implements qb {
     private final /* synthetic */ void t(float f7) {
     }
 
-    private final /* synthetic */ void u(sc scVar) {
+    private final /* synthetic */ void u(qc qcVar) {
     }
 
-    private final /* synthetic */ void v(sc scVar) {
+    private final /* synthetic */ void v(qc qcVar) {
     }
 
-    private final /* synthetic */ void w(sc scVar) {
+    private final /* synthetic */ void w(qc qcVar) {
     }
 
-    private final /* synthetic */ void x(sc scVar) {
+    private final /* synthetic */ void x(qc qcVar) {
     }
 
-    private final /* synthetic */ void y(sc scVar) {
+    private final /* synthetic */ void y(qc qcVar) {
     }
 
-    private final /* synthetic */ void z(sc scVar) {
+    private final /* synthetic */ void z(qc qcVar) {
     }
 }

@@ -12,15 +12,16 @@ import android.view.TextureView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.google.android.gms.internal.cast.a6;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.ui.Components.bs;
-import org.telegram.ui.Components.v61;
-import org.telegram.ui.n60;
+import org.telegram.ui.Components.n31;
+import org.telegram.ui.Components.yr;
+import org.telegram.ui.s50;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes.dex */
 public final class o extends q2 {
     public float g0;
     public final /* synthetic */ ChatObject.Call h0;
@@ -31,13 +32,13 @@ public final class o extends q2 {
     public final /* synthetic */ String m0;
     public final /* synthetic */ float n0;
     public final /* synthetic */ StaticLayout o0;
-    public final /* synthetic */ n60 p0;
+    public final /* synthetic */ s50 p0;
     public final /* synthetic */ String q0;
     public final /* synthetic */ float r0;
     public final /* synthetic */ t s0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o(t tVar, Context context, ChatObject.Call call, l0 l0Var, TextPaint textPaint, StaticLayout staticLayout, TextPaint textPaint2, String str, float f7, StaticLayout staticLayout2, n60 n60Var, String str2, float f10) {
+    public o(t tVar, Context context, ChatObject.Call call, l0 l0Var, TextPaint textPaint, StaticLayout staticLayout, TextPaint textPaint2, String str, float f7, StaticLayout staticLayout2, s50 s50Var, String str2, float f10) {
         super(context, false, false, true, true);
         this.s0 = tVar;
         this.h0 = call;
@@ -48,7 +49,7 @@ public final class o extends q2 {
         this.m0 = str;
         this.n0 = f7;
         this.o0 = staticLayout2;
-        this.p0 = n60Var;
+        this.p0 = s50Var;
         this.q0 = str2;
         this.r0 = f10;
     }
@@ -88,7 +89,7 @@ public final class o extends q2 {
         ImageView imageView = tVar.x0;
         if (imageView != null && imageView.getParent() != null) {
             if (tVar.x0.getAlpha() == 1.0f) {
-                tVar.x0.animate().alpha(0.0f).setDuration(300L).setListener(new v61(this, 7)).start();
+                tVar.x0.animate().alpha(0.0f).setDuration(300L).setListener(new n31(this, 9)).start();
             } else if (tVar.x0.getParent() != null) {
                 oVar.removeView(tVar.x0);
             }
@@ -110,7 +111,7 @@ public final class o extends q2 {
     */
     public final void dispatchDraw(Canvas canvas) {
         float f7;
-        bs bsVar;
+        yr yrVar;
         float f10;
         int c10;
         float f11;
@@ -119,7 +120,7 @@ public final class o extends q2 {
         float f13;
         float f14;
         t tVar = this.s0;
-        bs bsVar2 = tVar.u0;
+        yr yrVar2 = tVar.u0;
         Drawable drawable = tVar.v0;
         o oVar = tVar.a;
         ImageReceiver imageReceiver = tVar.l0;
@@ -172,7 +173,7 @@ public final class o extends q2 {
                 if (qVar.getVisibility() != 4) {
                     qVar.setVisibility(4);
                 }
-                bsVar = bsVar2;
+                yrVar = yrVar2;
             } else if (videoParticipant.presentation && videoParticipant.participant.self) {
                 if (qVar.getVisibility() != 0) {
                     qVar.setVisibility(0);
@@ -183,7 +184,7 @@ public final class o extends q2 {
                 int dp2 = AndroidUtilities.dp(33.0f);
                 if (tVar.r || tVar.b) {
                     f10 = 10.0f;
-                    c10 = (int) t8.b.c(AndroidUtilities.dp(39.0f), l0Var.c, AndroidUtilities.dp(10.0f), dp2);
+                    c10 = (int) r.c.c(AndroidUtilities.dp(39.0f), l0Var.c, AndroidUtilities.dp(10.0f), dp2);
                 } else {
                     f10 = 10.0f;
                     c10 = (int) ((Math.max(1.0f - l0Var.c, (tVar.h || tVar.f) ? l0Var.n : f7) * AndroidUtilities.dp(10.0f)) + dp2);
@@ -200,7 +201,7 @@ public final class o extends q2 {
                 }
                 float f21 = f11;
                 int dp3 = (int) ((AndroidUtilities.dp(17.0f) * f20) + ((((getMeasuredHeight() - c10) / 2) - AndroidUtilities.dp(28.0f)) - (((((tVar.b || tVar.r) ? l0Var.c : f7) * AndroidUtilities.dp(74.0f)) + AndroidUtilities.dp(17.0f)) * f21)));
-                bsVar = bsVar2;
+                yrVar = yrVar2;
                 int i11 = dp3 + c10;
                 drawable.setBounds(measuredWidth, dp3, measuredWidth + c10, i11);
                 drawable.draw(canvas);
@@ -230,7 +231,7 @@ public final class o extends q2 {
                     canvas.restore();
                 }
             } else {
-                bsVar = bsVar2;
+                yrVar = yrVar2;
                 if (qVar.getVisibility() != 4) {
                     qVar.setVisibility(4);
                 }
@@ -246,9 +247,9 @@ public final class o extends q2 {
                         hVar.g = f23;
                         if (f23 > 4.0f) {
                             hVar.g = 0.0f;
-                            ri.h0 h0Var = hVar.p;
-                            if (h0Var != null) {
-                                h0Var.run();
+                            org.telegram.ui.web.z1 z1Var = hVar.p;
+                            if (z1Var != null) {
+                                z1Var.run();
                             }
                         }
                         hVar.h = currentTimeMillis;
@@ -276,7 +277,7 @@ public final class o extends q2 {
             }
             invalidate();
         } else {
-            bsVar = bsVar2;
+            yrVar = yrVar2;
         }
         textView.setTranslationY((((getMeasuredHeight() - textView.getMeasuredHeight()) / 2.0f) + tVar.p0) - this.N);
         textView.setTranslationX(((getMeasuredWidth() - textView.getMeasuredWidth()) / 2.0f) - this.O);
@@ -289,8 +290,8 @@ public final class o extends q2 {
         float measuredHeight = (getMeasuredHeight() - this.N) - AndroidUtilities.dp(80.0f);
         if (tVar.w != call.videoNotAvailableParticipant) {
             canvas.save();
-            if ((tVar.b || tVar.r) && !n60.F3 && !n60.G3) {
-                measuredHeight = com.google.android.gms.internal.play_billing.k3.D(1.0f, l0Var.W, AndroidUtilities.dp(90.0f) * l0Var.c, measuredHeight);
+            if ((tVar.b || tVar.r) && !s50.F3 && !s50.G3) {
+                measuredHeight = a6.D(1.0f, l0Var.W, AndroidUtilities.dp(90.0f) * l0Var.c, measuredHeight);
             }
             f12 = 0.0f;
             canvas.translate(0.0f, measuredHeight);
@@ -337,9 +338,9 @@ public final class o extends q2 {
                     } else {
                         canvas.save();
                     }
-                    bs bsVar3 = bsVar;
-                    bsVar3.setBounds((int) rectF2.left, (int) rectF2.top, (int) rectF2.right, (int) rectF2.bottom);
-                    bsVar3.draw(canvas);
+                    yr yrVar3 = yrVar;
+                    yrVar3.setBounds((int) rectF2.left, (int) rectF2.top, (int) rectF2.right, (int) rectF2.bottom);
+                    yrVar3.draw(canvas);
                     canvas.restore();
                     float f32 = f14 * l0Var.c;
                     if (f32 <= 0.0f || tVar.w == call.videoNotAvailableParticipant) {

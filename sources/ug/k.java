@@ -1,25 +1,17 @@
 package ug;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+import org.telegram.ui.ActionBar.d6;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ n b;
+public final class k {
+    public final /* synthetic */ y a;
+    public final /* synthetic */ d6 b;
+    public final /* synthetic */ l c;
 
-    public /* synthetic */ k(n nVar, int i10) {
-        this.a = i10;
-        this.b = nVar;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.dismiss();
-                break;
-            default:
-                this.b.onBackPressed();
-                break;
-        }
+    public k(l lVar, y yVar, d6 d6Var) {
+        this.c = lVar;
+        this.a = yVar;
+        this.b = d6Var;
     }
 }

@@ -2,9 +2,8 @@ package v7;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class v6 {
     public static String a(String str, Object... objArr) {
@@ -15,7 +14,7 @@ public abstract class v6 {
         for (int i11 = 0; i11 < objArr.length; i11++) {
             Object obj = objArr[i11];
             if (obj == null) {
-                sb2 = BuildConfig.BETA_URL;
+                sb2 = "null";
             } else {
                 try {
                     sb2 = obj.toString();

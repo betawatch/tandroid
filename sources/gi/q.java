@@ -1,35 +1,10 @@
 package gi;
 
-import android.view.View;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.m61;
-import r0.l1;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class q implements Utilities.Callback5, Utilities.Callback5Return, r0.n {
-    public final /* synthetic */ s a;
-
-    @Override // r0.n
-    public l1 Q0(View view, l1 l1Var) {
-        this.a.V(l1Var.a.f(519).d);
-        return l1.b;
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback5Return
-    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).intValue();
-        ((Float) obj4).floatValue();
-        ((Float) obj5).floatValue();
-        this.a.getClass();
-        return Boolean.FALSE;
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        s.U(this.a, (m61) obj);
-    }
+public final class q {
+    public TLRPC.User a;
+    public boolean b;
 }

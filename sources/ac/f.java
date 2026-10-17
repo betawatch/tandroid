@@ -4,16 +4,15 @@ import android.graphics.Bitmap;
 import android.os.SystemClock;
 import com.google.android.gms.internal.cast.p;
 import com.google.android.gms.internal.cast.z5;
-import com.google.firebase.messaging.m;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.TimeUnit;
-import m2.t;
+import mi.q;
 import n6.j;
 import n6.l;
 import org.telegram.tgnet.ConnectionsManager;
 import v7.z8;
-import w7.k8;
+import w7.l8;
 import x7.d7;
 import x7.da;
 import x7.e7;
@@ -22,6 +21,7 @@ import x7.fa;
 import x7.g7;
 import x7.g8;
 import x7.h8;
+import x7.m;
 import x7.m7;
 import x7.n7;
 import x7.o;
@@ -29,7 +29,7 @@ import x7.o7;
 import x7.r0;
 import x7.s;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class f extends rb.e {
     public boolean d = true;
@@ -42,7 +42,7 @@ public final class f extends rb.e {
         l.i(aVar, "ImageLabelerOptions can not be null");
         this.f = bVar;
         this.g = faVar;
-        v1.b bVar2 = new v1.b();
+        uc.b bVar2 = new uc.b();
         bVar2.a = Float.valueOf(aVar.a);
         this.e = new h8(bVar2);
         this.h = new z8(rb.g.c().b(), 1);
@@ -52,16 +52,16 @@ public final class f extends rb.e {
     public final synchronized void b() {
         this.f.zzb();
         fa faVar = this.g;
-        m mVar = new m();
-        mVar.c = m7.b;
-        n3.b bVar = new n3.b(24, false);
-        bVar.b = this.e;
-        x7.m mVar2 = o.b;
+        com.google.firebase.messaging.l lVar = new com.google.firebase.messaging.l();
+        lVar.c = m7.b;
+        n2.e eVar = new n2.e(25, false);
+        eVar.b = this.e;
+        m mVar = o.b;
         Object[] objArr = {n7.b};
-        k8.a(1, objArr);
-        bVar.c = new s(1, objArr);
-        mVar.d = new g8(bVar);
-        rb.m.a.execute(new p(faVar, new a5.a(mVar, 0), o7.e, faVar.b(), 7));
+        l8.a(1, objArr);
+        eVar.c = new s(1, objArr);
+        lVar.d = new g8(eVar);
+        rb.m.a.execute(new p(faVar, new a5.a(lVar, 0), o7.e, faVar.b(), 7));
     }
 
     @Override // rb.i
@@ -69,9 +69,9 @@ public final class f extends rb.e {
         this.f.zzc();
         this.d = true;
         fa faVar = this.g;
-        m mVar = new m();
-        mVar.c = m7.b;
-        rb.m.a.execute(new p(faVar, new a5.a(mVar, 0), o7.d, faVar.b(), 7));
+        com.google.firebase.messaging.l lVar = new com.google.firebase.messaging.l();
+        lVar.c = m7.b;
+        rb.m.a.execute(new p(faVar, new a5.a(lVar, 0), o7.d, faVar.b(), 7));
     }
 
     @Override // rb.e
@@ -101,8 +101,8 @@ public final class f extends rb.e {
         byte b10 = 0;
         if (faVar.c(o7Var, elapsedRealtime2)) {
             faVar.i.put(o7Var, Long.valueOf(elapsedRealtime2));
-            m mVar = new m();
-            mVar.c = m7.b;
+            com.google.firebase.messaging.l lVar = new com.google.firebase.messaging.l();
+            lVar.c = m7.b;
             u2.c cVar = new u2.c(12, false);
             z5 z5Var = new z5();
             z5Var.b = Long.valueOf(Long.MAX_VALUE & elapsedRealtime);
@@ -128,13 +128,13 @@ public final class f extends rb.e {
                 }
                 i10 = 0;
             }
-            t tVar = new t(29, b10);
-            tVar.b = i11 != -1 ? i11 != 35 ? i11 != 842094169 ? i11 != 16 ? i11 != 17 ? d7.b : d7.d : d7.c : d7.e : d7.f : d7.h;
-            tVar.c = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
-            cVar.d = new e7(tVar);
+            q qVar = new q(27, b10);
+            qVar.b = i11 != -1 ? i11 != 35 ? i11 != 842094169 ? i11 != 16 ? i11 != 17 ? d7.b : d7.d : d7.c : d7.e : d7.f : d7.h;
+            qVar.c = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
+            cVar.d = new e7(qVar);
             cVar.c = this.e;
-            mVar.e = new f8(cVar);
-            rb.m.a.execute(new p(faVar, new a5.a(mVar, 0), o7Var, faVar.b(), 7));
+            lVar.e = new f8(cVar);
+            rb.m.a.execute(new p(faVar, new a5.a(lVar, 0), o7Var, faVar.b(), 7));
         }
         u2.c cVar2 = new u2.c(11, false);
         cVar2.d = this.e;

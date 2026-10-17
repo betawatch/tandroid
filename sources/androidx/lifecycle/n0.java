@@ -5,14 +5,14 @@ import android.os.Bundle;
 import java.lang.reflect.Constructor;
 import java.util.LinkedHashMap;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class n0 implements s0 {
     public final Application a;
     public final r0 b;
     public final Bundle c;
     public final o d;
-    public final m.r e;
+    public final m.q e;
 
     public n0(Application application, t4.e eVar, Bundle bundle) {
         r0 r0Var;
@@ -33,9 +33,9 @@ public final class n0 implements s0 {
     }
 
     @Override // androidx.lifecycle.s0
-    public final p0 X0(Class cls, v1.c cVar) {
+    public final p0 W0(Class cls, v1.b bVar) {
         q0 q0Var = q0.b;
-        LinkedHashMap linkedHashMap = (LinkedHashMap) cVar.a;
+        LinkedHashMap linkedHashMap = (LinkedHashMap) bVar.a;
         String str = (String) linkedHashMap.get(q0Var);
         if (str == null) {
             throw new IllegalStateException("VIEW_MODEL_KEY must always be provided by ViewModelProvider");
@@ -49,7 +49,7 @@ public final class n0 implements s0 {
         Application application = (Application) linkedHashMap.get(q0.a);
         boolean isAssignableFrom = a.class.isAssignableFrom(cls);
         Constructor a2 = (!isAssignableFrom || application == null) ? o0.a(o0.b, cls) : o0.a(o0.a, cls);
-        return a2 == null ? this.b.X0(cls, cVar) : (!isAssignableFrom || application == null) ? o0.b(cls, a2, j0.c(cVar)) : o0.b(cls, a2, application, j0.c(cVar));
+        return a2 == null ? this.b.W0(cls, bVar) : (!isAssignableFrom || application == null) ? o0.b(cls, a2, j0.c(bVar)) : o0.b(cls, a2, application, j0.c(bVar));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -73,19 +73,19 @@ public final class n0 implements s0 {
             kotlin.jvm.internal.i.b(q0Var);
             return q0Var.f(cls);
         }
-        m.r rVar = this.e;
-        kotlin.jvm.internal.i.b(rVar);
+        m.q qVar = this.e;
+        kotlin.jvm.internal.i.b(qVar);
         Bundle bundle = this.c;
-        Bundle c10 = rVar.c(str);
+        Bundle c10 = qVar.c(str);
         Class[] clsArr = i0.f;
         i0 b10 = j0.b(c10, bundle);
         SavedStateHandleController savedStateHandleController = new SavedStateHandleController(str, b10);
-        savedStateHandleController.c(oVar, rVar);
+        savedStateHandleController.c(oVar, qVar);
         n nVar = ((v) oVar).c;
         if (nVar == n.b || nVar.compareTo(n.d) >= 0) {
-            rVar.g();
+            qVar.g();
         } else {
-            oVar.a(new LegacySavedStateHandleController$tryToAddRecreator$1(oVar, rVar));
+            oVar.a(new LegacySavedStateHandleController$tryToAddRecreator$1(oVar, qVar));
         }
         p0 b11 = (!isAssignableFrom || (application = this.a) == null) ? o0.b(cls, a2, b10) : o0.b(cls, a2, application, b10);
         synchronized (b11.a) {

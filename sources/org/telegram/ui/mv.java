@@ -1,62 +1,58 @@
 package org.telegram.ui;
 
-import android.graphics.drawable.ColorDrawable;
+import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.messenger.R;
+import java.util.ArrayList;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class mv extends org.telegram.ui.Components.lm0 {
-    public final /* synthetic */ ov c;
+public final /* synthetic */ class mv implements org.telegram.ui.Components.wl0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ey b;
 
-    public mv(ov ovVar) {
-        this.c = ovVar;
+    public /* synthetic */ mv(ey eyVar, int i10) {
+        this.a = i10;
+        this.b = eyVar;
     }
 
-    @Override // org.telegram.ui.Components.lm0
-    public final boolean D(s4.b1 b1Var) {
-        return false;
-    }
-
-    @Override // s4.g0
-    public final int h() {
-        return this.c.g0.h() ? 1 : 3;
-    }
-
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        View view;
-        int i11;
-        int i12;
-        ov ovVar = this.c;
-        if (i10 == 0) {
-            view = ovVar.d0;
-        } else if (i10 == 2) {
-            view = ovVar.e0;
-            s4.o0 o0Var = new s4.o0(-1, -2);
-            i11 = ((org.telegram.ui.ActionBar.e3) ovVar).backgroundPaddingLeft;
-            ((ViewGroup.MarginLayoutParams) o0Var).leftMargin = i11;
-            i12 = ((org.telegram.ui.ActionBar.e3) ovVar).backgroundPaddingLeft;
-            ((ViewGroup.MarginLayoutParams) o0Var).rightMargin = i12;
-            view.setLayoutParams(o0Var);
-        } else {
-            org.telegram.ui.Cells.e9 e9Var = new org.telegram.ui.Cells.e9(viewGroup.getContext());
-            e9Var.setFixedSize(12);
-            org.telegram.ui.Components.cr crVar = new org.telegram.ui.Components.cr(new ColorDrawable(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.a7, false)), org.telegram.ui.ActionBar.g6.W0(viewGroup.getContext(), R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.g6.b7));
-            crVar.w = true;
-            e9Var.setBackgroundDrawable(crVar);
-            view = e9Var;
+    @Override // org.telegram.ui.Components.wl0
+    public final void a(int i10, View view) {
+        switch (this.a) {
+            case 0:
+                ey eyVar = this.b;
+                Object obj = eyVar.C0.v0.G(i10).G;
+                if (!(obj instanceof MessageObject)) {
+                    if (obj instanceof ci.u6) {
+                        ci.u6 u6Var = (ci.u6) obj;
+                        Bundle j10 = org.telegram.ui.Cells.t0.j(3, TeXSymbolParser.TYPE_ATTR);
+                        j10.putString("hashtag", u6Var.C);
+                        j10.putInt("storiesCount", u6Var.J);
+                        eyVar.presentFragment(new org.telegram.ui.Components.wa0(j10, null));
+                        break;
+                    }
+                } else {
+                    MessageObject messageObject = (MessageObject) obj;
+                    Bundle bundle = new Bundle();
+                    if (messageObject.getDialogId() >= 0) {
+                        bundle.putLong("user_id", messageObject.getDialogId());
+                    } else {
+                        bundle.putLong("chat_id", -messageObject.getDialogId());
+                    }
+                    bundle.putInt("message_id", messageObject.getId());
+                    sn snVar = new sn(bundle);
+                    ey.b4(snVar, messageObject);
+                    eyVar.presentFragment(snVar);
+                    break;
+                }
+                break;
+            default:
+                ey eyVar2 = this.b;
+                eyVar2.b0.I0(true);
+                ArrayList arrayList = eyVar2.b0.V2;
+                eyVar2.g3(arrayList.isEmpty() ? hg.q0.a3[i10] : (hg.o0) arrayList.get(i10));
+                break;
         }
-        return new org.telegram.ui.Components.wl0(view);
-    }
-
-    @Override // s4.g0
-    public final int j(int i10) {
-        return i10;
-    }
-
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
     }
 }

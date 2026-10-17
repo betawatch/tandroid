@@ -1,18 +1,18 @@
 package androidx.emoji2.text;
 
 import android.os.Trace;
-import bi.s9;
+import ci.d8;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.b30;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.voip.k2;
+import org.telegram.ui.Components.x20;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.w2;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class n implements Runnable {
     public final /* synthetic */ int a;
@@ -44,20 +44,20 @@ public final class n implements Runnable {
                 }
             case 1:
                 Math.abs(Utilities.random.nextInt() % 3);
-                b30[] b30VarArr = s9.a;
+                x20[] x20VarArr = d8.a;
                 NotificationCenter.getInstance(UserConfig.selectedAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateInterfaces, 0);
-                AndroidUtilities.runOnUIThread(s9.o, 1000L);
+                AndroidUtilities.runOnUIThread(d8.o, 1000L);
                 LaunchActivity.R().getFragmentView();
                 return;
             case 2:
                 return;
             case 3:
-                g6.j = false;
-                g6.l(false);
+                h6.j = false;
+                h6.l(false);
                 return;
             case 4:
-                g6.k = false;
-                g6.l(true);
+                h6.k = false;
+                h6.l(true);
                 return;
             case 5:
                 return;

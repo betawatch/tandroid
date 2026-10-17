@@ -1,52 +1,27 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
+import android.content.Context;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class bj0 extends ki.n {
-    public Runnable W;
+public final class bj0 extends ei.d {
+    public final /* synthetic */ dj0 h0;
 
-    @Override // ki.n, s4.k
-    public final void N() {
-        super.N();
-        Runnable runnable = this.W;
-        if (runnable != null) {
-            AndroidUtilities.cancelRunOnUIThread(runnable);
-            this.W = null;
-        }
-        aj0 aj0Var = new aj0(this, 0);
-        this.W = aj0Var;
-        AndroidUtilities.runOnUIThread(aj0Var);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bj0(dj0 dj0Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, d6Var, true);
+        this.h0 = dj0Var;
     }
 
-    @Override // ki.n
-    public final void W() {
-        Runnable runnable = this.W;
-        if (runnable != null) {
-            AndroidUtilities.cancelRunOnUIThread(runnable);
-            this.W = null;
+    @Override // ei.d
+    public final float a(float f7, float f10) {
+        dj0 dj0Var = this.h0;
+        boolean z10 = dj0Var.n0 == 0.0f;
+        dj0Var.n0 = f7;
+        if (z10) {
+            dj0Var.o0 = new org.telegram.ui.Components.mb0(dj0Var, 1);
+            dj0Var.T(false);
         }
-        if (BuildVars.LOGS_ENABLED) {
-            FileLog.d("chatItemAnimator disable notifications");
-        }
-    }
-
-    @Override // ki.n, s4.k, s4.l0
-    public final void g() {
-        super.g();
-        Runnable runnable = this.W;
-        if (runnable != null) {
-            AndroidUtilities.cancelRunOnUIThread(runnable);
-        }
-        aj0 aj0Var = new aj0(this, 1);
-        this.W = aj0Var;
-        AndroidUtilities.runOnUIThread(aj0Var);
-    }
-
-    @Override // s4.k
-    public final void F() {
+        return f7;
     }
 }

@@ -1,68 +1,23 @@
 package com.google.android.gms.common.api.internal;
 
-import android.os.Looper;
-import android.os.Message;
-import android.util.Log;
-import java.util.concurrent.locks.ReentrantLock;
+import java.lang.ref.WeakReference;
+import v7.i5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class h0 extends com.google.android.gms.internal.cast.a0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class h0 extends i5 {
+    public final WeakReference a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ h0(Object obj, Looper looper, int i10) {
-        super(looper, 2);
-        this.a = i10;
-        this.b = obj;
+    public h0(i0 i0Var) {
+        this.a = new WeakReference(i0Var);
     }
 
-    @Override // android.os.Handler
-    public final void handleMessage(Message message) {
-        switch (this.a) {
-            case 0:
-                j0 j0Var = (j0) this.b;
-                int i10 = message.what;
-                if (i10 != 1) {
-                    if (i10 == 2) {
-                        j0.g(j0Var);
-                        return;
-                    }
-                    Log.w("GoogleApiClientImpl", "Unknown message id: " + i10);
-                    return;
-                }
-                ReentrantLock reentrantLock = j0Var.b;
-                reentrantLock.lock();
-                try {
-                    if (j0Var.h()) {
-                        j0Var.j();
-                    }
-                    return;
-                } finally {
-                    reentrantLock.unlock();
-                }
-            default:
-                int i11 = message.what;
-                if (i11 != 1) {
-                    if (i11 == 2) {
-                        throw ((RuntimeException) message.obj);
-                    }
-                    Log.w("GACStateManager", "Unknown message id: " + i11);
-                    return;
-                }
-                l0 l0Var = (l0) message.obj;
-                m0 m0Var = (m0) this.b;
-                l0Var.getClass();
-                m0Var.a.lock();
-                try {
-                    if (m0Var.m == l0Var.a) {
-                        l0Var.a();
-                    }
-                    return;
-                } finally {
-                    m0Var.a.unlock();
-                }
+    @Override // v7.i5
+    public final void a() {
+        i0 i0Var = (i0) this.a.get();
+        if (i0Var == null) {
+            return;
         }
+        i0.h(i0Var);
     }
 }

@@ -3,11 +3,11 @@ package ah;
 import android.graphics.Canvas;
 import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.gl0;
+import org.telegram.ui.Components.cl0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class e0 extends gl0 {
+public final class e0 extends cl0 {
     public float l1;
     public long m1;
 
@@ -23,7 +23,7 @@ public final class e0 extends gl0 {
         if (!isEnabled()) {
             float f7 = this.l1;
             if (f7 != 0.0f) {
-                this.l1 = Math.max(0.0f, f7 - (min / 150.0f));
+                this.l1 = org.telegram.ui.Cells.t0.v(min, 150.0f, f7, 0.0f);
                 invalidate();
                 if (this.l1 == 0.0f) {
                     setVisibility(8);
@@ -35,7 +35,7 @@ public final class e0 extends gl0 {
         if (isEnabled()) {
             float f10 = this.l1;
             if (f10 != 1.0f) {
-                this.l1 = Math.min(1.0f, (min / 150.0f) + f10);
+                this.l1 = org.telegram.ui.Cells.t0.c(min, 150.0f, f10, 1.0f);
                 invalidate();
             }
         }

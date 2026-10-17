@@ -1,21 +1,22 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class jt0 extends FragmentContextView {
-    public final /* synthetic */ xv0 R0;
+public final class jt0 implements View.OnLayoutChangeListener {
+    public final /* synthetic */ sv0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jt0(xv0 xv0Var, Context context, org.telegram.ui.ActionBar.m2 m2Var, xv0 xv0Var2, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, m2Var, xv0Var2, false, c6Var);
-        this.R0 = xv0Var;
+    public jt0(sv0 sv0Var) {
+        this.a = sv0Var;
     }
 
-    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
-    public final void setVisibility(int i10) {
-        xv0 xv0Var = this.R0;
-        xv0Var.P0.i(xv0Var.Q0, i10 == 0, true);
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
+        sv0 sv0Var = this.a;
+        if (sv0Var.n0 == null) {
+            return;
+        }
+        sv0Var.n0.setTranslationX(((View) r2.getParent()).getMeasuredWidth() - sv0Var.n0.getRight());
     }
 }

@@ -1,7 +1,7 @@
 package gd;
 
 import af.l;
-import com.google.android.gms.internal.play_billing.k3;
+import com.google.android.gms.internal.cast.a6;
 import df.p;
 import df.s;
 import java.util.ArrayList;
@@ -14,7 +14,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import v7.p7;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class i implements ef.a {
     public static final Pattern j = Pattern.compile("^[!\"#\\$%&'\\(\\)\\*\\+,\\-\\./:;<=>\\?@\\[\\\\\\]\\^_`\\{\\|\\}~\\p{Pc}\\p{Pd}\\p{Pe}\\p{Pf}\\p{Pi}\\p{Po}\\p{Ps}]");
@@ -299,8 +299,8 @@ public final class i implements ef.a {
                     s sVar2 = fVar4.a;
                     fVar4.g -= i10;
                     fVar2.g -= i10;
-                    sVar2.g = k3.j(i10, 0, sVar2.g);
-                    sVar.g = k3.j(i10, 0, sVar.g);
+                    sVar2.g = a6.j(i10, 0, sVar2.g);
+                    sVar.g = a6.j(i10, 0, sVar.g);
                     af.f fVar5 = fVar2.e;
                     while (fVar5 != null && fVar5 != fVar4) {
                         af.f fVar6 = fVar5.e;

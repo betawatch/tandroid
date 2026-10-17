@@ -16,9 +16,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class s2 extends FrameLayout implements org.telegram.ui.Cells.n9 {
+public final class s2 extends FrameLayout implements org.telegram.ui.Cells.m9 {
     public final n2 a;
     public final q2 b;
     public final r2 c;
@@ -30,18 +30,18 @@ public final class s2 extends FrameLayout implements org.telegram.ui.Cells.n9 {
     public int r;
     public float s;
     public int v;
-    public final i4 w;
-    public final /* synthetic */ k4 x;
+    public final j4 w;
+    public final /* synthetic */ l4 x;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s2(k4 k4Var, Context context, i4 i4Var) {
+    public s2(l4 l4Var, Context context, j4 j4Var) {
         super(context);
-        this.x = k4Var;
+        this.x = l4Var;
         this.h = AndroidUtilities.dp(18.0f);
-        this.w = i4Var;
-        if (k4.B1 == null) {
+        this.w = j4Var;
+        if (l4.B1 == null) {
             Paint paint = new Paint(1);
-            k4.B1 = paint;
+            l4.B1 = paint;
             paint.setColor(-1);
         }
         n2 n2Var = new n2(this, context);
@@ -50,7 +50,7 @@ public final class s2 extends FrameLayout implements org.telegram.ui.Cells.n9 {
         q2 q2Var = new q2(this);
         this.b = q2Var;
         n2Var.setAdapter(q2Var);
-        AndroidUtilities.setViewPagerEdgeEffectColor(n2Var, org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.d6, false));
+        AndroidUtilities.setViewPagerEdgeEffectColor(n2Var, org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
         addView(n2Var);
         r2 r2Var = new r2(this, context);
         this.c = r2Var;
@@ -58,7 +58,7 @@ public final class s2 extends FrameLayout implements org.telegram.ui.Cells.n9 {
         setWillNotDraw(false);
     }
 
-    @Override // org.telegram.ui.Cells.n9
+    @Override // org.telegram.ui.Cells.m9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         d3 d3Var = this.e;
         if (d3Var != null) {
@@ -102,13 +102,13 @@ public final class s2 extends FrameLayout implements org.telegram.ui.Cells.n9 {
             return;
         }
         d3 d3Var = this.e;
-        k4 k4Var = this.x;
+        l4 l4Var = this.x;
         int i10 = this.h;
         int i11 = 0;
         if (d3Var != null) {
             canvas.save();
             canvas.translate(i10, this.n);
-            k4.v(k4Var, canvas, this, 0);
+            l4.v(l4Var, canvas, this, 0);
             this.e.draw(canvas, this);
             canvas.restore();
             i11 = 1;
@@ -116,7 +116,7 @@ public final class s2 extends FrameLayout implements org.telegram.ui.Cells.n9 {
         if (this.f != null) {
             canvas.save();
             canvas.translate(i10, this.n + this.r);
-            k4.v(k4Var, canvas, this, i11);
+            l4.v(l4Var, canvas, this, i11);
             this.f.draw(canvas, this);
             canvas.restore();
         }
@@ -162,16 +162,16 @@ public final class s2 extends FrameLayout implements org.telegram.ui.Cells.n9 {
             this.n = dp3;
             TL_iv.pageBlockSlideshow pageblockslideshow = this.d;
             TL_iv.RichText richText = pageblockslideshow.caption.text;
-            HashSet hashSet = k4.b1;
+            HashSet hashSet = l4.b1;
             Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
-            k4 k4Var = this.x;
-            d3 p5 = k4.p(k4Var, this, null, richText, dp2, dp3, pageblockslideshow, alignment, 0, this.w);
+            l4 l4Var = this.x;
+            d3 p5 = l4.p(l4Var, this, null, richText, dp2, dp3, pageblockslideshow, alignment, 0, this.w);
             this.e = p5;
             int i13 = this.h;
             if (p5 != null) {
                 int height = this.e.d.getHeight() + AndroidUtilities.dp(4.0f);
                 this.r = height;
-                dp = org.telegram.messenger.g0.C(4.0f, height, dp);
+                dp = org.telegram.messenger.q.C(4.0f, height, dp);
                 d3 d3Var = this.e;
                 d3Var.s = i13;
                 d3Var.v = this.n;
@@ -181,9 +181,9 @@ public final class s2 extends FrameLayout implements org.telegram.ui.Cells.n9 {
             TL_iv.pageBlockSlideshow pageblockslideshow2 = this.d;
             TL_iv.RichText richText2 = pageblockslideshow2.caption.credit;
             if (this.w.G) {
-                alignment = org.telegram.ui.Components.ix0.a();
+                alignment = org.telegram.ui.Components.dx0.a();
             }
-            d3 p9 = k4.p(k4Var, this, null, richText2, dp2, 0, pageblockslideshow2, alignment, 0, this.w);
+            d3 p9 = l4.p(l4Var, this, null, richText2, dp2, 0, pageblockslideshow2, alignment, 0, this.w);
             this.f = p9;
             if (p9 != null) {
                 dp += this.f.d.getHeight() + AndroidUtilities.dp(4.0f);
@@ -203,10 +203,10 @@ public final class s2 extends FrameLayout implements org.telegram.ui.Cells.n9 {
         d3 d3Var = this.e;
         int i10 = this.h;
         int i11 = this.n;
-        k4 k4Var = this.x;
-        if (k4.l(k4Var, this.w, motionEvent, this, d3Var, i10, i11)) {
+        l4 l4Var = this.x;
+        if (l4.l(l4Var, this.w, motionEvent, this, d3Var, i10, i11)) {
             return true;
         }
-        return k4.l(k4Var, this.w, motionEvent, this, this.f, this.h, this.n + this.r) || super.onTouchEvent(motionEvent);
+        return l4.l(l4Var, this.w, motionEvent, this, this.f, this.h, this.n + this.r) || super.onTouchEvent(motionEvent);
     }
 }

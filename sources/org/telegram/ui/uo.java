@@ -1,116 +1,93 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessagesController;
-import pi.g;
-import qi.k;
-import qi.q;
+import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uo implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Object d;
+public final class uo extends org.telegram.ui.Components.e90 {
+    public final /* synthetic */ Context w;
+    public final /* synthetic */ yo x;
 
-    public /* synthetic */ uo(Object obj, long j10, long j11, int i10) {
-        this.a = i10;
-        this.d = obj;
-        this.b = j10;
-        this.c = j11;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public uo(yo yoVar, Context context, TLRPC.Chat chat, Context context2) {
+        super(context, chat);
+        this.x = yoVar;
+        this.w = context2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        org.telegram.ui.Components.a71 a71Var;
-        switch (this.a) {
-            case 0:
-                MessagesController.getInstance(r0.currentAccount).unlinkCommunity(this.b, this.c, new f5((zo) this.d, 4));
-                break;
-            case 1:
-                org.telegram.ui.web.z1 z1Var = (org.telegram.ui.web.z1) this.d;
-                long j10 = this.b;
-                long j11 = this.c;
-                z1Var.f = j10;
-                z1Var.h = j11;
-                org.telegram.ui.Components.c71 c71Var = z1Var.a;
-                if (c71Var != null && (a71Var = c71Var.W2) != null && c71Var.G) {
-                    a71Var.N(true);
-                    break;
-                }
-                break;
-            case 2:
-                qi.q qVar = (qi.q) this.d;
-                long j12 = this.b;
-                long j13 = this.c;
-                if (qVar.m == qi.o.h) {
-                    long j14 = ((j12 - j13) * 48000) / 1000;
-                    qVar.p = j14;
-                    qVar.r = 0L;
-                    qVar.s = qi.q.q(j14);
-                    qVar.i();
-                    break;
-                }
-                break;
-            default:
-                cc.e eVar = (cc.e) this.d;
-                long j15 = this.b;
-                long j16 = this.c;
-                final qi.q qVar2 = (qi.q) eVar.c;
-                if (j15 == qVar2.o) {
-                    qVar2.n = null;
-                    qVar2.p += j16;
-                    qVar2.q = 0L;
-                    qVar2.h.removeCallbacks(qVar2.D);
-                    qi.o oVar = qVar2.m;
-                    if (oVar != qi.o.s) {
-                        if (oVar != qi.o.r) {
-                            if (!qVar2.v) {
-                                if (oVar == qi.o.d) {
-                                    final qi.k kVar = qVar2.z;
-                                    if (kVar != null) {
-                                        long j17 = qVar2.j();
-                                        qVar2.r = 0L;
-                                        qVar2.s = j17;
-                                        qVar2.i.execute(new Runnable() { // from class: org.telegram.utils.recorder.audio.d
-                                            @Override // java.lang.Runnable
-                                            public final void run() {
-                                                byte[] bArr;
-                                                q qVar3 = q.this;
-                                                k kVar2 = kVar;
-                                                try {
-                                                    bArr = AudioRecorderNative.e(kVar2.b.getAbsolutePath());
-                                                } catch (Throwable th2) {
-                                                    qVar3.g.a("waveform extraction failed", th2);
-                                                    bArr = null;
-                                                }
-                                                qVar3.h.post(new g(qVar3, kVar2, bArr, 1));
-                                            }
-                                        });
-                                        break;
-                                    } else {
-                                        qVar2.g(new IllegalStateException("Output generation is missing"));
-                                        break;
-                                    }
-                                }
-                            } else {
-                                qVar2.v = false;
-                                qVar2.i();
-                                break;
-                            }
-                        } else {
-                            qVar2.c();
-                            qVar2.s();
-                            break;
-                        }
-                    } else {
-                        qVar2.c();
-                        qVar2.s();
-                        qVar2.l("cancelled");
-                        break;
-                    }
-                }
-                break;
+    @Override // org.telegram.ui.Components.e90
+    public final boolean a(final boolean z10, org.telegram.ui.Components.c90 c90Var) {
+        TLRPC.ChatFull chatFull;
+        int i10;
+        org.telegram.ui.ActionBar.d6 d6Var;
+        yo yoVar = this.x;
+        if (!yoVar.V || (chatFull = yoVar.Y) == null || (i10 = chatFull.invitesCount) == 0) {
+            return true;
         }
+        String str = yoVar.a0 ? z10 ? "ApproveNewMembersEnableForLinksChannel" : "ApproveNewMembersDisableForLinksChannel" : z10 ? "ApproveNewMembersEnableForLinks" : "ApproveNewMembersDisableForLinks";
+        Context context = this.w;
+        d6Var = ((org.telegram.ui.ActionBar.n2) yoVar).resourceProvider;
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, d6Var);
+        alertDialog$Builder.a.R = LocaleController.getString(R.string.ApproveNewMembersApplyToLinksTitle);
+        alertDialog$Builder.a.T = AndroidUtilities.replaceTags(LocaleController.formatPluralString(str, i10, new Object[0]));
+        final int i11 = 0;
+        alertDialog$Builder.k(LocaleController.getString(R.string.ApproveNewMembersApplyToLinksApply), new org.telegram.ui.ActionBar.a2(this) { // from class: org.telegram.ui.to
+            public final /* synthetic */ uo b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // org.telegram.ui.ActionBar.a2
+            public final void g(org.telegram.ui.ActionBar.b2 b2Var, int i12) {
+                switch (i11) {
+                    case 0:
+                        boolean z11 = z10;
+                        uo uoVar = this.b;
+                        uoVar.setJoinRequest(z11);
+                        uoVar.x.W = true;
+                        break;
+                    default:
+                        boolean z12 = z10;
+                        uo uoVar2 = this.b;
+                        uoVar2.setJoinRequest(z12);
+                        uoVar2.x.W = false;
+                        break;
+                }
+            }
+        });
+        final int i12 = 1;
+        alertDialog$Builder.h(LocaleController.getString(R.string.ApproveNewMembersApplyToLinksDontApply), new org.telegram.ui.ActionBar.a2(this) { // from class: org.telegram.ui.to
+            public final /* synthetic */ uo b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // org.telegram.ui.ActionBar.a2
+            public final void g(org.telegram.ui.ActionBar.b2 b2Var, int i122) {
+                switch (i12) {
+                    case 0:
+                        boolean z11 = z10;
+                        uo uoVar = this.b;
+                        uoVar.setJoinRequest(z11);
+                        uoVar.x.W = true;
+                        break;
+                    default:
+                        boolean z12 = z10;
+                        uo uoVar2 = this.b;
+                        uoVar2.setJoinRequest(z12);
+                        uoVar2.x.W = false;
+                        break;
+                }
+            }
+        });
+        yoVar.showDialog(alertDialog$Builder.a);
+        return false;
     }
 }

@@ -1,40 +1,29 @@
 package org.telegram.ui.Wallet;
 
-import android.view.View;
-import org.telegram.messenger.Utilities;
+import java.util.concurrent.FutureTask;
+import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class c7 implements View.OnClickListener {
+public final /* synthetic */ class c7 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ di.d b;
-    public final /* synthetic */ Utilities.Callback c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e3 d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.c6 e;
+    public final /* synthetic */ AtomicBoolean b;
+    public final /* synthetic */ FutureTask c;
 
-    public /* synthetic */ c7(di.d dVar, Utilities.Callback callback, org.telegram.ui.ActionBar.e3 e3Var, org.telegram.ui.ActionBar.c6 c6Var, int i10) {
+    public /* synthetic */ c7(AtomicBoolean atomicBoolean, FutureTask futureTask, int i10) {
         this.a = i10;
-        this.b = dVar;
-        this.c = callback;
-        this.d = e3Var;
-        this.e = c6Var;
+        this.b = atomicBoolean;
+        this.c = futureTask;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                di.d dVar = this.b;
-                dVar.setLoading(true);
-                this.c.run(new p3(dVar, this.d, this.e, 1));
+                WalletEngine2.lambda$emulateSend$18(this.b, this.c);
                 break;
             default:
-                di.d dVar2 = this.b;
-                if (!dVar2.N) {
-                    dVar2.setLoading(true);
-                    this.c.run(new p3(this.d, this.e, dVar2));
-                    break;
-                }
+                WalletEngine2.lambda$emulateSendNFT$23(this.b, this.c);
                 break;
         }
     }

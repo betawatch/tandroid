@@ -1,38 +1,53 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class op0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ yp0 b;
+import android.text.Editable;
 
-    public /* synthetic */ op0(yp0 yp0Var, int i10) {
-        this.a = i10;
-        this.b = yp0Var;
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes3.dex */
+public final class op0 implements jq0 {
+    public final /* synthetic */ tp0 a;
+
+    public op0(tp0 tp0Var) {
+        this.a = tp0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        yp0 yp0Var = this.b;
-        switch (i10) {
-            case 0:
-                if (yp0Var.G) {
-                    yp0Var.b.invalidate();
-                    break;
-                }
-                break;
-            case 1:
-                yp0Var.h();
-                break;
-            case 2:
-                int i11 = yp0.q0;
-                yp0Var.h();
-                break;
-            default:
-                int i12 = yp0.q0;
-                yp0Var.h();
-                break;
+    @Override // org.telegram.ui.jq0
+    public final void a() {
+        tp0 tp0Var = this.a;
+        if (tp0Var.b.size() != 0) {
+            tp0Var.Q.invalidate();
+            tp0Var.W(true);
+        } else {
+            tp0Var.Q.setPivotX(0.0f);
+            tp0Var.Q.setPivotY(0.0f);
+            tp0Var.W(false);
         }
+    }
+
+    @Override // org.telegram.ui.jq0
+    public final void b(Editable editable) {
+        tp0 tp0Var = this.a;
+        org.telegram.ui.Components.qu quVar = tp0Var.M;
+        tp0Var.a = editable;
+        quVar.setText(editable);
+    }
+
+    @Override // org.telegram.ui.jq0
+    public final /* synthetic */ boolean e() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.jq0
+    public final void h(int i10, boolean z10, boolean z11) {
+        tp0 tp0Var = this.a;
+        tp0Var.removeSelfFromStack();
+        if (z10) {
+            return;
+        }
+        tp0Var.V(tp0Var.b, tp0Var.c, z11, i10);
+    }
+
+    @Override // org.telegram.ui.jq0
+    public final /* synthetic */ void g() {
     }
 }

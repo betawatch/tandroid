@@ -1,52 +1,53 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class we implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class we implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ fo b;
+    public final /* synthetic */ sn b;
+    public final /* synthetic */ org.telegram.ui.Components.ym0 c;
+    public final /* synthetic */ String d;
 
-    public /* synthetic */ we(fo foVar, int i10) {
+    public /* synthetic */ we(sn snVar, org.telegram.ui.Components.ym0 ym0Var, String str, int i10) {
         this.a = i10;
-        this.b = foVar;
+        this.b = snVar;
+        this.c = ym0Var;
+        this.d = str;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        org.telegram.ui.Components.xc a02;
+        int i10;
         switch (this.a) {
             case 0:
-                mk mkVar = this.b.X1;
-                if (mkVar != null) {
-                    mkVar.c(false);
-                    break;
-                }
+                this.c.dismiss();
+                AndroidUtilities.addToClipboard(this.d);
+                a02 = org.telegram.ui.Components.xc.a0(this.b);
+                i10 = R.string.RelativeDateCopied;
                 break;
             case 1:
-                fo.a1(this.b);
+                this.c.dismiss();
+                AndroidUtilities.addToClipboard(this.d);
+                a02 = org.telegram.ui.Components.xc.a0(this.b);
+                i10 = R.string.WalletAddressCopiedBulletin;
                 break;
             case 2:
-                this.b.j8(false, true, 0.0f);
-                break;
-            case 3:
-                this.b.j8(false, true, 0.0f);
-                break;
-            case 4:
-                this.b.j8(false, true, 0.0f);
-                break;
-            case 5:
-                this.b.j8(false, true, 0.0f);
-                break;
-            case 6:
-                this.b.j8(false, true, 0.0f);
-                break;
-            case 7:
-                this.b.j8(false, true, 0.0f);
+                this.c.dismiss();
+                AndroidUtilities.addToClipboard("@" + this.d);
+                a02 = org.telegram.ui.Components.xc.a0(this.b);
+                i10 = R.string.UsernameCopied;
                 break;
             default:
-                this.b.Gb = null;
+                this.c.dismiss();
+                AndroidUtilities.addToClipboard(this.d);
+                a02 = org.telegram.ui.Components.xc.a0(this.b);
+                i10 = R.string.CardNumberCopied;
                 break;
         }
+        org.telegram.messenger.wh.p(i10, a02);
     }
 }

@@ -7,7 +7,7 @@ import android.os.IInterface;
 import android.os.Parcel;
 import android.os.RemoteException;
 import android.util.Log;
-import c5.w;
+import c5.v;
 import com.google.android.gms.common.data.DataHolder;
 import y8.b1;
 import y8.e0;
@@ -16,7 +16,7 @@ import y8.l0;
 import y8.v0;
 import y8.z0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class m extends b8.b {
     public volatile int b;
@@ -60,7 +60,7 @@ public final class m extends b8.b {
                 e0Var = queryLocalInterface instanceof e0 ? (e0) queryLocalInterface : new e0(readStrongBinder, "com.google.android.gms.wearable.internal.IRpcResponseCallback", 4);
             }
             f8.a.b(parcel);
-            K0(new w(this, obj, e0Var, 12), "onRequestReceived", obj);
+            K0(new v(this, obj, e0Var, 12), "onRequestReceived", obj);
             return true;
         }
         if (i10 == 14) {
@@ -71,7 +71,7 @@ public final class m extends b8.b {
             case 1:
                 DataHolder dataHolder = (DataHolder) f8.a.a(parcel, DataHolder.CREATOR);
                 f8.a.b(parcel);
-                Runnable jVar = new s9.j(7, this, dataHolder);
+                Runnable iVar = new s9.i(7, this, dataHolder);
                 try {
                     String valueOf = String.valueOf(dataHolder);
                     int i11 = dataHolder.n;
@@ -79,14 +79,14 @@ public final class m extends b8.b {
                     sb2.append(valueOf);
                     sb2.append(", rows=");
                     sb2.append(i11);
-                    return !K0(jVar, "onDataItemChanged", sb2.toString()) ? true : true;
+                    return !K0(iVar, "onDataItemChanged", sb2.toString()) ? true : true;
                 } finally {
                     dataHolder.close();
                 }
             case 2:
                 Object obj2 = (k0) f8.a.a(parcel, k0.CREATOR);
                 f8.a.b(parcel);
-                K0(new s9.j(8, this, obj2), "onMessageReceived", obj2);
+                K0(new s9.i(8, this, obj2), "onMessageReceived", obj2);
                 return true;
             case 3:
                 l0 l0Var = (l0) f8.a.a(parcel, l0.CREATOR);
@@ -101,27 +101,27 @@ public final class m extends b8.b {
             case 5:
                 Object createTypedArrayList = parcel.createTypedArrayList(l0.CREATOR);
                 f8.a.b(parcel);
-                K0(new s9.j(9, this, createTypedArrayList), "onConnectedNodes", createTypedArrayList);
+                K0(new s9.i(9, this, createTypedArrayList), "onConnectedNodes", createTypedArrayList);
                 return true;
             case 6:
                 Object obj3 = (b1) f8.a.a(parcel, b1.CREATOR);
                 f8.a.b(parcel);
-                K0(new s9.j(11, this, obj3), "onNotificationReceived", obj3);
+                K0(new s9.i(11, this, obj3), "onNotificationReceived", obj3);
                 return true;
             case 7:
                 Object obj4 = (y8.e) f8.a.a(parcel, y8.e.CREATOR);
                 f8.a.b(parcel);
-                K0(new s9.j(13, this, obj4), "onChannelEvent", obj4);
+                K0(new s9.i(13, this, obj4), "onChannelEvent", obj4);
                 return true;
             case 8:
                 Object obj5 = (y8.b) f8.a.a(parcel, y8.b.CREATOR);
                 f8.a.b(parcel);
-                K0(new s9.j(10, this, obj5), "onConnectedCapabilityChanged", obj5);
+                K0(new s9.i(10, this, obj5), "onConnectedCapabilityChanged", obj5);
                 return true;
             case 9:
                 Object obj6 = (v0) f8.a.a(parcel, v0.CREATOR);
                 f8.a.b(parcel);
-                K0(new s9.j(12, this, obj6), "onEntityUpdate", obj6);
+                K0(new s9.i(12, this, obj6), "onEntityUpdate", obj6);
                 return true;
             default:
                 return false;

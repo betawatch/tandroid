@@ -1,25 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.util.SparseIntArray;
+import android.view.View;
+import android.view.ViewPropertyAnimator;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class t21 extends org.telegram.ui.ActionBar.d5 {
-    public final /* synthetic */ SparseIntArray T;
+public final class t21 extends TextView {
+    public View a;
+    public ViewPropertyAnimator b;
+    public boolean c;
+    public fr0 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t21(boolean z10, SparseIntArray sparseIntArray) {
-        super(2, z10, false, null);
-        this.T = sparseIntArray;
+    public final void a() {
+        if (this.a == null) {
+            return;
+        }
+        View view = (View) getParent();
+        int i10 = 0;
+        int i11 = 0;
+        for (View view2 = this.a; view2 != view; view2 = (View) view2.getParent()) {
+            i11 += view2.getTop();
+            i10 += view2.getLeft();
+        }
+        int width = ((this.a.getWidth() / 2) + i10) - (getMeasuredWidth() / 2);
+        setTranslationX(width >= 0 ? getMeasuredWidth() + width > view.getMeasuredWidth() ? (view.getMeasuredWidth() - getMeasuredWidth()) - AndroidUtilities.dp(16.0f) : width : 0);
+        setTranslationY(i11 - getMeasuredHeight());
     }
 
-    @Override // org.telegram.ui.ActionBar.d5
-    public final int g(int i10) {
-        return this.T.get(i10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.d5
-    public final int h(int i10) {
-        return this.T.get(i10);
+    @Override // android.widget.TextView, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        a();
     }
 }

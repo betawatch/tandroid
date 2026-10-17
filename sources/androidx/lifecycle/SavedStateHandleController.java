@@ -1,6 +1,6 @@
 package androidx.lifecycle;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class SavedStateHandleController implements r {
     public final String a;
@@ -12,7 +12,7 @@ public final class SavedStateHandleController implements r {
         this.b = i0Var;
     }
 
-    public final void c(o lifecycle, m.r registry) {
+    public final void c(o lifecycle, m.q registry) {
         kotlin.jvm.internal.i.e(registry, "registry");
         kotlin.jvm.internal.i.e(lifecycle, "lifecycle");
         if (this.c) {

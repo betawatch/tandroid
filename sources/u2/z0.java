@@ -2,7 +2,7 @@ package u2;
 
 import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class z0 implements x3.g {
     public long a;
@@ -17,13 +17,13 @@ public final class z0 implements x3.g {
     }
 
     @Override // x3.g
-    public void g0(long j10) {
-        long[] jArr = (long[]) ((qf.b) this.d).b;
+    public void X(long j10) {
+        long[] jArr = (long[]) ((n4.s) this.d).b;
         this.b = jArr[e2.m0.f(jArr, j10, true)];
     }
 
     @Override // x3.g
-    public long l(c3.p pVar) {
+    public long k(c3.p pVar) {
         long j10 = this.b;
         if (j10 < 0) {
             return -1L;
@@ -34,7 +34,7 @@ public final class z0 implements x3.g {
     }
 
     @Override // x3.g
-    public c3.b0 y() {
+    public c3.c0 x() {
         u6.p(this.a != -1);
         return new c3.t((c3.u) this.c, this.a, 0);
     }

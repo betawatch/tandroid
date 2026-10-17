@@ -1,48 +1,52 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class nu0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ou0 b;
-    public final /* synthetic */ String c;
+public final class nu0 extends org.telegram.ui.Cells.h7 {
+    public final /* synthetic */ int l0;
+    public final /* synthetic */ hm0 m0;
 
-    public /* synthetic */ nu0(ou0 ou0Var, String str, int i10) {
-        this.a = i10;
-        this.b = ou0Var;
-        this.c = str;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ nu0(hm0 hm0Var, Context context, org.telegram.ui.ActionBar.d6 d6Var, int i10) {
+        super(context, 0, d6Var);
+        this.l0 = i10;
+        this.m0 = hm0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // org.telegram.ui.Cells.h7
+    public final boolean d(MessageObject messageObject) {
+        switch (this.l0) {
             case 0:
-                ou0 ou0Var = this.b;
-                String str = this.c;
-                ou0Var.getClass();
-                AndroidUtilities.runOnUIThread(new nu0(ou0Var, str, 1));
-                break;
+                ou0 ou0Var = (ou0) this.m0;
+                if (!messageObject.isVoice() && !messageObject.isRoundVideo()) {
+                    if (messageObject.isMusic()) {
+                        return MediaController.getInstance().setPlaylist(ou0Var.d, messageObject, ou0Var.v.c1);
+                    }
+                    return false;
+                }
+                boolean playMessage = MediaController.getInstance().playMessage(messageObject);
+                MediaController.getInstance().setVoiceMessagesPlaylist(playMessage ? ou0Var.d : null, false);
+                if (messageObject.isRoundVideo()) {
+                    MediaController.getInstance().setCurrentVideoVisible(false);
+                }
+                return playMessage;
             default:
-                ou0 ou0Var2 = this.b;
-                String str2 = this.c;
-                ArrayList arrayList = null;
-                ou0Var2.f = null;
-                if (!ChatObject.isChannel(ou0Var2.n) && ou0Var2.s.d1 != null) {
-                    arrayList = new ArrayList(ou0Var2.s.d1.participants.participants);
+                fv0 fv0Var = (fv0) this.m0;
+                int i10 = fv0Var.d;
+                sv0 sv0Var = fv0Var.f;
+                if (messageObject.isVoice() || messageObject.isRoundVideo()) {
+                    boolean playMessage2 = MediaController.getInstance().playMessage(messageObject);
+                    MediaController.getInstance().setVoiceMessagesPlaylist(playMessage2 ? sv0Var.t1[i10].a : null, false);
+                    return playMessage2;
                 }
-                ou0Var2.r = 2;
-                if (arrayList != null) {
-                    Utilities.searchQueue.postRunnable(new ze0(ou0Var2, str2, arrayList, 9));
-                } else {
-                    ou0Var2.r = 1;
+                if (messageObject.isMusic()) {
+                    return MediaController.getInstance().setPlaylist(sv0Var.t1[i10].a, messageObject, sv0Var.c1);
                 }
-                ou0Var2.e.g(str2, false, false, true, false, ChatObject.isChannel(ou0Var2.n) ? ou0Var2.n.id : 0L, false, 2, 1);
-                break;
+                return false;
         }
     }
 }

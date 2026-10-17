@@ -1,116 +1,33 @@
 package org.telegram.messenger;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class aj implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Serializable f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
-    public final /* synthetic */ TLObject r;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ SendMessagesHelper b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 d;
+    public final /* synthetic */ TLRPC.TL_messages_editMessage e;
 
-    public /* synthetic */ aj(SendMessagesHelper sendMessagesHelper, ArrayList arrayList, boolean z10, boolean z11, TLRPC.Message message, ArrayList arrayList2, ArrayList arrayList3, int i10) {
-        this.e = sendMessagesHelper;
-        this.f = arrayList;
-        this.c = z10;
-        this.d = z11;
-        this.r = message;
-        this.h = arrayList2;
-        this.n = arrayList3;
-        this.b = i10;
+    public /* synthetic */ aj(SendMessagesHelper sendMessagesHelper, TLRPC.TL_error tL_error, org.telegram.ui.ActionBar.n2 n2Var, TLRPC.TL_messages_editMessage tL_messages_editMessage, int i10) {
+        this.a = i10;
+        this.b = sendMessagesHelper;
+        this.c = tL_error;
+        this.d = n2Var;
+        this.e = tL_messages_editMessage;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i10;
-        TLRPC.TL_username tL_username;
         switch (this.a) {
             case 0:
-                ((SendMessagesHelper) this.e).lambda$performSendMessageRequest$99((ArrayList) this.f, this.c, this.d, (TLRPC.Message) this.r, (ArrayList) this.h, (ArrayList) this.n, this.b);
+                this.b.lambda$sendEditRichMessageRequest$28(this.c, this.d, this.e);
                 break;
             default:
-                org.telegram.ui.ka kaVar = (org.telegram.ui.ka) this.e;
-                String str = (String) this.f;
-                TLObject tLObject = (TLObject) this.h;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) this.n;
-                TLRPC.TL_username tL_username2 = (TLRPC.TL_username) this.r;
-                org.telegram.ui.va vaVar = kaVar.a;
-                ArrayList arrayList = vaVar.w;
-                ArrayList arrayList2 = vaVar.v;
-                arrayList.remove(str);
-                boolean z10 = tLObject instanceof TLRPC.TL_boolTrue;
-                int i11 = this.b;
-                boolean z11 = this.c;
-                if (z10) {
-                    vaVar.i0(i11, z11, false);
-                } else {
-                    boolean z12 = this.d;
-                    if (tL_error == null || !"USERNAMES_ACTIVE_TOO_MUCH".equals(tL_error.text)) {
-                        vaVar.j0(tL_username2, z12, true);
-                    } else {
-                        tL_username2.active = z11;
-                        vaVar.i0(i11, z11, false);
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(vaVar.getParentActivity(), 0, vaVar.getResourceProvider());
-                        alertDialog$Builder.a.R = LocaleController.getString(R.string.UsernameActivateErrorTitle);
-                        alertDialog$Builder.a.T = LocaleController.getString(R.string.UsernameActivateErrorMessage);
-                        alertDialog$Builder.k(LocaleController.getString(R.string.OK), new com.google.firebase.messaging.i(kaVar, tL_username2, z12, 3));
-                        alertDialog$Builder.o();
-                    }
-                }
-                i10 = ((org.telegram.ui.ActionBar.m2) vaVar).currentAccount;
-                TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(vaVar.g0()));
-                vaVar.getMessagesController().updateUsernameActiveness(user, tL_username2.username, tL_username2.active);
-                if (vaVar.x != 0 && arrayList2 != null) {
-                    int size = arrayList2.size();
-                    int i12 = 0;
-                    while (i12 < size) {
-                        Object obj = arrayList2.get(i12);
-                        i12++;
-                        if (((TLRPC.TL_username) obj).active) {
-                            break;
-                        }
-                    }
-                    int size2 = arrayList2.size();
-                    int i13 = 0;
-                    while (true) {
-                        if (i13 < size2) {
-                            Object obj2 = arrayList2.get(i13);
-                            i13++;
-                            tL_username = (TLRPC.TL_username) obj2;
-                            if (tL_username.editable) {
-                            }
-                        } else {
-                            tL_username = null;
-                        }
-                    }
-                    if (tL_username != null) {
-                        vaVar.j0(tL_username, true, false);
-                        vaVar.getMessagesController().updateUsernameActiveness(user, tL_username.username, tL_username.active);
-                        break;
-                    }
-                }
+                this.b.lambda$editMessage$23(this.c, this.d, this.e);
                 break;
         }
-    }
-
-    public /* synthetic */ aj(org.telegram.ui.ka kaVar, String str, TLObject tLObject, int i10, boolean z10, TLRPC.TL_error tL_error, TLRPC.TL_username tL_username, boolean z11) {
-        this.e = kaVar;
-        this.f = str;
-        this.h = tLObject;
-        this.b = i10;
-        this.c = z10;
-        this.n = tL_error;
-        this.r = tL_username;
-        this.d = z11;
     }
 }

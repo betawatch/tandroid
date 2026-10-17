@@ -1,95 +1,49 @@
 package org.telegram.ui;
 
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class fd implements org.telegram.ui.ActionBar.c6 {
-    public final /* synthetic */ gd a;
+public final /* synthetic */ class fd implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ od b;
 
-    public fd(gd gdVar) {
-        this.a = gdVar;
+    public /* synthetic */ fd(od odVar, int i10) {
+        this.a = i10;
+        this.b = odVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public final int E0(int i10) {
-        gd gdVar = this.a;
-        int indexOfKey = gdVar.r0.indexOfKey(i10);
-        if (indexOfKey >= 0) {
-            return gdVar.r0.valueAt(indexOfKey);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                od odVar = this.b;
+                odVar.j0 = true;
+                odVar.h0();
+                break;
+            case 1:
+                od odVar2 = this.b;
+                odVar2.x = null;
+                odVar2.y = null;
+                odVar2.l0 = null;
+                odVar2.m0 = null;
+                odVar2.o0 = null;
+                odVar2.n0 = null;
+                odVar2.p0 = 0.0d;
+                odVar2.e0(false, true);
+                odVar2.e.h(null, null, odVar2.s, null);
+                odVar2.h.setAnimation(odVar2.J);
+                odVar2.J.M(0);
+                break;
+            case 2:
+                this.b.g0(true);
+                break;
+            default:
+                od odVar3 = this.b;
+                odVar3.j0 = true;
+                if (odVar3.w.length() > 0) {
+                    odVar3.d0(odVar3.w.getText().toString());
+                }
+                odVar3.h0();
+                break;
         }
-        org.telegram.ui.ActionBar.c6 c6Var = gdVar.q0;
-        return c6Var != null ? c6Var.E0(i10) : org.telegram.ui.ActionBar.g6.x0(null, i10, false);
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public final Paint F(String str) {
-        return str.equals("paintDivider") ? this.a.y0 : org.telegram.ui.ActionBar.g6.T0(str);
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public final boolean a() {
-        return this.a.J;
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public final int b0(int i10) {
-        return E0(i10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public final int f1(int i10) {
-        return E0(i10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public final Drawable getDrawable(String str) {
-        gd gdVar = this.a;
-        Drawable drawable = gdVar.x0;
-        Drawable drawable2 = gdVar.w0;
-        if (str.equals("drawableMsgIn")) {
-            return gdVar.s0;
-        }
-        if (str.equals("drawableMsgInSelected")) {
-            return gdVar.t0;
-        }
-        if (str.equals("drawableMsgOut")) {
-            return gdVar.u0;
-        }
-        if (str.equals("drawableMsgOutSelected")) {
-            return gdVar.v0;
-        }
-        if (str.equals("drawableMsgOutCheckRead")) {
-            drawable2.setColorFilter(E0(org.telegram.ui.ActionBar.g6.La), PorterDuff.Mode.MULTIPLY);
-            return drawable2;
-        }
-        if (str.equals("drawableMsgOutHalfCheck")) {
-            drawable.setColorFilter(E0(org.telegram.ui.ActionBar.g6.La), PorterDuff.Mode.MULTIPLY);
-            return drawable;
-        }
-        org.telegram.ui.ActionBar.c6 c6Var = gdVar.q0;
-        return c6Var != null ? c6Var.getDrawable(str) : org.telegram.ui.ActionBar.g6.P0(str);
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public final void l(float f7, float f10, int i10, int i11) {
-        org.telegram.ui.ActionBar.g6.q(f7, f10, i10, i11);
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public final /* synthetic */ boolean m0() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public final ColorFilter w() {
-        return org.telegram.ui.ActionBar.g6.v3;
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public final /* synthetic */ void M0(int i10, int i11) {
     }
 }

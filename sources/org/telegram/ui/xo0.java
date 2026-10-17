@@ -1,27 +1,42 @@
 package org.telegram.ui;
 
-import android.text.TextPaint;
-import android.text.style.ClickableSpan;
-import android.view.View;
+import android.os.Build;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class xo0 extends ClickableSpan {
-    public final /* synthetic */ ap0 a;
+public final class xo0 extends s4.r0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ dp0 b;
 
-    public xo0(ap0 ap0Var) {
-        this.a = ap0Var;
+    public xo0(dp0 dp0Var, int i10) {
+        this.b = dp0Var;
+        this.a = i10;
     }
 
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        ap0 ap0Var = this.a;
-        ap0Var.presentFragment(new oh1(6, ap0Var.a0));
-    }
-
-    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        super.updateDrawState(textPaint);
-        textPaint.setUnderlineText(false);
+    @Override // s4.r0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        bh.f fVar;
+        dp0 dp0Var = this.b;
+        jp0 jp0Var = dp0Var.p0;
+        if (i11 != 0) {
+            jp0Var.D0(1);
+        }
+        if (Build.VERSION.SDK_INT >= 31 && (fVar = jp0Var.f0) != null) {
+            fVar.f(i10, i11);
+        }
+        dp0Var.h();
+        if (dp0Var.K != null) {
+            if (dp0Var.J == null || !dp0Var.c()) {
+                return;
+            }
+            dp0Var.J.g(false);
+            return;
+        }
+        ai.x9 x9Var = this.a == 1 ? jp0Var.c : jp0Var.b;
+        if (x9Var == null || !dp0Var.c()) {
+            return;
+        }
+        x9Var.a();
     }
 }

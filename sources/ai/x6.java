@@ -1,0 +1,108 @@
+package ai;
+
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.u10;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes4.dex */
+public final class x6 extends FrameLayout {
+    public final i2 a;
+    public final w6 b;
+    public final w6 c;
+    public final w6 d;
+    public boolean e;
+    public final u10 f;
+    public final RectF h;
+
+    public x6(Context context, org.telegram.ui.ActionBar.d6 d6Var, i2 i2Var) {
+        super(context);
+        this.f = new u10();
+        this.h = new RectF();
+        this.a = i2Var;
+        w6 w6Var = new w6(context, d6Var);
+        this.b = w6Var;
+        w6 w6Var2 = new w6(context, d6Var);
+        this.c = w6Var2;
+        w6 w6Var3 = new w6(context, d6Var);
+        this.d = w6Var3;
+        addView(w6Var, w7.z5.a(-2.0f, 12.66f, 5.33f, 12.66f, 5.33f, -2, 51));
+        addView(w6Var2, w7.z5.a(-2.0f, 12.66f, 5.33f, 12.66f, 5.33f, -2, 51));
+        addView(w6Var3, w7.z5.a(-2.0f, 12.66f, 5.33f, 12.66f, 5.33f, -2, 51));
+    }
+
+    public final void a(n6 n6Var, float f7, boolean z10, n6 n6Var2, float f10, boolean z11, n6 n6Var3, float f11, boolean z12) {
+        i2 i2Var = this.a;
+        w6 w6Var = this.b;
+        if (n6Var != null) {
+            if (z10) {
+                f7 = Math.max(0.5f, f7);
+            }
+            w6Var.setVisibility(0);
+            w6Var.e(n6Var.a, n6Var.b, i2Var);
+            w6Var.setTranslationY(AndroidUtilities.dp(36.0f) * ((f7 - 0.5f) / 1.5f));
+        } else {
+            w6Var.setVisibility(4);
+        }
+        w6 w6Var2 = this.c;
+        if (n6Var2 != null) {
+            float f12 = f10;
+            if (z11) {
+                f12 = Math.max(0.5f, f12);
+            }
+            float f13 = (f12 - 0.5f) / 1.5f;
+            w6Var2.setVisibility(0);
+            w6Var2.e(n6Var2.a, n6Var2.b, i2Var);
+            w6Var2.setTranslationY(AndroidUtilities.dp(36.0f) * f13);
+            if (z11 && f13 <= 0.0f && !this.e) {
+                this.e = true;
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+                ofFloat.addUpdateListener(new ah.c0(w6Var2, 4));
+                ofFloat.setDuration(180L);
+                ofFloat.start();
+            }
+        } else {
+            w6Var2.setVisibility(4);
+        }
+        w6 w6Var3 = this.d;
+        if (n6Var3 == null) {
+            w6Var3.setVisibility(4);
+            return;
+        }
+        float f14 = f11;
+        if (z12) {
+            f14 = Math.max(0.5f, f14);
+        }
+        w6Var3.setVisibility(0);
+        w6Var3.e(n6Var3.a, n6Var3.b, i2Var);
+        w6Var3.setTranslationY(AndroidUtilities.dp(36.0f) * ((f14 - 0.5f) / 1.5f));
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
+        super.dispatchDraw(canvas);
+        canvas.save();
+        float width = getWidth();
+        float dp = AndroidUtilities.dp(8.0f);
+        RectF rectF = this.h;
+        rectF.set(0.0f, 0.0f, width, dp);
+        u10 u10Var = this.f;
+        u10Var.b(canvas, rectF, 1, 1.0f);
+        rectF.set(0.0f, getHeight() - AndroidUtilities.dp(8.0f), getWidth(), getHeight());
+        u10Var.b(canvas, rectF, 3, 1.0f);
+        canvas.restore();
+        canvas.restore();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(37.66f), TLObject.FLAG_30));
+    }
+}

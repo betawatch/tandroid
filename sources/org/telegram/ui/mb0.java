@@ -1,90 +1,53 @@
 package org.telegram.ui;
 
-import android.view.Window;
-import java.lang.ref.WeakReference;
+import android.text.TextUtils;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class mb0 implements zf.k0 {
-    public final /* synthetic */ int a;
-    public boolean b;
-    public boolean c;
-    public final Object d;
+public final class mb0 extends pg.a {
+    public final CharSequence c;
+    public final int d;
+    public final int e;
+    public final int f;
 
-    public /* synthetic */ mb0(Object obj, int i10) {
-        this.a = i10;
-        this.d = obj;
+    public mb0(int i10, int i11, CharSequence charSequence, int i12, int i13) {
+        super(i10, false);
+        this.c = charSequence;
+        this.d = i11;
+        this.e = i12;
+        this.f = i13;
     }
 
-    @Override // zf.k0
-    public void a(boolean z10) {
-        switch (this.a) {
-            case 0:
-                if (this.b != z10 && !this.c) {
-                    this.b = z10;
-                    LaunchActivity launchActivity = (LaunchActivity) ((WeakReference) this.d).get();
-                    if (launchActivity != null) {
-                        int i10 = launchActivity.A1 + (z10 ? 1 : -1);
-                        launchActivity.A1 = i10;
-                        l0 l0Var = launchActivity.w0;
-                        if (l0Var != null) {
-                            l0Var.setVisibility(i10 > 0 ? 8 : 0);
-                        }
-                        launchActivity.getWindow();
-                        break;
-                    }
-                }
-                break;
-            default:
-                zf.l0 l0Var2 = (zf.l0) this.d;
-                if (this.b != z10 && !this.c) {
-                    this.b = z10;
-                    if (z10) {
-                        l0Var2.a++;
-                    } else {
-                        l0Var2.a--;
-                    }
-                    boolean z11 = l0Var2.a > 0;
-                    if (l0Var2.b != z11) {
-                        l0Var2.b = z11;
-                        Window window = (Window) ((WeakReference) l0Var2.c.b).get();
-                        if (window != null) {
-                            window.getDecorView().setVisibility(z11 ? 8 : 0);
-                            break;
-                        }
-                    }
-                }
-                break;
-        }
+    public static mb0 b(int i10, String str) {
+        return new mb0(4, 0, str, i10, 0);
     }
 
-    public void b() {
-        if (this.b) {
-            return;
-        }
-        this.b = true;
-        Runnable runnable = (Runnable) this.d;
-        if (runnable != null) {
-            runnable.run();
-        }
+    public static mb0 c(int i10, int i11, String str) {
+        return new mb0(3, i10, str, i11, 0);
     }
 
-    @Override // zf.k0
-    public void destroy() {
-        switch (this.a) {
-            case 0:
-                a(false);
-                this.c = true;
-                break;
-            default:
-                a(false);
-                this.c = true;
-                break;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-    }
-
-    public mb0(LaunchActivity launchActivity, boolean z10) {
-        this.a = 0;
-        this.d = new WeakReference(launchActivity);
+        if (!(obj instanceof mb0)) {
+            return false;
+        }
+        mb0 mb0Var = (mb0) obj;
+        int i10 = mb0Var.a;
+        int i11 = this.a;
+        if (i10 != i11) {
+            return false;
+        }
+        if (i11 == 3 && mb0Var.d != this.d) {
+            return false;
+        }
+        if (i11 == 5 && mb0Var.f != this.f) {
+            return false;
+        }
+        if ((i11 == 3 || i11 == 4) && mb0Var.e != this.e) {
+            return false;
+        }
+        return !(i11 == 0 || i11 == 2 || i11 == 3 || i11 == 4 || i11 == 5) || TextUtils.equals(mb0Var.c, this.c);
     }
 }

@@ -1,80 +1,30 @@
 package org.telegram.messenger;
 
-import android.content.SharedPreferences;
-import java.util.ArrayList;
+import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.l80;
-import org.telegram.ui.fo;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ic implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ MessagesController.ErrorDelegate b;
+    public final /* synthetic */ TLRPC.TL_error c;
 
-    public /* synthetic */ ic(MessagesController messagesController, TLRPC.updates_ChannelDifference updates_channeldifference, long j10, TLRPC.Chat chat, a0.h hVar, int i10, long j11) {
-        this.e = messagesController;
-        this.f = updates_channeldifference;
-        this.b = j10;
-        this.h = chat;
-        this.n = hVar;
-        this.d = i10;
-        this.c = j11;
+    public /* synthetic */ ic(MessagesController.ErrorDelegate errorDelegate, TLRPC.TL_error tL_error, int i10) {
+        this.a = i10;
+        this.b = errorDelegate;
+        this.c = tL_error;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.e).lambda$getChannelDifference$345((TLRPC.updates_ChannelDifference) this.f, this.b, (TLRPC.Chat) this.h, (a0.h) this.n, this.d, this.c);
-                break;
-            case 1:
-                ((SendMessagesHelper) this.e).lambda$completeSendingGramTransfer$7(this.b, this.c, this.d, (TLRPC.Message) this.f, (ArrayList) this.h, (MessageObject) this.n);
+                this.b.run(this.c);
                 break;
             default:
-                l80 l80Var = (l80) this.e;
-                l80 l80Var2 = (l80) this.f;
-                org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) this.h;
-                org.telegram.ui.ActionBar.c6 c6Var = (org.telegram.ui.ActionBar.c6) this.n;
-                l80Var.u();
-                SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(this.d);
-                StringBuilder sb2 = new StringBuilder("sound_enabled_");
-                long j10 = this.b;
-                long j11 = this.c;
-                boolean z10 = notificationsSettings.getBoolean(g0.i(j10, j11, sb2), true);
-                notificationsSettings.edit().putBoolean(g0.i(j10, j11, new StringBuilder("sound_enabled_")), !z10).apply();
-                l80Var2.u();
-                if (org.telegram.ui.Components.zc.a(m2Var)) {
-                    org.telegram.ui.Components.zc.S(z10 ? 1 : 0, m2Var, c6Var).j();
-                    break;
-                }
+                this.b.run(this.c);
                 break;
         }
-    }
-
-    public /* synthetic */ ic(SendMessagesHelper sendMessagesHelper, long j10, long j11, int i10, TLRPC.Message message, ArrayList arrayList, MessageObject messageObject) {
-        this.e = sendMessagesHelper;
-        this.b = j10;
-        this.c = j11;
-        this.d = i10;
-        this.f = message;
-        this.h = arrayList;
-        this.n = messageObject;
-    }
-
-    public /* synthetic */ ic(l80 l80Var, int i10, long j10, long j11, l80 l80Var2, fo foVar, org.telegram.ui.ActionBar.c6 c6Var) {
-        this.e = l80Var;
-        this.d = i10;
-        this.b = j10;
-        this.c = j11;
-        this.f = l80Var2;
-        this.h = foVar;
-        this.n = c6Var;
     }
 }

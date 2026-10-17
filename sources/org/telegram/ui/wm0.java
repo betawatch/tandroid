@@ -1,73 +1,52 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import android.graphics.Canvas;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class wm0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ sn0 c;
+public final class wm0 extends FrameLayout {
+    public TextView a;
+    public TextView b;
+    public ImageView c;
+    public boolean d;
 
-    public /* synthetic */ wm0(sn0 sn0Var, boolean z10, int i10) {
-        this.a = i10;
-        this.c = sn0Var;
-        this.b = z10;
+    public final void a(String str, boolean z10) {
+        this.a.setText(str);
+        this.b.setText("");
+        this.d = z10;
+        setWillNotDraw(!z10);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 0:
-                sn0 sn0Var = this.c;
-                AnimatorSet animatorSet = sn0Var.M;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    sn0Var.M = null;
-                    break;
-                }
-                break;
-            default:
-                sn0 sn0Var2 = this.c;
-                AnimatorSet animatorSet2 = sn0Var2.M;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    sn0Var2.M = null;
-                    break;
-                }
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.d) {
+            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.h6.k0);
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                sn0 sn0Var = this.c;
-                AnimatorSet animatorSet = sn0Var.M;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    if (!this.b) {
-                        sn0Var.N.setVisibility(4);
-                        break;
-                    } else {
-                        sn0Var.L.getContentView().setVisibility(4);
-                        break;
-                    }
-                }
-                break;
-            default:
-                sn0 sn0Var2 = this.c;
-                AnimatorSet animatorSet2 = sn0Var2.M;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    if (!this.b) {
-                        sn0Var2.P.setVisibility(4);
-                        break;
-                    } else {
-                        sn0Var2.O.setVisibility(4);
-                        break;
-                    }
-                }
-                break;
-        }
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(64.0f) + (this.d ? 1 : 0), TLObject.FLAG_30));
+    }
+
+    public void setChecked(boolean z10) {
+        this.c.setVisibility(z10 ? 0 : 4);
+    }
+
+    public void setNeedDivider(boolean z10) {
+        this.d = z10;
+        setWillNotDraw(!z10);
+        invalidate();
+    }
+
+    public void setValue(CharSequence charSequence) {
+        this.b.setText(charSequence);
     }
 }

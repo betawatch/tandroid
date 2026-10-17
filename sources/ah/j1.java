@@ -13,7 +13,7 @@ import android.text.TextUtils;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
-import com.google.android.gms.internal.play_billing.k3;
+import com.google.android.gms.internal.cast.a6;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -33,23 +33,23 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Cells.o4;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Cells.n4;
 import org.telegram.ui.Cells.u1;
-import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.ir;
-import org.telegram.ui.Components.m9;
-import org.telegram.ui.Components.r6;
-import org.telegram.ui.Components.s5;
-import org.telegram.ui.xm;
+import org.telegram.ui.Components.bs;
+import org.telegram.ui.Components.fr;
+import org.telegram.ui.Components.j9;
+import org.telegram.ui.Components.p6;
+import org.telegram.ui.Components.r5;
+import org.telegram.ui.lm;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class j1 {
     public static int Z;
     public MessageObject A;
-    public c6 B;
+    public d6 B;
     public Integer C;
     public float D;
     public boolean E;
@@ -158,9 +158,9 @@ public final class j1 {
         return 0L;
     }
 
-    public static void o(c6 c6Var) {
-        V.setColor(g6.w0(g6.ie, c6Var));
-        int w02 = g6.w0(g6.Sh, c6Var);
+    public static void o(d6 d6Var) {
+        V.setColor(h6.w0(h6.ie, d6Var));
+        int w02 = h6.w0(h6.Sh, d6Var);
         TextPaint textPaint = Y;
         textPaint.setColor(w02);
         textPaint.setTextSize(AndroidUtilities.dp(12.0f));
@@ -170,7 +170,7 @@ public final class j1 {
 
     public final boolean a() {
         ArrayList arrayList;
-        m9 m9Var;
+        j9 j9Var;
         int i10;
         int i11;
         if (this.A == null) {
@@ -198,7 +198,7 @@ public final class j1 {
             }
             g1 g1Var = (g1) arrayList2.get(i13);
             String str = g1Var.o;
-            ir irVar = g1Var.F;
+            fr frVar = g1Var.F;
             g1 g1Var2 = (g1) hashMap.get(str);
             if (g1Var2 != null && g1Var.b != g1Var2.b) {
                 g1Var2 = null;
@@ -220,13 +220,13 @@ public final class j1 {
                     g1Var.c = 3;
                     int i16 = g1Var.w;
                     int i17 = g1Var2.w;
-                    if (i16 != i17 && irVar != null) {
-                        irVar.c(i17, false);
-                        irVar.c(g1Var.w, true);
+                    if (i16 != i17 && frVar != null) {
+                        frVar.c(i17, false);
+                        frVar.c(g1Var.w, true);
                     }
-                    m9 m9Var2 = g1Var.T;
-                    if (m9Var2 != null || g1Var2.T != null) {
-                        if (m9Var2 == null) {
+                    j9 j9Var2 = g1Var.T;
+                    if (j9Var2 != null || g1Var2.T != null) {
+                        if (j9Var2 == null) {
                             g1Var.p(new ArrayList());
                         }
                         if (g1Var2.T == null) {
@@ -241,14 +241,14 @@ public final class j1 {
                                 i11 = (tLObject == null || tLObject2 == null || k(tLObject) != k(tLObject2)) ? 0 : i11 + 1;
                             }
                         }
-                        m9 m9Var3 = g1Var.T;
-                        if (m9Var3 != null && (m9Var = g1Var2.T) != null) {
-                            ValueAnimator valueAnimator = m9Var.f;
+                        j9 j9Var3 = g1Var.T;
+                        if (j9Var3 != null && (j9Var = g1Var2.T) != null) {
+                            ValueAnimator valueAnimator = j9Var.f;
                             if (valueAnimator != null) {
                                 valueAnimator.cancel();
-                                if (m9Var3.w) {
-                                    m9Var3.w = false;
-                                    m9Var3.n();
+                                if (j9Var3.w) {
+                                    j9Var3.w = false;
+                                    j9Var3.n();
                                 }
                             }
                             TLObject[] tLObjectArr = new TLObject[3];
@@ -258,16 +258,16 @@ public final class j1 {
                                 if (i18 >= 3) {
                                     break;
                                 }
-                                tLObjectArr[i18] = m9Var3.b[i18].h;
-                                m9Var3.l(i18, m9Var.b[i18].h, i10);
+                                tLObjectArr[i18] = j9Var3.b[i18].h;
+                                j9Var3.l(i18, j9Var.b[i18].h, i10);
                                 i18++;
                             }
-                            m9Var3.b(false, true);
+                            j9Var3.b(false, true);
                             for (int i19 = 0; i19 < 3; i19++) {
-                                m9Var3.l(i19, tLObjectArr[i19], i10);
+                                j9Var3.l(i19, tLObjectArr[i19], i10);
                             }
-                            m9Var3.d = true;
-                            m9Var3.b(true, false);
+                            j9Var3.d = true;
+                            j9Var3.b(true, false);
                         }
                     }
                 }
@@ -356,10 +356,10 @@ public final class j1 {
         float x10 = motionEvent.getX();
         float y3 = motionEvent.getY();
         org.telegram.ui.Cells.a0 a0Var = this.z;
-        if (k3.s(a0Var)) {
+        if (a6.s(a0Var)) {
             y3 -= a0Var.getPaddingTop();
-            if (a0Var instanceof org.telegram.ui.Cells.w0) {
-                x10 -= ((org.telegram.ui.Cells.w0) a0Var).j0 / 2.0f;
+            if (a0Var instanceof org.telegram.ui.Cells.x0) {
+                x10 -= ((org.telegram.ui.Cells.x0) a0Var).j0 / 2.0f;
             }
         }
         float f7 = x10 - this.c;
@@ -414,8 +414,8 @@ public final class j1 {
             if (this.T && this.S != null && motionEvent.getAction() == 1) {
                 TLRPC.ReactionCount reactionCount = this.S.a;
                 float x11 = motionEvent.getX();
-                if (k3.s(a0Var)) {
-                    ((o4) a0Var).f(reactionCount, false, x11, y3);
+                if (a6.s(a0Var)) {
+                    ((n4) a0Var).f(reactionCount, false, x11, y3);
                 }
             }
             this.T = false;
@@ -570,7 +570,7 @@ public final class j1 {
         }
     }
 
-    public final void f(xm xmVar, Canvas canvas, int i10, Integer num) {
+    public final void f(lm lmVar, Canvas canvas, int i10, Integer num) {
         if (this.s && this.w.isEmpty()) {
             return;
         }
@@ -592,7 +592,7 @@ public final class j1 {
                 float f11 = f7 + f10;
                 RectF rectF2 = this.O;
                 rectF2.set(clamp, (f7 - dp) + f10, dp + clamp, f11);
-                float interpolation = es.h.getInterpolation(this.D);
+                float interpolation = bs.h.getInterpolation(this.D);
                 AndroidUtilities.lerp(rectF, rectF2, interpolation, rectF2);
                 int i12 = g1Var.V;
                 i1 i1Var = g1Var.s;
@@ -605,7 +605,7 @@ public final class j1 {
                         if (i1Var.f != null) {
                             TLRPC.TL_availableReaction tL_availableReaction = MediaDataController.getInstance(i12).getReactionsMap().get(i1Var.f);
                             if (tL_availableReaction != null && tL_availableReaction.activate_animation != null) {
-                                SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(tL_availableReaction.static_icon, g6.a7, 1.0f);
+                                SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(tL_availableReaction.static_icon, h6.a7, 1.0f);
                                 ImageReceiver imageReceiver = new ImageReceiver(view);
                                 g1Var.f0 = imageReceiver;
                                 imageReceiver.setLayerNum(7);
@@ -618,9 +618,9 @@ public final class j1 {
                                 g1Var.f0.setImage(ImageLocation.getForDocument(tL_availableReaction.activate_animation), "140_140", svgThumb, null, tL_availableReaction, 1);
                             }
                         } else if (i1Var.g != 0) {
-                            s5 s5Var = new s5(24, i12, i1Var.g);
-                            g1Var.g0 = s5Var;
-                            s5Var.a(view);
+                            r5 r5Var = new r5(24, i12, i1Var.g);
+                            g1Var.g0 = r5Var;
+                            r5Var.a(view);
                         }
                     }
                 }
@@ -632,14 +632,14 @@ public final class j1 {
                         g1Var.f0.setAlpha(interpolation);
                         g1Var.f0.draw(canvas);
                     } else {
-                        s5 s5Var2 = g1Var.g0;
-                        if (s5Var2 != null) {
-                            s5Var2.setBounds((int) rectF2.left, (int) rectF2.top, (int) rectF2.right, (int) rectF2.bottom);
+                        r5 r5Var2 = g1Var.g0;
+                        if (r5Var2 != null) {
+                            r5Var2.setBounds((int) rectF2.left, (int) rectF2.top, (int) rectF2.right, (int) rectF2.bottom);
                             g1Var.g0.setAlpha((int) (interpolation * 255.0f));
                             g1Var.g0.draw(canvas);
                         }
                     }
-                    xmVar.invalidate();
+                    lmVar.invalidate();
                 }
             }
             i11++;
@@ -713,8 +713,8 @@ public final class j1 {
             }
             g1 g1Var = (g1) arrayList.get(i12);
             boolean z10 = g1Var.b;
-            r6 r6Var = g1Var.G;
-            ir irVar = g1Var.F;
+            p6 p6Var = g1Var.G;
+            fr frVar = g1Var.F;
             if (z10) {
                 g1Var.A = AndroidUtilities.dp(14.0f);
                 g1Var.B = AndroidUtilities.dp(14.0f);
@@ -722,9 +722,9 @@ public final class j1 {
                 g1Var.A = AndroidUtilities.dp(42.0f);
                 g1Var.B = AndroidUtilities.dp(26.0f);
                 if (g1Var.u) {
-                    g1Var.A = (int) (r6Var.d + AndroidUtilities.dp(8.0f) + g1Var.A);
-                } else if (irVar != null && g1Var.w > 1) {
-                    g1Var.A = org.telegram.messenger.g0.C(8.0f, (int) Math.ceil(irVar.m), g1Var.A);
+                    g1Var.A = (int) (p6Var.d + AndroidUtilities.dp(8.0f) + g1Var.A);
+                } else if (frVar != null && g1Var.w > 1) {
+                    g1Var.A = org.telegram.messenger.q.C(8.0f, (int) Math.ceil(frVar.m), g1Var.A);
                 }
             } else {
                 g1Var.A = AndroidUtilities.dp(g1Var.D != null ? 6.0f : 4.0f) + AndroidUtilities.dp(20.0f) + AndroidUtilities.dp(8.0f);
@@ -733,9 +733,9 @@ public final class j1 {
                     g1Var.A = (int) ((AndroidUtilities.dp(20.0f) * (g1Var.U.size() > 1 ? g1Var.U.size() - 1 : 0) * 0.8f) + AndroidUtilities.dp(20.0f) + AndroidUtilities.dp(2.0f) + AndroidUtilities.dp(1.0f) + g1Var.A);
                     g1Var.T.o = AndroidUtilities.dp(26.0f);
                 } else if (g1Var.u) {
-                    g1Var.A = (int) (r6Var.d + AndroidUtilities.dp(8.0f) + g1Var.A);
-                } else if (((int) Math.ceil(irVar.m)) > 0) {
-                    g1Var.A = org.telegram.messenger.g0.C(8.0f, (int) Math.ceil(irVar.m), g1Var.A);
+                    g1Var.A = (int) (p6Var.d + AndroidUtilities.dp(8.0f) + g1Var.A);
+                } else if (((int) Math.ceil(frVar.m)) > 0) {
+                    g1Var.A = org.telegram.messenger.q.C(8.0f, (int) Math.ceil(frVar.m), g1Var.A);
                 } else {
                     g1Var.A -= AndroidUtilities.dp(1.0f);
                 }
@@ -743,14 +743,14 @@ public final class j1 {
             }
             if (g1Var.A + i13 > i10) {
                 arrayList2.add(Integer.valueOf(i13));
-                i15 = org.telegram.messenger.g0.C(4.0f, g1Var.B, i15);
+                i15 = org.telegram.messenger.q.C(4.0f, g1Var.B, i15);
                 i16++;
                 i13 = 0;
             }
             g1Var.x = i13;
             g1Var.y = i15;
             g1Var.z = i16;
-            i13 = org.telegram.messenger.g0.C(4.0f, g1Var.A, i13);
+            i13 = org.telegram.messenger.q.C(4.0f, g1Var.A, i13);
             if (i13 > i14) {
                 i14 = i13;
             }
@@ -781,7 +781,7 @@ public final class j1 {
             for (int i23 = 0; i23 < arrayList.size(); i23++) {
                 g1 g1Var2 = (g1) arrayList.get(i23);
                 int i24 = g1Var2.z;
-                g1Var2.x = (int) k3.z(i10, (i24 < 0 || i24 >= arrayList2.size()) ? 0.0f : ((Integer) arrayList2.get(g1Var2.z)).intValue(), 2.0f, g1Var2.x);
+                g1Var2.x = (int) a6.z(i10, (i24 < 0 || i24 >= arrayList2.size()) ? 0.0f : ((Integer) arrayList2.get(g1Var2.z)).intValue(), 2.0f, g1Var2.x);
             }
         }
         this.u = i13;
@@ -850,7 +850,7 @@ public final class j1 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void s(MessageObject messageObject, boolean z10, boolean z11, c6 c6Var) {
+    public final void s(MessageObject messageObject, boolean z10, boolean z11, d6 d6Var) {
         int i10;
         boolean z12;
         int i11;
@@ -861,7 +861,7 @@ public final class j1 {
         j1 j1Var = this;
         boolean z13 = z10;
         boolean z14 = z11;
-        j1Var.B = c6Var;
+        j1Var.B = d6Var;
         j1Var.b = z13;
         j1Var.M = z14;
         j1Var.A = messageObject;

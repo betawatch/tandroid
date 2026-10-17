@@ -15,9 +15,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class a extends Drawable {
     public static SvgHelper.SvgDrawable j;
@@ -83,7 +83,7 @@ public final class a extends Drawable {
             }
         }
         int[] iArr2 = (int[]) l.get(iArr[this.e]);
-        int[] iArr3 = g6.I.q() ? new int[]{i0.a.d(0.2f, iArr2[0], -1), i0.a.d(0.2f, iArr2[1], -1)} : iArr2;
+        int[] iArr3 = h6.I.q() ? new int[]{i0.b.f(0.2f, iArr2[0], -1), i0.b.f(0.2f, iArr2[1], -1)} : iArr2;
         this.h = iArr3;
         Paint paint = new Paint(1);
         LinearGradient linearGradient = new LinearGradient(0.0f, 100.0f, 0.0f, 0.0f, iArr3, (float[]) null, Shader.TileMode.CLAMP);
@@ -91,8 +91,8 @@ public final class a extends Drawable {
         linearGradient.setLocalMatrix(this.c);
         paint.setShader(this.b);
         this.a.setPaint(paint, 0);
-        this.g.setColor(i0.a.d(0.1f, iArr3[1], -1));
-        this.f.setColor(i0.a.d(0.1f, iArr3[0], -16777216));
+        this.g.setColor(i0.b.f(0.1f, iArr3[1], -1));
+        this.f.setColor(i0.b.f(0.1f, iArr3[0], -16777216));
     }
 
     @Override // android.graphics.drawable.Drawable

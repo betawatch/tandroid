@@ -1,84 +1,51 @@
 package di;
 
-import android.text.TextUtils;
-import java.util.ArrayList;
-import org.telegram.messenger.BuildVars;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.h6;
+import w7.z5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class t {
-    public static ArrayList f;
-    public final String a;
-    public final int b;
-    public final int c;
-    public final int[] d;
-    public final ArrayList e = new ArrayList();
+public final class t extends LinearLayout {
+    public final TextView a;
+    public final TextView b;
+    public boolean c;
 
-    public t(String str) {
-        str = str == null ? "." : str;
-        this.a = str;
-        String[] split = str.split("/");
-        int length = split.length;
-        this.c = length;
-        this.d = new int[length];
-        int i10 = 0;
-        for (int i11 = 0; i11 < split.length; i11++) {
-            this.d[i11] = split[i11].length();
-            i10 = Math.max(i10, split[i11].length());
-        }
-        this.b = i10;
-        for (int i12 = 0; i12 < split.length; i12++) {
-            for (int i13 = 0; i13 < split[i12].length(); i13++) {
-                this.e.add(new s(this, i13, i12));
-            }
+    public t(Context context) {
+        super(context);
+        setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), 0);
+        setOrientation(1);
+        TextView textView = new TextView(context);
+        this.a = textView;
+        textView.setTextSize(1, 16.0f);
+        textView.setTextColor(h6.x0(null, h6.j5, false));
+        textView.setGravity(LocaleController.isRTL ? 5 : 3);
+        addView(textView, z5.t(-1, -2, 51, 0, 7, 0, 0));
+        TextView textView2 = new TextView(context);
+        this.b = textView2;
+        textView2.setTextSize(1, 13.0f);
+        textView2.setTextColor(h6.x0(null, h6.q5, false));
+        textView2.setGravity(LocaleController.isRTL ? 5 : 3);
+        addView(textView2, z5.t(-1, -2, 51, 0, 4, 0, 0));
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.c) {
+            canvas.drawRect(getPaddingLeft(), getHeight() - 1, getWidth(), getHeight(), h6.k0);
         }
     }
 
-    public static ArrayList a() {
-        if (f == null) {
-            ArrayList arrayList = new ArrayList();
-            f = arrayList;
-            arrayList.add(new t("./."));
-            f.add(new t(".."));
-            f.add(new t("../."));
-            f.add(new t("./.."));
-            f.add(new t("././."));
-            f.add(new t("..."));
-            f.add(new t("../.."));
-            f.add(new t("./../.."));
-            f.add(new t("../../."));
-            f.add(new t("../../.."));
-            if (BuildVars.DEBUG_PRIVATE_VERSION) {
-                f.add(new t("../../../.."));
-                f.add(new t(".../.../..."));
-                f.add(new t("..../..../...."));
-                f.add(new t(".../.../.../..."));
-            }
-        }
-        return f;
-    }
-
-    public static int b() {
-        ArrayList a2 = a();
-        int size = a2.size();
-        int i10 = 0;
-        int i11 = 0;
-        while (i11 < size) {
-            Object obj = a2.get(i11);
-            i11++;
-            i10 = Math.max(i10, ((t) obj).e.size());
-        }
-        return i10;
-    }
-
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof t)) {
-            return false;
-        }
-        return TextUtils.equals(this.a, ((t) obj).a);
-    }
-
-    public final String toString() {
-        return this.a;
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), TLObject.FLAG_30));
     }
 }

@@ -1,58 +1,159 @@
 package org.telegram.ui.Components;
 
+import android.os.Looper;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n5 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ o5 b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ TLObject d;
+public final class n5 {
+    public HashMap a;
+    public HashMap b;
+    public HashSet c;
+    public pg d;
+    public final int e;
 
-    public /* synthetic */ n5(o5 o5Var, ArrayList arrayList, TLObject tLObject, int i10) {
-        this.a = i10;
-        this.b = o5Var;
-        this.c = arrayList;
-        this.d = tLObject;
+    public n5(int i10) {
+        this.e = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new n5(this.b, this.c, this.d, 1));
-                break;
-            default:
-                o5 o5Var = this.b;
-                int i10 = o5Var.e;
-                HashSet hashSet = new HashSet(this.c);
-                TLObject tLObject = this.d;
-                if (tLObject instanceof Vector) {
-                    ArrayList arrayList = ((Vector) tLObject).objects;
-                    MessagesStorage.getInstance(i10).getStorageQueue().postRunnable(new l5(o5Var, arrayList, 1));
-                    o5Var.d(arrayList);
-                    for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                        if (arrayList.get(i11) instanceof TLRPC.Document) {
-                            hashSet.remove(Long.valueOf(((TLRPC.Document) arrayList.get(i11)).id));
-                        }
+    public static boolean a() {
+        if (Thread.currentThread() == Looper.getMainLooper().getThread()) {
+            return true;
+        }
+        if (!BuildVars.DEBUG_VERSION) {
+            return false;
+        }
+        FileLog.e("EmojiDocumentFetcher", new IllegalStateException("Wrong thread"));
+        return false;
+    }
+
+    public final void b(long j10, o5 o5Var) {
+        TLRPC.Document document;
+        if (j10 == 0) {
+            return;
+        }
+        synchronized (this) {
+            try {
+                HashMap hashMap = this.a;
+                if (hashMap != null && (document = (TLRPC.Document) hashMap.get(Long.valueOf(j10))) != null) {
+                    if (o5Var != null) {
+                        o5Var.a(document);
                     }
-                    if (!hashSet.isEmpty()) {
-                        ArrayList<Long> arrayList2 = new ArrayList<>(hashSet);
-                        TLRPC.TL_messages_getCustomEmojiDocuments tL_messages_getCustomEmojiDocuments = new TLRPC.TL_messages_getCustomEmojiDocuments();
-                        tL_messages_getCustomEmojiDocuments.document_id = arrayList2;
-                        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getCustomEmojiDocuments, new org.telegram.ui.to(3, o5Var, arrayList2));
-                        break;
+                    return;
+                }
+                if (a()) {
+                    if (this.b == null) {
+                        this.b = new HashMap();
+                    }
+                    ArrayList arrayList = (ArrayList) this.b.get(Long.valueOf(j10));
+                    if (arrayList != null) {
+                        arrayList.add(o5Var);
+                        return;
+                    }
+                    ArrayList arrayList2 = new ArrayList(1);
+                    arrayList2.add(o5Var);
+                    this.b.put(Long.valueOf(j10), arrayList2);
+                    if (this.c == null) {
+                        this.c = new HashSet();
+                    }
+                    this.c.add(Long.valueOf(j10));
+                    if (this.d != null) {
+                        return;
+                    }
+                    pg pgVar = new pg(this, 5);
+                    this.d = pgVar;
+                    AndroidUtilities.runOnUIThread(pgVar);
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
+
+    public final TLRPC.InputStickerSet c(long j10) {
+        synchronized (this) {
+            try {
+                HashMap hashMap = this.a;
+                if (hashMap == null) {
+                    return null;
+                }
+                TLRPC.Document document = (TLRPC.Document) hashMap.get(Long.valueOf(j10));
+                if (document == null) {
+                    return null;
+                }
+                return MessageObject.getInputStickerSet(document);
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
+
+    public final void d(ArrayList arrayList) {
+        ArrayList arrayList2;
+        if (a()) {
+            r5.x();
+            for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                if (arrayList.get(i10) instanceof TLRPC.Document) {
+                    TLRPC.Document document = (TLRPC.Document) arrayList.get(i10);
+                    e(document);
+                    HashMap hashMap = this.b;
+                    if (hashMap != null && (arrayList2 = (ArrayList) hashMap.remove(Long.valueOf(document.id))) != null) {
+                        for (int i11 = 0; i11 < arrayList2.size(); i11++) {
+                            o5 o5Var = (o5) arrayList2.get(i11);
+                            if (o5Var != null) {
+                                o5Var.a(document);
+                            }
+                        }
+                        arrayList2.clear();
                     }
                 }
-                break;
+            }
+        }
+    }
+
+    public final void e(TLRPC.Document document) {
+        if (document == null) {
+            return;
+        }
+        synchronized (this) {
+            try {
+                if (this.a == null) {
+                    this.a = new HashMap();
+                }
+                this.a.put(Long.valueOf(document.id), document);
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
+
+    public final void f(ArrayList arrayList) {
+        if (arrayList == null) {
+            return;
+        }
+        synchronized (this) {
+            try {
+                if (this.a == null) {
+                    this.a = new HashMap();
+                }
+                int size = arrayList.size();
+                int i10 = 0;
+                while (i10 < size) {
+                    Object obj = arrayList.get(i10);
+                    i10++;
+                    TLRPC.Document document = (TLRPC.Document) obj;
+                    this.a.put(Long.valueOf(document.id), document);
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
         }
     }
 }

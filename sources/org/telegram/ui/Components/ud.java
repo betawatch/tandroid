@@ -1,46 +1,28 @@
 package org.telegram.ui.Components;
 
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.StickersActivity;
-import org.telegram.ui.ThemeActivity;
+import android.text.InputFilter;
+import android.text.Spanned;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ud implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.m2 b;
-
-    public /* synthetic */ ud(int i10, org.telegram.ui.ActionBar.m2 m2Var) {
-        this.a = i10;
-        this.b = m2Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        org.telegram.ui.ActionBar.m2 m2Var = this.b;
-        switch (i10) {
-            case 0:
-                int i11 = ChatActivityEnterView.n5;
-                if (m2Var == null) {
-                    if (m2Var.getContext() instanceof LaunchActivity) {
-                        ((LaunchActivity) m2Var.getContext()).p0(new PremiumPreviewFragment(0, null));
-                        break;
+public final /* synthetic */ class ud implements InputFilter {
+    @Override // android.text.InputFilter
+    public final CharSequence filter(CharSequence charSequence, int i10, int i11, Spanned spanned, int i12, int i13) {
+        int i14 = ChatActivityEnterView.n5;
+        for (int i15 = i10; i15 < i11; i15++) {
+            char charAt = charSequence.charAt(i15);
+            if (charAt == '\n' || charAt == '\r') {
+                StringBuilder sb2 = new StringBuilder(i11 - i10);
+                while (i10 < i11) {
+                    char charAt2 = charSequence.charAt(i10);
+                    if (charAt2 != '\n' && charAt2 != '\r') {
+                        sb2.append(charAt2);
                     }
-                } else {
-                    new sg.y0(m2Var, 11, false).show();
-                    break;
+                    i10++;
                 }
-                break;
-            case 1:
-                m2Var.presentFragment(new StickersActivity(0, null));
-                break;
-            default:
-                ThemeActivity themeActivity = new ThemeActivity(0);
-                themeActivity.T0 = true;
-                m2Var.presentFragment(themeActivity);
-                break;
+                return sb2;
+            }
         }
+        return null;
     }
 }

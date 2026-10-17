@@ -2,90 +2,91 @@ package di;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.view.KeyEvent;
-import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.ob0;
-import org.telegram.ui.Components.vi;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.iv0;
+import org.telegram.ui.Components.ku0;
+import org.telegram.ui.Components.ql0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class i extends ob0 {
-    public final /* synthetic */ int V;
-    public final /* synthetic */ KeyEvent.Callback W;
+public final class i extends iv0 {
+    public final /* synthetic */ r o3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ i(KeyEvent.Callback callback, Context context, long j10, org.telegram.ui.ActionBar.m2 m2Var, org.telegram.ui.ActionBar.c6 c6Var, int i10) {
-        super(context, j10, 0L, m2Var, c6Var);
-        this.V = i10;
-        this.W = callback;
+    public i(r rVar, Context context) {
+        super(context);
+        this.o3 = rVar;
     }
 
-    @Override // org.telegram.ui.Components.ob0
-    public void f(Canvas canvas, Rect rect, float f7) {
-        switch (this.V) {
-            case 0:
-                m mVar = (m) this.W;
-                Paint paint = mVar.e;
-                RectF rectF = mVar.z0;
-                rectF.set(rect);
-                if (!mVar.g()) {
-                    Paint c10 = mVar.T.c(1.0f);
-                    if (c10 != null) {
-                        canvas.drawRoundRect(rectF, f7, f7, c10);
-                        paint.setAlpha(80);
-                        canvas.drawRoundRect(rectF, f7, f7, paint);
-                        break;
-                    } else {
-                        paint.setAlpha(128);
-                        canvas.drawRoundRect(rectF, f7, f7, paint);
-                        break;
-                    }
-                } else {
-                    mVar.h(mVar.T, canvas, mVar.z0, f7, false, -mVar.M.getX(), -mVar.M.getY(), false);
-                    break;
+    @Override // org.telegram.ui.Components.iv0
+    public final boolean A1() {
+        return this.o3.b;
+    }
+
+    @Override // org.telegram.ui.Components.iv0
+    public final boolean B1() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.iv0, org.telegram.ui.Components.ia, org.telegram.ui.Components.im0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        int i10 = 0;
+        for (int i11 = 0; i11 < getChildCount(); i11++) {
+            int bottom = getChildAt(i11).getBottom() - getPaddingTop();
+            if (bottom > i10) {
+                i10 = bottom;
+            }
+        }
+        float f7 = i10;
+        r rVar = this.o3;
+        o oVar = rVar.J;
+        if (rVar.b) {
+            ku0 ku0Var = rVar.r;
+            int i12 = 0;
+            for (int i13 = 0; i13 < ku0Var.getChildCount(); i13++) {
+                int bottom2 = ku0Var.getChildAt(i13).getBottom() - ku0Var.getPaddingTop();
+                if (bottom2 > i12) {
+                    i12 = bottom2;
                 }
-            default:
-                super.f(canvas, rect, f7);
-                break;
+            }
+            f7 = AndroidUtilities.lerp(f7, i12, rVar.c);
         }
+        oVar.setVisibility(rVar.v.h() <= 0 ? 8 : 0);
+        oVar.setTranslationY(f7);
     }
 
-    @Override // org.telegram.ui.Components.ob0
-    public boolean h() {
-        switch (this.V) {
-            case 0:
-                return true;
-            default:
-                return super.h();
-        }
+    @Override // org.telegram.ui.Components.iv0
+    public final int getAnimateToColumnsCount() {
+        return this.o3.e;
     }
 
-    @Override // org.telegram.ui.Components.ob0
-    public void i() {
-        switch (this.V) {
-            case 1:
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ((vi) this.W).j0;
-                if (chatAttachAlertPhotoLayout != null) {
-                    chatAttachAlertPhotoLayout.V();
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.iv0
+    public final float getChangeColumnsProgress() {
+        return this.o3.c;
     }
 
-    @Override // org.telegram.ui.Components.ob0
-    public void n(boolean z10) {
-        switch (this.V) {
-            case 1:
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ((vi) this.W).j0;
-                if (chatAttachAlertPhotoLayout != null) {
-                    chatAttachAlertPhotoLayout.V();
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.iv0
+    public final int getColumnsCount() {
+        return this.o3.d;
+    }
+
+    @Override // org.telegram.ui.Components.iv0
+    public final ql0 getMovingAdapter() {
+        r rVar = this.o3;
+        if (rVar.G.y != 0 || rVar.W.G.C1) {
+            return null;
         }
+        return rVar.v;
+    }
+
+    @Override // org.telegram.ui.Components.iv0
+    public final ql0 getSupportingAdapter() {
+        return this.o3.w;
+    }
+
+    @Override // org.telegram.ui.Components.iv0
+    public final ku0 getSupportingListView() {
+        return this.o3.r;
     }
 }

@@ -5,7 +5,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class m extends i {
     public final Serializable a;
@@ -114,7 +114,7 @@ public final class m extends i {
             return (Number) serializable;
         }
         if (serializable instanceof String) {
-            return new gb.j((String) serializable);
+            return new gb.h((String) serializable);
         }
         throw new UnsupportedOperationException("Primitive is neither a number nor a string");
     }

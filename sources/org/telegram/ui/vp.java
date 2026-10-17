@@ -1,262 +1,78 @@
 package org.telegram.ui;
 
-import android.view.ViewParent;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
+import android.os.Bundle;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.SharedPrefsHelper;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_aicompose;
-import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vp implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ dq b;
 
-    public /* synthetic */ vp(int i10, Object obj, Object obj2) {
+    public /* synthetic */ vp(dq dqVar, int i10) {
         this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+        this.b = dqVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        switch (this.a) {
+        int i10 = this.a;
+        dq dqVar = this.b;
+        int i11 = 1;
+        switch (i10) {
             case 0:
-                wp wpVar = (wp) this.b;
-                TLRPC.Chat chat = (TLRPC.Chat) this.c;
-                wpVar.getClass();
-                chat.join_request = true;
-                wpVar.h = true;
-                wpVar.c.setChecked(true);
-                break;
-            case 1:
-                yr yrVar = (yr) this.b;
-                TLRPC.Updates updates = (TLRPC.Updates) this.c;
-                yrVar.getClass();
-                yrVar.getMessagesController().loadFullChat(updates.chats.get(0).id, 0, true);
-                break;
-            case 2:
-                nr nrVar = (nr) this.b;
-                TLRPC.User user = (TLRPC.User) this.c;
-                yr yrVar2 = nrVar.a;
-                if (org.telegram.ui.Components.zc.a(yrVar2)) {
-                    org.telegram.ui.Components.zc.C(yrVar2, user.first_name).j();
+                TLRPC.User user = dqVar.v;
+                aq aqVar = dqVar.X0;
+                if (aqVar != null) {
+                    aqVar.b(0, dqVar.K ? dqVar.M : null, null, dqVar.S);
+                }
+                Bundle h = a1.g.h("scrollToTopOnResume", true);
+                h.putLong("chat_id", dqVar.w.id);
+                if (!dqVar.getMessagesController().checkCanOpenChat(h, dqVar)) {
+                    dqVar.t0(false);
                     break;
-                }
-                break;
-            case 3:
-                ((org.telegram.ui.Components.e0) this.b).u0.unsave((TL_aicompose.TL_aiComposeTone) this.c);
-                break;
-            case 4:
-                org.telegram.ui.Components.q qVar = (org.telegram.ui.Components.q) this.b;
-                TL_aicompose.TL_aiComposeTone tL_aiComposeTone = (TL_aicompose.TL_aiComposeTone) this.c;
-                qVar.getClass();
-                org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
-                if (U != null) {
-                    U.presentFragment(ProfileActivity.m4(tL_aiComposeTone.author_id));
-                    qVar.dismiss();
-                    break;
-                }
-                break;
-            case 5:
-                boolean[] zArr = (boolean[]) this.b;
-                tz0 tz0Var = (tz0) this.c;
-                if (zArr[0]) {
-                    tz0Var.run();
-                    break;
-                }
-                break;
-            case 6:
-                org.telegram.ui.Components.fa faVar = (org.telegram.ui.Components.fa) this.b;
-                TLObject tLObject = (TLObject) this.c;
-                faVar.getClass();
-                if ((tLObject instanceof TLRPC.TL_help_appUpdate) && !((TLRPC.TL_help_appUpdate) tLObject).can_not_skip) {
-                    faVar.setVisibility(8);
-                    SharedConfig.pendingAppUpdate = null;
-                    SharedConfig.saveConfig();
-                    break;
-                }
-                break;
-            case 7:
-                org.telegram.ui.Components.sc scVar = (org.telegram.ui.Components.sc) this.b;
-                CharSequence charSequence = (CharSequence) this.c;
-                scVar.n = true;
-                ViewParent viewParent = scVar.e;
-                if (viewParent instanceof org.telegram.ui.Components.xb) {
-                    org.telegram.ui.Components.yb ybVar = (org.telegram.ui.Components.yb) ((org.telegram.ui.Components.xb) viewParent);
-                    ybVar.b.setText(charSequence);
-                    AndroidUtilities.updateViewShow(ybVar.d, false, false, true);
-                    AndroidUtilities.updateViewShow(ybVar.b, true, false, true);
-                }
-                scVar.i(true);
-                break;
-            case 8:
-                boolean[] zArr2 = (boolean[]) this.b;
-                Runnable runnable = (Runnable) this.c;
-                if (!zArr2[0]) {
-                    zArr2[0] = true;
-                    runnable.run();
-                    break;
-                }
-                break;
-            case 9:
-                ((org.telegram.ui.Components.md) this.b).removeView((di.d4) this.c);
-                break;
-            case 10:
-                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.b;
-                di.d4 d4Var = (di.d4) this.c;
-                int i10 = ChatActivityEnterView.n5;
-                chatActivityEnterView.removeView(d4Var);
-                break;
-            case 11:
-                ChatActivityEnterView chatActivityEnterView2 = (ChatActivityEnterView) this.b;
-                CharSequence charSequence2 = (CharSequence) this.c;
-                int i11 = ChatActivityEnterView.n5;
-                chatActivityEnterView2.setFieldText(charSequence2);
-                chatActivityEnterView2.W = null;
-                break;
-            case 12:
-                ChatActivityEnterView chatActivityEnterView3 = (ChatActivityEnterView) this.b;
-                org.telegram.ui.Components.td tdVar = (org.telegram.ui.Components.td) this.c;
-                int i12 = ChatActivityEnterView.n5;
-                tdVar.run();
-                SharedPrefsHelper.setWebViewConfirmShown(chatActivityEnterView3.Q, chatActivityEnterView3.Q2, true);
-                break;
-            case 13:
-                org.telegram.ui.Components.tg tgVar = (org.telegram.ui.Components.tg) this.b;
-                org.telegram.ui.Components.qg qgVar = (org.telegram.ui.Components.qg) this.c;
-                ChatActivityEnterView chatActivityEnterView4 = tgVar.V;
-                chatActivityEnterView4.i1 = chatActivityEnterView4.h1.getAudioRightMs() - chatActivityEnterView4.h1.getAudioLeftMs();
-                MediaController.getInstance().trimCurrentRecording(chatActivityEnterView4.h1.getAudioLeftMs(), chatActivityEnterView4.h1.getAudioRightMs(), qgVar);
-                break;
-            case 14:
-                ((org.telegram.ui.Components.vi) this.b).containerView.removeView((di.d4) this.c);
-                break;
-            case 15:
-                org.telegram.ui.Components.vi viVar = (org.telegram.ui.Components.vi) this.b;
-                org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) this.c;
-                viVar.dismiss(true);
-                if (m2Var != null) {
-                    m2Var.presentFragment(new PremiumPreviewFragment(0, "caption_limit"));
-                    break;
-                }
-                break;
-            case 16:
-                org.telegram.ui.Components.vi viVar2 = (org.telegram.ui.Components.vi) this.b;
-                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.c;
-                if (!viVar2.isDismissed() && editTextBoldCursor.isFocusable() && editTextBoldCursor.hasFocus() && editTextBoldCursor.isShown()) {
-                    AndroidUtilities.showKeyboard(editTextBoldCursor);
-                    break;
-                }
-                break;
-            case 17:
-                org.telegram.ui.Components.vi viVar3 = (org.telegram.ui.Components.vi) this.b;
-                TLRPC.TL_attachMenuBot tL_attachMenuBot = ((org.telegram.ui.Components.oi) this.c).c;
-                tL_attachMenuBot.side_menu_disclaimer_needed = false;
-                tL_attachMenuBot.inactive = false;
-                viVar3.R1(tL_attachMenuBot.bot_id, null, false, true);
-                MediaDataController.getInstance(viVar3.M1).updateAttachMenuBotsInCache();
-                break;
-            case 18:
-                org.telegram.ui.Components.vi viVar4 = (org.telegram.ui.Components.vi) this.b;
-                TLRPC.TL_attachMenuBot tL_attachMenuBot2 = (TLRPC.TL_attachMenuBot) this.c;
-                MediaDataController.getInstance(viVar4.M1).loadAttachMenuBots(false, true);
-                if (viVar4.B0 == viVar4.A0.get(tL_attachMenuBot2.bot_id)) {
-                    viVar4.U1(viVar4.j0);
-                    break;
-                }
-                break;
-            case 19:
-                org.telegram.ui.Components.hj hjVar = (org.telegram.ui.Components.hj) this.b;
-                ArrayList arrayList = (ArrayList) this.c;
-                hjVar.G = false;
-                hjVar.H = arrayList;
-                hjVar.S();
-                break;
-            case 20:
-                org.telegram.ui.Components.hj hjVar2 = (org.telegram.ui.Components.hj) this.b;
-                ((org.telegram.ui.Components.vi) this.c).b1();
-                hjVar2.O();
-                hjVar2.b.b2(hjVar2, 0);
-                break;
-            case 21:
-                AndroidUtilities.runOnUIThread(new vp(22, (org.telegram.ui.Components.yj) this.b, ((org.telegram.ui.Components.xj) this.c).run()));
-                break;
-            case 22:
-                ((org.telegram.ui.Components.yj) this.b).setStatus((CharSequence) this.c);
-                break;
-            case 23:
-                org.telegram.ui.Components.ok okVar = (org.telegram.ui.Components.ok) this.b;
-                String str = (String) this.c;
-                okVar.getClass();
-                ArrayList arrayList2 = new ArrayList(okVar.X.v.c);
-                if (okVar.X.v.d.isEmpty()) {
-                    arrayList2.addAll(0, okVar.X.v.e);
-                }
-                Utilities.searchQueue.postRunnable(new bi.h4(okVar, str, !okVar.R.isEmpty(), arrayList2, 16));
-                break;
-            case 24:
-                org.telegram.ui.Components.ok okVar2 = (org.telegram.ui.Components.ok) this.b;
-                ArrayList arrayList3 = (ArrayList) this.c;
-                org.telegram.ui.Components.pk pkVar = okVar2.X;
-                boolean z10 = pkVar.b0;
-                org.telegram.ui.Components.ek ekVar = pkVar.r;
-                if (z10) {
-                    s4.g0 adapter = ekVar.getAdapter();
-                    org.telegram.ui.Components.ok okVar3 = pkVar.y;
-                    if (adapter != okVar3) {
-                        ekVar.setAdapter(okVar3);
+                } else {
+                    sn snVar = new sn(h);
+                    dqVar.presentFragment(snVar, true);
+                    if (org.telegram.ui.Components.xc.a(snVar)) {
+                        boolean z10 = dqVar.Z0;
+                        if (!z10 || !dqVar.K) {
+                            if (!z10 && !dqVar.L && dqVar.K) {
+                                org.telegram.ui.Components.xc.C(snVar, user.first_name).j();
+                                break;
+                            }
+                        } else {
+                            String str = user.first_name;
+                            org.telegram.ui.Components.yb ybVar = new org.telegram.ui.Components.yb(snVar.getParentActivity(), snVar.ea);
+                            ybVar.d(R.raw.ic_admin, "Shield");
+                            ybVar.b.setText(AndroidUtilities.replaceTags(LocaleController.formatString("UserAddedAsAdminHint", R.string.UserAddedAsAdminHint, str)));
+                            org.telegram.ui.Components.qc.g(snVar, ybVar, 1500).j();
+                            break;
+                        }
                     }
                 }
-                okVar2.s = arrayList3;
-                okVar2.l();
                 break;
-            case 25:
-                org.telegram.ui.Components.cl clVar = (org.telegram.ui.Components.cl) this.b;
-                TLRPC.User user2 = (TLRPC.User) this.c;
-                org.telegram.ui.Components.vi viVar5 = clVar.b;
-                viVar5.dismiss();
-                viVar5.f0.presentFragment(fo.W9(user2.id));
-                break;
-            case 26:
-                org.telegram.messenger.g0.q(R.string.WalletAddressCopiedBulletin, new org.telegram.ui.Components.zc((org.telegram.ui.Components.cl) this.b, (org.telegram.ui.ActionBar.c6) this.c), R.raw.copy, 36);
-                break;
-            case 27:
-                org.telegram.ui.Components.tl tlVar = (org.telegram.ui.Components.tl) this.b;
-                float[] fArr = (float[]) this.c;
-                tlVar.getClass();
-                tlVar.e0(fArr[0], fArr[1]);
-                break;
-            case 28:
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) this.b;
-                org.telegram.ui.Components.ni niVar = (org.telegram.ui.Components.ni) this.c;
-                boolean z11 = ChatAttachAlertPhotoLayout.q1;
-                int currentItemTop = niVar.getCurrentItemTop();
-                int listTopPadding = niVar.getListTopPadding();
-                org.telegram.ui.Components.gm gmVar = chatAttachAlertPhotoLayout.E;
-                if (currentItemTop > AndroidUtilities.dp(8.0f)) {
-                    listTopPadding -= currentItemTop;
-                }
-                gmVar.scrollBy(0, listTopPadding);
+            case 1:
+                dqVar.r0(false);
                 break;
             default:
-                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = (ChatAttachAlertPhotoLayout) this.b;
-                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.c;
-                org.telegram.ui.Components.qm qmVar = chatAttachAlertPhotoLayout2.P;
-                if (qmVar != null) {
-                    qmVar.setLayoutParams(layoutParams);
+                if (dqVar.r) {
+                    long j10 = dqVar.n;
+                    org.telegram.ui.ActionBar.b2[] b2VarArr = {new org.telegram.ui.ActionBar.b2(dqVar.getParentActivity(), 3, null)};
+                    dqVar.getMessagesController().toggleChatJoinRequest(dqVar.s, j10, true, false, true, new pg(b2VarArr, 2), new pg(b2VarArr, 3));
+                    b2VarArr[0].q(300L);
+                }
+                aq aqVar2 = dqVar.X0;
+                if (aqVar2 != null) {
+                    TLRPC.TL_chatAdminRights tL_chatAdminRights = dqVar.M;
+                    if (!tL_chatAdminRights.change_info && !tL_chatAdminRights.post_messages && !tL_chatAdminRights.manage_direct_messages && !tL_chatAdminRights.manage_welcome_messages && !tL_chatAdminRights.edit_messages && !tL_chatAdminRights.delete_messages && !tL_chatAdminRights.ban_users && !tL_chatAdminRights.invite_users && ((!dqVar.G || !tL_chatAdminRights.manage_topics) && !tL_chatAdminRights.pin_messages && !tL_chatAdminRights.manage_ranks && !tL_chatAdminRights.add_admins && !tL_chatAdminRights.anonymous && !tL_chatAdminRights.manage_call && ((!dqVar.E || (!tL_chatAdminRights.post_stories && !tL_chatAdminRights.edit_stories && !tL_chatAdminRights.delete_stories)) && !tL_chatAdminRights.other))) {
+                        i11 = 0;
+                    }
+                    aqVar2.b(i11, tL_chatAdminRights, dqVar.O, dqVar.S);
+                    dqVar.finishFragment();
                     break;
                 }
                 break;

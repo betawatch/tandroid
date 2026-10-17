@@ -1,21 +1,44 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public interface i6 {
-    void a(Object obj);
+public final class i6 {
+    public final t4 a;
+    public final String b;
+    public final Object[] c;
+    public final int d;
 
-    int b(f5 f5Var);
+    public i6(t4 t4Var, String str, Object[] objArr) {
+        this.a = t4Var;
+        this.b = str;
+        this.c = objArr;
+        char charAt = str.charAt(0);
+        if (charAt < 55296) {
+            this.d = charAt;
+            return;
+        }
+        int i10 = charAt & 8191;
+        int i11 = 1;
+        int i12 = 13;
+        while (true) {
+            int i13 = i11 + 1;
+            char charAt2 = str.charAt(i11);
+            if (charAt2 < 55296) {
+                this.d = i10 | (charAt2 << i12);
+                return;
+            } else {
+                i10 |= (charAt2 & 8191) << i12;
+                i12 += 13;
+                i11 = i13;
+            }
+        }
+    }
 
-    boolean c(f5 f5Var, f5 f5Var2);
-
-    void d(Object obj, Object obj2);
-
-    void e(Object obj, u5 u5Var);
-
-    boolean f(Object obj);
-
-    int g(t4 t4Var);
-
-    f5 zzc();
+    public final int a() {
+        int i10 = this.d;
+        if ((i10 & 1) != 0) {
+            return 1;
+        }
+        return (i10 & 4) == 4 ? 3 : 2;
+    }
 }

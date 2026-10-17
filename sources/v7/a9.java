@@ -2,17 +2,17 @@ package v7;
 
 import w7.pa;
 import x7.ia;
-import z7.ag;
+import z7.bg;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a9 implements qa.b {
     public final /* synthetic */ int a;
-    public final /* synthetic */ l5.q b;
+    public final /* synthetic */ l5.r b;
 
-    public /* synthetic */ a9(l5.q qVar, int i10) {
+    public /* synthetic */ a9(l5.r rVar, int i10) {
         this.a = i10;
-        this.b = qVar;
+        this.b = rVar;
     }
 
     @Override // qa.b
@@ -31,9 +31,9 @@ public final /* synthetic */ class a9 implements qa.b {
             case 5:
                 return this.b.a("FIREBASE_ML_SDK", new i5.c("proto"), ia.d);
             case 6:
-                return this.b.a("FIREBASE_ML_SDK", new i5.c("json"), ag.e);
+                return this.b.a("FIREBASE_ML_SDK", new i5.c("json"), bg.e);
             default:
-                return this.b.a("FIREBASE_ML_SDK", new i5.c("proto"), ag.d);
+                return this.b.a("FIREBASE_ML_SDK", new i5.c("proto"), bg.d);
         }
     }
 }

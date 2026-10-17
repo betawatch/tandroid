@@ -1,46 +1,51 @@
 package org.telegram.ui.Components;
 
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationsController;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class uo implements ImageReceiver.ImageReceiverDelegate {
-    public boolean a;
-    public final /* synthetic */ ig.g b;
-    public final /* synthetic */ wo c;
+public final /* synthetic */ class uo implements Utilities.Callback {
+    public final /* synthetic */ i80 a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 e;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d6 f;
 
-    public uo(ig.i iVar, ig.g gVar) {
-        this.c = iVar;
-        this.b = gVar;
+    public /* synthetic */ uo(i80 i80Var, int i10, long j10, long j11, org.telegram.ui.sn snVar, org.telegram.ui.ActionBar.d6 d6Var) {
+        this.a = i80Var;
+        this.b = i10;
+        this.c = j10;
+        this.d = j11;
+        this.e = snVar;
+        this.f = d6Var;
     }
 
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        yj0 yj0Var;
-        zf.f fVar;
-        if (this.a) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        Integer num = (Integer) obj;
+        this.a.u();
+        int intValue = num.intValue();
+        int i10 = this.b;
+        long j10 = this.c;
+        long j11 = this.d;
+        org.telegram.ui.ActionBar.n2 n2Var = this.e;
+        org.telegram.ui.ActionBar.d6 d6Var = this.f;
+        if (intValue != 0) {
+            NotificationsController.getInstance(i10).muteUntil(j10, j11, num.intValue());
+            if (xc.a(n2Var)) {
+                xc.z(n2Var, 5, num.intValue(), d6Var).j();
+                return;
+            }
             return;
         }
-        if ((i10 == 0 || i10 == 3) && drawable != null) {
-            this.a = true;
-            boolean z10 = drawable instanceof yj0;
-            ig.g gVar = this.b;
-            if (z10 && (fVar = (yj0Var = (yj0) drawable).B0) != null && fVar.g()) {
-                yj0Var.A0 = new vm(1, this, gVar);
-            } else {
-                wo.a(this.c);
-                gVar.run();
-            }
+        if (MessagesController.getInstance(i10).isDialogMuted(j10, j11)) {
+            NotificationsController.getInstance(i10).muteDialog(j10, j11, false);
         }
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        org.telegram.messenger.l5.b(this, imageReceiver);
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
+        if (xc.a(n2Var)) {
+            xc.z(n2Var, 4, num.intValue(), d6Var).j();
+        }
     }
 }

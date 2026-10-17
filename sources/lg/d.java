@@ -1,5 +1,6 @@
 package lg;
 
+import ai.ld;
 import android.graphics.Canvas;
 import android.text.Layout;
 import android.text.StaticLayout;
@@ -9,11 +10,10 @@ import java.text.DecimalFormatSymbols;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BillingController;
-import org.telegram.messenger.g0;
-import org.telegram.ui.qe;
-import zh.p7;
+import org.telegram.messenger.q;
+import org.telegram.ui.ke;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class d {
     public final long[] a;
@@ -227,7 +227,7 @@ public final class d {
                 return AndroidUtilities.formatWholeNumber((int) j10, 0);
             }
             if (i10 != 1) {
-                return p7.Y0(false, g0.h(j10, ' ', new StringBuilder("XTR ")), 0.65f, null);
+                return ld.Y0(false, q.h(j10, ' ', new StringBuilder("XTR ")), 0.65f, null);
             }
             return "≈" + BillingController.getInstance().formatCurrency(j10, "USD");
         }
@@ -244,6 +244,6 @@ public final class d {
             this.h.setGroupingUsed(false);
         }
         this.h.setMaximumFractionDigits(j10 <= 1000000000 ? 6 : 2);
-        return qe.f0("TON " + this.h.format(j10 / 1.0E9d), textPaint, 0.8f, -AndroidUtilities.dp(0.66f), false);
+        return ke.f0("TON " + this.h.format(j10 / 1.0E9d), textPaint, 0.8f, -AndroidUtilities.dp(0.66f), false);
     }
 }

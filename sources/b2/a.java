@@ -4,7 +4,7 @@ import android.net.Uri;
 import java.util.Arrays;
 import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class a {
     public static final String i;
@@ -22,7 +22,7 @@ public final class a {
     public final int a;
     public final int b;
     public final Uri[] c;
-    public final p0[] d;
+    public final o0[] d;
     public final int[] e;
     public final long[] f;
     public final String[] g;
@@ -44,17 +44,17 @@ public final class a {
         t = Integer.toString(11, 36);
     }
 
-    public a(int i10, int i11, int[] iArr, p0[] p0VarArr, long[] jArr, String[] strArr, b[] bVarArr) {
+    public a(int i10, int i11, int[] iArr, o0[] o0VarArr, long[] jArr, String[] strArr, b[] bVarArr) {
         Uri uri;
         int i12 = 0;
-        u6.g(iArr.length == p0VarArr.length);
+        u6.g(iArr.length == o0VarArr.length);
         u6.g(iArr.length == bVarArr.length);
         this.a = i10;
         this.b = i11;
         this.e = iArr;
-        this.d = p0VarArr;
+        this.d = o0VarArr;
         this.f = jArr;
-        this.c = new Uri[p0VarArr.length];
+        this.c = new Uri[o0VarArr.length];
         while (true) {
             Uri[] uriArr = this.c;
             if (i12 >= uriArr.length) {
@@ -62,13 +62,13 @@ public final class a {
                 this.h = bVarArr;
                 return;
             }
-            p0 p0Var = p0VarArr[i12];
-            if (p0Var == null) {
+            o0 o0Var = o0VarArr[i12];
+            if (o0Var == null) {
                 uri = null;
             } else {
-                k0 k0Var = p0Var.b;
-                k0Var.getClass();
-                uri = k0Var.a;
+                j0 j0Var = o0Var.b;
+                j0Var.getClass();
+                uri = j0Var.a;
             }
             uriArr[i12] = uri;
             i12++;

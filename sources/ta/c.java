@@ -25,10 +25,9 @@ import java.util.zip.GZIPOutputStream;
 import n6.l;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.telegram.ui.Cells.c1;
 import ra.e;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class c {
     public static final Pattern d = Pattern.compile("[0-9]+s");
@@ -83,7 +82,7 @@ public final class c {
             return;
         }
         Log.w("Firebase-Installations", str4);
-        Log.w("Firebase-Installations", c1.i("Firebase options used while communicating with Firebase server APIs: ", str2, ", ", str3, TextUtils.isEmpty(str) ? "" : t8.b.h(", ", str)));
+        Log.w("Firebase-Installations", r.c.h("Firebase options used while communicating with Firebase server APIs: ", str2, ", ", str3, TextUtils.isEmpty(str) ? "" : r.c.g(", ", str)));
     }
 
     public static long d(String str) {
@@ -123,9 +122,9 @@ public final class c {
                         jsonReader.skipValue();
                     }
                 }
-                b f7 = a2.f();
+                b e7 = a2.e();
                 jsonReader.endObject();
-                bVar = f7;
+                bVar = e7;
             } else {
                 jsonReader.skipValue();
             }
@@ -155,7 +154,7 @@ public final class c {
         jsonReader.close();
         inputStream.close();
         a2.b = 1;
-        return a2.f();
+        return a2.e();
     }
 
     public static void g(HttpURLConnection httpURLConnection, String str, String str2) {
@@ -206,7 +205,7 @@ public final class c {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final HttpURLConnection c(URL url, String str) {
-        PackageInfo e7;
+        PackageInfo b10;
         Signature[] signatureArr;
         byte[] bArr;
         MessageDigest messageDigest;
@@ -225,19 +224,19 @@ public final class c {
             if (eVar != null) {
                 try {
                     httpURLConnection.addRequestProperty("x-firebase-client", (String) Tasks.await(((oa.c) eVar).b()));
-                } catch (InterruptedException e10) {
+                } catch (InterruptedException e7) {
                     Thread.currentThread().interrupt();
+                    Log.w("ContentValues", "Failed to get heartbeats header", e7);
+                } catch (ExecutionException e10) {
                     Log.w("ContentValues", "Failed to get heartbeats header", e10);
-                } catch (ExecutionException e11) {
-                    Log.w("ContentValues", "Failed to get heartbeats header", e11);
                 }
             }
             String str2 = null;
             try {
-                e7 = w6.b.a(context).e(64, context.getPackageName());
-                signatureArr = e7.signatures;
-            } catch (PackageManager.NameNotFoundException e12) {
-                Log.e("ContentValues", "No such package: " + context.getPackageName(), e12);
+                b10 = w6.b.a(context).b(64, context.getPackageName());
+                signatureArr = b10.signatures;
+            } catch (PackageManager.NameNotFoundException e11) {
+                Log.e("ContentValues", "No such package: " + context.getPackageName(), e11);
             }
             if (signatureArr != null && signatureArr.length == 1) {
                 int i10 = 0;
@@ -256,7 +255,7 @@ public final class c {
                     i10++;
                 }
                 if (messageDigest != null) {
-                    bArr = messageDigest.digest(e7.signatures[0].toByteArray());
+                    bArr = messageDigest.digest(b10.signatures[0].toByteArray());
                     if (bArr != null) {
                         Log.e("ContentValues", "Could not get fingerprint hash for package: " + context.getPackageName());
                     } else {

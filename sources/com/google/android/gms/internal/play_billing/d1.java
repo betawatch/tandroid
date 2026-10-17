@@ -1,6 +1,8 @@
 package com.google.android.gms.internal.play_billing;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+import com.google.android.gms.internal.cast.a6;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class d1 implements x1 {
     public static final d1 b = new d1(0);
@@ -47,11 +49,11 @@ public final class d1 implements x1 {
                         return true;
                 }
             case 2:
-                if (k3.a(i10) != 0) {
+                if (a6.a(i10) != 0) {
                 }
                 break;
             case 3:
-                if ((i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? null : n3.e : n3.d : n3.c : n3.b) != null) {
+                if ((i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? null : m3.e : m3.d : m3.c : m3.b) != null) {
                 }
                 break;
             case 4:

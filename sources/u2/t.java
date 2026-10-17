@@ -4,7 +4,7 @@ import android.net.Uri;
 import java.util.Map;
 import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class t implements g2.h {
     public final g2.h a;
@@ -48,7 +48,7 @@ public final class t implements g2.h {
         throw new UnsupportedOperationException();
     }
 
-    @Override // b2.p
+    @Override // b2.o
     public final int read(byte[] bArr, int i10, int i11) {
         int i12 = this.e;
         g2.h hVar = this.a;
@@ -73,12 +73,12 @@ public final class t implements g2.h {
                     if (i14 > 0) {
                         e2.x xVar = new e2.x(bArr3, i14);
                         t0 t0Var = this.c;
-                        long max = !t0Var.w ? t0Var.r : Math.max(t0Var.x.j(true), t0Var.r);
+                        long max = !t0Var.w ? t0Var.r : Math.max(t0Var.x.h(true), t0Var.r);
                         int a2 = xVar.a();
-                        c3.i0 i0Var = t0Var.v;
-                        i0Var.getClass();
-                        i0Var.d(a2, xVar);
-                        i0Var.c(max, 1, a2, 0, null);
+                        c3.j0 j0Var = t0Var.v;
+                        j0Var.getClass();
+                        j0Var.d(a2, xVar);
+                        j0Var.c(max, 1, a2, 0, null);
                         t0Var.w = true;
                     }
                 }

@@ -11,17 +11,17 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class c2 extends HorizontalScrollView implements org.telegram.ui.ActionBar.x5, g3 {
-    public final z70 a;
+public final class c2 extends HorizontalScrollView implements org.telegram.ui.ActionBar.y5, g3 {
+    public final d70 a;
     public final FrameLayout b;
     public final ImageView c;
     public int d;
 
-    public c2(Context context, z70 z70Var) {
+    public c2(Context context, d70 d70Var) {
         super(context);
-        this.a = z70Var;
+        this.a = d70Var;
         FrameLayout frameLayout = new FrameLayout(context);
         this.b = frameLayout;
         addView(frameLayout, w7.z5.d(-2.0f, -2));
@@ -32,7 +32,7 @@ public final class c2 extends HorizontalScrollView implements org.telegram.ui.Ac
         d();
     }
 
-    @Override // org.telegram.ui.ActionBar.x5
+    @Override // org.telegram.ui.ActionBar.y5
     public final void d() {
         this.c.setColorFilter(new PorterDuffColorFilter(this.a.b(), PorterDuff.Mode.SRC_IN));
     }
@@ -81,25 +81,25 @@ public final class c2 extends HorizontalScrollView implements org.telegram.ui.Ac
     }
 
     public void setBlock(TL_iv.pageBlockMath pageblockmath) {
-        ji.s a2;
+        ki.r a2;
         ImageView imageView = this.c;
         imageView.setImageBitmap(null);
-        z70 z70Var = this.a;
-        z70Var.getClass();
+        d70 d70Var = this.a;
+        d70Var.getClass();
         float f7 = 18;
         int dp = AndroidUtilities.dp(f7);
-        z70Var.getClass();
+        d70Var.getClass();
         imageView.setPadding(dp, 0, AndroidUtilities.dp(f7), 0);
         imageView.setLayoutParams(new FrameLayout.LayoutParams(0, 0));
-        z70Var.getClass();
+        d70Var.getClass();
         float f10 = 36;
         this.d = AndroidUtilities.dp(f10);
-        if (pageblockmath == null || (a2 = ji.s.a(pageblockmath.source, AndroidUtilities.dp(20.0f), false)) == null) {
+        if (pageblockmath == null || (a2 = ki.r.a(pageblockmath.source, AndroidUtilities.dp(20.0f), false)) == null) {
             return;
         }
         imageView.setImageBitmap(a2.a);
         int i10 = a2.b;
-        z70Var.getClass();
+        d70Var.getClass();
         int dp2 = AndroidUtilities.dp(f10) + i10;
         this.d = dp2;
         imageView.setLayoutParams(new FrameLayout.LayoutParams(dp2, a2.c));

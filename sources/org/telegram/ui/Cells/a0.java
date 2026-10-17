@@ -4,11 +4,11 @@ import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
-import org.telegram.ui.Components.lw0;
+import org.telegram.ui.Components.gw0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public abstract class a0 extends ViewGroup implements lw0 {
+public abstract class a0 extends ViewGroup implements gw0 {
     public boolean a;
     public androidx.emoji2.text.j b;
     public int c;
@@ -38,13 +38,13 @@ public abstract class a0 extends ViewGroup implements lw0 {
         drawable.setBounds(i10, i11, drawable.getIntrinsicWidth() + i10, drawable.getIntrinsicHeight() + i11);
     }
 
-    public static void q(Drawable drawable, float f7, float f10) {
+    public static void p(Drawable drawable, float f7, float f10) {
         int i10 = (int) f7;
         int i11 = (int) f10;
         drawable.setBounds(i10, i11, drawable.getIntrinsicWidth() + i10, drawable.getIntrinsicHeight() + i11);
     }
 
-    @Override // org.telegram.ui.Components.lw0
+    @Override // org.telegram.ui.Components.gw0
     public final void g(Runnable runnable) {
         this.e = runnable;
     }
@@ -91,7 +91,7 @@ public abstract class a0 extends ViewGroup implements lw0 {
         return true;
     }
 
-    public final void r() {
+    public final void q() {
         if (this.a) {
             return;
         }

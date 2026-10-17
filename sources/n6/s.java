@@ -7,10 +7,10 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class s implements Handler.Callback {
-    public final ya.c a;
+    public final a6.i a;
     public final com.google.android.gms.internal.cast.a0 n;
     public final ArrayList b = new ArrayList();
     public final ArrayList c = new ArrayList();
@@ -20,8 +20,8 @@ public final class s implements Handler.Callback {
     public boolean h = false;
     public final Object r = new Object();
 
-    public s(Looper looper, ya.c cVar) {
-        this.a = cVar;
+    public s(Looper looper, a6.i iVar) {
+        this.a = iVar;
         this.n = new com.google.android.gms.internal.cast.a0(looper, this);
     }
 
@@ -44,13 +44,13 @@ public final class s implements Handler.Callback {
     public final boolean handleMessage(Message message) {
         int i10 = message.what;
         if (i10 != 1) {
-            Log.wtf("GmsClientEvents", i2.d.j(i10, "Don't know how to handle message: "), new Exception());
+            Log.wtf("GmsClientEvents", i0.a.j(i10, "Don't know how to handle message: "), new Exception());
             return false;
         }
         com.google.android.gms.common.api.k kVar = (com.google.android.gms.common.api.k) message.obj;
         synchronized (this.r) {
             try {
-                if (this.e && this.a.y0() && this.b.contains(kVar)) {
+                if (this.e && this.a.B() && this.b.contains(kVar)) {
                     kVar.onConnected(null);
                 }
             } catch (Throwable th2) {

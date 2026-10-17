@@ -13,12 +13,11 @@ import java.util.TreeMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class a {
-    public static volatile com.google.firebase.messaging.r b;
+    public static volatile com.google.firebase.messaging.q b;
     public static final Object a = new Object();
     public static final b1 c = new b1("id");
     public static final b1 d = new b1(TeXSymbolParser.TYPE_ATTR);
@@ -86,48 +85,48 @@ public abstract class a {
         int length;
         int length2;
         int indexOf;
-        String i10;
+        String h;
+        int i10 = 0;
         int i11 = 0;
-        int i12 = 0;
         while (true) {
             length = objArr.length;
-            if (i12 >= length) {
+            if (i11 >= length) {
                 break;
             }
-            Object obj = objArr[i12];
+            Object obj = objArr[i11];
             if (obj == null) {
-                i10 = BuildConfig.BETA_URL;
+                h = "null";
             } else {
                 try {
-                    i10 = obj.toString();
+                    h = obj.toString();
                 } catch (Exception e) {
                     String D = a1.g.D(obj.getClass().getName(), "@", Integer.toHexString(System.identityHashCode(obj)));
                     Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(D), (Throwable) e);
-                    i10 = org.telegram.ui.Cells.c1.i("<", D, " threw ", e.getClass().getName(), ">");
+                    h = r.c.h("<", D, " threw ", e.getClass().getName(), ">");
                 }
             }
-            objArr[i12] = i10;
-            i12++;
+            objArr[i11] = h;
+            i11++;
         }
         StringBuilder sb2 = new StringBuilder(str.length() + (length * 16));
-        int i13 = 0;
+        int i12 = 0;
         while (true) {
             length2 = objArr.length;
-            if (i11 >= length2 || (indexOf = str.indexOf("%s", i13)) == -1) {
+            if (i10 >= length2 || (indexOf = str.indexOf("%s", i12)) == -1) {
                 break;
             }
-            sb2.append((CharSequence) str, i13, indexOf);
-            sb2.append(objArr[i11]);
-            i11++;
-            i13 = indexOf + 2;
+            sb2.append((CharSequence) str, i12, indexOf);
+            sb2.append(objArr[i10]);
+            i10++;
+            i12 = indexOf + 2;
         }
-        sb2.append((CharSequence) str, i13, str.length());
-        if (i11 < length2) {
+        sb2.append((CharSequence) str, i12, str.length());
+        if (i10 < length2) {
             sb2.append(" [");
-            sb2.append(objArr[i11]);
-            for (int i14 = i11 + 1; i14 < objArr.length; i14++) {
+            sb2.append(objArr[i10]);
+            for (int i13 = i10 + 1; i13 < objArr.length; i13++) {
                 sb2.append(", ");
-                sb2.append(objArr[i14]);
+                sb2.append(objArr[i13]);
             }
             sb2.append(']');
         }
@@ -192,7 +191,7 @@ public abstract class a {
                 c10 = c("%s (%s) must not be negative", "index", Integer.valueOf(i10));
             } else {
                 if (i11 < 0) {
-                    throw new IllegalArgumentException(i2.d.j(i11, "negative size: "));
+                    throw new IllegalArgumentException(i0.a.j(i11, "negative size: "));
                 }
                 c10 = c("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i10), Integer.valueOf(i11));
             }
@@ -212,15 +211,15 @@ public abstract class a {
     public static final void g(StringBuilder sb2, Iterator it, sb.a aVar) {
         if (it.hasNext()) {
             Map.Entry entry = (Map.Entry) it.next();
-            sb2.append(sb.a.x2(entry.getKey()));
+            sb2.append(sb.a.u2(entry.getKey()));
             sb2.append(" : ");
-            sb2.append(sb.a.x2(entry.getValue()));
+            sb2.append(sb.a.u2(entry.getValue()));
             while (it.hasNext()) {
                 sb2.append(",\n  ");
                 Map.Entry entry2 = (Map.Entry) it.next();
-                sb2.append(sb.a.x2(entry2.getKey()));
+                sb2.append(sb.a.u2(entry2.getKey()));
                 sb2.append(" : ");
-                sb2.append(sb.a.x2(entry2.getValue()));
+                sb2.append(sb.a.u2(entry2.getValue()));
             }
         }
     }
@@ -327,7 +326,7 @@ public abstract class a {
                     }
                     l(b11, c10);
                     int i11 = (int) c10;
-                    n3.b[] bVarArr = new n3.b[i11];
+                    n2.e[] eVarArr = new n2.e[i11];
                     d1 d1Var = null;
                     int i12 = 0;
                     while (i12 < c10) {
@@ -335,17 +334,17 @@ public abstract class a {
                         if (d1Var != null && k10.compareTo(d1Var) <= 0) {
                             throw new z4("Keys in CBOR Map not in strictly ascending natural order:\nPrevious key: " + d1Var.toString() + "\nCurrent key: " + k10.toString());
                         }
-                        bVarArr[i12] = new n3.b(2, k10, k(f1Var));
+                        eVarArr[i12] = new n2.e(3, k10, k(f1Var));
                         i12++;
                         d1Var = k10;
                     }
                     TreeMap treeMap = new TreeMap();
                     while (i10 < i11) {
-                        n3.b bVar = bVarArr[i10];
-                        if (treeMap.containsKey((d1) bVar.b)) {
+                        n2.e eVar = eVarArr[i10];
+                        if (treeMap.containsKey((d1) eVar.b)) {
                             throw new z4("Attempted to add duplicate key to canonical CBOR Map.");
                         }
-                        treeMap.put((d1) bVar.b, (d1) bVar.c);
+                        treeMap.put((d1) eVar.b, (d1) eVar.c);
                         i10++;
                     }
                     return new a1(s.b(treeMap));
@@ -366,22 +365,22 @@ public abstract class a {
         switch (b10) {
             case 24:
                 if (j10 < 24) {
-                    throw new z4(org.telegram.ui.Cells.c1.h(j10, "Integer value ", " after add info could have been represented in 0 additional bytes, but used 1"));
+                    throw new z4(r.c.f(j10, "Integer value ", " after add info could have been represented in 0 additional bytes, but used 1"));
                 }
                 return;
             case 25:
                 if (j10 < 256) {
-                    throw new z4(org.telegram.ui.Cells.c1.h(j10, "Integer value ", " after add info could have been represented in 0-1 additional bytes, but used 2"));
+                    throw new z4(r.c.f(j10, "Integer value ", " after add info could have been represented in 0-1 additional bytes, but used 2"));
                 }
                 return;
             case 26:
                 if (j10 < 65536) {
-                    throw new z4(org.telegram.ui.Cells.c1.h(j10, "Integer value ", " after add info could have been represented in 0-2 additional bytes, but used 4"));
+                    throw new z4(r.c.f(j10, "Integer value ", " after add info could have been represented in 0-2 additional bytes, but used 4"));
                 }
                 return;
             case 27:
                 if (j10 < 4294967296L) {
-                    throw new z4(org.telegram.ui.Cells.c1.h(j10, "Integer value ", " after add info could have been represented in 0-4 additional bytes, but used 8"));
+                    throw new z4(r.c.f(j10, "Integer value ", " after add info could have been represented in 0-4 additional bytes, but used 8"));
                 }
                 return;
             default:
@@ -402,6 +401,6 @@ public abstract class a {
         if (i11 >= 0) {
             return c("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i10), Integer.valueOf(i11));
         }
-        throw new IllegalArgumentException(i2.d.j(i11, "negative size: "));
+        throw new IllegalArgumentException(i0.a.j(i11, "negative size: "));
     }
 }

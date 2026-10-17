@@ -1,23 +1,26 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Paint;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public interface h50 {
-    void E(float f7);
+public final class h50 {
+    public long a;
+    public float b;
+    public float c;
+    public boolean d;
+    public float e;
+    public final RectF f = new RectF();
+    public int g;
+    public final Paint h;
+    public final int i;
 
-    void K(boolean z10, boolean z11);
-
-    void P();
-
-    void Q(TLRPC.InputFile inputFile, TLRPC.InputFile inputFile2, double d, String str, TLRPC.PhotoSize photoSize, TLRPC.PhotoSize photoSize2, boolean z10, TLRPC.VideoSize videoSize);
-
-    boolean e();
-
-    org.telegram.ui.jv0 getCloseIntoObject();
-
-    String getInitialSearchString();
-
-    boolean v();
+    public h50(int i10) {
+        this.i = i10;
+        Paint paint = new Paint(1);
+        this.h = paint;
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+    }
 }

@@ -1,30 +1,84 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gz0 implements View.OnClickListener {
+public final class gz0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Runnable b;
+    public final /* synthetic */ ProfileActivity b;
 
-    public /* synthetic */ gz0(int i10, Runnable runnable) {
+    public /* synthetic */ gz0(ProfileActivity profileActivity, int i10) {
         this.a = i10;
-        this.b = runnable;
+        this.b = profileActivity;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
         switch (this.a) {
-            case 0:
-                this.b.run();
+            case 2:
+                ProfileActivity profileActivity = this.b;
+                profileActivity.P1 = false;
+                profileActivity.a.O0 = true;
                 break;
             default:
-                Runnable runnable = this.b;
-                if (runnable != null) {
-                    runnable.run();
+                super.onAnimationCancel(animator);
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                super.onAnimationEnd(animator);
+                this.b.k4(true);
+                break;
+            case 1:
+                ProfileActivity profileActivity = this.b;
+                AnimatorSet animatorSet = profileActivity.w;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    profileActivity.w = null;
                     break;
                 }
+                break;
+            case 2:
+                ProfileActivity profileActivity2 = this.b;
+                profileActivity2.P1 = false;
+                profileActivity2.a.O0 = true;
+                profileActivity2.k2.removeListener(this);
+                profileActivity2.e1.setBackgroundColor(-16777216);
+                profileActivity2.Y.setVisibility(8);
+                profileActivity2.o0.setVisibility(0);
+                profileActivity2.o0.setAlpha(1.0f);
+                break;
+            case 3:
+                ProfileActivity profileActivity3 = this.b;
+                profileActivity3.k2.removeListener(this);
+                profileActivity3.o0.setVisibility(8);
+                profileActivity3.o0.setAlpha(1.0f);
+                break;
+            default:
+                ProfileActivity profileActivity4 = this.b;
+                profileActivity4.x0 = null;
+                profileActivity4.fragmentView.invalidate();
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 2:
+                ProfileActivity profileActivity = this.b;
+                ProfileActivity.s3(profileActivity, false);
+                profileActivity.o0.setAnimatedFileMaybe(profileActivity.f0.getImageReceiver().getAnimation());
+                profileActivity.o0.L();
+                break;
+            default:
+                super.onAnimationStart(animator);
                 break;
         }
     }

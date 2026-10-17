@@ -6,9 +6,9 @@ import android.graphics.Path;
 import android.graphics.Rect;
 import java.util.Arrays;
 import w7.r;
-import zf.f0;
+import zf.e0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class c {
     public int d;
@@ -29,7 +29,7 @@ public final class c {
 
     public final void a() {
         float[] fArr = this.b;
-        this.l = f0.c(fArr);
+        this.l = e0.c(fArr);
         Rect rect = this.a;
         Rect rect2 = this.m;
         rect2.set(rect);

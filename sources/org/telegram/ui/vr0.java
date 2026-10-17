@@ -1,113 +1,102 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.view.ViewGroup;
+import android.widget.Toast;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.ui.Components.ClippingImageView;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vr0 implements org.telegram.ui.Components.f5, org.telegram.ui.ActionBar.z1, ImageReceiver.ImageReceiverDelegate, r0.n {
-    public final /* synthetic */ PhotoViewer a;
+public final /* synthetic */ class vr0 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ vr0(PhotoViewer photoViewer) {
-        this.a = photoViewer;
+    public /* synthetic */ vr0(Object obj, Object obj2, Object obj3, int i10) {
+        this.a = i10;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
     }
 
-    @Override // org.telegram.ui.Components.f5
-    public void J(int i10, int i11, boolean z10) {
-        Drawable[] drawableArr = PhotoViewer.U8;
-        this.a.w2(z10, i10, i11, false, false, false);
-    }
-
-    @Override // r0.n
-    public r0.l1 Q0(View view, r0.l1 l1Var) {
-        PhotoViewer photoViewer = this.a;
-        mr0 mr0Var = photoViewer.v4;
-        Rect rect = photoViewer.s2;
-        Rect rect2 = new Rect(rect);
-        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(l1Var, false);
-        int i10 = defaultWindowInsets.a;
-        int i11 = defaultWindowInsets.b;
-        int i12 = defaultWindowInsets.c;
-        rect.set(i10, i11, i12, defaultWindowInsets.d);
-        if (!rect2.equals(rect)) {
-            int i13 = photoViewer.n4;
-            if (i13 == 1 || i13 == 3) {
-                ClippingImageView clippingImageView = photoViewer.h0;
-                clippingImageView.setTranslationX(clippingImageView.getTranslationX() - rect.left);
-                photoViewer.k4[0][2] = photoViewer.h0.getTranslationX();
-            }
-            iv0 iv0Var = photoViewer.g0;
-            if (iv0Var != null) {
-                iv0Var.requestLayout();
-            }
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new gn0((as0) this.b, tLObject, (UserConfig) this.c, (TLRPC.Photo) this.d, 5));
+                break;
+            case 1:
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.g30((ex0) this.b, tLObject, (TLRPC.UserFull) this.c, (TL_account.TL_birthday) this.d, tL_error, 25));
+                break;
+            case 2:
+                AndroidUtilities.runOnUIThread(new gn0((PrivacySettingsActivity) this.b, (org.telegram.ui.ActionBar.b2) this.c, tLObject, (TL_account.setAccountTTL) this.d, 8));
+                break;
+            case 3:
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.g30((ProfileActivity) this.b, tLObject, (TLRPC.UserFull) this.c, (TL_account.TL_birthday) this.d, tL_error, 29));
+                break;
+            case 4:
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.g30((ProfileActivity) this.b, tLObject, (TLRPC.TL_username) this.c, (dz0) this.d, tL_error, 27));
+                break;
+            case 5:
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.g30((ProfileActivity) this.b, tLObject, (String) this.c, (TLRPC.User) this.d, tL_error, 28));
+                break;
+            case 6:
+                AndroidUtilities.runOnUIThread(new gn0((lz0) this.b, tLObject, (UserConfig) this.c, (TLRPC.Photo) this.d, 14));
+                break;
+            case 7:
+                AndroidUtilities.runOnUIThread(new i01((j61) this.b, tL_error, tLObject, (TwoStepVerificationActivity) this.c, (TLRPC.User) this.d, 2));
+                break;
+            case 8:
+                AndroidUtilities.runOnUIThread(new gn0((SessionsActivity) this.b, (org.telegram.ui.ActionBar.b2) this.c, tL_error, (TLRPC.TL_authorization) this.d, 17));
+                break;
+            case 9:
+                AndroidUtilities.runOnUIThread(new gn0((SessionsActivity) this.b, (org.telegram.ui.ActionBar.b2) this.c, tL_error, (TLRPC.TL_webAuthorization) this.d, 16));
+                break;
+            case 10:
+                c91 c91Var = (c91) this.b;
+                String str = (String) this.c;
+                q91 q91Var = (q91) this.d;
+                boolean z10 = true;
+                kg.b bVar = null;
+                if (tLObject instanceof TL_stats.TL_statsGraph) {
+                    try {
+                        JSONObject jSONObject = new JSONObject(((TL_stats.TL_statsGraph) tLObject).json.data);
+                        d91 d91Var = c91Var.r;
+                        int i10 = d91Var.i;
+                        if (d91Var != c91Var.w.w) {
+                            z10 = false;
+                        }
+                        bVar = r91.e0(jSONObject, i10, z10);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                } else if (tLObject instanceof TL_stats.TL_statsGraphError) {
+                    Toast.makeText(c91Var.getContext(), ((TL_stats.TL_statsGraphError) tLObject).error, 1).show();
+                }
+                AndroidUtilities.runOnUIThread(new gn0(c91Var, bVar, str, q91Var, 20));
+                break;
+            case 11:
+                AndroidUtilities.runOnUIThread(new gn0((ld1) this.b, tLObject, (String) this.c, (org.telegram.ui.ActionBar.b2) this.d, 22));
+                break;
+            default:
+                TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.b;
+                byte[] bArr = (byte[]) this.c;
+                byte[] bArr2 = (byte[]) this.d;
+                if (tL_error != null) {
+                    AndroidUtilities.runOnUIThread(new m71(17, twoStepVerificationActivity, tL_error));
+                    break;
+                } else {
+                    Utilities.globalQueue.postRunnable(new gn0(twoStepVerificationActivity, bArr, tLObject, bArr2, 23));
+                    break;
+                }
         }
-        View view2 = photoViewer.j0;
-        if (view2 != null) {
-            photoViewer.k0 = rect.bottom;
-            ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view2.getLayoutParams();
-            int i14 = photoViewer.k0;
-            marginLayoutParams.height = i14;
-            marginLayoutParams.bottomMargin = (-i14) / 2;
-            photoViewer.j0.setLayoutParams(marginLayoutParams);
-        }
-        photoViewer.e0.setPadding(defaultWindowInsets.a, 0, i12, 0);
-        if (photoViewer.F != null) {
-            AndroidUtilities.cancelRunOnUIThread(mr0Var);
-            if (photoViewer.e && photoViewer.n4 == 0) {
-                AndroidUtilities.runOnUIThread(mr0Var, 200L);
-            }
-        }
-        return r0.l1.b;
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        hv0 hv0Var;
-        int i10;
-        Bitmap bitmap;
-        int i11;
-        PhotoViewer photoViewer = this.a;
-        if (imageReceiver == photoViewer.C4 && z10 && !z11) {
-            if (!photoViewer.r1 && ((photoViewer.u4 == 1 || (i11 = photoViewer.c2) == 1 || i11 == 11) && photoViewer.C1 != null && (bitmap = imageReceiver.getBitmap()) != null)) {
-                org.telegram.ui.Components.uf0 uf0Var = photoViewer.C1;
-                int orientation = imageReceiver.getOrientation();
-                int i12 = photoViewer.c2;
-                uf0Var.b(bitmap, orientation, (i12 == 1 || i12 == 11) ? false : true, true, photoViewer.D1, null, null);
-            }
-            if (photoViewer.y4.getVisibility() == 0) {
-                photoViewer.e0.requestLayout();
-            }
-            photoViewer.Q0();
-        }
-        if (imageReceiver != photoViewer.C4 || !z10 || (hv0Var = photoViewer.d) == null || !hv0Var.K() || photoViewer.k5 || (i10 = photoViewer.c2) == 1 || i10 == 11) {
-            return;
-        }
-        if (photoViewer.T5) {
-            photoViewer.N2();
-        } else {
-            photoViewer.U5 = true;
-        }
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        org.telegram.messenger.l5.a(this, i10, str, drawable);
-    }
-
-    @Override // org.telegram.ui.ActionBar.z1
-    public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
-        Drawable[] drawableArr = PhotoViewer.U8;
-        this.a.e3(0);
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        org.telegram.messenger.l5.b(this, imageReceiver);
     }
 }

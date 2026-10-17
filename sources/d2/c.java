@@ -1,6 +1,6 @@
 package d2;
 
-import bi.w2;
+import ci.i1;
 import e2.m0;
 import e9.l0;
 import e9.n0;
@@ -9,10 +9,10 @@ import e9.s1;
 import e9.x1;
 import java.util.List;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class c {
-    public static final r c = new r(new w2(10), s1.b);
+    public static final r c = new r(new i1(12), s1.b);
     public static final c d;
     public static final String e;
     public static final String f;

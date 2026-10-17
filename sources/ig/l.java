@@ -2,24 +2,24 @@ package ig;
 
 import android.content.Context;
 import android.text.Editable;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.Cells.j3;
-import org.telegram.ui.Components.c71;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.Cells.i3;
+import org.telegram.ui.Components.u61;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class l extends j3 {
+public final class l extends i3 {
     public final /* synthetic */ int x;
     public final /* synthetic */ m y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l(m mVar, Context context, String str, int i10, c6 c6Var, int i11) {
-        super(context, str, false, false, i10, c6Var);
+    public l(m mVar, Context context, String str, int i10, d6 d6Var, int i11) {
+        super(context, str, false, false, i10, d6Var);
         this.x = i11;
         switch (i11) {
             case 1:
                 this.y = mVar;
-                super(context, str, true, false, i10, c6Var);
+                super(context, str, true, false, i10, d6Var);
                 break;
             default:
                 this.y = mVar;
@@ -27,27 +27,27 @@ public final class l extends j3 {
         }
     }
 
-    @Override // org.telegram.ui.Cells.j3
+    @Override // org.telegram.ui.Cells.i3
     public final void a(boolean z10) {
-        c71 c71Var;
-        c71 c71Var2;
+        u61 u61Var;
+        u61 u61Var2;
         switch (this.x) {
             case 0:
-                if (z10 && (c71Var = this.y.a) != null) {
-                    c71Var.x0(2);
+                if (z10 && (u61Var = this.y.a) != null) {
+                    u61Var.x0(2);
                     break;
                 }
                 break;
             default:
-                if (z10 && (c71Var2 = this.y.a) != null) {
-                    c71Var2.x0(3);
+                if (z10 && (u61Var2 = this.y.a) != null) {
+                    u61Var2.x0(3);
                     break;
                 }
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Cells.j3
+    @Override // org.telegram.ui.Cells.i3
     public final void b(Editable editable) {
         switch (this.x) {
             case 0:

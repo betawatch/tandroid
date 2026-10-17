@@ -9,7 +9,7 @@ import android.os.Parcel;
 import android.os.RemoteException;
 import android.os.SystemClock;
 import android.util.Log;
-import di.y6;
+import ci.v7;
 import e2.g0;
 import e2.i0;
 import e2.n0;
@@ -19,7 +19,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import n6.l;
 import rb.j;
 import w7.f0;
-import w7.p8;
+import w7.q8;
 import x7.ja;
 import x7.ka;
 import x7.la;
@@ -28,7 +28,7 @@ import x7.na;
 import x7.oa;
 import x7.y;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class a implements b {
     public boolean a;
@@ -61,7 +61,7 @@ public final class a implements b {
         int i10 = aVar.e;
         int i11 = aVar.b;
         int i12 = aVar.c;
-        int a2 = p8.a(aVar.d);
+        int a2 = q8.a(aVar.d);
         long elapsedRealtime = SystemClock.elapsedRealtime();
         int i13 = aVar.e;
         if (i13 != -1) {
@@ -69,7 +69,7 @@ public final class a implements b {
                 if (i13 == 35) {
                     bVar = new x6.b(null);
                 } else if (i13 != 842094169) {
-                    throw new nb.a(i2.d.j(aVar.e, "Unsupported image format: "), 3);
+                    throw new nb.a(i0.a.j(aVar.e, "Unsupported image format: "), 3);
                 }
             }
             l.h(null);
@@ -121,7 +121,7 @@ public final class a implements b {
         }
         AtomicBoolean atomicBoolean = new AtomicBoolean(true);
         i0 i0Var2 = (i0) this.e;
-        i0Var2.a.postDelayed(new y6(23, this, atomicBoolean), 1000L);
+        i0Var2.a.postDelayed(new v7(20, this, atomicBoolean), 1000L);
         i0Var.d(new o0(this, atomicBoolean, z10, z11, 0));
     }
 
@@ -178,7 +178,7 @@ public final class a implements b {
     }
 
     public a(Context context, Looper looper, g0 g0Var) {
-        this.c = new qf.b(context.getApplicationContext(), 15);
+        this.c = new qf.b((Object) context.getApplicationContext(), 13);
         this.d = g0Var.a(looper, null);
         this.e = g0Var.a(Looper.getMainLooper(), null);
     }

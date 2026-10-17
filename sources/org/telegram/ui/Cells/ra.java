@@ -1,108 +1,77 @@
 package org.telegram.ui.Cells;
 
 import android.content.Context;
-import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
-import android.view.View;
-import android.widget.LinearLayout;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.widget.TextView;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.regex.Pattern;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UnconfirmedAuthController;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.br;
-import org.telegram.ui.Components.zc;
-import org.telegram.ui.fo;
-import org.telegram.ui.yy;
+import org.telegram.ui.Components.bs;
+import org.telegram.ui.Components.dq;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ra implements View.OnClickListener {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.m2 d;
-    public final /* synthetic */ Serializable e;
+public final class ra extends TextView {
+    public boolean a;
+    public final org.telegram.ui.Components.f6 b;
+    public dq c;
 
-    public /* synthetic */ ra(fo foVar, TLRPC.User user, String str, boolean z10, int i10) {
-        this.d = foVar;
-        this.e = str;
-        this.b = z10;
-        this.c = i10;
+    public ra(Context context) {
+        super(context);
+        this.b = new org.telegram.ui.Components.f6(this, 0L, 350L, bs.h);
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        int i10 = this.a;
-        int i11 = this.c;
-        boolean z10 = this.b;
-        Serializable serializable = this.e;
-        org.telegram.ui.ActionBar.m2 m2Var = this.d;
-        int i12 = 0;
-        switch (i10) {
-            case 0:
-                yy yyVar = (yy) m2Var;
-                ArrayList<UnconfirmedAuthController.UnconfirmedAuth> arrayList = (ArrayList) serializable;
-                String string = LocaleController.getString(R.string.UnconfirmedAuthConfirmedMessage);
-                int i13 = org.telegram.ui.ActionBar.g6.Gi;
-                SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(string, i13, 0, new g(yyVar, 10));
-                SpannableString spannableString = new SpannableString(">");
-                br brVar = new br(R.drawable.attach_arrow_right, 0);
-                brVar.setOverrideColor(org.telegram.ui.ActionBar.g6.x0(null, i13, false));
-                brVar.setScale(0.7f, 0.7f);
-                brVar.setWidth(AndroidUtilities.dp(12.0f));
-                spannableString.setSpan(brVar, 0, spannableString.length(), 33);
-                AndroidUtilities.replaceCharSequence(">", replaceSingleTag, spannableString);
-                zc.a0(yyVar).M(LocaleController.getString(z10 ? R.string.UnconfirmedAuthConfirmedBot : R.string.UnconfirmedAuthConfirmed), replaceSingleTag, R.raw.contact_check).j();
-                MessagesController.getInstance(i11).getUnconfirmedAuthController().confirm(arrayList, new bi.f(8));
-                MessagesController.getInstance(i11).getUnconfirmedAuthController().cleanup();
-                break;
-            default:
-                fo foVar = (fo) m2Var;
-                String str = (String) serializable;
-                Pattern pattern = org.telegram.ui.Components.g5.a;
-                if (foVar.getParentActivity() != null) {
-                    org.telegram.ui.ActionBar.e3 e3Var = new org.telegram.ui.ActionBar.e3(1, (Context) foVar.getParentActivity(), (org.telegram.ui.ActionBar.c6) null, false);
-                    e3Var.fixNavigationBar();
-                    e3Var.title = LocaleController.getString(z10 ? R.string.ChatWithAdminChannelTitle : R.string.ChatWithAdminGroupTitle);
-                    e3Var.bigTitle = true;
-                    LinearLayout linearLayout = new LinearLayout(foVar.getParentActivity());
-                    linearLayout.setOrientation(1);
-                    TextView textView = new TextView(foVar.getParentActivity());
-                    linearLayout.addView(textView, w7.z5.t(-1, -1, 0, 21, 0, 21, 8));
-                    textView.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.G6, false));
-                    textView.setTextSize(1, 16.0f);
-                    textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("ChatWithAdminMessage", R.string.ChatWithAdminMessage, str, LocaleController.formatDateAudio(i11, false))));
-                    TextView textView2 = new TextView(foVar.getParentActivity());
-                    textView2.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
-                    textView2.setGravity(17);
-                    textView2.setTextSize(1, 14.0f);
-                    textView2.setTypeface(AndroidUtilities.bold());
-                    textView2.setText(LocaleController.getString(R.string.IUnderstand));
-                    textView2.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Sh, false));
-                    int dp = AndroidUtilities.dp(8.0f);
-                    int x02 = org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Oh, false);
-                    int x03 = org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Qh, false);
-                    textView2.setBackground(org.telegram.ui.ActionBar.g6.j0(dp, dp, dp, dp, x02, x03, x03));
-                    linearLayout.addView(textView2, w7.z5.t(-1, 48, 0, 16, 12, 16, 8));
-                    e3Var.customView = linearLayout;
-                    e3Var.show();
-                    textView2.setOnClickListener(new org.telegram.ui.Components.g3(e3Var, i12));
-                    break;
-                }
-                break;
+    public final void a(boolean z10, boolean z11) {
+        this.a = z10;
+        boolean z12 = true;
+        if (!z11) {
+            this.b.f(z10, true);
         }
+        if (!isPressed() && !z10) {
+            z12 = false;
+        }
+        super.setPressed(z12);
+        invalidate();
     }
 
-    public /* synthetic */ ra(yy yyVar, boolean z10, int i10, ArrayList arrayList) {
-        this.d = yyVar;
-        this.b = z10;
-        this.c = i10;
-        this.e = arrayList;
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        Canvas canvas2;
+        float e = this.b.e(this.a);
+        if (e <= 0.0f) {
+            super.onDraw(canvas);
+            return;
+        }
+        if (e < 1.0f) {
+            canvas2 = canvas;
+            canvas2.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), (int) ((1.0f - e) * 255.0f), 31);
+            float f7 = 1.0f - (0.2f * e);
+            canvas2.scale(f7, f7, getWidth() / 2.0f, getHeight() / 2.0f);
+            canvas2.translate(0.0f, AndroidUtilities.dp(-12.0f) * e);
+            super.onDraw(canvas2);
+            canvas2.restore();
+        } else {
+            canvas2 = canvas;
+        }
+        if (this.c == null) {
+            dq dqVar = new dq(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(2.0f), getCurrentTextColor());
+            this.c = dqVar;
+            dqVar.setCallback(this);
+        }
+        this.c.b(getCurrentTextColor());
+        float f10 = 1.0f - e;
+        this.c.setBounds(getWidth() / 2, (getHeight() / 2) + ((int) (AndroidUtilities.dp(12.0f) * f10)), getWidth() / 2, (getHeight() / 2) + ((int) (f10 * AndroidUtilities.dp(12.0f))));
+        this.c.setAlpha((int) (e * 255.0f));
+        this.c.draw(canvas2);
+        invalidate();
+    }
+
+    @Override // android.view.View
+    public final void setPressed(boolean z10) {
+        super.setPressed(z10 || this.a);
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return this.c == drawable || super.verifyDrawable(drawable);
     }
 }

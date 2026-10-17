@@ -1,142 +1,101 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
+import android.util.SparseIntArray;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public class ax0 extends FrameLayout {
-    public final org.telegram.ui.ActionBar.h5 a;
-    public final TextView b;
-    public final ImageView c;
-    public final ImageView d;
-    public boolean e;
-    public qx0 f;
-    public org.telegram.ui.Components.q5 h;
-    public Drawable n;
+public final class ax0 extends s4.o {
+    public int b;
+    public final SparseIntArray c = new SparseIntArray();
+    public final SparseIntArray d = new SparseIntArray();
+    public final /* synthetic */ PrivacyControlActivity e;
 
-    public ax0(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context);
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        setClipChildren(false);
-        linearLayout.setClipChildren(false);
-        org.telegram.ui.ActionBar.h5 h5Var = new org.telegram.ui.ActionBar.h5(context);
-        this.a = h5Var;
-        h5Var.setTypeface(AndroidUtilities.bold());
-        h5Var.setTextSize(15);
-        h5Var.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.G6, c6Var));
-        linearLayout.addView(h5Var, w7.z5.n(-1, -2));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        textView.setTextSize(1, 14.0f);
-        textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.y6, c6Var));
-        textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        linearLayout.addView(textView, w7.z5.p(-1, -2, 0.0f, 0, 0, 1, 0, 0));
-        addView(linearLayout, w7.z5.a(-2.0f, 62.0f, 8.0f, 48.0f, 9.0f, -1, 0));
-        ImageView imageView = new ImageView(context);
-        this.c = imageView;
-        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER_INSIDE;
-        imageView.setScaleType(scaleType);
-        addView(imageView, w7.z5.a(28.0f, 18.0f, 12.0f, 0.0f, 0.0f, 28, 0));
-        ImageView imageView2 = new ImageView(context);
-        this.d = imageView2;
-        imageView2.setScaleType(scaleType);
-        imageView2.setImageResource(R.drawable.msg_arrowright);
-        imageView2.setColorFilter(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.M6, c6Var));
-        addView(imageView2, w7.z5.a(24.0f, 0.0f, 0.0f, 18.0f, 0.0f, 24, 21));
+    public ax0(PrivacyControlActivity privacyControlActivity) {
+        this.e = privacyControlActivity;
     }
 
-    public final void a(qx0 qx0Var, boolean z10) {
-        boolean isPremium = UserConfig.getInstance(UserConfig.selectedAccount).isPremium();
-        ImageView imageView = this.d;
-        if (isPremium && qx0Var.a == 12 && qx0Var.b == R.drawable.filled_premium_status2) {
-            imageView.setVisibility(8);
-            if (this.h == null) {
-                this.h = new org.telegram.ui.Components.q5(AndroidUtilities.dp(24.0f), 13, this, false);
-                if (isAttachedToWindow()) {
-                    this.h.a();
-                }
-            }
-            Long emojiStatusDocumentId = UserObject.getEmojiStatusDocumentId(UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser());
-            b(emojiStatusDocumentId == null ? 0L : emojiStatusDocumentId.longValue(), false);
-        } else {
-            imageView.setVisibility(0);
-            org.telegram.ui.Components.q5 q5Var = this.h;
-            if (q5Var != null) {
-                q5Var.b();
-                this.h = null;
-            }
-        }
-        this.f = qx0Var;
-        this.a.l(qx0Var.c, false);
-        this.b.setText(qx0Var.d);
-        this.c.setImageResource(qx0Var.b);
-        this.e = z10;
-    }
-
-    public final void b(long j10, boolean z10) {
-        if (this.h == null) {
-            this.h = new org.telegram.ui.Components.q5(AndroidUtilities.dp(24.0f), 13, this, false);
-            if (isAttachedToWindow()) {
-                this.h.a();
-            }
-        }
-        if (j10 != 0) {
-            this.h.j(j10, z10);
-            return;
-        }
-        if (this.n == null) {
-            Drawable mutate = getContext().getResources().getDrawable(R.drawable.msg_premium_prolfilestar).mutate();
-            this.n = mutate;
-            mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.v6, false), PorterDuff.Mode.SRC_IN));
-        }
-        this.h.g(this.n, z10);
-    }
-
-    public final void c() {
-        this.h.setBounds((getWidth() - this.h.s) - AndroidUtilities.dp(21.0f), (getHeight() - this.h.s) / 2, getWidth() - AndroidUtilities.dp(21.0f), (getHeight() + this.h.s) / 2);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        if (this.h != null) {
-            c();
-            this.h.k(Integer.valueOf(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.v6, false)));
-            this.h.draw(canvas);
-        }
-        if (this.e) {
-            canvas.drawRect(AndroidUtilities.dp(62.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight(), org.telegram.ui.ActionBar.g6.k0);
+    public static void g(int i10, int i11, SparseIntArray sparseIntArray) {
+        if (i11 >= 0) {
+            sparseIntArray.put(i11, i10);
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        org.telegram.ui.Components.q5 q5Var = this.h;
-        if (q5Var != null) {
-            q5Var.a();
-        }
-        super.onAttachedToWindow();
+    @Override // s4.o
+    public final boolean a(int i10, int i11) {
+        return b(i10, i11);
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        org.telegram.ui.Components.q5 q5Var = this.h;
-        if (q5Var != null) {
-            q5Var.b();
-        }
-        super.onDetachedFromWindow();
+    @Override // s4.o
+    public final boolean b(int i10, int i11) {
+        int i12 = this.c.get(i10, -1);
+        return i12 == this.d.get(i11, -1) && i12 >= 0;
+    }
+
+    @Override // s4.o
+    public final int d() {
+        return this.e.r0;
+    }
+
+    @Override // s4.o
+    public final int e() {
+        return this.b;
+    }
+
+    public final void f(SparseIntArray sparseIntArray) {
+        int i10;
+        int i11;
+        int i12;
+        int i13;
+        int i14;
+        int i15;
+        int i16;
+        int i17;
+        sparseIntArray.clear();
+        PrivacyControlActivity privacyControlActivity = this.e;
+        g(1, privacyControlActivity.M, sparseIntArray);
+        g(2, privacyControlActivity.N, sparseIntArray);
+        i10 = privacyControlActivity.everybodyRow;
+        g(3, i10, sparseIntArray);
+        g(4, privacyControlActivity.O, sparseIntArray);
+        i11 = privacyControlActivity.nobodyRow;
+        g(5, i11, sparseIntArray);
+        g(6, privacyControlActivity.g0, sparseIntArray);
+        g(7, privacyControlActivity.P, sparseIntArray);
+        g(8, privacyControlActivity.R, sparseIntArray);
+        g(9, privacyControlActivity.S, sparseIntArray);
+        g(10, privacyControlActivity.T, sparseIntArray);
+        g(11, privacyControlActivity.U, sparseIntArray);
+        g(12, privacyControlActivity.V, sparseIntArray);
+        g(13, privacyControlActivity.W, sparseIntArray);
+        g(14, privacyControlActivity.X, sparseIntArray);
+        g(15, privacyControlActivity.Y, sparseIntArray);
+        i12 = privacyControlActivity.photoForRestRow;
+        g(16, i12, sparseIntArray);
+        i13 = privacyControlActivity.currentPhotoForRestRow;
+        g(17, i13, sparseIntArray);
+        g(18, privacyControlActivity.Z, sparseIntArray);
+        g(19, privacyControlActivity.a0, sparseIntArray);
+        g(20, privacyControlActivity.b0, sparseIntArray);
+        g(21, privacyControlActivity.c0, sparseIntArray);
+        i14 = privacyControlActivity.readRow;
+        g(22, i14, sparseIntArray);
+        g(23, privacyControlActivity.d0, sparseIntArray);
+        g(24, privacyControlActivity.e0, sparseIntArray);
+        g(25, privacyControlActivity.f0, sparseIntArray);
+        g(26, privacyControlActivity.h0, sparseIntArray);
+        i15 = privacyControlActivity.priceRow;
+        g(27, i15, sparseIntArray);
+        g(28, privacyControlActivity.j0, sparseIntArray);
+        i16 = privacyControlActivity.showGiftIconRow;
+        g(29, i16, sparseIntArray);
+        g(30, privacyControlActivity.k0, sparseIntArray);
+        i17 = privacyControlActivity.giftTypesHeaderRow;
+        g(31, i17, sparseIntArray);
+        g(32, privacyControlActivity.m0, sparseIntArray);
+        g(33, privacyControlActivity.l0, sparseIntArray);
+        g(34, privacyControlActivity.n0, sparseIntArray);
+        g(35, privacyControlActivity.o0, sparseIntArray);
+        g(36, privacyControlActivity.p0, sparseIntArray);
+        g(37, privacyControlActivity.q0, sparseIntArray);
     }
 }

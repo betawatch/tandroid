@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements qa.b {
     public final /* synthetic */ int a;
@@ -26,10 +26,10 @@ public final /* synthetic */ class f implements qa.b {
                 return ExecutorsRegistrar.a();
             case 3:
                 n nVar = ExecutorsRegistrar.a;
-                return new s9.g(Executors.newFixedThreadPool(Math.max(2, Runtime.getRuntime().availableProcessors()), new s9.a("Firebase Lite", 0, new StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build())), (ScheduledExecutorService) ExecutorsRegistrar.d.get());
+                return new s9.f(Executors.newFixedThreadPool(Math.max(2, Runtime.getRuntime().availableProcessors()), new s9.a("Firebase Lite", 0, new StrictMode.ThreadPolicy.Builder().detectAll().penaltyLog().build())), (ScheduledExecutorService) ExecutorsRegistrar.d.get());
             case 4:
                 n nVar2 = ExecutorsRegistrar.a;
-                return new s9.g(Executors.newCachedThreadPool(new s9.a("Firebase Blocking", 11, null)), (ScheduledExecutorService) ExecutorsRegistrar.d.get());
+                return new s9.f(Executors.newCachedThreadPool(new s9.a("Firebase Blocking", 11, null)), (ScheduledExecutorService) ExecutorsRegistrar.d.get());
             default:
                 n nVar3 = ExecutorsRegistrar.a;
                 return Executors.newSingleThreadScheduledExecutor(new s9.a("Firebase Scheduler", 0, null));

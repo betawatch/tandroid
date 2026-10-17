@@ -1,39 +1,48 @@
 package z7;
 
+import android.graphics.Bitmap;
 import android.os.Parcel;
 import android.os.Parcelable;
+import java.util.ArrayList;
+import java.util.List;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class kg extends o6.a {
-    public static final Parcelable.Creator<kg> CREATOR = new dg(3);
-    public final boolean a;
-    public final boolean b;
-    public final boolean c;
-    public final boolean d;
-    public final boolean e;
+    public static final Parcelable.Creator<kg> CREATOR = new eg(2);
+    public final List a;
+    public final float[] b;
+    public final Bitmap c;
+    public final List d;
 
-    public kg(boolean z10, boolean z11, boolean z12, boolean z13, boolean z14) {
-        this.a = z10;
-        this.b = z11;
-        this.c = z12;
-        this.d = z13;
-        this.e = z14;
+    public kg(ArrayList arrayList, float[] fArr, Bitmap bitmap, ArrayList arrayList2) {
+        this.a = arrayList;
+        this.b = fArr;
+        this.c = bitmap;
+        this.d = arrayList2;
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
         int q6 = w7.f0.q(parcel, 20293);
-        w7.f0.s(parcel, 1, 4);
-        parcel.writeInt(this.a ? 1 : 0);
-        w7.f0.s(parcel, 2, 4);
-        parcel.writeInt(this.b ? 1 : 0);
-        w7.f0.s(parcel, 3, 4);
-        parcel.writeInt(this.c ? 1 : 0);
-        w7.f0.s(parcel, 4, 4);
-        parcel.writeInt(this.d ? 1 : 0);
-        w7.f0.s(parcel, 5, 4);
-        parcel.writeInt(this.e ? 1 : 0);
+        w7.f0.p(parcel, 1, this.a);
+        float[] fArr = this.b;
+        if (fArr != null) {
+            int q10 = w7.f0.q(parcel, 2);
+            parcel.writeFloatArray(fArr);
+            w7.f0.r(parcel, q10);
+        }
+        w7.f0.k(parcel, 3, this.c, i10);
+        List list = this.d;
+        if (list != null) {
+            int q11 = w7.f0.q(parcel, 4);
+            int size = list.size();
+            parcel.writeInt(size);
+            for (int i11 = 0; i11 < size; i11++) {
+                parcel.writeFloat(((Float) list.get(i11)).floatValue());
+            }
+            w7.f0.r(parcel, q11);
+        }
         w7.f0.r(parcel, q6);
     }
 }

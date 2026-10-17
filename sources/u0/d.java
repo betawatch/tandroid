@@ -7,20 +7,20 @@ import android.view.ViewConfiguration;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AnimationUtils;
 import java.util.WeakHashMap;
-import m.t1;
+import m.s1;
 import p4.s0;
 import r0.i0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class d implements View.OnTouchListener {
     public static final int H = ViewConfiguration.getTapTimeout();
     public boolean E;
     public boolean F;
-    public final t1 G;
+    public final s1 G;
     public final a a;
     public final AccelerateInterpolator b;
-    public final t1 c;
+    public final s1 c;
     public s0 d;
     public final float[] e;
     public final float[] f;
@@ -33,7 +33,7 @@ public final class d implements View.OnTouchListener {
     public boolean x;
     public boolean y;
 
-    public d(t1 t1Var) {
+    public d(s1 s1Var) {
         a aVar = new a();
         aVar.e = Long.MIN_VALUE;
         aVar.g = -1L;
@@ -50,7 +50,7 @@ public final class d implements View.OnTouchListener {
         this.s = fArr4;
         float[] fArr5 = {Float.MAX_VALUE, Float.MAX_VALUE};
         this.v = fArr5;
-        this.c = t1Var;
+        this.c = s1Var;
         float f7 = Resources.getSystem().getDisplayMetrics().density;
         float f10 = ((int) ((1575.0f * f7) + 0.5f)) / 1000.0f;
         fArr5[0] = f10;
@@ -68,7 +68,7 @@ public final class d implements View.OnTouchListener {
         this.n = H;
         aVar.a = 500;
         aVar.b = 500;
-        this.G = t1Var;
+        this.G = s1Var;
     }
 
     public static float b(float f7, float f10, float f11) {
@@ -147,17 +147,17 @@ public final class d implements View.OnTouchListener {
     }
 
     public final boolean e() {
-        t1 t1Var;
+        s1 s1Var;
         int count;
         a aVar = this.a;
         float f7 = aVar.d;
         int abs = (int) (f7 / Math.abs(f7));
         Math.abs(aVar.c);
-        if (abs != 0 && (count = (t1Var = this.G).getCount()) != 0) {
-            int childCount = t1Var.getChildCount();
-            int firstVisiblePosition = t1Var.getFirstVisiblePosition();
+        if (abs != 0 && (count = (s1Var = this.G).getCount()) != 0) {
+            int childCount = s1Var.getChildCount();
+            int firstVisiblePosition = s1Var.getFirstVisiblePosition();
             int i10 = firstVisiblePosition + childCount;
-            if (abs <= 0 ? !(abs >= 0 || (firstVisiblePosition <= 0 && t1Var.getChildAt(0).getTop() >= 0)) : !(i10 >= count && t1Var.getChildAt(childCount - 1).getBottom() <= t1Var.getHeight())) {
+            if (abs <= 0 ? !(abs >= 0 || (firstVisiblePosition <= 0 && s1Var.getChildAt(0).getTop() >= 0)) : !(i10 >= count && s1Var.getChildAt(childCount - 1).getBottom() <= s1Var.getHeight())) {
                 return true;
             }
         }
@@ -188,9 +188,9 @@ public final class d implements View.OnTouchListener {
             this.w = false;
             float x10 = motionEvent.getX();
             float width = view.getWidth();
-            t1 t1Var = this.c;
-            float a2 = a(x10, width, t1Var.getWidth(), 0);
-            float a10 = a(motionEvent.getY(), view.getHeight(), t1Var.getHeight(), 1);
+            s1 s1Var = this.c;
+            float a2 = a(x10, width, s1Var.getWidth(), 0);
+            float a10 = a(motionEvent.getY(), view.getHeight(), s1Var.getHeight(), 1);
             a aVar = this.a;
             aVar.c = a2;
             aVar.d = a10;
@@ -206,7 +206,7 @@ public final class d implements View.OnTouchListener {
                     s0 s0Var = this.d;
                     long j10 = i10;
                     WeakHashMap weakHashMap = i0.a;
-                    t1Var.postOnAnimationDelayed(s0Var, j10);
+                    s1Var.postOnAnimationDelayed(s0Var, j10);
                 }
                 this.w = true;
             }

@@ -1,43 +1,36 @@
 package ah;
 
-import android.util.LongSparseArray;
+import ai.a2;
+import ai.ad;
+import ai.cd;
+import ai.g7;
+import ai.k6;
+import ai.ka;
+import ai.ld;
+import ai.x3;
+import ai.zc;
 import android.view.View;
-import bi.bb;
-import bi.h3;
-import bi.j7;
-import bi.la;
-import bi.lb;
-import bi.sb;
-import bi.wa;
-import di.ac;
-import di.i9;
-import di.l9;
-import di.r6;
-import di.s6;
-import hg.e2;
-import ji.e3;
-import ji.h2;
-import ji.x3;
+import ci.aa;
+import ci.e9;
+import ci.g6;
+import ci.j9;
+import ci.t9;
+import ei.a9;
+import ei.j6;
+import ei.lb;
+import ei.x8;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
-import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.Cells.s3;
+import org.telegram.ui.ActionBar.l2;
+import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.be;
-import org.telegram.ui.Components.zc;
+import org.telegram.ui.Components.zd;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.gj0;
-import org.telegram.ui.wf;
+import org.telegram.ui.mf;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -50,8 +43,8 @@ public final /* synthetic */ class g0 implements View.OnClickListener {
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
+        n2 R;
         Utilities.Callback callback;
-        ji.a aVar;
         switch (this.a) {
             case 0:
                 t0 t0Var = (t0) this.b;
@@ -61,189 +54,129 @@ public final /* synthetic */ class g0 implements View.OnClickListener {
                 }
                 break;
             case 1:
-                ((androidx.mediarouter.app.g) this.b).dismiss();
+                ((ai.o0) this.b).dismiss();
                 break;
             case 2:
-                ((h3) this.b).q(!r8.f0, true);
+                ((ai.h1) this.b).dismiss();
                 break;
             case 3:
-                ((sb) this.b).N();
+                ai.l1 l1Var = (ai.l1) this.b;
+                ag.c cVar = l1Var.E.a;
+                ag.c cVar2 = ag.c.b;
+                if (cVar == cVar2) {
+                    cVar2 = ag.c.a;
+                }
+                l1Var.o(ag.a.i(0L, cVar2), true, false, true);
+                l1Var.c.setText("");
                 break;
             case 4:
-                ((j7) this.b).dismiss();
-                m2 R = LaunchActivity.R();
-                if (R != null) {
-                    R.showDialog(new sg.y0(R, 14, false));
+                ((a2) this.b).dismiss();
+                break;
+            case 5:
+                ((x3) this.b).run();
+                break;
+            case 6:
+                ((x3) this.b).run();
+                break;
+            case 7:
+                k6 k6Var = (k6) this.b;
+                k6Var.getClass();
+                new cd(k6Var.b, k6Var.g).show();
+                break;
+            case 8:
+                ((g7) this.b).dismiss();
+                break;
+            case 9:
+                ((ka) this.b).run();
+                break;
+            case 10:
+                if (((zc) ((ad) this.b).d).f > 0 && (R = LaunchActivity.R()) != null) {
+                    l2 l2Var = new l2();
+                    l2Var.a = true;
+                    R.showAsSheet(new ld(), l2Var);
                     break;
                 }
                 break;
-            case 5:
-                wa waVar = (wa) this.b;
-                waVar.onClick(waVar.b);
+            case 11:
+                ((androidx.mediarouter.app.g) this.b).dismiss();
                 break;
-            case 6:
-                bb bbVar = (bb) this.b;
-                bbVar.b.u1.animate().alpha(0.0f).setDuration(150L).setListener(new lb(bbVar, 0)).start();
+            case 12:
+                ((ci.n2) this.b).q(!r5.f0, true);
                 break;
-            case 7:
-                ((la) this.b).run();
+            case 13:
+                ((aa) this.b).N();
                 break;
-            case 8:
-                di.m mVar = (di.m) this.b;
-                di.g gVar = mVar.f;
+            case 14:
+                ((g6) this.b).dismiss();
+                n2 R2 = LaunchActivity.R();
+                if (R2 != null) {
+                    R2.showDialog(new sg.x0(R2, 14, false));
+                    break;
+                }
+                break;
+            case 15:
+                e9 e9Var = (e9) this.b;
+                e9Var.onClick(e9Var.b);
+                break;
+            case 16:
+                j9 j9Var = (j9) this.b;
+                j9Var.b.u1.animate().alpha(0.0f).setDuration(150L).setListener(new t9(j9Var, 0)).start();
+                break;
+            case 17:
+                ((com.google.firebase.messaging.s) this.b).run();
+                break;
+            case 18:
+                ei.m mVar = (ei.m) this.b;
+                ei.g gVar = mVar.f;
                 gVar.d();
                 gVar.k(true);
-                di.e eVar = mVar.c0;
+                ei.e eVar = mVar.c0;
                 AndroidUtilities.cancelRunOnUIThread(eVar);
                 eVar.run();
                 break;
-            case 9:
-                ((ac) this.b).B();
+            case 19:
+                ((lb) this.b).B();
                 break;
-            case 10:
-                di.t0.a((di.t0) this.b);
+            case 20:
+                ei.u0.a((ei.u0) this.b);
                 break;
-            case 11:
+            case 21:
                 ((o) this.b).run();
                 break;
-            case 12:
-                s6 s6Var = ((r6) this.b).x;
-                if (s6Var.r && (callback = s6Var.f) != null) {
+            case 22:
+                ei.k6 k6Var2 = ((j6) this.b).x;
+                if (k6Var2.r && (callback = k6Var2.f) != null) {
                     callback.run(5);
                     break;
                 }
                 break;
-            case 13:
-                l9 l9Var = (l9) ((i9) this.b).h;
-                if (l9Var != null) {
-                    l9Var.run();
+            case 23:
+                a9 a9Var = (a9) ((x8) this.b).h;
+                if (a9Var != null) {
+                    a9Var.run();
                     break;
                 }
                 break;
-            case 14:
-                ((wf) this.b).run();
+            case 24:
+                ((mf) this.b).run();
                 break;
-            case 15:
-                ((wf) this.b).run();
+            case 25:
+                ((mf) this.b).run();
                 break;
-            case 16:
-                ChatActivityEnterView.g(((be) ((fi.o0) this.b).d).a, (TL_keyboard.KeyboardButton) view.getTag());
+            case 26:
+                ChatActivityEnterView.g(((zd) ((gi.n0) this.b).d).a, (TL_keyboard.KeyboardButton) view.getTag());
                 break;
-            case 17:
-                ((androidx.car.app.utils.b) this.b).run();
+            case 27:
+                ((ai.y0) this.b).run();
                 break;
-            case 18:
-                gi.p pVar = (gi.p) this.b;
-                TLRPC.Chat chat = pVar.H;
-                if (chat != null && !chat.title.equals(((gi.o) pVar.n.b).getText().toString())) {
-                    pVar.getMessagesController().changeChatTitle(pVar.H.id, ((gi.o) pVar.n.b).getText().toString(), new gi.h(pVar, 1));
-                }
-                TLRPC.Chat chat2 = pVar.H;
-                if (chat2 != null && pVar.h != pVar.f) {
-                    if (chat2.default_banned_rights == null) {
-                        chat2.default_banned_rights = new TLRPC.TL_chatBannedRights();
-                    }
-                    pVar.H.default_banned_rights.manage_linked_peers = !pVar.h;
-                    pVar.getMessagesController().setDefaultBannedRole(pVar.b, pVar.H.default_banned_rights, false, pVar);
-                }
-                pVar.finishFragment();
-                break;
-            case 19:
-                ((gi.e0) this.b).h.d.D(0);
-                break;
-            case 20:
-                gi.k0.z(((gi.f0) this.b).r);
-                break;
-            case 21:
+            case 28:
                 hg.m mVar2 = (hg.m) this.b;
                 MessagesController.getInstance(mVar2.F).hintDialogs.clear();
                 MessagesController.getGlobalMainSettings().edit().remove("installReferer").commit();
                 mVar2.l();
                 break;
-            case 22:
-                ((hg.v) this.b).run();
-                break;
-            case 23:
-                ((hg.s0) this.b).K();
-                break;
-            case 24:
-                e2 e2Var = (e2) this.b;
-                LongSparseArray longSparseArray = e2Var.n;
-                s3 s3Var = (s3) view.getParent();
-                TLRPC.StickerSetCovered stickerSet = s3Var.getStickerSet();
-                if (stickerSet != null && e2Var.h.indexOfKey(stickerSet.set.id) < 0 && longSparseArray.indexOfKey(stickerSet.set.id) < 0) {
-                    if (!s3Var.r) {
-                        e2Var.F(stickerSet, s3Var);
-                        break;
-                    } else {
-                        longSparseArray.put(stickerSet.set.id, stickerSet);
-                        e2Var.e.a.h(s3Var.getStickerSet());
-                        break;
-                    }
-                }
-                break;
-            case 25:
-                ig.e eVar2 = (ig.e) this.b;
-                org.telegram.ui.Components.s6 s6Var2 = eVar2.f;
-                int i10 = eVar2.a;
-                boolean z10 = eVar2.r;
-                eVar2.r = !z10;
-                eVar2.h.c(LocaleController.getString(!z10 ? R.string.BizBotStart : R.string.BizBotStop), true, true);
-                s6Var2.a();
-                s6Var2.c(LocaleController.getString(eVar2.r ? R.string.BizBotStatusStopped : R.string.BizBotStatusManages), true, true);
-                if (eVar2.r) {
-                    eVar2.w |= 1;
-                } else {
-                    eVar2.w &= -2;
-                }
-                MessagesController.getNotificationsSettings(i10).edit().putInt("dialog_botflags" + eVar2.s, eVar2.w).apply();
-                TL_account.toggleConnectedBotPaused toggleconnectedbotpaused = new TL_account.toggleConnectedBotPaused();
-                toggleconnectedbotpaused.peer = MessagesController.getInstance(i10).getInputPeer(eVar2.s);
-                toggleconnectedbotpaused.paused = eVar2.r;
-                ConnectionsManager.getInstance(i10).sendRequest(toggleconnectedbotpaused, null);
-                break;
-            case 26:
-                TL_account.TL_businessChatLink tL_businessChatLink = ((ig.t) this.b).f;
-                if (tL_businessChatLink != null) {
-                    AndroidUtilities.addToClipboard(tL_businessChatLink.link);
-                    zc.a0(LaunchActivity.R()).k(false).j();
-                    break;
-                }
-                break;
-            case 27:
-                ((ii.c) this.b).dismiss();
-                break;
-            case 28:
-                ji.r rVar = (ji.r) this.b;
-                rVar.K(0, true, 0, false, 0L);
-                gj0 gj0Var = rVar.O;
-                if (gj0Var != null) {
-                    gj0Var.h(true);
-                    rVar.O = null;
-                    break;
-                }
-                break;
             default:
-                ji.t0 t0Var2 = (ji.t0) this.b;
-                e3 e3Var = t0Var2.h;
-                if (e3Var != null && (aVar = t0Var2.f) != null) {
-                    x3 x3Var = e3Var.a;
-                    x3Var.getClass();
-                    if (x3.y3(aVar)) {
-                        TL_iv.pageBlockDetails pageblockdetails = (TL_iv.pageBlockDetails) aVar.b;
-                        h2 h2Var = x3Var.H3;
-                        if (h2Var != null) {
-                            h2Var.d();
-                        }
-                        pageblockdetails.open = !pageblockdetails.open;
-                        x3Var.W2.N(true);
-                        h2 h2Var2 = x3Var.H3;
-                        if (h2Var2 != null) {
-                            h2Var2.h();
-                            break;
-                        }
-                    }
-                }
+                ((hg.v) this.b).run();
                 break;
         }
     }

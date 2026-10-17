@@ -1,100 +1,82 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.R;
+import android.animation.ValueAnimator;
+import android.view.View;
+import android.view.animation.OvershootInterpolator;
 
-/* JADX WARN: Enum visitor error
-jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'e' uses external variables
-	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
-	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
-	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
-	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
- */
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class yc {
-    public static final yc E;
-    public static final yc F;
-    public static final yc G;
-    public static final yc H;
-    public static final yc I;
-    public static final /* synthetic */ yc[] J;
-    public static final yc e;
-    public static final yc f;
-    public static final yc h;
-    public static final yc n;
-    public static final yc r;
-    public static final yc s;
-    public static final yc v;
-    public static final yc w;
-    public static final yc x;
-    public static final yc y;
-    public final String a;
-    public final int b;
-    public final boolean c;
-    public final xc d;
+public class yc {
+    public View a;
+    public final float b;
+    public final float c;
+    public final float d;
+    public long e;
+    public Runnable f;
+    public ValueAnimator g;
+    public final float h;
+    public boolean i;
+    public float j;
 
-    static {
-        int i10 = R.string.PhotoSavedHint;
-        xc xcVar = xc.e;
-        yc ycVar = new yc("PHOTO", 0, "PhotoSavedHint", i10, xcVar);
-        e = ycVar;
-        yc ycVar2 = new yc("PHOTOS", 1, "PhotosSavedHint", xcVar);
-        f = ycVar2;
-        yc ycVar3 = new yc("VIDEO", 2, "VideoSavedHint", R.string.VideoSavedHint, xcVar);
-        h = ycVar3;
-        yc ycVar4 = new yc("VIDEOS", 3, "VideosSavedHint", xcVar);
-        n = ycVar4;
-        yc ycVar5 = new yc("LIVEPHOTO", 4, "LivePhotoSavedHint", R.string.LivePhotoSavedHint, xcVar);
-        r = ycVar5;
-        yc ycVar6 = new yc("LIVEPHOTOS", 5, "LivePhotosSavedHint", xcVar);
-        s = ycVar6;
-        yc ycVar7 = new yc("MEDIA", 6, "MediaSavedHint", xcVar);
-        v = ycVar7;
-        int i11 = R.string.PhotoSavedToDownloadsHintLinked;
-        xc xcVar2 = xc.d;
-        yc ycVar8 = new yc("PHOTO_TO_DOWNLOADS", 7, "PhotoSavedToDownloadsHintLinked", i11, xcVar2);
-        w = ycVar8;
-        yc ycVar9 = new yc("VIDEO_TO_DOWNLOADS", 8, "VideoSavedToDownloadsHintLinked", R.string.VideoSavedToDownloadsHintLinked, xcVar2);
-        x = ycVar9;
-        yc ycVar10 = new yc("GIF", 9, "GifSavedHint", R.string.GifSavedHint, xc.h);
-        y = ycVar10;
-        yc ycVar11 = new yc("GIF_TO_DOWNLOADS", 10, "GifSavedToDownloadsHintLinked", R.string.GifSavedToDownloadsHintLinked, xcVar2);
-        E = ycVar11;
-        int i12 = R.string.AudioSavedHint;
-        xc xcVar3 = xc.f;
-        yc ycVar12 = new yc("AUDIO", 11, "AudioSavedHint", i12, xcVar3);
-        F = ycVar12;
-        yc ycVar13 = new yc("AUDIOS", 12, "AudiosSavedHint", xcVar3);
-        G = ycVar13;
-        yc ycVar14 = new yc("UNKNOWN", 13, "FileSavedHintLinked", R.string.FileSavedHintLinked, xcVar2);
-        H = ycVar14;
-        yc ycVar15 = new yc("UNKNOWNS", 14, "FilesSavedHintLinked", xcVar2);
-        I = ycVar15;
-        J = new yc[]{ycVar, ycVar2, ycVar3, ycVar4, ycVar5, ycVar6, ycVar7, ycVar8, ycVar9, ycVar10, ycVar11, ycVar12, ycVar13, ycVar14, ycVar15};
+    public yc(View view) {
+        this(view, 1.0f, 5.0f);
     }
 
-    public yc(String str, int i10, String str2, int i11, xc xcVar) {
-        this.a = str2;
-        this.b = i11;
-        this.d = xcVar;
-        this.c = false;
+    public final float a(float f7) {
+        return com.google.android.gms.internal.cast.a6.x(1.0f, this.j, f7, 1.0f - f7) * this.h;
     }
 
-    public static yc valueOf(String str) {
-        return (yc) Enum.valueOf(yc.class, str);
+    public void b() {
+        View view = this.a;
+        if (view != null) {
+            view.invalidate();
+        }
+        Runnable runnable = this.f;
+        if (runnable != null) {
+            runnable.run();
+        }
     }
 
-    public static yc[] values() {
-        return (yc[]) J.clone();
+    public final void c(boolean z10) {
+        if (this.i != z10) {
+            this.i = z10;
+            ValueAnimator valueAnimator = this.g;
+            this.g = null;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+            }
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.j, z10 ? 1.0f : 0.0f);
+            this.g = ofFloat;
+            ofFloat.addUpdateListener(new l6(this, 7));
+            this.g.addListener(new org.telegram.ui.ho(2, this, z10));
+            if (this.i) {
+                this.g.setInterpolator(bs.f);
+                this.g.setDuration((long) (this.b * 60.0f));
+                this.g.setStartDelay(0L);
+            } else {
+                this.g.setInterpolator(new OvershootInterpolator(this.d));
+                this.g.setDuration((long) (this.c * 350.0f));
+                this.g.setStartDelay(this.e);
+            }
+            this.g.start();
+        }
     }
 
-    public yc(String str, int i10, String str2, xc xcVar) {
-        this.a = str2;
-        this.d = xcVar;
-        this.b = 0;
-        this.c = true;
+    public yc(View view, float f7, float f10) {
+        this.e = 0L;
+        this.h = 1.0f;
+        this.a = view;
+        this.c = f7;
+        this.b = f7;
+        this.d = f10;
+    }
+
+    public yc(ei.d6 d6Var) {
+        this.e = 0L;
+        this.h = 1.0f;
+        this.a = d6Var;
+        this.b = 1.5f;
+        this.c = 1.0f;
+        this.d = 2.0f;
     }
 }

@@ -1,37 +1,34 @@
 package b2;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+import android.os.Parcel;
+import android.os.Parcelable;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class q {
-    public static final q c = new q(new x1());
-    public static final String d;
-    public static final String e;
-    public final int a = 0;
-    public final int b = 0;
+public final class q implements Parcelable.Creator {
+    public final /* synthetic */ int a;
 
-    static {
-        String str = e2.m0.a;
-        Integer.toString(0, 36);
-        d = Integer.toString(1, 36);
-        e = Integer.toString(2, 36);
-        Integer.toString(3, 36);
-    }
-
-    public q(x1 x1Var) {
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // android.os.Parcelable.Creator
+    public final Object createFromParcel(Parcel parcel) {
+        switch (this.a) {
+            case 0:
+                return new s(parcel);
+            case 1:
+                return new r(parcel);
+            default:
+                return new i1(parcel);
         }
-        if (!(obj instanceof q)) {
-            return false;
-        }
-        q qVar = (q) obj;
-        return this.a == qVar.a && this.b == qVar.b;
     }
 
-    public final int hashCode() {
-        return (((16337 + this.a) * 31) + this.b) * 31;
+    @Override // android.os.Parcelable.Creator
+    public final Object[] newArray(int i10) {
+        switch (this.a) {
+            case 0:
+                return new s[i10];
+            case 1:
+                return new r[i10];
+            default:
+                return new i1[i10];
+        }
     }
 }

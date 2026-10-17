@@ -1,30 +1,24 @@
 package org.telegram.messenger;
 
-import java.util.function.Consumer;
+import android.media.SoundPool;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class ug implements Runnable {
+public final /* synthetic */ class ug implements SoundPool.OnLoadCompleteListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Consumer d;
 
-    public /* synthetic */ ug(MessagesStorage messagesStorage, long j10, Consumer consumer, int i10) {
+    public /* synthetic */ ug(int i10) {
         this.a = i10;
-        this.b = messagesStorage;
-        this.c = j10;
-        this.d = consumer;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.media.SoundPool.OnLoadCompleteListener
+    public final void onLoadComplete(SoundPool soundPool, int i10, int i11) {
         switch (this.a) {
             case 0:
-                this.b.lambda$loadStoryAlbumsCache$270(this.c, this.d);
+                NotificationsController.lambda$playInChatSound$40(soundPool, i10, i11);
                 break;
             default:
-                this.b.lambda$loadTopics$51(this.c, this.d);
+                NotificationsController.lambda$playOutChatSound$49(soundPool, i10, i11);
                 break;
         }
     }

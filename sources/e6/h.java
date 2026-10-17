@@ -10,9 +10,9 @@ import com.google.android.gms.cast.MediaError;
 import com.google.android.gms.cast.MediaInfo;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.api.internal.BasePendingResult;
+import com.google.android.gms.common.api.internal.t;
 import com.google.android.gms.common.api.internal.u;
 import com.google.android.gms.common.api.internal.v;
-import com.google.android.gms.common.api.internal.w;
 import com.google.android.gms.internal.cast.a0;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import j$.util.concurrent.ConcurrentHashMap;
@@ -25,7 +25,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class h implements c6.f {
     public static final g6.b k = new g6.b("RemoteMediaClient", null);
@@ -52,15 +52,15 @@ public final class h implements c6.f {
         androidx.biometric.e eVar = new androidx.biometric.e(this);
         this.d = eVar;
         this.c = mVar;
-        mVar.h = new ya.c(this, 17);
+        mVar.h = new ya.c(this, 14);
         mVar.c = eVar;
         this.e = new c(this);
     }
 
-    public static u t() {
-        u uVar = new u(null, 1);
-        uVar.a(new n(new Status(17, null, null, null), 0));
-        return uVar;
+    public static t t() {
+        t tVar = new t(null, 1);
+        tVar.a(new n(new Status(17, null, null, null), 0));
+        return tVar;
     }
 
     public static final void x(o oVar) {
@@ -258,7 +258,7 @@ public final class h implements c6.f {
                                         JSONArray jSONArray = jSONObject.getJSONArray("items");
                                         c6.o[] oVarArr = new c6.o[jSONArray.length()];
                                         for (int i12 = 0; i12 < jSONArray.length(); i12++) {
-                                            oVarArr[i12] = new a6.m(jSONArray.getJSONObject(i12)).E();
+                                            oVarArr[i12] = new a6.i(jSONArray.getJSONObject(i12)).j();
                                         }
                                         Iterator it = ((h) mVar.h.b).i.iterator();
                                         while (it.hasNext()) {
@@ -651,7 +651,7 @@ public final class h implements c6.f {
         synchronized (e0Var.C) {
             e0Var.C.put(str, this);
         }
-        v b10 = w.b();
+        u b10 = v.b();
         b10.c = new c6.a0(e0Var, str, this);
         b10.a = 8413;
         e0Var.e(1, b10.a());
@@ -681,7 +681,7 @@ public final class h implements c6.f {
             synchronized (e0Var2.C) {
                 fVar = (c6.f) e0Var2.C.remove(str);
             }
-            v b10 = w.b();
+            u b10 = v.b();
             b10.c = new c6.a0(e0Var2, fVar, str);
             b10.a = 8414;
             e0Var2.e(1, b10.a());

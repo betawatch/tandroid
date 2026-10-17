@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class e1 implements c0, i5 {
     public static final e1 a = new e1();
@@ -35,7 +35,7 @@ public final class e1 implements c0, i5 {
                                 i11 = -1;
                                 break;
                             }
-                            i11 = v6.a(bArr, i13, i10);
+                            i11 = w6.a(bArr, i13, i10);
                             break;
                         }
                         if (i13 < i10 - 1) {
@@ -49,7 +49,7 @@ public final class e1 implements c0, i5 {
                             i11 = -1;
                             break;
                         }
-                        i11 = v6.a(bArr, i13, i10);
+                        i11 = w6.a(bArr, i13, i10);
                         break;
                     }
                     if (i13 < i10) {
@@ -72,7 +72,7 @@ public final class e1 implements c0, i5 {
 
     @Override // com.google.android.gms.internal.cast.c0
     public Object zza() {
-        g6.b bVar = w6.n;
+        g6.b bVar = x6.n;
         g6.b bVar2 = d6.a.l;
         n6.l.e("Must be called from the main thread.");
         d6.a aVar = d6.a.n;

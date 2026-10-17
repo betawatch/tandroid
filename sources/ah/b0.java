@@ -2,10 +2,10 @@ package ah;
 
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.ui.fo;
+import org.telegram.ui.sn;
 import w7.z5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b0 implements Runnable {
     public final /* synthetic */ int a;
@@ -27,9 +27,9 @@ public final /* synthetic */ class b0 implements Runnable {
                 f0Var.e = f0Var.b();
                 int i10 = f0Var.f;
                 int i11 = f0Var.h;
-                fo foVar = f0Var.a;
+                sn snVar = f0Var.a;
                 if (f0Var.b == null) {
-                    e0 e0Var = new e0((foVar.getUserConfig().getClientUserId() > foVar.a() ? 1 : (foVar.getUserConfig().getClientUserId() == foVar.a() ? 0 : -1)) == 0 ? 3 : 0, foVar.getCurrentAccount(), f0Var.getContext(), f0Var.a, foVar.getResourceProvider());
+                    e0 e0Var = new e0((snVar.getUserConfig().getClientUserId() > snVar.a() ? 1 : (snVar.getUserConfig().getClientUserId() == snVar.a() ? 0 : -1)) == 0 ? 3 : 0, snVar.getCurrentAccount(), f0Var.getContext(), f0Var.a, snVar.getResourceProvider());
                     e0Var.l1 = 1.0f;
                     e0Var.setWillNotDraw(false);
                     f0Var.b = e0Var;
@@ -52,7 +52,7 @@ public final /* synthetic */ class b0 implements Runnable {
                     break;
                 } else {
                     f0Var.x = true;
-                    f0Var.b.p(f0Var.e, foVar.Z7, true);
+                    f0Var.b.p(f0Var.e, snVar.Z7, true);
                     f0Var.b.r(false);
                     break;
                 }

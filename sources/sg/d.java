@@ -5,43 +5,43 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.google.android.gms.internal.play_billing.k3;
+import com.google.android.gms.internal.cast.a6;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.sk;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Cells.t3;
+import org.telegram.messenger.wh;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Cells.s3;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
-import org.telegram.ui.Components.lm0;
-import org.telegram.ui.d61;
+import org.telegram.ui.Components.hm0;
+import org.telegram.ui.l41;
 import w7.z5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class d extends lm0 {
-    public final c6 c;
+public final class d extends hm0 {
+    public final d6 c;
     public final int d;
     public final int e;
     public final ArrayList f;
-    public final a1 h;
+    public final z0 h;
     public int n;
     public c r;
     public final boolean s;
 
-    public d(int i10, c6 c6Var) {
+    public d(int i10, d6 d6Var) {
         ArrayList arrayList = new ArrayList();
         this.f = arrayList;
         this.s = true;
-        this.c = c6Var;
-        a1 a1Var = new a1(g6.Lj, g6.Mj, g6.Nj, g6.Oj, c6Var);
-        this.h = a1Var;
-        a1Var.o = 0.0f;
-        a1Var.p = 0.0f;
-        a1Var.q = 1.0f;
+        this.c = d6Var;
+        z0 z0Var = new z0(h6.Lj, h6.Mj, h6.Nj, h6.Oj, d6Var);
+        this.h = z0Var;
+        z0Var.o = 0.0f;
+        z0Var.p = 0.0f;
+        z0Var.q = 1.0f;
         MessagesController messagesController = MessagesController.getInstance(i10);
         arrayList.add(new e(messagesController.channelsLimitDefault, messagesController.channelsLimitPremium, LocaleController.getString(R.string.GroupsAndChannelsLimitTitle), LocaleController.formatString(R.string.GroupsAndChannelsLimitSubtitle, Integer.valueOf(messagesController.channelsLimitPremium))));
         arrayList.add(new e(messagesController.dialogFiltersPinnedLimitDefault, messagesController.dialogFiltersPinnedLimitPremium, LocaleController.getString(R.string.PinChatsLimitTitle), LocaleController.formatString(R.string.PinChatsLimitSubtitle, Integer.valueOf(messagesController.dialogFiltersPinnedLimitPremium))));
@@ -59,7 +59,7 @@ public final class d extends lm0 {
         this.d = arrayList.size() + 1;
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.hm0
     public final boolean D(s4.b1 b1Var) {
         return false;
     }
@@ -91,40 +91,40 @@ public final class d extends lm0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.ViewGroup, org.telegram.ui.d61] */
+    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.ViewGroup, org.telegram.ui.l41] */
     /* JADX WARN: Type inference failed for: r1v7, types: [sg.f] */
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        t3 t3Var;
+        s3 s3Var;
         Context context = viewGroup.getContext();
-        c6 c6Var = this.c;
+        d6 d6Var = this.c;
         if (i10 != 1) {
             if (i10 != 2) {
-                ?? fVar = new f(context, c6Var);
+                ?? fVar = new f(context, d6Var);
                 fVar.c.setParentViewForGradien(this.r);
                 fVar.c.setStaticGradinet(this.h);
-                t3Var = fVar;
+                s3Var = fVar;
             } else {
-                t3Var = new t3(context, 16);
+                s3Var = new s3(context, 16);
             }
         } else if (this.s) {
-            ?? d61Var = new d61(context, 10);
-            LinearLayout e = sk.e(context, 0);
+            ?? l41Var = new l41(context, 10);
+            LinearLayout e = wh.e(context, 0);
             ImageView imageView = new ImageView(context);
-            imageView.setImageDrawable(b1.c(context.getDrawable(R.drawable.other_2x_large), b1.d().a));
+            imageView.setImageDrawable(a1.c(context.getDrawable(R.drawable.other_2x_large), a1.d().a));
             e.addView(imageView, z5.a(28.0f, 0.0f, 0.0f, 8.0f, 0.0f, 40, 16));
             TextView textView = new TextView(context);
             textView.setText(LocaleController.getString(R.string.DoubledLimits));
             textView.setGravity(17);
             textView.setTextSize(1, 20.0f);
-            textView.setTextColor(g6.w0(g6.G6, c6Var));
+            textView.setTextColor(h6.w0(h6.G6, d6Var));
             textView.setTypeface(AndroidUtilities.bold());
             e.addView(textView, z5.e(-2, -2, 16));
-            d61Var.addView(e, z5.e(-2, -2, 17));
-            t3Var = d61Var;
+            l41Var.addView(e, z5.e(-2, -2, 17));
+            s3Var = l41Var;
         } else {
-            t3Var = new t3(context, 64);
+            s3Var = new s3(context, 64);
         }
-        return k3.l(t3Var, t3Var, -1, -2);
+        return a6.l(s3Var, s3Var, -1, -2);
     }
 }

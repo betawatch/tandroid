@@ -1,51 +1,62 @@
 package di;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
+import android.view.View;
+import ci.t6;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.hs0;
+import org.telegram.ui.Components.r41;
+import org.telegram.ui.Components.u81;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class b implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ d b;
+public final class b extends u81 {
+    public final /* synthetic */ Context a;
+    public final /* synthetic */ hs0 b;
 
-    public /* synthetic */ b(d dVar, int i10) {
-        this.a = i10;
-        this.b = dVar;
+    public b(hs0 hs0Var, Context context) {
+        this.b = hs0Var;
+        this.a = context;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                d dVar = this.b;
-                dVar.getClass();
-                dVar.P = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
-                dVar.invalidate();
-                break;
-            case 1:
-                d dVar2 = this.b;
-                dVar2.getClass();
-                dVar2.V = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                dVar2.invalidate();
-                break;
-            case 2:
-                d dVar3 = this.b;
-                dVar3.getClass();
-                dVar3.M = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                dVar3.invalidate();
-                break;
-            case 3:
-                d dVar4 = this.b;
-                dVar4.getClass();
-                dVar4.H = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                dVar4.invalidate();
-                break;
-            default:
-                d dVar5 = this.b;
-                dVar5.getClass();
-                dVar5.H = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                dVar5.invalidate();
-                break;
+    @Override // org.telegram.ui.Components.u81
+    public final void b(View view, int i10, int i11) {
+        r rVar = (r) view;
+        hs0 hs0Var = this.b;
+        t6 t6Var = i10 == 0 ? hs0Var.e : (t6) hs0Var.f.get(i10 - 1);
+        t6Var.H(null);
+        rVar.setList(t6Var);
+        rVar.setVisibleHeight(hs0Var.v);
+    }
+
+    @Override // org.telegram.ui.Components.u81
+    public final View d(int i10) {
+        return new r(this.b, this.a);
+    }
+
+    @Override // org.telegram.ui.Components.u81
+    public final int e() {
+        return this.b.f.size() + 1;
+    }
+
+    @Override // org.telegram.ui.Components.u81
+    public final int f(int i10) {
+        if (i10 == 0) {
+            return 0;
         }
+        return ((t6) this.b.f.get(i10 - 1)).E.hashCode();
+    }
+
+    @Override // org.telegram.ui.Components.u81
+    public final CharSequence g(int i10) {
+        if (i10 == 0) {
+            return LocaleController.getString(R.string.ProfileBotLanguageGeneral);
+        }
+        String F = r41.F(((t6) this.b.f.get(i10 - 1)).E, null, null);
+        if (F == null) {
+            return null;
+        }
+        return F.substring(0, 1).toUpperCase() + F.substring(1);
     }
 }

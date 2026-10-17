@@ -2,9 +2,8 @@ package tc;
 
 import java.io.UnsupportedEncodingException;
 import java.security.SecureRandom;
-import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class x {
     public boolean a;
@@ -100,7 +99,7 @@ public final class x {
         if (i11 == 1) {
             u10.append(",Payload=");
             if (this.g == null) {
-                u10.append(BuildConfig.BETA_URL);
+                u10.append("null");
             } else if (this.b) {
                 u10.append("compressed");
             } else {
@@ -118,7 +117,7 @@ public final class x {
         } else if (i11 == 2) {
             u10.append(",Payload=");
             if (this.g == null) {
-                u10.append(BuildConfig.BETA_URL);
+                u10.append("null");
             } else if (this.b) {
                 u10.append("compressed");
             } else {
@@ -145,7 +144,7 @@ public final class x {
                 }
             }
             if (str2 == null) {
-                u10.append(BuildConfig.BETA_URL);
+                u10.append("null");
             } else {
                 u10.append("\"");
                 u10.append(str2);

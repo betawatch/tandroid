@@ -11,23 +11,23 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class u2 extends View implements org.telegram.ui.Cells.n9, g3 {
-    public final z70 a;
-    public final i4 b;
+public final class u2 extends View implements org.telegram.ui.Cells.m9, g3 {
+    public final d70 a;
+    public final j4 b;
     public d3 c;
     public int d;
     public int e;
     public TL_iv.pageBlockSubtitle f;
 
-    public u2(Context context, z70 z70Var, i4 i4Var) {
+    public u2(Context context, d70 d70Var, j4 j4Var) {
         super(context);
-        this.a = z70Var;
-        this.b = i4Var;
+        this.a = d70Var;
+        this.b = j4Var;
     }
 
-    @Override // org.telegram.ui.Cells.n9
+    @Override // org.telegram.ui.Cells.m9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         d3 d3Var = this.c;
         if (d3Var != null) {
@@ -69,7 +69,7 @@ public final class u2 extends View implements org.telegram.ui.Cells.n9, g3 {
     }
 
     public /* bridge */ /* synthetic */ int getMinWidth() {
-        return org.telegram.messenger.sk.a(this);
+        return org.telegram.messenger.wh.a(this);
     }
 
     @Override // android.view.View
@@ -97,7 +97,7 @@ public final class u2 extends View implements org.telegram.ui.Cells.n9, g3 {
         }
         canvas.save();
         canvas.translate(this.d, this.e);
-        k4.v(this.a, canvas, this, 0);
+        l4.v(this.a, canvas, this, 0);
         this.c.draw(canvas, this);
         canvas.restore();
     }
@@ -110,30 +110,30 @@ public final class u2 extends View implements org.telegram.ui.Cells.n9, g3 {
         if (d3Var == null) {
             return;
         }
-        accessibilityNodeInfo.setText(k4.i(R.string.AccDescrIVHeading, k4.j(this.a, this.b, d3Var)));
+        accessibilityNodeInfo.setText(l4.i(R.string.AccDescrIVHeading, l4.j(this.a, this.b, d3Var)));
     }
 
     @Override // android.view.View
     public final void onMeasure(int i10, int i11) {
         int i12;
         int size = View.MeasureSpec.getSize(i10);
-        z70 z70Var = this.a;
-        z70Var.getClass();
+        d70 d70Var = this.a;
+        d70Var.getClass();
         this.d = AndroidUtilities.dp(18);
-        z70Var.getClass();
+        d70Var.getClass();
         this.e = AndroidUtilities.dp(8);
         TL_iv.pageBlockSubtitle pageblocksubtitle = this.f;
         if (pageblocksubtitle != null) {
             TL_iv.RichText richText = pageblocksubtitle.text;
-            z70 z70Var2 = this.a;
-            z70Var2.getClass();
+            d70 d70Var2 = this.a;
+            d70Var2.getClass();
             int dp = size - AndroidUtilities.dp(36);
             TL_iv.pageBlockSubtitle pageblocksubtitle2 = this.f;
-            i4 i4Var = this.b;
-            d3 p5 = k4.p(z70Var2, this, null, richText, dp, 0, pageblocksubtitle2, (i4Var == null || !i4Var.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.ix0.a(), 0, this.b);
+            j4 j4Var = this.b;
+            d3 p5 = l4.p(d70Var2, this, null, richText, dp, 0, pageblocksubtitle2, (j4Var == null || !j4Var.G) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.dx0.a(), 0, this.b);
             this.c = p5;
             if (p5 != null) {
-                z70Var.getClass();
+                d70Var.getClass();
                 i12 = this.c.d.getHeight() + AndroidUtilities.dp(16);
                 d3 d3Var = this.c;
                 d3Var.s = this.d;
@@ -149,7 +149,7 @@ public final class u2 extends View implements org.telegram.ui.Cells.n9, g3 {
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return k4.l(this.a, this.b, motionEvent, this, this.c, this.d, this.e) || super.onTouchEvent(motionEvent);
+        return l4.l(this.a, this.b, motionEvent, this, this.c, this.d, this.e) || super.onTouchEvent(motionEvent);
     }
 
     public void setBlock(TL_iv.pageBlockSubtitle pageblocksubtitle) {

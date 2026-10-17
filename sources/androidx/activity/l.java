@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class l implements Executor, ViewTreeObserver.OnDrawListener, Runnable {
     public Runnable b;
@@ -31,7 +31,7 @@ public final class l implements Executor, ViewTreeObserver.OnDrawListener, Runna
         this.b = runnable;
         View decorView = this.d.getWindow().getDecorView();
         if (!this.c) {
-            decorView.postOnAnimation(new a3.d(this, 7));
+            decorView.postOnAnimation(new a3.d(this, 27));
         } else if (Looper.myLooper() == Looper.getMainLooper()) {
             decorView.invalidate();
         } else {

@@ -1,71 +1,83 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.PhotoViewer;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class gm extends mm0 {
-    public final /* synthetic */ int V2;
-    public final /* synthetic */ ChatAttachAlertPhotoLayout W2;
+public final class gm extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ChatAttachAlertPhotoLayout b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ gm(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, Context context, org.telegram.ui.ActionBar.c6 c6Var, int i10) {
-        super(context, c6Var);
-        this.V2 = i10;
-        this.W2 = chatAttachAlertPhotoLayout;
+    public /* synthetic */ gm(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, int i10) {
+        this.a = i10;
+        this.b = chatAttachAlertPhotoLayout;
     }
 
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        switch (this.V2) {
-            case 1:
-                if (motionEvent.getAction() != 0 || motionEvent.getY() >= this.W2.b.e2[0] - AndroidUtilities.dp(80.0f)) {
-                    break;
-                }
-                break;
-        }
-        return super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        switch (this.V2) {
-            case 1:
-                super.onLayout(z10, i10, i11, i12, i13);
-                PhotoViewer.t1().y0();
-                break;
-            default:
-                super.onLayout(z10, i10, i11, i12, i13);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.V2) {
-            case 1:
-                if (motionEvent.getAction() != 0 || motionEvent.getY() >= this.W2.b.e2[0] - AndroidUtilities.dp(80.0f)) {
-                    break;
-                }
-                break;
-        }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
-    public void requestLayout() {
-        switch (this.V2) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
             case 0:
-                if (!this.W2.J0) {
-                    super.requestLayout();
+                this.b.m0 = null;
+                break;
+            case 1:
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
+                chatAttachAlertPhotoLayout.f1.unlock();
+                chatAttachAlertPhotoLayout.d0 = false;
+                om omVar = chatAttachAlertPhotoLayout.P;
+                if (omVar != null) {
+                    omVar.invalidateOutline();
+                    chatAttachAlertPhotoLayout.P.invalidate();
+                }
+                if (chatAttachAlertPhotoLayout.b0) {
+                    chatAttachAlertPhotoLayout.b.c2.J();
+                }
+                om omVar2 = chatAttachAlertPhotoLayout.P;
+                if (omVar2 != null) {
+                    omVar2.setSystemUiVisibility(1028);
+                }
+                em emVar = chatAttachAlertPhotoLayout.E;
+                if (emVar != null) {
+                    emVar.invalidate();
                     break;
                 }
                 break;
             default:
-                super.requestLayout();
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = this.b;
+                w91 w91Var = chatAttachAlertPhotoLayout2.l0;
+                chatAttachAlertPhotoLayout2.f1.unlock();
+                chatAttachAlertPhotoLayout2.i1 = false;
+                chatAttachAlertPhotoLayout2.b.getWindow().clearFlags(128);
+                chatAttachAlertPhotoLayout2.setCameraOpenProgress(0.0f);
+                chatAttachAlertPhotoLayout2.d0 = false;
+                em emVar2 = chatAttachAlertPhotoLayout2.E;
+                if (emVar2 != null) {
+                    emVar2.invalidate();
+                }
+                om omVar3 = chatAttachAlertPhotoLayout2.P;
+                if (omVar3 != null) {
+                    omVar3.invalidateOutline();
+                    chatAttachAlertPhotoLayout2.P.invalidate();
+                }
+                chatAttachAlertPhotoLayout2.b0 = false;
+                ah.x xVar = chatAttachAlertPhotoLayout2.j0;
+                if (xVar != null) {
+                    xVar.setVisibility(8);
+                }
+                if (w91Var != null) {
+                    w91Var.setVisibility(8);
+                    w91Var.setTag(null);
+                }
+                em emVar3 = chatAttachAlertPhotoLayout2.r;
+                if (emVar3 != null) {
+                    emVar3.setVisibility(8);
+                }
+                om omVar4 = chatAttachAlertPhotoLayout2.P;
+                if (omVar4 != null) {
+                    omVar4.setFpsLimit(30);
+                    chatAttachAlertPhotoLayout2.P.setSystemUiVisibility(1024);
+                    break;
+                }
                 break;
         }
     }

@@ -1,23 +1,38 @@
 package org.telegram.ui;
 
+import android.view.TextureView;
 import android.view.ViewGroup;
-import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class c40 extends s4.r0 {
-    public final /* synthetic */ n60 a;
+public final class c40 implements tu0 {
+    public final /* synthetic */ s50 a;
 
-    public c40(n60 n60Var) {
-        this.a = n60Var;
+    public c40(s50 s50Var) {
+        this.a = s50Var;
     }
 
-    @Override // s4.r0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
+    @Override // org.telegram.ui.tu0
+    public final /* synthetic */ TextureView U() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.tu0
+    public final void m0(MessageObject messageObject) {
         ViewGroup viewGroup;
-        n60 n60Var = this.a;
-        viewGroup = ((org.telegram.ui.ActionBar.e3) n60Var).containerView;
+        s50 s50Var = this.a;
+        s50Var.Q.I0(true);
+        s50Var.c2.f.setRoundRadius(AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f), 0, 0);
+        viewGroup = ((org.telegram.ui.ActionBar.f3) s50Var).containerView;
         viewGroup.invalidate();
-        n60Var.a2.invalidate();
+    }
+
+    @Override // org.telegram.ui.tu0
+    public final void z(MessageObject messageObject) {
+        ViewGroup viewGroup;
+        viewGroup = ((org.telegram.ui.ActionBar.f3) this.a).containerView;
+        viewGroup.invalidate();
     }
 }

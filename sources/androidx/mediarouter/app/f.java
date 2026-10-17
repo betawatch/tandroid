@@ -8,17 +8,17 @@ import android.content.IntentSender;
 import android.os.Build;
 import android.util.Log;
 import android.view.KeyEvent;
+import ci.v7;
 import com.google.firebase.messaging.FirebaseMessaging;
-import di.y6;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.concurrent.Executor;
-import org.telegram.ui.Components.pk;
-import org.telegram.ui.Components.qg;
+import org.telegram.ui.Components.nk;
+import org.telegram.ui.Components.pg;
 import p4.t0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class f extends BroadcastReceiver {
     public final /* synthetic */ int a;
@@ -56,7 +56,7 @@ public final class f extends BroadcastReceiver {
                 }
                 return;
             case 2:
-                ((Executor) ((e2.w) this.b).c).execute(new y6(21, this, context));
+                ((Executor) ((e2.w) this.b).c).execute(new v7(18, this, context));
                 return;
             case 3:
                 ((g.o) this.b).k();
@@ -86,12 +86,12 @@ public final class f extends BroadcastReceiver {
                 }
                 return;
             case 8:
-                qg qgVar = new qg(this, 22);
+                pg pgVar = new pg(this, 22);
                 if ("android.intent.action.MEDIA_UNMOUNTED".equals(intent.getAction())) {
-                    ((pk) this.b).r.postDelayed(qgVar, 1000L);
+                    ((nk) this.b).r.postDelayed(pgVar, 1000L);
                     return;
                 } else {
-                    qgVar.run();
+                    pgVar.run();
                     return;
                 }
             case 9:

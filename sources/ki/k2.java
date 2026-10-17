@@ -1,0 +1,56 @@
+package ki;
+
+import ai.ta;
+import android.text.SpannableString;
+import android.text.TextUtils;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.tl.TL_iv;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class k2 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ c6 b;
+
+    public /* synthetic */ k2(c6 c6Var, int i10) {
+        this.a = i10;
+        this.b = c6Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.x();
+                break;
+            default:
+                c6 c6Var = this.b;
+                c6Var.G = null;
+                a aVar = c6Var.x;
+                if (aVar != null) {
+                    TL_iv.PageBlock pageBlock = aVar.b;
+                    if ((pageBlock instanceof TL_iv.pageBlockPreformatted) && !TextUtils.isEmpty(((TL_iv.pageBlockPreformatted) pageBlock).language)) {
+                        String obj = c6Var.f.getText().toString();
+                        if (!obj.equals(c6Var.H)) {
+                            a aVar2 = c6Var.x;
+                            String str = ((TL_iv.pageBlockPreformatted) aVar2.b).language;
+                            int i10 = c6Var.I + 1;
+                            c6Var.I = i10;
+                            ta taVar = new ta(c6Var, i10, aVar2, obj, 2);
+                            mi.r rVar = mi.k.a;
+                            SpannableString spannableString = new SpannableString(obj);
+                            String b10 = mi.r.b(str);
+                            if (!b10.isEmpty() && spannableString.length() != 0) {
+                                mi.k.a.d(spannableString.toString(), b10, new m4.y0(2, spannableString, taVar));
+                                break;
+                            } else {
+                                AndroidUtilities.runOnUIThread(new m4.z(4, taVar, spannableString));
+                                break;
+                            }
+                        }
+                    }
+                }
+                break;
+        }
+    }
+}

@@ -1,100 +1,15 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.ViewTreeObserver;
-import android.widget.PopupWindow;
-import java.lang.reflect.Field;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class jv extends PopupWindow {
-    public static Field f;
-    public static final org.telegram.ui.ActionBar.f1 g = new org.telegram.ui.ActionBar.f1(1);
-    public ViewTreeObserver.OnScrollChangedListener a;
-    public ViewTreeObserver b;
-    public final iv c;
-    public boolean d;
-    public final int e;
+public final class jv extends xv {
+    public final /* synthetic */ aw h;
 
-    public jv(iv ivVar) {
-        super(ivVar);
-        this.e = AndroidUtilities.dp(AndroidUtilities.isTablet() ? 40.0f : 32.0f);
-        this.c = ivVar;
-        setOutsideTouchable(true);
-        setClippingEnabled(true);
-        setInputMethodMode(2);
-        setSoftInputMode(0);
-        ivVar.setFocusableInTouchMode(true);
-        ivVar.setOnKeyListener(new zn(this, 1));
-    }
-
-    public final void a(View view) {
-        if (this.a != null) {
-            ViewTreeObserver viewTreeObserver = view.getWindowToken() != null ? view.getViewTreeObserver() : null;
-            ViewTreeObserver viewTreeObserver2 = this.b;
-            if (viewTreeObserver != viewTreeObserver2) {
-                if (viewTreeObserver2 != null && viewTreeObserver2.isAlive()) {
-                    this.b.removeOnScrollChangedListener(this.a);
-                }
-                this.b = viewTreeObserver;
-                if (viewTreeObserver != null) {
-                    viewTreeObserver.addOnScrollChangedListener(this.a);
-                }
-            }
-        }
-    }
-
-    @Override // android.widget.PopupWindow
-    public final void dismiss() {
-        ViewTreeObserver viewTreeObserver;
-        setFocusable(false);
-        try {
-            super.dismiss();
-        } catch (Exception unused) {
-        }
-        if (this.a == null || (viewTreeObserver = this.b) == null) {
-            return;
-        }
-        if (viewTreeObserver.isAlive()) {
-            this.b.removeOnScrollChangedListener(this.a);
-        }
-        this.b = null;
-    }
-
-    @Override // android.widget.PopupWindow
-    public final void showAsDropDown(View view, int i10, int i11) {
-        try {
-            super.showAsDropDown(view, i10, i11);
-            a(view);
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-    }
-
-    @Override // android.widget.PopupWindow
-    public final void showAtLocation(View view, int i10, int i11, int i12) {
-        ViewTreeObserver viewTreeObserver;
-        super.showAtLocation(view, i10, i11, i12);
-        if (this.a == null || (viewTreeObserver = this.b) == null) {
-            return;
-        }
-        if (viewTreeObserver.isAlive()) {
-            this.b.removeOnScrollChangedListener(this.a);
-        }
-        this.b = null;
-    }
-
-    @Override // android.widget.PopupWindow
-    public final void update(View view, int i10, int i11, int i12, int i13) {
-        super.update(view, i10, i11, i12, i13);
-        a(view);
-    }
-
-    @Override // android.widget.PopupWindow
-    public final void update(View view, int i10, int i11) {
-        super.update(view, i10, i11);
-        a(view);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public jv(int i10, ArrayList arrayList, aw awVar) {
+        super(i10, arrayList, awVar);
+        this.h = awVar;
     }
 }

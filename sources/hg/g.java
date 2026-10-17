@@ -3,11 +3,11 @@ package hg;
 import j$.util.Objects;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.fy;
-import org.telegram.ui.Components.im0;
-import org.telegram.ui.r71;
+import org.telegram.ui.Components.ay;
+import org.telegram.ui.Components.em0;
+import org.telegram.ui.z51;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class g extends s4.o {
     public final /* synthetic */ int b;
@@ -55,11 +55,11 @@ public final class g extends s4.o {
                 TLRPC.Dialog dialog2 = kVar2.c;
                 return i12 == i13 && (i12 != 0 ? i12 != 14 ? i12 != 4 ? i12 != 6 ? i12 != 5 ? i12 != 10 : kVar.j == kVar2.j : !((tL_contact = kVar.e) == null || (tL_contact2 = kVar2.e) == null || tL_contact.user_id != tL_contact2.user_id) : !((recentMeUrl = kVar.d) == null || kVar2.d == null || (str = recentMeUrl.url) == null || !str.equals(str)) : dialog != null && dialog2 != null && dialog.id == dialog2.id && dialog.isFolder == dialog2.isFolder : dialog != null && dialog2 != null && dialog.id == dialog2.id && kVar.h == kVar2.h && kVar.f == kVar2.f && kVar.g == kVar2.g);
             case 1:
-                return ((Integer) this.c.get(i10)).equals(((fy) this.d).n.get(i11));
+                return ((Integer) this.c.get(i10)).equals(((ay) this.d).n.get(i11));
             case 2:
-                return Objects.equals(this.c.get(i10), ((im0) this.d).n.get(i11));
+                return Objects.equals(this.c.get(i10), ((em0) this.d).n.get(i11));
             case 3:
-                return ((Long) this.c.get(i10)).equals(((r71) this.d).v0.get(i11));
+                return ((Long) this.c.get(i10)).equals(((z51) this.d).v0.get(i11));
             default:
                 pg.a aVar = (pg.a) this.c.get(i10);
                 pg.a aVar2 = (pg.a) ((ArrayList) this.d).get(i11);
@@ -76,11 +76,11 @@ public final class g extends s4.o {
             case 0:
                 return this.c.size();
             case 1:
-                return ((fy) this.d).n.size();
+                return ((ay) this.d).n.size();
             case 2:
-                return ((im0) this.d).n.size();
+                return ((em0) this.d).n.size();
             case 3:
-                return ((r71) this.d).v0.size();
+                return ((z51) this.d).v0.size();
             default:
                 return ((ArrayList) this.d).size();
         }

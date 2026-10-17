@@ -2,8 +2,9 @@ package androidx.mediarouter.app;
 
 import android.widget.SeekBar;
 import j$.util.DesugarCollections;
+import ki.t1;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class c extends p4.s {
     public final /* synthetic */ int a;
@@ -31,7 +32,7 @@ public final class c extends p4.s {
 
     @Override // p4.s
     public final void e(p4.v vVar) {
-        m.l b10;
+        t1 b10;
         p4.o oVar;
         switch (this.a) {
             case 0:
@@ -50,7 +51,7 @@ public final class c extends p4.s {
                     uVar.getClass();
                     p4.x.b();
                     for (p4.v vVar2 : DesugarCollections.unmodifiableList(uVar.b)) {
-                        if (!DesugarCollections.unmodifiableList(n0Var.r.v).contains(vVar2) && (b10 = n0Var.r.b(vVar2)) != null && (oVar = (p4.o) b10.a) != null && oVar.d && !n0Var.v.contains(vVar2)) {
+                        if (!DesugarCollections.unmodifiableList(n0Var.r.v).contains(vVar2) && (b10 = n0Var.r.b(vVar2)) != null && (oVar = (p4.o) b10.b) != null && oVar.d && !n0Var.v.contains(vVar2)) {
                             n0Var.o();
                             n0Var.l();
                             break;

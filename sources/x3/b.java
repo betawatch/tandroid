@@ -1,13 +1,13 @@
 package x3;
 
-import c3.b0;
+import c3.c0;
 import c3.p;
 import e2.m0;
 import java.io.EOFException;
 import java.io.IOException;
 import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class b implements g {
     public final f a;
@@ -38,7 +38,7 @@ public final class b implements g {
     }
 
     @Override // x3.g
-    public final void g0(long j10) {
+    public final void X(long j10) {
         this.n = m0.j(j10, 0L, this.f - 1);
         this.e = 2;
         this.r = this.b;
@@ -53,7 +53,7 @@ public final class b implements g {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final long l(p pVar) {
+    public final long k(p pVar) {
         long j10;
         long j11;
         long j12;
@@ -167,7 +167,7 @@ public final class b implements g {
     }
 
     @Override // x3.g
-    public final b0 y() {
+    public final c0 x() {
         if (this.f != 0) {
             return new a(this);
         }

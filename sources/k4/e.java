@@ -1,11 +1,11 @@
 package k4;
 
 import a1.g;
-import b2.x0;
+import b2.w0;
 import c3.p;
 import e2.x;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class e {
     public static final byte[] a = {0, 0, 0, 0, 16, 0, Byte.MIN_VALUE, 0, 0, -86, 0, 56, -101, 113};
@@ -41,7 +41,7 @@ public abstract class e {
                 j11 = 9 + j10;
             }
             if (j11 > 2147483647L) {
-                throw x0.c("Chunk is too large (~2GB+) to skip; id: " + i11);
+                throw w0.c("Chunk is too large (~2GB+) to skip; id: " + i11);
             }
             pVar.r((int) j11);
             b10 = d.b(pVar, xVar);

@@ -3,10 +3,10 @@ package md;
 import java.io.Serializable;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
-import m.y2;
+import m.x2;
 import v7.i8;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class a implements kd.c, d, Serializable {
     private final kd.c completion;
@@ -58,20 +58,20 @@ public abstract class a implements kd.c, d, Serializable {
             i10 = -1;
         }
         int i11 = i10 >= 0 ? eVar.l()[i10] : -1;
-        y2 y2Var = f.b;
-        y2 y2Var2 = f.a;
-        if (y2Var == null) {
+        x2 x2Var = f.b;
+        x2 x2Var2 = f.a;
+        if (x2Var == null) {
             try {
-                y2 y2Var3 = new y2(Class.class.getDeclaredMethod("getModule", null), getClass().getClassLoader().loadClass("java.lang.Module").getDeclaredMethod("getDescriptor", null), getClass().getClassLoader().loadClass("java.lang.module.ModuleDescriptor").getDeclaredMethod("name", null));
-                f.b = y2Var3;
-                y2Var = y2Var3;
+                x2 x2Var3 = new x2(Class.class.getDeclaredMethod("getModule", null), getClass().getClassLoader().loadClass("java.lang.Module").getDeclaredMethod("getDescriptor", null), getClass().getClassLoader().loadClass("java.lang.module.ModuleDescriptor").getDeclaredMethod("name", null));
+                f.b = x2Var3;
+                x2Var = x2Var3;
             } catch (Exception unused2) {
-                f.b = y2Var2;
-                y2Var = y2Var2;
+                f.b = x2Var2;
+                x2Var = x2Var2;
             }
         }
-        if (y2Var != y2Var2 && (method = y2Var.a) != null && (invoke = method.invoke(getClass(), null)) != null && (method2 = y2Var.b) != null && (invoke2 = method2.invoke(invoke, null)) != null) {
-            Method method3 = y2Var.c;
+        if (x2Var != x2Var2 && (method = x2Var.a) != null && (invoke = method.invoke(getClass(), null)) != null && (method2 = x2Var.b) != null && (invoke2 = method2.invoke(invoke, null)) != null) {
+            Method method3 = x2Var.c;
             Object invoke3 = method3 != null ? method3.invoke(invoke2, null) : null;
             if (invoke3 instanceof String) {
                 str2 = (String) invoke3;

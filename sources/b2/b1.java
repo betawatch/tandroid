@@ -1,17 +1,59 @@
 package b2;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+import android.os.Bundle;
+import android.util.SparseBooleanArray;
+import java.util.ArrayList;
+import v7.u6;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class b1 {
-    public static final int[] b = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 31, 20, 21, 22, 23, 24, 25, 33, 26, 34, 35, 27, 28, 29, 30, 32};
-    public Object a;
+    public static final b1 b;
+    public static final String c;
+    public final u a;
 
-    public void a(int i10, boolean z10) {
-        u uVar = (u) this.a;
-        if (z10) {
-            uVar.b(i10);
-        } else {
-            uVar.getClass();
+    static {
+        SparseBooleanArray sparseBooleanArray = new SparseBooleanArray();
+        u6.p(!false);
+        b = new b1(new u(sparseBooleanArray));
+        String str = e2.m0.a;
+        c = Integer.toString(0, 36);
+    }
+
+    public b1(u uVar) {
+        this.a = uVar;
+    }
+
+    public final boolean a(int i10) {
+        return this.a.a.get(i10);
+    }
+
+    public final Bundle b() {
+        Bundle bundle = new Bundle();
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        int i10 = 0;
+        while (true) {
+            u uVar = this.a;
+            if (i10 >= uVar.a.size()) {
+                bundle.putIntegerArrayList(c, arrayList);
+                return bundle;
+            }
+            arrayList.add(Integer.valueOf(uVar.a(i10)));
+            i10++;
         }
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof b1) {
+            return this.a.equals(((b1) obj).a);
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return this.a.hashCode();
     }
 }

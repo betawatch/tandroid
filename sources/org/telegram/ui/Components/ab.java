@@ -1,44 +1,28 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class ab extends s4.i0 {
-    public final /* synthetic */ s4.i0 a;
-    public final /* synthetic */ bb b;
+public final class ab {
+    public boolean a;
+    public int b;
+    public boolean c;
+    public boolean d;
+    public boolean e;
+    public int f;
+    public org.telegram.ui.ActionBar.d6 g;
 
-    public ab(bb bbVar, s4.i0 i0Var) {
-        this.b = bbVar;
-        this.a = i0Var;
+    public ab(ab abVar) {
+        this.a = abVar.a;
+        this.b = abVar.b;
+        this.c = abVar.c;
+        this.d = abVar.d;
+        this.e = abVar.e;
+        this.f = abVar.f;
+        this.g = abVar.g;
     }
 
-    @Override // s4.i0
-    public final void a() {
-        this.a.a();
-    }
-
-    @Override // s4.i0
-    public final void b(int i10, int i11) {
-        this.a.b(i10 + (!((db) this.b.f).P ? 1 : 0), i11);
-    }
-
-    @Override // s4.i0
-    public final void c(int i10, int i11, Object obj) {
-        this.a.c(i10 + (!((db) this.b.f).P ? 1 : 0), i11, obj);
-    }
-
-    @Override // s4.i0
-    public final void d(int i10, int i11) {
-        this.a.d(i10 + (!((db) this.b.f).P ? 1 : 0), i11);
-    }
-
-    @Override // s4.i0
-    public final void e(int i10, int i11) {
-        int i12 = !((db) this.b.f).P ? 1 : 0;
-        this.a.e(i10 + i12, i11 + i12);
-    }
-
-    @Override // s4.i0
-    public final void f(int i10, int i11) {
-        this.a.f(i10 + (!((db) this.b.f).P ? 1 : 0), i11);
+    public ab() {
+        this.b = 1;
+        this.f = 1;
     }
 }

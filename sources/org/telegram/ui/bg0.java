@@ -1,71 +1,63 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.graphics.Rect;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.AnimatedPhoneNumberEditText;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class bg0 extends org.telegram.ui.Components.voip.l2 {
-    public final /* synthetic */ int e;
-    public final /* synthetic */ org.telegram.ui.Components.tw0 f;
+public final class bg0 extends AnimatedPhoneNumberEditText {
+    public final /* synthetic */ eg0 G;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bg0(dg0 dg0Var, Context context, int i10) {
-        super(dg0Var.s0, context);
-        this.e = i10;
-        switch (i10) {
-            case 1:
-                this.f = dg0Var;
-                super(dg0Var.s0, context);
-                break;
-            default:
-                this.f = dg0Var;
-                break;
+    public bg0(eg0 eg0Var, Context context) {
+        super(context);
+        this.G = eg0Var;
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final void onFocusChanged(boolean z10, int i10, Rect rect) {
+        super.onFocusChanged(z10, i10, rect);
+        eg0 eg0Var = this.G;
+        fg0 fg0Var = eg0Var.V;
+        org.telegram.ui.Components.sd0 sd0Var = eg0Var.f;
+        float f7 = (z10 || eg0Var.a.isFocused()) ? 1.0f : 0.0f;
+        sd0Var.b(f7, f7, true);
+        if (!z10) {
+            if (eg0Var.x == 2) {
+                eg0Var.setCountryButtonText(null);
+            }
+        } else {
+            fg0Var.c.setEditText(this);
+            fg0Var.c.setDispatchBackWhenEmpty(true);
+            if (eg0Var.x == 2) {
+                eg0Var.setCountryButtonText(LocaleController.getString(R.string.WrongCountry));
+            }
         }
     }
 
-    @Override // org.telegram.ui.Components.voip.l2
-    public final boolean a() {
-        switch (this.e) {
-            case 0:
-                return ((dg0) this.f).i0;
-            case 1:
-                return ((dg0) this.f).i0;
-            default:
-                return ((bf0) this.f).M;
+    @Override // android.widget.TextView, android.view.View, android.view.KeyEvent.Callback
+    public final boolean onKeyDown(int i10, KeyEvent keyEvent) {
+        eg0 eg0Var = this.G;
+        mj0 mj0Var = eg0Var.a;
+        if (i10 == 67 && eg0Var.b.length() == 0) {
+            mj0Var.requestFocus();
+            mj0Var.setSelection(mj0Var.length());
+            mj0Var.dispatchKeyEvent(keyEvent);
         }
+        return super.onKeyDown(i10, keyEvent);
     }
 
-    @Override // org.telegram.ui.Components.voip.l2
-    public final boolean b() {
-        bg0 bg0Var;
-        switch (this.e) {
-            case 0:
-                if (getVisibility() == 0) {
-                    dg0 dg0Var = (dg0) this.f;
-                    if (dg0Var.V <= 0 || dg0Var.R == null) {
-                    }
-                }
-                break;
-            case 1:
-                dg0 dg0Var2 = (dg0) this.f;
-                if (!isClickable() || getVisibility() != 0 || dg0Var2.d0 || (((bg0Var = dg0Var2.v) != null && bg0Var.getVisibility() != 8) || dg0Var2.i0)) {
-                }
-                break;
-            default:
-                if (getVisibility() == 0) {
-                    bf0 bf0Var = (bf0) this.f;
-                    if (bf0Var.P <= 0 || bf0Var.N == null) {
-                    }
-                }
-                break;
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() == 0 && !fg0.T0(this.G.V, this)) {
+            clearFocus();
+            requestFocus();
         }
-        return false;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bg0(bf0 bf0Var, Context context) {
-        super(bf0Var.a0, context);
-        this.e = 2;
-        this.f = bf0Var;
+        return super.onTouchEvent(motionEvent);
     }
 }

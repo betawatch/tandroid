@@ -1,86 +1,74 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ValueAnimator;
-import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class dz0 extends FrameLayout {
-    public float E;
-    public float F;
-    public ValueAnimator G;
-    public ValueAnimator H;
-    public c2.b I;
-    public float J;
-    public boolean K;
-    public org.telegram.ui.Components.voip.h L;
-    public Paint a;
-    public Paint b;
-    public Paint c;
-    public Paint d;
-    public boolean e;
-    public di.ab f;
-    public TextView h;
-    public TextView n;
-    public TextView r;
-    public TextView s;
-    public TextView v;
-    public View w;
-    public int x;
-    public org.telegram.ui.Cells.ca y;
+public final class dz0 extends hm0 {
+    public final gz0 c;
+    public final /* synthetic */ gz0 d;
 
-    @Override // android.view.View
-    public final void invalidate() {
-        TextView textView = this.s;
-        TextView textView2 = this.r;
-        TextView textView3 = this.n;
-        TextView textView4 = this.h;
-        super.invalidate();
-        this.f.invalidate();
-        int i10 = this.x;
-        int i11 = org.telegram.ui.ActionBar.g6.Vi;
-        if (i10 != org.telegram.ui.ActionBar.g6.x0(null, i11, false)) {
-            this.x = org.telegram.ui.ActionBar.g6.x0(null, i11, false);
-            textView4.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.g6.K(AndroidUtilities.dp(10.0f), this.x), (Drawable) null, (Drawable) null, (Drawable) null);
-            textView4.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
-            textView3.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.g6.K(AndroidUtilities.dp(10.0f), this.x), (Drawable) null, (Drawable) null, (Drawable) null);
-            textView3.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
-            textView2.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.g6.K(AndroidUtilities.dp(10.0f), i0.a.k(this.x, 64)), (Drawable) null, (Drawable) null, (Drawable) null);
-            textView2.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
-            textView.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.g6.K(AndroidUtilities.dp(10.0f), i0.a.k(this.x, 127)), (Drawable) null, (Drawable) null, (Drawable) null);
-            textView.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
-        }
-        this.y.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.G6, false));
-        this.w.setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.d7, false));
+    public dz0(gz0 gz0Var, gz0 gz0Var2) {
+        this.d = gz0Var;
+        this.c = gz0Var2;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        c2.b bVar = this.I;
-        if (bVar != null) {
-            bVar.a = true;
-            AnimatorSet animatorSet = (AnimatorSet) bVar.c;
-            if (animatorSet.isRunning()) {
-                return;
+    @Override // org.telegram.ui.Components.hm0
+    public final boolean D(s4.b1 b1Var) {
+        return true;
+    }
+
+    @Override // s4.g0
+    public final int h() {
+        ArrayList arrayList = this.c.w;
+        if (arrayList == null) {
+            return 0;
+        }
+        return arrayList.size();
+    }
+
+    @Override // s4.g0
+    public final long i(int i10) {
+        if (this.c.w == null) {
+            return 0L;
+        }
+        return ((MediaDataController.KeywordResult) r0.get(i10)).emoji.hashCode();
+    }
+
+    @Override // s4.g0
+    public final void v(s4.b1 b1Var, int i10) {
+        fz0 fz0Var = (fz0) b1Var.a;
+        gz0 gz0Var = this.c;
+        ArrayList arrayList = gz0Var.w;
+        String str = arrayList == null ? null : ((MediaDataController.KeywordResult) arrayList.get(i10)).emoji;
+        int direction = gz0Var.getDirection();
+        fz0Var.a = str;
+        if (str == null || !str.startsWith("animated_")) {
+            fz0Var.setImageDrawable(Emoji.getEmojiBigDrawable(str));
+        } else {
+            try {
+                long parseLong = Long.parseLong(str.substring(9));
+                Drawable drawable = fz0Var.b;
+                if (!(drawable instanceof r5) || ((r5) drawable).i() != parseLong) {
+                    fz0Var.setImageDrawable(r5.n(UserConfig.selectedAccount, parseLong, null, fz0Var.f.d()));
+                }
+            } catch (Exception unused) {
+                fz0Var.setImageDrawable(null);
             }
-            animatorSet.start();
+        }
+        if (fz0Var.d != direction) {
+            fz0Var.d = direction;
+            fz0Var.requestLayout();
         }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        c2.b bVar = this.I;
-        if (bVar != null) {
-            bVar.a = false;
-            ((AnimatorSet) bVar.c).cancel();
-        }
+    @Override // s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        return new sl0(new fz0(this.d, this.c.getContext()));
     }
 }

@@ -1,6 +1,6 @@
 package v7;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class d9 implements i5.e {
     public static d9 b;
@@ -38,7 +38,7 @@ public final class d9 implements i5.e {
         aVar.a(u8.class, l2.a);
         aVar.a(z5.class, n2.a);
         aVar.a(y5.class, k2.a);
-        aVar.a(androidx.fragment.app.d0.class, m3.a);
+        aVar.a(androidx.fragment.app.e0.class, m3.a);
         aVar.a(w7.class, k4.a);
         aVar.a(x7.class, l4.a);
         aVar.a(v7.class, j4.a);

@@ -18,12 +18,12 @@ import android.os.SystemClock;
 import android.util.AttributeSet;
 import android.util.StateSet;
 import androidx.activity.i;
-import m.o2;
+import m.n2;
 import org.xmlpull.v1.XmlPullParserException;
 import v7.w7;
 import x4.o;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class e extends Drawable implements Drawable.Callback {
     public static final /* synthetic */ int J = 0;
@@ -116,7 +116,7 @@ public final class e extends Drawable implements Drawable.Callback {
                     TypedArray f10 = h0.b.f(resources2, theme, attributeSet, j.c.b);
                     int resourceId = f10.getResourceId(z10 ? 1 : 0, z10 ? 1 : 0);
                     int resourceId2 = f10.getResourceId(i10, -1);
-                    Drawable g10 = resourceId2 > 0 ? o2.d().g(context2, resourceId2) : null;
+                    Drawable g10 = resourceId2 > 0 ? n2.d().g(context2, resourceId2) : null;
                     f10.recycle();
                     int attributeCount = attributeSet.getAttributeCount();
                     int[] iArr = new int[attributeCount];
@@ -159,7 +159,7 @@ public final class e extends Drawable implements Drawable.Callback {
                     int resourceId3 = f11.getResourceId(2, -1);
                     int resourceId4 = f11.getResourceId(1, -1);
                     int resourceId5 = f11.getResourceId(z10 ? 1 : 0, -1);
-                    Drawable g11 = resourceId5 > 0 ? o2.d().g(context2, resourceId5) : null;
+                    Drawable g11 = resourceId5 > 0 ? n2.d().g(context2, resourceId5) : null;
                     boolean z11 = f11.getBoolean(3, z10);
                     f11.recycle();
                     if (g11 == null) {

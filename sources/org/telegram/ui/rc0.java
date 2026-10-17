@@ -1,33 +1,44 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class rc0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ld0 b;
-    public final /* synthetic */ boolean c;
+import android.animation.ValueAnimator;
+import org.telegram.messenger.AndroidUtilities;
 
-    public /* synthetic */ rc0(ld0 ld0Var, boolean z10, int i10) {
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class rc0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ fg0 b;
+
+    public /* synthetic */ rc0(fg0 fg0Var, int i10) {
         this.a = i10;
-        this.b = ld0Var;
-        this.c = z10;
+        this.b = fg0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                boolean z10 = this.c;
-                ld0 ld0Var = this.b;
-                if (!z10) {
-                    ld0Var.b.setVisibility(8);
-                    break;
-                } else {
-                    ld0Var.getClass();
-                    break;
-                }
+                fg0 fg0Var = this.b;
+                fg0Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                fg0Var.c.setAlpha(floatValue);
+                fg0Var.c.setTranslationY((1.0f - floatValue) * AndroidUtilities.dp(230.0f));
+                break;
+            case 1:
+                fg0 fg0Var2 = this.b;
+                fg0Var2.getClass();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                float f7 = (0.9f * floatValue2) + 0.1f;
+                fg0Var2.V.setScaleX(f7);
+                fg0Var2.V.setScaleY(f7);
+                fg0Var2.V.setAlpha(floatValue2);
+                break;
             default:
-                this.b.r0(this.c);
+                fg0 fg0Var3 = this.b;
+                fg0Var3.getClass();
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                fg0Var3.c.setAlpha(floatValue3);
+                fg0Var3.c.setTranslationY((1.0f - floatValue3) * AndroidUtilities.dp(230.0f));
                 break;
         }
     }

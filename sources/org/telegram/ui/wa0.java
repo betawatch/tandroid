@@ -1,106 +1,70 @@
 package org.telegram.ui;
 
-import java.util.regex.Pattern;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_stories;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.messenger.Emoji;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wa0 implements Utilities.Callback {
+public final class wa0 implements TextWatcher {
     public final /* synthetic */ int a;
-    public final /* synthetic */ LaunchActivity b;
-    public final /* synthetic */ d20 c;
-    public final /* synthetic */ Long d;
+    public final /* synthetic */ cb0 b;
 
-    public /* synthetic */ wa0(LaunchActivity launchActivity, d20 d20Var, Long l4, int i10) {
+    public /* synthetic */ wa0(cb0 cb0Var, int i10) {
         this.a = i10;
-        this.b = launchActivity;
-        this.c = d20Var;
-        this.d = l4;
+        this.b = cb0Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        org.telegram.ui.Components.zc X;
-        int i10;
-        int i11;
-        org.telegram.ui.Components.zc X2;
-        int i12;
-        int i13;
-        int i14 = this.a;
-        Long l4 = this.d;
-        d20 d20Var = this.c;
-        LaunchActivity launchActivity = this.b;
-        TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj;
-        switch (i14) {
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        switch (this.a) {
             case 0:
-                Pattern pattern = LaunchActivity.B1;
-                try {
-                    d20Var.run();
-                } catch (Exception e) {
-                    FileLog.e(e);
-                }
-                org.telegram.ui.ActionBar.m2 R = LaunchActivity.R();
-                if (storyItem != null) {
-                    if (!(storyItem instanceof TL_stories.TL_storyItemDeleted)) {
-                        if (R != null) {
-                            storyItem.dialogId = l4.longValue();
-                            bi.sb createOverlayStoryViewer = R.createOverlayStoryViewer();
-                            createOverlayStoryViewer.v();
-                            createOverlayStoryViewer.F(launchActivity, storyItem, null);
-                            break;
-                        }
-                    } else {
-                        X = org.telegram.ui.Components.zc.X();
-                        if (X != null) {
-                            i10 = R.raw.story_bomb1;
-                            i11 = R.string.StoryNotFound;
-                        }
-                    }
-                } else {
-                    X = org.telegram.ui.Components.zc.X();
-                    if (X != null) {
-                        i10 = R.raw.story_bomb2;
-                        i11 = R.string.StoryNotFound;
-                    }
-                }
-                org.telegram.messenger.g0.q(i11, X, i10, 36);
+                Emoji.replaceEmoji(editable, this.b.K.getPaint().getFontMetricsInt(), false);
                 break;
             default:
-                Pattern pattern2 = LaunchActivity.B1;
-                try {
-                    d20Var.run();
-                } catch (Exception e7) {
-                    FileLog.e(e7);
-                }
-                org.telegram.ui.ActionBar.m2 R2 = LaunchActivity.R();
-                if (storyItem != null) {
-                    if (!(storyItem instanceof TL_stories.TL_storyItemDeleted)) {
-                        if (R2 != null) {
-                            storyItem.dialogId = l4.longValue();
-                            bi.sb createOverlayStoryViewer2 = R2.createOverlayStoryViewer();
-                            createOverlayStoryViewer2.v();
-                            createOverlayStoryViewer2.F(launchActivity, storyItem, null);
-                            break;
-                        }
+                cb0 cb0Var = this.b;
+                if (!cb0Var.O) {
+                    if (editable.toString().equals("0")) {
+                        cb0Var.F.setText("");
+                        break;
                     } else {
-                        X2 = org.telegram.ui.Components.zc.X();
-                        if (X2 != null) {
-                            i12 = R.raw.story_bomb1;
-                            i13 = R.string.StoryNotFound;
+                        try {
+                            int parseInt = Integer.parseInt(editable.toString());
+                            if (parseInt <= 100000) {
+                                cb0Var.W(parseInt);
+                                break;
+                            } else {
+                                cb0Var.X();
+                                break;
+                            }
+                        } catch (NumberFormatException unused) {
+                            cb0Var.X();
                         }
                     }
-                } else {
-                    X2 = org.telegram.ui.Components.zc.X();
-                    if (X2 != null) {
-                        i12 = R.raw.story_bomb2;
-                        i13 = R.string.StoryNotFound;
-                    }
                 }
-                org.telegram.messenger.g0.q(i13, X2, i12, 36);
                 break;
         }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
+    }
+
+    private final void a(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

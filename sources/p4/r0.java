@@ -12,15 +12,13 @@ import android.util.Log;
 import com.google.android.gms.internal.vision.g3;
 import java.util.ArrayList;
 import java.util.List;
-import ji.h5;
-import ji.m5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class r0 extends g3 implements ServiceConnection {
     public static final /* synthetic */ int G = 0;
     public boolean E;
-    public m5 F;
+    public j5.b F;
     public final ComponentName r;
     public final com.google.android.gms.internal.cast.a0 s;
     public final ArrayList v;
@@ -33,7 +31,7 @@ public final class r0 extends g3 implements ServiceConnection {
     }
 
     public r0(Context context, ComponentName componentName) {
-        super(context, new h5(componentName, 18));
+        super(context, new k0.b(componentName, 19));
         this.v = new ArrayList();
         this.r = componentName;
         this.s = new com.google.android.gms.internal.cast.a0();
@@ -44,11 +42,11 @@ public final class r0 extends g3 implements ServiceConnection {
         if (str == null) {
             throw new IllegalArgumentException("initialMemberRouteId cannot be null.");
         }
-        b2.u uVar = (b2.u) this.n;
-        if (uVar == null) {
+        b2.t tVar = (b2.t) this.n;
+        if (tVar == null) {
             return null;
         }
-        List list = (List) uVar.c;
+        List list = (List) tVar.c;
         int size = list.size();
         for (int i10 = 0; i10 < size; i10++) {
             if (((m) list.get(i10)).d().equals(str)) {
@@ -107,11 +105,11 @@ public final class r0 extends g3 implements ServiceConnection {
     }
 
     public final q0 o(String str, String str2) {
-        b2.u uVar = (b2.u) this.n;
-        if (uVar == null) {
+        b2.t tVar = (b2.t) this.n;
+        if (tVar == null) {
             return null;
         }
-        List list = (List) uVar.c;
+        List list = (List) tVar.c;
         int size = list.size();
         for (int i10 = 0; i10 < size; i10++) {
             if (((m) list.get(i10)).d().equals(str)) {

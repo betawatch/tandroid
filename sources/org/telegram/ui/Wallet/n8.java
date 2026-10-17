@@ -1,58 +1,142 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Intent;
-import android.net.Uri;
-import java.util.ArrayList;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.TextUtils;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.c71;
+import org.telegram.ui.Components.zq;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class n8 implements hg.f0, org.telegram.ui.ActionBar.z1 {
-    public final /* synthetic */ s8 a;
+public final class n8 extends FrameLayout {
+    public final org.telegram.ui.ActionBar.d6 a;
+    public final FrameLayout b;
+    public final org.telegram.ui.Components.h9 c;
+    public final org.telegram.ui.Components.w9 d;
+    public final TextView e;
+    public final m8 f;
+    public final ImageView h;
+    public TLRPC.User n;
+    public String r;
 
-    public /* synthetic */ n8(s8 s8Var) {
-        this.a = s8Var;
+    public n8(Context context, Runnable runnable, Runnable runnable2, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context);
+        this.c = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
+        this.a = d6Var;
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.b = frameLayout;
+        frameLayout.setDuplicateParentStateEnabled(true);
+        frameLayout.setPivotX(0.0f);
+        frameLayout.setPivotY(0.0f);
+        addView(frameLayout, w7.z5.d(-1.0f, -1));
+        int i10 = org.telegram.ui.ActionBar.h6.a7;
+        frameLayout.setBackground(org.telegram.ui.ActionBar.h6.a0(org.telegram.ui.ActionBar.h6.w0(i10, d6Var), org.telegram.ui.ActionBar.h6.v(org.telegram.ui.ActionBar.h6.w0(i10, d6Var), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.i6, d6Var)), AndroidUtilities.dp(32.0f), AndroidUtilities.dp(32.0f)));
+        w7.b6.b(this, 0.02f, 1.2f);
+        org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
+        this.d = w9Var;
+        w9Var.setRoundRadius(AndroidUtilities.dp(18.0f));
+        frameLayout.addView(w9Var, w7.z5.a(34.0f, 15.0f, 0.0f, 0.0f, 0.0f, 34, 19));
+        TextView textView = new TextView(context);
+        this.e = textView;
+        textView.setTextSize(1, 14.0f);
+        textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.G6, d6Var));
+        textView.setSingleLine();
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setTypeface(AndroidUtilities.bold());
+        frameLayout.addView(textView, w7.z5.a(-2.0f, 60.0f, 7.0f, 52.0f, 0.0f, -1, 51));
+        m8 m8Var = new m8(this, context);
+        this.f = m8Var;
+        frameLayout.addView(m8Var, w7.z5.a(-2.0f, 60.0f, 26.0f, 52.0f, 0.0f, -1, 51));
+        ImageView imageView = new ImageView(context);
+        this.h = imageView;
+        imageView.setImageResource(R.drawable.msg2_help);
+        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.D6, d6Var), PorterDuff.Mode.SRC_IN));
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setScaleX(0.9f);
+        imageView.setScaleY(0.9f);
+        frameLayout.addView(imageView, w7.z5.a(24.0f, 0.0f, 0.0f, 14.0f, 0.0f, 24, 21));
+        setOnClickListener(new d8(this, runnable, d6Var, runnable2));
     }
 
-    @Override // hg.f0
-    public void b(a0.h hVar, ArrayList arrayList) {
-        s8 s8Var = this.a;
-        ArrayList arrayList2 = s8Var.r;
-        if (s8Var.n) {
-            return;
-        }
-        arrayList2.clear();
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            hg.g0 g0Var = (hg.g0) obj;
-            TLObject tLObject = g0Var.a;
-            if ((tLObject instanceof TLRPC.User) && s8.b0((TLRPC.User) tLObject)) {
-                arrayList2.add((TLRPC.User) g0Var.a);
+    public final void a(String str, TLRPC.User user) {
+        TLRPC.User user2 = this.n;
+        boolean z10 = (user2 == null ? 0L : user2.id) != (user != null ? user.id : 0L);
+        this.n = user;
+        this.r = str;
+        setClickable(!TextUtils.isEmpty(str));
+        TLRPC.User user3 = this.n;
+        TextView textView = this.e;
+        org.telegram.ui.Components.w9 w9Var = this.d;
+        ImageView imageView = this.h;
+        m8 m8Var = this.f;
+        if (user3 == null) {
+            if (TextUtils.isEmpty(str)) {
+                setClickable(false);
+                setVisibility(8);
+                m8Var.c(null, true);
+                return;
+            } else {
+                setClickable(false);
+                setVisibility(0);
+                w9Var.setImageDrawable(new zq(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(34.0f), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Oh, this.a)), getContext().getResources().getDrawable(R.drawable.menu_gram_24).mutate()));
+                textView.setText(LocaleController.getString(R.string.WalletGramWalletAddress));
+                m8Var.c(str, z10);
+                imageView.setVisibility(8);
+                return;
             }
         }
-        c71 c71Var = s8Var.a;
-        if (c71Var != null) {
-            c71Var.W2.N(true);
+        setClickable(true);
+        setVisibility(0);
+        TLRPC.User user4 = this.n;
+        org.telegram.ui.Components.h9 h9Var = this.c;
+        h9Var.r(user4);
+        w9Var.e(this.n, h9Var);
+        textView.setText(UserObject.getUserName(this.n));
+        if (TextUtils.isEmpty(str)) {
+            m8Var.c(null, z10);
+            imageView.setVisibility(8);
+        } else {
+            m8Var.c(str, z10);
+            imageView.setVisibility(0);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.z1
-    public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
-        s8 s8Var = this.a;
-        s8Var.getClass();
-        try {
-            Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-            intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
-            s8Var.getParentActivity().startActivity(intent);
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
+    public float getContentBottom() {
+        FrameLayout frameLayout = this.b;
+        return (frameLayout.getScaleY() * (frameLayout.getHeight() - frameLayout.getPivotY())) + frameLayout.getPivotY() + frameLayout.getY();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        float measuredHeight = getMeasuredHeight();
+        FrameLayout frameLayout = this.b;
+        int round = Math.round((measuredHeight - (frameLayout.getScaleY() * frameLayout.getMeasuredHeight())) / 2.0f);
+        frameLayout.layout(0, round, frameLayout.getMeasuredWidth(), frameLayout.getMeasuredHeight() + round);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.f.getLayoutParams();
+        int ceil = ((int) Math.ceil(r5.a())) + 1 + layoutParams.leftMargin + layoutParams.rightMargin;
+        setMeasuredDimension(View.resolveSize(Math.max(getMeasuredWidth(), ceil), i10), getMeasuredHeight());
+        int max = Math.max(getMeasuredWidth(), ceil);
+        float measuredWidth = getMeasuredWidth() / max;
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(max, TLObject.FLAG_30);
+        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30);
+        FrameLayout frameLayout = this.b;
+        frameLayout.measure(makeMeasureSpec, makeMeasureSpec2);
+        frameLayout.setScaleX(measuredWidth);
+        frameLayout.setScaleY(measuredWidth);
     }
 }

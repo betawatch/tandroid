@@ -1,24 +1,23 @@
 package org.telegram.ui;
 
 import android.app.Activity;
-import java.util.ArrayList;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class ni extends org.telegram.ui.Components.ew {
-    public final /* synthetic */ fo W;
+public final class ni extends org.telegram.ui.Cells.x0 {
+    public final /* synthetic */ sn t2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ni(fo foVar, org.telegram.ui.ActionBar.m2 m2Var, Activity activity, org.telegram.ui.ActionBar.c6 c6Var, ArrayList arrayList) {
-        super(m2Var, activity, c6Var, arrayList);
-        this.W = foVar;
+    public ni(Activity activity, org.telegram.ui.ActionBar.d6 d6Var, sn snVar) {
+        super(activity, d6Var, false);
+        this.t2 = snVar;
     }
 
-    @Override // org.telegram.ui.Components.ew, org.telegram.ui.ActionBar.e3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.i2
-    public final void dismiss() {
-        super.dismiss();
-        fo foVar = this.W;
-        foVar.getClass();
-        foVar.j8(false, true, 0.0f);
+    @Override // org.telegram.ui.Cells.x0, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        float y3 = getY();
+        sn snVar = this.t2;
+        a0(snVar.R0.getY() + y3, snVar.X0.getBackgroundSizeY());
     }
 }

@@ -2,7 +2,7 @@ package ec;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class b implements Cloneable {
     public int a;
@@ -31,7 +31,26 @@ public final class b implements Cloneable {
         return ((this.d[(i10 / 32) + (i11 * this.c)] >>> (i10 & 31)) & 1) != 0;
     }
 
-    public final void c(int i10, int i11, int i12, int i13) {
+    public final void c(int i10, int i11) {
+        int i12 = (i10 / 32) + (i11 * this.c);
+        int[] iArr = this.d;
+        iArr[i12] = (1 << (i10 & 31)) | iArr[i12];
+    }
+
+    public final Object clone() {
+        int i10 = this.a;
+        int i11 = this.b;
+        int i12 = this.c;
+        int[] iArr = (int[]) this.d.clone();
+        b bVar = new b();
+        bVar.a = i10;
+        bVar.b = i11;
+        bVar.c = i12;
+        bVar.d = iArr;
+        return bVar;
+    }
+
+    public final void d(int i10, int i11, int i12, int i13) {
         if (i11 < 0 || i10 < 0) {
             throw new IllegalArgumentException("Left and top must be nonnegative");
         }
@@ -52,19 +71,6 @@ public final class b implements Cloneable {
             }
             i11++;
         }
-    }
-
-    public final Object clone() {
-        int i10 = this.a;
-        int i11 = this.b;
-        int i12 = this.c;
-        int[] iArr = (int[]) this.d.clone();
-        b bVar = new b();
-        bVar.a = i10;
-        bVar.b = i11;
-        bVar.c = i12;
-        bVar.d = iArr;
-        return bVar;
     }
 
     public final boolean equals(Object obj) {

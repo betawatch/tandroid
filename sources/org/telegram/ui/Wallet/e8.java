@@ -1,117 +1,82 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.graphics.drawable.GradientDrawable;
-import android.text.Editable;
-import android.text.TextPaint;
 import android.text.TextUtils;
-import android.view.MotionEvent;
-import java.util.ArrayList;
+import java.nio.charset.StandardCharsets;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.es;
+import org.telegram.ui.Components.v61;
+import org.telegram.ui.pa0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class e8 extends EditTextBoldCursor {
-    public final org.telegram.ui.Components.g6 b;
-    public final org.telegram.ui.Components.g6 c;
-    public float d;
-    public float e;
-    public final /* synthetic */ i8 f;
+public final /* synthetic */ class e8 implements org.telegram.ui.ActionBar.a2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ v61 b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e8(i8 i8Var, Context context) {
-        super(context);
-        this.f = i8Var;
-        this.b = new org.telegram.ui.Components.g6(this, 180L, es.h);
-        this.c = new org.telegram.ui.Components.g6(this, 320L, i8.R);
-        this.d = 1.0f;
+    public /* synthetic */ e8(v61 v61Var, Object obj, Object obj2, int i10) {
+        this.a = i10;
+        this.b = v61Var;
+        this.d = obj;
+        this.c = obj2;
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor
-    public final void drawCursor(Canvas canvas, GradientDrawable gradientDrawable) {
-        gradientDrawable.setCornerRadius(AndroidUtilities.dpf2(1.5f));
-        int lineBaseline = getLayout().getLineBaseline(0);
-        Rect bounds = gradientDrawable.getBounds();
-        float f7 = lineBaseline;
-        int round = Math.round(((bounds.top - lineBaseline) * this.d) + f7);
-        int round2 = Math.round(((bounds.bottom - lineBaseline) * this.d) + f7);
-        int i10 = bounds.left;
-        int width = bounds.width();
-        if (this.e > 0.0f) {
-            float f10 = i10;
-            i10 = Math.round((((((((getWidth() + getScrollX()) - getCompoundPaddingLeft()) - getCompoundPaddingRight()) - getPaint().measureText("0")) - width) - f10) * this.e) + f10);
-        }
-        gradientDrawable.setBounds(i10, round, width + i10, round2);
-        super.drawCursor(canvas, gradientDrawable);
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0082  */
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.pu, android.widget.TextView, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onDraw(Canvas canvas) {
-        float lineLeft;
-        int size;
-        Editable text = getText();
-        int max = Math.max(TextUtils.indexOf((CharSequence) text, '.'), TextUtils.indexOf((CharSequence) text, ','));
-        int i10 = 0;
-        this.d = this.b.d((max < 0 || getSelectionStart() <= max) ? 1.0f : 0.6363636f, false);
-        this.e = this.c.e(length() == 0);
-        super.onDraw(canvas);
-        i8 i8Var = this.f;
-        if (i8Var.H >= 1.0f) {
-            return;
-        }
-        TextPaint paint = getPaint();
-        float textSize = paint.getTextSize();
-        float compoundPaddingLeft = getCompoundPaddingLeft();
-        if (length() != 0) {
-            if (getLayout() != null) {
-                lineLeft = getLayout().getLineLeft(0);
-            }
-            float f7 = compoundPaddingLeft;
-            int baseline = getBaseline();
-            ArrayList arrayList = i8Var.K;
-            size = arrayList.size();
-            while (i10 < size) {
-                Object obj = arrayList.get(i10);
-                i10++;
-                g8 g8Var = (g8) obj;
-                paint.setTextSize(g8Var.b ? (28.0f * textSize) / 44.0f : textSize);
-                g8Var.c.b(canvas, paint, g8Var.a, f7, baseline);
-            }
-            paint.setTextSize(textSize);
-        }
-        lineLeft = getScrollX() + i8Var.M;
-        compoundPaddingLeft += lineLeft;
-        float f72 = compoundPaddingLeft;
-        int baseline2 = getBaseline();
-        ArrayList arrayList2 = i8Var.K;
-        size = arrayList2.size();
-        while (i10 < size) {
-        }
-        paint.setTextSize(textSize);
-    }
-
-    @Override // org.telegram.ui.Components.pu, android.widget.TextView
-    public final void onSelectionChanged(int i10, int i11) {
-        super.onSelectionChanged(i10, i11);
-        if (i10 != i11) {
-            this.f.b();
+    @Override // org.telegram.ui.ActionBar.a2
+    public final void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        switch (this.a) {
+            case 0:
+                k8 k8Var = (k8) this.b;
+                Boolean bool = (Boolean) this.d;
+                m0 m0Var = (m0) this.c;
+                if (!bool.booleanValue()) {
+                    m0Var.c.B();
+                }
+                s2.a(m0Var.a, new gi.c(9), null, null, null, new ci.c0(5, m0Var, new x(9, k8Var, (k8Var.getParentLayout() == null || k8Var.getParentLayout().getFragmentStack().size() <= 1) ? null : (org.telegram.ui.ActionBar.n2) k8Var.getParentLayout().getFragmentStack().get(k8Var.getParentLayout().getFragmentStack().size() - 2))), false, true, new pa0((Object) null, 1));
+                break;
+            case 1:
+                k8 k8Var2 = (k8) this.b;
+                m0 m0Var2 = (m0) this.c;
+                h0 h0Var = (h0) this.d;
+                pf.c g10 = b2Var.g(i10, true, true);
+                g10.d();
+                g8 g8Var = new g8(k8Var2, g10, 2);
+                m0.F("disable backup: getting phrase...");
+                m0Var2.y(new k((Object) m0Var2, (Object) g8Var, (Object) h0Var, 5), false, true);
+                break;
+            default:
+                l9 l9Var = (l9) this.b;
+                ig.y0 y0Var = (ig.y0) this.d;
+                org.telegram.ui.Cells.a2 a2Var = (org.telegram.ui.Cells.a2) this.c;
+                if (y0Var.getText().toString().getBytes(StandardCharsets.UTF_8).length <= 960) {
+                    String trim = y0Var.getText().toString().trim();
+                    if (TextUtils.isEmpty(trim)) {
+                        trim = null;
+                    }
+                    l9Var.d0 = trim;
+                    l9Var.e0 = !a2Var.b();
+                    if (TextUtils.isEmpty(l9Var.d0)) {
+                        l9Var.M.setVisibility(8);
+                    } else {
+                        l9Var.M.setText(l9Var.d0);
+                        l9Var.M.setVisibility(0);
+                    }
+                    l9Var.y0();
+                    b2Var.dismiss();
+                    l9Var.n0();
+                    break;
+                } else {
+                    int i11 = -l9Var.l0;
+                    l9Var.l0 = i11;
+                    AndroidUtilities.shakeViewSpring(y0Var, i11);
+                    break;
+                }
         }
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getActionMasked() == 0) {
-            this.f.b();
-            this.c.a(length() == 0);
-        }
-        return super.onTouchEvent(motionEvent);
+    public /* synthetic */ e8(k8 k8Var, m0 m0Var, h0 h0Var) {
+        this.a = 1;
+        this.b = k8Var;
+        this.c = m0Var;
+        this.d = h0Var;
     }
 }

@@ -1,50 +1,207 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.widget.FrameLayout;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.AccountInstance;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public abstract class qd extends FrameLayout {
-    public ah.x a;
-    public od b;
-    public boolean c;
+public final /* synthetic */ class qd implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ Long h;
+    public final /* synthetic */ String n;
+    public final /* synthetic */ Object r;
+    public final /* synthetic */ Object s;
+    public final /* synthetic */ Object v;
 
-    public final void a(od odVar, FrameLayout.LayoutParams layoutParams) {
-        if (this.b == null) {
-            this.b = odVar;
-            odVar.setVisibility(8);
-            addView(odVar, layoutParams);
-        }
-    }
-
-    public final void b(ah.x xVar, FrameLayout.LayoutParams layoutParams) {
-        if (this.a == null) {
-            this.a = xVar;
-            addView(xVar, layoutParams);
-        }
-    }
-
-    public od getEditView() {
-        return this.b;
-    }
-
-    public View getReplyView() {
-        return this.a;
-    }
-
-    public void setEditMode(boolean z10) {
+    public /* synthetic */ qd(gg ggVar, Object obj, MediaController.PhotoEntry photoEntry, boolean z10, int i10, int i11, boolean z11, Long l4, String str, Object obj2) {
+        this.r = ggVar;
+        this.b = obj;
+        this.s = photoEntry;
         this.c = z10;
-        this.a.setVisibility(z10 ? 8 : 0);
-        this.b.setVisibility(z10 ? 0 : 8);
+        this.d = i10;
+        this.e = i11;
+        this.f = z11;
+        this.h = l4;
+        this.n = str;
+        this.v = obj2;
     }
 
-    public void setEditSuggestionMode(boolean z10) {
-        setEditMode(z10);
-        if (z10) {
-            this.a.setVisibility(0);
+    @Override // java.lang.Runnable
+    public final void run() {
+        boolean z10;
+        MessageObject threadMessage;
+        MessageObject threadMessage2;
+        MessageObject threadMessage3;
+        MessageObject threadMessage4;
+        String str;
+        switch (this.a) {
+            case 0:
+                ChatActivityEnterView.f((ChatActivityEnterView) this.r, (TLRPC.Document) this.s, this.n, (MessageObject.SendAnimationData) this.v, this.c, this.d, this.e, this.b, this.h, this.f);
+                break;
+            default:
+                gg ggVar = (gg) this.r;
+                MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) this.s;
+                ChatActivityEnterView chatActivityEnterView = ggVar.a;
+                boolean z11 = chatActivityEnterView.z3;
+                org.telegram.ui.sn snVar = chatActivityEnterView.P2;
+                boolean z12 = false;
+                if (z11) {
+                    if (chatActivityEnterView.R1 != 0) {
+                        chatActivityEnterView.U0.B();
+                    }
+                    chatActivityEnterView.l1(false, true, false, true);
+                }
+                og ogVar = chatActivityEnterView.Z2;
+                TL_stories.StoryItem a12 = ogVar != null ? ogVar.a1() : null;
+                Object obj = this.b;
+                boolean z13 = obj instanceof TLRPC.Document;
+                boolean z14 = this.c;
+                int i10 = this.d;
+                int i11 = this.e;
+                Long l4 = this.h;
+                int i12 = i10;
+                String str2 = this.n;
+                Object obj2 = this.v;
+                if (z13) {
+                    TLRPC.Document document = (TLRPC.Document) obj;
+                    VideoEditedInfo videoEditedInfo = photoEntry != null ? photoEntry.editedInfo : null;
+                    if (videoEditedInfo != null && photoEntry != null) {
+                        videoEditedInfo.roundVideo = true;
+                        boolean needConvert = videoEditedInfo.needConvert();
+                        videoEditedInfo.roundVideo = false;
+                        videoEditedInfo.muted = true;
+                        z12 = needConvert;
+                    }
+                    boolean z15 = this.f;
+                    if (z12) {
+                        ArrayList arrayList = new ArrayList();
+                        SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
+                        if (photoEntry.isVideo || (str = photoEntry.imagePath) == null) {
+                            String str3 = photoEntry.path;
+                            if (str3 != null) {
+                                sendingMediaInfo.path = str3;
+                            }
+                        } else {
+                            sendingMediaInfo.path = str;
+                            if (photoEntry.isHighQuality()) {
+                                sendingMediaInfo.originalPhotoEntry = photoEntry.clone();
+                            }
+                        }
+                        sendingMediaInfo.thumbPath = photoEntry.thumbPath;
+                        sendingMediaInfo.coverPath = photoEntry.coverPath;
+                        sendingMediaInfo.coverPhoto = photoEntry.coverPhoto;
+                        sendingMediaInfo.isLivePhoto = photoEntry.isLivePhoto();
+                        sendingMediaInfo.isVideo = photoEntry.isVideo;
+                        sendingMediaInfo.discardLivePhoto = photoEntry.isUnalivePhoto();
+                        sendingMediaInfo.livePhotoVideoOffset = photoEntry.livePhotoVideoOffset;
+                        sendingMediaInfo.livePhotoTimestampUs = photoEntry.livePhotoTimestampUs;
+                        CharSequence charSequence = photoEntry.caption;
+                        sendingMediaInfo.caption = charSequence != null ? charSequence.toString() : null;
+                        sendingMediaInfo.entities = photoEntry.entities;
+                        sendingMediaInfo.masks = photoEntry.stickers;
+                        sendingMediaInfo.ttl = photoEntry.ttl;
+                        sendingMediaInfo.videoEditedInfo = photoEntry.editedInfo;
+                        sendingMediaInfo.canDeleteAfter = photoEntry.canDeleteAfter;
+                        sendingMediaInfo.updateStickersOrder = SendMessagesHelper.checkUpdateStickersOrder(photoEntry.caption);
+                        sendingMediaInfo.hasMediaSpoilers = photoEntry.hasSpoiler;
+                        sendingMediaInfo.stars = photoEntry.starsAmount;
+                        sendingMediaInfo.highQuality = photoEntry.isHighQuality();
+                        arrayList.add(sendingMediaInfo);
+                        photoEntry.reset();
+                        AccountInstance accountInstance = AccountInstance.getInstance(chatActivityEnterView.Q);
+                        long j10 = chatActivityEnterView.Q2;
+                        MessageObject messageObject = chatActivityEnterView.T2;
+                        threadMessage4 = chatActivityEnterView.getThreadMessage();
+                        SendMessagesHelper.prepareSendingMedia(accountInstance, arrayList, j10, messageObject, threadMessage4, null, chatActivityEnterView.V2, false, false, chatActivityEnterView.Z1, z14, i12, i11, 0, false, null, snVar != null ? snVar.H8() : null, chatActivityEnterView.S4, z15, l4.longValue(), chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams());
+                        z10 = z14;
+                        i12 = i12;
+                    } else {
+                        SendMessagesHelper sendMessagesHelper = SendMessagesHelper.getInstance(chatActivityEnterView.Q);
+                        long j11 = chatActivityEnterView.Q2;
+                        CharSequence charSequence2 = photoEntry != null ? photoEntry.caption : null;
+                        TL_stories.StoryItem storyItem = a12;
+                        MessageObject messageObject2 = chatActivityEnterView.T2;
+                        threadMessage3 = chatActivityEnterView.getThreadMessage();
+                        sendMessagesHelper.sendSticker(document, str2, j11, charSequence2, videoEditedInfo, messageObject2, threadMessage3, storyItem, chatActivityEnterView.V2, null, z14, i12, i11, false, obj2, snVar != null ? snVar.H8() : null, l4.longValue(), chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams(), z15);
+                        z10 = z14;
+                        i12 = i12;
+                        MediaDataController.getInstance(chatActivityEnterView.Q).addRecentGif(document, (int) (System.currentTimeMillis() / 1000), true);
+                        if (DialogObject.isEncryptedDialog(chatActivityEnterView.Q2)) {
+                            chatActivityEnterView.R.getMessagesController().saveGif(obj2, document);
+                        }
+                    }
+                } else {
+                    z10 = z14;
+                    TL_stories.StoryItem storyItem2 = a12;
+                    if (obj instanceof TLRPC.BotInlineResult) {
+                        TLRPC.BotInlineResult botInlineResult = (TLRPC.BotInlineResult) obj;
+                        if (botInlineResult.document != null) {
+                            MediaDataController.getInstance(chatActivityEnterView.Q).addRecentGif(botInlineResult.document, (int) (System.currentTimeMillis() / 1000), false);
+                            if (DialogObject.isEncryptedDialog(chatActivityEnterView.Q2)) {
+                                chatActivityEnterView.R.getMessagesController().saveGif(obj2, botInlineResult.document);
+                            }
+                        }
+                        HashMap hashMap = new HashMap();
+                        hashMap.put("id", botInlineResult.id);
+                        hashMap.put("query_id", "" + botInlineResult.query_id);
+                        hashMap.put("force_gif", "1");
+                        if (storyItem2 == null) {
+                            org.telegram.ui.sn snVar2 = chatActivityEnterView.P2;
+                            AccountInstance accountInstance2 = chatActivityEnterView.R;
+                            long j12 = chatActivityEnterView.Q2;
+                            MessageObject messageObject3 = chatActivityEnterView.T2;
+                            threadMessage2 = chatActivityEnterView.getThreadMessage();
+                            SendMessagesHelper.prepareSendingBotContextResult(snVar2, accountInstance2, botInlineResult, hashMap, j12, messageObject3, threadMessage2, null, chatActivityEnterView.V2, z10, i12, 0, snVar != null ? snVar.H8() : null, l4.longValue(), chatActivityEnterView.getSendMonoForumPeerId());
+                            z10 = z10;
+                            i12 = i12;
+                        } else {
+                            SendMessagesHelper sendMessagesHelper2 = SendMessagesHelper.getInstance(chatActivityEnterView.Q);
+                            TLRPC.Document document2 = botInlineResult.document;
+                            long j13 = chatActivityEnterView.Q2;
+                            MessageObject messageObject4 = chatActivityEnterView.T2;
+                            threadMessage = chatActivityEnterView.getThreadMessage();
+                            sendMessagesHelper2.sendSticker(document2, str2, j13, messageObject4, threadMessage, storyItem2, chatActivityEnterView.V2, null, z10, i12, i11, false, obj2, snVar != null ? snVar.H8() : null, l4.longValue(), chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams());
+                        }
+                        if (chatActivityEnterView.R1 != 0) {
+                            chatActivityEnterView.j1(0, true);
+                            chatActivityEnterView.U0.t(true);
+                            chatActivityEnterView.U0.B();
+                        }
+                    }
+                }
+                og ogVar2 = chatActivityEnterView.Z2;
+                if (ogVar2 != null) {
+                    ogVar2.L(null, z10, i12, 0, 0L);
+                    break;
+                }
+                break;
         }
-        this.b.a[0].setOnlyIconMode(z10);
-        this.b.a[1].setOnlyIconMode(z10);
+    }
+
+    public /* synthetic */ qd(ChatActivityEnterView chatActivityEnterView, TLRPC.Document document, String str, MessageObject.SendAnimationData sendAnimationData, boolean z10, int i10, int i11, Object obj, Long l4, boolean z11) {
+        this.r = chatActivityEnterView;
+        this.s = document;
+        this.n = str;
+        this.v = sendAnimationData;
+        this.c = z10;
+        this.d = i10;
+        this.e = i11;
+        this.b = obj;
+        this.h = l4;
+        this.f = z11;
     }
 }

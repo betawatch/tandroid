@@ -2,15 +2,15 @@ package x2;
 
 import android.util.SparseArray;
 import android.util.SparseBooleanArray;
-import b2.r1;
+import b2.q1;
+import b2.s1;
 import b2.t1;
-import b2.u1;
 import java.util.HashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class h extends t1 {
+public final class h extends s1 {
     public final boolean J;
     public final boolean K;
     public final boolean L;
@@ -39,18 +39,18 @@ public final class h extends t1 {
         this.R = iVar.E0.clone();
     }
 
-    @Override // b2.t1
-    public final void a(r1 r1Var) {
-        this.H.put(r1Var.a, r1Var);
+    @Override // b2.s1
+    public final void a(q1 q1Var) {
+        this.H.put(q1Var.a, q1Var);
     }
 
-    @Override // b2.t1
-    public final u1 b() {
+    @Override // b2.s1
+    public final t1 b() {
         return new i(this);
     }
 
-    @Override // b2.t1
-    public final t1 c() {
+    @Override // b2.s1
+    public final s1 c() {
         super.c();
         return this;
     }

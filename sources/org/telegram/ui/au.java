@@ -1,29 +1,41 @@
 package org.telegram.ui;
 
-import j$.util.Objects;
+import android.content.DialogInterface;
+import android.content.SharedPreferences;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class au {
-    public String a;
-    public String b;
-    public String c;
-    public String d;
+public final /* synthetic */ class au implements DialogInterface.OnClickListener {
+    public final /* synthetic */ DataSettingsActivity a;
+    public final /* synthetic */ SharedPreferences b;
+    public final /* synthetic */ int c;
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && au.class == obj.getClass()) {
-            au auVar = (au) obj;
-            if (Objects.equals(this.a, auVar.a) && Objects.equals(this.c, auVar.c)) {
-                return true;
-            }
-        }
-        return false;
+    public /* synthetic */ au(DataSettingsActivity dataSettingsActivity, SharedPreferences sharedPreferences, int i10) {
+        this.a = dataSettingsActivity;
+        this.b = sharedPreferences;
+        this.c = i10;
     }
 
-    public final int hashCode() {
-        return Objects.hash(this.a, this.c);
+    @Override // android.content.DialogInterface.OnClickListener
+    public final void onClick(DialogInterface dialogInterface, int i10) {
+        int i11;
+        DataSettingsActivity dataSettingsActivity = this.a;
+        dataSettingsActivity.getClass();
+        if (i10 != 0) {
+            i11 = 3;
+            if (i10 != 1) {
+                i11 = i10 != 2 ? i10 != 3 ? -1 : 2 : 1;
+            }
+        } else {
+            i11 = 0;
+        }
+        if (i11 != -1) {
+            this.b.edit().putInt("VoipDataSaving", i11).commit();
+            dataSettingsActivity.V = true;
+        }
+        bu buVar = dataSettingsActivity.a;
+        if (buVar != null) {
+            buVar.m(this.c);
+        }
     }
 }

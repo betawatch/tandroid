@@ -1,69 +1,16 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
+import android.graphics.Canvas;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class a4 extends org.telegram.ui.ActionBar.h5 {
-    public float M0;
-    public final /* synthetic */ int N0;
-    public final /* synthetic */ e4 O0;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a4(e4 e4Var, Context context, int i10) {
-        super(context);
-        this.O0 = e4Var;
-        this.N0 = i10;
-    }
-
-    @Override // android.view.View
-    public final float getAlpha() {
-        return this.M0;
-    }
-
-    @Override // android.view.View
-    public final void setAlpha(float f7) {
-        this.M0 = f7;
-        e4 e4Var = this.O0;
-        if (this.N0 != 4) {
-            super.setAlpha((1.0f - e4Var.d[4].getFullAlpha()) * f7);
-            return;
-        }
-        float fullAlpha = e4Var.d[4].getFullAlpha();
-        if (e4Var.c()) {
-            float f10 = e4Var.e0;
-            if (f10 > 0.0f) {
-                super.setAlpha(1.0f - f10);
-                return;
-            }
-        }
-        if (fullAlpha > 0.0f) {
-            super.setAlpha(Math.max(f7, fullAlpha));
-        } else {
-            super.setAlpha(f7);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.h5
-    public final void setFullAlpha(float f7) {
-        super.setFullAlpha(f7);
-        int i10 = 0;
-        while (true) {
-            org.telegram.ui.ActionBar.h5[] h5VarArr = this.O0.d;
-            if (i10 >= h5VarArr.length) {
-                return;
-            }
-            org.telegram.ui.ActionBar.h5 h5Var = h5VarArr[i10];
-            h5Var.setAlpha(h5Var.getAlpha());
-            i10++;
-        }
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        if (this.N0 == 4 && getFullAlpha() > 0.0f) {
-            f7 = 0.0f;
-        }
-        super.setTranslationY(f7);
+public final class a4 extends org.telegram.ui.Components.q5 {
+    @Override // org.telegram.ui.Components.q5, android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        canvas.save();
+        canvas.translate(AndroidUtilities.dp(-2.0f), AndroidUtilities.dp(0.0f));
+        super.draw(canvas);
+        canvas.restore();
     }
 }

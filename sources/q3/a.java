@@ -1,10 +1,10 @@
 package q3;
 
-import b2.r0;
+import b2.q0;
 import j$.util.Objects;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class a extends i {
     public final String b;
@@ -20,9 +20,9 @@ public final class a extends i {
         this.e = bArr;
     }
 
-    @Override // q3.i, b2.t0
-    public final void b(r0 r0Var) {
-        r0Var.a(this.d, this.e);
+    @Override // q3.i, b2.s0
+    public final void b(q0 q0Var) {
+        q0Var.a(this.d, this.e);
     }
 
     public final boolean equals(Object obj) {

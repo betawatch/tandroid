@@ -1,16 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class ky extends FrameLayout {
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(11.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(11.0f));
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(getPaddingBottom() + getPaddingTop() + AndroidUtilities.dp(44.0f), TLObject.FLAG_30));
+public final class ky {
+    public final TLRPC.StickerSetCovered a;
+    public final TLRPC.TL_messages_stickerSet b;
+    public final TLRPC.StickerSet c;
+    public final ArrayList d;
+    public final TLRPC.Document e;
+
+    public ky(TLRPC.TL_messages_stickerSet tL_messages_stickerSet, ArrayList arrayList) {
+        TLRPC.Document document = null;
+        this.a = null;
+        this.b = tL_messages_stickerSet;
+        this.c = tL_messages_stickerSet.set;
+        this.d = arrayList;
+        if (arrayList != null && !arrayList.isEmpty()) {
+            document = (TLRPC.Document) arrayList.get(0);
+        }
+        this.e = document;
+    }
+
+    public ky(TLRPC.StickerSetCovered stickerSetCovered, ArrayList arrayList) {
+        this.a = stickerSetCovered;
+        this.b = null;
+        this.c = stickerSetCovered.set;
+        this.d = arrayList;
+        this.e = arrayList.isEmpty() ? null : (TLRPC.Document) arrayList.get(0);
     }
 }

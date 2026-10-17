@@ -1,37 +1,19 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class ml implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ nl b;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ ml(nl nlVar, int i10) {
-        this.a = i10;
-        this.b = nlVar;
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes3.dex */
+public final class ml extends bu0 {
+    public final /* synthetic */ sn a;
+
+    public ml(sn snVar) {
+        this.a = snVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                sk skVar = this.b.H.Y;
-                if (skVar != null) {
-                    skVar.T0 = false;
-                    org.telegram.ui.Components.fg fgVar = skVar.U0;
-                    if (fgVar != null) {
-                        fgVar.v(false);
-                        break;
-                    }
-                }
-                break;
-            default:
-                sk skVar2 = this.b.H.Y;
-                if (skVar2 != null) {
-                    skVar2.F0();
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.bu0, org.telegram.ui.ju0
+    public final lu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        return sn.E1(this.a, messageObject, fileLocation, i10, z10, false);
     }
 }

@@ -12,7 +12,6 @@ import android.os.SystemClock;
 import android.util.Pair;
 import e2.m0;
 import e9.n0;
-import ig.t0;
 import j$.util.DesugarCollections;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,19 +21,17 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
-import ji.h5;
-import ji.w4;
+import ki.t1;
 import v7.u6;
 import w7.a0;
-import z7.xf;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class b implements g {
+public final class b implements h {
     public final List a;
-    public final q b;
-    public final xf c;
-    public final w4 d;
+    public final r b;
+    public final e c;
+    public final t1 d;
     public final boolean e;
     public final boolean f;
     public final HashMap g;
@@ -51,18 +48,18 @@ public final class b implements g {
     public HandlerThread r;
     public android.support.v4.media.session.f s;
     public h2.b t;
-    public f u;
+    public g u;
     public byte[] v;
     public byte[] w;
-    public o x;
-    public h5 y;
-    public p z;
+    public p x;
+    public le.b y;
+    public q z;
 
-    public b(UUID uuid, q qVar, xf xfVar, w4 w4Var, List list, boolean z10, boolean z11, byte[] bArr, HashMap hashMap, c2.b bVar, Looper looper, oa.d dVar, j2.k kVar) {
+    public b(UUID uuid, r rVar, e eVar, t1 t1Var, List list, boolean z10, boolean z11, byte[] bArr, HashMap hashMap, c2.b bVar, Looper looper, oa.d dVar, j2.k kVar) {
         this.l = uuid;
-        this.c = xfVar;
-        this.d = w4Var;
-        this.b = qVar;
+        this.c = eVar;
+        this.d = t1Var;
+        this.b = rVar;
         this.e = z10;
         this.f = z11;
         if (bArr != null) {
@@ -83,8 +80,8 @@ public final class b implements g {
         this.o = new Object();
     }
 
-    @Override // n2.g
-    public final void a(j jVar) {
+    @Override // n2.h
+    public final void a(k kVar) {
         p();
         int i10 = this.q;
         if (i10 <= 0) {
@@ -111,80 +108,80 @@ public final class b implements g {
             this.z = null;
             byte[] bArr = this.v;
             if (bArr != null) {
-                this.b.W(bArr);
+                this.b.Y(bArr);
                 this.v = null;
             }
         }
-        if (jVar != null) {
-            this.h.m(jVar);
-            if (this.h.h(jVar) == 0) {
-                jVar.e();
+        if (kVar != null) {
+            this.h.m(kVar);
+            if (this.h.h(kVar) == 0) {
+                kVar.e();
             }
         }
-        w4 w4Var = this.d;
+        t1 t1Var = this.d;
         int i12 = this.q;
-        e eVar = (e) w4Var.b;
-        if (i12 == 1 && eVar.E > 0 && eVar.v != -9223372036854775807L) {
-            eVar.y.add(this);
-            Handler handler = eVar.J;
+        f fVar = (f) t1Var.b;
+        if (i12 == 1 && fVar.E > 0 && fVar.v != -9223372036854775807L) {
+            fVar.y.add(this);
+            Handler handler = fVar.J;
             handler.getClass();
-            handler.postAtTime(new t0(this, 18), this, SystemClock.uptimeMillis() + eVar.v);
+            handler.postAtTime(new ki.u(this, 8), this, SystemClock.uptimeMillis() + fVar.v);
         } else if (i12 == 0) {
-            eVar.w.remove(this);
-            if (eVar.G == this) {
-                eVar.G = null;
+            fVar.w.remove(this);
+            if (fVar.G == this) {
+                fVar.G = null;
             }
-            if (eVar.H == this) {
-                eVar.H = null;
+            if (fVar.H == this) {
+                fVar.H = null;
             }
-            xf xfVar = eVar.n;
-            HashSet hashSet = (HashSet) xfVar.a;
+            e eVar = fVar.n;
+            HashSet hashSet = (HashSet) eVar.b;
             hashSet.remove(this);
-            if (((b) xfVar.b) == this) {
-                xfVar.b = null;
+            if (((b) eVar.c) == this) {
+                eVar.c = null;
                 if (!hashSet.isEmpty()) {
                     b bVar = (b) hashSet.iterator().next();
-                    xfVar.b = bVar;
-                    p p5 = bVar.b.p();
-                    bVar.z = p5;
-                    android.support.v4.media.session.f fVar = bVar.s;
+                    eVar.c = bVar;
+                    q o10 = bVar.b.o();
+                    bVar.z = o10;
+                    android.support.v4.media.session.f fVar2 = bVar.s;
                     String str2 = m0.a;
-                    p5.getClass();
-                    fVar.getClass();
-                    fVar.obtainMessage(1, new a(u2.u.g.getAndIncrement(), true, SystemClock.elapsedRealtime(), p5)).sendToTarget();
+                    o10.getClass();
+                    fVar2.getClass();
+                    fVar2.obtainMessage(1, new a(u2.u.g.getAndIncrement(), true, SystemClock.elapsedRealtime(), o10)).sendToTarget();
                 }
             }
-            if (eVar.v != -9223372036854775807L) {
-                Handler handler2 = eVar.J;
+            if (fVar.v != -9223372036854775807L) {
+                Handler handler2 = fVar.J;
                 handler2.getClass();
                 handler2.removeCallbacksAndMessages(this);
-                eVar.y.remove(this);
+                fVar.y.remove(this);
             }
         }
-        eVar.g();
+        fVar.g();
     }
 
-    @Override // n2.g
-    public final void b(j jVar) {
+    @Override // n2.h
+    public final void b(k kVar) {
         p();
         if (this.q < 0) {
             e2.a.c("DefaultDrmSession", "Session reference count less than zero: " + this.q);
             this.q = 0;
         }
-        if (jVar != null) {
-            e2.k kVar = this.h;
-            synchronized (kVar.a) {
+        if (kVar != null) {
+            e2.k kVar2 = this.h;
+            synchronized (kVar2.a) {
                 try {
-                    ArrayList arrayList = new ArrayList(kVar.d);
-                    arrayList.add(jVar);
-                    kVar.d = DesugarCollections.unmodifiableList(arrayList);
-                    Integer num = (Integer) kVar.b.get(jVar);
+                    ArrayList arrayList = new ArrayList(kVar2.d);
+                    arrayList.add(kVar);
+                    kVar2.d = DesugarCollections.unmodifiableList(arrayList);
+                    Integer num = (Integer) kVar2.b.get(kVar);
                     if (num == null) {
-                        HashSet hashSet = new HashSet(kVar.c);
-                        hashSet.add(jVar);
-                        kVar.c = DesugarCollections.unmodifiableSet(hashSet);
+                        HashSet hashSet = new HashSet(kVar2.c);
+                        hashSet.add(kVar);
+                        kVar2.c = DesugarCollections.unmodifiableSet(hashSet);
                     }
-                    kVar.b.put(jVar, Integer.valueOf(num != null ? num.intValue() + 1 : 1));
+                    kVar2.b.put(kVar, Integer.valueOf(num != null ? num.intValue() + 1 : 1));
                 } finally {
                 }
             }
@@ -200,46 +197,46 @@ public final class b implements g {
             if (n()) {
                 j(true);
             }
-        } else if (jVar != null && k() && this.h.h(jVar) == 1) {
-            jVar.c(this.p);
+        } else if (kVar != null && k() && this.h.h(kVar) == 1) {
+            kVar.c(this.p);
         }
-        e eVar = (e) this.d.b;
-        if (eVar.v != -9223372036854775807L) {
-            eVar.y.remove(this);
-            Handler handler = eVar.J;
+        f fVar = (f) this.d.b;
+        if (fVar.v != -9223372036854775807L) {
+            fVar.y.remove(this);
+            Handler handler = fVar.J;
             handler.getClass();
             handler.removeCallbacksAndMessages(this);
         }
     }
 
-    @Override // n2.g
+    @Override // n2.h
     public final UUID c() {
         p();
         return this.l;
     }
 
-    @Override // n2.g
+    @Override // n2.h
     public final boolean d() {
         p();
         return this.e;
     }
 
-    @Override // n2.g
+    @Override // n2.h
     public final int e() {
         p();
         return this.p;
     }
 
-    @Override // n2.g
+    @Override // n2.h
     public final boolean f(String str) {
         p();
         byte[] bArr = this.v;
         bArr.getClass();
-        return this.b.w0(str, bArr);
+        return this.b.B0(str, bArr);
     }
 
-    @Override // n2.g
-    public final f g() {
+    @Override // n2.h
+    public final g g() {
         p();
         if (this.p == 1) {
             return this.u;
@@ -247,7 +244,7 @@ public final class b implements g {
         return null;
     }
 
-    @Override // n2.g
+    @Override // n2.h
     public final h2.b h() {
         p();
         return this.t;
@@ -261,7 +258,7 @@ public final class b implements g {
         }
         Iterator it = set.iterator();
         while (it.hasNext()) {
-            jVar.accept((j) it.next());
+            jVar.accept((k) it.next());
         }
     }
 
@@ -288,7 +285,7 @@ public final class b implements g {
         }
         if (this.p != 4) {
             try {
-                this.b.K(this.v, this.w);
+                this.b.U(this.v, this.w);
             } catch (Exception | NoSuchMethodError e) {
                 l(1, e);
                 z11 = false;
@@ -297,7 +294,7 @@ public final class b implements g {
                 return;
             }
         }
-        if (b2.n.e.equals(this.l)) {
+        if (b2.m.e.equals(this.l)) {
             p();
             byte[] bArr2 = this.v;
             Pair pair = null;
@@ -335,7 +332,7 @@ public final class b implements g {
             return;
         }
         if (min <= 0) {
-            l(2, new u());
+            l(2, new v());
             return;
         }
         this.p = 4;
@@ -345,7 +342,7 @@ public final class b implements g {
         }
         Iterator it = set.iterator();
         while (it.hasNext()) {
-            ((j) it.next()).b();
+            ((k) it.next()).b();
         }
     }
 
@@ -364,11 +361,11 @@ public final class b implements g {
                 if (!(th2 instanceof NotProvisionedException) && !a0.b(th2)) {
                     if (th2 instanceof DeniedByServerException) {
                         i11 = 6007;
-                    } else if (th2 instanceof x) {
+                    } else if (th2 instanceof y) {
                         i11 = 6001;
                     } else if (th2 instanceof c) {
                         i11 = 6003;
-                    } else if (th2 instanceof u) {
+                    } else if (th2 instanceof v) {
                         i11 = 6008;
                     } else if (i10 != 1) {
                         if (i10 == 2) {
@@ -382,7 +379,7 @@ public final class b implements g {
             }
             i11 = 6006;
         }
-        this.u = new f(i11, th2);
+        this.u = new g(i11, th2);
         e2.a.d("DefaultDrmSession", "DRM session error", th2);
         if (th2 instanceof Exception) {
             e2.k kVar = this.h;
@@ -391,7 +388,7 @@ public final class b implements g {
             }
             Iterator it = set.iterator();
             while (it.hasNext()) {
-                ((j) it.next()).d((Exception) th2);
+                ((k) it.next()).d((Exception) th2);
             }
         } else {
             if (!(th2 instanceof Error)) {
@@ -408,7 +405,7 @@ public final class b implements g {
 
     public final void m(Throwable th2, boolean z10) {
         if ((th2 instanceof NotProvisionedException) || a0.b(th2)) {
-            this.c.b(this);
+            this.c.g0(this);
         } else {
             l(z10 ? 1 : 2, th2);
         }
@@ -425,10 +422,10 @@ public final class b implements g {
             return true;
         }
         try {
-            byte[] D = this.b.D();
-            this.v = D;
-            this.b.k(D, this.j);
-            this.t = this.b.q(this.v);
+            byte[] H = this.b.H();
+            this.v = H;
+            this.b.h(H, this.j);
+            this.t = this.b.u(this.v);
             this.p = 3;
             e2.k kVar = this.h;
             synchronized (kVar.a) {
@@ -436,12 +433,12 @@ public final class b implements g {
             }
             Iterator it = set.iterator();
             while (it.hasNext()) {
-                ((j) it.next()).c(3);
+                ((k) it.next()).c(3);
             }
             this.v.getClass();
             return true;
         } catch (NotProvisionedException unused) {
-            this.c.b(this);
+            this.c.g0(this);
             return false;
         } catch (Exception e) {
             e = e;
@@ -449,7 +446,7 @@ public final class b implements g {
                 l(1, e);
                 return false;
             }
-            this.c.b(this);
+            this.c.g0(this);
             return false;
         } catch (NoSuchMethodError e7) {
             e = e7;
@@ -462,7 +459,7 @@ public final class b implements g {
         try {
             synchronized (this.o) {
                 try {
-                    this.y = new h5(7);
+                    this.y = new le.b(3);
                     List list = this.a;
                     if (list != null) {
                         n0.u(list);
@@ -471,7 +468,7 @@ public final class b implements g {
                     throw th2;
                 }
             }
-            o k02 = this.b.k0(bArr, this.a, i10, this.g);
+            p k02 = this.b.k0(bArr, this.a, i10, this.g);
             this.x = k02;
             android.support.v4.media.session.f fVar = this.s;
             String str = m0.a;

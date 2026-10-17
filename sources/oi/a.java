@@ -1,35 +1,79 @@
 package oi;
 
-import android.util.SparseArray;
-import bi.s6;
-import j$.util.Comparator$-CC;
+import android.graphics.RectF;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
 public final class a {
-    public SparseArray a;
+    public final ArrayList a = new ArrayList();
+    public int b;
 
-    public final void a(HashMap hashMap) {
-        if (this.a != null) {
-            for (Map.Entry entry : hashMap.entrySet()) {
-                this.a.put(((String) entry.getKey()).hashCode(), (String) entry.getValue());
+    public final RectF a(float f7, float f10, float f11, float f12) {
+        RectF rectF;
+        int i10 = this.b;
+        ArrayList arrayList = this.a;
+        if (i10 < arrayList.size()) {
+            rectF = (RectF) arrayList.get(this.b);
+            rectF.set(f7, f10, f11, f12);
+        } else {
+            rectF = new RectF(f7, f10, f11, f12);
+            arrayList.add(rectF);
+        }
+        this.b++;
+        return rectF;
+    }
+
+    public final RectF b(int i10) {
+        if (i10 >= 0 && i10 < this.b) {
+            return (RectF) this.a.get(i10);
+        }
+        StringBuilder l4 = i0.a.l(i10, "index=", ", size=");
+        l4.append(this.b);
+        throw new IndexOutOfBoundsException(l4.toString());
+    }
+
+    public final void c(int i10) {
+        int i11;
+        if (i10 < 0 || i10 >= (i11 = this.b)) {
+            StringBuilder l4 = i0.a.l(i10, "index=", ", size=");
+            l4.append(this.b);
+            throw new IndexOutOfBoundsException(l4.toString());
+        }
+        int i12 = i11 - 1;
+        ArrayList arrayList = this.a;
+        RectF rectF = (RectF) arrayList.get(i10);
+        if (i10 != i12) {
+            arrayList.set(i10, (RectF) arrayList.get(i12));
+            arrayList.set(i12, rectF);
+        }
+        this.b = i12;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof a)) {
+            return false;
+        }
+        a aVar = (a) obj;
+        if (this.b != aVar.b) {
+            return false;
+        }
+        for (int i10 = 0; i10 < this.b; i10++) {
+            if (!((RectF) this.a.get(i10)).equals(aVar.a.get(i10))) {
+                return false;
             }
-            return;
         }
-        this.a = new SparseArray(hashMap.size());
-        ArrayList arrayList = new ArrayList(hashMap.entrySet());
-        Collections.sort(arrayList, Comparator$-CC.comparingInt(new s6(4)));
-        int size = arrayList.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            Map.Entry entry2 = (Map.Entry) obj;
-            this.a.append(((String) entry2.getKey()).hashCode(), (String) entry2.getValue());
+        return true;
+    }
+
+    public final int hashCode() {
+        int i10 = 1;
+        for (int i11 = 0; i11 < this.b; i11++) {
+            i10 = (i10 * 31) + ((RectF) this.a.get(i11)).hashCode();
         }
+        return i10;
     }
 }

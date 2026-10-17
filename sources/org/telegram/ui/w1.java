@@ -16,13 +16,13 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class w1 extends View implements org.telegram.ui.Cells.n9 {
-    public final z70 a;
-    public final i4 b;
+public final class w1 extends View implements org.telegram.ui.Cells.m9 {
+    public final d70 a;
+    public final j4 b;
     public final ImageReceiver c;
-    public final org.telegram.ui.Components.k9 d;
+    public final org.telegram.ui.Components.h9 d;
     public d3 e;
     public d3 f;
     public d3 h;
@@ -34,18 +34,18 @@ public final class w1 extends View implements org.telegram.ui.Cells.n9 {
     public int x;
     public TL_iv.pageBlockEmbedPost y;
 
-    public w1(Context context, z70 z70Var, i4 i4Var) {
+    public w1(Context context, d70 d70Var, j4 j4Var) {
         super(context);
-        this.a = z70Var;
-        this.b = i4Var;
+        this.a = d70Var;
+        this.b = j4Var;
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.c = imageReceiver;
         imageReceiver.setRoundRadius(AndroidUtilities.dp(20.0f));
         imageReceiver.setImageCoords(AndroidUtilities.dp(32.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(40.0f), AndroidUtilities.dp(40.0f));
-        this.d = new org.telegram.ui.Components.k9((org.telegram.ui.ActionBar.c6) null);
+        this.d = new org.telegram.ui.Components.h9((org.telegram.ui.ActionBar.d6) null);
     }
 
-    @Override // org.telegram.ui.Cells.n9
+    @Override // org.telegram.ui.Cells.m9
     public final void fillTextLayoutBlocks(ArrayList arrayList) {
         d3 d3Var = this.f;
         if (d3Var != null) {
@@ -116,7 +116,7 @@ public final class w1 extends View implements org.telegram.ui.Cells.n9 {
             return;
         }
         boolean z10 = pageblockembedpost instanceof z3;
-        z70 z70Var = this.a;
+        d70 d70Var = this.a;
         if (z10) {
             canvas2 = canvas;
         } else {
@@ -126,7 +126,7 @@ public final class w1 extends View implements org.telegram.ui.Cells.n9 {
             if (this.f != null) {
                 canvas.save();
                 canvas.translate(AndroidUtilities.dp((this.r ? 54 : 0) + 32), AndroidUtilities.dp(this.e != null ? 10.0f : 19.0f));
-                k4.v(z70Var, canvas, this, 0);
+                l4.v(d70Var, canvas, this, 0);
                 this.f.draw(canvas, this);
                 canvas.restore();
                 i10 = 1;
@@ -136,19 +136,19 @@ public final class w1 extends View implements org.telegram.ui.Cells.n9 {
             if (this.e != null) {
                 canvas.save();
                 canvas.translate(AndroidUtilities.dp((this.r ? 54 : 0) + 32), AndroidUtilities.dp(29.0f));
-                k4.v(z70Var, canvas, this, i10);
+                l4.v(d70Var, canvas, this, i10);
                 this.e.draw(canvas, this);
                 canvas.restore();
                 i10++;
             }
             canvas2 = canvas;
-            canvas2.drawRect(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(20.0f), this.x - (this.y.level == 0 ? AndroidUtilities.dp(6.0f) : 0), k4.q1);
+            canvas2.drawRect(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(20.0f), this.x - (this.y.level == 0 ? AndroidUtilities.dp(6.0f) : 0), l4.q1);
             r2 = i10;
         }
         if (this.h != null) {
             canvas2.save();
             canvas2.translate(this.s, this.v);
-            k4.v(z70Var, canvas2, this, r2);
+            l4.v(d70Var, canvas2, this, r2);
             this.h.draw(canvas2, this);
             canvas2.restore();
             r2++;
@@ -156,7 +156,7 @@ public final class w1 extends View implements org.telegram.ui.Cells.n9 {
         if (this.n != null) {
             canvas2.save();
             canvas2.translate(this.s, this.v + this.w);
-            k4.v(z70Var, canvas2, this, r2);
+            l4.v(d70Var, canvas2, this, r2);
             this.n.draw(canvas2, this);
             canvas2.restore();
         }
@@ -193,13 +193,13 @@ public final class w1 extends View implements org.telegram.ui.Cells.n9 {
         int i12 = 1;
         if (pageblockembedpost != null) {
             boolean z10 = pageblockembedpost instanceof z3;
-            i4 i4Var = this.b;
+            j4 j4Var = this.b;
             if (z10) {
                 this.s = AndroidUtilities.dp(18.0f);
                 this.v = AndroidUtilities.dp(4.0f);
                 int dp = size - AndroidUtilities.dp(50.0f);
                 TL_iv.pageBlockEmbedPost pageblockembedpost2 = this.y;
-                d3 q6 = k4.q(this.a, this, null, pageblockembedpost2.caption.text, dp, this.v, pageblockembedpost2, this.b);
+                d3 q6 = l4.q(this.a, this, null, pageblockembedpost2.caption.text, dp, this.v, pageblockembedpost2, this.b);
                 this.h = q6;
                 if (q6 != null) {
                     int height = this.h.d.getHeight() + AndroidUtilities.dp(4.0f);
@@ -207,7 +207,7 @@ public final class w1 extends View implements org.telegram.ui.Cells.n9 {
                     r13 = AndroidUtilities.dp(4.0f) + height;
                 }
                 TL_iv.pageBlockEmbedPost pageblockembedpost3 = this.y;
-                d3 p5 = k4.p(this.a, this, null, pageblockembedpost3.caption.credit, dp, 0, pageblockembedpost3, i4Var.G ? org.telegram.ui.Components.ix0.a() : Layout.Alignment.ALIGN_NORMAL, 0, this.b);
+                d3 p5 = l4.p(this.a, this, null, pageblockembedpost3.caption.credit, dp, 0, pageblockembedpost3, j4Var.G ? org.telegram.ui.Components.dx0.a() : Layout.Alignment.ALIGN_NORMAL, 0, this.b);
                 this.n = p5;
                 if (p5 != null) {
                     r13 += this.n.d.getHeight() + AndroidUtilities.dp(4.0f);
@@ -218,28 +218,28 @@ public final class w1 extends View implements org.telegram.ui.Cells.n9 {
                 boolean z11 = j10 != 0;
                 this.r = z11;
                 if (z11) {
-                    TLRPC.Photo e = h4.e(i4Var.E, j10);
+                    TLRPC.Photo e = h4.e(j4Var.E, j10);
                     boolean z12 = e instanceof TLRPC.TL_photo;
                     this.r = z12;
                     if (z12) {
                         String str = this.y.author;
-                        org.telegram.ui.Components.k9 k9Var = this.d;
-                        k9Var.n(0L, str, null);
-                        this.c.setImage(ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(e.sizes, AndroidUtilities.dp(40.0f), true), e), "40_40", k9Var, 0L, (String) null, i4Var.E, 1);
+                        org.telegram.ui.Components.h9 h9Var = this.d;
+                        h9Var.n(0L, str, null);
+                        this.c.setImage(ImageLocation.getForPhoto(FileLoader.getClosestPhotoSizeWithSize(e.sizes, AndroidUtilities.dp(40.0f), true), e), "40_40", h9Var, 0L, (String) null, j4Var.E, 1);
                     }
                 }
                 String str2 = this.y.author;
                 int dp2 = size - AndroidUtilities.dp((this.r ? 54 : 0) + 50);
                 TL_iv.pageBlockEmbedPost pageblockembedpost4 = this.y;
                 Layout.Alignment alignment = Layout.Alignment.ALIGN_NORMAL;
-                d3 p9 = k4.p(this.a, this, str2, null, dp2, 0, pageblockembedpost4, alignment, 1, this.b);
+                d3 p9 = l4.p(this.a, this, str2, null, dp2, 0, pageblockembedpost4, alignment, 1, this.b);
                 this.f = p9;
                 if (p9 != null) {
                     p9.s = AndroidUtilities.dp((this.r ? 54 : 0) + 32);
                     this.f.v = AndroidUtilities.dp(this.e != null ? 10.0f : 19.0f);
                 }
                 if (this.y.date != 0) {
-                    this.e = k4.q(this.a, this, LocaleController.getInstance().getChatFullDate().format(this.y.date * 1000), null, size - AndroidUtilities.dp((this.r ? 54 : 0) + 50), AndroidUtilities.dp(29.0f), this.y, this.b);
+                    this.e = l4.q(this.a, this, LocaleController.getInstance().getChatFullDate().format(this.y.date * 1000), null, size - AndroidUtilities.dp((this.r ? 54 : 0) + 50), AndroidUtilities.dp(29.0f), this.y, this.b);
                 } else {
                     this.e = null;
                 }
@@ -249,16 +249,16 @@ public final class w1 extends View implements org.telegram.ui.Cells.n9 {
                     this.v = AndroidUtilities.dp(56.0f);
                     int dp4 = size - AndroidUtilities.dp(50.0f);
                     TL_iv.pageBlockEmbedPost pageblockembedpost5 = this.y;
-                    d3 q10 = k4.q(this.a, this, null, pageblockembedpost5.caption.text, dp4, this.v, pageblockembedpost5, this.b);
+                    d3 q10 = l4.q(this.a, this, null, pageblockembedpost5.caption.text, dp4, this.v, pageblockembedpost5, this.b);
                     this.h = q10;
                     if (q10 != null) {
                         int height2 = this.h.d.getHeight() + AndroidUtilities.dp(4.0f);
                         this.w = height2;
-                        dp3 = org.telegram.messenger.g0.C(4.0f, height2, dp3);
+                        dp3 = org.telegram.messenger.q.C(4.0f, height2, dp3);
                     }
                     int i13 = dp3;
                     TL_iv.pageBlockEmbedPost pageblockembedpost6 = this.y;
-                    d3 p10 = k4.p(this.a, this, null, pageblockembedpost6.caption.credit, dp4, 0, pageblockembedpost6, i4Var.G ? org.telegram.ui.Components.ix0.a() : alignment, 0, this.b);
+                    d3 p10 = l4.p(this.a, this, null, pageblockembedpost6.caption.credit, dp4, 0, pageblockembedpost6, j4Var.G ? org.telegram.ui.Components.dx0.a() : alignment, 0, this.b);
                     this.n = p10;
                     dp3 = p10 != null ? this.n.d.getHeight() + AndroidUtilities.dp(4.0f) + i13 : i13;
                 } else {
@@ -289,10 +289,10 @@ public final class w1 extends View implements org.telegram.ui.Cells.n9 {
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (k4.l(this.a, this.b, motionEvent, this, this.h, this.s, this.v)) {
+        if (l4.l(this.a, this.b, motionEvent, this, this.h, this.s, this.v)) {
             return true;
         }
-        return k4.l(this.a, this.b, motionEvent, this, this.n, this.s, this.v + this.w) || super.onTouchEvent(motionEvent);
+        return l4.l(this.a, this.b, motionEvent, this, this.n, this.s, this.v + this.w) || super.onTouchEvent(motionEvent);
     }
 
     public void setBlock(TL_iv.pageBlockEmbedPost pageblockembedpost) {

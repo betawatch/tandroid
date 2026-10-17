@@ -1,37 +1,45 @@
 package ec;
 
-import java.nio.charset.Charset;
-import java.nio.charset.UnsupportedCharsetException;
+import com.google.android.gms.internal.cast.a6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public abstract class g {
-    public static final Charset a = Charset.defaultCharset();
-    public static final Charset b;
-    public static final Charset c;
-    public static final boolean d;
+public final class g {
+    public float a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public float g;
+    public float h;
+    public float i;
 
-    static {
-        Charset charset;
-        Charset charset2;
-        Charset charset3 = null;
-        try {
-            charset = Charset.forName("SJIS");
-        } catch (UnsupportedCharsetException unused) {
-            charset = null;
+    public g(float f7, float f10, float f11, float f12, float f13, float f14, float f15, float f16, float f17) {
+        this.a = f7;
+        this.b = f12;
+        this.c = f15;
+        this.d = f10;
+        this.e = f13;
+        this.f = f16;
+        this.g = f11;
+        this.h = f14;
+        this.i = f17;
+    }
+
+    public static g a(float f7, float f10, float f11, float f12, float f13, float f14, float f15, float f16) {
+        float f17 = ((f7 - f11) + f13) - f15;
+        float f18 = ((f10 - f12) + f14) - f16;
+        if (f17 == 0.0f && f18 == 0.0f) {
+            return new g(f11 - f7, f13 - f11, f7, f12 - f10, f14 - f12, f10, 0.0f, 0.0f, 1.0f);
         }
-        b = charset;
-        try {
-            charset2 = Charset.forName("GB2312");
-        } catch (UnsupportedCharsetException unused2) {
-            charset2 = null;
-        }
-        c = charset2;
-        try {
-            charset3 = Charset.forName("EUC_JP");
-        } catch (UnsupportedCharsetException unused3) {
-        }
-        Charset charset4 = b;
-        d = (charset4 != null && charset4.equals(a)) || (charset3 != null && charset3.equals(a));
+        float f19 = f11 - f13;
+        float f20 = f15 - f13;
+        float f21 = f12 - f14;
+        float f22 = f16 - f14;
+        float f23 = (f19 * f22) - (f20 * f21);
+        float c10 = a6.c(f20, f18, f22 * f17, f23);
+        float c11 = a6.c(f17, f21, f19 * f18, f23);
+        return new g((c10 * f11) + (f11 - f7), (c11 * f15) + (f15 - f7), f7, (c10 * f12) + (f12 - f10), (c11 * f16) + (f16 - f10), f10, c10, c11, 1.0f);
     }
 }

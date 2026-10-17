@@ -9,9 +9,9 @@ import c6.e0;
 import com.google.android.gms.cast.CastDevice;
 import java.util.HashSet;
 import java.util.Iterator;
-import org.telegram.ui.ps0;
+import org.telegram.ui.hk0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class j extends b8.b {
     public final /* synthetic */ int b = 2;
@@ -34,16 +34,16 @@ public final class j extends b8.b {
         int i13 = 0;
         switch (i11) {
             case 0:
-                ps0 ps0Var = (ps0) obj;
+                hk0 hk0Var = (hk0) obj;
                 if (i10 == 1) {
-                    x6.b bVar = new x6.b(ps0Var);
+                    x6.b bVar = new x6.b(hk0Var);
                     parcel2.writeNoException();
                     com.google.android.gms.internal.cast.v.d(parcel2, bVar);
                     break;
                 } else if (i10 == 2) {
                     int readInt = parcel.readInt();
                     com.google.android.gms.internal.cast.v.b(parcel);
-                    ps0Var.getClass();
+                    hk0Var.getClass();
                     Log.d("CAST_STATE", "onCastStateChanged " + readInt);
                     parcel2.writeNoException();
                     break;
@@ -177,17 +177,16 @@ public final class j extends b8.b {
                 }
             case 3:
                 c cVar4 = (c) obj;
-                int i17 = 13;
                 if (i10 == 1) {
                     String readString2 = parcel.readString();
                     String readString3 = parcel.readString();
                     com.google.android.gms.internal.cast.v.b(parcel);
                     e0 e0Var = cVar4.i;
                     if (e0Var != null && e0Var.F == 2) {
-                        com.google.android.gms.common.api.internal.v b11 = com.google.android.gms.common.api.internal.w.b();
+                        com.google.android.gms.common.api.internal.u b11 = com.google.android.gms.common.api.internal.v.b();
                         b11.c = new c6.b0(e0Var, readString2, readString3, i13);
                         b11.a = 8407;
-                        e0Var.e(1, b11.a()).addOnCompleteListener(new ya.c(this, i17));
+                        e0Var.e(1, b11.a()).addOnCompleteListener(new a6.i(this, 14));
                     }
                     parcel2.writeNoException();
                     break;
@@ -197,10 +196,10 @@ public final class j extends b8.b {
                     com.google.android.gms.internal.cast.v.b(parcel);
                     e0 e0Var2 = cVar4.i;
                     if (e0Var2 != null && e0Var2.F == 2) {
-                        com.google.android.gms.common.api.internal.v b12 = com.google.android.gms.common.api.internal.w.b();
+                        com.google.android.gms.common.api.internal.u b12 = com.google.android.gms.common.api.internal.v.b();
                         b12.c = new androidx.biometric.e(e0Var2, readString4, iVar, i12);
                         b12.a = 8406;
-                        e0Var2.e(1, b12.a()).addOnCompleteListener(new a6.m(this, i17));
+                        e0Var2.e(1, b12.a()).addOnCompleteListener(new ya.c(this, 13));
                     }
                     parcel2.writeNoException();
                     break;
@@ -209,8 +208,8 @@ public final class j extends b8.b {
                     com.google.android.gms.internal.cast.v.b(parcel);
                     e0 e0Var3 = cVar4.i;
                     if (e0Var3 != null && e0Var3.F == 2) {
-                        com.google.android.gms.common.api.internal.v b13 = com.google.android.gms.common.api.internal.w.b();
-                        b13.c = new qf.b(11, e0Var3, readString5);
+                        com.google.android.gms.common.api.internal.u b13 = com.google.android.gms.common.api.internal.v.b();
+                        b13.c = new n4.s(11, e0Var3, readString5);
                         b13.a = 8409;
                         e0Var3.e(1, b13.a());
                     }
@@ -229,7 +228,6 @@ public final class j extends b8.b {
                 } else {
                     break;
                 }
-                break;
             default:
                 if (i10 == 1) {
                     long readLong = parcel.readLong();
@@ -267,8 +265,8 @@ public final class j extends b8.b {
         this.c = bVar;
     }
 
-    public j(ps0 ps0Var) {
+    public j(hk0 hk0Var) {
         super("com.google.android.gms.cast.framework.ICastStateListener", 1);
-        this.c = ps0Var;
+        this.c = hk0Var;
     }
 }

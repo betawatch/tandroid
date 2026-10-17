@@ -1,129 +1,117 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import java.util.Locale;
-import org.telegram.messenger.BillingController;
-import org.telegram.messenger.BuildVars;
+import android.os.Bundle;
+import android.view.View;
+import java.util.HashSet;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class rx0 {
-    public final TLRPC.TL_premiumSubscriptionOption a;
-    public int b;
-    public long c;
-    public long d;
-    public long e;
-    public c5.p f;
-    public c5.o g;
-    public int h;
+public final /* synthetic */ class rx0 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ProfileActivity b;
 
-    public rx0(TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption) {
-        this.a = tL_premiumSubscriptionOption;
+    public /* synthetic */ rx0(ProfileActivity profileActivity, int i10) {
+        this.a = i10;
+        this.b = profileActivity;
     }
 
-    public final void a() {
-        c5.p pVar = this.f;
-        if (pVar != null && this.g == null) {
-            ArrayList arrayList = pVar.h;
-            int size = arrayList.size();
-            int i10 = 0;
-            while (i10 < size) {
-                Object obj = arrayList.get(i10);
-                i10++;
-                c5.o oVar = (c5.o) obj;
-                String str = ((c5.m) oVar.b.a.get(0)).d;
-                int i11 = this.a.months;
-                if (i11 != 12) {
-                    Locale locale = Locale.ROOT;
-                    if (str.equals("P" + i11 + "M")) {
-                        this.g = oVar;
-                        return;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i10 = this.a;
+        ProfileActivity profileActivity = this.b;
+        switch (i10) {
+            case 0:
+                ProfileActivity.c0(profileActivity);
+                break;
+            case 1:
+                if (profileActivity.v.getTag() == null) {
+                    profileActivity.u4();
+                    break;
+                }
+                break;
+            case 2:
+                profileActivity.finishPreviewFragment();
+                break;
+            case 3:
+                profileActivity.R4();
+                break;
+            case 4:
+                TLRPC.UserFull userFull = profileActivity.w2;
+                if (userFull != null && userFull.wallet_card != null && profileActivity.getParentActivity() != null) {
+                    profileActivity.showDialog(new org.telegram.ui.Wallet.x2(profileActivity, profileActivity.d0, profileActivity.getMessagesController().getUser(Long.valueOf(profileActivity.f1)), profileActivity.w2.wallet_card));
+                    break;
+                }
+                break;
+            case 5:
+                ProfileActivity.f0(profileActivity);
+                break;
+            case 6:
+                profileActivity.getClass();
+                Bundle bundle = new Bundle();
+                bundle.putLong("chat_id", profileActivity.g1);
+                bundle.putLong("user_id", profileActivity.f1);
+                profileActivity.presentFragment(new zh.m0(bundle));
+                break;
+            case 7:
+                ProfileActivity.g0(profileActivity);
+                break;
+            case 8:
+                profileActivity.Q4();
+                break;
+            case 9:
+                profileActivity.Q4();
+                break;
+            case 10:
+                if (profileActivity.getParentLayout() != null && profileActivity.getParentLayout().getFragmentStack() != null) {
+                    int i11 = 0;
+                    while (i11 < profileActivity.getParentLayout().getFragmentStack().size()) {
+                        org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) profileActivity.getParentLayout().getFragmentStack().get(i11);
+                        if (n2Var instanceof ey) {
+                            ey eyVar = (ey) n2Var;
+                            yw ywVar = eyVar.G3;
+                            if (ywVar != null) {
+                                org.telegram.ui.ActionBar.n2 fragment = ywVar.getFragment();
+                                if ((fragment instanceof te1) && (-((te1) fragment).a) == profileActivity.a()) {
+                                    eyVar.G3.a();
+                                }
+                            }
+                        } else if (n2Var instanceof sn) {
+                            if (((sn) n2Var).a() == profileActivity.a()) {
+                                ((ActionBarLayout) profileActivity.getParentLayout()).a0(n2Var, false);
+                                i11--;
+                            }
+                        } else if (n2Var instanceof te1) {
+                            if ((-((te1) n2Var).a) == profileActivity.a()) {
+                                ((ActionBarLayout) profileActivity.getParentLayout()).a0(n2Var, false);
+                                i11--;
+                            }
+                        } else if ((n2Var instanceof ProfileActivity) && n2Var != profileActivity) {
+                            ProfileActivity profileActivity2 = (ProfileActivity) n2Var;
+                            if (profileActivity2.a() == profileActivity.a() && profileActivity2.r1) {
+                                ((ActionBarLayout) profileActivity.getParentLayout()).a0(n2Var, false);
+                                i11--;
+                            }
+                        }
+                        i11++;
                     }
-                } else if (str.equals("P1Y")) {
-                    this.g = oVar;
-                    return;
                 }
-            }
+                profileActivity.K1 = 0;
+                Bundle bundle2 = new Bundle();
+                bundle2.putLong("chat_id", profileActivity.g1);
+                HashSet hashSet = te1.n1;
+                profileActivity.presentFragment(te1.E0(profileActivity.getMessagesController(), profileActivity.getMessagesStorage(), bundle2));
+                break;
+            case 11:
+                ProfileActivity.U(profileActivity);
+                break;
+            case 12:
+                profileActivity.t4(view);
+                break;
+            default:
+                profileActivity.t4(view);
+                break;
         }
-    }
-
-    public final String b() {
-        boolean useInvoiceBilling = BuildVars.useInvoiceBilling();
-        TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption = this.a;
-        if (useInvoiceBilling || tL_premiumSubscriptionOption.store_product == null) {
-            return tL_premiumSubscriptionOption.currency;
-        }
-        if (this.f == null) {
-            return "";
-        }
-        a();
-        c5.o oVar = this.g;
-        return oVar == null ? "" : ((c5.m) oVar.b.a.get(0)).c;
-    }
-
-    public final int c() {
-        if (this.b == 0) {
-            if (h() == 0) {
-                return 0;
-            }
-            if (this.e != 0) {
-                int i10 = (int) ((1.0d - (i() / this.e)) * 100.0d);
-                this.b = i10;
-                if (i10 == 0) {
-                    this.b = -1;
-                }
-            }
-        }
-        return this.b;
-    }
-
-    public final String d() {
-        return (BuildVars.useInvoiceBilling() || this.a.store_product == null) ? BillingController.getInstance().formatCurrency(g(), b()) : this.f == null ? "" : BillingController.getInstance().formatCurrency(g(), b(), 6);
-    }
-
-    public final String e() {
-        return (BuildVars.useInvoiceBilling() || this.a.store_product == null) ? BillingController.getInstance().formatCurrency(h(), b()) : this.f == null ? "" : BillingController.getInstance().formatCurrency(h(), b(), 6);
-    }
-
-    public final String f() {
-        return (BuildVars.useInvoiceBilling() || this.a.store_product == null) ? BillingController.getInstance().formatCurrency(i(), b()) : this.f == null ? "" : BillingController.getInstance().formatCurrency(i(), b(), 6);
-    }
-
-    public final long g() {
-        boolean useInvoiceBilling = BuildVars.useInvoiceBilling();
-        TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption = this.a;
-        if (useInvoiceBilling || tL_premiumSubscriptionOption.store_product == null) {
-            return tL_premiumSubscriptionOption.amount;
-        }
-        if (this.f == null) {
-            return 0L;
-        }
-        a();
-        c5.o oVar = this.g;
-        if (oVar == null) {
-            return 0L;
-        }
-        return ((c5.m) oVar.b.a.get(0)).b;
-    }
-
-    public final long h() {
-        if (this.c == 0) {
-            long g10 = g();
-            if (g10 != 0) {
-                this.c = g10 / this.a.months;
-            }
-        }
-        return this.c;
-    }
-
-    public final long i() {
-        if (this.d == 0) {
-            long g10 = g();
-            if (g10 != 0) {
-                this.d = (long) ((g10 / this.a.months) * 12.0d);
-            }
-        }
-        return this.d;
     }
 }

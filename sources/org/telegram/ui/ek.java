@@ -1,25 +1,34 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
+import android.content.Context;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class ek extends g.o {
-    public final /* synthetic */ fo c;
+public final class ek extends org.telegram.ui.Components.dp {
+    public final /* synthetic */ sn f;
 
-    public ek(fo foVar) {
-        this.c = foVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ek(sn snVar, Context context) {
+        super(context);
+        this.f = snVar;
     }
 
-    @Override // g.o
-    public final int i(int i10) {
-        int i11;
-        MessageObject messageObject;
-        MessageObject.GroupedMessages c92;
-        fo foVar = this.c;
-        rm rmVar = foVar.A0;
-        int i12 = rmVar.J;
-        return (i10 < i12 || i10 >= rmVar.K || (i11 = i10 - i12) < 0 || i11 >= rmVar.L().size() || (c92 = foVar.c9((messageObject = (MessageObject) foVar.A0.L().get(i11)))) == null) ? MediaDataController.MAX_STYLE_RUNS_COUNT : c92.getPosition(messageObject).spanSize;
+    @Override // org.telegram.ui.Components.dp
+    public final void a(boolean z10) {
+        sn snVar = this.f;
+        snVar.w7();
+        snVar.u7();
+        snVar.x7();
+        snVar.y7();
+        xk xkVar = snVar.bb;
+        if (xkVar != null) {
+            xkVar.setTranslationY(snVar.w9 + getCurrentHeight());
+        }
+        if (!z10) {
+            snVar.t9();
+        } else {
+            snVar.D9 = true;
+            snVar.nc();
+        }
     }
 }

@@ -2,205 +2,76 @@ package m;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
-import android.content.res.Resources;
-import android.content.res.TypedArray;
 import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
-import android.os.Bundle;
-import android.os.Parcelable;
-import android.util.AttributeSet;
-import android.widget.CompoundButton;
-import android.widget.TextView;
-import java.util.Iterator;
-import java.util.Map;
-import v7.q7;
+import android.graphics.drawable.LayerDrawable;
+import android.os.Build;
+import android.util.Log;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class r {
-    public Parcelable a;
-    public Object b;
-    public boolean c;
-    public boolean d;
-    public boolean e;
-    public final Object f;
+    public static final PorterDuff.Mode b = PorterDuff.Mode.SRC_IN;
+    public static r c;
+    public n2 a;
 
-    public /* synthetic */ r(TextView textView) {
-        this.a = null;
-        this.b = null;
-        this.c = false;
-        this.d = false;
-        this.f = textView;
+    public static synchronized r a() {
+        r rVar;
+        synchronized (r.class) {
+            try {
+                if (c == null) {
+                    c();
+                }
+                rVar = c;
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        return rVar;
     }
 
-    public void a() {
-        CompoundButton compoundButton = (CompoundButton) this.f;
-        Drawable buttonDrawable = compoundButton.getButtonDrawable();
-        if (buttonDrawable != null) {
-            if (this.c || this.d) {
-                Drawable mutate = buttonDrawable.mutate();
-                if (this.c) {
-                    mutate.setTintList((ColorStateList) this.a);
-                }
-                if (this.d) {
-                    mutate.setTintMode((PorterDuff.Mode) this.b);
-                }
-                if (mutate.isStateful()) {
-                    mutate.setState(compoundButton.getDrawableState());
-                }
-                compoundButton.setButtonDrawable(mutate);
+    public static synchronized void c() {
+        synchronized (r.class) {
+            if (c == null) {
+                r rVar = new r();
+                c = rVar;
+                rVar.a = n2.d();
+                c.a.l(new com.google.firebase.messaging.l(3));
             }
         }
     }
 
-    public void b() {
-        q qVar = (q) this.f;
-        Drawable checkMarkDrawable = qVar.getCheckMarkDrawable();
-        if (checkMarkDrawable != null) {
-            if (this.c || this.d) {
-                Drawable mutate = checkMarkDrawable.mutate();
-                if (this.c) {
-                    mutate.setTintList((ColorStateList) this.a);
-                }
-                if (this.d) {
-                    mutate.setTintMode((PorterDuff.Mode) this.b);
-                }
-                if (mutate.isStateful()) {
-                    mutate.setState(qVar.getDrawableState());
-                }
-                qVar.setCheckMarkDrawable(mutate);
-            }
+    public static void d(Drawable drawable, e3 e3Var, int[] iArr) {
+        PorterDuff.Mode mode = n2.h;
+        int[] state = drawable.getState();
+        int[] iArr2 = m1.a;
+        if (drawable.mutate() != drawable) {
+            Log.d("ResourceManagerInternal", "Mutated drawable is not the same instance as the input.");
+            return;
         }
-    }
-
-    public Bundle c(String str) {
-        if (!this.d) {
-            throw new IllegalStateException("You can consumeRestoredStateForKey only after super.onCreate of corresponding component");
+        if ((drawable instanceof LayerDrawable) && drawable.isStateful()) {
+            drawable.setState(new int[0]);
+            drawable.setState(state);
         }
-        Bundle bundle = (Bundle) this.a;
-        if (bundle == null) {
-            return null;
-        }
-        Bundle bundle2 = bundle.getBundle(str);
-        Bundle bundle3 = (Bundle) this.a;
-        if (bundle3 != null) {
-            bundle3.remove(str);
-        }
-        Bundle bundle4 = (Bundle) this.a;
-        if (bundle4 != null && !bundle4.isEmpty()) {
-            return bundle2;
-        }
-        this.a = null;
-        return bundle2;
-    }
-
-    public t4.d d() {
-        String str;
-        t4.d dVar;
-        Iterator it = ((o.f) this.f).iterator();
-        do {
-            o.b bVar = (o.b) it;
-            if (!bVar.hasNext()) {
-                return null;
+        boolean z10 = e3Var.b;
+        if (z10 || e3Var.a) {
+            PorterDuffColorFilter porterDuffColorFilter = null;
+            ColorStateList colorStateList = z10 ? (ColorStateList) e3Var.c : null;
+            PorterDuff.Mode mode2 = e3Var.a ? (PorterDuff.Mode) e3Var.d : n2.h;
+            if (colorStateList != null && mode2 != null) {
+                porterDuffColorFilter = n2.h(colorStateList.getColorForState(iArr, 0), mode2);
             }
-            Map.Entry components = (Map.Entry) bVar.next();
-            kotlin.jvm.internal.i.d(components, "components");
-            str = (String) components.getKey();
-            dVar = (t4.d) components.getValue();
-        } while (!kotlin.jvm.internal.i.a(str, "androidx.lifecycle.internal.SavedStateHandlesProvider"));
-        return dVar;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:11:0x005c A[Catch: all -> 0x003b, TryCatch #1 {all -> 0x003b, blocks: (B:3:0x0022, B:5:0x0029, B:8:0x002f, B:9:0x0055, B:11:0x005c, B:12:0x0063, B:14:0x006a, B:21:0x003e, B:23:0x0044, B:25:0x004a), top: B:2:0x0022 }] */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x006a A[Catch: all -> 0x003b, TRY_LEAVE, TryCatch #1 {all -> 0x003b, blocks: (B:3:0x0022, B:5:0x0029, B:8:0x002f, B:9:0x0055, B:11:0x005c, B:12:0x0063, B:14:0x006a, B:21:0x003e, B:23:0x0044, B:25:0x004a), top: B:2:0x0022 }] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void e(AttributeSet attributeSet, int i10) {
-        int resourceId;
-        int resourceId2;
-        CompoundButton compoundButton = (CompoundButton) this.f;
-        Context context = compoundButton.getContext();
-        int[] iArr = f.a.m;
-        h3 P = h3.P(context, attributeSet, iArr, i10);
-        TypedArray typedArray = (TypedArray) P.c;
-        r0.i0.i(compoundButton, compoundButton.getContext(), iArr, attributeSet, (TypedArray) P.c, i10);
-        try {
-            if (typedArray.hasValue(1) && (resourceId2 = typedArray.getResourceId(1, 0)) != 0) {
-                try {
-                    compoundButton.setButtonDrawable(q7.b(compoundButton.getContext(), resourceId2));
-                } catch (Resources.NotFoundException unused) {
-                }
-                if (typedArray.hasValue(2)) {
-                    compoundButton.setButtonTintList(P.E(2));
-                }
-                if (typedArray.hasValue(3)) {
-                    compoundButton.setButtonTintMode(n1.b(typedArray.getInt(3, -1), null));
-                }
-                P.Q();
-            }
-            if (typedArray.hasValue(0) && (resourceId = typedArray.getResourceId(0, 0)) != 0) {
-                compoundButton.setButtonDrawable(q7.b(compoundButton.getContext(), resourceId));
-            }
-            if (typedArray.hasValue(2)) {
-            }
-            if (typedArray.hasValue(3)) {
-            }
-            P.Q();
-        } catch (Throwable th2) {
-            P.Q();
-            throw th2;
-        }
-    }
-
-    public void f(String str, t4.d provider) {
-        Object obj;
-        kotlin.jvm.internal.i.e(provider, "provider");
-        o.f fVar = (o.f) this.f;
-        o.c h = fVar.h(str);
-        if (h != null) {
-            obj = h.b;
+            drawable.setColorFilter(porterDuffColorFilter);
         } else {
-            o.c cVar = new o.c(str, provider);
-            fVar.d++;
-            o.c cVar2 = fVar.b;
-            if (cVar2 == null) {
-                fVar.a = cVar;
-                fVar.b = cVar;
-            } else {
-                cVar2.c = cVar;
-                cVar.d = cVar2;
-                fVar.b = cVar;
-            }
-            obj = null;
+            drawable.clearColorFilter();
         }
-        if (((t4.d) obj) != null) {
-            throw new IllegalArgumentException("SavedStateProvider with the given key is already registered");
+        if (Build.VERSION.SDK_INT <= 23) {
+            drawable.invalidateSelf();
         }
     }
 
-    public void g() {
-        if (!this.e) {
-            throw new IllegalStateException("Can not perform this action after onSaveInstanceState");
-        }
-        t4.a aVar = (t4.a) this.b;
-        if (aVar == null) {
-            aVar = new t4.a(this);
-        }
-        this.b = aVar;
-        try {
-            androidx.lifecycle.j.class.getDeclaredConstructor(null);
-            t4.a aVar2 = (t4.a) this.b;
-            if (aVar2 != null) {
-                aVar2.a.add(androidx.lifecycle.j.class.getName());
-            }
-        } catch (NoSuchMethodException e) {
-            throw new IllegalArgumentException("Class " + androidx.lifecycle.j.class.getSimpleName() + " must have default constructor in order to be automatically recreated", e);
-        }
-    }
-
-    public r() {
-        this.f = new o.f();
-        this.e = true;
+    public final synchronized Drawable b(Context context, int i10) {
+        return this.a.g(context, i10);
     }
 }

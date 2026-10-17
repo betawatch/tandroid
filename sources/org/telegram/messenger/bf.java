@@ -1,32 +1,28 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class bf implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ Utilities.Callback c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ long e;
+    public final /* synthetic */ MessagesStorage.IntCallback b;
+    public final /* synthetic */ int[] c;
 
-    public /* synthetic */ bf(MessagesStorage messagesStorage, Utilities.Callback callback, long j10, long j11, int i10) {
+    public /* synthetic */ bf(MessagesStorage.IntCallback intCallback, int[] iArr, int i10) {
         this.a = i10;
-        this.b = messagesStorage;
-        this.c = callback;
-        this.d = j10;
-        this.e = j11;
+        this.b = intCallback;
+        this.c = iArr;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$getEphemeralMessages$208(this.c, this.d, this.e);
+                MessagesStorage.lambda$getDialogMaxMessageId$254(this.b, this.c);
                 break;
             default:
-                this.b.lambda$getEphemeralMessages$207(this.c, this.d, this.e);
+                MessagesStorage.lambda$getSavedDialogMaxMessageId$52(this.b, this.c);
                 break;
         }
     }

@@ -1,17 +1,27 @@
 package com.google.android.gms.internal.play_billing;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class v3 extends v1 {
     private static final v3 zzb;
     private int zzd;
-    private int zze;
+    private z1 zze = r2.e;
     private String zzf = "";
+    private boolean zzg;
 
     static {
         v3 v3Var = new v3();
         zzb = v3Var;
         v1.k(v3.class, v3Var);
+    }
+
+    public static /* synthetic */ void n(v3 v3Var, boolean z10) {
+        v3Var.zzd |= 2;
+        v3Var.zzg = z10;
+    }
+
+    public static v3 o() {
+        return zzb;
     }
 
     @Override // com.google.android.gms.internal.play_billing.v1
@@ -21,13 +31,13 @@ public final class v3 extends v1 {
             return (byte) 1;
         }
         if (i11 == 2) {
-            return new s2(zzb, "\u0004\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001᠌\u0000\u0002ဈ\u0001", new Object[]{"zzd", "zze", d1.h, "zzf"});
+            return new s2(zzb, "\u0004\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0001\u0000\u0001\u001b\u0002ဈ\u0000\u0003ဇ\u0001", new Object[]{"zzd", "zze", u3.class, "zzf", "zzg"});
         }
         if (i11 == 3) {
             return new v3();
         }
         if (i11 == 4) {
-            return new y0(zzb);
+            return new t3(zzb);
         }
         if (i11 == 5) {
             return zzb;

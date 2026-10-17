@@ -3,7 +3,7 @@ package q4;
 import android.graphics.Color;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class d {
     public final int a;
@@ -29,23 +29,23 @@ public final class d {
             return;
         }
         int i10 = this.d;
-        int g10 = i0.a.g(4.5f, -1, i10);
-        int g11 = i0.a.g(3.0f, -1, i10);
-        if (g10 != -1 && g11 != -1) {
-            this.h = i0.a.k(-1, g10);
-            this.g = i0.a.k(-1, g11);
+        int i11 = i0.b.i(4.5f, -1, i10);
+        int i12 = i0.b.i(3.0f, -1, i10);
+        if (i11 != -1 && i12 != -1) {
+            this.h = i0.b.o(-1, i11);
+            this.g = i0.b.o(-1, i12);
             this.f = true;
             return;
         }
-        int g12 = i0.a.g(4.5f, -16777216, i10);
-        int g13 = i0.a.g(3.0f, -16777216, i10);
-        if (g12 == -1 || g13 == -1) {
-            this.h = g10 != -1 ? i0.a.k(-1, g10) : i0.a.k(-16777216, g12);
-            this.g = g11 != -1 ? i0.a.k(-1, g11) : i0.a.k(-16777216, g13);
+        int i13 = i0.b.i(4.5f, -16777216, i10);
+        int i14 = i0.b.i(3.0f, -16777216, i10);
+        if (i13 == -1 || i14 == -1) {
+            this.h = i11 != -1 ? i0.b.o(-1, i11) : i0.b.o(-16777216, i13);
+            this.g = i12 != -1 ? i0.b.o(-1, i12) : i0.b.o(-16777216, i14);
             this.f = true;
         } else {
-            this.h = i0.a.k(-16777216, g12);
-            this.g = i0.a.k(-16777216, g13);
+            this.h = i0.b.o(-16777216, i13);
+            this.g = i0.b.o(-16777216, i14);
             this.f = true;
         }
     }
@@ -54,7 +54,7 @@ public final class d {
         if (this.i == null) {
             this.i = new float[3];
         }
-        i0.a.b(this.i, this.a, this.b, this.c);
+        i0.b.c(this.i, this.a, this.b, this.c);
         return this.i;
     }
 

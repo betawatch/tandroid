@@ -16,7 +16,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import v7.r7;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class q extends o6.a {
     public static final Parcelable.Creator<q> CREATOR;
@@ -890,9 +890,9 @@ public final class q extends o6.a {
                             } else if (num.intValue() != this.c || (mediaInfo = this.a) == null) {
                                 arrayList7.add(new o(jSONObject6));
                             } else {
-                                o E = new a6.m(mediaInfo).E();
-                                E.b(jSONObject6);
-                                arrayList7.add(E);
+                                o j18 = new a6.i(mediaInfo).j();
+                                j18.b(jSONObject6);
+                                arrayList7.add(j18);
                             }
                             i13 = i41;
                             i40++;

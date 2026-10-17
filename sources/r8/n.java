@@ -1,5 +1,6 @@
 package r8;
 
+import ai.c1;
 import android.graphics.Bitmap;
 import android.os.Parcel;
 import android.os.RemoteException;
@@ -9,31 +10,31 @@ import com.google.android.gms.internal.vision.d3;
 import com.google.android.gms.internal.vision.f3;
 import com.google.android.gms.internal.vision.t2;
 import java.nio.ByteBuffer;
-import m.h3;
+import m.g3;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class n extends b2.h {
+public final class n extends c1 {
     public final t2 b;
 
     public n(t2 t2Var) {
-        super(3);
+        super(4);
         this.b = t2Var;
     }
 
-    @Override // b2.h
+    @Override // ai.c1
     public final void X0() {
         super.X0();
         this.b.l();
     }
 
-    public final SparseArray e1(h3 h3Var) {
+    public final SparseArray e1(g3 g3Var) {
         m[] mVarArr;
-        if (h3Var == null) {
+        if (g3Var == null) {
             throw new IllegalArgumentException("No frame supplied.");
         }
-        f3 b10 = f3.b(h3Var);
-        Bitmap bitmap = (Bitmap) h3Var.d;
+        f3 b10 = f3.b(g3Var);
+        Bitmap bitmap = (Bitmap) g3Var.d;
         t2 t2Var = this.b;
         if (bitmap != null) {
             if (t2Var.k()) {
@@ -60,7 +61,7 @@ public final class n extends b2.h {
                 throw new IllegalArgumentException("Internal barcode detector error; check logcat output.");
             }
         } else {
-            ByteBuffer I = h3Var.I();
+            ByteBuffer I = g3Var.I();
             n6.l.h(I);
             if (t2Var.k()) {
                 try {

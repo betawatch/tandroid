@@ -13,8 +13,9 @@ import e9.x1;
 import j$.util.Objects;
 import java.util.List;
 import v7.b8;
+import v7.c9;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class b {
     public static final x1 e;
@@ -42,7 +43,7 @@ public final class b {
         aVar.x(6, 8);
         aVar.x(8, 8);
         aVar.x(14, 8);
-        h = aVar.e(true);
+        h = aVar.d(true);
     }
 
     public b(x1 x1Var, List list, List list2) {
@@ -87,7 +88,7 @@ public final class b {
             return g0.a.c(e7, fVar, b10, list);
         }
         for (AudioDeviceInfo audioDeviceInfo2 : audioDeviceInfo == null ? e7.getDevices(2) : new AudioDeviceInfo[]{audioDeviceInfo}) {
-            if (w7.i.a(audioDeviceInfo2.getType())) {
+            if (c9.a(audioDeviceInfo2.getType())) {
                 return new b(e9.n0.y(a.d), b10, list);
             }
         }
@@ -132,11 +133,11 @@ public final class b {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Pair c(b2.f fVar, b2.x xVar) {
+    public final Pair c(b2.f fVar, b2.w wVar) {
         int t10;
-        String str = xVar.s;
+        String str = wVar.s;
         str.getClass();
-        int c10 = b2.w0.c(str, xVar.k);
+        int c10 = b2.v0.c(str, wVar.k);
         Integer valueOf = Integer.valueOf(c10);
         e9.q0 q0Var = h;
         if (!q0Var.containsKey(valueOf)) {
@@ -156,10 +157,10 @@ public final class b {
         aVar.getClass();
         int i11 = aVar.b;
         e9.y0 y0Var = aVar.c;
-        int i12 = xVar.K;
+        int i12 = wVar.K;
         boolean z10 = false;
         if (i12 == -1 || c10 == 18) {
-            int i13 = xVar.L;
+            int i13 = wVar.L;
             if (i13 == -1) {
                 i13 = 48000;
             }
@@ -173,7 +174,7 @@ public final class b {
                 }
             }
             i12 = i11;
-        } else if (!xVar.s.equals("audio/vnd.dts.uhd;profile=p2") || Build.VERSION.SDK_INT >= 33) {
+        } else if (!wVar.s.equals("audio/vnd.dts.uhd;profile=p2") || Build.VERSION.SDK_INT >= 33) {
             if (y0Var != null) {
                 int t11 = e2.m0.t(i12);
                 if (t11 != 0) {

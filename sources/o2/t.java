@@ -1,10 +1,10 @@
 package o2;
 
 import android.text.TextUtils;
-import b2.w;
+import b2.v;
+import b2.v0;
 import b2.w0;
-import b2.x0;
-import c3.i0;
+import c3.j0;
 import e2.k0;
 import e2.m0;
 import e2.x;
@@ -18,24 +18,24 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class t implements c3.o {
     public static final Pattern i = Pattern.compile("LOCAL:([^,]+)");
     public static final Pattern j = Pattern.compile("MPEGTS:(-?\\d+)");
     public final String a;
     public final k0 b;
-    public final z3.l d;
+    public final z3.k d;
     public final boolean e;
     public c3.q f;
     public int h;
     public final x c = new x();
     public byte[] g = new byte[1024];
 
-    public t(String str, k0 k0Var, z3.l lVar, boolean z10) {
+    public t(String str, k0 k0Var, z3.k kVar, boolean z10) {
         this.a = str;
         this.b = k0Var;
-        this.d = lVar;
+        this.d = kVar;
         this.e = z10;
     }
 
@@ -60,7 +60,7 @@ public final class t implements c3.o {
             qVar = new c2.b(qVar, this.d);
         }
         this.f = qVar;
-        qVar.K(new c3.t(-9223372036854775807L));
+        qVar.g0(new c3.t(-9223372036854775807L));
     }
 
     @Override // c3.o
@@ -130,7 +130,7 @@ public final class t implements c3.o {
                 long c10 = i4.i.c(group);
                 String str = m0.a;
                 long b10 = this.b.b(m0.a0((j10 + c10) - j11, 90000L, 1000000L, RoundingMode.DOWN) % 8589934592L);
-                i0 g10 = g(b10 - c10);
+                j0 g10 = g(b10 - c10);
                 byte[] bArr3 = this.g;
                 int i13 = this.h;
                 x xVar2 = this.c;
@@ -142,11 +142,11 @@ public final class t implements c3.o {
             if (n11.startsWith("X-TIMESTAMP-MAP")) {
                 Matcher matcher3 = i.matcher(n11);
                 if (!matcher3.find()) {
-                    throw x0.a(null, "X-TIMESTAMP-MAP doesn't contain local timestamp: ".concat(n11));
+                    throw w0.a(null, "X-TIMESTAMP-MAP doesn't contain local timestamp: ".concat(n11));
                 }
                 Matcher matcher4 = j.matcher(n11);
                 if (!matcher4.find()) {
-                    throw x0.a(null, "X-TIMESTAMP-MAP doesn't contain media timestamp: ".concat(n11));
+                    throw w0.a(null, "X-TIMESTAMP-MAP doesn't contain media timestamp: ".concat(n11));
                 }
                 String group2 = matcher3.group(1);
                 group2.getClass();
@@ -161,15 +161,15 @@ public final class t implements c3.o {
         }
     }
 
-    public final i0 g(long j10) {
-        i0 W = this.f.W(0, 3);
-        w wVar = new w();
-        wVar.r = w0.n("text/vtt");
-        wVar.d = this.a;
-        wVar.w = j10;
-        i2.d.u(wVar, W);
-        this.f.D();
-        return W;
+    public final j0 g(long j10) {
+        j0 j02 = this.f.j0(0, 3);
+        v vVar = new v();
+        vVar.r = v0.n("text/vtt");
+        vVar.d = this.a;
+        vVar.w = j10;
+        i0.a.u(vVar, j02);
+        this.f.H();
+        return j02;
     }
 
     @Override // c3.o

@@ -1,71 +1,164 @@
 package org.telegram.ui.Components;
 
-import android.os.Bundle;
+import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public abstract class g10 extends dp0 {
-    public final boolean d;
+public final class g10 extends FrameLayout {
+    public ValueAnimator E;
+    public dq F;
+    public Paint a;
+    public p6 b;
+    public p6 c;
+    public float d;
+    public f6 e;
+    public View f;
+    public float h;
+    public boolean n;
+    public ValueAnimator r;
+    public float s;
+    public ValueAnimator v;
+    public int w;
+    public float x;
+    public boolean y;
 
-    public g10(boolean z10) {
-        this.d = z10;
+    public final void a(boolean z10) {
+        if (this.n != z10) {
+            ValueAnimator valueAnimator = this.r;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+                this.r = null;
+            }
+            float f7 = this.h;
+            this.n = z10;
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, z10 ? 1.0f : 0.0f);
+            this.r = ofFloat;
+            ofFloat.addUpdateListener(new f10(this, 2));
+            this.r.addListener(new org.telegram.ui.ho(10, this, z10));
+            this.r.setDuration(320L);
+            this.r.setInterpolator(bs.h);
+            this.r.start();
+        }
     }
 
-    @Override // org.telegram.ui.Components.dp0
-    public final boolean a() {
-        return k() > j();
-    }
-
-    @Override // org.telegram.ui.Components.dp0
-    public final boolean b() {
-        return k() < i();
-    }
-
-    @Override // org.telegram.ui.Components.dp0
-    public final void c(boolean z10) {
-        float h = h();
+    public final void b(CharSequence charSequence, boolean z10) {
+        p6 p6Var = this.b;
         if (z10) {
-            h *= -1.0f;
+            p6Var.a();
         }
-        l(Math.min(i(), Math.max(j(), k() + h)));
+        p6Var.t(charSequence, z10, true);
+        invalidate();
     }
 
-    @Override // org.telegram.ui.Components.dp0
-    public final void e(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.e(view, accessibilityNodeInfo);
-        if (this.d) {
-            accessibilityNodeInfo.addAction((AccessibilityNodeInfo.AccessibilityAction) s0.b.h.a);
-            accessibilityNodeInfo.setRangeInfo(AccessibilityNodeInfo.RangeInfo.obtain(1, j(), i(), k()));
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
+        return false;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        boolean z10;
+        Paint paint = this.a;
+        p6 p6Var = this.c;
+        p6 p6Var2 = this.b;
+        this.f.draw(canvas);
+        if (this.h > 0.0f) {
+            if (this.F == null) {
+                this.F = new dq(p6Var2.a.getColor());
+            }
+            int dp = (int) ((1.0f - this.h) * AndroidUtilities.dp(24.0f));
+            this.F.setBounds(0, dp, getWidth(), getHeight() + dp);
+            this.F.setAlpha((int) (this.h * 255.0f));
+            this.F.draw(canvas);
+            invalidate();
+        }
+        float f7 = this.h;
+        if (f7 < 1.0f) {
+            if (f7 != 0.0f) {
+                canvas.save();
+                canvas.translate(0.0f, (int) (this.h * AndroidUtilities.dp(-24.0f)));
+                canvas.scale(1.0f, 1.0f - (this.h * 0.4f));
+                z10 = true;
+            } else {
+                z10 = false;
+            }
+            float c10 = p6Var2.c();
+            float d = this.e.d(this.d, false);
+            float c11 = ((p6Var.c() + AndroidUtilities.dp(15.66f)) * d) + c10;
+            Rect rect = AndroidUtilities.rectTmp2;
+            rect.set((int) (((getMeasuredWidth() - c11) - getWidth()) / 2.0f), (int) (((getMeasuredHeight() - p6Var2.e) / 2.0f) - AndroidUtilities.dp(1.0f)), (int) org.telegram.messenger.q.a(getMeasuredWidth() - c11, getWidth(), 2.0f, c10), (int) (((getMeasuredHeight() + p6Var2.e) / 2.0f) - AndroidUtilities.dp(1.0f)));
+            p6Var2.B = (int) (AndroidUtilities.lerp(0.5f, 1.0f, this.x) * (1.0f - this.h) * 255.0f);
+            p6Var2.setBounds(rect);
+            p6Var2.draw(canvas);
+            rect.set((int) (com.google.android.gms.internal.cast.a6.z(getMeasuredWidth(), c11, 2.0f, c10) + AndroidUtilities.dp(5.0f)), (int) ((getMeasuredHeight() - AndroidUtilities.dp(18.0f)) / 2.0f), (int) (Math.max(AndroidUtilities.dp(9.0f), p6Var.c()) + com.google.android.gms.internal.cast.a6.z(getMeasuredWidth(), c11, 2.0f, c10) + AndroidUtilities.dp(13.0f)), (int) ((AndroidUtilities.dp(18.0f) + getMeasuredHeight()) / 2.0f));
+            RectF rectF = AndroidUtilities.rectTmp;
+            rectF.set(rect);
+            if (this.s != 1.0f) {
+                canvas.save();
+                float f10 = this.s;
+                canvas.scale(f10, f10, rect.centerX(), rect.centerY());
+            }
+            paint.setAlpha((int) ((1.0f - this.h) * 255.0f * d * d));
+            canvas.drawRoundRect(rectF, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), paint);
+            rect.offset(-AndroidUtilities.dp(0.3f), -AndroidUtilities.dp(0.4f));
+            p6Var.B = (int) org.telegram.messenger.q.z(1.0f, this.h, 255.0f, d);
+            p6Var.setBounds(rect);
+            p6Var.draw(canvas);
+            if (this.s != 1.0f) {
+                canvas.restore();
+            }
+            if (z10) {
+                canvas.restore();
+            }
         }
     }
 
-    @Override // org.telegram.ui.Components.dp0
-    public final boolean g(View view, int i10, Bundle bundle) {
-        if (super.g(view, i10, bundle)) {
-            return true;
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        String str;
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.widget.Button");
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append((Object) this.b.i);
+        if (this.w > 0) {
+            str = ", " + LocaleController.formatPluralString("Chats", this.w, new Object[0]);
+        } else {
+            str = "";
         }
-        if (i10 != ((AccessibilityNodeInfo.AccessibilityAction) s0.b.h.a).getId()) {
-            return false;
+        sb2.append(str);
+        accessibilityNodeInfo.setContentDescription(sb2.toString());
+    }
+
+    @Override // android.view.View
+    public final void setEnabled(boolean z10) {
+        if (this.y != z10) {
+            ValueAnimator valueAnimator = this.E;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+                this.E = null;
+            }
+            float f7 = this.x;
+            this.y = z10;
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, z10 ? 1.0f : 0.0f);
+            this.E = ofFloat;
+            ofFloat.addUpdateListener(new f10(this, 0));
+            this.E.addListener(new ah.z(2));
+            this.E.start();
         }
-        l(bundle.getFloat("android.view.accessibility.action.ARGUMENT_PROGRESS_VALUE"));
-        return true;
     }
 
-    public float h() {
-        return 0.05f;
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return this.b == drawable || this.c == drawable || super.verifyDrawable(drawable);
     }
-
-    public float i() {
-        return 1.0f;
-    }
-
-    public float j() {
-        return 0.0f;
-    }
-
-    public abstract float k();
-
-    public abstract void l(float f7);
 }

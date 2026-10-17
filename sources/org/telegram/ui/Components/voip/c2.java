@@ -4,11 +4,11 @@ import android.app.Activity;
 import android.content.Context;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.x80;
+import org.telegram.ui.Components.t80;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes4.dex */
-public final class c2 extends x80 {
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes.dex */
+public final class c2 extends t80 {
     public final /* synthetic */ TLRPC.User c;
     public final /* synthetic */ TLRPC.Chat d;
     public final /* synthetic */ String e;
@@ -17,12 +17,12 @@ public final class c2 extends x80 {
     public final /* synthetic */ boolean n;
     public final /* synthetic */ boolean r;
     public final /* synthetic */ Activity s;
-    public final /* synthetic */ org.telegram.ui.ActionBar.m2 v;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 v;
     public final /* synthetic */ AccountInstance w;
     public final /* synthetic */ boolean x;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c2(Context context, TLRPC.Chat chat, TLRPC.User user, TLRPC.Chat chat2, String str, TLRPC.InputPeer inputPeer, boolean z10, boolean z11, boolean z12, Activity activity, org.telegram.ui.ActionBar.m2 m2Var, AccountInstance accountInstance, boolean z13) {
+    public c2(Context context, TLRPC.Chat chat, TLRPC.User user, TLRPC.Chat chat2, String str, TLRPC.InputPeer inputPeer, boolean z10, boolean z11, boolean z12, Activity activity, org.telegram.ui.ActionBar.n2 n2Var, AccountInstance accountInstance, boolean z13) {
         super(context, chat);
         this.c = user;
         this.d = chat2;
@@ -32,12 +32,12 @@ public final class c2 extends x80 {
         this.n = z11;
         this.r = z12;
         this.s = activity;
-        this.v = m2Var;
+        this.v = n2Var;
         this.w = accountInstance;
         this.x = z13;
     }
 
-    @Override // org.telegram.ui.Components.x80
+    @Override // org.telegram.ui.Components.t80
     public final void n() {
         d2.b(this.c, this.d, this.e, this.f, false, this.h, this.n, this.r, this.s, this.v, this.w, false, true, this.x);
     }

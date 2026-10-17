@@ -1,197 +1,210 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.text.SpannableString;
-import android.view.KeyEvent;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.view.MotionEvent;
 import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLog;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class zv0 implements org.telegram.ui.Components.wy {
-    public final /* synthetic */ fw0 a;
+public final class zv0 extends org.telegram.ui.ActionBar.n2 {
+    public final long a;
+    public org.telegram.ui.Cells.y7 b;
+    public org.telegram.ui.Components.q90 c;
+    public org.telegram.ui.Components.a71 d;
+    public org.telegram.ui.Components.as e;
+    public org.telegram.ui.ActionBar.u0 f;
+    public final boolean h;
+    public final long n;
+    public boolean r;
+    public long s;
+    public co v;
+    public boolean w;
 
-    public zv0(fw0 fw0Var) {
-        this.a = fw0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zv0(long j10) {
+        super(null);
+        TLRPC.Chat chat = null;
+        this.w = true;
+        this.a = j10;
+        TLRPC.Chat chat2 = getMessagesController().getChat(Long.valueOf(j10));
+        if (chat2 != null && chat2.linked_monoforum_id != 0) {
+            chat = getMessagesController().getChat(Long.valueOf(chat2.linked_monoforum_id));
+        }
+        long j11 = chat != null ? chat.send_paid_messages_stars : 0L;
+        boolean z10 = chat2 != null && chat2.broadcast_messages_allowed;
+        this.h = z10;
+        long clamp = Utilities.clamp(z10 ? j11 : getMessagesController().config.starsPaidMessagesChannelAmountDefault.get(), getMessagesController().starsPaidMessageAmountMax, 0L);
+        this.n = clamp;
+        this.r = z10;
+        this.s = clamp;
     }
 
-    @Override // org.telegram.ui.Components.wy
-    public final /* synthetic */ boolean A() {
-        return false;
+    public static /* synthetic */ void U(zv0 zv0Var, TLRPC.TL_error tL_error, TLObject tLObject, TL_stars.updatePaidMessagesPrice updatepaidmessagesprice) {
+        if (tL_error != null) {
+            zv0Var.e.a(0.0f);
+            org.telegram.ui.Components.xc.d0(tL_error);
+            return;
+        }
+        TLRPC.Updates updates = (TLRPC.Updates) tLObject;
+        zv0Var.getMessagesController().putChats(updates.chats, false);
+        zv0Var.getMessagesController().lambda$processUpdates$377(updates, false);
+        if (zv0Var.isFinished || zv0Var.finishing) {
+            return;
+        }
+        co coVar = zv0Var.v;
+        if (coVar != null) {
+            coVar.run(updatepaidmessagesprice.suggestions_allowed ? updatepaidmessagesprice.send_paid_messages_stars : -1L);
+        }
+        zv0Var.finishFragment();
     }
 
-    @Override // org.telegram.ui.Components.wy
-    public final /* synthetic */ long a() {
-        return 0L;
+    public final void V(boolean z10) {
+        boolean X;
+        if (this.f == null || this.w == (X = X())) {
+            return;
+        }
+        this.w = X;
+        this.f.setEnabled(X);
+        if (z10) {
+            this.f.animate().alpha(X ? 1.0f : 0.0f).scaleX(X ? 1.0f : 0.0f).scaleY(X ? 1.0f : 0.0f).setDuration(180L).start();
+            return;
+        }
+        this.f.setAlpha(X ? 1.0f : 0.0f);
+        this.f.setScaleX(X ? 1.0f : 0.0f);
+        this.f.setScaleY(X ? 1.0f : 0.0f);
     }
 
-    @Override // org.telegram.ui.Components.wy
-    public final /* synthetic */ boolean b() {
-        return false;
+    public final String W() {
+        return LocaleController.formatString(R.string.PostSuggestionsPriceInfo2, gi.l.H0(getMessagesController().starsPaidMessageCommissionPermille), String.valueOf(((int) (((this.s * (r0 / 1000.0f)) / 1000.0d) * getMessagesController().starsUsdWithdrawRate1000)) / 100.0d));
     }
 
-    @Override // org.telegram.ui.Components.wy
-    public final /* synthetic */ boolean c() {
-        return false;
+    public final boolean X() {
+        return (this.s == this.n && this.r == this.h) ? false : true;
     }
 
-    @Override // org.telegram.ui.Components.wy
-    public final /* synthetic */ int f() {
-        return 0;
+    public final void Y() {
+        if (this.e.c > 0.0f) {
+            return;
+        }
+        if (!X()) {
+            finishFragment();
+            return;
+        }
+        this.e.a(1.0f);
+        TL_stars.updatePaidMessagesPrice updatepaidmessagesprice = new TL_stars.updatePaidMessagesPrice();
+        MessagesController messagesController = getMessagesController();
+        long j10 = this.a;
+        updatepaidmessagesprice.channel = messagesController.getInputChannel(j10);
+        boolean z10 = this.r;
+        updatepaidmessagesprice.send_paid_messages_stars = z10 ? this.s : 0L;
+        updatepaidmessagesprice.suggestions_allowed = z10;
+        getConnectionsManager().sendRequest(updatepaidmessagesprice, new z40(19, this, updatepaidmessagesprice));
+        TLRPC.Chat chat = getMessagesController().getChat(Long.valueOf(j10));
+        if (chat != null) {
+            if (this.r) {
+                chat.flags2 |= 65536;
+                chat.broadcast_messages_allowed = true;
+            } else {
+                chat.flags2 &= -65537;
+                chat.broadcast_messages_allowed = false;
+            }
+            getMessagesController().putChat(chat, true);
+            TLRPC.Chat chat2 = getMessagesController().getChat(Long.valueOf(chat.linked_monoforum_id));
+            if (chat2 != null) {
+                if (this.r) {
+                    chat2.flags2 |= 16384;
+                    chat2.send_paid_messages_stars = this.s;
+                } else {
+                    chat2.flags2 &= -16385;
+                    chat2.send_paid_messages_stars = 0L;
+                }
+                getMessagesController().putChat(chat2, true);
+            }
+        }
+        co coVar = this.v;
+        if (coVar != null) {
+            coVar.run(this.r ? this.s : -1L);
+        }
     }
 
-    @Override // org.telegram.ui.Components.wy
-    public final /* synthetic */ boolean g() {
-        return false;
+    @Override // org.telegram.ui.ActionBar.n2
+    public final View createView(Context context) {
+        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        this.actionBar.setAllowOverlayTitle(true);
+        this.actionBar.setTitle(LocaleController.getString(R.string.PostSuggestions));
+        this.actionBar.setActionBarMenuOnItemClick(new q60(this, 21));
+        Drawable mutate = context.getResources().getDrawable(R.drawable.ic_ab_done).mutate();
+        int i10 = org.telegram.ui.ActionBar.h6.v8;
+        mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.x0(null, i10, false), PorterDuff.Mode.MULTIPLY));
+        this.e = new org.telegram.ui.Components.as(mutate, new org.telegram.ui.Components.dq(org.telegram.ui.ActionBar.h6.x0(null, i10, false)));
+        this.f = this.actionBar.n().i(AndroidUtilities.dp(56.0f), LocaleController.getString(R.string.Done), this.e);
+        V(false);
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.fragmentView = frameLayout;
+        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.a7, false));
+        FrameLayout frameLayout2 = (FrameLayout) this.fragmentView;
+        org.telegram.ui.Cells.y7 y7Var = new org.telegram.ui.Cells.y7(context, this.resourceProvider);
+        this.b = y7Var;
+        int i11 = org.telegram.ui.ActionBar.h6.d6;
+        y7Var.setBackgroundColor(getThemedColor(i11));
+        org.telegram.ui.Components.q90 q90Var = new org.telegram.ui.Components.q90(context, this, null, true, true);
+        this.c = q90Var;
+        q90Var.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(16.0f), 0);
+        this.c.setBackgroundColor(getThemedColor(i11));
+        this.c.b(true);
+        this.c.d(0, null, false);
+        org.telegram.ui.Components.a71 a71Var = new org.telegram.ui.Components.a71(context, this.currentAccount, this.classGuid, false, new g5(this, 16), new yv0(this, 2), null, this.resourceProvider);
+        this.d = a71Var;
+        a71Var.p1();
+        frameLayout2.addView(this.d, w7.z5.e(-1, -1, 51));
+        this.actionBar.setAdaptiveBackground(this.d);
+        return this.fragmentView;
     }
 
-    @Override // org.telegram.ui.Components.wy
-    public final void i(int i10) {
-        boolean z10 = i10 != 0;
-        fw0 fw0Var = this.a;
-        fw0Var.B0 = z10;
-        fw0Var.e.requestLayout();
+    @Override // org.telegram.ui.ActionBar.n2
+    public final boolean isSwipeBackEnabled(MotionEvent motionEvent) {
+        return !X();
     }
 
-    @Override // org.telegram.ui.Components.wy
-    public final /* synthetic */ boolean j() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.wy
-    public final boolean k() {
-        EditTextBoldCursor editField = this.a.b0.getEditField();
-        if (editField == null) {
+    @Override // org.telegram.ui.ActionBar.n2
+    public final boolean onBackPressed(boolean z10) {
+        if (!X()) {
+            return super.onBackPressed(z10);
+        }
+        if (!z10) {
             return false;
         }
-        editField.dispatchKeyEvent(new KeyEvent(0, 67));
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
+        alertDialog$Builder.a.R = LocaleController.getString(R.string.UnsavedChanges);
+        alertDialog$Builder.a.T = LocaleController.getString(R.string.MessageSuggestionsUnsavedChanges);
+        alertDialog$Builder.k(LocaleController.getString(R.string.ApplyTheme), new yv0(this, 0));
+        alertDialog$Builder.h(LocaleController.getString(R.string.Discard), new yv0(this, 1));
+        showDialog(alertDialog$Builder.a);
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final boolean onFragmentCreate() {
+        org.telegram.ui.Components.s61 s61Var;
+        super.onFragmentCreate();
+        org.telegram.ui.Components.a71 a71Var = this.d;
+        if (a71Var == null || (s61Var = a71Var.W2) == null) {
+            return true;
+        }
+        s61Var.N(false);
         return true;
-    }
-
-    @Override // org.telegram.ui.Components.wy
-    public final void l(String str) {
-        EditTextBoldCursor editField = this.a.b0.getEditField();
-        if (editField == null) {
-            return;
-        }
-        int selectionEnd = editField.getSelectionEnd();
-        if (selectionEnd < 0) {
-            selectionEnd = 0;
-        }
-        try {
-            CharSequence replaceEmoji = Emoji.replaceEmoji(str, editField.getPaint().getFontMetricsInt(), false);
-            editField.setText(editField.getText().insert(selectionEnd, replaceEmoji));
-            int length = selectionEnd + replaceEmoji.length();
-            editField.setSelection(length, length);
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.wy
-    public final void n() {
-        org.telegram.ui.ActionBar.c6 c6Var;
-        fw0 fw0Var = this.a;
-        Activity parentActivity = fw0Var.getParentActivity();
-        c6Var = ((org.telegram.ui.ActionBar.m2) fw0Var).resourceProvider;
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(parentActivity, 0, c6Var);
-        alertDialog$Builder.a.R = LocaleController.getString(R.string.ClearRecentEmojiTitle);
-        alertDialog$Builder.a.T = LocaleController.getString(R.string.ClearRecentEmojiText);
-        alertDialog$Builder.k(LocaleController.getString(R.string.ClearButton), new lq0(this, 4));
-        i2.d.r(R.string.Cancel, alertDialog$Builder, null);
-    }
-
-    @Override // org.telegram.ui.Components.wy
-    public final /* synthetic */ float p() {
-        return 0.0f;
-    }
-
-    @Override // org.telegram.ui.Components.wy
-    public final void x(long j10, TLRPC.Document document, String str, boolean z10) {
-        fw0 fw0Var = this.a;
-        EditTextBoldCursor editField = fw0Var.b0.getEditField();
-        if (editField == null) {
-            return;
-        }
-        int selectionEnd = editField.getSelectionEnd();
-        if (selectionEnd < 0) {
-            selectionEnd = 0;
-        }
-        try {
-            SpannableString spannableString = new SpannableString(str);
-            org.telegram.ui.Components.b6 b6Var = document != null ? new org.telegram.ui.Components.b6(document, editField.getPaint().getFontMetricsInt()) : new org.telegram.ui.Components.b6(j10, editField.getPaint().getFontMetricsInt());
-            b6Var.cacheType = fw0Var.R.c;
-            spannableString.setSpan(b6Var, 0, spannableString.length(), 33);
-            editField.setText(editField.getText().insert(selectionEnd, spannableString));
-            int length = selectionEnd + spannableString.length();
-            editField.setSelection(length, length);
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.wy
-    public final boolean z() {
-        return this.a.B0;
-    }
-
-    @Override // org.telegram.ui.Components.wy
-    public final /* synthetic */ void h(TLRPC.StickerSetCovered stickerSetCovered) {
-    }
-
-    @Override // org.telegram.ui.Components.wy
-    public final /* synthetic */ void o(org.telegram.ui.Components.i61 i61Var) {
-    }
-
-    @Override // org.telegram.ui.Components.wy
-    public final /* synthetic */ void q() {
-    }
-
-    @Override // org.telegram.ui.Components.wy
-    public final /* synthetic */ void r(TLRPC.StickerSetCovered stickerSetCovered) {
-    }
-
-    @Override // org.telegram.ui.Components.wy
-    public final /* synthetic */ void s(int i10) {
-    }
-
-    @Override // org.telegram.ui.Components.wy
-    public final /* synthetic */ void t(ArrayList arrayList) {
-    }
-
-    @Override // org.telegram.ui.Components.wy
-    public final /* synthetic */ void u() {
-    }
-
-    @Override // org.telegram.ui.Components.wy
-    public final /* synthetic */ void w() {
-    }
-
-    @Override // org.telegram.ui.Components.wy
-    public final /* synthetic */ void y(long j10) {
-    }
-
-    @Override // org.telegram.ui.Components.wy
-    public final /* synthetic */ void e(Object obj, Object obj2) {
-    }
-
-    @Override // org.telegram.ui.Components.wy
-    public final /* synthetic */ void d(TLRPC.StickerSet stickerSet, TLRPC.InputStickerSet inputStickerSet, boolean z10) {
-    }
-
-    @Override // org.telegram.ui.Components.wy
-    public final /* synthetic */ void m(View view, TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z10, int i10) {
-    }
-
-    @Override // org.telegram.ui.Components.wy
-    public final /* synthetic */ void v(View view, Object obj, String str, Object obj2, boolean z10, int i10, int i11) {
     }
 }

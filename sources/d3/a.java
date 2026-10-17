@@ -1,11 +1,11 @@
 package d3;
 
 import androidx.car.app.media.b;
-import b2.w;
+import b2.v;
+import b2.v0;
 import b2.w0;
-import b2.x0;
-import c3.b0;
-import c3.i0;
+import c3.c0;
+import c3.j0;
 import c3.k;
 import c3.n;
 import c3.o;
@@ -13,20 +13,19 @@ import c3.p;
 import c3.q;
 import c3.s;
 import c3.t;
-import c3.y;
-import c5.c0;
+import c3.z;
+import c5.b0;
 import e2.m0;
 import e9.l0;
 import e9.n0;
 import e9.x1;
-import i2.d;
 import java.io.EOFException;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class a implements o {
     public static final int[] s = {13, 14, 16, 18, 20, 21, 27, 32, 6, 7, 6, 6, 1, 1, 1, 1};
@@ -43,9 +42,9 @@ public final class a implements o {
     public int j;
     public long k;
     public q l;
-    public i0 m;
-    public i0 n;
-    public b0 o;
+    public j0 m;
+    public j0 n;
+    public c0 o;
     public boolean p;
     public long q;
     public boolean r;
@@ -74,10 +73,10 @@ public final class a implements o {
     @Override // c3.o
     public final void c(q qVar) {
         this.l = qVar;
-        i0 W = qVar.W(0, 1);
-        this.m = W;
-        this.n = W;
-        qVar.D();
+        j0 j02 = qVar.j0(0, 1);
+        this.m = j02;
+        this.n = j02;
+        qVar.H();
     }
 
     @Override // c3.o
@@ -86,21 +85,21 @@ public final class a implements o {
         this.f = 0;
         this.g = 0;
         this.q = j11;
-        b0 b0Var = this.o;
-        if (!(b0Var instanceof y)) {
-            if (j10 == 0 || !(b0Var instanceof k)) {
+        c0 c0Var = this.o;
+        if (!(c0Var instanceof z)) {
+            if (j10 == 0 || !(c0Var instanceof k)) {
                 this.k = 0L;
                 return;
             } else {
-                this.k = (Math.max(0L, j10 - ((k) b0Var).b) * 8000000) / r7.e;
+                this.k = (Math.max(0L, j10 - ((k) c0Var).b) * 8000000) / r7.e;
                 return;
             }
         }
-        y yVar = (y) b0Var;
-        c0 c0Var = yVar.b;
-        long h = c0Var.b == 0 ? -9223372036854775807L : c0Var.h(m0.c(yVar.a, j10));
-        this.k = h;
-        if (Math.abs(this.q - h) < 20000) {
+        z zVar = (z) c0Var;
+        b0 b0Var = zVar.b;
+        long m10 = b0Var.b == 0 ? -9223372036854775807L : b0Var.m(m0.c(zVar.a, j10));
+        this.k = m10;
+        if (Math.abs(this.q - m10) < 20000) {
             return;
         }
         this.p = true;
@@ -125,7 +124,7 @@ public final class a implements o {
         this.m.getClass();
         String str = m0.a;
         if (pVar.getPosition() == 0 && !h(pVar)) {
-            throw x0.a(null, "Could not find AMR header.");
+            throw w0.a(null, "Could not find AMR header.");
         }
         if (!this.r) {
             this.r = true;
@@ -134,14 +133,14 @@ public final class a implements o {
             String str3 = z10 ? "audio/amr-wb" : "audio/3gpp";
             int i11 = z10 ? b.AUDIO_CONTENT_SAMPLING_RATE : 8000;
             int i12 = z10 ? t[8] : s[7];
-            i0 i0Var = this.m;
-            w wVar = new w();
-            wVar.q = w0.n(str2);
-            wVar.r = w0.n(str3);
-            wVar.s = i12;
-            wVar.J = 1;
-            wVar.K = i11;
-            d.u(wVar, i0Var);
+            j0 j0Var = this.m;
+            v vVar = new v();
+            vVar.q = v0.n(str2);
+            vVar.r = v0.n(str3);
+            vVar.s = i12;
+            vVar.J = 1;
+            vVar.K = i11;
+            i0.a.u(vVar, j0Var);
         }
         int i13 = 0;
         if (this.g == 0) {
@@ -156,22 +155,22 @@ public final class a implements o {
                 if (this.i == this.f) {
                     this.j++;
                 }
-                b0 b0Var = this.o;
-                if (b0Var instanceof y) {
-                    y yVar = (y) b0Var;
+                c0 c0Var = this.o;
+                if (c0Var instanceof z) {
+                    z zVar = (z) c0Var;
                     long j10 = this.k + this.e + 20000;
                     long position = pVar.getPosition() + this.f;
-                    c0 c0Var = yVar.b;
-                    int i14 = c0Var.b;
-                    if (i14 == 0 || j10 - c0Var.h(i14 - 1) >= 100000) {
-                        c0 c0Var2 = yVar.a;
-                        c0 c0Var3 = yVar.b;
-                        if (c0Var3.b == 0 && j10 > 0) {
-                            c0Var2.b(0L);
-                            c0Var3.b(0L);
+                    b0 b0Var = zVar.b;
+                    int i14 = b0Var.b;
+                    if (i14 == 0 || j10 - b0Var.m(i14 - 1) >= 100000) {
+                        b0 b0Var2 = zVar.a;
+                        b0 b0Var3 = zVar.b;
+                        if (b0Var3.b == 0 && j10 > 0) {
+                            b0Var2.c(0L);
+                            b0Var3.c(0L);
                         }
-                        c0Var2.b(position);
-                        c0Var3.b(j10);
+                        b0Var2.c(position);
+                        b0Var3.c(j10);
                     }
                     if (this.p && Math.abs(this.q - j10) < 20000) {
                         this.p = false;
@@ -200,17 +199,17 @@ public final class a implements o {
                     this.o = kVar;
                     this.m.e(kVar.f);
                 }
-                b0 b0Var2 = this.o;
-                if (b0Var2 != null) {
-                    this.l.K(b0Var2);
+                c0 c0Var2 = this.o;
+                if (c0Var2 != null) {
+                    this.l.g0(c0Var2);
                 }
             }
             if (i13 == -1) {
-                b0 b0Var3 = this.o;
-                if (b0Var3 instanceof y) {
+                c0 c0Var3 = this.o;
+                if (c0Var3 instanceof z) {
                     long j11 = this.k + this.e;
-                    ((y) b0Var3).c = j11;
-                    this.l.K(b0Var3);
+                    ((z) c0Var3).c = j11;
+                    this.l.g0(c0Var3);
                     this.m.e(j11);
                 }
             }
@@ -232,7 +231,7 @@ public final class a implements o {
         pVar.b(0, 1, bArr);
         byte b10 = bArr[0];
         if ((b10 & 131) > 0) {
-            throw x0.a(null, "Invalid padding bits for frame header " + ((int) b10));
+            throw w0.a(null, "Invalid padding bits for frame header " + ((int) b10));
         }
         int i10 = (b10 >> 3) & 15;
         if (i10 >= 0 && i10 <= 15 && (((z10 = this.d) && (i10 < 10 || i10 > 13)) || (!z10 && (i10 < 12 || i10 > 14)))) {
@@ -242,7 +241,7 @@ public final class a implements o {
         sb2.append(this.d ? "WB" : "NB");
         sb2.append(" frame type ");
         sb2.append(i10);
-        throw x0.a(null, sb2.toString());
+        throw w0.a(null, sb2.toString());
     }
 
     public final boolean h(p pVar) {

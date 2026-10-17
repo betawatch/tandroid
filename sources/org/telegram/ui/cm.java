@@ -1,22 +1,30 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class cm extends di.d4 {
-    public final /* synthetic */ fo L0;
+public final class cm extends org.telegram.ui.Components.s6 {
+    public final /* synthetic */ em b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cm(fo foVar, Activity activity) {
-        super(activity, 3);
-        this.L0 = foVar;
+    public cm(em emVar) {
+        super("progress", 0);
+        this.b = emVar;
     }
 
-    @Override // android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        setTranslationY(((-getTop()) - AndroidUtilities.dp(120.0f)) + this.L0.C1);
+    @Override // org.telegram.ui.Components.s6
+    public final void c(Object obj, float f7) {
+        ((MessageObject.SendAnimationData) obj).progress = f7;
+        View view = this.b.b.Q.fragmentView;
+        if (view != null) {
+            view.invalidate();
+        }
+    }
+
+    @Override // android.util.Property
+    public final Object get(Object obj) {
+        return Float.valueOf(((MessageObject.SendAnimationData) obj).progress);
     }
 }

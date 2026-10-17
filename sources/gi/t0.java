@@ -1,219 +1,128 @@
 package gi;
 
 import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.view.ViewGroup;
-import android.widget.TextView;
-import di.dd;
-import di.n9;
-import java.util.ArrayList;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_communities;
-import org.telegram.ui.ActionBar.a2;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.da0;
-import org.telegram.ui.Components.g5;
-import org.telegram.ui.Components.i71;
-import org.telegram.ui.Components.m61;
-import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.rc;
-import org.telegram.ui.Components.zc;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.h9;
+import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.y6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class t0 implements hi.e {
-    public final Context a;
-    public final c6 b;
-    public final zc c;
-    public final int d;
-    public final long e;
-    public final TLRPC.Chat f;
-    public s0 h;
-    public n9 i;
-    public String k;
-    public int l;
-    public boolean m;
-    public boolean n;
-    public long o;
-    public int p;
-    public a2 q;
-    public int r;
-    public final a0.h g = new a0.h();
-    public ArrayList j = new ArrayList();
+public final class t0 extends Drawable implements y6 {
+    public final Paint a;
+    public final Paint b;
+    public final Paint c;
+    public final ImageReceiver d;
+    public final ImageReceiver e;
+    public final Drawable f;
 
-    public t0(Context context, c6 c6Var, zc zcVar, int i10, long j10) {
-        this.a = context;
-        this.b = c6Var;
-        this.c = zcVar;
-        this.d = i10;
-        this.e = j10;
-        this.f = MessagesController.getInstance(i10).getChat(Long.valueOf(j10));
-        this.o = MessagesController.getMainSettings(i10).getLong(a1.g.o(j10, "community_requests_last_view_time_"), 0L);
+    public t0(Context context, TLRPC.User user, TLRPC.User user2) {
+        Paint paint = new Paint(1);
+        this.a = paint;
+        this.b = new Paint(1);
+        Paint paint2 = new Paint(1);
+        this.c = paint2;
+        ImageReceiver imageReceiver = new ImageReceiver();
+        this.d = imageReceiver;
+        ImageReceiver imageReceiver2 = new ImageReceiver();
+        this.e = imageReceiver2;
+        new RectF();
+        paint.setColor(-1);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint2.setColor(-1);
+        Drawable mutate = context.getResources().getDrawable(R.drawable.filled_location).mutate();
+        this.f = mutate;
+        mutate.setColorFilter(new PorterDuffColorFilter(h6.x0(null, h6.L5, false), PorterDuff.Mode.SRC_IN));
+        h9 h9Var = new h9((d6) null);
+        h9Var.r(user);
+        imageReceiver.setForUserOrChat(user, h9Var);
+        imageReceiver.setRoundRadius(AndroidUtilities.dp(25.0f));
+        h9 h9Var2 = new h9((d6) null);
+        h9Var2.r(user2);
+        imageReceiver2.setForUserOrChat(user2, h9Var2);
+        imageReceiver2.setRoundRadius(AndroidUtilities.dp(25.0f));
     }
 
-    public final void a() {
-        this.p = 0;
-        ArrayList arrayList = this.j;
-        if (arrayList == null) {
-            return;
-        }
-        int size = arrayList.size();
-        for (int i10 = 0; i10 < size; i10++) {
-            if (!this.g.d(DialogObject.getPeerDialogId(((TL_communities.CommunityPeerRequest) this.j.get(i10)).peer))) {
-                if (r2.date <= this.o) {
-                    return;
-                } else {
-                    this.p++;
-                }
-            }
-        }
+    @Override // org.telegram.ui.Components.y6
+    public final void a(xj0 xj0Var) {
+        this.e.setParentView(xj0Var);
+        this.d.setParentView(xj0Var);
     }
 
-    public final void b(i71 i71Var) {
-        if (this.m || this.n || i71Var.V2.N0() + 10 <= i71Var.W2.x.size()) {
-            return;
-        }
-        d();
+    @Override // org.telegram.ui.Components.y6
+    public final void b(ImageReceiver imageReceiver) {
+        this.d.onDetachedFromWindow();
+        this.e.onDetachedFromWindow();
     }
 
-    public final void c(ArrayList arrayList) {
-        ArrayList arrayList2 = this.j;
-        if (arrayList2 == null || arrayList2.isEmpty()) {
-            return;
-        }
-        ArrayList arrayList3 = this.j;
-        if (arrayList3 != null && !arrayList3.isEmpty()) {
-            int size = arrayList3.size();
-            int i10 = 0;
-            while (i10 < size) {
-                TL_communities.CommunityPeerRequest communityPeerRequest = (TL_communities.CommunityPeerRequest) arrayList3.get(i10);
-                long peerDialogId = DialogObject.getPeerDialogId(communityPeerRequest.peer);
-                a0.h hVar = this.g;
-                if (hVar == null || !hVar.d(peerDialogId)) {
-                    TLRPC.User user = MessagesController.getInstance(this.d).getUser(Long.valueOf(communityPeerRequest.requested_by));
-                    boolean z10 = !communityPeerRequest.visible;
-                    boolean z11 = i10 < size + (-1);
-                    int i11 = hi.g.a;
-                    m61 J = m61.J(hi.g.class);
-                    J.G = new hi.f(peerDialogId, user, z10);
-                    J.H = this;
-                    J.j = !z11;
-                    arrayList.add(J);
-                }
-                i10++;
-            }
-        }
-        if (this.n) {
-            return;
-        }
-        arrayList.add(m61.n(29));
+    @Override // org.telegram.ui.Components.y6
+    public final void c(ImageReceiver imageReceiver) {
+        this.d.onAttachedToWindow();
+        this.e.onAttachedToWindow();
     }
 
-    public final void d() {
-        if (this.m || this.n || !ChatObject.canUserDoAdminAction(this.f, 27)) {
-            return;
-        }
-        this.m = true;
-        MessagesController.getInstance(this.d).fetchCommunityPendingJoinRequests(this.e, this.k, new r0(this, 1));
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Rect bounds = getBounds();
+        int x02 = h6.x0(null, h6.L5, false);
+        Paint paint = this.b;
+        paint.setColor(x02);
+        float dp = AndroidUtilities.dp(136.0f) / 2.0f;
+        float centerY = bounds.centerY() - AndroidUtilities.dp(25.0f);
+        float dp2 = AndroidUtilities.dp(50.0f);
+        float dp3 = AndroidUtilities.dp(50.0f);
+        ImageReceiver imageReceiver = this.d;
+        imageReceiver.setImageCoords(bounds.centerX() - dp, centerY, dp2, dp3);
+        imageReceiver.draw(canvas);
+        float centerX = (bounds.centerX() - dp) + AndroidUtilities.dp(41.0f);
+        float dp4 = AndroidUtilities.dp(16.0f) + bounds.centerY();
+        canvas.drawCircle(centerX, dp4, AndroidUtilities.dp(14.0f), paint);
+        canvas.drawCircle(centerX, dp4, AndroidUtilities.dp(12.0f), this.c);
+        int dp5 = (int) (dp4 + AndroidUtilities.dp(9.0f));
+        Drawable drawable = this.f;
+        drawable.setBounds((int) (centerX - AndroidUtilities.dp(9.0f)), (int) (dp4 - AndroidUtilities.dp(9.0f)), (int) (centerX + AndroidUtilities.dp(9.0f)), dp5);
+        drawable.draw(canvas);
+        float centerX2 = bounds.centerX() - AndroidUtilities.dp(3.33f);
+        float centerY2 = bounds.centerY() - AndroidUtilities.dp(7.0f);
+        float dp6 = AndroidUtilities.dp(3.33f) + bounds.centerX();
+        float centerY3 = bounds.centerY();
+        Paint paint2 = this.a;
+        canvas.drawLine(centerX2, centerY2, dp6, centerY3, paint2);
+        canvas.drawLine(bounds.centerX() - AndroidUtilities.dp(3.33f), AndroidUtilities.dp(7.0f) + bounds.centerY(), AndroidUtilities.dp(3.33f) + bounds.centerX(), bounds.centerY(), paint2);
+        float centerY4 = bounds.centerY() - AndroidUtilities.dp(25.0f);
+        float dp7 = AndroidUtilities.dp(50.0f);
+        float dp8 = AndroidUtilities.dp(50.0f);
+        ImageReceiver imageReceiver2 = this.e;
+        imageReceiver2.setImageCoords((bounds.centerX() + dp) - AndroidUtilities.dp(50.0f), centerY4, dp7, dp8);
+        imageReceiver2.draw(canvas);
     }
 
-    public final void e() {
-        int i10 = this.d;
-        long currentTime = ConnectionsManager.getInstance(i10).getCurrentTime();
-        this.o = currentTime;
-        MessagesController.getMainSettings(i10).edit().putLong("community_requests_last_view_time_" + this.e, currentTime).apply();
-        a();
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
     }
 
-    public final void f(boolean z10, boolean z11) {
-        TextView textView;
-        if (this.q == null && this.r == 0) {
-            if (z11) {
-                a2 O = g5.O(this.a, this.b, LocaleController.getString(z10 ? R.string.CommunityAddAllChatsTitle : R.string.CommunityDeclineAllTitle), AndroidUtilities.replaceTags(LocaleController.formatPluralString(z10 ? "CommunityAddAllChatsMessage" : "CommunityDeclineAllMessage", this.l, new Object[0])), LocaleController.getString(z10 ? R.string.Add : R.string.Decline), new ah.t(8, this, z10));
-                O.show();
-                if (z10 || (textView = (TextView) O.d(-1)) == null) {
-                    return;
-                }
-                textView.setTextColor(g6.x0(null, g6.q7, false));
-                return;
-            }
-            n9 n9Var = this.i;
-            if (n9Var != null) {
-                n9Var.run();
-            }
-            this.i = null;
-            a2 a2Var = new a2(this.a, 3, this.b);
-            this.q = a2Var;
-            a2Var.setOnCancelListener(new dd(this, 3));
-            this.q.q(500L);
-            this.r = MessagesController.getInstance(this.d).resolveCommunityAllJoinPendingRequests(this.e, !z10, new r0(this, 0));
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
     }
 
-    public final void g(long j10, boolean z10) {
-        int i10;
-        this.g.k(null, j10);
-        this.l--;
-        a();
-        s0 s0Var = this.h;
-        if (s0Var != null) {
-            s0Var.p();
-        }
-        int i11 = z10 ? R.string.CommunityRequestApprovedToast : R.string.CommunityRequestDeclinedToast;
-        int i12 = this.d;
-        SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString(i11, DialogObject.getShortName(i12, j10)));
-        n9 n9Var = this.i;
-        if (n9Var != null) {
-            n9Var.run();
-        }
-        this.i = new n9(this, j10, z10, 1);
-        Context context = this.a;
-        c6 c6Var = this.b;
-        rc rcVar = new rc(context, c6Var, false);
-        TLObject userOrChat = MessagesController.getInstance(i12).getUserOrChat(j10);
-        org.telegram.ui.Components.n9 n9Var2 = rcVar.a;
-        if (userOrChat != null) {
-            n9Var2.setCount(1);
-            n9Var2.b(0, userOrChat, UserConfig.selectedAccount);
-            i10 = 1;
-        } else {
-            i10 = 0;
-        }
-        n9Var2.setTranslationX(AndroidUtilities.dp(7.0f));
-        n9Var2.setScaleX(1.333f);
-        n9Var2.setScaleY(1.333f);
-        n9Var2.a(false);
-        da0 da0Var = rcVar.b;
-        da0Var.setSingleLine(false);
-        da0Var.setMaxLines(2);
-        da0Var.setTextSize(1, 14.0f);
-        da0Var.setText(replaceTags);
-        if (da0Var.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
-            int dp = AndroidUtilities.dp(74 - ((3 - i10) * 12));
-            if (LocaleController.isRTL) {
-                ((ViewGroup.MarginLayoutParams) da0Var.getLayoutParams()).rightMargin = dp;
-            } else {
-                ((ViewGroup.MarginLayoutParams) da0Var.getLayoutParams()).leftMargin = dp;
-            }
-        }
-        if (LocaleController.isRTL) {
-            n9Var2.setTranslationX(AndroidUtilities.dp(32 - ((i10 - 1) * 12)));
-        }
-        qc qcVar = new qc(context, c6Var, true, true);
-        qcVar.e(LocaleController.getString(R.string.UndoNoCaps));
-        qcVar.a = new bi.g(this, j10, 9);
-        qcVar.b = this.i;
-        rcVar.setButton(qcVar);
-        this.c.b(rcVar, 5000).j();
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

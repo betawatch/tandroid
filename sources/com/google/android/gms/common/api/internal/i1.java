@@ -4,117 +4,65 @@ import android.os.DeadObjectException;
 import android.os.RemoteException;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.TaskCompletionSource;
+import java.util.Map;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class i1 extends w0 {
-    public final TaskCompletionSource b;
-    public final /* synthetic */ int c;
-    public final Object d;
+public final class i1 extends v0 {
+    public final v b;
+    public final TaskCompletionSource c;
+    public final s d;
 
-    public i1(int i10, TaskCompletionSource taskCompletionSource) {
+    public i1(int i10, v vVar, TaskCompletionSource taskCompletionSource, s sVar) {
         super(i10);
-        this.b = taskCompletionSource;
+        this.c = taskCompletionSource;
+        this.b = vVar;
+        this.d = sVar;
+        if (i10 == 2 && vVar.b) {
+            throw new IllegalArgumentException("Best-effort write calls cannot pass methods that should auto-resolve missing features.");
+        }
     }
 
-    @Override // com.google.android.gms.common.api.internal.k1
+    @Override // com.google.android.gms.common.api.internal.j1
     public final void a(Status status) {
-        this.b.trySetException(new com.google.android.gms.common.api.f(status));
+        this.c.trySetException(this.d.a(status));
     }
 
-    @Override // com.google.android.gms.common.api.internal.k1
+    @Override // com.google.android.gms.common.api.internal.j1
     public final void b(Exception exc) {
-        this.b.trySetException(exc);
+        this.c.trySetException(exc);
     }
 
-    @Override // com.google.android.gms.common.api.internal.k1
-    public final void c(p0 p0Var) {
+    @Override // com.google.android.gms.common.api.internal.j1
+    public final void c(o0 o0Var) {
+        TaskCompletionSource taskCompletionSource = this.c;
         try {
-            h(p0Var);
+            this.b.c(o0Var.b, taskCompletionSource);
         } catch (DeadObjectException e) {
-            a(k1.e(e));
             throw e;
         } catch (RemoteException e7) {
-            a(k1.e(e7));
+            a(j1.e(e7));
         } catch (RuntimeException e10) {
-            this.b.trySetException(e10);
+            taskCompletionSource.trySetException(e10);
         }
     }
 
-    @Override // com.google.android.gms.common.api.internal.k1
-    public final /* bridge */ /* synthetic */ void d(g1 g1Var, boolean z10) {
-        int i10 = this.c;
+    @Override // com.google.android.gms.common.api.internal.j1
+    public final void d(f1 f1Var, boolean z10) {
+        Boolean valueOf = Boolean.valueOf(z10);
+        Map map = (Map) f1Var.b;
+        TaskCompletionSource taskCompletionSource = this.c;
+        map.put(taskCompletionSource, valueOf);
+        taskCompletionSource.getTask().addOnCompleteListener(new f1(f1Var, taskCompletionSource));
     }
 
-    @Override // com.google.android.gms.common.api.internal.w0
-    public final boolean f(p0 p0Var) {
-        switch (this.c) {
-            case 0:
-                return ((b1) this.d).a.a;
-            default:
-                b1 b1Var = (b1) p0Var.f.get((n) this.d);
-                return b1Var != null && b1Var.a.a;
-        }
+    @Override // com.google.android.gms.common.api.internal.v0
+    public final boolean f(o0 o0Var) {
+        return this.b.b;
     }
 
-    @Override // com.google.android.gms.common.api.internal.w0
-    public final k6.c[] g(p0 p0Var) {
-        switch (this.c) {
-            case 0:
-                return (k6.c[]) ((b1) this.d).a.d;
-            default:
-                b1 b1Var = (b1) p0Var.f.get((n) this.d);
-                if (b1Var == null) {
-                    return null;
-                }
-                return (k6.c[]) b1Var.a.d;
-        }
-    }
-
-    public final void h(p0 p0Var) {
-        switch (this.c) {
-            case 0:
-                e2.w wVar = ((b1) this.d).a;
-                ((s) ((r) wVar.e).c).accept(p0Var.b, this.b);
-                n nVar = ((p) ((b1) this.d).a.c).c;
-                if (nVar != null) {
-                    p0Var.f.put(nVar, (b1) this.d);
-                    break;
-                }
-                break;
-            default:
-                TaskCompletionSource taskCompletionSource = this.b;
-                b1 b1Var = (b1) p0Var.f.remove((n) this.d);
-                if (b1Var == null) {
-                    taskCompletionSource.trySetResult(Boolean.FALSE);
-                    break;
-                } else {
-                    ((s) ((r) b1Var.b.b).d).accept(p0Var.b, taskCompletionSource);
-                    p pVar = (p) b1Var.a.c;
-                    pVar.b = null;
-                    pVar.c = null;
-                    break;
-                }
-        }
-    }
-
-    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public i1(n nVar, TaskCompletionSource taskCompletionSource) {
-        this(4, taskCompletionSource);
-        this.c = 1;
-        this.d = nVar;
-    }
-
-    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public i1(b1 b1Var, TaskCompletionSource taskCompletionSource) {
-        this(3, taskCompletionSource);
-        this.c = 0;
-        this.d = b1Var;
-    }
-
-    private final /* bridge */ /* synthetic */ void i(g1 g1Var, boolean z10) {
-    }
-
-    private final /* bridge */ /* synthetic */ void j(g1 g1Var, boolean z10) {
+    @Override // com.google.android.gms.common.api.internal.v0
+    public final k6.c[] g(o0 o0Var) {
+        return this.b.a;
     }
 }

@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.content.DialogInterface;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i2 implements DialogInterface.OnShowListener {
     public final /* synthetic */ int a;
@@ -18,14 +18,14 @@ public final /* synthetic */ class i2 implements DialogInterface.OnShowListener 
     public final void onShow(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                h4 h4Var = (h4) this.b;
-                h4Var.requestFocus();
-                AndroidUtilities.showKeyboard(h4Var);
+                g4 g4Var = (g4) this.b;
+                g4Var.requestFocus();
+                AndroidUtilities.showKeyboard(g4Var);
                 break;
             default:
-                ig.b1 b1Var = (ig.b1) this.b;
-                b1Var.requestFocus();
-                AndroidUtilities.showKeyboard(b1Var);
+                ig.y0 y0Var = (ig.y0) this.b;
+                y0Var.requestFocus();
+                AndroidUtilities.showKeyboard(y0Var);
                 break;
         }
     }

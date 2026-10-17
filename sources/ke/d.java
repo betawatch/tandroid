@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import w7.n;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class d extends h implements a {
     public static final /* synthetic */ AtomicReferenceFieldUpdater g = AtomicReferenceFieldUpdater.newUpdater(d.class, Object.class, "owner$volatile");
@@ -61,10 +61,10 @@ public final class d extends h implements a {
         while (c()) {
             AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = g;
             Object obj2 = atomicReferenceFieldUpdater.get(this);
-            a6.i iVar = e.a;
-            if (obj2 != iVar) {
+            com.google.android.gms.internal.clearcut.e eVar = e.a;
+            if (obj2 != eVar) {
                 if (obj2 == obj || obj == null) {
-                    while (!atomicReferenceFieldUpdater.compareAndSet(this, obj2, iVar)) {
+                    while (!atomicReferenceFieldUpdater.compareAndSet(this, obj2, eVar)) {
                         if (atomicReferenceFieldUpdater.get(this) != obj2) {
                             break;
                         }

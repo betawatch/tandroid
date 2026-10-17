@@ -2,7 +2,7 @@ package u2;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class n implements f1 {
     public final f1 a;
@@ -24,17 +24,17 @@ public final class n implements f1 {
     }
 
     @Override // u2.f1
-    public final boolean m(i2.v0 v0Var) {
-        return this.a.m(v0Var);
+    public final boolean p(i2.t0 t0Var) {
+        return this.a.p(t0Var);
     }
 
     @Override // u2.f1
-    public final long p() {
-        return this.a.p();
+    public final long s() {
+        return this.a.s();
     }
 
     @Override // u2.f1
-    public final void s(long j10) {
-        this.a.s(j10);
+    public final void u(long j10) {
+        this.a.u(j10);
     }
 }

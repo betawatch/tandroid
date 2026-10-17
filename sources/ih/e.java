@@ -20,13 +20,13 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.u1;
-import org.telegram.ui.Cells.w0;
-import org.telegram.ui.ak;
+import org.telegram.ui.Cells.x0;
+import org.telegram.ui.pj;
 import w7.r;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class e extends View implements ViewTreeObserver.OnPreDrawListener, ViewTreeObserver.OnScrollChangedListener, ViewTreeObserver.OnGlobalLayoutListener {
     public static final RectF H = new RectF();
@@ -76,11 +76,11 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
         arrayList.clear();
     }
 
-    public final void b(int i10, long j10, ViewGroup viewGroup, ak akVar) {
+    public final void b(int i10, long j10, ViewGroup viewGroup, pj pjVar) {
         this.d = j10;
         this.e = i10;
         this.f = viewGroup;
-        this.h = akVar;
+        this.h = pjVar;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:130:0x02a8  */
@@ -134,8 +134,8 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
             if (j.c(childAt, viewGroup, rectF3)) {
                 if (childAt instanceof u1) {
                     messageObject = ((u1) childAt).getMessageObject();
-                } else if (childAt instanceof w0) {
-                    messageObject = ((w0) childAt).getMessageObject();
+                } else if (childAt instanceof x0) {
+                    messageObject = ((x0) childAt).getMessageObject();
                 }
                 if (messageObject != null) {
                     long dialogId = messageObject.getDialogId();
@@ -355,7 +355,7 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
                 this.G.setTextSize(AndroidUtilities.dp(10.0f));
             }
             super.onDraw(canvas);
-            Paint paint = g6.Ol;
+            Paint paint = h6.Ol;
             RectF rectF = this.c;
             canvas.drawRect(rectF, paint);
             LongSparseArray longSparseArray = this.w;
@@ -363,10 +363,10 @@ public final class e extends View implements ViewTreeObserver.OnPreDrawListener,
             for (int i10 = 0; i10 < size; i10++) {
                 d dVar = (d) longSparseArray.valueAt(i10);
                 RectF rectF2 = dVar.c;
-                canvas.drawRect(rectF2, g6.Pl);
+                canvas.drawRect(rectF2, h6.Pl);
                 canvas.save();
                 canvas.translate(rectF2.left, r.a(r.a(rectF2.centerY() - AndroidUtilities.dp(20.0f), rectF.top - AndroidUtilities.dp(40.0f), rectF.bottom), rectF2.top, rectF2.bottom - AndroidUtilities.dp(40.0f)));
-                canvas.drawRect(0.0f, 0.0f, rectF2.width(), AndroidUtilities.dp(40.0f), g6.Nl);
+                canvas.drawRect(0.0f, 0.0f, rectF2.width(), AndroidUtilities.dp(40.0f), h6.Nl);
                 canvas.translate(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(16.0f));
                 canvas.save();
                 canvas.drawText("time_in_view_ms: " + dVar.g, 0.0f, 0.0f, this.G);

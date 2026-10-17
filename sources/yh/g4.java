@@ -1,338 +1,149 @@
 package yh;
 
-import android.app.Dialog;
+import ai.fa;
+import ai.k5;
+import ai.k6;
+import ai.sc;
+import ai.x9;
 import android.content.Context;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
-import android.os.Bundle;
-import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
 import android.view.View;
-import android.view.ViewPropertyAnimator;
 import android.widget.FrameLayout;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
+import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.sk;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.b5;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.a71;
-import org.telegram.ui.Components.aq;
-import org.telegram.ui.Components.br;
-import org.telegram.ui.Components.d10;
-import org.telegram.ui.Components.da0;
-import org.telegram.ui.Components.eo;
-import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.f10;
-import org.telegram.ui.Components.kc0;
-import org.telegram.ui.Components.l20;
-import org.telegram.ui.Components.l80;
-import org.telegram.ui.Components.m61;
-import org.telegram.ui.Components.nu;
-import org.telegram.ui.Components.sc;
-import org.telegram.ui.Components.yj0;
-import org.telegram.ui.Components.z9;
-import org.telegram.ui.Components.zc;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.w41;
-import org.telegram.ui.z8;
-import w7.b6;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.ao;
+import org.telegram.ui.Components.b10;
+import org.telegram.ui.Components.bb;
+import org.telegram.ui.Components.bs;
+import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.hm0;
+import org.telegram.ui.Components.i80;
+import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.iu;
+import org.telegram.ui.Components.kv;
+import org.telegram.ui.ko0;
 import w7.z5;
-import zh.d7;
-import zh.n5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public class g4 extends org.telegram.ui.ActionBar.m2 implements ne.d {
-    public LinearLayout E;
-    public k3 F;
-    public k3 G;
-    public k3 H;
-    public k3 I;
-    public d10 J;
-    public boolean K;
-    public gh.c L;
-    public bh.b M;
-    public final ne.b a;
-    public final long b;
-    public final String c;
-    public final t3 d;
-    public Utilities.Callback e;
-    public org.telegram.ui.ActionBar.f2 f;
-    public View h;
-    public c3 n;
-    public FrameLayout r;
-    public FrameLayout s;
-    public TextView v;
-    public l3 w;
-    public boolean x;
-    public HorizontalScrollView y;
+public final class g4 extends bb {
+    public static final /* synthetic */ int k0 = 0;
+    public final String X;
+    public final f4 Y;
+    public final HorizontalScrollView Z;
+    public final k3 a0;
+    public final k3 b0;
+    public final k3 c0;
+    public final k3 d0;
+    public final k5 e0;
+    public ai.q2 f0;
+    public final HashSet g0;
+    public boolean h0;
+    public e4 i0;
+    public boolean j0;
 
-    public g4(long j10, String str, long j11, c6 c6Var) {
-        super(null);
-        this.a = new ne.b(0, this, es.h, 380L, false);
-        this.K = true;
-        this.b = j10;
-        this.c = str;
-        this.resourceProvider = c6Var;
-        t3 t3Var = new t3(j11, this.currentAccount, new ji.p1(this, 21));
-        this.d = t3Var;
-        t3Var.g(false);
-    }
+    public g4(final Context context, String str, final f4 f4Var) {
+        super(2, context, (d6) null, false);
+        this.g0 = new HashSet();
+        this.K = AndroidUtilities.dp(12.0f);
+        fixNavigationBar();
+        this.X = str;
+        this.Y = f4Var;
+        this.e.setTitle(A());
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setPadding(AndroidUtilities.dp(11.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(11.0f), AndroidUtilities.dp(6.0f));
+        linearLayout.setOrientation(0);
+        linearLayout.setClipChildren(false);
+        linearLayout.setClipToPadding(false);
+        HorizontalScrollView horizontalScrollView = new HorizontalScrollView(context);
+        this.Z = horizontalScrollView;
+        horizontalScrollView.setHorizontalScrollBarEnabled(false);
+        horizontalScrollView.setClipChildren(false);
+        horizontalScrollView.setClipToPadding(false);
+        horizontalScrollView.addView(linearLayout);
+        k3 k3Var = new k3(context, this.resourcesProvider);
+        this.a0 = k3Var;
+        k3Var.setSorting(f4Var.c.p);
+        linearLayout.addView(k3Var, z5.t(-2, -2, 16, 0, 0, 6, 0));
+        k3Var.setOnClickListener(new qg.n(13, this, f4Var));
+        k3 k3Var2 = new k3(context, this.resourcesProvider);
+        this.b0 = k3Var2;
+        k3Var2.setValue(LocaleController.getString(R.string.Gift2AttributeModel));
+        linearLayout.addView(k3Var2, z5.t(-2, -2, 16, 0, 0, 6, 0));
+        final int i10 = 0;
+        k3Var2.setOnClickListener(new View.OnClickListener(this) { // from class: yh.a4
+            public final /* synthetic */ g4 b;
 
-    public static void U(g4 g4Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10, boolean z10) {
-        if (j10 == UserConfig.getInstance(g4Var.currentAccount).getClientUserId()) {
-            g4Var.d.d.remove(tL_starGiftUnique);
-            g4Var.e0(false);
-            if (j10 == UserConfig.getInstance(g4Var.currentAccount).getClientUserId()) {
-                zc a02 = zc.a0(g4Var);
-                TLRPC.Document document = tL_starGiftUnique.getDocument();
-                String string = LocaleController.getString(R.string.BoughtResoldGiftTitle);
-                int i10 = R.string.BoughtResoldGiftText;
-                StringBuilder sb2 = new StringBuilder();
-                sb2.append(tL_starGiftUnique.title);
-                sb2.append(" #");
-                sc O = a02.O(document, string, LocaleController.formatString(i10, org.telegram.messenger.g0.h(tL_starGiftUnique.num, ',', sb2)));
-                O.r = false;
-                O.j();
-            } else {
-                sc O2 = zc.a0(g4Var).O(tL_starGiftUnique.getDocument(), LocaleController.getString(R.string.BoughtResoldGiftToTitle), LocaleController.formatString(R.string.BoughtResoldGiftToText, DialogObject.getShortName(g4Var.currentAccount, j10)));
-                O2.r = false;
-                O2.j();
+            {
+                this.b = this;
             }
-            g4Var.J.c(true);
-            return;
-        }
-        Bundle bundle = new Bundle();
-        if (j10 >= 0) {
-            bundle.putLong("user_id", j10);
-        } else {
-            bundle.putLong("chat_id", -j10);
-        }
-        b3 b3Var = new b3(bundle, tL_starGiftUnique, j10);
-        b5 b5Var = g4Var.parentLayout;
-        if (b5Var == null || !((ActionBarLayout) b5Var).b) {
-            g4Var.presentFragment(b3Var, true, z10);
-        } else {
-            Dialog dialog = g4Var.parentDialog;
-            if ((dialog instanceof org.telegram.ui.ActionBar.e3) && z10) {
-                ((org.telegram.ui.ActionBar.e3) dialog).skipDismissAnimation();
-            }
-            g4Var.finishFragment();
-            org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
-            if (U != null) {
-                U.presentFragment(b3Var, false, z10);
-            }
-        }
-        Utilities.Callback callback = g4Var.e;
-        if (callback != null) {
-            callback.run(Boolean.valueOf(z10));
-        }
-    }
 
-    public static void V(g4 g4Var, Context context) {
-        t3 t3Var = g4Var.d;
-        if (g4Var.K && !t3Var.h.isEmpty()) {
-            l80 l80Var = new l80(g4Var, g4Var.I, false, false);
-            l80Var.t = false;
-            l80Var.Y = true;
-            l80Var.a0(0.0f, AndroidUtilities.dp(-8.0f));
-            l80Var.R = true;
-            l80Var.p = new ji.h(l80Var, 3);
-            String[] strArr = {""};
-            ArrayList arrayList = new ArrayList(t3Var.h);
-            Collections.sort(arrayList, new s2(g4Var, 0));
-            f3 f3Var = new f3(g4Var, new t2(g4Var, strArr, arrayList, 0), new u2(g4Var, l80Var, 0), null);
-            f3Var.W2.r = false;
-            FrameLayout frameLayout = new FrameLayout(context);
-            ImageView imageView = new ImageView(context);
-            imageView.setScaleType(ImageView.ScaleType.CENTER);
-            imageView.setImageResource(R.drawable.smiles_inputsearch);
-            imageView.setColorFilter(new PorterDuffColorFilter(g4Var.getThemedColor(g6.F8), PorterDuff.Mode.SRC_IN));
-            frameLayout.addView(imageView, z5.a(24.0f, 10.0f, 0.0f, 0.0f, 0.0f, 24, 19));
-            nu nuVar = new nu(context, g4Var.resourceProvider);
-            nuVar.setTextSize(1, 16.0f);
-            nuVar.setInputType(573441);
-            nuVar.setRawInputType(573441);
-            nuVar.setHintTextColor(g6.w0(g6.A6, g4Var.resourceProvider));
-            nuVar.setCursorColor(g6.w0(g6.G6, g4Var.resourceProvider));
-            nuVar.setCursorSize(AndroidUtilities.dp(19.0f));
-            nuVar.setCursorWidth(1.5f);
-            nuVar.setHint(LocaleController.getString(R.string.Gift2ResaleFiltersSearch));
-            nuVar.setTextColor(g6.w0(g6.E8, g4Var.resourceProvider));
-            nuVar.setBackground(null);
-            frameLayout.addView(nuVar, z5.a(-2.0f, 43.0f, 0.0f, 8.0f, 0.0f, -1, 19));
-            nuVar.addTextChangedListener(new eo(strArr, f3Var, false, 8));
-            if (arrayList.size() > 8) {
-                l80Var.r(frameLayout, z5.n(-1, 44));
-                l80Var.k();
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i10) {
+                    case 0:
+                        g4.S(this.b, f4Var, context);
+                        break;
+                    case 1:
+                        g4.X(this.b, f4Var, context);
+                        break;
+                    default:
+                        g4.T(this.b, f4Var, context);
+                        break;
+                }
             }
-            if (!t3Var.l.isEmpty()) {
-                l80Var.c(R.drawable.msg_select, LocaleController.getString(R.string.SelectAll), new v2(g4Var, 0), false);
-            }
-            l80Var.q(f3Var);
-            l80Var.Z();
-        }
-    }
+        });
+        k3 k3Var3 = new k3(context, this.resourcesProvider);
+        this.c0 = k3Var3;
+        k3Var3.setValue(LocaleController.getString(R.string.Gift2AttributeBackdrop));
+        linearLayout.addView(k3Var3, z5.t(-2, -2, 16, 0, 0, 6, 0));
+        final int i11 = 1;
+        k3Var3.setOnClickListener(new View.OnClickListener(this) { // from class: yh.a4
+            public final /* synthetic */ g4 b;
 
-    public static void W(g4 g4Var, Context context) {
-        t3 t3Var = g4Var.d;
-        if (g4Var.K && !t3Var.f.isEmpty()) {
-            l80 l80Var = new l80(g4Var, g4Var.G, false, false);
-            l80Var.t = false;
-            l80Var.Y = true;
-            l80Var.a0(0.0f, AndroidUtilities.dp(-8.0f));
-            l80Var.R = true;
-            l80Var.p = new ji.h(l80Var, 5);
-            String[] strArr = {""};
-            ArrayList arrayList = new ArrayList(t3Var.f);
-            Collections.sort(arrayList, new s2(g4Var, 2));
-            d3 d3Var = new d3(g4Var, new t2(g4Var, strArr, arrayList, 2), new u2(g4Var, l80Var, 2), null);
-            d3Var.W2.r = false;
-            FrameLayout frameLayout = new FrameLayout(context);
-            ImageView imageView = new ImageView(context);
-            imageView.setScaleType(ImageView.ScaleType.CENTER);
-            imageView.setImageResource(R.drawable.smiles_inputsearch);
-            imageView.setColorFilter(new PorterDuffColorFilter(g4Var.getThemedColor(g6.F8), PorterDuff.Mode.SRC_IN));
-            frameLayout.addView(imageView, z5.a(24.0f, 10.0f, 0.0f, 0.0f, 0.0f, 24, 19));
-            nu nuVar = new nu(context, g4Var.resourceProvider);
-            nuVar.setTextSize(1, 16.0f);
-            nuVar.setInputType(573441);
-            nuVar.setRawInputType(573441);
-            nuVar.setHintTextColor(g6.w0(g6.A6, g4Var.resourceProvider));
-            nuVar.setCursorColor(g6.w0(g6.G6, g4Var.resourceProvider));
-            nuVar.setCursorSize(AndroidUtilities.dp(19.0f));
-            nuVar.setCursorWidth(1.5f);
-            nuVar.setHint(LocaleController.getString(R.string.Gift2ResaleFiltersSearch));
-            nuVar.setTextColor(g6.w0(g6.E8, g4Var.resourceProvider));
-            nuVar.setBackground(null);
-            frameLayout.addView(nuVar, z5.a(-2.0f, 43.0f, 0.0f, 8.0f, 0.0f, -1, 19));
-            nuVar.addTextChangedListener(new eo(strArr, d3Var, false, 9));
-            if (arrayList.size() > 8) {
-                l80Var.r(frameLayout, z5.n(-1, 44));
-                l80Var.k();
+            {
+                this.b = this;
             }
-            if (!t3Var.j.isEmpty()) {
-                l80Var.c(R.drawable.msg_select, LocaleController.getString(R.string.SelectAll), new v2(g4Var, 2), false);
-            }
-            l80Var.q(d3Var);
-            l80Var.Z();
-        }
-    }
 
-    public static void X(g4 g4Var, Context context) {
-        t3 t3Var = g4Var.d;
-        if (g4Var.K && !t3Var.g.isEmpty()) {
-            l80 l80Var = new l80(g4Var, g4Var.H, false, false);
-            l80Var.t = false;
-            l80Var.Y = true;
-            l80Var.a0(0.0f, AndroidUtilities.dp(-8.0f));
-            l80Var.R = true;
-            l80Var.p = new ji.h(l80Var, 4);
-            String[] strArr = {""};
-            ArrayList arrayList = new ArrayList(t3Var.g);
-            Collections.sort(arrayList, new s2(g4Var, 1));
-            e3 e3Var = new e3(g4Var, new t2(g4Var, strArr, arrayList, 1), new u2(g4Var, l80Var, 1), null);
-            e3Var.W2.r = false;
-            FrameLayout frameLayout = new FrameLayout(context);
-            ImageView imageView = new ImageView(context);
-            imageView.setScaleType(ImageView.ScaleType.CENTER);
-            imageView.setImageResource(R.drawable.smiles_inputsearch);
-            imageView.setColorFilter(new PorterDuffColorFilter(g4Var.getThemedColor(g6.F8), PorterDuff.Mode.SRC_IN));
-            frameLayout.addView(imageView, z5.a(24.0f, 10.0f, 0.0f, 0.0f, 0.0f, 24, 19));
-            nu nuVar = new nu(context, g4Var.resourceProvider);
-            nuVar.setTextSize(1, 16.0f);
-            nuVar.setInputType(573441);
-            nuVar.setRawInputType(573441);
-            nuVar.setHintTextColor(g6.w0(g6.A6, g4Var.resourceProvider));
-            nuVar.setCursorColor(g6.w0(g6.G6, g4Var.resourceProvider));
-            nuVar.setCursorSize(AndroidUtilities.dp(19.0f));
-            nuVar.setCursorWidth(1.5f);
-            nuVar.setHint(LocaleController.getString(R.string.Gift2ResaleFiltersSearch));
-            nuVar.setTextColor(g6.w0(g6.E8, g4Var.resourceProvider));
-            nuVar.setBackground(null);
-            frameLayout.addView(nuVar, z5.a(-2.0f, 43.0f, 0.0f, 8.0f, 0.0f, -1, 19));
-            nuVar.addTextChangedListener(new eo(strArr, e3Var, false, 10));
-            if (arrayList.size() > 8) {
-                l80Var.r(frameLayout, z5.n(-1, 44));
-                l80Var.k();
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i11) {
+                    case 0:
+                        g4.S(this.b, f4Var, context);
+                        break;
+                    case 1:
+                        g4.X(this.b, f4Var, context);
+                        break;
+                    default:
+                        g4.T(this.b, f4Var, context);
+                        break;
+                }
             }
-            if (!t3Var.k.isEmpty()) {
-                l80Var.c(R.drawable.msg_select, LocaleController.getString(R.string.SelectAll), new v2(g4Var, 1), false);
-            }
-            l80Var.q(e3Var);
-            l80Var.Z();
-        }
-    }
-
-    public static void Y(g4 g4Var, m61 m61Var) {
-        Object obj = m61Var.G;
-        if (obj instanceof TL_stars.TL_starGiftUnique) {
-            TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) obj;
-            zh.r3 r3Var = new zh.r3(g4Var.getParentActivity(), g4Var.currentAccount, g4Var.b, g4Var.resourceProvider, null);
-            r3Var.j2(tL_starGiftUnique.slug, tL_starGiftUnique, g4Var.d);
-            r3Var.P0 = new x2(g4Var);
-            g4Var.showDialog(r3Var);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.m2
-    public final View createView(final Context context) {
-        gh.c cVar = new gh.c();
-        this.L = cVar;
-        int i10 = g6.d6;
-        cVar.a(getThemedColor(i10));
-        this.M = new bh.b(this.L);
-        org.telegram.ui.ActionBar.k kVar = this.actionBar;
-        org.telegram.ui.ActionBar.f2 f2Var = new org.telegram.ui.ActionBar.f2(false);
-        this.f = f2Var;
-        kVar.setBackButtonDrawable(f2Var);
-        this.f.k = 240.0f;
-        this.actionBar.setCastShadows(false);
-        this.actionBar.setAddToContainer(false);
-        this.actionBar.setActionBarMenuOnItemClick(new w41(this, 14));
-        this.actionBar.setTitle(this.c);
-        this.actionBar.setBackgroundColor(getThemedColor(i10));
-        org.telegram.ui.ActionBar.k kVar2 = this.actionBar;
-        int i11 = g6.G6;
-        kVar2.D(getThemedColor(i11), false);
-        this.actionBar.D(getThemedColor(i11), true);
-        this.actionBar.C(getThemedColor(g6.z8), false);
-        this.actionBar.setTitleColor(getThemedColor(i11));
-        this.actionBar.setSubtitleColor(getThemedColor(g6.z6));
-        z8 z8Var = new z8(this, context, 9);
-        int v = g6.v(g6.w0(i10, this.resourceProvider), g6.m1(0.04f, g6.w0(i11, this.resourceProvider)));
-        z8Var.setBackgroundColor(v);
-        this.fragmentView = z8Var;
-        d7 d7Var = new d7(context, this.currentAccount, this.resourceProvider);
-        d7Var.d = true;
-        b6.a(d7Var);
-        d7Var.setOnClickListener(new a(1, this, d7Var));
-        this.actionBar.addView(d7Var, z5.a(-2.0f, 0.0f, 0.0f, 4.0f, 0.0f, -2, 85));
-        c3 c3Var = new c3(this, new ii.a(this, 18), new x2(this), new x2(this));
-        this.n = c3Var;
-        c3Var.W2.r = false;
-        c3Var.setSpanCount(3);
-        this.n.j(new kc0(this, 19));
-        this.n.setPadding(0, AndroidUtilities.dp(45.0f), 0, AndroidUtilities.dp(101.0f));
-        this.n.setClipToPadding(false);
-        z8Var.addView(this.n, z5.a(-1.0f, 7.33f, 0.0f, 7.33f, -45.0f, -1, 119));
-        z8Var.addView(this.actionBar);
-        final int i12 = 0;
-        View.OnClickListener onClickListener = new View.OnClickListener(this) { // from class: yh.y2
+        });
+        k3 k3Var4 = new k3(context, this.resourcesProvider);
+        this.d0 = k3Var4;
+        k3Var4.setValue(LocaleController.getString(R.string.Gift2AttributeSymbol));
+        linearLayout.addView(k3Var4, z5.t(-2, -2, 16, 0, 0, 0, 0));
+        final int i12 = 2;
+        k3Var4.setOnClickListener(new View.OnClickListener(this) { // from class: yh.a4
             public final /* synthetic */ g4 b;
 
             {
@@ -343,557 +154,416 @@ public class g4 extends org.telegram.ui.ActionBar.m2 implements ne.d {
             public final void onClick(View view) {
                 switch (i12) {
                     case 0:
-                        t3 t3Var = this.b.d;
-                        t3Var.k.clear();
-                        t3Var.j.clear();
-                        t3Var.l.clear();
-                        t3Var.h();
+                        g4.S(this.b, f4Var, context);
+                        break;
+                    case 1:
+                        g4.X(this.b, f4Var, context);
                         break;
                     default:
-                        t3 t3Var2 = this.b.d;
-                        t3Var2.k.clear();
-                        t3Var2.j.clear();
-                        t3Var2.l.clear();
-                        t3Var2.h();
+                        g4.T(this.b, f4Var, context);
                         break;
                 }
             }
-        };
-        c6 c6Var = this.resourceProvider;
-        l3 l3Var = new l3(context);
-        LinearLayout e = sk.e(context, 1);
-        l3Var.addView(e, z5.e(-1, -2, 23));
-        z9 z9Var = new z9(context);
-        z9Var.setImageDrawable(new yj0(R.raw.utyan_empty, AndroidUtilities.dp(130.0f), AndroidUtilities.dp(130.0f)));
-        e.addView(z9Var, z5.q(130, 130, 17));
-        TextView textView = new TextView(context);
-        sk.o(g6.G6, c6Var, textView, 1, 17.0f);
-        textView.setGravity(17);
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setText(LocaleController.getString(R.string.Gift2ResaleFiltersEmptyTitle));
-        e.addView(textView, z5.t(-2, -2, 17, 32, 12, 32, 9));
-        da0 da0Var = new da0(context, null);
-        da0Var.setTextColor(g6.w0(g6.A6, c6Var));
-        da0Var.setTextSize(1, 14.0f);
-        da0Var.setGravity(17);
-        da0Var.setText(LocaleController.getString(R.string.Gift2ResaleFiltersEmptySubtitle));
-        da0Var.setMaxWidth(AndroidUtilities.dp(200.0f));
-        e.addView(da0Var, z5.t(-2, -2, 17, 32, 0, 32, 12));
-        TextView textView2 = new TextView(context);
-        int i13 = g6.Oh;
-        textView2.setTextColor(g6.w0(i13, c6Var));
-        textView2.setBackground(g6.Z(g6.m1(0.1f, g6.w0(i13, c6Var)), 6, 6));
-        textView2.setGravity(17);
-        textView2.setPadding(org.telegram.ui.Cells.c1.b(13.0f, R.string.Gift2ResaleFiltersEmptyClear, textView2), 0, AndroidUtilities.dp(13.0f), 0);
-        b6.a(textView2);
-        e.addView(textView2, z5.t(-2, 27, 17, 32, 0, 32, 12));
-        textView2.setOnClickListener(onClickListener);
-        this.w = l3Var;
-        this.x = false;
-        l3Var.setAlpha(0.0f);
-        this.w.setScaleX(0.95f);
-        this.w.setScaleY(0.95f);
-        this.w.setVisibility(8);
-        z8Var.addView(this.w, z5.a(-1.0f, 0.0f, 0.0f, 0.0f, -45.0f, -1, 119));
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.E = linearLayout;
-        linearLayout.setPadding(AndroidUtilities.dp(11.0f), 0, AndroidUtilities.dp(11.0f), 0);
-        this.E.setOrientation(0);
-        HorizontalScrollView horizontalScrollView = new HorizontalScrollView(context);
-        this.y = horizontalScrollView;
-        horizontalScrollView.setHorizontalScrollBarEnabled(false);
-        this.y.addView(this.E);
-        this.y.setBackgroundColor(v);
-        this.y.setClipChildren(false);
-        z8Var.addView(this.y, z5.e(-1, 47, 55));
-        View view = new View(context);
-        this.h = view;
-        view.setBackgroundColor(getThemedColor(g6.d7));
-        this.h.setAlpha(0.0f);
-        z8Var.addView(this.h, z5.b(-1.0f, 2.0f / AndroidUtilities.density, 55));
-        LinearLayout linearLayout2 = new LinearLayout(context);
-        linearLayout2.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(15.0f), 0);
-        linearLayout2.setOrientation(0);
-        final aq aqVar = new aq(context, 24, this.resourceProvider);
-        aqVar.b(g6.h7, g6.j7, g6.k7);
-        aqVar.setDrawUnchecked(true);
-        aqVar.a(false, false);
-        aqVar.setDrawBackgroundAsArc(10);
-        aqVar.setTranslationX(AndroidUtilities.dp(4.0f));
-        aqVar.setScaleX(0.8f);
-        aqVar.setScaleY(0.8f);
-        linearLayout2.addView(aqVar, z5.q(26, 26, 16));
-        TextView textView3 = new TextView(context);
-        sk.o(g6.j5, this.resourceProvider, textView3, 1, 14.0f);
-        textView3.setText(LocaleController.getString(R.string.GiftResaleStarsOnly));
-        linearLayout2.addView(textView3, z5.t(-2, -2, 16, 9, 0, 0, 0));
-        int dp = AndroidUtilities.dp(18.0f);
-        int themedColor = getThemedColor(i10);
-        int i14 = g6.Oh;
-        int v10 = g6.v(themedColor, g6.m1(0.1f, getThemedColor(i14)));
-        linearLayout2.setBackground(g6.j0(dp, dp, dp, dp, 0, v10, v10));
+        });
+        getContext();
+        s4.s sVar = new s4.s(3);
+        sVar.O = new ai.q1(this, 8);
+        this.d.setLayoutManager(sVar);
+        this.d.setOnItemClickListener(new org.telegram.ui.web.c0(24, this, f4Var));
+        this.d.setPadding(AndroidUtilities.dp(8.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(8.0f) + this.backgroundPaddingLeft, 0);
+        this.d.setOnScrollListener(new kv(this, 24));
+        s4.k kVar = new s4.k();
+        kVar.m = false;
+        kVar.C = false;
+        kVar.o(bs.h);
+        kVar.n(350L);
+        this.d.setItemAnimator(kVar);
+        int i13 = 2;
+        this.d.setItemSelectorColorProvider(new g(i13));
+        k5 k5Var = new k5(context);
+        this.e0 = k5Var;
+        int dp = AndroidUtilities.dp(20.0f);
+        int dp2 = AndroidUtilities.dp(9.0f);
+        k5Var.h = dp;
+        k5Var.n = dp2;
+        k5Var.setRoundRadius(AndroidUtilities.dp(22.0f));
+        k5Var.setFullRect(true);
+        AndroidUtilities.makeGlobalBlurBitmap(new ai.r0(k5Var, i13), 12.0f, 12, null, new ArrayList());
+        k5Var.setPivotY(0.0f);
+        this.container.addView(k5Var, z5.e(-1, -2, 55));
+        this.i0.N(false);
+        f4Var.d = new y3(this, 1);
+    }
+
+    public static void Q(g4 g4Var, f4 f4Var) {
+        i80 F = i80.F(g4Var.container, g4Var.resourcesProvider, g4Var.a0);
+        F.c(R.drawable.menu_sort_value, LocaleController.getString(s3.b.a), new x3(f4Var, 3), false);
+        F.c(R.drawable.menu_sort_date, LocaleController.getString(s3.c.a), new x3(f4Var, 4), false);
+        F.c(R.drawable.menu_sort_number, LocaleController.getString(s3.d.a), new x3(f4Var, 5), false);
+        F.t = false;
+        F.Y = true;
+        F.a0(0.0f, AndroidUtilities.dp(-8.0f));
+        F.Z();
+    }
+
+    public static void R(g4 g4Var, f4 f4Var, int i10) {
+        TL_stars.SavedStarGift savedStarGift;
+        f61 G = g4Var.i0.G(i10 - 1);
+        if (G == null) {
+            return;
+        }
+        Object obj = G.G;
+        if (obj instanceof TL_stars.StarGift) {
+            TL_stars.StarGift starGift = (TL_stars.StarGift) obj;
+            boolean z10 = G.r;
+            if (!TextUtils.isEmpty(starGift.gift_address) && g4Var.h0) {
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(g4Var.getContext(), 0, g4Var.resourcesProvider);
+                String string = LocaleController.getString(R.string.GiftCraftCantChooseFirstTitle);
+                org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+                b2Var.R = string;
+                b2Var.T = LocaleController.getString(R.string.GiftCraftCantChooseFirst);
+                org.telegram.messenger.q.p(R.string.OK, alertDialog$Builder, null);
+                return;
+            }
+            if (z10 && (starGift instanceof TL_stars.TL_starGiftUnique)) {
+                TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) G.G;
+                org.telegram.ui.ActionBar.b2 b2Var2 = new org.telegram.ui.ActionBar.b2(g4Var.getContext(), 3, null);
+                b2Var2.q(400L);
+                long clientUserId = UserConfig.getInstance(g4Var.currentAccount).getClientUserId();
+                ag.c cVar = tL_starGiftUnique.resale_ton_only ? ag.c.b : ag.c.a;
+                fa.x(g4Var.currentAccount, cVar).H(tL_starGiftUnique, clientUserId, null, true, new ko0(g4Var, b2Var2, cVar, tL_starGiftUnique, clientUserId));
+                return;
+            }
+            if (!z10) {
+                ArrayList arrayList = f4Var.b.l;
+                int size = arrayList.size();
+                int i11 = 0;
+                while (true) {
+                    if (i11 >= size) {
+                        savedStarGift = null;
+                        break;
+                    }
+                    Object obj2 = arrayList.get(i11);
+                    i11++;
+                    savedStarGift = (TL_stars.SavedStarGift) obj2;
+                    if (savedStarGift.gift == starGift) {
+                        break;
+                    }
+                }
+                if (savedStarGift != null && savedStarGift.can_craft_at > 0 && savedStarGift.can_craft_at > ConnectionsManager.getInstance(g4Var.currentAccount).getCurrentTime()) {
+                    AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(g4Var.getContext());
+                    String string2 = LocaleController.getString(R.string.GiftCraftUnavailableTitle);
+                    org.telegram.ui.ActionBar.b2 b2Var3 = alertDialog$Builder2.a;
+                    b2Var3.R = string2;
+                    b2Var3.T = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.GiftCraftUnavailableTextTime, LocaleController.formatDateTime(savedStarGift.can_craft_at, true)));
+                    org.telegram.messenger.q.p(R.string.OK, alertDialog$Builder2, null);
+                    return;
+                }
+            }
+            g4Var.f0.run(starGift);
+            g4Var.dismiss();
+        }
+    }
+
+    public static void S(g4 g4Var, f4 f4Var, Context context) {
+        t3 t3Var = f4Var.c;
+        if (t3Var.f.isEmpty()) {
+            return;
+        }
+        i80 i80Var = new i80(g4Var.container, g4Var.resourcesProvider, g4Var.b0, false, true, false);
+        i80Var.t = false;
+        i80Var.Y = true;
+        i80Var.a0(0.0f, AndroidUtilities.dp(-8.0f));
+        i80Var.R = true;
+        i80Var.p = new ki.h(i80Var, 8);
+        String[] strArr = {""};
+        ArrayList arrayList = new ArrayList(t3Var.f);
+        Collections.sort(arrayList, new z3(f4Var, 2));
+        int i10 = 0;
+        b4 b4Var = new b4(context, g4Var.currentAccount, 0, false, new v3(strArr, f4Var, arrayList, i10), new w3(f4Var, i80Var, i10), null, g4Var.resourcesProvider);
+        b4Var.W2.r = false;
         FrameLayout frameLayout = new FrameLayout(context);
-        this.s = frameLayout;
-        frameLayout.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-        View view2 = this.s;
-        dh.d c10 = this.M.c(view2, null, false);
-        c10.o(fh.b.l(this.resourceProvider));
-        c10.p(AndroidUtilities.dp(8.0f));
-        c10.q(AndroidUtilities.dp(18.0f));
-        view2.setBackground(c10);
-        final int i15 = 0;
-        this.s.setOnClickListener(new View.OnClickListener(this) { // from class: yh.z2
-            public final /* synthetic */ g4 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view3) {
-                switch (i15) {
-                    case 0:
-                        t3 t3Var = this.b.d;
-                        if (t3Var != null) {
-                            boolean z10 = !t3Var.r;
-                            t3Var.r = z10;
-                            aqVar.a(z10, true);
-                            t3Var.h();
-                            break;
-                        }
-                        break;
-                    default:
-                        final g4 g4Var = this.b;
-                        t3 t3Var2 = g4Var.d;
-                        if (g4Var.K) {
-                            l80 H = l80.H(g4Var, g4Var.F);
-                            H.c(R.drawable.menu_sort_value, LocaleController.getString(s3.b.a), new v2(g4Var, 3), false);
-                            H.c(R.drawable.menu_sort_date, LocaleController.getString(s3.c.a), new v2(g4Var, 4), false);
-                            H.c(R.drawable.menu_sort_number, LocaleController.getString(s3.d.a), new v2(g4Var, 5), false);
-                            H.k();
-                            boolean z11 = !t3Var2.r;
-                            String string = LocaleController.getString(R.string.GiftResaleFilterAllListings);
-                            final int i16 = 0;
-                            final aq aqVar2 = aqVar;
-                            H.i(new Runnable() { // from class: yh.w2
-                                @Override // java.lang.Runnable
-                                public final void run() {
-                                    switch (i16) {
-                                        case 0:
-                                            t3 t3Var3 = g4Var.d;
-                                            if (t3Var3.r) {
-                                                t3Var3.r = false;
-                                                aqVar2.a(false, true);
-                                                t3Var3.h();
-                                                break;
-                                            }
-                                            break;
-                                        default:
-                                            t3 t3Var4 = g4Var.d;
-                                            if (!t3Var4.r) {
-                                                t3Var4.r = true;
-                                                aqVar2.a(true, true);
-                                                t3Var4.h();
-                                                break;
-                                            }
-                                            break;
-                                    }
-                                }
-                            }, string, z11);
-                            final int i17 = 1;
-                            H.i(new Runnable() { // from class: yh.w2
-                                @Override // java.lang.Runnable
-                                public final void run() {
-                                    switch (i17) {
-                                        case 0:
-                                            t3 t3Var3 = g4Var.d;
-                                            if (t3Var3.r) {
-                                                t3Var3.r = false;
-                                                aqVar2.a(false, true);
-                                                t3Var3.h();
-                                                break;
-                                            }
-                                            break;
-                                        default:
-                                            t3 t3Var4 = g4Var.d;
-                                            if (!t3Var4.r) {
-                                                t3Var4.r = true;
-                                                aqVar2.a(true, true);
-                                                t3Var4.h();
-                                                break;
-                                            }
-                                            break;
-                                    }
-                                }
-                            }, LocaleController.getString(R.string.GiftResaleFilterForStarsOnly), t3Var2.r);
-                            H.t = false;
-                            H.Y = true;
-                            H.a0(0.0f, AndroidUtilities.dp(-8.0f));
-                            H.Z();
-                            break;
-                        }
-                        break;
-                }
-            }
-        });
-        this.s.addView(linearLayout2, z5.d(-1.0f, -2));
-        b6.b(this.s, 0.04f, 1.5f);
-        z8Var.addView(this.s, z5.a(52.0f, 0.0f, 0.0f, 0.0f, AndroidUtilities.navigationBarHeight / AndroidUtilities.density, -2, 81));
-        n5 y3 = n5.y(this.currentAccount, true);
-        if (y3.e && !y3.s().k()) {
-            this.s.setVisibility(8);
+        ImageView imageView = new ImageView(context);
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setImageResource(R.drawable.smiles_inputsearch);
+        imageView.setColorFilter(new PorterDuffColorFilter(g4Var.getThemedColor(h6.F8), PorterDuff.Mode.SRC_IN));
+        frameLayout.addView(imageView, z5.a(24.0f, 10.0f, 0.0f, 0.0f, 0.0f, 24, 19));
+        iu iuVar = new iu(context, g4Var.resourcesProvider);
+        iuVar.setTextSize(1, 16.0f);
+        iuVar.setInputType(573441);
+        iuVar.setRawInputType(573441);
+        iuVar.setHintTextColor(h6.w0(h6.A6, g4Var.resourcesProvider));
+        iuVar.setCursorColor(h6.w0(h6.G6, g4Var.resourcesProvider));
+        iuVar.setCursorSize(AndroidUtilities.dp(19.0f));
+        iuVar.setCursorWidth(1.5f);
+        iuVar.setHint(LocaleController.getString(R.string.Gift2ResaleFiltersSearch));
+        iuVar.setTextColor(h6.w0(h6.E8, g4Var.resourcesProvider));
+        iuVar.setBackground(null);
+        frameLayout.addView(iuVar, z5.a(-2.0f, 43.0f, 0.0f, 8.0f, 0.0f, -1, 19));
+        iuVar.addTextChangedListener(new ao(strArr, b4Var, false, 11));
+        if (arrayList.size() > 8) {
+            i80Var.r(frameLayout, z5.n(-1, 44));
+            i80Var.k();
         }
-        FrameLayout frameLayout2 = new FrameLayout(context);
-        this.r = frameLayout2;
-        frameLayout2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-        View view3 = this.r;
-        dh.d c11 = this.M.c(view3, null, false);
-        c11.o(fh.b.l(this.resourceProvider));
-        c11.p(AndroidUtilities.dp(8.0f));
-        c11.q(AndroidUtilities.dp(22.0f));
-        view3.setBackground(c11);
-        z8Var.addView(this.r, z5.a(60.0f, 0.0f, 0.0f, 0.0f, AndroidUtilities.navigationBarHeight / AndroidUtilities.density, -2, 81));
-        this.v = new TextView(context);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("x");
-        spannableStringBuilder.setSpan(new br(R.drawable.msg_clearcache, 0), 0, 1, 33);
-        spannableStringBuilder.append((CharSequence) " ").append((CharSequence) LocaleController.getString(R.string.Gift2ResaleFiltersClear));
-        this.v.setText(spannableStringBuilder);
-        this.v.setTextColor(getThemedColor(i14));
-        this.v.setTypeface(AndroidUtilities.bold());
-        this.v.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
-        TextView textView4 = this.v;
-        int dp2 = AndroidUtilities.dp(22.0f);
-        int v11 = g6.v(getThemedColor(i10), g6.m1(0.1f, getThemedColor(i14)));
-        textView4.setBackground(g6.j0(dp2, dp2, dp2, dp2, 0, v11, v11));
-        this.v.setGravity(17);
-        final int i16 = 1;
-        this.r.setOnClickListener(new View.OnClickListener(this) { // from class: yh.y2
-            public final /* synthetic */ g4 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view4) {
-                switch (i16) {
-                    case 0:
-                        t3 t3Var = this.b.d;
-                        t3Var.k.clear();
-                        t3Var.j.clear();
-                        t3Var.l.clear();
-                        t3Var.h();
-                        break;
-                    default:
-                        t3 t3Var2 = this.b.d;
-                        t3Var2.k.clear();
-                        t3Var2.j.clear();
-                        t3Var2.l.clear();
-                        t3Var2.h();
-                        break;
-                }
-            }
-        });
-        this.r.addView(this.v, z5.d(-1.0f, -2));
-        this.r.setVisibility(8);
-        b6.b(this.r, 0.05f, 1.5f);
-        k3 k3Var = new k3(context, this.resourceProvider);
-        this.F = k3Var;
-        k3Var.setSorting(this.d.p);
-        this.E.addView(this.F, z5.t(-2, -2, 16, 0, 0, 6, 0));
-        final int i17 = 1;
-        this.F.setOnClickListener(new View.OnClickListener(this) { // from class: yh.z2
-            public final /* synthetic */ g4 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view32) {
-                switch (i17) {
-                    case 0:
-                        t3 t3Var = this.b.d;
-                        if (t3Var != null) {
-                            boolean z10 = !t3Var.r;
-                            t3Var.r = z10;
-                            aqVar.a(z10, true);
-                            t3Var.h();
-                            break;
-                        }
-                        break;
-                    default:
-                        final g4 g4Var = this.b;
-                        t3 t3Var2 = g4Var.d;
-                        if (g4Var.K) {
-                            l80 H = l80.H(g4Var, g4Var.F);
-                            H.c(R.drawable.menu_sort_value, LocaleController.getString(s3.b.a), new v2(g4Var, 3), false);
-                            H.c(R.drawable.menu_sort_date, LocaleController.getString(s3.c.a), new v2(g4Var, 4), false);
-                            H.c(R.drawable.menu_sort_number, LocaleController.getString(s3.d.a), new v2(g4Var, 5), false);
-                            H.k();
-                            boolean z11 = !t3Var2.r;
-                            String string = LocaleController.getString(R.string.GiftResaleFilterAllListings);
-                            final int i162 = 0;
-                            final aq aqVar2 = aqVar;
-                            H.i(new Runnable() { // from class: yh.w2
-                                @Override // java.lang.Runnable
-                                public final void run() {
-                                    switch (i162) {
-                                        case 0:
-                                            t3 t3Var3 = g4Var.d;
-                                            if (t3Var3.r) {
-                                                t3Var3.r = false;
-                                                aqVar2.a(false, true);
-                                                t3Var3.h();
-                                                break;
-                                            }
-                                            break;
-                                        default:
-                                            t3 t3Var4 = g4Var.d;
-                                            if (!t3Var4.r) {
-                                                t3Var4.r = true;
-                                                aqVar2.a(true, true);
-                                                t3Var4.h();
-                                                break;
-                                            }
-                                            break;
-                                    }
-                                }
-                            }, string, z11);
-                            final int i172 = 1;
-                            H.i(new Runnable() { // from class: yh.w2
-                                @Override // java.lang.Runnable
-                                public final void run() {
-                                    switch (i172) {
-                                        case 0:
-                                            t3 t3Var3 = g4Var.d;
-                                            if (t3Var3.r) {
-                                                t3Var3.r = false;
-                                                aqVar2.a(false, true);
-                                                t3Var3.h();
-                                                break;
-                                            }
-                                            break;
-                                        default:
-                                            t3 t3Var4 = g4Var.d;
-                                            if (!t3Var4.r) {
-                                                t3Var4.r = true;
-                                                aqVar2.a(true, true);
-                                                t3Var4.h();
-                                                break;
-                                            }
-                                            break;
-                                    }
-                                }
-                            }, LocaleController.getString(R.string.GiftResaleFilterForStarsOnly), t3Var2.r);
-                            H.t = false;
-                            H.Y = true;
-                            H.a0(0.0f, AndroidUtilities.dp(-8.0f));
-                            H.Z();
-                            break;
-                        }
-                        break;
-                }
-            }
-        });
-        k3 k3Var2 = new k3(context, this.resourceProvider);
-        this.G = k3Var2;
-        k3Var2.setValue(LocaleController.getString(R.string.Gift2AttributeModel));
-        this.E.addView(this.G, z5.t(-2, -2, 16, 0, 0, 6, 0));
-        final int i18 = 0;
-        this.G.setOnClickListener(new View.OnClickListener(this) { // from class: yh.r2
-            public final /* synthetic */ g4 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view4) {
-                switch (i18) {
-                    case 0:
-                        g4.W(this.b, context);
-                        break;
-                    case 1:
-                        g4.X(this.b, context);
-                        break;
-                    default:
-                        g4.V(this.b, context);
-                        break;
-                }
-            }
-        });
-        k3 k3Var3 = new k3(context, this.resourceProvider);
-        this.H = k3Var3;
-        k3Var3.setValue(LocaleController.getString(R.string.Gift2AttributeBackdrop));
-        this.E.addView(this.H, z5.t(-2, -2, 16, 0, 0, 6, 0));
-        final int i19 = 1;
-        this.H.setOnClickListener(new View.OnClickListener(this) { // from class: yh.r2
-            public final /* synthetic */ g4 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view4) {
-                switch (i19) {
-                    case 0:
-                        g4.W(this.b, context);
-                        break;
-                    case 1:
-                        g4.X(this.b, context);
-                        break;
-                    default:
-                        g4.V(this.b, context);
-                        break;
-                }
-            }
-        });
-        k3 k3Var4 = new k3(context, this.resourceProvider);
-        this.I = k3Var4;
-        k3Var4.setValue(LocaleController.getString(R.string.Gift2AttributeSymbol));
-        this.E.addView(this.I, z5.t(-2, -2, 16, 0, 0, 0, 0));
-        final int i20 = 2;
-        this.I.setOnClickListener(new View.OnClickListener(this) { // from class: yh.r2
-            public final /* synthetic */ g4 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view4) {
-                switch (i20) {
-                    case 0:
-                        g4.W(this.b, context);
-                        break;
-                    case 1:
-                        g4.X(this.b, context);
-                        break;
-                    default:
-                        g4.V(this.b, context);
-                        break;
-                }
-            }
-        });
-        d10 d10Var = new d10(getParentActivity());
-        this.J = d10Var;
-        z8Var.addView(d10Var, z5.d(-1.0f, -1));
-        d0(false, false);
-        return z8Var;
+        if (!t3Var.j.isEmpty()) {
+            i80Var.c(R.drawable.msg_select, LocaleController.getString(R.string.SelectAll), new x3(f4Var, 0), false);
+        }
+        i80Var.q(b4Var);
+        i80Var.Z();
     }
 
-    public final void d0(boolean z10, boolean z11) {
-        if (this.K == z10) {
+    public static void T(g4 g4Var, f4 f4Var, Context context) {
+        t3 t3Var = f4Var.c;
+        if (t3Var.h.isEmpty()) {
             return;
         }
-        this.K = z10;
-        if (!z11) {
-            this.y.setVisibility(z10 ? 0 : 8);
-            this.y.setTranslationY(z10 ? 0.0f : -AndroidUtilities.dp(45.0f));
-            this.y.setAlpha(z10 ? 1.0f : 0.0f);
-            this.h.setTranslationY(z10 ? 0.0f : -AndroidUtilities.dp(45.0f));
-            this.n.setTranslationY(z10 ? 0.0f : -AndroidUtilities.dp(39.0f));
-            return;
+        i80 i80Var = new i80(g4Var.container, g4Var.resourcesProvider, g4Var.d0, false, true, false);
+        i80Var.t = false;
+        i80Var.Y = true;
+        i80Var.a0(0.0f, AndroidUtilities.dp(-8.0f));
+        i80Var.R = true;
+        i80Var.p = new ki.h(i80Var, 7);
+        String[] strArr = {""};
+        ArrayList arrayList = new ArrayList(t3Var.h);
+        Collections.sort(arrayList, new z3(f4Var, 1));
+        int i10 = 2;
+        d4 d4Var = new d4(context, g4Var.currentAccount, 0, false, new v3(strArr, f4Var, arrayList, i10), new w3(f4Var, i80Var, i10), null, g4Var.resourcesProvider);
+        d4Var.W2.r = false;
+        FrameLayout frameLayout = new FrameLayout(context);
+        ImageView imageView = new ImageView(context);
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setImageResource(R.drawable.smiles_inputsearch);
+        imageView.setColorFilter(new PorterDuffColorFilter(g4Var.getThemedColor(h6.F8), PorterDuff.Mode.SRC_IN));
+        frameLayout.addView(imageView, z5.a(24.0f, 10.0f, 0.0f, 0.0f, 0.0f, 24, 19));
+        iu iuVar = new iu(context, g4Var.resourcesProvider);
+        iuVar.setTextSize(1, 16.0f);
+        iuVar.setInputType(573441);
+        iuVar.setRawInputType(573441);
+        iuVar.setHintTextColor(h6.w0(h6.A6, g4Var.resourcesProvider));
+        iuVar.setCursorColor(h6.w0(h6.G6, g4Var.resourcesProvider));
+        iuVar.setCursorSize(AndroidUtilities.dp(19.0f));
+        iuVar.setCursorWidth(1.5f);
+        iuVar.setHint(LocaleController.getString(R.string.Gift2ResaleFiltersSearch));
+        iuVar.setTextColor(h6.w0(h6.E8, g4Var.resourcesProvider));
+        iuVar.setBackground(null);
+        frameLayout.addView(iuVar, z5.a(-2.0f, 43.0f, 0.0f, 8.0f, 0.0f, -1, 19));
+        iuVar.addTextChangedListener(new ao(strArr, d4Var, false, 13));
+        if (arrayList.size() > 8) {
+            i80Var.r(frameLayout, z5.n(-1, 44));
+            i80Var.k();
         }
-        this.y.setVisibility(0);
-        ViewPropertyAnimator alpha = this.y.animate().translationY(z10 ? 0.0f : -AndroidUtilities.dp(45.0f)).alpha(z10 ? 1.0f : 0.0f);
-        es esVar = es.h;
-        alpha.setInterpolator(esVar).setDuration(420L).setListener(new a3(this, z10, 0)).start();
-        this.h.animate().translationY(z10 ? 0.0f : -AndroidUtilities.dp(45.0f)).setInterpolator(esVar).setDuration(420L).start();
-        this.n.animate().translationY(z10 ? 0.0f : -AndroidUtilities.dp(39.0f)).setInterpolator(esVar).setDuration(420L).start();
+        if (!t3Var.l.isEmpty()) {
+            i80Var.c(R.drawable.msg_select, LocaleController.getString(R.string.SelectAll), new x3(f4Var, 2), false);
+        }
+        i80Var.q(d4Var);
+        i80Var.Z();
     }
 
-    public final void e0(boolean z10) {
-        a71 a71Var;
-        t3 t3Var = this.d;
-        int i10 = t3Var.e;
-        HashSet hashSet = t3Var.l;
-        ArrayList arrayList = t3Var.h;
-        HashSet hashSet2 = t3Var.k;
-        ArrayList arrayList2 = t3Var.g;
-        HashSet hashSet3 = t3Var.j;
-        ArrayList arrayList3 = t3Var.f;
-        if (i10 > 12) {
-            d0(true, true);
+    public static void U(g4 g4Var, ArrayList arrayList) {
+        f4 f4Var = g4Var.Y;
+        if (f4Var != null) {
+            x9 x9Var = f4Var.b;
+            t3 t3Var = f4Var.c;
+            if (x9Var == null || t3Var == null) {
+                return;
+            }
+            int currentTime = ConnectionsManager.getInstance(g4Var.currentAccount).getCurrentTime();
+            arrayList.add(f61.s(-1, LocaleController.getString(R.string.GiftCraftSelectYour)));
+            ArrayList arrayList2 = x9Var.l;
+            int size = arrayList2.size();
+            int i10 = 0;
+            int i11 = 0;
+            int i12 = 0;
+            boolean z10 = true;
+            while (i12 < size) {
+                Object obj = arrayList2.get(i12);
+                i12++;
+                TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
+                if (!g4Var.g0.contains(Long.valueOf(savedStarGift.gift.id))) {
+                    boolean z11 = savedStarGift.can_craft_at <= currentTime;
+                    f61 a2 = g1.a(0, savedStarGift.gift, false, true, false, false, true);
+                    a2.g = z11;
+                    arrayList.add(a2);
+                    i11++;
+                    z10 = false;
+                }
+            }
+            if (x9Var.i || !x9Var.j) {
+                int i13 = i11 % 3;
+                int i14 = 6 - i13;
+                for (int i15 = 0; i15 < i14; i15++) {
+                    f61 o10 = f61.o((i15 - i13) + 1, 35);
+                    o10.u = 1;
+                    arrayList.add(o10);
+                }
+            } else if (z10) {
+                arrayList.add(f61.g(LocaleController.getString(R.string.GiftCraftSelectYourEmpty)));
+            }
+            if (t3Var.e > 0 || g4Var.j0) {
+                g4Var.j0 = true;
+                String string = LocaleController.getString(R.string.GiftCraftSelectResale);
+                f61 f61Var = new f61(42);
+                f61Var.d = -2;
+                f61Var.o = string;
+                arrayList.add(f61Var);
+                HorizontalScrollView horizontalScrollView = g4Var.Z;
+                if (horizontalScrollView != null) {
+                    arrayList.add(f61.j(-3, horizontalScrollView));
+                }
+                ArrayList arrayList3 = t3Var.d;
+                int size2 = arrayList3.size();
+                while (i10 < size2) {
+                    Object obj2 = arrayList3.get(i10);
+                    i10++;
+                    arrayList.add(g1.a(0, (TL_stars.TL_starGiftUnique) obj2, false, true, false, true, true));
+                }
+                if (t3Var.t || !t3Var.u) {
+                    f61 o11 = f61.o(10, 35);
+                    o11.u = 1;
+                    arrayList.add(o11);
+                    f61 o12 = f61.o(11, 35);
+                    o12.u = 1;
+                    arrayList.add(o12);
+                    f61 o13 = f61.o(12, 35);
+                    o13.u = 1;
+                    arrayList.add(o13);
+                    f61 o14 = f61.o(13, 35);
+                    o14.u = 1;
+                    arrayList.add(o14);
+                    f61 o15 = f61.o(14, 35);
+                    o15.u = 1;
+                    arrayList.add(o15);
+                    f61 o16 = f61.o(15, 35);
+                    o16.u = 1;
+                    arrayList.add(o16);
+                }
+            }
         }
-        c3 c3Var = this.n;
+    }
+
+    public static /* synthetic */ void V(g4 g4Var, org.telegram.ui.ActionBar.b2 b2Var, ag.c cVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10, TLRPC.TL_payments_paymentFormStarGift tL_payments_paymentFormStarGift) {
+        b2Var.dismiss();
+        if (tL_payments_paymentFormStarGift == null) {
+            return;
+        }
+        ai.h6 h6Var = new ai.h6(cVar, tL_payments_paymentFormStarGift);
+        Context context = g4Var.getContext();
+        d6 d6Var = g4Var.resourcesProvider;
+        int i10 = g4Var.currentAccount;
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(tL_starGiftUnique.title);
+        sb2.append(" #");
+        new k6(context, d6Var, tL_starGiftUnique, h6Var, i10, j10, org.telegram.messenger.q.h(tL_starGiftUnique.num, ',', sb2), true, new sc(g4Var, tL_starGiftUnique, j10, 2)).b();
+    }
+
+    public static void W(g4 g4Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10, ai.h6 h6Var, pf.c cVar) {
+        cVar.d();
+        fa.x(g4Var.currentAccount, h6Var.a).h(h6Var.b, tL_starGiftUnique, j10, null, true, new ai.s0(g4Var, cVar, tL_starGiftUnique, 8));
+    }
+
+    public static void X(g4 g4Var, f4 f4Var, Context context) {
+        t3 t3Var = f4Var.c;
+        if (t3Var.g.isEmpty()) {
+            return;
+        }
+        i80 i80Var = new i80(g4Var.container, g4Var.resourcesProvider, g4Var.c0, false, true, false);
+        i80Var.t = false;
+        i80Var.Y = true;
+        i80Var.a0(0.0f, AndroidUtilities.dp(-8.0f));
+        i80Var.R = true;
+        i80Var.p = new ki.h(i80Var, 6);
+        String[] strArr = {""};
+        ArrayList arrayList = new ArrayList(t3Var.g);
+        Collections.sort(arrayList, new z3(f4Var, 0));
+        int i10 = 1;
+        c4 c4Var = new c4(context, g4Var.currentAccount, 0, false, new v3(strArr, f4Var, arrayList, i10), new w3(f4Var, i80Var, i10), null, g4Var.resourcesProvider);
+        c4Var.W2.r = false;
+        FrameLayout frameLayout = new FrameLayout(context);
+        ImageView imageView = new ImageView(context);
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setImageResource(R.drawable.smiles_inputsearch);
+        imageView.setColorFilter(new PorterDuffColorFilter(g4Var.getThemedColor(h6.F8), PorterDuff.Mode.SRC_IN));
+        frameLayout.addView(imageView, z5.a(24.0f, 10.0f, 0.0f, 0.0f, 0.0f, 24, 19));
+        iu iuVar = new iu(context, g4Var.resourcesProvider);
+        iuVar.setTextSize(1, 16.0f);
+        iuVar.setInputType(573441);
+        iuVar.setRawInputType(573441);
+        iuVar.setHintTextColor(h6.w0(h6.A6, g4Var.resourcesProvider));
+        iuVar.setCursorColor(h6.w0(h6.G6, g4Var.resourcesProvider));
+        iuVar.setCursorSize(AndroidUtilities.dp(19.0f));
+        iuVar.setCursorWidth(1.5f);
+        iuVar.setHint(LocaleController.getString(R.string.Gift2ResaleFiltersSearch));
+        iuVar.setTextColor(h6.w0(h6.E8, g4Var.resourcesProvider));
+        iuVar.setBackground(null);
+        frameLayout.addView(iuVar, z5.a(-2.0f, 43.0f, 0.0f, 8.0f, 0.0f, -1, 19));
+        iuVar.addTextChangedListener(new ao(strArr, c4Var, false, 12));
+        if (arrayList.size() > 8) {
+            i80Var.r(frameLayout, z5.n(-1, 44));
+            i80Var.k();
+        }
+        if (!t3Var.k.isEmpty()) {
+            i80Var.c(R.drawable.msg_select, LocaleController.getString(R.string.SelectAll), new x3(f4Var, 1), false);
+        }
+        i80Var.q(c4Var);
+        i80Var.Z();
+    }
+
+    @Override // org.telegram.ui.Components.bb
+    public final CharSequence A() {
+        String str = this.X;
+        return str != null ? str : LocaleController.getString(R.string.GiftCraftSelectTitle);
+    }
+
+    @Override // org.telegram.ui.Components.bb
+    public final void G(float f7) {
+        float y3 = this.containerView.getY() + f7;
+        k5 k5Var = this.e0;
+        float measuredHeight = y3 - k5Var.getMeasuredHeight();
+        float clamp01 = 1.0f - Utilities.clamp01(Math.max(0.0f, (-measuredHeight) + AndroidUtilities.dp(8.0f)) / k5Var.getMeasuredHeight());
+        float height = this.container.getHeight() / 2.0f;
+        if (measuredHeight > height) {
+            clamp01 = Math.min(clamp01, Utilities.clamp01(1.0f - ((measuredHeight - height) / AndroidUtilities.dpf2(128.0f))));
+        }
+        k5Var.setScaleX(clamp01);
+        k5Var.setScaleY(clamp01);
+        k5Var.setAlpha(AndroidUtilities.ilerp(clamp01, 0.5f, 1.0f));
+        k5Var.setTranslationY(measuredHeight);
+    }
+
+    public final void a0() {
+        int R;
+        f61 G;
+        int i10 = 0;
+        boolean z10 = false;
         boolean z11 = false;
-        if (c3Var != null && (a71Var = c3Var.W2) != null) {
-            a71Var.N(true);
-            if (z10) {
-                this.n.u0(0);
-            }
-        }
-        org.telegram.ui.ActionBar.k kVar = this.actionBar;
-        if (kVar != null) {
-            kVar.setTitle(this.c);
-            org.telegram.ui.ActionBar.k kVar2 = this.actionBar;
-            int i11 = t3Var.e;
-            kVar2.setSubtitle(i11 <= 0 ? LocaleController.getString(R.string.Gift2ResaleNoCount) : LocaleController.formatPluralStringComma("Gift2ListingsCount", i11));
-        }
-        k3 k3Var = this.F;
-        if (k3Var != null) {
-            k3Var.setSorting(t3Var.p);
-        }
-        if (this.G != null) {
-            int size = arrayList3.size() - hashSet3.size();
-            this.G.setValue((size <= 0 || size == arrayList3.size()) ? LocaleController.getString(R.string.Gift2ResaleFilterModel) : LocaleController.formatPluralStringComma("Gift2ResaleFilterModels", size));
-        }
-        if (this.H != null) {
-            int size2 = arrayList2.size() - hashSet2.size();
-            this.H.setValue((size2 <= 0 || size2 == arrayList2.size()) ? LocaleController.getString(R.string.Gift2ResaleFilterBackdrop) : LocaleController.formatPluralStringComma("Gift2ResaleFilterBackdrops", size2));
-        }
-        if (this.I != null) {
-            int size3 = arrayList.size() - hashSet.size();
-            this.I.setValue((size3 <= 0 || size3 == arrayList.size()) ? LocaleController.getString(R.string.Gift2ResaleFilterSymbol) : LocaleController.formatPluralStringComma("Gift2ResaleFilterSymbols", size3));
-        }
-        int i12 = 0;
         while (true) {
-            if (i12 >= this.n.getChildCount()) {
+            im0 im0Var = this.d;
+            if (i10 >= im0Var.getChildCount()) {
                 break;
             }
-            if (this.n.getChildAt(i12) instanceof f10) {
-                t3Var.g(false);
-                break;
+            View childAt = im0Var.getChildAt(i10);
+            if ((childAt instanceof b10) && (R = RecyclerView.R(childAt) - 1) >= 0 && (G = this.i0.G(R)) != null) {
+                if (G.d < 10) {
+                    z10 = true;
+                } else {
+                    z11 = true;
+                }
             }
-            i12++;
+            i10++;
         }
-        if ((t3Var.t || t3Var.e > 0) && (!hashSet3.isEmpty() || !hashSet2.isEmpty() || !hashSet.isEmpty())) {
-            z11 = true;
+        f4 f4Var = this.Y;
+        if (z10) {
+            f4Var.b.a();
         }
-        this.a.a(z11, true);
-    }
-
-    @Override // org.telegram.ui.ActionBar.m2
-    public final boolean isLightStatusBar() {
-        if (getLastStoryViewer() == null || getLastStoryViewer().H0) {
-            int x02 = g6.x0(null, g6.d6, false);
-            if (this.actionBar.t()) {
-                x02 = g6.x0(null, g6.w8, false);
-            }
-            if (i0.a.f(x02) > 0.699999988079071d) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.m2
-    public final boolean isSupportEdgeToEdge() {
-        return true;
-    }
-
-    @Override // ne.d
-    public final void p(int i10, float f7, float f10, ne.e eVar) {
-        if (i10 == 0) {
-            this.s.setTranslationY((-AndroidUtilities.dp(52.0f)) * f7);
-            l20.d(this.r, f7);
+        if (z11) {
+            f4Var.c.g(false);
         }
     }
 
-    @Override // ne.d
-    public final /* synthetic */ void A(float f7, int i10) {
+    @Override // org.telegram.ui.Components.bb
+    public final hm0 x(im0 im0Var) {
+        e4 e4Var = new e4(this, im0Var, getContext(), this.currentAccount, new u3(this, 0), this.resourcesProvider);
+        this.i0 = e4Var;
+        return e4Var;
     }
 }

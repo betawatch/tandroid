@@ -1,24 +1,42 @@
 package sg;
 
-import android.content.Context;
-import bi.o3;
-import java.util.ArrayList;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.Components.ew;
+import android.animation.ValueAnimator;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import org.telegram.ui.Components.ml0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class h1 extends ew {
-    public final /* synthetic */ m1 W;
+public final /* synthetic */ class h1 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h1(m1 m1Var, o3 o3Var, Context context, c6 c6Var, ArrayList arrayList) {
-        super(o3Var, context, c6Var, arrayList);
-        this.W = m1Var;
+    public /* synthetic */ h1(int i10, Object obj, Object obj2) {
+        this.a = i10;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    @Override // org.telegram.ui.Components.ew
-    public final void Z() {
-        this.W.dismiss();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                ml0 ml0Var = (ml0) this.b;
+                Drawable drawable = (Drawable) this.c;
+                ml0Var.getClass();
+                drawable.setAlpha(((Integer) valueAnimator.getAnimatedValue()).intValue());
+                View view = ((l1) ml0Var.c).A0;
+                if (!(view instanceof org.telegram.ui.Cells.u1)) {
+                    view.invalidate();
+                    break;
+                } else {
+                    ((org.telegram.ui.Cells.u1) view).a3();
+                    break;
+                }
+            default:
+                ((s4.k) this.b).P((s4.b1) this.c);
+                break;
+        }
     }
 }

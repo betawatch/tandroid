@@ -1,215 +1,41 @@
 package org.telegram.ui;
 
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.Point;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import java.util.HashSet;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class ow0 implements r0.n, org.telegram.ui.Components.j81, org.telegram.ui.Components.xq0, org.telegram.ui.Components.fp0, org.telegram.ui.ActionBar.c6, org.telegram.ui.Components.vo0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class ow0 extends org.telegram.ui.Components.hm0 {
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ pw0 d;
 
-    public /* synthetic */ ow0(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public ow0(pw0 pw0Var, Context context) {
+        this.d = pw0Var;
+        this.c = context;
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public int E0(int i10) {
-        return ((yd1) this.b).f.a.E0(i10);
+    @Override // org.telegram.ui.Components.hm0
+    public final boolean D(s4.b1 b1Var) {
+        return !((rw0) this.d.n.d.get(b1Var.b())).a.current;
     }
 
-    @Override // org.telegram.ui.ActionBar.c6
-    public Paint F(String str) {
-        return ((yd1) this.b).f.a.F(str);
+    @Override // s4.g0
+    public final int h() {
+        return this.d.n.d.size();
     }
 
-    @Override // r0.n
-    public r0.l1 Q0(View view, r0.l1 l1Var) {
-        switch (this.a) {
-            case 0:
-                rw0 rw0Var = (rw0) this.b;
-                i0.b g10 = l1Var.a.g(519);
-                rw0Var.r = g10;
-                rw0Var.d.setPadding(g10.a, g10.b, g10.c, g10.d);
-                rw0Var.c.requestLayout();
-                break;
-            default:
-                re1 re1Var = (re1) this.b;
-                i0.b g11 = l1Var.a.g(519);
-                re1Var.n = g11;
-                re1Var.c.setPadding(g11.a, g11.b, g11.c, g11.d);
-                re1Var.b.requestLayout();
-                break;
-        }
-        return r0.l1.b;
+    @Override // s4.g0
+    public final void v(s4.b1 b1Var, int i10) {
+        sg.q1 q1Var = (sg.q1) b1Var.a;
+        PremiumPreviewFragment premiumPreviewFragment = this.d.n;
+        q1Var.a((rw0) premiumPreviewFragment.d.get(i10), i10 != h() - 1);
+        q1Var.c(premiumPreviewFragment.e == i10, false);
     }
 
-    @Override // org.telegram.ui.Components.xq0
-    public void U() {
-        ((StickersActivity) this.b).j0();
-    }
-
-    @Override // org.telegram.ui.Components.fp0
-    public void X(float f7, boolean z10) {
-        switch (this.a) {
-            case 3:
-                ThemeActivity.Y(((cc1) this.b).d, Math.round((r5.b * f7) + 0), false);
-                break;
-            default:
-                nc1 nc1Var = (nc1) this.b;
-                ThemeActivity.k0(nc1Var.h, Math.round(((nc1Var.d - r1) * f7) + nc1Var.c));
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public boolean a() {
-        return ((yd1) this.b).f.a.a();
-    }
-
-    @Override // org.telegram.ui.Components.j81
-    public void b(float f7) {
-        SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b;
-        j51 j51Var = secretMediaViewer.y;
-        if (j51Var != null) {
-            long p5 = j51Var.p();
-            if (p5 != -9223372036854775807L) {
-                secretMediaViewer.y.L((long) (f7 * p5), false);
-            }
-            secretMediaViewer.y.C();
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public int b0(int i10) {
-        return ((yd1) this.b).f.a.E0(i10);
-    }
-
-    @Override // org.telegram.ui.Components.j81
-    public void c(float f7) {
-        SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.b;
-        j51 j51Var = secretMediaViewer.y;
-        if (j51Var != null) {
-            j51Var.B();
-            long p5 = secretMediaViewer.y.p();
-            if (p5 != -9223372036854775807L) {
-                secretMediaViewer.y.L((long) (f7 * p5), false);
-            }
-        }
-    }
-
-    @Override // org.telegram.ui.Components.vo0
-    public void e(float f7) {
-        Point point = AndroidUtilities.displaySize;
-        if (point.x > point.y) {
-            ((gg1) this.b).t0.movePreviewFragment(f7);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.vo0
-    public void f(org.telegram.ui.Cells.s2 s2Var) {
-        kg1 kg1Var = ((gg1) this.b).t0;
-        HashSet hashSet = kg1.n1;
-        kg1Var.M0(s2Var);
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public int f1(int i10) {
-        return ((yd1) this.b).f.a.f1(i10);
-    }
-
-    @Override // org.telegram.ui.Components.vo0
-    public void finish() {
-        Point point = AndroidUtilities.displaySize;
-        if (point.x > point.y) {
-            ((gg1) this.b).t0.finishPreviewFragment();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.fp0
-    public CharSequence getContentDescription() {
-        switch (this.a) {
-            case 3:
-                return String.valueOf(Math.round((((cc1) this.b).a.getProgress() * r0.b) + 0));
-            default:
-                nc1 nc1Var = (nc1) this.b;
-                return String.valueOf(Math.round((nc1Var.b.getProgress() * (nc1Var.d - r1)) + nc1Var.c));
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public Drawable getDrawable(String str) {
-        ce1 ce1Var = ((yd1) this.b).f;
-        if (str.equals("drawableMsgOut")) {
-            return ce1Var.R;
-        }
-        if (str.equals("drawableMsgOutSelected")) {
-            return ce1Var.S;
-        }
-        if (str.equals("drawableMsgOutMedia")) {
-            return ce1Var.T;
-        }
-        if (str.equals("drawableMsgOutMediaSelected")) {
-            return ce1Var.U;
-        }
-        cd1 cd1Var = ce1Var.a;
-        return cd1Var != null ? cd1Var.getDrawable(str) : org.telegram.ui.ActionBar.g6.P0(str);
-    }
-
-    @Override // org.telegram.ui.Components.fp0
-    public int k0() {
-        switch (this.a) {
-            case 3:
-                return ((cc1) this.b).b;
-            default:
-                nc1 nc1Var = (nc1) this.b;
-                return nc1Var.d - nc1Var.c;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public void l(float f7, float f10, int i10, int i11) {
-        cd1 cd1Var = ((yd1) this.b).f.a;
-        if (cd1Var != null) {
-            cd1Var.l(f7, f10, i10, i11);
-        } else {
-            org.telegram.ui.ActionBar.g6.q(f7, f10, i10, i11);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public boolean m0() {
-        return ((yd1) this.b).f.a.m0();
-    }
-
-    @Override // org.telegram.ui.Components.xq0
-    public void s0() {
-        ((StickersActivity) this.b).j0();
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public ColorFilter w() {
-        return org.telegram.ui.ActionBar.g6.v3;
-    }
-
-    @Override // org.telegram.ui.Components.fp0
-    public void z() {
-        int i10 = this.a;
-    }
-
-    private final void d() {
-    }
-
-    private final void g() {
-    }
-
-    @Override // org.telegram.ui.ActionBar.c6
-    public /* synthetic */ void M0(int i10, int i11) {
+    @Override // s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        nw0 nw0Var = new nw0(this, this.c);
+        nw0Var.setCirclePaintProvider(new fr0(6, this, nw0Var));
+        return new org.telegram.ui.Components.sl0(nw0Var);
     }
 }

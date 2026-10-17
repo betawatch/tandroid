@@ -12,7 +12,7 @@ import java.util.HashSet;
 import java.util.Set;
 import r9.r;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements qa.b {
     public final /* synthetic */ int a;
@@ -96,7 +96,7 @@ public final /* synthetic */ class d implements qa.b {
                 z5Var.d = DesugarCollections.unmodifiableSet(hashSet4);
                 DesugarCollections.unmodifiableSet(hashSet5);
                 z5Var.e = gVar;
-                return dVar.n2(z5Var);
+                return dVar.j2(z5Var);
         }
     }
 

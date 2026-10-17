@@ -3,30 +3,26 @@ package org.telegram.ui.Components;
 import android.text.Editable;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class du implements Utilities.Callback0Return {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final /* synthetic */ class du implements Utilities.Callback {
+    public final /* synthetic */ iu a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ du(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public /* synthetic */ du(iu iuVar, int i10, int i11) {
+        this.a = iuVar;
+        this.b = i10;
+        this.c = i11;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback0Return
-    public final Object run() {
-        Editable text;
-        sj0[] sj0VarArr;
-        int i10 = this.a;
-        Object obj = this.b;
-        switch (i10) {
-            case 0:
-                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) obj;
-                int i11 = EditTextBoldCursor.a;
-                return Boolean.valueOf(editTextBoldCursor.hasSelection() && editTextBoldCursor.getSelectionStart() >= 0 && editTextBoldCursor.getSelectionEnd() >= 0 && editTextBoldCursor.getSelectionStart() != editTextBoldCursor.getSelectionEnd() && (text = editTextBoldCursor.getText()) != null && ((sj0VarArr = (sj0[]) text.getSpans(editTextBoldCursor.getSelectionStart(), editTextBoldCursor.getSelectionEnd(), sj0.class)) == null || sj0VarArr.length == 0));
-            default:
-                return ((h50) obj).getCloseIntoObject();
-        }
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        CharSequence charSequence = (CharSequence) obj;
+        iu iuVar = this.a;
+        Editable text = iuVar.getText();
+        int i10 = this.b;
+        text.replace(i10, this.c, charSequence);
+        iuVar.setSelection(i10, charSequence.length() + i10);
     }
 }

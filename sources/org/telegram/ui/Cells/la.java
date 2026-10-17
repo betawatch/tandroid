@@ -1,130 +1,110 @@
 package org.telegram.ui.Cells;
 
-import android.graphics.Canvas;
-import android.view.VelocityTracker;
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_payments;
-import org.telegram.ui.Components.zc;
+import org.telegram.ui.Components.RadioButton;
+import org.telegram.ui.Components.hm0;
+import org.telegram.ui.Components.sl0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class la implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public final class la extends hm0 {
+    public final Context c;
+    public final /* synthetic */ ma d;
 
-    public /* synthetic */ la(int i10, Object obj, Object obj2) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+    public la(ma maVar, Context context) {
+        this.d = maVar;
+        this.c = context;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ThemesHorizontalListCell$InnerThemeView themesHorizontalListCell$InnerThemeView = (ThemesHorizontalListCell$InnerThemeView) this.b;
-                TLObject tLObject = (TLObject) this.c;
-                na naVar = themesHorizontalListCell$InnerThemeView.a0;
-                if (!(tLObject instanceof TLRPC.TL_wallPaper)) {
-                    themesHorizontalListCell$InnerThemeView.b.f = true;
-                    break;
-                } else {
-                    TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) tLObject;
-                    String attachFileName = FileLoader.getAttachFileName(wallPaper.document);
-                    if (!naVar.X2.containsKey(attachFileName)) {
-                        naVar.X2.put(attachFileName, themesHorizontalListCell$InnerThemeView.b);
-                        FileLoader.getInstance(themesHorizontalListCell$InnerThemeView.b.E).loadFile(wallPaper.document, wallPaper, 1, 1);
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                o0 o0Var = (o0) this.b;
-                n0 n0Var = (n0) this.c;
-                u1 u1Var = o0Var.a;
-                n0 n0Var2 = o0Var.F;
-                if (n0Var == n0Var2) {
-                    n0Var2.n.c(false);
-                    n0 n0Var3 = o0Var.F;
-                    if (!n0Var3.g) {
-                        TLObject tLObject2 = n0Var3.o;
-                        u1 u1Var2 = o0Var.a;
-                        if (u1Var2.getDelegate() != null) {
-                            u1Var2.getDelegate().A0(u1Var2, tLObject2, true);
-                        }
-                    } else if (u1Var.getDelegate() != null) {
-                        u1Var.getDelegate().r2();
-                    }
-                }
-                o0Var.F = null;
-                o0Var.G = null;
-                o0Var.B = false;
-                o0Var.A = false;
-                o0Var.y.c(false);
-                VelocityTracker velocityTracker = o0Var.D;
-                if (velocityTracker != null) {
-                    velocityTracker.recycle();
-                    o0Var.D = null;
-                    break;
-                }
-                break;
-            case 2:
-                w0 w0Var = (w0) this.b;
-                w0Var.f1.a2(w0Var, ((TLRPC.TL_messageActionGiftCode) this.c).slug);
-                break;
-            case 3:
-                final w0 w0Var2 = (w0) this.b;
-                final org.telegram.ui.ActionBar.m2 m2Var = (org.telegram.ui.ActionBar.m2) this.c;
-                TL_payments.TL_resolveStarGiftOffer tL_resolveStarGiftOffer = new TL_payments.TL_resolveStarGiftOffer();
-                tL_resolveStarGiftOffer.offer_msg_id = w0Var2.getMessageObject().getId();
-                tL_resolveStarGiftOffer.decline = true;
-                ConnectionsManager.getInstance(w0Var2.H).sendRequestTyped(tL_resolveStarGiftOffer, new Utilities.Callback2() { // from class: org.telegram.ui.Cells.s0
-                    @Override // org.telegram.messenger.Utilities.Callback2
-                    public final void run(Object obj, Object obj2) {
-                        TLRPC.Updates updates = (TLRPC.Updates) obj;
-                        TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                        if (updates != null) {
-                            MessagesController.getInstance(w0.this.H).lambda$processUpdates$377(updates, false);
-                        }
-                        if (tL_error != null) {
-                            AndroidUtilities.runOnUIThread(new la(4, m2Var, tL_error));
-                        }
-                    }
-                });
-                break;
-            case 4:
-                org.telegram.ui.ActionBar.m2 m2Var2 = (org.telegram.ui.ActionBar.m2) this.b;
-                zc.a0(m2Var2).f0((TLRPC.TL_error) this.c, false);
-                break;
-            case 5:
-                u1 u1Var3 = (u1) this.b;
-                u1Var3.O0.draw((Canvas) this.c);
-                break;
-            case 6:
-                ((u1) this.b).post(new b1(8, (u1) this.c));
-                break;
-            case 7:
-                m8 m8Var = (m8) this.b;
-                TLRPC.Document document = (TLRPC.Document) this.c;
-                if (m8Var.r.documents.isEmpty()) {
-                    TLRPC.TL_messages_stickerSet tL_messages_stickerSet = m8Var.r;
-                    if (tL_messages_stickerSet.set.thumb_document_id == document.id) {
-                        tL_messages_stickerSet.documents.add(document);
-                        m8Var.d(m8Var.r, m8Var.f, m8Var.s);
-                        break;
-                    }
-                }
-                break;
-            default:
-                ((na) this.b).x1((org.telegram.ui.ActionBar.f6) this.c);
-                break;
+    @Override // org.telegram.ui.Components.hm0
+    public final boolean D(s4.b1 b1Var) {
+        return false;
+    }
+
+    @Override // s4.g0
+    public final int h() {
+        ma maVar = this.d;
+        int size = maVar.b3.size() + maVar.c3.size();
+        maVar.e3 = size;
+        return size;
+    }
+
+    @Override // s4.g0
+    public final void v(s4.b1 b1Var, int i10) {
+        int i11;
+        org.telegram.ui.ActionBar.g6 g6Var;
+        TLRPC.TL_theme tL_theme;
+        ThemesHorizontalListCell$InnerThemeView themesHorizontalListCell$InnerThemeView = (ThemesHorizontalListCell$InnerThemeView) b1Var.a;
+        ma maVar = this.d;
+        ArrayList arrayList = maVar.c3;
+        if (i10 < arrayList.size()) {
+            i11 = i10;
+        } else {
+            ArrayList arrayList2 = maVar.b3;
+            int size = i10 - arrayList.size();
+            arrayList = arrayList2;
+            i11 = size;
         }
+        org.telegram.ui.ActionBar.g6 g6Var2 = (org.telegram.ui.ActionBar.g6) arrayList.get(i11);
+        boolean z10 = i10 == h() - 1;
+        boolean z11 = i10 == 0;
+        HashMap hashMap = themesHorizontalListCell$InnerThemeView.a0.X2;
+        themesHorizontalListCell$InnerThemeView.b = g6Var2;
+        themesHorizontalListCell$InnerThemeView.s = z11;
+        themesHorizontalListCell$InnerThemeView.r = z10;
+        themesHorizontalListCell$InnerThemeView.F = g6Var2.Y;
+        RadioButton radioButton = themesHorizontalListCell$InnerThemeView.a;
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) radioButton.getLayoutParams();
+        layoutParams.leftMargin = AndroidUtilities.dp(themesHorizontalListCell$InnerThemeView.s ? 49.0f : 27.0f);
+        radioButton.setLayoutParams(layoutParams);
+        themesHorizontalListCell$InnerThemeView.v = 0.0f;
+        org.telegram.ui.ActionBar.g6 g6Var3 = themesHorizontalListCell$InnerThemeView.b;
+        if (g6Var3.b != null && !g6Var3.T) {
+            g6Var3.Q = org.telegram.ui.ActionBar.h6.D0(org.telegram.ui.ActionBar.h6.ra);
+            themesHorizontalListCell$InnerThemeView.b.R = org.telegram.ui.ActionBar.h6.D0(org.telegram.ui.ActionBar.h6.Aa);
+            boolean exists = new File(themesHorizontalListCell$InnerThemeView.b.b).exists();
+            if ((!exists || !themesHorizontalListCell$InnerThemeView.c() || !exists) && (tL_theme = (g6Var = themesHorizontalListCell$InnerThemeView.b).F) != null) {
+                if (tL_theme.document != null) {
+                    g6Var.U = false;
+                    themesHorizontalListCell$InnerThemeView.v = 1.0f;
+                    Drawable mutate = themesHorizontalListCell$InnerThemeView.getResources().getDrawable(R.drawable.msg_theme).mutate();
+                    themesHorizontalListCell$InnerThemeView.T = mutate;
+                    int x02 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.E6, false);
+                    themesHorizontalListCell$InnerThemeView.U = x02;
+                    org.telegram.ui.ActionBar.h6.x1(x02, mutate);
+                    if (!exists) {
+                        String attachFileName = FileLoader.getAttachFileName(themesHorizontalListCell$InnerThemeView.b.F.document);
+                        if (!hashMap.containsKey(attachFileName)) {
+                            hashMap.put(attachFileName, themesHorizontalListCell$InnerThemeView.b);
+                            FileLoader fileLoader = FileLoader.getInstance(themesHorizontalListCell$InnerThemeView.b.E);
+                            TLRPC.TL_theme tL_theme2 = themesHorizontalListCell$InnerThemeView.b.F;
+                            fileLoader.loadFile(tL_theme2.document, tL_theme2, 1, 1);
+                        }
+                    }
+                } else {
+                    Drawable mutate2 = themesHorizontalListCell$InnerThemeView.getResources().getDrawable(R.drawable.preview_custom).mutate();
+                    themesHorizontalListCell$InnerThemeView.T = mutate2;
+                    int x03 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.E6, false);
+                    themesHorizontalListCell$InnerThemeView.U = x03;
+                    org.telegram.ui.ActionBar.h6.x1(x03, mutate2);
+                }
+            }
+        }
+        themesHorizontalListCell$InnerThemeView.a();
+    }
+
+    @Override // s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        return new sl0(new ThemesHorizontalListCell$InnerThemeView(this.d, this.c));
     }
 }

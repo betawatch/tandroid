@@ -1,29 +1,62 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.os.Bundle;
+import android.os.SystemClock;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mh0 implements RequestDelegate {
+public final /* synthetic */ class mh0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ di0 b;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ mh0(di0 di0Var, int i10) {
+    public /* synthetic */ mh0(Object obj, long j10, int i10) {
         this.a = i10;
-        this.b = di0Var;
+        this.c = obj;
+        this.b = j10;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        ri.n nVar;
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new rh0(this.b, tL_error, tLObject, 0));
+                sn snVar = ((fi) this.c).e;
+                snVar.D7(true);
+                Bundle bundle = new Bundle();
+                long j10 = this.b;
+                bundle.putLong("user_id", j10);
+                if (j10 == snVar.getUserConfig().getClientUserId()) {
+                    bundle.putBoolean("my_profile", true);
+                }
+                snVar.presentFragment(new ProfileActivity(bundle, null));
+                break;
+            case 1:
+                ((org.telegram.ui.ActionBar.j3) this.c).run(Long.valueOf(this.b));
+                break;
+            case 2:
+                org.telegram.ui.web.e0 e0Var = (org.telegram.ui.web.e0) this.c;
+                e0Var.getClass();
+                e0Var.presentFragment(sn.W9(this.b));
+                break;
+            case 3:
+                ri.p pVar = (ri.p) ((cc.e) this.c).c;
+                if (this.b == pVar.o && (nVar = pVar.m) != ri.n.r && nVar != ri.n.s && nVar != ri.n.n) {
+                    SystemClock.elapsedRealtime();
+                    pVar.w = false;
+                    pVar.r(ri.n.c);
+                    pVar.h.removeCallbacks(pVar.D);
+                    pVar.g.b("recording started: retainedDurationMs=" + ri.p.q(pVar.p));
+                    break;
+                }
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new se0(11, this.b, tL_error));
+                ug.x0 x0Var = (ug.x0) this.c;
+                HashSet hashSet = x0Var.e0;
+                hashSet.remove(Long.valueOf(this.b));
+                x0Var.Y.b(true, hashSet, new ug.r0(x0Var, 5), null);
+                x0Var.c0(true, false);
                 break;
         }
     }

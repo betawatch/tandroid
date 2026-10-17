@@ -1,34 +1,37 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b7 implements RequestDelegate {
+public final /* synthetic */ class b7 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ String d;
-    public final /* synthetic */ BaseController e;
+    public final /* synthetic */ MediaDataController b;
+    public final /* synthetic */ TLRPC.TL_messages_stickerSet c;
 
-    public /* synthetic */ b7(BaseController baseController, int i10, String str, String str2, int i11) {
-        this.a = i11;
-        this.e = baseController;
-        this.b = i10;
-        this.c = str;
-        this.d = str2;
+    public /* synthetic */ b7(MediaDataController mediaDataController, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, int i10) {
+        this.a = i10;
+        this.b = mediaDataController;
+        this.c = tL_messages_stickerSet;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((MediaDataController) this.e).lambda$fetchNewEmojiKeywords$213(this.b, this.c, this.d, tLObject, tL_error);
+                this.b.lambda$saveStickerSetIntoCache$40(this.c);
+                break;
+            case 1:
+                this.b.lambda$loadGroupStickerSet$45(this.c);
+                break;
+            case 2:
+                this.b.lambda$loadGroupStickerSet$43(this.c);
+                break;
+            case 3:
+                this.b.lambda$putSetToCache$47(this.c);
                 break;
             default:
-                ((MessagesController) this.e).lambda$checkPromoInfoInternal$168(this.b, this.c, this.d, tLObject, tL_error);
+                this.b.lambda$replaceStickerSet$28(this.c);
                 break;
         }
     }

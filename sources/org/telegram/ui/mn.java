@@ -1,35 +1,30 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class mn extends pf.c {
-    public final /* synthetic */ org.telegram.ui.Cells.u1 d;
-    public final /* synthetic */ qn e;
+public final /* synthetic */ class mn implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.Components.wc0 b;
 
-    public mn(qn qnVar, org.telegram.ui.Cells.u1 u1Var) {
-        this.e = qnVar;
-        this.d = u1Var;
+    public /* synthetic */ mn(org.telegram.ui.Components.wc0 wc0Var, int i10) {
+        this.a = i10;
+        this.b = wc0Var;
     }
 
-    @Override // pf.c
-    public final void c(boolean z10) {
-        if (z10) {
-            return;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                this.b.r(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 1:
+                this.b.r(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            default:
+                this.b.r(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
         }
-        AndroidUtilities.runOnUIThread(new gk(this.e.a, 9), 250L);
-    }
-
-    @Override // pf.c
-    public final void d() {
-        qn qnVar = this.e;
-        fo foVar = qnVar.a;
-        org.telegram.ui.Cells.u1 u1Var = this.d;
-        foVar.wb = u1Var.getMessageObject().getId();
-        fo foVar2 = qnVar.a;
-        foVar2.xb = 2;
-        foVar2.yb = null;
-        u1Var.invalidate();
     }
 }

@@ -3,111 +3,51 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class ar0 extends lm0 {
+public final class ar0 extends hm0 {
     public final Context c;
-    public final ArrayList d = new ArrayList();
-    public final a0.h e = new a0.h();
-    public final /* synthetic */ ir0 f;
+    public boolean d;
+    public boolean e;
+    public ArrayList f;
+    public final /* synthetic */ dr0 h;
 
-    public ar0(ir0 ir0Var, Context context) {
-        this.f = ir0Var;
+    public ar0(dr0 dr0Var, Context context) {
+        this.h = dr0Var;
         this.c = context;
-        E();
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.hm0
     public final boolean D(s4.b1 b1Var) {
         return b1Var.f != 1;
     }
 
-    public final void E() {
-        int i10;
-        int i11;
-        int i12;
-        int i13;
-        TLRPC.TL_chatAdminRights tL_chatAdminRights;
-        int i14;
-        ArrayList arrayList = this.d;
-        arrayList.clear();
-        a0.h hVar = this.e;
-        hVar.b();
-        ir0 ir0Var = this.f;
-        i10 = ((org.telegram.ui.ActionBar.e3) ir0Var).currentAccount;
-        long j10 = UserConfig.getInstance(i10).clientUserId;
-        if (ir0Var.Z) {
-            zq0 zq0Var = new zq0();
-            zq0Var.id = Long.MAX_VALUE;
-            arrayList.add(zq0Var);
-            hVar.k(zq0Var, zq0Var.id);
+    public final TLRPC.TL_forumTopic E(int i10) {
+        int i11 = i10 - 1;
+        if (this.d) {
+            i11 = i10 - 2;
         }
-        i11 = ((org.telegram.ui.ActionBar.e3) ir0Var).currentAccount;
-        if (!MessagesController.getInstance(i11).dialogsForward.isEmpty()) {
-            i14 = ((org.telegram.ui.ActionBar.e3) ir0Var).currentAccount;
-            TLRPC.Dialog dialog = MessagesController.getInstance(i14).dialogsForward.get(0);
-            arrayList.add(dialog);
-            hVar.k(dialog, dialog.id);
+        ArrayList arrayList = this.f;
+        if (arrayList == null || i11 < 0 || i11 >= arrayList.size()) {
+            return null;
         }
-        ArrayList arrayList2 = new ArrayList();
-        i12 = ((org.telegram.ui.ActionBar.e3) ir0Var).currentAccount;
-        ArrayList<TLRPC.Dialog> allDialogs = MessagesController.getInstance(i12).getAllDialogs();
-        for (int i15 = 0; i15 < allDialogs.size(); i15++) {
-            TLRPC.Dialog dialog2 = allDialogs.get(i15);
-            if (dialog2 instanceof TLRPC.TL_dialog) {
-                long j11 = dialog2.id;
-                if (j11 != j10 && !DialogObject.isEncryptedDialog(j11)) {
-                    if (DialogObject.isUserDialog(dialog2.id)) {
-                        if (dialog2.folder_id == 1) {
-                            arrayList2.add(dialog2);
-                        } else {
-                            arrayList.add(dialog2);
-                        }
-                        hVar.k(dialog2, dialog2.id);
-                    } else {
-                        i13 = ((org.telegram.ui.ActionBar.e3) ir0Var).currentAccount;
-                        TLRPC.Chat chat = MessagesController.getInstance(i13).getChat(Long.valueOf(-dialog2.id));
-                        if (chat != null && !ChatObject.isNotInChat(chat) && ((!chat.gigagroup || ChatObject.hasAdminRights(chat)) && (!ChatObject.isChannel(chat) || chat.creator || (((tL_chatAdminRights = chat.admin_rights) != null && tL_chatAdminRights.post_messages) || chat.megagroup)))) {
-                            if (dialog2.folder_id == 1) {
-                                arrayList2.add(dialog2);
-                            } else {
-                                arrayList.add(dialog2);
-                            }
-                            hVar.k(dialog2, dialog2.id);
-                        }
-                    }
-                }
-            }
-        }
-        arrayList.addAll(arrayList2);
-        org.telegram.ui.fo foVar = ir0Var.f0;
-        if (foVar != null) {
-            int i16 = foVar.a;
-            if (i16 == 1) {
-                ArrayList arrayList3 = new ArrayList(arrayList.subList(0, Math.min(4, arrayList.size())));
-                arrayList.clear();
-                arrayList.addAll(arrayList3);
-            } else if (i16 == 2) {
-                while (!arrayList.isEmpty() && arrayList.size() < 80) {
-                    arrayList.add((TLRPC.Dialog) i2.d.h(1, arrayList));
-                }
-            }
-        }
-        l();
+        return (TLRPC.TL_forumTopic) this.f.get(i11);
     }
 
     @Override // s4.g0
     public final int h() {
-        int size = this.d.size();
-        return size != 0 ? size + 1 : size;
+        ArrayList arrayList = this.f;
+        return (arrayList != null ? arrayList.size() + 1 : 0) + (this.d ? 1 : 0);
     }
 
     @Override // s4.g0
@@ -115,55 +55,100 @@ public final class ar0 extends lm0 {
         return i10 == 0 ? 1 : 0;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:15:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0021  */
     @Override // s4.g0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
     public final void v(s4.b1 b1Var, int i10) {
-        TLRPC.Dialog dialog;
-        int i11;
-        if (b1Var.f != 0) {
-            return;
-        }
-        org.telegram.ui.Cells.f7 f7Var = (org.telegram.ui.Cells.f7) b1Var.a;
-        int i12 = i10 - 1;
-        if (i12 >= 0) {
-            ArrayList arrayList = this.d;
-            if (i12 < arrayList.size()) {
-                dialog = (TLRPC.Dialog) arrayList.get(i12);
-                if (dialog != null) {
-                    return;
-                }
-                ir0 ir0Var = this.f;
-                TLRPC.TL_forumTopic tL_forumTopic = (TLRPC.TL_forumTopic) ir0Var.V.get(dialog);
-                i11 = ((org.telegram.ui.ActionBar.e3) ir0Var).currentAccount;
-                f7Var.d(tL_forumTopic, MessagesController.getInstance(i11).isMonoForum(dialog.id), false);
-                long j10 = dialog.id;
-                f7Var.c(j10, ir0Var.U.h(j10) >= 0, null);
+        long j10;
+        if (b1Var.f == 0) {
+            org.telegram.ui.Cells.f7 f7Var = (org.telegram.ui.Cells.f7) b1Var.a;
+            if (i10 == 1 && this.d) {
+                f7Var.setAsNewBotForumTopic(this.e);
                 return;
             }
-        }
-        dialog = null;
-        if (dialog != null) {
+            if (this.f != null) {
+                TLRPC.TL_forumTopic E = E(i10);
+                dr0 dr0Var = this.h;
+                TLRPC.Dialog dialog = dr0Var.C0;
+                boolean z10 = E != null && dr0Var.U.h((long) E.id) >= 0;
+                org.telegram.ui.Cells.c7 c7Var = f7Var.b;
+                int i11 = f7Var.f;
+                w9 w9Var = f7Var.a;
+                TextView textView = f7Var.c;
+                if (dialog == null) {
+                    return;
+                }
+                TLRPC.Chat chat = MessagesController.getInstance(i11).getChat(Long.valueOf(-dialog.id));
+                if (dialog.id > 0) {
+                    textView.setText(E.title);
+                    j10 = 0;
+                } else if (chat == null) {
+                    j10 = 0;
+                    textView.setText("");
+                } else if (chat.monoforum) {
+                    j10 = 0;
+                    textView.setText(MessagesController.getInstance(i11).getPeerName(DialogObject.getPeerDialogId(E.from_id)));
+                } else {
+                    j10 = 0;
+                    textView.setText(E.title);
+                }
+                if (ChatObject.isMonoForum(chat)) {
+                    w9Var.setAnimatedEmojiDrawable(null);
+                    w9Var.setImageDrawable(null);
+                    long peerDialogId = DialogObject.getPeerDialogId(E.from_id);
+                    if (DialogObject.isUserDialog(peerDialogId)) {
+                        TLRPC.User user = MessagesController.getInstance(i11).getUser(Long.valueOf(peerDialogId));
+                        textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.j5, f7Var.h));
+                        c7Var.m(i11, user);
+                        if (user != null) {
+                            textView.setText(ContactsController.formatName(user.first_name, user.last_name));
+                        } else {
+                            textView.setText("");
+                        }
+                        w9Var.e(user, c7Var);
+                        w9Var.setRoundRadius(AndroidUtilities.dp(28.0f));
+                    } else {
+                        TLRPC.Chat chat2 = MessagesController.getInstance(i11).getChat(Long.valueOf(peerDialogId));
+                        if (chat2 != null) {
+                            textView.setText(chat2.title);
+                        } else {
+                            textView.setText("");
+                        }
+                        c7Var.k(i11, chat2);
+                        w9Var.e(chat, c7Var);
+                    }
+                } else if (E.icon_emoji_id != j10) {
+                    w9Var.setImageDrawable(null);
+                    w9Var.setAnimatedEmojiDrawable(new r5(13, UserConfig.selectedAccount, E.icon_emoji_id));
+                } else {
+                    w9Var.setAnimatedEmojiDrawable(null);
+                    og.a aVar = new og.a(E.icon_color);
+                    f90 f90Var = new f90(1, null);
+                    String upperCase = E.title.trim().toUpperCase();
+                    f90Var.a(upperCase.length() >= 1 ? upperCase.substring(0, 1) : "");
+                    f90Var.i = 1.8f;
+                    zq zqVar = new zq(aVar, f90Var, 0, 0);
+                    zqVar.w = true;
+                    w9Var.setImageDrawable(zqVar);
+                }
+                w9Var.setRoundRadius((chat == null || !chat.forum || z10) ? AndroidUtilities.dp(28.0f) : AndroidUtilities.dp(16.0f));
+                f7Var.d = dialog.id;
+                f7Var.e = E.id;
+            }
         }
     }
 
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        View yq0Var;
-        org.telegram.ui.ActionBar.c6 c6Var;
-        ir0 ir0Var = this.f;
+        View f7Var;
+        org.telegram.ui.ActionBar.d6 d6Var;
         Context context = this.c;
-        if (i10 != 0) {
-            yq0Var = new View(context);
-            yq0Var.setLayoutParams(new s4.o0(-1, AndroidUtilities.dp((!ir0Var.h0 || ir0Var.o0[1] == null) ? 56.0f : 109.0f)));
+        if (i10 == 0 || i10 == 2) {
+            d6Var = ((org.telegram.ui.ActionBar.f3) this.h).resourcesProvider;
+            f7Var = new org.telegram.ui.Cells.f7(context, d6Var);
+            f7Var.setLayoutParams(new s4.o0(-1, AndroidUtilities.dp(100.0f)));
         } else {
-            c6Var = ((org.telegram.ui.ActionBar.e3) ir0Var).resourcesProvider;
-            yq0Var = new yq0(this, context, c6Var);
-            yq0Var.setLayoutParams(new s4.o0(-1, AndroidUtilities.dp(100.0f)));
+            f7Var = new View(context);
+            f7Var.setLayoutParams(new s4.o0(-1, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()));
         }
-        return new wl0(yq0Var);
+        return new sl0(f7Var);
     }
 }

@@ -1,29 +1,30 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class dm extends AnimatorListenerAdapter {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ fo d;
+public final class dm extends org.telegram.ui.Components.s6 {
+    public final /* synthetic */ em b;
 
-    public dm(fo foVar, boolean z10, boolean z11, boolean z12) {
-        this.d = foVar;
-        this.a = z10;
-        this.b = z11;
-        this.c = z12;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dm(em emVar) {
+        super("alpha", 0);
+        this.b = emVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        fo foVar = this.d;
-        foVar.M2 = null;
-        foVar.J2.setVisibility(this.a ? 0 : 4);
-        foVar.L2.setVisibility(this.b ? 0 : 4);
-        foVar.K2.setVisibility(this.c ? 0 : 4);
+    @Override // org.telegram.ui.Components.s6
+    public final void c(Object obj, float f7) {
+        ((MessageObject.SendAnimationData) obj).timeAlpha = f7;
+        View view = this.b.b.Q.fragmentView;
+        if (view != null) {
+            view.invalidate();
+        }
+    }
+
+    @Override // android.util.Property
+    public final Object get(Object obj) {
+        return Float.valueOf(((MessageObject.SendAnimationData) obj).timeAlpha);
     }
 }

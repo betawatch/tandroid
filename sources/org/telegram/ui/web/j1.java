@@ -1,63 +1,27 @@
 package org.telegram.ui.web;
 
-import android.os.AsyncTask;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import android.util.Base64InputStream;
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FilterInputStream;
 import java.util.HashMap;
-import java.util.Map;
-import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class j1 extends AsyncTask {
+public final class j1 {
     public final HashMap a = new HashMap();
-    public final Utilities.Callback b;
-    public Exception c;
+    public File b;
+    public long c;
+    public long d;
 
-    public j1(Utilities.Callback callback) {
-        this.b = callback;
-    }
-
-    @Override // android.os.AsyncTask
-    public final Object doInBackground(Object[] objArr) {
-        try {
-            HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(((String[]) objArr)[0]).openConnection();
-            for (Map.Entry entry : this.a.entrySet()) {
-                if (entry.getKey() != null && entry.getValue() != null) {
-                    httpURLConnection.setRequestProperty((String) entry.getKey(), (String) entry.getValue());
-                }
-            }
-            httpURLConnection.setRequestMethod("GET");
-            httpURLConnection.setDoInput(true);
-            int responseCode = httpURLConnection.getResponseCode();
-            BufferedReader bufferedReader = (responseCode < 200 || responseCode >= 300) ? new BufferedReader(new InputStreamReader(httpURLConnection.getErrorStream())) : new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream()));
-            StringBuilder sb2 = new StringBuilder();
-            while (true) {
-                String readLine = bufferedReader.readLine();
-                if (readLine == null) {
-                    bufferedReader.close();
-                    return sb2.toString();
-                }
-                sb2.append(readLine);
-            }
-        } catch (Exception e) {
-            this.c = e;
-            return null;
+    public final FilterInputStream a() {
+        BufferedInputStream bufferedInputStream = new BufferedInputStream(new i1(this.c, this.d, this.b));
+        HashMap hashMap = this.a;
+        k1 k1Var = (k1) hashMap.get("content-transfer-encoding");
+        if ("base64".equals(k1Var == null ? null : k1Var.a)) {
+            return new Base64InputStream(bufferedInputStream, 0);
         }
-    }
-
-    @Override // android.os.AsyncTask
-    public final void onPostExecute(Object obj) {
-        String str = (String) obj;
-        Utilities.Callback callback = this.b;
-        if (callback != null) {
-            if (this.c == null) {
-                callback.run(str);
-            } else {
-                callback.run(null);
-            }
-        }
+        k1 k1Var2 = (k1) hashMap.get("content-transfer-encoding");
+        return "quoted-printable".equalsIgnoreCase(k1Var2 != null ? k1Var2.a : null) ? new l1(bufferedInputStream, 0) : bufferedInputStream;
     }
 }

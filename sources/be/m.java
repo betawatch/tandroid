@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public class m extends m0 implements l, md.d, j2 {
     public static final /* synthetic */ AtomicIntegerFieldUpdater f = AtomicIntegerFieldUpdater.newUpdater(m.class, "_decisionAndIndex$volatile");
@@ -50,10 +50,10 @@ public class m extends m0 implements l, md.d, j2 {
             AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = ge.h.n;
             loop0: while (true) {
                 Object obj = atomicReferenceFieldUpdater.get(hVar);
-                a6.i iVar = ge.a.d;
-                if (obj == iVar) {
-                    while (!atomicReferenceFieldUpdater.compareAndSet(hVar, iVar, this)) {
-                        if (atomicReferenceFieldUpdater.get(hVar) != iVar) {
+                com.google.android.gms.internal.clearcut.e eVar = ge.a.d;
+                if (obj == eVar) {
+                    while (!atomicReferenceFieldUpdater.compareAndSet(hVar, eVar, this)) {
+                        if (atomicReferenceFieldUpdater.get(hVar) != eVar) {
                             break;
                         }
                     }
@@ -119,8 +119,8 @@ public class m extends m0 implements l, md.d, j2 {
         C(id.i.a, (hVar != null ? hVar.d : null) == a0Var ? 4 : this.c, null);
     }
 
-    public final a6.i F(td.l lVar, Object obj) {
-        a6.i iVar = f0.a;
+    public final com.google.android.gms.internal.clearcut.e F(td.l lVar, Object obj) {
+        com.google.android.gms.internal.clearcut.e eVar = f0.a;
         while (true) {
             AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = h;
             Object obj2 = atomicReferenceFieldUpdater.get(this);
@@ -136,7 +136,7 @@ public class m extends m0 implements l, md.d, j2 {
             if (!x()) {
                 o();
             }
-            return iVar;
+            return eVar;
         }
     }
 
@@ -206,7 +206,7 @@ public class m extends m0 implements l, md.d, j2 {
     }
 
     @Override // be.l
-    public final a6.i d(td.l lVar, Object obj) {
+    public final com.google.android.gms.internal.clearcut.e d(td.l lVar, Object obj) {
         return F(lVar, obj);
     }
 

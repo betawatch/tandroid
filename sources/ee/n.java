@@ -1,118 +1,181 @@
 package ee;
 
-import java.util.concurrent.atomic.AtomicReference;
-import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
+import ab.u;
+import be.b0;
+import be.g1;
+import java.io.Serializable;
+import java.util.NoSuchElementException;
+import java.util.concurrent.CancellationException;
+import kotlin.jvm.internal.p;
+import org.telegram.tgnet.TLObject;
+import v7.g8;
+import v7.i8;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class n extends fe.b implements k, b {
-    public static final /* synthetic */ AtomicReferenceFieldUpdater e = AtomicReferenceFieldUpdater.newUpdater(n.class, Object.class, "_state$volatile");
-    private volatile /* synthetic */ Object _state$volatile;
-    public int d;
+public abstract class n {
+    public static final com.google.android.gms.internal.clearcut.e a = new com.google.android.gms.internal.clearcut.e("NONE", 1);
+    public static final com.google.android.gms.internal.clearcut.e b = new com.google.android.gms.internal.clearcut.e("PENDING", 1);
 
-    public n(Object obj) {
-        this._state$volatile = obj;
-    }
-
-    @Override // ee.c
-    public final Object a(Object obj, md.c cVar) {
-        d(obj);
-        return id.i.a;
-    }
-
-    public final Object c() {
-        Object obj = e.get(this);
-        if (obj == fe.e.a) {
-            return null;
-        }
-        return obj;
-    }
-
-    public final void d(Object obj) {
-        int i10;
-        p[] pVarArr;
-        a6.i iVar;
-        if (obj == null) {
-            obj = fe.e.a;
-        }
-        synchronized (this) {
-            AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = e;
-            if (kotlin.jvm.internal.i.a(atomicReferenceFieldUpdater.get(this), obj)) {
-                return;
-            }
-            atomicReferenceFieldUpdater.set(this, obj);
-            int i11 = this.d;
-            if ((i11 & 1) != 0) {
-                this.d = i11 + 2;
-                return;
-            }
-            int i12 = i11 + 1;
-            this.d = i12;
-            p[] pVarArr2 = this.a;
-            while (true) {
-                if (pVarArr2 != null) {
-                    for (p pVar : pVarArr2) {
-                        if (pVar != null) {
-                            AtomicReference atomicReference = pVar.a;
-                            while (true) {
-                                Object obj2 = atomicReference.get();
-                                if (obj2 != null && obj2 != (iVar = o.b)) {
-                                    a6.i iVar2 = o.a;
-                                    if (obj2 != iVar2) {
-                                        while (!atomicReference.compareAndSet(obj2, iVar2)) {
-                                            if (atomicReference.get() != obj2) {
-                                                break;
-                                            }
-                                        }
-                                        ((be.m) obj2).resumeWith(id.i.a);
-                                        break;
-                                    }
-                                    while (!atomicReference.compareAndSet(obj2, iVar)) {
-                                        if (atomicReference.get() != obj2) {
-                                            break;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                synchronized (this) {
-                    i10 = this.d;
-                    if (i10 == i12) {
-                        this.d = i12 + 1;
-                        return;
-                    }
-                    pVarArr = this.a;
-                }
-                pVarArr2 = pVarArr;
-                i12 = i10;
-            }
-        }
-    }
-
-    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
-        jadx.core.utils.exceptions.JadxOverflowException: Regions count limit reached
-        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
-        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
-        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
-        */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x00cc A[Catch: all -> 0x003d, TryCatch #0 {all -> 0x003d, blocks: (B:13:0x0037, B:15:0x00c4, B:17:0x00cc, B:20:0x00d3, B:21:0x00d7, B:25:0x00da, B:27:0x00fb, B:30:0x010b, B:31:0x0127, B:37:0x0137, B:33:0x012e, B:36:0x0134, B:46:0x00e0, B:49:0x00e7, B:57:0x0052, B:59:0x005d, B:60:0x00b5), top: B:7:0x0025 }] */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x010a  */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x010b A[Catch: all -> 0x003d, TryCatch #0 {all -> 0x003d, blocks: (B:13:0x0037, B:15:0x00c4, B:17:0x00cc, B:20:0x00d3, B:21:0x00d7, B:25:0x00da, B:27:0x00fb, B:30:0x010b, B:31:0x0127, B:37:0x0137, B:33:0x012e, B:36:0x0134, B:46:0x00e0, B:49:0x00e7, B:57:0x0052, B:59:0x005d, B:60:0x00b5), top: B:7:0x0025 }] */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x00e4  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x00f9  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x00e6  */
-    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:29:0x010a -> B:15:0x00c4). Please report as a decompilation issue!!! */
-    @Override // ee.b
+    /* JADX WARN: Removed duplicated region for block: B:30:0x0080 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x0081  */
+    /* JADX WARN: Removed duplicated region for block: B:39:0x0033  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0021  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final java.lang.Object g(ee.c r18, md.c r19) {
-        /*
-            Method dump skipped, instructions count: 329
-            To view this dump add '--comments-level debug' option
-        */
-        throw new UnsupportedOperationException("Method not decompiled: ee.n.g(ee.c, md.c):java.lang.Object");
+    public static final Serializable a(b bVar, c cVar, md.c cVar2) {
+        e eVar;
+        int i10;
+        p pVar;
+        Throwable th2;
+        g1 g1Var;
+        CancellationException cancellationException;
+        if (cVar2 instanceof e) {
+            eVar = (e) cVar2;
+            int i11 = eVar.c;
+            if ((i11 & TLObject.FLAG_31) != 0) {
+                eVar.c = i11 - TLObject.FLAG_31;
+                Object obj = eVar.b;
+                ld.a aVar = ld.a.a;
+                i10 = eVar.c;
+                if (i10 != 0) {
+                    i8.b(obj);
+                    p pVar2 = new p();
+                    try {
+                        c gVar = new g(cVar, pVar2);
+                        eVar.a = pVar2;
+                        eVar.c = 1;
+                        if (bVar.r(gVar, eVar) == aVar) {
+                            return aVar;
+                        }
+                        return null;
+                    } catch (Throwable th3) {
+                        th = th3;
+                        pVar = pVar2;
+                    }
+                } else {
+                    if (i10 != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    pVar = eVar.a;
+                    try {
+                        i8.b(obj);
+                        return null;
+                    } catch (Throwable th4) {
+                        th = th4;
+                    }
+                }
+                th2 = (Throwable) pVar.a;
+                if ((th2 == null && th2.equals(th)) || ((g1Var = (g1) eVar.getContext().get(b0.b)) != null && g1Var.isCancelled() && (cancellationException = g1Var.getCancellationException()) != null && cancellationException.equals(th))) {
+                    throw th;
+                }
+                if (th2 != null) {
+                    return th;
+                }
+                if (th instanceof CancellationException) {
+                    g8.a(th2, th);
+                    throw th2;
+                }
+                g8.a(th, th2);
+                throw th;
+            }
+        }
+        eVar = new e(cVar2);
+        Object obj2 = eVar.b;
+        ld.a aVar2 = ld.a.a;
+        i10 = eVar.c;
+        if (i10 != 0) {
+        }
+        th2 = (Throwable) pVar.a;
+        if (th2 == null) {
+        }
+        if (th2 != null) {
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0062 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0063  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x006b  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0037  */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0023  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static final Object b(b bVar, md.c cVar) {
+        j jVar;
+        int i10;
+        com.google.android.gms.internal.clearcut.e eVar;
+        p pVar;
+        fe.a e;
+        u uVar;
+        Object obj;
+        if (cVar instanceof j) {
+            jVar = (j) cVar;
+            int i11 = jVar.d;
+            if ((i11 & TLObject.FLAG_31) != 0) {
+                jVar.d = i11 - TLObject.FLAG_31;
+                Object obj2 = jVar.c;
+                Object obj3 = ld.a.a;
+                i10 = jVar.d;
+                eVar = fe.e.a;
+                if (i10 != 0) {
+                    i8.b(obj2);
+                    p pVar2 = new p();
+                    pVar2.a = eVar;
+                    u uVar2 = new u(pVar2, 1);
+                    try {
+                        jVar.a = pVar2;
+                        jVar.b = uVar2;
+                        jVar.d = 1;
+                        if (bVar.r(uVar2, jVar) == obj3) {
+                            return obj3;
+                        }
+                        pVar = pVar2;
+                    } catch (fe.a e7) {
+                        pVar = pVar2;
+                        e = e7;
+                        uVar = uVar2;
+                        if (e.a != uVar) {
+                        }
+                        obj = pVar.a;
+                        if (obj == eVar) {
+                        }
+                    }
+                } else {
+                    if (i10 != 1) {
+                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                    }
+                    uVar = jVar.b;
+                    pVar = jVar.a;
+                    try {
+                        i8.b(obj2);
+                    } catch (fe.a e10) {
+                        e = e10;
+                        if (e.a != uVar) {
+                            throw e;
+                        }
+                        obj = pVar.a;
+                        if (obj == eVar) {
+                        }
+                    }
+                }
+                obj = pVar.a;
+                if (obj == eVar) {
+                    return obj;
+                }
+                throw new NoSuchElementException("Expected at least one element");
+            }
+        }
+        jVar = new j(cVar);
+        Object obj22 = jVar.c;
+        Object obj32 = ld.a.a;
+        i10 = jVar.d;
+        eVar = fe.e.a;
+        if (i10 != 0) {
+        }
+        obj = pVar.a;
+        if (obj == eVar) {
+        }
     }
 }

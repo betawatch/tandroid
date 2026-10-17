@@ -1,15 +1,15 @@
 package t3;
 
 import a1.g;
-import b2.r0;
-import b2.t0;
-import b2.x;
+import b2.q0;
+import b2.s0;
+import b2.w;
 import v7.b8;
 import v7.s6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class a implements t0 {
+public final class a implements s0 {
     public final String a;
     public final String b;
 
@@ -18,14 +18,14 @@ public final class a implements t0 {
         this.b = str2;
     }
 
-    @Override // b2.t0
-    public final /* synthetic */ x a() {
+    @Override // b2.s0
+    public final /* synthetic */ w a() {
         return null;
     }
 
     /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
-    @Override // b2.t0
-    public final void b(r0 r0Var) {
+    @Override // b2.s0
+    public final void b(q0 q0Var) {
         String str = this.a;
         str.getClass();
         char c10 = 65535;
@@ -96,53 +96,53 @@ public final class a implements t0 {
             case 0:
                 Integer g10 = b8.g(str2);
                 if (g10 != null) {
-                    r0Var.p = g10;
+                    q0Var.p = g10;
                     break;
                 }
                 break;
             case 1:
                 Integer g11 = b8.g(str2);
                 if (g11 != null) {
-                    r0Var.D = g11;
+                    q0Var.D = g11;
                     break;
                 }
                 break;
             case 2:
                 Integer g12 = b8.g(str2);
                 if (g12 != null) {
-                    r0Var.o = g12;
+                    q0Var.o = g12;
                     break;
                 }
                 break;
             case 3:
-                r0Var.c = str2;
+                q0Var.c = str2;
                 break;
             case 4:
-                r0Var.E = str2;
+                q0Var.E = str2;
                 break;
             case 5:
-                r0Var.a = str2;
+                q0Var.a = str2;
                 break;
             case 6:
-                r0Var.g = str2;
+                q0Var.g = str2;
                 break;
             case 7:
                 Integer g13 = b8.g(str2);
                 if (g13 != null) {
-                    r0Var.C = g13;
+                    q0Var.C = g13;
                     break;
                 }
                 break;
             case '\b':
-                r0Var.d = str2;
+                q0Var.d = str2;
                 break;
             case '\t':
-                r0Var.b = str2;
+                q0Var.b = str2;
                 break;
         }
     }
 
-    @Override // b2.t0
+    @Override // b2.s0
     public final /* synthetic */ byte[] c() {
         return null;
     }

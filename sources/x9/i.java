@@ -2,13 +2,13 @@ package x9;
 
 import android.util.Log;
 import java.io.IOException;
-import org.telegram.ui.ds0;
+import org.telegram.ui.lg0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class i {
     public static final ca.a d = new ca.a(2);
-    public static final ds0 e = new ds0(22);
+    public static final lg0 e = new lg0(25);
     public final ca.c a;
     public String b = null;
     public String c = null;

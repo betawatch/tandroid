@@ -1,64 +1,126 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.os.SystemClock;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.ThemeEditorView;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class s21 extends FrameLayout {
-    public final ImageView a;
-    public final q21 b;
-    public final /* synthetic */ ThemeEditorView.EditorAlert c;
+public final class s21 {
+    public long a;
+    public boolean b;
+    public final ArrayList c;
+    public final ArrayList d;
+    public final int e;
+    public boolean f;
+    public float g;
+    public float h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s21(ThemeEditorView.EditorAlert editorAlert, Context context) {
-        super(context);
-        this.c = editorAlert;
-        View view = new View(context);
-        view.setBackgroundDrawable(org.telegram.ui.ActionBar.g6.c0(AndroidUtilities.dp(18.0f), -854795));
-        addView(view, w7.z5.a(36.0f, 14.0f, 11.0f, 14.0f, 0.0f, -1, 51));
-        ImageView imageView = new ImageView(context);
-        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        imageView.setScaleType(scaleType);
-        imageView.setImageResource(R.drawable.smiles_inputsearch);
-        imageView.setColorFilter(new PorterDuffColorFilter(-6182737, PorterDuff.Mode.MULTIPLY));
-        addView(imageView, w7.z5.a(36.0f, 16.0f, 11.0f, 0.0f, 0.0f, 36, 51));
-        ImageView imageView2 = new ImageView(context);
-        this.a = imageView2;
-        imageView2.setScaleType(scaleType);
-        p21 p21Var = new p21();
-        imageView2.setImageDrawable(p21Var);
-        p21Var.f = AndroidUtilities.dp(7.0f);
-        imageView2.setScaleX(0.1f);
-        imageView2.setScaleY(0.1f);
-        imageView2.setAlpha(0.0f);
-        addView(imageView2, w7.z5.a(36.0f, 14.0f, 11.0f, 14.0f, 0.0f, 36, 53));
-        imageView2.setOnClickListener(new y80(this, 20));
-        q21 q21Var = new q21(this, context);
-        this.b = q21Var;
-        q21Var.setTextSize(1, 16.0f);
-        q21Var.setHintTextColor(-6774617);
-        q21Var.setTextColor(-14540254);
-        q21Var.setBackgroundDrawable(null);
-        q21Var.setPadding(0, 0, 0, 0);
-        q21Var.setMaxLines(1);
-        q21Var.setLines(1);
-        q21Var.setSingleLine(true);
-        q21Var.setImeOptions(268435459);
-        q21Var.setHint(LocaleController.getString(R.string.Search));
-        q21Var.setCursorColor(-11491093);
-        q21Var.setCursorSize(AndroidUtilities.dp(20.0f));
-        q21Var.setCursorWidth(1.5f);
-        addView(q21Var, w7.z5.a(40.0f, 54.0f, 9.0f, 46.0f, 0.0f, -1, 51));
-        q21Var.addTextChangedListener(new r21(this));
-        q21Var.setOnEditorActionListener(new e1(this, 10));
+    public s21() {
+        this(40);
+    }
+
+    public final void a(float f7, float f10, Canvas canvas, Paint paint, RectF rectF) {
+        r21 r21Var;
+        ArrayList arrayList = this.c;
+        int size = arrayList.size();
+        int i10 = 0;
+        for (int i11 = 0; i11 < size; i11++) {
+            r21 r21Var2 = (r21) arrayList.get(i11);
+            paint.setAlpha((int) (r21Var2.f * 255.0f * f10));
+            canvas.drawPoint(r21Var2.a, r21Var2.b, paint);
+        }
+        double d = (f7 - 90.0f) * 0.017453292519943295d;
+        double sin = Math.sin(d);
+        double d10 = -Math.cos(d);
+        double width = rectF.width() / 2.0f;
+        float centerX = (float) (((-d10) * width) + rectF.centerX());
+        float centerY = (float) ((width * sin) + rectF.centerY());
+        ArrayList arrayList2 = this.d;
+        boolean z10 = true;
+        int clamp = Utilities.clamp(arrayList2.size() / 12, 3, 1);
+        int i12 = 0;
+        while (i12 < clamp) {
+            if (arrayList2.isEmpty()) {
+                r21Var = new r21();
+            } else {
+                r21Var = (r21) arrayList2.get(i10);
+                arrayList2.remove(i10);
+            }
+            if (this.b && this.f) {
+                float f11 = (i12 + 1) / clamp;
+                r21Var.a = AndroidUtilities.lerp(this.g, centerX, f11);
+                r21Var.b = AndroidUtilities.lerp(this.h, centerY, f11);
+            } else {
+                r21Var.a = centerX;
+                r21Var.b = centerY;
+            }
+            double d11 = sin;
+            double nextInt = (Utilities.random.nextInt(140) - 70) * 0.017453292519943295d;
+            if (nextInt < 0.0d) {
+                nextInt += 6.283185307179586d;
+            }
+            r21Var.c = (float) ((Math.cos(nextInt) * d11) - (Math.sin(nextInt) * d10));
+            r21 r21Var3 = r21Var;
+            r21Var3.d = (float) i0.a.f(nextInt, d10, Math.sin(nextInt) * d11);
+            r21Var3.f = 1.0f;
+            r21Var3.h = 0.0f;
+            if (this.b) {
+                r21Var3.g = Utilities.random.nextInt(200) + 600;
+                r21Var3.e = (Utilities.random.nextFloat() * 20.0f) + 30.0f;
+            } else {
+                r21Var3.g = Utilities.random.nextInt(100) + 400;
+                r21Var3.e = (Utilities.random.nextFloat() * 4.0f) + 20.0f;
+            }
+            arrayList.add(r21Var3);
+            i12++;
+            sin = d11;
+            i10 = 0;
+            z10 = true;
+        }
+        this.f = z10;
+        this.g = centerX;
+        this.h = centerY;
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long min = Math.min(20L, elapsedRealtime - this.a);
+        int size2 = arrayList.size();
+        int i13 = 0;
+        while (i13 < size2) {
+            r21 r21Var4 = (r21) arrayList.get(i13);
+            float f12 = r21Var4.h;
+            float f13 = r21Var4.g;
+            if (f12 >= f13) {
+                if (arrayList2.size() < this.e) {
+                    arrayList2.add(r21Var4);
+                }
+                arrayList.remove(i13);
+                i13--;
+                size2--;
+            } else {
+                r21Var4.f = 1.0f - AndroidUtilities.decelerateInterpolator.getInterpolation(f12 / f13);
+                float f14 = r21Var4.a;
+                float f15 = r21Var4.c;
+                float f16 = r21Var4.e;
+                float f17 = min;
+                r21Var4.a = a1.g.B(f15 * f16, f17, 200.0f, f14);
+                r21Var4.b = (((r21Var4.d * f16) * f17) / 200.0f) + r21Var4.b;
+                r21Var4.h += f17;
+            }
+            i13++;
+        }
+        this.a = elapsedRealtime;
+    }
+
+    public s21(int i10) {
+        this.c = new ArrayList();
+        this.d = new ArrayList();
+        this.e = i10;
+        for (int i11 = 0; i11 < i10; i11++) {
+            this.d.add(new r21());
+        }
     }
 }

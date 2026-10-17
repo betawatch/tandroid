@@ -1,85 +1,50 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
+import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.TwoStepVerificationActivity;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j31 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ TLObject n;
+public final class j31 extends e61 {
+    public static final /* synthetic */ int a = 0;
 
-    public /* synthetic */ j31(y31 y31Var, boolean z10, org.telegram.ui.ActionBar.e1 e1Var, l80 l80Var, long j10, TLRPC.User user, TLRPC.Chat chat) {
-        this.d = y31Var;
-        this.b = z10;
-        this.e = e1Var;
-        this.f = l80Var;
-        this.c = j10;
-        this.h = user;
-        this.n = chat;
+    static {
+        e61.setup(new j31());
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                final y31 y31Var = (y31) this.d;
-                org.telegram.ui.ActionBar.e1 e1Var = (org.telegram.ui.ActionBar.e1) this.e;
-                final l80 l80Var = (l80) this.f;
-                final TLRPC.User user = (TLRPC.User) this.h;
-                final TLRPC.Chat chat = (TLRPC.Chat) this.n;
-                boolean z10 = this.b;
-                final boolean z11 = !z10;
-                e1Var.setVisibility(0);
-                e1Var.setText(LocaleController.getString(!z10 ? R.string.UnbanUserMonoforum : R.string.BanUserMonoforum));
-                final long j10 = this.c;
-                e1Var.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.k31
-                    @Override // android.view.View.OnClickListener
-                    public final void onClick(View view) {
-                        y31 y31Var2 = y31.this;
-                        int i10 = y31Var2.b;
-                        l80Var.u();
-                        boolean z12 = z11;
-                        TLRPC.User user2 = user;
-                        if (!z12) {
-                            MessagesController.getInstance(i10).deleteParticipantFromChat(j10, user2, (TLRPC.Chat) null, false, false);
-                            return;
-                        }
-                        TLRPC.TL_channels_editBanned tL_channels_editBanned = new TLRPC.TL_channels_editBanned();
-                        tL_channels_editBanned.participant = MessagesController.getInputPeer(user2);
-                        tL_channels_editBanned.channel = MessagesController.getInputChannel(chat);
-                        tL_channels_editBanned.banned_rights = new TLRPC.TL_chatBannedRights();
-                        ConnectionsManager.getInstance(i10).sendRequest(tL_channels_editBanned, new y1(y31Var2, 15));
-                    }
-                });
-                break;
-            default:
-                zh.g.Z((zh.g) this.d, (TLRPC.TL_error) this.e, (TwoStepVerificationActivity) this.f, (Activity) this.h, this.b, this.c, this.n);
-                break;
+    @Override // org.telegram.ui.Components.e61
+    public final void bindView(View view, f61 f61Var, boolean z10, s61 s61Var, a71 a71Var) {
+        k31 k31Var = (k31) view;
+        boolean z11 = false;
+        if (f61Var.r) {
+            k31Var.f();
+        } else {
+            Object obj = f61Var.G;
+            if (obj == null) {
+                if (f61Var.d == -2) {
+                    k31Var.c();
+                } else {
+                    k31Var.d((f61Var.y & 1) != 0, f61Var.q, f61Var.e);
+                }
+            } else if (obj instanceof TLRPC.TL_forumTopic) {
+                if (f61Var.I) {
+                    k31Var.b(f61Var.x, (TLRPC.TL_forumTopic) obj, f61Var.e);
+                } else {
+                    k31Var.g(f61Var.x, (TLRPC.TL_forumTopic) obj, f61Var.e);
+                }
+            }
         }
+        k31Var.L = w7.m6.a(f61Var.y, 8) ? AndroidUtilities.dp(10.0f) : 0;
+        if (a71Var != null && a71Var.a3 && k31Var.s) {
+            z11 = true;
+        }
+        k31Var.setReorder(z11);
     }
 
-    public /* synthetic */ j31(zh.g gVar, TLRPC.TL_error tL_error, TwoStepVerificationActivity twoStepVerificationActivity, Activity activity, boolean z10, long j10, TLObject tLObject) {
-        this.d = gVar;
-        this.e = tL_error;
-        this.f = twoStepVerificationActivity;
-        this.h = activity;
-        this.b = z10;
-        this.c = j10;
-        this.n = tLObject;
+    @Override // org.telegram.ui.Components.e61
+    public final View createView(Context context, im0 im0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
+        return new k31(context, i10, d6Var);
     }
 }

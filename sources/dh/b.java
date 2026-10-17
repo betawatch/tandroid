@@ -2,23 +2,26 @@ package dh;
 
 import android.graphics.Outline;
 import android.graphics.RectF;
+import android.os.Build;
 import android.view.View;
 import android.view.ViewOutlineProvider;
-import di.i;
+import ei.i;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.k;
-import org.telegram.ui.ActionBar.m2;
+import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.p60;
-import org.telegram.ui.Components.pc0;
-import org.telegram.ui.Components.vi;
+import org.telegram.ui.Components.ic0;
+import org.telegram.ui.Components.m60;
+import org.telegram.ui.Components.ti;
 import org.telegram.ui.Components.voip.q2;
 import org.telegram.ui.Components.voip.s1;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.Wallet.c5;
+import org.telegram.ui.Wallet.n5;
 import w7.i6;
+import zh.b0;
+import zh.b1;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class b extends ViewOutlineProvider {
     public final /* synthetic */ int a;
@@ -41,10 +44,10 @@ public final class b extends ViewOutlineProvider {
                 break;
             case 1:
                 ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) obj;
-                vi viVar = chatAttachAlertPhotoLayout.b;
-                float f7 = viVar.J0[1];
-                i iVar = viVar.E2;
-                int min = (int) Math.min((viVar.getContainerView().getTranslationY() + ((f7 - (iVar != null ? iVar.d() + AndroidUtilities.dp(16.0f) : 0.0f)) + chatAttachAlertPhotoLayout.W0)) - chatAttachAlertPhotoLayout.P.getTranslationY(), view.getMeasuredHeight());
+                ti tiVar = chatAttachAlertPhotoLayout.b;
+                float f7 = tiVar.J0[1];
+                i iVar = tiVar.E2;
+                int min = (int) Math.min((tiVar.getContainerView().getTranslationY() + ((f7 - (iVar != null ? iVar.d() + AndroidUtilities.dp(16.0f) : 0.0f)) + chatAttachAlertPhotoLayout.W0)) - chatAttachAlertPhotoLayout.P.getTranslationY(), view.getMeasuredHeight());
                 if (chatAttachAlertPhotoLayout.b0) {
                     min = view.getMeasuredHeight();
                 } else if (chatAttachAlertPhotoLayout.d0) {
@@ -72,11 +75,11 @@ public final class b extends ViewOutlineProvider {
                 }
                 break;
             case 2:
-                int i11 = ((p60) obj).X0;
+                int i11 = ((m60) obj).X0;
                 outline.setOval(0, 0, i11, i11);
                 break;
             case 3:
-                outline.setRoundRect(0, ((pc0) obj).T + 1, view.getMeasuredWidth(), view.getMeasuredHeight(), AndroidUtilities.dp(8.0f));
+                outline.setRoundRect(0, ((ic0) obj).T + 1, view.getMeasuredWidth(), view.getMeasuredHeight(), AndroidUtilities.dp(8.0f));
                 break;
             case 4:
                 s1 s1Var = (s1) obj;
@@ -107,13 +110,20 @@ public final class b extends ViewOutlineProvider {
                 }
             case 6:
                 int dp2 = AndroidUtilities.dp(12.0f);
-                kVar = ((m2) ((PremiumPreviewFragment) obj)).actionBar;
+                kVar = ((n2) ((PremiumPreviewFragment) obj)).actionBar;
                 outline.setRoundRect(dp2, AndroidUtilities.dp(12.0f) + kVar.getBottom(), view.getWidth() - AndroidUtilities.dp(12.0f), AndroidUtilities.dp(16.0f) + view.getMeasuredHeight(), AndroidUtilities.dp(16.0f));
                 break;
+            case 7:
+                n5 n5Var = (n5) obj;
+                i6.a(n5Var.c, view.getWidth(), view.getHeight());
+                outline.setConvexPath(n5Var.c);
+                break;
             default:
-                c5 c5Var = (c5) obj;
-                i6.a(c5Var.c, view.getWidth(), view.getHeight());
-                outline.setConvexPath(c5Var.c);
+                float dp3 = AndroidUtilities.dp(32.0f);
+                if (Build.VERSION.SDK_INT >= 31) {
+                    dp3 = b0.g((b1) obj, dp3);
+                }
+                outline.setRoundRect(0, 0, view.getWidth(), view.getHeight(), dp3);
                 break;
         }
     }

@@ -1,142 +1,60 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.TextUtils;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public class et extends a71 {
-    public final int N;
-    public final int O;
-    public final boolean P;
-    public final dt Q;
-    public final ArrayList R;
-    public final ArrayList S;
-    public final ArrayList T;
-    public boolean U;
-    public boolean V;
-    public final CharSequence W;
-    public int X;
-    public int Y;
-    public boolean Z;
-    public boolean a0;
-    public boolean b0;
-    public int c0;
-    public int d0;
-    public String e0;
-    public final zs f0;
-    public boolean g0;
-    public final a3 h0;
+public final class et extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ s4.b1 b;
+    public final /* synthetic */ org.telegram.ui.Cells.r2 c;
+    public final /* synthetic */ kt d;
 
-    public et(mm0 mm0Var, Context context, int i10, int i11, boolean z10, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(mm0Var, context, i10, 0, true, null, c6Var);
-        this.R = new ArrayList();
-        this.S = new ArrayList();
-        this.T = new ArrayList();
-        this.f0 = new zs(this, 0);
-        this.g0 = true;
-        this.h0 = new a3(this, 3);
-        this.s = new d(this, 8);
-        this.N = i10;
-        this.O = i11;
-        this.P = z10;
-        this.Q = new dt(i10, new zs(this, 1));
-        this.W = AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AppsTabInfo), new at(this, c6Var, context)), true);
-        N(false);
-        MediaDataController.getInstance(i10).loadHints(true);
+    public /* synthetic */ et(kt ktVar, s4.b1 b1Var, org.telegram.ui.Cells.r2 r2Var, int i10) {
+        this.a = i10;
+        this.d = ktVar;
+        this.b = b1Var;
+        this.c = r2Var;
     }
 
-    public final void V() {
-        boolean isEmpty = TextUtils.isEmpty(this.e0);
-        mm0 mm0Var = this.d;
-        if (isEmpty) {
-            if (!this.g0) {
-                if (mm0Var != null) {
-                    for (int i10 = 0; i10 < mm0Var.getChildCount(); i10++) {
-                        if (!(mm0Var.getChildAt(i10) instanceof f10)) {
-                        }
-                    }
-                }
-            }
-            this.Q.a();
-            break;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                animator.removeAllListeners();
+                org.telegram.ui.Cells.r2 r2Var = this.c;
+                r2Var.setClipProgress(0.0f);
+                r2Var.setElevation(0.0f);
+                kt ktVar = this.d;
+                s4.b1 b1Var = this.b;
+                ktVar.d(b1Var);
+                ktVar.x.remove(b1Var);
+                ktVar.A();
+                break;
+            default:
+                animator.removeAllListeners();
+                org.telegram.ui.Cells.r2 r2Var2 = this.c;
+                r2Var2.setClipProgress(0.0f);
+                r2Var2.setElevation(0.0f);
+                kt ktVar2 = this.d;
+                s4.b1 b1Var2 = this.b;
+                ktVar2.d(b1Var2);
+                ktVar2.x.remove(b1Var2);
+                ktVar2.A();
+                break;
         }
-        if (this.b0 && !this.Z && mm0Var != null) {
-            int i11 = 0;
-            while (true) {
-                if (i11 >= mm0Var.getChildCount()) {
-                    break;
-                }
-                if (!(mm0Var.getChildAt(i11) instanceof f10)) {
-                    i11++;
-                } else if (this.b0 && !this.Z && !TextUtils.isEmpty(this.e0)) {
-                    W(true);
-                }
-            }
-        }
-        this.g0 = false;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0079  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0083  */
-    /* JADX WARN: Removed duplicated region for block: B:19:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x007c  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void W(boolean z10) {
-        this.Z = true;
-        int i10 = this.d0 + 1;
-        this.d0 = i10;
-        TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal = new TLRPC.TL_messages_searchGlobal();
-        tL_messages_searchGlobal.broadcasts_only = false;
-        int i11 = this.O;
-        if (i11 != 0) {
-            tL_messages_searchGlobal.flags |= 1;
-            tL_messages_searchGlobal.folder_id = i11;
-        }
-        tL_messages_searchGlobal.q = this.e0;
-        tL_messages_searchGlobal.limit = 25;
-        tL_messages_searchGlobal.filter = new TLRPC.TL_inputMessagesFilterEmpty();
-        int i12 = this.N;
-        if (z10) {
-            ArrayList arrayList = this.T;
-            if (!arrayList.isEmpty()) {
-                MessageObject messageObject = (MessageObject) i2.d.h(1, arrayList);
-                tL_messages_searchGlobal.offset_rate = this.c0;
-                tL_messages_searchGlobal.offset_id = messageObject.getId();
-                if (messageObject.messageOwner.peer_id == null) {
-                    tL_messages_searchGlobal.offset_peer = new TLRPC.TL_inputPeerEmpty();
-                } else {
-                    tL_messages_searchGlobal.offset_peer = MessagesController.getInstance(i12).getInputPeer(messageObject.messageOwner.peer_id);
-                }
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.m0(this, i10, tL_messages_searchGlobal, z10, 3), !z10 ? 800L : 0L);
-                if (z10) {
-                    this.a0 = true;
-                    TLRPC.TL_contacts_search tL_contacts_search = new TLRPC.TL_contacts_search();
-                    tL_contacts_search.limit = 30;
-                    tL_contacts_search.bots = true;
-                    tL_contacts_search.q = this.e0;
-                    ConnectionsManager.getInstance(i12).sendRequestTyped(tL_contacts_search, new org.telegram.messenger.a(), new bi.f0(11, this, tL_contacts_search));
-                    return;
-                }
-                return;
-            }
-        }
-        tL_messages_searchGlobal.offset_rate = 0;
-        tL_messages_searchGlobal.offset_id = 0;
-        tL_messages_searchGlobal.offset_peer = new TLRPC.TL_inputPeerEmpty();
-        AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.m0(this, i10, tL_messages_searchGlobal, z10, 3), !z10 ? 800L : 0L);
-        if (z10) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.d.y();
+                break;
+            default:
+                this.d.y();
+                break;
         }
     }
 }

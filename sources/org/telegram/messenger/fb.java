@@ -1,52 +1,29 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.FileLoadOperation;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class fb implements RequestDelegate {
+public final /* synthetic */ class fb implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ TL_account.TL_webBrowserSettings c;
 
-    public /* synthetic */ fb(Object obj, int i10, Object obj2, int i11) {
-        this.a = i11;
-        this.c = obj;
-        this.b = i10;
-        this.d = obj2;
+    public /* synthetic */ fb(MessagesController messagesController, TL_account.TL_webBrowserSettings tL_webBrowserSettings, int i10) {
+        this.a = i10;
+        this.b = messagesController;
+        this.c = tL_webBrowserSettings;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.c).lambda$checkChatlistFolderUpdate$481(this.b, (MessagesController.ChatlistUpdatesStat) this.d, tLObject, tL_error);
-                break;
-            case 1:
-                ((FileLoadOperation) this.c).lambda$startDownloadRequest$29(this.b, (FileLoadOperation.RequestInfo) this.d, tLObject, tL_error);
-                break;
-            case 2:
-                ((MediaDataController) this.c).lambda$toggleStickerSetInternal$117((TLRPC.StickerSet) this.d, this.b, tLObject, tL_error);
-                break;
-            case 3:
-                ((MediaDataController) this.c).lambda$loadStickers$97(this.b, (Utilities.Callback) this.d, tLObject, tL_error);
+                this.b.lambda$loadWebBrowserConfig$513(this.c);
                 break;
             default:
-                ((MessagesController) this.c).lambda$registerForPush$323(this.b, (String) this.d, tLObject, tL_error);
+                this.b.lambda$loadWebBrowserConfig$511(this.c);
                 break;
         }
-    }
-
-    public /* synthetic */ fb(MediaDataController mediaDataController, TLRPC.StickerSet stickerSet, int i10) {
-        this.a = 2;
-        this.c = mediaDataController;
-        this.d = stickerSet;
-        this.b = i10;
     }
 }

@@ -1,92 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.os.Build;
-import android.widget.EdgeEffect;
-import androidx.recyclerview.widget.RecyclerView;
+import android.view.View;
+import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class au extends EdgeEffect {
-    public final int a;
-    public final yt b;
-    public final RecyclerView c;
-    public final kq d;
-    public boolean e;
+public final /* synthetic */ class au implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ View b;
 
-    public au(RecyclerView recyclerView, int i10, yt ytVar) {
-        super(recyclerView.getContext());
-        this.d = new kq(this, 7);
-        this.c = recyclerView;
+    public /* synthetic */ au(int i10, View view) {
         this.a = i10;
-        this.b = ytVar;
+        this.b = view;
     }
 
-    public final void a() {
-        boolean b10 = b();
-        if (this.e != b10) {
-            this.e = b10;
-            yt ytVar = this.b;
-            if (ytVar != null) {
-                ytVar.a(this.a, b10);
-            }
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        switch (this.a) {
+            case 0:
+                org.telegram.ui.ActionBar.h4 h4Var = ((EditTextBoldCursor) this.b).floatingActionMode;
+                if (h4Var != null) {
+                    h4Var.c();
+                    break;
+                }
+                break;
+            default:
+                ((g80) this.b).invalidate();
+                break;
         }
-    }
-
-    public final boolean b() {
-        if (isFinished()) {
-            return false;
-        }
-        return Build.VERSION.SDK_INT < 31 || getDistance() != 0.0f;
-    }
-
-    @Override // android.widget.EdgeEffect
-    public final boolean draw(Canvas canvas) {
-        boolean draw = super.draw(canvas);
-        this.c.postOnAnimation(this.d);
-        return draw;
-    }
-
-    @Override // android.widget.EdgeEffect
-    public final void finish() {
-        super.finish();
-        a();
-    }
-
-    @Override // android.widget.EdgeEffect
-    public final void onAbsorb(int i10) {
-        super.onAbsorb(i10);
-        a();
-    }
-
-    @Override // android.widget.EdgeEffect
-    public final void onPull(float f7) {
-        super.onPull(f7);
-        a();
-    }
-
-    @Override // android.widget.EdgeEffect
-    public final float onPullDistance(float f7, float f10) {
-        float onPullDistance = super.onPullDistance(f7, f10);
-        a();
-        return onPullDistance;
-    }
-
-    @Override // android.widget.EdgeEffect
-    public final void onRelease() {
-        super.onRelease();
-        a();
-    }
-
-    @Override // android.widget.EdgeEffect
-    public final void setSize(int i10, int i11) {
-        super.setSize(i10, i11);
-        a();
-    }
-
-    @Override // android.widget.EdgeEffect
-    public final void onPull(float f7, float f10) {
-        super.onPull(f7, f10);
-        a();
+        return true;
     }
 }

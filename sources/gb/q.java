@@ -2,23 +2,21 @@ package gb;
 
 import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class q extends u {
+public final class q extends s {
     public final /* synthetic */ Method b;
-    public final /* synthetic */ Object c;
 
-    public q(Method method, Object obj) {
+    public q(Method method) {
         this.b = method;
-        this.c = obj;
     }
 
-    @Override // gb.u
+    @Override // gb.s
     public final Object a(Class cls) {
-        String w9 = qf.b.w(cls);
-        if (w9 == null) {
-            return this.b.invoke(this.c, cls);
+        String y3 = qf.b.y(cls);
+        if (y3 == null) {
+            return this.b.invoke(null, cls, Object.class);
         }
-        throw new AssertionError("UnsafeAllocator is used for non-instantiable type: ".concat(w9));
+        throw new AssertionError("UnsafeAllocator is used for non-instantiable type: ".concat(y3));
     }
 }

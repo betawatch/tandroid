@@ -1,40 +1,22 @@
 package qi;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class c implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ q b;
-    public final /* synthetic */ k c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ long e;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestTimeDelegate;
+import org.telegram.ui.ac0;
 
-    public /* synthetic */ c(q qVar, k kVar, long j10, long j11, int i10) {
-        this.a = i10;
-        this.b = qVar;
-        this.c = kVar;
-        this.d = j10;
-        this.e = j11;
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class c implements RequestTimeDelegate {
+    public final /* synthetic */ e a;
+    public final /* synthetic */ d b;
+
+    public /* synthetic */ c(e eVar, d dVar) {
+        this.a = eVar;
+        this.b = dVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                m mVar = this.b.f;
-                k kVar = this.c;
-                mVar.onOutputCompleted(kVar.a, kVar.b, this.d, this.e);
-                break;
-            case 1:
-                m mVar2 = this.b.f;
-                k kVar2 = this.c;
-                mVar2.onBytesAvailable(kVar2.a, kVar2.b, this.d, this.e);
-                break;
-            default:
-                m mVar3 = this.b.f;
-                k kVar3 = this.c;
-                mVar3.onOutputCompleted(kVar3.a, kVar3.b, this.d, this.e);
-                break;
-        }
+    @Override // org.telegram.tgnet.RequestTimeDelegate
+    public void run(long j10) {
+        AndroidUtilities.runOnUIThread(new ac0(this.a, this.b, j10, 2));
     }
 }

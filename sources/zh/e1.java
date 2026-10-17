@@ -1,46 +1,37 @@
 package zh;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.app.ActivityManager;
+import android.os.Build;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class e1 implements RequestDelegate {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ r3 b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ Object f;
+public abstract class e1 {
+    public static final float[][] a = {new float[]{1.1f, 27.0f, 1.05f, 23.0f, 1.15f, 33.0f, 3.8f, 1.0f, -1.0f, 1.0f, 1.0f, 2.0f, 3.0f}, new float[]{0.83f, 27.0f, 0.79f, 23.0f, 0.86f, 33.0f, 3.8f, 1.0f, -1.0f, 0.6f, 1.0f, 2.0f, 3.0f}, new float[]{1.1f, 27.0f, 1.05f, 23.0f, 1.15f, 18.0f, 3.8f, 1.0f, -1.0f, 1.2f, 1.0f, 2.0f, 3.0f}, new float[]{0.83f, 13.0f, 0.79f, 11.0f, 0.86f, 16.0f, 3.8f, 1.0f, -1.0f, 0.6f, 1.0f, 1.0f, 1.5f}};
+    public static final float[] b = {20.0f, 10.0f, 17.5f, 6.0f, 85.0f, 55.0f, 26.0f, 50.0f, 40.0f, 5.0f, 7.0f, 9.0f, 33.0f, 46.0f, 24.0f, 0.0f, 30.0f, 45.0f, 67.0f, 15.0f, 70.0f, 139.0f, 100.0f, 61.0f, 193.0f, 4.0f, 2.0f, 100.0f, 55.0f, 0.3f, 100.0f, 30.0f, 1.5f, 2.5f, 0.0f, 1.0f, 1.3f, 200.0f, 0.7f, 207.0f, 0.0f, 0.0f, 3.5f, 0.0f, 1.5f, 2.5f, 34.0f, 27.0f, 360.0f, 780.0f, 1.1f, 920.0f, 1.0f, 10.0f};
 
-    public /* synthetic */ e1(r3 r3Var, long j10, long j11, Utilities.Callback callback, long j12) {
-        this.b = r3Var;
-        this.c = j10;
-        this.d = j11;
-        this.f = callback;
-        this.e = j12;
-    }
-
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new m1(this.b, (org.telegram.ui.ActionBar.a2) this.f, tLObject, this.c, this.d, this.e, tL_error));
-                break;
-            default:
-                AndroidUtilities.runOnUIThread(new m1(this.b, tLObject, this.c, this.d, (Utilities.Callback) this.f, tL_error, this.e));
-                break;
+    public static boolean a(long j10) {
+        try {
+            if (Build.VERSION.SDK_INT < 26) {
+                Runtime runtime = Runtime.getRuntime();
+                return j10 < (runtime.maxMemory() - (runtime.totalMemory() - runtime.freeMemory())) / 2;
+            }
+            ActivityManager activityManager = (ActivityManager) ApplicationLoader.applicationContext.getSystemService("activity");
+            ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
+            activityManager.getMemoryInfo(memoryInfo);
+            return !memoryInfo.lowMemory && memoryInfo.availMem - j10 > memoryInfo.threshold * 2;
+        } catch (Throwable th2) {
+            FileLog.e(th2);
+            return false;
         }
     }
 
-    public /* synthetic */ e1(r3 r3Var, org.telegram.ui.ActionBar.a2 a2Var, long j10, long j11, long j12) {
-        this.b = r3Var;
-        this.f = a2Var;
-        this.c = j10;
-        this.d = j11;
-        this.e = j12;
+    public static int b(int i10, int i11, int i12) {
+        int min = Math.min(i11, (4096 / ((int) Math.ceil(Math.sqrt(Math.max(1, i10))))) - 4);
+        if (min >= i12) {
+            return min;
+        }
+        return 0;
     }
 }

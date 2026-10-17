@@ -1,42 +1,70 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import java.io.Serializable;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rf implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class rf implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ fo b;
-    public final /* synthetic */ View c;
+    public final /* synthetic */ sn b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ String e;
+    public final /* synthetic */ String f;
+    public final /* synthetic */ Serializable h;
+    public final /* synthetic */ TLRPC.InputPeer n;
+    public final /* synthetic */ int[] r;
+    public final /* synthetic */ boolean s;
+    public final /* synthetic */ qf v;
+    public final /* synthetic */ Object w;
 
-    public /* synthetic */ rf(fo foVar, org.telegram.ui.Cells.w0 w0Var, int i10) {
-        this.a = i10;
-        this.b = foVar;
-        this.c = w0Var;
+    public /* synthetic */ rf(sn snVar, int i10, ArrayList arrayList, String str, String str2, String str3, TLRPC.InputPeer inputPeer, int[] iArr, Object obj, boolean z10, qf qfVar, int i11) {
+        this.a = i11;
+        this.b = snVar;
+        this.c = i10;
+        this.d = arrayList;
+        this.e = str;
+        this.f = str2;
+        this.h = str3;
+        this.n = inputPeer;
+        this.r = iArr;
+        this.w = obj;
+        this.s = z10;
+        this.v = qfVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                fo foVar = this.b;
-                foVar.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                foVar.A9 = AndroidUtilities.dp(30.0f) * floatValue;
-                foVar.t9();
-                this.c.setAlpha(floatValue);
+                sn.b0(this.b, this.c, this.d, this.e, this.f, (String) this.h, this.n, this.r, (TL_iv.RichMessage) this.w, this.s, this.v);
+                break;
+            case 1:
+                sn.d0(this.b, this.c, this.d, this.e, this.f, (String) this.h, this.n, this.r, (CharSequence) this.w, this.s, this.v);
                 break;
             default:
-                fo foVar2 = this.b;
-                foVar2.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                foVar2.A9 = AndroidUtilities.dp(30.0f) * floatValue2;
-                foVar2.t9();
-                foVar2.w9();
-                this.c.setAlpha(floatValue2);
+                sn.t0(this.b, this.c, this.d, (String[]) this.h, this.e, this.f, this.n, this.r, (CharSequence) this.w, this.s, this.v);
                 break;
         }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public /* synthetic */ rf(sn snVar, int i10, ArrayList arrayList, String[] strArr, String str, String str2, TLRPC.InputPeer inputPeer, int[] iArr, CharSequence charSequence, boolean z10, qf qfVar) {
+        this.a = 2;
+        this.b = snVar;
+        this.c = i10;
+        this.d = arrayList;
+        this.h = strArr;
+        this.e = str;
+        this.f = str2;
+        this.n = inputPeer;
+        this.r = iArr;
+        this.w = charSequence;
+        this.s = z10;
+        this.v = qfVar;
     }
 }

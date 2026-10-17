@@ -1,56 +1,71 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j51 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.e3[] b;
-    public final /* synthetic */ Context c;
+public final class j51 extends s4.r0 {
+    public final /* synthetic */ int a = 0;
+    public int b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ j51(Context context, org.telegram.ui.ActionBar.e3[] e3VarArr) {
-        this.a = 3;
-        this.c = context;
-        this.b = e3VarArr;
+    public j51(n51 n51Var) {
+        this.c = n51Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        org.telegram.ui.ActionBar.e3 e3Var;
-        org.telegram.ui.ActionBar.m2 m2Var;
+    @Override // s4.r0
+    public final void a(RecyclerView recyclerView, int i10) {
+        org.telegram.ui.Wallet.q8 q8Var;
         switch (this.a) {
             case 0:
-                this.b[0].dismiss();
-                pf.d.r(this.c, LocaleController.getString(R.string.CocoonFeature1TextLink));
-                break;
-            case 1:
-                this.b[0].dismiss();
-                pf.d.t(this.c, LocaleController.getString(R.string.CocoonFeature3TextLink));
-                break;
-            case 2:
-                this.b[0].dismiss();
-                pf.d.r(this.c, LocaleController.getString(R.string.CocoonFooterLink));
+                if (i10 == 0) {
+                    this.b = 0;
+                    break;
+                }
                 break;
             default:
-                dx0 dx0Var = new dx0(this.c);
-                if (!AndroidUtilities.isTablet()) {
-                    org.telegram.ui.ActionBar.e3[] e3VarArr = this.b;
-                    if (!AndroidUtilities.hasDialogOnTop(e3VarArr[0].attachedFragment) && (e3Var = e3VarArr[0]) != null && (m2Var = e3Var.attachedFragment) != null) {
-                        dx0Var.makeAttached(m2Var);
-                    }
+                if (i10 == 1 && (q8Var = ((org.telegram.ui.Wallet.h4) this.c).b.j0) != null) {
+                    q8Var.a();
+                    break;
                 }
-                dx0Var.show();
                 break;
         }
     }
 
-    public /* synthetic */ j51(org.telegram.ui.ActionBar.e3[] e3VarArr, Context context, int i10) {
-        this.a = i10;
-        this.b = e3VarArr;
-        this.c = context;
+    @Override // s4.r0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                n51 n51Var = (n51) this.c;
+                this.b += i11;
+                if (recyclerView.getScrollState() == 1 && Math.abs(this.b) > AndroidUtilities.dp(96.0f)) {
+                    View findFocus = n51Var.e.findFocus();
+                    if (findFocus == null) {
+                        findFocus = n51Var.e;
+                    }
+                    AndroidUtilities.hideKeyboard(findFocus);
+                }
+                if (i11 != 0) {
+                    n51.n(n51Var);
+                    break;
+                }
+                break;
+            default:
+                org.telegram.ui.Wallet.l5 l5Var = ((org.telegram.ui.Wallet.h4) this.c).b;
+                if (this.b != 0) {
+                    recyclerView.post(new org.telegram.ui.Wallet.m3(l5Var, 14));
+                    break;
+                } else {
+                    l5Var.x0();
+                    break;
+                }
+        }
+    }
+
+    public j51(org.telegram.ui.Wallet.h4 h4Var, int i10) {
+        this.c = h4Var;
+        this.b = i10;
     }
 }

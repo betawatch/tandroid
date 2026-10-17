@@ -8,17 +8,18 @@ import android.graphics.Canvas;
 import android.util.Property;
 import android.view.View;
 import android.widget.FrameLayout;
+import ei.i6;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LiteMode;
-import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.z9;
+import org.telegram.ui.Components.bs;
+import org.telegram.ui.Components.w9;
 import w7.z5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes.dex */
 public final class r0 extends FrameLayout {
     public final q0 a;
-    public final z9 b;
+    public final w9 b;
     public AnimatorSet c;
     public boolean d;
     public boolean e;
@@ -33,14 +34,14 @@ public final class r0 extends FrameLayout {
             invalidate();
         }
         q0Var.e = true;
-        z9 z9Var = new z9(activity);
-        this.b = z9Var;
-        addView(z9Var, z5.e(135, 135, 17));
+        w9 w9Var = new w9(activity);
+        this.b = w9Var;
+        addView(w9Var, z5.e(135, 135, 17));
         setWillNotDraw(false);
         AnimatorSet animatorSet = new AnimatorSet();
         this.c = animatorSet;
         animatorSet.playTogether(ObjectAnimator.ofFloat(this, (Property<r0, Float>) View.SCALE_X, 1.0f, 1.05f, 1.0f, 1.05f, 1.0f), ObjectAnimator.ofFloat(this, (Property<r0, Float>) View.SCALE_Y, 1.0f, 1.05f, 1.0f, 1.05f, 1.0f));
-        this.c.setInterpolator(es.g);
+        this.c.setInterpolator(bs.g);
         this.c.setDuration(3000L);
         boolean isEnabled = LiteMode.isEnabled(512);
         this.f = isEnabled;
@@ -62,7 +63,7 @@ public final class r0 extends FrameLayout {
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.c = animatorSet2;
         animatorSet2.playTogether(ObjectAnimator.ofFloat(this, (Property<r0, Float>) View.SCALE_X, getScaleX(), 1.05f, 1.0f), ObjectAnimator.ofFloat(this, (Property<r0, Float>) View.SCALE_Y, getScaleY(), 1.05f, 1.0f));
-        this.c.setInterpolator(es.g);
+        this.c.setInterpolator(bs.g);
         this.c.setDuration(400L);
         this.c.start();
     }
@@ -81,7 +82,6 @@ public final class r0 extends FrameLayout {
                     valueAnimator.removeAllUpdateListeners();
                     q0Var.j.cancel();
                 }
-                int i10 = 1;
                 if (z10) {
                     q0Var.j = ValueAnimator.ofFloat(q0Var.i, 0.0f);
                     q0Var.k = (int) (2000.0f / AndroidUtilities.screenRefreshTime);
@@ -89,7 +89,7 @@ public final class r0 extends FrameLayout {
                     q0Var.k = 0;
                     q0Var.j = ValueAnimator.ofFloat(q0Var.i, 1.0f);
                 }
-                q0Var.j.addUpdateListener(new ki.a(q0Var, i10));
+                q0Var.j.addUpdateListener(new i6(q0Var, 8));
                 if (z11) {
                     q0Var.j.setDuration(150L);
                 } else {

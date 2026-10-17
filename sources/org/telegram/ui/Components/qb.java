@@ -1,21 +1,42 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public interface qb {
-    boolean a();
+public final class qb extends o1.i {
+    public final /* synthetic */ int a;
 
-    void b(sc scVar);
+    public /* synthetic */ qb(int i10) {
+        this.a = i10;
+    }
 
-    void c(float f7);
+    @Override // o1.i
+    public final float a(Object obj) {
+        switch (this.a) {
+            case 0:
+                return ((ub) obj).inOutOffset;
+            case 1:
+                return ((org.telegram.ui.rg0) obj).N;
+            default:
+                return ((org.telegram.ui.rg0) obj).M;
+        }
+    }
 
-    void d(sc scVar);
-
-    boolean e();
-
-    int f(int i10);
-
-    boolean g(int i10);
-
-    int h(int i10);
+    @Override // o1.i
+    public final void b(Object obj, float f7) {
+        switch (this.a) {
+            case 0:
+                ((ub) obj).setInOutOffset(f7);
+                break;
+            case 1:
+                org.telegram.ui.rg0 rg0Var = (org.telegram.ui.rg0) obj;
+                rg0Var.N = f7;
+                rg0Var.invalidate();
+                break;
+            default:
+                org.telegram.ui.rg0 rg0Var2 = (org.telegram.ui.rg0) obj;
+                rg0Var2.M = f7;
+                rg0Var2.invalidate();
+                break;
+        }
+    }
 }

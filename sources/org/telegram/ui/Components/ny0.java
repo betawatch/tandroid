@@ -1,60 +1,60 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class ny0 extends s4.x {
-    public int e;
-    public final /* synthetic */ uy0 f;
+public final /* synthetic */ class ny0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ com.google.firebase.messaging.l b;
+    public final /* synthetic */ int c;
 
-    public ny0(uy0 uy0Var) {
-        this.f = uy0Var;
-        this.d = 15;
-        this.e = -1;
+    public /* synthetic */ ny0(com.google.firebase.messaging.l lVar, int i10, int i11) {
+        this.a = i11;
+        this.b = lVar;
+        this.c = i10;
     }
 
-    @Override // s4.v
-    public final boolean n(RecyclerView recyclerView, s4.b1 b1Var, s4.b1 b1Var2) {
-        int i10 = b1Var.f;
-        if (i10 == 3 || i10 != b1Var2.f) {
-            return false;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                ArrayList arrayList = (ArrayList) this.b.d;
+                Float f7 = (Float) valueAnimator.getAnimatedValue();
+                f7.getClass();
+                arrayList.set(this.c, f7);
+                break;
+            case 1:
+                ArrayList arrayList2 = (ArrayList) this.b.e;
+                Float f10 = (Float) valueAnimator.getAnimatedValue();
+                f10.getClass();
+                arrayList2.set(this.c, f10);
+                break;
+            case 2:
+                ArrayList arrayList3 = (ArrayList) this.b.f;
+                Float f11 = (Float) valueAnimator.getAnimatedValue();
+                f11.getClass();
+                arrayList3.set(this.c, f11);
+                break;
+            case 3:
+                ArrayList arrayList4 = (ArrayList) this.b.d;
+                Float f12 = (Float) valueAnimator.getAnimatedValue();
+                f12.getClass();
+                arrayList4.set(this.c, f12);
+                break;
+            case 4:
+                ArrayList arrayList5 = (ArrayList) this.b.e;
+                Float f13 = (Float) valueAnimator.getAnimatedValue();
+                f13.getClass();
+                arrayList5.set(this.c, f13);
+                break;
+            default:
+                ArrayList arrayList6 = (ArrayList) this.b.f;
+                Float f14 = (Float) valueAnimator.getAnimatedValue();
+                f14.getClass();
+                arrayList6.set(this.c, f14);
+                break;
         }
-        uy0 uy0Var = this.f;
-        if (uy0Var.S == null) {
-            return false;
-        }
-        int b10 = b1Var.b();
-        int b11 = b1Var2.b();
-        uy0Var.S.documents.add(b11, uy0Var.S.documents.remove(b10));
-        uy0Var.d.p(b10, b11);
-        this.e = b11;
-        return true;
-    }
-
-    @Override // s4.v
-    public final void p(s4.b1 b1Var, int i10) {
-        uy0 uy0Var = this.f;
-        if (i10 != 0 || uy0Var.f == null || this.e <= 0) {
-            if (i10 == 2) {
-                uy0Var.f = ((org.telegram.ui.Cells.f8) b1Var.a).getSticker();
-            }
-        } else {
-            TLRPC.TL_stickers_changeStickerPosition tL_stickers_changeStickerPosition = new TLRPC.TL_stickers_changeStickerPosition();
-            tL_stickers_changeStickerPosition.position = this.e;
-            tL_stickers_changeStickerPosition.sticker = MediaDataController.getInputStickerSetItem(uy0Var.f, "").document;
-            this.e = -1;
-            uy0Var.f = null;
-        }
-    }
-
-    @Override // s4.v
-    public final void q(s4.b1 b1Var) {
-    }
-
-    @Override // s4.v
-    public final void o(RecyclerView recyclerView, s4.b1 b1Var, s4.b1 b1Var2, int i10, int i11, int i12) {
     }
 }

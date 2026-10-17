@@ -1,9 +1,9 @@
 package x2;
 
 import android.os.Build;
-import b2.x;
+import b2.w;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements d9.m {
     public final /* synthetic */ n a;
@@ -25,13 +25,13 @@ public final /* synthetic */ class d implements d9.m {
     public final boolean apply(Object obj) {
         Boolean bool;
         z2.d dVar;
-        x xVar = (x) obj;
+        w wVar = (w) obj;
         n nVar = this.a;
         nVar.getClass();
         if (this.b.A0 && ((bool = nVar.k) == null || !bool.booleanValue())) {
-            int i10 = xVar.K;
+            int i10 = wVar.K;
             if (i10 != -1 && i10 > 2) {
-                String str = xVar.s;
+                String str = wVar.s;
                 if (str != null) {
                     switch (str) {
                         case "audio/eac3-joc":
@@ -46,7 +46,7 @@ public final /* synthetic */ class d implements d9.m {
                             }
                             break;
                         default:
-                            if (Build.VERSION.SDK_INT >= 32 || (dVar = nVar.i) == null || !dVar.b || !dVar.c() || !nVar.i.d() || !nVar.i.a(nVar.j, xVar)) {
+                            if (Build.VERSION.SDK_INT >= 32 || (dVar = nVar.i) == null || !dVar.b || !dVar.c() || !nVar.i.d() || !nVar.i.a(nVar.j, wVar)) {
                                 return false;
                             }
                             break;

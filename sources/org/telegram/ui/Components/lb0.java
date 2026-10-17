@@ -1,18 +1,24 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Canvas;
 import android.graphics.Paint;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public interface lb0 {
-    void g(TLRPC.BotInlineResult botInlineResult, boolean z10, int i10);
+public final class lb0 extends a6 {
+    public final /* synthetic */ ob0 a;
 
-    Paint.FontMetricsInt i();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public lb0(ob0 ob0Var, TLRPC.Document document, Paint.FontMetricsInt fontMetricsInt) {
+        super(document, fontMetricsInt);
+        this.a = ob0Var;
+    }
 
-    void m(TLRPC.TL_document tL_document, String str, Object obj);
-
-    void r(int i10, int i11, CharSequence charSequence, boolean z10);
-
-    void y(String str);
+    @Override // org.telegram.ui.Components.a6, android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        int i15 = i14 + i12;
+        int i16 = this.measuredSize;
+        this.a.c.set((int) f7, (i15 - i16) / 2, (int) (f7 + i16), (i15 + i16) / 2);
+    }
 }

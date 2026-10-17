@@ -1,57 +1,39 @@
 package org.telegram.ui.Wallet;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RenderEffect;
-import android.graphics.Shader;
-import android.graphics.SweepGradient;
-import android.os.Build;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.a71;
+import org.telegram.ui.Components.e61;
+import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.s61;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class c5 extends View {
-    public final Paint a;
-    public final Matrix b;
-    public final Path c;
-    public SweepGradient d;
-    public float e;
-    public float f;
+public final class c5 extends e61 {
+    public static final /* synthetic */ int a = 0;
 
-    public c5(Context context) {
-        super(context);
-        this.a = new Paint(1);
-        this.b = new Matrix();
-        this.c = new Path();
-        setClipToOutline(true);
-        setOutlineProvider(new dh.b(this, 7));
-        if (Build.VERSION.SDK_INT >= 31) {
-            setRenderEffect(RenderEffect.createBlurEffect(AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f), Shader.TileMode.CLAMP));
-        }
+    static {
+        e61.setup(new c5());
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), this.a);
+    @Override // org.telegram.ui.Components.e61
+    public final void bindView(View view, f61 f61Var, boolean z10, s61 s61Var, a71 a71Var) {
+        ((d5) view).a(f61Var.l, f61Var.m, f61Var.k);
     }
 
-    @Override // android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        super.onSizeChanged(i10, i11, i12, i13);
-        this.e = i10 * 0.5f;
-        this.f = i11 * 0.5f;
-        this.d = new SweepGradient(this.e, this.f, new int[]{-16216082, -15291399, -16216082, -15291399, -16216082}, new float[]{0.0f, 0.25f, 0.5f, 0.75f, 1.0f});
-        float f7 = this.e;
-        float f10 = this.f;
-        Matrix matrix = this.b;
-        matrix.setRotate(-69.01f, f7, f10);
-        this.d.setLocalMatrix(matrix);
-        this.a.setShader(this.d);
-        invalidateOutline();
+    @Override // org.telegram.ui.Components.e61
+    public final View createView(Context context, im0 im0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
+        return new d5(context, d6Var);
+    }
+
+    @Override // org.telegram.ui.Components.e61
+    public final boolean isClickable() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.e61
+    public final boolean isShadow() {
+        return true;
     }
 }

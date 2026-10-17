@@ -4,12 +4,12 @@ import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class t0 implements Application.ActivityLifecycleCallbacks {
     public static final t0 a = new t0();
     public static boolean b;
-    public static com.google.firebase.messaging.s c;
+    public static com.google.firebase.messaging.r c;
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public final void onActivityCreated(Activity activity, Bundle bundle) {
@@ -24,9 +24,9 @@ public final class t0 implements Application.ActivityLifecycleCallbacks {
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public final void onActivityPaused(Activity activity) {
         kotlin.jvm.internal.i.e(activity, "activity");
-        com.google.firebase.messaging.s sVar = c;
-        if (sVar != null) {
-            sVar.r(2);
+        com.google.firebase.messaging.r rVar = c;
+        if (rVar != null) {
+            rVar.r(2);
         }
     }
 
@@ -34,9 +34,9 @@ public final class t0 implements Application.ActivityLifecycleCallbacks {
     public final void onActivityResumed(Activity activity) {
         id.i iVar;
         kotlin.jvm.internal.i.e(activity, "activity");
-        com.google.firebase.messaging.s sVar = c;
-        if (sVar != null) {
-            sVar.r(1);
+        com.google.firebase.messaging.r rVar = c;
+        if (rVar != null) {
+            rVar.r(1);
             iVar = id.i.a;
         } else {
             iVar = null;

@@ -1,83 +1,120 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.widget.ImageView;
+import android.os.Bundle;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import java.util.regex.Pattern;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qg implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
+public final /* synthetic */ class qg implements gv0, xx {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ qg(Object obj, float f7, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.b = f7;
+    public /* synthetic */ qg(sn snVar, boolean z10, MessageObject messageObject, int i10) {
+        this.c = snVar;
+        this.a = z10;
+        this.d = messageObject;
+        this.b = i10;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                fo foVar = (fo) this.c;
-                foVar.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                foVar.H8 = floatValue;
-                foVar.L8 = floatValue / this.b;
-                View view = foVar.fragmentView;
-                if (view != null) {
-                    view.invalidate();
+    @Override // org.telegram.ui.xx
+    public /* synthetic */ boolean D() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.xx
+    public /* synthetic */ boolean K(ey eyVar) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.gv0
+    public void b(TLRPC.MessageMedia messageMedia) {
+        int i10;
+        sn snVar = (sn) this.c;
+        MessageObject messageObject = (MessageObject) this.d;
+        if (!this.a) {
+            if (messageMedia instanceof TLRPC.TL_messageMediaToDo) {
+                TLRPC.MessageMedia messageMedia2 = messageObject.messageOwner.media;
+                if (messageMedia2 instanceof TLRPC.TL_messageMediaToDo) {
+                    ((TLRPC.TL_messageMediaToDo) messageMedia).completions = ((TLRPC.TL_messageMediaToDo) messageMedia2).completions;
+                }
+            }
+            messageObject.messageOwner.media = messageMedia;
+            snVar.getSendMessagesHelper().editMessage(messageObject, null, null, null, null, null, null, false, false, null);
+            return;
+        }
+        TLRPC.TL_messages_appendTodoList tL_messages_appendTodoList = new TLRPC.TL_messages_appendTodoList();
+        tL_messages_appendTodoList.peer = snVar.getMessagesController().getInputPeer(messageObject.getDialogId());
+        tL_messages_appendTodoList.msg_id = messageObject.getId();
+        if (messageMedia instanceof TLRPC.TL_messageMediaToDo) {
+            TLRPC.TL_messageMediaToDo tL_messageMediaToDo = (TLRPC.TL_messageMediaToDo) messageMedia;
+            int i11 = 0;
+            int i12 = 0;
+            while (true) {
+                i10 = this.b;
+                if (i11 >= i10) {
                     break;
                 }
-                break;
-            case 1:
-                ArrayList arrayList = (ArrayList) this.c;
-                float floatValue2 = 1.0f - ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                    View view2 = (View) arrayList.get(i10);
-                    if (view2 != null) {
-                        view2.setTranslationY(this.b * floatValue2);
-                    }
+                i12 = Math.max(i12, tL_messageMediaToDo.todo.list.get(i11).id);
+                i11++;
+            }
+            while (i10 < tL_messageMediaToDo.todo.list.size()) {
+                TLRPC.TodoItem todoItem = tL_messageMediaToDo.todo.list.get(i10);
+                if (todoItem.id <= i12) {
+                    todoItem.id = i12 + 1;
                 }
-                break;
-            case 2:
-                ((org.telegram.ui.Components.io) this.c).E.setTranslationY(AndroidUtilities.lerp(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
-                break;
-            case 3:
-                ((fw0) this.c).R.setTranslationY(AndroidUtilities.lerp(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
-                break;
-            case 4:
-                n21 n21Var = (n21) this.c;
-                n21Var.getClass();
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                float lerp = AndroidUtilities.lerp(0.0f, this.b, floatValue3);
-                n21Var.a.setTranslationX(lerp);
-                n21Var.b.setTranslationX(lerp);
-                ImageView imageView = n21Var.c;
-                imageView.setTranslationX(lerp);
-                org.telegram.ui.Components.aq aqVar = n21Var.f;
-                aqVar.setTranslationX((LocaleController.isRTL ? AndroidUtilities.dp(32.0f) : -AndroidUtilities.dp(32.0f)) + lerp);
-                float f7 = (floatValue3 * 0.5f) + 0.5f;
-                aqVar.setScaleX(f7);
-                aqVar.setScaleY(f7);
-                aqVar.setAlpha(floatValue3);
-                float f10 = 1.0f - floatValue3;
-                float f11 = (f10 * 0.5f) + 0.5f;
-                imageView.setScaleX(f11);
-                imageView.setScaleY(f11);
-                imageView.setAlpha(f10);
-                break;
-            default:
-                org.telegram.ui.Wallet.e3 e3Var = (org.telegram.ui.Wallet.e3) this.c;
-                e3Var.getClass();
-                e3Var.R = ((((Float) valueAnimator.getAnimatedValue()).floatValue() * 240.0f) + this.b) % 360.0f;
-                e3Var.a.invalidate();
-                break;
+                tL_messages_appendTodoList.list.add(todoItem);
+                i12 = Math.max(i12, todoItem.id);
+                i10++;
+            }
+            TLRPC.MessageMedia messageMedia3 = messageObject.messageOwner.media;
+            if (messageMedia3 instanceof TLRPC.TL_messageMediaToDo) {
+                tL_messageMediaToDo.completions = ((TLRPC.TL_messageMediaToDo) messageMedia3).completions;
+            }
         }
+        messageObject.messageOwner.media = messageMedia;
+        snVar.getConnectionsManager().sendRequest(tL_messages_appendTodoList, null);
+    }
+
+    @Override // org.telegram.ui.xx
+    public boolean w(ey eyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, te1 te1Var) {
+        LaunchActivity launchActivity = (LaunchActivity) this.c;
+        String str = (String) this.d;
+        Pattern pattern = LaunchActivity.C1;
+        long j10 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
+        Bundle bundle = new Bundle();
+        bundle.putBoolean("scrollToTopOnResume", true);
+        bundle.putBoolean("hasUrl", this.a);
+        if (DialogObject.isEncryptedDialog(j10)) {
+            bundle.putInt("enc_id", DialogObject.getEncryptedChatId(j10));
+        } else if (DialogObject.isUserDialog(j10)) {
+            bundle.putLong("user_id", j10);
+        } else {
+            bundle.putLong("chat_id", -j10);
+        }
+        int i12 = this.b;
+        if (MessagesController.getInstance(i12).checkCanOpenChat(bundle, eyVar)) {
+            NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
+            MediaDataController.getInstance(i12).saveDraft(j10, 0, str, null, null, false, 0L);
+            ((ActionBarLayout) launchActivity.O()).S(new sn(bundle), true, false);
+        }
+        return true;
+    }
+
+    public /* synthetic */ qg(LaunchActivity launchActivity, boolean z10, int i10, String str) {
+        this.c = launchActivity;
+        this.a = z10;
+        this.b = i10;
+        this.d = str;
     }
 }

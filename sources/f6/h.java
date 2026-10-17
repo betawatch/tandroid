@@ -35,7 +35,7 @@ import n4.s;
 import n6.l;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class h {
     public static final g6.b v = new g6.b("MediaSessionManager", null);
@@ -80,11 +80,10 @@ public final class h {
         this.g = !TextUtils.isEmpty(str2) ? new ComponentName(context, str2) : null;
         z5 z5Var = new z5(context);
         this.h = z5Var;
-        int i10 = 18;
-        z5Var.e = new ya.c(this, i10);
+        z5Var.e = new ya.c(this, 17);
         z5 z5Var2 = new z5(context);
         this.i = z5Var2;
-        z5Var2.e = new a6.i(this, i10);
+        z5Var2.e = new a6.i(this, 20);
         this.k = new a0(Looper.getMainLooper(), 0);
         g6.b bVar3 = f.u;
         e6.a aVar3 = bVar.f;
@@ -101,8 +100,8 @@ public final class h {
                 } else if (b10 == null || (b10.length) == 0) {
                     Log.e(bVar3.a, bVar3.d(e6.e.class.getSimpleName().concat(" doesn't provide any actions for compact view."), new Object[0]));
                 } else {
-                    for (int i11 : b10) {
-                        if (i11 < 0 || i11 >= size) {
+                    for (int i10 : b10) {
+                        if (i10 < 0 || i10 >= size) {
                             Log.e(bVar3.a, bVar3.d(e6.e.class.getSimpleName().concat("provides a compact view action whose index is out of bounds."), new Object[0]));
                             break;
                         }
@@ -220,8 +219,8 @@ public final class h {
                             sVar = fVar.l;
                             if (sVar != null || !g6.a.d(uri, (Uri) sVar.b)) {
                                 z5 z5Var = fVar.i;
-                                z5Var.e = new qf.b(fVar, sVar2, false, 18);
-                                z5Var.C(uri);
+                                z5Var.e = new qf.b(fVar, sVar2, false, 16);
+                                z5Var.B(uri);
                             }
                         } else {
                             Integer num = (Integer) e.N.get(e.c);
@@ -250,8 +249,8 @@ public final class h {
                                 if (sVar != null) {
                                 }
                                 z5 z5Var2 = fVar.i;
-                                z5Var2.e = new qf.b(fVar, sVar22, false, 18);
-                                z5Var2.C(uri);
+                                z5Var2.e = new qf.b(fVar, sVar22, false, 16);
+                                z5Var2.B(uri);
                             }
                         }
                     }
@@ -278,8 +277,8 @@ public final class h {
                     if (sVar != null) {
                     }
                     z5 z5Var22 = fVar.i;
-                    z5Var22.e = new qf.b(fVar, sVar222, false, 18);
-                    z5Var22.C(uri);
+                    z5Var22.e = new qf.b(fVar, sVar222, false, 16);
+                    z5Var22.B(uri);
                 }
             }
             if (hVar.k()) {
@@ -375,9 +374,9 @@ public final class h {
             createFromParcel.b = metadata;
             mediaMetadataCompat = createFromParcel;
         }
-        android.support.v4.media.c cVar = mediaMetadataCompat == null ? new android.support.v4.media.c() : new android.support.v4.media.c(mediaMetadataCompat);
-        cVar.b(i10 == 0 ? "android.media.metadata.DISPLAY_ICON" : "android.media.metadata.ALBUM_ART", bitmap);
-        b0Var.e(new MediaMetadataCompat(cVar.a));
+        ag.b bVar = mediaMetadataCompat == null ? new ag.b(1) : new ag.b(mediaMetadataCompat);
+        bVar.Q(i10 == 0 ? "android.media.metadata.DISPLAY_ICON" : "android.media.metadata.ALBUM_ART", bitmap);
+        b0Var.e(new MediaMetadataCompat((Bundle) bVar.b));
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -567,7 +566,7 @@ public final class h {
         if (fVar != null) {
             v.b("Stopping media notification.", new Object[0]);
             z5 z5Var = fVar.i;
-            z5Var.D();
+            z5Var.C();
             z5Var.e = null;
             NotificationManager notificationManager = fVar.b;
             if (notificationManager != null) {
@@ -708,19 +707,19 @@ public final class h {
             obtain.recycle();
             createFromParcel.b = metadata;
         }
-        android.support.v4.media.c cVar = createFromParcel == null ? new android.support.v4.media.c() : new android.support.v4.media.c(createFromParcel);
-        cVar.c(j11);
+        ag.b bVar = createFromParcel == null ? new ag.b(1) : new ag.b(createFromParcel);
+        bVar.U(j11);
         if (string != null) {
-            cVar.d("android.media.metadata.TITLE", string);
-            cVar.d("android.media.metadata.DISPLAY_TITLE", string);
+            bVar.X("android.media.metadata.TITLE", string);
+            bVar.X("android.media.metadata.DISPLAY_TITLE", string);
         }
         if (string2 != null) {
-            cVar.d("android.media.metadata.DISPLAY_SUBTITLE", string2);
+            bVar.X("android.media.metadata.DISPLAY_SUBTITLE", string2);
         }
-        b0Var.e(new MediaMetadataCompat(cVar.a));
+        b0Var.e(new MediaMetadataCompat((Bundle) bVar.b));
         Uri d = d(lVar);
         if (d != null) {
-            this.h.C(d);
+            this.h.B(d);
             bitmap = null;
         } else {
             bitmap = null;
@@ -728,7 +727,7 @@ public final class h {
         }
         Uri d10 = d(lVar);
         if (d10 != null) {
-            this.i.C(d10);
+            this.i.B(d10);
         } else {
             e(bitmap, 3);
         }

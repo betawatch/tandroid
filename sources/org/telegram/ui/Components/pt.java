@@ -1,29 +1,19 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.style.ReplacementSpan;
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.Shader;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class pt extends ReplacementSpan {
-    public int b;
-    public final Paint a = new Paint(1);
-    public float c = 3.0f;
+public final class pt {
+    public int a;
+    public Object b;
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        int color = paint.getColor();
-        Paint paint2 = this.a;
-        if (color != 0) {
-            paint2.setColor(paint.getColor());
+    public boolean a(int i10) {
+        if (((zf.i) this.b) != null && this.a == i10) {
+            return false;
         }
-        canvas.drawCircle(f7 + (AndroidUtilities.dpf2(this.c) / 2.0f), ((i14 - i12) / 2) + this.b, AndroidUtilities.dpf2(3.0f) / 2.0f, paint2);
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        return AndroidUtilities.dp(this.c);
+        this.a = i10;
+        this.b = new zf.i(0.0f, 0.0f, 1.0f, 0.0f, new int[]{i10, i10}, null, Shader.TileMode.CLAMP);
+        return true;
     }
 }

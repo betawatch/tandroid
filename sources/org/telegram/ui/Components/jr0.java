@@ -1,175 +1,80 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.drawable.Drawable;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.View;
+import java.util.Random;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class jr0 extends Drawable {
-    public long a = 0;
-    public final float[] b = {0.0f, -0.5f};
-    public final Drawable c;
-    public final Drawable d;
-    public final Drawable e;
-    public final int f;
+public final class jr0 extends View {
+    public Random a;
+    public Paint b;
+    public Paint c;
+    public Paint d;
+    public Paint e;
+    public float f;
+    public float h;
+    public float n;
 
-    public jr0(Context context, int i10) {
-        this.f = i10;
-        if (i10 == 4) {
-            this.c = context.getResources().getDrawable(R.drawable.filled_extend_location).mutate();
-            this.d = context.getResources().getDrawable(R.drawable.smallanimationpinleft).mutate();
-            this.e = context.getResources().getDrawable(R.drawable.smallanimationpinright).mutate();
-        } else if (i10 == 5) {
-            this.c = context.getResources().getDrawable(R.drawable.filled_stop_location).mutate();
-            this.d = context.getResources().getDrawable(R.drawable.smallanimationpinleft).mutate();
-            this.e = context.getResources().getDrawable(R.drawable.smallanimationpinright).mutate();
-        } else if (i10 == 1) {
-            this.c = context.getResources().getDrawable(R.drawable.smallanimationpin).mutate();
-            this.d = context.getResources().getDrawable(R.drawable.smallanimationpinleft).mutate();
-            this.e = context.getResources().getDrawable(R.drawable.smallanimationpinright).mutate();
-        } else {
-            this.c = context.getResources().getDrawable(R.drawable.animationpin).mutate();
-            this.d = context.getResources().getDrawable(R.drawable.animationpinleft).mutate();
-            this.e = context.getResources().getDrawable(R.drawable.animationpinright).mutate();
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Paint paint = this.c;
+        Paint paint2 = this.b;
+        super.onDraw(canvas);
+        canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), 255, 31);
+        float f7 = 3.0f;
+        int measuredWidth = (getMeasuredWidth() / 2) - AndroidUtilities.dp(3.0f);
+        int dp = AndroidUtilities.dp(1.0f) + ((AndroidUtilities.dp(1.0f) + measuredWidth) * 7);
+        bs bsVar = bs.g;
+        float f10 = this.f;
+        float interpolation = bsVar.getInterpolation(f10 > 0.4f ? (f10 - 0.4f) / 0.6f : 0.0f);
+        float f11 = (this.n * interpolation) + ((1.0f - interpolation) * this.h);
+        canvas.save();
+        canvas.translate(0.0f, (-org.telegram.messenger.q.A(4.0f, getMeasuredHeight(), dp)) * f11);
+        int i10 = 0;
+        for (int i11 = 7; i10 < i11; i11 = 7) {
+            int dp2 = ((AndroidUtilities.dp(1.0f) + measuredWidth) * i10) + AndroidUtilities.dp(f7);
+            RectF rectF = AndroidUtilities.rectTmp;
+            float f12 = dp2;
+            float f13 = dp2 + measuredWidth;
+            rectF.set(0.0f, f12, measuredWidth, f13);
+            canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), paint2);
+            rectF.set(AndroidUtilities.dp(1.0f) + measuredWidth, f12, org.telegram.messenger.q.C(1.0f, measuredWidth, measuredWidth), f13);
+            canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), paint2);
+            i10++;
+            f7 = f7;
         }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        float[] fArr;
-        int dp;
-        int dp2;
-        int dp3;
-        int D;
-        int i10;
-        Drawable drawable = this.c;
-        int intrinsicWidth = drawable.getIntrinsicWidth();
-        int intrinsicHeight = drawable.getIntrinsicHeight();
-        int i11 = 3;
-        int i12 = 5;
-        int i13 = 1;
-        int i14 = this.f;
-        int i15 = 4;
-        int dp4 = (i14 == 4 || i14 == 5) ? AndroidUtilities.dp(24.0f) : i14 == 3 ? AndroidUtilities.dp(44.0f) : i14 == 2 ? AndroidUtilities.dp(32.0f) : i14 == 1 ? AndroidUtilities.dp(30.0f) : AndroidUtilities.dp(120.0f);
-        int intrinsicHeight2 = ((getIntrinsicHeight() - dp4) / 2) + getBounds().top;
-        int intrinsicWidth2 = ((getIntrinsicWidth() - dp4) / 2) + getBounds().left;
-        int i16 = intrinsicWidth + intrinsicWidth2;
-        drawable.setBounds(intrinsicWidth2, intrinsicHeight2, i16, intrinsicHeight2 + intrinsicHeight);
-        drawable.draw(canvas);
-        int i17 = 0;
-        while (true) {
-            fArr = this.b;
-            if (i17 >= 2) {
-                break;
+        float f14 = f7;
+        canvas.restore();
+        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), AndroidUtilities.dp(4.0f), this.d);
+        canvas.translate(0.0f, getMeasuredHeight() - AndroidUtilities.dp(4.0f));
+        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), AndroidUtilities.dp(4.0f), this.e);
+        canvas.restore();
+        float measuredHeight = ((getMeasuredHeight() - AndroidUtilities.dp(21.0f)) * f11) + AndroidUtilities.dp(f14);
+        RectF rectF2 = AndroidUtilities.rectTmp;
+        rectF2.set(getMeasuredWidth() - AndroidUtilities.dp(f14), measuredHeight, getMeasuredWidth(), AndroidUtilities.dp(15.0f) + measuredHeight);
+        canvas.drawRoundRect(rectF2, AndroidUtilities.dp(1.5f), AndroidUtilities.dp(1.5f), paint);
+        float centerY = rectF2.centerY();
+        float dp3 = AndroidUtilities.dp(0.5f) + measuredWidth;
+        rectF2.set(dp3 - AndroidUtilities.dp(8.0f), centerY - AndroidUtilities.dp(f14), dp3 + AndroidUtilities.dp(8.0f), centerY + AndroidUtilities.dp(f14));
+        canvas.drawRoundRect(rectF2, AndroidUtilities.dp(f14), AndroidUtilities.dp(f14), paint);
+        float f15 = this.f + 0.016f;
+        this.f = f15;
+        if (f15 > 1.0f) {
+            this.h = this.n;
+            float h = org.telegram.ui.Cells.t0.h(this.a, 1001) / 1000.0f;
+            this.n = h;
+            if (h > this.h) {
+                this.n = h + 0.3f;
+            } else {
+                this.n = h - 0.3f;
             }
-            float f7 = fArr[i17];
-            if (f7 >= 0.0f) {
-                float f10 = (f7 * 0.5f) + 0.5f;
-                if (i14 == i15 || i14 == i12) {
-                    int dp5 = AndroidUtilities.dp(2.5f * f10);
-                    dp = AndroidUtilities.dp(f10 * 6.5f);
-                    int dp6 = AndroidUtilities.dp(fArr[i17] * 6.0f);
-                    dp2 = (AndroidUtilities.dp(3.0f) + intrinsicWidth2) - dp6;
-                    dp3 = ((intrinsicHeight / 2) + intrinsicHeight2) - AndroidUtilities.dp(2.0f);
-                    D = org.telegram.messenger.sk.D(3.0f, i16, dp6);
-                    i10 = dp5;
-                } else if (i14 == i11) {
-                    i10 = AndroidUtilities.dp(5.0f * f10);
-                    dp = AndroidUtilities.dp(f10 * 18.0f);
-                    int dp7 = AndroidUtilities.dp(fArr[i17] * 15.0f);
-                    dp2 = (AndroidUtilities.dp(2.0f) + intrinsicWidth2) - dp7;
-                    dp3 = ((intrinsicHeight / 2) + intrinsicHeight2) - AndroidUtilities.dp(7.0f);
-                    D = org.telegram.messenger.sk.D(2.0f, i16, dp7);
-                } else if (i14 == 2) {
-                    i10 = AndroidUtilities.dp(5.0f * f10);
-                    dp = AndroidUtilities.dp(f10 * 18.0f);
-                    int dp8 = AndroidUtilities.dp(fArr[i17] * 15.0f);
-                    dp2 = (AndroidUtilities.dp(2.0f) + intrinsicWidth2) - dp8;
-                    dp3 = (intrinsicHeight / 2) + intrinsicHeight2;
-                    D = org.telegram.messenger.sk.D(2.0f, i16, dp8);
-                } else if (i14 == i13) {
-                    int dp9 = AndroidUtilities.dp(2.5f * f10);
-                    dp = AndroidUtilities.dp(f10 * 6.5f);
-                    int dp10 = AndroidUtilities.dp(fArr[i17] * 6.0f);
-                    dp2 = (AndroidUtilities.dp(7.0f) + intrinsicWidth2) - dp10;
-                    dp3 = (intrinsicHeight / 2) + intrinsicHeight2;
-                    i10 = dp9;
-                    D = org.telegram.messenger.sk.D(7.0f, i16, dp10);
-                } else {
-                    i10 = AndroidUtilities.dp(5.0f * f10);
-                    dp = AndroidUtilities.dp(f10 * 18.0f);
-                    int dp11 = AndroidUtilities.dp(fArr[i17] * 15.0f);
-                    dp2 = (AndroidUtilities.dp(42.0f) + intrinsicWidth2) - dp11;
-                    dp3 = ((intrinsicHeight / 2) + intrinsicHeight2) - AndroidUtilities.dp(7.0f);
-                    D = org.telegram.messenger.sk.D(42.0f, i16, dp11);
-                }
-                float f11 = fArr[i17];
-                int x10 = (int) ((f11 < 0.5f ? f11 / 0.5f : org.telegram.messenger.g0.x(f11, 0.5f, 0.5f, 1.0f)) * 255.0f);
-                Drawable drawable2 = this.d;
-                drawable2.setAlpha(x10);
-                int i18 = dp3 - dp;
-                int i19 = dp3 + dp;
-                drawable2.setBounds(dp2 - i10, i18, dp2 + i10, i19);
-                drawable2.draw(canvas);
-                Drawable drawable3 = this.e;
-                drawable3.setAlpha(x10);
-                drawable3.setBounds(D - i10, i18, D + i10, i19);
-                drawable3.draw(canvas);
-            }
-            i17++;
-            i11 = 3;
-            i12 = 5;
-            i13 = 1;
-            i15 = 4;
+            this.n = Math.max(0.0f, Math.min(1.0f, this.n));
+            this.f = 0.0f;
         }
-        long currentTimeMillis = System.currentTimeMillis();
-        long j10 = currentTimeMillis - this.a;
-        this.a = currentTimeMillis;
-        if (j10 > 16) {
-            j10 = 16;
-        }
-        for (int i20 = 0; i20 < 2; i20++) {
-            if (fArr[i20] >= 1.0f) {
-                fArr[i20] = 0.0f;
-            }
-            float f12 = (j10 / 1300.0f) + fArr[i20];
-            fArr[i20] = f12;
-            if (f12 > 1.0f) {
-                fArr[i20] = 1.0f;
-            }
-        }
-        invalidateSelf();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        int i10 = this.f;
-        return (i10 == 4 || i10 == 5) ? AndroidUtilities.dp(42.0f) : i10 == 3 ? AndroidUtilities.dp(100.0f) : i10 == 2 ? AndroidUtilities.dp(74.0f) : i10 == 1 ? AndroidUtilities.dp(40.0f) : AndroidUtilities.dp(180.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        int i10 = this.f;
-        return (i10 == 4 || i10 == 5) ? AndroidUtilities.dp(42.0f) : i10 == 3 ? AndroidUtilities.dp(100.0f) : i10 == 2 ? AndroidUtilities.dp(74.0f) : i10 == 1 ? AndroidUtilities.dp(40.0f) : AndroidUtilities.dp(120.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.c.setColorFilter(colorFilter);
-        this.d.setColorFilter(colorFilter);
-        this.e.setColorFilter(colorFilter);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
+        invalidate();
     }
 }

@@ -1,30 +1,58 @@
 package org.telegram.ui.Components;
 
 import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaDataController;
+import android.view.View;
+import android.widget.ImageView;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationsController;
+import org.telegram.messenger.NotificationsSettingsFacade;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class oe extends bh {
-    public final /* synthetic */ ChatActivityEnterView x;
+public final class oe implements View.OnClickListener {
+    public final /* synthetic */ org.telegram.ui.sn a;
+    public final /* synthetic */ Activity b;
+    public final /* synthetic */ ChatActivityEnterView c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public oe(ChatActivityEnterView chatActivityEnterView, Activity activity) {
-        super(activity);
-        this.x = chatActivityEnterView;
+    public oe(ChatActivityEnterView chatActivityEnterView, org.telegram.ui.sn snVar, Activity activity) {
+        this.c = chatActivityEnterView;
+        this.a = snVar;
+        this.b = activity;
     }
 
-    @Override // android.widget.ImageView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        ChatActivityEnterView chatActivityEnterView = this.x;
-        Paint paint = chatActivityEnterView.Q1;
-        super.onDraw(canvas);
-        if (getTag() == null || chatActivityEnterView.p1 == null || chatActivityEnterView.W0 || MediaDataController.getInstance(chatActivityEnterView.Q).getUnreadStickerSets().isEmpty() || paint == null) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        String str;
+        int i10;
+        org.telegram.ui.sn snVar = this.a;
+        if (snVar == null) {
             return;
         }
-        canvas.drawCircle(AndroidUtilities.dp(9.0f) + (getWidth() / 2), (getHeight() / 2) - AndroidUtilities.dp(8.0f), AndroidUtilities.dp(5.0f), paint);
+        ChatActivityEnterView chatActivityEnterView = this.c;
+        chatActivityEnterView.g2 = !chatActivityEnterView.g2;
+        if (chatActivityEnterView.e0 == null) {
+            chatActivityEnterView.e0 = new yr(this.b, R.drawable.input_notify_on, org.telegram.ui.ActionBar.h6.Wk);
+        }
+        chatActivityEnterView.e0.a(chatActivityEnterView.g2, true);
+        chatActivityEnterView.I1.setImageDrawable(chatActivityEnterView.e0);
+        MessagesController.getNotificationsSettings(chatActivityEnterView.Q).edit().putBoolean(NotificationsSettingsFacade.PROPERTY_SILENT + chatActivityEnterView.Q2, chatActivityEnterView.g2).commit();
+        NotificationsController.getInstance(chatActivityEnterView.Q).updateServerNotificationsSettings(chatActivityEnterView.Q2, snVar == null ? 0L : snVar.d());
+        snVar.T7();
+        UndoView undoView = snVar.y3;
+        if (undoView != null) {
+            undoView.j(!chatActivityEnterView.g2 ? 54 : 55, 0L, null);
+        }
+        ImageView imageView = chatActivityEnterView.I1;
+        if (chatActivityEnterView.g2) {
+            str = "AccDescrChanSilentOn";
+            i10 = R.string.AccDescrChanSilentOn;
+        } else {
+            str = "AccDescrChanSilentOff";
+            i10 = R.string.AccDescrChanSilentOff;
+        }
+        imageView.setContentDescription(LocaleController.getString(str, i10));
+        chatActivityEnterView.E1(true);
     }
 }

@@ -1,74 +1,28 @@
 package org.telegram.ui;
 
-import java.util.HashSet;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r8 implements RequestDelegate {
+public final /* synthetic */ class r8 implements DialogInterface.OnCancelListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ n9 b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.a2 c;
-    public final /* synthetic */ HashSet d;
-    public final /* synthetic */ TLRPC.TL_inputGroupCallInviteMessage e;
-    public final /* synthetic */ boolean f;
+    public final /* synthetic */ m9 b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ r8(n9 n9Var, org.telegram.ui.ActionBar.a2 a2Var, HashSet hashSet, TLRPC.TL_inputGroupCallInviteMessage tL_inputGroupCallInviteMessage, boolean z10, int i10) {
-        this.a = i10;
-        this.b = n9Var;
-        this.c = a2Var;
-        this.d = hashSet;
-        this.e = tL_inputGroupCallInviteMessage;
-        this.f = z10;
+    public /* synthetic */ r8(m9 m9Var, int i10, int i11) {
+        this.a = i11;
+        this.b = m9Var;
+        this.c = i10;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                final int i10 = 0;
-                final n9 n9Var = this.b;
-                final org.telegram.ui.ActionBar.a2 a2Var = this.c;
-                final HashSet hashSet = this.d;
-                final TLRPC.TL_inputGroupCallInviteMessage tL_inputGroupCallInviteMessage = this.e;
-                final boolean z10 = this.f;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.u8
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                n9.V(n9Var, a2Var, tLObject, hashSet, tL_inputGroupCallInviteMessage, z10, tL_error);
-                                break;
-                            default:
-                                n9.Y(n9Var, a2Var, tLObject, hashSet, tL_inputGroupCallInviteMessage, z10, tL_error);
-                                break;
-                        }
-                    }
-                });
+                this.b.getConnectionsManager().cancelRequest(this.c, true);
                 break;
             default:
-                final int i11 = 1;
-                final n9 n9Var2 = this.b;
-                final org.telegram.ui.ActionBar.a2 a2Var2 = this.c;
-                final HashSet hashSet2 = this.d;
-                final TLRPC.TL_inputGroupCallInviteMessage tL_inputGroupCallInviteMessage2 = this.e;
-                final boolean z11 = this.f;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.u8
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                n9.V(n9Var2, a2Var2, tLObject, hashSet2, tL_inputGroupCallInviteMessage2, z11, tL_error);
-                                break;
-                            default:
-                                n9.Y(n9Var2, a2Var2, tLObject, hashSet2, tL_inputGroupCallInviteMessage2, z11, tL_error);
-                                break;
-                        }
-                    }
-                });
+                this.b.getConnectionsManager().cancelRequest(this.c, true);
                 break;
         }
     }

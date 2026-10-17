@@ -1,50 +1,43 @@
 package org.telegram.ui;
 
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uw implements RequestDelegate {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ org.telegram.ui.ActionBar.a2 b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ TLObject f;
-    public final /* synthetic */ Object g;
+public final /* synthetic */ class uw {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ vw b;
+    public final /* synthetic */ View c;
 
-    public /* synthetic */ uw(yy yyVar, org.telegram.ui.ActionBar.a2 a2Var, TLRPC.User user, TLRPC.Chat chat, long j10, TLRPC.TL_messages_checkHistoryImportPeer tL_messages_checkHistoryImportPeer) {
-        this.d = yyVar;
-        this.b = a2Var;
-        this.e = user;
-        this.f = chat;
-        this.c = j10;
-        this.g = tL_messages_checkHistoryImportPeer;
+    public /* synthetic */ uw(vw vwVar, View view, int i10) {
+        this.a = i10;
+        this.b = vwVar;
+        this.c = view;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    public final void a(boolean z10) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new iw((yy) this.d, this.b, tLObject, (TLRPC.User) this.e, (TLRPC.Chat) this.f, this.c, tL_error, (TLRPC.TL_messages_checkHistoryImportPeer) this.g));
+                View view = this.c;
+                if (view instanceof ci.q) {
+                    this.b.O0.E0.i((ci.q) view, false);
+                    if (z10) {
+                        AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.rc(22), 500L);
+                        break;
+                    }
+                }
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new iw((zh.r3) this.d, (pf.c) this.e, this.b, tLObject, (TL_stars.TL_starGiftUnique) this.f, tL_error, this.c, (CharSequence) this.g));
+                View view2 = this.c;
+                if (view2 instanceof ci.q) {
+                    this.b.O0.E0.i((ci.q) view2, false);
+                    if (z10) {
+                        AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.rc(22), 500L);
+                        break;
+                    }
+                }
                 break;
         }
-    }
-
-    public /* synthetic */ uw(zh.r3 r3Var, pf.c cVar, org.telegram.ui.ActionBar.a2 a2Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10, CharSequence charSequence) {
-        this.d = r3Var;
-        this.e = cVar;
-        this.b = a2Var;
-        this.f = tL_starGiftUnique;
-        this.c = j10;
-        this.g = charSequence;
     }
 }

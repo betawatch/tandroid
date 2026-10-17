@@ -3,10 +3,10 @@ package jg;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
-import com.google.android.gms.internal.play_billing.k3;
+import com.google.android.gms.internal.cast.a6;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class l extends g {
     @Override // jg.g
@@ -82,7 +82,7 @@ public final class l extends g {
                         float f25 = (j10 - f24) / (this.v - f24);
                         float strokeWidth = paint.getStrokeWidth() / 2.0f;
                         i12 = i14;
-                        float D = k3.D((getMeasuredHeight() - this.s) - g.n1, strokeWidth, f25, (getMeasuredHeight() - this.s) - strokeWidth);
+                        float D = a6.D((getMeasuredHeight() - this.s) - g.n1, strokeWidth, f25, (getMeasuredHeight() - this.s) - strokeWidth);
                         if (!z10) {
                             if (z12) {
                                 path.moveTo(f23 - (f20 / 2.0f), D);

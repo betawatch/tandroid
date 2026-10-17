@@ -1,12 +1,11 @@
 package com.google.android.gms.internal.play_billing;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class r3 extends v1 {
     private static final r3 zzb;
     private int zzd;
-    private boolean zze;
-    private boolean zzf;
+    private int zze;
 
     static {
         r3 r3Var = new r3();
@@ -21,7 +20,7 @@ public final class r3 extends v1 {
             return (byte) 1;
         }
         if (i11 == 2) {
-            return new s2(zzb, "\u0004\u0002\u0000\u0001\u0001\u0002\u0002\u0000\u0000\u0000\u0001ဇ\u0000\u0002ဇ\u0001", new Object[]{"zzd", "zze", "zzf"});
+            return new s2(zzb, "\u0004\u0001\u0000\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0001᠌\u0000", new Object[]{"zzd", "zze", d1.g});
         }
         if (i11 == 3) {
             return new r3();

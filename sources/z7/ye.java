@@ -1,6 +1,31 @@
 package z7;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public abstract class ye {
+public final class ye {
+    public final String a;
+    public final String b;
+    public final String c;
+    public final String d;
+    public final m e;
+    public final String f;
+    public final Boolean g;
+    public final Boolean h;
+    public final Boolean i;
+    public final Integer j;
+    public final Integer k;
+
+    public /* synthetic */ ye(v7.d8 d8Var) {
+        this.a = d8Var.a;
+        this.b = d8Var.b;
+        this.c = d8Var.c;
+        this.d = d8Var.d;
+        this.e = (m) d8Var.k;
+        this.f = d8Var.e;
+        this.g = (Boolean) d8Var.f;
+        this.h = (Boolean) d8Var.g;
+        this.i = (Boolean) d8Var.h;
+        this.j = d8Var.i;
+        this.k = (Integer) d8Var.j;
+    }
 }

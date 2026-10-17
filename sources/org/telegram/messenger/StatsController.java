@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.RandomAccessFile;
 import java.lang.reflect.Array;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public class StatsController extends BaseController {
     private static final int OLD_TYPES_COUNT = 7;
@@ -22,7 +22,7 @@ public class StatsController extends BaseController {
     public static final int TYPE_VIDEOS = 2;
     public static final int TYPE_WIFI = 1;
     private byte[] buffer;
-    zf.a0 byteArrayOutputStream;
+    zf.z byteArrayOutputStream;
     private int[] callsTotalTime;
     private long lastInternalStatsSaveTime;
     private long[][] receivedBytes;
@@ -52,7 +52,7 @@ public class StatsController extends BaseController {
         this.receivedItems = (int[][]) Array.newInstance((Class<?>) cls2, 3, 8);
         this.resetStatsDate = new long[3];
         this.callsTotalTime = new int[3];
-        this.byteArrayOutputStream = new zf.a0(32);
+        this.byteArrayOutputStream = new zf.z(32);
         this.saveRunnable = new Runnable() { // from class: org.telegram.messenger.StatsController.2
             @Override // java.lang.Runnable
             public void run() {
@@ -91,8 +91,8 @@ public class StatsController extends BaseController {
                     }
                     StatsController.this.statsFile.seek(0L);
                     RandomAccessFile randomAccessFile = StatsController.this.statsFile;
-                    zf.a0 a0Var = StatsController.this.byteArrayOutputStream;
-                    randomAccessFile.write(a0Var.a, 0, a0Var.b);
+                    zf.z zVar = StatsController.this.byteArrayOutputStream;
+                    randomAccessFile.write(zVar.a, 0, zVar.b);
                     StatsController.this.statsFile.getFD().sync();
                 } catch (Exception unused) {
                 }
@@ -100,7 +100,7 @@ public class StatsController extends BaseController {
         };
         File filesDirFixed = ApplicationLoader.getFilesDirFixed();
         if (i10 != 0) {
-            filesDirFixed = new File(ApplicationLoader.getFilesDirFixed(), i2.d.k(i10, "account", "/"));
+            filesDirFixed = new File(ApplicationLoader.getFilesDirFixed(), i0.a.k(i10, "account", "/"));
             filesDirFixed.mkdirs();
         }
         try {

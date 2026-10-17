@@ -1,82 +1,71 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class ti implements org.telegram.ui.Components.dm0 {
-    public final /* synthetic */ fo a;
+public final class ti extends pf.c {
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ org.telegram.ui.Cells.u1 f;
+    public final /* synthetic */ sn g;
 
-    public ti(fo foVar) {
-        this.a = foVar;
+    public /* synthetic */ ti(sn snVar, int i10, org.telegram.ui.Cells.u1 u1Var, int i11) {
+        this.d = i11;
+        this.g = snVar;
+        this.e = i10;
+        this.f = u1Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0094  */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x0083  */
-    @Override // org.telegram.ui.Components.dm0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean d(float f7, float f10, int i10, View view) {
-        boolean z10;
-        boolean z11;
-        org.telegram.ui.ActionBar.k kVar;
-        View view2;
-        boolean z12;
-        fo foVar = this.a;
-        ym ymVar = foVar.c9;
-        if ((ymVar == null || !ymVar.z) && !foVar.g9()) {
-            z10 = ((org.telegram.ui.ActionBar.m2) foVar).inPreviewMode;
-            if (!z10 && !foVar.Pa) {
-                foVar.D4 = true;
-                if (view instanceof org.telegram.ui.Cells.w0) {
-                    org.telegram.ui.Cells.w0 w0Var = (org.telegram.ui.Cells.w0) view;
-                    MessageObject messageObject = w0Var.getMessageObject();
-                    if (messageObject != null) {
-                        if (!(messageObject.messageOwner.action instanceof TLRPC.TL_messageActionSetMessagesTTL) && w0Var.getMessageObject().type != 21 && !w0Var.getMessageObject().isWallpaperAction() && w0Var.getMessageObject().type != 30) {
-                            z11 = false;
-                            kVar = ((org.telegram.ui.ActionBar.m2) foVar).actionBar;
-                            if (!kVar.t() || (foVar.F9() && !z11)) {
-                                view2 = view;
-                                fo.c2(foVar, view2, view2 instanceof org.telegram.ui.Cells.u1 ? !((org.telegram.ui.Cells.u1) view2).i3(f7) : false, f7, f10);
-                                z12 = true;
-                            } else {
-                                view2 = view;
-                                z12 = foVar.L7(view2, false, true, f7, f10, true, true, false);
-                            }
-                            if (view2 instanceof org.telegram.ui.Cells.u1) {
-                                org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) view2;
-                                if (u1Var.getMessageObject() != null && u1Var.getMessageObject().type != 27) {
-                                    fo.d2(foVar, i10);
-                                    return true;
-                                }
-                            }
-                            return z12;
-                        }
-                    }
+    @Override // pf.c
+    public final void c(boolean z10) {
+        switch (this.d) {
+            case 0:
+                if (!z10) {
+                    AndroidUtilities.runOnUIThread(new ah.g(this, this.e, 23), 240L);
+                    break;
                 }
-                z11 = true;
-                kVar = ((org.telegram.ui.ActionBar.m2) foVar).actionBar;
-                if (kVar.t()) {
+                break;
+            case 1:
+                if (!z10) {
+                    AndroidUtilities.runOnUIThread(new ah.g(this, this.e, 26), 240L);
+                    break;
                 }
-                view2 = view;
-                fo.c2(foVar, view2, view2 instanceof org.telegram.ui.Cells.u1 ? !((org.telegram.ui.Cells.u1) view2).i3(f7) : false, f7, f10);
-                z12 = true;
-                if (view2 instanceof org.telegram.ui.Cells.u1) {
+                break;
+            default:
+                if (!z10) {
+                    AndroidUtilities.runOnUIThread(new ah.g(this, this.e, 27), 240L);
+                    break;
                 }
-                return z12;
-            }
+                break;
         }
-        return false;
     }
 
-    @Override // org.telegram.ui.Components.dm0
-    public final /* synthetic */ void h() {
-    }
-
-    @Override // org.telegram.ui.Components.dm0
-    public final /* synthetic */ void q(float f7) {
+    @Override // pf.c
+    public final void d() {
+        switch (this.d) {
+            case 0:
+                int i10 = this.e;
+                sn snVar = this.g;
+                snVar.wb = i10;
+                snVar.xb = 6;
+                this.f.invalidate();
+                break;
+            case 1:
+                int i11 = this.e;
+                sn snVar2 = this.g;
+                snVar2.wb = i11;
+                snVar2.xb = 5;
+                snVar2.zb = null;
+                this.f.invalidate();
+                break;
+            default:
+                int i12 = this.e;
+                sn snVar3 = this.g;
+                snVar3.wb = i12;
+                snVar3.xb = 7;
+                this.f.invalidate();
+                break;
+        }
     }
 }

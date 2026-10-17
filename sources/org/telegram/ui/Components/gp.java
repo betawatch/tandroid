@@ -1,63 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChannelBoostsController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public abstract class gp extends FrameLayout {
-    public k91 a;
-    public float b;
-    public boolean c;
-    public float d;
-    public ValueAnimator e;
+public final /* synthetic */ class gp implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ wp b;
 
-    public abstract void a(boolean z10);
+    public /* synthetic */ gp(wp wpVar, int i10) {
+        this.a = i10;
+        this.b = wpVar;
+    }
 
-    public final void b(boolean z10) {
-        this.c = z10;
-        ValueAnimator valueAnimator = this.e;
-        if (valueAnimator != null) {
-            this.e = null;
-            valueAnimator.cancel();
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
+            case 0:
+                wp wpVar = this.b;
+                wpVar.f0 = (TL_stories.TL_premium_boostsStatus) obj;
+                wpVar.e0 = true;
+                wpVar.G(true);
+                wpVar.d0 = false;
+                break;
+            default:
+                wp.n(this.b, (ChannelBoostsController.CanApplyBoost) obj);
+                break;
         }
-        if (z10) {
-            setVisibility(0);
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.d, z10 ? 1.0f : 0.0f);
-        this.e = ofFloat;
-        ofFloat.addUpdateListener(new n6(this, 13));
-        this.e.setInterpolator(es.h);
-        this.e.setDuration(320L);
-        this.e.addListener(new org.telegram.ui.vo(5, this, z10));
-        this.e.start();
-    }
-
-    public int getCurrentHeight() {
-        return (int) (getMeasuredHeight() * this.b);
-    }
-
-    @Override // android.view.View
-    public final boolean isShown() {
-        return this.c;
-    }
-
-    public void setShown(float f7) {
-        this.b = f7;
-        k91 k91Var = this.a;
-        if (k91Var != null) {
-            k91Var.setPivotX(k91Var.getWidth() / 2.0f);
-            this.a.setPivotY(0.0f);
-            this.a.setScaleX(AndroidUtilities.lerp(0.8f, 1.0f, f7));
-            this.a.setScaleY(AndroidUtilities.lerp(0.8f, 1.0f, f7));
-        }
-        setAlpha(f7);
-        invalidate();
-    }
-
-    public void setTabs(k91 k91Var) {
-        this.a = k91Var;
-        addView(k91Var, w7.z5.d(-1.0f, -1));
     }
 }

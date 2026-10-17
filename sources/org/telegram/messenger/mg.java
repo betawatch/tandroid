@@ -1,67 +1,31 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import java.util.function.Consumer;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class mg implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ long b;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ MessagesStorage b;
     public final /* synthetic */ long c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ TLObject f;
+    public final /* synthetic */ Consumer d;
 
-    public /* synthetic */ mg(MessagesStorage messagesStorage, long j10, boolean z10, TLRPC.InputPeer inputPeer, long j11) {
-        this.e = messagesStorage;
-        this.b = j10;
-        this.d = z10;
-        this.f = inputPeer;
-        this.c = j11;
+    public /* synthetic */ mg(MessagesStorage messagesStorage, long j10, Consumer consumer, int i10) {
+        this.a = i10;
+        this.b = messagesStorage;
+        this.c = j10;
+        this.d = consumer;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        TLRPC.PeerSettings peerSettings;
-        int i10 = this.a;
-        TLObject tLObject = this.f;
-        Object obj = this.e;
-        switch (i10) {
+        switch (this.a) {
             case 0:
-                ((MessagesStorage) obj).lambda$loadPendingTasks$15(this.b, this.d, (TLRPC.InputPeer) tLObject, this.c);
+                this.b.lambda$loadStoryAlbumsCache$270(this.c, this.d);
                 break;
             default:
-                zh.n5 n5Var = (zh.n5) obj;
-                int i11 = n5Var.a;
-                if (tLObject instanceof TLRPC.TL_boolTrue) {
-                    long j10 = this.b;
-                    long j11 = this.c;
-                    if (j10 == 0) {
-                        TLRPC.UserFull userFull = MessagesController.getInstance(i11).getUserFull(j11);
-                        if (userFull != null && (peerSettings = userFull.settings) != null) {
-                            peerSettings.flags &= -16385;
-                            peerSettings.charge_paid_message_stars = 0L;
-                        }
-                        MessagesController.getNotificationsSettings(i11).edit().putLong(a1.g.o(j11, "dialog_bar_paying_"), 0L).apply();
-                        MessagesController.getInstance(i11).loadPeerSettings(MessagesController.getInstance(i11).getUser(Long.valueOf(j11)), MessagesController.getInstance(i11).getChat(Long.valueOf(-j11)), true);
-                        ContactsController.getInstance(i11).loadPrivacySettings(true);
-                        NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.messagesFeeUpdated, Long.valueOf(j11));
-                        break;
-                    } else {
-                        n5Var.b0(-j10, j11, this.d);
-                        break;
-                    }
-                }
+                this.b.lambda$loadTopics$51(this.c, this.d);
                 break;
         }
-    }
-
-    public /* synthetic */ mg(zh.n5 n5Var, TLObject tLObject, long j10, long j11, boolean z10) {
-        this.e = n5Var;
-        this.f = tLObject;
-        this.b = j10;
-        this.c = j11;
-        this.d = z10;
     }
 }

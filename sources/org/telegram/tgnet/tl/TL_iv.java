@@ -3,21 +3,22 @@ package org.telegram.tgnet.tl;
 import android.graphics.Bitmap;
 import java.io.File;
 import java.util.ArrayList;
+import org.telegram.messenger.sg;
 import org.telegram.tgnet.InputSerializedData;
 import org.telegram.tgnet.OutputSerializedData;
 import org.telegram.tgnet.TLMethod;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
-import org.telegram.tgnet.q;
-import org.telegram.tgnet.t;
+import org.telegram.tgnet.p;
+import org.telegram.tgnet.s;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public class TL_iv {
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static abstract class Page extends TLObject {
         public int flags;
         public File local;
@@ -57,7 +58,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static abstract class PageBlock extends TLObject {
         public boolean bottom;
         public int cachedHeight;
@@ -190,7 +191,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class PageCaption extends TLObject {
         public static final int constructor = 1869903447;
         public RichText credit;
@@ -214,7 +215,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static abstract class PageListItem extends TLObject {
         public boolean checkbox;
         public boolean checked;
@@ -243,7 +244,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static abstract class PageListOrderedItem extends TLObject {
         public boolean checkbox;
         public boolean checked;
@@ -275,7 +276,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class RichMessage extends TLObject {
         public static final int constructor = -1158439541;
         public int flags;
@@ -296,8 +297,8 @@ public class TL_iv {
             this.rtl = TLObject.hasFlag(readInt32, 1);
             this.part = TLObject.hasFlag(this.flags, 2);
             this.blocks = Vector.deserialize(inputSerializedData, new c(22), z10);
-            this.photos = Vector.deserialize(inputSerializedData, new t(3), z10);
-            this.documents = Vector.deserialize(inputSerializedData, new q(5), z10);
+            this.photos = Vector.deserialize(inputSerializedData, new s(3), z10);
+            this.documents = Vector.deserialize(inputSerializedData, new p(5), z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -314,7 +315,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static abstract class RichText extends TLObject {
         public String email;
         public RichText parentRichText;
@@ -399,7 +400,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class TL_inputRichMessage extends TLObject {
         public static final int constructor = -456898052;
         public int flags;
@@ -425,10 +426,10 @@ public class TL_iv {
                 this.photos = Vector.deserialize(inputSerializedData, new c(23), z10);
             }
             if (TLObject.hasFlag(this.flags, 8)) {
-                this.documents = Vector.deserialize(inputSerializedData, new q(10), z10);
+                this.documents = Vector.deserialize(inputSerializedData, new p(10), z10);
             }
             if (TLObject.hasFlag(this.flags, 16)) {
-                this.users = Vector.deserialize(inputSerializedData, new q(11), z10);
+                this.users = Vector.deserialize(inputSerializedData, new p(11), z10);
             }
         }
 
@@ -453,7 +454,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class TL_page extends Page {
         public static final int constructor = -1738178803;
 
@@ -466,8 +467,8 @@ public class TL_iv {
             this.v2 = TLObject.hasFlag(this.flags, 4);
             this.url = inputSerializedData.readString(z10);
             this.blocks = Vector.deserialize(inputSerializedData, new c(22), z10);
-            this.photos = Vector.deserialize(inputSerializedData, new t(3), z10);
-            this.documents = Vector.deserialize(inputSerializedData, new q(5), z10);
+            this.photos = Vector.deserialize(inputSerializedData, new s(3), z10);
+            this.documents = Vector.deserialize(inputSerializedData, new p(5), z10);
             if (TLObject.hasFlag(this.flags, 8)) {
                 this.views = inputSerializedData.readInt32(z10);
             }
@@ -493,15 +494,15 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class TL_pageFull_layer67 extends TL_page {
         public static final int constructor = -677274263;
 
         @Override // org.telegram.tgnet.tl.TL_iv.TL_page, org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z10) {
             this.blocks = Vector.deserialize(inputSerializedData, new c(22), z10);
-            this.photos = Vector.deserialize(inputSerializedData, new t(3), z10);
-            this.documents = Vector.deserialize(inputSerializedData, new q(5), z10);
+            this.photos = Vector.deserialize(inputSerializedData, new s(3), z10);
+            this.documents = Vector.deserialize(inputSerializedData, new p(5), z10);
         }
 
         @Override // org.telegram.tgnet.tl.TL_iv.TL_page, org.telegram.tgnet.TLObject
@@ -513,15 +514,15 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class TL_pageFull_layer82 extends TL_page {
         public static final int constructor = 1433323434;
 
         @Override // org.telegram.tgnet.tl.TL_iv.TL_page, org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z10) {
             this.blocks = Vector.deserialize(inputSerializedData, new c(22), z10);
-            this.photos = Vector.deserialize(inputSerializedData, new t(3), z10);
-            this.documents = Vector.deserialize(inputSerializedData, new q(5), z10);
+            this.photos = Vector.deserialize(inputSerializedData, new s(3), z10);
+            this.documents = Vector.deserialize(inputSerializedData, new p(5), z10);
         }
 
         @Override // org.telegram.tgnet.tl.TL_iv.TL_page, org.telegram.tgnet.TLObject
@@ -533,7 +534,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class TL_pageListItemBlocks extends PageListItem {
         public static final int constructor = 1674209194;
         public ArrayList<PageBlock> blocks = new ArrayList<>();
@@ -559,7 +560,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class TL_pageListItemBlocks_226 extends TL_pageListItemBlocks {
         public static final int constructor = 635466748;
 
@@ -575,7 +576,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class TL_pageListItemText extends PageListItem {
         public static final int constructor = 794323004;
         public RichText text;
@@ -601,7 +602,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class TL_pageListItemText_layer226 extends TL_pageListItemText {
         public static final int constructor = -1188055347;
 
@@ -617,7 +618,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class TL_pageListOrderedItemBlocks extends PageListOrderedItem {
         public static final int constructor = -1879910928;
         public ArrayList<PageBlock> blocks = new ArrayList<>();
@@ -665,7 +666,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class TL_pageListOrderedItemBlocks_layer226 extends TL_pageListOrderedItemBlocks {
         public static final int constructor = -1730311882;
 
@@ -683,7 +684,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class TL_pageListOrderedItemText extends PageListOrderedItem {
         public static final int constructor = 352522633;
         public RichText text;
@@ -731,7 +732,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class TL_pageListOrderedItemText_layer226 extends TL_pageListOrderedItemText {
         public static final int constructor = 1577484359;
 
@@ -749,7 +750,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class TL_pagePart_layer67 extends TL_pagePart_layer82 {
         public static final int constructor = -1913754556;
 
@@ -757,8 +758,8 @@ public class TL_iv {
         public void readParams(InputSerializedData inputSerializedData, boolean z10) {
             this.part = true;
             this.blocks = Vector.deserialize(inputSerializedData, new c(22), z10);
-            this.photos = Vector.deserialize(inputSerializedData, new t(3), z10);
-            this.documents = Vector.deserialize(inputSerializedData, new q(5), z10);
+            this.photos = Vector.deserialize(inputSerializedData, new s(3), z10);
+            this.documents = Vector.deserialize(inputSerializedData, new p(5), z10);
         }
 
         @Override // org.telegram.tgnet.tl.TL_iv.TL_pagePart_layer82, org.telegram.tgnet.tl.TL_iv.TL_page, org.telegram.tgnet.TLObject
@@ -770,7 +771,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class TL_pagePart_layer82 extends TL_page {
         public static final int constructor = -1908433218;
 
@@ -778,8 +779,8 @@ public class TL_iv {
         public void readParams(InputSerializedData inputSerializedData, boolean z10) {
             this.part = true;
             this.blocks = Vector.deserialize(inputSerializedData, new c(22), z10);
-            this.photos = Vector.deserialize(inputSerializedData, new t(3), z10);
-            this.documents = Vector.deserialize(inputSerializedData, new q(5), z10);
+            this.photos = Vector.deserialize(inputSerializedData, new s(3), z10);
+            this.documents = Vector.deserialize(inputSerializedData, new p(5), z10);
         }
 
         @Override // org.telegram.tgnet.tl.TL_iv.TL_page, org.telegram.tgnet.TLObject
@@ -791,7 +792,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class TL_page_layer110 extends TL_page {
         public static final int constructor = -1366746132;
 
@@ -803,8 +804,8 @@ public class TL_iv {
             this.rtl = TLObject.hasFlag(this.flags, 2);
             this.url = inputSerializedData.readString(z10);
             this.blocks = Vector.deserialize(inputSerializedData, new c(22), z10);
-            this.photos = Vector.deserialize(inputSerializedData, new t(3), z10);
-            this.documents = Vector.deserialize(inputSerializedData, new q(5), z10);
+            this.photos = Vector.deserialize(inputSerializedData, new s(3), z10);
+            this.documents = Vector.deserialize(inputSerializedData, new p(5), z10);
         }
 
         @Override // org.telegram.tgnet.tl.TL_iv.TL_page, org.telegram.tgnet.TLObject
@@ -822,7 +823,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class TL_page_layer88 extends TL_page {
         public static final int constructor = -241590104;
 
@@ -834,8 +835,8 @@ public class TL_iv {
             this.rtl = TLObject.hasFlag(this.flags, 2);
             this.v2 = TLObject.hasFlag(this.flags, 4);
             this.blocks = Vector.deserialize(inputSerializedData, new c(22), z10);
-            this.photos = Vector.deserialize(inputSerializedData, new t(3), z10);
-            this.documents = Vector.deserialize(inputSerializedData, new q(5), z10);
+            this.photos = Vector.deserialize(inputSerializedData, new s(3), z10);
+            this.documents = Vector.deserialize(inputSerializedData, new p(5), z10);
         }
 
         @Override // org.telegram.tgnet.tl.TL_iv.TL_page, org.telegram.tgnet.TLObject
@@ -854,7 +855,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class getRichMessage extends TLMethod<TLRPC.messages_Messages> {
         public static final int constructor = 1343580623;
         public int id;
@@ -873,7 +874,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class inputPageBlockMap extends PageBlock {
         public static final int constructor = 1464557951;
         public TLRPC.InputGeoPoint geo;
@@ -901,7 +902,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockAnchor extends PageBlock {
         public static final int constructor = -837994576;
         public String name;
@@ -918,7 +919,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockAudio extends PageBlock {
         public static final int constructor = -2143067670;
         public long audio_id;
@@ -937,7 +938,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockAudio_layer82 extends pageBlockAudio {
         public static final int constructor = 834148991;
 
@@ -958,7 +959,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockAuthorDate extends PageBlock {
         public static final int constructor = -1162877472;
         public RichText author;
@@ -978,7 +979,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockAuthorDate_layer60 extends pageBlockAuthorDate {
         public static final int constructor = 1029399794;
 
@@ -999,7 +1000,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockBlockquote extends PageBlock {
         public static final int constructor = 1724999435;
         public RichText caption;
@@ -1026,7 +1027,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockBlockquoteBlocks extends PageBlock {
         public static final int constructor = 242108356;
         public ArrayList<PageBlock> blocks = new ArrayList<>();
@@ -1046,7 +1047,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockBlockquote_layer228 extends pageBlockBlockquote {
         public static final int constructor = 641563686;
 
@@ -1064,7 +1065,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockButtonRow extends PageBlock {
         public static final int constructor = 1835270936;
         public boolean align_center;
@@ -1097,7 +1098,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockChannel extends PageBlock {
         public static final int constructor = -283684427;
         public TLRPC.Chat channel;
@@ -1114,7 +1115,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockCollage extends PageBlock {
         public static final int constructor = 1705048653;
         public ArrayList<PageBlock> items = new ArrayList<>();
@@ -1133,7 +1134,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockCollage_layer82 extends pageBlockCollage {
         public static final int constructor = 145955919;
 
@@ -1154,7 +1155,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockCover extends PageBlock {
         public static final int constructor = 972174080;
         public PageBlock cover;
@@ -1171,7 +1172,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockDetails extends PageBlock {
         public static final int constructor = 1987480557;
         public ArrayList<PageBlock> blocks = new ArrayList<>();
@@ -1199,7 +1200,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockDivider extends PageBlock {
         public static final int constructor = -618614392;
 
@@ -1209,7 +1210,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockDocument extends PageBlock {
         public static final int constructor = 955923363;
         public long document_id;
@@ -1228,7 +1229,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockEmbed extends PageBlock {
         public static final int constructor = -1468953147;
         public boolean allow_scrolling;
@@ -1291,7 +1292,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockEmbedPost extends PageBlock {
         public static final int constructor = -229005301;
         public String author;
@@ -1325,7 +1326,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockEmbedPost_layer82 extends pageBlockEmbedPost {
         public static final int constructor = 690781161;
 
@@ -1356,7 +1357,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockEmbed_layer60 extends pageBlockEmbed {
         public static final int constructor = -650782469;
 
@@ -1400,7 +1401,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockEmbed_layer82 extends pageBlockEmbed {
         public static final int constructor = -840826671;
 
@@ -1450,7 +1451,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockFooter extends PageBlock {
         public static final int constructor = 1216809369;
 
@@ -1466,7 +1467,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockHeader extends PageBlock {
         public static final int constructor = -1076861716;
 
@@ -1482,7 +1483,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockHeading1 extends PageBlock {
         public static final int constructor = -1157691601;
 
@@ -1498,7 +1499,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockHeading2 extends PageBlock {
         public static final int constructor = 158018284;
 
@@ -1514,7 +1515,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockHeading3 extends PageBlock {
         public static final int constructor = 1743204781;
 
@@ -1530,7 +1531,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockHeading4 extends PageBlock {
         public static final int constructor = -1254983893;
 
@@ -1546,7 +1547,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockHeading5 extends PageBlock {
         public static final int constructor = -608277398;
 
@@ -1562,7 +1563,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockHeading6 extends PageBlock {
         public static final int constructor = 1747599785;
 
@@ -1578,7 +1579,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockKicker extends PageBlock {
         public static final int constructor = 504660880;
 
@@ -1594,7 +1595,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockList extends PageBlock {
         public static final int constructor = -454524911;
         public ArrayList<PageListItem> items = new ArrayList<>();
@@ -1612,14 +1613,14 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockList_layer82 extends pageBlockList {
         public static final int constructor = 978896884;
 
         @Override // org.telegram.tgnet.tl.TL_iv.pageBlockList, org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z10) {
             this.ordered = inputSerializedData.readBool(z10);
-            ArrayList deserialize = Vector.deserialize(inputSerializedData, new c(26), z10);
+            ArrayList deserialize = Vector.deserialize(inputSerializedData, new sg(2), z10);
             int size = deserialize.size();
             int i10 = 0;
             while (i10 < size) {
@@ -1651,7 +1652,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockMap extends PageBlock {
         public static final int constructor = -1538310410;
         public TLRPC.GeoPoint geo;
@@ -1679,7 +1680,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockMath extends PageBlock {
         public static final int constructor = 1493699616;
         public String source;
@@ -1696,7 +1697,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockOrderedList extends PageBlock {
         public static final int constructor = 534181569;
         public int flags;
@@ -1710,7 +1711,7 @@ public class TL_iv {
             int readInt32 = inputSerializedData.readInt32(z10);
             this.flags = readInt32;
             this.reversed = TLObject.hasFlag(readInt32, 4);
-            this.items = Vector.deserialize(inputSerializedData, new c(27), z10);
+            this.items = Vector.deserialize(inputSerializedData, new c(26), z10);
             if (TLObject.hasFlag(this.flags, 1)) {
                 this.start = inputSerializedData.readInt32(z10);
             }
@@ -1735,13 +1736,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockOrderedList_layer226 extends pageBlockOrderedList {
         public static final int constructor = -1702174239;
 
         @Override // org.telegram.tgnet.tl.TL_iv.pageBlockOrderedList, org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.items = Vector.deserialize(inputSerializedData, new c(27), z10);
+            this.items = Vector.deserialize(inputSerializedData, new c(26), z10);
         }
 
         @Override // org.telegram.tgnet.tl.TL_iv.pageBlockOrderedList, org.telegram.tgnet.TLObject
@@ -1751,7 +1752,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockParagraph extends PageBlock {
         public static final int constructor = 1182402406;
 
@@ -1767,7 +1768,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockPhoto extends PageBlock {
         public static final int constructor = 391759200;
         public int flags;
@@ -1808,7 +1809,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockPhoto_layer82 extends pageBlockPhoto {
         public static final int constructor = -372860542;
 
@@ -1829,7 +1830,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockPreformatted extends PageBlock {
         public static final int constructor = -1066346178;
         public String language;
@@ -1848,7 +1849,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockPullquote extends PageBlock {
         public static final int constructor = 1329878739;
         public RichText caption;
@@ -1867,7 +1868,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockRelatedArticles extends PageBlock {
         public static final int constructor = 370236054;
         public ArrayList<pageRelatedArticle> articles = new ArrayList<>();
@@ -1876,7 +1877,7 @@ public class TL_iv {
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z10) {
             this.title = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.articles = Vector.deserialize(inputSerializedData, new c(28), z10);
+            this.articles = Vector.deserialize(inputSerializedData, new c(27), z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1887,7 +1888,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockSlideshow extends PageBlock {
         public static final int constructor = 52401552;
         public ArrayList<PageBlock> items = new ArrayList<>();
@@ -1906,7 +1907,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockSlideshow_layer82 extends pageBlockSlideshow {
         public static final int constructor = 319588707;
 
@@ -1927,7 +1928,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockSubheader extends PageBlock {
         public static final int constructor = -248793375;
 
@@ -1943,7 +1944,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockSubtitle extends PageBlock {
         public static final int constructor = -1879401953;
 
@@ -1959,7 +1960,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockTable extends PageBlock {
         public static final int constructor = -1085412734;
         public boolean bordered;
@@ -1977,7 +1978,7 @@ public class TL_iv {
             this.striped = TLObject.hasFlag(this.flags, 2);
             this.compact = TLObject.hasFlag(this.flags, 4);
             this.title = RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
-            this.rows = Vector.deserialize(inputSerializedData, new c(29), z10);
+            this.rows = Vector.deserialize(inputSerializedData, new c(28), z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1995,7 +1996,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockThinking extends PageBlock {
         public static final int constructor = 1009361890;
 
@@ -2011,7 +2012,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockTitle extends PageBlock {
         public static final int constructor = 1890305021;
 
@@ -2027,7 +2028,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockUnsupported extends PageBlock {
         public static final int constructor = 324435594;
 
@@ -2037,7 +2038,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockVideo extends PageBlock {
         public static final int constructor = 2089805750;
         public boolean autoplay;
@@ -2072,7 +2073,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageBlockVideo_layer82 extends pageBlockVideo {
         public static final int constructor = -640214938;
 
@@ -2102,7 +2103,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageRelatedArticle extends TLObject {
         public static final int constructor = -1282352120;
         public String author;
@@ -2164,7 +2165,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageTableCell extends TLObject {
         public static final int constructor = 878078826;
         public boolean align_center;
@@ -2227,7 +2228,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class pageTableRow extends TLObject {
         public static final int constructor = -524237339;
         public ArrayList<pageTableCell> cells = new ArrayList<>();
@@ -2238,7 +2239,7 @@ public class TL_iv {
 
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.cells = Vector.deserialize(inputSerializedData, new a(0), z10);
+            this.cells = Vector.deserialize(inputSerializedData, new c(29), z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2248,7 +2249,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class textAnchor extends RichText {
         public static final int constructor = 894777186;
         public String name;
@@ -2267,7 +2268,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class textAutoEmail extends RichText {
         public static final int constructor = -984177571;
 
@@ -2283,7 +2284,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class textAutoPhone extends RichText {
         public static final int constructor = 616720265;
 
@@ -2299,7 +2300,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class textAutoUrl extends RichText {
         public static final int constructor = -1402305622;
 
@@ -2315,7 +2316,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class textBankCard extends RichText {
         public static final int constructor = -1185513171;
 
@@ -2331,7 +2332,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class textBold extends RichText {
         public static final int constructor = 1730456516;
 
@@ -2347,7 +2348,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class textBotCommand extends RichText {
         public static final int constructor = 50276819;
 
@@ -2363,7 +2364,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class textButton extends RichText implements TL_keyboard.KeyboardButtonProto {
         public static final int constructor = -1345872682;
         public int flags;
@@ -2372,7 +2373,7 @@ public class TL_iv {
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.KeyboardButtonProto
         public final /* synthetic */ byte[] getData() {
-            return b.a(this);
+            return a.a(this);
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.KeyboardButtonProto
@@ -2391,7 +2392,7 @@ public class TL_iv {
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.KeyboardButtonProto
         public final /* synthetic */ String getUrl() {
-            return b.b(this);
+            return a.b(this);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2418,7 +2419,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class textCashtag extends RichText {
         public static final int constructor = 2073958401;
 
@@ -2434,13 +2435,13 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class textConcat extends RichText {
         public static final int constructor = 2120376535;
 
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z10) {
-            this.texts = Vector.deserialize(inputSerializedData, new c(26), z10);
+            this.texts = Vector.deserialize(inputSerializedData, new sg(2), z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2450,7 +2451,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class textCustomEmoji extends RichText {
         public static final int constructor = -1570679104;
         public String alt;
@@ -2470,7 +2471,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class textDate extends RichText {
         public static final int constructor = -1514906069;
         public int date;
@@ -2517,7 +2518,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class textDiff extends RichText {
         public static final int constructor = -1769551024;
         public RichText old_text;
@@ -2537,7 +2538,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class textEmail extends RichText {
         public static final int constructor = -564523562;
 
@@ -2555,7 +2556,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class textEmpty extends RichText {
         public static final int constructor = -599948721;
 
@@ -2565,7 +2566,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class textFixed extends RichText {
         public static final int constructor = 1816074681;
 
@@ -2581,7 +2582,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class textHashtag extends RichText {
         public static final int constructor = 1368728810;
 
@@ -2597,7 +2598,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class textImage extends RichText {
         public static final int constructor = 136105807;
         public long document_id;
@@ -2621,7 +2622,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class textItalic extends RichText {
         public static final int constructor = -653089380;
 
@@ -2637,7 +2638,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class textMarked extends RichText {
         public static final int constructor = 55281185;
 
@@ -2653,7 +2654,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class textMath extends RichText {
         public static final int constructor = -1657885545;
         public Bitmap bitmap;
@@ -2675,7 +2676,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class textMention extends RichText {
         public static final int constructor = -853225660;
 
@@ -2691,7 +2692,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class textMentionName extends RichText {
         public static final int constructor = 27917308;
         public long user_id;
@@ -2710,7 +2711,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class textPhone extends RichText {
         public static final int constructor = 483104362;
         public String phone;
@@ -2729,7 +2730,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class textPlain extends RichText {
         public static final int constructor = 1950782688;
         public String text;
@@ -2746,7 +2747,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class textSpoiler extends RichText {
         public static final int constructor = 1277844834;
 
@@ -2762,7 +2763,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class textStrike extends RichText {
         public static final int constructor = -1678197867;
 
@@ -2778,7 +2779,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class textSubscript extends RichText {
         public static final int constructor = -311786236;
 
@@ -2794,7 +2795,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class textSuperscript extends RichText {
         public static final int constructor = -939827711;
 
@@ -2810,7 +2811,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class textTonAddress extends RichText {
         public static final int constructor = 1020437354;
 
@@ -2826,7 +2827,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class textUnderline extends RichText {
         public static final int constructor = -1054465340;
 
@@ -2842,7 +2843,7 @@ public class TL_iv {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class textUrl extends RichText {
         public static final int constructor = 1009288385;
 

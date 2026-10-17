@@ -2,9 +2,9 @@ package fd;
 
 import java.util.Locale;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public abstract class j extends f2.e {
+public abstract class j extends f2.f {
     public String c;
     public String d;
     public String e;
@@ -136,17 +136,17 @@ public abstract class j extends f2.e {
         this.e = null;
         this.h = false;
         this.i = false;
-        f2.e.c(sb2);
+        f2.f.c(sb2);
         this.g = null;
     }
 
-    @Override // f2.e
+    @Override // f2.f
     /* renamed from: k, reason: merged with bridge method [inline-methods] */
     public j b() {
         this.c = null;
         this.d = null;
         this.e = null;
-        f2.e.c(this.f);
+        f2.f.c(this.f);
         this.g = null;
         this.h = false;
         this.i = false;

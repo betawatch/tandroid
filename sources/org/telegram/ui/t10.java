@@ -1,30 +1,48 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+import android.content.Context;
+import android.view.View;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class t10 {
-    public long a;
-    public int b;
+public final class t10 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ tg.g c;
 
-    public t10(int i10, long j10) {
-        this.a = j10;
-        this.b = i10;
+    public /* synthetic */ t10(Context context, tg.g gVar, int i10) {
+        this.a = i10;
+        this.b = context;
+        this.c = gVar;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                g gVar = new g(this, 18);
+                Context context = this.b;
+                org.telegram.ui.Components.u8 u8Var = new org.telegram.ui.Components.u8(context, false, gVar, 1);
+                tg.o oVar = this.c.c;
+                u8Var.e(oVar != null ? oVar.I : 0, 0);
+                u8Var.f(-1, 1, 1, false);
+                org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(context, false);
+                f3Var.setCustomView(u8Var);
+                f3Var.setDimBehind(false);
+                f3Var.show();
+                break;
+            default:
+                g gVar2 = new g(this, 19);
+                Context context2 = this.b;
+                org.telegram.ui.Components.u8 u8Var2 = new org.telegram.ui.Components.u8(context2, false, gVar2, 2);
+                tg.o oVar2 = this.c.c;
+                u8Var2.e(oVar2 == null ? 0 : oVar2.H, 0);
+                u8Var2.f(-1, 1, 1, false);
+                org.telegram.ui.ActionBar.f3 f3Var2 = new org.telegram.ui.ActionBar.f3(context2, false);
+                f3Var2.setCustomView(u8Var2);
+                f3Var2.setDimBehind(false);
+                f3Var2.show();
+                break;
         }
-        if (obj != null && t10.class == obj.getClass()) {
-            t10 t10Var = (t10) obj;
-            if (this.a == t10Var.a && this.b == t10Var.b) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return this.b;
     }
 }

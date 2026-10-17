@@ -1,20 +1,77 @@
 package org.telegram.ui.Components;
 
-import android.text.Layout;
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.widget.TextView;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class z5 {
-    public Layout a;
-    public final ArrayList b = new ArrayList();
+public class z5 extends TextView {
+    public int a;
+    public PorterDuffColorFilter b;
+    public w5 c;
 
-    public z5(WeakReference weakReference, Layout layout) {
-        this.a = layout;
+    public z5(Context context) {
+        super(context);
+        this.a = 0;
     }
 
-    public final void a() {
-        this.b.size();
+    @Override // android.widget.TextView, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.c = a6.update(this.a, this, this.c, getLayout());
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        a6.release(this, this.c);
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public void onDraw(Canvas canvas) {
+        Canvas canvas2;
+        super.onDraw(canvas);
+        float height = ((getGravity() & 16) == 0 || getLayout() == null) ? 0.0f : ((((getHeight() - getPaddingTop()) - getPaddingBottom()) - getLayout().getHeight()) / 2.0f) + getPaddingTop();
+        float paddingRight = LocaleController.isRTL ? getPaddingRight() : getPaddingLeft();
+        if (height == 0.0f && paddingRight == 0.0f) {
+            canvas2 = canvas;
+        } else {
+            canvas.save();
+            canvas2 = canvas;
+            canvas2.translate(paddingRight, height);
+        }
+        a6.drawAnimatedEmojis(canvas2, getLayout(), this.c, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, this.b);
+        if (height == 0.0f && paddingRight == 0.0f) {
+            return;
+        }
+        canvas.restore();
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        this.c = a6.update(this.a, this, this.c, getLayout());
+    }
+
+    public void setCacheType(int i10) {
+        if (this.a == i10) {
+            return;
+        }
+        this.a = i10;
+        this.c = a6.update(i10, this, this.c, getLayout());
+    }
+
+    public void setEmojiColor(int i10) {
+        this.b = new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN);
+    }
+
+    @Override // android.widget.TextView
+    public final void setText(CharSequence charSequence, TextView.BufferType bufferType) {
+        super.setText(charSequence, bufferType);
+        this.c = a6.update(this.a, this, this.c, getLayout());
     }
 }

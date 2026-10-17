@@ -1,21 +1,45 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
-import androidx.recyclerview.widget.RecyclerView;
+import android.os.Bundle;
+import org.telegram.messenger.voip.GroupCallMessage;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class q30 extends s4.r0 {
-    public final /* synthetic */ n60 a;
+public final class q30 implements mh.a {
+    public final /* synthetic */ s50 a;
 
-    public q30(n60 n60Var) {
-        this.a = n60Var;
+    public q30(s50 s50Var) {
+        this.a = s50Var;
     }
 
-    @Override // s4.r0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        ViewGroup viewGroup;
-        viewGroup = ((org.telegram.ui.ActionBar.e3) this.a).containerView;
-        viewGroup.invalidate();
+    public final void a(GroupCallMessage groupCallMessage) {
+        org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
+        if (R == null) {
+            return;
+        }
+        boolean z10 = R instanceof ProfileActivity;
+        s50 s50Var = this.a;
+        if (z10 && ((ProfileActivity) R).a() == groupCallMessage.fromId) {
+            s50Var.dismiss();
+            return;
+        }
+        int Q0 = s50Var.Q0();
+        Bundle bundle = new Bundle();
+        long j10 = groupCallMessage.fromId;
+        if (j10 > 0) {
+            bundle.putLong("user_id", j10);
+        } else {
+            bundle.putLong("chat_id", -j10);
+        }
+        boolean z11 = true;
+        if (groupCallMessage.fromId == s50Var.d.getUserConfig().getClientUserId()) {
+            bundle.putBoolean("my_profile", true);
+        }
+        ProfileActivity profileActivity = new ProfileActivity(bundle, null);
+        if (Q0 > 0 && Q0 != Integer.MAX_VALUE) {
+            z11 = false;
+        }
+        R.presentFragment(profileActivity, false, z11);
+        s50Var.dismiss();
     }
 }

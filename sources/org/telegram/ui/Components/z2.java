@@ -1,74 +1,162 @@
 package org.telegram.ui.Components;
 
-import j$.time.YearMonth;
-import org.telegram.messenger.FileLog;
+import android.graphics.Bitmap;
+import android.graphics.ColorMatrix;
+import android.view.View;
+import android.view.ViewPropertyAnimator;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z2 implements Runnable {
-    public final /* synthetic */ ud0 a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ ud0 c;
-    public final /* synthetic */ ud0 d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ int h;
+public final /* synthetic */ class z2 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ z2(ud0 ud0Var, int i10, ud0 ud0Var2, ud0 ud0Var3, int i11, int i12, int i13) {
-        this.a = ud0Var;
-        this.b = i10;
-        this.c = ud0Var2;
-        this.d = ud0Var3;
-        this.e = i11;
-        this.f = i12;
-        this.h = i13;
+    public /* synthetic */ z2(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        ud0 ud0Var = this.a;
-        int value = ud0Var.getValue();
-        int i10 = this.b;
-        ud0 ud0Var2 = this.c;
-        ud0 ud0Var3 = this.d;
-        if (value == i10) {
-            ud0Var2.setMinValue(1);
-            try {
-                ud0Var2.setMaxValue(YearMonth.of(2024, ud0Var3.getValue() + 1).lengthOfMonth());
-            } catch (Exception e) {
-                FileLog.e(e);
-                ud0Var2.setMaxValue(31);
-            }
-            ud0Var3.setMinValue(0);
-            ud0Var3.setMaxValue(11);
-            return;
-        }
-        if (ud0Var.getValue() != this.e) {
-            ud0Var2.setMinValue(1);
-            try {
-                ud0Var2.setMaxValue(YearMonth.of(ud0Var.getValue(), ud0Var3.getValue() + 1).lengthOfMonth());
-            } catch (Exception e7) {
-                FileLog.e(e7);
-                ud0Var2.setMaxValue(31);
-            }
-            ud0Var3.setMinValue(0);
-            ud0Var3.setMaxValue(11);
-            return;
-        }
-        ud0Var3.setMinValue(0);
-        int i11 = this.f;
-        ud0Var3.setMaxValue(i11);
-        if (ud0Var3.getValue() == i11) {
-            ud0Var2.setMinValue(1);
-            ud0Var2.setMaxValue(this.h);
-            return;
-        }
-        ud0Var2.setMinValue(1);
-        try {
-            ud0Var2.setMaxValue(YearMonth.of(ud0Var.getValue(), ud0Var3.getValue() + 1).lengthOfMonth());
-        } catch (Exception e10) {
-            FileLog.e(e10);
-            ud0Var2.setMaxValue(31);
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        float height;
+        switch (this.a) {
+            case 0:
+                ((e2) this.b).run();
+                break;
+            case 1:
+                CharSequence charSequence = (CharSequence) obj;
+                ei.g gVar = ((kd) this.b).f;
+                gVar.setText(charSequence);
+                gVar.w(charSequence.length(), charSequence.length());
+                break;
+            case 2:
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ((sm) this.b).v;
+                chatAttachAlertPhotoLayout.r0(null, null, ((Long) obj).longValue());
+                chatAttachAlertPhotoLayout.b.dismiss();
+                break;
+            case 3:
+                MessagesController.getInstance(((at) this.b).N).openApp((TLRPC.User) obj, 0);
+                break;
+            case 4:
+                ((iu) this.b).performMenuAction(((Integer) obj).intValue());
+                break;
+            case 5:
+                Runnable runnable = (Runnable) this.b;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
+            case 6:
+                ((wa0) this.b).V.a1(((Integer) obj).intValue() + 8);
+                break;
+            case 7:
+                oc0 oc0Var = (oc0) this.b;
+                Integer num = (Integer) obj;
+                ArrayList arrayList = oc0Var.e.a;
+                qb0 qb0Var = oc0Var.f;
+                if (((lc0) arrayList.get(qb0Var.getCurrentPosition())).a != num.intValue()) {
+                    int i10 = 0;
+                    int i11 = 0;
+                    while (true) {
+                        if (i11 < arrayList.size()) {
+                            if (((lc0) arrayList.get(i11)).a == num.intValue()) {
+                                i10 = i11;
+                            } else {
+                                i11++;
+                            }
+                        }
+                    }
+                    if (qb0Var.getCurrentPosition() != i10) {
+                        qb0Var.D(i10);
+                        break;
+                    }
+                }
+                break;
+            case 8:
+                ic0 ic0Var = (ic0) this.b;
+                ic0Var.n.y(ic0Var.f.T((View) obj));
+                break;
+            case 9:
+                le0 le0Var = (le0) this.b;
+                Integer num2 = (Integer) obj;
+                FrameLayout frameLayout = le0Var.h;
+                if (le0Var.getContext() != null) {
+                    boolean z10 = le0Var.getContext().getResources().getConfiguration().orientation == 2;
+                    int intValue = num2.intValue() - AndroidUtilities.navigationBarHeight;
+                    if (SharedConfig.passcodeType == 1) {
+                        ViewPropertyAnimator animate = frameLayout.animate();
+                        if (intValue <= AndroidUtilities.dp(20.0f)) {
+                            height = 0.0f;
+                        } else {
+                            height = (((le0Var.getHeight() - intValue) / 2.0f) - (frameLayout.getHeight() / (z10 ? 1.0f : 2.0f))) - frameLayout.getTop();
+                        }
+                        ViewPropertyAnimator duration = animate.translationY(height).setDuration(320L);
+                        bs bsVar = bs.h;
+                        duration.setInterpolator(bsVar).start();
+                        le0Var.M.animate().alpha(intValue > AndroidUtilities.dp(20.0f) ? 0.0f : 1.0f).setDuration(320L).setInterpolator(bsVar);
+                        break;
+                    }
+                }
+                break;
+            case 10:
+                if0 if0Var = (if0) this.b;
+                if0Var.K.b(if0Var.N, true, 0, ((Long) obj).longValue());
+                if0Var.dismiss();
+                break;
+            case 11:
+                Utilities.Callback2 callback2 = (Utilities.Callback2) this.b;
+                Bitmap bitmap = (Bitmap) obj;
+                ColorMatrix colorMatrix = new ColorMatrix();
+                AndroidUtilities.adjustSaturationColorMatrix(colorMatrix, org.telegram.ui.ActionBar.h6.I.q() ? 0.04f : 0.25f);
+                AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, org.telegram.ui.ActionBar.h6.I.q() ? -0.04f : -0.07f);
+                Bitmap applyColorMatrix = AndroidUtilities.applyColorMatrix(bitmap, colorMatrix);
+                applyColorMatrix.setHasAlpha(false);
+                ColorMatrix colorMatrix2 = new ColorMatrix();
+                colorMatrix2.setSaturation(org.telegram.ui.ActionBar.h6.I.q() ? 2.0f : 3.0f);
+                if (!org.telegram.ui.ActionBar.h6.I.q()) {
+                    AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix2, org.telegram.ui.ActionBar.h6.I.q() ? -0.2f : -0.07f);
+                }
+                Bitmap applyColorMatrix2 = AndroidUtilities.applyColorMatrix(bitmap, colorMatrix2);
+                applyColorMatrix2.setHasAlpha(false);
+                bitmap.recycle();
+                callback2.run(applyColorMatrix, applyColorMatrix2);
+                break;
+            case 12:
+                zy0 zy0Var = (zy0) this.b;
+                TL_account.TL_birthday tL_birthday = (TL_account.TL_birthday) obj;
+                TL_account.updateBirthday updatebirthday = new TL_account.updateBirthday();
+                updatebirthday.flags |= 1;
+                updatebirthday.birthday = tL_birthday;
+                int i12 = zy0Var.a;
+                TLRPC.UserFull userFull = MessagesController.getInstance(i12).getUserFull(UserConfig.getInstance(i12).getClientUserId());
+                TL_account.TL_birthday tL_birthday2 = userFull != null ? userFull.birthday : null;
+                if (userFull != null) {
+                    userFull.flags2 |= 32;
+                    userFull.birthday = tL_birthday;
+                    MessagesStorage.getInstance(i12).updateUserInfo(userFull, false);
+                }
+                ConnectionsManager.getInstance(i12).sendRequest(updatebirthday, new ai.p2(zy0Var, userFull, tL_birthday2, 18), 1024);
+                MessagesController.getInstance(i12).invalidateContentSettings();
+                MessagesController.getInstance(i12).removeSuggestion(0L, "BIRTHDAY_SETUP");
+                NotificationCenter.getInstance(i12).lambda$postNotificationNameOnUIThread$1(NotificationCenter.newSuggestionsAvailable, new Object[0]);
+                break;
+            default:
+                a71 a71Var = (a71) this.b;
+                a71Var.W2.Q(a71Var.T((View) obj), a71Var.a3);
+                break;
         }
     }
 }

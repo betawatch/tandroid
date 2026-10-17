@@ -8,12 +8,12 @@ import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotInlineKeyboard;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.sk;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.Components.ha0;
-import org.telegram.ui.Components.i11;
+import org.telegram.ui.Components.ba0;
+import org.telegram.ui.Components.d11;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class e0 {
     public final Runnable a;
@@ -23,7 +23,7 @@ public final class e0 {
     public float e;
     public int f;
     public int g;
-    public i11 h;
+    public d11 h;
     public TL_keyboard.KeyboardInlineButton i;
     public BotInlineKeyboard.ButtonCustom j;
     public BotInlineKeyboard.Button k;
@@ -33,10 +33,10 @@ public final class e0 {
     public final Paint o = new Paint(1);
     public final RectF p = new RectF();
     public final float[] q = new float[8];
-    public ha0 r;
+    public ba0 r;
     public z s;
     public Drawable t;
-    public org.telegram.ui.Components.s5 u;
+    public org.telegram.ui.Components.r5 u;
     public boolean v;
     public float w;
     public ValueAnimator x;
@@ -55,7 +55,7 @@ public final class e0 {
                 this.a.run();
             }
         }
-        return com.google.android.gms.internal.play_billing.k3.y(1.0f, this.w, 0.04f, 0.96f);
+        return com.google.android.gms.internal.cast.a6.x(1.0f, this.w, 0.04f, 0.96f);
     }
 
     public final void b(boolean z10) {
@@ -75,8 +75,8 @@ public final class e0 {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, 0.0f);
                 this.x = ofFloat;
                 ofFloat.addUpdateListener(new r(this, 1));
-                this.x.addListener(new org.telegram.ui.u0(this, 9));
-                sk.l(2.0f, this.x);
+                this.x.addListener(new m.a(this, 11));
+                wh.l(2.0f, this.x);
                 this.x.setDuration(350L);
                 this.x.start();
             }

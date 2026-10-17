@@ -10,17 +10,17 @@ import java.security.MessageDigest;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.ChatActivityEnterView;
-import org.telegram.ui.Components.cy;
-import org.telegram.ui.Components.gd;
-import org.telegram.ui.Components.mz;
-import org.telegram.ui.Components.ow0;
-import org.telegram.ui.Components.pg;
-import org.telegram.ui.Components.rf;
+import org.telegram.ui.Components.ed;
+import org.telegram.ui.Components.jw0;
+import org.telegram.ui.Components.kz;
+import org.telegram.ui.Components.og;
+import org.telegram.ui.Components.pf;
+import org.telegram.ui.Components.xx;
 import r0.m0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class f implements m0, cy {
+public final class f implements m0, xx {
     public int a;
     public boolean b;
     public Object c;
@@ -51,18 +51,18 @@ public final class f implements m0, cy {
     }
 
     public boolean d() {
-        mz mzVar;
-        rf rfVar;
+        kz kzVar;
+        pf pfVar;
         ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
         if (chatActivityEnterView.x3) {
-            return (chatActivityEnterView.z3 || (rfVar = chatActivityEnterView.E0) == null || rfVar.length() <= 0) && (mzVar = chatActivityEnterView.U0.y0) != null && mzVar.h() > 0 && !chatActivityEnterView.k3;
+            return (chatActivityEnterView.z3 || (pfVar = chatActivityEnterView.E0) == null || pfVar.length() <= 0) && (kzVar = chatActivityEnterView.U0.y0) != null && kzVar.h() > 0 && !chatActivityEnterView.k3;
         }
         return false;
     }
 
     public void e() {
         ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
-        ow0 ow0Var = chatActivityEnterView.m1;
+        jw0 jw0Var = chatActivityEnterView.m1;
         if (d()) {
             AnimatorSet animatorSet = chatActivityEnterView.B3;
             if (animatorSet != null) {
@@ -72,7 +72,7 @@ public final class f implements m0, cy {
             this.b = chatActivityEnterView.z3;
             chatActivityEnterView.z3 = true;
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 1);
-            int height = ((((ow0Var.getHeight() - AndroidUtilities.statusBarHeight) - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(6.0f)) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - chatActivityEnterView.getHeight();
+            int height = ((((jw0Var.getHeight() - AndroidUtilities.statusBarHeight) - AndroidUtilities.navigationBarHeight) - AndroidUtilities.dp(6.0f)) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - chatActivityEnterView.getHeight();
             chatActivityEnterView.D3 = height;
             if (chatActivityEnterView.R1 == 2) {
                 int dp = AndroidUtilities.dp(175.0f);
@@ -83,14 +83,14 @@ public final class f implements m0, cy {
                 chatActivityEnterView.U0.getLayoutParams().height = chatActivityEnterView.D3;
             }
             chatActivityEnterView.U0.setLayerType(2, null);
-            ow0Var.requestLayout();
+            jw0Var.requestLayout();
             if (chatActivityEnterView.y4) {
-                ow0Var.setForeground(new gd(chatActivityEnterView));
+                jw0Var.setForeground(new ed(chatActivityEnterView));
             }
             this.a = (int) chatActivityEnterView.getTranslationY();
-            pg pgVar = chatActivityEnterView.Z2;
-            if (pgVar != null) {
-                pgVar.o1();
+            og ogVar = chatActivityEnterView.Z2;
+            if (ogVar != null) {
+                ogVar.n1();
             }
         }
     }

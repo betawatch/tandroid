@@ -1,14 +1,14 @@
 package ah;
 
+import ai.u6;
 import android.graphics.drawable.Drawable;
 import android.view.View;
-import org.telegram.ui.Components.e41;
-import org.telegram.ui.Components.gd;
-import org.telegram.ui.Components.lp0;
-import org.telegram.ui.Components.rq;
-import zh.g3;
+import org.telegram.ui.Components.ed;
+import org.telegram.ui.Components.gp0;
+import org.telegram.ui.Components.oq;
+import org.telegram.ui.Components.x31;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class f1 implements Drawable.Callback {
     public final /* synthetic */ int a;
@@ -29,33 +29,33 @@ public final class f1 implements Drawable.Callback {
                 }
                 break;
             case 1:
+                ((u6) this.b).h.invalidate();
                 break;
             case 2:
-                ((ji.t0) this.b).b.invalidate();
                 break;
             case 3:
-                ((rq) this.b).invalidateSelf();
+                ((ki.t0) this.b).b.invalidate();
                 break;
             case 4:
-                ((lp0) this.b).b.run();
+                ((oq) this.b).invalidateSelf();
                 break;
             case 5:
-                ((gd) this.b).invalidateSelf();
+                ((gp0) this.b).b.run();
                 break;
             case 6:
-                ((e41) this.b).invalidateSelf();
+                ((ed) this.b).invalidateSelf();
                 break;
             case 7:
-                ((x4.d) this.b).invalidateSelf();
+                ((x31) this.b).invalidateSelf();
                 break;
             case 8:
-                ((xg.a) this.b).c.invalidate();
+                ((x4.d) this.b).invalidateSelf();
                 break;
             case 9:
-                ((xg.c) this.b).c.invalidate();
+                ((xg.a) this.b).c.invalidate();
                 break;
             default:
-                ((g3) this.b).h.invalidate();
+                ((xg.c) this.b).c.invalidate();
                 break;
         }
     }
@@ -71,6 +71,8 @@ public final class f1 implements Drawable.Callback {
                 }
                 break;
             case 1:
+                break;
+            case 2:
                 Drawable.Callback callback = (Drawable.Callback) this.b;
                 if (callback != null) {
                     callback.scheduleDrawable(drawable, runnable, j10);
@@ -78,18 +80,24 @@ public final class f1 implements Drawable.Callback {
                 }
                 break;
             case 3:
-                ((rq) this.b).scheduleSelf(runnable, j10);
+                break;
+            case 4:
+                ((oq) this.b).scheduleSelf(runnable, j10);
                 break;
             case 5:
-                ((gd) this.b).scheduleSelf(runnable, j10);
+                break;
+            case 6:
+                ((ed) this.b).scheduleSelf(runnable, j10);
                 break;
             case 7:
-                ((x4.d) this.b).scheduleSelf(runnable, j10);
                 break;
             case 8:
-                ((xg.a) this.b).c.invalidate();
+                ((x4.d) this.b).scheduleSelf(runnable, j10);
                 break;
             case 9:
+                ((xg.a) this.b).c.invalidate();
+                break;
+            default:
                 ((xg.c) this.b).c.invalidate();
                 break;
         }
@@ -106,6 +114,8 @@ public final class f1 implements Drawable.Callback {
                 }
                 break;
             case 1:
+                break;
+            case 2:
                 Drawable.Callback callback = (Drawable.Callback) this.b;
                 if (callback != null) {
                     callback.unscheduleDrawable(drawable, runnable);
@@ -113,18 +123,24 @@ public final class f1 implements Drawable.Callback {
                 }
                 break;
             case 3:
-                ((rq) this.b).unscheduleSelf(runnable);
+                break;
+            case 4:
+                ((oq) this.b).unscheduleSelf(runnable);
                 break;
             case 5:
-                ((gd) this.b).unscheduleSelf(runnable);
+                break;
+            case 6:
+                ((ed) this.b).unscheduleSelf(runnable);
                 break;
             case 7:
-                ((x4.d) this.b).unscheduleSelf(runnable);
                 break;
             case 8:
-                ((xg.a) this.b).c.invalidate();
+                ((x4.d) this.b).unscheduleSelf(runnable);
                 break;
             case 9:
+                ((xg.a) this.b).c.invalidate();
+                break;
+            default:
                 ((xg.c) this.b).c.invalidate();
                 break;
         }

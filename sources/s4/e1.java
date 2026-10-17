@@ -2,7 +2,7 @@ package s4;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class e1 extends l0 {
     public boolean m;
@@ -21,11 +21,11 @@ public abstract class e1 extends l0 {
     }
 
     @Override // s4.l0
-    public boolean a(b1 b1Var, b2.v0 v0Var, b2.v0 v0Var2) {
+    public boolean a(b1 b1Var, b2.u0 u0Var, b2.u0 u0Var2) {
         int i10;
         int i11;
-        if (v0Var != null && ((i10 = v0Var.a) != (i11 = v0Var2.a) || v0Var.b != v0Var2.b || this.n)) {
-            return r(b1Var, v0Var, i10, v0Var.b, i11, v0Var2.b);
+        if (u0Var != null && ((i10 = u0Var.a) != (i11 = u0Var2.a) || u0Var.b != u0Var2.b || this.n)) {
+            return r(b1Var, u0Var, i10, u0Var.b, i11, u0Var2.b);
         }
         p(b1Var);
         return true;
@@ -33,11 +33,11 @@ public abstract class e1 extends l0 {
 
     public abstract void p(b1 b1Var);
 
-    public abstract boolean q(b1 b1Var, b1 b1Var2, b2.v0 v0Var, int i10, int i11, int i12, int i13);
+    public abstract boolean q(b1 b1Var, b1 b1Var2, b2.u0 u0Var, int i10, int i11, int i12, int i13);
 
-    public abstract boolean r(b1 b1Var, b2.v0 v0Var, int i10, int i11, int i12, int i13);
+    public abstract boolean r(b1 b1Var, b2.u0 u0Var, int i10, int i11, int i12, int i13);
 
-    public abstract void s(b1 b1Var, b2.v0 v0Var);
+    public abstract void s(b1 b1Var, b2.u0 u0Var);
 
     public boolean t(b1 b1Var) {
         return !this.m || b1Var.h();

@@ -1,28 +1,28 @@
 package ah;
 
 import android.os.Bundle;
-import org.telegram.ui.ActionBar.m2;
+import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.hb1;
+import org.telegram.ui.r91;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k1 implements Runnable {
     public final /* synthetic */ int a = 1;
     public final /* synthetic */ long b;
-    public final /* synthetic */ m2 c;
+    public final /* synthetic */ n2 c;
 
-    public /* synthetic */ k1(long j10, m2 m2Var) {
+    public /* synthetic */ k1(long j10, n2 n2Var) {
         this.b = j10;
-        this.c = m2Var;
+        this.c = n2Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                m2 m2Var = this.c;
-                m2Var.presentFragment(hb1.d0(m2Var.getMessagesController().getChat(Long.valueOf(-this.b)), true));
+                n2 n2Var = this.c;
+                n2Var.presentFragment(r91.d0(n2Var.getMessagesController().getChat(Long.valueOf(-this.b)), true));
                 break;
             default:
                 Bundle bundle = new Bundle();
@@ -39,8 +39,8 @@ public final /* synthetic */ class k1 implements Runnable {
         }
     }
 
-    public /* synthetic */ k1(m2 m2Var, long j10) {
-        this.c = m2Var;
+    public /* synthetic */ k1(n2 n2Var, long j10) {
+        this.c = n2Var;
         this.b = j10;
     }
 }

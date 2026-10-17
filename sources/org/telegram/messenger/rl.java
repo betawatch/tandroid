@@ -1,33 +1,36 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.LanguageDetector;
-import org.telegram.messenger.TranslateController;
-import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class rl implements LanguageDetector.StringCallback, LanguageDetector.ExceptionCallback {
-    public final /* synthetic */ TranslateController a;
-    public final /* synthetic */ MessageObject b;
-    public final /* synthetic */ TranslateController.MessageKey c;
-    public final /* synthetic */ Utilities.Callback d;
+public final /* synthetic */ class rl implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ rl(TranslateController translateController, MessageObject messageObject, TranslateController.MessageKey messageKey, Utilities.Callback callback) {
-        this.a = translateController;
-        this.b = messageObject;
-        this.c = messageKey;
-        this.d = callback;
+    public /* synthetic */ rl(String str, String str2, byte[] bArr) {
+        this.b = str;
+        this.c = str2;
+        this.d = bArr;
     }
 
-    @Override // org.telegram.messenger.LanguageDetector.ExceptionCallback
-    public void run(Exception exc) {
-        this.a.lambda$detectPhotoLanguage$42(this.b, this.c, this.d, exc);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                WearAuthListenerService.lambda$onMessageReceived$0(this.b, (String) this.c, (byte[]) this.d);
+                break;
+            default:
+                ((MediaDataController) this.c).lambda$putEmojiKeywords$216((TLRPC.TL_emojiKeywordsDifference) this.d, this.b);
+                break;
+        }
     }
 
-    @Override // org.telegram.messenger.LanguageDetector.StringCallback
-    public void run(String str) {
-        TranslateController.MessageKey messageKey = this.c;
-        Utilities.Callback callback = this.d;
-        this.a.lambda$detectPhotoLanguage$40(this.b, messageKey, callback, str);
+    public /* synthetic */ rl(MediaDataController mediaDataController, TLRPC.TL_emojiKeywordsDifference tL_emojiKeywordsDifference, String str) {
+        this.c = mediaDataController;
+        this.d = tL_emojiKeywordsDifference;
+        this.b = str;
     }
 }

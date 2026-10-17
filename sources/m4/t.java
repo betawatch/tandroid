@@ -5,13 +5,13 @@ import e9.x1;
 import java.util.HashSet;
 import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class t {
     public static final p1 e;
-    public static final b2.c1 f;
+    public static final b2.b1 f;
     public final p1 a;
-    public final b2.c1 b;
+    public final b2.b1 b;
     public final e9.n0 c;
     public final e9.n0 d;
 
@@ -32,17 +32,17 @@ public final class t {
         }
         new p1(hashSet2);
         SparseBooleanArray sparseBooleanArray = new SparseBooleanArray();
-        for (int i13 : b2.b1.b) {
+        for (int i13 : b2.a1.b) {
             u6.p(!false);
             sparseBooleanArray.append(i13, true);
         }
         u6.p(!false);
-        f = new b2.c1(new b2.v(sparseBooleanArray));
+        f = new b2.b1(new b2.u(sparseBooleanArray));
     }
 
-    public t(p1 p1Var, b2.c1 c1Var, e9.n0 n0Var, e9.n0 n0Var2) {
+    public t(p1 p1Var, b2.b1 b1Var, e9.n0 n0Var, e9.n0 n0Var2) {
         this.a = p1Var;
-        this.b = c1Var;
+        this.b = b1Var;
         this.c = n0Var;
         this.d = n0Var2;
     }

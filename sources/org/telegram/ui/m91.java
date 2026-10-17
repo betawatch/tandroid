@@ -1,57 +1,83 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
-import org.telegram.messenger.Emoji;
+import java.util.Locale;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class m91 extends org.telegram.ui.Components.l61 {
-    static {
-        org.telegram.ui.Components.l61.setup(new m91());
-    }
+public final class m91 {
+    public String A;
+    public boolean B;
+    public boolean C;
+    public String D;
+    public String E;
+    public String F;
+    public boolean G;
+    public boolean H;
+    public String a;
+    public String b;
+    public String c;
+    public boolean d;
+    public String e;
+    public String f;
+    public String g;
+    public boolean h;
+    public String i;
+    public String j;
+    public String k;
+    public boolean l;
+    public String m;
+    public String n;
+    public String o;
+    public String p;
+    public String q;
+    public boolean r;
+    public boolean s;
+    public String t;
+    public String u;
+    public String v;
+    public boolean w;
+    public boolean x;
+    public String y;
+    public String z;
 
-    public static org.telegram.ui.Components.m61 a(String str, CharSequence charSequence, String str2, View.OnClickListener onClickListener, CharSequence charSequence2, View.OnClickListener onClickListener2) {
-        org.telegram.ui.Components.m61 J = org.telegram.ui.Components.m61.J(m91.class);
-        J.l = str;
-        J.m = charSequence;
-        J.n = str2;
-        J.D = onClickListener;
-        J.o = charSequence2;
-        J.E = onClickListener2;
-        return J;
-    }
-
-    @Override // org.telegram.ui.Components.l61
-    public final void bindView(View view, org.telegram.ui.Components.m61 m61Var, boolean z10, org.telegram.ui.Components.a71 a71Var, org.telegram.ui.Components.i71 i71Var) {
-        n91 n91Var = (n91) view;
-        CharSequence charSequence = m61Var.l;
-        CharSequence charSequence2 = m61Var.m;
-        CharSequence charSequence3 = m61Var.n;
-        View.OnClickListener onClickListener = m61Var.D;
-        CharSequence charSequence4 = m61Var.o;
-        View.OnClickListener onClickListener2 = m61Var.E;
-        di.d dVar = n91Var.e;
-        org.telegram.ui.Components.da0 da0Var = n91Var.b;
-        da0Var.setText(Emoji.replaceEmoji(charSequence, da0Var.getPaint().getFontMetricsInt(), false));
-        org.telegram.ui.Components.da0 da0Var2 = n91Var.c;
-        da0Var2.setText(Emoji.replaceEmoji(charSequence2, da0Var2.getPaint().getFontMetricsInt(), false));
-        di.d dVar2 = n91Var.d;
-        dVar2.setVisibility(TextUtils.isEmpty(charSequence3) ? 8 : 0);
-        dVar2.setText(charSequence3);
-        dVar2.setOnClickListener(onClickListener);
-        dVar.setText(charSequence4);
-        dVar.setOnClickListener(onClickListener2);
-    }
-
-    @Override // org.telegram.ui.Components.l61
-    public final View createView(Context context, org.telegram.ui.Components.mm0 mm0Var, int i10, int i11, org.telegram.ui.ActionBar.c6 c6Var) {
-        return new n91(context, c6Var);
-    }
-
-    @Override // org.telegram.ui.Components.l61
-    public final boolean isClickable() {
-        return false;
+    public static com.google.firebase.messaging.r a(TL_stats.TL_statsAbsValueAndPrev tL_statsAbsValueAndPrev) {
+        String str;
+        double d = tL_statsAbsValueAndPrev.current;
+        double d10 = tL_statsAbsValueAndPrev.previous;
+        int i10 = (int) (d - d10);
+        float abs = d10 == 0.0d ? 0.0f : Math.abs((i10 / ((float) d10)) * 100.0f);
+        String formatWholeNumber = AndroidUtilities.formatWholeNumber((int) tL_statsAbsValueAndPrev.current, 0);
+        boolean z10 = true;
+        str = "";
+        if (i10 != 0 && abs != 0.0f) {
+            int i11 = (int) abs;
+            if (abs == i11) {
+                Locale locale = Locale.ENGLISH;
+                StringBuilder sb2 = new StringBuilder();
+                sb2.append(i10 > 0 ? "+" : "");
+                sb2.append(AndroidUtilities.formatWholeNumber(i10, 0));
+                str = sb2.toString() + " (" + i11 + "%)";
+            } else {
+                Locale locale2 = Locale.ENGLISH;
+                StringBuilder sb3 = new StringBuilder();
+                sb3.append(i10 > 0 ? "+" : "");
+                sb3.append(AndroidUtilities.formatWholeNumber(i10, 0));
+                str = String.format(locale2, "%s (%.1f%s)", sb3.toString(), Float.valueOf(abs), "%");
+            }
+        }
+        boolean z11 = i10 >= 0;
+        if (i10 == 0 && tL_statsAbsValueAndPrev.current == 0.0d) {
+            z10 = false;
+        }
+        Boolean valueOf = Boolean.valueOf(z11);
+        Boolean valueOf2 = Boolean.valueOf(z10);
+        com.google.firebase.messaging.r rVar = new com.google.firebase.messaging.r(8, false);
+        rVar.b = formatWholeNumber;
+        rVar.e = str;
+        rVar.c = valueOf;
+        rVar.d = valueOf2;
+        return rVar;
     }
 }

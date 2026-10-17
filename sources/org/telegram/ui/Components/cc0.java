@@ -1,63 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class cc0 extends s4.t {
-    public final /* synthetic */ pc0 S;
+public final /* synthetic */ class cc0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ dc0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cc0(pc0 pc0Var) {
-        super(true);
-        this.S = pc0Var;
+    public /* synthetic */ cc0(dc0 dc0Var, int i10) {
+        this.a = i10;
+        this.b = dc0Var;
     }
 
-    @Override // s4.t
-    public final boolean B1(int i10) {
-        byte b10;
-        pc0 pc0Var = this.S;
-        MessageObject messageObject = pc0Var.r.previewMessages.get(i10);
-        MessageObject.GroupedMessages a2 = pc0.a(pc0Var, messageObject);
-        if (a2 != null) {
-            MessageObject.GroupedMessagePosition position = a2.getPosition(messageObject);
-            if (position.minX != position.maxX && (b10 = position.minY) == position.maxY && b10 != 0) {
-                int size = a2.posArray.size();
-                for (int i11 = 0; i11 < size; i11++) {
-                    MessageObject.GroupedMessagePosition groupedMessagePosition = a2.posArray.get(i11);
-                    if (groupedMessagePosition != position) {
-                        byte b11 = groupedMessagePosition.minY;
-                        byte b12 = position.minY;
-                        if (b11 <= b12 && groupedMessagePosition.maxY >= b12) {
-                            return true;
-                        }
-                    }
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                dc0 dc0Var = this.b;
+                if (dc0Var.W != -1) {
+                    NotificationCenter.getInstance(dc0Var.Y.c0.w).onAnimationFinish(dc0Var.W);
+                    dc0Var.W = -1;
+                    break;
                 }
-            }
-        }
-        return false;
-    }
-
-    @Override // s4.t
-    public final boolean C1(View view) {
-        return false;
-    }
-
-    @Override // s4.s, s4.b0, s4.n0
-    public final void b0(qf.e eVar, s4.y0 y0Var) {
-        if (BuildVars.DEBUG_PRIVATE_VERSION) {
-            super.b0(eVar, y0Var);
-            return;
-        }
-        try {
-            super.b0(eVar, y0Var);
-        } catch (Exception e) {
-            FileLog.e(e);
-            AndroidUtilities.runOnUIThread(new kq(this, 29));
+                break;
+            case 1:
+                this.b.Y.i();
+                break;
+            default:
+                dc0 dc0Var2 = this.b;
+                if (dc0Var2.W != -1) {
+                    NotificationCenter.getInstance(dc0Var2.Y.c0.w).onAnimationFinish(dc0Var2.W);
+                    dc0Var2.W = -1;
+                    break;
+                }
+                break;
         }
     }
 }

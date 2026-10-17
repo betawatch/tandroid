@@ -7,23 +7,23 @@ import android.os.PowerManager;
 import android.util.Log;
 import java.io.IOException;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class a0 implements Runnable {
     public static final Object f = new Object();
     public static Boolean h;
     public static Boolean n;
     public final Context a;
-    public final o b;
+    public final n b;
     public final PowerManager.WakeLock c;
     public final y d;
     public final long e;
 
-    public a0(y yVar, Context context, o oVar, long j10) {
+    public a0(y yVar, Context context, n nVar, long j10) {
         this.d = yVar;
         this.a = context;
         this.e = j10;
-        this.b = oVar;
+        this.b = nVar;
         this.c = ((PowerManager) context.getSystemService("power")).newWakeLock(1, "wake:com.google.firebase.messaging");
     }
 

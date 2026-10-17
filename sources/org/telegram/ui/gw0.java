@@ -1,52 +1,19 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gw0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ rw0 b;
+public final class gw0 extends q51 {
+    public final /* synthetic */ PremiumPreviewFragment e;
 
-    public /* synthetic */ gw0(rw0 rw0Var, int i10) {
-        this.a = i10;
-        this.b = rw0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gw0(PremiumPreviewFragment premiumPreviewFragment, fw0 fw0Var) {
+        super(fw0Var);
+        this.e = premiumPreviewFragment;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                rw0 rw0Var = this.b;
-                AndroidUtilities.runOnUIThread(new gw0(rw0Var, 3));
-                org.telegram.ui.Cells.u1 u1Var = rw0Var.L;
-                if (u1Var != null) {
-                    u1Var.setVisibility(0);
-                    org.telegram.ui.Cells.u1 u1Var2 = rw0Var.L;
-                    u1Var2.L7 = null;
-                    u1Var2.invalidate();
-                }
-                bn bnVar = rw0Var.e0;
-                if (bnVar != null) {
-                    AndroidUtilities.runOnUIThread(bnVar);
-                    rw0Var.e0 = null;
-                    break;
-                }
-                break;
-            case 1:
-                this.b.c(false);
-                break;
-            case 2:
-                this.b.c(false);
-                break;
-            default:
-                super/*android.app.Dialog*/.dismiss();
-                break;
-        }
-    }
-
-    public /* synthetic */ gw0(rw0 rw0Var, boolean z10) {
-        this.a = 0;
-        this.b = rw0Var;
+    @Override // org.telegram.ui.q51, android.widget.PopupWindow
+    public final void dismiss() {
+        super.dismiss();
+        this.e.s0 = null;
     }
 }

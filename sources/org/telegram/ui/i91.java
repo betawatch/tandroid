@@ -1,34 +1,29 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class i91 extends org.telegram.ui.Components.l61 {
-    public static final /* synthetic */ int a = 0;
+public final class i91 extends dq {
+    public final /* synthetic */ boolean[] d1;
+    public final /* synthetic */ r91 e1;
+    public final /* synthetic */ k91 f1;
 
-    static {
-        org.telegram.ui.Components.l61.setup(new i91());
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public i91(k91 k91Var, long j10, long j11, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str, boolean z10, boolean[] zArr, r91 r91Var) {
+        super(j10, j11, tL_chatAdminRights, null, tL_chatBannedRights, str, 0, true, z10, null);
+        this.f1 = k91Var;
+        this.d1 = zArr;
+        this.e1 = r91Var;
     }
 
-    @Override // org.telegram.ui.Components.l61
-    public final void bindView(View view, org.telegram.ui.Components.m61 m61Var, boolean z10, org.telegram.ui.Components.a71 a71Var, org.telegram.ui.Components.i71 i71Var) {
-        ((j91) view).set(m61Var.z);
-    }
-
-    @Override // org.telegram.ui.Components.l61
-    public final boolean contentsEquals(org.telegram.ui.Components.m61 m61Var, org.telegram.ui.Components.m61 m61Var2) {
-        return m61Var.z == m61Var2.z;
-    }
-
-    @Override // org.telegram.ui.Components.l61
-    public final View createView(Context context, org.telegram.ui.Components.mm0 mm0Var, int i10, int i11, org.telegram.ui.ActionBar.c6 c6Var) {
-        return new j91(context, c6Var);
-    }
-
-    @Override // org.telegram.ui.Components.l61
-    public final boolean equals(org.telegram.ui.Components.m61 m61Var, org.telegram.ui.Components.m61 m61Var2) {
-        return m61Var.d == m61Var2.d;
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
+        if (!z10 && z11 && this.d1[0]) {
+            r91 r91Var = this.e1;
+            if (org.telegram.ui.Components.xc.a(r91Var)) {
+                org.telegram.ui.Components.xc.C(r91Var, this.f1.a.first_name).j();
+            }
+        }
     }
 }

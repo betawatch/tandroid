@@ -1,60 +1,41 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.AnimationNotificationsLocker;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wq implements MessagesStorage.LongCallback, org.telegram.ui.ActionBar.z1, org.telegram.ui.Components.bm0, org.telegram.ui.Components.cm0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ yr b;
+public final class wq extends s4.k {
+    public final AnimationNotificationsLocker F = new AnimationNotificationsLocker();
+    public final /* synthetic */ jr G;
 
-    public /* synthetic */ wq(yr yrVar, int i10) {
-        this.a = i10;
-        this.b = yrVar;
+    public wq(jr jrVar) {
+        this.G = jrVar;
     }
 
-    @Override // org.telegram.ui.Components.cm0
-    public boolean a(int i10, View view) {
-        yr yrVar = this.b;
-        if (yrVar.getParentActivity() != null) {
-            s4.g0 adapter = yrVar.c.getAdapter();
-            ur urVar = yrVar.a;
-            if (adapter == urVar) {
-                return yrVar.h0(urVar.E(i10), false, view);
-            }
+    @Override // s4.k
+    public final void N() {
+        this.F.unlock();
+    }
+
+    @Override // s4.k
+    public final void O() {
+        this.G.c.invalidate();
+    }
+
+    @Override // s4.k
+    public final void P(s4.b1 b1Var) {
+        this.G.c.invalidate();
+    }
+
+    @Override // s4.k, s4.l0
+    public final void m() {
+        boolean isEmpty = this.p.isEmpty();
+        boolean isEmpty2 = this.r.isEmpty();
+        boolean isEmpty3 = this.s.isEmpty();
+        boolean isEmpty4 = this.q.isEmpty();
+        if (!isEmpty || !isEmpty2 || !isEmpty4 || !isEmpty3) {
+            this.F.lock();
         }
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.bm0
-    public /* synthetic */ boolean c1(View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.bm0
-    public void d(float f7, float f10, int i10, View view) {
-        yr.V(this.b, view, i10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.z1
-    public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
-        switch (this.a) {
-            case 1:
-                this.b.u0();
-                break;
-            default:
-                this.b.finishFragment();
-                break;
-        }
-    }
-
-    @Override // org.telegram.messenger.MessagesStorage.LongCallback
-    public void run(long j10) {
-        yr.U(this.b, j10);
-    }
-
-    @Override // org.telegram.ui.Components.bm0
-    public /* synthetic */ void p0(View view, float f7, float f10) {
+        super.m();
     }
 }

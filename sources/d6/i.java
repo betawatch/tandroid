@@ -3,10 +3,10 @@ package d6;
 import android.os.Parcel;
 import android.os.RemoteException;
 import com.google.android.gms.internal.cast.o4;
-import com.google.android.gms.internal.cast.x6;
+import com.google.android.gms.internal.cast.y6;
 import com.google.android.gms.internal.cast.z5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class i {
     public final /* synthetic */ c a;
@@ -36,7 +36,7 @@ public final class i {
         }
         o4 o4Var = cVar.l;
         if (o4Var != null) {
-            z5.E(o4Var.a, new x6(new a5.a(3, 2)));
+            z5.D(o4Var.a, new y6(new a5.a(3, 2)));
         }
     }
 }

@@ -4,11 +4,11 @@ import android.os.SystemClock;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
-import z7.hb;
-import z7.mg;
-import z7.wf;
+import z7.jb;
+import z7.ng;
+import z7.yf;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class da implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -61,22 +61,22 @@ public final /* synthetic */ class da implements Runnable {
                 }
                 return;
             default:
-                wf wfVar = (wf) this.c;
-                hb hbVar = hb.N1;
+                yf yfVar = (yf) this.c;
+                jb jbVar = jb.N1;
                 z7.i1 i1Var = (z7.i1) this.d;
-                HashMap hashMap2 = wfVar.j;
-                if (!hashMap2.containsKey(hbVar)) {
+                HashMap hashMap2 = yfVar.j;
+                if (!hashMap2.containsKey(jbVar)) {
                     z7.d dVar = new z7.d();
-                    mg mgVar = new mg();
+                    ng ngVar = new ng();
                     if (!dVar.isEmpty()) {
                         throw new IllegalArgumentException();
                     }
-                    mgVar.c = dVar;
-                    hashMap2.put(hbVar, mgVar);
+                    ngVar.c = dVar;
+                    hashMap2.put(jbVar, ngVar);
                 }
-                mg mgVar2 = (mg) hashMap2.get(hbVar);
+                ng ngVar2 = (ng) hashMap2.get(jbVar);
                 Long valueOf2 = Long.valueOf(this.b);
-                z7.d dVar2 = mgVar2.c;
+                z7.d dVar2 = ngVar2.c;
                 Collection collection2 = (Collection) dVar2.get(i1Var);
                 if (collection2 == null) {
                     ArrayList arrayList2 = new ArrayList(3);
@@ -88,18 +88,18 @@ public final /* synthetic */ class da implements Runnable {
                     collection2.add(valueOf2);
                 }
                 long elapsedRealtime2 = SystemClock.elapsedRealtime();
-                if (wfVar.d(hbVar, elapsedRealtime2)) {
-                    wfVar.i.put(hbVar, Long.valueOf(elapsedRealtime2));
-                    rb.m.a.execute(new p4.s0(wfVar));
+                if (yfVar.d(jbVar, elapsedRealtime2)) {
+                    yfVar.i.put(jbVar, Long.valueOf(elapsedRealtime2));
+                    rb.m.a.execute(new p4.s0(yfVar));
                     return;
                 }
                 return;
         }
     }
 
-    public /* synthetic */ da(wf wfVar, z7.i1 i1Var, long j10) {
-        hb hbVar = hb.b;
-        this.c = wfVar;
+    public /* synthetic */ da(yf yfVar, z7.i1 i1Var, long j10) {
+        jb jbVar = jb.b;
+        this.c = yfVar;
         this.d = i1Var;
         this.b = j10;
     }

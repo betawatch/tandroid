@@ -14,19 +14,19 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
 public final class f {
     public final int a;
-    public final k0 b;
+    public final m0 b;
     public boolean c;
     public TL_wallet.currencyRates d;
     public String e = "en";
     public String f;
 
-    public f(k0 k0Var) {
-        this.b = k0Var;
-        this.a = k0Var.a;
+    public f(m0 m0Var) {
+        this.b = m0Var;
+        this.a = m0Var.a;
         try {
             this.f = ApplicationLoader.applicationContext.getSharedPreferences("gram_wallet", 0).getString("currency", g());
         } catch (Exception e) {

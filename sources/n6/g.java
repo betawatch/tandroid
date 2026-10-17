@@ -12,7 +12,7 @@ import android.os.Looper;
 import android.os.RemoteException;
 import android.util.Log;
 import com.google.android.gms.common.api.Scope;
-import com.google.android.gms.common.api.internal.p0;
+import com.google.android.gms.common.api.internal.o0;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -22,10 +22,9 @@ import java.util.Iterator;
 import java.util.Locale;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
-import m.t3;
-import org.telegram.messenger.BuildConfig;
+import m.s3;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class g implements com.google.android.gms.common.api.c {
     public static final k6.c[] T = new k6.c[0];
@@ -59,7 +58,7 @@ public abstract class g implements com.google.android.gms.common.api.c {
     public final Object x;
     public y y;
 
-    public g(Context context, Looper looper, int i10, t3 t3Var, com.google.android.gms.common.api.k kVar, com.google.android.gms.common.api.l lVar, int i11) {
+    public g(Context context, Looper looper, int i10, s3 s3Var, com.google.android.gms.common.api.k kVar, com.google.android.gms.common.api.l lVar, int i11) {
         synchronized (j0.g) {
             try {
                 if (j0.h == null) {
@@ -75,7 +74,7 @@ public abstract class g implements com.google.android.gms.common.api.c {
         l.h(lVar);
         m mVar = new m(kVar);
         m mVar2 = new m(lVar);
-        String str = (String) t3Var.e;
+        String str = (String) s3Var.e;
         Object obj2 = k6.d.c;
         this.f = null;
         this.w = new Object();
@@ -97,7 +96,7 @@ public abstract class g implements com.google.android.gms.common.api.c {
         this.J = mVar;
         this.K = mVar2;
         this.M = str;
-        Set set = (Set) t3Var.b;
+        Set set = (Set) s3Var.b;
         Iterator it = set.iterator();
         while (it.hasNext()) {
             if (!set.contains((Scope) it.next())) {
@@ -330,19 +329,14 @@ public abstract class g implements com.google.android.gms.common.api.c {
     }
 
     @Override // com.google.android.gms.common.api.c
-    public final void e(a6.i iVar) {
-        ((p0) iVar.b).o.x.post(new androidx.activity.i((Object) iVar, 14));
-    }
-
-    @Override // com.google.android.gms.common.api.c
-    public void f(b bVar) {
+    public void e(b bVar) {
         l.i(bVar, "Connection progress callbacks cannot be null.");
         this.E = bVar;
         F(2, null);
     }
 
     @Override // com.google.android.gms.common.api.c
-    public final boolean g() {
+    public final boolean f() {
         boolean z10;
         synchronized (this.w) {
             int i10 = this.I;
@@ -355,7 +349,7 @@ public abstract class g implements com.google.android.gms.common.api.c {
     }
 
     @Override // com.google.android.gms.common.api.c
-    public final void h(String str, PrintWriter printWriter) {
+    public final void g(String str, PrintWriter printWriter) {
         int i10;
         IInterface iInterface;
         y yVar;
@@ -382,13 +376,13 @@ public abstract class g implements com.google.android.gms.common.api.c {
         }
         printWriter.append(" mService=");
         if (iInterface == null) {
-            printWriter.append(BuildConfig.BETA_URL);
+            printWriter.append("null");
         } else {
             printWriter.append((CharSequence) v()).append("@").append((CharSequence) Integer.toHexString(System.identityHashCode(iInterface.asBinder())));
         }
         printWriter.append(" mServiceBroker=");
         if (yVar == null) {
-            printWriter.println(BuildConfig.BETA_URL);
+            printWriter.println("null");
         } else {
             printWriter.append("IGmsServiceBroker@").println(Integer.toHexString(System.identityHashCode(yVar.a)));
         }
@@ -423,12 +417,17 @@ public abstract class g implements com.google.android.gms.common.api.c {
     }
 
     @Override // com.google.android.gms.common.api.c
-    public final String i() {
+    public final String h() {
         androidx.activity.o oVar;
         if (!j() || (oVar = this.h) == null) {
             throw new RuntimeException("Failed to connect when checking package");
         }
         return (String) oVar.c;
+    }
+
+    @Override // com.google.android.gms.common.api.c
+    public final void i(ag.b bVar) {
+        ((o0) bVar.b).o.x.post(new androidx.activity.i(bVar, 14));
     }
 
     @Override // com.google.android.gms.common.api.c

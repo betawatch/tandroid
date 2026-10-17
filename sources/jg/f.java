@@ -11,12 +11,12 @@ import androidx.media3.exoplayer.hls.HlsMediaSource$Factory;
 import java.lang.reflect.GenericDeclaration;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
 import t7.u;
 import u2.f0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class f {
     public boolean a;
@@ -45,7 +45,7 @@ public final class f {
 
     public f0 b(int i10) {
         d9.u uVar;
-        d9.u nVar;
+        d9.u mVar;
         HashMap hashMap = (HashMap) this.e;
         f0 f0Var = (f0) hashMap.get(Integer.valueOf(i10));
         if (f0Var != null) {
@@ -63,12 +63,12 @@ public final class f {
                     if (i10 != 2) {
                         final int i13 = 3;
                         if (i10 == 3) {
-                            nVar = new i2.n(Class.forName("androidx.media3.exoplayer.rtsp.RtspMediaSource$Factory").asSubclass(f0.class), 3);
+                            mVar = new i2.m(Class.forName("androidx.media3.exoplayer.rtsp.RtspMediaSource$Factory").asSubclass(f0.class), 3);
                         } else {
                             if (i10 != 4) {
-                                throw new IllegalArgumentException(i2.d.j(i10, "Unrecognized contentType: "));
+                                throw new IllegalArgumentException(i0.a.j(i10, "Unrecognized contentType: "));
                             }
-                            nVar = new d9.u() { // from class: u2.p
+                            mVar = new d9.u() { // from class: u2.p
                                 @Override // d9.u
                                 public final Object get() {
                                     switch (i13) {
@@ -84,7 +84,7 @@ public final class f {
                                 }
                             };
                         }
-                        uVar2 = nVar;
+                        uVar2 = mVar;
                     } else {
                         final Class asSubclass = HlsMediaSource$Factory.class.asSubclass(f0.class);
                         uVar = new d9.u() { // from class: u2.p
@@ -160,13 +160,13 @@ public final class f {
             this.c = Bitmap.createBitmap(i11, i10, Bitmap.Config.ARGB_8888);
             this.d = new Canvas((Bitmap) this.c);
             rectF.set(0.0f, 0.0f, i11, i10);
-            ((Canvas) this.d).drawColor(g6.w0(g6.d6, (c6) this.g));
+            ((Canvas) this.d).drawColor(h6.w0(h6.d6, (d6) this.g));
             ((Canvas) this.d).drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), (Paint) this.f);
         }
         return (Bitmap) this.c;
     }
 
-    public f(c6 c6Var) {
+    public f(d6 d6Var) {
         this.e = new RectF();
         Paint paint = new Paint(1);
         this.f = paint;
@@ -174,6 +174,6 @@ public final class f {
         this.a = true;
         paint.setColor(0);
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-        this.g = c6Var;
+        this.g = d6Var;
     }
 }

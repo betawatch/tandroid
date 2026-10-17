@@ -4,13 +4,13 @@ import android.media.MediaCodecInfo;
 import android.os.Build;
 import java.util.List;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i implements v {
     public static final i a = new i();
     public static final i b = new i();
 
-    public static /* bridge */ /* synthetic */ MediaCodecInfo.VideoCapabilities.PerformancePoint b(Object obj) {
+    public static /* bridge */ /* synthetic */ MediaCodecInfo.VideoCapabilities.PerformancePoint c(Object obj) {
         return (MediaCodecInfo.VideoCapabilities.PerformancePoint) obj;
     }
 
@@ -19,7 +19,7 @@ public final /* synthetic */ class i implements v {
     }
 
     @Override // r2.v
-    public int c(Object obj) {
+    public int b(Object obj) {
         String str = ((o) obj).a;
         if (str.startsWith("OMX.google") || str.startsWith("c2.android")) {
             return 1;

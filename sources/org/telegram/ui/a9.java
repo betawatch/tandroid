@@ -1,45 +1,37 @@
 package org.telegram.ui;
 
-import android.os.Build;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import org.telegram.ui.Components.FragmentContextView;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class a9 extends s4.r0 {
-    public boolean a;
-    public final /* synthetic */ n9 b;
+public final class a9 extends FragmentContextView {
+    public final /* synthetic */ int R0 = 0;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 S0;
 
-    public a9(n9 n9Var) {
-        this.b = n9Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a9(m9 m9Var, Context context, m9 m9Var2, y8 y8Var, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, m9Var2, y8Var, false, d6Var);
+        this.S0 = m9Var;
     }
 
-    @Override // s4.r0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        bh.f fVar;
-        n9 n9Var = this.b;
-        ArrayList arrayList = n9Var.G;
-        int L0 = n9Var.c.L0();
-        int abs = L0 == -1 ? 0 : Math.abs(n9Var.c.N0() - L0) + 1;
-        if (abs > 0) {
-            int size = n9Var.d.W2.x.size();
-            if (!n9Var.J && !n9Var.H && !arrayList.isEmpty() && abs + L0 >= size - 5) {
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.p0(18, this, (j9) i2.d.h(1, arrayList)));
-            }
+    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
+    public final void setVisibility(int i10) {
+        switch (this.R0) {
+            case 0:
+                m9 m9Var = (m9) this.S0;
+                m9Var.M.i(m9Var.N, i10 == 0, true);
+                break;
+            default:
+                te1 te1Var = (te1) this.S0;
+                te1Var.U0.i(te1Var.F0, i10 == 0, true);
+                break;
         }
-        View childAt = recyclerView.getChildAt(0);
-        int top = childAt != null ? childAt.getTop() : 0;
-        if (i11 != 0 && this.a) {
-            n9Var.f.e(i11 < 0, true);
-        }
-        this.a = true;
-        n9Var.r.b(L0 != 0 || top < n9Var.d.getPaddingTop(), true);
-        if (Build.VERSION.SDK_INT < 31 || (fVar = n9Var.Y) == null) {
-            return;
-        }
-        fVar.f(i10, i11);
-        n9Var.f0();
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a9(te1 te1Var, Context context, te1 te1Var2) {
+        super(context, te1Var2, null, false, null);
+        this.S0 = te1Var;
     }
 }

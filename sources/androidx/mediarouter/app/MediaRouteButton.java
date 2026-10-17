@@ -26,7 +26,7 @@ import android.view.View;
 import java.util.Iterator;
 import v7.q7;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public class MediaRouteButton extends View {
     private static final String CHOOSER_FRAGMENT_TAG = "android.support.v7.mediarouter:MediaRouteChooserDialogFragment";
@@ -118,10 +118,10 @@ public class MediaRouteButton extends View {
         return null;
     }
 
-    private androidx.fragment.app.i0 getFragmentManager() {
+    private androidx.fragment.app.j0 getFragmentManager() {
         Activity activity = getActivity();
-        if (activity instanceof androidx.fragment.app.u) {
-            return ((androidx.fragment.app.u) activity).s();
+        if (activity instanceof androidx.fragment.app.v) {
+            return ((androidx.fragment.app.v) activity).s();
         }
         return null;
     }
@@ -140,7 +140,7 @@ public class MediaRouteButton extends View {
     }
 
     private boolean showDialogForType(int i10) {
-        androidx.fragment.app.i0 fragmentManager = getFragmentManager();
+        androidx.fragment.app.j0 fragmentManager = getFragmentManager();
         if (fragmentManager == null) {
             throw new IllegalStateException("The activity must be a subclass of FragmentActivity");
         }

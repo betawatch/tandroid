@@ -1,104 +1,114 @@
 package org.telegram.ui.Wallet;
 
-import java.util.Arrays;
-import org.json.JSONObject;
+import java.util.ArrayList;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.eh;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.mt;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class t1 implements Utilities.Callback {
-    public final /* synthetic */ e2 a;
-    public final /* synthetic */ a2 b;
-    public final /* synthetic */ mt c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ h0 e;
+public final /* synthetic */ class t1 implements Utilities.Callback2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ f2 b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ t1(e2 e2Var, a2 a2Var, mt mtVar, boolean z10, h0 h0Var) {
-        this.a = e2Var;
-        this.b = a2Var;
-        this.c = mtVar;
-        this.d = z10;
-        this.e = h0Var;
+    public /* synthetic */ t1(f2 f2Var, Object obj, long j10, int i10, int i11) {
+        this.a = i11;
+        this.b = f2Var;
+        this.e = obj;
+        this.c = j10;
+        this.d = i10;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        final byte[] bArr = (byte[]) obj;
-        final e2 e2Var = this.a;
-        final a2 a2Var = this.b;
-        boolean i10 = e2Var.i(a2Var);
-        final mt mtVar = this.c;
-        if (i10 || !e2Var.y(a2Var)) {
-            if (bArr != null) {
-                Arrays.fill(bArr, (byte) 0);
-            }
-            mtVar.run("Request expired or wallet changed");
-            return;
-        }
-        TL_wallet.tonConnectClaimRequest tonconnectclaimrequest = new TL_wallet.tonConnectClaimRequest();
-        tonconnectclaimrequest.session_id = a2Var.a.id;
-        tonconnectclaimrequest.msg_id = a2Var.b;
-        tonconnectclaimrequest.app_request_id = a2Var.d;
-        final boolean z10 = this.d;
-        tonconnectclaimrequest.declined = z10;
-        tonconnectclaimrequest.challenge_answer = bArr;
-        ConnectionsManager connectionsManager = e2Var.f;
-        org.telegram.messenger.a aVar = new org.telegram.messenger.a();
-        final h0 h0Var = this.e;
-        connectionsManager.sendRequestTyped(tonconnectclaimrequest, aVar, new Utilities.Callback2() { // from class: org.telegram.ui.Wallet.u1
-            @Override // org.telegram.messenger.Utilities.Callback2
-            public final void run(Object obj2, Object obj3) {
-                e2 e2Var2 = e2.this;
-                byte[] bArr2 = bArr;
-                a2 a2Var2 = a2Var;
-                mt mtVar2 = mtVar;
-                boolean z11 = z10;
-                h0 h0Var2 = h0Var;
-                TLRPC.Bool bool = (TLRPC.Bool) obj2;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj3;
-                if (bArr2 != null) {
-                    Arrays.fill(bArr2, (byte) 0);
-                }
-                if (tL_error != null || !(bool instanceof TLRPC.TL_boolTrue)) {
-                    if (tL_error != null && ("TONCONNECT_REQUEST_ALREADY_CLAIMED".equals(tL_error.text) || "TONCONNECT_REQUEST_EXPIRED".equals(tL_error.text) || "TONCONNECT_REQUEST_NOT_FOUND".equals(tL_error.text))) {
-                        a2Var2.n = true;
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        final long j10;
+        final int i10;
+        final TL_wallet.tonConnectRequest tonconnectrequest;
+        TL_wallet.tonConnectSession tonconnectsession;
+        switch (this.a) {
+            case 0:
+                final eh ehVar = (eh) this.e;
+                final TL_wallet.tonConnectPending tonconnectpending = (TL_wallet.tonConnectPending) obj;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                final f2 f2Var = this.b;
+                m0 m0Var = f2Var.b;
+                if (tL_error == null && tonconnectpending != null) {
+                    ArrayList<TL_wallet.tonConnectRequest> arrayList = tonconnectpending.requests;
+                    int size = arrayList.size();
+                    int i11 = 0;
+                    while (true) {
+                        j10 = this.c;
+                        i10 = this.d;
+                        if (i11 < size) {
+                            TL_wallet.tonConnectRequest tonconnectrequest2 = arrayList.get(i11);
+                            i11++;
+                            TL_wallet.tonConnectRequest tonconnectrequest3 = tonconnectrequest2;
+                            if (tonconnectrequest3.session_id == j10 && tonconnectrequest3.msg_id == i10) {
+                                tonconnectrequest = tonconnectrequest3;
+                            }
+                        } else {
+                            tonconnectrequest = null;
+                        }
                     }
-                    mtVar2.run(e2.x(tL_error, "claimRequest"));
-                    return;
-                }
-                a2Var2.o = true;
-                if (z11 || a2Var2.l >= 0) {
-                    e2Var2.w(a2Var2, h0Var2, null, z11 ? 300 : a2Var2.l, z11 ? "User declined the request" : a2Var2.j, mtVar2);
-                    return;
-                }
-                if ("disconnect".equals(a2Var2.e)) {
-                    e2Var2.w(a2Var2, h0Var2, new JSONObject(), -1, null, mtVar2);
-                    return;
-                }
-                if ("signData".equals(a2Var2.e)) {
-                    if (!e2Var2.y(a2Var2) || e2Var2.i(a2Var2)) {
-                        e2Var2.w(a2Var2, h0Var2, null, 0, "Request expired or wallet changed", mtVar2);
-                        return;
+                    if (tonconnectrequest != null && (tonconnectsession = tonconnectpending.session) != null && tonconnectsession.id == j10 && tonconnectrequest.expires > f2Var.f.getCurrentTime()) {
+                        final String s10 = m0Var.s();
+                        final byte[] bArr = m0Var.x() != null ? (byte[]) m0Var.x().clone() : null;
+                        m0Var.y(new Utilities.Callback2() { // from class: org.telegram.ui.Wallet.u1
+                            @Override // org.telegram.messenger.Utilities.Callback2
+                            public final void run(Object obj3, Object obj4) {
+                                f2 f2Var2 = f2.this;
+                                eh ehVar2 = ehVar;
+                                TL_wallet.tonConnectPending tonconnectpending2 = tonconnectpending;
+                                TL_wallet.tonConnectRequest tonconnectrequest4 = tonconnectrequest;
+                                String str = s10;
+                                byte[] bArr2 = bArr;
+                                long j11 = j10;
+                                int i12 = i10;
+                                j0 j0Var = (j0) obj3;
+                                String str2 = (String) obj4;
+                                f2Var2.getClass();
+                                if (j0Var != null && str2 == null) {
+                                    j0 b10 = j0Var.b();
+                                    Utilities.globalQueue.postRunnable(new gi.d1(f2Var2, tonconnectpending2, tonconnectrequest4, b10, str, bArr2, new s1(2, b10, ehVar2), j11, i12));
+                                } else {
+                                    f2Var2.h = false;
+                                    if (str2 == null) {
+                                        str2 = "Recovery phrase is unavailable";
+                                    }
+                                    ehVar2.run(null, str2);
+                                }
+                            }
+                        }, true, false);
+                        break;
                     } else {
-                        Utilities.globalQueue.postRunnable(new m6(e2Var2, h0Var2, a2Var2, mtVar2, 8));
-                        return;
+                        f2Var.h = false;
+                        ehVar.run(null, "This request has expired or has already been answered");
+                        break;
                     }
+                } else {
+                    f2Var.h = false;
+                    ehVar.run(null, f2.x(tL_error, "getPending"));
+                    break;
                 }
-                if (!"signMessage".equals(a2Var2.e)) {
-                    e2Var2.z(a2Var2, h0Var2, mtVar2);
-                    return;
+                break;
+            default:
+                Utilities.Callback callback = (Utilities.Callback) this.e;
+                TLRPC.Bool bool = (TLRPC.Bool) obj;
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
+                f2 f2Var2 = this.b;
+                f2Var2.getClass();
+                if (tL_error2 != null || !(bool instanceof TLRPC.TL_boolTrue)) {
+                    callback.run(f2.x(tL_error2, "closeSession"));
+                    break;
+                } else {
+                    f2Var2.d(this.c, this.d, callback);
+                    break;
                 }
-                WalletEngine2 walletEngine2 = e2Var2.b.b;
-                if (walletEngine2 == null || !e2Var2.y(a2Var2) || e2Var2.i(a2Var2)) {
-                    e2Var2.w(a2Var2, h0Var2, null, 0, "Wallet unavailable or request expired", mtVar2);
-                    return;
-                }
-                walletEngine2.signMessage(h0Var2, a2Var2.f, "ton-connect:" + a2Var2.a.id + ":" + a2Var2.b, new o(e2Var2, a2Var2, h0Var2, mtVar2, 8));
-            }
-        });
+                break;
+        }
     }
 }

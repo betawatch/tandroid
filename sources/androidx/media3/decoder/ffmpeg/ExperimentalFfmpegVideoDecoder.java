@@ -2,18 +2,17 @@ package androidx.media3.decoder.ffmpeg;
 
 import android.view.Surface;
 import androidx.media3.decoder.VideoDecoderOutputBuffer;
-import b2.x;
+import b2.w;
 import e2.m0;
 import h2.f;
 import h2.h;
 import h2.j;
 import h2.l;
-import i2.d;
 import java.nio.ByteBuffer;
 import java.util.ArrayDeque;
 import java.util.List;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 final class ExperimentalFfmpegVideoDecoder extends l {
     public final String o;
@@ -21,7 +20,7 @@ final class ExperimentalFfmpegVideoDecoder extends l {
     public volatile int q;
     public final ArrayDeque r;
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static final class PendingInput {
         public final ByteBuffer a;
         public final long b;
@@ -32,15 +31,15 @@ final class ExperimentalFfmpegVideoDecoder extends l {
         }
     }
 
-    public ExperimentalFfmpegVideoDecoder(int i10, int i11, int i12, int i13, x xVar) {
+    public ExperimentalFfmpegVideoDecoder(int i10, int i11, int i12, int i13, w wVar) {
         super(new h[i10], new VideoDecoderOutputBuffer[i11]);
         byte[] bArr;
         this.r = new ArrayDeque();
         String str = FfmpegLibrary.a;
-        String a2 = FfmpegLibrary.a(xVar.s);
+        String a2 = FfmpegLibrary.a(wVar.s);
         a2.getClass();
         this.o = a2;
-        List list = xVar.v;
+        List list = wVar.v;
         int i14 = 0;
         for (int i15 = 0; i15 < list.size(); i15++) {
             i14 += ((byte[]) list.get(i15)).length;
@@ -54,7 +53,7 @@ final class ExperimentalFfmpegVideoDecoder extends l {
         } else {
             bArr = null;
         }
-        long ffmpegInitialize = ffmpegInitialize(this.o, bArr, i13, xVar.E, xVar.z, xVar.A);
+        long ffmpegInitialize = ffmpegInitialize(this.o, bArr, i13, wVar.E, wVar.z, wVar.A);
         this.p = ffmpegInitialize;
         if (ffmpegInitialize == 0) {
             throw new FfmpegDecoderException("Failed to initialize decoder.");
@@ -177,7 +176,7 @@ final class ExperimentalFfmpegVideoDecoder extends l {
         }
         int ffmpegRenderFrame = ffmpegRenderFrame(this.p, surface, videoDecoderOutputBuffer, videoDecoderOutputBuffer.width, videoDecoderOutputBuffer.height);
         if (ffmpegRenderFrame == -2 || ffmpegRenderFrame == -4) {
-            throw new FfmpegDecoderException(d.j(ffmpegRenderFrame, "Buffer render error: "));
+            throw new FfmpegDecoderException(i0.a.j(ffmpegRenderFrame, "Buffer render error: "));
         }
     }
 

@@ -1,58 +1,22 @@
 package zh;
 
-import java.util.ArrayList;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.tl.TL_payments;
+import android.graphics.Bitmap;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
 public final class l {
-    public final int a;
-    public final long b;
-    public int c;
-    public boolean d;
-    public final ArrayList e = new ArrayList();
-    public long f;
-    public boolean g;
-    public boolean h;
-    public int i;
+    public final Bitmap a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final HashMap e;
 
-    public l(int i10, long j10) {
-        this.g = false;
-        this.h = false;
-        this.a = i10;
-        this.b = j10;
-        if (System.currentTimeMillis() - this.f > 900000) {
-            this.c = 0;
-            this.h = false;
-            this.d = false;
-            if (this.i != 0) {
-                ConnectionsManager.getInstance(i10).cancelRequest(this.i, true);
-                this.i = 0;
-            }
-            this.g = false;
-            a();
-        }
-    }
-
-    public final void a() {
-        if (this.g || this.h || this.d) {
-            return;
-        }
-        this.f = System.currentTimeMillis();
-        this.g = true;
-        TL_payments.getConnectedStarRefBots getconnectedstarrefbots = new TL_payments.getConnectedStarRefBots();
-        int i10 = this.a;
-        getconnectedstarrefbots.peer = MessagesController.getInstance(i10).getInputPeer(this.b);
-        getconnectedstarrefbots.limit = 20;
-        ArrayList arrayList = this.e;
-        if (!arrayList.isEmpty()) {
-            TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) i2.d.h(1, arrayList);
-            getconnectedstarrefbots.flags |= 4;
-            getconnectedstarrefbots.offset_date = connectedbotstarref.date;
-            getconnectedstarrefbots.offset_link = connectedbotstarref.url;
-        }
-        this.i = ConnectionsManager.getInstance(i10).sendRequest(getconnectedstarrefbots, new bi.z7(this, 25));
+    public l(Bitmap bitmap, int i10, int i11, HashMap hashMap) {
+        this.a = bitmap;
+        this.b = i10;
+        this.c = i10 + 4;
+        this.d = i11;
+        this.e = hashMap;
     }
 }

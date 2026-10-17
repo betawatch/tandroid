@@ -1,15 +1,15 @@
 package rg;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r implements o1.f {
     public final /* synthetic */ int a;
-    public final /* synthetic */ o0 b;
+    public final /* synthetic */ m0 b;
     public final /* synthetic */ boolean c;
 
-    public /* synthetic */ r(o0 o0Var, boolean z10, int i10) {
+    public /* synthetic */ r(m0 m0Var, boolean z10, int i10) {
         this.a = i10;
-        this.b = o0Var;
+        this.b = m0Var;
         this.c = z10;
     }
 
@@ -17,26 +17,26 @@ public final /* synthetic */ class r implements o1.f {
     public final void a(o1.h hVar, boolean z10, float f7, float f10) {
         switch (this.a) {
             case 0:
-                o0 o0Var = this.b;
-                v1 v1Var = o0Var.v1;
-                if (hVar == o0Var.F1) {
-                    o0Var.F1 = null;
+                m0 m0Var = this.b;
+                t1 t1Var = m0Var.v1;
+                if (hVar == m0Var.F1) {
+                    m0Var.F1 = null;
                     if (!this.c) {
-                        v1Var.setVisibility(8);
+                        t1Var.setVisibility(8);
                     }
-                    v1Var.setMaskProvider(null);
+                    t1Var.setMaskProvider(null);
                     break;
                 }
                 break;
             default:
-                o0 o0Var2 = this.b;
-                k0 k0Var = o0Var2.G1;
-                if (hVar == o0Var2.M1) {
-                    o0Var2.M1 = null;
+                m0 m0Var2 = this.b;
+                i0 i0Var = m0Var2.G1;
+                if (hVar == m0Var2.M1) {
+                    m0Var2.M1 = null;
                     if (!this.c) {
-                        k0Var.setVisibility(8);
-                        qg.s0.e(o0Var2.P1).g();
-                        k0Var.getAdapter().l();
+                        i0Var.setVisibility(8);
+                        qg.u0.e(m0Var2.P1).g();
+                        i0Var.getAdapter().l();
                         break;
                     }
                 }

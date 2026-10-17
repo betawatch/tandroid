@@ -15,29 +15,29 @@ import org.telegram.tgnet.TLObject;
 import v7.g8;
 import v7.h8;
 import v7.i8;
-import w7.i7;
+import w7.l7;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class z implements f {
     public static final LinkedHashSet r = new LinkedHashSet();
     public static final Object s = new Object();
     public final k0 a;
     public final rb.b b;
-    public final ee.l c;
+    public final a6.m c;
     public final String d = ".tmp";
     public final id.g e = h8.a(new k0(this, 1));
-    public final ee.n f = new ee.n(b0.a);
+    public final ee.m f = new ee.m(b0.a);
     public List h;
-    public final com.google.firebase.messaging.s n;
+    public final com.google.firebase.messaging.r n;
 
     public z(k0 k0Var, List list, rb.b bVar, c0 c0Var) {
         this.a = k0Var;
         this.b = bVar;
         kd.c cVar = null;
-        this.c = new ee.l(new n(this, cVar, 1));
+        this.c = new a6.m(new n(this, cVar, 1), 20);
         this.h = jd.g.m(list);
-        this.n = new com.google.firebase.messaging.s(c0Var, new m(this, 0), new n(this, cVar, 0));
+        this.n = new com.google.firebase.messaging.r(c0Var, new m(this, 0), new n(this, cVar, 0));
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:34:0x00a0, code lost:
@@ -242,8 +242,8 @@ public final class z implements f {
                 i10 = qVar.r;
                 if (i10 != 0) {
                     i8.b(obj);
-                    ee.n nVar3 = this.f;
-                    if (!kotlin.jvm.internal.i.a(nVar3.c(), b0.a) && !(nVar3.c() instanceof h)) {
+                    ee.m mVar = this.f;
+                    if (!kotlin.jvm.internal.i.a(mVar.c(), b0.a) && !(mVar.c() instanceof h)) {
                         throw new IllegalStateException("Check failed.");
                     }
                     a2 = ke.e.a();
@@ -273,9 +273,9 @@ public final class z implements f {
                         try {
                             nVar2.a = true;
                             ((ke.d) aVar2).e(null);
-                            ee.n nVar4 = zVar3.f;
+                            ee.m mVar2 = zVar3.f;
                             Object obj2 = pVar4.a;
-                            nVar4.d(new b(obj2, obj2 == null ? obj2.hashCode() : 0));
+                            mVar2.d(new b(obj2, obj2 == null ? obj2.hashCode() : 0));
                             return id.i.a;
                         } catch (Throwable th2) {
                             ((ke.d) aVar2).e(null);
@@ -321,9 +321,9 @@ public final class z implements f {
                         pVar4 = pVar2;
                         nVar2.a = true;
                         ((ke.d) aVar2).e(null);
-                        ee.n nVar42 = zVar3.f;
+                        ee.m mVar22 = zVar3.f;
                         Object obj22 = pVar4.a;
-                        nVar42.d(new b(obj22, obj22 == null ? obj22.hashCode() : 0));
+                        mVar22.d(new b(obj22, obj22 == null ? obj22.hashCode() : 0));
                         return id.i.a;
                     }
                     return aVar3;
@@ -334,11 +334,11 @@ public final class z implements f {
                 zVar = qVar.a;
                 i8.b(obj);
                 pVar.a = obj;
-                kotlin.jvm.internal.n nVar5 = new kotlin.jvm.internal.n();
-                s sVar2 = new s(a2, nVar5, pVar2, zVar);
+                kotlin.jvm.internal.n nVar3 = new kotlin.jvm.internal.n();
+                s sVar2 = new s(a2, nVar3, pVar2, zVar);
                 list = zVar.h;
                 if (list != null) {
-                    nVar2 = nVar5;
+                    nVar2 = nVar3;
                     qVar2 = qVar;
                     zVar3 = zVar;
                     zVar3.h = null;
@@ -359,7 +359,7 @@ public final class z implements f {
                 sVar = sVar2;
                 it = list.iterator();
                 aVar = a2;
-                nVar = nVar5;
+                nVar = nVar3;
                 while (it.hasNext()) {
                 }
                 qVar2 = qVar;
@@ -388,8 +388,8 @@ public final class z implements f {
         if (i10 != 0) {
         }
         pVar.a = obj3;
-        kotlin.jvm.internal.n nVar52 = new kotlin.jvm.internal.n();
-        s sVar22 = new s(a2, nVar52, pVar2, zVar);
+        kotlin.jvm.internal.n nVar32 = new kotlin.jvm.internal.n();
+        s sVar22 = new s(a2, nVar32, pVar2, zVar);
         list = zVar.h;
         if (list != null) {
         }
@@ -580,18 +580,18 @@ public final class z implements f {
                             try {
                                 throw th2;
                             } catch (Throwable th5) {
-                                i7.a(fileInputStream, th2);
+                                l7.a(fileInputStream, th2);
                                 throw th5;
                             }
                         }
                     }
-                    i7.a(fileInputStream, null);
+                    l7.a(fileInputStream, null);
                     return obj;
                 }
             }
             if (i10 != 0) {
             }
-            i7.a(fileInputStream, null);
+            l7.a(fileInputStream, null);
             return obj;
         } catch (FileNotFoundException e7) {
             e = e7;
@@ -880,13 +880,13 @@ public final class z implements f {
                             try {
                                 throw th;
                             } catch (Throwable th4) {
-                                i7.a(fileOutputStream, th);
+                                l7.a(fileOutputStream, th);
                                 throw th4;
                             }
                         }
                     }
                     fileOutputStream2.getFD().sync();
-                    i7.a(fileOutputStream, null);
+                    l7.a(fileOutputStream, null);
                     if (!r32.renameTo(zVar.c())) {
                         return iVar;
                     }
@@ -896,7 +896,7 @@ public final class z implements f {
             if (r32 != 0) {
             }
             fileOutputStream2.getFD().sync();
-            i7.a(fileOutputStream, null);
+            l7.a(fileOutputStream, null);
             if (!r32.renameTo(zVar.c())) {
             }
         } catch (IOException e) {

@@ -1,39 +1,18 @@
 package org.telegram.ui;
 
-import android.animation.AnimatorSet;
-import android.widget.FrameLayout;
+import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class al implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ fo b;
+public final class al implements MessagesStorage.IntCallback {
+    public final /* synthetic */ sn a;
 
-    public /* synthetic */ al(fo foVar, int i10) {
-        this.a = i10;
-        this.b = foVar;
+    public al(sn snVar) {
+        this.a = snVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        org.telegram.ui.Components.dh dhVar;
-        FrameLayout frameLayout;
-        switch (this.a) {
-            case 0:
-                fo foVar = this.b;
-                AnimatorSet animatorSet = foVar.V9;
-                if (animatorSet != null && !animatorSet.isRunning()) {
-                    foVar.V9.start();
-                    break;
-                }
-                break;
-            default:
-                fo foVar2 = this.b;
-                if (foVar2.O2 == this && (dhVar = foVar2.M0) != null && (frameLayout = foVar2.N2) != null) {
-                    dhVar.i(frameLayout, false, true);
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.messenger.MessagesStorage.IntCallback
+    public final void run(int i10) {
+        this.a.L9(i10);
     }
 }

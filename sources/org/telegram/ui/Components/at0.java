@@ -1,57 +1,60 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class at0 extends s4.m0 {
-    public final /* synthetic */ ts0 a;
-    public final /* synthetic */ xv0 b;
+public final class at0 extends b10 {
+    public final /* synthetic */ os0 U;
+    public final /* synthetic */ sv0 V;
 
-    public at0(xv0 xv0Var, ts0 ts0Var) {
-        this.b = xv0Var;
-        this.a = ts0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public at0(sv0 sv0Var, Context context, os0 os0Var) {
+        super(context, null);
+        this.V = sv0Var;
+        this.U = os0Var;
     }
 
-    @Override // s4.m0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.y0 y0Var) {
-        ts0 ts0Var = this.a;
-        if (ts0Var.h.getAdapter() == this.b.O) {
-            recyclerView.getClass();
-            int R = RecyclerView.R(view);
-            rect.left = 0;
-            rect.bottom = 0;
-            us0 us0Var = ts0Var.x;
-            us0Var.B1();
-            if (R <= us0Var.U) {
-                rect.top = 0;
-            } else {
-                rect.top = AndroidUtilities.dp(2.0f);
+    @Override // org.telegram.ui.Components.b10
+    public final int getColumnsCount() {
+        return this.V.m1[sv0.q0(this.U.F) ? 1 : 0];
+    }
+
+    @Override // org.telegram.ui.Components.b10
+    public final int getViewType() {
+        setIsSingleCell(false);
+        int i10 = this.U.F;
+        if (i10 == 0 || i10 == 5) {
+            return 2;
+        }
+        if (i10 == 1) {
+            return 3;
+        }
+        if (i10 != 2 && i10 != 4) {
+            if (i10 == 3) {
+                return 5;
             }
-            rect.right = ts0Var.x.E1(R) ? 0 : AndroidUtilities.dp(2.0f);
-            return;
+            if (i10 != 7) {
+                if (i10 == 6) {
+                    if (this.V.I0.getTabsCount() == 1) {
+                        setIsSingleCell(true);
+                        return 1;
+                    }
+                } else if (sv0.q0(i10)) {
+                    return 27;
+                }
+                return 1;
+            }
         }
-        if (!(view instanceof org.telegram.ui.Cells.t7)) {
-            rect.left = 0;
-            rect.top = 0;
-            rect.bottom = 0;
-            rect.right = 0;
-            return;
-        }
-        org.telegram.ui.Cells.t7 t7Var = (org.telegram.ui.Cells.t7) view;
-        ts0Var.h.getClass();
-        int R2 = RecyclerView.R(t7Var);
-        int i10 = ts0Var.x.J;
-        t7Var.a0 = R2 < i10;
-        int i11 = R2 % i10;
-        t7Var.V = i11 == 0;
-        t7Var.W = i11 == i10 - 1;
-        rect.left = 0;
-        rect.top = 0;
-        rect.bottom = 0;
-        rect.right = 0;
+        return 6;
+    }
+
+    @Override // org.telegram.ui.Components.b10, android.view.View
+    public final void onDraw(Canvas canvas) {
+        sv0 sv0Var = this.V;
+        sv0Var.T0.setColor(sv0Var.i0(org.telegram.ui.ActionBar.h6.d6));
+        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), sv0Var.T0);
+        super.onDraw(canvas);
     }
 }

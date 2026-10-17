@@ -11,32 +11,32 @@ import com.google.android.gms.internal.cast.z5;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.oj;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.dj;
 import w7.b6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class c extends LinearLayout {
     public static final /* synthetic */ int e = 0;
-    public final c6 a;
+    public final d6 a;
     public final z5 b;
     public final z5 c;
     public float d;
 
-    public c(Context context, c6 c6Var, oj ojVar, bh.b bVar) {
+    public c(Context context, d6 d6Var, dj djVar, bh.b bVar) {
         super(context);
         z5 z5Var = new z5(this);
         this.b = z5Var;
         z5 z5Var2 = new z5(this);
         this.c = z5Var2;
-        this.a = c6Var;
-        jh.a c10 = jh.a.c(context, bVar, ojVar, c6Var);
+        this.a = d6Var;
+        jh.a c10 = jh.a.c(context, bVar, djVar, d6Var);
         z5Var.b = c10;
         c10.setOnClickListener(new ah.f(6));
         b6.b((jh.a) z5Var.b, 0.065f, 2.0f);
-        jh.a c11 = jh.a.c(context, bVar, ojVar, c6Var);
+        jh.a c11 = jh.a.c(context, bVar, djVar, d6Var);
         z5Var2.b = c11;
         c11.setOnClickListener(new ah.f(6));
         b6.b((jh.a) z5Var2.b, 0.065f, 2.0f);
@@ -55,12 +55,12 @@ public final class c extends LinearLayout {
         textView.setTextSize(1, 15.0f);
         textView.setPadding(AndroidUtilities.dp(21.0f), 0, AndroidUtilities.dp(21.0f), 0);
         textView.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
-        int i11 = g6.Xk;
-        c6 c6Var = this.a;
-        textView.setTextColor(g6.w0(i11, c6Var));
+        int i11 = h6.Xk;
+        d6 d6Var = this.a;
+        textView.setTextColor(h6.w0(i11, d6Var));
         textView.setTypeface(AndroidUtilities.bold());
         Drawable mutate = getContext().getResources().getDrawable(i10).mutate();
-        mutate.setColorFilter(new PorterDuffColorFilter(g6.w0(g6.Wk, c6Var), PorterDuff.Mode.MULTIPLY));
+        mutate.setColorFilter(new PorterDuffColorFilter(h6.w0(h6.Wk, d6Var), PorterDuff.Mode.MULTIPLY));
         Drawable drawable = z10 ? mutate : null;
         if (z10) {
             mutate = null;

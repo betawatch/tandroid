@@ -1,12 +1,12 @@
 package j4;
 
-import b2.w0;
-import c3.i0;
+import b2.v0;
+import c3.j0;
 import java.util.Collections;
 import java.util.List;
 import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class h implements i {
     public final /* synthetic */ int a;
@@ -20,7 +20,7 @@ public final class h implements i {
     public h(List list) {
         this.a = 0;
         this.f = list;
-        this.g = new i0[list.size()];
+        this.g = new j0[list.size()];
         this.c = -9223372036854775807L;
     }
 
@@ -59,9 +59,9 @@ public final class h implements i {
                     }
                     int i10 = xVar.b;
                     int a2 = xVar.a();
-                    for (i0 i0Var : (i0[]) this.g) {
+                    for (j0 j0Var : (j0[]) this.g) {
                         xVar.N(i10);
-                        i0Var.d(a2, xVar);
+                        j0Var.d(a2, xVar);
                     }
                     this.e += a2;
                     break;
@@ -69,7 +69,7 @@ public final class h implements i {
                 break;
             default:
                 e2.x xVar2 = (e2.x) this.f;
-                ((i0) this.g).getClass();
+                ((j0) this.g).getClass();
                 if (this.b) {
                     int a10 = xVar.a();
                     int i11 = this.e;
@@ -89,7 +89,7 @@ public final class h implements i {
                         }
                     }
                     int min2 = Math.min(a10, this.d - this.e);
-                    ((i0) this.g).d(min2, xVar);
+                    ((j0) this.g).d(min2, xVar);
                     this.e += min2;
                     break;
                 }
@@ -115,34 +115,34 @@ public final class h implements i {
     public final void d(c3.q qVar, f0 f0Var) {
         switch (this.a) {
             case 0:
-                i0[] i0VarArr = (i0[]) this.g;
-                for (int i10 = 0; i10 < i0VarArr.length; i10++) {
+                j0[] j0VarArr = (j0[]) this.g;
+                for (int i10 = 0; i10 < j0VarArr.length; i10++) {
                     e0 e0Var = (e0) ((List) this.f).get(i10);
                     f0Var.b();
                     f0Var.c();
-                    i0 W = qVar.W(f0Var.c, 3);
-                    b2.w wVar = new b2.w();
+                    j0 j02 = qVar.j0(f0Var.c, 3);
+                    b2.v vVar = new b2.v();
                     f0Var.c();
-                    wVar.a = (String) f0Var.e;
-                    wVar.q = w0.n("video/mp2t");
-                    wVar.r = w0.n("application/dvbsubs");
-                    wVar.u = Collections.singletonList(e0Var.b);
-                    wVar.d = e0Var.a;
-                    i2.d.u(wVar, W);
-                    i0VarArr[i10] = W;
+                    vVar.a = (String) f0Var.e;
+                    vVar.q = v0.n("video/mp2t");
+                    vVar.r = v0.n("application/dvbsubs");
+                    vVar.u = Collections.singletonList(e0Var.b);
+                    vVar.d = e0Var.a;
+                    i0.a.u(vVar, j02);
+                    j0VarArr[i10] = j02;
                 }
                 break;
             default:
                 f0Var.b();
                 f0Var.c();
-                i0 W2 = qVar.W(f0Var.c, 5);
-                this.g = W2;
-                b2.w wVar2 = new b2.w();
+                j0 j03 = qVar.j0(f0Var.c, 5);
+                this.g = j03;
+                b2.v vVar2 = new b2.v();
                 f0Var.c();
-                wVar2.a = (String) f0Var.e;
-                wVar2.q = w0.n("video/mp2t");
-                wVar2.r = w0.n("application/id3");
-                i2.d.u(wVar2, W2);
+                vVar2.a = (String) f0Var.e;
+                vVar2.q = v0.n("video/mp2t");
+                vVar2.r = v0.n("application/id3");
+                i0.a.u(vVar2, j03);
                 break;
         }
     }
@@ -154,18 +154,18 @@ public final class h implements i {
             case 0:
                 if (this.b) {
                     u6.p(this.c != -9223372036854775807L);
-                    for (i0 i0Var : (i0[]) this.g) {
-                        i0Var.c(this.c, 1, this.e, 0, null);
+                    for (j0 j0Var : (j0[]) this.g) {
+                        j0Var.c(this.c, 1, this.e, 0, null);
                     }
                     this.b = false;
                     break;
                 }
                 break;
             default:
-                ((i0) this.g).getClass();
+                ((j0) this.g).getClass();
                 if (this.b && (i10 = this.d) != 0 && this.e == i10) {
                     u6.p(this.c != -9223372036854775807L);
-                    ((i0) this.g).c(this.c, 1, this.d, 0, null);
+                    ((j0) this.g).c(this.c, 1, this.d, 0, null);
                     this.b = false;
                     break;
                 }

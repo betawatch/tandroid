@@ -4,9 +4,9 @@ import android.view.ViewGroup;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.es;
+import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class l implements Runnable {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final /* synthetic */ class l implements Runnable {
                     a0Var.c.setVisibility(0);
                     a0Var.c.setTranslationY(r0.getMeasuredHeight());
                     a0Var.c.animate().setListener(null).cancel();
-                    a0Var.c.animate().translationY(0.0f).withLayer().setDuration(350L).setInterpolator(es.f).setUpdateListener(new n(a0Var, 0)).setListener(new z(0)).start();
+                    a0Var.c.animate().translationY(0.0f).withLayer().setDuration(350L).setInterpolator(bs.f).setUpdateListener(new n(a0Var, 0)).setListener(new z(0)).start();
                     break;
                 }
                 break;

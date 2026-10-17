@@ -1,43 +1,32 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import java.util.concurrent.CountDownLatch;
+import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class v30 implements Runnable {
-    public final /* synthetic */ n60 a;
+public final class v30 implements org.telegram.ui.ActionBar.z2 {
+    public final /* synthetic */ s50 a;
 
-    public v30(n60 n60Var) {
-        this.a = n60Var;
+    public v30(s50 s50Var) {
+        this.a = s50Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        n60 n60Var = this.a;
-        org.telegram.ui.ActionBar.h5 h5Var = n60Var.U;
-        s50 s50Var = n60Var.V;
-        if (s50Var == null || n60Var.isDismissed()) {
-            return;
+    @Override // org.telegram.ui.ActionBar.z2
+    public final boolean h() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.z2
+    public final void onOpenAnimationEnd() {
+        CountDownLatch groupCallBottomSheetLatch;
+        VoIPService sharedInstance = VoIPService.getSharedInstance();
+        if (sharedInstance != null && (groupCallBottomSheetLatch = sharedInstance.getGroupCallBottomSheetLatch()) != null) {
+            groupCallBottomSheetLatch.countDown();
         }
-        ChatObject.Call call = n60Var.a1;
-        int i10 = call != null ? call.call.schedule_date : n60Var.k2;
-        if (i10 == 0) {
-            return;
+        s50 s50Var = this.a;
+        if (s50Var.F1 == 6) {
+            s50.C0(s50Var);
         }
-        int currentTime = i10 - n60Var.d.getConnectionsManager().getCurrentTime();
-        if (currentTime >= 86400) {
-            s50Var.l(LocaleController.formatPluralString("Days", Math.round(currentTime / 86400.0f), new Object[0]), false);
-        } else {
-            s50Var.l(AndroidUtilities.formatFullDuration(Math.abs(currentTime)), false);
-            if (currentTime < 0 && h5Var.getTag() == null) {
-                h5Var.setTag(1);
-                h5Var.l(LocaleController.getString(R.string.VoipChatLateBy), false);
-            }
-        }
-        n60Var.W.l(LocaleController.formatStartsTime(i10, 3), false);
-        AndroidUtilities.runOnUIThread(n60Var.w2, 1000L);
     }
 }

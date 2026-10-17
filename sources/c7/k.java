@@ -3,9 +3,9 @@ package c7;
 import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.Arrays;
-import m.h3;
+import m.g3;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class k extends l {
     public static final Parcelable.Creator<k> CREATOR = new r0(17);
@@ -36,18 +36,18 @@ public final class k extends l {
     }
 
     public final String toString() {
-        h3 h3Var = new h3(getClass().getSimpleName());
+        g3 g3Var = new g3(getClass().getSimpleName());
         String valueOf = String.valueOf(this.a.a);
         n7.d dVar = new n7.d(7, false);
-        ((h3) h3Var.d).d = dVar;
-        h3Var.d = dVar;
+        ((g3) g3Var.d).d = dVar;
+        g3Var.d = dVar;
         dVar.c = valueOf;
         dVar.b = "errorCode";
         String str = this.b;
         if (str != null) {
-            h3Var.Y(str, "errorMessage");
+            g3Var.Y(str, "errorMessage");
         }
-        return h3Var.toString();
+        return g3Var.toString();
     }
 
     @Override // android.os.Parcelable

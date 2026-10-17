@@ -1,18 +1,18 @@
 package s3;
 
 import a4.g;
+import a4.l;
+import b2.s0;
 import b2.t0;
-import b2.u0;
 import e2.k0;
 import e2.x;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import ji.h5;
 import w7.m;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class c extends m {
     public final x a = new x();
@@ -20,9 +20,9 @@ public final class c extends m {
     public k0 c;
 
     @Override // w7.m
-    public final u0 b(l3.a aVar, ByteBuffer byteBuffer) {
+    public final t0 b(l3.a aVar, ByteBuffer byteBuffer) {
         int i10;
-        t0 eVar;
+        s0 eVar;
         long j10;
         boolean z10;
         long j11;
@@ -80,7 +80,7 @@ public final class c extends m {
                         xVar.A();
                         xVar.A();
                     }
-                    arrayList.add(new h5(arrayList2));
+                    arrayList.add(new l(arrayList2));
                 }
                 eVar = new f(arrayList);
             } else if (g12 == 5) {
@@ -142,10 +142,10 @@ public final class c extends m {
             eVar = new a(C, g10, 0);
         }
         if (eVar == null) {
-            return new u0(new t0[i10]);
+            return new t0(new s0[i10]);
         }
-        t0[] t0VarArr = new t0[1];
-        t0VarArr[i10] = eVar;
-        return new u0(t0VarArr);
+        s0[] s0VarArr = new s0[1];
+        s0VarArr[i10] = eVar;
+        return new t0(s0VarArr);
     }
 }

@@ -1,33 +1,26 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_wallet;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class j6 implements Runnable {
+public final /* synthetic */ class j6 implements o1.g {
     public final /* synthetic */ int a;
-    public final /* synthetic */ WalletEngine2 b;
-    public final /* synthetic */ Utilities.Callback2 c;
-    public final /* synthetic */ TL_wallet.walletTransaction d;
-    public final /* synthetic */ String e;
+    public final /* synthetic */ p6 b;
 
-    public /* synthetic */ j6(WalletEngine2 walletEngine2, Utilities.Callback2 callback2, TL_wallet.walletTransaction wallettransaction, String str, int i10) {
+    public /* synthetic */ j6(p6 p6Var, int i10) {
         this.a = i10;
-        this.b = walletEngine2;
-        this.c = callback2;
-        this.d = wallettransaction;
-        this.e = str;
+        this.b = p6Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // o1.g
+    public final void a(o1.h hVar, float f7, float f10) {
         switch (this.a) {
             case 0:
-                this.b.lambda$previewTonConnect$1(this.c, this.d, this.e);
+                p6 p6Var = this.b;
+                p6Var.c.setScaleX(f7);
+                p6Var.c.setScaleY(f7);
                 break;
             default:
-                this.b.lambda$emulateRotateKey$29(this.c, this.d, this.e);
+                this.b.P = f10;
                 break;
         }
     }

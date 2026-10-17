@@ -1,165 +1,75 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import android.content.Context;
+import android.util.SparseIntArray;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class w41 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class w41 extends b51 {
+    public final /* synthetic */ int d3;
+    public final /* synthetic */ z51 e3;
 
-    public /* synthetic */ w41(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public w41(z51 z51Var, Context context, int i10) {
+        super(z51Var, context);
+        this.e3 = z51Var;
+        this.d3 = i10;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        int i11;
-        switch (this.a) {
-            case 0:
-                if (i10 == -1) {
-                    ((SaveToGallerySettingsActivity) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 1:
-                if (i10 == -1) {
-                    ((SecretMediaViewer) this.b).e(true, false);
-                    break;
-                }
-                break;
-            case 2:
-                if (i10 == -1) {
-                    ((SessionsActivity) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 3:
-                o91 o91Var = (o91) this.b;
-                if (i10 != -1) {
-                    if (i10 == 2) {
-                        o91Var.l0(new dh0(null));
-                        break;
-                    }
-                } else {
-                    o91Var.finishFragment();
-                    break;
-                }
-                break;
-            case 4:
-                if (i10 == -1) {
-                    ((hb1) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 5:
-                StickersActivity stickersActivity = (StickersActivity) this.b;
-                if (i10 != -1) {
-                    StickersActivity.d0(stickersActivity, i10);
-                    break;
-                } else if (stickersActivity.onBackPressed(true)) {
-                    stickersActivity.finishFragment();
-                    break;
-                }
-                break;
-            case 6:
-                he1 he1Var = (he1) this.b;
-                if (i10 != -1) {
-                    if (i10 == 1) {
-                        he1.Y(he1Var);
-                        break;
-                    }
-                } else {
-                    he1Var.finishFragment();
-                    break;
-                }
-                break;
-            case 7:
-                if (i10 == -1) {
-                    ((ze1) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 8:
-                if (i10 == -1) {
-                    ((qg1) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 9:
-                if (i10 == -1) {
-                    TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.b;
-                    if (twoStepVerificationActivity.X < 0) {
-                        twoStepVerificationActivity.finishFragment();
-                        break;
-                    } else {
-                        twoStepVerificationActivity.x0();
-                        break;
-                    }
-                }
-                break;
-            case 10:
-                UserInfoActivity userInfoActivity = (UserInfoActivity) this.b;
-                if (i10 != -1) {
-                    if (i10 == 1) {
-                        userInfoActivity.c0(true);
-                        break;
-                    }
-                } else if (userInfoActivity.onBackPressed(true)) {
-                    userInfoActivity.finishFragment();
-                    break;
-                }
-                break;
-            case 11:
-                UsersSelectActivity usersSelectActivity = (UsersSelectActivity) this.b;
-                if (i10 != -1) {
-                    if (i10 == 1) {
-                        usersSelectActivity.X();
-                        break;
-                    }
-                } else {
-                    usersSelectActivity.finishFragment();
-                    break;
-                }
-                break;
-            case 12:
-                org.telegram.ui.Wallet.j8 j8Var = (org.telegram.ui.Wallet.j8) this.b;
-                if (i10 != -1) {
-                    if (i10 != 2) {
-                        if (i10 == 3) {
-                            j8Var.o0();
+    @Override // androidx.recyclerview.widget.RecyclerView
+    public final void j0(int i10) {
+        z51 z51Var = this.e3;
+        q41 q41Var = z51Var.f0;
+        if (i10 == 0) {
+            z51Var.w1 = false;
+            if (z51Var.a == -1 || q41Var.getVisibility() != 0 || q41Var.getTranslationY() <= (-AndroidUtilities.dp(51.0f))) {
+                return;
+            }
+            z51.a(z51Var, q41Var.getTranslationY() > ((float) (-AndroidUtilities.dp(16.0f))) ? 0 : 1, 0);
+        }
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView
+    public final void k0(int i10, int i11) {
+        int i12;
+        z51 z51Var = this.e3;
+        z51Var.h();
+        if (!z51Var.w1) {
+            int I0 = z51Var.r0.I0();
+            ArrayList arrayList = z51Var.D0;
+            SparseIntArray sparseIntArray = z51Var.w0;
+            if (I0 != -1) {
+                if (I0 > ((arrayList.size() <= 40 || z51Var.C0) ? arrayList.size() + (z51Var.N0 ? 1 : 0) : 40) && I0 > z51Var.I0.size()) {
+                    int i13 = 0;
+                    while (true) {
+                        if (i13 >= sparseIntArray.size()) {
                             break;
                         }
-                    } else {
-                        Activity parentActivity = j8Var.getParentActivity();
-                        i11 = ((org.telegram.ui.ActionBar.m2) j8Var).currentAccount;
-                        org.telegram.ui.Wallet.a5.u0(parentActivity, i11, j8Var.getResourceProvider());
-                        break;
+                        int keyAt = sparseIntArray.keyAt(i13);
+                        int valueAt = sparseIntArray.valueAt(i13);
+                        org.telegram.ui.Components.fy fyVar = valueAt >= 0 ? (org.telegram.ui.Components.fy) z51Var.M0.get(valueAt) : null;
+                        if (fyVar != null) {
+                            boolean z10 = fyVar.h;
+                            int size = fyVar.c.size();
+                            if (!z10) {
+                                size = Math.min(24, size);
+                            }
+                            if (I0 > keyAt && I0 <= keyAt + 1 + size) {
+                                org.telegram.ui.Components.kw kwVar = z51Var.d0;
+                                kwVar.j(((kwVar.E == null || !kwVar.b0) ? 0 : 1) + (kwVar.y != null ? 1 : 0) + valueAt, true);
+                            }
+                        }
+                        i13++;
                     }
                 } else {
-                    j8Var.finishFragment();
-                    break;
+                    z51Var.d0.j(0, true);
                 }
-                break;
-            case 13:
-                if (i10 == -1) {
-                    ((sg.y0) this.b).dismiss();
-                    break;
-                }
-                break;
-            case 14:
-                if (i10 == -1) {
-                    ((yh.g4) this.b).finishFragment();
-                    break;
-                }
-                break;
-            default:
-                if (i10 == -1) {
-                    ((zh.g) this.b).finishFragment();
-                    break;
-                }
-                break;
+            }
         }
+        z51Var.C();
+        AndroidUtilities.updateViewVisibilityAnimated(z51Var.e0, z51Var.h0.computeVerticalScrollOffset() != 0 || (i12 = this.d3) == 0 || i12 == 12 || i12 == 10 || i12 == 1 || i12 == 11 || i12 == 6, 1.0f, true);
+        z51Var.m();
     }
 }

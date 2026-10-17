@@ -1,8 +1,27 @@
 package org.telegram.ui.Cells;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+import java.util.ArrayList;
+import java.util.HashMap;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class h4 {
-    public int[] a;
-    public float[] b;
+    public ArrayList a;
+    public ArrayList b;
+    public HashMap c;
+    public int d;
+    public int e;
+    public int f;
+    public float g;
+    public int h;
+    public float i;
+
+    public final float a(float[] fArr, int i10, int i11) {
+        float f7 = 0.0f;
+        while (i10 < i11) {
+            f7 += fArr[i10];
+            i10++;
+        }
+        return this.h / f7;
+    }
 }

@@ -1,16 +1,17 @@
 package o3;
 
 import a1.g;
-import b2.r0;
-import b2.t0;
-import b2.w0;
+import b2.q0;
+import b2.s0;
+import b2.v0;
+import b2.w;
 import e2.x;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class a implements t0 {
+public final class a implements s0 {
     public final int a;
     public final String b;
     public final String c;
@@ -33,7 +34,7 @@ public final class a implements t0 {
 
     public static a d(x xVar) {
         int m10 = xVar.m();
-        String n10 = w0.n(xVar.y(xVar.m(), StandardCharsets.US_ASCII));
+        String n10 = v0.n(xVar.y(xVar.m(), StandardCharsets.US_ASCII));
         String y3 = xVar.y(xVar.m(), StandardCharsets.UTF_8);
         int m11 = xVar.m();
         int m12 = xVar.m();
@@ -45,17 +46,17 @@ public final class a implements t0 {
         return new a(m10, n10, y3, m11, m12, m13, m14, bArr);
     }
 
-    @Override // b2.t0
-    public final /* synthetic */ b2.x a() {
+    @Override // b2.s0
+    public final /* synthetic */ w a() {
         return null;
     }
 
-    @Override // b2.t0
-    public final void b(r0 r0Var) {
-        r0Var.a(this.a, this.h);
+    @Override // b2.s0
+    public final void b(q0 q0Var) {
+        q0Var.a(this.a, this.h);
     }
 
-    @Override // b2.t0
+    @Override // b2.s0
     public final /* synthetic */ byte[] c() {
         return null;
     }

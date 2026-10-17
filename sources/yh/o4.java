@@ -1,33 +1,38 @@
 package yh;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import org.telegram.tgnet.TLRPC;
+import ai.cd;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o4 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ TLRPC.User b;
+    public final /* synthetic */ y4 b;
 
-    public /* synthetic */ o4(int i10, TLRPC.User user) {
+    public /* synthetic */ o4(y4 y4Var, int i10) {
         this.a = i10;
-        this.b = user;
+        this.b = y4Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i10 = this.a;
-        TLRPC.User user = this.b;
-        switch (i10) {
+        switch (this.a) {
             case 0:
-                ug.j0.d0(new ArrayList(Arrays.asList(user)));
+                this.b.Z(false);
                 break;
             case 1:
-                ug.j0.d0(new ArrayList(Arrays.asList(user)));
+                this.b.Z(true);
+                break;
+            case 2:
+                y4.V(this.b);
+                break;
+            case 3:
+                w.V(r0.getContext(), r0.c0, this.b.resourcesProvider);
+                break;
+            case 4:
+                new cd(r0.getContext(), this.b.resourcesProvider).show();
                 break;
             default:
-                ug.j0.d0(new ArrayList(Arrays.asList(user)));
+                this.b.dismiss();
                 break;
         }
     }

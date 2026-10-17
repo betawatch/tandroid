@@ -1,50 +1,83 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class i61 extends g71 {
-    public final /* synthetic */ r71 E;
+public final class i61 implements NotificationCenter.NotificationCenterDelegate {
+    public final int a;
+    public final TLRPC.Chat b;
+    public TLRPC.ChannelParticipantsFilter c;
+    public boolean f;
+    public boolean h;
+    public boolean r;
+    public boolean s;
+    public final ArrayList d = new ArrayList();
+    public final ArrayList e = new ArrayList();
+    public int n = -1;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i61(r71 r71Var, Context context, boolean z10) {
-        super(r71Var, context, z10);
-        this.E = r71Var;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        r71 r71Var = this.E;
-        d61 d61Var = r71Var.g0;
-        i61 i61Var = r71Var.f0;
-        r61 r61Var = r71Var.U;
-        if (r61Var != null) {
-            int measuredWidth = getMeasuredWidth();
-            int measuredHeight = getMeasuredHeight();
-            float x10 = d61Var.getX() + i61Var.getX();
-            float y3 = d61Var.getY() + i61Var.getY();
-            ah.h0 h0Var = (ah.h0) r61Var;
-            ah.t0 t0Var = (ah.t0) h0Var.b;
-            ah.s0 s0Var = t0Var.a;
-            org.telegram.ui.Components.gl0 gl0Var = (org.telegram.ui.Components.gl0) h0Var.c;
-            RectF rectF = AndroidUtilities.rectTmp;
-            float f7 = 0;
-            rectF.set(f7, f7, measuredWidth, measuredHeight);
-            gl0Var.getDelegate().r(canvas, rectF, 0.0f, s0Var.getX() + x10, (t0Var.y == 1 ? s0Var.getY() - AndroidUtilities.statusBarHeight : s0Var.getY() + t0Var.c.getY()) + y3, 255, true);
+    public i61(int i10, long j10, TLRPC.ChannelParticipantsFilter channelParticipantsFilter) {
+        this.a = i10;
+        this.b = MessagesController.getInstance(i10).getChat(Long.valueOf(j10));
+        TLRPC.ChatFull chatFull = MessagesController.getInstance(i10).getChatFull(j10);
+        this.c = channelParticipantsFilter;
+        if (chatFull == null) {
+            if (!this.s) {
+                this.s = true;
+                NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.chatInfoDidLoad);
+            }
+            MessagesController.getInstance(i10).loadFullChat(j10, 0, false);
         }
-        super.dispatchDraw(canvas);
     }
 
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        if (f7 != getTranslationY()) {
-            super.setTranslationY(f7);
-            if (this.E.U != null) {
-                invalidate();
+    public final void a() {
+        if (this.s) {
+            return;
+        }
+        this.s = false;
+        int i10 = this.a;
+        NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.chatInfoDidLoad);
+        if (this.n >= 0) {
+            ConnectionsManager.getInstance(i10).cancelRequest(this.n, true);
+            this.n = -1;
+        }
+        this.f = false;
+    }
+
+    public final void b() {
+        if (this.f || this.h) {
+            return;
+        }
+        TLRPC.ChannelParticipantsFilter channelParticipantsFilter = this.c;
+        if ((channelParticipantsFilter instanceof TLRPC.TL_channelParticipantsSearch) && TextUtils.isEmpty(channelParticipantsFilter.q)) {
+            return;
+        }
+        this.f = true;
+        TLRPC.Chat chat = this.b;
+        if (ChatObject.isChannel(chat)) {
+            TLRPC.TL_channels_getParticipants tL_channels_getParticipants = new TLRPC.TL_channels_getParticipants();
+            tL_channels_getParticipants.channel = MessagesController.getInputChannel(chat);
+            tL_channels_getParticipants.filter = this.c;
+            tL_channels_getParticipants.limit = 30;
+            tL_channels_getParticipants.offset = this.r ? 0 : this.d.size();
+            ConnectionsManager.getInstance(this.a).sendRequestTyped(tL_channels_getParticipants, new org.telegram.messenger.a(), new g5(this, 24));
+        }
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 == NotificationCenter.chatInfoDidLoad) {
+            long j10 = ((TLRPC.ChatFull) objArr[0]).id;
+            TLRPC.Chat chat = this.b;
+            if (j10 == chat.id && !ChatObject.isChannel(chat) && this.f) {
+                this.f = false;
+                b();
             }
         }
     }

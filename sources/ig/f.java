@@ -1,13 +1,12 @@
 package ig;
 
-import bi.z7;
 import java.util.ArrayList;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class f {
     public static volatile f[] g = new f[4];
@@ -66,7 +65,7 @@ public final class f {
         }
         if (System.currentTimeMillis() - this.b > 60000 || !(z10 = this.f)) {
             this.e = true;
-            ConnectionsManager.getInstance(this.a).sendRequest(new TL_account.getConnectedBots(), new z7(this, 11));
+            ConnectionsManager.getInstance(this.a).sendRequest(new TL_account.getConnectedBots(), new ai.h(this, 17));
         } else if (z10) {
             d();
         }

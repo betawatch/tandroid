@@ -1,64 +1,51 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class dc0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ic0 b;
-    public final /* synthetic */ String c;
+import android.content.Context;
+import java.util.ArrayList;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.UserObject;
 
-    public /* synthetic */ dc0(ic0 ic0Var, String str, int i10) {
-        this.a = i10;
-        this.b = ic0Var;
-        this.c = str;
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes3.dex */
+public final class dc0 extends hg.s0 {
+    public boolean m0;
+    public final /* synthetic */ pc0 n0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dc0(pc0 pc0Var, Context context, int i10, long j10, org.telegram.ui.ActionBar.d6 d6Var, boolean z10, boolean z11) {
+        super(context, i10, j10, false, d6Var, false, z10, z11);
+        this.n0 = pc0Var;
+        this.m0 = true;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ic0 ic0Var = this.b;
-                if (ic0Var.a()) {
-                    ic0Var.w(this.c);
-                    break;
+    @Override // hg.s0
+    public final void K() {
+        this.n0.q0(null);
+    }
+
+    @Override // hg.s0
+    public final void N(ArrayList arrayList) {
+        int i10;
+        pc0 pc0Var = this.n0;
+        MessageObject messageObject = pc0Var.B0;
+        if (messageObject != null && messageObject.isLiveLocation()) {
+            if (arrayList != null) {
+                i10 = 0;
+                for (int i11 = 0; i11 < arrayList.size(); i11++) {
+                    jc0 jc0Var = (jc0) arrayList.get(i11);
+                    if (jc0Var != null && !UserObject.isUserSelf(jc0Var.c)) {
+                        i10++;
+                    }
                 }
-                break;
-            case 1:
-                this.b.w(this.c);
-                break;
-            case 2:
-                ic0 ic0Var2 = this.b;
-                ic0Var2.getClass();
-                String str = this.c;
-                if ("disable".equalsIgnoreCase(str)) {
-                    ic0Var2.x("turnPasswordOffRow");
-                }
-                if ("change".equalsIgnoreCase(str)) {
-                    ic0Var2.x("changePasswordRow");
-                }
-                if ("change-email".equalsIgnoreCase(str)) {
-                    ic0Var2.x("emailRow");
-                    break;
-                }
-                break;
-            default:
-                ic0 ic0Var3 = this.b;
-                ic0Var3.getClass();
-                String str2 = this.c;
-                if ("disable".equalsIgnoreCase(str2)) {
-                    ic0Var3.x("disablePasscodeRow");
-                }
-                if ("change".equalsIgnoreCase(str2)) {
-                    ic0Var3.x("changePasscodeRow");
-                }
-                if ("auto-lock".equalsIgnoreCase(str2)) {
-                    ic0Var3.x("autoLockRow");
-                }
-                if ("fingerprint".equalsIgnoreCase(str2)) {
-                    ic0Var3.x("fingerprintRow");
-                    break;
-                }
-                break;
+            } else {
+                i10 = 0;
+            }
+            if (this.m0 && i10 == 1) {
+                pc0Var.i0 = ((jc0) arrayList.get(0)).a;
+            }
+            this.m0 = false;
+            pc0Var.Z.setVisibility(i10 != 1 ? 8 : 0);
         }
+        super.N(arrayList);
     }
 }

@@ -1,151 +1,64 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.view.ViewTreeObserver;
-import android.view.WindowManager;
-import android.widget.PopupWindow;
-import java.lang.reflect.Field;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MrzRecognizer;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public abstract class i71 extends PopupWindow {
-    public static final Field c;
-    public static final org.telegram.ui.ActionBar.f1 d = new org.telegram.ui.ActionBar.f1(2);
-    public final ViewTreeObserver.OnScrollChangedListener a;
-    public ViewTreeObserver b;
+public final class i71 implements x9 {
+    public TLObject a = null;
+    public TLRPC.TL_error b = null;
+    public final /* synthetic */ SessionsActivity c;
 
-    static {
-        Field field = null;
-        try {
-            field = PopupWindow.class.getDeclaredField("mOnScrollChangedListener");
-            field.setAccessible(true);
-        } catch (NoSuchFieldException unused) {
-        }
-        c = field;
+    public i71(SessionsActivity sessionsActivity) {
+        this.c = sessionsActivity;
     }
 
-    public i71(r71 r71Var) {
-        super(r71Var, -2, -2);
-        setFocusable(true);
-        setAnimationStyle(0);
-        setOutsideTouchable(true);
-        setClippingEnabled(true);
-        setInputMethodMode(0);
-        setSoftInputMode(4);
-        Field field = c;
-        if (field != null) {
-            try {
-                this.a = (ViewTreeObserver.OnScrollChangedListener) field.get(this);
-                field.set(this, d);
-            } catch (Exception unused) {
-                this.a = null;
+    @Override // org.telegram.ui.x9
+    public final void E(String str) {
+        TLObject tLObject = this.a;
+        if (!(tLObject instanceof TLRPC.TL_authorization)) {
+            if (this.b != null) {
+                AndroidUtilities.runOnUIThread(new g71(this, 0));
+                return;
             }
-        }
-    }
-
-    public final void b() {
-        View rootView = getContentView().getRootView();
-        WindowManager windowManager = (WindowManager) getContentView().getContext().getSystemService("window");
-        WindowManager.LayoutParams layoutParams = (WindowManager.LayoutParams) rootView.getLayoutParams();
-        layoutParams.flags |= 2;
-        layoutParams.dimAmount = 0.2f;
-        windowManager.updateViewLayout(rootView, layoutParams);
-    }
-
-    public final void c(View view) {
-        if (getContentView() instanceof r71) {
-            ((r71) getContentView()).s(new h71(this, 1));
-        }
-        if (this.a != null) {
-            ViewTreeObserver viewTreeObserver = view.getWindowToken() != null ? view.getViewTreeObserver() : null;
-            ViewTreeObserver viewTreeObserver2 = this.b;
-            if (viewTreeObserver != viewTreeObserver2) {
-                if (viewTreeObserver2 != null && viewTreeObserver2.isAlive()) {
-                    this.b.removeOnScrollChangedListener(this.a);
-                }
-                this.b = viewTreeObserver;
-                if (viewTreeObserver != null) {
-                    viewTreeObserver.addOnScrollChangedListener(this.a);
-                }
-            }
-        }
-    }
-
-    @Override // android.widget.PopupWindow
-    public void dismiss() {
-        if (!(getContentView() instanceof r71)) {
-            super.dismiss();
             return;
         }
-        r71 r71Var = (r71) getContentView();
-        h71 h71Var = new h71(this, 0);
-        Integer num = r71Var.Y1;
-        if (num != null) {
-            r71.c2.put(num, r71Var.r0.e0());
+        TLRPC.TL_authorization tL_authorization = (TLRPC.TL_authorization) tLObject;
+        boolean z10 = tL_authorization.password_pending;
+        SessionsActivity sessionsActivity = this.c;
+        if (z10) {
+            sessionsActivity.f.add(0, tL_authorization);
+            sessionsActivity.V = 4;
+            sessionsActivity.k0(false);
+        } else {
+            sessionsActivity.e.add(0, tL_authorization);
         }
-        ValueAnimator valueAnimator = r71Var.V1;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-            r71Var.V1 = null;
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        r71Var.V1 = ofFloat;
-        ofFloat.addUpdateListener(new s51(r71Var, 3));
-        r71Var.V1.addListener(new org.telegram.ui.Components.ql0(15, r71Var, h71Var));
-        r71Var.V1.setDuration(200L);
-        r71Var.V1.setInterpolator(org.telegram.ui.Components.es.h);
-        r71Var.V1.start();
-        i61 i61Var = r71Var.f0;
-        if (i61Var != null) {
-            AndroidUtilities.hideKeyboard(i61Var.h);
-        }
-        View rootView = getContentView().getRootView();
-        WindowManager windowManager = (WindowManager) getContentView().getContext().getSystemService("window");
-        if (rootView.getLayoutParams() == null || !(rootView.getLayoutParams() instanceof WindowManager.LayoutParams)) {
-            return;
-        }
-        WindowManager.LayoutParams layoutParams = (WindowManager.LayoutParams) rootView.getLayoutParams();
-        try {
-            int i10 = layoutParams.flags;
-            if ((i10 & 2) != 0) {
-                layoutParams.flags = i10 & (-3);
-                layoutParams.dimAmount = 0.0f;
-                windowManager.updateViewLayout(rootView, layoutParams);
-            }
-        } catch (Exception unused) {
-        }
+        sessionsActivity.m0();
+        sessionsActivity.a.l();
+        sessionsActivity.s.m(0L, this.a, 11);
     }
 
-    @Override // android.widget.PopupWindow
-    public final void showAsDropDown(View view) {
-        super.showAsDropDown(view);
-        c(view);
-    }
-
-    @Override // android.widget.PopupWindow
-    public final void showAtLocation(View view, int i10, int i11, int i12) {
-        ViewTreeObserver viewTreeObserver;
-        super.showAtLocation(view, i10, i11, i12);
-        if (this.a == null || (viewTreeObserver = this.b) == null) {
-            return;
-        }
-        if (viewTreeObserver.isAlive()) {
-            this.b.removeOnScrollChangedListener(this.a);
-        }
+    @Override // org.telegram.ui.x9
+    public final boolean U0(String str, n9 n9Var) {
+        this.a = null;
         this.b = null;
+        AndroidUtilities.runOnUIThread(new h71(this, str, n9Var, 0), 750L);
+        return true;
     }
 
-    @Override // android.widget.PopupWindow
-    public final void showAsDropDown(View view, int i10, int i11) {
-        super.showAsDropDown(view, i10, i11);
-        c(view);
+    @Override // org.telegram.ui.x9
+    public final /* synthetic */ String p0() {
+        return null;
     }
 
-    @Override // android.widget.PopupWindow
-    public final void showAsDropDown(View view, int i10, int i11, int i12) {
-        super.showAsDropDown(view, i10, i11, i12);
-        c(view);
+    @Override // org.telegram.ui.x9
+    public final /* synthetic */ void F0(MrzRecognizer.Result result) {
+    }
+
+    @Override // org.telegram.ui.x9
+    public final /* synthetic */ void onDismiss() {
     }
 }

@@ -1,6 +1,7 @@
 package tc;
 
-import b2.v0;
+import ai.wb;
+import b2.u0;
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
 import java.io.IOException;
@@ -11,23 +12,22 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.TreeMap;
+import ki.t1;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.k7;
-import org.telegram.ui.Cells.c1;
-import org.telegram.ui.Wallet.y0;
-import org.telegram.ui.web.n1;
+import org.telegram.ui.Wallet.z0;
+import org.telegram.ui.web.l1;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class u {
     public final s a;
-    public final v0 b;
+    public final u0 b;
     public final h c;
     public final c2.b d;
     public final p e;
     public final p f;
-    public n1 h;
+    public l1 h;
     public y i;
     public q j;
     public a0 k;
@@ -45,10 +45,10 @@ public final class u {
 
     public u(boolean z10, String str, String str2, String str3, s sVar) {
         this.a = sVar;
-        v0 v0Var = new v0();
-        v0Var.b = 1;
-        v0Var.a = 1;
-        this.b = v0Var;
+        u0 u0Var = new u0();
+        u0Var.b = 1;
+        u0Var.a = 1;
+        this.b = u0Var;
         h hVar = new h();
         hVar.a = str;
         hVar.b = str2;
@@ -78,12 +78,12 @@ public final class u {
                 while (i10 < size) {
                     Object obj = arrayList.get(i10);
                     i10++;
-                    y0 y0Var = (y0) obj;
+                    z0 z0Var = (z0) obj;
                     try {
                         try {
-                            AndroidUtilities.runOnUIThread(new k7(y0Var, (u) bVar.b, y0Var.a, y0Var.b, 15));
+                            AndroidUtilities.runOnUIThread(new wb(z0Var, (u) bVar.b, z0Var.a, z0Var.b, 16));
                         } catch (Throwable unused) {
-                            y0Var.getClass();
+                            z0Var.getClass();
                         }
                     } catch (Throwable unused2) {
                     }
@@ -96,11 +96,11 @@ public final class u {
 
     public final void b() {
         synchronized (this.b) {
-            v0 v0Var = this.b;
-            if (v0Var.a != 1) {
+            u0 u0Var = this.b;
+            if (u0Var.a != 1) {
                 throw new v(1, "The current state of the WebSocket is not CREATED.");
             }
-            v0Var.a = 2;
+            u0Var.a = 2;
         }
         this.d.e();
         try {
@@ -163,10 +163,10 @@ public final class u {
                     if (c10 != 2) {
                         return;
                     }
-                    v0 v0Var = this.b;
-                    v0Var.a = 4;
-                    if (v0Var.b == 1) {
-                        v0Var.b = 3;
+                    u0 u0Var = this.b;
+                    u0Var.a = 4;
+                    if (u0Var.b == 1) {
+                        u0Var.b = 3;
                     }
                     g(x.a(MediaDataController.MAX_STYLE_RUNS_COUNT, null));
                     this.d.e();
@@ -182,12 +182,12 @@ public final class u {
                     while (i11 < size) {
                         Object obj = arrayList.get(i11);
                         i11++;
-                        y0 y0Var = (y0) obj;
+                        z0 z0Var = (z0) obj;
                         try {
                             try {
-                                y0Var.getClass();
+                                z0Var.getClass();
                             } catch (Throwable unused) {
-                                y0Var.getClass();
+                                z0Var.getClass();
                             }
                         } catch (Throwable unused2) {
                         }
@@ -224,14 +224,14 @@ public final class u {
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            y0 y0Var = (y0) obj;
+            z0 z0Var = (z0) obj;
             try {
                 try {
-                    y0Var.a((u) bVar.b, xVar, xVar2, z10);
+                    z0Var.a((u) bVar.b, xVar, xVar2, z10);
                 } catch (Throwable unused2) {
                 }
             } catch (Throwable unused3) {
-                y0Var.getClass();
+                z0Var.getClass();
             }
         }
     }
@@ -287,10 +287,10 @@ public final class u {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:121:0x030f  */
-    /* JADX WARN: Removed duplicated region for block: B:133:0x0330  */
-    /* JADX WARN: Removed duplicated region for block: B:161:0x02e8  */
-    /* JADX WARN: Removed duplicated region for block: B:169:0x02ff A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:120:0x0311  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x0332  */
+    /* JADX WARN: Removed duplicated region for block: B:160:0x02ea  */
+    /* JADX WARN: Removed duplicated region for block: B:168:0x0301 A[SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -301,7 +301,7 @@ public final class u {
         w wVar2;
         String str;
         try {
-            n1 n1Var = new n1(new BufferedInputStream(socket.getInputStream()), 1);
+            l1 l1Var = new l1(new BufferedInputStream(socket.getInputStream()), 1);
             try {
                 y yVar = new y(new BufferedOutputStream(socket.getOutputStream()));
                 byte[] bArr = new byte[16];
@@ -320,7 +320,7 @@ public final class u {
                 if (str2 != null && str2.length() != 0) {
                     arrayList.add(new String[]{"Authorization", "Basic " + d.a(k.a(str2))});
                 }
-                StringBuilder i12 = t8.b.i(p5, "\r\n");
+                StringBuilder i12 = r.c.i(p5, "\r\n");
                 int size = arrayList.size();
                 int i13 = 0;
                 int i14 = 0;
@@ -345,12 +345,12 @@ public final class u {
                 while (i15 < size2) {
                     Object obj2 = arrayList2.get(i15);
                     i15++;
-                    y0 y0Var = (y0) obj2;
+                    z0 z0Var = (z0) obj2;
                     try {
                         try {
-                            y0Var.getClass();
+                            z0Var.getClass();
                         } catch (Throwable unused) {
-                            y0Var.getClass();
+                            z0Var.getClass();
                         }
                     } catch (Throwable unused2) {
                     }
@@ -358,9 +358,9 @@ public final class u {
                 try {
                     yVar.write(k.a(sb2));
                     yVar.flush();
-                    m.l lVar = new m.l(this);
+                    t1 t1Var = new t1(this, 29);
                     try {
-                        String b10 = k.b(n1Var);
+                        String b10 = k.b(l1Var);
                         if (b10 == null || b10.length() == 0) {
                             throw new v(6, "The status line of the opening handshake response is empty.");
                         }
@@ -370,14 +370,14 @@ public final class u {
                             StringBuilder sb3 = null;
                             while (true) {
                                 try {
-                                    String b11 = k.b(n1Var);
+                                    String b11 = k.b(l1Var);
                                     if (b11 == null || b11.length() == 0) {
                                         break;
                                     }
                                     char charAt = b11.charAt(0);
                                     if (charAt != ' ' && charAt != '\t') {
                                         if (sb3 != null) {
-                                            m.l.E(sb3.toString(), treeMap);
+                                            t1.M(sb3.toString(), treeMap);
                                         }
                                         sb3 = new StringBuilder(b11);
                                     } else if (sb3 != null) {
@@ -388,7 +388,7 @@ public final class u {
                                 }
                             }
                             if (sb3 != null) {
-                                m.l.E(sb3.toString(), treeMap);
+                                t1.M(sb3.toString(), treeMap);
                             }
                             if (aVar.c != 101) {
                                 try {
@@ -398,7 +398,7 @@ public final class u {
                                 }
                                 if (i11 > 0) {
                                     try {
-                                        n1Var.b(i11, new byte[i11]);
+                                        l1Var.b(i11, new byte[i11]);
                                     } catch (Throwable unused4) {
                                     }
                                 }
@@ -431,7 +431,7 @@ public final class u {
                                                         throw new n(14, "The opening handshake response does not contain 'Sec-WebSocket-Accept' header.", aVar);
                                                     }
                                                     try {
-                                                        if (!d.a(MessageDigest.getInstance("SHA-1").digest(k.a(t8.b.u(a2, "258EAFA5-E914-47DA-95CA-C5AB0DC85B11")))).equals((String) list3.get(0))) {
+                                                        if (!d.a(MessageDigest.getInstance("SHA-1").digest(k.a(r.c.u(a2, "258EAFA5-E914-47DA-95CA-C5AB0DC85B11")))).equals((String) list3.get(0))) {
                                                             throw new n(15, "The value of 'Sec-WebSocket-Accept' header is different from the expected one.", aVar);
                                                         }
                                                     } catch (Exception unused5) {
@@ -511,14 +511,14 @@ public final class u {
                                                                             }
                                                                             wVar2 = wVar;
                                                                             if (wVar2 != null) {
-                                                                                throw new n(16, t8.b.h("The value in 'Sec-WebSocket-Extensions' failed to be parsed: ", str3), aVar);
+                                                                                throw new n(16, r.c.g("The value in 'Sec-WebSocket-Extensions' failed to be parsed: ", str3), aVar);
                                                                             }
                                                                             String str6 = wVar2.a;
-                                                                            h hVar2 = ((u) lVar.a).c;
+                                                                            h hVar2 = ((u) t1Var.b).c;
                                                                             if (str6 == null) {
                                                                                 hVar2.getClass();
                                                                             }
-                                                                            throw new n(17, t8.b.h("The extension contained in the Sec-WebSocket-Extensions header is not supported: ", str6), aVar);
+                                                                            throw new n(17, r.c.g("The extension contained in the Sec-WebSocket-Extensions header is not supported: ", str6), aVar);
                                                                         }
                                                                     }
                                                                 }
@@ -535,15 +535,15 @@ public final class u {
                                                             w wVar4 = (w) obj3;
                                                             if (wVar4 instanceof o) {
                                                                 if (wVar3 != null) {
-                                                                    throw new n(18, c1.i("'", wVar3.a, "' extension and '", wVar4.a, "' extension conflict with each other."), aVar);
+                                                                    throw new n(18, r.c.h("'", wVar3.a, "' extension and '", wVar4.a, "' extension conflict with each other."), aVar);
                                                                 }
                                                                 wVar3 = wVar4;
                                                             }
                                                         }
-                                                        ((u) lVar.a).l = arrayList3;
+                                                        ((u) t1Var.b).l = arrayList3;
                                                     }
-                                                    lVar.H(aVar, treeMap);
-                                                    this.h = n1Var;
+                                                    t1Var.Z(aVar, treeMap);
+                                                    this.h = l1Var;
                                                     this.i = yVar;
                                                     return treeMap;
                                                 }
@@ -591,12 +591,12 @@ public final class u {
             while (i11 < size) {
                 Object obj = arrayList.get(i11);
                 i11++;
-                y0 y0Var = (y0) obj;
+                z0 z0Var = (z0) obj;
                 try {
                     try {
-                        y0Var.getClass();
+                        z0Var.getClass();
                     } catch (Throwable unused) {
-                        y0Var.getClass();
+                        z0Var.getClass();
                     }
                 } catch (Throwable unused2) {
                 }
@@ -609,12 +609,12 @@ public final class u {
             while (i10 < size2) {
                 Object obj2 = arrayList2.get(i10);
                 i10++;
-                y0 y0Var2 = (y0) obj2;
+                z0 z0Var2 = (z0) obj2;
                 try {
                     try {
-                        y0Var2.getClass();
+                        z0Var2.getClass();
                     } catch (Throwable unused3) {
-                        y0Var2.getClass();
+                        z0Var2.getClass();
                     }
                 } catch (Throwable unused4) {
                 }

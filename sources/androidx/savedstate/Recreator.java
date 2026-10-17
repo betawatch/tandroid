@@ -15,11 +15,11 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import kotlin.jvm.internal.i;
+import m.q;
 import t4.c;
 import t4.e;
-import t8.b;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class Recreator implements r {
     public final e a;
@@ -62,7 +62,7 @@ public final class Recreator implements r {
                             throw new IllegalStateException("Internal error: OnRecreation should be registered only on components that implement ViewModelStoreOwner");
                         }
                         t0 f7 = ((u0) eVar).f();
-                        m.r g10 = eVar.g();
+                        q g10 = eVar.g();
                         f7.getClass();
                         LinkedHashMap linkedHashMap = f7.a;
                         Iterator it = new HashSet(linkedHashMap.keySet()).iterator();
@@ -77,7 +77,7 @@ public final class Recreator implements r {
                             g10.g();
                         }
                     } catch (Exception e) {
-                        throw new RuntimeException(b.h("Failed to instantiate ", str2), e);
+                        throw new RuntimeException(r.c.g("Failed to instantiate ", str2), e);
                     }
                 } catch (NoSuchMethodException e7) {
                     throw new IllegalStateException("Class " + asSubclass.getSimpleName() + " must have default constructor in order to be automatically recreated", e7);

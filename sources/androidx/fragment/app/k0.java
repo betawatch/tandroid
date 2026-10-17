@@ -1,36 +1,6 @@
 package androidx.fragment.app;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class k0 implements Parcelable {
-    public static final Parcelable.Creator<k0> CREATOR = new w.a(13);
-    public ArrayList a;
-    public ArrayList b;
-    public b[] c;
-    public int d;
-    public String e;
-    public ArrayList f;
-    public ArrayList h;
-    public ArrayList n;
-
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        parcel.writeStringList(this.a);
-        parcel.writeStringList(this.b);
-        parcel.writeTypedArray(this.c, i10);
-        parcel.writeInt(this.d);
-        parcel.writeString(this.e);
-        parcel.writeStringList(this.f);
-        parcel.writeTypedList(this.h);
-        parcel.writeTypedList(this.n);
-    }
+public final class k0 extends j0 {
 }

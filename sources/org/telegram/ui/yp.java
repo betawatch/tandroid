@@ -1,36 +1,38 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
+import android.content.DialogInterface;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.DatePicker;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yp implements Runnable {
+public final /* synthetic */ class yp implements DialogInterface.OnShowListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ zp b;
-    public final /* synthetic */ String c;
+    public final /* synthetic */ View b;
 
-    public /* synthetic */ yp(zp zpVar, String str, int i10) {
+    public /* synthetic */ yp(int i10, View view) {
         this.a = i10;
-        this.b = zpVar;
-        this.c = str;
+        this.b = view;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.content.DialogInterface.OnShowListener
+    public final void onShow(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                zp zpVar = this.b;
-                String str = this.c;
-                zpVar.getClass();
-                AndroidUtilities.runOnUIThread(new yp(zpVar, str, 1));
+                DatePicker datePicker = (DatePicker) this.b;
+                int childCount = datePicker.getChildCount();
+                for (int i10 = 0; i10 < childCount; i10++) {
+                    View childAt = datePicker.getChildAt(i10);
+                    ViewGroup.LayoutParams layoutParams = childAt.getLayoutParams();
+                    layoutParams.width = -1;
+                    childAt.setLayoutParams(layoutParams);
+                }
                 break;
             default:
-                zp zpVar2 = this.b;
-                String str2 = this.c;
-                zpVar2.f = null;
-                Utilities.searchQueue.postRunnable(new t1(zpVar2, str2, new ArrayList(zpVar2.h.v), 28));
+                AndroidUtilities.runOnUIThread(new ch(1, (EditTextBoldCursor) this.b));
                 break;
         }
     }

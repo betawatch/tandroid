@@ -1,65 +1,31 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.text.TextUtils;
+import android.app.Activity;
+import android.text.style.CharacterStyle;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaDataController;
+import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class dl extends org.telegram.ui.Components.ko0 {
-    public final /* synthetic */ fo I;
+public final class dl extends UndoView {
+    public final /* synthetic */ sn f0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dl(fo foVar, Context context, fo foVar2, int i10, long j10, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(i10, j10, context, foVar2, c6Var);
-        this.I = foVar;
+    public dl(sn snVar, Activity activity, sn snVar2, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(activity, snVar2, true, d6Var);
+        this.f0 = snVar;
     }
 
-    @Override // org.telegram.ui.Components.ko0
-    public final void b(boolean z10) {
-        fo foVar = this.I;
-        foVar.w7();
-        foVar.u7();
-        il ilVar = foVar.bb;
-        if (ilVar != null) {
-            ilVar.setTranslationY(foVar.w9 + getCurrentHeight());
-        }
-        if (z10) {
-            foVar.D9 = true;
-            foVar.nc();
-        }
+    @Override // org.telegram.ui.Components.UndoView
+    public final void b(CharacterStyle characterStyle) {
+        this.f0.X7(characterStyle, false, null, null);
     }
 
-    @Override // org.telegram.ui.Components.ko0
-    public final boolean f(ah.i1 i1Var) {
-        int i10;
-        fo foVar = this.I;
-        foVar.q3 = i1Var;
-        foVar.r3 = i1Var != null;
-        if (i1Var == null) {
-            foVar.getMediaDataController().clearFoundMessageObjects();
-            foVar.ob(false);
-            foVar.Jc(0, 0, -1);
-        }
-        foVar.Mc();
-        foVar.zc();
-        foVar.t3 = foVar.j0.getSearchField().getText().toString();
-        MediaDataController mediaDataController = foVar.getMediaDataController();
-        String str = foVar.t3;
-        long j10 = foVar.T5;
-        long j11 = foVar.L6;
-        i10 = ((org.telegram.ui.ActionBar.m2) foVar).classGuid;
-        mediaDataController.searchMessagesInChat(str, j10, j11, i10, 0, foVar.d4, false, foVar.o3, foVar.p3, (TextUtils.isEmpty(foVar.t3) && foVar.q3 == null) ? false : true, foVar.q3);
-        AndroidUtilities.hideKeyboard(foVar.j0.getSearchField());
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.ko0
-    public final void h(boolean z10) {
-        super.h(z10);
-        fo foVar = this.I;
-        org.telegram.ui.ActionBar.u0 u0Var = foVar.j0;
-        g(u0Var != null && u0Var.s() && a() && foVar.u3 == null);
+    @Override // org.telegram.ui.Components.UndoView
+    public final void k(long j10, int i10, Object obj, Object obj2, Runnable runnable, Runnable runnable2) {
+        int i11;
+        bk bkVar = this.f0.X1;
+        setAdditionalTranslationY((bkVar == null || !(((i11 = bkVar.U) == 1 || i11 == 3) && bkVar.T)) ? 0.0f : AndroidUtilities.dp(bkVar.getStyleHeight()));
+        super.k(j10, i10, obj, obj2, runnable, runnable2);
     }
 }

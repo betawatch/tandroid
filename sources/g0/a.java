@@ -13,7 +13,7 @@ import android.media.AudioProfile;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.accessibility.AccessibilityNodeInfo;
-import e0.g0;
+import e0.f0;
 import e2.m0;
 import e9.k0;
 import e9.n0;
@@ -24,7 +24,7 @@ import java.util.Map;
 import java.util.Set;
 import v7.b8;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static Paint a(Bitmap bitmap) {
@@ -39,8 +39,8 @@ public abstract class a {
         return paint;
     }
 
-    public static void b(Canvas canvas, g0 g0Var, int i10, Paint paint) {
-        canvas.drawVertices(Canvas.VertexMode.TRIANGLES, i10 * 8, (float[]) g0Var.b, 0, (float[]) g0Var.c, 0, (int[]) g0Var.e, 0, (short[]) g0Var.d, 0, i10 * 6, paint);
+    public static void b(Canvas canvas, f0 f0Var, int i10, Paint paint) {
+        canvas.drawVertices(Canvas.VertexMode.TRIANGLES, i10 * 8, (float[]) f0Var.c, 0, (float[]) f0Var.d, 0, (int[]) f0Var.f, 0, (short[]) f0Var.e, 0, i10 * 6, paint);
     }
 
     public static k2.b c(AudioManager audioManager, b2.f fVar, n0 n0Var, List list) {
@@ -86,11 +86,15 @@ public abstract class a {
         return accessibilityNodeInfo.getUniqueId();
     }
 
-    public static boolean g(AccessibilityNodeInfo accessibilityNodeInfo) {
+    public static boolean g() {
+        return Build.VERSION.SDK_INT >= 29;
+    }
+
+    public static boolean h(AccessibilityNodeInfo accessibilityNodeInfo) {
         return accessibilityNodeInfo.isTextSelectable();
     }
 
-    public static void h(ShortcutInfo.Builder builder) {
+    public static void i(ShortcutInfo.Builder builder) {
         builder.setExcludedFromSurfaces(0);
     }
 }

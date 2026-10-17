@@ -2,208 +2,117 @@ package qg;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.LinearGradient;
 import android.graphics.Paint;
-import android.graphics.Path;
+import android.graphics.Rect;
 import android.graphics.RectF;
-import android.util.LongSparseArray;
+import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
 import android.view.MotionEvent;
 import android.view.View;
-import java.util.HashMap;
-import java.util.Map;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.sk;
-import org.telegram.ui.Components.es;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class t extends View {
     public final Paint a;
-    public final int[] b;
+    public final Paint b;
     public final Paint c;
-    public final LongSparseArray d;
-    public long e;
-    public final Path f;
+    public float d;
+    public float e;
+    public final Drawable f;
     public final float[] h;
-    public final HashMap n;
-    public final /* synthetic */ x r;
+    public final /* synthetic */ y n;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t(x xVar, Context context) {
+    public t(y yVar, Context context) {
         super(context);
-        this.r = xVar;
+        this.n = yVar;
         this.a = new Paint(1);
-        this.b = new int[]{-16735784, -16752387, -11788361, -6804548, -4707235, -180718, -38656, -152832, -211200, -198077, -2495689, -8996289};
+        this.b = new Paint(1);
         Paint paint = new Paint(1);
         this.c = paint;
-        this.d = new LongSparseArray();
-        this.e = Long.MIN_VALUE;
-        this.f = new Path();
-        this.h = new float[8];
-        this.n = new HashMap();
+        this.h = new float[3];
         setPadding(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(3.0f));
         paint.setColor(-1);
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setStrokeJoin(Paint.Join.ROUND);
-        for (int i10 = 0; i10 < 12; i10++) {
-            for (int i11 = 0; i11 < 10; i11++) {
-                if (i11 == 0) {
-                    this.n.put(Long.valueOf((i10 << 16) + i11), Integer.valueOf(i0.a.d(i10 / 11.0f, -1, -16777216)));
-                } else {
-                    this.n.put(Long.valueOf((i10 << 16) + i11), Integer.valueOf(i11 < 6 ? i0.a.d(((5 - i11) / 4.0f) * 0.5f, this.b[i10], -16777216) : i0.a.d(sk.b(9 - i11, 5.0f, 0.5f, 0.5f), this.b[i10], -1)));
-                }
-            }
-        }
+        paint.setStyle(Paint.Style.FILL_AND_STROKE);
+        paint.setStrokeWidth(AndroidUtilities.dp(3.0f));
+        this.f = context.getDrawable(R.drawable.knob_shadow);
     }
 
-    public final void a(int i10) {
-        for (Map.Entry entry : this.n.entrySet()) {
-            if (((Integer) entry.getValue()).intValue() == i10) {
-                long longValue = ((Long) entry.getKey()).longValue();
-                b((int) (longValue >> 16), (int) (longValue - (r5 << 16)));
-                return;
-            }
+    public final void a(MotionEvent motionEvent) {
+        this.d = (motionEvent.getX() - getPaddingLeft()) / ((getWidth() - getPaddingLeft()) - getPaddingRight());
+        float y3 = (motionEvent.getY() - getPaddingTop()) / ((getHeight() - getPaddingTop()) - getPaddingBottom());
+        this.e = y3;
+        float[] fArr = this.h;
+        fArr[0] = y3 * 360.0f;
+        float f7 = this.d;
+        if (f7 <= 0.22f || f7 >= 0.78f) {
+            fArr[1] = AndroidUtilities.lerp(1.0f, 0.0f, f7 <= 0.22f ? 1.0f - (f7 / 0.22f) : (f7 - 0.78f) / 0.22000003f);
+            float f10 = this.d;
+            fArr[2] = f10 > 0.22f ? AndroidUtilities.lerp(1.0f, 0.0f, (f10 - 0.78f) / 0.22000003f) : 1.0f;
+        } else {
+            fArr[1] = 1.0f;
+            fArr[2] = 1.0f;
         }
-        this.e = Long.MIN_VALUE;
+        int HSVToColor = Color.HSVToColor(fArr);
+        y yVar = this.n;
+        yVar.f = HSVToColor;
+        yVar.n(HSVToColor, 0);
         invalidate();
-    }
-
-    public final void b(int i10, int i11) {
-        long j10 = (i10 << 16) + i11;
-        this.e = j10;
-        LongSparseArray longSparseArray = this.d;
-        if (longSparseArray.get(j10) == null) {
-            longSparseArray.put(this.e, Float.valueOf(0.0f));
-        }
-        invalidate();
-    }
-
-    public final void c(MotionEvent motionEvent) {
-        int width = ((getWidth() - getPaddingLeft()) - getPaddingRight()) / 12;
-        int height = ((getHeight() - getPaddingTop()) - getPaddingBottom()) / 10;
-        int x10 = (int) ((motionEvent.getX() - getPaddingLeft()) / width);
-        int y3 = (int) (motionEvent.getY() / height);
-        Integer num = (Integer) this.n.get(Long.valueOf((x10 << 16) + y3));
-        if (num != null) {
-            int intValue = num.intValue();
-            int i10 = x.s;
-            this.r.n(intValue, 3);
-            b(x10, y3);
-        }
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        HashMap hashMap;
         super.onDraw(canvas);
         RectF rectF = AndroidUtilities.rectTmp;
         rectF.set(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getHeight() - getPaddingBottom());
-        canvas.save();
-        Path path = this.r.e;
-        path.rewind();
-        float f7 = 10.0f;
-        path.addRoundRect(rectF, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), Path.Direction.CW);
-        canvas.clipPath(path);
-        float width = ((getWidth() - getPaddingLeft()) - getPaddingRight()) / 12.0f;
-        float height = ((getHeight() - getPaddingTop()) - getPaddingBottom()) / 10.0f;
-        int i10 = 0;
-        while (true) {
-            hashMap = this.n;
-            if (i10 >= 12) {
-                break;
-            }
-            for (int i11 = 0; i11 < 10; i11++) {
-                Integer num = (Integer) hashMap.get(Long.valueOf((i10 << 16) + i11));
-                if (num != null) {
-                    int intValue = num.intValue();
-                    Paint paint = this.a;
-                    paint.setColor(intValue);
-                    RectF rectF2 = AndroidUtilities.rectTmp;
-                    rectF2.set((i10 * width) + getPaddingLeft(), (i11 * height) + getPaddingTop(), ((i10 + 1) * width) + getPaddingLeft(), ((i11 + 1) * height) + getPaddingTop());
-                    canvas.drawRect(rectF2, paint);
-                }
-            }
-            i10++;
-        }
-        canvas.restore();
-        int i12 = 0;
-        while (true) {
-            LongSparseArray longSparseArray = this.d;
-            if (i12 >= longSparseArray.size()) {
-                return;
-            }
-            long keyAt = longSparseArray.keyAt(i12);
-            float floatValue = ((Float) longSparseArray.valueAt(i12)).floatValue();
-            float min = this.e == keyAt ? Math.min(1.0f, floatValue + 0.045714285f) : Math.max(0.0f, floatValue - 0.10666667f);
-            float f10 = f7;
-            int i13 = (int) (keyAt >> 16);
-            int i14 = (int) (keyAt - (i13 << 16));
-            Integer num2 = (Integer) hashMap.get(Long.valueOf(keyAt));
-            Paint paint2 = this.c;
-            if (num2 != null) {
-                paint2.setColor(AndroidUtilities.computePerceivedBrightness(num2.intValue()) > 0.721f ? -15658735 : -1);
-            }
-            paint2.setStrokeWidth(es.h.getInterpolation(min) * AndroidUtilities.dp(3.0f));
-            Path path2 = this.f;
-            path2.rewind();
-            RectF rectF3 = AndroidUtilities.rectTmp;
-            float f11 = width;
-            float f12 = height;
-            HashMap hashMap2 = hashMap;
-            rectF3.set((i13 * f11) + getPaddingLeft(), (i14 * f12) + getPaddingTop(), ((i13 + 1) * f11) + getPaddingLeft(), ((i14 + 1) * f12) + getPaddingTop());
-            float dp = (i13 == 0 && i14 == 0) ? AndroidUtilities.dp(f10) : 0.0f;
-            float[] fArr = this.h;
-            fArr[1] = dp;
-            fArr[0] = dp;
-            float dp2 = (i13 == 11 && i14 == 0) ? AndroidUtilities.dp(f10) : 0.0f;
-            fArr[3] = dp2;
-            fArr[2] = dp2;
-            float dp3 = (i13 == 11 && i14 == 9) ? AndroidUtilities.dp(f10) : 0.0f;
-            fArr[5] = dp3;
-            fArr[4] = dp3;
-            float dp4 = (i13 == 0 && i14 == 9) ? AndroidUtilities.dp(f10) : 0.0f;
-            fArr[7] = dp4;
-            fArr[6] = dp4;
-            path2.addRoundRect(rectF3, fArr, Path.Direction.CW);
-            canvas.drawPath(path2, paint2);
-            if (min > 0.0f || this.e == keyAt) {
-                if (min < 1.0f) {
-                    invalidate();
-                }
-                longSparseArray.setValueAt(i12, Float.valueOf(min));
-            } else {
-                longSparseArray.removeAt(i12);
-                i12--;
-                invalidate();
-            }
-            i12++;
-            f7 = f10;
-            width = f11;
-            height = f12;
-            hashMap = hashMap2;
-        }
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), this.a);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), this.b);
+        float dp = AndroidUtilities.dp(13.0f);
+        Paint paint = this.c;
+        float strokeWidth = dp - (paint.getStrokeWidth() / 2.0f);
+        float dp2 = AndroidUtilities.dp(16.0f);
+        int width = (getWidth() - getPaddingLeft()) - getPaddingRight();
+        int height = (getHeight() - getPaddingTop()) - getPaddingBottom();
+        float f7 = width;
+        float a2 = w7.r.a(this.d * f7, dp2, f7 - dp2) + getPaddingLeft();
+        float f10 = height;
+        float a10 = w7.r.a(this.e * f10, dp2, f10 - dp2) + getPaddingTop();
+        Rect rect = AndroidUtilities.rectTmp2;
+        Drawable drawable = this.f;
+        drawable.getPadding(rect);
+        int i10 = (int) ((a2 - dp) - rect.left);
+        int i11 = (int) ((a10 - dp) - rect.top);
+        int i12 = rect.bottom;
+        drawable.setBounds(i10, i11, (int) (a2 + dp + i12), (int) (a10 + dp + i12));
+        drawable.draw(canvas);
+        canvas.drawCircle(a2, a10, dp, paint);
+        rg.i1.y1(a2, a10, strokeWidth, i0.b.o(this.n.f, 255), canvas);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:7:0x000d, code lost:
-    
-        if (r0 != 3) goto L14;
-     */
     @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        super.onSizeChanged(i10, i11, i12, i13);
+        this.a.setShader(new LinearGradient(0.0f, getPaddingTop(), 0.0f, i11 - getPaddingBottom(), new int[]{-65536, -256, -16711936, -16711681, -16776961, -65281, -65536}, (float[]) null, Shader.TileMode.CLAMP));
+        this.b.setShader(new LinearGradient(getPaddingLeft(), 0.0f, i10 - getPaddingRight(), 0.0f, new int[]{-1, 0, 0, -16777216}, new float[]{0.06f, 0.22f, 0.78f, 0.94f}, Shader.TileMode.MIRROR));
+    }
+
+    @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         int actionMasked = motionEvent.getActionMasked();
-        if (actionMasked != 0) {
-            if (actionMasked == 1) {
-                c(motionEvent);
-            } else if (actionMasked == 2) {
-                c(motionEvent);
-            }
-            getParent().requestDisallowInterceptTouchEvent(false);
-        } else {
-            c(motionEvent);
+        if (actionMasked == 0) {
             getParent().requestDisallowInterceptTouchEvent(true);
+            a(motionEvent);
+        } else if (actionMasked == 1) {
+            getParent().requestDisallowInterceptTouchEvent(false);
+            a(motionEvent);
+        } else if (actionMasked == 2) {
+            a(motionEvent);
+        } else if (actionMasked == 3) {
+            getParent().requestDisallowInterceptTouchEvent(false);
         }
         return true;
     }

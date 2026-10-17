@@ -6,14 +6,14 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class j0 {
     public static final q0 a = new q0();
     public static final q0 b = new q0();
     public static final q0 c = new q0();
 
-    public static final void a(p0 p0Var, m.r registry, o lifecycle) {
+    public static final void a(p0 p0Var, m.q registry, o lifecycle) {
         Object obj;
         kotlin.jvm.internal.i.e(registry, "registry");
         kotlin.jvm.internal.i.e(lifecycle, "lifecycle");
@@ -65,8 +65,8 @@ public abstract class j0 {
         return new i0(linkedHashMap);
     }
 
-    public static final i0 c(v1.c cVar) {
-        LinkedHashMap linkedHashMap = (LinkedHashMap) cVar.a;
+    public static final i0 c(v1.b bVar) {
+        LinkedHashMap linkedHashMap = (LinkedHashMap) bVar.a;
         t4.e eVar = (t4.e) linkedHashMap.get(a);
         if (eVar == null) {
             throw new IllegalArgumentException("CreationExtras must have a value by `SAVED_STATE_REGISTRY_OWNER_KEY`");
@@ -123,12 +123,12 @@ public abstract class j0 {
         ArrayList arrayList = new ArrayList();
         Class a2 = kotlin.jvm.internal.q.a(m0.class).a();
         kotlin.jvm.internal.i.c(a2, "null cannot be cast to non-null type java.lang.Class<T of kotlin.jvm.JvmClassMappingKt.<get-java>>");
-        arrayList.add(new v1.d(a2));
-        v1.d[] dVarArr = (v1.d[]) arrayList.toArray(new v1.d[0]);
-        v1.d[] initializers = (v1.d[]) Arrays.copyOf(dVarArr, dVarArr.length);
+        arrayList.add(new v1.c(a2));
+        v1.c[] cVarArr = (v1.c[]) arrayList.toArray(new v1.c[0]);
+        v1.c[] initializers = (v1.c[]) Arrays.copyOf(cVarArr, cVarArr.length);
         kotlin.jvm.internal.i.e(initializers, "initializers");
-        v1.b bVar = new v1.b();
+        uc.b bVar = new uc.b();
         bVar.a = initializers;
-        return (m0) new androidx.biometric.e(u0Var.f(), bVar, u0Var instanceof i ? ((i) u0Var).d() : v1.a.b).l(m0.class, "androidx.lifecycle.internal.SavedStateHandlesVM");
+        return (m0) new androidx.biometric.e(u0Var.f(), bVar, u0Var instanceof i ? ((i) u0Var).d() : v1.a.b).n(m0.class, "androidx.lifecycle.internal.SavedStateHandlesVM");
     }
 }

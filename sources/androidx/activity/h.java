@@ -6,11 +6,11 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
-import androidx.fragment.app.d0;
-import androidx.fragment.app.i0;
+import androidx.fragment.app.e0;
+import androidx.fragment.app.j0;
 import java.util.LinkedHashMap;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class h extends androidx.activity.result.f {
     public final /* synthetic */ m h;
@@ -20,13 +20,13 @@ public final class h extends androidx.activity.result.f {
     }
 
     @Override // androidx.activity.result.f
-    public final void b(int i10, d0 d0Var, Object obj) {
+    public final void b(int i10, e0 e0Var, Object obj) {
         a9.r rVar;
         Intent input;
         Bundle bundleExtra;
         Bundle bundle;
         int i11;
-        int i12 = d0Var.a;
+        int i12 = e0Var.a;
         m mVar = this.h;
         switch (i12) {
             case 1:
@@ -59,7 +59,7 @@ public final class h extends androidx.activity.result.f {
             new Handler(Looper.getMainLooper()).post(new g(this, i10, rVar, 0));
             return;
         }
-        switch (d0Var.a) {
+        switch (e0Var.a) {
             case 0:
                 androidx.activity.result.g gVar = (androidx.activity.result.g) obj;
                 input = new Intent("androidx.activity.result.contract.action.INTENT_SENDER_REQUEST");
@@ -74,7 +74,7 @@ public final class h extends androidx.activity.result.f {
                     }
                 }
                 input.putExtra("androidx.activity.result.contract.extra.INTENT_SENDER_REQUEST", gVar);
-                if (i0.K(2)) {
+                if (j0.K(2)) {
                     Log.v("FragmentManager", "CreateIntent created the following intent: " + input);
                     break;
                 }
@@ -111,7 +111,7 @@ public final class h extends androidx.activity.result.f {
             if (stringArrayExtra == null) {
                 stringArrayExtra = new String[0];
             }
-            e0.c.e(mVar, stringArrayExtra, i10);
+            e0.b.e(mVar, stringArrayExtra, i10);
             return;
         }
         if (!"androidx.activity.result.contract.action.INTENT_SENDER_REQUEST".equals(input.getAction())) {

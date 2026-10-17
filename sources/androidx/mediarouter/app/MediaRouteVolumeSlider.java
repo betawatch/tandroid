@@ -9,9 +9,9 @@ import android.graphics.drawable.LayerDrawable;
 import android.util.AttributeSet;
 import android.util.Log;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public class MediaRouteVolumeSlider extends m.e0 {
+public class MediaRouteVolumeSlider extends m.d0 {
     public final float b;
     public boolean c;
     public Drawable d;
@@ -45,7 +45,7 @@ public class MediaRouteVolumeSlider extends m.e0 {
         super.setThumb(z10 ? null : this.d);
     }
 
-    @Override // m.e0, android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
+    @Override // m.d0, android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
     public final void drawableStateChanged() {
         super.drawableStateChanged();
         int i10 = isEnabled() ? 255 : (int) (this.b * 255.0f);

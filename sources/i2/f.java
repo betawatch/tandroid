@@ -1,43 +1,53 @@
 package i2;
 
-import android.text.TextUtils;
-import v7.u6;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class f {
-    public final String a;
-    public final b2.x b;
-    public final b2.x c;
-    public final int d;
-    public final int e;
+    public final long a;
+    public final long b;
+    public long c = -9223372036854775807L;
+    public long d = -9223372036854775807L;
+    public long f = -9223372036854775807L;
+    public long g = -9223372036854775807L;
+    public float j = 0.97f;
+    public float i = 1.03f;
+    public float k = 1.0f;
+    public long l = -9223372036854775807L;
+    public long e = -9223372036854775807L;
+    public long h = -9223372036854775807L;
+    public long m = -9223372036854775807L;
+    public long n = -9223372036854775807L;
 
-    public f(String str, b2.x xVar, b2.x xVar2, int i10, int i11) {
-        u6.g(i10 == 0 || i11 == 0);
-        u6.g(true ^ TextUtils.isEmpty(str));
-        this.a = str;
-        xVar.getClass();
-        this.b = xVar;
-        xVar2.getClass();
-        this.c = xVar2;
-        this.d = i10;
-        this.e = i11;
+    public f(long j10, long j11) {
+        this.a = j10;
+        this.b = j11;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && f.class == obj.getClass()) {
-            f fVar = (f) obj;
-            if (this.d == fVar.d && this.e == fVar.e && this.a.equals(fVar.a) && this.b.equals(fVar.b) && this.c.equals(fVar.c)) {
-                return true;
+    public final void a() {
+        long j10;
+        long j11 = this.c;
+        if (j11 != -9223372036854775807L) {
+            j10 = this.d;
+            if (j10 == -9223372036854775807L) {
+                long j12 = this.f;
+                if (j12 != -9223372036854775807L && j11 < j12) {
+                    j11 = j12;
+                }
+                j10 = this.g;
+                if (j10 == -9223372036854775807L || j11 <= j10) {
+                    j10 = j11;
+                }
             }
+        } else {
+            j10 = -9223372036854775807L;
         }
-        return false;
-    }
-
-    public final int hashCode() {
-        return this.c.hashCode() + ((this.b.hashCode() + a1.g.g((((527 + this.d) * 31) + this.e) * 31, 31, this.a)) * 31);
+        if (this.e == j10) {
+            return;
+        }
+        this.e = j10;
+        this.h = j10;
+        this.m = -9223372036854775807L;
+        this.n = -9223372036854775807L;
+        this.l = -9223372036854775807L;
     }
 }

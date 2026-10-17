@@ -13,10 +13,10 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.atomic.AtomicInteger;
 import v7.q8;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class n0 implements j9.t, u {
-    public b2.s0 a;
+    public b2.r0 a;
     public String b;
     public Uri c;
     public long d;
@@ -24,13 +24,13 @@ public final class n0 implements j9.t, u {
 
     public n0(p0 p0Var) {
         this.e = p0Var;
-        this.a = b2.s0.L;
+        this.a = b2.r0.L;
         this.b = "";
         this.d = -9223372036854775807L;
     }
 
     @Override // m4.u
-    public void c(int i10, b2.c1 c1Var) {
+    public void c(int i10, b2.b1 b1Var) {
         p0 p0Var = (p0) this.e;
         m1 m1Var = p0Var.g.t;
         int i11 = m1Var.o0(20) ? 4 : 0;
@@ -84,36 +84,36 @@ public final class n0 implements j9.t, u {
         ((n4.n) p0Var.m.b).a.setPlaybackToLocal((m1Var.o0(21) ? m1Var.H() : b2.f.i).b());
     }
 
-    public void l(b2.p0 p0Var) {
-        p0 p0Var2 = (p0) this.e;
-        n4.s sVar = p0Var2.m;
+    public void l(b2.o0 o0Var) {
+        p0 p0Var = (p0) this.e;
+        n4.s sVar = p0Var.m;
         r();
-        if (p0Var == null) {
+        if (o0Var == null) {
             ((n4.n) sVar.b).a.setRatingType(0);
         } else {
-            ((n4.n) sVar.b).a.setRatingType(n.e(p0Var.d.i));
+            ((n4.n) sVar.b).a.setRatingType(n.e(o0Var.d.i));
         }
-        p0Var2.O(p0Var2.g.t);
+        p0Var.O(p0Var.g.t);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:13:0x0039, code lost:
     
-        if (j$.util.Objects.equals(r4.o0(18) ? r4.i0() : b2.s0.L, r1) == false) goto L18;
+        if (j$.util.Objects.equals(r4.o0(18) ? r4.i0() : b2.r0.L, r1) == false) goto L18;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public void m(int i10, m1 m1Var, m1 m1Var2) {
         p0 p0Var = (p0) this.e;
-        b2.p1 T0 = m1Var2.T0();
+        b2.o1 T0 = m1Var2.T0();
         if (m1Var == null || !Objects.equals(m1Var.T0(), T0)) {
             q(T0);
         }
-        b2.s0 i02 = m1Var2.o0(18) ? m1Var2.i0() : b2.s0.L;
+        b2.r0 i02 = m1Var2.o0(18) ? m1Var2.i0() : b2.r0.L;
         if (m1Var != null) {
         }
         n(i02);
-        b2.s0 U0 = m1Var2.U0();
+        b2.r0 U0 = m1Var2.U0();
         if (m1Var == null || !Objects.equals(m1Var.U0(), U0)) {
             r();
         }
@@ -130,7 +130,7 @@ public final class n0 implements j9.t, u {
             p0Var.s = i11;
             ((n4.n) p0Var.m.b).a.setFlags(i11 | 3);
         }
-        b2.p0 S0 = m1Var2.S0();
+        b2.o0 S0 = m1Var2.S0();
         if (m1Var == null || !Objects.equals(m1Var.S0(), S0)) {
             l(S0);
         } else {
@@ -138,11 +138,11 @@ public final class n0 implements j9.t, u {
         }
     }
 
-    public void n(b2.s0 s0Var) {
+    public void n(b2.r0 r0Var) {
         p0 p0Var = (p0) this.e;
         n4.s sVar = p0Var.m;
         CharSequence queueTitle = ((n4.f) ((n4.w) sVar.c).a).a.getQueueTitle();
-        CharSequence charSequence = s0Var.a;
+        CharSequence charSequence = r0Var.a;
         if (TextUtils.equals(queueTitle, charSequence)) {
             return;
         }
@@ -190,8 +190,8 @@ public final class n0 implements j9.t, u {
             return;
         }
         p0.E(p0Var.m, n.b(this.a, this.b, this.c, this.d, bitmap));
-        e0 e0Var = p0Var.g;
-        e2.m0.W(e0Var.o, new y(e0Var, 1));
+        f0 f0Var = p0Var.g;
+        e2.m0.W(f0Var.o, new y(f0Var, 1));
     }
 
     public void p(boolean z10) {
@@ -213,21 +213,21 @@ public final class n0 implements j9.t, u {
         }
     }
 
-    public void q(b2.p1 p1Var) {
-        s(p1Var);
+    public void q(b2.o1 o1Var) {
+        s(o1Var);
         r();
     }
 
     public void r() {
         long j10;
         Uri uri;
-        b2.s0 s0Var;
+        b2.r0 r0Var;
         Uri uri2;
         p0 p0Var = (p0) this.e;
-        e0 e0Var = p0Var.g;
-        m1 m1Var = e0Var.t;
-        b2.p0 S0 = m1Var.S0();
-        b2.s0 U0 = m1Var.U0();
+        f0 f0Var = p0Var.g;
+        m1 m1Var = f0Var.t;
+        b2.o0 S0 = m1Var.S0();
+        b2.r0 U0 = m1Var.U0();
         long j11 = -9223372036854775807L;
         if ((!m1Var.o0(16) || !m1Var.P0()) && m1Var.o0(16)) {
             j11 = m1Var.getDuration();
@@ -242,67 +242,67 @@ public final class n0 implements j9.t, u {
         this.c = uri3;
         this.a = U0;
         this.d = j11;
-        j9.y o10 = e0Var.m.o(U0);
-        if (o10 != null) {
+        j9.y e = f0Var.m.e(U0);
+        if (e != null) {
             p0Var.r = null;
-            if (!o10.isDone()) {
+            if (!e.isDone()) {
                 j10 = j11;
                 uri = uri3;
-                s0Var = U0;
-                n0 n0Var = new n0(this, s0Var, str, uri, j10);
+                r0Var = U0;
+                n0 n0Var = new n0(this, r0Var, str, uri, j10);
                 str = str;
                 p0Var.r = n0Var;
-                Handler handler = e0Var.l;
+                Handler handler = f0Var.l;
                 Objects.requireNonNull(handler);
-                o10.a(new j9.u(0, o10, n0Var), new i2.f0(handler, 1));
-                p0.E(p0Var.m, n.b(s0Var, str, uri, j10, bitmap));
+                e.a(new j9.u(0, e, n0Var), new i2.e0(handler, 1));
+                p0.E(p0Var.m, n.b(r0Var, str, uri, j10, bitmap));
             }
             try {
-                bitmap = (Bitmap) q8.a(o10);
-            } catch (CancellationException | ExecutionException e) {
-                e2.a.l("MediaSessionLegacyStub", "Failed to load bitmap: " + e.getMessage());
+                bitmap = (Bitmap) q8.a(e);
+            } catch (CancellationException | ExecutionException e7) {
+                e2.a.l("MediaSessionLegacyStub", "Failed to load bitmap: " + e7.getMessage());
             }
         }
         j10 = j11;
         uri = uri3;
-        s0Var = U0;
-        p0.E(p0Var.m, n.b(s0Var, str, uri, j10, bitmap));
+        r0Var = U0;
+        p0.E(p0Var.m, n.b(r0Var, str, uri, j10, bitmap));
     }
 
-    public void s(b2.p1 p1Var) {
+    public void s(b2.o1 o1Var) {
         p0 p0Var = (p0) this.e;
-        e0 e0Var = p0Var.g;
-        m1 m1Var = e0Var.t;
-        if (!p0Var.x.a(17) || !m1Var.s().a(17) || p1Var.p()) {
+        f0 f0Var = p0Var.g;
+        m1 m1Var = f0Var.t;
+        if (!p0Var.x.a(17) || !m1Var.s().a(17) || o1Var.p()) {
             p0.D(p0Var.m, null);
             return;
         }
         int i10 = n.a;
         ArrayList arrayList = new ArrayList();
-        b2.o1 o1Var = new b2.o1();
-        for (int i11 = 0; i11 < p1Var.o(); i11++) {
-            arrayList.add(p1Var.m(i11, o1Var, 0L).c);
+        b2.n1 n1Var = new b2.n1();
+        for (int i11 = 0; i11 < o1Var.o(); i11++) {
+            arrayList.add(o1Var.m(i11, n1Var, 0L).c);
         }
         ArrayList arrayList2 = new ArrayList();
-        androidx.car.app.utils.b bVar = new androidx.car.app.utils.b(this, new AtomicInteger(0), arrayList, arrayList2, 20);
+        ai.y0 y0Var = new ai.y0(this, new AtomicInteger(0), arrayList, arrayList2, 26);
         for (int i12 = 0; i12 < arrayList.size(); i12++) {
-            byte[] bArr = ((b2.p0) arrayList.get(i12)).d.k;
+            byte[] bArr = ((b2.o0) arrayList.get(i12)).d.k;
             if (bArr == null) {
                 arrayList2.add(null);
-                bVar.run();
+                y0Var.run();
             } else {
-                j9.y u10 = e0Var.m.u(bArr);
-                arrayList2.add(u10);
-                Handler handler = e0Var.l;
+                j9.y v = f0Var.m.v(bArr);
+                arrayList2.add(v);
+                Handler handler = f0Var.l;
                 Objects.requireNonNull(handler);
-                u10.a(bVar, new i2.f0(handler, 1));
+                v.a(y0Var, new i2.e0(handler, 1));
             }
         }
     }
 
-    public n0(n0 n0Var, b2.s0 s0Var, String str, Uri uri, long j10) {
+    public n0(n0 n0Var, b2.r0 r0Var, String str, Uri uri, long j10) {
         this.e = n0Var;
-        this.a = s0Var;
+        this.a = r0Var;
         this.b = str;
         this.c = uri;
         this.d = j10;
@@ -329,6 +329,6 @@ public final class n0 implements j9.t, u {
     }
 
     @Override // m4.u
-    public /* synthetic */ void h(int i10, k1 k1Var, b2.c1 c1Var, boolean z10, boolean z11) {
+    public /* synthetic */ void h(int i10, k1 k1Var, b2.b1 b1Var, boolean z10, boolean z11) {
     }
 }

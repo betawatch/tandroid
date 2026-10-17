@@ -1,31 +1,50 @@
 package ad;
 
-import java.io.FilterOutputStream;
+import java.util.HashMap;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.ah;
+import org.telegram.ui.Components.uj0;
+import org.telegram.ui.Components.zg;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class g extends FilterOutputStream {
-    public final void a() {
-        ((FilterOutputStream) this).out.write("0\r\n\r\n".getBytes());
+public final class g extends HashMap {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+
+    public /* synthetic */ g(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // java.io.FilterOutputStream, java.io.OutputStream
-    public final void write(int i10) {
-        write(new byte[]{(byte) i10}, 0, 1);
-    }
-
-    @Override // java.io.FilterOutputStream, java.io.OutputStream
-    public final void write(byte[] bArr) {
-        write(bArr, 0, bArr.length);
-    }
-
-    @Override // java.io.FilterOutputStream, java.io.OutputStream
-    public final void write(byte[] bArr, int i10, int i11) {
-        if (i11 == 0) {
-            return;
+    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
+    public Object get(Object obj) {
+        switch (this.a) {
+            case 1:
+                int i10 = ((ah) this.b).v;
+                uj0 uj0Var = (uj0) super.get(obj);
+                if (uj0Var != null) {
+                    return uj0Var;
+                }
+                zg zgVar = (zg) obj;
+                uj0 uj0Var2 = new uj0(zgVar.c, AndroidUtilities.dp(i10), AndroidUtilities.dp(i10));
+                put(zgVar, uj0Var2);
+                return uj0Var2;
+            default:
+                return super.get(obj);
         }
-        ((FilterOutputStream) this).out.write(String.format("%x\r\n", Integer.valueOf(i11)).getBytes());
-        ((FilterOutputStream) this).out.write(bArr, i10, i11);
-        ((FilterOutputStream) this).out.write("\r\n".getBytes());
+    }
+
+    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
+    public Object put(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                String str = (String) obj;
+                String str2 = (String) obj2;
+                ((j) this.b).f.put(str == null ? str : str.toLowerCase(), str2);
+                return (String) super.put(str, str2);
+            default:
+                return super.put(obj, obj2);
+        }
     }
 }

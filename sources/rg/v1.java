@@ -1,76 +1,9 @@
 package rg;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.sk;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.mm0;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class v1 extends mm0 implements NotificationCenter.NotificationCenterDelegate {
-    public final Path V2;
-    public q0.a W2;
+public interface v1 {
+    void U(float f7);
 
-    public v1(Context context) {
-        super(context, null);
-        this.V2 = new Path();
-        setWillNotDraw(false);
-        setLayoutManager(new s4.b0());
-        setAdapter(new u1());
-        setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
-        setClipToPadding(false);
-    }
-
-    @Override // org.telegram.ui.Components.mm0
-    public final Integer W0(int i10) {
-        return 285212671;
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == NotificationCenter.customTypefacesLoaded) {
-            getAdapter().l();
-        }
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void draw(Canvas canvas) {
-        q0.a aVar = this.W2;
-        if (aVar != null) {
-            Path path = this.V2;
-            aVar.accept(path);
-            canvas.save();
-            canvas.clipPath(path);
-        }
-        super.draw(canvas);
-        if (this.W2 != null) {
-            canvas.restore();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.customTypefacesLoaded);
-    }
-
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.customTypefacesLoaded);
-    }
-
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, sk.C(16.0f, AndroidUtilities.dp(48.0f) * Math.min(qg.j0.c().size(), 6), TLObject.FLAG_30));
-    }
-
-    public void setMaskProvider(q0.a aVar) {
-        this.W2 = aVar;
-        invalidate();
-    }
+    float get();
 }

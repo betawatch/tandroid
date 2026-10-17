@@ -1,183 +1,272 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
-import android.view.MotionEvent;
+import android.text.Layout;
+import android.text.SpannableStringBuilder;
 import android.view.View;
-import java.util.ArrayList;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import java.util.Date;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.AppGlobalConfig;
+import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class tc0 extends View {
-    public final ArrayList a;
-    public float b;
-    public final Paint c;
-    public final int d;
-    public final int e;
-    public Drawable f;
-    public float h;
-    public float n;
-    public final RectF r;
-    public Utilities.Callback s;
+public final class tc0 extends FrameLayout {
+    public boolean E;
+    public float F;
+    public final int a;
+    public final int b;
+    public final org.telegram.ui.ActionBar.d6 c;
+    public final LinearLayout d;
+    public final TextView e;
+    public final TextView f;
+    public final TextView h;
+    public final long n;
+    public final int r;
+    public final int s;
+    public final int v;
+    public final int w;
+    public final Runnable x;
+    public final int y;
 
-    public tc0(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
+    public tc0(Context context, int i10, MessageObject messageObject, Runnable runnable, org.telegram.ui.ActionBar.d6 d6Var) {
         super(context);
-        int[] iArr;
-        this.a = new ArrayList();
-        Paint paint = new Paint(1);
-        this.c = paint;
-        this.h = AndroidUtilities.dp(14.0f);
-        this.n = AndroidUtilities.dp(0.0f);
-        this.r = new RectF();
-        if (org.telegram.ui.ActionBar.g6.I.q()) {
-            this.d = -1862270977;
-            this.e = -1325400065;
-            paint.setColor(285212671);
+        TLRPC.MessageFwdHeader messageFwdHeader;
+        this.E = false;
+        this.F = -1.0f;
+        this.b = i10;
+        int i11 = messageObject.currentAccount;
+        this.a = i11;
+        this.c = d6Var;
+        this.x = runnable;
+        this.y = ConnectionsManager.getInstance(i11).getCurrentTime() - messageObject.messageOwner.date;
+        this.n = messageObject.getDialogId();
+        this.r = messageObject.getId();
+        TLRPC.Message message = messageObject.messageOwner;
+        this.s = message == null ? 0 : message.date;
+        this.v = message == null ? 0 : message.edit_date;
+        this.w = (message == null || (messageFwdHeader = message.fwd_from) == null) ? 0 : messageFwdHeader.date;
+        ImageView imageView = new ImageView(context);
+        addView(imageView, w7.z5.a(24.0f, 11.0f, 0.0f, 0.0f, 0.0f, 24, 19));
+        Drawable mutate = context.getDrawable(i10 == 1 ? AppGlobalConfig.getInstance(i11).messagePrimaryEditedDate.get() ? R.drawable.outline_message_time_24 : R.drawable.menu_edited_stamp : i10 == 2 ? R.drawable.menu_forward_stamp : messageObject.isVoice() ? R.drawable.msg_played : R.drawable.msg_seen).mutate();
+        mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.F8, d6Var), PorterDuff.Mode.MULTIPLY));
+        imageView.setImageDrawable(mutate);
+        TextView textView = new TextView(context);
+        this.h = textView;
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("loading text ");
+        spannableStringBuilder.setSpan(new ca0(textView, AndroidUtilities.dp(96.0f), AndroidUtilities.dp(2.0f), d6Var), 0, spannableStringBuilder.length() - 1, 17);
+        int i12 = org.telegram.ui.ActionBar.h6.j5;
+        textView.setTextColor(org.telegram.ui.ActionBar.h6.m1(0.7f, org.telegram.ui.ActionBar.h6.w0(i12, d6Var)));
+        textView.setText(spannableStringBuilder);
+        textView.setTextSize(1, 13.0f);
+        addView(textView, w7.z5.a(-2.0f, 40.0f, -1.0f, 8.0f, 0.0f, 96, 19));
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.d = linearLayout;
+        linearLayout.setOrientation(0);
+        linearLayout.setAlpha(0.0f);
+        addView(linearLayout, w7.z5.a(-2.0f, 38.0f, 0.0f, 8.0f, 0.0f, -1, 19));
+        TextView textView2 = new TextView(context);
+        this.e = textView2;
+        org.telegram.messenger.wh.o(i12, d6Var, textView2, 1, 14.0f);
+        TextView i13 = com.google.android.gms.internal.cast.a6.i(linearLayout, textView2, w7.z5.t(-2, -2, 19, 0, -1, 0, 0), context);
+        this.f = i13;
+        i13.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(20.0f), org.telegram.ui.ActionBar.h6.m1(0.75f, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.d7, d6Var))));
+        org.telegram.messenger.wh.o(i12, d6Var, i13, 1, 11.0f);
+        i13.setPadding(AndroidUtilities.dp(5.33f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(5.33f), AndroidUtilities.dp(2.33f));
+        linearLayout.addView(i13, w7.z5.t(-2, -2, 19, 4, 0, 0, 0));
+        a();
+    }
+
+    public static void b(final Context context, final int i10, long j10, final boolean z10, Runnable runnable, final Runnable runnable2, final org.telegram.ui.ActionBar.d6 d6Var) {
+        final org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(1, context, d6Var, false);
+        f3Var.fixNavigationBar(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.h5, d6Var));
+        boolean premiumFeaturesBlocked = MessagesController.getInstance(i10).premiumFeaturesBlocked();
+        LinearLayout e = org.telegram.messenger.wh.e(context, 1);
+        e.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
+        xj0 xj0Var = new xj0(context);
+        xj0Var.setScaleType(ImageView.ScaleType.CENTER);
+        xj0Var.f(z10 ? R.raw.large_lastseen : R.raw.large_readtime, 70, 70, null);
+        xj0Var.d();
+        xj0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        xj0Var.setBackground(org.telegram.ui.ActionBar.h6.K(AndroidUtilities.dp(80.0f), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Oh, d6Var)));
+        e.addView(xj0Var, w7.z5.t(80, 80, 1, 0, 16, 0, 16));
+        TextView textView = new TextView(context);
+        textView.setTypeface(AndroidUtilities.bold());
+        textView.setGravity(17);
+        int i11 = org.telegram.ui.ActionBar.h6.j5;
+        org.telegram.messenger.wh.o(i11, d6Var, textView, 1, 20.0f);
+        textView.setText(LocaleController.getString(z10 ? R.string.PremiumLastSeenHeader1 : R.string.PremiumReadHeader1));
+        e.addView(textView, w7.z5.t(-1, -2, 1, 12, 0, 12, 0));
+        TextView textView2 = new TextView(context);
+        textView2.setGravity(17);
+        org.telegram.messenger.wh.o(i11, d6Var, textView2, 1, 14.0f);
+        String firstName = j10 > 0 ? UserObject.getFirstName(MessagesController.getInstance(i10).getUser(Long.valueOf(j10))) : "";
+        org.telegram.messenger.wh.r(z10 ? premiumFeaturesBlocked ? R.string.PremiumLastSeenText1Locked : R.string.PremiumLastSeenText1 : premiumFeaturesBlocked ? R.string.PremiumReadText1Locked : R.string.PremiumReadText1, new Object[]{firstName}, textView2);
+        e.addView(textView2, w7.z5.t(-1, -2, 1, 32, 9, 32, 19));
+        final ei.d f7 = org.telegram.messenger.wh.f(24, context, d6Var, true);
+        f7.g(LocaleController.getString(z10 ? R.string.PremiumLastSeenButton1 : R.string.PremiumReadButton1), false, true);
+        e.addView(f7, w7.z5.q(-1, 48, 1));
+        f7.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.pc0
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                ei.d dVar = ei.d.this;
+                dVar.setLoading(true);
+                boolean z11 = z10;
+                int i12 = i10;
+                org.telegram.ui.ActionBar.f3 f3Var2 = f3Var;
+                Runnable runnable3 = runnable2;
+                if (z11) {
+                    TL_account.setPrivacy setprivacy = new TL_account.setPrivacy();
+                    setprivacy.key = new TLRPC.TL_inputPrivacyKeyStatusTimestamp();
+                    setprivacy.rules.add(new TLRPC.TL_inputPrivacyValueAllowAll());
+                    ConnectionsManager.getInstance(i12).sendRequest(setprivacy, new ai.p2(dVar, f3Var2, runnable3, 16));
+                    return;
+                }
+                TL_account.setGlobalPrivacySettings setglobalprivacysettings = new TL_account.setGlobalPrivacySettings();
+                TLRPC.GlobalPrivacySettings globalPrivacySettings = ContactsController.getInstance(i12).getGlobalPrivacySettings();
+                setglobalprivacysettings.settings = globalPrivacySettings;
+                if (globalPrivacySettings == null) {
+                    setglobalprivacysettings.settings = new TLRPC.TL_globalPrivacySettings();
+                }
+                setglobalprivacysettings.settings.hide_read_marks = false;
+                ConnectionsManager.getInstance(i12).sendRequest(setglobalprivacysettings, new ai.s9(context, d6Var, dVar, f3Var2, runnable3, 6));
+            }
+        });
+        if (!premiumFeaturesBlocked) {
+            sc0 sc0Var = new sc0(context, d6Var);
+            sc0Var.setGravity(17);
+            sc0Var.setAlignment(Layout.Alignment.ALIGN_CENTER);
+            sc0Var.setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.z6, d6Var));
+            sc0Var.l(" " + LocaleController.getString(R.string.PremiumOr) + " ", false);
+            sc0Var.setTextSize(14);
+            e.addView(sc0Var, w7.z5.t(270, -2, 1, 12, 17, 12, 17));
+            TextView textView3 = new TextView(context);
+            textView3.setTypeface(AndroidUtilities.bold());
+            textView3.setGravity(17);
+            textView3.setTextColor(org.telegram.ui.ActionBar.h6.w0(i11, d6Var));
+            textView3.setTextSize(1, 20.0f);
+            textView3.setText(LocaleController.getString(z10 ? R.string.PremiumLastSeenHeader2 : R.string.PremiumReadHeader2));
+            e.addView(textView3, w7.z5.t(-1, -2, 1, 12, 0, 12, 0));
+            TextView textView4 = new TextView(context);
+            textView4.setGravity(17);
+            org.telegram.messenger.wh.o(i11, d6Var, textView4, 1, 14.0f);
+            org.telegram.messenger.wh.r(z10 ? R.string.PremiumLastSeenText2 : R.string.PremiumReadText2, new Object[]{firstName}, textView4);
+            e.addView(textView4, w7.z5.t(-1, -2, 1, 32, 9, 32, 19));
+            sg.p0 p0Var = new sg.p0(context, d6Var, true);
+            p0Var.setOnClickListener(new qc0(z10, f3Var, runnable));
+            p0Var.b(LocaleController.getString(z10 ? R.string.PremiumLastSeenButton2 : R.string.PremiumReadButton2), false, false);
+            e.addView(p0Var, w7.z5.t(-1, 48, 1, 0, 0, 0, 4));
+        }
+        f3Var.setCustomView(e);
+        f3Var.show();
+    }
+
+    public final void a() {
+        TextView textView = this.e;
+        int i10 = this.a;
+        TextView textView2 = this.f;
+        TextView textView3 = this.h;
+        LinearLayout linearLayout = this.d;
+        int i11 = this.b;
+        if (i11 == 1) {
+            linearLayout.setAlpha(1.0f);
+            textView3.setAlpha(0.0f);
+            textView2.setVisibility(8);
+            textView.setText(AppGlobalConfig.getInstance(i10).messagePrimaryEditedDate.get() ? LocaleController.formatPmSentDate(this.s) : LocaleController.formatPmEditedDate(this.v));
             return;
         }
-        int w02 = org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.Nd, c6Var);
-        if (c6Var instanceof org.telegram.ui.co) {
-            org.telegram.ui.co coVar = (org.telegram.ui.co) c6Var;
-            if ((coVar.d() instanceof cd0) && (iArr = ((cd0) coVar.d()).a) != null) {
-                w02 = AndroidUtilities.getAverageColor(AndroidUtilities.getAverageColor(iArr[0], iArr[1]), AndroidUtilities.getAverageColor(iArr[2], iArr[3]));
-            }
-        }
-        this.d = org.telegram.ui.ActionBar.g6.c(-1606201797, w02);
-        this.e = org.telegram.ui.ActionBar.g6.c(-448573893, w02);
-        paint.setColor(org.telegram.ui.ActionBar.g6.c(814980216, w02));
-    }
-
-    public final void a(int i10, String str) {
-        this.a.add(new sc0(i10, str));
-    }
-
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        ArrayList arrayList = this.a;
-        if (arrayList.size() <= 1) {
+        if (i11 == 2) {
+            linearLayout.setAlpha(1.0f);
+            textView3.setAlpha(0.0f);
+            textView2.setVisibility(8);
+            textView.setText(LocaleController.formatPmFwdDate(this.w));
             return;
         }
-        float f7 = this.b;
-        double d = f7;
-        int floor = (int) Math.floor(d);
-        boolean z10 = floor >= 0 && floor < arrayList.size();
-        int ceil = (int) Math.ceil(d);
-        boolean z11 = ceil >= 0 && ceil < arrayList.size();
-        RectF rectF = this.r;
-        if (z10 && z11) {
-            AndroidUtilities.lerp(((sc0) arrayList.get(floor)).c, ((sc0) arrayList.get(ceil)).c, f7 - floor, rectF);
-        } else if (z10) {
-            rectF.set(((sc0) arrayList.get(floor)).c);
-        } else if (z11) {
-            rectF.set(((sc0) arrayList.get(ceil)).c);
-        }
-        Drawable drawable = this.f;
-        if (drawable != null) {
-            drawable.draw(canvas);
-        }
-        if (z10 || z11) {
-            canvas.drawRoundRect(rectF, AndroidUtilities.dp(13.0f), AndroidUtilities.dp(13.0f), this.c);
-        }
-        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            sc0 sc0Var = (sc0) arrayList.get(i10);
-            sc0Var.b.c(sc0Var.c.left + this.h, getMeasuredHeight() / 2.0f, 1.0f, i0.a.d(1.0f - Math.abs(f7 - i10), this.d, this.e), canvas);
-        }
+        setOnClickListener(null);
+        linearLayout.setAlpha(0.0f);
+        textView3.setAlpha(1.0f);
+        textView2.setVisibility(0);
+        TLRPC.TL_messages_getOutboxReadDate tL_messages_getOutboxReadDate = new TLRPC.TL_messages_getOutboxReadDate();
+        tL_messages_getOutboxReadDate.peer = MessagesController.getInstance(i10).getInputPeer(this.n);
+        tL_messages_getOutboxReadDate.msg_id = this.r;
+        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getOutboxReadDate, new y1(this, 8));
     }
 
-    @Override // android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        int i10;
-        Utilities.Callback callback;
-        ArrayList arrayList = this.a;
-        if (arrayList.size() > 1) {
-            float x10 = motionEvent.getX();
-            float y3 = motionEvent.getY();
-            int i11 = 0;
-            while (true) {
-                if (i11 >= arrayList.size()) {
-                    i10 = -1;
-                    break;
-                }
-                if (((sc0) arrayList.get(i11)).d.contains(x10, y3)) {
-                    i10 = ((sc0) arrayList.get(i11)).a;
-                    break;
-                }
-                i11++;
-            }
-            if (motionEvent.getAction() == 0) {
-                if (i10 != -1) {
-                    return true;
-                }
-            } else if (motionEvent.getAction() == 1 && i10 != -1 && (callback = this.s) != null) {
-                callback.run(Integer.valueOf(i10));
-            }
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        ub ubVar;
+        super.onDetachedFromWindow();
+        qc qcVar = qc.w;
+        if (qcVar == null || (ubVar = qcVar.e) == null || ubVar.getParent() == null || !(qcVar.e.getParent().getParent() instanceof kb)) {
+            return;
         }
-        return false;
+        qcVar.b();
     }
 
-    public int getColor() {
-        return this.d;
-    }
-
-    @Override // android.view.View
+    @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        ArrayList arrayList;
-        super.onMeasure(i10, i11);
-        this.h = AndroidUtilities.dp(14.0f);
-        float f7 = 0.0f;
-        this.n = AndroidUtilities.dp(0.0f);
-        int i12 = 0;
-        while (true) {
-            arrayList = this.a;
-            if (i12 >= arrayList.size()) {
-                break;
+        float f7;
+        View view = (View) getParent();
+        int size = View.MeasureSpec.getSize(i10);
+        int mode = View.MeasureSpec.getMode(i10);
+        if (this.F < 0.0f) {
+            this.F = 0.0f;
+            int i12 = this.b;
+            TextView textView = this.e;
+            if (i12 == 0) {
+                long currentTimeMillis = System.currentTimeMillis();
+                float max = Math.max(this.F, AndroidUtilities.dp(144.0f));
+                this.F = max;
+                float max2 = Math.max(max, textView.getPaint().measureText(LocaleController.getString(R.string.PmReadUnknown)) + AndroidUtilities.dp(48.0f));
+                this.F = max2;
+                float max3 = Math.max(max2, textView.getPaint().measureText(LocaleController.getString(R.string.PmRead) + this.f.getPaint().measureText(LocaleController.getString(R.string.PmReadShowWhen))) + AndroidUtilities.dp(64.0f));
+                this.F = max3;
+                float max4 = Math.max(max3, textView.getPaint().measureText(LocaleController.formatString(R.string.PmReadTodayAt, LocaleController.getInstance().getFormatterDay().format(new Date(currentTimeMillis)))) + ((float) AndroidUtilities.dp(48.0f)));
+                this.F = max4;
+                int i13 = this.y;
+                if (i13 > 86400) {
+                    f7 = 48.0f;
+                    this.F = Math.max(max4, textView.getPaint().measureText(LocaleController.formatString(R.string.PmReadYesterdayAt, LocaleController.getInstance().getFormatterDay().format(new Date(currentTimeMillis)))) + AndroidUtilities.dp(48.0f));
+                } else {
+                    f7 = 48.0f;
+                }
+                if (i13 > 172800) {
+                    float max5 = Math.max(this.F, textView.getPaint().measureText(LocaleController.formatString(R.string.PmReadDateTimeAt, LocaleController.getInstance().getFormatterDayMonth().format(new Date(currentTimeMillis)), LocaleController.getInstance().getFormatterDay().format(new Date(currentTimeMillis)))) + AndroidUtilities.dp(f7));
+                    this.F = max5;
+                    this.F = Math.max(max5, textView.getPaint().measureText(LocaleController.formatString(R.string.PmReadDateTimeAt, LocaleController.getInstance().getFormatterYear().format(new Date(currentTimeMillis)), LocaleController.getInstance().getFormatterDay().format(new Date(currentTimeMillis)))) + AndroidUtilities.dp(f7));
+                }
+            } else {
+                this.F = textView.getPaint().measureText(textView.getText().toString()) + AndroidUtilities.dp(48.0f);
             }
-            if (i12 > 0) {
-                f7 += this.n;
-            }
-            f7 += ((sc0) arrayList.get(i12)).b.l() + this.h + this.h;
-            i12++;
         }
-        int measuredWidth = getMeasuredWidth();
-        int measuredHeight = getMeasuredHeight();
-        float dp = (measuredHeight - AndroidUtilities.dp(26.0f)) / 2.0f;
-        float dp2 = (AndroidUtilities.dp(26.0f) + measuredHeight) / 2.0f;
-        float f10 = measuredWidth;
-        float f11 = (f10 - f7) / 2.0f;
-        float f12 = f11;
-        for (int i13 = 0; i13 < arrayList.size(); i13++) {
-            float l4 = ((sc0) arrayList.get(i13)).b.l() + this.h + this.h;
-            ((sc0) arrayList.get(i13)).c.set(f12, dp, f12 + l4, dp2);
-            ((sc0) arrayList.get(i13)).d.set(((sc0) arrayList.get(i13)).c);
-            ((sc0) arrayList.get(i13)).d.inset((-this.n) / 2.0f, -dp);
-            f12 += l4 + this.n;
+        int i14 = TLObject.FLAG_30;
+        if (view != null && view.getWidth() > 0) {
+            size = view.getWidth();
+            mode = 1073741824;
         }
-        Drawable drawable = this.f;
-        if (drawable != null) {
-            Rect rect = AndroidUtilities.rectTmp2;
-            drawable.getPadding(rect);
-            int i14 = measuredHeight / 2;
-            this.f.setBounds((((int) f11) - AndroidUtilities.dp(3.0f)) - rect.left, (i14 - AndroidUtilities.dp(16.0f)) - rect.top, AndroidUtilities.dp(3.0f) + ((int) ((f10 + f7) / 2.0f)) + rect.right, AndroidUtilities.dp(16.0f) + i14 + rect.bottom);
+        float f10 = size;
+        float f11 = this.F;
+        if (f10 < f11 || mode == Integer.MIN_VALUE) {
+            size = (int) f11;
+        } else {
+            i14 = mode;
         }
-    }
-
-    @Override // android.view.View
-    public void setBackground(Drawable drawable) {
-        this.f = drawable;
-    }
-
-    public void setOnTabClick(Utilities.Callback<Integer> callback) {
-        this.s = callback;
-    }
-
-    public void setSelectedTab(float f7) {
-        this.b = f7;
-        invalidate();
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, i14), i11);
     }
 }

@@ -1,39 +1,58 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
 import android.view.View;
-import org.telegram.ui.Components.a71;
-import org.telegram.ui.Components.i71;
-import org.telegram.ui.Components.l61;
-import org.telegram.ui.Components.m61;
-import org.telegram.ui.Components.mm0;
+import java.io.Serializable;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class r4 extends l61 {
-    public static final /* synthetic */ int a = 0;
+public final class r4 implements View.OnAttachStateChangeListener {
+    public final /* synthetic */ v3 a;
+    public final /* synthetic */ TL_wallet.walletTransaction[] b;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ Utilities.Callback2 e;
+    public final /* synthetic */ k2[] f;
+    public final /* synthetic */ String[] h;
+    public final /* synthetic */ boolean[] n;
 
-    static {
-        l61.setup(new r4());
+    public r4(v3 v3Var, TL_wallet.walletTransaction[] wallettransactionArr, q4 q4Var, int i10, Utilities.Callback2 callback2, k2[] k2VarArr, String[] strArr, boolean[] zArr) {
+        this.a = v3Var;
+        this.b = wallettransactionArr;
+        this.c = q4Var;
+        this.d = i10;
+        this.e = callback2;
+        this.f = k2VarArr;
+        this.h = strArr;
+        this.n = zArr;
     }
 
-    @Override // org.telegram.ui.Components.l61
-    public final void bindView(View view, m61 m61Var, boolean z10, a71 a71Var, i71 i71Var) {
-        ((s4) view).a(m61Var.l, m61Var.m, m61Var.k);
+    /* JADX WARN: Type inference failed for: r3v0, types: [java.io.Serializable, java.lang.String[]] */
+    /* JADX WARN: Type inference failed for: r4v0, types: [boolean[], java.io.Serializable] */
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewAttachedToWindow(View view) {
+        this.a.run(this.b[0]);
+        NotificationCenter.NotificationCenterDelegate notificationCenterDelegate = this.c;
+        if (notificationCenterDelegate != null) {
+            int i10 = this.d;
+            NotificationCenter.getInstance(i10).addObserver(notificationCenterDelegate, NotificationCenter.walletUpdate);
+            NotificationCenter.getInstance(i10).addObserver(notificationCenterDelegate, NotificationCenter.walletTransactionsUpdate);
+        }
+        Utilities.Callback2 callback2 = this.e;
+        if (callback2 != null) {
+            this.f[0].setOnDismissListener(new h(callback2, (Serializable) this.h, (Serializable) this.n, 12));
+        }
     }
 
-    @Override // org.telegram.ui.Components.l61
-    public final View createView(Context context, mm0 mm0Var, int i10, int i11, org.telegram.ui.ActionBar.c6 c6Var) {
-        return new s4(context, c6Var);
-    }
-
-    @Override // org.telegram.ui.Components.l61
-    public final boolean isClickable() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.l61
-    public final boolean isShadow() {
-        return true;
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewDetachedFromWindow(View view) {
+        NotificationCenter.NotificationCenterDelegate notificationCenterDelegate = this.c;
+        if (notificationCenterDelegate != null) {
+            int i10 = this.d;
+            NotificationCenter.getInstance(i10).removeObserver(notificationCenterDelegate, NotificationCenter.walletUpdate);
+            NotificationCenter.getInstance(i10).removeObserver(notificationCenterDelegate, NotificationCenter.walletTransactionsUpdate);
+        }
     }
 }

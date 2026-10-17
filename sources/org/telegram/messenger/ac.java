@@ -1,47 +1,32 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ac implements RequestDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
     public final /* synthetic */ long c;
     public final /* synthetic */ long d;
-    public final /* synthetic */ ArrayList e;
 
-    public /* synthetic */ ac(int i10, long j10, long j11, ArrayList arrayList, MessagesController messagesController) {
+    public /* synthetic */ ac(int i10, long j10, long j11, MessagesController messagesController) {
         this.a = i10;
         this.b = messagesController;
         this.c = j10;
         this.d = j11;
-        this.e = arrayList;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.b.lambda$checkUnreadPollVotesInternal2$433(this.c, this.d, this.e, tLObject, tL_error);
-                break;
-            case 1:
-                this.b.lambda$checkUnreadPollVotesInternal2$435(this.c, this.d, this.e, tLObject, tL_error);
-                break;
-            case 2:
-                this.b.lambda$checkUnreadPollVotesInternal2$437(this.c, this.d, this.e, tLObject, tL_error);
-                break;
-            case 3:
-                this.b.lambda$checkUnreadReactionsInternal2$426(this.c, this.d, this.e, tLObject, tL_error);
-                break;
-            case 4:
-                this.b.lambda$checkUnreadReactionsInternal2$428(this.c, this.d, this.e, tLObject, tL_error);
+                this.b.lambda$loadUnknownDialog$207(this.c, this.d, tLObject, tL_error);
                 break;
             default:
-                this.b.lambda$checkUnreadReactionsInternal2$430(this.c, this.d, this.e, tLObject, tL_error);
+                this.b.lambda$deleteMessages$123(this.c, this.d, tLObject, tL_error);
                 break;
         }
     }

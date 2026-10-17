@@ -30,11 +30,11 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.cd0;
-import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.gd;
+import org.telegram.ui.Components.bs;
+import org.telegram.ui.Components.ed;
+import org.telegram.ui.Components.wc0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public abstract class b1 extends FrameLayout {
     public final Paint E;
@@ -64,7 +64,7 @@ public abstract class b1 extends FrameLayout {
     public long c0;
     public final x0 d;
     public boolean d0;
-    public final org.telegram.ui.Components.g6 e;
+    public final org.telegram.ui.Components.f6 e;
     public Bitmap f;
     public BitmapShader h;
     public Matrix n;
@@ -72,14 +72,14 @@ public abstract class b1 extends FrameLayout {
     public float s;
     public boolean v;
     public boolean w;
-    public final c6 x;
+    public final d6 x;
     public final Paint y;
 
-    public b1(Context context, c6 c6Var) {
+    public b1(Context context, d6 d6Var) {
         super(context);
         this.a = 0.5f;
-        es esVar = es.h;
-        this.e = new org.telegram.ui.Components.g6(1.0f, this, 0L, 320L, esVar);
+        bs bsVar = bs.h;
+        this.e = new org.telegram.ui.Components.f6(1.0f, this, 0L, 320L, bsVar);
         this.r = new int[2];
         this.s = 0.0f;
         Paint paint = new Paint(1);
@@ -99,13 +99,13 @@ public abstract class b1 extends FrameLayout {
         this.N = true;
         this.U = false;
         this.V = new p(this, 3);
-        this.x = c6Var;
+        this.x = d6Var;
         setWillNotDraw(false);
         x0 x0Var = new x0(this, 0);
         this.c = x0Var;
         x0Var.setCallback(this);
         x0Var.x(AndroidUtilities.bold());
-        x0Var.n(0.3f, 165L, esVar);
+        x0Var.n(0.3f, 165L, bsVar);
         x0Var.w(AndroidUtilities.dpf2(14.0f));
         Paint.Style style = Paint.Style.FILL_AND_STROKE;
         TextPaint textPaint = x0Var.a;
@@ -116,7 +116,7 @@ public abstract class b1 extends FrameLayout {
         this.d = x0Var2;
         x0Var2.setCallback(this);
         x0Var2.x(AndroidUtilities.bold());
-        x0Var2.n(0.3f, 165L, esVar);
+        x0Var2.n(0.3f, 165L, bsVar);
         x0Var2.w(AndroidUtilities.dpf2(14.0f));
         TextPaint textPaint2 = x0Var2.a;
         textPaint2.setStyle(style);
@@ -128,14 +128,14 @@ public abstract class b1 extends FrameLayout {
         AndroidUtilities.adjustSaturationColorMatrix(colorMatrix, -0.4f);
         AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, 0.1f);
         paint5.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
-        paint2.setColor(g6.w0(g6.G8, c6Var));
+        paint2.setColor(h6.w0(h6.G8, d6Var));
         boolean z10 = AndroidUtilities.computePerceivedBrightness(paint2.getColor()) <= 0.721f;
         this.L = z10;
         x0Var.u(z10 ? -1 : -16777216);
         x0Var2.u(this.L ? -1 : -16777216);
-        paint4.setColor(g6.m1(0.025f, -16777216));
-        paint3.setColor(g6.m1(0.35f, -1));
-        paint6.setColor(g6.m1(0.2f, -1));
+        paint4.setColor(h6.m1(0.025f, -16777216));
+        paint3.setColor(h6.m1(0.35f, -1));
+        paint6.setColor(h6.m1(0.2f, -1));
     }
 
     public final void a(Canvas canvas) {
@@ -195,7 +195,7 @@ public abstract class b1 extends FrameLayout {
             this.T = ofFloat;
             ofFloat.addUpdateListener(new v0(this, i10));
             this.T.addListener(new y0(this, a2, i10));
-            this.T.setInterpolator(es.h);
+            this.T.setInterpolator(bs.h);
             this.T.setDuration(220L);
             this.T.start();
         } else {
@@ -205,7 +205,7 @@ public abstract class b1 extends FrameLayout {
         a1 a1Var = (a1) this;
         String str2 = a1Var.f0;
         if (str2 == null) {
-            str2 = gd.a((a2 * 2.8f) + 0.2f) + "x";
+            str2 = ed.a((a2 * 2.8f) + 0.2f) + "x";
         }
         if (str2 != null) {
             x0 x0Var = this.c;
@@ -215,7 +215,7 @@ public abstract class b1 extends FrameLayout {
             }
         }
         if (a1Var.f0 != null) {
-            str = gd.a((a2 * 2.8f) + 0.2f) + "x";
+            str = ed.a((a2 * 2.8f) + 0.2f) + "x";
         }
         if (str != null) {
             x0 x0Var2 = this.d;
@@ -224,9 +224,9 @@ public abstract class b1 extends FrameLayout {
                 x0Var2.t(str, true, true);
             }
         }
-        int i11 = g6.sj;
-        c6 c6Var = a1Var.x;
-        this.J.setColor(i0.a.d(w7.r.a((((a2 * 2.8f) + 0.2f) - 1.0f) / 1.0f, 0.0f, 1.0f), g6.w0(i11, c6Var), g6.w0(g6.tj, c6Var)));
+        int i11 = h6.sj;
+        d6 d6Var = a1Var.x;
+        this.J.setColor(i0.b.f(w7.r.a((((a2 * 2.8f) + 0.2f) - 1.0f) / 1.0f, 0.0f, 1.0f), h6.w0(i11, d6Var), h6.w0(h6.tj, d6Var)));
     }
 
     public float getValue() {
@@ -319,14 +319,14 @@ public abstract class b1 extends FrameLayout {
             }
         }
         boolean z11 = this.N;
-        c6 c6Var = this.x;
+        d6 d6Var = this.x;
         if (z11) {
-            Drawable s02 = g6.s0();
+            Drawable s02 = h6.s0();
             if (s02 instanceof ColorDrawable) {
                 w02 = ((ColorDrawable) s02).getColor();
             } else {
                 Pair pair = null;
-                Bitmap bitmap = s02 instanceof cd0 ? ((cd0) s02).k : s02 instanceof BitmapDrawable ? ((BitmapDrawable) s02).getBitmap() : null;
+                Bitmap bitmap = s02 instanceof wc0 ? ((wc0) s02).k : s02 instanceof BitmapDrawable ? ((BitmapDrawable) s02).getBitmap() : null;
                 if (bitmap != null) {
                     float f7 = iArr[0] / AndroidUtilities.displaySize.x;
                     int width = (int) (f7 * bitmap.getWidth());
@@ -348,12 +348,12 @@ public abstract class b1 extends FrameLayout {
                     this.O = linearGradient;
                     this.I.setShader(linearGradient);
                 }
-                w02 = g6.m1(0.25f, g6.w0(g6.d6, c6Var));
+                w02 = h6.m1(0.25f, h6.w0(h6.d6, d6Var));
             }
         } else {
-            w02 = g6.w0(g6.d6, c6Var);
-            if (!g6.I.q()) {
-                w02 = g6.v(w02, g6.m1(0.18f, -16777216));
+            w02 = h6.w0(h6.d6, d6Var);
+            if (!h6.I.q()) {
+                w02 = h6.v(w02, h6.m1(0.18f, -16777216));
             }
         }
         i14 = w02;

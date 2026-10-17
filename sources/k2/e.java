@@ -10,13 +10,12 @@ import android.os.Looper;
 import android.provider.Settings;
 import e9.x1;
 import java.util.List;
-import ji.m5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class e {
     public final Context a;
-    public final m5 b;
+    public final j5.b b;
     public final Handler c;
     public final c d;
     public final androidx.mediarouter.app.f e;
@@ -27,10 +26,10 @@ public final class e {
     public b2.f j;
     public boolean k;
 
-    public e(Context context, m5 m5Var, b2.f fVar, AudioDeviceInfo audioDeviceInfo) {
+    public e(Context context, j5.b bVar, b2.f fVar, AudioDeviceInfo audioDeviceInfo) {
         Context applicationContext = context.getApplicationContext();
         this.a = applicationContext;
-        this.b = m5Var;
+        this.b = bVar;
         this.j = fVar;
         this.i = audioDeviceInfo;
         String str = e2.m0.a;
@@ -59,16 +58,16 @@ public final class e {
             return;
         }
         this.h = bVar;
-        j0 j0Var = (j0) this.b.b;
-        j0Var.f();
-        b bVar2 = j0Var.h;
+        k0 k0Var = (k0) this.b.b;
+        k0Var.f();
+        b bVar2 = k0Var.h;
         if (bVar2 == null || bVar.equals(bVar2)) {
             return;
         }
-        j0Var.h = bVar;
-        e2.r rVar = j0Var.f;
+        k0Var.h = bVar;
+        e2.r rVar = k0Var.f;
         if (rVar != null) {
-            rVar.e(-1, new j2.e(29));
+            rVar.e(-1, new f0(1));
         }
     }
 

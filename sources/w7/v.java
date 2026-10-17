@@ -2,51 +2,51 @@ package w7;
 
 import android.util.SparseBooleanArray;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class v {
-    public static b2.c1 a(b2.c1 c1Var, b2.c1 c1Var2) {
-        if (c1Var != null) {
-            b2.v vVar = c1Var.a;
-            if (c1Var2 != null) {
+    public static b2.b1 a(b2.b1 b1Var, b2.b1 b1Var2) {
+        if (b1Var != null) {
+            b2.u uVar = b1Var.a;
+            if (b1Var2 != null) {
                 SparseBooleanArray sparseBooleanArray = new SparseBooleanArray();
-                for (int i10 = 0; i10 < vVar.a.size(); i10++) {
-                    if (c1Var2.a(vVar.a(i10))) {
-                        int a2 = vVar.a(i10);
+                for (int i10 = 0; i10 < uVar.a.size(); i10++) {
+                    if (b1Var2.a(uVar.a(i10))) {
+                        int a2 = uVar.a(i10);
                         v7.u6.p(!false);
                         sparseBooleanArray.append(a2, true);
                     }
                 }
                 v7.u6.p(!false);
-                return new b2.c1(new b2.v(sparseBooleanArray));
+                return new b2.b1(new b2.u(sparseBooleanArray));
             }
         }
-        return b2.c1.b;
+        return b2.b1.b;
     }
 
-    public static void b(b2.g1 g1Var, m4.w wVar) {
+    public static void b(b2.f1 f1Var, m4.w wVar) {
         int i10 = wVar.b;
         long j10 = wVar.c;
         e9.n0 n0Var = wVar.a;
         if (i10 == -1) {
-            if (g1Var.o0(20)) {
-                g1Var.L0(n0Var);
+            if (f1Var.o0(20)) {
+                f1Var.L0(n0Var);
                 return;
             } else {
                 if (n0Var.isEmpty()) {
                     return;
                 }
-                g1Var.l0((b2.p0) n0Var.get(0));
+                f1Var.l0((b2.o0) n0Var.get(0));
                 return;
             }
         }
-        if (g1Var.o0(20)) {
-            g1Var.S(j10, wVar.b, n0Var);
+        if (f1Var.o0(20)) {
+            f1Var.S(j10, wVar.b, n0Var);
         } else {
             if (n0Var.isEmpty()) {
                 return;
             }
-            g1Var.k((b2.p0) n0Var.get(0), j10);
+            f1Var.k((b2.o0) n0Var.get(0), j10);
         }
     }
 }

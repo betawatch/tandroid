@@ -1,12 +1,16 @@
 package m;
 
-import android.view.View;
+import android.graphics.Rect;
 import android.widget.PopupWindow;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class a2 {
-    public static int a(PopupWindow popupWindow, View view, int i10, boolean z10) {
-        return popupWindow.getMaxAvailableHeight(view, i10, z10);
+    public static void a(PopupWindow popupWindow, Rect rect) {
+        popupWindow.setEpicenterBounds(rect);
+    }
+
+    public static void b(PopupWindow popupWindow, boolean z10) {
+        popupWindow.setIsClippedToScreen(z10);
     }
 }

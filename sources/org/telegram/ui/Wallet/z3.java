@@ -1,13 +1,27 @@
 package org.telegram.ui.Wallet;
 
-import android.app.Activity;
-import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class z3 extends org.telegram.ui.ActionBar.e3 {
-    public z3(Activity activity, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(1, (Context) activity, c6Var, false);
-        this.behindKeyboardColorKey = org.telegram.ui.ActionBar.g6.a7;
+public final /* synthetic */ class z3 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f3[] b;
+
+    public /* synthetic */ z3(org.telegram.ui.ActionBar.f3[] f3VarArr, int i10) {
+        this.a = i10;
+        this.b = f3VarArr;
+    }
+
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                this.b[0].dismiss();
+                break;
+            default:
+                this.b[0].dismiss();
+                break;
+        }
     }
 }

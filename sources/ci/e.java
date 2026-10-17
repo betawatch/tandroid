@@ -1,33 +1,194 @@
 package ci;
 
+import android.content.SharedPreferences;
+import android.text.TextUtils;
 import android.view.View;
-import bi.f8;
-import org.telegram.ui.Components.ms0;
+import java.util.HashMap;
+import java.util.HashSet;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Cells.sa;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.dd;
+import org.telegram.ui.ff0;
+import org.telegram.ui.t21;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class e implements View.OnClickListener {
+public final /* synthetic */ class e implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ t b;
 
-    public /* synthetic */ e(t tVar, int i10) {
+    public /* synthetic */ e(int i10) {
         this.a = i10;
-        this.b = tVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        MessageObject messageObject;
+        MessageObject messageObject2;
+        int i10 = 2;
         switch (this.a) {
             case 0:
-                t tVar = this.b;
-                ms0 ms0Var = tVar.W;
-                f8 f8Var = tVar.a;
-                ms0Var.a(f8Var == null ? "" : f8Var.E);
+                View view = (View) obj;
+                view.setAlpha(1.0f);
+                view.setTranslationX(0.0f);
+                view.setTranslationY(0.0f);
+                break;
+            case 1:
+                ((View) obj).setTranslationY(0.0f);
+                break;
+            case 2:
+                ((q) ((View) obj)).invalidate();
+                break;
+            case 3:
+                View view2 = (View) obj;
+                if (view2 instanceof ig.u1) {
+                    ((ig.u1) view2).c.invalidate();
+                    break;
+                }
+                break;
+            case 4:
+                View view3 = (View) obj;
+                if (view3 instanceof ig.u1) {
+                    ((ig.u1) view3).d.a(false, true);
+                    break;
+                }
+                break;
+            case 5:
+                ((View) obj).invalidate();
+                break;
+            case 6:
+                HashMap hashMap = org.telegram.ui.ActionBar.n3.K;
+                break;
+            case 7:
+                int i11 = org.telegram.ui.ActionBar.l3.r;
+                break;
+            case 8:
+                int i12 = sa.f;
+                break;
+            case 9:
+                dd.Y0((View) obj);
+                break;
+            case 10:
+                View view4 = (View) obj;
+                if ((view4 instanceof org.telegram.ui.Cells.u1) && (messageObject = ((org.telegram.ui.Cells.u1) view4).getMessageObject()) != null) {
+                    messageObject.forceUpdate = true;
+                    break;
+                }
+                break;
+            case 11:
+                View view5 = (View) obj;
+                if ((view5 instanceof org.telegram.ui.Cells.u1) && (messageObject2 = ((org.telegram.ui.Cells.u1) view5).getMessageObject()) != null) {
+                    messageObject2.forceUpdate = true;
+                    messageObject2.reactionsChanged = true;
+                    break;
+                }
+                break;
+            case 12:
+                View view6 = (View) obj;
+                if (view6 instanceof org.telegram.ui.ActionBar.y2) {
+                    ((org.telegram.ui.ActionBar.y2) view6).getTextView().invalidate();
+                    break;
+                } else {
+                    view6.invalidate();
+                    break;
+                }
+            case 13:
+                View view7 = (View) obj;
+                if (view7 instanceof org.telegram.ui.Cells.g5) {
+                    org.telegram.ui.Cells.g5 g5Var = (org.telegram.ui.Cells.g5) view7;
+                    g5Var.b.invalidate();
+                    g5Var.c.invalidate();
+                    break;
+                } else if (view7 instanceof ig.u1) {
+                    ((ig.u1) view7).c.invalidate();
+                    break;
+                } else {
+                    view7.invalidate();
+                    break;
+                }
+            case 14:
+                View view8 = (View) obj;
+                if (view8 instanceof org.telegram.ui.Cells.e8) {
+                    ((org.telegram.ui.Cells.e8) view8).a(true);
+                    break;
+                }
+                break;
+            case 15:
+                View view9 = (View) obj;
+                if (view9 instanceof org.telegram.ui.Cells.e8) {
+                    ((org.telegram.ui.Cells.e8) view9).c(true);
+                    break;
+                }
+                break;
+            case 16:
+                ((Boolean) obj).getClass();
+                break;
+            case 17:
+                break;
+            case 18:
+                Long l4 = (Long) obj;
+                if (l4 != null && l4.longValue() != Long.MAX_VALUE) {
+                    org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                    if (U != null) {
+                        U.presentFragment(ProfileActivity.m4(l4.longValue()));
+                        break;
+                    }
+                } else {
+                    AndroidUtilities.runOnUIThread(new ff0(i10));
+                    break;
+                }
+                break;
+            case 19:
+                break;
+            case 20:
+                HashSet hashSet = (HashSet) obj;
+                String str = LocaleController.getInstance().getCurrentLocaleInfo().pluralLangCode;
+                hashSet.addAll(t21.Y());
+                SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
+                if (hashSet.size() == 1 && TextUtils.equals((CharSequence) hashSet.iterator().next(), str)) {
+                    edit.remove("translate_button_restricted_languages");
+                } else {
+                    edit.putStringSet("translate_button_restricted_languages", hashSet);
+                }
+                edit.putInt("translate_button_restricted_languages_version", 2).apply();
+                t21.s = false;
+                for (int i13 = 0; i13 < 4; i13++) {
+                    try {
+                        MessagesController.getInstance(i13).getTranslateController().checkRestrictedLanguagesUpdate();
+                    } catch (Exception unused) {
+                    }
+                }
+                break;
+            case 21:
+                View view10 = (View) obj;
+                view10.setScaleX(1.0f);
+                view10.setScaleY(1.0f);
+                break;
+            case 22:
+                View view11 = (View) obj;
+                if (view11 instanceof org.telegram.ui.web.h) {
+                    ((org.telegram.ui.web.h) view11).setChecked(false);
+                    break;
+                }
+                break;
+            case 23:
+                View view12 = (View) obj;
+                if (view12 instanceof org.telegram.ui.web.h) {
+                    ((org.telegram.ui.web.h) view12).setChecked(false);
+                    break;
+                }
                 break;
             default:
-                t tVar2 = this.b;
-                tVar2.W.b(tVar2.a.E);
                 break;
         }
+    }
+
+    public /* synthetic */ e(dd ddVar) {
+        this.a = 9;
     }
 }

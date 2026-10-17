@@ -1,248 +1,315 @@
 package ig;
 
-import android.os.Bundle;
-import android.transition.TransitionManager;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
 import android.view.View;
-import android.widget.TextView;
-import bi.u3;
+import android.widget.FrameLayout;
+import ei.bc;
 import java.util.ArrayList;
-import java.util.HashMap;
-import ji.h2;
-import ji.w4;
-import m.t3;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BotWebViewVibrationEffect;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.voip.GroupCallMessage;
-import org.telegram.tgnet.TLParseException;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.Cells.h3;
-import org.telegram.ui.Cells.j3;
-import org.telegram.ui.Components.voip.n2;
-import org.telegram.ui.fo;
-import org.telegram.ui.kg1;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Components.a71;
+import org.telegram.ui.Components.as;
+import org.telegram.ui.Components.dq;
+import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.s61;
 import w7.z5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class t0 extends n2 implements NotificationCenter.NotificationCenterDelegate {
+    public as a;
+    public org.telegram.ui.ActionBar.u0 b;
+    public a71 c;
+    public a0 d;
+    public final int[] e;
+    public final String[] f;
+    public boolean h;
+    public int n;
+    public TL_account.TL_businessGreetingMessage r;
+    public boolean s;
+    public boolean v;
+    public int w;
 
-    public /* synthetic */ t0(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public t0() {
+        super(null);
+        int[] iArr = {7, 14, 21, 28};
+        this.e = iArr;
+        this.n = -4;
+        this.w = 7;
+        this.f = new String[iArr.length];
+        int i10 = 0;
+        while (true) {
+            int[] iArr2 = this.e;
+            if (i10 >= iArr2.length) {
+                return;
+            }
+            this.f[i10] = LocaleController.formatPluralString("DaysSchedule", iArr2[i10], new Object[0]);
+            i10++;
+        }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        Object obj = this.b;
-        switch (i10) {
-            case 0:
-                u0 u0Var = (u0) ((a6.i) obj).b;
-                u0Var.c.W2.N(true);
-                u0Var.b0();
-                break;
-            case 1:
-                w0 w0Var = (w0) obj;
-                w0Var.c.W2.N(true);
-                w0Var.V(true);
-                break;
-            case 2:
-                g1 g1Var = (g1) obj;
-                g1Var.a.W2.N(true);
-                g1Var.Y(true);
-                break;
-            case 3:
-                ((u3) obj).run(Boolean.FALSE);
-                break;
-            case 4:
-                NotificationCenter.getInstance(((b2) obj).a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.quickRepliesUpdated, new Object[0]);
-                break;
-            case 5:
-                j2.f fVar = (j2.f) obj;
-                j2.a l4 = fVar.l();
-                fVar.q(l4, 1028, new j2.c(l4));
-                fVar.f.d();
-                break;
-            case 6:
-                h3 h3Var = ((j3) obj).b;
-                h3Var.requestFocus();
-                AndroidUtilities.showKeyboard(h3Var);
-                break;
-            case 7:
-                AndroidUtilities.showKeyboard(((ji.x) obj).e0.b);
-                break;
-            case 8:
-                ((ji.d0) obj).invalidate();
-                break;
-            case 9:
-                t3 t3Var = (t3) obj;
-                t3Var.c = null;
-                t3Var.d = null;
-                t3Var.e = null;
-                t3Var.f = null;
-                t3Var.e(null);
-                break;
-            case 10:
-                ((ji.a2) obj).invalidateSelf();
-                break;
-            case 11:
-                ((h2) obj).c();
-                break;
-            case 12:
-                ((k2.e) obj).c();
-                break;
-            case 13:
-                e2.r rVar = (e2.r) obj;
-                rVar.getClass();
-                if (Thread.currentThread() == rVar.a) {
-                    rVar.e(-1, new j2.e(26));
+    public static void U(t0 t0Var, ArrayList arrayList, s61 s61Var) {
+        String string = LocaleController.getString(R.string.BusinessGreet);
+        String string2 = LocaleController.getString(R.string.BusinessGreetInfo);
+        f61 f61Var = new f61(2);
+        f61Var.l = string;
+        f61Var.o = string2;
+        f61Var.m = "RestrictedEmoji";
+        f61Var.n = "👋";
+        arrayList.add(f61Var);
+        f61 i10 = f61.i(1, LocaleController.getString(R.string.BusinessGreetSend));
+        i10.K(t0Var.s);
+        arrayList.add(i10);
+        arrayList.add(f61.B(null));
+        if (t0Var.s) {
+            x1 d = y1.f(t0Var.currentAccount).d("hello");
+            if (d != null) {
+                f61 f61Var2 = new f61(17);
+                f61Var2.G = d;
+                arrayList.add(f61Var2);
+            } else {
+                f61 c10 = f61.c(2, R.drawable.msg2_chats_add, LocaleController.getString(R.string.BusinessGreetCreate));
+                c10.q = true;
+                arrayList.add(c10);
+            }
+            arrayList.add(f61.B(null));
+            i0.a.p(R.string.BusinessRecipients, arrayList);
+            f61 w9 = f61.w(3, LocaleController.getString(R.string.BusinessChatsAllPrivateExcept2));
+            w9.K(t0Var.v);
+            arrayList.add(w9);
+            f61 w10 = f61.w(4, LocaleController.getString(R.string.BusinessChatsOnlySelected2));
+            w10.K(!t0Var.v);
+            arrayList.add(w10);
+            arrayList.add(f61.B(null));
+            t0Var.d.a(arrayList, s61Var, true);
+            i0.a.A(R.string.BusinessGreetRecipientsInfo, arrayList);
+            i0.a.p(R.string.BusinessGreetPeriod, arrayList);
+            int i11 = 0;
+            while (true) {
+                int[] iArr = t0Var.e;
+                if (i11 >= iArr.length) {
+                    i11 = -1;
                     break;
-                }
-                break;
-            case 14:
-                k2.s0 s0Var = (k2.s0) obj;
-                if (s0Var.a0 >= 300000) {
-                    s0Var.n.g();
-                    s0Var.a0 = 0L;
+                } else if (iArr[i11] == t0Var.w) {
                     break;
+                } else {
+                    i11++;
                 }
-                break;
-            case 15:
-                ((lh.b) obj).invalidate();
-                break;
-            case 16:
-                mh.c cVar = (mh.c) obj;
-                GroupCallMessage groupCallMessage = cVar.H;
-                if (groupCallMessage != null) {
-                    cVar.a.a(groupCallMessage.isSendDelayed(), true);
-                    cVar.b.a(cVar.H.isSendError(), true);
-                    break;
-                }
-                break;
-            case 17:
-                n2.d dVar = (n2.d) obj;
-                if (!dVar.c) {
-                    n2.g gVar = dVar.b;
-                    if (gVar != null) {
-                        gVar.a(dVar.a);
-                    }
-                    dVar.d.x.remove(dVar);
-                    dVar.c = true;
-                    break;
-                }
-                break;
-            case 18:
-                ((n2.b) obj).a(null);
-                break;
-            case 19:
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, (f6) obj, Boolean.TRUE, null, -1);
-                break;
-            case 20:
-                ((w4) obj).d1();
-                break;
-            case 21:
-                kg1 kg1Var = (kg1) obj;
-                if (kg1Var.getParentLayout() != null) {
-                    kg1Var.H = true;
-                    Bundle bundle = new Bundle();
-                    bundle.putLong("chat_id", kg1Var.a);
-                    fo foVar = new fo(bundle);
-                    foVar.ja = true;
-                    kg1Var.presentFragment(foVar);
-                    break;
-                }
-                break;
-            case 22:
-                TLParseException.lambda$doThrowOrLog$0((TLParseException) obj);
-                break;
-            case 23:
-                org.telegram.ui.Components.voip.l0 l0Var = (org.telegram.ui.Components.voip.l0) obj;
-                l0Var.P0 = null;
-                l0Var.setVisibleParticipant(true);
-                break;
-            case 24:
-                org.telegram.ui.Components.voip.h1 h1Var = (org.telegram.ui.Components.voip.h1) obj;
-                h1Var.K = false;
-                h1Var.o(false);
-                h1Var.W = false;
-                break;
-            case 25:
-                org.telegram.ui.Components.voip.h1 h1Var2 = (org.telegram.ui.Components.voip.h1) ((mg.b) obj).b;
-                h1Var2.e.invalidate();
-                if (!h1Var2.e.isInLayout()) {
-                    h1Var2.e.requestLayout();
-                    h1Var2.d.requestLayout();
-                    h1Var2.f.requestLayout();
-                    break;
-                }
-                break;
-            case 26:
-                ((org.telegram.ui.Components.voip.g1) obj).a.i(false);
-                break;
-            case 27:
-                org.telegram.ui.Components.voip.f2 f2Var = (org.telegram.ui.Components.voip.f2) obj;
-                f2Var.e = false;
-                HashMap hashMap = f2Var.a;
-                ArrayList arrayList = f2Var.c;
-                ArrayList arrayList2 = f2Var.b;
-                if (!arrayList2.isEmpty() || !arrayList.isEmpty()) {
-                    if (f2Var.getParent() != null) {
-                        TransitionManager.beginDelayedTransition(f2Var, f2Var.d);
-                    }
-                    int i11 = 0;
-                    while (i11 < arrayList2.size()) {
-                        org.telegram.ui.Components.voip.e2 e2Var = (org.telegram.ui.Components.voip.e2) arrayList2.get(i11);
-                        int i12 = 0;
-                        while (true) {
-                            if (i12 >= arrayList.size()) {
-                                break;
-                            }
-                            if (e2Var.a.equals(((org.telegram.ui.Components.voip.e2) arrayList.get(i12)).a)) {
-                                arrayList2.remove(i11);
-                                arrayList.remove(i12);
-                                i11--;
-                            } else {
-                                i12++;
-                            }
-                        }
-                        i11++;
-                    }
-                    for (int i13 = 0; i13 < arrayList2.size(); i13++) {
-                        f2Var.addView((View) arrayList2.get(i13), z5.t(-2, -2, 1, 4, 0, 0, 4));
-                    }
-                    for (int i14 = 0; i14 < arrayList.size(); i14++) {
-                        f2Var.removeView((View) arrayList.get(i14));
-                    }
-                    hashMap.clear();
-                    for (int i15 = 0; i15 < f2Var.getChildCount(); i15++) {
-                        org.telegram.ui.Components.voip.e2 e2Var2 = (org.telegram.ui.Components.voip.e2) f2Var.getChildAt(i15);
-                        hashMap.put(e2Var2.a, e2Var2);
-                    }
-                    arrayList2.clear();
-                    arrayList.clear();
-                    f2Var.e = true;
-                    AndroidUtilities.runOnUIThread(new t0(f2Var, 27), 700L);
-                    Runnable runnable = f2Var.h;
-                    if (runnable != null) {
-                        runnable.run();
-                        break;
-                    }
-                }
-                break;
-            case 28:
-                TextView[] textViewArr = ((n2) obj).a;
-                TextView textView = textViewArr[0];
-                textViewArr[0] = textViewArr[1];
-                textViewArr[1] = textView;
-                break;
-            default:
-                TextView[] textViewArr2 = ((n2) ((hg.j0) obj).e).a;
-                TextView textView2 = textViewArr2[0];
-                textViewArr2[0] = textViewArr2[1];
-                textViewArr2[1] = textView2;
-                break;
+            }
+            String[] strArr = t0Var.f;
+            l0 l0Var = new l0(t0Var, 1);
+            f61 f61Var3 = new f61(14);
+            f61Var3.p = strArr;
+            f61Var3.z = i11;
+            f61Var3.C = l0Var;
+            f61Var3.B = -1L;
+            arrayList.add(f61Var3);
+            i0.a.A(R.string.BusinessGreetPeriodInfo, arrayList);
         }
+    }
+
+    public final void V(boolean z10) {
+        if (this.b == null) {
+            return;
+        }
+        boolean W = W();
+        this.b.setEnabled(W);
+        if (z10) {
+            this.b.animate().alpha(W ? 1.0f : 0.0f).scaleX(W ? 1.0f : 0.0f).scaleY(W ? 1.0f : 0.0f).setDuration(180L).start();
+            return;
+        }
+        this.b.setAlpha(W ? 1.0f : 0.0f);
+        this.b.setScaleX(W ? 1.0f : 0.0f);
+        this.b.setScaleY(W ? 1.0f : 0.0f);
+    }
+
+    public final boolean W() {
+        a0 a0Var;
+        if (this.h) {
+            boolean z10 = this.s;
+            TL_account.TL_businessGreetingMessage tL_businessGreetingMessage = this.r;
+            if (z10 != (tL_businessGreetingMessage != null) || (z10 && tL_businessGreetingMessage != null && (tL_businessGreetingMessage.no_activity_days != this.w || tL_businessGreetingMessage.recipients.exclude_selected != this.v || ((a0Var = this.d) != null && a0Var.g())))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final void X() {
+        if (this.a.c > 0.0f) {
+            return;
+        }
+        if (!W()) {
+            finishFragment();
+            return;
+        }
+        x1 d = y1.f(this.currentAccount).d("hello");
+        boolean z10 = this.s;
+        if (z10 && d == null) {
+            BotWebViewVibrationEffect.APP_ERROR.vibrate();
+            View z12 = this.c.z1(2);
+            int i10 = -this.n;
+            this.n = i10;
+            AndroidUtilities.shakeViewSpring(z12, i10);
+            return;
+        }
+        if (!z10 || this.d.k(this.c)) {
+            this.a.a(1.0f);
+            TLRPC.UserFull userFull = getMessagesController().getUserFull(getUserConfig().getClientUserId());
+            TL_account.updateBusinessGreetingMessage updatebusinessgreetingmessage = new TL_account.updateBusinessGreetingMessage();
+            if (this.s) {
+                TL_account.TL_inputBusinessGreetingMessage tL_inputBusinessGreetingMessage = new TL_account.TL_inputBusinessGreetingMessage();
+                updatebusinessgreetingmessage.message = tL_inputBusinessGreetingMessage;
+                tL_inputBusinessGreetingMessage.shortcut_id = d.a;
+                tL_inputBusinessGreetingMessage.recipients = this.d.e();
+                updatebusinessgreetingmessage.message.no_activity_days = this.w;
+                updatebusinessgreetingmessage.flags |= 1;
+                if (userFull != null) {
+                    userFull.flags2 |= 4;
+                    TL_account.TL_businessGreetingMessage tL_businessGreetingMessage = new TL_account.TL_businessGreetingMessage();
+                    userFull.business_greeting_message = tL_businessGreetingMessage;
+                    tL_businessGreetingMessage.shortcut_id = d.a;
+                    tL_businessGreetingMessage.recipients = this.d.f();
+                    userFull.business_greeting_message.no_activity_days = this.w;
+                }
+            } else if (userFull != null) {
+                userFull.flags2 &= -5;
+                userFull.business_greeting_message = null;
+            }
+            getConnectionsManager().sendRequest(updatebusinessgreetingmessage, new ai.h(this, 19));
+            getMessagesStorage().updateUserInfo(userFull, false);
+        }
+    }
+
+    public final void Y() {
+        s61 s61Var;
+        if (this.h) {
+            return;
+        }
+        TLRPC.UserFull userFull = getMessagesController().getUserFull(getUserConfig().getClientUserId());
+        if (userFull == null) {
+            getMessagesController().loadUserInfo(getUserConfig().getCurrentUser(), true, getClassGuid());
+            return;
+        }
+        TL_account.TL_businessGreetingMessage tL_businessGreetingMessage = userFull.business_greeting_message;
+        this.r = tL_businessGreetingMessage;
+        this.s = tL_businessGreetingMessage != null;
+        this.w = tL_businessGreetingMessage != null ? tL_businessGreetingMessage.no_activity_days : 7;
+        this.v = tL_businessGreetingMessage != null ? tL_businessGreetingMessage.recipients.exclude_selected : true;
+        a0 a0Var = this.d;
+        if (a0Var != null) {
+            a0Var.j(tL_businessGreetingMessage == null ? null : tL_businessGreetingMessage.recipients);
+        }
+        a71 a71Var = this.c;
+        if (a71Var != null && (s61Var = a71Var.W2) != null) {
+            s61Var.N(true);
+        }
+        V(true);
+        this.h = true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final View createView(Context context) {
+        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        this.actionBar.setAllowOverlayTitle(true);
+        this.actionBar.setTitle(LocaleController.getString(R.string.BusinessGreet));
+        this.actionBar.setActionBarMenuOnItemClick(new ah.s(this, 14));
+        Drawable mutate = context.getResources().getDrawable(R.drawable.ic_ab_done).mutate();
+        int i10 = h6.v8;
+        mutate.setColorFilter(new PorterDuffColorFilter(h6.x0(null, i10, false), PorterDuff.Mode.MULTIPLY));
+        this.a = new as(mutate, new dq(h6.x0(null, i10, false)));
+        this.b = this.actionBar.n().i(AndroidUtilities.dp(56.0f), LocaleController.getString(R.string.Done), this.a);
+        V(false);
+        FrameLayout frameLayout = new FrameLayout(context);
+        frameLayout.setBackgroundColor(h6.x0(null, h6.a7, false));
+        a0 a0Var = new a0(this, new bc(this, 21));
+        this.d = a0Var;
+        a0Var.n = true;
+        TL_account.TL_businessGreetingMessage tL_businessGreetingMessage = this.r;
+        a0Var.j(tL_businessGreetingMessage == null ? null : tL_businessGreetingMessage.recipients);
+        a71 a71Var = new a71(this, new hg.o(this, 6), new s0(this, 2), null);
+        this.c = a71Var;
+        a71Var.p1();
+        a71 a71Var2 = this.c;
+        a71Var2.W2.r = false;
+        frameLayout.addView(a71Var2, z5.d(-1.0f, -1));
+        this.actionBar.A(this.c, true);
+        Y();
+        this.fragmentView = frameLayout;
+        return frameLayout;
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        s61 s61Var;
+        if (i10 != NotificationCenter.quickRepliesUpdated) {
+            if (i10 == NotificationCenter.userInfoDidLoad) {
+                Y();
+            }
+        } else {
+            a71 a71Var = this.c;
+            if (a71Var != null && (s61Var = a71Var.W2) != null) {
+                s61Var.N(true);
+            }
+            V(true);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final boolean isSupportEdgeToEdge() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final boolean onBackPressed(boolean z10) {
+        if (!W()) {
+            return super.onBackPressed(z10);
+        }
+        if (z10) {
+            if (!this.s) {
+                X();
+                return false;
+            }
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
+            alertDialog$Builder.a.R = LocaleController.getString(R.string.UnsavedChanges);
+            alertDialog$Builder.a.T = LocaleController.getString(R.string.BusinessGreetUnsavedChanges);
+            alertDialog$Builder.k(LocaleController.getString(R.string.ApplyTheme), new s0(this, 0));
+            alertDialog$Builder.h(LocaleController.getString(R.string.PassportDiscard), new s0(this, 1));
+            showDialog(alertDialog$Builder.a);
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final boolean onFragmentCreate() {
+        getNotificationCenter().addObserver(this, NotificationCenter.quickRepliesUpdated);
+        getNotificationCenter().addObserver(this, NotificationCenter.userInfoDidLoad);
+        y1.f(this.currentAccount).h();
+        Y();
+        return super.onFragmentCreate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onFragmentDestroy() {
+        getNotificationCenter().removeObserver(this, NotificationCenter.quickRepliesUpdated);
+        getNotificationCenter().removeObserver(this, NotificationCenter.userInfoDidLoad);
+        super.onFragmentDestroy();
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onInsets(int i10, int i11, int i12, int i13) {
+        this.c.setPadding(0, 0, 0, i13);
+        this.c.setClipToPadding(false);
     }
 }

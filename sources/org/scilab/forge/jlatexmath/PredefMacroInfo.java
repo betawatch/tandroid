@@ -9,7 +9,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 class PredefMacroInfo extends MacroInfo {
     private int id;
@@ -439,9 +439,9 @@ class PredefMacroInfo extends MacroInfo {
                     return PredefMacros.simcolon_macro(teXParser, strArr);
                 case 230:
                     return PredefMacros.simcoloncolon_macro(teXParser, strArr);
-                case TLRPC.LAYER /* 231 */:
+                case 231:
                     return PredefMacros.approxcolon_macro(teXParser, strArr);
-                case 232:
+                case TLRPC.LAYER /* 232 */:
                     return PredefMacros.approxcoloncolon_macro(teXParser, strArr);
                 case 233:
                     return PredefMacros.coloncolon_macro(teXParser, strArr);

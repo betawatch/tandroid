@@ -1,31 +1,96 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.FileLog;
+import android.content.Context;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class je0 extends v7.l {
-    public final /* synthetic */ re0 a;
+public final class je0 extends FrameLayout {
+    public final ImageView a;
+    public final TextView b;
+    public final TextView c;
 
-    public je0(re0 re0Var) {
-        this.a = re0Var;
+    public je0(Context context) {
+        super(context);
+        ImageView imageView = new ImageView(context);
+        this.a = imageView;
+        imageView.setScaleType(ImageView.ScaleType.CENTER);
+        imageView.setImageResource(R.drawable.fingerprint);
+        addView(imageView, w7.z5.e(-1, -1, 119));
+        TextView textView = new TextView(context);
+        this.b = textView;
+        textView.setTypeface(AndroidUtilities.bold());
+        textView.setTextColor(-1);
+        textView.setTextSize(1, 26.0f);
+        textView.setGravity(17);
+        addView(textView, w7.z5.a(-2.0f, 0.0f, -5.33f, 0.0f, 0.0f, -1, 17));
+        TextView textView2 = new TextView(context);
+        this.c = textView2;
+        textView2.setTypeface(AndroidUtilities.bold());
+        textView2.setTextSize(1, 10.0f);
+        textView2.setTextColor(ConnectionsManager.DEFAULT_DATACENTER_ID);
+        textView2.setGravity(17);
+        addView(textView2, w7.z5.a(-2.0f, 0.0f, 14.0f, 0.0f, 0.0f, -1, 17));
     }
 
-    @Override // v7.l
-    public final void a(int i10, CharSequence charSequence) {
-        FileLog.d("PasscodeView onAuthenticationError " + i10 + " \"" + ((Object) charSequence) + "\"");
-        this.a.n(true);
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.widget.Button");
     }
 
-    @Override // v7.l
-    public final void b() {
-        FileLog.d("PasscodeView onAuthenticationFailed");
-        this.a.n(true);
+    public void setImage(int i10) {
+        ImageView imageView = this.a;
+        imageView.setVisibility(0);
+        this.b.setVisibility(8);
+        this.c.setVisibility(8);
+        imageView.setImageResource(i10);
     }
 
-    @Override // v7.l
-    public final void c(androidx.biometric.u uVar) {
-        FileLog.d("PasscodeView onAuthenticationSucceeded");
-        this.a.m(true);
+    public void setNum(int i10) {
+        this.a.setVisibility(8);
+        TextView textView = this.b;
+        textView.setVisibility(0);
+        TextView textView2 = this.c;
+        textView2.setVisibility(0);
+        String str = "";
+        textView.setText("" + i10);
+        if (i10 != 0) {
+            switch (i10) {
+                case 2:
+                    str = "ABC";
+                    break;
+                case 3:
+                    str = "DEF";
+                    break;
+                case 4:
+                    str = "GHI";
+                    break;
+                case 5:
+                    str = "JKL";
+                    break;
+                case 6:
+                    str = "MNO";
+                    break;
+                case 7:
+                    str = "PQRS";
+                    break;
+                case 8:
+                    str = "TUV";
+                    break;
+                case 9:
+                    str = "WXYZ";
+                    break;
+            }
+        } else {
+            str = "+";
+        }
+        textView2.setText(str);
     }
 }

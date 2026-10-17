@@ -1,47 +1,33 @@
 package org.telegram.ui.Wallet;
 
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
 public final class a0 implements Runnable {
     public volatile boolean a;
     public Runnable b;
     public final /* synthetic */ String c;
-    public final /* synthetic */ TL_wallet.nftItem d;
+    public final /* synthetic */ long d;
     public final /* synthetic */ String e;
-    public final /* synthetic */ Utilities.Callback2 f;
-    public final /* synthetic */ k0 h;
+    public final /* synthetic */ byte[] f;
+    public final /* synthetic */ Utilities.Callback2 h;
+    public final /* synthetic */ m0 n;
 
-    public a0(k0 k0Var, String str, TL_wallet.nftItem nftitem, String str2, Utilities.Callback2 callback2) {
-        this.h = k0Var;
+    public a0(m0 m0Var, String str, long j10, String str2, byte[] bArr, Utilities.Callback2 callback2) {
+        this.n = m0Var;
         this.c = str;
-        this.d = nftitem;
+        this.d = j10;
         this.e = str2;
-        this.f = callback2;
+        this.f = bArr;
+        this.h = callback2;
     }
 
     @Override // java.lang.Runnable
     public final synchronized void run() {
-        try {
-            try {
-                if (this.a) {
-                    return;
-                }
-                WalletEngine2 walletEngine2 = this.h.b;
-                String str = this.c;
-                TL_wallet.nftItem nftitem = this.d;
-                String str2 = nftitem.address;
-                String str3 = this.e;
-                this.b = walletEngine2.emulateSendNFT(str, str2, str3, new o(this, nftitem, str3, this.f, 4));
-            } catch (Throwable th2) {
-                th = th2;
-                throw th;
-            }
-        } catch (Throwable th3) {
-            th = th3;
-            throw th;
+        if (this.a) {
+            return;
         }
+        this.b = this.n.b.emulateSend(this.c, this.d, this.e, this.f, new ai.q5(28, this, this.h));
     }
 }

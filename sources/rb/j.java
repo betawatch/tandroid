@@ -5,16 +5,14 @@ import android.content.Intent;
 import android.text.TextUtils;
 import android.util.Log;
 import com.google.android.gms.common.api.internal.v;
-import com.google.android.gms.common.api.internal.w;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
-import ji.h5;
 import t7.u;
-import w7.p7;
+import w7.q7;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class j {
     public static final k6.c[] a = new k6.c[0];
@@ -79,7 +77,7 @@ public abstract class j {
 
     public static boolean a(Context context, k6.c[] cVarArr) {
         try {
-            return ((r6.a) Tasks.await(new s6.g(context, s6.g.k, com.google.android.gms.common.api.b.p, com.google.android.gms.common.api.i.c).f(new r(cVarArr, 1)).addOnFailureListener(new oa.d(22)))).a;
+            return ((r6.a) Tasks.await(new s6.g(context, s6.g.k, com.google.android.gms.common.api.b.p, com.google.android.gms.common.api.i.c).f(new r(cVarArr, 1)).addOnFailureListener(new u(21)))).a;
         } catch (InterruptedException | ExecutionException e) {
             Log.e("OptionalModuleUtils", "Failed to complete the task of features availability check", e);
             return false;
@@ -89,7 +87,7 @@ public abstract class j {
     public static void b(Context context) {
         t7.b bVar = t7.d.b;
         Object[] objArr = {"ica"};
-        p7.a(1, objArr);
+        q7.a(1, objArr);
         t7.g gVar = new t7.g(1, objArr);
         k6.e.b.getClass();
         if (k6.e.a(context) < 221500000) {
@@ -121,13 +119,13 @@ public abstract class j {
         if (b10.a.isEmpty()) {
             e = Tasks.forResult(new r6.c(0, false));
         } else {
-            v b11 = w.b();
+            com.google.android.gms.common.api.internal.u b11 = v.b();
             b11.d = new k6.c[]{k7.b.c};
             b11.b = true;
             b11.a = 27304;
-            b11.c = new h5(gVar, b10);
+            b11.c = new le.b(gVar, b10);
             e = gVar.e(0, b11.a());
         }
-        e.addOnFailureListener(new u(21));
+        e.addOnFailureListener(new sb.a(21));
     }
 }

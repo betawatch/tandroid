@@ -1,102 +1,235 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.KeyEvent;
-import android.view.View;
-import org.telegram.messenger.LocaleController;
+import android.text.TextUtils;
+import java.util.ArrayList;
+import java.util.concurrent.CountDownLatch;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bc implements org.telegram.ui.Components.am0 {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ KeyEvent.Callback d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public final /* synthetic */ class bc implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ec b;
+    public final /* synthetic */ CountDownLatch c;
+    public final /* synthetic */ Runnable d;
 
-    public /* synthetic */ bc(hc hcVar, Context context, long j10, org.telegram.ui.ActionBar.c6 c6Var, hb1 hb1Var) {
-        this.d = hcVar;
-        this.c = context;
-        this.b = j10;
-        this.e = c6Var;
-        this.f = hb1Var;
+    public /* synthetic */ bc(ec ecVar, CountDownLatch countDownLatch, Runnable runnable, int i10) {
+        this.a = i10;
+        this.b = ecVar;
+        this.c = countDownLatch;
+        this.d = runnable;
     }
 
-    @Override // org.telegram.ui.Components.am0
-    public final void a(int i10, View view) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                hc hcVar = (hc) this.d;
-                org.telegram.ui.ActionBar.c6 c6Var = (org.telegram.ui.ActionBar.c6) this.e;
-                hb1 hb1Var = (hb1) this.f;
-                boolean z10 = view instanceof zg.b;
-                long j10 = this.b;
-                if (z10) {
-                    zg.b bVar = (zg.b) view;
-                    TL_stories.Boost boost = bVar.getBoost();
-                    boolean z11 = boost.giveaway;
-                    if (!z11 || boost.stars <= 0) {
-                        boolean z12 = boost.gift;
-                        if (((z12 || z11) && boost.user_id >= 0) || boost.unclaimed) {
-                            TLRPC.TL_payments_checkedGiftCode tL_payments_checkedGiftCode = new TLRPC.TL_payments_checkedGiftCode();
-                            tL_payments_checkedGiftCode.giveaway_msg_id = boost.giveaway_msg_id;
-                            tL_payments_checkedGiftCode.to_id = boost.user_id;
-                            tL_payments_checkedGiftCode.from_id = MessagesController.getInstance(UserConfig.selectedAccount).getPeer(-hcVar.J.id);
-                            int i11 = boost.date;
-                            tL_payments_checkedGiftCode.date = i11;
-                            tL_payments_checkedGiftCode.via_giveaway = boost.giveaway;
-                            int i12 = boost.expires - i11;
-                            tL_payments_checkedGiftCode.days = i12 / 86400;
-                            tL_payments_checkedGiftCode.months = (i12 / 30) / 86400;
-                            if (boost.unclaimed) {
-                                tL_payments_checkedGiftCode.to_id = -1L;
-                                tL_payments_checkedGiftCode.flags = -1;
-                            } else {
-                                tL_payments_checkedGiftCode.boost = boost;
-                            }
-                            new ug.c0(hb1Var, tL_payments_checkedGiftCode, boost.used_gift_slug).show();
-                        } else if (z11 && boost.user_id == -1) {
-                            org.telegram.ui.Components.ac acVar = new org.telegram.ui.Components.ac(hb1Var.getParentActivity(), hb1Var.getResourceProvider());
-                            acVar.c(R.raw.chats_infotip, 36, 36, new String[0]);
-                            acVar.b.setText(LocaleController.getString(R.string.BoostingRecipientWillBeSelected));
-                            acVar.b.setSingleLine(false);
-                            acVar.b.setMaxLines(2);
-                            org.telegram.ui.Components.sc.g(hb1Var, acVar, 2750).j();
-                        } else if (!z12 && !z11) {
-                            hb1Var.presentFragment(ProfileActivity.m4(bVar.getDialogId()));
+                final int i10 = 1;
+                final ec ecVar = this.b;
+                final CountDownLatch countDownLatch = this.c;
+                final Runnable runnable = this.d;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.zb
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                ec ecVar2 = ecVar;
+                                ArrayList arrayList = ecVar2.h;
+                                CountDownLatch countDownLatch2 = countDownLatch;
+                                if (countDownLatch2 != null) {
+                                    countDownLatch2.countDown();
+                                }
+                                TLObject tLObject2 = tLObject;
+                                if (tLObject2 != null) {
+                                    ecVar2.N = 20;
+                                    TL_stories.TL_premium_boostsList tL_premium_boostsList = (TL_stories.TL_premium_boostsList) tLObject2;
+                                    boolean z10 = false;
+                                    MessagesController.getInstance(ecVar2.b).putUsers(tL_premium_boostsList.users, false);
+                                    ecVar2.K = tL_premium_boostsList.next_offset;
+                                    arrayList.addAll(tL_premium_boostsList.boosts);
+                                    int size = arrayList.size();
+                                    int i11 = 0;
+                                    int i12 = 0;
+                                    while (true) {
+                                        int i13 = 1;
+                                        if (i12 >= size) {
+                                            ecVar2.s = Math.max(0, tL_premium_boostsList.count - i11);
+                                            if (!TextUtils.isEmpty(tL_premium_boostsList.next_offset) && ecVar2.s > 0) {
+                                                z10 = true;
+                                            }
+                                            ecVar2.r = z10;
+                                            ecVar2.P = tL_premium_boostsList.count;
+                                            Runnable runnable2 = runnable;
+                                            if (runnable2 != null) {
+                                                runnable2.run();
+                                                break;
+                                            }
+                                        } else {
+                                            Object obj = arrayList.get(i12);
+                                            i12++;
+                                            int i14 = ((TL_stories.Boost) obj).multiplier;
+                                            if (i14 > 0) {
+                                                i13 = i14;
+                                            }
+                                            i11 += i13;
+                                        }
+                                    }
+                                }
+                                break;
+                            default:
+                                ec ecVar3 = ecVar;
+                                ArrayList arrayList2 = ecVar3.n;
+                                CountDownLatch countDownLatch3 = countDownLatch;
+                                if (countDownLatch3 != null) {
+                                    countDownLatch3.countDown();
+                                }
+                                TLObject tLObject3 = tLObject;
+                                if (tLObject3 != null) {
+                                    ecVar3.M = 20;
+                                    TL_stories.TL_premium_boostsList tL_premium_boostsList2 = (TL_stories.TL_premium_boostsList) tLObject3;
+                                    boolean z11 = false;
+                                    MessagesController.getInstance(ecVar3.b).putUsers(tL_premium_boostsList2.users, false);
+                                    ecVar3.L = tL_premium_boostsList2.next_offset;
+                                    arrayList2.addAll(tL_premium_boostsList2.boosts);
+                                    int size2 = arrayList2.size();
+                                    int i15 = 0;
+                                    int i16 = 0;
+                                    while (true) {
+                                        int i17 = 1;
+                                        if (i16 >= size2) {
+                                            ecVar3.w = Math.max(0, tL_premium_boostsList2.count - i15);
+                                            if (!TextUtils.isEmpty(tL_premium_boostsList2.next_offset) && ecVar3.w > 0) {
+                                                z11 = true;
+                                            }
+                                            ecVar3.v = z11;
+                                            ecVar3.O = tL_premium_boostsList2.count;
+                                            Runnable runnable3 = runnable;
+                                            if (runnable3 != null) {
+                                                runnable3.run();
+                                                break;
+                                            }
+                                        } else {
+                                            Object obj2 = arrayList2.get(i16);
+                                            i16++;
+                                            int i18 = ((TL_stories.Boost) obj2).multiplier;
+                                            if (i18 > 0) {
+                                                i17 = i18;
+                                            }
+                                            i15 += i17;
+                                        }
+                                    }
+                                }
+                                break;
                         }
-                    } else {
-                        zh.p7.f1(this.c, hcVar.b, j10, boost, c6Var);
                     }
-                }
-                if (view instanceof org.telegram.ui.Cells.r8) {
-                    ug.n.n(hb1Var, c6Var, j10, null);
-                }
-                if (view instanceof zg.c) {
-                    ug.n.n(hb1Var, c6Var, j10, ((zg.c) view).getPrepaidGiveaway());
-                }
-                if (((gc) hcVar.x.get(i10)).a == 9) {
-                    hcVar.c(Boolean.valueOf(hcVar.y == 1));
-                    break;
-                }
+                });
                 break;
             default:
-                org.telegram.ui.Components.z70.N((org.telegram.ui.Components.z70) this.d, this.b, (org.telegram.ui.ActionBar.m2) this.e, (a0.h) this.f, this.c, i10);
+                final int i11 = 0;
+                final ec ecVar2 = this.b;
+                final CountDownLatch countDownLatch2 = this.c;
+                final Runnable runnable2 = this.d;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.zb
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                ec ecVar22 = ecVar2;
+                                ArrayList arrayList = ecVar22.h;
+                                CountDownLatch countDownLatch22 = countDownLatch2;
+                                if (countDownLatch22 != null) {
+                                    countDownLatch22.countDown();
+                                }
+                                TLObject tLObject2 = tLObject;
+                                if (tLObject2 != null) {
+                                    ecVar22.N = 20;
+                                    TL_stories.TL_premium_boostsList tL_premium_boostsList = (TL_stories.TL_premium_boostsList) tLObject2;
+                                    boolean z10 = false;
+                                    MessagesController.getInstance(ecVar22.b).putUsers(tL_premium_boostsList.users, false);
+                                    ecVar22.K = tL_premium_boostsList.next_offset;
+                                    arrayList.addAll(tL_premium_boostsList.boosts);
+                                    int size = arrayList.size();
+                                    int i112 = 0;
+                                    int i12 = 0;
+                                    while (true) {
+                                        int i13 = 1;
+                                        if (i12 >= size) {
+                                            ecVar22.s = Math.max(0, tL_premium_boostsList.count - i112);
+                                            if (!TextUtils.isEmpty(tL_premium_boostsList.next_offset) && ecVar22.s > 0) {
+                                                z10 = true;
+                                            }
+                                            ecVar22.r = z10;
+                                            ecVar22.P = tL_premium_boostsList.count;
+                                            Runnable runnable22 = runnable2;
+                                            if (runnable22 != null) {
+                                                runnable22.run();
+                                                break;
+                                            }
+                                        } else {
+                                            Object obj = arrayList.get(i12);
+                                            i12++;
+                                            int i14 = ((TL_stories.Boost) obj).multiplier;
+                                            if (i14 > 0) {
+                                                i13 = i14;
+                                            }
+                                            i112 += i13;
+                                        }
+                                    }
+                                }
+                                break;
+                            default:
+                                ec ecVar3 = ecVar2;
+                                ArrayList arrayList2 = ecVar3.n;
+                                CountDownLatch countDownLatch3 = countDownLatch2;
+                                if (countDownLatch3 != null) {
+                                    countDownLatch3.countDown();
+                                }
+                                TLObject tLObject3 = tLObject;
+                                if (tLObject3 != null) {
+                                    ecVar3.M = 20;
+                                    TL_stories.TL_premium_boostsList tL_premium_boostsList2 = (TL_stories.TL_premium_boostsList) tLObject3;
+                                    boolean z11 = false;
+                                    MessagesController.getInstance(ecVar3.b).putUsers(tL_premium_boostsList2.users, false);
+                                    ecVar3.L = tL_premium_boostsList2.next_offset;
+                                    arrayList2.addAll(tL_premium_boostsList2.boosts);
+                                    int size2 = arrayList2.size();
+                                    int i15 = 0;
+                                    int i16 = 0;
+                                    while (true) {
+                                        int i17 = 1;
+                                        if (i16 >= size2) {
+                                            ecVar3.w = Math.max(0, tL_premium_boostsList2.count - i15);
+                                            if (!TextUtils.isEmpty(tL_premium_boostsList2.next_offset) && ecVar3.w > 0) {
+                                                z11 = true;
+                                            }
+                                            ecVar3.v = z11;
+                                            ecVar3.O = tL_premium_boostsList2.count;
+                                            Runnable runnable3 = runnable2;
+                                            if (runnable3 != null) {
+                                                runnable3.run();
+                                                break;
+                                            }
+                                        } else {
+                                            Object obj2 = arrayList2.get(i16);
+                                            i16++;
+                                            int i18 = ((TL_stories.Boost) obj2).multiplier;
+                                            if (i18 > 0) {
+                                                i17 = i18;
+                                            }
+                                            i15 += i17;
+                                        }
+                                    }
+                                }
+                                break;
+                        }
+                    }
+                });
                 break;
         }
-    }
-
-    public /* synthetic */ bc(org.telegram.ui.Components.z70 z70Var, long j10, org.telegram.ui.ActionBar.m2 m2Var, a0.h hVar, Context context) {
-        this.d = z70Var;
-        this.b = j10;
-        this.e = m2Var;
-        this.f = hVar;
-        this.c = context;
     }
 }

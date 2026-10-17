@@ -1,26 +1,80 @@
 package ug;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.c6;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.l2;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.PrivacyControlActivity;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class y0 extends yg.i {
-    public final /* synthetic */ z0 J;
+public final /* synthetic */ class y0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ l1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y0(z0 z0Var, Context context, c6 c6Var) {
-        super(context, c6Var);
-        this.J = z0Var;
+    public /* synthetic */ y0(l1 l1Var, int i10) {
+        this.a = i10;
+        this.b = l1Var;
     }
 
-    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        int dp = AndroidUtilities.dp(78.0f) + getMeasuredHeight();
-        z0 z0Var = this.J;
-        z0Var.p0 = dp;
-        z0Var.o0.G();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.c0(true);
+                break;
+            case 1:
+                this.b.d0.setVisibility(8);
+                break;
+            case 2:
+                l1 l1Var = this.b;
+                l1Var.X();
+                l1Var.j0(true, false);
+                break;
+            case 3:
+                f1 f1Var = this.b.Z;
+                f1Var.b.setHintText(LocaleController.getString(R.string.Search), true);
+                break;
+            case 4:
+                f1 f1Var2 = this.b.Z;
+                f1Var2.b.setHintText(LocaleController.getString(R.string.GiftPremiumUsersSearchHint), true);
+                break;
+            case 5:
+                l1 l1Var2 = this.b;
+                l1Var2.X();
+                l1Var2.j0(true, false);
+                break;
+            case 6:
+                this.b.d0(true);
+                break;
+            case 7:
+                this.b.d0.setVisibility(8);
+                break;
+            case 8:
+                l1 l1Var3 = this.b;
+                l1Var3.X();
+                l1Var3.j0(true, false);
+                break;
+            case 9:
+                n2 n2Var = this.b.n;
+                if (n2Var != null) {
+                    l2 l2Var = new l2();
+                    l2Var.a = true;
+                    n2Var.showAsSheet(new PrivacyControlActivity(11, false), l2Var);
+                    break;
+                }
+                break;
+            case 10:
+                this.b.i0(true, true);
+                break;
+            case 11:
+                this.b.dismiss();
+                break;
+            default:
+                l1 l1Var4 = this.b;
+                l1Var4.X();
+                l1Var4.j0(true, false);
+                break;
+        }
     }
 }

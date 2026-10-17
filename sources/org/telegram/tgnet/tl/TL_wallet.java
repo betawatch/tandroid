@@ -9,21 +9,23 @@ import org.telegram.tgnet.TLMethod;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
-import org.telegram.tgnet.n;
+import org.telegram.tgnet.m;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Wallet.WalletEngine2;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public class TL_wallet {
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class InputWalletReplacement extends TLObject {
         public static InputWalletReplacement TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
             return (InputWalletReplacement) TLObject.TLdeserialize(InputWalletReplacement.class, i10 != 1671708892 ? i10 != 1722182203 ? null : new inputWalletImported() : new inputWalletNew(), inputSerializedData, i10, z10);
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class TL_walletState extends WalletState {
         public static final int constructor = -1782238101;
         public String address;
@@ -54,7 +56,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class TL_walletStateEmpty extends WalletState {
         public static final int constructor = -1665551636;
         public boolean creating;
@@ -71,16 +73,17 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class WalletState extends TLObject {
         public static WalletState TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
             return (WalletState) TLObject.TLdeserialize(WalletState.class, i10 != -1782238101 ? i10 != -1665551636 ? null : new TL_walletStateEmpty() : new TL_walletState(), inputSerializedData, i10, z10);
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class WalletTransactionPeer extends TLObject {
         public String address;
+        public long channel_id;
         public String domain;
         public long user_id;
 
@@ -93,8 +96,14 @@ public class TL_wallet {
                 case walletTransactionPeerOnramp.constructor /* -443213714 */:
                     wallettransactionpeeruser = new walletTransactionPeerOnramp();
                     break;
+                case walletTransactionPeerTelegramGift.constructor /* -193817447 */:
+                    wallettransactionpeeruser = new walletTransactionPeerTelegramGift();
+                    break;
                 case walletTransactionPeerAddress.constructor /* 103596476 */:
                     wallettransactionpeeruser = new walletTransactionPeerAddress();
+                    break;
+                case walletTransactionPeerChannel.constructor /* 1424428081 */:
+                    wallettransactionpeeruser = new walletTransactionPeerChannel();
                     break;
                 case walletTransactionPeerUnsupported.constructor /* 1921772890 */:
                     wallettransactionpeeruser = new walletTransactionPeerUnsupported();
@@ -119,11 +128,22 @@ public class TL_wallet {
                 walletTransactionPeerUser wallettransactionpeeruser2 = (walletTransactionPeerUser) walletTransactionPeer;
                 return wallettransactionpeeruser.user_id == wallettransactionpeeruser2.user_id && TextUtils.equals(wallettransactionpeeruser.address, wallettransactionpeeruser2.address);
             }
+            if (walletTransactionPeer instanceof walletTransactionPeerChannel) {
+                if (!(this instanceof walletTransactionPeerChannel)) {
+                    return false;
+                }
+                walletTransactionPeerChannel wallettransactionpeerchannel = (walletTransactionPeerChannel) this;
+                walletTransactionPeerChannel wallettransactionpeerchannel2 = (walletTransactionPeerChannel) walletTransactionPeer;
+                return wallettransactionpeerchannel.channel_id == wallettransactionpeerchannel2.channel_id && TextUtils.equals(wallettransactionpeerchannel.address, wallettransactionpeerchannel2.address);
+            }
             if (walletTransactionPeer instanceof walletTransactionPeerAddress) {
                 if (this instanceof walletTransactionPeerAddress) {
                     return TextUtils.equals(((walletTransactionPeerAddress) this).address, ((walletTransactionPeerAddress) walletTransactionPeer).address);
                 }
                 return false;
+            }
+            if (walletTransactionPeer instanceof walletTransactionPeerTelegramGift) {
+                return (this instanceof walletTransactionPeerTelegramGift) && ((walletTransactionPeerTelegramGift) this).own_profile == ((walletTransactionPeerTelegramGift) walletTransactionPeer).own_profile;
             }
             if (walletTransactionPeer instanceof walletTransactionPeerUnsupported) {
                 return this instanceof walletTransactionPeerUnsupported;
@@ -132,7 +152,73 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    public static class card extends TLObject {
+        public static final int constructor = -1898953807;
+        public String address;
+        public long balance;
+        public nftItem bg_nft_item;
+        public ArrayList<cardSticker> stickers = new ArrayList<>();
+
+        public static card TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
+            return (card) TLObject.TLdeserialize(card.class, -1898953807 != i10 ? null : new card(), inputSerializedData, i10, z10);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            int readInt32 = inputSerializedData.readInt32(z10);
+            if (TLObject.hasFlag(readInt32, 1)) {
+                this.stickers = Vector.deserialize(inputSerializedData, new d(18), z10);
+            }
+            if (TLObject.hasFlag(readInt32, 2)) {
+                this.bg_nft_item = nftItem.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            }
+            this.address = inputSerializedData.readString(z10);
+            this.balance = inputSerializedData.readInt64(z10);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            ArrayList<cardSticker> arrayList = this.stickers;
+            int flag = TLObject.setFlag(TLObject.setFlag(0, 1, (arrayList == null || arrayList.isEmpty()) ? false : true), 2, this.bg_nft_item != null);
+            outputSerializedData.writeInt32(flag);
+            if (TLObject.hasFlag(flag, 1)) {
+                Vector.serialize(outputSerializedData, this.stickers);
+            }
+            if (TLObject.hasFlag(flag, 2)) {
+                this.bg_nft_item.serializeToStream(outputSerializedData);
+            }
+            outputSerializedData.writeString(this.address);
+            outputSerializedData.writeInt64(this.balance);
+        }
+    }
+
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    public static class cardSticker extends TLObject {
+        public static final int constructor = -218035014;
+        public TL_stories.MediaAreaCoordinates coordinates;
+        public nftItem nft;
+
+        public static cardSticker TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
+            return (cardSticker) TLObject.TLdeserialize(cardSticker.class, -218035014 != i10 ? null : new cardSticker(), inputSerializedData, i10, z10);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            this.coordinates = TL_stories.MediaAreaCoordinates.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            this.nft = nftItem.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            this.coordinates.serializeToStream(outputSerializedData);
+            this.nft.serializeToStream(outputSerializedData);
+        }
+    }
+
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class currencyRate extends TLObject {
         public static final int constructor = 819557436;
         public String currency;
@@ -165,7 +251,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class currencyRates extends TLObject {
         public static final int constructor = -1144199998;
         public ArrayList<currencyRate> rates = new ArrayList<>();
@@ -186,7 +272,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class disableBackup extends TLMethod<WalletState> {
         public static final int constructor = 185331930;
         public byte[] new_public_key;
@@ -215,7 +301,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class enableBackup extends TLMethod<WalletState> {
         public static final int constructor = 1157678373;
         public byte[] new_public_key;
@@ -242,7 +328,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class encryptedSecretPhrasePart extends TLObject {
         public static final int constructor = 417867063;
         public byte[] data;
@@ -263,7 +349,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class existingBalance extends TLObject {
         public static final int constructor = -1108800883;
         public boolean has_balance;
@@ -287,7 +373,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class exportSecretPhrase extends TLMethod<secretPhraseParts> {
         public static final int constructor = -1871197780;
         public TLRPC.InputCheckPasswordSRP password;
@@ -308,7 +394,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class fetchEncryptedSecretPhrasePart extends TLMethod<encryptedSecretPhrasePart> {
         public static final int constructor = -180804145;
         public byte[] public_key;
@@ -327,7 +413,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class getBackupHolderDcs extends TLMethod<Vector<holderDc>> {
         public static final int constructor = -780544876;
 
@@ -342,7 +428,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class getCurrencyRates extends TLMethod<currencyRates> {
         public static final int constructor = -749108248;
 
@@ -357,7 +443,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class getExistingWaltBalance extends TLMethod<existingBalance> {
         public static final int constructor = 1763656544;
 
@@ -372,7 +458,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class getGaslessInfo extends TLMethod<TLRPC.Updates> {
         public static final int constructor = 1949167777;
 
@@ -387,7 +473,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class getNfts extends TLMethod<nftItems> {
         public static final int constructor = -1944915036;
         public int limit;
@@ -406,7 +492,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class getProofChallenge extends TLMethod<proofChallenge> {
         public static final int constructor = 539354775;
 
@@ -421,7 +507,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class getState extends TLMethod<WalletState> {
         public static final int constructor = -1417432262;
 
@@ -436,7 +522,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class getTransactions extends TLMethod<walletTransactions> {
         public static final int constructor = -1467807101;
         public boolean inbound;
@@ -458,7 +544,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class getTransactionsByIDs extends TLMethod<walletTransactions> {
         public static final int constructor = -2128811338;
         public ArrayList<String> id = new ArrayList<>();
@@ -475,7 +561,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class getTransactionsByMsgHash extends TLMethod<walletTransactions> {
         public static final int constructor = -1497663139;
         public ArrayList<String> msg_hash = new ArrayList<>();
@@ -492,7 +578,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class getUserAddresses extends TLMethod<userAddresses> {
         public static final int constructor = 1383456733;
         public boolean force;
@@ -513,7 +599,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class holderDc extends TLObject {
         public static final int constructor = -103410961;
         public int dc;
@@ -537,7 +623,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class inputTonConnectOauthSession extends TLObject {
         public static final int constructor = 1654613710;
         public byte[] body;
@@ -567,7 +653,31 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    public static class inputWalletCardSticker extends TLObject {
+        public static final int constructor = 1474250151;
+        public TL_stories.MediaAreaCoordinates coordinates;
+        public String nft_address;
+
+        public static inputWalletCardSticker TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
+            return (inputWalletCardSticker) TLObject.TLdeserialize(inputWalletCardSticker.class, 1474250151 != i10 ? null : new inputWalletCardSticker(), inputSerializedData, i10, z10);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            this.coordinates = TL_stories.MediaAreaCoordinates.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            this.nft_address = inputSerializedData.readString(z10);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            this.coordinates.serializeToStream(outputSerializedData);
+            outputSerializedData.writeString(this.nft_address);
+        }
+    }
+
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class inputWalletImported extends InputWalletReplacement {
         public static final int constructor = 1722182203;
         public byte[] anchor_public_key;
@@ -597,7 +707,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class inputWalletNew extends InputWalletReplacement {
         public static final int constructor = 1671708892;
 
@@ -607,7 +717,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class mnemonic_decryptedKeyPart extends TLObject {
         public static final int constructor = -1953440504;
         public byte[] share;
@@ -628,7 +738,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class nftAttribute extends TLObject {
         public static final int constructor = 1277096206;
         public String trait_type;
@@ -652,15 +762,16 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class nftItem extends TLObject {
-        public static final int constructor = 876739868;
+        public static final int constructor = 389937907;
         public String address;
         public ArrayList<nftAttribute> attributes = new ArrayList<>();
         public String collection_address;
         public TLRPC.WebDocument content_url;
         public String description;
         public TLRPC.TL_dataJSON extra;
+        public TL_stars.StarGift gift;
         public TLRPC.WebDocument image;
         public TLRPC.WebDocument image_small;
         public String index;
@@ -669,7 +780,7 @@ public class TL_wallet {
         public String owner_address;
 
         public static nftItem TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
-            return (nftItem) TLObject.TLdeserialize(nftItem.class, 876739868 != i10 ? null : new nftItem(), inputSerializedData, i10, z10);
+            return (nftItem) TLObject.TLdeserialize(nftItem.class, 389937907 != i10 ? null : new nftItem(), inputSerializedData, i10, z10);
         }
 
         public boolean isGift() {
@@ -738,6 +849,9 @@ public class TL_wallet {
             if (TLObject.hasFlag(readInt32, 256)) {
                 this.extra = TLRPC.TL_dataJSON.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
+            if (TLObject.hasFlag(readInt32, 512)) {
+                this.gift = TL_stars.StarGift.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            }
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -745,7 +859,7 @@ public class TL_wallet {
             outputSerializedData.writeInt32(constructor);
             int flag = TLObject.setFlag(TLObject.setFlag(TLObject.setFlag(TLObject.setFlag(TLObject.setFlag(TLObject.setFlag(TLObject.setFlag(0, 1, this.collection_address != null), 2, this.name != null), 4, this.description != null), 8, this.image != null), 16, this.image_small != null), 32, this.content_url != null), 64, this.lottie != null);
             ArrayList<nftAttribute> arrayList = this.attributes;
-            int flag2 = TLObject.setFlag(TLObject.setFlag(flag, 128, (arrayList == null || arrayList.isEmpty()) ? false : true), 256, this.extra != null);
+            int flag2 = TLObject.setFlag(TLObject.setFlag(TLObject.setFlag(flag, 128, (arrayList == null || arrayList.isEmpty()) ? false : true), 256, this.extra != null), 512, this.gift != null);
             outputSerializedData.writeInt32(flag2);
             if (TLObject.hasFlag(flag2, 1)) {
                 outputSerializedData.writeString(this.collection_address);
@@ -777,10 +891,13 @@ public class TL_wallet {
             if (TLObject.hasFlag(flag2, 256)) {
                 this.extra.serializeToStream(outputSerializedData);
             }
+            if (TLObject.hasFlag(flag2, 512)) {
+                this.gift.serializeToStream(outputSerializedData);
+            }
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class nftItems extends TLObject {
         public static final int constructor = 2035107951;
         public ArrayList<nftItem> items = new ArrayList<>();
@@ -811,7 +928,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class proofChallenge extends TLObject {
         public static final int constructor = -1713105145;
         public String domain;
@@ -838,7 +955,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class replaceWallet extends TLMethod<WalletState> {
         public static final int constructor = -658034964;
         public TLRPC.InputCheckPasswordSRP password;
@@ -861,7 +978,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class secretPhraseParts extends TLObject {
         public static final int constructor = -422514943;
         public ArrayList<Integer> dcs = new ArrayList<>();
@@ -885,7 +1002,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class sendTransfer extends TLMethod<TLRPC.Updates> {
         public static final int constructor = -639247902;
         public byte[] data_gasless;
@@ -914,7 +1031,30 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    public static class setCardStickers extends TLMethod<card> {
+        public static final int constructor = 109382060;
+        public String bg_nft_address;
+        public ArrayList<inputWalletCardSticker> stickers = new ArrayList<>();
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            int flag = TLObject.setFlag(0, 1, this.bg_nft_address != null);
+            outputSerializedData.writeInt32(flag);
+            Vector.serialize(outputSerializedData, this.stickers);
+            if (TLObject.hasFlag(flag, 1)) {
+                outputSerializedData.writeString(this.bg_nft_address);
+            }
+        }
+
+        @Override // org.telegram.tgnet.TLMethod
+        public card deserializeResponseT(InputSerializedData inputSerializedData, int i10, boolean z10) {
+            return card.TLdeserialize(inputSerializedData, i10, z10);
+        }
+    }
+
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class tonConnectChallenge extends TLObject {
         public static final int constructor = 1271436947;
         public byte[] challenge;
@@ -938,7 +1078,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class tonConnectClaimRequest extends TLMethod<TLRPC.Bool> {
         public static final int constructor = 1723169601;
         public String app_request_id;
@@ -966,7 +1106,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class tonConnectCloseSession extends TLMethod<TLRPC.Bool> {
         public static final int constructor = -700489266;
         public byte[] body;
@@ -989,7 +1129,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class tonConnectCreateSession extends TLMethod<tonConnectSession> {
         public static final int constructor = -862777274;
         public String dapp_client_id;
@@ -1008,7 +1148,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class tonConnectGetNextEventId extends TLMethod<tonConnectNextEventId> {
         public static final int constructor = 2002612804;
         public long session_id;
@@ -1025,7 +1165,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class tonConnectGetPending extends TLMethod<tonConnectPending> {
         public static final int constructor = 296673381;
         public String dapp_client_id;
@@ -1050,7 +1190,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class tonConnectGetSessions extends TLMethod<tonConnectSessions> {
         public static final int constructor = -1476414098;
 
@@ -1065,7 +1205,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class tonConnectManifest extends TLObject {
         public static final int constructor = 304255588;
         public TLRPC.WebDocument icon;
@@ -1099,7 +1239,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class tonConnectNextEventId extends TLObject {
         public static final int constructor = 1478780131;
         public long event_id;
@@ -1120,7 +1260,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class tonConnectPending extends TLObject {
         public static final int constructor = -2050952924;
         public ArrayList<tonConnectRequest> requests = new ArrayList<>();
@@ -1144,7 +1284,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class tonConnectRegisterKey extends TLMethod<tonConnectChallenge> {
         public static final int constructor = 864800540;
         public String client_id;
@@ -1163,7 +1303,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class tonConnectRequest extends TLObject {
         public static final int constructor = -1587575533;
         public byte[] body;
@@ -1210,7 +1350,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class tonConnectSession extends TLObject {
         public static final int constructor = 308631238;
         public String client_id;
@@ -1270,7 +1410,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class tonConnectSessions extends TLObject {
         public static final int constructor = 236939414;
         public ArrayList<tonConnectSession> sessions = new ArrayList<>();
@@ -1291,7 +1431,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class tonConnectSubmitConnectResult extends TLMethod<TLRPC.Bool> {
         public static final int constructor = -1027602567;
         public byte[] body;
@@ -1319,7 +1459,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class tonConnectSubmitResponse extends TLMethod<TLRPC.Bool> {
         public static final int constructor = -87655108;
         public byte[] body;
@@ -1346,7 +1486,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class userAddresses extends TLObject {
         public static final int constructor = -1836156075;
         public ArrayList<walletUserAddress> addresses = new ArrayList<>();
@@ -1359,7 +1499,7 @@ public class TL_wallet {
         @Override // org.telegram.tgnet.TLObject
         public void readParams(InputSerializedData inputSerializedData, boolean z10) {
             this.addresses = Vector.deserialize(inputSerializedData, new d(25), z10);
-            this.users = Vector.deserialize(inputSerializedData, new n(4), z10);
+            this.users = Vector.deserialize(inputSerializedData, new m(4), z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1370,7 +1510,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class walletOwnershipProof extends TLObject {
         public static final int constructor = 1622985485;
         public byte[] signature;
@@ -1394,7 +1534,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class walletTransaction extends TLObject {
         public static final int constructor = -1792163517;
         public long amount;
@@ -1523,7 +1663,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class walletTransactionPeerAddress extends WalletTransactionPeer {
         public static final int constructor = 103596476;
 
@@ -1548,7 +1688,34 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    public static class walletTransactionPeerChannel extends WalletTransactionPeer {
+        public static final int constructor = 1424428081;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            int readInt32 = inputSerializedData.readInt32(z10);
+            this.channel_id = inputSerializedData.readInt64(z10);
+            this.address = inputSerializedData.readString(z10);
+            if (TLObject.hasFlag(readInt32, 1)) {
+                this.domain = inputSerializedData.readString(z10);
+            }
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            int flag = TLObject.setFlag(0, 1, this.domain != null);
+            outputSerializedData.writeInt32(flag);
+            outputSerializedData.writeInt64(this.channel_id);
+            outputSerializedData.writeString(this.address);
+            if (TLObject.hasFlag(flag, 1)) {
+                outputSerializedData.writeString(this.domain);
+            }
+        }
+    }
+
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class walletTransactionPeerOnramp extends WalletTransactionPeer {
         public static final int constructor = -443213714;
         public String provider_name;
@@ -1576,7 +1743,24 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    public static class walletTransactionPeerTelegramGift extends WalletTransactionPeer {
+        public static final int constructor = -193817447;
+        public boolean own_profile;
+
+        @Override // org.telegram.tgnet.TLObject
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            this.own_profile = TLObject.hasFlag(inputSerializedData.readInt32(z10), 1);
+        }
+
+        @Override // org.telegram.tgnet.TLObject
+        public void serializeToStream(OutputSerializedData outputSerializedData) {
+            outputSerializedData.writeInt32(constructor);
+            outputSerializedData.writeInt32(TLObject.setFlag(0, 1, this.own_profile));
+        }
+    }
+
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class walletTransactionPeerUser extends WalletTransactionPeer {
         public static final int constructor = -722833299;
 
@@ -1603,7 +1787,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class walletTransactions extends TLObject {
         public static final int constructor = 1126356389;
         public long balance;
@@ -1624,8 +1808,8 @@ public class TL_wallet {
             if (TLObject.hasFlag(readInt32, 1)) {
                 this.next_offset = inputSerializedData.readString(z10);
             }
-            this.chats = Vector.deserialize(inputSerializedData, new n(10), z10);
-            this.users = Vector.deserialize(inputSerializedData, new n(4), z10);
+            this.chats = Vector.deserialize(inputSerializedData, new m(10), z10);
+            this.users = Vector.deserialize(inputSerializedData, new m(4), z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1643,7 +1827,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class walletUserAddress extends TLObject {
         public static final int constructor = -25628980;
         public String address;
@@ -1676,7 +1860,7 @@ public class TL_wallet {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class walletTransactionPeerUnsupported extends WalletTransactionPeer {
         public static final int constructor = 1921772890;
 

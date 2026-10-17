@@ -1,6 +1,6 @@
 package j4;
 
-import b2.x0;
+import b2.w0;
 import e9.l0;
 import e9.n0;
 import e9.x1;
@@ -8,7 +8,7 @@ import java.io.EOFException;
 import java.util.List;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class d implements c3.o {
     public final int a;
@@ -75,7 +75,7 @@ public final class d implements c3.o {
     public final void c(c3.q qVar) {
         this.f = qVar;
         this.b.d(qVar, new f0(0, 1));
-        qVar.D();
+        qVar.H();
     }
 
     @Override // c3.o
@@ -132,7 +132,7 @@ public final class d implements c3.o {
                         int g10 = gVar.g(13);
                         if (g10 <= 6) {
                             this.j = true;
-                            throw x0.a(null, "Malformed ADTS stream");
+                            throw w0.a(null, "Malformed ADTS stream");
                         }
                         j10 += g10;
                         i13++;
@@ -166,7 +166,7 @@ public final class d implements c3.o {
                         int i14 = this.i;
                         i10 = -1;
                         eVar = eVar2;
-                        qVar.K(new c3.k(length, this.h, (int) ((i14 * 8000000) / j11), i14, false, true));
+                        qVar.g0(new c3.k(length, this.h, (int) ((i14 * 8000000) / j11), i14, false, true));
                         this.l = true;
                         if (z10) {
                             return i10;
@@ -183,7 +183,7 @@ public final class d implements c3.o {
                 }
                 i10 = -1;
                 eVar = eVar2;
-                this.f.K(new c3.t(-9223372036854775807L));
+                this.f.g0(new c3.t(-9223372036854775807L));
                 this.l = true;
                 if (z10) {
                 }

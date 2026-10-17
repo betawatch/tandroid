@@ -1,58 +1,57 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class db0 implements MessagesController.MessagesLoadedCallback {
-    public final /* synthetic */ d20 a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ Bundle c;
-    public final /* synthetic */ TLRPC.ChatInvite d;
-    public final /* synthetic */ LaunchActivity e;
+public final /* synthetic */ class db0 implements Utilities.Callback2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ kb0 b;
+    public final /* synthetic */ String c;
 
-    public db0(LaunchActivity launchActivity, d20 d20Var, boolean[] zArr, Bundle bundle, TLRPC.ChatInvite chatInvite) {
-        this.e = launchActivity;
-        this.a = d20Var;
-        this.b = zArr;
-        this.c = bundle;
-        this.d = chatInvite;
+    public /* synthetic */ db0(kb0 kb0Var, String str, int i10) {
+        this.a = i10;
+        this.b = kb0Var;
+        this.c = str;
     }
 
-    @Override // org.telegram.messenger.MessagesController.MessagesLoadedCallback
-    public final void onError() {
-        LaunchActivity launchActivity = this.e;
-        if (!launchActivity.isFinishing()) {
-            org.telegram.ui.Components.g5.t0((org.telegram.ui.ActionBar.m2) i2.d.h(1, launchActivity.d0), null, LocaleController.getString(R.string.JoinToGroupErrorNotExist), null);
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                TL_account.Passkeys passkeys = (TL_account.Passkeys) obj;
+                kb0 kb0Var = this.b;
+                kb0Var.c();
+                if (passkeys != null) {
+                    kb0Var.u(new PasskeysActivity(passkeys.passkeys), false);
+                    if ("create".equalsIgnoreCase(this.c)) {
+                        kb0Var.x("addPasskeyRow");
+                        break;
+                    }
+                }
+                break;
+            default:
+                org.telegram.ui.Wallet.a2 a2Var = (org.telegram.ui.Wallet.a2) obj;
+                String str = (String) obj2;
+                kb0 kb0Var2 = this.b;
+                kb0Var2.c();
+                if (a2Var != null) {
+                    org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                    if (U != null && U.getContext() != null) {
+                        org.telegram.ui.Wallet.f2.B(U.getContext(), kb0Var2.b, a2Var, null, U.getResourceProvider(), null, new gb0(kb0Var2, this.c, 1));
+                        break;
+                    }
+                } else {
+                    if (str == null) {
+                        str = LocaleController.getString(R.string.WalletTonConnectSessionResponseEmpty);
+                    }
+                    org.telegram.ui.Components.xc.b0(str);
+                    break;
+                }
+                break;
         }
-        try {
-            this.a.run();
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-    }
-
-    @Override // org.telegram.messenger.MessagesController.MessagesLoadedCallback
-    public final void onMessagesLoaded(boolean z10) {
-        try {
-            this.a.run();
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-        if (this.b[0]) {
-            return;
-        }
-        fo foVar = new fo(this.c);
-        TLRPC.ChatInvite chatInvite = this.d;
-        if (chatInvite instanceof TLRPC.TL_chatInvitePeek) {
-            foVar.K5 = chatInvite;
-        }
-        ((ActionBarLayout) this.e.O()).P(foVar);
     }
 }

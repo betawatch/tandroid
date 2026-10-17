@@ -13,7 +13,7 @@ import android.os.Messenger;
 import android.util.Log;
 import android.util.SparseArray;
 import com.google.android.gms.internal.cast.a0;
-import com.google.firebase.messaging.r;
+import com.google.firebase.messaging.q;
 import j9.u;
 import java.util.ArrayDeque;
 import java.util.Iterator;
@@ -21,7 +21,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import n4.s;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class j implements ServiceConnection {
     public int a = 0;
@@ -52,7 +52,7 @@ public final class j implements ServiceConnection {
                         jVar.c();
                         Bundle data = message.getData();
                         if (data.getBoolean("unsupported", false)) {
-                            kVar.b(new r("Not supported by GmsCore", null));
+                            kVar.b(new q("Not supported by GmsCore", null));
                             return true;
                         }
                         switch (kVar.e) {
@@ -61,7 +61,7 @@ public final class j implements ServiceConnection {
                                     kVar.c(null);
                                     return true;
                                 }
-                                kVar.b(new r("Invalid response to one way request", null));
+                                kVar.b(new q("Invalid response to one way request", null));
                                 return true;
                             default:
                                 Bundle bundle = data.getBundle("data");
@@ -107,14 +107,14 @@ public final class j implements ServiceConnection {
             }
             this.a = 4;
             t6.a.a().b((Context) this.f.b, this);
-            r rVar = new r(str, securityException);
+            q qVar = new q(str, securityException);
             Iterator it = this.d.iterator();
             while (it.hasNext()) {
-                ((k) it.next()).b(rVar);
+                ((k) it.next()).b(qVar);
             }
             this.d.clear();
             for (int i11 = 0; i11 < this.e.size(); i11++) {
-                ((k) this.e.valueAt(i11)).b(rVar);
+                ((k) this.e.valueAt(i11)).b(qVar);
             }
             this.e.clear();
         } catch (Throwable th2) {

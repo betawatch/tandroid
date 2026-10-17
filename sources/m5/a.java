@@ -2,9 +2,8 @@ package m5;
 
 import a1.g;
 import m1.j;
-import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class a {
     public final int a;
@@ -38,7 +37,7 @@ public final class a {
     public final String toString() {
         StringBuilder sb2 = new StringBuilder("BackendResponse{status=");
         int i10 = this.a;
-        sb2.append(i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? BuildConfig.BETA_URL : "INVALID_PAYLOAD" : "FATAL_ERROR" : "TRANSIENT_ERROR" : "OK");
+        sb2.append(i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? "null" : "INVALID_PAYLOAD" : "FATAL_ERROR" : "TRANSIENT_ERROR" : "OK");
         sb2.append(", nextRequestWaitMillis=");
         return g.r(sb2, this.b, "}");
     }

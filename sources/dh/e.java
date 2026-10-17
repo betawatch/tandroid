@@ -10,9 +10,9 @@ import android.graphics.RenderNode;
 import android.os.Build;
 import bh.g;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class e extends d {
     public final gh.a G;
@@ -64,7 +64,7 @@ public final class e extends d {
             w();
         }
         this.O = false;
-        int m12 = g6.m1(this.J.getAlpha() * this.p, this.d);
+        int m12 = h6.m1(this.J.getAlpha() * this.p, this.d);
         if (Color.alpha(m12) != 0) {
             float f7 = this.n;
             float f10 = this.o;
@@ -176,7 +176,7 @@ public final class e extends d {
             float[] fArr = cVar.c;
             gVar.a(width, height, fArr[0], fArr[2], fArr[4], fArr[6], max, cVar.g, cVar.h, this.e);
         }
-        this.G.v(beginRecording, f11, f12, f13, f14);
+        this.G.y(beginRecording, f11, f12, f13, f14);
         beginRecording.save();
         this.K.endRecording();
         RecordingCanvas beginRecording2 = this.J.beginRecording();

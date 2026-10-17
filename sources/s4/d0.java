@@ -1,13 +1,13 @@
 package s4;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public interface d0 {
-    void D(int i10, int i11);
+    void X(int i10, int i11);
 
-    void O0(int i10, int i11);
+    void a1(int i10, int i11);
 
-    void j0(int i10, int i11);
+    void t0(int i10, int i11);
 
-    void m1(int i10, int i11);
+    void y(int i10, int i11);
 }

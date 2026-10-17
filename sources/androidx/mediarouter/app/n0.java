@@ -29,9 +29,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import ki.t1;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class n0 extends g.t {
     public static final /* synthetic */ int j0 = 0;
@@ -137,7 +138,7 @@ public final class n0 extends g.t {
         qf.b bVar = this.Z;
         q qVar = this.a0;
         if (bVar != null) {
-            bVar.g0(qVar);
+            bVar.f0(qVar);
             this.Z = null;
         }
         if (mediaSessionCompat$Token != null && this.F) {
@@ -292,9 +293,9 @@ public final class n0 extends g.t {
         uVar.getClass();
         p4.x.b();
         for (p4.v vVar : DesugarCollections.unmodifiableList(uVar.b)) {
-            m.l b10 = this.r.b(vVar);
+            t1 b10 = this.r.b(vVar);
             if (b10 != null) {
-                p4.o oVar = (p4.o) b10.a;
+                p4.o oVar = (p4.o) b10.b;
                 if (oVar != null && oVar.d) {
                     arrayList2.add(vVar);
                 }

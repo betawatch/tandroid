@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class s {
     /* JADX WARN: Removed duplicated region for block: B:19:0x007f  */
@@ -27,7 +27,7 @@ public abstract class s {
         ApplicationInfo applicationInfo;
         pb.a cVar = Build.VERSION.SDK_INT >= 28 ? new androidx.emoji2.text.c(2) : new pb.a(2);
         PackageManager packageManager = context.getPackageManager();
-        w7.m6.a(packageManager, "Package manager required to locate emoji font provider");
+        w7.n6.a(packageManager, "Package manager required to locate emoji font provider");
         Iterator<ResolveInfo> it = packageManager.queryIntentContentProviders(new Intent("androidx.content.action.LOAD_EMOJI_FONT"), 0).iterator();
         while (true) {
             if (!it.hasNext()) {
@@ -43,9 +43,9 @@ public abstract class s {
             try {
                 String str = providerInfo.authority;
                 String str2 = providerInfo.packageName;
-                Signature[] p02 = cVar.p0(packageManager, str2);
+                Signature[] k02 = cVar.k0(packageManager, str2);
                 ArrayList arrayList = new ArrayList();
-                for (Signature signature : p02) {
+                for (Signature signature : k02) {
                     arrayList.add(signature.toByteArray());
                 }
                 dVar = new o0.d(str, str2, "emojicompat-emoji-font", Collections.singletonList(arrayList));

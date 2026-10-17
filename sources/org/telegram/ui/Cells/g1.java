@@ -1,31 +1,31 @@
 package org.telegram.ui.Cells;
 
 import android.view.ViewGroup;
+import org.telegram.ui.Components.bp0;
+import org.telegram.ui.Components.c10;
 import org.telegram.ui.Components.cp0;
 import org.telegram.ui.Components.fp0;
-import org.telegram.ui.Components.g10;
-import org.telegram.ui.Components.gp0;
-import org.telegram.ui.Components.jp0;
+import org.telegram.ui.Components.yo0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class g1 extends g10 {
+public final class g1 extends c10 {
     public final /* synthetic */ int e = 0;
     public final /* synthetic */ ViewGroup f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g1(gp0 gp0Var, boolean z10) {
+    public g1(cp0 cp0Var, boolean z10) {
         super(z10);
-        this.f = gp0Var;
+        this.f = cp0Var;
     }
 
-    @Override // org.telegram.ui.Components.dp0
+    @Override // org.telegram.ui.Components.zo0
     public CharSequence d() {
         switch (this.e) {
             case 1:
-                fp0 fp0Var = ((gp0) this.f).w;
-                if (fp0Var != null) {
-                    return fp0Var.getContentDescription();
+                bp0 bp0Var = ((cp0) this.f).w;
+                if (bp0Var != null) {
+                    return bp0Var.getContentDescription();
                 }
                 return null;
             default:
@@ -33,13 +33,13 @@ public final class g1 extends g10 {
         }
     }
 
-    @Override // org.telegram.ui.Components.g10
+    @Override // org.telegram.ui.Components.c10
     public float h() {
         switch (this.e) {
             case 1:
-                int k02 = ((gp0) this.f).w.k0();
-                if (k02 > 0) {
-                    return 1.0f / k02;
+                int Y = ((cp0) this.f).w.Y();
+                if (Y > 0) {
+                    return 1.0f / Y;
                 }
                 return 0.05f;
             default:
@@ -47,7 +47,7 @@ public final class g1 extends g10 {
         }
     }
 
-    @Override // org.telegram.ui.Components.g10
+    @Override // org.telegram.ui.Components.c10
     public final float k() {
         float f7;
         int i10;
@@ -59,7 +59,7 @@ public final class g1 extends g10 {
                 if (u1Var.y7.isMusic()) {
                     f7 = f1Var.b;
                     i10 = f1Var.f;
-                    i11 = cp0.E;
+                    i11 = yo0.E;
                 } else {
                     if (!u1Var.y7.isVoice()) {
                         if (u1Var.y7.isRoundVideo()) {
@@ -68,38 +68,38 @@ public final class g1 extends g10 {
                         return 0.0f;
                     }
                     if (u1Var.F5) {
-                        jp0 jp0Var = u1Var.H5;
-                        return jp0Var.a / jp0Var.g;
+                        fp0 fp0Var = u1Var.H5;
+                        return fp0Var.a / fp0Var.g;
                     }
                     f7 = f1Var.b;
                     i10 = f1Var.f;
-                    i11 = cp0.E;
+                    i11 = yo0.E;
                 }
                 return f7 / (i10 - i11);
             default:
-                return ((gp0) this.f).getProgress();
+                return ((cp0) this.f).getProgress();
         }
     }
 
-    @Override // org.telegram.ui.Components.g10
+    @Override // org.telegram.ui.Components.c10
     public final void l(float f7) {
         switch (this.e) {
             case 0:
                 u1 u1Var = (u1) this.f;
-                jp0 jp0Var = u1Var.H5;
+                fp0 fp0Var = u1Var.H5;
                 f1 f1Var = u1Var.G5;
                 if (u1Var.y7.isMusic()) {
                     f1Var.i(f7);
                 } else if (u1Var.y7.isVoice()) {
                     if (u1Var.F5) {
-                        jp0Var.g(f7, false);
+                        fp0Var.g(f7, false);
                     } else {
                         f1Var.i(f7);
                     }
                 } else if (u1Var.y7.isRoundVideo()) {
                     if (u1Var.F5) {
-                        if (jp0Var != null) {
-                            jp0Var.g(f7, false);
+                        if (fp0Var != null) {
+                            fp0Var.g(f7, false);
                         }
                     } else if (f1Var != null) {
                         f1Var.i(f7);
@@ -110,11 +110,11 @@ public final class g1 extends g10 {
                 u1Var.invalidate();
                 break;
             default:
-                gp0 gp0Var = (gp0) this.f;
-                gp0Var.v = true;
-                gp0Var.setProgress(f7);
-                gp0Var.f(f7, true);
-                gp0Var.v = false;
+                cp0 cp0Var = (cp0) this.f;
+                cp0Var.v = true;
+                cp0Var.setProgress(f7);
+                cp0Var.f(f7, true);
+                cp0Var.v = false;
                 break;
         }
     }

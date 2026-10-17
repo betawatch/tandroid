@@ -5,13 +5,13 @@ import android.os.Process;
 import android.util.Log;
 import com.google.android.gms.tasks.Task;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class c0 extends Binder {
-    public final a4.l a;
+    public final a6.m a;
 
-    public c0(a4.l lVar) {
-        this.a = lVar;
+    public c0(a6.m mVar) {
+        this.a = mVar;
     }
 
     public final void a(d0 d0Var) {
@@ -23,6 +23,6 @@ public final class c0 extends Binder {
             Log.d("FirebaseMessaging", "service received new intent via bind strategy");
         }
         b10 = ((g) this.a.b).b(d0Var.a);
-        b10.addOnCompleteListener(new a3.b(2), new a1.c(d0Var, 18));
+        b10.addOnCompleteListener(new a3.b(2), new a1.c(d0Var, 25));
     }
 }

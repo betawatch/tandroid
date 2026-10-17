@@ -1,199 +1,102 @@
 package ei;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import bi.v0;
-import ci.u;
-import di.d4;
+import android.animation.ObjectAnimator;
+import android.text.Editable;
+import android.text.TextWatcher;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.Components.a71;
-import org.telegram.ui.Components.db;
-import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.lm0;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.za;
+import org.telegram.messenger.BotWebViewVibrationEffect;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.fo;
-import org.telegram.ui.sk;
-import s4.k;
-import w7.z5;
-import zh.n5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class h extends db implements NotificationCenter.NotificationCenterDelegate {
-    public final ag.a X;
-    public final v0 Y;
-    public final FrameLayout Z;
-    public Runnable a0;
-    public a71 b0;
+public final class h implements TextWatcher {
+    public int a;
+    public boolean b;
+    public final /* synthetic */ m c;
 
-    public h(Context context, c6 c6Var, ag.a aVar, boolean z10, Runnable runnable) {
-        super(context, null, false, false, c6Var);
-        this.v = 0.2f;
-        this.a0 = runnable;
-        fixNavigationBar();
-        mm0 mm0Var = this.d;
-        int i10 = this.backgroundPaddingLeft;
-        final int i11 = 0;
-        mm0Var.setPadding(i10, 0, i10, 0);
-        this.d.setOnItemClickListener(new bi.d(this, 7));
-        k kVar = new k();
-        kVar.m = false;
-        kVar.C = false;
-        kVar.o(es.h);
-        kVar.n(350L);
-        this.d.setItemAnimator(kVar);
-        setBackgroundColor(g6.w0(g6.h5, c6Var));
-        this.X = aVar;
-        final int i12 = 1;
-        v0 v0Var = new v0(context, 1, c6Var);
-        this.Y = v0Var;
-        ((TextView) v0Var.c).setText(LocaleController.formatString(R.string.TonNeededTitle, ag.a.i(aVar.b - n5.y(this.currentAccount, true).s().b, ag.b.b).d()));
-        TextView textView = (TextView) v0Var.d;
-        textView.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.FragmentAddFunds)));
-        textView.setMaxWidth(d4.a(textView.getText(), textView.getPaint()));
-        this.e.setTitle(B());
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.Z = frameLayout;
-        di.d dVar = new di.d(getContext(), getResourcesProvider(), true);
-        frameLayout.addView(dVar, z5.t(-1, 48, 17, 20, 10, 20, 20));
-        if (z10 || i.C0()) {
-            dVar.g(LocaleController.getString(R.string.TopUpViaFragment), false, true);
-            dVar.setOnClickListener(new View.OnClickListener(this) { // from class: ei.g
-                public final /* synthetic */ h b;
+    public h(m mVar) {
+        this.c = mVar;
+    }
 
-                {
-                    this.b = this;
-                }
-
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    switch (i11) {
-                        case 0:
-                            pf.d.t(this.b.getContext(), LocaleController.getString(R.string.TopUpViaFragmentLink));
-                            break;
-                        default:
-                            this.b.dismiss();
-                            break;
-                    }
-                }
-            });
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        String str;
+        m mVar = this.c;
+        e eVar = mVar.c0;
+        org.telegram.ui.Components.q6 q6Var = mVar.v;
+        mVar.w = Character.codePointCount(editable, 0, editable.length());
+        int captionLimit = mVar.getCaptionLimit();
+        if (mVar.w + 25 > captionLimit) {
+            str = "" + (captionLimit - mVar.w);
         } else {
-            dVar.g(LocaleController.getString(R.string.Close), false, true);
-            dVar.setOnClickListener(new View.OnClickListener(this) { // from class: ei.g
-                public final /* synthetic */ h b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // android.view.View.OnClickListener
-                public final void onClick(View view) {
-                    switch (i12) {
-                        case 0:
-                            pf.d.t(this.b.getContext(), LocaleController.getString(R.string.TopUpViaFragmentLink));
-                            break;
-                        default:
-                            this.b.dismiss();
-                            break;
-                    }
-                }
-            });
+            str = null;
         }
-        a71 a71Var = this.b0;
-        if (a71Var != null) {
-            a71Var.N(false);
+        q6Var.a();
+        q6Var.setText(str);
+        q6Var.setTextColor(mVar.w >= captionLimit ? -1280137 : -1);
+        if (mVar.w > captionLimit && !UserConfig.getInstance(mVar.U).isPremium() && mVar.w < mVar.getCaptionPremiumLimit() && mVar.w > this.a && (mVar.e() || MessagesController.getInstance(mVar.U).premiumFeaturesBlocked())) {
+            int i10 = -mVar.N;
+            mVar.N = i10;
+            AndroidUtilities.shakeViewSpring(q6Var, i10);
+            BotWebViewVibrationEffect.APP_ERROR.vibrate();
         }
+        int i11 = mVar.w;
+        this.a = i11;
+        boolean z10 = i11 > captionLimit;
+        if (z10 != this.b) {
+            mVar.q(z10);
+        }
+        this.b = z10;
+        if (!mVar.V) {
+            AndroidUtilities.cancelRunOnUIThread(eVar);
+            AndroidUtilities.runOnUIThread(eVar, 1500L);
+        }
+        mVar.V = false;
+        AndroidUtilities.runOnUIThread(new com.google.firebase.messaging.s(this, 5));
     }
 
-    @Override // org.telegram.ui.Components.db
-    public final CharSequence B() {
-        v0 v0Var = this.Y;
-        if (v0Var == null) {
-            return null;
-        }
-        return ((TextView) v0Var.c).getText();
-    }
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        Runnable runnable;
-        if (i10 == NotificationCenter.starOptionsLoaded || i10 == NotificationCenter.starBalanceUpdated) {
-            a71 a71Var = this.b0;
-            if (a71Var != null) {
-                a71Var.N(true);
-            }
-            ag.a s10 = n5.y(this.currentAccount, true).s();
-            TextView textView = (TextView) this.Y.c;
-            int i12 = R.string.TonNeededTitle;
-            ag.a aVar = this.X;
-            textView.setText(LocaleController.formatString(i12, ag.a.i(aVar.b - s10.b, ag.b.b).d()));
-            za zaVar = this.e;
-            if (zaVar != null) {
-                zaVar.setTitle(B());
-            }
-            if (s10.b < aVar.b || (runnable = this.a0) == null) {
-                return;
-            }
-            runnable.run();
-            this.a0 = null;
-            dismiss();
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        m mVar = this.c;
+        ObjectAnimator objectAnimator = mVar.g0;
+        if (objectAnimator == null || !objectAnimator.isRunning()) {
+            mVar.a0 = mVar.f.getEditText().getScrollY();
+            mVar.W = true;
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.i2
-    public final void dismiss() {
-        super.dismiss();
-        v0 v0Var = this.Y;
-        if (v0Var != null) {
-            ((org.telegram.ui.Wallet.c6) v0Var.b).setPaused(true);
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.e3
-    public final void dismissInternal() {
-        super.dismissInternal();
-        NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.starOptionsLoaded);
-        NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.starBalanceUpdated);
-    }
-
-    @Override // org.telegram.ui.ActionBar.e3, android.app.Dialog
-    public final void show() {
-        sk skVar;
-        if (n5.y(this.currentAccount, true).s().b >= this.X.b) {
-            Runnable runnable = this.a0;
-            if (runnable != null) {
-                runnable.run();
-                this.a0 = null;
-                return;
-            }
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        m mVar = this.c;
+        g gVar = mVar.f;
+        if (gVar.getEditText().suppressOnTextChanged) {
             return;
         }
-        m2 R = LaunchActivity.R();
-        if (R instanceof fo) {
-            fo foVar = (fo) R;
-            if (foVar.C9() && (skVar = foVar.Y) != null) {
-                skVar.N();
+        if (mVar.M == null) {
+            i iVar = new i(mVar, mVar.getContext(), mVar.x, LaunchActivity.R(), new ci.b(), 0);
+            mVar.M = iVar;
+            mVar.T = new org.telegram.ui.Components.na(mVar.O, iVar, 0, false);
+            mVar.M.p(new ya.c(mVar, 15));
+            bh.b bVar = mVar.h0;
+            if (bVar != null) {
+                i iVar2 = mVar.M;
+                dh.d c10 = bVar.c(iVar2, null, false);
+                c10.o(fh.c.i(mVar.a));
+                iVar2.setBackgroundDrawable(c10);
             }
+            mVar.b.addView(mVar.M, w7.z5.e(-1, -1, 83));
+            mVar.w();
         }
-        super.show();
-        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.starOptionsLoaded);
-        NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.starBalanceUpdated);
-    }
-
-    @Override // org.telegram.ui.Components.db
-    public final lm0 x(mm0 mm0Var) {
-        a71 a71Var = new a71(this.d, getContext(), this.currentAccount, 0, true, new u(this, 11), this.resourcesProvider);
-        this.b0 = a71Var;
-        return a71Var;
+        if (mVar.M.getAdapter() != null) {
+            hg.j1 adapter = mVar.M.getAdapter();
+            MessagesController.getInstance(mVar.U).getUser(Long.valueOf(mVar.x));
+            TLRPC.Chat chat = MessagesController.getInstance(mVar.U).getChat(Long.valueOf(-mVar.x));
+            adapter.getClass();
+            adapter.l0 = chat;
+            mVar.M.getAdapter().U(charSequence, gVar.getEditText().getSelectionStart(), null, false, false);
+        }
     }
 }

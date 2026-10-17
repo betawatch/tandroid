@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class i extends SQLiteOpenHelper {
     public static final String c = "INSERT INTO global_log_event_state VALUES (" + System.currentTimeMillis() + ")";
@@ -24,7 +24,7 @@ public final class i extends SQLiteOpenHelper {
     public static void a(SQLiteDatabase sQLiteDatabase, int i10, int i11) {
         List list = e;
         if (i11 > list.size()) {
-            StringBuilder m10 = i2.d.m("Migration from ", i10, " to ", i11, " was requested, but cannot be performed. Only ");
+            StringBuilder m10 = i0.a.m("Migration from ", i10, " to ", i11, " was requested, but cannot be performed. Only ");
             m10.append(list.size());
             m10.append(" migrations are provided");
             throw new IllegalArgumentException(m10.toString());

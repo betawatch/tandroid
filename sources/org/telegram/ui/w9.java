@@ -1,189 +1,54 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.text.Layout;
-import android.text.Spannable;
-import android.text.Spanned;
-import android.text.style.CharacterStyle;
-import android.text.style.ClickableSpan;
-import android.view.MotionEvent;
-import android.widget.TextView;
+import android.content.Intent;
+import android.graphics.Point;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.SendMessagesHelper;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class w9 extends TextView {
-    public final /* synthetic */ int a = 0;
-    public final Paint b;
-    public Path c;
-    public Object d;
-    public final Object e;
+public final class w9 implements sp0 {
+    public final /* synthetic */ y9 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w9(org.telegram.ui.Components.ko0 ko0Var, Context context) {
-        super(context);
-        this.e = ko0Var;
-        this.c = new Path();
-        this.d = new RectF();
-        this.b = new Paint();
+    public w9(y9 y9Var) {
+        this.a = y9Var;
     }
 
-    @Override // android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        switch (this.a) {
-            case 1:
-                int m12 = org.telegram.ui.ActionBar.g6.m1(0.15f, org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.o6, ((org.telegram.ui.Components.ko0) this.e).c));
-                Paint paint = this.b;
-                paint.setColor(m12);
-                RectF rectF = (RectF) this.d;
-                rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-                Path path = this.c;
-                Paint paint2 = ah.j1.V;
-                ah.j1.h(rectF, AndroidUtilities.rectTmp, path);
-                canvas.drawPath(path, paint);
-                super.dispatchDraw(canvas);
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.Components.x90 x90Var = (org.telegram.ui.Components.x90) this.c;
-                if (x90Var != null) {
-                    canvas.drawPath(x90Var, this.b);
-                }
-                if (((org.telegram.ui.Components.aa0) this.e).f(canvas)) {
-                    invalidate();
-                }
-                super.onDraw(canvas);
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        switch (this.a) {
-            case 1:
-                org.telegram.ui.Components.ko0 ko0Var = (org.telegram.ui.Components.ko0) this.e;
-                super.onLayout(z10, i10, i11, i12, i13);
-                int width = getWidth();
-                int i14 = 0;
-                for (int i15 = 0; i15 < ko0Var.getChildCount(); i15++) {
-                    width = Math.min(width, ko0Var.getChildAt(i15).getLeft());
-                    i14 = Math.max(i14, ko0Var.getChildAt(i15).getRight());
-                }
-                setPivotX((width + i14) / 2.0f);
-                break;
-            default:
-                super.onLayout(z10, i10, i11, i12, i13);
-                break;
-        }
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.a) {
-            case 0:
-                super.onMeasure(i10, i11);
-                if (getText() instanceof Spanned) {
-                    Spanned spanned = (Spanned) getText();
-                    org.telegram.ui.Components.q61[] q61VarArr = (org.telegram.ui.Components.q61[]) spanned.getSpans(0, spanned.length(), org.telegram.ui.Components.q61.class);
-                    if (q61VarArr != null && q61VarArr.length > 0) {
-                        org.telegram.ui.Components.x90 x90Var = new org.telegram.ui.Components.x90(0);
-                        this.c = x90Var;
-                        x90Var.n = false;
-                        for (int i12 = 0; i12 < q61VarArr.length; i12++) {
-                            int spanStart = spanned.getSpanStart(q61VarArr[i12]);
-                            int spanEnd = spanned.getSpanEnd(q61VarArr[i12]);
-                            ((org.telegram.ui.Components.x90) this.c).d(getLayout(), spanStart, 0.0f);
-                            int i13 = getText() != null ? getPaint().baselineShift : 0;
-                            org.telegram.ui.Components.x90 x90Var2 = (org.telegram.ui.Components.x90) this.c;
-                            x90Var2.o = i13 != 0 ? AndroidUtilities.dp(i13 > 0 ? 5.0f : -2.0f) + i13 : 0;
-                            getLayout().getSelectionPath(spanStart, spanEnd, (org.telegram.ui.Components.x90) this.c);
-                        }
-                        ((org.telegram.ui.Components.x90) this.c).n = true;
-                        break;
+    @Override // org.telegram.ui.sp0
+    public final void a(ArrayList arrayList) {
+        y9 y9Var = this.a;
+        try {
+            if (arrayList.isEmpty()) {
+                return;
+            }
+            SendMessagesHelper.SendingMediaInfo sendingMediaInfo = (SendMessagesHelper.SendingMediaInfo) arrayList.get(0);
+            if (sendingMediaInfo.path != null) {
+                Point realScreenSize = AndroidUtilities.getRealScreenSize();
+                m.g3 g02 = y9Var.g0(null, 0, 0, 0, ImageLoader.loadBitmap(sendingMediaInfo.path, null, realScreenSize.x, realScreenSize.y, true));
+                if (g02 != null) {
+                    x9 x9Var = y9Var.N;
+                    if (x9Var != null) {
+                        x9Var.E((String) g02.b);
                     }
+                    y9Var.removeSelfFromStack();
                 }
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                break;
+            }
+        } catch (Throwable th2) {
+            FileLog.e(th2);
         }
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.Components.aa0 aa0Var = (org.telegram.ui.Components.aa0) this.e;
-                Layout layout = getLayout();
-                float f7 = 0;
-                int x10 = (int) (motionEvent.getX() - f7);
-                int y3 = (int) (motionEvent.getY() - f7);
-                if (motionEvent.getAction() == 0 || motionEvent.getAction() == 1) {
-                    int lineForVertical = layout.getLineForVertical(y3);
-                    float f10 = x10;
-                    int offsetForHorizontal = layout.getOffsetForHorizontal(lineForVertical, f10);
-                    float lineLeft = layout.getLineLeft(lineForVertical);
-                    if (lineLeft <= f10 && layout.getLineWidth(lineForVertical) + lineLeft >= f10 && y3 >= 0 && y3 <= layout.getHeight()) {
-                        Spannable spannable = (Spannable) layout.getText();
-                        ClickableSpan[] clickableSpanArr = (ClickableSpan[]) spannable.getSpans(offsetForHorizontal, offsetForHorizontal, ClickableSpan.class);
-                        if (clickableSpanArr.length != 0) {
-                            aa0Var.d(true);
-                            if (motionEvent.getAction() != 0) {
-                                if (motionEvent.getAction() == 1) {
-                                    org.telegram.ui.Components.ea0 ea0Var = (org.telegram.ui.Components.ea0) this.d;
-                                    if (ea0Var != null) {
-                                        CharacterStyle characterStyle = ea0Var.i;
-                                        ClickableSpan clickableSpan = clickableSpanArr[0];
-                                        if (characterStyle == clickableSpan) {
-                                            clickableSpan.onClick(this);
-                                        }
-                                    }
-                                    this.d = null;
-                                    break;
-                                }
-                            } else {
-                                org.telegram.ui.Components.ea0 ea0Var2 = new org.telegram.ui.Components.ea0(clickableSpanArr[0], null, motionEvent.getX(), motionEvent.getY(), 0);
-                                this.d = ea0Var2;
-                                ea0Var2.d(771751935);
-                                aa0Var.a((org.telegram.ui.Components.ea0) this.d, null);
-                                int spanStart = spannable.getSpanStart(((org.telegram.ui.Components.ea0) this.d).i);
-                                int spanEnd = spannable.getSpanEnd(((org.telegram.ui.Components.ea0) this.d).i);
-                                org.telegram.ui.Components.x90 b10 = ((org.telegram.ui.Components.ea0) this.d).b();
-                                b10.d(layout, spanStart, f7);
-                                layout.getSelectionPath(spanStart, spanEnd, b10);
-                                break;
-                            }
-                        }
-                    }
-                }
-                if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                    aa0Var.d(true);
-                    this.d = null;
-                }
-                break;
+    @Override // org.telegram.ui.sp0
+    public final void b() {
+        try {
+            Intent intent = new Intent("android.intent.action.PICK");
+            intent.setType("image/*");
+            this.a.getParentActivity().startActivityForResult(intent, 11);
+        } catch (Exception e) {
+            FileLog.e(e);
         }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w9(Context context, Paint paint) {
-        super(context);
-        this.b = paint;
-        this.e = new org.telegram.ui.Components.aa0(this);
     }
 }

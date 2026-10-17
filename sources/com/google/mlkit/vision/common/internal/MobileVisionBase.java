@@ -3,21 +3,22 @@ package com.google.mlkit.vision.common.internal;
 import androidx.lifecycle.b0;
 import androidx.lifecycle.m;
 import androidx.lifecycle.s;
-import c5.a;
 import com.google.android.gms.tasks.CancellationTokenSource;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import java.io.Closeable;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicBoolean;
+import m2.t;
 import rb.e;
 import u4.f;
+import xb.a;
 import xb.d;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public class MobileVisionBase<DetectionResultT> implements Closeable, s {
-    public static final a e = new a("MobileVisionBase", "");
+    public static final t e = new t("MobileVisionBase", "");
     public final AtomicBoolean a = new AtomicBoolean(false);
     public final e b;
     public final CancellationTokenSource c;
@@ -29,7 +30,7 @@ public class MobileVisionBase<DetectionResultT> implements Closeable, s {
         this.c = cancellationTokenSource;
         this.d = executor;
         eVar.b.incrementAndGet();
-        eVar.a(executor, d.a, cancellationTokenSource.getToken()).addOnFailureListener(xb.a.b);
+        eVar.a(executor, d.a, cancellationTokenSource.getToken()).addOnFailureListener(a.b);
     }
 
     @Override // java.io.Closeable, java.lang.AutoCloseable

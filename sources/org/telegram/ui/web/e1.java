@@ -1,62 +1,75 @@
 package org.telegram.ui.web;
 
-import android.util.LongSparseArray;
-import java.util.ArrayList;
+import android.text.TextUtils;
+import android.widget.EditText;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.b31;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.wh;
+import org.telegram.ui.ActionBar.g5;
+import org.telegram.ui.Components.u61;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public abstract class e1 {
-    public static boolean a;
-    public static boolean b;
-    public static ArrayList c;
-    public static LongSparseArray d;
-    public static ArrayList e;
+public final class e1 extends g5 {
+    public final ki.u r = new ki.u(this, 26);
+    public final /* synthetic */ f1 s;
 
-    public static ArrayList a(Utilities.Callback callback) {
-        boolean z10;
-        if (callback == null || b) {
-            z10 = false;
-        } else {
-            if (e == null) {
-                e = new ArrayList();
+    public e1(f1 f1Var) {
+        this.s = f1Var;
+    }
+
+    public static boolean w(String str, String str2) {
+        if (str == null || str2 == null) {
+            return false;
+        }
+        String lowerCase = str.toLowerCase();
+        String lowerCase2 = str2.toLowerCase();
+        if (lowerCase.startsWith(lowerCase2) || wh.w(" ", lowerCase2, lowerCase) || wh.w(".", lowerCase2, lowerCase)) {
+            return true;
+        }
+        String translitSafe = AndroidUtilities.translitSafe(lowerCase);
+        String translitSafe2 = AndroidUtilities.translitSafe(lowerCase2);
+        return translitSafe.startsWith(translitSafe2) || wh.w(" ", translitSafe2, translitSafe) || wh.w(".", translitSafe2, translitSafe);
+    }
+
+    @Override // org.telegram.ui.ActionBar.g5
+    public final void m() {
+        f1 f1Var = this.s;
+        f1Var.n = null;
+        f1Var.h = false;
+        AndroidUtilities.cancelRunOnUIThread(this.r);
+        u61 u61Var = f1Var.a;
+        if (u61Var != null) {
+            u61Var.W2.N(true);
+            f1Var.a.V2.h1(0, 0);
+        }
+        f1Var.w.d.setText(LocaleController.getString(TextUtils.isEmpty(f1Var.n) ? R.string.WebNoHistory : R.string.WebNoSearchedHistory));
+    }
+
+    @Override // org.telegram.ui.ActionBar.g5
+    public final void q(EditText editText) {
+        f1 f1Var = this.s;
+        boolean z10 = !TextUtils.isEmpty(f1Var.n);
+        String obj = editText.getText().toString();
+        if (!TextUtils.equals(f1Var.n, obj)) {
+            f1Var.n = obj;
+            f1Var.h = true;
+            ki.u uVar = this.r;
+            AndroidUtilities.cancelRunOnUIThread(uVar);
+            AndroidUtilities.runOnUIThread(uVar, 500L);
+            f1Var.w.d.setText(LocaleController.getString(TextUtils.isEmpty(obj) ? R.string.WebNoHistory : R.string.WebNoSearchedHistory));
+        }
+        u61 u61Var = f1Var.a;
+        if (u61Var != null) {
+            u61Var.W2.N(true);
+            if (z10 != (!TextUtils.isEmpty(obj))) {
+                f1Var.a.V2.h1(0, 0);
             }
-            e.add(callback);
-            z10 = true;
         }
-        b();
-        if (z10) {
-            return null;
-        }
-        return c;
     }
 
-    public static void b() {
-        if (a || b) {
-            return;
-        }
-        a = true;
-        c = new ArrayList();
-        d = new LongSparseArray();
-        Utilities.globalQueue.postRunnable(new b31(10));
-    }
-
-    public static void c(d1 d1Var) {
-        if (d1Var == null || d1Var.d == null) {
-            return;
-        }
-        b();
-        d1 d1Var2 = (d1) d.get(d1Var.a);
-        if (d1Var2 != null) {
-            d1Var2.d = d1Var.d;
-        } else {
-            c.add(d1Var);
-            d.put(d1Var.a, d1Var);
-        }
-        int i10 = 9;
-        AndroidUtilities.cancelRunOnUIThread(new b31(i10));
-        AndroidUtilities.runOnUIThread(new b31(i10), 1000L);
+    @Override // org.telegram.ui.ActionBar.g5
+    public final void n() {
     }
 }

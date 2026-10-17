@@ -1,257 +1,266 @@
 package fh;
 
-import android.graphics.Color;
-import bi.w2;
-import eh.e;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
-import w7.r;
+import android.content.pm.ShortcutManager;
+import android.graphics.Bitmap;
+import android.window.OnBackInvokedDispatcher;
+import androidx.car.app.j;
+import b2.d1;
+import b2.z0;
+import com.google.android.gms.internal.cast.z5;
+import com.google.firebase.datatransport.TransportRegistrar;
+import d9.k;
+import e2.g0;
+import e2.o;
+import e9.d2;
+import e9.r1;
+import e9.t1;
+import e9.u0;
+import e9.u1;
+import e9.v0;
+import e9.w0;
+import e9.y0;
+import eh.d;
+import gi.d3;
+import gi.e4;
+import gi.z3;
+import i2.l;
+import j$.util.Objects;
+import j2.f;
+import java.util.Collection;
+import java.util.Iterator;
+import org.telegram.messenger.GenericProvider;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.a2;
+import org.telegram.ui.ActionBar.b2;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.aw0;
+import org.telegram.ui.Components.bw0;
+import org.telegram.ui.Components.cw0;
+import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public abstract class b {
-    public static e a(c6 c6Var) {
-        e eVar = new e(c6Var);
-        eVar.e = new w2(25);
-        eVar.d(385875968, 402653183);
-        eVar.c(385875968, 402653183);
-        eVar.b(285212672, 83886079);
-        float dpf2 = AndroidUtilities.dpf2(2.0f);
-        float dpf22 = AndroidUtilities.dpf2(0.33333334f);
-        eVar.n = dpf2;
-        eVar.r = dpf22;
-        float dpf23 = AndroidUtilities.dpf2(0.4f);
-        float dpf24 = AndroidUtilities.dpf2(0.4f);
-        eVar.f = dpf23;
-        eVar.h = dpf24;
-        return eVar;
+public final /* synthetic */ class b implements d, aw0, bw0, GenericProvider, k, r9.d, o, a2, hh.b {
+    public final /* synthetic */ int a;
+
+    public /* synthetic */ b(int i10) {
+        this.a = i10;
     }
 
-    public static e b(c6 c6Var) {
-        e eVar = new e(c6Var);
-        eVar.e = new a(0, c6Var);
-        eVar.d(-1, 687865855);
-        eVar.c(-1, 352321535);
-        eVar.b(TLObject.FLAG_29, 0);
-        float dpf2 = AndroidUtilities.dpf2(0.5f);
-        float dpf22 = AndroidUtilities.dpf2(0.5f);
-        eVar.f = dpf2;
-        eVar.h = dpf22;
-        return eVar;
+    public static /* bridge */ /* synthetic */ ShortcutManager d(Object obj) {
+        return (ShortcutManager) obj;
     }
 
-    public static boolean c(int i10, c6 c6Var) {
-        boolean a2 = c6Var != null ? c6Var.a() : g6.I.q();
-        boolean chatBlurEnabled = SharedConfig.chatBlurEnabled();
-        if (chatBlurEnabled && !a2 && MessagesController.getInstance(i10).config.disableBlurInLightTheme.get()) {
-            chatBlurEnabled = false;
+    public static /* bridge */ /* synthetic */ OnBackInvokedDispatcher e(Object obj) {
+        return (OnBackInvokedDispatcher) obj;
+    }
+
+    public static /* bridge */ /* synthetic */ Class h() {
+        return ShortcutManager.class;
+    }
+
+    @Override // hh.b
+    public Object a(Bitmap bitmap) {
+        switch (this.a) {
+            case 26:
+                if (bitmap == null || bitmap.isRecycled()) {
+                    return null;
+                }
+                Bitmap stackBlurBitmapWithScaleFactor = Utilities.stackBlurBitmapWithScaleFactor(bitmap, Math.max(bitmap.getWidth() / 90.0f, bitmap.getHeight() / 120.0f));
+                stackBlurBitmapWithScaleFactor.setHasAlpha(false);
+                return stackBlurBitmapWithScaleFactor;
+            case 27:
+                int i10 = 0;
+                if (bitmap != null && !bitmap.isRecycled()) {
+                    int height = bitmap.getHeight();
+                    i10 = Utilities.averageBitmapColor(bitmap, 0, (height * 9) / 10, bitmap.getWidth(), height);
+                }
+                return Integer.valueOf(i10);
+            default:
+                int i11 = 0;
+                if (bitmap != null && !bitmap.isRecycled()) {
+                    i11 = Utilities.averageBitmapColor(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight() / 10);
+                }
+                return Integer.valueOf(i11);
         }
-        if (chatBlurEnabled && a2 && MessagesController.getInstance(i10).config.disableBlurInDarkTheme.get()) {
-            return false;
+    }
+
+    @Override // d9.k
+    public Object apply(Object obj) {
+        boolean z10 = true;
+        switch (this.a) {
+            case 14:
+                String str = (String) obj;
+                d9.a aVar = h9.a.g;
+                aVar.getClass();
+                int length = str.length() - 1;
+                while (true) {
+                    if (length >= 0) {
+                        if (aVar.c(str.charAt(length))) {
+                            length--;
+                        } else {
+                            z10 = false;
+                        }
+                    }
+                }
+                if (z10 && !str.isEmpty()) {
+                    return str;
+                }
+                StringBuilder sb2 = new StringBuilder(str.length() + 16);
+                sb2.append('\"');
+                while (r1 < str.length()) {
+                    char charAt = str.charAt(r1);
+                    if (charAt == '\r' || charAt == '\\' || charAt == '\"') {
+                        sb2.append('\\');
+                    }
+                    sb2.append(charAt);
+                    r1++;
+                }
+                sb2.append('\"');
+                return sb2.toString();
+            case 15:
+                Collection collection = (Collection) obj;
+                int i10 = w0.d;
+                if (collection instanceof w0) {
+                    return (w0) collection;
+                }
+                boolean z11 = collection instanceof r1;
+                int size = z11 ? ((v0) ((d2) ((r1) collection)).s()).size() : 11;
+                u0 u0Var = new u0();
+                u0Var.b = false;
+                u1 u1Var = new u1();
+                u1Var.d(size);
+                u0Var.a = u1Var;
+                if (z11) {
+                    r1 r1Var = (r1) collection;
+                    u1 u1Var2 = r1Var instanceof d2 ? ((d2) r1Var).e : null;
+                    if (u1Var2 != null) {
+                        u1Var.a(Math.max(u1Var.c, u1Var2.c));
+                        r1 = u1Var2.c == 0 ? -1 : 0;
+                        while (r1 >= 0) {
+                            u6.j(r1, u1Var2.c);
+                            Object obj2 = u1Var2.a[r1];
+                            u6.j(r1, u1Var2.c);
+                            u0Var.c(u1Var2.b[r1], obj2);
+                            r1++;
+                            if (r1 >= u1Var2.c) {
+                                r1 = -1;
+                            }
+                        }
+                    } else {
+                        w0 w0Var = (w0) r1Var;
+                        y0 t10 = w0Var.t();
+                        u1 u1Var3 = u0Var.a;
+                        u1Var3.a(Math.max(u1Var3.c, t10.size()));
+                        for (t1 t1Var : w0Var.t()) {
+                            u0Var.c(t1Var.a(), t1Var.a);
+                        }
+                    }
+                } else {
+                    Iterator it = collection.iterator();
+                    while (it.hasNext()) {
+                        u0Var.a(it.next());
+                    }
+                }
+                Objects.requireNonNull(u0Var.a);
+                if (u0Var.a.c == 0) {
+                    return d2.n;
+                }
+                u0Var.b = true;
+                return new d2(u0Var.a);
+            default:
+                return new f((g0) obj);
         }
-        return chatBlurEnabled;
     }
 
-    public static e d(c6 c6Var) {
-        e eVar = new e(c6Var);
-        eVar.e = new w2(29);
-        eVar.d(-1, 687865855);
-        eVar.c(-1, 352321535);
-        eVar.b(TLObject.FLAG_30, 0);
-        float dpf2 = AndroidUtilities.dpf2(3.6666667f);
-        float dpf22 = AndroidUtilities.dpf2(0.6666667f);
-        eVar.n = dpf2;
-        eVar.r = dpf22;
-        float dpf23 = AndroidUtilities.dpf2(0.5f);
-        float dpf24 = AndroidUtilities.dpf2(0.5f);
-        eVar.f = dpf23;
-        eVar.h = dpf24;
-        return eVar;
-    }
-
-    public static e e(c6 c6Var) {
-        e eVar = new e(c6Var);
-        eVar.e = new w2(15);
-        eVar.d(687865855, 687865855);
-        eVar.c(352321535, 352321535);
-        eVar.b(TLObject.FLAG_29, 0);
-        float dpf2 = AndroidUtilities.dpf2(3.3333333f);
-        float dpf22 = AndroidUtilities.dpf2(0.6666667f);
-        eVar.n = dpf2;
-        eVar.r = dpf22;
-        float dpf23 = AndroidUtilities.dpf2(1.0f);
-        float dpf24 = AndroidUtilities.dpf2(0.6666667f);
-        eVar.f = dpf23;
-        eVar.h = dpf24;
-        return eVar;
-    }
-
-    public static e f(c6 c6Var) {
-        e eVar = new e(c6Var);
-        eVar.e = new w2(24);
-        eVar.d(285212672, 117440511);
-        eVar.c(TLObject.FLAG_29, 301989887);
-        eVar.b(TLObject.FLAG_29, 83886079);
-        float dpf2 = AndroidUtilities.dpf2(2.667f);
-        float dpf22 = AndroidUtilities.dpf2(0.85f);
-        eVar.n = dpf2;
-        eVar.r = dpf22;
-        float dpf23 = AndroidUtilities.dpf2(0.4f);
-        float dpf24 = AndroidUtilities.dpf2(0.4f);
-        eVar.f = dpf23;
-        eVar.h = dpf24;
-        return eVar;
-    }
-
-    public static e g(c6 c6Var) {
-        e eVar = new e(c6Var);
-        eVar.e = new w2(16);
-        eVar.d(1157627903, 0);
-        eVar.c(587202559, 0);
-        eVar.b(939524096, 0);
-        eVar.n = AndroidUtilities.dpf2(3.5f);
-        eVar.r = 0.0f;
-        float dpf2 = AndroidUtilities.dpf2(0.6666667f);
-        float dpf22 = AndroidUtilities.dpf2(0.6666667f);
-        eVar.f = dpf2;
-        eVar.h = dpf22;
-        return eVar;
-    }
-
-    public static e h(c6 c6Var) {
-        return g(c6Var);
-    }
-
-    public static e i(c6 c6Var) {
-        e eVar = new e(c6Var);
-        eVar.e = new w2(28);
-        eVar.d(687865855, 687865855);
-        eVar.c(352321535, 352321535);
-        float dpf2 = AndroidUtilities.dpf2(0.6666667f);
-        float dpf22 = AndroidUtilities.dpf2(0.6666667f);
-        eVar.f = dpf2;
-        eVar.h = dpf22;
-        return eVar;
-    }
-
-    public static e j(c6 c6Var) {
-        e eVar = new e(c6Var);
-        eVar.e = new w2(26);
-        eVar.d(-1, 553648127);
-        eVar.c(0, 553648127);
-        eVar.b(1207959552, 83886079);
-        eVar.n = AndroidUtilities.dpf2(0.6666667f);
-        eVar.r = 0.0f;
-        float dpf2 = AndroidUtilities.dpf2(0.67f);
-        float dpf22 = AndroidUtilities.dpf2(0.67f);
-        eVar.f = dpf2;
-        eVar.h = dpf22;
-        return eVar;
-    }
-
-    public static e k(c6 c6Var) {
-        e eVar = new e(c6Var);
-        eVar.e = new w2(23);
-        eVar.d(1157627903, 0);
-        eVar.c(587202559, 0);
-        eVar.b(637534208, 0);
-        eVar.n = AndroidUtilities.dpf2(4.0f);
-        eVar.r = 0.0f;
-        float dpf2 = AndroidUtilities.dpf2(0.6666667f);
-        float dpf22 = AndroidUtilities.dpf2(0.6666667f);
-        eVar.f = dpf2;
-        eVar.h = dpf22;
-        return eVar;
-    }
-
-    public static e l(c6 c6Var) {
-        e eVar = new e(c6Var);
-        eVar.d(0, 687865855);
-        eVar.c(0, 352321535);
-        eVar.b(805306368, 83886079);
-        float dpf2 = AndroidUtilities.dpf2(4.0f);
-        float dpf22 = AndroidUtilities.dpf2(0.33333334f);
-        eVar.n = dpf2;
-        eVar.r = dpf22;
-        float dpf23 = AndroidUtilities.dpf2(0.4f);
-        float dpf24 = AndroidUtilities.dpf2(0.4f);
-        eVar.f = dpf23;
-        eVar.h = dpf24;
-        return eVar;
-    }
-
-    public static int m(float f7, int i10, int i11) {
-        float a2 = r.a(f7, 0.0f, 1.0f);
-        if (a2 <= 0.0f) {
-            return Color.argb(0, 0, 0, 0);
+    @Override // org.telegram.ui.Components.bw0
+    public void b(Object obj, float f7) {
+        switch (this.a) {
+            case 8:
+                d3 d3Var = (d3) obj;
+                d3Var.b = f7;
+                d3Var.e.invalidate();
+                d3Var.W.setAlpha(f7);
+                d3Var.F();
+                d3Var.D();
+                break;
+            case 9:
+            default:
+                ((e4) obj).setSwipeOffsetY(f7);
+                break;
+            case 10:
+                ((z3) obj).setLoadProgress(f7);
+                break;
         }
-        if (a2 >= 1.0f) {
-            return Color.argb(255, Color.red(i11), Color.green(i11), Color.blue(i11));
+    }
+
+    @Override // eh.d
+    public int f(d6 d6Var, boolean z10) {
+        switch (this.a) {
+            case 0:
+                LiteMode.isEnabled(262144);
+                return 0;
+            default:
+                return h6.m1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, h6.w0(h6.d6, d6Var));
         }
-        int red = Color.red(i10);
-        int green = Color.green(i10);
-        int blue = Color.blue(i10);
-        float f10 = 1.0f - a2;
-        return Color.argb(r.b(Math.round(a2 * 255.0f), 0, 255), r.b(Math.round((Color.red(i11) - (red * f10)) / a2), 0, 255), r.b(Math.round((Color.green(i11) - (green * f10)) / a2), 0, 255), r.b(Math.round((Color.blue(i11) - (blue * f10)) / a2), 0, 255));
     }
 
-    public static e n(c6 c6Var) {
-        e eVar = new e(c6Var);
-        eVar.e = new w2(17);
-        eVar.d(285212672, 117440511);
-        eVar.c(TLObject.FLAG_29, 301989887);
-        eVar.b(TLObject.FLAG_29, 83886079);
-        float dpf2 = AndroidUtilities.dpf2(2.667f);
-        float dpf22 = AndroidUtilities.dpf2(0.85f);
-        eVar.n = dpf2;
-        eVar.r = dpf22;
-        float dpf23 = AndroidUtilities.dpf2(0.4f);
-        float dpf24 = AndroidUtilities.dpf2(0.4f);
-        eVar.f = dpf23;
-        eVar.h = dpf24;
-        return eVar;
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(b2 b2Var, int i10) {
+        switch (this.a) {
+            case 24:
+                b2Var.dismiss();
+                break;
+            default:
+                b2Var.dismiss();
+                break;
+        }
     }
 
-    public static e o(c6 c6Var) {
-        e eVar = new e(c6Var);
-        eVar.e = new a(2, c6Var);
-        eVar.d(-1, 553648127);
-        eVar.c(-1, 352321535);
-        eVar.b(TLObject.FLAG_29, 0);
-        float dpf2 = AndroidUtilities.dpf2(0.55f);
-        float dpf22 = AndroidUtilities.dpf2(0.55f);
-        eVar.f = dpf2;
-        eVar.h = dpf22;
-        return eVar;
+    @Override // org.telegram.ui.Components.aw0
+    public float get(Object obj) {
+        switch (this.a) {
+            case 7:
+                return ((d3) obj).b;
+            case 8:
+            default:
+                return ((e4) obj).getSwipeOffsetY();
+            case 9:
+                return ((z3) obj).c;
+        }
     }
 
-    public static e p(c6 c6Var) {
-        e eVar = new e(c6Var);
-        eVar.e = new w2(27);
-        eVar.d(0, 0);
-        eVar.c(0, 0);
-        eVar.b(0, 0);
-        eVar.n = 0.0f;
-        eVar.r = 0.0f;
-        eVar.f = 0.0f;
-        eVar.h = 0.0f;
-        return eVar;
+    @Override // e2.o
+    public void invoke(Object obj) {
+        switch (this.a) {
+            case 22:
+                ((d1) obj).onPlayerError(new l(2, new j("Player release timed out."), 1003));
+                break;
+            case 23:
+                ((d1) obj).onRenderedFirstFrame();
+                break;
+            default:
+                ((j2.b) obj).getClass();
+                break;
+        }
     }
 
-    public static e q(c6 c6Var) {
-        e eVar = new e(c6Var);
-        eVar.e = new a(1, c6Var);
-        eVar.d(0, 0);
-        eVar.c(0, 0);
-        eVar.b(0, 0);
-        eVar.n = 0.0f;
-        eVar.r = 0.0f;
-        eVar.f = 0.0f;
-        eVar.h = 0.0f;
-        return eVar;
+    @Override // r9.d
+    public Object j2(z5 z5Var) {
+        i5.f lambda$getComponents$0;
+        lambda$getComponents$0 = TransportRegistrar.lambda$getComponents$0(z5Var);
+        return lambda$getComponents$0;
+    }
+
+    @Override // org.telegram.messenger.GenericProvider
+    public Object provide(Object obj) {
+        cw0 cw0Var = e4.b0;
+        return Boolean.FALSE;
+    }
+
+    public /* synthetic */ b(j2.a aVar, z0 z0Var) {
+        this.a = 29;
     }
 }

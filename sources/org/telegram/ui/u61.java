@@ -1,26 +1,40 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
 import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import android.widget.TextView;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class u61 extends FrameLayout {
-    public FrameLayout a;
-    public org.telegram.ui.Cells.u3 b;
-    public sg.q0 c;
-    public String d;
-    public ValueAnimator e;
-    public float f;
-    public Boolean h;
-    public ValueAnimator n;
+public final class u61 implements View.OnClickListener {
+    public final /* synthetic */ f71 a;
+    public final /* synthetic */ TLRPC.TL_authorization b;
+    public final /* synthetic */ SessionsActivity c;
+    public final /* synthetic */ w61 d;
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setPadding(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(8.0f));
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(getPaddingBottom() + getPaddingTop() + AndroidUtilities.dp(44.0f), TLObject.FLAG_30));
+    public u61(w61 w61Var, f71 f71Var, TLRPC.TL_authorization tL_authorization, SessionsActivity sessionsActivity) {
+        this.d = w61Var;
+        this.a = f71Var;
+        this.b = tL_authorization;
+        this.c = sessionsActivity;
+    }
+
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this.d.c.getParentActivity());
+        alertDialog$Builder.a.T = LocaleController.getString(R.string.TerminateSessionText);
+        alertDialog$Builder.a.R = LocaleController.getString(R.string.AreYouSureSessionTitle);
+        alertDialog$Builder.k(LocaleController.getString(R.string.Terminate), new e7(this, this.a, this.b, 21));
+        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+        SessionsActivity sessionsActivity = this.c;
+        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+        sessionsActivity.showDialog(b2Var);
+        TextView textView = (TextView) b2Var.d(-1);
+        if (textView != null) {
+            textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.q7, false));
+        }
     }
 }

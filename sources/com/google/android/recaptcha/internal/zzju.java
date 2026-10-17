@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-import com.google.android.gms.internal.play_billing.k3;
+import com.google.android.gms.internal.cast.a6;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -9,7 +9,7 @@ import jd.h;
 import jd.i;
 import jd.o;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class zzju implements zzjt {
     public static final zzju zza = new zzju();
@@ -67,7 +67,7 @@ public final class zzju implements zzjt {
             ArrayList arrayList3 = new ArrayList(iArr.length);
             int length6 = iArr.length;
             while (i10 < length6) {
-                i10 = k3.f(iArr[i10], i10, 1, arrayList3);
+                i10 = a6.f(iArr[i10], i10, 1, arrayList3);
             }
             return arrayList3;
         }

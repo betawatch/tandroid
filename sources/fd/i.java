@@ -1,10 +1,10 @@
 package fd;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class i extends j {
-    @Override // fd.j, f2.e
-    public final /* bridge */ /* synthetic */ f2.e b() {
+    @Override // fd.j, f2.f
+    public final /* bridge */ /* synthetic */ f2.f b() {
         b();
         return this;
     }
@@ -17,7 +17,7 @@ public final class i extends j {
         return this;
     }
 
-    @Override // f2.e
+    @Override // f2.f
     public final String toString() {
         ed.c cVar = this.k;
         if (cVar == null || cVar.a <= 0) {

@@ -1,5 +1,6 @@
 package wg;
 
+import ai.z6;
 import android.content.Context;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
@@ -8,13 +9,13 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.q11;
-import org.telegram.ui.Components.r11;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.l11;
+import org.telegram.ui.Components.m11;
 import w7.z5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class t extends FrameLayout {
     public final wh.n a;
@@ -23,7 +24,7 @@ public final class t extends FrameLayout {
     public String d;
     public final ImageView e;
 
-    public t(Context context, c6 c6Var) {
+    public t(Context context, d6 d6Var) {
         super(context);
         FrameLayout frameLayout = new FrameLayout(context);
         this.b = frameLayout;
@@ -33,14 +34,14 @@ public final class t extends FrameLayout {
         nVar.setTextSize(1, 16.0f);
         nVar.setEllipsize(TextUtils.TruncateAt.MIDDLE);
         nVar.setSingleLine(true);
-        nVar.setTextColor(g6.w0(g6.G6, c6Var));
+        nVar.setTextColor(h6.w0(h6.G6, d6Var));
         nVar.r = false;
         frameLayout.addView(nVar, z5.e(-2, -2, 17));
         int dp = AndroidUtilities.dp(8.0f);
-        int w02 = g6.w0(g6.e7, c6Var);
-        int i10 = g6.i6;
-        int k10 = i0.a.k(g6.w0(i10, c6Var), 76);
-        frameLayout.setBackground(g6.j0(dp, dp, dp, dp, w02, k10, k10));
+        int w02 = h6.w0(h6.e7, d6Var);
+        int i10 = h6.i6;
+        int o10 = i0.b.o(h6.w0(i10, d6Var), 76);
+        frameLayout.setBackground(h6.j0(dp, dp, dp, dp, w02, o10, o10));
         addView(frameLayout, z5.a(-2.0f, 14.0f, 0.0f, 14.0f, 0.0f, -1, 0));
         final int i11 = 0;
         frameLayout.setOnClickListener(new View.OnClickListener(this) { // from class: wg.s
@@ -65,11 +66,11 @@ public final class t extends FrameLayout {
         ImageView imageView = new ImageView(getContext());
         this.e = imageView;
         imageView.setImageResource(R.drawable.menu_copy_s);
-        imageView.setColorFilter(g6.w0(g6.j5, c6Var));
+        imageView.setColorFilter(h6.w0(h6.j5, d6Var));
         imageView.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
         int dp2 = AndroidUtilities.dp(20.0f);
-        int k11 = i0.a.k(g6.w0(i10, c6Var), 76);
-        imageView.setBackground(g6.j0(dp2, dp2, dp2, dp2, 0, k11, k11));
+        int o11 = i0.b.o(h6.w0(i10, d6Var), 76);
+        imageView.setBackground(h6.j0(dp2, dp2, dp2, dp2, 0, o11, o11));
         addView(imageView, z5.a(40.0f, 15.0f, 0.0f, 17.0f, 0.0f, 40, 21));
         final int i12 = 1;
         imageView.setOnClickListener(new View.OnClickListener(this) { // from class: wg.s
@@ -101,20 +102,20 @@ public final class t extends FrameLayout {
         int dp4 = AndroidUtilities.dp(18.0f);
         wh.n nVar = this.a;
         nVar.setPadding(dp, dp2, dp3, dp4);
-        q11 q11Var = new q11();
-        q11Var.a |= 256;
+        l11 l11Var = new l11();
+        l11Var.a |= 256;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("t.me/giftcode/" + this.c);
         if (this.c == null) {
             spannableStringBuilder.append((CharSequence) "1234567891011123654897566536223");
         }
-        spannableStringBuilder.setSpan(new r11(q11Var, 0), 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new m11(l11Var, 0), 0, spannableStringBuilder.length(), 33);
         nVar.setText(spannableStringBuilder);
-        this.b.setOnClickListener(new ci.o(4, runnable));
+        this.b.setOnClickListener(new z6(5, runnable));
     }
 
     public void setSlug(String str) {
         this.c = str;
-        this.d = t8.b.h("https://t.me/giftcode/", str);
+        this.d = r.c.g("https://t.me/giftcode/", str);
         this.a.setText("t.me/giftcode/" + str);
     }
 }

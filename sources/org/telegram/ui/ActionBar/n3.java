@@ -1,38 +1,584 @@
 package org.telegram.ui.ActionBar;
 
+import ai.r9;
+import ai.s7;
 import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.text.TextPaint;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.WeakHashMap;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.bs;
+import org.telegram.ui.Components.d11;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.hk;
+import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n3 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ v3 b;
+public final class n3 extends FrameLayout {
+    public static final HashMap K = new HashMap();
+    public static final HashMap L = new HashMap();
+    public static TextPaint M;
+    public final RectF E;
+    public ValueAnimator F;
+    public float G;
+    public int H;
+    public final HashSet I;
+    public final HashSet J;
+    public final Paint a;
+    public boolean b;
+    public boolean c;
+    public final ActionBarLayout d;
+    public final l3 e;
+    public int f;
+    public final org.telegram.ui.Components.i5 h;
+    public int n;
+    public final org.telegram.ui.Components.i5 r;
+    public boolean s;
+    public final org.telegram.ui.Components.f6 v;
+    public int w;
+    public boolean x;
+    public boolean y;
 
-    public /* synthetic */ n3(v3 v3Var, int i10) {
-        this.a = i10;
-        this.b = v3Var;
+    public n3(Context context, ActionBarLayout actionBarLayout) {
+        super(context);
+        this.a = new Paint(1);
+        this.b = true;
+        this.c = false;
+        bs bsVar = bs.h;
+        this.h = new org.telegram.ui.Components.i5(this, 200L, bsVar, 0);
+        this.r = new org.telegram.ui.Components.i5(this, 200L, bsVar, 0);
+        this.v = new org.telegram.ui.Components.f6(this, 0L, 200L, bsVar);
+        this.w = UserConfig.selectedAccount;
+        this.E = new RectF();
+        this.I = new HashSet();
+        this.J = new HashSet();
+        this.d = actionBarLayout;
+        setNavigationBarColor(h6.x0(null, h6.a7, false));
+        l3 l3Var = new l3(this, this);
+        this.e = l3Var;
+        r0.i0.j(this, l3Var);
+        n();
+        o(false);
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                v3 v3Var = this.b;
-                v3Var.getClass();
-                v3Var.V = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                v3Var.invalidate();
-                break;
-            case 1:
-                v3 v3Var2 = this.b;
-                v3Var2.getClass();
-                v3Var2.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                v3Var2.invalidate();
-                break;
-            default:
-                v3 v3Var3 = this.b;
-                v3Var3.getClass();
-                v3Var3.L = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                break;
+    /* JADX INFO: Access modifiers changed from: private */
+    public static TextPaint getTextPaint() {
+        if (M == null) {
+            TextPaint textPaint = new TextPaint(1);
+            M = textPaint;
+            textPaint.setTypeface(AndroidUtilities.bold());
+            M.setTextSize(AndroidUtilities.dp(17.0f));
         }
+        return M;
+    }
+
+    public static String p(String str) {
+        if (str == null) {
+            return null;
+        }
+        int indexOf = str.indexOf(35);
+        return indexOf >= 0 ? str.substring(0, indexOf + 1) : str;
+    }
+
+    public final void b() {
+        ValueAnimator valueAnimator;
+        ArrayList<m3> tabs = getTabs();
+        int size = tabs.size();
+        if (size == 0) {
+            return;
+        }
+        m3 m3Var = (m3) i0.a.h(1, tabs);
+        LaunchActivity launchActivity = LaunchActivity.H1;
+        w3 w3Var = launchActivity == null ? null : launchActivity.y0;
+        if (w3Var != null && (valueAnimator = w3Var.d) != null) {
+            valueAnimator.cancel();
+            w3Var.d = null;
+        }
+        if (size == 1 || w3Var == null) {
+            e(m3Var);
+        } else {
+            w3Var.f();
+        }
+    }
+
+    public final k3 c(m3 m3Var) {
+        ArrayList<k3> tabDrawables = getTabDrawables();
+        for (int i10 = 0; i10 < tabDrawables.size(); i10++) {
+            if (tabDrawables.get(i10).a == m3Var) {
+                return tabDrawables.get(i10);
+            }
+        }
+        return null;
+    }
+
+    public final void d(RectF rectF, float f7) {
+        rectF.set(AndroidUtilities.dp(4.0f), (getHeight() - AndroidUtilities.dp(4.0f)) - AndroidUtilities.dp(50.0f), getWidth() - AndroidUtilities.dp(4.0f), getHeight() - AndroidUtilities.dp(4.0f));
+        rectF.offset(0.0f, (-AndroidUtilities.dp(8.0f)) * f7);
+        float lerp = AndroidUtilities.lerp(1.0f, 0.95f, Math.abs(f7));
+        float centerX = rectF.centerX();
+        float centerY = rectF.centerY();
+        float width = rectF.width();
+        float height = rectF.height();
+        float f10 = (width / 2.0f) * lerp;
+        rectF.left = centerX - f10;
+        rectF.right = centerX + f10;
+        float f11 = (height / 2.0f) * lerp;
+        rectF.top = centerY - f11;
+        rectF.bottom = centerY + f11;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        Canvas canvas2;
+        getTabs();
+        ArrayList<k3> tabDrawables = getTabDrawables();
+        if (this.G <= 0.0f) {
+            return;
+        }
+        this.a.setColor(this.h.a(this.f, false));
+        super.dispatchDraw(canvas);
+        int a2 = this.r.a(this.n, false);
+        float e = this.v.e(this.s);
+        if (this.b) {
+            int i10 = 0;
+            while (i10 < tabDrawables.size()) {
+                k3 k3Var = tabDrawables.get(i10);
+                float c10 = k3Var.c();
+                float b10 = k3Var.b();
+                if (b10 > 0.0f && c10 <= 1.99f) {
+                    RectF rectF = this.E;
+                    d(rectF, c10);
+                    k3Var.w = 0.0f;
+                    boolean z10 = e > 0.5f;
+                    k3Var.m = a2;
+                    k3Var.o = z10;
+                    canvas2 = canvas;
+                    k3Var.a(canvas2, rectF, AndroidUtilities.dp(18.0f), b10, 1.0f);
+                } else {
+                    canvas2 = canvas;
+                }
+                i10++;
+                canvas = canvas2;
+            }
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchHoverEvent(MotionEvent motionEvent) {
+        l3 l3Var;
+        if (!this.b || getTabs().isEmpty() || (l3Var = this.e) == null || !l3Var.f(motionEvent)) {
+            return super.dispatchHoverEvent(motionEvent);
+        }
+        return true;
+    }
+
+    public final void e(m3 m3Var) {
+        sn snVar;
+        hk hkVar;
+        n2 R = LaunchActivity.R();
+        if (R == null || R.getParentActivity() == null) {
+            return;
+        }
+        boolean z10 = R instanceof sn;
+        if (z10 && (hkVar = (snVar = (sn) R).Y) != null) {
+            hkVar.N();
+            snVar.Y.l0(true, false, true);
+        }
+        if (m3Var.J == null) {
+            new j3(0, this, m3Var).run(R);
+            if (m3Var.C) {
+                if (z10 && ((sn) R).a() == m3Var.a.c) {
+                    return;
+                }
+                this.c = true;
+                AndroidUtilities.runOnUIThread(new ig.c2(this, R, sn.W9(m3Var.a.c), 20), 220L);
+                return;
+            }
+            return;
+        }
+        n2 sheetFragment = this.d.getSheetFragment();
+        org.telegram.ui.l4 l4Var = m3Var.J;
+        org.telegram.ui.x3 x3Var = l4Var.K;
+        i3.b(x3Var);
+        sheetFragment.addSheet(x3Var);
+        org.telegram.ui.w3 w3Var = x3Var.c;
+        x3Var.h = false;
+        x3Var.n = false;
+        ValueAnimator valueAnimator = x3Var.y;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        ValueAnimator valueAnimator2 = x3Var.E;
+        if (valueAnimator2 != null) {
+            valueAnimator2.cancel();
+        }
+        x3Var.x = 0.0f;
+        x3Var.w = 0.0f;
+        x3Var.h();
+        x3Var.n();
+        w3Var.invalidate();
+        w3Var.requestLayout();
+        l4Var.Y(sheetFragment.getParentActivity(), sheetFragment);
+        x3Var.g(sheetFragment);
+        x3Var.f();
+        h(this.w, m3Var, false);
+    }
+
+    public final void f() {
+        ArrayList<m3> tabs = getTabs();
+        ArrayList<k3> tabDrawables = getTabDrawables();
+        for (int i10 = 0; i10 < tabs.size(); i10++) {
+            tabs.get(i10).a();
+        }
+        tabs.clear();
+        for (int i11 = 0; i11 < tabDrawables.size(); i11++) {
+            tabDrawables.get(i11).d = -1;
+        }
+        n();
+        o(true);
+        invalidate();
+        tabs.isEmpty();
+    }
+
+    public final void g(m3 m3Var, Utilities.Callback callback) {
+        String str;
+        if (m3Var == null) {
+            callback.run(Boolean.TRUE);
+            return;
+        }
+        if (!m3Var.y) {
+            h(this.w, m3Var, true);
+            callback.run(Boolean.TRUE);
+            return;
+        }
+        TLRPC.User user = MessagesController.getInstance(m3Var.a.a).getUser(Long.valueOf(m3Var.a.c));
+        if (user != null) {
+            str = ContactsController.formatName(user.first_name, user.last_name);
+        } else {
+            gi.t4 t4Var = m3Var.a;
+            str = t4Var.g == 6 ? t4Var.e : null;
+        }
+        boolean[] zArr = {false};
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext());
+        b2 b2Var = alertDialog$Builder.a;
+        b2Var.R = str;
+        b2Var.T = LocaleController.getString(R.string.BotWebViewChangesMayNotBeSaved);
+        alertDialog$Builder.k(LocaleController.getString(R.string.BotWebViewCloseAnyway), new s7(this, zArr, m3Var, callback, r8));
+        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new ai.s2(zArr, callback, r8, 17));
+        b2[] b2VarArr = {b2Var};
+        b2Var.setOnDismissListener(new r9(zArr, callback));
+        b2VarArr[0].show();
+        ((TextView) b2VarArr[0].d(-1)).setTextColor(h6.x0(null, h6.q7, false));
+    }
+
+    public Paint getBackgroundPaint() {
+        return this.a;
+    }
+
+    public int getExpandedHeight() {
+        int size = getTabs().size();
+        if (size == 0) {
+            return 0;
+        }
+        return size == 1 ? AndroidUtilities.dp(60.0f) : AndroidUtilities.dp(68.0f);
+    }
+
+    public ArrayList<k3> getTabDrawables() {
+        int i10 = this.w;
+        Integer valueOf = Integer.valueOf(i10);
+        HashMap hashMap = L;
+        ArrayList<k3> arrayList = (ArrayList) hashMap.get(valueOf);
+        if (arrayList != null) {
+            return arrayList;
+        }
+        Integer valueOf2 = Integer.valueOf(i10);
+        ArrayList<k3> arrayList2 = new ArrayList<>();
+        hashMap.put(valueOf2, arrayList2);
+        return arrayList2;
+    }
+
+    public ArrayList<m3> getTabs() {
+        int i10 = this.w;
+        Integer valueOf = Integer.valueOf(i10);
+        HashMap hashMap = K;
+        ArrayList<m3> arrayList = (ArrayList) hashMap.get(valueOf);
+        if (arrayList != null) {
+            return arrayList;
+        }
+        Integer valueOf2 = Integer.valueOf(i10);
+        ArrayList<m3> arrayList2 = new ArrayList<>();
+        hashMap.put(valueOf2, arrayList2);
+        return arrayList2;
+    }
+
+    public final boolean h(int i10, m3 m3Var, boolean z10) {
+        Integer valueOf = Integer.valueOf(i10);
+        HashMap hashMap = K;
+        ArrayList arrayList = (ArrayList) hashMap.get(valueOf);
+        if (arrayList == null) {
+            Integer valueOf2 = Integer.valueOf(i10);
+            ArrayList arrayList2 = new ArrayList();
+            hashMap.put(valueOf2, arrayList2);
+            arrayList = arrayList2;
+        }
+        Integer valueOf3 = Integer.valueOf(i10);
+        HashMap hashMap2 = L;
+        ArrayList arrayList3 = (ArrayList) hashMap2.get(valueOf3);
+        if (arrayList3 == null) {
+            Integer valueOf4 = Integer.valueOf(i10);
+            arrayList3 = new ArrayList();
+            hashMap2.put(valueOf4, arrayList3);
+        }
+        arrayList.remove(m3Var);
+        if (z10) {
+            m3Var.a();
+        }
+        for (int i11 = 0; i11 < arrayList3.size(); i11++) {
+            k3 k3Var = (k3) arrayList3.get(i11);
+            int indexOf = arrayList.indexOf(k3Var.a);
+            k3Var.d = indexOf;
+            if (indexOf >= 0) {
+                k3Var.c = indexOf;
+            }
+        }
+        n();
+        AndroidUtilities.runOnUIThread(new ig.c2(this, arrayList3, m3Var, 21), 320L);
+        o(true);
+        invalidate();
+        l3 l3Var = this.e;
+        if (l3Var != null) {
+            l3Var.i();
+        }
+        return arrayList.isEmpty();
+    }
+
+    public final void i(int i10, boolean z10) {
+        if (i10 != this.f) {
+            ActionBarLayout actionBarLayout = this.d;
+            if (!actionBarLayout.Q || actionBarLayout.T) {
+                z10 = false;
+            }
+            this.f = i10;
+            int v = h6.v(i10, h6.m1((AndroidUtilities.computePerceivedBrightness(i10) > 0.721f ? 1 : (AndroidUtilities.computePerceivedBrightness(i10) == 0.721f ? 0 : -1)) < 0 ? 0.08f : 0.75f, -1));
+            this.n = v;
+            this.s = AndroidUtilities.computePerceivedBrightness(v) < 0.721f;
+            if (!z10) {
+                this.h.a(this.f, true);
+                this.r.a(this.n, true);
+                this.v.f(this.s, true);
+            }
+            invalidate();
+        }
+    }
+
+    public final boolean j(float f7, float f10, int i10) {
+        ArrayList<m3> tabs = getTabs();
+        ArrayList<k3> tabDrawables = getTabDrawables();
+        if (this.b) {
+            m3 m3Var = tabs.isEmpty() ? null : tabs.get(0);
+            k3 c10 = c(m3Var);
+            if (c10 != null) {
+                org.telegram.ui.Cells.z zVar = c10.l;
+                float c11 = c10.c();
+                RectF rectF = this.E;
+                d(rectF, c11);
+                if (i10 == 0 || i10 == 2) {
+                    boolean contains = zVar.getBounds().contains((int) (f7 - rectF.left), (int) (f10 - rectF.centerY()));
+                    this.x = contains;
+                    this.y = !contains && rectF.contains(f7, f10);
+                    zVar.setState(this.x ? new int[]{android.R.attr.state_pressed, android.R.attr.state_enabled} : new int[0]);
+                } else if (i10 == 1 || i10 == 3) {
+                    if (this.y && i10 == 1) {
+                        b();
+                    } else if (this.x && i10 == 1) {
+                        g(m3Var, new ci.e(6));
+                    }
+                    this.x = false;
+                    this.y = false;
+                    zVar.setState(new int[0]);
+                }
+                for (int i11 = 0; i11 < tabDrawables.size(); i11++) {
+                    if (tabDrawables.get(i11) != c10) {
+                        tabDrawables.get(i11).l.setState(new int[0]);
+                    }
+                }
+            } else {
+                this.y = false;
+                this.x = false;
+            }
+        } else {
+            this.y = false;
+            this.x = false;
+        }
+        return this.y || this.x;
+    }
+
+    public final m3 k(gi.t4 t4Var) {
+        Integer valueOf = Integer.valueOf(this.w);
+        HashMap hashMap = K;
+        ArrayList arrayList = (ArrayList) hashMap.get(valueOf);
+        if (arrayList == null) {
+            Integer valueOf2 = Integer.valueOf(this.w);
+            ArrayList arrayList2 = new ArrayList();
+            hashMap.put(valueOf2, arrayList2);
+            arrayList = arrayList2;
+        }
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            m3 m3Var = (m3) arrayList.get(i10);
+            if (t4Var.equals(m3Var.a)) {
+                e(m3Var);
+                return m3Var;
+            }
+        }
+        return null;
+    }
+
+    public final m3 l(MessageObject messageObject) {
+        TLRPC.Message message;
+        TLRPC.MessageMedia messageMedia;
+        TLRPC.WebPage webPage;
+        if (messageObject == null || (message = messageObject.messageOwner) == null || (messageMedia = message.media) == null || (webPage = messageMedia.webpage) == null) {
+            return null;
+        }
+        return m(webPage);
+    }
+
+    public final m3 m(TLRPC.WebPage webPage) {
+        if (webPage == null) {
+            return null;
+        }
+        ArrayList<m3> tabs = getTabs();
+        for (int i10 = 0; i10 < tabs.size(); i10++) {
+            m3 m3Var = tabs.get(i10);
+            org.telegram.ui.l4 l4Var = m3Var.J;
+            if (l4Var != null && !l4Var.d0.isEmpty()) {
+                Object h = i0.a.h(1, m3Var.J.d0);
+                if ((h instanceof TLRPC.WebPage) && ((TLRPC.WebPage) h).id == webPage.id) {
+                    e(m3Var);
+                    return m3Var;
+                }
+            }
+        }
+        return null;
+    }
+
+    public final void n() {
+        CharSequence replaceEmoji;
+        ArrayList<m3> tabs = getTabs();
+        ArrayList<k3> tabDrawables = getTabDrawables();
+        CharSequence charSequence = null;
+        for (int i10 = 0; i10 < tabDrawables.size(); i10++) {
+            k3 k3Var = tabDrawables.get(i10);
+            if (tabs.size() <= 1 || k3Var.c != 0) {
+                replaceEmoji = Emoji.replaceEmoji(k3Var.a.b(), getTextPaint().getFontMetricsInt(), false);
+                k3Var.v = null;
+            } else {
+                replaceEmoji = Emoji.replaceEmoji(LocaleController.formatPluralString("BotMoreTabs", tabs.size() - 1, k3Var.a.b()), getTextPaint().getFontMetricsInt(), false);
+                if (replaceEmoji == null) {
+                    k3Var.v = null;
+                } else {
+                    k3Var.v = new d11(replaceEmoji, 17.0f, AndroidUtilities.bold());
+                }
+            }
+            charSequence = replaceEmoji;
+        }
+        if (tabs.isEmpty()) {
+            setImportantForAccessibility(2);
+            setContentDescription(LocaleController.formatString(R.string.AccDescrTabs, ""));
+            return;
+        }
+        setImportantForAccessibility(1);
+        int i11 = R.string.AccDescrTabs;
+        if (charSequence == null) {
+            charSequence = "";
+        }
+        setContentDescription(LocaleController.formatString(i11, charSequence));
+    }
+
+    public final void o(boolean z10) {
+        if (this.H == getExpandedHeight()) {
+            return;
+        }
+        ValueAnimator valueAnimator = this.F;
+        if (valueAnimator != null) {
+            this.F = null;
+            valueAnimator.cancel();
+        }
+        this.H = getExpandedHeight();
+        Iterator it = this.J.iterator();
+        while (it.hasNext()) {
+            ((Runnable) it.next()).run();
+        }
+        if (z10) {
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(this.G, this.H);
+            this.F = ofFloat;
+            ofFloat.addUpdateListener(new v0(this, 4));
+            this.F.addListener(new h(this, 3));
+            this.F.setDuration(250L);
+            this.F.setInterpolator(o1.w);
+            this.F.start();
+        } else {
+            this.G = this.H;
+            invalidate();
+        }
+        Object parent = getParent();
+        if (parent instanceof View) {
+            WeakHashMap weakHashMap = r0.i0.a;
+            r0.y.c((View) parent);
+        }
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return j(motionEvent.getX(), motionEvent.getY(), motionEvent.getAction()) || super.onTouchEvent(motionEvent);
+    }
+
+    public void setCurrentAccount(int i10) {
+        if (this.w != i10) {
+            this.w = i10;
+            o(false);
+            invalidate();
+        }
+    }
+
+    public void setNavigationBarColor(int i10) {
+        i(i10, true);
+    }
+
+    public void setupTab(k3 k3Var) {
+        int a2 = this.r.a(this.n, false);
+        float e = this.v.e(this.s);
+        k3Var.w = 0.0f;
+        boolean z10 = e > 0.5f;
+        k3Var.m = a2;
+        k3Var.o = z10;
+    }
+
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        super.verifyDrawable(drawable);
+        return true;
     }
 }

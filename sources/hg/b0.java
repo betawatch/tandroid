@@ -8,30 +8,30 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.d6;
 import org.telegram.ui.Cells.j2;
-import org.telegram.ui.Cells.n4;
-import org.telegram.ui.Components.lm0;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Cells.m4;
+import org.telegram.ui.Components.hm0;
+import org.telegram.ui.Components.sl0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public class b0 extends lm0 {
+public class b0 extends hm0 {
     public final Context c;
     public final int d;
     public final boolean e;
     public final boolean f;
-    public final c6 h;
+    public final d6 h;
 
-    public b0(int i10, Context context, c6 c6Var, boolean z10, boolean z11) {
+    public b0(int i10, Context context, d6 d6Var, boolean z10, boolean z11) {
         this.e = z10;
         this.c = context;
         this.d = i10;
         this.f = z11;
-        this.h = c6Var;
+        this.h = d6Var;
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.hm0
     public final boolean D(s4.b1 b1Var) {
         return true;
     }
@@ -44,7 +44,7 @@ public class b0 extends lm0 {
     @Override // s4.g0
     public void v(s4.b1 b1Var, int i10) {
         TLRPC.Chat chat;
-        n4 n4Var = (n4) b1Var.a;
+        m4 m4Var = (m4) b1Var.a;
         int i11 = this.d;
         TLRPC.TL_topPeer tL_topPeer = MediaDataController.getInstance(i11).hints.get(i10);
         new TLRPC.TL_dialog();
@@ -70,19 +70,19 @@ public class b0 extends lm0 {
                 }
             }
         }
-        n4Var.setTag(Long.valueOf(j10));
-        n4Var.a(j10, user != null ? UserObject.getFirstName(user) : chat != null ? chat.monoforum ? og.d.i(chat, i11, false) : chat.title : "");
+        m4Var.setTag(Long.valueOf(j10));
+        m4Var.a(j10, user != null ? UserObject.getFirstName(user) : chat != null ? chat.monoforum ? og.d.i(chat, i11, false) : chat.title : "");
     }
 
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
         boolean z10 = this.e;
-        n4 n4Var = new n4(this.c, this.h, z10);
-        if (this.f && !n4Var.x) {
-            n4Var.x = true;
-            NotificationCenter.getInstance(n4Var.h).listen(n4Var, NotificationCenter.userIsPremiumBlockedUpadted, new j2(n4Var, 1));
+        m4 m4Var = new m4(this.c, this.h, z10);
+        if (this.f && !m4Var.x) {
+            m4Var.x = true;
+            NotificationCenter.getInstance(m4Var.h).listen(m4Var, NotificationCenter.userIsPremiumBlockedUpadted, new j2(m4Var, 1));
         }
-        n4Var.setLayoutParams(new s4.o0(AndroidUtilities.dp(80.0f), AndroidUtilities.dp(86.0f)));
-        return new wl0(n4Var);
+        m4Var.setLayoutParams(new s4.o0(AndroidUtilities.dp(80.0f), AndroidUtilities.dp(86.0f)));
+        return new sl0(m4Var);
     }
 }

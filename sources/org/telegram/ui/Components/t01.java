@@ -1,49 +1,64 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class t01 implements TextWatcher {
-    public final /* synthetic */ a11 a;
+public final class t01 extends jw0 {
+    public final org.telegram.ui.u10 w0;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d6 x0;
+    public final /* synthetic */ r01 y0;
 
-    public t01(a11 a11Var) {
-        this.a = a11Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t01(Context context, org.telegram.ui.ActionBar.d6 d6Var, r01 r01Var) {
+        super(context, null);
+        this.x0 = d6Var;
+        this.y0 = r01Var;
+        this.w0 = new org.telegram.ui.u10();
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        a11 a11Var = this.a;
-        s6 s6Var = a11Var.n;
-        if (a11Var.x) {
-            return;
-        }
-        String trim = editable.toString().trim();
-        if (trim.length() > 16) {
-            s6Var.setText("-" + (trim.length() - 16));
-            trim = trim.substring(0, 16);
-        } else {
-            s6Var.setText("");
-        }
-        Utilities.Callback callback = a11Var.w;
-        if (callback != null) {
-            callback.run(trim);
-        }
-        MessageObject messageObject = a11Var.r;
-        if (messageObject != null) {
-            messageObject.forceUpdate = true;
-            a11Var.d.X3(messageObject, null, false, false, false, false);
-        }
+    @Override // org.telegram.ui.Components.jw0
+    public final boolean P() {
+        return false;
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // org.telegram.ui.Components.jw0
+    public final boolean Q() {
+        return false;
     }
 
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
+        if (view != this.y0) {
+            return super.drawChild(canvas, view, j10);
+        }
+        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
+        boolean drawChild = super.drawChild(canvas, view, j10);
+        canvas.save();
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(0.0f, 0.0f, AndroidUtilities.dp(45.0f), getHeight());
+        this.w0.b(canvas, rectF, 0, 1.0f);
+        canvas.restore();
+        canvas.restore();
+        return drawChild;
+    }
+
+    @Override // org.telegram.ui.Components.jw0
+    public final org.telegram.ui.ActionBar.d6 getResourceProvider() {
+        return this.x0;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(AndroidUtilities.displaySize.x, TLObject.FLAG_30);
+        r01 r01Var = this.y0;
+        r01Var.measure(makeMeasureSpec, i11);
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), r01Var.getMeasuredHeight() + AndroidUtilities.dp(24.0f));
     }
 }

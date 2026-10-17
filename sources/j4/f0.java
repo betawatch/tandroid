@@ -10,7 +10,7 @@ import java.util.concurrent.CountDownLatch;
 import javax.net.SocketFactory;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class f0 {
     public final int a;
@@ -27,15 +27,15 @@ public final class f0 {
         tc.h hVar = new tc.h();
         ArrayList arrayList = new ArrayList(inetAddressArr.length);
         int i10 = 0;
-        c5.c0 c0Var = null;
+        c5.b0 b0Var = null;
         int i11 = 0;
         for (InetAddress inetAddress : inetAddressArr) {
             int i12 = this.b;
             if ((i12 != 2 || (inetAddress instanceof Inet4Address)) && (i12 != 3 || (inetAddress instanceof Inet6Address))) {
                 int i13 = i11 + this.c;
-                c5.c0 c0Var2 = new c5.c0(i13, 11);
-                arrayList.add(new tc.t(hVar, (SocketFactory) this.d, new InetSocketAddress(inetAddress, ((tc.a) this.e).b), this.a, c0Var, c0Var2));
-                c0Var = c0Var2;
+                c5.b0 b0Var2 = new c5.b0(i13, 11);
+                arrayList.add(new tc.t(hVar, (SocketFactory) this.d, new InetSocketAddress(inetAddress, ((tc.a) this.e).b), this.a, b0Var, b0Var2));
+                b0Var = b0Var2;
                 i11 = i13;
             }
         }

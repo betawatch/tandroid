@@ -1,6 +1,6 @@
 package n7;
 
-import com.google.android.gms.internal.play_billing.k3;
+import com.google.android.gms.internal.cast.a6;
 import j$.util.Map;
 import j$.util.Objects;
 import java.util.ArrayList;
@@ -16,7 +16,7 @@ import java.util.Set;
 import java.util.SortedMap;
 import java.util.TreeMap;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class s extends o implements NavigableMap, Map {
     public static final s f;
@@ -66,14 +66,14 @@ public final class s extends o implements NavigableMap, Map {
             Object[] objArr = {key};
             for (int i12 = 0; i12 < 1; i12++) {
                 if (objArr[i12] == null) {
-                    throw new NullPointerException(i2.d.j(i12, "at index "));
+                    throw new NullPointerException(i0.a.j(i12, "at index "));
                 }
             }
             a0 a0Var = new a0(n.s(1, objArr), wVar);
             Object[] objArr2 = {value};
             while (i11 < 1) {
                 if (objArr2[i11] == null) {
-                    throw new NullPointerException(i2.d.j(i11, "at index "));
+                    throw new NullPointerException(i0.a.j(i11, "at index "));
                 }
                 i11++;
             }
@@ -93,7 +93,7 @@ public final class s extends o implements NavigableMap, Map {
                 i11++;
             }
         } else {
-            Arrays.sort(entryArr, 0, length, new gb.k(2));
+            Arrays.sort(entryArr, 0, length, new gb.i(2));
             Map.Entry entry3 = entryArr[0];
             Objects.requireNonNull(entry3);
             Object key3 = entry3.getKey();
@@ -112,7 +112,7 @@ public final class s extends o implements NavigableMap, Map {
                 objArr3[i10] = key4;
                 objArr4[i10] = value4;
                 if (wVar.compare(key3, key4) == 0) {
-                    throw new IllegalArgumentException(k3.k("Multiple entries with same key: ", String.valueOf(entry4), " and ", String.valueOf(entry5)));
+                    throw new IllegalArgumentException(a6.k("Multiple entries with same key: ", String.valueOf(entry4), " and ", String.valueOf(entry5)));
                 }
                 i10++;
                 key3 = key4;

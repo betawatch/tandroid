@@ -1,56 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u5 implements ValueAnimator.AnimatorUpdateListener {
+public final class u5 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ float d;
-    public final /* synthetic */ float e;
-    public final /* synthetic */ Object f;
+    public final /* synthetic */ a6 b;
 
-    public /* synthetic */ u5(Object obj, float f7, float f10, float f11, float f12, int i10) {
+    public /* synthetic */ u5(a6 a6Var, int i10) {
         this.a = i10;
-        this.f = obj;
-        this.b = f7;
-        this.c = f10;
-        this.d = f11;
-        this.e = f12;
+        this.b = a6Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        int i10 = this.a;
-        float f7 = this.e;
-        float f10 = this.d;
-        float f11 = this.c;
-        float f12 = this.b;
-        Object obj = this.f;
-        switch (i10) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        Runnable runnable;
+        Runnable runnable2;
+        switch (this.a) {
             case 0:
-                b6 b6Var = (b6) obj;
-                b6Var.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                b6Var.lastDrawnCy = AndroidUtilities.lerp(f12, f11, floatValue);
-                b6Var.lastDrawnCx = AndroidUtilities.lerp(f10, f7, floatValue);
+                this.b.scaleAnimator = null;
+                boolean unused = a6.lockPositionChanging = false;
+                break;
+            case 1:
+                a6 a6Var = this.b;
+                a6Var.scaleAnimator = null;
+                runnable = a6Var.removedAction;
+                if (runnable != null) {
+                    runnable2 = a6Var.removedAction;
+                    runnable2.run();
+                    a6Var.removedAction = null;
+                    break;
+                }
                 break;
             default:
-                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj;
-                int i11 = ChatActivityEnterView.n5;
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                float y3 = com.google.android.gms.internal.play_billing.k3.y(f11, f12, floatValue2, f12);
-                xp0 xp0Var = chatActivityEnterView.p0;
-                if (xp0Var != null) {
-                    xp0Var.setAlpha(((f7 - f10) * floatValue2) + f10);
-                    chatActivityEnterView.p0.setTranslationX(y3);
-                }
-                chatActivityEnterView.Q0.setTranslationX(y3);
-                chatActivityEnterView.G = y3;
-                chatActivityEnterView.G1();
+                this.b.moveAnimator = null;
                 break;
         }
     }

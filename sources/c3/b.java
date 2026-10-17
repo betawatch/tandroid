@@ -1,8 +1,8 @@
 package c3;
 
 import android.util.Base64;
-import b2.u0;
-import b2.x0;
+import b2.t0;
+import b2.w0;
 import e2.m0;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.OneUIUtilities;
 import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final int[] a = {96000, 88200, 64000, 48000, 44100, 32000, 24000, 22050, androidx.car.app.media.b.AUDIO_CONTENT_SAMPLING_RATE, 12000, 11025, 8000, 7350};
@@ -134,11 +134,11 @@ public abstract class b {
 
     public static void b(String str, boolean z10) {
         if (!z10) {
-            throw x0.a(null, str);
+            throw w0.a(null, str);
         }
     }
 
-    public static void c(long j10, e2.x xVar, i0[] i0VarArr) {
+    public static void c(long j10, e2.x xVar, j0[] j0VarArr) {
         int i10;
         while (true) {
             if (xVar.a() <= 1) {
@@ -186,24 +186,24 @@ public abstract class b {
                     z10 &= m10 == 1195456820;
                 }
                 if (z10) {
-                    d(j10, xVar, i0VarArr);
+                    d(j10, xVar, j0VarArr);
                 }
             }
             xVar.N(i13);
         }
     }
 
-    public static void d(long j10, e2.x xVar, i0[] i0VarArr) {
+    public static void d(long j10, e2.x xVar, j0[] j0VarArr) {
         int A = xVar.A();
         if ((A & 64) != 0) {
             xVar.O(1);
             int i10 = (A & 31) * 3;
             int i11 = xVar.b;
-            for (i0 i0Var : i0VarArr) {
+            for (j0 j0Var : j0VarArr) {
                 xVar.N(i11);
-                i0Var.d(i10, xVar);
+                j0Var.d(i10, xVar);
                 u6.p(j10 != -9223372036854775807L);
-                i0Var.c(j10, 1, i10, 0, null);
+                j0Var.c(j10, 1, i10, 0, null);
             }
         }
     }
@@ -403,12 +403,12 @@ public abstract class b {
             if (gVar.b() >= 24) {
                 return gVar.g(24);
             }
-            throw x0.a(null, "AAC header insufficient data");
+            throw w0.a(null, "AAC header insufficient data");
         }
         if (g10 < 13) {
             return a[g10];
         }
-        throw x0.a(null, "AAC header wrong Sampling Frequency Index");
+        throw w0.a(null, "AAC header wrong Sampling Frequency Index");
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:40:0x0081, code lost:
@@ -490,7 +490,7 @@ public abstract class b {
         }
         int l4 = l(gVar);
         int g11 = gVar.g(4);
-        String j10 = i2.d.j(g10, "mp4a.40.");
+        String j10 = i0.a.j(g10, "mp4a.40.");
         if (g10 == 5 || g10 == 29) {
             l4 = l(gVar);
             int g12 = gVar.g(5);
@@ -512,7 +512,7 @@ public abstract class b {
                     case 23:
                         break;
                     default:
-                        throw x0.c("Unsupported audio object type: " + g10);
+                        throw w0.c("Unsupported audio object type: " + g10);
                 }
             }
             if (gVar.f()) {
@@ -546,13 +546,13 @@ public abstract class b {
                 case 23:
                     int g13 = gVar.g(2);
                     if (g13 == 2 || g13 == 3) {
-                        throw x0.c("Unsupported epConfig: " + g13);
+                        throw w0.c("Unsupported epConfig: " + g13);
                     }
             }
         }
         int i10 = b[g11];
         if (i10 == -1) {
-            throw x0.a(null, null);
+            throw w0.a(null, null);
         }
         a aVar = new a();
         aVar.b = l4;
@@ -622,7 +622,7 @@ public abstract class b {
         return gVar.g(iArr[i10]) + i12;
     }
 
-    public static u0 r(List list) {
+    public static t0 r(List list) {
         ArrayList arrayList = new ArrayList();
         for (int i10 = 0; i10 < list.size(); i10++) {
             String str = (String) list.get(i10);
@@ -643,7 +643,7 @@ public abstract class b {
         if (arrayList.isEmpty()) {
             return null;
         }
-        return new u0(arrayList);
+        return new t0(arrayList);
     }
 
     public static int s(int i10, e2.x xVar) {
@@ -673,7 +673,7 @@ public abstract class b {
         }
     }
 
-    public static qf.b t(e2.x xVar) {
+    public static n4.s t(e2.x xVar) {
         xVar.O(1);
         int D = xVar.D();
         long j10 = xVar.b + D;
@@ -697,10 +697,10 @@ public abstract class b {
             i11++;
         }
         xVar.O((int) (j10 - xVar.b));
-        return new qf.b(8, jArr, jArr2);
+        return new n4.s(8, jArr, jArr2);
     }
 
-    public static k0 u(e2.x xVar, boolean z10, boolean z11) {
+    public static l0 u(e2.x xVar, boolean z10, boolean z11) {
         if (z10) {
             w(3, xVar, false);
         }
@@ -711,15 +711,15 @@ public abstract class b {
             strArr[i10] = xVar.y((int) xVar.r(), StandardCharsets.UTF_8);
         }
         if (z11 && (xVar.A() & 1) == 0) {
-            throw x0.a(null, "framing bit expected to be set");
+            throw w0.a(null, "framing bit expected to be set");
         }
-        return new k0(strArr);
+        return new l0(strArr);
     }
 
     public static void v(a4.g gVar) {
         int g10 = gVar.g(6);
         if (g10 < 2 || g10 > 42) {
-            throw x0.c(String.format("Invalid language tag bytes number: %d. Must be between 2 and 42.", Integer.valueOf(g10)));
+            throw w0.c(String.format("Invalid language tag bytes number: %d. Must be between 2 and 42.", Integer.valueOf(g10)));
         }
         gVar.o(g10 * 8);
     }
@@ -729,13 +729,13 @@ public abstract class b {
             if (z10) {
                 return false;
             }
-            throw x0.a(null, "too short header: " + xVar.a());
+            throw w0.a(null, "too short header: " + xVar.a());
         }
         if (xVar.A() != i10) {
             if (z10) {
                 return false;
             }
-            throw x0.a(null, "expected header type " + Integer.toHexString(i10));
+            throw w0.a(null, "expected header type " + Integer.toHexString(i10));
         }
         if (xVar.A() == 118 && xVar.A() == 111 && xVar.A() == 114 && xVar.A() == 98 && xVar.A() == 105 && xVar.A() == 115) {
             return true;
@@ -743,6 +743,6 @@ public abstract class b {
         if (z10) {
             return false;
         }
-        throw x0.a(null, "expected characters 'vorbis'");
+        throw w0.a(null, "expected characters 'vorbis'");
     }
 }

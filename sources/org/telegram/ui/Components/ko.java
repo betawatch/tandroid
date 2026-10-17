@@ -1,53 +1,75 @@
 package org.telegram.ui.Components;
 
-import java.util.concurrent.atomic.AtomicReference;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.MotionEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.te1;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ko implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ro b;
+public final class ko extends w9 {
+    public final org.telegram.ui.Cells.l6 G;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 H;
+    public final /* synthetic */ boolean I;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d6 J;
+    public final /* synthetic */ oo K;
 
-    public /* synthetic */ ko(ro roVar, int i10) {
-        this.a = i10;
-        this.b = roVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ko(oo ooVar, Context context, org.telegram.ui.ActionBar.n2 n2Var, boolean z10, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context);
+        this.K = ooVar;
+        this.H = n2Var;
+        this.I = z10;
+        this.J = d6Var;
+        this.G = new org.telegram.ui.Cells.l6(this);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ro roVar = this.b;
-                AtomicReference atomicReference = roVar.n;
-                org.telegram.ui.ActionBar.h5 h5Var = (org.telegram.ui.ActionBar.h5) atomicReference.get();
-                if (h5Var != null) {
-                    roVar.removeView(h5Var);
-                    atomicReference.set(null);
-                    break;
-                }
-                break;
-            case 1:
-                ro roVar2 = this.b;
-                AtomicReference atomicReference2 = roVar2.v;
-                org.telegram.ui.ActionBar.h5 h5Var2 = (org.telegram.ui.ActionBar.h5) atomicReference2.get();
-                if (h5Var2 != null) {
-                    roVar2.removeView(h5Var2);
-                    atomicReference2.set(null);
-                    if (!roVar2.b) {
-                        roVar2.setClipChildren(true);
-                        break;
-                    }
-                }
-                break;
-            default:
-                ro roVar3 = this.b;
-                roVar3.j0 = false;
-                roVar3.h0.c(false);
-                if (roVar3.a()) {
-                    roVar3.f();
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.w9, android.view.View
+    public final void onDraw(Canvas canvas) {
+        long j10;
+        oo ooVar = this.K;
+        if (!ooVar.b || this.e != null) {
+            super.onDraw(canvas);
+            return;
         }
+        org.telegram.ui.Cells.l6 l6Var = this.G;
+        l6Var.F.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
+        l6Var.a = true;
+        l6Var.v = true;
+        l6Var.J = this.J;
+        Integer num = ooVar.c;
+        if (num != null) {
+            l6Var.z = num.intValue();
+        }
+        org.telegram.ui.sn snVar = ooVar.G;
+        if (snVar != null) {
+            j10 = snVar.a();
+        } else {
+            org.telegram.ui.ActionBar.n2 n2Var = this.H;
+            j10 = n2Var instanceof te1 ? -((te1) n2Var).a : 0L;
+        }
+        ci.d8.h(j10, canvas, this.a, l6Var);
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        if (!this.I || !getImageReceiver().hasNotThumb()) {
+            accessibilityNodeInfo.setVisibleToUser(false);
+        } else {
+            accessibilityNodeInfo.setText(LocaleController.getString(R.string.AccDescrProfilePicture));
+            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, LocaleController.getString(R.string.Open)));
+        }
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (this.K.b && this.G.a(motionEvent, this)) {
+            return true;
+        }
+        return super.onTouchEvent(motionEvent);
     }
 }

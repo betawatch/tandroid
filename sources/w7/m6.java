@@ -1,11 +1,13 @@
 package w7;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class m6 {
-    public static void a(Object obj, String str) {
-        if (obj == null) {
-            throw new NullPointerException(str);
-        }
+    public static boolean a(int i10, int i11) {
+        return (i10 & i11) != 0;
+    }
+
+    public static int b(int i10, int i11, boolean z10) {
+        return z10 ? i10 | i11 : i10 & (~i11);
     }
 }

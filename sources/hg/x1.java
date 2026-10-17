@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x1 implements Runnable {
     public final /* synthetic */ int a;
@@ -46,8 +46,8 @@ public final /* synthetic */ class x1 implements Runnable {
                         hashMap.put(y1Var.a, y1Var);
                     }
                     queryFinalized.dispose();
-                    Collections.sort(arrayList, new a4.d(17));
-                    AndroidUtilities.runOnUIThread(new t(a2Var2, arrayList, hashMap, 3));
+                    Collections.sort(arrayList, new a4.d(20));
+                    AndroidUtilities.runOnUIThread(new ei.z1(a2Var2, arrayList, hashMap, 18));
                     break;
                 } catch (Exception e7) {
                     FileLog.e(e7);

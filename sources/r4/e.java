@@ -4,9 +4,9 @@ import android.graphics.Rect;
 import android.view.Choreographer;
 import java.util.ArrayList;
 import w7.r;
-import zf.y;
+import zf.x;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements Choreographer.FrameCallback {
     public final /* synthetic */ int a;
@@ -62,20 +62,20 @@ public final /* synthetic */ class e implements Choreographer.FrameCallback {
                 iVar.l = false;
                 break;
             default:
-                y yVar = (y) this.b;
-                if (yVar.F.get()) {
-                    long j11 = yVar.b;
+                x xVar = (x) this.b;
+                if (xVar.F.get()) {
+                    long j11 = xVar.b;
                     if (j11 == 0) {
-                        yVar.b = j10;
+                        xVar.b = j10;
                     } else if (j10 - j11 >= 1000000000) {
-                        yVar.c = yVar.a;
-                        yVar.f = yVar.e.getAndSet(0);
-                        yVar.a = 0;
-                        yVar.b = j10;
+                        xVar.c = xVar.a;
+                        xVar.f = xVar.e.getAndSet(0);
+                        xVar.a = 0;
+                        xVar.b = j10;
                     } else {
-                        yVar.a++;
+                        xVar.a++;
                     }
-                    Choreographer.getInstance().postFrameCallback(yVar.d);
+                    Choreographer.getInstance().postFrameCallback(xVar.d);
                     break;
                 }
                 break;

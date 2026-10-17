@@ -1,14 +1,14 @@
 package j4;
 
-import b2.w0;
-import c3.i0;
+import b2.v0;
+import c3.j0;
 import e2.m0;
 import java.util.Arrays;
 import java.util.Collections;
 import org.telegram.messenger.MediaController;
 import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class e implements i {
     public static final byte[] x = {73, 68, 51};
@@ -17,14 +17,14 @@ public final class e implements i {
     public final int e;
     public final String f;
     public String g;
-    public i0 h;
-    public i0 i;
+    public j0 h;
+    public j0 i;
     public boolean m;
     public boolean n;
     public int q;
     public boolean r;
     public int t;
-    public i0 v;
+    public j0 v;
     public long w;
     public final a4.g b = new a4.g(new byte[7], 7);
     public final e2.x c = new e2.x(Arrays.copyOf(x, 10));
@@ -253,11 +253,11 @@ public final class e implements i {
                     if (i32 == 10) {
                         this.i.d(10, xVar2);
                         xVar2.N(6);
-                        i0 i0Var = this.i;
+                        j0 j0Var = this.i;
                         int z10 = xVar2.z() + 10;
                         this.j = 4;
                         this.k = 10;
-                        this.v = i0Var;
+                        this.v = j0Var;
                         this.w = 0L;
                         this.t = z10;
                     }
@@ -283,19 +283,19 @@ public final class e implements i {
                             int i35 = this.p;
                             byte[] bArr8 = {(byte) (((g12 << 3) & 248) | ((i35 >> 1) & 7)), (byte) (((g13 << 3) & 120) | ((i35 << 7) & 128))};
                             c3.a n10 = c3.b.n(new a4.g(bArr8, 2), false);
-                            b2.w wVar = new b2.w();
-                            wVar.a = this.g;
-                            wVar.q = w0.n(this.f);
-                            wVar.r = w0.n(MediaController.AUDIO_MIME_TYPE);
-                            wVar.j = n10.a;
-                            wVar.J = n10.c;
-                            wVar.K = n10.b;
-                            wVar.u = Collections.singletonList(bArr8);
-                            wVar.d = this.d;
-                            wVar.f = this.e;
-                            b2.x xVar3 = new b2.x(wVar);
-                            this.s = 1024000000 / xVar3.L;
-                            this.h.b(xVar3);
+                            b2.v vVar = new b2.v();
+                            vVar.a = this.g;
+                            vVar.q = v0.n(this.f);
+                            vVar.r = v0.n(MediaController.AUDIO_MIME_TYPE);
+                            vVar.j = n10.a;
+                            vVar.J = n10.c;
+                            vVar.K = n10.b;
+                            vVar.u = Collections.singletonList(bArr8);
+                            vVar.d = this.d;
+                            vVar.f = this.e;
+                            b2.w wVar = new b2.w(vVar);
+                            this.s = 1024000000 / wVar.L;
+                            this.h.b(wVar);
                             this.r = true;
                         }
                         gVar.o(4);
@@ -304,11 +304,11 @@ public final class e implements i {
                         if (this.m) {
                             i36 = g14 - 9;
                         }
-                        i0 i0Var2 = this.h;
+                        j0 j0Var2 = this.h;
                         long j10 = this.s;
                         this.j = 4;
                         this.k = 0;
-                        this.v = i0Var2;
+                        this.v = j0Var2;
                         this.w = j10;
                         this.t = i36;
                     }
@@ -367,23 +367,23 @@ public final class e implements i {
         f0Var.c();
         this.g = (String) f0Var.e;
         f0Var.c();
-        i0 W = qVar.W(f0Var.c, 1);
-        this.h = W;
-        this.v = W;
+        j0 j02 = qVar.j0(f0Var.c, 1);
+        this.h = j02;
+        this.v = j02;
         if (!this.a) {
             this.i = new c3.n();
             return;
         }
         f0Var.b();
         f0Var.c();
-        i0 W2 = qVar.W(f0Var.c, 5);
-        this.i = W2;
-        b2.w wVar = new b2.w();
+        j0 j03 = qVar.j0(f0Var.c, 5);
+        this.i = j03;
+        b2.v vVar = new b2.v();
         f0Var.c();
-        wVar.a = (String) f0Var.e;
-        wVar.q = w0.n(this.f);
-        wVar.r = w0.n("application/id3");
-        i2.d.u(wVar, W2);
+        vVar.a = (String) f0Var.e;
+        vVar.q = v0.n(this.f);
+        vVar.r = v0.n("application/id3");
+        i0.a.u(vVar, j03);
     }
 
     @Override // j4.i

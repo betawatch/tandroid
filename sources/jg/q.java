@@ -6,12 +6,12 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
-import com.google.android.gms.internal.play_billing.k3;
+import com.google.android.gms.internal.cast.a6;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public class q extends g {
     public final Matrix D1;
@@ -165,11 +165,11 @@ public class q extends g {
                 float width = rectF.width() > rectF.height() ? rectF.width() : rectF.height();
                 float height = (rectF.width() > rectF.height() ? rectF.height() : rectF.width()) * 0.45f;
                 f10 = 0.0f;
-                float y3 = k3.y(1.0f, this.z0.f, (width - height) / 2.0f, height);
+                float x10 = a6.x(1.0f, this.z0.f, (width - height) / 2.0f, height);
                 RectF rectF2 = new RectF();
                 f7 = 1.0f;
-                rectF2.set(centerX - y3, centerY - y3, centerX + y3, centerY + y3);
-                path.addRoundRect(rectF2, y3, y3, Path.Direction.CW);
+                rectF2.set(centerX - x10, centerY - x10, centerX + x10, centerY + x10);
+                path.addRoundRect(rectF2, x10, x10, Path.Direction.CW);
                 canvas.clipPath(path);
             } else {
                 f7 = 1.0f;
@@ -722,7 +722,7 @@ public class q extends g {
                     canvas.save();
                     canvas.clipRect(f38, i12, f37, getMeasuredHeight() - this.s);
                     if (z11) {
-                        canvas.drawColor(g6.x0(null, g6.rj, false));
+                        canvas.drawColor(h6.x0(null, h6.rj, false));
                     }
                     for (size = arrayList3.size() - 1; size >= 0; size--) {
                         lg.f fVar3 = (lg.f) arrayList3.get(size);
@@ -934,7 +934,7 @@ public class q extends g {
                 }
             }
             if (z12) {
-                canvas.drawColor(g6.x0(null, g6.rj, false));
+                canvas.drawColor(h6.x0(null, h6.rj, false));
             }
             for (int size2 = arrayList.size() - 1; size2 >= 0; size2--) {
                 lg.f fVar3 = (lg.f) arrayList.get(size2);

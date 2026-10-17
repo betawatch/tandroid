@@ -14,12 +14,12 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.ui.Components.es;
+import org.telegram.ui.Components.bs;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.cj1;
+import org.telegram.ui.jh1;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes.dex */
 public final class j2 extends FrameLayout {
     public static final /* synthetic */ int h = 0;
     public final float a;
@@ -34,7 +34,7 @@ public final class j2 extends FrameLayout {
         super(context);
         this.f = k2Var;
         this.a = ViewConfiguration.get(context).getScaledTouchSlop();
-        setOutlineProvider(new bi.a2(18));
+        setOutlineProvider(new ci.o1(18));
         setClipToOutline(true);
     }
 
@@ -120,7 +120,7 @@ public final class j2 extends FrameLayout {
                 Context context = getContext();
                 boolean z10 = context instanceof LaunchActivity;
                 if (z10 && !ApplicationLoader.mainInterfacePaused) {
-                    cj1.v((Activity) context, this.f.M);
+                    jh1.v((Activity) context, this.f.M);
                 } else if (z10) {
                     Intent intent = new Intent(context, (Class<?>) LaunchActivity.class);
                     intent.setAction("voip");
@@ -166,7 +166,7 @@ public final class j2 extends FrameLayout {
                     ofFloat4.addUpdateListener(this.f.Q);
                     this.f.O.playTogether(ofFloat4);
                 }
-                this.f.O.setDuration(150L).setInterpolator(es.f);
+                this.f.O.setDuration(150L).setInterpolator(bs.f);
                 this.f.O.start();
             }
             this.f.K = false;

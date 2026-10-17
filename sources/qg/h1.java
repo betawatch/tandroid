@@ -1,17 +1,47 @@
 package qg;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+import android.graphics.RectF;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class h1 {
-    public double a;
-    public double b;
+    public final l a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public float g;
+    public float h;
+    public float i;
+    public float j;
+    public float k;
+    public boolean l;
 
-    public h1(double d, double d10) {
-        this.a = d;
-        this.b = d10;
+    public h1(l lVar) {
+        this.a = lVar;
     }
 
-    public final double a(double d, double d10) {
-        return Math.sqrt(Math.pow(d10 - this.b, 2.0d) + Math.pow(d - this.a, 2.0d));
+    public final void a(RectF rectF) {
+        l lVar = this.a;
+        if (lVar.o() == 4) {
+            float f7 = this.b;
+            float f10 = this.k;
+            float f11 = this.c;
+            rectF.set(f7 - f10, f11 - f10, f7 + f10, f11 + f10);
+            rectF.union(this.d, this.e);
+            rectF.union(this.i, this.j);
+        } else {
+            float max = Math.max(Math.abs(this.d), Math.abs(this.e));
+            float f12 = this.b;
+            float f13 = max * 1.42f;
+            float f14 = this.c;
+            rectF.set(f12 - f13, f14 - f13, f12 + f13, f14 + f13);
+            if (lVar.o() == 3) {
+                rectF.union(this.i, this.j);
+            }
+        }
+        float f15 = (-this.f) - 3.0f;
+        rectF.inset(f15, f15);
     }
 }

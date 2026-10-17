@@ -1,29 +1,92 @@
 package ig;
 
-import java.util.Calendar;
-import org.telegram.messenger.LocaleController;
+import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
+import ei.bc;
+import java.util.ArrayList;
 import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Components.a71;
+import w7.z5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class f1 {
-    public int a;
-    public int b;
+public final class f1 extends n2 {
+    public final CharSequence a;
+    public final ArrayList b;
+    public final int c;
+    public final int d;
+    public final int e;
+    public bc f;
+    public hi.t h;
+    public a71 n;
+    public boolean r;
 
-    public f1(int i10, int i11) {
-        this.a = i10;
-        this.b = i11;
+    public f1(CharSequence charSequence, ArrayList arrayList, int i10, int i11, int i12) {
+        super(null);
+        this.a = charSequence;
+        this.b = arrayList;
+        this.c = i10;
+        this.d = i11;
+        this.e = i12;
+        this.r = !arrayList.isEmpty();
     }
 
-    public static String a(int i10) {
-        int i11 = i10 % 60;
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(0, 0, 0, ((i10 - i11) / 60) % 24, i11);
-        String format = LocaleController.getInstance().getFormatterConstDay().format(calendar.getTime());
-        return i10 > 1440 ? LocaleController.formatString(R.string.BusinessHoursNextDay, format) : format;
+    public final boolean U() {
+        ArrayList arrayList = this.b;
+        return arrayList.size() == 1 && ((c1) arrayList.get(0)).a == 0 && ((c1) arrayList.get(0)).b == 1439;
     }
 
-    public final String toString() {
-        return a(this.a) + " - " + a(this.b);
+    public final boolean V() {
+        ArrayList arrayList = this.b;
+        if (arrayList.size() >= this.e) {
+            return false;
+        }
+        return arrayList.isEmpty() || U() || ((c1) i0.a.h(1, arrayList)).b < Math.min(1438, this.d + (-2));
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final View createView(Context context) {
+        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        this.actionBar.setAllowOverlayTitle(true);
+        this.actionBar.setTitle(this.a);
+        this.actionBar.setActionBarMenuOnItemClick(new ah.s(this, 17));
+        FrameLayout frameLayout = new FrameLayout(context);
+        frameLayout.setBackgroundColor(h6.x0(null, h6.a7, false));
+        a71 a71Var = new a71(this, new hg.o(this, 9), new e1.c(this, 21), null);
+        this.n = a71Var;
+        a71Var.p1();
+        this.actionBar.setAdaptiveBackground(this.n);
+        frameLayout.addView(this.n, z5.d(-1.0f, -1));
+        this.fragmentView = frameLayout;
+        return frameLayout;
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onBecomeFullyHidden() {
+        hi.t tVar = this.h;
+        if (tVar != null) {
+            tVar.run();
+        }
+        super.onBecomeFullyHidden();
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onFragmentDestroy() {
+        super.onFragmentDestroy();
+        if (this.r) {
+            return;
+        }
+        ArrayList arrayList = this.b;
+        if (arrayList.isEmpty()) {
+            return;
+        }
+        arrayList.clear();
+        bc bcVar = this.f;
+        if (bcVar != null) {
+            bcVar.run();
+        }
     }
 }

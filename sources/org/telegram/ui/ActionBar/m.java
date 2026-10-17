@@ -6,19 +6,19 @@ import android.text.TextUtils;
 import android.widget.FrameLayout;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.es;
+import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public abstract class m extends FrameLayout implements ne.k {
-    public final c6 a;
+    public final d6 a;
     public final c2.b b;
     public final ne.l c;
 
-    public m(Context context, c6 c6Var, c2.b bVar) {
+    public m(Context context, d6 d6Var, c2.b bVar) {
         super(context);
-        this.c = new ne.l(this, es.h, 350L);
-        this.a = c6Var;
+        this.c = new ne.l(this, bs.h, 350L);
+        this.a = d6Var;
         this.b = bVar;
     }
 
@@ -43,10 +43,10 @@ public abstract class m extends FrameLayout implements ne.k {
             charSequence2 = charSequence;
         }
         l lVar2 = new l(this, getContext());
-        int i10 = g6.gl;
-        c6 c6Var = this.a;
-        lVar2.setTextColor(g6.w0(i10, c6Var));
-        lVar2.setLinkTextColor(g6.w0(i10, c6Var));
+        int i10 = h6.gl;
+        d6 d6Var = this.a;
+        lVar2.setTextColor(h6.w0(i10, d6Var));
+        lVar2.setLinkTextColor(h6.w0(i10, d6Var));
         lVar2.setTextSize(1, 14.0f);
         lVar2.setAlpha(0.0f);
         lVar2.setText(charSequence2);
@@ -62,10 +62,10 @@ public abstract class m extends FrameLayout implements ne.k {
         while (it.hasNext()) {
             ne.g gVar = (ne.g) it.next();
             l lVar = (l) gVar.a;
-            int i10 = g6.gl;
-            c6 c6Var = this.a;
-            lVar.setTextColor(g6.w0(i10, c6Var));
-            ((l) gVar.a).setLinkTextColor(g6.w0(i10, c6Var));
+            int i10 = h6.gl;
+            d6 d6Var = this.a;
+            lVar.setTextColor(h6.w0(i10, d6Var));
+            ((l) gVar.a).setLinkTextColor(h6.w0(i10, d6Var));
         }
     }
 

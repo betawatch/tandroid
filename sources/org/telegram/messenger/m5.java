@@ -1,41 +1,32 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class m5 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ LocaleController b;
-    public final /* synthetic */ LocaleController.LocaleInfo c;
-    public final /* synthetic */ TLObject d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ Runnable f;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ m5(LocaleController localeController, LocaleController.LocaleInfo localeInfo, TLObject tLObject, int i10, Runnable runnable, int i11) {
+    public /* synthetic */ m5(LocaleController localeController, int i10, int i11) {
         this.a = i11;
         this.b = localeController;
-        this.c = localeInfo;
-        this.d = tLObject;
-        this.e = i10;
-        this.f = runnable;
+        this.c = i10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$applyRemoteLanguage$16(this.c, this.d, this.e, this.f);
+                this.b.lambda$applyLanguage$8(this.c);
                 break;
             case 1:
-                this.b.lambda$applyRemoteLanguage$20(this.c, this.d, this.e, this.f);
+                this.b.lambda$checkPatchLangpack$4(this.c);
                 break;
             case 2:
-                this.b.lambda$applyRemoteLanguage$18(this.c, this.d, this.e, this.f);
+                this.b.lambda$checkUpdateForCurrentRemoteLocale$2(this.c);
                 break;
             default:
-                this.b.lambda$applyRemoteLanguage$14(this.c, this.d, this.e, this.f);
+                this.b.lambda$checkUpdateForCurrentRemoteLocale$3(this.c);
                 break;
         }
     }

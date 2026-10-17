@@ -1,79 +1,62 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gg implements org.telegram.ui.Components.pk0, org.telegram.ui.ActionBar.z1 {
+public final /* synthetic */ class gg implements q0.a {
     public final /* synthetic */ int a;
-    public final /* synthetic */ fo b;
-    public final /* synthetic */ MessageObject c;
+    public final /* synthetic */ sn b;
 
-    public /* synthetic */ gg(fo foVar, MessageObject messageObject, int i10) {
+    public /* synthetic */ gg(sn snVar, int i10) {
         this.a = i10;
-        this.b = foVar;
-        this.c = messageObject;
+        this.b = snVar;
     }
 
-    @Override // org.telegram.ui.Components.pk0
-    public void a(long j10, TLRPC.MessagePeerReaction messagePeerReaction) {
+    @Override // q0.a
+    public final void accept(Object obj) {
         switch (this.a) {
             case 0:
-                Bundle bundle = new Bundle();
-                if (j10 > 0) {
-                    bundle.putLong("user_id", j10);
+                Integer num = (Integer) obj;
+                sn snVar = this.b;
+                snVar.getClass();
+                if (num.intValue() != 0) {
+                    snVar.Fc(true);
+                    snVar.j(num.intValue(), 0, false, 0, true, 0);
+                    break;
                 } else {
-                    bundle.putLong("chat_id", -j10);
+                    snVar.l1 = 0;
+                    snVar.Fc(true);
+                    snVar.getMessagesController().markReactionsAsRead(snVar.T5, snVar.d());
+                    break;
                 }
-                fo foVar = this.b;
-                if (messagePeerReaction != null && messagePeerReaction.reaction != null) {
-                    bundle.putInt("report_reaction_message_id", this.c.getId());
-                    bundle.putLong("report_reaction_from_dialog_id", foVar.T5);
+            case 1:
+                Integer num2 = (Integer) obj;
+                sn snVar2 = this.b;
+                snVar2.getClass();
+                if (num2.intValue() != 0) {
+                    int i10 = snVar2.m1 - 1;
+                    snVar2.m1 = i10;
+                    if (i10 <= 0) {
+                        snVar2.getMessagesController().markPollVotesAsRead(snVar2.T5, snVar2.d());
+                    }
+                    snVar2.Ec(true);
+                    snVar2.j(num2.intValue(), 0, false, 0, true, 0);
+                    break;
+                } else {
+                    snVar2.m1 = 0;
+                    snVar2.Ec(true);
+                    snVar2.getMessagesController().markPollVotesAsRead(snVar2.T5, snVar2.d());
+                    break;
                 }
-                foVar.presentFragment(new ProfileActivity(bundle, null));
-                foVar.D7(true);
-                break;
             default:
-                fo foVar2 = this.b;
-                foVar2.getClass();
-                Bundle bundle2 = new Bundle();
-                if (j10 > 0) {
-                    bundle2.putLong("user_id", j10);
-                } else {
-                    bundle2.putLong("chat_id", -j10);
+                sn snVar3 = this.b;
+                snVar3.getClass();
+                boolean booleanValue = ((Boolean) obj).booleanValue();
+                snVar3.f7 = booleanValue;
+                if (!booleanValue) {
+                    snVar3.v8();
+                    break;
                 }
-                if (messagePeerReaction != null && messagePeerReaction.reaction != null) {
-                    bundle2.putInt("report_reaction_message_id", this.c.getId());
-                    bundle2.putLong("report_reaction_from_dialog_id", foVar2.T5);
-                }
-                foVar2.presentFragment(new ProfileActivity(bundle2, null));
-                foVar2.D7(true);
                 break;
         }
-    }
-
-    @Override // org.telegram.ui.ActionBar.z1
-    public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
-        fo foVar = this.b;
-        org.telegram.ui.ActionBar.a2[] a2VarArr = {new org.telegram.ui.ActionBar.a2(foVar.getParentActivity(), 3, foVar.ea)};
-        TLRPC.TL_messages_editMessage tL_messages_editMessage = new TLRPC.TL_messages_editMessage();
-        MessageObject messageObject = this.c;
-        TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) messageObject.messageOwner.media;
-        TLRPC.TL_inputMediaPoll tL_inputMediaPoll = new TLRPC.TL_inputMediaPoll();
-        TLRPC.TL_poll tL_poll = new TLRPC.TL_poll();
-        tL_inputMediaPoll.poll = tL_poll;
-        TLRPC.Poll poll = tL_messageMediaPoll.poll;
-        tL_poll.id = poll.id;
-        tL_poll.question = poll.question;
-        tL_poll.answers = poll.answers;
-        tL_poll.closed = true;
-        tL_messages_editMessage.media = tL_inputMediaPoll;
-        tL_messages_editMessage.peer = foVar.getMessagesController().getInputPeer(foVar.T5);
-        tL_messages_editMessage.id = messageObject.getId();
-        tL_messages_editMessage.flags |= 16384;
-        AndroidUtilities.runOnUIThread(new zg(foVar, a2VarArr, foVar.getConnectionsManager().sendRequest(tL_messages_editMessage, new fa(foVar, a2VarArr, tL_messages_editMessage, 5)), 2), 500L);
     }
 }

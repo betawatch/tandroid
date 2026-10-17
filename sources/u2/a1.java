@@ -1,13 +1,13 @@
 package u2;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class a1 {
-    public final b2.x a;
-    public final n2.l b;
+    public final b2.w a;
+    public final n2.m b;
 
-    public a1(b2.x xVar, n2.l lVar) {
-        this.a = xVar;
-        this.b = lVar;
+    public a1(b2.w wVar, n2.m mVar) {
+        this.a = wVar;
+        this.b = mVar;
     }
 }

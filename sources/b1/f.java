@@ -6,12 +6,11 @@ import android.content.Intent;
 import android.os.CancellationSignal;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
 import androidx.credentials.playservices.controllers.identityauth.HiddenActivity;
-import bi.la;
 import java.util.concurrent.Executor;
 import td.l;
 import v0.i;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements l {
     public final /* synthetic */ int a;
@@ -49,7 +48,7 @@ public final /* synthetic */ class f implements l {
                     } catch (Exception unused) {
                         CredentialProviderPlayServicesImpl.Companion.getClass();
                         if (!a1.h.a(cancellationSignal)) {
-                            eVar.f().execute(new la(eVar, 6));
+                            eVar.f().execute(new androidx.fragment.app.d(eVar, 3));
                         }
                     }
                 }

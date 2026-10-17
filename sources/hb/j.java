@@ -2,7 +2,7 @@ package hb;
 
 import j$.util.concurrent.ConcurrentHashMap;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class j implements eb.v {
     public static final i c;
@@ -22,12 +22,12 @@ public final class j implements eb.v {
 
     public final eb.u a(qf.b bVar, eb.g gVar, lb.a aVar, fb.a aVar2, boolean z10) {
         eb.u uVar;
-        Object i22 = bVar.W(new lb.a(aVar2.value())).i2();
+        Object f22 = bVar.W(new lb.a(aVar2.value())).f2();
         boolean nullSafe = aVar2.nullSafe();
-        if (i22 instanceof eb.u) {
-            uVar = (eb.u) i22;
-        } else if (i22 instanceof eb.v) {
-            eb.v vVar = (eb.v) i22;
+        if (f22 instanceof eb.u) {
+            uVar = (eb.u) f22;
+        } else if (f22 instanceof eb.v) {
+            eb.v vVar = (eb.v) f22;
             if (z10) {
                 eb.v vVar2 = (eb.v) this.b.putIfAbsent(aVar.a, vVar);
                 if (vVar2 != null) {
@@ -36,11 +36,11 @@ public final class j implements eb.v {
             }
             uVar = vVar.create(gVar, aVar);
         } else {
-            boolean z11 = i22 instanceof eb.o;
+            boolean z11 = f22 instanceof eb.o;
             if (!z11) {
-                throw new IllegalArgumentException("Invalid attempt to bind an instance of " + i22.getClass().getName() + " as a @JsonAdapter for " + gb.d.k(aVar.b) + ". @JsonAdapter value must be a TypeAdapter, TypeAdapterFactory, JsonSerializer or JsonDeserializer.");
+                throw new IllegalArgumentException("Invalid attempt to bind an instance of " + f22.getClass().getName() + " as a @JsonAdapter for " + gb.d.k(aVar.b) + ". @JsonAdapter value must be a TypeAdapter, TypeAdapterFactory, JsonSerializer or JsonDeserializer.");
             }
-            a0 a0Var = new a0(z11 ? (eb.o) i22 : null, gVar, aVar, z10 ? c : d, nullSafe);
+            a0 a0Var = new a0(z11 ? (eb.o) f22 : null, gVar, aVar, z10 ? c : d, nullSafe);
             nullSafe = false;
             uVar = a0Var;
         }

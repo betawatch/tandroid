@@ -1,11 +1,24 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class hb {
-    public final /* synthetic */ ac a;
+public final class hb extends org.telegram.ui.ActionBar.m1 {
+    public final /* synthetic */ xb o;
 
-    public hb(ac acVar) {
-        this.a = acVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hb(xb xbVar, gb gbVar) {
+        super(gbVar, -2, -2);
+        this.o = xbVar;
+    }
+
+    @Override // org.telegram.ui.ActionBar.m1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        xb xbVar = this.o;
+        if (xbVar.F0 != this) {
+            return;
+        }
+        org.telegram.ui.Components.qc.e();
+        xbVar.F0 = null;
     }
 }

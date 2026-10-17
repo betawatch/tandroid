@@ -14,40 +14,40 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.TextView;
 import androidx.appcompat.widget.ActionMenuView;
 import androidx.appcompat.widget.Toolbar;
-import androidx.biometric.g0;
-import androidx.fragment.app.i0;
+import androidx.biometric.f0;
+import androidx.fragment.app.j0;
 import androidx.lifecycle.z;
-import bi.ib;
-import bi.jb;
-import bi.q5;
-import bi.sb;
-import bi.y9;
-import c5.c0;
-import c5.h0;
-import com.google.android.gms.common.api.internal.d1;
-import com.google.android.gms.common.api.internal.m1;
-import com.google.android.gms.common.api.internal.p0;
+import c5.b0;
+import c5.g0;
+import c5.y;
+import ci.aa;
+import ci.j8;
+import ci.q4;
+import ci.q9;
+import ci.r9;
+import com.google.android.gms.common.api.internal.c1;
+import com.google.android.gms.common.api.internal.l1;
+import com.google.android.gms.common.api.internal.o0;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import di.mb;
+import ei.xa;
 import java.io.IOException;
-import m.t1;
+import m.s1;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.Cells.a0;
-import org.telegram.ui.Cells.t6;
-import org.telegram.ui.Cells.v5;
-import org.telegram.ui.u0;
-import rg.x2;
+import org.telegram.ui.Cells.s6;
+import org.telegram.ui.Cells.u5;
+import rg.v2;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class i implements Runnable {
     public final /* synthetic */ int a;
     public final Object b;
 
-    public i(m1 m1Var, c0 c0Var) {
+    public i(l1 l1Var, b0 b0Var) {
         this.a = 16;
-        this.b = c0Var;
+        this.b = b0Var;
     }
 
     private final void a() {
@@ -85,29 +85,29 @@ public final class i implements Runnable {
                     return;
                 }
             case 1:
-                g0 g0Var = (g0) this.b;
-                Context n10 = g0Var.n();
+                f0 f0Var = (f0) this.b;
+                Context n10 = f0Var.n();
                 if (n10 == null) {
                     Log.w("FingerprintFragment", "Not resetting the dialog. Context is null.");
                     return;
                 } else {
-                    g0Var.C0.f(1);
-                    g0Var.C0.e(n10.getString(R.string.fingerprint_dialog_touch_sensor));
+                    f0Var.C0.f(1);
+                    f0Var.C0.e(n10.getString(R.string.fingerprint_dialog_touch_sensor));
                     return;
                 }
             case 2:
-                androidx.fragment.app.o oVar = (androidx.fragment.app.o) this.b;
-                oVar.n0.onDismiss(oVar.v0);
+                androidx.fragment.app.p pVar = (androidx.fragment.app.p) this.b;
+                pVar.n0.onDismiss(pVar.v0);
                 return;
             case 3:
-                androidx.fragment.app.r rVar = (androidx.fragment.app.r) this.b;
-                if (rVar.Y != null) {
-                    rVar.j().getClass();
+                androidx.fragment.app.s sVar = (androidx.fragment.app.s) this.b;
+                if (sVar.Y != null) {
+                    sVar.j().getClass();
                     return;
                 }
                 return;
             case 4:
-                ((i0) this.b).A(true);
+                ((j0) this.b).A(true);
                 return;
             case 5:
                 synchronized (((z) this.b).a) {
@@ -134,34 +134,34 @@ public final class i implements Runnable {
                 }
                 return;
             case 8:
-                q5 q5Var = (q5) this.b;
-                if (q5Var.K1 && q5Var.b1) {
-                    sb sbVar = ((jb) q5Var.Q1).d;
-                    sbVar.l1 = false;
-                    sbVar.P();
+                y yVar = (y) this.b;
+                c5.c cVar = yVar.d;
+                cVar.k(0);
+                c5.i iVar2 = g0.i;
+                cVar.j(24, iVar2);
+                yVar.c(iVar2);
+                return;
+            case 9:
+                q4 q4Var = (q4) this.b;
+                if (q4Var.K1 && q4Var.b1) {
+                    aa aaVar = ((r9) q4Var.Q1).d;
+                    aaVar.l1 = false;
+                    aaVar.P();
                     return;
                 }
                 return;
-            case 9:
-                ((ib) this.b).L0 = false;
-                return;
             case 10:
-                y9 y9Var = (y9) this.b;
-                y9Var.b = false;
-                y9Var.invalidate();
+                ((q9) this.b).L0 = false;
                 return;
             case 11:
-                c5.z zVar = (c5.z) this.b;
-                c5.c cVar = zVar.d;
-                cVar.k(0);
-                c5.i iVar2 = h0.i;
-                cVar.j(24, iVar2);
-                zVar.c(iVar2);
+                j8 j8Var = (j8) this.b;
+                j8Var.b = false;
+                j8Var.invalidate();
                 return;
             case 12:
-                com.google.android.gms.common.api.internal.g0 g0Var2 = (com.google.android.gms.common.api.internal.g0) this.b;
-                k6.e eVar = g0Var2.d;
-                Context context = g0Var2.c;
+                com.google.android.gms.common.api.internal.f0 f0Var2 = (com.google.android.gms.common.api.internal.f0) this.b;
+                k6.e eVar = f0Var2.d;
+                Context context = f0Var2.c;
                 eVar.getClass();
                 if (k6.g.a.getAndSet(true)) {
                     return;
@@ -178,30 +178,30 @@ public final class i implements Runnable {
                     return;
                 }
             case 13:
-                ((p0) this.b).f();
+                ((o0) this.b).f();
                 return;
             case 14:
-                com.google.android.gms.common.api.c cVar2 = ((p0) ((a6.i) this.b).b).b;
+                com.google.android.gms.common.api.c cVar2 = ((o0) ((ag.b) this.b).b).b;
                 cVar2.d(cVar2.getClass().getName().concat(" disconnecting because it was signed out."));
                 return;
             case 15:
-                ((d1) this.b).j.b(new k6.a(4));
+                ((c1) this.b).j.b(new k6.a(4));
                 return;
             case 16:
                 return;
             case 17:
-                com.google.android.gms.common.api.internal.x xVar = (com.google.android.gms.common.api.internal.x) this.b;
-                xVar.o.lock();
+                com.google.android.gms.common.api.internal.w wVar = (com.google.android.gms.common.api.internal.w) this.b;
+                wVar.o.lock();
                 try {
-                    com.google.android.gms.common.api.internal.x.l(xVar);
+                    com.google.android.gms.common.api.internal.w.l(wVar);
                     return;
                 } finally {
-                    xVar.o.unlock();
+                    wVar.o.unlock();
                 }
             case 18:
-                rg.j jVar = ((mb) this.b).J0;
-                if (jVar instanceof x2) {
-                    ((x2) jVar).getEditText();
+                rg.j jVar = ((xa) this.b).J0;
+                if (jVar instanceof v2) {
+                    ((v2) jVar).getEditText();
                     return;
                 }
                 return;
@@ -233,9 +233,9 @@ public final class i implements Runnable {
                 eVar3.h.animate().setDuration(120L).alpha(1.0f).start();
                 return;
             case 24:
-                t1 t1Var = (t1) this.b;
-                t1Var.w = null;
-                t1Var.drawableStateChanged();
+                s1 s1Var = (s1) this.b;
+                s1Var.w = null;
+                s1Var.drawableStateChanged();
                 return;
             case 25:
                 ActionMenuView actionMenuView = ((Toolbar) this.b).a;
@@ -259,24 +259,24 @@ public final class i implements Runnable {
                 a0Var.postDelayed(jVar2, ViewConfiguration.getLongPressTimeout() - ViewConfiguration.getTapTimeout());
                 return;
             case 28:
-                v5 v5Var = (v5) this.b;
-                TextView textView = v5Var.b;
+                u5 u5Var = (u5) this.b;
+                TextView textView = u5Var.b;
                 textView.setTag(null);
                 AnimatorSet animatorSet = new AnimatorSet();
-                v5Var.d = animatorSet;
+                u5Var.d = animatorSet;
                 Property property = View.ALPHA;
-                animatorSet.playTogether(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f), ObjectAnimator.ofFloat(v5Var.a, (Property<TextView, Float>) property, 1.0f));
-                v5Var.d.setDuration(250L);
-                v5Var.d.setInterpolator(new DecelerateInterpolator());
-                v5Var.d.addListener(new u0(this, 12));
-                v5Var.d.start();
+                animatorSet.playTogether(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f), ObjectAnimator.ofFloat(u5Var.a, (Property<TextView, Float>) property, 1.0f));
+                u5Var.d.setDuration(250L);
+                u5Var.d.setInterpolator(new DecelerateInterpolator());
+                u5Var.d.addListener(new m.a(this, 14));
+                u5Var.d.start();
                 return;
             default:
-                t6 t6Var = (t6) this.b;
-                t6Var.a();
-                RectF rectF = t6Var.f;
-                t6Var.invalidate(((int) rectF.left) - 5, ((int) rectF.top) - 5, ((int) rectF.right) + 5, ((int) rectF.bottom) + 5);
-                AndroidUtilities.runOnUIThread(t6Var.v, 1000L);
+                s6 s6Var = (s6) this.b;
+                s6Var.a();
+                RectF rectF = s6Var.f;
+                s6Var.invalidate(((int) rectF.left) - 5, ((int) rectF.top) - 5, ((int) rectF.right) + 5, ((int) rectF.bottom) + 5);
+                AndroidUtilities.runOnUIThread(s6Var.v, 1000L);
                 return;
         }
     }

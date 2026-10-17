@@ -1,40 +1,7 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.tl.TL_stories;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class z4 extends org.telegram.ui.Components.z9 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.c6 G;
-    public final /* synthetic */ b5 H;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z4(b5 b5Var, Context context, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context);
-        this.H = b5Var;
-        this.G = c6Var;
-    }
-
-    @Override // org.telegram.ui.Components.z9, android.view.View
-    public final void onDraw(Canvas canvas) {
-        b5 b5Var = this.H;
-        if (b5Var.r == null) {
-            super.onDraw(canvas);
-            return;
-        }
-        float dp = AndroidUtilities.dp(1.0f);
-        b5Var.N.F.set(dp, dp, getMeasuredWidth() - r1, getMeasuredHeight() - r1);
-        bi.m9 m9Var = b5Var.N;
-        m9Var.a = false;
-        m9Var.b = false;
-        m9Var.v = true;
-        m9Var.o = false;
-        m9Var.J = this.G;
-        TL_stories.StoryItem storyItem = b5Var.r;
-        m9Var.d = storyItem;
-        bi.s9.h(storyItem.dialogId, canvas, this.a, m9Var);
-    }
+public interface z4 {
+    boolean d(a5 a5Var, boolean z10);
 }

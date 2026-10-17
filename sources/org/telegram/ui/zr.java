@@ -1,26 +1,35 @@
 package org.telegram.ui;
 
-import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zr implements View.OnClickListener {
+public final /* synthetic */ class zr implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Components.vh0 b;
+    public final /* synthetic */ hs b;
 
-    public /* synthetic */ zr(org.telegram.ui.Components.vh0 vh0Var, int i10) {
+    public /* synthetic */ zr(hs hsVar, int i10) {
         this.a = i10;
-        this.b = vh0Var;
+        this.b = hsVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.b(true);
+                hs hsVar = this.b;
+                if (hsVar.J) {
+                    hsVar.d.b.requestFocus();
+                    AndroidUtilities.showKeyboard(hsVar.d.b);
+                    break;
+                }
+                break;
+            case 1:
+                hs.Z(this.b);
                 break;
             default:
-                this.b.b(true);
+                hs hsVar2 = this.b;
+                hsVar2.presentFragment(sn.W9(hsVar2.H), true);
                 break;
         }
     }

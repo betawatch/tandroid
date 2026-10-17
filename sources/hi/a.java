@@ -1,238 +1,71 @@
 package hi;
 
-import android.app.Activity;
-import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
+import android.graphics.ColorFilter;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
-import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.k61;
-import org.telegram.ui.Components.k9;
-import org.telegram.ui.Components.l91;
-import org.telegram.ui.Wallet.d4;
-import zf.q;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class a extends View {
-    public final /* synthetic */ int a = 1;
-    public final Paint b;
-    public final Object c;
-    public final Object d;
-    public final Object e;
+public final class a extends Drawable {
+    public int b;
+    public int c = 255;
+    public final Drawable a = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.settings_arrow).mutate();
 
-    public a(Activity activity, c6 c6Var) {
-        super(activity);
-        this.c = new ne.b(this, es.h, 380L);
-        this.b = new Paint(1);
-        this.d = c6Var;
-        k61 k61Var = new k61(true);
-        this.e = k61Var;
-        k61Var.setCallback(this);
-        k61Var.b(-1);
-        k61Var.i = true;
-    }
-
-    @Override // android.view.View
-    public void onAttachedToWindow() {
-        switch (this.a) {
-            case 1:
-                super.onAttachedToWindow();
-                ((k61) this.e).d();
-                break;
-            case 2:
-            default:
-                super.onAttachedToWindow();
-                break;
-            case 3:
-                super.onAttachedToWindow();
-                ((ImageReceiver) this.c).onAttachedToWindow();
-                ((ImageReceiver) this.d).onAttachedToWindow();
-                break;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        float exactCenterX = getBounds().exactCenterX();
+        float exactCenterY = getBounds().exactCenterY();
+        int x02 = h6.x0(null, h6.G6, false);
+        int x03 = h6.x0(null, h6.d6, false);
+        int i10 = this.b;
+        Drawable drawable = this.a;
+        if (i10 != x03) {
+            this.b = x03;
+            drawable.setColorFilter(new PorterDuffColorFilter(x03, PorterDuff.Mode.SRC_IN));
         }
+        canvas.drawCircle(exactCenterX, exactCenterY, AndroidUtilities.dp(7.6666665f), h6.m0(i0.b.o(x03, this.c)));
+        canvas.drawCircle(exactCenterX, exactCenterY, AndroidUtilities.dp(6.6666665f), h6.m0(i0.b.o(x02, this.c)));
+        zf.p.d(drawable, exactCenterX, exactCenterY, 17);
+        canvas.translate(0.0f, AndroidUtilities.dp(0.66f));
+        canvas.save();
+        canvas.rotate(90.0f, exactCenterX, exactCenterY);
+        zf.p.b(canvas, drawable, 0.8f);
+        canvas.restore();
     }
 
-    @Override // android.view.View
-    public void onDetachedFromWindow() {
-        switch (this.a) {
-            case 1:
-                super.onDetachedFromWindow();
-                ((k61) this.e).e();
-                break;
-            case 2:
-            default:
-                super.onDetachedFromWindow();
-                break;
-            case 3:
-                super.onDetachedFromWindow();
-                ((ImageReceiver) this.c).onDetachedFromWindow();
-                ((ImageReceiver) this.d).onDetachedFromWindow();
-                break;
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final int getAlpha() {
+        return this.c;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                super.onDraw(canvas);
-                RectF rectF = (RectF) this.e;
-                rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-                canvas.drawRoundRect(rectF, rectF.width() / 2.0f, rectF.height() / 2.0f, this.b);
-                rectF.inset(AndroidUtilities.dp(1.33f), AndroidUtilities.dp(1.33f));
-                canvas.drawRoundRect(rectF, rectF.width() / 2.0f, rectF.height() / 2.0f, (Paint) this.d);
-                rectF.inset(AndroidUtilities.dpf2(4.67f), AndroidUtilities.dpf2(9.066f));
-                canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, (Paint) this.c);
-                break;
-            case 1:
-                float width = getWidth() / 2.0f;
-                float height = getHeight() / 2.0f;
-                super.onDraw(canvas);
-                int w02 = g6.w0(g6.Yd, (c6) this.d);
-                Paint paint = this.b;
-                paint.setColor(w02);
-                canvas.drawCircle(width, height, AndroidUtilities.dp(19.0f), paint);
-                float f7 = ((ne.b) this.c).e;
-                float f10 = 1.0f - f7;
-                if (f10 > 0.0f) {
-                    q.b(canvas, (k61) this.e, f10 * 1.35f);
-                    invalidate();
-                }
-                if (f7 > 0.0f) {
-                    float dp = AndroidUtilities.dp(6.666f) * f7;
-                    float dp2 = AndroidUtilities.dp(2.666f) * f7;
-                    canvas.drawRoundRect(width - dp, height - dp, width + dp, dp + height, dp2, dp2, g6.m0(-1));
-                    break;
-                }
-                break;
-            case 2:
-                d4 d4Var = (d4) this.e;
-                d4Var.getClass();
-                int themedColor = d4Var.getThemedColor(g6.d6);
-                Paint paint2 = this.b;
-                paint2.setColor(themedColor);
-                d4Var.b0.getLocationInWindow((int[]) this.c);
-                getLocationInWindow((int[]) this.d);
-                for (View view : ((l91) d4Var.b0).getViewPages()) {
-                    if (view != null && view.getVisibility() == 0) {
-                        canvas.save();
-                        canvas.translate(view.getLeft() + (r6[0] - r7[0]), view.getTop() + (r6[1] - r7[1]));
-                        canvas.concat(view.getMatrix());
-                        canvas.drawRect(view.getPaddingLeft(), 0.0f, view.getWidth() - view.getPaddingRight(), AndroidUtilities.dp(100.0f) + view.getHeight(), paint2);
-                        canvas.restore();
-                    }
-                }
-                break;
-            default:
-                int width2 = (getWidth() / 2) - (AndroidUtilities.dp(156.0f) / 2);
-                int height2 = (getHeight() / 2) - AndroidUtilities.dp(30.0f);
-                ImageReceiver imageReceiver = (ImageReceiver) this.c;
-                float f11 = height2;
-                imageReceiver.setImageCoords(width2, f11, AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f));
-                imageReceiver.draw(canvas);
-                canvas.save();
-                canvas.translate((getWidth() / 2.0f) - (AndroidUtilities.dp(6.166f) / 2.0f), getHeight() / 2.0f);
-                canvas.drawPath((Path) this.e, this.b);
-                canvas.restore();
-                ImageReceiver imageReceiver2 = (ImageReceiver) this.d;
-                imageReceiver2.setImageCoords(AndroidUtilities.dp(96.0f) + width2, f11, AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f));
-                imageReceiver2.draw(canvas);
-                break;
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(13.333333f);
     }
 
-    @Override // android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.a) {
-            case 3:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(100.0f), TLObject.FLAG_30));
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                break;
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return AndroidUtilities.dp(13.333333f);
     }
 
-    @Override // android.view.View
-    public void onSizeChanged(int i10, int i11, int i12, int i13) {
-        switch (this.a) {
-            case 1:
-                super.onSizeChanged(i10, i11, i12, i13);
-                q.d((k61) this.e, i10 / 2.0f, i11 / 2.0f, 17);
-                break;
-            default:
-                super.onSizeChanged(i10, i11, i12, i13);
-                break;
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -3;
     }
 
-    @Override // android.view.View
-    public boolean verifyDrawable(Drawable drawable) {
-        switch (this.a) {
-            case 1:
-                return super.verifyDrawable(drawable) || (drawable == ((k61) this.e) && !((ne.b) this.c).f);
-            default:
-                return super.verifyDrawable(drawable);
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.c = i10;
+        this.a.setAlpha(i10);
     }
 
-    public a(Context context, c6 c6Var) {
-        super(context);
-        Paint paint = new Paint(1);
-        this.b = paint;
-        Paint paint2 = new Paint(1);
-        this.c = paint2;
-        Paint paint3 = new Paint(1);
-        this.d = paint3;
-        this.e = new RectF();
-        paint2.setColor(-1);
-        paint.setColor(g6.w0(g6.d6, c6Var));
-        paint3.setColor(g6.w0(g6.wj, c6Var));
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a(d4 d4Var, Context context) {
-        super(context);
-        this.e = d4Var;
-        this.b = new Paint(1);
-        this.c = new int[2];
-        this.d = new int[2];
-    }
-
-    public a(Context context, TLObject tLObject, TLObject tLObject2) {
-        super(context);
-        Path path = new Path();
-        this.e = path;
-        Paint paint = new Paint(1);
-        this.b = paint;
-        k9 k9Var = new k9((c6) null);
-        k9Var.p(tLObject);
-        ImageReceiver imageReceiver = new ImageReceiver(this);
-        this.c = imageReceiver;
-        imageReceiver.setRoundRadius(AndroidUtilities.dp(30.0f));
-        imageReceiver.setForUserOrChat(tLObject, k9Var);
-        k9 k9Var2 = new k9((c6) null);
-        k9Var2.p(tLObject2);
-        ImageReceiver imageReceiver2 = new ImageReceiver(this);
-        this.d = imageReceiver2;
-        imageReceiver2.setRoundRadius(AndroidUtilities.dp(30.0f));
-        imageReceiver2.setForUserOrChat(tLObject2, k9Var2);
-        paint.setColor(g6.x0(null, g6.E6, false));
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        paint.setStrokeJoin(Paint.Join.ROUND);
-        paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        path.rewind();
-        path.moveTo(0.0f, -AndroidUtilities.dp(8.0f));
-        path.lineTo(AndroidUtilities.dp(6.166f), 0.0f);
-        path.lineTo(0.0f, AndroidUtilities.dp(8.0f));
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

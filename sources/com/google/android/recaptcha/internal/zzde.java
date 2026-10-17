@@ -18,14 +18,13 @@ import java.util.concurrent.CancellationException;
 import kd.c;
 import kd.f;
 import kd.g;
-import kd.h;
 import kotlin.jvm.internal.i;
 import ld.a;
 import td.l;
-import w7.k;
+import w7.h;
 import yd.b;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class zzde implements i0 {
     private final /* synthetic */ s zza;
@@ -63,7 +62,7 @@ public final class zzde implements i0 {
     public final f get(g gVar) {
         v1 v1Var = (v1) this.zza;
         v1Var.getClass();
-        return k.a(v1Var, gVar);
+        return h.a(v1Var, gVar);
     }
 
     @Override // be.g1
@@ -137,10 +136,10 @@ public final class zzde implements i0 {
     }
 
     @Override // kd.h
-    public final h minusKey(g gVar) {
+    public final kd.h minusKey(g gVar) {
         v1 v1Var = (v1) this.zza;
         v1Var.getClass();
-        return k.b(v1Var, gVar);
+        return h.b(v1Var, gVar);
     }
 
     public final g1 plus(g1 g1Var) {
@@ -163,10 +162,10 @@ public final class zzde implements i0 {
     }
 
     @Override // kd.h
-    public final h plus(h hVar) {
+    public final kd.h plus(kd.h hVar) {
         v1 v1Var = (v1) this.zza;
         v1Var.getClass();
-        return k.c(v1Var, hVar);
+        return h.c(v1Var, hVar);
     }
 
     public final boolean cancel(Throwable th2) {

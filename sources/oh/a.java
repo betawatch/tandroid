@@ -5,14 +5,14 @@ import android.content.Context;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.Components.i71;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.Components.a71;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public abstract class a extends i71 {
-    public a(Context context, int i10, Utilities.Callback2 callback2, Utilities.Callback5 callback5, c6 c6Var) {
-        super(context, i10, -1, false, callback2, callback5, null, c6Var, -1, 0);
+public abstract class a extends a71 {
+    public a(Context context, int i10, Utilities.Callback2 callback2, Utilities.Callback5 callback5, d6 d6Var) {
+        super(context, i10, -1, false, callback2, callback5, null, d6Var, -1, 0);
         this.x2 = true;
         setOverScrollMode(2);
     }
@@ -27,7 +27,7 @@ public abstract class a extends i71 {
         float width2 = view.getWidth() + x10;
         int i10 = x10 < dp ? (int) (x10 - dp) : width2 > width ? (int) (width2 - width) : 0;
         if (i10 != 0) {
-            AndroidUtilities.doOnLayout(this, new o(this, view, i10, 18));
+            AndroidUtilities.doOnLayout(this, new o(this, view, i10, 22));
         }
     }
 }

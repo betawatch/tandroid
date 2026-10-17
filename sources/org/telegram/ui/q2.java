@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class q2 extends z4.a {
     public final /* synthetic */ s2 c;
@@ -36,17 +36,17 @@ public final class q2 extends z4.a {
     public final Object e(z4.g gVar, int i10) {
         z2 z2Var;
         s2 s2Var = this.c;
-        i4 i4Var = s2Var.w;
-        k4 k4Var = s2Var.x;
+        j4 j4Var = s2Var.w;
+        l4 l4Var = s2Var.x;
         TL_iv.PageBlock pageBlock = s2Var.d.items.get(i10);
         if (pageBlock instanceof TL_iv.pageBlockPhoto) {
-            f2 f2Var = new f2(s2Var.getContext(), k4Var, i4Var, 1);
-            f2Var.a((TL_iv.pageBlockPhoto) pageBlock, i4Var.E.cached_page, false, true);
+            f2 f2Var = new f2(s2Var.getContext(), l4Var, j4Var, 1);
+            f2Var.a((TL_iv.pageBlockPhoto) pageBlock, j4Var.E.cached_page, false, true);
             z2Var = f2Var;
         } else {
-            z2 z2Var2 = new z2(s2Var.getContext(), k4Var, i4Var, 1);
+            z2 z2Var2 = new z2(s2Var.getContext(), l4Var, j4Var, 1);
             TL_iv.pageBlockVideo pageblockvideo = (TL_iv.pageBlockVideo) pageBlock;
-            z2Var2.b(pageblockvideo, (a3) k4Var.y.f(pageblockvideo.video_id), false, true);
+            z2Var2.b(pageblockvideo, (a3) l4Var.y.f(pageblockvideo.video_id), false, true);
             z2Var = z2Var2;
         }
         gVar.addView(z2Var);

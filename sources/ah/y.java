@@ -9,27 +9,27 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.Components.b6;
-import org.telegram.ui.Components.s5;
-import org.telegram.ui.Components.zc;
-import org.telegram.ui.r71;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.Components.a6;
+import org.telegram.ui.Components.r5;
+import org.telegram.ui.Components.xc;
+import org.telegram.ui.z51;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class y extends r71 {
+public final class y extends z51 {
     public boolean d2;
     public final /* synthetic */ a0 e2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y(a0 a0Var, a0 a0Var2, Activity activity, c6 c6Var, int i10) {
-        super(a0Var2, activity, false, null, 6, false, c6Var, 16, i10);
+    public y(a0 a0Var, a0 a0Var2, Activity activity, d6 d6Var, int i10) {
+        super(a0Var2, activity, false, null, 6, false, d6Var, 16, i10);
         this.e2 = a0Var;
         this.d2 = true;
         setDrawBackground(false);
     }
 
-    @Override // org.telegram.ui.r71, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.z51, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         if (this.d2) {
@@ -38,7 +38,7 @@ public final class y extends r71 {
         }
     }
 
-    @Override // org.telegram.ui.r71
+    @Override // org.telegram.ui.z51
     public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
         a0 a0Var = this.e2;
         int i10 = a0Var.J;
@@ -46,22 +46,22 @@ public final class y extends r71 {
         LinkedHashMap linkedHashMap = a0Var.E;
         if (linkedHashMap.containsKey(l4)) {
             arrayList.remove(l4);
-            b6 b6Var = (b6) linkedHashMap.remove(l4);
-            b6Var.setRemoved(new a1.f(9, this, b6Var));
-            a0Var.W(b6Var);
+            a6 a6Var = (a6) linkedHashMap.remove(l4);
+            a6Var.setRemoved(new a1.f(9, this, a6Var));
+            a0Var.W(a6Var);
             a0Var.b.x(l4, true);
             a0Var.Y(false);
             return;
         }
         if (linkedHashMap.size() - (linkedHashMap.containsKey(-1L) ? 1 : 0) >= i10) {
-            zc.a0(a0Var).t(LocaleController.formatPluralString("ReactionMaxCountError", i10, new Object[0]), null).j();
+            xc.a0(a0Var).t(LocaleController.formatPluralString("ReactionMaxCountError", i10, new Object[0]), null).j();
             return;
         }
         try {
             int editTextSelectionEnd = a0Var.n.getEditTextSelectionEnd();
             SpannableString spannableString = new SpannableString("b");
-            b6 e = l1.e(document, l4, a0Var.n.getFontMetricsInt());
-            e.cacheType = s5.g();
+            a6 e = l1.e(document, l4, a0Var.n.getFontMetricsInt());
+            e.cacheType = r5.g();
             e.setAdded();
             arrayList.add(w7.r.b(editTextSelectionEnd, 0, arrayList.size()), l4);
             linkedHashMap.put(l4, e);

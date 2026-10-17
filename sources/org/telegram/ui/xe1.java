@@ -1,106 +1,105 @@
 package org.telegram.ui;
 
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xe1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ye1 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ int d;
+public final class xe1 extends pg.b {
+    public final /* synthetic */ ze1 d;
 
-    public /* synthetic */ xe1(ye1 ye1Var, String str, int i10, int i11) {
-        this.a = i11;
-        this.b = ye1Var;
-        this.c = str;
-        this.d = i10;
+    public xe1(ze1 ze1Var) {
+        this.d = ze1Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:38:0x009d A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:42:0x00ac A[SYNTHETIC] */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ye1 ye1Var = this.b;
-                String str = this.c;
-                int i10 = this.d;
-                ye1Var.getClass();
-                Utilities.searchQueue.postRunnable(new xe1(ye1Var, str, i10, 1));
-                break;
-            default:
-                ye1 ye1Var2 = this.b;
-                String str2 = this.c;
-                int i11 = this.d;
-                ze1 ze1Var = ye1Var2.h;
-                ArrayList arrayList = ze1Var.f;
-                String lowerCase = str2.trim().toLowerCase();
-                String str3 = null;
-                if (lowerCase.length() != 0) {
-                    String translitString = LocaleController.getInstance().getTranslitString(lowerCase);
-                    if (!lowerCase.equals(translitString) && translitString.length() != 0) {
-                        str3 = translitString;
-                    }
-                    int i12 = (str3 != null ? 1 : 0) + 1;
-                    String[] strArr = new String[i12];
-                    strArr[0] = lowerCase;
-                    if (str3 != null) {
-                        strArr[1] = str3;
-                    }
-                    ArrayList arrayList2 = new ArrayList();
-                    int i13 = 0;
-                    ArrayList arrayList3 = new ArrayList();
-                    int i14 = 0;
-                    while (i14 < arrayList.size()) {
-                        TLRPC.Chat chat = (TLRPC.Chat) arrayList.get(i14);
-                        int i15 = i13;
-                        int i16 = i15;
-                        while (true) {
-                            if (i15 >= 2) {
-                                break;
-                            }
-                            String publicUsername = i15 == 0 ? chat.title : ChatObject.getPublicUsername(chat);
-                            if (publicUsername != null) {
-                                String lowerCase2 = publicUsername.toLowerCase();
-                                while (i13 < i12) {
-                                    String str4 = strArr[i13];
-                                    if (!lowerCase2.startsWith(str4)) {
-                                        int i17 = i13;
-                                        if (!org.telegram.messenger.g0.w(" ", str4, lowerCase2)) {
-                                            i13 = i17 + 1;
-                                        }
-                                    }
-                                    i16 = 1;
-                                    if (i16 == 0) {
-                                        arrayList2.add(chat);
-                                        arrayList3.add((String) ze1Var.h.get(i14));
-                                    }
-                                }
-                                if (i16 == 0) {
-                                }
-                            }
-                            i15++;
-                            i13 = 0;
-                        }
-                        i14++;
-                        i13 = 0;
-                    }
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.n21(ye1Var2, i11, arrayList2, arrayList3, 13));
-                    break;
-                } else {
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.n21(ye1Var2, i11, str3, str3, 13));
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.hm0
+    public final boolean D(s4.b1 b1Var) {
+        int i10 = b1Var.f;
+        return i10 == 1 || i10 == 2 || i10 == 4;
+    }
+
+    @Override // s4.g0
+    public final int h() {
+        return this.d.d.size();
+    }
+
+    @Override // s4.g0
+    public final int j(int i10) {
+        return ((ye1) this.d.d.get(i10)).a;
+    }
+
+    @Override // s4.g0
+    public final void v(s4.b1 b1Var, int i10) {
+        ze1 ze1Var = this.d;
+        ArrayList arrayList = ze1Var.d;
+        if (((ye1) arrayList.get(i10)).a == 2) {
+            org.telegram.ui.Cells.oa oaVar = (org.telegram.ui.Cells.oa) b1Var.a;
+            long j10 = ze1Var.c;
+            TLRPC.TL_forumTopic tL_forumTopic = ((ye1) arrayList.get(i10)).c;
+            org.telegram.ui.Components.w9 w9Var = oaVar.b;
+            og.d.p(w9Var, tL_forumTopic, false, false, null);
+            if (w9Var != null && w9Var.getImageReceiver() != null && (w9Var.getImageReceiver().getDrawable() instanceof og.c)) {
+                ((og.c) w9Var.getImageReceiver().getDrawable()).a(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.c9, false));
+            }
+            oaVar.c.setText(tL_forumTopic.title);
+            oaVar.d.setText(MessagesController.getInstance(UserConfig.selectedAccount).getMutedString(j10, tL_forumTopic.id));
+            oaVar.a = i10 == arrayList.size() - 1 || ((ye1) arrayList.get(i10 + 1)).a == 2;
         }
+    }
+
+    @Override // s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        View view;
+        View view2 = null;
+        if (i10 == 1) {
+            org.telegram.ui.Cells.q8 q8Var = new org.telegram.ui.Cells.q8(viewGroup.getContext());
+            q8Var.m(R.drawable.msg_contact_add, LocaleController.getString(R.string.NotificationsAddAnException), true);
+            q8Var.e(org.telegram.ui.ActionBar.h6.v6, org.telegram.ui.ActionBar.h6.u6);
+            q8Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
+            view = q8Var;
+        } else if (i10 == 2) {
+            Context context = viewGroup.getContext();
+            org.telegram.ui.Cells.oa oaVar = new org.telegram.ui.Cells.oa(context);
+            org.telegram.ui.Components.w9 w9Var = new org.telegram.ui.Components.w9(context);
+            oaVar.b = w9Var;
+            oaVar.addView(w9Var, w7.z5.a(30.0f, 20.0f, 0.0f, 0.0f, 0.0f, 30, 16));
+            TextView textView = new TextView(context);
+            oaVar.c = textView;
+            textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false));
+            textView.setTextSize(1, 16.0f);
+            textView.setTypeface(AndroidUtilities.bold());
+            textView.setMaxLines(1);
+            oaVar.addView(textView, w7.z5.a(-2.0f, 72.0f, 8.0f, 12.0f, 0.0f, -1, 0));
+            TextView textView2 = new TextView(context);
+            oaVar.d = textView2;
+            textView2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.y6, false));
+            textView2.setTextSize(1, 14.0f);
+            oaVar.addView(textView2, w7.z5.a(-2.0f, 72.0f, 32.0f, 12.0f, 0.0f, -1, 0));
+            oaVar.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
+            view = oaVar;
+        } else {
+            if (i10 != 3) {
+                if (i10 == 4) {
+                    org.telegram.ui.Cells.q8 q8Var2 = new org.telegram.ui.Cells.q8(viewGroup.getContext());
+                    q8Var2.i(LocaleController.getString(R.string.NotificationsDeleteAllException), false);
+                    q8Var2.e(-1, org.telegram.ui.ActionBar.h6.p7);
+                    q8Var2.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
+                    view = q8Var2;
+                }
+                return com.google.android.gms.internal.cast.a6.l(view2, view2, -1, -2);
+            }
+            view = new org.telegram.ui.Cells.z6(viewGroup.getContext(), (org.telegram.ui.Cells.t0) null);
+        }
+        view2 = view;
+        return com.google.android.gms.internal.cast.a6.l(view2, view2, -1, -2);
     }
 }

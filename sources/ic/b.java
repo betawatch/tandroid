@@ -1,11 +1,11 @@
 package ic;
 
-import ec.g;
+import ec.h;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class b {
     public static final char[] a = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ $%*+-./:".toCharArray();
@@ -60,7 +60,7 @@ public abstract class b {
             bArr[i12] = (byte) dVar.e(8);
         }
         if (cVar == null) {
-            Charset charset = g.b;
+            Charset charset = h.b;
             boolean z11 = true;
             if (i10 <= 2 || !(((b10 = bArr[0]) == -2 && bArr[1] == -1) || (b10 == -1 && bArr[1] == -2))) {
                 boolean z12 = charset != null;
@@ -181,7 +181,7 @@ public abstract class b {
                 boolean z19 = (!z18 || i16 <= 0) ? z18 : false;
                 boolean z20 = (!z14 || i17 <= 0) ? z14 : false;
                 if (!z19 || (!z13 && i18 + i19 + i20 <= 0)) {
-                    if (!z20 || (!g.d && i11 < 3 && i13 < 3)) {
+                    if (!z20 || (!h.d && i11 < 3 && i13 < 3)) {
                         if (z17 && z20) {
                             if ((i11 != 2 || i14 != 2) && i21 * 10 < i10) {
                                 forName = StandardCharsets.ISO_8859_1;
@@ -189,7 +189,7 @@ public abstract class b {
                         } else if (z17) {
                             forName = StandardCharsets.ISO_8859_1;
                         } else if (!z20) {
-                            forName = z19 ? StandardCharsets.UTF_8 : g.a;
+                            forName = z19 ? StandardCharsets.UTF_8 : h.a;
                         }
                     }
                     forName = charset3;
@@ -207,7 +207,7 @@ public abstract class b {
     }
 
     public static void c(b4.d dVar, StringBuilder sb2, int i10) {
-        if (g.c == null) {
+        if (h.c == null) {
             throw dc.c.a();
         }
         if (i10 * 13 > dVar.d()) {
@@ -224,11 +224,11 @@ public abstract class b {
             i11 += 2;
             i10--;
         }
-        sb2.append(new String(bArr, g.c));
+        sb2.append(new String(bArr, h.c));
     }
 
     public static void d(b4.d dVar, StringBuilder sb2, int i10) {
-        if (g.b == null) {
+        if (h.b == null) {
             throw dc.c.a();
         }
         if (i10 * 13 > dVar.d()) {
@@ -245,7 +245,7 @@ public abstract class b {
             i11 += 2;
             i10--;
         }
-        sb2.append(new String(bArr, g.b));
+        sb2.append(new String(bArr, h.b));
     }
 
     public static void e(b4.d dVar, StringBuilder sb2, int i10) {

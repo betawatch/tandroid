@@ -1,11 +1,12 @@
 package androidx.activity;
 
 import android.os.Bundle;
-import androidx.fragment.app.i0;
+import androidx.fragment.app.j0;
+import androidx.lifecycle.i0;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements t4.d {
     public final /* synthetic */ int a;
@@ -31,15 +32,15 @@ public final /* synthetic */ class e implements t4.d {
                 bundle.putBundle("KEY_COMPONENT_ACTIVITY_PENDING_RESULT", (Bundle) hVar.g.clone());
                 return bundle;
             case 1:
-                androidx.fragment.app.u uVar = (androidx.fragment.app.u) this.b;
-                while (androidx.fragment.app.u.t(uVar.s())) {
+                androidx.fragment.app.v vVar = (androidx.fragment.app.v) this.b;
+                while (androidx.fragment.app.v.t(vVar.s())) {
                 }
-                uVar.K.e(androidx.lifecycle.m.ON_STOP);
+                vVar.K.e(androidx.lifecycle.m.ON_STOP);
                 return new Bundle();
             case 2:
-                return ((i0) this.b).Y();
+                return ((j0) this.b).Y();
             default:
-                return androidx.lifecycle.i0.a((androidx.lifecycle.i0) this.b);
+                return i0.a((i0) this.b);
         }
     }
 }

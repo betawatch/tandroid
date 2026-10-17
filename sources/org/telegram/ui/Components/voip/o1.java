@@ -6,15 +6,15 @@ import android.graphics.Paint;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 import java.util.ArrayList;
-import org.telegram.ui.Components.v61;
+import org.telegram.ui.Components.n31;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes.dex */
 public final class o1 {
-    public final com.google.firebase.messaging.m a;
-    public final com.google.firebase.messaging.m b;
-    public com.google.firebase.messaging.m c;
-    public com.google.firebase.messaging.m d;
+    public final com.google.firebase.messaging.l a;
+    public final com.google.firebase.messaging.l b;
+    public com.google.firebase.messaging.l c;
+    public com.google.firebase.messaging.l d;
     public boolean e;
     public int f;
     public int g;
@@ -26,10 +26,10 @@ public final class o1 {
     public final ArrayList m;
 
     public o1() {
-        com.google.firebase.messaging.m mVar = new com.google.firebase.messaging.m(80, 80);
-        this.a = mVar;
-        com.google.firebase.messaging.m mVar2 = new com.google.firebase.messaging.m(80, 80);
-        this.b = mVar2;
+        com.google.firebase.messaging.l lVar = new com.google.firebase.messaging.l(80, 80);
+        this.a = lVar;
+        com.google.firebase.messaging.l lVar2 = new com.google.firebase.messaging.l(80, 80);
+        this.b = lVar2;
         this.f = 0;
         this.g = 0;
         Paint paint = new Paint(1);
@@ -39,15 +39,15 @@ public final class o1 {
         Paint paint3 = new Paint(1);
         this.l = paint3;
         this.m = new ArrayList();
-        mVar2.z(0.0f, 0.0f, 80.0f, 80.0f);
-        mVar.z(0.0f, 0.0f, 80.0f, 80.0f);
+        lVar2.E(0.0f, 0.0f, 80.0f, 80.0f);
+        lVar.E(0.0f, 0.0f, 80.0f, 80.0f);
         paint.setColor(-1);
         paint.setAlpha(35);
         paint2.setColor(-16777216);
         paint2.setAlpha(102);
         paint3.setColor(-16777216);
         paint3.setAlpha(35);
-        ((Paint) mVar2.a).setAlpha(180);
+        ((Paint) lVar2.a).setAlpha(180);
     }
 
     public final void a(View view) {
@@ -73,8 +73,8 @@ public final class o1 {
         float f11 = this.g * 1.12f;
         float f12 = -f7;
         float f13 = -f10;
-        this.b.B(f12 - ((f11 - this.f) / 2.0f), f13 - ((f11 - this.g) / 2.0f), f11 / ((Bitmap) r1.c).getHeight(), this.h);
-        this.d.z(f12, f13, this.f - f7, this.g - f10);
+        this.b.G(f12 - ((f11 - this.f) / 2.0f), f13 - ((f11 - this.g) / 2.0f), f11 / ((Bitmap) r1.c).getHeight(), this.h);
+        this.d.E(f12, f13, this.f - f7, this.g - f10);
     }
 
     public final void e(boolean z10) {
@@ -116,7 +116,7 @@ public final class o1 {
             });
             ofFloat.setInterpolator(new LinearInterpolator());
             ofFloat.setDuration(80L);
-            ofFloat.addListener(new v61(this, 10));
+            ofFloat.addListener(new n31(this, 12));
             ofFloat.start();
             ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
             final int i11 = 1;

@@ -1,13 +1,13 @@
 package m2;
 
-import b2.x;
+import b2.w;
 import e9.n0;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class d {
-    public final x a;
+    public final w a;
     public final n0 b;
     public final s c;
     public final String d;
@@ -16,8 +16,8 @@ public final class d {
     public final ArrayList g;
     public final ArrayList h;
 
-    public d(x xVar, ArrayList arrayList, s sVar, String str, ArrayList arrayList2, ArrayList arrayList3, ArrayList arrayList4, ArrayList arrayList5) {
-        this.a = xVar;
+    public d(w wVar, ArrayList arrayList, s sVar, String str, ArrayList arrayList2, ArrayList arrayList3, ArrayList arrayList4, ArrayList arrayList5) {
+        this.a = wVar;
         this.b = n0.u(arrayList);
         this.c = sVar;
         this.d = str;

@@ -12,8 +12,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.TreeSet;
+import v7.c9;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class z0 {
     public static final x1 a = e9.n0.y(12);
@@ -35,7 +36,7 @@ public abstract class z0 {
         int type;
         e9.n0 n0Var;
         int speakerLayoutChannelMask;
-        boolean a2 = w7.i.a(audioDeviceInfo.getType());
+        boolean a2 = c9.a(audioDeviceInfo.getType());
         x1 x1Var = a;
         if (!a2) {
             if (audioDeviceInfo.getType() == 1) {
@@ -74,73 +75,73 @@ public abstract class z0 {
                                         } else {
                                             if (Build.VERSION.SDK_INT >= 34 && descriptor.length == 3) {
                                                 byte b11 = descriptor[0];
-                                                r11 = (b11 & 1) != 0 ? 12 : 0;
+                                                r10 = (b11 & 1) != 0 ? 12 : 0;
                                                 if ((b11 & 2) != 0) {
-                                                    r11 |= 32;
+                                                    r10 |= 32;
                                                 }
                                                 if ((b11 & 4) != 0) {
-                                                    r11 |= 16;
+                                                    r10 |= 16;
                                                 }
                                                 if ((b11 & 8) != 0) {
-                                                    r11 |= 192;
+                                                    r10 |= 192;
                                                 }
                                                 if ((b11 & 16) != 0) {
-                                                    r11 |= 1024;
+                                                    r10 |= 1024;
                                                 }
                                                 if ((b11 & 32) != 0) {
-                                                    r11 |= 768;
+                                                    r10 |= 768;
                                                 }
                                                 if ((b11 & 128) != 0) {
-                                                    r11 |= 201326592;
+                                                    r10 |= 201326592;
                                                 }
                                                 byte b12 = descriptor[1];
                                                 if ((b12 & 1) != 0) {
-                                                    r11 |= 81920;
+                                                    r10 |= 81920;
                                                 }
                                                 if ((b12 & 2) != 0) {
-                                                    r11 |= 8192;
+                                                    r10 |= 8192;
                                                 }
                                                 if ((b12 & 4) != 0) {
-                                                    r11 |= 32768;
+                                                    r10 |= 32768;
                                                 }
                                                 if ((b12 & 8) != 0) {
-                                                    r11 |= 6144;
+                                                    r10 |= 6144;
                                                 }
                                                 if ((b12 & 16) != 0) {
-                                                    r11 |= 33554432;
+                                                    r10 |= 33554432;
                                                 }
                                                 if ((b12 & 32) != 0) {
-                                                    r11 |= 262144;
+                                                    r10 |= 262144;
                                                 }
                                                 if ((b12 & 64) != 0) {
-                                                    r11 |= 6144;
+                                                    r10 |= 6144;
                                                 }
                                                 if ((b12 & 128) != 0) {
-                                                    r11 |= 3145728;
+                                                    r10 |= 3145728;
                                                 }
                                                 byte b13 = descriptor[2];
                                                 if ((b13 & 1) != 0) {
-                                                    r11 |= 655360;
+                                                    r10 |= 655360;
                                                 }
                                                 if ((b13 & 2) != 0) {
-                                                    r11 = 8388608 | r11;
+                                                    r10 = 8388608 | r10;
                                                 }
                                                 if ((b13 & 4) != 0) {
-                                                    r11 |= 20971520;
+                                                    r10 |= 20971520;
                                                 }
                                             }
-                                            arrayList.add(Integer.valueOf(r11));
+                                            arrayList.add(Integer.valueOf(r10));
                                         }
                                     }
                                 }
-                                List.-EL.sort(arrayList, new a4.d(22));
+                                List.-EL.sort(arrayList, new a4.d(25));
                                 n0Var = e9.n0.u(arrayList);
                             }
                             if (!n0Var.isEmpty()) {
                                 return n0Var;
                             }
                         }
-                        e9.n0 b14 = e0.f0.b(audioDescriptors);
+                        e9.n0 b14 = e0.e0.b(audioDescriptors);
                         if (!b14.isEmpty()) {
                             return b14;
                         }
@@ -157,7 +158,7 @@ public abstract class z0 {
                 if (!a12.isEmpty()) {
                     return a12;
                 }
-                e9.n0 b15 = e0.f0.b(audioDeviceInfo.getAudioDescriptors());
+                e9.n0 b15 = e0.e0.b(audioDeviceInfo.getAudioDescriptors());
                 if (!b15.isEmpty()) {
                     return b15;
                 }

@@ -1,41 +1,79 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class c61 extends g.o {
-    public final /* synthetic */ int c;
-    public final /* synthetic */ r71 d;
+public final class c61 implements TextWatcher {
+    public final sy0 a = new sy0(this, 17);
+    public final /* synthetic */ j61 b;
 
-    public /* synthetic */ c61(r71 r71Var, int i10) {
-        this.c = i10;
-        this.d = r71Var;
+    public c61(j61 j61Var) {
+        this.b = j61Var;
     }
 
-    @Override // g.o
-    public final int i(int i10) {
-        int i11;
-        ArrayList arrayList;
-        int i12;
-        switch (this.c) {
-            case 0:
-                r71 r71Var = this.d;
-                return (r71Var.w0.indexOfKey(i10) >= 0 || r71Var.z0.indexOfKey(i10) >= 0 || i10 == r71Var.f || i10 == r71Var.y || i10 == r71Var.n || i10 == r71Var.h || i10 == r71Var.v || i10 == r71Var.a || i10 == r71Var.x) ? r71Var.r0.J : ((i10 < r71Var.E || i10 >= r71Var.F) && !r71Var.Q) ? 5 : 8;
-            default:
-                r71 r71Var2 = this.d;
-                b71 b71Var = r71Var2.q0;
-                int j10 = b71Var.j(i10);
-                if (j10 == 6) {
-                    return r71Var2.r0.J;
-                }
-                if (j10 != 5) {
-                    r71 r71Var3 = b71Var.s;
-                    if (r71Var3.W != 14 ? i10 <= (i11 = b71Var.c) || (i10 - i11) - 1 >= r71Var3.C1.size() : (arrayList = r71Var3.B1) == null || i10 < (i12 = b71Var.c) || i10 - i12 >= arrayList.size()) {
-                        return 5;
-                    }
-                }
-                return 8;
+    public final void a() {
+        boolean z10;
+        boolean z11;
+        TLRPC.TL_channelParticipantsSearch tL_channelParticipantsSearch = new TLRPC.TL_channelParticipantsSearch();
+        j61 j61Var = this.b;
+        String obj = j61Var.c0.getText().toString();
+        tL_channelParticipantsSearch.q = obj;
+        i61 i61Var = j61Var.g0;
+        TLRPC.ChannelParticipantsFilter channelParticipantsFilter = i61Var.c;
+        if (channelParticipantsFilter instanceof TLRPC.TL_channelParticipantsSearch) {
+            z10 = !TextUtils.equals(channelParticipantsFilter.q, obj);
+            z11 = false;
+        } else {
+            z10 = true;
+            z11 = true;
         }
+        i61Var.c = tL_channelParticipantsSearch;
+        if (z10) {
+            if (z11) {
+                i61Var.r = false;
+                if (i61Var.n >= 0) {
+                    ConnectionsManager.getInstance(i61Var.a).cancelRequest(i61Var.n, true);
+                    i61Var.n = -1;
+                }
+                i61Var.f = false;
+                i61Var.d.clear();
+                i61Var.h = false;
+            } else {
+                i61Var.r = true;
+                i61Var.h = false;
+            }
+            i61Var.b();
+        }
+        org.telegram.ui.Components.s61 s61Var = j61Var.i0;
+        if (s61Var != null) {
+            s61Var.N(true);
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        int length = editable.length();
+        sy0 sy0Var = this.a;
+        if (length <= 0) {
+            AndroidUtilities.cancelRunOnUIThread(sy0Var);
+            a();
+        } else {
+            AndroidUtilities.cancelRunOnUIThread(sy0Var);
+            AndroidUtilities.runOnUIThread(sy0Var, 300L);
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

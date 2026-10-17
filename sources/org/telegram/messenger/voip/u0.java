@@ -1,31 +1,31 @@
 package org.telegram.messenger.voip;
 
-import android.media.AudioManager;
 import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class u0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ AudioManager b;
-
-    public /* synthetic */ u0(AudioManager audioManager, int i10) {
-        this.a = i10;
-        this.b = audioManager;
+public abstract /* synthetic */ class u0 {
+    public static void a(VoIPService.StateListener stateListener) {
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                VoIPService.1.lambda$run$1(this.b);
-                break;
-            case 1:
-                VoIPService.lambda$onDestroy$98(this.b);
-                break;
-            default:
-                VoipAudioManager.lambda$stopBluetooth$2(this.b);
-                break;
-        }
+    public static void b(VoIPService.StateListener stateListener) {
+    }
+
+    public static void c(VoIPService.StateListener stateListener, boolean z10) {
+    }
+
+    public static void e(VoIPService.StateListener stateListener, boolean z10) {
+    }
+
+    public static void f(VoIPService.StateListener stateListener, int i10) {
+    }
+
+    public static void g(VoIPService.StateListener stateListener, int i10) {
+    }
+
+    public static void h(VoIPService.StateListener stateListener, boolean z10) {
+    }
+
+    public static void d(VoIPService.StateListener stateListener, int i10, int i11) {
     }
 }

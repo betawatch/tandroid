@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class e1 implements Runnable {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final class e1 implements Runnable {
             case 0:
                 l1 l1Var = this.b.Jc;
                 if (l1Var != null) {
-                    l1Var.s();
+                    l1Var.q();
                     break;
                 }
                 break;
@@ -45,7 +45,7 @@ public final class e1 implements Runnable {
                         AndroidUtilities.runOnUIThread(e1Var, 1000L);
                         u1Var.Wc = true;
                         int dp = u1Var.J8 - AndroidUtilities.dp(91.0f);
-                        u1Var.T3 = new StaticLayout(TextUtils.ellipsize(LocaleController.getString(R.string.AttachLiveLocation), org.telegram.ui.ActionBar.g6.H2, dp, TextUtils.TruncateAt.END), org.telegram.ui.ActionBar.g6.H2, dp, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                        u1Var.T3 = new StaticLayout(TextUtils.ellipsize(LocaleController.getString(R.string.AttachLiveLocation), org.telegram.ui.ActionBar.h6.H2, dp, TextUtils.TruncateAt.END), org.telegram.ui.ActionBar.h6.H2, dp, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
                     }
                 }
                 if (!u1Var.W3) {

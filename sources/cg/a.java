@@ -5,7 +5,7 @@ import oa.d;
 import rb.b;
 import t7.u;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public interface a {
     public static final u k = new u(5);
@@ -20,7 +20,7 @@ public interface a {
         o = new pb.a(i10);
     }
 
-    int F1(int i10, int i11, int i12);
+    int E1(int i10, int i11, int i12);
 
-    void Q0(ShortBuffer shortBuffer, int i10, ShortBuffer shortBuffer2, int i11);
+    void P0(ShortBuffer shortBuffer, int i10, ShortBuffer shortBuffer2, int i11);
 }

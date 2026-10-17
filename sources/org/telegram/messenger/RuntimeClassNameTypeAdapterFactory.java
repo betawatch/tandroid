@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class RuntimeClassNameTypeAdapterFactory<T> implements eb.v {
     private final Class<?> baseType;
@@ -105,7 +105,7 @@ public final class RuntimeClassNameTypeAdapterFactory<T> implements eb.v {
                         try {
                             uVar = gVar.c(RuntimeClassNameTypeAdapterFactory.this, new lb.a(Class.forName(m10)));
                         } catch (ClassNotFoundException e10) {
-                            throw new androidx.car.app.j(t8.b.h("Cannot find class ", m10), e10);
+                            throw new androidx.car.app.j(r.c.g("Cannot find class ", m10), e10);
                         }
                     }
                     return uVar.fromJsonTree(iVar);
@@ -132,13 +132,13 @@ public final class RuntimeClassNameTypeAdapterFactory<T> implements eb.v {
                     gb.d.l(jsonTree, bVar);
                     return;
                 }
-                gb.o oVar = jsonTree.h().a;
-                if (oVar.containsKey(RuntimeClassNameTypeAdapterFactory.this.typeFieldName)) {
+                gb.m mVar = jsonTree.h().a;
+                if (mVar.containsKey(RuntimeClassNameTypeAdapterFactory.this.typeFieldName)) {
                     throw new androidx.car.app.j("cannot serialize " + cls3.getSimpleName() + " because it already defines a field named " + RuntimeClassNameTypeAdapterFactory.this.typeFieldName);
                 }
                 eb.l lVar = new eb.l();
                 lVar.n(RuntimeClassNameTypeAdapterFactory.this.typeFieldName, new eb.m(simpleName));
-                Iterator it = ((gb.m) oVar.entrySet()).iterator();
+                Iterator it = ((gb.k) mVar.entrySet()).iterator();
                 while (it.hasNext()) {
                     Map.Entry entry = (Map.Entry) it.next();
                     lVar.n((String) entry.getKey(), (eb.i) entry.getValue());

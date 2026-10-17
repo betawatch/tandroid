@@ -3,9 +3,9 @@ package org.telegram.ui;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.CacheByChatsController;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b6 implements r80 {
+public final /* synthetic */ class b6 implements v70 {
     public final /* synthetic */ int a;
     public final /* synthetic */ e6 b;
     public final /* synthetic */ CacheByChatsController.KeepMediaException c;
@@ -16,7 +16,7 @@ public final /* synthetic */ class b6 implements r80 {
         this.c = keepMediaException;
     }
 
-    @Override // org.telegram.ui.r80
+    @Override // org.telegram.ui.v70
     public final void a(int i10) {
         switch (this.a) {
             case 0:

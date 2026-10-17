@@ -1,135 +1,200 @@
 package b2;
 
-import android.net.Uri;
-import j$.util.Objects;
-import java.util.Collections;
-import java.util.List;
+import android.util.Pair;
 import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class o1 {
-    public static final String A;
-    public static final String B;
-    public static final String C;
-    public static final String D;
-    public static final String E;
-    public static final Object q = new Object();
-    public static final p0 r;
-    public static final String s;
-    public static final String t;
-    public static final String u;
-    public static final String v;
-    public static final String w;
-    public static final String x;
-    public static final String y;
-    public static final String z;
-    public Object b;
-    public Object d;
-    public long e;
-    public long f;
-    public long g;
-    public boolean h;
-    public boolean i;
-    public j0 j;
-    public boolean k;
-    public long l;
-    public long m;
-    public int n;
-    public int o;
-    public long p;
-    public Object a = q;
-    public p0 c = r;
+public abstract class o1 {
+    public static final k1 a = new k1();
+    public static final String b;
+    public static final String c;
+    public static final String d;
 
     static {
-        k0 k0Var;
-        d0 d0Var = new d0();
-        g0 g0Var = new g0();
-        List list = Collections.EMPTY_LIST;
-        e9.x1 x1Var = e9.x1.e;
-        i0 i0Var = new i0();
-        l0 l0Var = l0.d;
-        Uri uri = Uri.EMPTY;
-        u6.p(g0Var.b == null || g0Var.a != null);
-        h0 h0Var = null;
-        if (uri != null) {
-            if (g0Var.a != null) {
-                h0Var = new h0(g0Var);
+        String str = e2.m0.a;
+        b = Integer.toString(0, 36);
+        c = Integer.toString(1, 36);
+        d = Integer.toString(2, 36);
+    }
+
+    public int a(boolean z10) {
+        return p() ? -1 : 0;
+    }
+
+    public abstract int b(Object obj);
+
+    public int c(boolean z10) {
+        if (p()) {
+            return -1;
+        }
+        return o() - 1;
+    }
+
+    public final int d(int i10, l1 l1Var, n1 n1Var, int i11, boolean z10) {
+        int i12 = f(i10, l1Var, false).c;
+        if (m(i12, n1Var, 0L).o != i10) {
+            return i10 + 1;
+        }
+        int e = e(i12, i11, z10);
+        if (e == -1) {
+            return -1;
+        }
+        return m(e, n1Var, 0L).n;
+    }
+
+    public int e(int i10, int i11, boolean z10) {
+        if (i11 == 0) {
+            if (i10 == c(z10)) {
+                return -1;
             }
-            k0Var = new k0(uri, null, h0Var, null, list, null, x1Var, -9223372036854775807L);
-        } else {
-            k0Var = null;
+            return i10 + 1;
         }
-        r = new p0("androidx.media3.common.Timeline", new f0(d0Var), k0Var, new j0(i0Var), s0.L, l0Var);
-        s = Integer.toString(1, 36);
-        t = Integer.toString(2, 36);
-        u = Integer.toString(3, 36);
-        v = Integer.toString(4, 36);
-        w = Integer.toString(5, 36);
-        x = Integer.toString(6, 36);
-        y = Integer.toString(7, 36);
-        z = Integer.toString(8, 36);
-        A = Integer.toString(9, 36);
-        B = Integer.toString(10, 36);
-        C = Integer.toString(11, 36);
-        D = Integer.toString(12, 36);
-        E = Integer.toString(13, 36);
+        if (i11 == 1) {
+            return i10;
+        }
+        if (i11 == 2) {
+            return i10 == c(z10) ? a(z10) : i10 + 1;
+        }
+        throw new IllegalStateException();
     }
 
-    public final boolean a() {
-        return this.j != null;
-    }
-
-    public final void b(Object obj, p0 p0Var, Object obj2, long j10, long j11, long j12, boolean z10, boolean z11, j0 j0Var, long j13, long j14, int i10, int i11, long j15) {
-        this.a = obj;
-        this.c = p0Var != null ? p0Var : r;
-        if (p0Var != null) {
-            k0 k0Var = p0Var.b;
-        }
-        this.b = null;
-        this.d = obj2;
-        this.e = j10;
-        this.f = j11;
-        this.g = j12;
-        this.h = z10;
-        this.i = z11;
-        this.j = j0Var;
-        this.l = j13;
-        this.m = j14;
-        this.n = i10;
-        this.o = i11;
-        this.p = j15;
-        this.k = false;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || !o1.class.equals(obj.getClass())) {
+    public boolean equals(Object obj) {
+        int c10;
+        if (this != obj) {
+            if (obj instanceof o1) {
+                o1 o1Var = (o1) obj;
+                if (o1Var.o() == o() && o1Var.h() == h()) {
+                    n1 n1Var = new n1();
+                    l1 l1Var = new l1();
+                    n1 n1Var2 = new n1();
+                    l1 l1Var2 = new l1();
+                    int i10 = 0;
+                    while (true) {
+                        if (i10 >= o()) {
+                            int i11 = 0;
+                            while (true) {
+                                if (i11 >= h()) {
+                                    int a2 = a(true);
+                                    if (a2 == o1Var.a(true) && (c10 = c(true)) == o1Var.c(true)) {
+                                        while (a2 != c10) {
+                                            int e = e(a2, 0, true);
+                                            if (e == o1Var.e(a2, 0, true)) {
+                                                a2 = e;
+                                            }
+                                        }
+                                    }
+                                } else {
+                                    if (!f(i11, l1Var, true).equals(o1Var.f(i11, l1Var2, true))) {
+                                        break;
+                                    }
+                                    i11++;
+                                }
+                            }
+                        } else {
+                            if (!m(i10, n1Var, 0L).equals(o1Var.m(i10, n1Var2, 0L))) {
+                                break;
+                            }
+                            i10++;
+                        }
+                    }
+                }
+            }
             return false;
         }
-        o1 o1Var = (o1) obj;
-        return Objects.equals(this.a, o1Var.a) && Objects.equals(this.c, o1Var.c) && Objects.equals(this.d, o1Var.d) && Objects.equals(this.j, o1Var.j) && this.e == o1Var.e && this.f == o1Var.f && this.g == o1Var.g && this.h == o1Var.h && this.i == o1Var.i && this.k == o1Var.k && this.l == o1Var.l && this.m == o1Var.m && this.n == o1Var.n && this.o == o1Var.o && this.p == o1Var.p;
+        return true;
     }
 
-    public final int hashCode() {
-        int hashCode = (this.c.hashCode() + ((this.a.hashCode() + 217) * 31)) * 31;
-        Object obj = this.d;
-        int hashCode2 = (hashCode + (obj == null ? 0 : obj.hashCode())) * 31;
-        j0 j0Var = this.j;
-        int hashCode3 = (hashCode2 + (j0Var != null ? j0Var.hashCode() : 0)) * 31;
-        long j10 = this.e;
-        int i10 = (hashCode3 + ((int) (j10 ^ (j10 >>> 32)))) * 31;
-        long j11 = this.f;
-        int i11 = (i10 + ((int) (j11 ^ (j11 >>> 32)))) * 31;
-        long j12 = this.g;
-        int i12 = (((((((i11 + ((int) (j12 ^ (j12 >>> 32)))) * 31) + (this.h ? 1 : 0)) * 31) + (this.i ? 1 : 0)) * 31) + (this.k ? 1 : 0)) * 31;
-        long j13 = this.l;
-        int i13 = (i12 + ((int) (j13 ^ (j13 >>> 32)))) * 31;
-        long j14 = this.m;
-        int i14 = (((((i13 + ((int) (j14 ^ (j14 >>> 32)))) * 31) + this.n) * 31) + this.o) * 31;
-        long j15 = this.p;
-        return i14 + ((int) (j15 ^ (j15 >>> 32)));
+    public abstract l1 f(int i10, l1 l1Var, boolean z10);
+
+    public l1 g(Object obj, l1 l1Var) {
+        return f(b(obj), l1Var, true);
+    }
+
+    public abstract int h();
+
+    public int hashCode() {
+        n1 n1Var = new n1();
+        l1 l1Var = new l1();
+        int o10 = o() + 217;
+        for (int i10 = 0; i10 < o(); i10++) {
+            o10 = (o10 * 31) + m(i10, n1Var, 0L).hashCode();
+        }
+        int h = h() + (o10 * 31);
+        for (int i11 = 0; i11 < h(); i11++) {
+            h = (h * 31) + f(i11, l1Var, true).hashCode();
+        }
+        int a2 = a(true);
+        while (a2 != -1) {
+            h = (h * 31) + a2;
+            a2 = e(a2, 0, true);
+        }
+        return h;
+    }
+
+    public final Pair i(n1 n1Var, l1 l1Var, int i10, long j10) {
+        Pair j11 = j(n1Var, l1Var, i10, j10, 0L);
+        j11.getClass();
+        return j11;
+    }
+
+    public final Pair j(n1 n1Var, l1 l1Var, int i10, long j10, long j11) {
+        u6.j(i10, o());
+        m(i10, n1Var, j11);
+        if (j10 == -9223372036854775807L) {
+            j10 = n1Var.l;
+            if (j10 == -9223372036854775807L) {
+                return null;
+            }
+        }
+        int i11 = n1Var.n;
+        f(i11, l1Var, false);
+        while (i11 < n1Var.o && l1Var.e != j10) {
+            int i12 = i11 + 1;
+            if (f(i12, l1Var, false).e > j10) {
+                break;
+            }
+            i11 = i12;
+        }
+        f(i11, l1Var, true);
+        long j12 = j10 - l1Var.e;
+        long j13 = l1Var.d;
+        if (j13 != -9223372036854775807L) {
+            j12 = Math.min(j12, j13 - 1);
+        }
+        long max = Math.max(0L, j12);
+        Object obj = l1Var.b;
+        obj.getClass();
+        return Pair.create(obj, Long.valueOf(max));
+    }
+
+    public int k(int i10, int i11, boolean z10) {
+        if (i11 == 0) {
+            if (i10 == a(z10)) {
+                return -1;
+            }
+            return i10 - 1;
+        }
+        if (i11 == 1) {
+            return i10;
+        }
+        if (i11 == 2) {
+            return i10 == a(z10) ? c(z10) : i10 - 1;
+        }
+        throw new IllegalStateException();
+    }
+
+    public abstract Object l(int i10);
+
+    public abstract n1 m(int i10, n1 n1Var, long j10);
+
+    public final void n(int i10, n1 n1Var) {
+        m(i10, n1Var, 0L);
+    }
+
+    public abstract int o();
+
+    public final boolean p() {
+        return o() == 0;
     }
 }

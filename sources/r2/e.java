@@ -10,7 +10,7 @@ import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class e implements m {
     public static final ArrayDeque h = new ArrayDeque();
@@ -30,7 +30,7 @@ public final class e implements m {
         this.d = new AtomicReference();
     }
 
-    public static d a() {
+    public static d c() {
         ArrayDeque arrayDeque = h;
         synchronized (arrayDeque) {
             try {
@@ -44,7 +44,7 @@ public final class e implements m {
         }
     }
 
-    public static void c(d dVar) {
+    public static void d(d dVar) {
         ArrayDeque arrayDeque = h;
         synchronized (arrayDeque) {
             arrayDeque.add(dVar);
@@ -52,27 +52,35 @@ public final class e implements m {
     }
 
     @Override // r2.m
-    public final void b(long j10, int i10, int i11, int i12) {
-        s0();
-        d a2 = a();
-        a2.a = i10;
-        a2.b = i11;
-        a2.d = j10;
-        a2.e = i12;
-        o0 o0Var = this.c;
-        String str = m0.a;
-        o0Var.obtainMessage(1, a2).sendToTarget();
+    public final void C() {
+        RuntimeException runtimeException = (RuntimeException) this.d.getAndSet(null);
+        if (runtimeException != null) {
+            throw runtimeException;
+        }
     }
 
     @Override // r2.m
-    public final void d(int i10, h2.d dVar, long j10, int i11) {
-        s0();
-        d a2 = a();
-        a2.a = i10;
-        a2.b = 0;
-        a2.d = j10;
-        a2.e = i11;
-        MediaCodec.CryptoInfo cryptoInfo = a2.c;
+    public final void a(long j10, int i10, int i11, int i12) {
+        C();
+        d c10 = c();
+        c10.a = i10;
+        c10.b = i11;
+        c10.d = j10;
+        c10.e = i12;
+        o0 o0Var = this.c;
+        String str = m0.a;
+        o0Var.obtainMessage(1, c10).sendToTarget();
+    }
+
+    @Override // r2.m
+    public final void b(int i10, h2.d dVar, long j10, int i11) {
+        C();
+        d c10 = c();
+        c10.a = i10;
+        c10.b = 0;
+        c10.d = j10;
+        c10.e = i11;
+        MediaCodec.CryptoInfo cryptoInfo = c10.c;
         cryptoInfo.numSubSamples = dVar.f;
         int[] iArr = dVar.d;
         int[] iArr2 = cryptoInfo.numBytesOfClearData;
@@ -122,7 +130,7 @@ public final class e implements m {
         }
         o0 o0Var = this.c;
         String str = m0.a;
-        o0Var.obtainMessage(2, a2).sendToTarget();
+        o0Var.obtainMessage(2, c10).sendToTarget();
     }
 
     @Override // r2.m
@@ -148,16 +156,8 @@ public final class e implements m {
     }
 
     @Override // r2.m
-    public final void s0() {
-        RuntimeException runtimeException = (RuntimeException) this.d.getAndSet(null);
-        if (runtimeException != null) {
-            throw runtimeException;
-        }
-    }
-
-    @Override // r2.m
     public final void setParameters(Bundle bundle) {
-        s0();
+        C();
         o0 o0Var = this.c;
         String str = m0.a;
         o0Var.obtainMessage(4, bundle).sendToTarget();

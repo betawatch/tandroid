@@ -21,13 +21,13 @@ import java.util.concurrent.atomic.AtomicInteger;
 import x9.j;
 import z9.a2;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class b {
     public static final Charset e = Charset.forName("UTF-8");
     public static final int f = 15;
     public static final aa.b g = new aa.b();
-    public static final d h = new d(11);
+    public static final d h = new d(7);
     public static final a i = new a(0);
     public final AtomicInteger a = new AtomicInteger(0);
     public final c b;
@@ -108,7 +108,7 @@ public final class b {
         int i10 = this.c.d().a.a;
         g.getClass();
         try {
-            f(cVar.b(str, g.p("event", String.format(Locale.US, "%010d", Integer.valueOf(this.a.getAndIncrement())), z10 ? "_" : "")), aa.b.a.b1(a2Var));
+            f(cVar.b(str, g.p("event", String.format(Locale.US, "%010d", Integer.valueOf(this.a.getAndIncrement())), z10 ? "_" : "")), aa.b.a.m(a2Var));
         } catch (IOException e7) {
             Log.w("FirebaseCrashlytics", "Could not persist event for session " + str, e7);
         }
@@ -117,7 +117,7 @@ public final class b {
         File file = new File(cVar.c, str);
         file.mkdirs();
         List<File> e10 = c.e(file.listFiles(aVar));
-        Collections.sort(e10, new d(12));
+        Collections.sort(e10, new d(8));
         int size = e10.size();
         for (File file2 : e10) {
             if (size <= i10) {

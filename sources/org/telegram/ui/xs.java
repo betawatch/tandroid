@@ -1,33 +1,26 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessagesStorage;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xs implements MessagesStorage.IntCallback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ContactsActivity b;
+public final class xs extends org.telegram.ui.ActionBar.m1 {
+    public final /* synthetic */ ct o;
 
-    public /* synthetic */ xs(ContactsActivity contactsActivity, int i10) {
-        this.a = i10;
-        this.b = contactsActivity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xs(ct ctVar, ViewGroup viewGroup) {
+        super(viewGroup, -2, -2);
+        this.o = ctVar;
     }
 
-    @Override // org.telegram.messenger.MessagesStorage.IntCallback
-    public final void run(int i10) {
-        switch (this.a) {
-            case 0:
-                ContactsActivity contactsActivity = this.b;
-                contactsActivity.getClass();
-                contactsActivity.b0 = i10 != 0;
-                if (i10 != 0) {
-                    contactsActivity.f0(false);
-                    break;
-                }
-                break;
-            default:
-                ContactsActivity.W(this.b, i10);
-                break;
+    @Override // org.telegram.ui.ActionBar.m1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        gt gtVar = this.o.a;
+        gtVar.k = null;
+        gtVar.K = false;
+        if (gtVar.R) {
+            gtVar.n();
         }
     }
 }

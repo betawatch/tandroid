@@ -1,13 +1,13 @@
 package s4;
 
+import ai.ae;
 import android.view.animation.Interpolator;
 import android.widget.OverScroller;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.Arrays;
 import java.util.WeakHashMap;
-import org.telegram.ui.Cells.m2;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class a1 implements Runnable {
     public int a;
@@ -20,11 +20,11 @@ public final class a1 implements Runnable {
 
     public a1(RecyclerView recyclerView) {
         this.h = recyclerView;
-        m2 m2Var = RecyclerView.R0;
-        this.d = m2Var;
+        ae aeVar = RecyclerView.R0;
+        this.d = aeVar;
         this.e = false;
         this.f = false;
-        this.c = new OverScroller(recyclerView.getContext(), m2Var);
+        this.c = new OverScroller(recyclerView.getContext(), aeVar);
     }
 
     public final void a() {

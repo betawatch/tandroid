@@ -2,13 +2,13 @@ package g2;
 
 import android.net.Uri;
 import android.util.Base64;
-import b2.x0;
+import b2.w0;
 import e2.m0;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class f extends c {
     public m a;
@@ -47,14 +47,14 @@ public final class f extends c {
         String str = m0.a;
         String[] split = schemeSpecificPart.split(",", -1);
         if (split.length != 2) {
-            throw new x0("Unexpected URI format: " + normalizeScheme, null, true, 0);
+            throw new w0("Unexpected URI format: " + normalizeScheme, null, true, 0);
         }
         String str2 = split[1];
         if (split[0].contains(";base64")) {
             try {
                 this.b = Base64.decode(str2, 0);
             } catch (IllegalArgumentException e) {
-                throw new x0(t8.b.h("Error while parsing Base64 encoded string: ", str2), e, true, 0);
+                throw new w0(r.c.g("Error while parsing Base64 encoded string: ", str2), e, true, 0);
             }
         } else {
             this.b = URLDecoder.decode(str2, StandardCharsets.US_ASCII.name()).getBytes(StandardCharsets.UTF_8);
@@ -76,7 +76,7 @@ public final class f extends c {
         return j10 != -1 ? j10 : this.d;
     }
 
-    @Override // b2.p
+    @Override // b2.o
     public final int read(byte[] bArr, int i10, int i11) {
         if (i11 == 0) {
             return 0;

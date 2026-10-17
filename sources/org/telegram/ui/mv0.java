@@ -1,19 +1,19 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
+import android.view.View;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class mv0 {
-    public final int a;
-    public final ArrayList b;
-    public final hv0 c;
-    public final /* synthetic */ PhotoViewer d;
+public final class mv0 implements View.OnClickListener {
+    public final /* synthetic */ org.telegram.ui.Components.i80 a;
 
-    public mv0(PhotoViewer photoViewer, int i10, ArrayList arrayList, hv0 hv0Var) {
-        this.d = photoViewer;
-        this.b = arrayList;
-        this.a = i10;
-        this.c = hv0Var;
+    public mv0(org.telegram.ui.Components.i80 i80Var) {
+        this.a = i80Var;
+    }
+
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        org.telegram.ui.Components.qc.e();
+        this.a.s();
     }
 }

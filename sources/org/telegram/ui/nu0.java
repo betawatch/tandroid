@@ -1,60 +1,119 @@
 package org.telegram.ui;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.util.Property;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.TextPaint;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewPropertyAnimator;
-import android.view.ViewTreeObserver;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class nu0 implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ hv0 a;
-    public final /* synthetic */ Integer b;
-    public final /* synthetic */ PhotoViewer c;
+public final class nu0 extends View {
+    public final Paint a;
+    public final TextPaint b;
+    public int c;
+    public int d;
+    public int e;
+    public int f;
+    public final String h;
+    public final String n;
+    public int r;
+    public final /* synthetic */ PhotoViewer s;
 
-    public nu0(PhotoViewer photoViewer, hv0 hv0Var, Integer num) {
-        this.c = photoViewer;
-        this.a = hv0Var;
-        this.b = num;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public nu0(Context context, PhotoViewer photoViewer) {
+        super(context);
+        this.s = photoViewer;
+        this.a = new Paint(1);
+        TextPaint textPaint = new TextPaint(1);
+        this.b = textPaint;
+        textPaint.setTextSize(AndroidUtilities.dp(14.0f));
+        textPaint.setColor(-3289651);
+        this.h = LocaleController.getString("AccDescrVideoCompressLow", R.string.AccDescrVideoCompressLow);
+        this.n = LocaleController.getString("AccDescrVideoCompressHigh", R.string.AccDescrVideoCompressHigh);
+        setImportantForAccessibility(1);
+        setFocusable(true);
+        setAccessibilityDelegate(new mu0(this));
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        PhotoViewer photoViewer = this.c;
-        photoViewer.g0.getViewTreeObserver().removeOnPreDrawListener(this);
-        photoViewer.F.setTranslationY(-AndroidUtilities.dp(32.0f));
-        ViewPropertyAnimator duration = photoViewer.F.animate().alpha(1.0f).translationY(0.0f).setDuration(150L);
-        org.telegram.ui.Components.es esVar = org.telegram.ui.Components.es.f;
-        duration.setInterpolator(esVar).start();
-        photoViewer.N0.setTranslationY(-AndroidUtilities.dp(32.0f));
-        photoViewer.N0.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setInterpolator(esVar).start();
-        photoViewer.O0.setTranslationY(-AndroidUtilities.dp(32.0f));
-        photoViewer.O0.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setInterpolator(esVar).start();
-        photoViewer.P0.setTranslationY(AndroidUtilities.dp(32.0f));
-        photoViewer.P0.animate().alpha(1.0f).setDuration(150L).setInterpolator(esVar).start();
-        photoViewer.S0.setTranslationY(AndroidUtilities.dp(32.0f));
-        photoViewer.S0.setAlpha(0.0f);
-        photoViewer.S0.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setInterpolator(esVar).start();
-        photoViewer.s3.setTranslationY(AndroidUtilities.dp(32.0f));
-        photoViewer.s3.animate().alpha(1.0f).translationY(0.0f).setDuration(150L).setInterpolator(esVar).start();
-        photoViewer.e0.setAlpha(0.0f);
-        photoViewer.L0.setAlpha(0);
-        photoViewer.n4 = 4;
-        photoViewer.e0.invalidate();
-        AnimatorSet animatorSet = new AnimatorSet();
-        x5 x5Var = photoViewer.P0;
-        ObjectAnimator duration2 = ObjectAnimator.ofFloat(x5Var, (Property<x5, Float>) View.TRANSLATION_Y, x5Var.getTranslationY(), 0.0f).setDuration(220L);
-        duration2.setInterpolator(esVar);
-        x5 x5Var2 = photoViewer.P0;
-        Property property = View.ALPHA;
-        ObjectAnimator duration3 = ObjectAnimator.ofFloat(x5Var2, (Property<x5, Float>) property, 1.0f).setDuration(220L);
-        duration3.setInterpolator(esVar);
-        animatorSet.playTogether(ObjectAnimator.ofFloat(photoViewer.e0, (Property<bv0, Float>) property, 0.0f, 1.0f).setDuration(220L), ObjectAnimator.ofFloat(photoViewer.j0, (Property<View, Float>) property, 0.0f, 1.0f).setDuration(220L), duration2, duration3);
-        animatorSet.addListener(new mu0(this));
-        animatorSet.start();
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.s.Z7 != 1) {
+            this.f = (((getMeasuredWidth() - (this.c * this.s.Z7)) - (((this.s.Z7 * 2) - 2) * this.d)) - (this.e * 2)) / (this.s.Z7 - 1);
+        } else {
+            this.f = ((getMeasuredWidth() - (this.c * this.s.Z7)) - (this.d * 2)) - (this.e * 2);
+        }
+        int dp = AndroidUtilities.dp(6.0f) + (getMeasuredHeight() / 2);
+        int i10 = 0;
+        while (i10 < this.s.Z7) {
+            int i11 = this.e;
+            int i12 = (this.d * 2) + this.f;
+            int i13 = this.c;
+            int i14 = (i13 / 2) + ((i12 + i13) * i10) + i11;
+            if (i10 <= this.s.Y7) {
+                this.a.setColor(-11292945);
+            } else {
+                this.a.setColor(1728053247);
+            }
+            canvas.drawCircle(i14, dp, i10 == this.s.Y7 ? AndroidUtilities.dp(6.0f) : this.c / 2, this.a);
+            if (i10 != 0) {
+                canvas.drawRect((i10 == this.s.Y7 + 1 ? AndroidUtilities.dpf2(2.0f) : 0.0f) + (((i14 - (this.c / 2)) - this.d) - this.f), dp - AndroidUtilities.dp(1.0f), (r2 + this.f) - (i10 == this.s.Y7 ? AndroidUtilities.dpf2(2.0f) : 0.0f), AndroidUtilities.dp(2.0f) + dp, this.a);
+            }
+            i10++;
+        }
+        canvas.drawText(this.h, this.e, dp - AndroidUtilities.dp(16.0f), this.b);
+        canvas.drawText(this.n, (getMeasuredWidth() - this.e) - this.b.measureText(this.n), dp - AndroidUtilities.dp(16.0f), this.b);
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        this.c = AndroidUtilities.dp(8.0f);
+        this.d = AndroidUtilities.dp(2.0f);
+        this.e = AndroidUtilities.dp(18.0f);
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        float x10 = motionEvent.getX();
+        if (motionEvent.getAction() == 0) {
+            this.r = this.s.Y7;
+            getParent().requestDisallowInterceptTouchEvent(true);
+        }
+        int i10 = 0;
+        if (motionEvent.getAction() == 0 || motionEvent.getAction() == 2) {
+            while (true) {
+                if (i10 >= this.s.Z7) {
+                    break;
+                }
+                int i11 = this.e;
+                int i12 = this.f;
+                int i13 = this.d;
+                int i14 = this.c;
+                int i15 = (((i13 * 2) + i12 + i14) * i10) + i11;
+                int i16 = i14 / 2;
+                int i17 = i15 + i16;
+                int i18 = (i12 / 2) + i16 + i13;
+                if (x10 <= i17 - i18 || x10 >= i17 + i18) {
+                    i10++;
+                } else if (this.s.Y7 != i10) {
+                    this.s.Y7 = i10;
+                    this.s.S0();
+                    invalidate();
+                    return true;
+                }
+            }
+        } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+            if (this.s.Y7 != this.r) {
+                this.s.p2(1);
+            }
+            this.s.L6 = false;
+            return true;
+        }
         return true;
     }
 }

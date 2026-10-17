@@ -9,19 +9,19 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class r3 extends FrameLayout {
     public final TextView a;
     public final TextView b;
     public boolean c;
     public final boolean d;
-    public final /* synthetic */ k4 e;
+    public final /* synthetic */ l4 e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r3(k4 k4Var, Context context, boolean z10) {
+    public r3(l4 l4Var, Context context, boolean z10) {
         super(context);
-        this.e = k4Var;
+        this.e = l4Var;
         this.d = z10;
         setTag(90);
         TextView textView = new TextView(context);

@@ -1,88 +1,28 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import android.view.ViewGroup;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import android.view.View;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class oe0 implements TextWatcher {
-    public final /* synthetic */ int a = 0;
+public final class oe0 implements View.OnAttachStateChangeListener {
     public boolean b;
-    public final /* synthetic */ ViewGroup c;
+    public final /* synthetic */ pe0 d;
+    public long a = System.currentTimeMillis();
+    public final ne0 c = new ne0(this, 0);
 
-    public oe0(rg.x2 x2Var) {
-        this.c = x2Var;
+    public oe0(pe0 pe0Var) {
+        this.d = pe0Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        int clamp;
-        switch (this.a) {
-            case 0:
-                pe0 pe0Var = (pe0) this.c;
-                if (this.b) {
-                    if (pe0Var.f.getVisibility() != 0 && !TextUtils.isEmpty(editable)) {
-                        if (pe0Var.y) {
-                            pe0Var.f.callOnClick();
-                        }
-                        AndroidUtilities.updateViewVisibilityAnimated(pe0Var.f, true, 0.1f, true);
-                        break;
-                    } else if (pe0Var.f.getVisibility() != 8 && TextUtils.isEmpty(editable)) {
-                        AndroidUtilities.updateViewVisibilityAnimated(pe0Var.f, false, 0.1f, true);
-                        break;
-                    }
-                }
-                break;
-            default:
-                rg.x2 x2Var = (rg.x2) this.c;
-                rg.w2 w2Var = x2Var.q0;
-                if (this.b && x2Var.w0 > 0 && x2Var.x0 > 0 && !x2Var.z0 && w2Var.getLayout() != null) {
-                    float f7 = AndroidUtilities.displaySize.y / 3.0f;
-                    float height = w2Var.getLayout().getHeight();
-                    if (height > f7 && (clamp = Utilities.clamp((int) ((f7 / height) * x2Var.getBaseFontSize()), x2Var.x0, x2Var.w0)) != x2Var.getBaseFontSize()) {
-                        x2Var.setBaseFontSize(clamp);
-                        Runnable runnable = x2Var.y0;
-                        if (runnable != null) {
-                            runnable.run();
-                        }
-                    }
-                }
-                x2Var.s();
-                break;
-        }
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewAttachedToWindow(View view) {
+        this.b = true;
+        view.post(this.c);
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        switch (this.a) {
-            case 0:
-                break;
-            default:
-                this.b = i12 > 3;
-                break;
-        }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
-    }
-
-    public oe0(pe0 pe0Var, boolean z10) {
-        this.c = pe0Var;
-        this.b = z10;
-    }
-
-    private final void a(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewDetachedFromWindow(View view) {
+        this.b = false;
+        view.removeCallbacks(this.c);
     }
 }

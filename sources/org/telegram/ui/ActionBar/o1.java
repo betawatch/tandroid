@@ -11,12 +11,12 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
-import org.telegram.ui.Components.es;
+import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public abstract class o1 {
-    public static final es w = ki.n.V;
+    public static final bs w = li.m.V;
     public final FrameLayout a;
     public FrameLayout b;
     public ViewGroup c;
@@ -31,7 +31,7 @@ public abstract class o1 {
     public boolean s;
     public boolean v;
     public boolean e = false;
-    public final u2 h = new u2(this, 2);
+    public final v2 h = new v2(this, 2);
     public int i = -1;
     public int j = -1;
     public int k = -1;
@@ -69,7 +69,7 @@ public abstract class o1 {
             while (true) {
                 view2 = null;
                 if (view != null) {
-                    if (!(view.getParent() instanceof x3)) {
+                    if (!(view.getParent() instanceof y3)) {
                         if (!(view.getParent() instanceof View)) {
                             break;
                         } else {

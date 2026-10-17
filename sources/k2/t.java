@@ -1,37 +1,37 @@
 package k2;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class t implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ qf.b b;
-    public final /* synthetic */ t0 c;
+    public final /* synthetic */ u0 c;
 
-    public /* synthetic */ t(qf.b bVar, t0 t0Var, int i10) {
+    public /* synthetic */ t(qf.b bVar, u0 u0Var, int i10) {
         this.a = i10;
         this.b = bVar;
-        this.c = t0Var;
+        this.c = u0Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         int i10 = this.a;
-        t0 t0Var = this.c;
+        u0 u0Var = this.c;
         qf.b bVar = this.b;
         switch (i10) {
             case 0:
                 u uVar = (u) bVar.c;
                 String str = e2.m0.a;
-                j2.f fVar = ((i2.b0) uVar).a.s;
+                j2.f fVar = ((i2.a0) uVar).a.s;
                 j2.a p5 = fVar.p();
-                fVar.q(p5, 1032, new j2.e(p5, t0Var, 16));
+                fVar.q(p5, 1032, new j2.e(p5, u0Var, 18));
                 break;
             default:
                 u uVar2 = (u) bVar.c;
                 String str2 = e2.m0.a;
-                j2.f fVar2 = ((i2.b0) uVar2).a.s;
+                j2.f fVar2 = ((i2.a0) uVar2).a.s;
                 j2.a p9 = fVar2.p();
-                fVar2.q(p9, 1031, new j2.c(p9, t0Var, 29));
+                fVar2.q(p9, 1031, new j2.e(p9, u0Var, 1));
                 break;
         }
     }

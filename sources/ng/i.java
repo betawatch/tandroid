@@ -27,22 +27,22 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.b5;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Cells.c1;
+import org.telegram.ui.ActionBar.d5;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Cells.t0;
 import org.telegram.ui.Cells.z;
-import org.telegram.ui.Components.cr;
-import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.zq;
 import org.telegram.ui.LaunchActivity;
 import w7.r;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class i extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public ArrayList E;
     public int F;
     public v a;
-    public cr b;
+    public zq b;
     public k c;
     public k d;
     public SharedPreferences e;
@@ -54,7 +54,7 @@ public final class i extends FrameLayout implements NotificationCenter.Notificat
     public int v;
     public LinearLayout w;
     public TextView x;
-    public mm0 y;
+    public im0 y;
 
     public static float a(DisplayMetrics displayMetrics, float f7) {
         return r.a(f7, AndroidUtilities.dp(16.0f), displayMetrics.widthPixels - AndroidUtilities.dp(72.0f));
@@ -67,11 +67,11 @@ public final class i extends FrameLayout implements NotificationCenter.Notificat
     private List<a> getBuiltInDebugItems() {
         ArrayList arrayList = new ArrayList();
         arrayList.add(new a("Theme"));
-        arrayList.add(new a("Draw action bar shadow", new j(15)));
+        arrayList.add(new a("Draw action bar shadow", new j(19)));
         arrayList.add(new a("Show blur settings", new c(this, 0)));
         arrayList.add(new a(LocaleController.getString(R.string.DebugGeneral)));
         arrayList.add(new a(LocaleController.getString(SharedConfig.debugWebView ? R.string.DebugMenuDisableWebViewDebug : R.string.DebugMenuEnableWebViewDebug), new c(this, 1)));
-        arrayList.add(new a(g6.I.q() ? "Switch to day theme" : "Switch to dark theme", new j(16)));
+        arrayList.add(new a(h6.I.q() ? "Switch to day theme" : "Switch to dark theme", new j(20)));
         arrayList.add(new a(LocaleController.getString(R.string.DebugSendLogs), new c(this, 2)));
         return arrayList;
     }
@@ -87,17 +87,17 @@ public final class i extends FrameLayout implements NotificationCenter.Notificat
             this.w.setVisibility(0);
             arrayList.clear();
             if (getContext() instanceof LaunchActivity) {
-                b5 O = ((LaunchActivity) getContext()).O();
+                d5 O = ((LaunchActivity) getContext()).O();
                 if (O instanceof b) {
-                    arrayList.addAll(((b) O).C());
+                    arrayList.addAll(((b) O).B());
                 }
                 ActionBarLayout actionBarLayout = ((LaunchActivity) getContext()).s0;
                 if (actionBarLayout != null) {
-                    arrayList.addAll(actionBarLayout.C());
+                    arrayList.addAll(actionBarLayout.B());
                 }
                 ActionBarLayout actionBarLayout2 = ((LaunchActivity) getContext()).r0;
                 if (actionBarLayout2 != null) {
-                    arrayList.addAll(actionBarLayout2.C());
+                    arrayList.addAll(actionBarLayout2.B());
                 }
             }
             arrayList.addAll(getBuiltInDebugItems());
@@ -110,9 +110,9 @@ public final class i extends FrameLayout implements NotificationCenter.Notificat
         final float translationX = vVar.getTranslationX();
         final float translationY = vVar.getTranslationY();
         k kVar = new k(new o1.j(z10 ? 0.0f : 1000.0f));
-        l j10 = c1.j(1000.0f, 900.0f, 1.0f);
-        j10.i = z10 ? 1000.0f : 0.0f;
-        kVar.u = j10;
+        l l4 = t0.l(1000.0f, 900.0f, 1.0f);
+        l4.i = z10 ? 1000.0f : 0.0f;
+        kVar.u = l4;
         kVar.b(new o1.g() { // from class: ng.d
             @Override // o1.g
             public final void a(o1.h hVar, float f7, float f10) {
@@ -138,7 +138,7 @@ public final class i extends FrameLayout implements NotificationCenter.Notificat
                 vVar2.setTranslationX(AndroidUtilities.lerp(f12, (iVar.getWidth() / 2.0f) - AndroidUtilities.dp(28.0f), f11));
                 vVar2.setTranslationY(AndroidUtilities.lerp(f13, (iVar.getHeight() / 2.0f) - AndroidUtilities.dp(28.0f), f11));
                 vVar2.setAlpha(1.0f - f11);
-                window.setStatusBarColor(i0.a.d(f11, iVar.v, 2046820352));
+                window.setStatusBarColor(i0.b.f(f11, iVar.v, 2046820352));
                 iVar.invalidate();
             }
         });
@@ -159,20 +159,20 @@ public final class i extends FrameLayout implements NotificationCenter.Notificat
     }
 
     public final void d() {
-        z i02 = g6.i0(AndroidUtilities.dp(56.0f), g6.x0(null, g6.P9, false), g6.x0(null, g6.Q9, false));
+        z i02 = h6.i0(AndroidUtilities.dp(56.0f), h6.x0(null, h6.P9, false), h6.x0(null, h6.Q9, false));
         Drawable mutate = getResources().getDrawable(R.drawable.floating_shadow).mutate();
         PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
         mutate.setColorFilter(new PorterDuffColorFilter(-16777216, mode));
-        cr crVar = new cr(mutate, i02, 0, 0);
+        zq zqVar = new zq(mutate, i02, 0, 0);
         int dp = AndroidUtilities.dp(56.0f);
         int dp2 = AndroidUtilities.dp(56.0f);
-        crVar.e = dp;
-        crVar.f = dp2;
-        this.b = crVar;
+        zqVar.e = dp;
+        zqVar.f = dp2;
+        this.b = zqVar;
         Drawable drawable = getResources().getDrawable(R.drawable.popup_fixed_alert3);
-        drawable.setColorFilter(new PorterDuffColorFilter(g6.x0(null, g6.h5, false), mode));
+        drawable.setColorFilter(new PorterDuffColorFilter(h6.x0(null, h6.h5, false), mode));
         this.w.setBackground(drawable);
-        this.x.setTextColor(g6.x0(null, g6.j5, false));
+        this.x.setTextColor(h6.x0(null, h6.j5, false));
         invalidate();
     }
 

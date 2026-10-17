@@ -1,28 +1,26 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.MessagesStorage;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class gf implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesStorage.IntCallback b;
-    public final /* synthetic */ int[] c;
+    public final /* synthetic */ MessagesStorage b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ gf(MessagesStorage.IntCallback intCallback, int[] iArr, int i10) {
+    public /* synthetic */ gf(MessagesStorage messagesStorage, boolean z10, int i10) {
         this.a = i10;
-        this.b = intCallback;
-        this.c = iArr;
+        this.b = messagesStorage;
+        this.c = z10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                MessagesStorage.lambda$getDialogMaxMessageId$254(this.b, this.c);
+                this.b.lambda$getCachedPhoneBook$150(this.c);
                 break;
             default:
-                MessagesStorage.lambda$getSavedDialogMaxMessageId$52(this.b, this.c);
+                this.b.lambda$cleanup$6(this.c);
                 break;
         }
     }

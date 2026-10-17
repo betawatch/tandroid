@@ -3,7 +3,7 @@ package q4;
 import a0.f;
 import android.graphics.Color;
 import android.util.SparseBooleanArray;
-import gb.k;
+import gb.i;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
@@ -11,10 +11,10 @@ import java.util.List;
 import java.util.PriorityQueue;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class b {
-    public static final k f = new k(3);
+    public static final i f = new i(3);
     public static final c g = new c();
     public final Object a;
     public final Object b;
@@ -40,8 +40,8 @@ public final class b {
             if (iArr2[i14] > 0) {
                 int rgb = Color.rgb(b((i14 >> 10) & 31, 5, 8), b((i14 >> 5) & 31, 5, 8), b(i14 & 31, 5, 8));
                 float[] fArr = (float[]) this.e;
-                ThreadLocal threadLocal = i0.a.a;
-                i0.a.b(fArr, Color.red(rgb), Color.green(rgb), Color.blue(rgb));
+                ThreadLocal threadLocal = i0.b.a;
+                i0.b.c(fArr, Color.red(rgb), Color.green(rgb), Color.blue(rgb));
                 if (c(fArr)) {
                     iArr2[i14] = 0;
                 }

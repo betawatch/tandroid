@@ -3,26 +3,26 @@ package ig;
 import android.graphics.Rect;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.ui.Components.b00;
-import org.telegram.ui.Components.fk;
-import org.telegram.ui.Components.ll;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.ni;
-import org.telegram.ui.Components.oj;
-import org.telegram.ui.Components.tl;
-import org.telegram.ui.Components.vn;
+import org.telegram.ui.Components.dk;
+import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.jl;
+import org.telegram.ui.Components.li;
+import org.telegram.ui.Components.mj;
+import org.telegram.ui.Components.rl;
+import org.telegram.ui.Components.sn;
+import org.telegram.ui.Components.yz;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class e0 extends b00 {
+public final class e0 extends yz {
     public final /* synthetic */ int U;
-    public final /* synthetic */ ni V;
+    public final /* synthetic */ li V;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ e0(ni niVar, int i10, mm0 mm0Var, int i11) {
-        super(i10, 0, mm0Var);
+    public /* synthetic */ e0(li liVar, int i10, im0 im0Var, int i11) {
+        super(i10, 0, im0Var);
         this.U = i11;
-        this.V = niVar;
+        this.V = liVar;
     }
 
     @Override // s4.n0
@@ -52,32 +52,32 @@ public final class e0 extends b00 {
                 w0(d0Var);
                 break;
             case 1:
-                oj ojVar = new oj(this, recyclerView.getContext());
-                ojVar.a = i10;
-                w0(ojVar);
+                mj mjVar = new mj(this, recyclerView.getContext());
+                mjVar.a = i10;
+                w0(mjVar);
                 break;
             case 2:
-                fk fkVar = new fk(this, recyclerView.getContext());
-                fkVar.a = i10;
-                w0(fkVar);
+                dk dkVar = new dk(this, recyclerView.getContext());
+                dkVar.a = i10;
+                w0(dkVar);
                 break;
             case 3:
-                ll llVar = new ll(this, recyclerView.getContext());
-                llVar.a = i10;
-                w0(llVar);
+                jl jlVar = new jl(this, recyclerView.getContext());
+                jlVar.a = i10;
+                w0(jlVar);
                 break;
             default:
-                vn vnVar = new vn(this, recyclerView.getContext());
-                vnVar.a = i10;
-                w0(vnVar);
+                sn snVar = new sn(this, recyclerView.getContext());
+                snVar.a = i10;
+                w0(snVar);
                 break;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e0(tl tlVar, bi.o0 o0Var) {
-        super(0, 0, o0Var);
+    public e0(rl rlVar, ai.u1 u1Var) {
+        super(0, 0, u1Var);
         this.U = 3;
-        this.V = tlVar;
+        this.V = rlVar;
     }
 }

@@ -9,19 +9,19 @@ import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class h2 extends View {
-    public final /* synthetic */ z70 a;
-    public final /* synthetic */ i4 b;
+    public final /* synthetic */ d70 a;
+    public final /* synthetic */ j4 b;
     public final /* synthetic */ i2 c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h2(i2 i2Var, Context context, z70 z70Var, i4 i4Var) {
+    public h2(i2 i2Var, Context context, d70 d70Var, j4 j4Var) {
         super(context);
         this.c = i2Var;
-        this.a = z70Var;
-        this.b = i4Var;
+        this.a = d70Var;
+        this.b = j4Var;
     }
 
     @Override // android.view.View
@@ -29,7 +29,7 @@ public final class h2 extends View {
         i2 i2Var = this.c;
         if (i2Var.c != null) {
             canvas.save();
-            k4.v(this.a, canvas, i2Var, 0);
+            l4.v(this.a, canvas, i2Var, 0);
             i2Var.c.draw(canvas, this);
             canvas.restore();
             i2Var.c.s = (int) getX();
@@ -45,18 +45,18 @@ public final class h2 extends View {
         int i13 = 1;
         if (pageblockpreformatted != null) {
             CharSequence charSequence = i2Var.h;
-            i4 i4Var = this.b;
-            z70 z70Var = this.a;
+            j4 j4Var = this.b;
+            d70 d70Var = this.a;
             if (charSequence == null) {
                 TL_iv.RichText richText = pageblockpreformatted.text;
                 int dp = AndroidUtilities.dp(5000.0f);
-                HashSet hashSet = k4.b1;
-                i2Var.h = k4.C(z70Var, i4Var.E, this, richText, richText, pageblockpreformatted, dp);
+                HashSet hashSet = l4.b1;
+                i2Var.h = l4.C(d70Var, j4Var.E, this, richText, richText, pageblockpreformatted, dp);
                 if (!TextUtils.isEmpty(i2Var.f.language)) {
-                    i2Var.h = li.k.b(i2Var.h, i2Var.f.language);
+                    i2Var.h = mi.k.b(i2Var.h, i2Var.f.language);
                 }
             }
-            d3 q6 = k4.q(z70Var, this, i2Var.h, null, AndroidUtilities.dp(5000.0f), 0, i2Var.f, i4Var);
+            d3 q6 = l4.q(d70Var, this, i2Var.h, null, AndroidUtilities.dp(5000.0f), 0, i2Var.f, j4Var);
             i2Var.c = q6;
             if (q6 != null) {
                 i12 = q6.d.getHeight();
@@ -76,6 +76,6 @@ public final class h2 extends View {
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         i2 i2Var = this.c;
-        return k4.l(this.a, this.b, motionEvent, i2Var, i2Var.c, 0, 0) || super.onTouchEvent(motionEvent);
+        return l4.l(this.a, this.b, motionEvent, i2Var, i2Var.c, 0, 0) || super.onTouchEvent(motionEvent);
     }
 }

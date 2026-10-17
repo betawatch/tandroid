@@ -1,7 +1,123 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.view.ActionMode;
+import android.view.Menu;
+import android.view.MotionEvent;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.R;
+import org.telegram.messenger.XiaomiUtilities;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public interface lu {
-    void p();
+public final class lu extends iu {
+    public Drawable c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ qu e;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public lu(qu quVar, Context context, org.telegram.ui.ActionBar.d6 d6Var, int i10) {
+        super(context, d6Var);
+        this.e = quVar;
+        this.d = i10;
+        this.c = null;
+    }
+
+    @Override // org.telegram.ui.Components.ku
+    public final int emojiCacheType() {
+        return this.e.h();
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor
+    public final void extendActionMode(ActionMode actionMode, Menu menu) {
+        qu quVar = this.e;
+        if (quVar.a()) {
+            org.telegram.ui.sn.n8(menu, null, quVar.L == 3, true, true, true);
+        } else {
+            quVar.i(menu);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor
+    public final int getActionModeStyle() {
+        int i10 = this.d;
+        if (i10 == 2 || i10 == 3) {
+            return 2;
+        }
+        return super.getActionModeStyle();
+    }
+
+    @Override // org.telegram.ui.Components.iu
+    public final void onLineCountChanged(int i10, int i11) {
+        this.e.q(i10, i11);
+    }
+
+    @Override // org.telegram.ui.Components.ku, android.widget.TextView
+    public final void onSelectionChanged(int i10, int i11) {
+        super.onSelectionChanged(i10, i11);
+        qu quVar = this.e;
+        nm0 nm0Var = quVar.c;
+        if (nm0Var != null) {
+            boolean z10 = false;
+            boolean z11 = i11 != i10;
+            if (quVar.a() && z11) {
+                XiaomiUtilities.isMIUI();
+                z10 = true;
+            }
+            if (quVar.n != z10) {
+                quVar.n = z10;
+                if (z10) {
+                    this.c = nm0Var.d;
+                    nm0Var.a(R.drawable.msg_edit, true);
+                } else {
+                    nm0Var.b(this.c, true);
+                    this.c = null;
+                }
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        mu muVar;
+        qu quVar = this.e;
+        if (quVar.e && motionEvent.getAction() == 0) {
+            quVar.u();
+            if (!quVar.x || (muVar = quVar.d) == null) {
+                quVar.x(AndroidUtilities.usingHardwareInput ? 0 : 2);
+            } else {
+                muVar.t(false);
+                quVar.x = false;
+                quVar.k(true);
+                AndroidUtilities.showKeyboard(this);
+            }
+            quVar.v();
+        }
+        if (motionEvent.getAction() == 0) {
+            boolean isFocused = isFocused();
+            requestFocus();
+            if (!AndroidUtilities.showKeyboard(this)) {
+                clearFocus();
+                requestFocus();
+            }
+            if (!isFocused) {
+                setSelection(getText().length());
+            }
+        }
+        try {
+            return super.onTouchEvent(motionEvent);
+        } catch (Exception e) {
+            FileLog.e(e);
+            return false;
+        }
+    }
+
+    @Override // android.view.View
+    public final void scrollTo(int i10, int i11) {
+        if (this.e.t(i11)) {
+            super.scrollTo(i10, i11);
+        }
+    }
 }

@@ -1,15 +1,15 @@
 package r9;
 
-import b2.n0;
+import b2.m0;
 import j$.util.DesugarCollections;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
-import ji.m5;
-import w7.c7;
+import qg.g0;
+import w7.f7;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class a {
     public final String a;
@@ -30,26 +30,26 @@ public final class a {
         this.g = DesugarCollections.unmodifiableSet(set3);
     }
 
-    public static n0 a(Class cls) {
-        return new n0(cls, new Class[0]);
+    public static m0 a(Class cls) {
+        return new m0(cls, new Class[0]);
     }
 
-    public static n0 b(r rVar) {
+    public static m0 b(r rVar) {
         r[] rVarArr = new r[0];
-        n0 n0Var = new n0();
-        n0Var.d = null;
+        m0 m0Var = new m0();
+        m0Var.d = null;
         HashSet hashSet = new HashSet();
-        n0Var.c = hashSet;
-        n0Var.e = new HashSet();
-        n0Var.a = 0;
-        n0Var.b = 0;
-        n0Var.g = new HashSet();
+        m0Var.c = hashSet;
+        m0Var.e = new HashSet();
+        m0Var.a = 0;
+        m0Var.b = 0;
+        m0Var.g = new HashSet();
         hashSet.add(rVar);
         for (r rVar2 : rVarArr) {
-            c7.a(rVar2, "Null interface");
+            f7.a(rVar2, "Null interface");
         }
-        Collections.addAll((HashSet) n0Var.c, rVarArr);
-        return n0Var;
+        Collections.addAll((HashSet) m0Var.c, rVarArr);
+        return m0Var;
     }
 
     public static a c(Object obj, Class cls, Class... clsArr) {
@@ -58,10 +58,10 @@ public final class a {
         HashSet hashSet3 = new HashSet();
         hashSet.add(r.a(cls));
         for (Class cls2 : clsArr) {
-            c7.a(cls2, "Null interface");
+            f7.a(cls2, "Null interface");
             hashSet.add(r.a(cls2));
         }
-        return new a(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new m5(obj, 27), hashSet3);
+        return new a(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new g0(obj, 6), hashSet3);
     }
 
     public final String toString() {

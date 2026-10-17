@@ -1,12 +1,44 @@
 package li;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes4.dex */
-public final class g {
-    public final String a;
-    public p b;
+import android.animation.ValueAnimator;
+import android.view.View;
+import org.telegram.ui.Cells.h0;
+import org.telegram.ui.Cells.xa;
 
-    public g(String str) {
-        this.a = str;
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes4.dex */
+public final class g implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ m c;
+    public final /* synthetic */ View d;
+
+    public /* synthetic */ g(m mVar, View view, float f7, int i10) {
+        this.a = i10;
+        this.c = mVar;
+        this.d = view;
+        this.b = f7;
+    }
+
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                m mVar = this.c;
+                float measuredHeight = ((mVar.G.getMeasuredHeight() - mVar.F.s9) - r2.Ba) / 2.0f;
+                h0 h0Var = (h0) this.d;
+                float measuredHeight2 = (measuredHeight - (h0Var.getMeasuredHeight() / 2.0f)) + mVar.F.s9;
+                h0Var.setTranslationY(((((float) h0Var.getTop()) > measuredHeight2 ? measuredHeight2 - h0Var.getTop() : 0.0f) * floatValue) + ((1.0f - floatValue) * this.b));
+                break;
+            default:
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                m mVar2 = this.c;
+                float measuredHeight3 = ((mVar2.G.getMeasuredHeight() - mVar2.F.s9) - r2.Ba) / 2.0f;
+                xa xaVar = (xa) this.d;
+                float measuredHeight4 = (measuredHeight3 - (xaVar.getMeasuredHeight() / 2.0f)) + mVar2.F.s9;
+                xaVar.setTranslationY(((((float) xaVar.getTop()) > measuredHeight4 ? measuredHeight4 - xaVar.getTop() : 0.0f) * floatValue2) + ((1.0f - floatValue2) * this.b));
+                break;
+        }
     }
 }

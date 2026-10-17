@@ -23,12 +23,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Components.jb0;
-import org.telegram.ui.Components.z9;
+import org.telegram.ui.Components.db0;
+import org.telegram.ui.Components.w9;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.fo;
+import org.telegram.ui.Wallet.f2;
+import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x0 implements Runnable {
     public final /* synthetic */ int a;
@@ -84,13 +85,13 @@ public final /* synthetic */ class x0 implements Runnable {
                 String str2 = (String) obj5;
                 MessagesStorage messagesStorage = (MessagesStorage) obj;
                 String str3 = (String) obj4;
-                jb0 jb0Var = j1Var.V;
+                db0 db0Var = j1Var.V;
                 if (str.equals(j1Var.r0)) {
                     j1Var.u0 = 0;
                     if (z11 && tLObject == null) {
                         j1Var.T(false, user, str, str2);
-                    } else if (jb0Var != null) {
-                        jb0Var.b(false);
+                    } else if (db0Var != null) {
+                        db0Var.b(false);
                     }
                     if (tLObject instanceof TLRPC.TL_messages_botResults) {
                         TLRPC.TL_messages_botResults tL_messages_botResults = (TLRPC.TL_messages_botResults) tLObject;
@@ -123,9 +124,9 @@ public final /* synthetic */ class x0 implements Runnable {
                             }
                             z10 = true;
                         }
-                        t tVar = j1Var.p0;
-                        if (tVar != null) {
-                            AndroidUtilities.cancelRunOnUIThread(tVar);
+                        ei.z1 z1Var = j1Var.p0;
+                        if (z1Var != null) {
+                            AndroidUtilities.cancelRunOnUIThread(z1Var);
                             r10 = 0;
                             j1Var.p0 = null;
                         } else {
@@ -142,7 +143,7 @@ public final /* synthetic */ class x0 implements Runnable {
                         j1Var.K = r10;
                         j1Var.P = r10;
                         j1Var.o0 = false;
-                        jb0Var.a((j1Var.R.isEmpty() && j1Var.T == null && j1Var.U == null) ? false : true);
+                        db0Var.a((j1Var.R.isEmpty() && j1Var.T == null && j1Var.U == null) ? false : true);
                         if (!z10) {
                             j1Var.l();
                             break;
@@ -162,22 +163,22 @@ public final /* synthetic */ class x0 implements Runnable {
                 ((MediaDataController) obj7).lambda$broadcastPinnedMessage$169((ArrayList) obj6, this.b, (ArrayList) obj5, (ArrayList) obj4, (ArrayList) obj3, (a0.h) obj2, (a0.h) obj);
                 break;
             case 3:
-                ((SendMessagesHelper) obj7).lambda$sendCallback$46((TLRPC.TL_error) obj6, (TLObject) obj3, (TwoStepVerificationActivity) obj5, this.b, (MessageObject) obj4, (TL_keyboard.KeyboardButtonProto) obj2, (fo) obj);
+                ((SendMessagesHelper) obj7).lambda$sendCallback$46((TLRPC.TL_error) obj6, (TLObject) obj3, (TwoStepVerificationActivity) obj5, this.b, (MessageObject) obj4, (TL_keyboard.KeyboardButtonProto) obj2, (sn) obj);
                 break;
             case 4:
                 ((CameraController) obj7).lambda$recordVideo$14((Camera) obj6, (CameraSession) obj5, this.b, (File) obj4, (CameraInfo) obj3, (CameraController.VideoTakeCallback) obj2, (Runnable) obj);
                 break;
             default:
-                di.d dVar = (di.d) obj7;
-                org.telegram.ui.Wallet.k0 k0Var = (org.telegram.ui.Wallet.k0) obj6;
-                org.telegram.ui.Wallet.e2 e2Var = k0Var.g;
+                ei.d dVar = (ei.d) obj7;
+                org.telegram.ui.Wallet.m0 m0Var = (org.telegram.ui.Wallet.m0) obj6;
+                f2 f2Var = m0Var.g;
                 TL_wallet.tonConnectSession tonconnectsession = (TL_wallet.tonConnectSession) obj5;
-                org.telegram.ui.Wallet.z1 z1Var = (org.telegram.ui.Wallet.z1) obj4;
+                org.telegram.ui.Wallet.a2 a2Var = (org.telegram.ui.Wallet.a2) obj4;
                 TextView textView2 = (TextView) obj3;
-                z9 z9Var = (z9) obj2;
+                w9 w9Var = (w9) obj2;
                 TextView textView3 = (TextView) obj;
                 if (!z11) {
-                    ArrayList arrayList = e2Var.d;
+                    ArrayList arrayList = f2Var.d;
                     int size = arrayList.size();
                     int i13 = 0;
                     while (true) {
@@ -189,7 +190,7 @@ public final /* synthetic */ class x0 implements Runnable {
                             r16 = 0;
                             ArrayList arrayList2 = arrayList;
                             if (tonconnectsession2.id == tonconnectsession.id) {
-                                z1Var.e = tonconnectsession2;
+                                a2Var.e = tonconnectsession2;
                             } else {
                                 textView3 = textView;
                                 arrayList = arrayList2;
@@ -199,9 +200,9 @@ public final /* synthetic */ class x0 implements Runnable {
                             r16 = 0;
                         }
                     }
-                    TL_wallet.tonConnectSession tonconnectsession3 = z1Var.e;
+                    TL_wallet.tonConnectSession tonconnectsession3 = a2Var.e;
                     boolean z12 = (tonconnectsession3.manifest == null || tonconnectsession3.manifest_error != null || tonconnectsession3.closed || tonconnectsession3.closing) ? r16 : true;
-                    dVar.setEnabled((!z12 || z1Var.f) ? r16 : true);
+                    dVar.setEnabled((!z12 || a2Var.f) ? r16 : true);
                     TL_wallet.tonConnectManifest tonconnectmanifest = tonconnectsession3.manifest;
                     if (tonconnectmanifest != null) {
                         int i14 = R.string.WalletConnectToApp;
@@ -210,7 +211,7 @@ public final /* synthetic */ class x0 implements Runnable {
                         textView2.setText(LocaleController.formatSpannable(i14, objArr));
                         TLRPC.WebDocument webDocument = tonconnectsession3.manifest.icon;
                         if (webDocument != null) {
-                            z9Var.n(ImageLocation.getForWebFile(WebFile.createWithWebDocument(webDocument)), "76_76", null, tonconnectsession3.manifest);
+                            w9Var.n(ImageLocation.getForWebFile(WebFile.createWithWebDocument(webDocument)), "76_76", null, tonconnectsession3.manifest);
                         }
                     }
                     Integer num = tonconnectsession3.manifest_error;
@@ -219,8 +220,8 @@ public final /* synthetic */ class x0 implements Runnable {
                             textView.setText(LocaleController.getString((tonconnectsession3.closed || tonconnectsession3.closing) ? R.string.WalletTonConnectSessionClosed : R.string.Loading));
                             break;
                         } else {
-                            e2Var.getClass();
-                            textView.setText(LocaleController.getString(org.telegram.ui.Wallet.e2.u(z1Var) ? R.string.WalletConnectProofInfo : R.string.WalletConnectInfo));
+                            f2Var.getClass();
+                            textView.setText(LocaleController.getString(f2.u(a2Var) ? R.string.WalletConnectProofInfo : R.string.WalletConnectInfo));
                             break;
                         }
                     } else {
@@ -231,7 +232,7 @@ public final /* synthetic */ class x0 implements Runnable {
                         break;
                     }
                 } else {
-                    dVar.setEnabled((!k0Var.D() || k0Var.r() == null || k0Var.w() == null || dVar.N) ? false : true);
+                    dVar.setEnabled((!m0Var.E() || m0Var.s() == null || m0Var.x() == null || dVar.N) ? false : true);
                     break;
                 }
                 break;
@@ -262,7 +263,7 @@ public final /* synthetic */ class x0 implements Runnable {
         this.r = hVar2;
     }
 
-    public /* synthetic */ x0(MessageObject messageObject, SendMessagesHelper sendMessagesHelper, TLObject tLObject, TLRPC.TL_error tL_error, TL_keyboard.KeyboardButtonProto keyboardButtonProto, fo foVar, TwoStepVerificationActivity twoStepVerificationActivity, boolean z10) {
+    public /* synthetic */ x0(MessageObject messageObject, SendMessagesHelper sendMessagesHelper, TLObject tLObject, TLRPC.TL_error tL_error, TL_keyboard.KeyboardButtonProto keyboardButtonProto, sn snVar, TwoStepVerificationActivity twoStepVerificationActivity, boolean z10) {
         this.a = 3;
         this.c = sendMessagesHelper;
         this.d = tL_error;
@@ -271,18 +272,18 @@ public final /* synthetic */ class x0 implements Runnable {
         this.b = z10;
         this.f = messageObject;
         this.n = keyboardButtonProto;
-        this.r = foVar;
+        this.r = snVar;
     }
 
-    public /* synthetic */ x0(boolean z10, di.d dVar, org.telegram.ui.Wallet.k0 k0Var, TL_wallet.tonConnectSession tonconnectsession, org.telegram.ui.Wallet.z1 z1Var, TextView textView, z9 z9Var, TextView textView2) {
+    public /* synthetic */ x0(boolean z10, ei.d dVar, org.telegram.ui.Wallet.m0 m0Var, TL_wallet.tonConnectSession tonconnectsession, org.telegram.ui.Wallet.a2 a2Var, TextView textView, w9 w9Var, TextView textView2) {
         this.a = 5;
         this.b = z10;
         this.c = dVar;
-        this.d = k0Var;
+        this.d = m0Var;
         this.e = tonconnectsession;
-        this.f = z1Var;
+        this.f = a2Var;
         this.h = textView;
-        this.n = z9Var;
+        this.n = w9Var;
         this.r = textView2;
     }
 }

@@ -1,26 +1,79 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLObject;
+import android.R;
+import android.net.Uri;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class xs0 extends org.telegram.ui.Components.uy0 {
-    public final /* synthetic */ ys0 v0;
+public final /* synthetic */ class xs0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ys0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xs0(ys0 ys0Var, Activity activity, MessageObject messageObject, TLObject tLObject, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(activity, messageObject, tLObject, c6Var);
-        this.v0 = ys0Var;
+    public /* synthetic */ xs0(ys0 ys0Var, int i10) {
+        this.a = i10;
+        this.b = ys0Var;
     }
 
-    @Override // org.telegram.ui.Components.uy0, org.telegram.ui.ActionBar.e3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.i2
-    public final void dismiss() {
-        super.dismiss();
-        PhotoViewer photoViewer = this.v0.b;
-        if (photoViewer.U3 == this) {
-            photoViewer.U3 = null;
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x0057, code lost:
+    
+        if (r2 != 7) goto L31;
+     */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        b2.n nVar;
+        switch (this.a) {
+            case 0:
+                PhotoViewer photoViewer = this.b.b;
+                cu0 cu0Var = photoViewer.E2;
+                if (cu0Var != null) {
+                    org.telegram.ui.Components.a81 a81Var = photoViewer.F2;
+                    if (cu0Var.e != a81Var) {
+                        cu0Var.c = false;
+                        cu0Var.d = false;
+                        if (cu0Var.b) {
+                            cu0Var.a++;
+                            cu0Var.b = false;
+                        }
+                        cu0Var.setImageResource(R.color.transparent);
+                    }
+                    if (a81Var != null) {
+                        i2.g0 g0Var = a81Var.d;
+                        if (g0Var != null) {
+                            try {
+                                g0Var.F1();
+                                b2.w wVar = g0Var.S;
+                                if (wVar != null && (nVar = wVar.I) != null) {
+                                    int i10 = nVar.c;
+                                    if (i10 != 6) {
+                                        break;
+                                    }
+                                }
+                            } catch (Exception unused) {
+                            }
+                        }
+                        long p5 = a81Var.p() - a81Var.n();
+                        if (!cu0Var.c && !cu0Var.d && !cu0Var.b && p5 < 5250.0f) {
+                            Uri uri = a81Var.F;
+                            int i11 = cu0Var.a + 1;
+                            cu0Var.a = i11;
+                            Utilities.globalQueue.postRunnable(new org.telegram.ui.Components.w31(cu0Var, uri, i11, 8));
+                            cu0Var.b = true;
+                        }
+                    }
+                    cu0Var.e = a81Var;
+                    break;
+                }
+                break;
+            case 1:
+                cu0.a(this.b.b.E2);
+                break;
+            default:
+                cu0.a(this.b.b.E2);
+                break;
         }
     }
 }

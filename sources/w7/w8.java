@@ -1,23 +1,12 @@
 package w7;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class w8 {
-    public static r9.a a(String str, String str2) {
-        ya.a aVar = new ya.a(str, str2);
-        b2.n0 a2 = r9.a.a(ya.a.class);
-        a2.b = 1;
-        a2.f = new ji.m5(aVar, 27);
-        return a2.b();
-    }
-
-    public static r9.a b(String str, k2.y0 y0Var) {
-        b2.n0 a2 = r9.a.a(ya.a.class);
-        a2.b = 1;
-        a2.a(r9.j.a(Context.class));
-        a2.f = new org.telegram.ui.web.o0(18, str, y0Var);
-        return a2.b();
+    public static /* synthetic */ boolean a(Object obj, Object obj2) {
+        if (obj != obj2) {
+            return obj != null && obj.equals(obj2);
+        }
+        return true;
     }
 }

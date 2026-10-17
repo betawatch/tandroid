@@ -1,5 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
+import com.google.android.gms.internal.cast.a6;
 import j$.util.Objects;
 import java.util.Locale;
 import java.util.concurrent.CancellationException;
@@ -10,10 +11,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
-import org.telegram.messenger.BuildConfig;
 import v7.z5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class w0 extends l0 implements g0 {
     public t0 n;
@@ -166,7 +166,7 @@ public final class w0 extends l0 implements g0 {
         try {
             executor.execute(runnable);
         } catch (Exception e) {
-            l0.e.c().logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "executeListener", k3.k("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e);
+            l0.e.c().logp(Level.SEVERE, "com.google.common.util.concurrent.AbstractFuture", "executeListener", a6.k("RuntimeException while executing runnable ", String.valueOf(runnable), " with executor ", String.valueOf(executor)), (Throwable) e);
         }
     }
 
@@ -340,7 +340,7 @@ public final class w0 extends l0 implements g0 {
         }
         sb2.append("SUCCESS, result=[");
         if (obj == null) {
-            sb2.append(BuildConfig.BETA_URL);
+            sb2.append("null");
         } else if (obj == this) {
             sb2.append("this future");
         } else {

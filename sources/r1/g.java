@@ -26,9 +26,9 @@ import java.util.Map;
 import java.util.regex.Pattern;
 import java.util.zip.CRC32;
 import org.chromium.support_lib_boundary.WebViewProviderFactoryBoundaryInterface;
-import w7.v6;
+import w7.w6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class g {
     public static final String[] E;
@@ -825,7 +825,7 @@ public final class g {
                 if (Arrays.equals(bArr2, y)) {
                     byte[] bArr3 = new byte[readInt];
                     if (bVar.read(bArr3) != readInt) {
-                        throw new IOException("Failed to read given length for given PNG chunk type: " + v6.a(bArr2));
+                        throw new IOException("Failed to read given length for given PNG chunk type: " + w6.a(bArr2));
                     }
                     int readInt2 = bVar.readInt();
                     CRC32 crc32 = new CRC32();
@@ -962,7 +962,7 @@ public final class g {
                         x(new b(bArr3));
                         return;
                     } else {
-                        throw new IOException("Failed to read given length for given PNG chunk type: " + v6.a(bArr2));
+                        throw new IOException("Failed to read given length for given PNG chunk type: " + w6.a(bArr2));
                     }
                 }
                 if (readInt2 % 2 == 1) {
@@ -1157,7 +1157,7 @@ public final class g {
         }
         int readInt = fVar.readInt();
         if (readInt < 8) {
-            throw new IOException(i2.d.j(readInt, "Invalid first Ifd offset: "));
+            throw new IOException(i0.a.j(readInt, "Invalid first Ifd offset: "));
         }
         int i11 = readInt - 8;
         if (i11 > 0) {
@@ -1172,7 +1172,7 @@ public final class g {
             if (i10 >= hashMapArr.length) {
                 return;
             }
-            StringBuilder l4 = i2.d.l(i10, "The size of tag group[", "]: ");
+            StringBuilder l4 = i0.a.l(i10, "The size of tag group[", "]: ");
             l4.append(hashMapArr[i10].size());
             Log.d("ExifInterface", l4.toString());
             for (Map.Entry entry : hashMapArr[i10].entrySet()) {
@@ -1189,11 +1189,11 @@ public final class g {
         v(fVar, i10);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:21:0x0171  */
-    /* JADX WARN: Removed duplicated region for block: B:24:0x0178  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x0261  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x027c  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x02b5  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0172  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0179  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x0262  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x027d  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x02b6  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1479,8 +1479,8 @@ public final class g {
                 if (cVar4 == null || cVar5 == null) {
                     return;
                 }
-                long[] b10 = v6.b(cVar4.g(this.g));
-                long[] b11 = v6.b(cVar5.g(this.g));
+                long[] b10 = w6.b(cVar4.g(this.g));
+                long[] b11 = w6.b(cVar5.g(this.g));
                 if (b10 == null || b10.length == 0) {
                     Log.w("ExifInterface", "stripOffsets should not be null or have zero length.");
                     return;

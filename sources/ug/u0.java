@@ -1,35 +1,67 @@
 package ug;
 
-import j$.util.function.BiConsumer$-CC;
+import android.text.TextUtils;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.function.BiConsumer;
-import org.telegram.ui.Components.db;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u0 implements BiConsumer {
+public final /* synthetic */ class u0 implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ db b;
+    public final /* synthetic */ x0 b;
 
-    public /* synthetic */ u0(db dbVar, int i10) {
+    public /* synthetic */ u0(x0 x0Var, int i10) {
         this.a = i10;
-        this.b = dbVar;
+        this.b = x0Var;
     }
 
-    @Override // java.util.function.BiConsumer
-    public final void accept(Object obj, Object obj2) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                ((z0) this.b).k0.addAll((List) obj2);
+                String str = (String) obj;
+                x0 x0Var = this.b;
+                ArrayList arrayList = x0Var.g0;
+                p4.s0 s0Var = x0Var.v0;
+                x0Var.n0 = str;
+                int i10 = x0Var.r0;
+                if (i10 == 1) {
+                    AndroidUtilities.cancelRunOnUIThread(s0Var);
+                    AndroidUtilities.runOnUIThread(s0Var, 350L);
+                    break;
+                } else if (i10 == 2) {
+                    if (!TextUtils.isEmpty(str)) {
+                        AndroidUtilities.cancelRunOnUIThread(s0Var);
+                        AndroidUtilities.runOnUIThread(s0Var, 350L);
+                        break;
+                    } else {
+                        AndroidUtilities.cancelRunOnUIThread(s0Var);
+                        arrayList.clear();
+                        arrayList.addAll(q.e(x0Var.q0.id));
+                        x0Var.b0(false, true);
+                        x0Var.Y(true);
+                        break;
+                    }
+                } else if (i10 == 3) {
+                    x0Var.b0(false, true);
+                    x0Var.Y(true);
+                    break;
+                }
                 break;
             default:
-                ((uh.f) this.b).b0.addAll((List) obj2);
+                List list = (List) obj;
+                x0 x0Var2 = this.b;
+                ArrayList arrayList2 = x0Var2.g0;
+                if (!TextUtils.isEmpty(x0Var2.n0)) {
+                    arrayList2.clear();
+                    arrayList2.addAll(list);
+                    x0Var2.c0(true, true);
+                    x0Var2.Y(true);
+                    break;
+                }
                 break;
         }
-    }
-
-    public /* synthetic */ BiConsumer andThen(BiConsumer biConsumer) {
-        int i10 = this.a;
-        return BiConsumer$-CC.$default$andThen(this, biConsumer);
     }
 }

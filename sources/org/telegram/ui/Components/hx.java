@@ -1,23 +1,40 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.view.MotionEvent;
+import android.widget.ImageView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class hx extends iz {
-    public final /* synthetic */ wz H;
+public final class hx extends ImageView {
+    public final /* synthetic */ tz a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hx(wz wzVar, Context context) {
-        super(wzVar, context, 0);
-        this.H = wzVar;
+    public hx(tz tzVar, Context context) {
+        super(context);
+        this.a = tzVar;
     }
 
     @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        if (f7 != getTranslationY()) {
-            super.setTranslationY(f7);
-            this.H.x0.invalidate();
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        uy uyVar;
+        int action = motionEvent.getAction();
+        tz tzVar = this.a;
+        if (action == 0) {
+            tzVar.P1 = true;
+            tzVar.Q1 = false;
+            AndroidUtilities.runOnUIThread(new e2(tzVar, 350, 7), 350);
+        } else if (motionEvent.getAction() == 3 || motionEvent.getAction() == 1) {
+            tzVar.P1 = false;
+            if (!tzVar.Q1 && (uyVar = tzVar.t1) != null && uyVar.k()) {
+                try {
+                    tzVar.x.performHapticFeedback(3);
+                } catch (Exception unused) {
+                }
+            }
         }
+        super.onTouchEvent(motionEvent);
+        return true;
     }
 }

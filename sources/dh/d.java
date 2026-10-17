@@ -18,12 +18,12 @@ import android.os.Build;
 import java.lang.ref.WeakReference;
 import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h6;
 import v7.v7;
 import w7.r;
-import zf.f0;
+import zf.e0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public abstract class d extends Drawable {
     public static final float[] E = new float[8];
@@ -198,7 +198,7 @@ public abstract class d extends Drawable {
     }
 
     public static void h(Outline outline, Rect rect, float[] fArr) {
-        if (f0.c(fArr)) {
+        if (e0.c(fArr)) {
             outline.setRoundRect(rect, Math.min(fArr[0], Math.min(rect.width(), rect.height()) / 2.0f));
             return;
         }
@@ -304,7 +304,7 @@ public abstract class d extends Drawable {
                 paint.setAlpha(this.l);
                 cVar.b(canvas, paint);
             }
-            int m12 = g6.m1(this.l / 255.0f, this.e);
+            int m12 = h6.m1(this.l / 255.0f, this.e);
             if (Color.alpha(m12) > 0) {
                 Paint paint2 = this.t;
                 paint2.setColor(m12);
@@ -328,13 +328,13 @@ public abstract class d extends Drawable {
         if (aVar == null || (i10 = this.l) == 0) {
             return;
         }
-        int m13 = g6.m1(i10 / 255.0f, this.e);
+        int m13 = h6.m1(i10 / 255.0f, this.e);
         if (Color.alpha(this.d) > 0 && this.l == 255) {
             float f7 = this.p;
             if (f7 > 0.0f) {
                 float f10 = this.n;
                 float f11 = this.o;
-                int m14 = g6.m1(f7, this.d);
+                int m14 = h6.m1(f7, this.d);
                 Paint paint3 = this.u;
                 paint3.setShadowLayer(f10, 0.0f, f11, m14);
                 cVar.c(canvas, paint3, this.m);
@@ -359,7 +359,7 @@ public abstract class d extends Drawable {
         canvas.clipPath(cVar.k);
         canvas.translate(rect2.left, rect2.top);
         canvas.translate(-f15, -f17);
-        aVar.v(canvas, f15, f17, f19, f21);
+        aVar.y(canvas, f15, f17, f19, f21);
         canvas.restore();
         if (Color.alpha(m13) > 0) {
             Paint paint4 = this.q;
@@ -373,11 +373,11 @@ public abstract class d extends Drawable {
     }
 
     public final void d(Canvas canvas, int i10) {
-        int h = i0.a.h(this.e, i10);
-        if (Color.alpha(h) == 0 && Color.alpha(this.d) == 0) {
+        int k10 = i0.b.k(this.e, i10);
+        if (Color.alpha(k10) == 0 && Color.alpha(this.d) == 0) {
             return;
         }
-        NinePatchDrawable a2 = a(h, true);
+        NinePatchDrawable a2 = a(k10, true);
         Rect rect = this.j.m;
         int i11 = rect.left;
         Rect rect2 = this.B;
@@ -387,8 +387,8 @@ public abstract class d extends Drawable {
     }
 
     public final void g(Canvas canvas) {
-        int m12 = g6.m1(this.l / 255.0f, this.f);
-        int m13 = g6.m1(this.l / 255.0f, this.g);
+        int m12 = h6.m1(this.l / 255.0f, this.f);
+        int m13 = h6.m1(this.l / 255.0f, this.g);
         int alpha = Color.alpha(m12);
         c cVar = this.j;
         Paint paint = this.r;
@@ -546,10 +546,10 @@ public abstract class d extends Drawable {
         if (aVar == null) {
             return;
         }
-        this.e = aVar.j0();
-        this.d = this.c.J();
-        this.f = this.c.k();
-        this.g = this.c.w();
+        this.e = aVar.a0();
+        this.d = this.c.E();
+        this.f = this.c.h();
+        this.g = this.c.u();
     }
 
     public void m() {

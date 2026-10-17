@@ -2,37 +2,43 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class bi0 implements org.telegram.ui.Components.v90 {
-    public final /* synthetic */ org.telegram.ui.Components.w90 a;
-    public final /* synthetic */ ci0 b;
+public final class bi0 extends org.telegram.ui.Components.vg {
+    public final /* synthetic */ org.telegram.ui.Components.vg l0;
+    public final /* synthetic */ boolean m0;
+    public final /* synthetic */ oi0 n0;
 
-    public bi0(ci0 ci0Var, org.telegram.ui.Components.w90 w90Var) {
-        this.b = ci0Var;
-        this.a = w90Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bi0(oi0 oi0Var, Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var, org.telegram.ui.Components.vg vgVar, boolean z10) {
+        super(i10, context, d6Var, false);
+        this.n0 = oi0Var;
+        this.l0 = vgVar;
+        this.m0 = z10;
     }
 
-    @Override // org.telegram.ui.Components.v90
-    public final void d() {
-        di0.W(this.b.d);
+    @Override // org.telegram.ui.Components.vg
+    public final boolean d() {
+        return this.l0.d();
     }
 
-    @Override // org.telegram.ui.Components.v90
-    public final void i() {
-        ci0 ci0Var = this.b;
-        di0 di0Var = ci0Var.d;
-        Context context = this.a.getContext();
-        di0 di0Var2 = ci0Var.d;
-        di0Var.l0 = new org.telegram.ui.Components.p70(context, di0Var2.e, di0Var2.d, di0Var2.k0, di0Var2, di0Var2.n, true, di0Var2.h);
-        ci0Var.d.l0.show();
+    @Override // org.telegram.ui.Components.vg
+    public final boolean e() {
+        return this.l0.e();
     }
 
-    @Override // org.telegram.ui.Components.v90
-    public final /* synthetic */ void c() {
+    @Override // org.telegram.ui.Components.vg
+    public final boolean f() {
+        return (this.m0 && this.n0.q0 && this.r <= 0) ? false : true;
     }
 
-    @Override // org.telegram.ui.Components.v90
-    public final /* synthetic */ void j() {
+    @Override // org.telegram.ui.Components.vg
+    public final int getFillColor() {
+        return this.l0.getFillColor();
+    }
+
+    @Override // org.telegram.ui.Components.vg
+    public final boolean j() {
+        return this.l0.j();
     }
 }

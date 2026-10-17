@@ -1,93 +1,119 @@
 package yh;
 
+import ai.ld;
 import android.content.Context;
-import android.os.Bundle;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.SpannableStringBuilder;
+import android.view.View;
 import android.widget.FrameLayout;
-import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.GiftAuctionController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.Components.a71;
-import org.telegram.ui.Components.db;
-import org.telegram.ui.Components.lm0;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.p7;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ProfileActivity;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.p6;
+import org.telegram.ui.Components.q6;
+import org.telegram.ui.Components.xj0;
+import org.telegram.ui.Components.yq;
 import w7.z5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class d extends db {
-    public static final /* synthetic */ int a0 = 0;
-    public final List X;
-    public final GiftAuctionController.Auction Y;
-    public a71 Z;
+public final class d extends FrameLayout {
+    public final ei.d a;
+    public final q6 b;
+    public final q6 c;
+    public final GiftAuctionController.Auction d;
+    public final Paint e;
+    public final zf.n f;
+    public final yq h;
+    public final yq[] n;
 
-    public d(Context context, c6 c6Var, GiftAuctionController.Auction auction, List list) {
-        super(context, null, false, false, 2, c6Var);
-        this.Y = auction;
-        this.X = list;
-        this.v = 0.2f;
-        this.L = false;
-        this.K = AndroidUtilities.dp(12.0f);
-        this.e.setTitle(B());
-        fixNavigationBar();
-        this.d.setPadding(this.backgroundPaddingLeft, AndroidUtilities.dp(9.0f), this.backgroundPaddingLeft, AndroidUtilities.dp(64.0f));
-        this.d.setOnItemClickListener(new p7(3));
-        this.d.setOverScrollMode(2);
-        di.d dVar = new di.d(context, c6Var, true);
-        dVar.setOnClickListener(new ji.o4(this, 16));
-        dVar.g(LocaleController.getString(R.string.OK), false, true);
-        FrameLayout.LayoutParams a2 = z5.a(48.0f, 16.0f, 16.0f, 16.0f, 16.0f, -1, 80);
-        int i10 = a2.leftMargin;
-        int i11 = this.backgroundPaddingLeft;
-        a2.leftMargin = i10 + i11;
-        a2.rightMargin += i11;
-        this.containerView.addView(dVar, a2);
-        this.Z.N(false);
+    public d(Context context, GiftAuctionController.Auction auction) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.e = paint;
+        this.f = new zf.n(new qg.g0(this, 27));
+        this.h = new yq(R.drawable.filled_gift_sell_24, 0);
+        this.n = new yq[1];
+        this.d = auction;
+        setPadding(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(9.0f));
+        paint.setShadowLayer(AndroidUtilities.dp(1.0f), 0.0f, 0.0f, TLObject.FLAG_29);
+        paint.setColor(h6.x0(null, h6.d6, false));
+        ei.d dVar = new ei.d(context, null, true);
+        this.a = dVar;
+        p6 p6Var = dVar.d;
+        p6Var.D = false;
+        p6Var.E = true;
+        p6Var.F = true;
+        p6Var.G = true;
+        p6Var.H = false;
+        xj0 xj0Var = new xj0(context);
+        q6 q6Var = new q6(context, false, false, false);
+        this.b = q6Var;
+        q6Var.setTextSize(AndroidUtilities.dp(14.0f));
+        q6Var.setTypeface(AndroidUtilities.bold());
+        q6Var.setTextColor(h6.x0(null, h6.G6, false));
+        q6 q6Var2 = new q6(context, false, false, false);
+        this.c = q6Var2;
+        q6Var2.setTextSize(AndroidUtilities.dp(12.0f));
+        TLRPC.Document document = auction.gift.sticker;
+        if (document != null) {
+            xj0Var.g(44, 44, document);
+        }
+        addView(q6Var, z5.a(18.0f, 64.0f, 15.0f, 15.0f, 0.0f, -1, 51));
+        addView(q6Var2, z5.a(17.0f, 64.0f, 34.0f, 15.0f, 0.0f, -1, 51));
+        addView(xj0Var, z5.a(44.0f, 14.0f, 11.0f, 0.0f, 0.0f, 44, 51));
+        addView(dVar, z5.a(44.0f, 15.0f, 0.0f, 15.0f, 15.0f, -1, 80));
+        b(false);
     }
 
-    public static void Q(d dVar, TL_stars.TL_StarGiftAuctionAcquiredGift tL_StarGiftAuctionAcquiredGift) {
-        long peerDialogId = DialogObject.getPeerDialogId(tL_StarGiftAuctionAcquiredGift.peer);
-        dVar.dismiss();
-        org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
-        if (U == null || UserObject.isService(peerDialogId)) {
-            return;
+    public final void a(long j10, boolean z10) {
+        String formatDurationNoHours = AndroidUtilities.formatDurationNoHours((int) j10, false);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("*");
+        spannableStringBuilder.setSpan(this.h, 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.append((CharSequence) "  ");
+        spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.Gift2ActiveAuctionsActiveRaiseBid));
+        spannableStringBuilder.append((CharSequence) "  ");
+        spannableStringBuilder.append((CharSequence) formatDurationNoHours);
+        this.a.g(spannableStringBuilder, z10, true);
+    }
+
+    public final void b(boolean z10) {
+        GiftAuctionController.Auction auction = this.d;
+        if (auction.auctionStateActive != null) {
+            this.b.c(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveRound, LocaleController.formatNumber(r1.current_round, ','), LocaleController.formatNumber(auction.auctionStateActive.total_rounds, ',')), z10, true);
         }
-        Bundle bundle = new Bundle();
-        if (peerDialogId > 0) {
-            bundle.putLong("user_id", peerDialogId);
-            if (peerDialogId == UserConfig.getInstance(dVar.currentAccount).getClientUserId()) {
-                bundle.putBoolean("my_profile", true);
-            }
+        String h = org.telegram.messenger.q.h(auction.auctionUserState.bid_amount, ',', new StringBuilder("⭐️"));
+        boolean isOutbid = auction.getBidStatus().isOutbid();
+        yq[] yqVarArr = this.n;
+        q6 q6Var = this.c;
+        if (isOutbid) {
+            q6Var.c(ld.Y0(false, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveBidOutbid, h)), 0.66f, yqVarArr), z10, true);
+            q6Var.setTextColor(h6.x0(null, h6.q7, false));
         } else {
-            bundle.putLong("chat_id", -peerDialogId);
+            q6Var.c(ld.Y0(false, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2ActiveAuctionsActiveBidActive, h, Integer.valueOf(auction.getApproximatedMyPlace()))), 0.66f, yqVarArr), z10, true);
+            q6Var.setTextColor(h6.x0(null, h6.G6, false));
         }
-        bundle.putBoolean("open_gifts", true);
-        U.presentFragment(new ProfileActivity(bundle, null));
     }
 
-    @Override // org.telegram.ui.Components.db
-    public final CharSequence B() {
-        List list = this.X;
-        if (list == null) {
-            return null;
-        }
-        return LocaleController.formatPluralString("Gift2AuctionsAcquiredGifts", list.size(), new Object[0]);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.drawRoundRect(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(9.0f), getMeasuredWidth() - AndroidUtilities.dp(14.0f), getMeasuredHeight() - AndroidUtilities.dp(9.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), this.e);
+        super.dispatchDraw(canvas);
     }
 
-    @Override // org.telegram.ui.Components.db
-    public final lm0 x(mm0 mm0Var) {
-        a71 a71Var = new a71(this.d, getContext(), this.currentAccount, 0, true, new ii.a(this, 11), this.resourcesProvider);
-        this.Z = a71Var;
-        a71Var.r = false;
-        return a71Var;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.f.b();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(146), TLObject.FLAG_30));
     }
 }

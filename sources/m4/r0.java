@@ -2,7 +2,7 @@ package m4;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class r0 implements e1, f1 {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class r0 implements e1, f1 {
                     m1Var.O(i1Var.K0(vVar, m1Var, i10), i1Var.K0(vVar, m1Var, i10 + 1), list);
                     break;
                 } else {
-                    m1Var.u0((b2.p0) list.get(0), i1Var.K0(vVar, m1Var, i10));
+                    m1Var.u0((b2.o0) list.get(0), i1Var.K0(vVar, m1Var, i10));
                     break;
                 }
             default:
@@ -40,7 +40,7 @@ public final /* synthetic */ class r0 implements e1, f1 {
     }
 
     @Override // m4.e1
-    public void h(m1 m1Var, v vVar) {
+    public void d(m1 m1Var, v vVar) {
         switch (this.a) {
             case 0:
                 m1Var.Y(this.b.K0(vVar, m1Var, this.c));

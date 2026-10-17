@@ -1,145 +1,115 @@
 package t8;
 
-import android.os.Bundle;
-import android.os.Parcel;
-import e9.k0;
-import e9.n0;
-import j$.util.DesugarCollections;
-import java.io.File;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import n4.s;
-import org.telegram.messenger.AndroidUtilities;
-import rg.b0;
-import v7.e;
-import x7.z;
-import z3.m;
-import z3.n;
-import z7.w;
+import ai.c1;
+import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.util.Log;
+import android.util.SparseArray;
+import com.google.android.gms.internal.vision.f3;
+import com.google.android.gms.internal.vision.t2;
+import java.nio.ByteBuffer;
+import java.util.HashSet;
+import m.g3;
+import n6.l;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public abstract /* synthetic */ class b {
-    public static z3.c a(n nVar, byte[] bArr, int i10) {
-        k0 t10 = n0.t();
-        nVar.m0(bArr, 0, i10, m.c, new b0(t10, 23));
-        return new z3.c(t10.f());
+public final class b extends c1 {
+    public final q8.a b;
+    public final t2 c;
+    public final Object d;
+    public boolean e;
+
+    public b(t2 t2Var) {
+        super(4);
+        this.b = new q8.a();
+        this.d = new Object();
+        this.e = true;
+        this.c = t2Var;
     }
 
-    public static /* synthetic */ int b(int i10) {
-        int i11 = 1;
-        if (i10 != 1) {
-            i11 = 2;
-            if (i10 != 2) {
-                i11 = 3;
-                if (i10 != 3) {
-                    if (i10 == 4) {
-                        return 4;
-                    }
-                    throw null;
+    @Override // ai.c1
+    public final void X0() {
+        super.X0();
+        synchronized (this.d) {
+            try {
+                if (this.e) {
+                    this.c.l();
+                    this.e = false;
                 }
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
-        return i11;
     }
 
-    public static float c(float f7, float f10, float f11, float f12) {
-        return (f7 * f10) + f11 + f12;
-    }
-
-    public static int d(Float f7, float f10) {
-        return AndroidUtilities.dp(f7.floatValue() * f10);
-    }
-
-    public static Bundle e(long j10, String str) {
-        Bundle bundle = new Bundle();
-        bundle.putLong(str, j10);
-        return bundle;
-    }
-
-    public static ja.c f(int i10, s sVar) {
-        z7.s sVar2 = new z7.s(i10);
-        if (((HashMap) sVar.c) == null) {
-            sVar.c = new HashMap();
+    public final SparseArray e1(g3 g3Var) {
+        ByteBuffer I;
+        a[] n10;
+        Bitmap bitmap = (Bitmap) g3Var.d;
+        if (bitmap != null) {
+            int width = bitmap.getWidth();
+            int height = bitmap.getHeight();
+            int i10 = width * height;
+            I = ByteBuffer.allocateDirect(((((height + 1) / 2) * ((width + 1) / 2)) << 1) + i10);
+            int i11 = i10;
+            for (int i12 = 0; i12 < i10; i12++) {
+                int i13 = i12 % width;
+                int i14 = i12 / width;
+                int pixel = bitmap.getPixel(i13, i14);
+                float red = Color.red(pixel);
+                float green = Color.green(pixel);
+                float blue = Color.blue(pixel);
+                I.put(i12, (byte) ((0.114f * blue) + (0.587f * green) + (0.299f * red)));
+                if (i14 % 2 == 0 && i13 % 2 == 0) {
+                    float c10 = r.c.c(blue, 0.5f, ((-0.331f) * green) + ((-0.169f) * red), 128.0f);
+                    float c11 = r.c.c(blue, -0.081f, (green * (-0.419f)) + (red * 0.5f), 128.0f);
+                    int i15 = i11 + 1;
+                    I.put(i11, (byte) c10);
+                    i11 += 2;
+                    I.put(i15, (byte) c11);
+                }
+            }
+        } else {
+            I = g3Var.I();
         }
-        ((HashMap) sVar.c).put(w.class, sVar2);
-        return new ja.c((String) sVar.b, ((HashMap) sVar.c) == null ? Collections.EMPTY_MAP : DesugarCollections.unmodifiableMap(new HashMap((HashMap) sVar.c)));
+        synchronized (this.d) {
+            if (!this.e) {
+                throw new IllegalStateException("Cannot use detector after release()");
+            }
+            t2 t2Var = this.c;
+            l.h(I);
+            n10 = t2Var.n(I, f3.b(g3Var));
+        }
+        HashSet hashSet = new HashSet();
+        SparseArray sparseArray = new SparseArray(n10.length);
+        int i16 = 0;
+        for (a aVar : n10) {
+            int i17 = aVar.a;
+            i16 = Math.max(i16, i17);
+            if (hashSet.contains(Integer.valueOf(i17))) {
+                i17 = i16 + 1;
+                i16 = i17;
+            }
+            hashSet.add(Integer.valueOf(i17));
+            sparseArray.append(this.b.a(i17), aVar);
+        }
+        return sparseArray;
     }
 
-    public static Object g(int i10, List list) {
-        return list.get(list.size() - i10);
-    }
-
-    public static String h(String str, String str2) {
-        return str + str2;
-    }
-
-    public static StringBuilder i(String str, String str2) {
-        StringBuilder sb2 = new StringBuilder();
-        sb2.append(str);
-        sb2.append(str2);
-        return sb2;
-    }
-
-    public static UnsupportedOperationException j(Parcel parcel) {
-        f8.a.b(parcel);
-        return new UnsupportedOperationException();
-    }
-
-    public static HashMap k(Class cls, e eVar) {
-        HashMap hashMap = new HashMap();
-        hashMap.put(cls, eVar);
-        return hashMap;
-    }
-
-    public static HashMap l(Class cls, w7.a aVar) {
-        HashMap hashMap = new HashMap();
-        hashMap.put(cls, aVar);
-        return hashMap;
-    }
-
-    public static HashMap m(Class cls, z zVar) {
-        HashMap hashMap = new HashMap();
-        hashMap.put(cls, zVar);
-        return hashMap;
-    }
-
-    public static HashMap n(Class cls, z7.s sVar) {
-        HashMap hashMap = new HashMap();
-        hashMap.put(cls, sVar);
-        return hashMap;
-    }
-
-    public static e o(int i10, HashMap hashMap) {
-        DesugarCollections.unmodifiableMap(new HashMap(hashMap));
-        return new e(i10);
-    }
-
-    public static w7.a p(int i10, HashMap hashMap) {
-        DesugarCollections.unmodifiableMap(new HashMap(hashMap));
-        return new w7.a(i10);
-    }
-
-    public static z q(int i10, HashMap hashMap) {
-        DesugarCollections.unmodifiableMap(new HashMap(hashMap));
-        return new z(i10);
-    }
-
-    public static z7.s r(int i10, HashMap hashMap) {
-        DesugarCollections.unmodifiableMap(new HashMap(hashMap));
-        return new z7.s(i10);
-    }
-
-    public static void s(HashMap hashMap) {
-        DesugarCollections.unmodifiableMap(new HashMap(hashMap));
-    }
-
-    public static boolean t(String str) {
-        return new File(str).exists();
-    }
-
-    public static String u(String str, String str2) {
-        return str + str2;
+    public final void finalize() {
+        try {
+            synchronized (this.d) {
+                try {
+                    if (this.e) {
+                        Log.w("FaceDetector", "FaceDetector was not released with FaceDetector.release()");
+                        X0();
+                    }
+                } finally {
+                }
+            }
+        } finally {
+            super.finalize();
+        }
     }
 }

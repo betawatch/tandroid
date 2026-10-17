@@ -1,32 +1,36 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y6 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ a7 b;
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ WalletEngine2 b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ Utilities.Callback d;
 
-    public /* synthetic */ y6(a7 a7Var, int i10) {
-        this.a = i10;
-        this.b = a7Var;
+    public /* synthetic */ y6(WalletEngine2 walletEngine2, String str, Utilities.Callback callback) {
+        this.b = walletEngine2;
+        this.c = str;
+        this.d = callback;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                a7 a7Var = this.b;
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(a7Var.getParentActivity(), 0, a7Var.getResourceProvider());
-                alertDialog$Builder.a.T = LocaleController.getString(R.string.WalletEnterSecretPhraseInfo);
-                org.telegram.messenger.g0.p(R.string.OK, alertDialog$Builder, null);
+                this.b.lambda$previewSignMessage$7(this.d, this.c);
                 break;
             default:
-                this.b.Y();
+                this.b.lambda$getTransactionByHash$39(this.c, this.d);
                 break;
         }
+    }
+
+    public /* synthetic */ y6(WalletEngine2 walletEngine2, Utilities.Callback callback, String str) {
+        this.b = walletEngine2;
+        this.d = callback;
+        this.c = str;
     }
 }

@@ -1,51 +1,179 @@
 package zh;
 
-import android.view.View;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.os.Build;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class d1 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ r3 b;
-    public final /* synthetic */ int c;
+public final class d1 {
+    public static final PorterDuffColorFilter l = new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN);
+    public Bitmap a;
+    public final Paint b;
+    public float[] c;
+    public float[] d;
+    public int[] e;
+    public short[] f;
+    public int g;
+    public Canvas h;
+    public final Rect i;
+    public final RectF j;
+    public final Paint k;
 
-    public /* synthetic */ d1(r3 r3Var, int i10, int i11) {
-        this.a = i11;
-        this.b = r3Var;
-        this.c = i10;
+    public d1(boolean z10) {
+        Paint paint = new Paint(3);
+        this.b = paint;
+        this.c = new float[0];
+        this.d = new float[0];
+        this.e = new int[0];
+        this.f = new short[0];
+        this.i = new Rect();
+        this.j = new RectF();
+        Paint paint2 = new Paint(3);
+        this.k = paint2;
+        if (z10) {
+            PorterDuffColorFilter porterDuffColorFilter = l;
+            paint.setColorFilter(porterDuffColorFilter);
+            paint2.setColorFilter(porterDuffColorFilter);
+        }
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                r3 r3Var = this.b;
-                int i10 = this.c;
-                r3Var.S0 = i10;
-                c2 c2Var = r3Var.Z;
-                c2Var.D(c2Var.getCurrentPosition() + (i10 > r3Var.H1() ? 1 : -1));
-                break;
-            case 1:
-                r3 r3Var2 = this.b;
-                int i11 = this.c;
-                r3Var2.S0 = i11;
-                c2 c2Var2 = r3Var2.Z;
-                c2Var2.D(c2Var2.getCurrentPosition() + (i11 > r3Var2.H1() ? 1 : -1));
-                break;
-            case 2:
-                r3 r3Var3 = this.b;
-                int i12 = this.c;
-                r3Var3.S0 = i12;
-                c2 c2Var3 = r3Var3.Z;
-                c2Var3.D(c2Var3.getCurrentPosition() + (i12 > r3Var3.H1() ? 1 : -1));
-                break;
-            default:
-                r3 r3Var4 = this.b;
-                int i13 = this.c;
-                r3Var4.S0 = i13;
-                c2 c2Var4 = r3Var4.Z;
-                c2Var4.D(c2Var4.getCurrentPosition() + (i13 > r3Var4.H1() ? 1 : -1));
-                break;
+    public final void a(Canvas canvas) {
+        this.g = 0;
+        if (Build.VERSION.SDK_INT >= 29) {
+            canvas = null;
         }
+        this.h = canvas;
+    }
+
+    public final void b(Canvas canvas) {
+        Bitmap bitmap;
+        if (this.h == null && this.g > 0 && (bitmap = this.a) != null && !bitmap.isRecycled()) {
+            Canvas.VertexMode vertexMode = Canvas.VertexMode.TRIANGLES;
+            int i10 = this.g;
+            canvas.drawVertices(vertexMode, i10 * 8, this.c, 0, this.d, 0, this.e, 0, this.f, 0, i10 * 6, this.b);
+        }
+        this.g = 0;
+        this.h = null;
+    }
+
+    public final void c(float f7, float f10, float f11, float f12, float f13, float f14, float f15, float f16) {
+        if (this.a == null || f11 <= 0.0f || f16 <= 0.004f || this.g >= 8191) {
+            return;
+        }
+        int min = Math.min(255, (int) (255.0f * f16));
+        if (this.h != null) {
+            Rect rect = this.i;
+            rect.set((int) f13, (int) f14, (int) (f13 + f15), (int) (f14 + f15));
+            float f17 = f11 / 2.0f;
+            RectF rectF = this.j;
+            rectF.set(f7 - f17, f10 - f17, f7 + f17, f17 + f10);
+            Paint paint = this.k;
+            paint.setAlpha(min);
+            this.h.save();
+            this.h.rotate(f12, f7, f10);
+            this.h.drawBitmap(this.a, rect, rectF, paint);
+            this.h.restore();
+            return;
+        }
+        int i10 = this.g + 1;
+        float[] fArr = this.c;
+        if (fArr.length < i10 * 8) {
+            int min2 = Math.min(8191, Math.max(i10, (fArr.length / 8) * 2));
+            int i11 = min2 * 8;
+            float[] fArr2 = new float[i11];
+            float[] fArr3 = new float[i11];
+            int[] iArr = new int[min2 * 4];
+            System.arraycopy(this.c, 0, fArr2, 0, this.g * 8);
+            System.arraycopy(this.d, 0, fArr3, 0, this.g * 8);
+            System.arraycopy(this.e, 0, iArr, 0, this.g * 4);
+            this.c = fArr2;
+            this.d = fArr3;
+            this.e = iArr;
+            this.f = new short[min2 * 6];
+            for (int i12 = 0; i12 < min2; i12++) {
+                int i13 = i12 * 4;
+                short[] sArr = this.f;
+                int i14 = i12 * 6;
+                short s10 = (short) i13;
+                sArr[i14] = s10;
+                sArr[i14 + 1] = (short) (i13 + 1);
+                short s11 = (short) (i13 + 2);
+                sArr[i14 + 2] = s11;
+                sArr[i14 + 3] = s10;
+                sArr[i14 + 4] = s11;
+                sArr[i14 + 5] = (short) (i13 + 3);
+            }
+        }
+        int i15 = this.g;
+        this.g = i15 + 1;
+        float f18 = f11 / 2.0f;
+        double radians = Math.toRadians(f12);
+        float cos = ((float) Math.cos(radians)) * f18;
+        float sin = ((float) Math.sin(radians)) * f18;
+        int i16 = i15 * 8;
+        float[] fArr4 = this.c;
+        float f19 = f7 - cos;
+        fArr4[i16] = f19 + sin;
+        int i17 = i16 + 1;
+        float f20 = f10 - sin;
+        fArr4[i17] = f20 - cos;
+        int i18 = i16 + 2;
+        float f21 = f7 + cos;
+        fArr4[i18] = f21 + sin;
+        int i19 = i16 + 3;
+        float f22 = f10 + sin;
+        fArr4[i19] = f22 - cos;
+        int i20 = i16 + 4;
+        fArr4[i20] = f21 - sin;
+        int i21 = i16 + 5;
+        fArr4[i21] = f22 + cos;
+        int i22 = i16 + 6;
+        fArr4[i22] = f19 - sin;
+        int i23 = i16 + 7;
+        fArr4[i23] = f20 + cos;
+        float[] fArr5 = this.d;
+        fArr5[i16] = f13;
+        fArr5[i17] = f14;
+        float f23 = f13 + f15;
+        fArr5[i18] = f23;
+        fArr5[i19] = f14;
+        fArr5[i20] = f23;
+        float f24 = f14 + f15;
+        fArr5[i21] = f24;
+        fArr5[i22] = f13;
+        fArr5[i23] = f24;
+        int i24 = (min << 24) | 16777215;
+        int i25 = i15 * 4;
+        int[] iArr2 = this.e;
+        iArr2[i25 + 3] = i24;
+        iArr2[i25 + 2] = i24;
+        iArr2[i25 + 1] = i24;
+        iArr2[i25] = i24;
+    }
+
+    public final void d(Bitmap bitmap) {
+        if (this.a == bitmap) {
+            return;
+        }
+        this.a = bitmap;
+        Paint paint = this.b;
+        if (bitmap == null) {
+            paint.setShader(null);
+            return;
+        }
+        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+        BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
+        if (Build.VERSION.SDK_INT >= 33) {
+            bitmapShader.setFilterMode(2);
+        }
+        paint.setShader(bitmapShader);
     }
 }

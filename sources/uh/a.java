@@ -3,11 +3,10 @@ package uh;
 import android.view.View;
 import java.util.ArrayList;
 import java.util.HashMap;
-import m.h;
-import org.telegram.ui.Components.io;
+import org.telegram.ui.Components.fo;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes3.dex */
 public final /* synthetic */ class a implements View.OnClickListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ f b;
@@ -23,31 +22,31 @@ public final /* synthetic */ class a implements View.OnClickListener {
         f fVar = this.b;
         switch (i10) {
             case 0:
-                h hVar = fVar.k0;
-                if (hVar != null) {
+                l2.f fVar2 = fVar.k0;
+                if (fVar2 != null) {
                     ArrayList arrayList = new ArrayList(fVar.j0.keySet());
-                    io ioVar = (io) hVar.b;
-                    ArrayList arrayList2 = ioVar.P0;
+                    fo foVar = (fo) fVar2.b;
+                    ArrayList arrayList2 = foVar.P0;
                     arrayList2.clear();
                     arrayList2.addAll(arrayList);
-                    int i11 = ioVar.L0;
+                    int i11 = foVar.L0;
                     if (i11 >= 0) {
-                        ioVar.r.m(i11);
+                        foVar.r.m(i11);
                     }
                 }
                 fVar.dismiss();
                 break;
             case 1:
-                h hVar2 = fVar.k0;
-                if (hVar2 != null) {
+                l2.f fVar3 = fVar.k0;
+                if (fVar3 != null) {
                     ArrayList arrayList3 = new ArrayList(fVar.j0.keySet());
-                    io ioVar2 = (io) hVar2.b;
-                    ArrayList arrayList4 = ioVar2.P0;
+                    fo foVar2 = (fo) fVar3.b;
+                    ArrayList arrayList4 = foVar2.P0;
                     arrayList4.clear();
                     arrayList4.addAll(arrayList3);
-                    int i12 = ioVar2.L0;
+                    int i12 = foVar2.L0;
                     if (i12 >= 0) {
-                        ioVar2.r.m(i12);
+                        foVar2.r.m(i12);
                     }
                 }
                 fVar.dismiss();

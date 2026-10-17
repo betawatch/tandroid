@@ -1,13 +1,12 @@
 package j4;
 
-import b2.w0;
-import c3.i0;
-import e2.m0;
-import i2.o0;
+import b2.v0;
+import c3.j0;
+import i2.m0;
 import java.util.Arrays;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class n implements i {
     public static final float[] l = {1.0f, 1.0f, 1.0909091f, 0.90909094f, 1.4545455f, 1.2121212f, 1.0f};
@@ -15,11 +14,11 @@ public final class n implements i {
     public final e2.x b;
     public final boolean[] c = new boolean[4];
     public final l d;
-    public final o0 e;
+    public final m0 e;
     public m f;
     public long g;
     public String h;
-    public i0 i;
+    public j0 i;
     public boolean j;
     public long k;
 
@@ -29,7 +28,7 @@ public final class n implements i {
         lVar.e = new byte[128];
         this.d = lVar;
         this.k = -9223372036854775807L;
-        this.e = new o0(178);
+        this.e = new m0(178);
         this.b = new e2.x();
     }
 
@@ -57,16 +56,16 @@ public final class n implements i {
         this.g += xVar.a();
         this.i.d(xVar.a(), xVar);
         while (true) {
-            int c10 = f2.p.c(bArr, i14, i15, this.c);
+            int c10 = f2.q.c(bArr, i14, i15, this.c);
             l lVar = this.d;
-            o0 o0Var = this.e;
+            m0 m0Var = this.e;
             if (c10 == i15) {
                 if (!this.j) {
                     lVar.a(i14, i15, bArr);
                 }
                 this.f.a(i14, i15, bArr);
-                if (o0Var != null) {
-                    o0Var.a(i14, i15, bArr);
+                if (m0Var != null) {
+                    m0Var.a(i14, i15, bArr);
                     return;
                 }
                 return;
@@ -106,7 +105,7 @@ public final class n implements i {
                             if (i17 == 179 || i17 == 181) {
                                 lVar.c -= i19;
                                 lVar.a = false;
-                                i0 i0Var = this.i;
+                                j0 j0Var = this.i;
                                 int i21 = lVar.d;
                                 String str = this.h;
                                 str.getClass();
@@ -167,15 +166,15 @@ public final class n implements i {
                                         int g15 = gVar.g(13);
                                         gVar.n();
                                         gVar.n();
-                                        b2.w wVar = new b2.w();
-                                        wVar.a = str;
-                                        wVar.q = w0.n("video/mp2t");
-                                        wVar.r = w0.n("video/mp4v-es");
-                                        wVar.y = g14;
-                                        wVar.z = g15;
-                                        wVar.E = f7;
-                                        wVar.u = Collections.singletonList(copyOf);
-                                        i2.d.u(wVar, i0Var);
+                                        b2.v vVar = new b2.v();
+                                        vVar.a = str;
+                                        vVar.q = v0.n("video/mp2t");
+                                        vVar.r = v0.n("video/mp4v-es");
+                                        vVar.y = g14;
+                                        vVar.z = g15;
+                                        vVar.E = f7;
+                                        vVar.u = Collections.singletonList(copyOf);
+                                        i0.a.u(vVar, j0Var);
                                         this.j = true;
                                     } else {
                                         f7 = g11 / g12;
@@ -194,15 +193,15 @@ public final class n implements i {
                                         int g152 = gVar.g(13);
                                         gVar.n();
                                         gVar.n();
-                                        b2.w wVar2 = new b2.w();
-                                        wVar2.a = str;
-                                        wVar2.q = w0.n("video/mp2t");
-                                        wVar2.r = w0.n("video/mp4v-es");
-                                        wVar2.y = g142;
-                                        wVar2.z = g152;
-                                        wVar2.E = f7;
-                                        wVar2.u = Collections.singletonList(copyOf);
-                                        i2.d.u(wVar2, i0Var);
+                                        b2.v vVar2 = new b2.v();
+                                        vVar2.a = str;
+                                        vVar2.q = v0.n("video/mp2t");
+                                        vVar2.r = v0.n("video/mp4v-es");
+                                        vVar2.y = g142;
+                                        vVar2.z = g152;
+                                        vVar2.E = f7;
+                                        vVar2.u = Collections.singletonList(copyOf);
+                                        i0.a.u(vVar2, j0Var);
                                         this.j = true;
                                     }
                                 } else if (g10 < 7) {
@@ -222,15 +221,15 @@ public final class n implements i {
                                     int g1522 = gVar.g(13);
                                     gVar.n();
                                     gVar.n();
-                                    b2.w wVar22 = new b2.w();
-                                    wVar22.a = str;
-                                    wVar22.q = w0.n("video/mp2t");
-                                    wVar22.r = w0.n("video/mp4v-es");
-                                    wVar22.y = g1422;
-                                    wVar22.z = g1522;
-                                    wVar22.E = f7;
-                                    wVar22.u = Collections.singletonList(copyOf);
-                                    i2.d.u(wVar22, i0Var);
+                                    b2.v vVar22 = new b2.v();
+                                    vVar22.a = str;
+                                    vVar22.q = v0.n("video/mp2t");
+                                    vVar22.r = v0.n("video/mp4v-es");
+                                    vVar22.y = g1422;
+                                    vVar22.z = g1522;
+                                    vVar22.E = f7;
+                                    vVar22.u = Collections.singletonList(copyOf);
+                                    i0.a.u(vVar22, j0Var);
                                     this.j = true;
                                 } else {
                                     e2.a.l("H263Reader", "Invalid aspect ratio");
@@ -250,15 +249,15 @@ public final class n implements i {
                                     int g15222 = gVar.g(13);
                                     gVar.n();
                                     gVar.n();
-                                    b2.w wVar222 = new b2.w();
-                                    wVar222.a = str;
-                                    wVar222.q = w0.n("video/mp2t");
-                                    wVar222.r = w0.n("video/mp4v-es");
-                                    wVar222.y = g14222;
-                                    wVar222.z = g15222;
-                                    wVar222.E = f7;
-                                    wVar222.u = Collections.singletonList(copyOf);
-                                    i2.d.u(wVar222, i0Var);
+                                    b2.v vVar222 = new b2.v();
+                                    vVar222.a = str;
+                                    vVar222.q = v0.n("video/mp2t");
+                                    vVar222.r = v0.n("video/mp4v-es");
+                                    vVar222.y = g14222;
+                                    vVar222.z = g15222;
+                                    vVar222.E = f7;
+                                    vVar222.u = Collections.singletonList(copyOf);
+                                    i0.a.u(vVar222, j0Var);
                                     this.j = true;
                                 }
                             } else {
@@ -299,17 +298,17 @@ public final class n implements i {
                 lVar.a(i13, 3, l.f);
             }
             this.f.a(i14, c10, bArr);
-            if (o0Var != null) {
+            if (m0Var != null) {
                 if (i18 > 0) {
-                    o0Var.a(i14, c10, bArr);
+                    m0Var.a(i14, c10, bArr);
                     i12 = 0;
                 } else {
                     i12 = -i18;
                 }
-                if (o0Var.e(i12)) {
-                    int p5 = f2.p.p(o0Var.e, (byte[]) o0Var.f);
-                    String str2 = m0.a;
-                    byte[] bArr2 = (byte[]) o0Var.f;
+                if (m0Var.e(i12)) {
+                    int p5 = f2.q.p(m0Var.e, (byte[]) m0Var.f);
+                    String str2 = e2.m0.a;
+                    byte[] bArr2 = (byte[]) m0Var.f;
                     e2.x xVar2 = this.b;
                     xVar2.L(p5, bArr2);
                     this.a.a(this.k, xVar2);
@@ -317,7 +316,7 @@ public final class n implements i {
                 if (i17 == 178) {
                     z10 = true;
                     if (xVar.a[c10 + 2] == 1) {
-                        o0Var.h(i17);
+                        m0Var.h(i17);
                     }
                     int i24 = i10 - c10;
                     this.f.b(i24, this.g - i24, this.j);
@@ -351,7 +350,7 @@ public final class n implements i {
 
     @Override // j4.i
     public final void c() {
-        f2.p.b(this.c);
+        f2.q.b(this.c);
         l lVar = this.d;
         lVar.a = false;
         lVar.c = 0;
@@ -363,9 +362,9 @@ public final class n implements i {
             mVar.d = false;
             mVar.e = -1;
         }
-        o0 o0Var = this.e;
-        if (o0Var != null) {
-            o0Var.g();
+        m0 m0Var = this.e;
+        if (m0Var != null) {
+            m0Var.g();
         }
         this.g = 0L;
         this.k = -9223372036854775807L;
@@ -377,9 +376,9 @@ public final class n implements i {
         f0Var.c();
         this.h = (String) f0Var.e;
         f0Var.c();
-        i0 W = qVar.W(f0Var.c, 2);
-        this.i = W;
-        this.f = new m(W);
+        j0 j02 = qVar.j0(f0Var.c, 2);
+        this.i = j02;
+        this.f = new m(j02);
         this.a.b(qVar, f0Var);
     }
 

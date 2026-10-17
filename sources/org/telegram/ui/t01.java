@@ -1,46 +1,43 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class t01 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ e11 b;
+public final class t01 implements ImageReceiver.ImageReceiverDelegate {
+    public final /* synthetic */ Runnable[] a;
 
-    public /* synthetic */ t01(e11 e11Var, int i10) {
-        this.a = i10;
-        this.b = e11Var;
+    public t01(Runnable[] runnableArr) {
+        this.a = runnableArr;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                e11 e11Var = this.b;
-                ProfileActivity profileActivity = e11Var.e;
-                TLRPC.User user = profileActivity.getMessagesController().getUser(Long.valueOf(profileActivity.e1));
-                MessagesController messagesController = profileActivity.getMessagesController();
-                ProfileActivity profileActivity2 = e11Var.e;
-                messagesController.openApp(profileActivity2, user, null, profileActivity2.getClassGuid(), null);
-                break;
-            default:
-                ProfileActivity profileActivity3 = this.b.e;
-                profileActivity3.O4 = !profileActivity3.O4;
-                if (!profileActivity3.N4) {
-                    profileActivity3.N4 = true;
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public final void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
+        if (imageReceiver.hasBitmapImage()) {
+            Runnable[] runnableArr = this.a;
+            if (runnableArr[0] != null) {
+                org.telegram.ui.Components.uj0 lottieAnimation = imageReceiver.getLottieAnimation();
+                if (lottieAnimation == null) {
+                    runnableArr[0].run();
+                    runnableArr[0] = null;
+                } else if (lottieAnimation.y()) {
+                    lottieAnimation.A0 = new sy0(runnableArr, 6);
+                } else {
+                    runnableArr[0].run();
+                    runnableArr[0] = null;
                 }
-                profileActivity3.F4();
-                view.requestLayout();
-                profileActivity3.d.m(profileActivity3.O3);
-                int i10 = profileActivity3.U5;
-                if (i10 >= 0) {
-                    profileActivity3.c.h1(i10, profileActivity3.V5 - profileActivity3.a.getPaddingTop());
-                    break;
-                }
-                break;
+            }
         }
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public final /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
+        org.telegram.messenger.k5.a(this, i10, str, drawable);
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public final /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
+        org.telegram.messenger.k5.b(this, imageReceiver);
     }
 }

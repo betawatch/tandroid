@@ -1,27 +1,104 @@
 package org.telegram.ui.Components;
 
-import android.text.InputFilter;
-import android.text.Spanned;
+import android.graphics.Color;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public abstract class tq implements InputFilter {
-    public final int a;
+public final class tq implements TextWatcher {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ View c;
 
-    public tq(int i10) {
-        this.a = i10;
+    public tq(wq wqVar, int i10) {
+        this.c = wqVar;
+        this.b = i10;
     }
 
-    @Override // android.text.InputFilter
-    public CharSequence filter(CharSequence charSequence, int i10, int i11, Spanned spanned, int i12, int i13) {
-        int codePointCount = this.a - (Character.codePointCount(spanned, 0, spanned.length()) - Character.codePointCount(spanned, i12, i13));
-        if (codePointCount <= 0) {
-            return "";
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        int i10;
+        int i11 = this.a;
+        int i12 = this.b;
+        View view = this.c;
+        switch (i11) {
+            case 0:
+                wq wqVar = (wq) view;
+                EditTextBoldCursor[] editTextBoldCursorArr = wqVar.E;
+                if (!wqVar.r) {
+                    wqVar.r = true;
+                    int i13 = 0;
+                    while (i13 < editable.length()) {
+                        char charAt = editable.charAt(i13);
+                        if ((charAt < '0' || charAt > '9') && ((charAt < 'a' || charAt > 'f') && (charAt < 'A' || charAt > 'F'))) {
+                            editable.replace(i13, i13 + 1, "");
+                            i13--;
+                        }
+                        i13++;
+                    }
+                    if (editable.length() != 0) {
+                        try {
+                            i10 = Integer.parseInt(editTextBoldCursorArr[i12].getText().toString(), 16) | (-16777216);
+                        } catch (Exception unused) {
+                            i10 = -1;
+                        }
+                        wqVar.setColorInner(i10);
+                        int color = wqVar.getColor();
+                        if (editable.length() == 6) {
+                            editable.replace(0, editable.length(), String.format("%02x%02x%02x", Byte.valueOf((byte) Color.red(color)), Byte.valueOf((byte) Color.green(color)), Byte.valueOf((byte) Color.blue(color))).toUpperCase());
+                            editTextBoldCursorArr[i12].setSelection(editable.length());
+                        }
+                        wqVar.v[wqVar.S].a(color);
+                        wqVar.a.j0(color, wqVar.S, true);
+                        wqVar.r = false;
+                        break;
+                    } else {
+                        wqVar.r = false;
+                        break;
+                    }
+                }
+                break;
+            default:
+                NumberTextView numberTextView = (NumberTextView) view;
+                int codePointCount = i12 - Character.codePointCount(editable, 0, editable.length());
+                if (codePointCount >= 30) {
+                    AndroidUtilities.updateViewVisibilityAnimated(numberTextView, false);
+                    break;
+                } else {
+                    numberTextView.a(codePointCount, numberTextView.getVisibility() == 0);
+                    AndroidUtilities.updateViewVisibilityAnimated(numberTextView, true);
+                    break;
+                }
         }
-        if (codePointCount >= Character.codePointCount(charSequence, i10, i11)) {
-            return null;
-        }
-        int i14 = codePointCount + i10;
-        return (Character.isHighSurrogate(charSequence.charAt(i14 + (-1))) && (i14 = i14 + (-1)) == i10) ? "" : charSequence.subSequence(i10, i14);
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
+    }
+
+    public tq(int i10, NumberTextView numberTextView) {
+        this.b = i10;
+        this.c = numberTextView;
+    }
+
+    private final void a(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

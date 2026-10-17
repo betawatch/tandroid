@@ -1,254 +1,633 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
+import android.text.SpannableString;
 import android.text.TextUtils;
+import java.security.SecureRandom;
 import java.util.ArrayList;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.UserConfig;
+import java.util.Arrays;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
+import org.telegram.messenger.voip.ConferenceCall;
 import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.tgnet.tl.TL_update;
+import org.telegram.tgnet.Vector;
+import org.telegram.tgnet.tl.TL_toncenter;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.wg1;
+import org.telegram.ui.Components.l11;
+import org.telegram.ui.Components.m11;
+import org.telegram.ui.Components.qy;
+import org.telegram.ui.Components.xc;
+import org.telegram.ui.Wallet.WalletEngine2;
+import org.telegram.ui.i01;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class q implements Runnable {
+public final /* synthetic */ class q implements Utilities.Callback2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
-    public final /* synthetic */ String c;
+    public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
     public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
-    public final /* synthetic */ long r;
-    public final /* synthetic */ TLObject s;
-    public final /* synthetic */ Object v;
-    public final /* synthetic */ Object w;
 
-    public /* synthetic */ q(k0 k0Var, String str, Utilities.Callback callback, TL_wallet.nftItem nftitem, String str2, String str3, byte[] bArr, long j10, TLRPC.User user, String str4, Utilities.Callback callback2, int i10) {
+    public /* synthetic */ q(Object obj, Object obj2, Object obj3, Object obj4, int i10) {
         this.a = i10;
-        this.b = k0Var;
-        this.c = str;
-        this.d = callback;
-        this.e = nftitem;
-        this.f = str2;
-        this.h = str3;
-        this.n = bArr;
-        this.r = j10;
-        this.s = user;
-        this.v = str4;
-        this.w = callback2;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
+        this.e = obj4;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        TLObject tLObject = this.s;
-        Object obj = this.n;
-        Object obj2 = this.e;
-        Object obj3 = this.w;
-        Object obj4 = this.d;
-        Object obj5 = this.v;
-        Object obj6 = this.h;
-        Object obj7 = this.f;
-        Object obj8 = this.b;
-        int i11 = 0;
-        switch (i10) {
+    /* JADX WARN: Removed duplicated region for block: B:203:0x0446  */
+    /* JADX WARN: Removed duplicated region for block: B:207:0x045b A[Catch: all -> 0x037e, Exception -> 0x0382, TRY_LEAVE, TryCatch #20 {Exception -> 0x0382, blocks: (B:155:0x0386, B:156:0x0389, B:161:0x037a, B:164:0x0395, B:185:0x03f0, B:186:0x03f3, B:188:0x0404, B:204:0x0447, B:205:0x044a, B:207:0x045b, B:217:0x0469), top: B:138:0x032e }] */
+    /* JADX WARN: Removed duplicated region for block: B:264:0x04fc  */
+    /* JADX WARN: Removed duplicated region for block: B:268:0x0509  */
+    /* JADX WARN: Removed duplicated region for block: B:270:0x050e  */
+    /* JADX WARN: Removed duplicated region for block: B:272:0x0513  */
+    /* JADX WARN: Removed duplicated region for block: B:277:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:279:0x04ff A[Catch: all -> 0x0521, TryCatch #1 {all -> 0x0521, blocks: (B:262:0x04f1, B:265:0x0503, B:279:0x04ff), top: B:261:0x04f1 }] */
+    /* JADX WARN: Removed duplicated region for block: B:283:0x0525  */
+    /* JADX WARN: Removed duplicated region for block: B:285:0x052a  */
+    /* JADX WARN: Removed duplicated region for block: B:287:0x052f  */
+    @Override // org.telegram.messenger.Utilities.Callback2
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run(Object obj, Object obj2) {
+        String str;
+        byte[] bArr;
+        String str2;
+        byte[] bArr2;
+        byte[][] bArr3;
+        byte[] c10;
+        char c11;
+        SerializedData serializedData;
+        char c12;
+        byte[] bArr4;
+        Long l4;
+        Long l10;
+        Long l11;
+        int i10;
+        byte[] byteArray;
+        byte[][] bArr5;
+        int i11;
+        byte[] key_to_public_key;
+        long key_from_ecdh;
+        Long valueOf;
+        String str3;
+        String str4;
+        str = "NULL_ERROR";
+        boolean z10 = false;
+        switch (this.a) {
             case 0:
-                k0 k0Var = (k0) obj8;
-                Utilities.Callback callback = (Utilities.Callback) obj4;
-                String str = this.c;
-                q qVar = new q(k0Var, str, callback, (TL_wallet.nftItem) obj2, (String) obj7, (String) obj6, (byte[]) obj, this.r, (TLRPC.User) tLObject, (String) obj5, (Utilities.Callback) obj3, 1);
-                if (k0Var.H() && !k0Var.G()) {
-                    k0.E("send " + str + ": asking passcode");
-                    org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
-                    if (U != null) {
-                        org.telegram.ui.ActionBar.k2 k2Var = new org.telegram.ui.ActionBar.k2();
-                        k2Var.a = true;
-                        boolean[] zArr = {false};
-                        x xVar = new x(zArr, callback);
-                        xVar.V = new wg1(9, zArr, qVar);
-                        U.showAsSheet(xVar, k2Var);
-                        break;
+                m0 m0Var = (m0) this.b;
+                d0 d0Var = (d0) this.c;
+                String str5 = (String) this.d;
+                Runnable runnable = (Runnable) this.e;
+                TL_toncenter.apiResponse apiresponse = (TL_toncenter.apiResponse) obj;
+                if (apiresponse != null) {
+                    try {
+                        d0Var.b = Long.parseLong(new JSONObject(apiresponse.response.data).getString("balance"));
+                        if (m0Var.N.get(str5) == d0Var) {
+                            m0Var.h0(d0Var);
+                            m0Var.J();
+                        }
+                    } catch (Exception e) {
+                        m0.j("failed to get balance of " + str5, e);
                     }
-                } else {
-                    qVar.run();
-                    break;
                 }
-                break;
+                runnable.run();
+                return;
             case 1:
-                final k0 k0Var2 = (k0) obj8;
-                final Utilities.Callback callback2 = (Utilities.Callback) obj4;
-                final TL_wallet.nftItem nftitem = (TL_wallet.nftItem) obj2;
-                final String str2 = (String) obj7;
-                final String str3 = (String) obj6;
-                final byte[] bArr = (byte[]) obj;
-                final TLRPC.User user = (TLRPC.User) tLObject;
-                final String str4 = (String) obj5;
-                final Utilities.Callback callback3 = (Utilities.Callback) obj3;
-                StringBuilder sb2 = new StringBuilder("send ");
-                final String str5 = this.c;
-                sb2.append(str5);
-                sb2.append(": ready, get secret phrase");
-                k0.E(sb2.toString());
-                final long j10 = this.r;
-                k0Var2.x(new Utilities.Callback2() { // from class: org.telegram.ui.Wallet.s
-                    /* JADX WARN: Removed duplicated region for block: B:50:0x012e  */
-                    /* JADX WARN: Removed duplicated region for block: B:52:0x0142  */
-                    @Override // org.telegram.messenger.Utilities.Callback2
-                    /*
-                        Code decompiled incorrectly, please refer to instructions dump.
-                    */
-                    public final void run(Object obj9, Object obj10) {
-                        long j11;
-                        MessageObject messageObject;
-                        String str6;
-                        h0 h0Var = (h0) obj9;
-                        String str7 = (String) obj10;
-                        k0 k0Var3 = k0.this;
-                        int i12 = k0Var3.a;
-                        Utilities.Callback callback4 = callback2;
-                        if (str7 != null) {
-                            callback4.run(str7);
-                            return;
-                        }
-                        if (h0Var == null) {
-                            callback4.run("NULL_ERROR");
-                            return;
-                        }
-                        if (k0Var3.b == null) {
-                            callback4.run("NULL_ENGINE");
-                            return;
-                        }
-                        TL_wallet.nftItem nftitem2 = nftitem;
-                        if (nftitem2 != null) {
-                            if (!k0.b(str2, k0Var3.r())) {
-                                callback4.run("WALLET_CHANGED");
-                                return;
+                m0 m0Var2 = (m0) this.b;
+                qy qyVar = (qy) this.c;
+                j0 j0Var = (j0) this.d;
+                byte[] bArr6 = (byte[]) this.e;
+                Vector vector = (Vector) obj;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                if (vector == null) {
+                    if (tL_error == null || (str3 = tL_error.text) == null) {
+                        str3 = "NULL_ERROR";
+                    }
+                    m0.i("enable backup: didnt get backup holders: ".concat(str3));
+                    if (tL_error != null && (str4 = tL_error.text) != null) {
+                        str = str4;
+                    }
+                    qyVar.run(str);
+                    return;
+                }
+                int size = vector.objects.size();
+                if (size != 3) {
+                    m0.i("enable backup: expected three backup holders");
+                    qyVar.run("INVALID_BACKUP_HOLDERS_COUNT");
+                    return;
+                }
+                byte[][] bArr7 = new byte[size][];
+                try {
+                    c10 = j0Var.c();
+                } catch (Exception e7) {
+                    e = e7;
+                    str2 = "NULL_ERROR";
+                    bArr = null;
+                } catch (Throwable th2) {
+                    th = th2;
+                    bArr = null;
+                }
+                try {
+                    bArr2 = m0.R(c10);
+                    try {
+                        bArr3 = m0.c0(bArr2, new SecureRandom());
+                        try {
+                            try {
+                            } catch (Exception e10) {
+                                e = e10;
+                                str2 = "NULL_ERROR";
                             }
-                        }
-                        j0 z10 = k0Var3.z();
-                        TL_wallet.walletTransaction wallettransaction = new TL_wallet.walletTransaction();
-                        wallettransaction.incoming = false;
-                        wallettransaction.pending = true;
-                        String str8 = str3;
-                        wallettransaction.comment = str8;
-                        wallettransaction.comment_encrypted = false;
-                        byte[] bArr2 = bArr;
-                        wallettransaction.comment_encrypted_preparing = (nftitem2 != null || bArr2 == null || TextUtils.isEmpty(str8)) ? false : true;
-                        wallettransaction.date = ConnectionsManager.getInstance(i12).getCurrentTime();
-                        long j12 = j10;
-                        wallettransaction.amount = j12;
-                        wallettransaction.nft = nftitem2;
-                        TLRPC.User user2 = user;
-                        String str9 = str5;
-                        wallettransaction.peer = k0.g(user2, str9, str4);
-                        m6 m6Var = new m6(k0Var3, wallettransaction, nftitem2, z10, 4);
-                        long nextLong = Utilities.random.nextLong();
-                        wallettransaction.random_id = nextLong;
-                        k0Var3.p.add(0, wallettransaction);
-                        if (nftitem2 != null) {
-                            if (k0Var3.o == null) {
-                                k0Var3.o = new c0(k0Var3);
-                            }
-                            c0 c0Var = k0Var3.o;
-                            c0Var.c.add(wallettransaction);
-                            c0Var.g();
-                            c0Var.f();
-                        }
-                        z10.h();
-                        z10.f();
-                        k0Var3.P();
-                        SendMessagesHelper sendMessagesHelper = SendMessagesHelper.getInstance(i12);
-                        if (user2 == null || user2.id == UserConfig.getInstance(i12).getClientUserId() || nftitem2 != null) {
-                            j11 = j12;
-                            messageObject = null;
-                        } else {
-                            j11 = j12;
-                            messageObject = sendMessagesHelper.createSendingGramTransfer(user2, str9, j11, wallettransaction.comment, wallettransaction.comment_encrypted, wallettransaction.comment_encrypted_preparing, nextLong);
-                        }
-                        wallettransaction.localMessageId = messageObject == null ? 0 : messageObject.getId();
-                        Utilities.Callback callback5 = callback3;
-                        if (callback5 != null) {
-                            callback5.run(wallettransaction);
-                        }
-                        callback4.run(null);
-                        TL_update.TL_updateWalletGaslessInfo tL_updateWalletGaslessInfo = k0Var3.f;
-                        if (tL_updateWalletGaslessInfo != null && !TextUtils.isEmpty(tL_updateWalletGaslessInfo.relayer_address)) {
-                            TL_update.TL_updateWalletGaslessInfo tL_updateWalletGaslessInfo2 = k0Var3.f;
-                            if (tL_updateWalletGaslessInfo2.available) {
-                                str6 = tL_updateWalletGaslessInfo2.relayer_address;
-                                k0.E("prepare sending");
-                                t tVar = new t(k0Var3, m6Var, sendMessagesHelper, messageObject, wallettransaction, str9, z10, nextLong, user2);
-                                if (nftitem2 == null) {
-                                    k0Var3.b.prepareSendNFT(h0Var, str9, nftitem2.address, str8, new d(tVar, 2));
-                                    return;
+                            try {
+                                if (BuildVars.LOGS_ENABLED) {
+                                    byte[] bArr8 = new byte[215];
+                                    c11 = 1;
+                                    try {
+                                        int length = bArr3.length;
+                                        int i12 = 0;
+                                        while (i12 < length) {
+                                            byte[] bArr9 = bArr3[i12];
+                                            String str6 = str;
+                                            int i13 = length;
+                                            for (int i14 = 0; i14 < bArr9.length; i14++) {
+                                                try {
+                                                    bArr8[i14] = (byte) (bArr8[i14] ^ bArr9[i14]);
+                                                } catch (Throwable th3) {
+                                                    th = th3;
+                                                    Arrays.fill(bArr8, (byte) 0);
+                                                    throw th;
+                                                }
+                                            }
+                                            i12++;
+                                            length = i13;
+                                            str = str6;
+                                        }
+                                        m0.F("enable backup: diagnostics sharesReconstructPaddedMnemonic=" + Arrays.equals(bArr2, bArr8));
+                                        Arrays.fill(bArr8, (byte) 0);
+                                    } catch (Throwable th4) {
+                                        th = th4;
+                                    }
                                 } else {
-                                    k0Var3.b.prepareSend(h0Var, str9, j11, str8, bArr2, str6, tVar);
+                                    c11 = 1;
+                                }
+                                int i15 = 0;
+                                while (i15 < size) {
+                                    TL_wallet.holderDc holderdc = (TL_wallet.holderDc) vector.objects.get(i15);
+                                    SerializedData serializedData2 = new SerializedData();
+                                    try {
+                                        TL_wallet.mnemonic_decryptedKeyPart mnemonic_decryptedkeypart = new TL_wallet.mnemonic_decryptedKeyPart();
+                                        c12 = 2;
+                                        try {
+                                            mnemonic_decryptedkeypart.share = bArr3[i15];
+                                            mnemonic_decryptedkeypart.serializeToStream(serializedData2);
+                                            byteArray = serializedData2.toByteArray();
+                                            bArr5 = bArr7;
+                                            try {
+                                                long key_generate_temporary_private_key = ConferenceCall.key_generate_temporary_private_key();
+                                                l10 = Long.valueOf(key_generate_temporary_private_key);
+                                                i11 = i15;
+                                                try {
+                                                    key_to_public_key = ConferenceCall.key_to_public_key(key_generate_temporary_private_key);
+                                                    serializedData = serializedData2;
+                                                    try {
+                                                        long key_from_public_key = ConferenceCall.key_from_public_key(holderdc.public_key);
+                                                        l11 = Long.valueOf(key_from_public_key);
+                                                        try {
+                                                            key_from_ecdh = ConferenceCall.key_from_ecdh(key_generate_temporary_private_key, key_from_public_key);
+                                                            valueOf = Long.valueOf(key_from_ecdh);
+                                                        } catch (Throwable th5) {
+                                                            th = th5;
+                                                            bArr4 = byteArray;
+                                                            l4 = null;
+                                                        }
+                                                    } catch (Throwable th6) {
+                                                        th = th6;
+                                                        bArr4 = byteArray;
+                                                        l4 = null;
+                                                        l11 = null;
+                                                        if (bArr4 != null) {
+                                                            Arrays.fill(bArr4, (byte) 0);
+                                                        }
+                                                        serializedData.cleanup();
+                                                        Long[] lArr = new Long[3];
+                                                        lArr[0] = l4;
+                                                        lArr[c11] = l11;
+                                                        lArr[c12] = l10;
+                                                        for (i10 = 0; i10 < 3; i10++) {
+                                                            Long l12 = lArr[i10];
+                                                            if (l12 != null) {
+                                                                try {
+                                                                    ConferenceCall.key_destroy(l12.longValue());
+                                                                } catch (Exception unused) {
+                                                                }
+                                                            }
+                                                        }
+                                                        throw th;
+                                                    }
+                                                } catch (Throwable th7) {
+                                                    th = th7;
+                                                    serializedData = serializedData2;
+                                                }
+                                            } catch (Throwable th8) {
+                                                th = th8;
+                                                serializedData = serializedData2;
+                                                bArr4 = byteArray;
+                                                l4 = null;
+                                                l10 = null;
+                                                l11 = null;
+                                                if (bArr4 != null) {
+                                                }
+                                                serializedData.cleanup();
+                                                Long[] lArr2 = new Long[3];
+                                                lArr2[0] = l4;
+                                                lArr2[c11] = l11;
+                                                lArr2[c12] = l10;
+                                                while (i10 < 3) {
+                                                }
+                                                throw th;
+                                            }
+                                        } catch (Throwable th9) {
+                                            th = th9;
+                                            serializedData = serializedData2;
+                                            bArr4 = null;
+                                            l4 = null;
+                                            l10 = null;
+                                            l11 = null;
+                                            if (bArr4 != null) {
+                                            }
+                                            serializedData.cleanup();
+                                            Long[] lArr22 = new Long[3];
+                                            lArr22[0] = l4;
+                                            lArr22[c11] = l11;
+                                            lArr22[c12] = l10;
+                                            while (i10 < 3) {
+                                            }
+                                            throw th;
+                                        }
+                                        try {
+                                            byte[] encrypt_message_for_one = ConferenceCall.encrypt_message_for_one(key_from_ecdh, byteArray);
+                                            byte[] bArr10 = new byte[encrypt_message_for_one.length + 32];
+                                            Vector vector2 = vector;
+                                            System.arraycopy(key_to_public_key, 0, bArr10, 0, 32);
+                                            System.arraycopy(encrypt_message_for_one, 0, bArr10, 32, encrypt_message_for_one.length);
+                                            bArr5[i11] = bArr10;
+                                            if (byteArray != null) {
+                                                Arrays.fill(byteArray, (byte) 0);
+                                            }
+                                            serializedData.cleanup();
+                                            Long[] lArr3 = new Long[3];
+                                            lArr3[0] = valueOf;
+                                            lArr3[c11] = l11;
+                                            lArr3[2] = l10;
+                                            int i16 = 0;
+                                            for (int i17 = 3; i16 < i17; i17 = 3) {
+                                                Long l13 = lArr3[i16];
+                                                if (l13 != null) {
+                                                    try {
+                                                        ConferenceCall.key_destroy(l13.longValue());
+                                                    } catch (Exception unused2) {
+                                                    }
+                                                }
+                                                i16++;
+                                            }
+                                            i15 = i11 + 1;
+                                            bArr7 = bArr5;
+                                            vector = vector2;
+                                        } catch (Throwable th10) {
+                                            th = th10;
+                                            bArr4 = byteArray;
+                                            l4 = valueOf;
+                                            if (bArr4 != null) {
+                                            }
+                                            serializedData.cleanup();
+                                            Long[] lArr222 = new Long[3];
+                                            lArr222[0] = l4;
+                                            lArr222[c11] = l11;
+                                            lArr222[c12] = l10;
+                                            while (i10 < 3) {
+                                            }
+                                            throw th;
+                                        }
+                                    } catch (Throwable th11) {
+                                        th = th11;
+                                        serializedData = serializedData2;
+                                        c12 = 2;
+                                    }
+                                }
+                                byte[][] bArr11 = bArr7;
+                                byte b10 = 0;
+                                Arrays.fill(c10, (byte) 0);
+                                Arrays.fill(bArr2, (byte) 0);
+                                int length2 = bArr3.length;
+                                int i18 = 0;
+                                while (i18 < length2) {
+                                    Arrays.fill(bArr3[i18], b10);
+                                    i18++;
+                                    b10 = 0;
+                                }
+                                for (int i19 = 0; i19 < size; i19++) {
+                                    if (bArr11[i19] == null) {
+                                        m0.i("part " + i19 + " is null");
+                                        qyVar.run("PART_" + i19 + "_NULL");
+                                        return;
+                                    }
+                                }
+                                TL_wallet.enableBackup enablebackup = new TL_wallet.enableBackup();
+                                enablebackup.parts = new ArrayList<>(Arrays.asList(bArr11));
+                                enablebackup.new_public_key = bArr6;
+                                m0Var2.S(j0Var, false, new k((Object) m0Var2, (Object) qyVar, (Object) enablebackup, 7));
+                                return;
+                            } catch (Exception e11) {
+                                e = e11;
+                                bArr = c10;
+                                try {
+                                    m0.j("enable backup", e);
+                                    qyVar.run(e.getMessage() == null ? str2 : e.getMessage());
+                                    byte b11 = 0;
+                                    if (bArr != null) {
+                                        Arrays.fill(bArr, (byte) 0);
+                                    }
+                                    if (bArr2 != null) {
+                                        Arrays.fill(bArr2, (byte) 0);
+                                    }
+                                    if (bArr3 != null) {
+                                        int length3 = bArr3.length;
+                                        int i20 = 0;
+                                        while (i20 < length3) {
+                                            Arrays.fill(bArr3[i20], b11);
+                                            i20++;
+                                            b11 = 0;
+                                        }
+                                        return;
+                                    }
                                     return;
+                                } catch (Throwable th12) {
+                                    th = th12;
+                                    if (bArr != null) {
+                                        Arrays.fill(bArr, (byte) 0);
+                                    }
+                                    if (bArr2 != null) {
+                                        Arrays.fill(bArr2, (byte) 0);
+                                    }
+                                    if (bArr3 != null) {
+                                        for (byte[] bArr12 : bArr3) {
+                                            Arrays.fill(bArr12, (byte) 0);
+                                        }
+                                    }
+                                    throw th;
                                 }
                             }
+                        } catch (Throwable th13) {
+                            th = th13;
+                            bArr = c10;
+                            if (bArr != null) {
+                            }
+                            if (bArr2 != null) {
+                            }
+                            if (bArr3 != null) {
+                            }
+                            throw th;
                         }
-                        str6 = null;
-                        k0.E("prepare sending");
-                        t tVar2 = new t(k0Var3, m6Var, sendMessagesHelper, messageObject, wallettransaction, str9, z10, nextLong, user2);
-                        if (nftitem2 == null) {
+                    } catch (Exception e12) {
+                        e = e12;
+                        str2 = "NULL_ERROR";
+                        bArr = c10;
+                        bArr3 = null;
+                        m0.j("enable backup", e);
+                        qyVar.run(e.getMessage() == null ? str2 : e.getMessage());
+                        byte b112 = 0;
+                        if (bArr != null) {
                         }
+                        if (bArr2 != null) {
+                        }
+                        if (bArr3 != null) {
+                        }
+                    } catch (Throwable th14) {
+                        th = th14;
+                        bArr = c10;
+                        bArr3 = null;
+                        if (bArr != null) {
+                        }
+                        if (bArr2 != null) {
+                        }
+                        if (bArr3 != null) {
+                        }
+                        throw th;
                     }
-                }, false, true);
-                break;
-            default:
-                zh.n5 n5Var = (zh.n5) obj8;
-                TLObject tLObject2 = (TLObject) obj7;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj6;
-                Utilities.Callback2 callback22 = (Utilities.Callback2) obj5;
-                TLRPC.TL_inputInvoicePremiumGiftStars tL_inputInvoicePremiumGiftStars = (TLRPC.TL_inputInvoicePremiumGiftStars) obj4;
-                Context context = (Context) obj3;
-                org.telegram.ui.ActionBar.c6 c6Var = (org.telegram.ui.ActionBar.c6) obj2;
-                TLObject tLObject3 = (TLObject) obj;
-                TLRPC.TL_textWithEntities tL_textWithEntities = (TLRPC.TL_textWithEntities) tLObject;
-                if (!(tLObject2 instanceof TLRPC.TL_payments_paymentFormStars)) {
-                    zh.n5.e(tL_error == null ? "NO_PAYMENT_FORM" : tL_error.text);
-                    callback22.run(Boolean.FALSE, null);
-                    break;
-                } else {
-                    TLRPC.TL_payments_paymentFormStars tL_payments_paymentFormStars = (TLRPC.TL_payments_paymentFormStars) tLObject2;
-                    TL_stars.TL_payments_sendStarsForm tL_payments_sendStarsForm = new TL_stars.TL_payments_sendStarsForm();
-                    tL_payments_sendStarsForm.form_id = tL_payments_paymentFormStars.form_id;
-                    tL_payments_sendStarsForm.invoice = tL_inputInvoicePremiumGiftStars;
-                    ArrayList<TLRPC.TL_labeledPrice> arrayList = tL_payments_paymentFormStars.invoice.prices;
-                    int size = arrayList.size();
-                    long j11 = 0;
-                    while (i11 < size) {
-                        TLRPC.TL_labeledPrice tL_labeledPrice = arrayList.get(i11);
-                        i11++;
-                        j11 += tL_labeledPrice.amount;
+                } catch (Exception e13) {
+                    e = e13;
+                    str2 = "NULL_ERROR";
+                    bArr = c10;
+                    bArr2 = null;
+                    bArr3 = null;
+                    m0.j("enable backup", e);
+                    qyVar.run(e.getMessage() == null ? str2 : e.getMessage());
+                    byte b1122 = 0;
+                    if (bArr != null) {
                     }
-                    ConnectionsManager.getInstance(n5Var.a).sendRequest(tL_payments_sendStarsForm, new zh.k4(n5Var, callback22, context, c6Var, j11, this.c, this.r, tLObject3, tL_textWithEntities));
-                    break;
+                    if (bArr2 != null) {
+                    }
+                    if (bArr3 != null) {
+                    }
+                } catch (Throwable th15) {
+                    th = th15;
+                    bArr = c10;
+                    bArr2 = null;
+                    bArr3 = null;
+                    if (bArr != null) {
+                    }
+                    if (bArr2 != null) {
+                    }
+                    if (bArr3 != null) {
+                    }
+                    throw th;
                 }
+                break;
+            case 2:
+                ((m0) this.b).S((j0) this.c, true, new q((Utilities.Callback) this.d, (Utilities.Callback) obj2, (byte[]) this.e, (TLRPC.InputCheckPasswordSRP) obj, 3));
+                return;
+            case 3:
+                Utilities.Callback callback = (Utilities.Callback) this.b;
+                Utilities.Callback callback2 = (Utilities.Callback) this.c;
+                byte[] bArr13 = (byte[]) this.d;
+                TLRPC.InputCheckPasswordSRP inputCheckPasswordSRP = (TLRPC.InputCheckPasswordSRP) this.e;
+                WalletEngine2.ImportedWalletProof importedWalletProof = (WalletEngine2.ImportedWalletProof) obj;
+                String str7 = (String) obj2;
+                if (importedWalletProof == null) {
+                    callback.run(str7 != null ? str7 : "NULL_ERROR");
+                    callback2.run(null);
+                    return;
+                }
+                TL_wallet.replaceWallet replacewallet = new TL_wallet.replaceWallet();
+                TL_wallet.inputWalletImported inputwalletimported = new TL_wallet.inputWalletImported();
+                inputwalletimported.public_key = importedWalletProof.publicKey;
+                inputwalletimported.anchor_public_key = bArr13;
+                TL_wallet.walletOwnershipProof walletownershipproof = new TL_wallet.walletOwnershipProof();
+                inputwalletimported.proof = walletownershipproof;
+                walletownershipproof.signature = importedWalletProof.signature;
+                walletownershipproof.timestamp = importedWalletProof.timestamp;
+                replacewallet.wallet = inputwalletimported;
+                replacewallet.password = inputCheckPasswordSRP;
+                callback2.run(replacewallet);
+                return;
+            case 4:
+                c0 c0Var = (c0) this.b;
+                TL_wallet.nftItem nftitem = (TL_wallet.nftItem) this.c;
+                String str8 = (String) this.d;
+                Utilities.Callback2 callback22 = (Utilities.Callback2) this.e;
+                TL_wallet.walletTransaction wallettransaction = (TL_wallet.walletTransaction) obj;
+                String str9 = (String) obj2;
+                if (wallettransaction != null) {
+                    wallettransaction.nft = nftitem;
+                    wallettransaction.comment = str8;
+                    wallettransaction.date = ConnectionsManager.getInstance(c0Var.h.a).getCurrentTime();
+                }
+                if (c0Var.a) {
+                    return;
+                }
+                callback22.run(wallettransaction, str9);
+                return;
+            case 5:
+                l0 l0Var = (l0) this.b;
+                String str10 = (String) this.d;
+                String str11 = (String) this.c;
+                String str12 = (String) this.e;
+                TL_wallet.walletUserAddress walletuseraddress = (TL_wallet.walletUserAddress) obj;
+                l0Var.getClass();
+                if (walletuseraddress == null || walletuseraddress.user_id == 0 || MessagesController.getInstance(l0Var.l.a).getUser(Long.valueOf(walletuseraddress.user_id)) == null) {
+                    return;
+                }
+                ArrayList arrayList = l0Var.b;
+                int size2 = arrayList.size();
+                int i21 = 0;
+                while (i21 < size2) {
+                    Object obj3 = arrayList.get(i21);
+                    i21++;
+                    TL_wallet.walletTransaction wallettransaction2 = (TL_wallet.walletTransaction) obj3;
+                    if (TextUtils.equals(wallettransaction2.id, str10) && (wallettransaction2.peer instanceof TL_wallet.walletTransactionPeerAddress)) {
+                        TL_wallet.walletTransactionPeerUser wallettransactionpeeruser = new TL_wallet.walletTransactionPeerUser();
+                        wallettransactionpeeruser.user_id = walletuseraddress.user_id;
+                        wallettransactionpeeruser.address = str11;
+                        wallettransactionpeeruser.domain = str12;
+                        wallettransaction2.peer = wallettransactionpeeruser;
+                        z10 = true;
+                    }
+                }
+                if (z10) {
+                    l0Var.j();
+                    l0Var.h();
+                    return;
+                }
+                return;
+            case 6:
+                x xVar = (x) this.b;
+                j0 j0Var2 = (j0) this.c;
+                b2 b2Var = (b2) this.d;
+                ai.q3 q3Var = (ai.q3) this.e;
+                TL_wallet.tonConnectChallenge tonconnectchallenge = (TL_wallet.tonConnectChallenge) obj;
+                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
+                if (tonconnectchallenge == null || tL_error2 != null) {
+                    xVar.run(f2.x(tL_error2, "registerKey"));
+                    return;
+                } else {
+                    Utilities.globalQueue.postRunnable(new i01(j0Var2, b2Var, tonconnectchallenge, xVar, q3Var, 5));
+                    return;
+                }
+            case 7:
+                f2 f2Var = (f2) this.b;
+                b2 b2Var2 = (b2) this.c;
+                j0 j0Var3 = (j0) this.d;
+                Utilities.Callback callback3 = (Utilities.Callback) this.e;
+                TL_wallet.sendTransfer sendtransfer = (TL_wallet.sendTransfer) obj;
+                String str13 = (String) obj2;
+                if (sendtransfer != null && str13 == null && f2Var.y(b2Var2) && !f2Var.i(b2Var2)) {
+                    Utilities.globalQueue.postRunnable(new i01(f2Var, sendtransfer, b2Var2, callback3, j0Var3, 6));
+                    return;
+                }
+                if (str13 == null) {
+                    str13 = "Transfer unavailable or request expired";
+                }
+                f2Var.w(b2Var2, j0Var3, null, 0, str13, callback3);
+                return;
+            case 8:
+                f2 f2Var2 = (f2) this.b;
+                b2 b2Var3 = (b2) this.c;
+                j0 j0Var4 = (j0) this.d;
+                x xVar2 = (x) this.e;
+                String str14 = (String) obj;
+                String str15 = (String) obj2;
+                if (str14 != null) {
+                    try {
+                        if (f2Var2.y(b2Var3) && !f2Var2.i(b2Var3)) {
+                            f2Var2.w(b2Var3, j0Var4, new JSONObject().put("internalBoc", str14), -1, null, xVar2);
+                            return;
+                        }
+                    } catch (JSONException e14) {
+                        f2Var2.w(b2Var3, j0Var4, null, 0, f2.h("sign message response", e14), xVar2);
+                        return;
+                    }
+                }
+                str15 = "Request expired or wallet changed";
+                f2Var2.w(b2Var3, j0Var4, null, 0, str15, xVar2);
+                return;
+            case 9:
+                boolean[] zArr = (boolean[]) this.b;
+                k2[] k2VarArr = (k2[]) this.c;
+                org.telegram.ui.ActionBar.d6 d6Var = (org.telegram.ui.ActionBar.d6) this.d;
+                wh.n nVar = (wh.n) this.e;
+                String str16 = (String) obj;
+                String str17 = (String) obj2;
+                zArr[0] = false;
+                if (str17 != null) {
+                    new xc(k2VarArr[0].topBulletinContainer, d6Var).e0(str17, false);
+                    return;
+                }
+                nVar.setPadding(AndroidUtilities.dp(19.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(15.0f), AndroidUtilities.dp(8.0f));
+                SpannableString spannableString = new SpannableString(str16);
+                l11 l11Var = new l11();
+                l11Var.a |= 256;
+                spannableString.setSpan(new m11(l11Var, 0), 0, spannableString.length(), 33);
+                nVar.setText(spannableString);
+                nVar.setTextIsSelectable(true);
+                nVar.setOnClickListener(null);
+                nVar.setStateListAnimator(null);
+                if (nVar.d || nVar.f) {
+                    return;
+                }
+                nVar.e = true;
+                if (nVar.getLayout() == null || nVar.isLayoutRequested()) {
+                    return;
+                }
+                nVar.c((nVar.getWidth() / 2.0f) - nVar.getPaddingLeft(), ((nVar.getHeight() / 2.0f) - nVar.getPaddingTop()) + nVar.getScrollY());
+                return;
+            default:
+                t9.Z((t9) this.c, (m0) this.b, (TLRPC.User) this.e, (String) this.d, (TL_wallet.walletTransaction) obj, (String) obj2);
+                return;
         }
     }
 
-    public /* synthetic */ q(zh.n5 n5Var, TLObject tLObject, TLRPC.TL_error tL_error, Utilities.Callback2 callback2, TLRPC.TL_inputInvoicePremiumGiftStars tL_inputInvoicePremiumGiftStars, Context context, org.telegram.ui.ActionBar.c6 c6Var, String str, long j10, TLObject tLObject2, TLRPC.TL_textWithEntities tL_textWithEntities) {
-        this.a = 2;
-        this.b = n5Var;
-        this.f = tLObject;
-        this.h = tL_error;
-        this.v = callback2;
-        this.d = tL_inputInvoicePremiumGiftStars;
-        this.w = context;
-        this.e = c6Var;
-        this.c = str;
-        this.r = j10;
-        this.n = tLObject2;
-        this.s = tL_textWithEntities;
+    public /* synthetic */ q(l0 l0Var, String str, String str2, String str3) {
+        this.a = 5;
+        this.b = l0Var;
+        this.d = str;
+        this.c = str2;
+        this.e = str3;
+    }
+
+    public /* synthetic */ q(t9 t9Var, m0 m0Var, TLRPC.User user, String str) {
+        this.a = 10;
+        this.c = t9Var;
+        this.b = m0Var;
+        this.e = user;
+        this.d = str;
     }
 }

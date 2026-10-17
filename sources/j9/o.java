@@ -13,10 +13,9 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.telegram.messenger.BuildConfig;
 import v7.p8;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class o extends k9.a implements y {
     public static final boolean d;
@@ -327,7 +326,7 @@ public abstract class o extends k9.a implements y {
 
     public final void f(StringBuilder sb2, Object obj) {
         if (obj == null) {
-            sb2.append(BuildConfig.BETA_URL);
+            sb2.append("null");
         } else {
             if (obj == this) {
                 sb2.append("this future");
@@ -407,7 +406,7 @@ public abstract class o extends k9.a implements y {
                     t10.append(timeUnit.toString().toLowerCase(locale));
                     String sb2 = t10.toString();
                     if (nanos + 1000 < j11) {
-                        String u10 = t8.b.u(sb2, " (plus ");
+                        String u10 = r.c.u(sb2, " (plus ");
                         long j14 = -nanos;
                         long convert = timeUnit.convert(j14, TimeUnit.NANOSECONDS);
                         long nanos2 = j14 - timeUnit.toNanos(convert);
@@ -415,17 +414,17 @@ public abstract class o extends k9.a implements y {
                         if (convert > j11) {
                             String str = u10 + convert + " " + lowerCase;
                             if (z11) {
-                                str = t8.b.u(str, ",");
+                                str = r.c.u(str, ",");
                             }
-                            u10 = t8.b.u(str, " ");
+                            u10 = r.c.u(str, " ");
                         }
                         if (z11) {
                             u10 = u10 + nanos2 + " nanoseconds ";
                         }
-                        sb2 = t8.b.u(u10, "delay)");
+                        sb2 = r.c.u(u10, "delay)");
                     }
                     if (isDone()) {
-                        throw new TimeoutException(t8.b.u(sb2, " but future completed as timeout expired"));
+                        throw new TimeoutException(r.c.u(sb2, " but future completed as timeout expired"));
                     }
                     throw new TimeoutException(a1.g.D(sb2, " for ", oVar));
                 }

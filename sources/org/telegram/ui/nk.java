@@ -1,37 +1,20 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.os.Bundle;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class nk extends ho {
-    public final /* synthetic */ int f;
-    public boolean h;
+public final class nk extends org.telegram.ui.Components.b71 {
+    public final /* synthetic */ sn N;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ nk(Context context, org.telegram.ui.ActionBar.b5 b5Var, Bundle bundle, int i10) {
-        super(context, b5Var, bundle);
-        this.f = i10;
+    public nk(sn snVar, Context context) {
+        super(context);
+        this.N = snVar;
     }
 
-    @Override // org.telegram.ui.ho
-    public final void a() {
-        switch (this.f) {
-            case 0:
-                if (!this.h) {
-                    this.h = true;
-                    super.a();
-                    break;
-                }
-                break;
-            default:
-                if (!this.h) {
-                    this.h = true;
-                    super.a();
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.b71
+    public final org.telegram.ui.ActionBar.d6 getResourceProvider() {
+        return this.N.ea;
     }
 }

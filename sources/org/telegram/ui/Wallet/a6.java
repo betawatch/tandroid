@@ -1,53 +1,60 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-import android.graphics.SurfaceTexture;
-import android.view.MotionEvent;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class a6 extends tg.n {
-    public final /* synthetic */ c6 f0;
+public final class a6 {
+    public boolean a;
+    public float b;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public float g;
+    public long h;
+    public long i;
+    public long j;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a6(c6 c6Var, Context context) {
-        super(context, 1, 4);
-        this.f0 = c6Var;
-    }
-
-    @Override // tg.n
-    public final void i() {
-        c6 c6Var = this.f0;
-        if (c6Var.e == this) {
-            c6.c(c6Var);
+    public final void a(float f7, float f10, long j10) {
+        if (Float.isNaN(f7) || Float.isInfinite(f7) || Float.isNaN(f10) || Float.isInfinite(f10)) {
+            return;
+        }
+        this.b = f7;
+        this.c = f10;
+        this.i = j10;
+        if (!this.a) {
+            this.a = true;
+            this.d = f7;
+            this.e = f10;
+            this.f = f7;
+            this.g = f10;
+            this.h = j10;
+            return;
+        }
+        float f11 = f7 - this.f;
+        float f12 = f10 - this.g;
+        if ((f12 * f12) + (f11 * f11) > 1.265625f) {
+            this.f = f7;
+            this.g = f10;
+            this.h = j10;
         }
     }
 
-    @Override // tg.n, android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
-        int round = Math.round(Math.min(i10, i11) * 3.5f);
-        surfaceTexture.setDefaultBufferSize(round, round);
-        super.onSurfaceTextureAvailable(surfaceTexture, round, round);
-    }
-
-    @Override // tg.n, android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i10, int i11) {
-        int round = Math.round(Math.min(i10, i11) * 3.5f);
-        surfaceTexture.setDefaultBufferSize(round, round);
-        this.y = round;
-        this.x = round;
-    }
-
-    @Override // tg.n, android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
-        int round = Math.round(Math.min(getWidth(), getHeight()) * 3.5f);
-        if (round > 0) {
-            surfaceTexture.setDefaultBufferSize(round, round);
+    public final void b(long j10) {
+        if (this.a) {
+            if (this.j == 0) {
+                this.j = j10;
+                return;
+            }
+            float min = Math.min(0.1f, Math.max(0.0f, (j10 - r0) * 1.0E-9f));
+            this.j = j10;
+            if (this.i - this.h < 1000000000) {
+                return;
+            }
+            float exp = 1.0f - ((float) Math.exp((-min) / 1.0f));
+            float f7 = this.d;
+            this.d = com.google.android.gms.internal.cast.a6.x(this.b, f7, exp, f7);
+            float f10 = this.e;
+            this.e = com.google.android.gms.internal.cast.a6.x(this.c, f10, exp, f10);
         }
-    }
-
-    @Override // tg.n, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return !this.f0.x && super.onTouchEvent(motionEvent);
     }
 }

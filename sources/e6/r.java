@@ -1,26 +1,73 @@
 package e6;
 
-import android.util.LruCache;
-import java.util.ArrayList;
+import com.google.android.gms.common.api.internal.BasePendingResult;
+import java.net.Socket;
+import java.util.ArrayDeque;
+import java.util.TimerTask;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.hq;
+import org.telegram.ui.ek0;
+import org.telegram.ui.fz;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class r extends LruCache {
-    public final /* synthetic */ c a;
+public final class r extends TimerTask {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r(c cVar) {
-        super(20);
-        this.a = cVar;
+    public /* synthetic */ r(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // android.util.LruCache
-    public final /* bridge */ /* synthetic */ void entryRemoved(boolean z10, Object obj, Object obj2, Object obj3) {
-        ArrayList arrayList = this.a.g;
-        Integer num = (Integer) obj;
-        if (z10) {
-            n6.l.h(arrayList);
-            arrayList.add(num);
+    @Override // java.util.TimerTask, java.lang.Runnable
+    public final void run() {
+        BasePendingResult basePendingResult;
+        switch (this.a) {
+            case 0:
+                c cVar = (c) this.b;
+                ArrayDeque arrayDeque = cVar.h;
+                if (!arrayDeque.isEmpty() && cVar.k == null && cVar.b != 0) {
+                    h hVar = cVar.c;
+                    int[] e = g6.a.e(arrayDeque);
+                    hVar.getClass();
+                    n6.l.e("Must be called from the main thread.");
+                    if (hVar.w()) {
+                        k kVar = new k(hVar, e);
+                        h.x(kVar);
+                        basePendingResult = kVar;
+                    } else {
+                        basePendingResult = h.t();
+                    }
+                    cVar.k = basePendingResult;
+                    basePendingResult.i(new q(cVar, 1));
+                    arrayDeque.clear();
+                    break;
+                }
+                break;
+            case 1:
+                AndroidUtilities.runOnUIThread(new com.google.firebase.messaging.s(this, 14));
+                break;
+            case 2:
+                AndroidUtilities.runOnUIThread(new hq(this, 24));
+                break;
+            case 3:
+                AndroidUtilities.runOnUIThread(new fz(this, 24));
+                break;
+            case 4:
+                AndroidUtilities.runOnUIThread(new ek0(this, 6));
+                break;
+            default:
+                try {
+                    Socket socket = ((tc.q) this.b).a.a.g;
+                    if (socket != null) {
+                        socket.close();
+                        break;
+                    }
+                } catch (Throwable unused) {
+                    return;
+                }
+                break;
         }
     }
 }

@@ -1,295 +1,144 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
+import android.animation.ValueAnimator;
 import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.drawable.GradientDrawable;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.Utilities;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.text.TextPaint;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class y9 extends GradientDrawable {
-    public final int[] a;
-    public final a0.f b;
-    public final a0.f c;
-    public final a0.f d;
-    public final ArrayList e;
-    public final Paint f;
-    public boolean g;
+public final class y9 extends Drawable {
+    public TextPaint a;
+    public final Paint b;
+    public final Paint c;
+    public final Paint d;
+    public final float e;
+    public float f;
+    public float g;
+    public final RectF h;
+    public ValueAnimator i;
 
-    public y9(GradientDrawable.Orientation orientation, int[] iArr) {
-        super(orientation, iArr);
-        this.b = new a0.f(0);
-        this.c = new a0.f(0);
-        this.d = new a0.f(0);
-        this.e = new ArrayList();
+    public y9() {
         Paint paint = new Paint(1);
-        this.f = paint;
-        this.g = false;
-        setDither(true);
-        this.a = iArr;
-        paint.setDither(true);
+        this.b = paint;
+        this.c = new Paint(1);
+        this.d = new Paint(1);
+        this.e = 1.0f;
+        this.f = 0.0f;
+        this.g = 1.0f;
+        this.h = new RectF();
+        paint.setStyle(Paint.Style.STROKE);
     }
 
-    public static /* synthetic */ void a(y9 y9Var, Runnable[] runnableArr, Bitmap bitmap, w60 w60Var, int i10, w7.w5[] w5VarArr) {
-        a0.f fVar = y9Var.b;
-        ArrayList arrayList = y9Var.e;
-        if (!arrayList.contains(runnableArr)) {
-            if (bitmap != null) {
-                bitmap.recycle();
-                return;
-            }
-            return;
+    public final void a(float f7, boolean z10) {
+        float max = Math.max(Math.min(f7, 1.0f), 0.0f);
+        ValueAnimator valueAnimator = this.i;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.i = null;
         }
-        if (bitmap != null) {
-            fVar.put(w60Var, bitmap);
-        } else {
-            fVar.remove(w60Var);
-            y9Var.c.remove(w60Var);
-        }
-        runnableArr[i10] = null;
-        boolean z10 = true;
-        if (runnableArr.length > 1) {
-            for (Runnable runnable : runnableArr) {
-                if (runnable != null) {
-                    break;
-                }
-            }
-        }
-        z10 = false;
         if (!z10) {
-            arrayList.remove(runnableArr);
-        }
-        w7.w5 w5Var = w5VarArr[0];
-        if (w5Var != null) {
-            w5Var.b(w60Var.a, w60Var.b);
-            if (z10) {
-                return;
-            }
-            w5VarArr[0].a();
-            w5VarArr[0] = null;
-        }
-    }
-
-    public static GradientDrawable.Orientation d(int i10) {
-        return i10 != 0 ? i10 != 90 ? i10 != 135 ? i10 != 180 ? i10 != 225 ? i10 != 270 ? i10 != 315 ? GradientDrawable.Orientation.BL_TR : GradientDrawable.Orientation.BR_TL : GradientDrawable.Orientation.RIGHT_LEFT : GradientDrawable.Orientation.TR_BL : GradientDrawable.Orientation.TOP_BOTTOM : GradientDrawable.Orientation.TL_BR : GradientDrawable.Orientation.LEFT_RIGHT : GradientDrawable.Orientation.BOTTOM_TOP;
-    }
-
-    public static Rect e(GradientDrawable.Orientation orientation, int i10, int i11) {
-        Rect rect = new Rect();
-        switch (w9.a[orientation.ordinal()]) {
-            case 1:
-                int i12 = i10 / 2;
-                rect.left = i12;
-                rect.top = 0;
-                rect.right = i12;
-                rect.bottom = i11;
-                break;
-            case 2:
-                rect.left = i10;
-                rect.top = 0;
-                rect.right = 0;
-                rect.bottom = i11;
-                break;
-            case 3:
-                rect.left = i10;
-                int i13 = i11 / 2;
-                rect.top = i13;
-                rect.right = 0;
-                rect.bottom = i13;
-                break;
-            case 4:
-                rect.left = i10;
-                rect.top = i11;
-                rect.right = 0;
-                rect.bottom = 0;
-                break;
-            case 5:
-                int i14 = i10 / 2;
-                rect.left = i14;
-                rect.top = i11;
-                rect.right = i14;
-                rect.bottom = 0;
-                break;
-            case 6:
-                rect.left = 0;
-                rect.top = i11;
-                rect.right = i10;
-                rect.bottom = 0;
-                break;
-            case 7:
-                rect.left = 0;
-                int i15 = i11 / 2;
-                rect.top = i15;
-                rect.right = i10;
-                rect.bottom = i15;
-                break;
-            default:
-                rect.left = 0;
-                rect.top = 0;
-                rect.right = i10;
-                rect.bottom = i11;
-                break;
-        }
-        return rect;
-    }
-
-    public final void b() {
-        if (this.g) {
+            this.g = max;
+            invalidateSelf();
             return;
         }
-        for (int size = this.e.size() - 1; size >= 0; size--) {
-            Utilities.globalQueue.cancelRunnables((Runnable[]) this.e.remove(size));
-        }
-        for (int i10 = this.b.c - 1; i10 >= 0; i10--) {
-            Bitmap bitmap = (Bitmap) this.b.f(i10);
-            if (bitmap != null) {
-                bitmap.recycle();
-            }
-        }
-        this.c.clear();
-        this.d.clear();
-        this.g = true;
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.g, max);
+        this.i = ofFloat;
+        ofFloat.addUpdateListener(new l6(this, 5));
+        this.i.addListener(new org.telegram.ui.ActionBar.y0(this, max, 4));
+        this.i.setInterpolator(bs.h);
+        this.i.setDuration(200L);
+        this.i.start();
     }
 
-    public final x9 c(Canvas canvas, final ViewGroup viewGroup) {
-        if (this.g) {
-            super.draw(canvas);
-            return null;
-        }
-        Rect bounds = getBounds();
-        int width = (int) (bounds.width() * 0.5f);
-        int height = (int) (bounds.height() * 0.5f);
-        a0.f fVar = this.b;
-        int i10 = fVar.c;
-        int i11 = 0;
-        while (true) {
-            a0.f fVar2 = this.d;
-            if (i11 >= i10) {
-                x9 x9Var = (x9) fVar2.remove(viewGroup);
-                if (x9Var != null) {
-                    x9Var.dispose();
-                }
-                w60 w60Var = new w60(width, height);
-                fVar.put(w60Var, null);
-                this.c.put(w60Var, Boolean.TRUE);
-                final t9 g10 = g(new w60[]{w60Var}, new v9(this, viewGroup), 0L);
-                x9 x9Var2 = (x9) fVar2.put(viewGroup, new x9() { // from class: org.telegram.ui.Components.u9
-                    @Override // org.telegram.ui.Components.x9
-                    public final void dispose() {
-                        y9.this.d.remove(viewGroup);
-                        g10.dispose();
-                    }
-                });
-                super.draw(canvas);
-                return x9Var2;
-            }
-            w60 w60Var2 = (w60) fVar.e(i11);
-            if (w60Var2.a == width && w60Var2.b == height) {
-                Bitmap bitmap = (Bitmap) fVar.h(i11);
-                if (bitmap != null) {
-                    canvas.drawBitmap(bitmap, (Rect) null, bounds, this.f);
-                } else {
-                    super.draw(canvas);
-                }
-                return (x9) fVar2.get(viewGroup);
-            }
-            i11++;
-        }
-    }
-
-    @Override // android.graphics.drawable.GradientDrawable, android.graphics.drawable.Drawable
+    @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
-        Bitmap bitmap;
-        Boolean bool;
-        if (this.g) {
-            super.draw(canvas);
+        if (getBounds() == null) {
             return;
         }
-        Rect bounds = getBounds();
-        int width = bounds.width();
-        int height = bounds.height();
-        a0.f fVar = this.b;
-        int i10 = fVar.c;
-        float f7 = Float.MAX_VALUE;
-        Bitmap bitmap2 = null;
-        for (int i11 = 0; i11 < i10; i11++) {
-            w60 w60Var = (w60) fVar.e(i11);
-            float f10 = f7;
-            float sqrt = (float) Math.sqrt(Math.pow(height - w60Var.b, 2.0d) + Math.pow(width - w60Var.a, 2.0d));
-            if (sqrt >= f10 || (bitmap = (Bitmap) fVar.h(i11)) == null || ((bool = (Boolean) this.c.get(w60Var)) != null && bool.booleanValue())) {
-                f7 = f10;
-            } else {
-                bitmap2 = bitmap;
-                f7 = sqrt;
-            }
+        int i10 = getBounds().left;
+        int i11 = getBounds().top + ((int) this.f);
+        int width = getBounds().width();
+        int height = getBounds().height();
+        int centerX = getBounds().centerX();
+        int centerY = getBounds().centerY() + ((int) this.f);
+        TextPaint textPaint = this.a;
+        Paint paint = this.d;
+        Paint paint2 = this.c;
+        Paint paint3 = this.b;
+        if (textPaint != null) {
+            int color = textPaint.getColor();
+            paint3.setColor(color);
+            paint2.setColor(color);
+            paint.setColor(color);
         }
-        if (bitmap2 != null) {
-            canvas.drawBitmap(bitmap2, (Rect) null, bounds, this.f);
-        } else {
-            super.draw(canvas);
+        if (this.e != 1.0f) {
+            canvas.save();
+            float f7 = this.e;
+            canvas.scale(f7, f7, centerX, centerY);
         }
-    }
-
-    public final t9 f(m.l lVar, w7.w5 w5Var, long j10) {
-        w60[] w60VarArr = (w60[]) lVar.a;
-        if (!this.g) {
-            ArrayList arrayList = new ArrayList(w60VarArr.length);
-            for (w60 w60Var : w60VarArr) {
-                a0.f fVar = this.b;
-                if (!fVar.containsKey(w60Var)) {
-                    fVar.put(w60Var, null);
-                    arrayList.add(w60Var);
-                }
-            }
-            if (!arrayList.isEmpty()) {
-                return g((w60[]) arrayList.toArray(new w60[0]), w5Var, j10);
-            }
-        }
-        return null;
-    }
-
-    public final void finalize() {
-        try {
-            b();
-        } finally {
-            super.finalize();
+        paint3.setStrokeWidth(AndroidUtilities.dpf2(1.1f));
+        float f10 = i10;
+        float f11 = width;
+        float dpf2 = (((f11 - AndroidUtilities.dpf2(16.33f)) / 2.0f) + f10) - AndroidUtilities.dpf2(1.33f);
+        float f12 = i11;
+        float f13 = height;
+        float dpf22 = ((f13 - AndroidUtilities.dpf2(10.33f)) / 2.0f) + f12;
+        float dpf23 = (((AndroidUtilities.dpf2(16.33f) + f11) / 2.0f) + f10) - AndroidUtilities.dpf2(1.33f);
+        float dpf24 = ((AndroidUtilities.dpf2(10.33f) + f13) / 2.0f) + f12;
+        RectF rectF = this.h;
+        rectF.set(dpf2, dpf22, dpf23, dpf24);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dpf2(2.33f), AndroidUtilities.dpf2(2.33f), paint3);
+        rectF.set((((f11 - AndroidUtilities.dpf2(13.0f)) / 2.0f) + f10) - AndroidUtilities.dpf2(1.66f), ((f13 - AndroidUtilities.dpf2(7.33f)) / 2.0f) + f12, Math.max(AndroidUtilities.dpf2(1.1f), this.g * AndroidUtilities.dpf2(13.0f)) + ((((f11 - AndroidUtilities.dpf2(13.0f)) / 2.0f) + f10) - AndroidUtilities.dpf2(1.66f)), ((AndroidUtilities.dpf2(7.33f) + f13) / 2.0f) + f12);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dpf2(0.83f), AndroidUtilities.dpf2(0.83f), paint);
+        float f14 = centerY;
+        rectF.set((((AndroidUtilities.dpf2(17.5f) + f11) - AndroidUtilities.dpf2(4.66f)) / 2.0f) + f10, f14 - AndroidUtilities.dpf2(2.65f), ((AndroidUtilities.dpf2(4.66f) + (AndroidUtilities.dpf2(17.5f) + f11)) / 2.0f) + f10, AndroidUtilities.dpf2(2.65f) + f14);
+        canvas.drawArc(rectF, -90.0f, 180.0f, false, paint2);
+        if (this.e != 1.0f) {
+            canvas.restore();
         }
     }
 
-    public final t9 g(w60[] w60VarArr, w7.w5 w5Var, long j10) {
-        if (w60VarArr.length == 0) {
-            return null;
-        }
-        w7.w5[] w5VarArr = {w5Var};
-        Runnable[] runnableArr = new Runnable[w60VarArr.length];
-        this.e.add(runnableArr);
-        for (int i10 = 0; i10 < w60VarArr.length; i10++) {
-            w60 w60Var = w60VarArr[i10];
-            if (w60Var.a != 0 && w60Var.b != 0) {
-                DispatchQueue dispatchQueue = Utilities.globalQueue;
-                s9 s9Var = new s9(this, w60Var, runnableArr, i10, w5VarArr);
-                runnableArr[i10] = s9Var;
-                dispatchQueue.postRunnable(s9Var, j10);
-            }
-        }
-        return new t9(this, w5VarArr, runnableArr, w60VarArr);
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(this.e * 24.0f);
     }
 
-    @Override // android.graphics.drawable.GradientDrawable, android.graphics.drawable.Drawable
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return AndroidUtilities.dp(this.e * 24.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
     public final void setAlpha(int i10) {
-        super.setAlpha(i10);
-        this.f.setAlpha(i10);
+        this.b.setAlpha(i10);
+        this.c.setAlpha(i10);
+        this.d.setAlpha(i10);
     }
 
-    @Override // android.graphics.drawable.GradientDrawable, android.graphics.drawable.Drawable
+    @Override // android.graphics.drawable.Drawable
     public final void setColorFilter(ColorFilter colorFilter) {
-        super.setColorFilter(colorFilter);
-        this.f.setColorFilter(colorFilter);
+        this.b.setColorFilter(colorFilter);
+        this.c.setColorFilter(colorFilter);
+        this.d.setColorFilter(colorFilter);
+    }
+
+    public y9(float f7, int i10) {
+        this();
+        a(f7, false);
+        this.b.setColor(-1);
+        this.c.setColor(-1);
+        this.d.setColor(i10);
+        this.e = 1.3f;
+        invalidateSelf();
     }
 }

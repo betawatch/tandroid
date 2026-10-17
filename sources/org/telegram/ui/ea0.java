@@ -1,39 +1,43 @@
 package org.telegram.ui;
 
-import java.util.regex.Pattern;
+import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ea0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ fo b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ TLRPC.Chat d;
+    public final /* synthetic */ fa0 b;
+    public final /* synthetic */ AccountInstance c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 e;
 
-    public /* synthetic */ ea0(fo foVar, long j10, TLRPC.Chat chat, int i10) {
+    public /* synthetic */ ea0(fa0 fa0Var, AccountInstance accountInstance, long j10, org.telegram.ui.ActionBar.n2 n2Var, int i10) {
         this.a = i10;
-        this.b = foVar;
-        this.c = j10;
-        this.d = chat;
+        this.b = fa0Var;
+        this.c = accountInstance;
+        this.d = j10;
+        this.e = n2Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i10 = this.a;
-        TLRPC.Chat chat = this.d;
-        long j10 = this.c;
-        fo foVar = this.b;
-        switch (i10) {
+        switch (this.a) {
             case 0:
-                Pattern pattern = LaunchActivity.B1;
-                org.telegram.ui.Components.zc.a0(foVar).M(LocaleController.getString(R.string.StarsSubscriptionCompleted), AndroidUtilities.replaceTags(LocaleController.formatPluralString("StarsSubscriptionCompletedText", (int) j10, chat.title)), R.raw.stars_send).k(true);
+                AndroidUtilities.runOnUIThread(new ea0(this.b, this.c, this.d, this.e, 1));
                 break;
             default:
-                org.telegram.ui.Components.zc.a0(foVar).M(LocaleController.getString(R.string.StarsSubscriptionCompleted), AndroidUtilities.replaceTags(LocaleController.formatPluralString("StarsSubscriptionCompletedText", (int) j10, chat.title)), R.raw.stars_send).k(true);
+                AccountInstance accountInstance = this.c;
+                MessagesController messagesController = accountInstance.getMessagesController();
+                long j10 = this.d;
+                long j11 = -j10;
+                ChatObject.Call groupCall = messagesController.getGroupCall(j11, false);
+                TLRPC.Chat chat = accountInstance.getMessagesController().getChat(Long.valueOf(j11));
+                accountInstance.getMessagesController().getInputPeer(j10);
+                org.telegram.ui.Components.voip.d2.l(chat, null, false, Boolean.valueOf(groupCall == null || !groupCall.call.rtmp_stream), this.b.g, this.e, accountInstance);
                 break;
         }
     }

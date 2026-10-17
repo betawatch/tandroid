@@ -1,167 +1,60 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.content.Context;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class uo0 implements TextWatcher {
-    public final String[] a = {"34", "37"};
-    public final String[] b = {"300", "301", "302", "303", "304", "305", "309", "36", "38", "39"};
-    public final String[] c = {"2221", "2222", "2223", "2224", "2225", "2226", "2227", "2228", "2229", "2200", "2201", "2202", "2203", "2204", "8600", "9860", "223", "224", "225", "226", "227", "228", "229", "23", "24", "25", "26", "270", "271", "2720", "50", "51", "52", "53", "54", "55", "4", "60", "62", "64", "65", "35"};
-    public int d = -1;
-    public int e;
-    public final /* synthetic */ ap0 f;
+public final class uo0 extends org.telegram.ui.Components.im0 {
+    public final /* synthetic */ int V2;
+    public final /* synthetic */ dp0 W2;
 
-    public uo0(ap0 ap0Var) {
-        this.f = ap0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public uo0(dp0 dp0Var, Context context, org.telegram.ui.ActionBar.d6 d6Var, int i10) {
+        super(context, d6Var);
+        this.W2 = dp0Var;
+        this.V2 = i10;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        int i10;
-        boolean z10;
-        int i11;
-        int i12;
-        String[] strArr;
-        int i13;
-        String str;
-        ap0 ap0Var = this.f;
-        if (ap0Var.o0) {
+    @Override // org.telegram.ui.Components.im0
+    public final Integer W0(int i10) {
+        dp0 dp0Var = this.W2;
+        if ((i10 < dp0Var.b0 || i10 >= dp0Var.c0) && (i10 < dp0Var.d0 || i10 >= dp0Var.e0)) {
+            return super.W0(i10);
+        }
+        return 0;
+    }
+
+    @Override // org.telegram.ui.Components.im0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        dp0 dp0Var = this.W2;
+        if (!dp0Var.G || dp0Var.E == null || dp0Var.F == null) {
             return;
         }
-        int i14 = 0;
-        EditTextBoldCursor editTextBoldCursor = ap0Var.f[0];
-        int selectionStart = editTextBoldCursor.getSelectionStart();
-        String obj = editTextBoldCursor.getText().toString();
-        int i15 = 3;
-        int i16 = 1;
-        if (this.d == 3) {
-            obj = obj.substring(0, this.e) + obj.substring(this.e + 1);
-            selectionStart--;
-        }
-        StringBuilder sb2 = new StringBuilder(obj.length());
-        int i17 = 0;
-        while (i17 < obj.length()) {
-            int i18 = i17 + 1;
-            String substring = obj.substring(i17, i18);
-            if ("0123456789".contains(substring)) {
-                sb2.append(substring);
-            }
-            i17 = i18;
-        }
-        ap0Var.o0 = true;
-        String str2 = null;
-        int i19 = 100;
-        if (sb2.length() > 0) {
-            String sb3 = sb2.toString();
-            int i20 = 0;
-            while (true) {
-                if (i20 >= i15) {
-                    i10 = i16;
-                    break;
-                }
-                if (i20 == 0) {
-                    strArr = this.c;
-                    i13 = 16;
-                    str = "xxxx xxxx xxxx xxxx";
-                } else if (i20 != i16) {
-                    strArr = this.b;
-                    i13 = 14;
-                    str = "xxxx xxxx xxxx xx";
-                } else {
-                    strArr = this.a;
-                    i13 = 15;
-                    str = "xxxx xxxx xxxx xxx";
-                }
-                i10 = i16;
-                for (int i21 = i14; i21 < strArr.length; i21++) {
-                    String str3 = strArr[i21];
-                    if (sb3.length() <= str3.length()) {
-                        if (str3.startsWith(sb3)) {
-                            i19 = i13;
-                            str2 = str;
-                            break;
-                        }
-                    } else {
-                        if (sb3.startsWith(str3)) {
-                            i19 = i13;
-                            str2 = str;
-                            break;
-                        }
-                    }
-                }
-                if (str2 != null) {
-                    break;
-                }
-                i20++;
-                i16 = i10;
-                i14 = 0;
-                i15 = 3;
-            }
-            if (sb2.length() > i19) {
-                sb2.setLength(i19);
-            }
-        } else {
-            i10 = 1;
-        }
-        if (str2 != null) {
-            if (sb2.length() == i19) {
-                ap0Var.f[i10].requestFocus();
-            }
-            editTextBoldCursor.setTextColor(ap0Var.getThemedColor(org.telegram.ui.ActionBar.g6.G6));
-            int i22 = 0;
-            while (true) {
-                if (i22 >= sb2.length()) {
-                    break;
-                }
-                if (i22 < str2.length()) {
-                    if (str2.charAt(i22) == ' ') {
-                        sb2.insert(i22, ' ');
-                        i22++;
-                        if (selectionStart == i22 && (i12 = this.d) != 2 && i12 != 3) {
-                            selectionStart++;
-                        }
-                    }
-                    i22++;
-                } else {
-                    sb2.insert(i22, ' ');
-                    if (selectionStart == i22 + 1 && (i11 = this.d) != 2 && i11 != 3) {
-                        selectionStart++;
-                    }
-                }
-            }
-        }
-        if (sb2.toString().equals(editable.toString())) {
-            z10 = false;
-        } else {
-            z10 = false;
-            editable.replace(0, editable.length(), sb2);
-        }
-        if (selectionStart >= 0) {
-            editTextBoldCursor.setSelection(Math.min(selectionStart, editTextBoldCursor.length()));
-        }
-        ap0Var.o0 = z10;
+        int save = canvas.save();
+        canvas.translate(dp0Var.E.getLeft() + dp0Var.F.getLeft(), dp0Var.F.getTop());
+        dp0Var.E.draw(canvas);
+        canvas.restoreToCount(save);
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        if (i11 == 0 && i12 == 1) {
-            this.d = 1;
+    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        dp0 dp0Var = this.W2;
+        jp0 jp0Var = dp0Var.p0;
+        dp0Var.h();
+        if (dp0Var.K != null) {
+            if (dp0Var.J == null || !dp0Var.c()) {
+                return;
+            }
+            dp0Var.J.g(false);
             return;
         }
-        if (i11 != 1 || i12 != 0) {
-            this.d = -1;
-        } else if (charSequence.charAt(i10) != ' ' || i10 <= 0) {
-            this.d = 2;
-        } else {
-            this.d = 3;
-            this.e = i10 - 1;
+        ai.x9 x9Var = this.V2 == 1 ? jp0Var.c : jp0Var.b;
+        if (x9Var == null || !dp0Var.c()) {
+            return;
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        x9Var.a();
     }
 }

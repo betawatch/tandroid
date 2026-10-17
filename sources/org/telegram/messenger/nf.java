@@ -1,45 +1,100 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+import android.graphics.Bitmap;
+import android.os.Build;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.atomic.AtomicBoolean;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class nf implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Serializable f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Cloneable n;
+    public final /* synthetic */ Object r;
+    public final /* synthetic */ Object s;
 
-    public /* synthetic */ nf(MessagesStorage messagesStorage, long j10, int i10) {
-        this.a = i10;
-        this.b = messagesStorage;
-        this.c = j10;
+    public /* synthetic */ nf(MessagesStorage messagesStorage, int i10, ArrayList arrayList, int i11, a0.h hVar, a0.h hVar2, ArrayList arrayList2, ArrayList arrayList3, CountDownLatch countDownLatch) {
+        this.e = messagesStorage;
+        this.b = i10;
+        this.d = arrayList;
+        this.c = i11;
+        this.n = hVar;
+        this.r = hVar2;
+        this.f = arrayList2;
+        this.h = arrayList3;
+        this.s = countDownLatch;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$deleteStoryPushMessage$39(this.c);
-                break;
-            case 1:
-                this.b.lambda$clearUserPhotos$92(this.c);
-                break;
-            case 2:
-                this.b.lambda$removeAllTopics$56(this.c);
-                break;
-            case 3:
-                this.b.lambda$deleteWallpaper$79(this.c);
-                break;
-            case 4:
-                this.b.lambda$deleteSavedDialog$55(this.c);
-                break;
-            case 5:
-                this.b.lambda$onDeleteQueryComplete$91(this.c);
-                break;
-            case 6:
-                this.b.lambda$removePendingTask$11(this.c);
-                break;
+                ((MessagesStorage) this.e).lambda$getWidgetDialogs$169(this.b, this.d, this.c, (a0.h) this.n, (a0.h) this.r, (ArrayList) this.f, (ArrayList) this.h, (CountDownLatch) this.s);
+                return;
             default:
-                this.b.lambda$loadChannelAdmins$123(this.c);
-                break;
+                zf.e eVar = (zf.e) this.e;
+                AtomicBoolean atomicBoolean = (AtomicBoolean) this.f;
+                Bitmap[] bitmapArr = (Bitmap[]) this.h;
+                int i10 = this.b;
+                zf.z[] zVarArr = (zf.z[]) this.n;
+                int i11 = this.c;
+                RandomAccessFile randomAccessFile = (RandomAccessFile) this.r;
+                ArrayList arrayList = this.d;
+                CountDownLatch[] countDownLatchArr = (CountDownLatch[]) this.s;
+                if (eVar.o.get() || atomicBoolean.get()) {
+                    return;
+                }
+                Bitmap.CompressFormat compressFormat = Bitmap.CompressFormat.WEBP;
+                if (Build.VERSION.SDK_INT <= 28) {
+                    compressFormat = Bitmap.CompressFormat.PNG;
+                }
+                bitmapArr[i10].compress(compressFormat, eVar.l, zVarArr[i10]);
+                int i12 = zVarArr[i10].b;
+                try {
+                    synchronized (eVar.h) {
+                        zf.d dVar = new zf.d(i11);
+                        dVar.c = (int) randomAccessFile.length();
+                        arrayList.add(dVar);
+                        randomAccessFile.write(zVarArr[i10].a, 0, i12);
+                        dVar.b = i12;
+                        zVarArr[i10].b();
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    try {
+                        randomAccessFile.close();
+                    } catch (Exception unused) {
+                    } catch (Throwable th2) {
+                        atomicBoolean.set(true);
+                        throw th2;
+                    }
+                    atomicBoolean.set(true);
+                }
+                countDownLatchArr[i10].countDown();
+                return;
         }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public /* synthetic */ nf(zf.e eVar, AtomicBoolean atomicBoolean, Bitmap[] bitmapArr, int i10, zf.z[] zVarArr, int i11, RandomAccessFile randomAccessFile, ArrayList arrayList, CountDownLatch[] countDownLatchArr) {
+        this.e = eVar;
+        this.f = atomicBoolean;
+        this.h = bitmapArr;
+        this.b = i10;
+        this.n = zVarArr;
+        this.c = i11;
+        this.r = randomAccessFile;
+        this.d = arrayList;
+        this.s = countDownLatchArr;
     }
 }

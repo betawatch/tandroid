@@ -1,35 +1,20 @@
 package org.telegram.ui.Wallet;
 
-import org.telegram.messenger.Utilities;
+import android.content.Context;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class f6 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ WalletEngine2 b;
-    public final /* synthetic */ byte[] c;
-    public final /* synthetic */ d2 d;
-    public final /* synthetic */ String e;
-    public final /* synthetic */ Utilities.Callback2 f;
+public final class f6 extends tg.t {
+    public final /* synthetic */ h6 y;
 
-    public /* synthetic */ f6(WalletEngine2 walletEngine2, byte[] bArr, d2 d2Var, String str, Utilities.Callback2 callback2, int i10) {
-        this.a = i10;
-        this.b = walletEngine2;
-        this.c = bArr;
-        this.d = d2Var;
-        this.e = str;
-        this.f = callback2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f6(h6 h6Var, Context context, d6 d6Var) {
+        super(context, d6Var, 2);
+        this.y = h6Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$signMessage$11(this.c, this.d, this.e, this.f);
-                break;
-            default:
-                this.b.lambda$prepareTonConnectTransfer$5(this.c, this.d, this.e, this.f);
-                break;
-        }
+    @Override // tg.t
+    public final void a() {
+        this.y.s = true;
     }
 }

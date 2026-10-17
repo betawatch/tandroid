@@ -4,7 +4,7 @@ import android.app.Application;
 import java.lang.reflect.InvocationTargetException;
 import java.util.LinkedHashMap;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class r0 extends q0 {
     public static r0 e;
@@ -15,11 +15,11 @@ public final class r0 extends q0 {
     }
 
     @Override // androidx.lifecycle.q0, androidx.lifecycle.s0
-    public final p0 X0(Class cls, v1.c cVar) {
+    public final p0 W0(Class cls, v1.b bVar) {
         if (this.d != null) {
             return f(cls);
         }
-        Application application = (Application) ((LinkedHashMap) cVar.a).get(q0.a);
+        Application application = (Application) ((LinkedHashMap) bVar.a).get(q0.a);
         if (application != null) {
             return a(cls, application);
         }

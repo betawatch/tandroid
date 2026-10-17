@@ -7,17 +7,22 @@ import android.os.Handler;
 import android.view.Surface;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
+import ki.t1;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public interface l {
-    void b(long j10, int i10, int i11, int i12);
+    void a(long j10, int i10, int i11, int i12);
 
-    void d(int i10, h2.d dVar, long j10, int i11);
+    void b(int i10, h2.d dVar, long j10, int i11);
 
-    void e(int i10);
+    boolean c(t1 t1Var);
 
-    void f(a3.m mVar, Handler handler);
+    void d(int i10);
+
+    void e(a3.m mVar, Handler handler);
+
+    void f(p2.b bVar);
 
     void flush();
 
@@ -37,15 +42,11 @@ public interface l {
 
     void k(int i10);
 
-    void l(org.telegram.ui.web.v vVar);
+    void l(Surface surface);
 
-    void m(Surface surface);
+    void m(ArrayList arrayList);
 
     void n(ArrayList arrayList);
-
-    boolean o(m.l lVar);
-
-    void p(ArrayList arrayList);
 
     void release();
 

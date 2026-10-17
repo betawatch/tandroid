@@ -1,25 +1,21 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class l00 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ k10 b;
+import android.content.Context;
+import org.telegram.tgnet.tl.TL_chatlists;
 
-    public /* synthetic */ l00(k10 k10Var, int i10) {
-        this.a = i10;
-        this.b = k10Var;
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes3.dex */
+public final class l00 extends i00 {
+    public final /* synthetic */ m00 E;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l00(m00 m00Var, Context context, org.telegram.ui.ActionBar.n2 n2Var, int i10, int i11) {
+        super(context, n2Var, i10, i11);
+        this.E = m00Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                k10.V(this.b);
-                break;
-            default:
-                k10.W(this.b);
-                break;
-        }
+    @Override // org.telegram.ui.i00
+    public final void b(TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite) {
+        this.E.e.l0(tL_exportedChatlistInvite);
     }
 }

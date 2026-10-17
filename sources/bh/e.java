@@ -5,9 +5,9 @@ import android.graphics.RectF;
 import android.graphics.RenderNode;
 import android.support.v4.media.session.x;
 import org.telegram.messenger.AndroidUtilities;
-import zf.g0;
+import zf.f0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class e {
     public final d b;
@@ -22,7 +22,7 @@ public final class e {
             this.c = dVar;
             dVar.e = 4;
             dVar.f = 4;
-            dVar.d(AndroidUtilities.dpf2(6.0f), g0.b());
+            dVar.d(AndroidUtilities.dpf2(6.0f), f0.b());
             d dVar2 = new d(fVar, "blur", 0, false);
             this.b = dVar2;
             dVar2.e = 8;
@@ -36,7 +36,7 @@ public final class e {
             dVar3.e = 8;
             dVar3.f = 8;
             dVar3.c(AndroidUtilities.dpf2(40.0f));
-            dVar3.e(g0.b());
+            dVar3.e(f0.b());
             this.c = null;
             return;
         }
@@ -47,7 +47,7 @@ public final class e {
         int i11 = z10 ? 16 : 8;
         dVar4.e = i10;
         dVar4.f = i11;
-        dVar4.d(AndroidUtilities.dpf2(40.0f), g0.b());
+        dVar4.d(AndroidUtilities.dpf2(40.0f), f0.b());
         this.c = null;
     }
 

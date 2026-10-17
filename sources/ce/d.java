@@ -1,7 +1,7 @@
 package ce;
 
 import be.j2;
-import com.google.firebase.messaging.s;
+import com.google.firebase.messaging.r;
 import de.g;
 import de.h;
 import id.i;
@@ -12,9 +12,10 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import k1.k;
 import k1.m;
 import kotlin.jvm.internal.j;
+import kotlin.jvm.internal.s;
 import td.l;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class d extends j implements l {
     public final /* synthetic */ int b;
@@ -44,16 +45,16 @@ public final class d extends j implements l {
             default:
                 Throwable th2 = (Throwable) obj;
                 ((m) this.c).invoke(th2);
-                de.b bVar = (de.b) ((s) this.d).d;
+                de.b bVar = (de.b) ((r) this.d).d;
                 bVar.getClass();
                 AtomicLongFieldUpdater atomicLongFieldUpdater = de.b.b;
                 AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = de.b.i;
-                a6.i iVar2 = de.d.r;
+                com.google.android.gms.internal.clearcut.e eVar2 = de.d.r;
                 while (true) {
                     z10 = true;
-                    if (atomicReferenceFieldUpdater.compareAndSet(bVar, iVar2, th2)) {
+                    if (atomicReferenceFieldUpdater.compareAndSet(bVar, eVar2, th2)) {
                         z11 = true;
-                    } else if (atomicReferenceFieldUpdater.get(bVar) != iVar2) {
+                    } else if (atomicReferenceFieldUpdater.get(bVar) != eVar2) {
                         z11 = false;
                     }
                 }
@@ -80,14 +81,14 @@ public final class d extends j implements l {
                     AtomicReferenceFieldUpdater atomicReferenceFieldUpdater2 = de.b.j;
                     while (true) {
                         Object obj2 = atomicReferenceFieldUpdater2.get(bVar);
-                        a6.i iVar3 = obj2 == null ? de.d.p : de.d.q;
-                        while (!atomicReferenceFieldUpdater2.compareAndSet(bVar, obj2, iVar3)) {
+                        com.google.android.gms.internal.clearcut.e eVar3 = obj2 == null ? de.d.p : de.d.q;
+                        while (!atomicReferenceFieldUpdater2.compareAndSet(bVar, obj2, eVar3)) {
                             if (atomicReferenceFieldUpdater2.get(bVar) != obj2) {
                                 break;
                             }
                         }
                         if (obj2 != null) {
-                            kotlin.jvm.internal.s.a(1, obj2);
+                            s.a(1, obj2);
                             ((l) obj2).invoke((Throwable) de.b.i.get(bVar));
                         }
                     }
@@ -150,7 +151,7 @@ public final class d extends j implements l {
                     if (eVar instanceof de.f) {
                         eVar = null;
                     }
-                    i iVar4 = i.a;
+                    i iVar2 = i.a;
                     if (eVar == null) {
                         iVar = null;
                     } else {
@@ -158,10 +159,10 @@ public final class d extends j implements l {
                         if (kVar instanceof k1.j) {
                             ((k1.j) kVar).b.L(th2 == null ? new CancellationException("DataStore scope was cancelled before updateData could complete") : th2);
                         }
-                        iVar = iVar4;
+                        iVar = iVar2;
                     }
                     if (iVar == null) {
-                        return iVar4;
+                        return iVar2;
                     }
                     z10 = true;
                 }

@@ -14,7 +14,7 @@ import org.json.JSONObject;
 import td.p;
 import v7.i8;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class b extends md.i implements p {
     public final /* synthetic */ int a = 1;
@@ -56,15 +56,15 @@ public final class b extends md.i implements p {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:110:0x01c8  */
-    /* JADX WARN: Removed duplicated region for block: B:116:0x01e7  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x028c  */
+    /* JADX WARN: Removed duplicated region for block: B:109:0x01ca  */
+    /* JADX WARN: Removed duplicated region for block: B:115:0x01e9  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x028e  */
     /* JADX WARN: Removed duplicated region for block: B:55:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0251  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x0234  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x024e  */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x0212  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x01f0  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x0253  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x0236  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x0250  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x0214  */
+    /* JADX WARN: Removed duplicated region for block: B:85:0x01f2  */
     /* JADX WARN: Type inference failed for: r8v4, types: [java.lang.Object, java.util.Map] */
     @Override // md.a
     /*
@@ -103,25 +103,25 @@ public final class b extends md.i implements p {
                             JSONObject jSONObject2 = (JSONObject) obj5;
                             try {
                                 bool = jSONObject2.has("sessions_enabled") ? (Boolean) jSONObject2.get("sessions_enabled") : null;
-                            } catch (JSONException e) {
-                                e = e;
-                                bool = null;
-                            }
-                            try {
-                                if (jSONObject2.has("sampling_rate")) {
-                                    pVar6.a = (Double) jSONObject2.get("sampling_rate");
-                                }
-                                if (jSONObject2.has("session_timeout_seconds")) {
-                                    pVar.a = (Integer) jSONObject2.get("session_timeout_seconds");
-                                }
-                                if (jSONObject2.has("cache_duration")) {
-                                    pVar7.a = (Integer) jSONObject2.get("cache_duration");
+                                try {
+                                    if (jSONObject2.has("sampling_rate")) {
+                                        pVar6.a = (Double) jSONObject2.get("sampling_rate");
+                                    }
+                                    if (jSONObject2.has("session_timeout_seconds")) {
+                                        pVar.a = (Integer) jSONObject2.get("session_timeout_seconds");
+                                    }
+                                    if (jSONObject2.has("cache_duration")) {
+                                        pVar7.a = (Integer) jSONObject2.get("cache_duration");
+                                    }
+                                } catch (JSONException e) {
+                                    e = e;
+                                    Log.e("SessionConfigFetcher", "Error parsing the configs remotely fetched: ", e);
+                                    if (bool == null) {
+                                    }
                                 }
                             } catch (JSONException e7) {
                                 e = e7;
-                                Log.e("SessionConfigFetcher", "Error parsing the configs remotely fetched: ", e);
-                                if (bool == null) {
-                                }
+                                bool = null;
                             }
                         } else {
                             bool = null;
@@ -317,7 +317,7 @@ public final class b extends md.i implements p {
                 try {
                     if (i11 == 0) {
                         i8.b(obj);
-                        URLConnection openConnection = androidx.biometric.e.d((androidx.biometric.e) this.d).openConnection();
+                        URLConnection openConnection = androidx.biometric.e.f((androidx.biometric.e) this.d).openConnection();
                         kotlin.jvm.internal.i.c(openConnection, "null cannot be cast to non-null type javax.net.ssl.HttpsURLConnection");
                         HttpsURLConnection httpsURLConnection = (HttpsURLConnection) openConnection;
                         httpsURLConnection.setRequestMethod("GET");

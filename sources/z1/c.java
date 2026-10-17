@@ -3,18 +3,18 @@ package z1;
 import android.app.Notification;
 import android.os.Build;
 import android.support.v4.media.session.MediaSessionCompat$Token;
-import e0.g0;
-import e0.z;
+import e0.f0;
+import e0.y;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class c extends z {
+public final class c extends y {
     public int[] e;
     public MediaSessionCompat$Token f;
 
-    @Override // e0.z
-    public final void b(g0 g0Var) {
-        Notification.Builder builder = (Notification.Builder) g0Var.c;
+    @Override // e0.y
+    public final void b(f0 f0Var) {
+        Notification.Builder builder = (Notification.Builder) f0Var.d;
         if (Build.VERSION.SDK_INT >= 34) {
             a.d(builder, a.b(b.a(a.a(), null, 0, null, Boolean.FALSE), this.e, this.f));
         } else {

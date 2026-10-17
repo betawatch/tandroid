@@ -1,33 +1,21 @@
 package org.telegram.ui.Wallet;
 
-import java.util.concurrent.atomic.AtomicBoolean;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class o6 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ AtomicBoolean b;
-    public final /* synthetic */ Utilities.Callback2 c;
+public final class o6 extends tg.f {
+    public final /* synthetic */ p6 L;
 
-    public /* synthetic */ o6(AtomicBoolean atomicBoolean, Utilities.Callback2 callback2, int i10) {
-        this.a = i10;
-        this.b = atomicBoolean;
-        this.c = callback2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o6(p6 p6Var, Context context) {
+        super(context);
+        this.L = p6Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                WalletEngine2.lambda$emulateSend$17(this.b, this.c);
-                break;
-            case 1:
-                WalletEngine2.lambda$emulateSendNFT$21(this.b, this.c);
-                break;
-            default:
-                WalletEngine2.lambda$emulateSendNFT$22(this.b, this.c);
-                break;
-        }
+    @Override // tg.f, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return !this.L.x && super.onTouchEvent(motionEvent);
     }
 }

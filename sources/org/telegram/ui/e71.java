@@ -1,27 +1,32 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e71 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Cells.c6 b;
+public final class e71 extends UndoView {
+    public final /* synthetic */ SessionsActivity f0;
 
-    public /* synthetic */ e71(org.telegram.ui.Cells.c6 c6Var, int i10) {
-        this.a = i10;
-        this.b = c6Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public e71(SessionsActivity sessionsActivity, Context context) {
+        super(context);
+        this.f0 = sessionsActivity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.showKeyboard(((i61) this.b.d).h);
-                break;
-            default:
-                this.b.requestFocus();
-                break;
+    @Override // org.telegram.ui.Components.UndoView
+    public final void e(int i10, boolean z10) {
+        int i11;
+        if (!z10 && getCurrentInfoObject() != null) {
+            TLRPC.TL_authorization tL_authorization = (TLRPC.TL_authorization) getCurrentInfoObject();
+            TL_account.resetAuthorization resetauthorization = new TL_account.resetAuthorization();
+            resetauthorization.hash = tL_authorization.hash;
+            i11 = ((org.telegram.ui.ActionBar.n2) this.f0).currentAccount;
+            ConnectionsManager.getInstance(i11).sendRequest(resetauthorization, new z40(26, this, tL_authorization));
         }
+        super.e(i10, z10);
     }
 }

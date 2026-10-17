@@ -1,10 +1,10 @@
 package kc;
 
-import com.google.firebase.messaging.r;
+import com.google.firebase.messaging.q;
 import java.util.Arrays;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final int[][] a = {new int[]{1, 1, 1, 1, 1, 1, 1}, new int[]{1, 0, 0, 0, 0, 0, 1}, new int[]{1, 0, 1, 1, 1, 0, 1}, new int[]{1, 0, 1, 1, 1, 0, 1}, new int[]{1, 0, 1, 1, 1, 0, 1}, new int[]{1, 0, 0, 0, 0, 0, 1}, new int[]{1, 1, 1, 1, 1, 1, 1}};
@@ -82,7 +82,7 @@ public abstract class d {
         int i26 = i22 - 7;
         f(7, i26, bVar);
         if (bVar.a(8, i25) == 0) {
-            throw new r();
+            throw new q();
         }
         bVar.b(8, i25, 1);
         int i27 = fVar.a;
@@ -154,7 +154,7 @@ public abstract class d {
         }
         ec.a aVar2 = new ec.a();
         if (i10 < 0 || i10 >= 8) {
-            throw new r("Invalid mask pattern");
+            throw new q("Invalid mask pattern");
         }
         int i43 = (cVar.a << 3) | i10;
         aVar2.b(i43, 5);
@@ -174,7 +174,7 @@ public abstract class d {
             i44++;
         }
         if (aVar2.b != 15) {
-            throw new r("should not happen but we got: " + aVar2.b);
+            throw new q("should not happen but we got: " + aVar2.b);
         }
         int i45 = i11;
         while (true) {
@@ -203,7 +203,7 @@ public abstract class d {
             aVar4.b(i27, 6);
             aVar4.b(c(i27, 7973), 12);
             if (aVar4.b != 18) {
-                throw new r("should not happen but we got: " + aVar4.b);
+                throw new q("should not happen but we got: " + aVar4.b);
             }
             int i48 = 17;
             for (int i49 = i11; i49 < 6; i49++) {
@@ -291,7 +291,7 @@ public abstract class d {
                                     }
                                     break;
                                 default:
-                                    throw new IllegalArgumentException(i2.d.j(i10, "Invalid mask pattern: "));
+                                    throw new IllegalArgumentException(i0.a.j(i10, "Invalid mask pattern: "));
                             }
                         }
                         bArr4[i53][i57] = (byte) i14;
@@ -306,7 +306,7 @@ public abstract class d {
         if (i54 == aVar.b) {
             return;
         }
-        throw new r("Not all bits consumed: " + i54 + '/' + aVar.b);
+        throw new q("Not all bits consumed: " + i54 + '/' + aVar.b);
     }
 
     public static int c(int i10, int i11) {
@@ -326,7 +326,7 @@ public abstract class d {
         for (int i12 = 0; i12 < 8; i12++) {
             int i13 = i10 + i12;
             if (!g(bVar.a(i13, i11))) {
-                throw new r();
+                throw new q();
             }
             bVar.b(i13, i11, 0);
         }
@@ -345,7 +345,7 @@ public abstract class d {
         for (int i12 = 0; i12 < 7; i12++) {
             int i13 = i11 + i12;
             if (!g(bVar.a(i10, i13))) {
-                throw new r();
+                throw new q();
             }
             bVar.b(i10, i13, 0);
         }

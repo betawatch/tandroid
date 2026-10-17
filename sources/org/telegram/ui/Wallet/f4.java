@@ -1,71 +1,42 @@
 package org.telegram.ui.Wallet;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import java.nio.charset.StandardCharsets;
+import android.content.DialogInterface;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.es;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class f4 extends EditTextBoldCursor {
-    public int b;
-    public final org.telegram.ui.Components.j5 c;
-    public final org.telegram.ui.Components.r6 d;
-    public final /* synthetic */ org.telegram.ui.ActionBar.c6 e;
+public final /* synthetic */ class f4 implements DialogInterface.OnDismissListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f4(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context);
-        this.e = c6Var;
-        this.b = 960;
-        this.c = new org.telegram.ui.Components.j5(this);
-        org.telegram.ui.Components.r6 r6Var = new org.telegram.ui.Components.r6(false, true, true);
-        this.d = r6Var;
-        r6Var.n(0.2f, 160L, es.h);
-        r6Var.w(AndroidUtilities.dp(15.33f));
-        r6Var.b = 5;
-        r6Var.setCallback(this);
+    public /* synthetic */ f4(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        int a2 = this.c.a(org.telegram.ui.ActionBar.g6.w0(this.b <= 0 ? org.telegram.ui.ActionBar.g6.p7 : org.telegram.ui.ActionBar.g6.P5, this.e), false);
-        org.telegram.ui.Components.r6 r6Var = this.d;
-        r6Var.u(a2);
-        int dp = AndroidUtilities.dp(48.0f) + ((getWidth() + getScrollX()) - getPaddingRight());
-        int height = getHeight() + getScrollY();
-        r6Var.setBounds(dp - AndroidUtilities.dp(48.0f), height - Math.min(AndroidUtilities.dp(44.0f), getHeight()), dp, height);
-        r6Var.draw(canvas);
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.pu, android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        canvas.save();
-        canvas.clipRect(getPaddingLeft() + getScrollX(), getScrollY(), (getWidth() + getScrollX()) - getPaddingRight(), getHeight() + getScrollY());
-        super.onDraw(canvas);
-        canvas.restore();
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.pu, android.widget.TextView
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        super.onTextChanged(charSequence, i10, i11, i12);
-        org.telegram.ui.Components.r6 r6Var = this.d;
-        if (r6Var == null) {
-            return;
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
+        switch (this.a) {
+            case 0:
+                TLRPC.User user = (TLRPC.User) this.b;
+                org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                if (U != null) {
+                    U.presentFragment(new l9(user));
+                    break;
+                }
+                break;
+            default:
+                l9 l9Var = (l9) this.b;
+                EditTextBoldCursor editTextBoldCursor = l9Var.E;
+                if (editTextBoldCursor != null) {
+                    editTextBoldCursor.requestFocus();
+                    AndroidUtilities.showKeyboard(l9Var.E);
+                    break;
+                }
+                break;
         }
-        this.b = 960 - charSequence.toString().getBytes(StandardCharsets.UTF_8).length;
-        r6Var.a();
-        int i13 = this.b;
-        r6Var.t(i13 <= 100 ? Integer.toString(i13) : "", isAttachedToWindow(), true);
-        invalidate();
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.d || super.verifyDrawable(drawable);
     }
 }

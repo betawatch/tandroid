@@ -1,66 +1,24 @@
 package org.telegram.ui.Components;
 
 import android.app.Activity;
-import org.telegram.messenger.Utilities;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bf0 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ String[] b;
-    public final /* synthetic */ Activity c;
-    public final /* synthetic */ Utilities.Callback d;
+public final class bf0 extends org.telegram.ui.ActionBar.k {
+    public final /* synthetic */ if0 u1;
 
-    public /* synthetic */ bf0(String[] strArr, Activity activity, Utilities.Callback callback, int i10) {
-        this.a = i10;
-        this.b = strArr;
-        this.c = activity;
-        this.d = callback;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bf0(if0 if0Var, Activity activity) {
+        super(activity, null);
+        this.u1 = if0Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        switch (this.a) {
-            case 0:
-                String[] strArr = this.b;
-                int length = strArr.length;
-                boolean z10 = false;
-                int i10 = 0;
-                while (true) {
-                    if (i10 < length) {
-                        if (this.c.checkSelfPermission(strArr[i10]) == 0) {
-                            z10 = true;
-                        } else {
-                            i10++;
-                        }
-                    }
-                }
-                Utilities.Callback callback = this.d;
-                if (callback != null) {
-                    callback.run(Boolean.valueOf(z10));
-                    break;
-                }
-                break;
-            default:
-                String[] strArr2 = this.b;
-                int length2 = strArr2.length;
-                boolean z11 = false;
-                int i11 = 0;
-                while (true) {
-                    if (i11 < length2) {
-                        if (this.c.checkSelfPermission(strArr2[i11]) == 0) {
-                            i11++;
-                        }
-                    } else {
-                        z11 = true;
-                    }
-                }
-                Utilities.Callback callback2 = this.d;
-                if (callback2 != null) {
-                    callback2.run(Boolean.valueOf(z11));
-                    break;
-                }
-                break;
-        }
+    @Override // android.view.View
+    public final void setAlpha(float f7) {
+        ViewGroup viewGroup;
+        super.setAlpha(f7);
+        viewGroup = ((org.telegram.ui.ActionBar.f3) this.u1).containerView;
+        viewGroup.invalidate();
     }
 }

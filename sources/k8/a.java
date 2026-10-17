@@ -3,14 +3,14 @@ package k8;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Base64;
-import com.google.android.gms.internal.play_billing.k3;
+import com.google.android.gms.internal.cast.a6;
 import g8.j;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import org.telegram.messenger.BuildConfig;
 import w7.f0;
+import w7.g;
 
 /* loaded from: classes.dex */
 public final class a extends o6.a {
@@ -43,7 +43,7 @@ public final class a extends o6.a {
         int length = iArr.length;
         int i10 = 0;
         while (i10 < length) {
-            i10 = k3.f(iArr[i10], i10, 1, arrayList);
+            i10 = a6.f(iArr[i10], i10, 1, arrayList);
         }
         Collections.sort(arrayList);
         return arrayList;
@@ -66,7 +66,7 @@ public final class a extends o6.a {
         sb2.append(str);
         sb2.append("=");
         if (bArr == null) {
-            str2 = BuildConfig.BETA_URL;
+            str2 = "null";
         } else {
             sb2.append("(");
             int length = bArr.length;
@@ -91,7 +91,7 @@ public final class a extends o6.a {
     public final boolean equals(Object obj) {
         if (obj instanceof a) {
             a aVar = (a) obj;
-            if (w7.j.a(this.a, aVar.a) && Arrays.equals(this.b, aVar.b) && w7.j.a(c(this.c), c(aVar.c)) && w7.j.a(c(this.d), c(aVar.d)) && w7.j.a(c(this.e), c(aVar.e)) && w7.j.a(c(this.f), c(aVar.f)) && w7.j.a(b(this.h), b(aVar.h)) && w7.j.a(c(this.n), c(aVar.n))) {
+            if (g.a(this.a, aVar.a) && Arrays.equals(this.b, aVar.b) && g.a(c(this.c), c(aVar.c)) && g.a(c(this.d), c(aVar.d)) && g.a(c(this.e), c(aVar.e)) && g.a(c(this.f), c(aVar.f)) && g.a(b(this.h), b(aVar.h)) && g.a(c(this.n), c(aVar.n))) {
                 return true;
             }
         }
@@ -104,7 +104,7 @@ public final class a extends o6.a {
         sb3.append("(");
         String str = this.a;
         if (str == null) {
-            sb2 = BuildConfig.BETA_URL;
+            sb2 = "null";
         } else {
             StringBuilder sb4 = new StringBuilder(String.valueOf(str).length() + 2);
             sb4.append("'");
@@ -116,7 +116,7 @@ public final class a extends o6.a {
         sb3.append(", direct=");
         byte[] bArr = this.b;
         if (bArr == null) {
-            sb3.append(BuildConfig.BETA_URL);
+            sb3.append("null");
         } else {
             sb3.append("'");
             sb3.append(Base64.encodeToString(bArr, 3));
@@ -135,7 +135,7 @@ public final class a extends o6.a {
         sb3.append("=");
         int[] iArr = this.h;
         if (iArr == null) {
-            sb3.append(BuildConfig.BETA_URL);
+            sb3.append("null");
         } else {
             sb3.append("(");
             int length = iArr.length;

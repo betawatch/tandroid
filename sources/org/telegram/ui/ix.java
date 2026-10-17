@@ -1,73 +1,77 @@
 package org.telegram.ui;
 
 import android.app.Activity;
-import android.text.TextUtils;
-import android.view.MotionEvent;
-import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class ix extends ChatActivityEnterView {
-    public final /* synthetic */ yy o5;
+public final class ix extends UndoView {
+    public final /* synthetic */ ey f0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ix(yy yyVar, Activity activity, ry ryVar) {
-        super(activity, ryVar, null, false, null);
-        this.o5 = yyVar;
+    public ix(ey eyVar, Activity activity) {
+        super(activity);
+        this.f0 = eyVar;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        int i10;
-        if (motionEvent.getAction() == 0) {
-            yy yyVar = this.o5;
-            Activity parentActivity = yyVar.getParentActivity();
-            i10 = ((org.telegram.ui.ActionBar.m2) yyVar).classGuid;
-            AndroidUtilities.requestAdjustResize(parentActivity, i10);
-        }
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final int getMessagesCount() {
-        yy yyVar = this.o5;
-        int i10 = yyVar.S0;
-        ix ixVar = yyVar.B1;
-        return Math.max(1, i10 + (!TextUtils.isEmpty(ixVar == null ? "" : ixVar.getFieldText()) ? 1 : 0));
-    }
-
-    @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final long getStarsPrice() {
-        yy yyVar = this.o5;
-        ArrayList arrayList = yyVar.I2;
-        if (arrayList == null) {
-            return 0L;
-        }
-        int size = arrayList.size();
+    @Override // org.telegram.ui.Components.UndoView
+    public final boolean a() {
         int i10 = 0;
-        long j10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList.get(i10);
-            i10++;
-            long longValue = ((Long) obj).longValue();
-            long sendPaidMessagesStars = yyVar.getMessagesController().getSendPaidMessagesStars(longValue);
-            if (sendPaidMessagesStars <= 0 && longValue > 0) {
-                sendPaidMessagesStars = DialogObject.getMessagesStarsPrice(yyVar.getMessagesController().isUserContactBlocked(longValue));
+        while (true) {
+            dy[] dyVarArr = this.f0.e0;
+            if (i10 >= dyVarArr.length) {
+                return true;
             }
-            j10 += sendPaidMessagesStars;
+            if (dyVarArr[i10].x.k()) {
+                return false;
+            }
+            i10++;
         }
-        return j10;
     }
 
-    @Override // org.telegram.ui.Components.ChatActivityEnterView
-    public final void y0(float f7) {
-        yy yyVar = this.o5;
-        yyVar.y1.setInputBubbleHeight(f7);
-        yyVar.q3();
-        yyVar.j3();
-        yyVar.r3();
+    @Override // org.telegram.ui.Components.UndoView
+    public final void h(int i10, long j10) {
+        if (i10 == 1 || i10 == 27) {
+            ey eyVar = this.f0;
+            eyVar.z3 = 1;
+            eyVar.y4(true, true);
+            if (eyVar.R1 != null) {
+                int i11 = 0;
+                while (true) {
+                    if (i11 >= eyVar.R1.size()) {
+                        i11 = -1;
+                        break;
+                    } else if (((TLRPC.Dialog) eyVar.R1.get(i11)).id == j10) {
+                        break;
+                    } else {
+                        i11++;
+                    }
+                }
+                if (i11 >= 0) {
+                    TLRPC.Dialog dialog = (TLRPC.Dialog) eyVar.R1.remove(i11);
+                    eyVar.e0[0].d.l();
+                    AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.w31(this, i11, dialog, 1));
+                } else {
+                    eyVar.y4(false, true);
+                }
+            }
+            eyVar.m3();
+        }
+    }
+
+    @Override // android.view.View
+    public final void setTranslationY(float f7) {
+        super.setTranslationY(f7);
+        ey eyVar = this.f0;
+        UndoView[] undoViewArr = eyVar.y0;
+        if (this == undoViewArr[0]) {
+            UndoView undoView = undoViewArr[1];
+            if (undoView == null || undoView.getVisibility() != 0) {
+                eyVar.u1 = Math.max(0.0f, (AndroidUtilities.dp(8.0f) + getMeasuredHeight()) - f7);
+                eyVar.V4();
+            }
+        }
     }
 }

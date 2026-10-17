@@ -8,11 +8,11 @@ import org.telegram.messenger.RichMessageLayout;
 import org.telegram.tgnet.QuickAckDelegate;
 import org.telegram.tgnet.RequestTimeDelegate;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.yj0;
+import org.telegram.ui.fj0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d implements org.telegram.ui.ActionBar.z1, RequestTimeDelegate, MessagesController.ErrorDelegate, yj0, QuickAckDelegate {
+public final /* synthetic */ class d implements org.telegram.ui.ActionBar.a2, RequestTimeDelegate, MessagesController.ErrorDelegate, fj0, QuickAckDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -23,19 +23,19 @@ public final /* synthetic */ class d implements org.telegram.ui.ActionBar.z1, Re
         this.c = obj2;
     }
 
-    @Override // org.telegram.ui.yj0
+    @Override // org.telegram.ui.fj0
     public void b(Canvas canvas) {
         ((RichMessageLayout.RichThinkingBlock) this.b).lambda$onDrawFaded$0((View) this.c, canvas);
     }
 
-    @Override // org.telegram.ui.ActionBar.z1
-    public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.lambda$isMapsInstalled$11((String) this.b, (org.telegram.ui.ActionBar.m2) this.c, a2Var, i10);
+                AndroidUtilities.lambda$isMapsInstalled$11((String) this.b, (org.telegram.ui.ActionBar.n2) this.c, b2Var, i10);
                 break;
             default:
-                AndroidUtilities.lambda$showProxyAlert$20((SharedPreferences) this.b, (h0) this.c, a2Var, i10);
+                AndroidUtilities.lambda$showProxyAlert$20((SharedPreferences) this.b, (h0) this.c, b2Var, i10);
                 break;
         }
     }
@@ -47,7 +47,7 @@ public final /* synthetic */ class d implements org.telegram.ui.ActionBar.z1, Re
 
     @Override // org.telegram.tgnet.RequestTimeDelegate
     public void run(long j10) {
-        AndroidUtilities.lambda$showProxyAlert$18((boolean[]) this.b, (org.telegram.ui.Components.bd[]) this.c, j10);
+        AndroidUtilities.lambda$showProxyAlert$18((boolean[]) this.b, (org.telegram.ui.Components.zc[]) this.c, j10);
     }
 
     @Override // org.telegram.messenger.MessagesController.ErrorDelegate

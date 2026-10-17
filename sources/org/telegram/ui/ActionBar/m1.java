@@ -19,7 +19,7 @@ import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public class m1 extends PopupWindow {
     public static Method k;
@@ -194,7 +194,7 @@ public class m1 extends PopupWindow {
         if (contentView instanceof ActionBarPopupWindow$ActionBarPopupWindowLayout) {
             ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) contentView;
             if (actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack() != null) {
-                setTouchInterceptor(new di.p1(1, this, actionBarPopupWindow$ActionBarPopupWindowLayout));
+                setTouchInterceptor(new ei.p1(1, this, actionBarPopupWindow$ActionBarPopupWindowLayout));
             }
         }
         Field field = l;

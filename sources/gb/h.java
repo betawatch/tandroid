@@ -1,58 +1,63 @@
 package gb;
 
-import eb.v;
-import java.lang.reflect.Modifier;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
-import v7.r8;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class h implements v, Cloneable {
-    public static final h c = new h();
-    public List a;
-    public final List b;
+public final class h extends Number {
+    public final String a;
 
-    public h() {
-        List list = Collections.EMPTY_LIST;
-        this.a = list;
-        this.b = list;
+    public h(String str) {
+        this.a = str;
     }
 
-    /* renamed from: a, reason: merged with bridge method [inline-methods] */
-    public final h clone() {
-        try {
-            return (h) super.clone();
-        } catch (CloneNotSupportedException e) {
-            throw new AssertionError(e);
-        }
+    @Override // java.lang.Number
+    public final double doubleValue() {
+        return Double.parseDouble(this.a);
     }
 
-    public final boolean b(Class cls, boolean z10) {
-        if (!z10 && !Enum.class.isAssignableFrom(cls)) {
-            r8 r8Var = jb.c.a;
-            if (!Modifier.isStatic(cls.getModifiers()) && (cls.isAnonymousClass() || cls.isLocalClass())) {
-                return true;
-            }
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        Iterator it = (z10 ? this.a : this.b).iterator();
-        while (it.hasNext()) {
-            if (((eb.a) it.next()).shouldSkipClass(cls)) {
-                return true;
-            }
+        if (obj instanceof h) {
+            return this.a.equals(((h) obj).a);
         }
         return false;
     }
 
-    @Override // eb.v
-    public final eb.u create(eb.g gVar, lb.a aVar) {
-        Class cls = aVar.a;
-        boolean b10 = b(cls, true);
-        boolean b11 = b(cls, false);
-        if (b10 || b11) {
-            return new g(this, b11, b10, gVar, aVar);
+    @Override // java.lang.Number
+    public final float floatValue() {
+        return Float.parseFloat(this.a);
+    }
+
+    public final int hashCode() {
+        return this.a.hashCode();
+    }
+
+    @Override // java.lang.Number
+    public final int intValue() {
+        String str = this.a;
+        try {
+            try {
+                return Integer.parseInt(str);
+            } catch (NumberFormatException unused) {
+                return (int) Long.parseLong(str);
+            }
+        } catch (NumberFormatException unused2) {
+            return d.i(str).intValue();
         }
-        return null;
+    }
+
+    @Override // java.lang.Number
+    public final long longValue() {
+        String str = this.a;
+        try {
+            return Long.parseLong(str);
+        } catch (NumberFormatException unused) {
+            return d.i(str).longValue();
+        }
+    }
+
+    public final String toString() {
+        return this.a;
     }
 }

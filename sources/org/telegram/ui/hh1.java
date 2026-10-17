@@ -1,67 +1,54 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Intent;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hh1 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ oh1 b;
+public final class hh1 implements org.telegram.ui.Components.voip.d {
+    public final /* synthetic */ jh1 a;
 
-    public /* synthetic */ hh1(oh1 oh1Var, int i10) {
-        this.a = i10;
-        this.b = oh1Var;
+    public hh1(jh1 jh1Var) {
+        this.a = jh1Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                final int i10 = 0;
-                final oh1 oh1Var = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.jh1
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                oh1.b0(oh1Var, tL_error, tLObject);
-                                break;
-                            default:
-                                oh1.h0(oh1Var, tL_error, tLObject);
-                                break;
-                        }
-                    }
-                });
-                break;
-            case 1:
-                AndroidUtilities.runOnUIThread(new kh1(this.b, tL_error, 0));
-                break;
-            case 2:
-                AndroidUtilities.runOnUIThread(new kh1(this.b, tL_error, 1));
-                break;
-            case 3:
-                AndroidUtilities.runOnUIThread(new kh1(this.b, tL_error, 2));
-                break;
-            default:
-                final int i11 = 1;
-                final oh1 oh1Var2 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.jh1
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                oh1.b0(oh1Var2, tL_error, tLObject);
-                                break;
-                            default:
-                                oh1.h0(oh1Var2, tL_error, tLObject);
-                                break;
-                        }
-                    }
-                });
-                break;
+    public final void a() {
+        jh1 jh1Var = this.a;
+        if (jh1Var.p0 != 17) {
+            if (jh1Var.b.checkSelfPermission("android.permission.RECORD_AUDIO") != 0) {
+                jh1Var.b.requestPermissions(new String[]{"android.permission.RECORD_AUDIO"}, 101);
+                return;
+            } else {
+                if (VoIPService.getSharedState() != null) {
+                    jh1Var.q(new sy0(this, 25));
+                    return;
+                }
+                return;
+            }
+        }
+        Intent intent = new Intent(jh1Var.b, (Class<?>) VoIPService.class);
+        intent.putExtra("user_id", jh1Var.d.id);
+        intent.putExtra("is_outgoing", true);
+        intent.putExtra("start_incall_activity", false);
+        intent.putExtra("video_call", jh1Var.U0);
+        intent.putExtra("can_video_call", jh1Var.U0);
+        intent.putExtra("account", jh1Var.a);
+        try {
+            jh1Var.b.startService(intent);
+        } catch (Throwable th2) {
+            FileLog.e(th2);
+        }
+    }
+
+    public final void b() {
+        jh1 jh1Var = this.a;
+        if (jh1Var.p0 == 17) {
+            jh1Var.u0.b();
+        } else if (VoIPService.getSharedState() != null) {
+            VoIPService.getSharedState().declineIncomingCall();
+        } else {
+            jh1Var.u0.b();
         }
     }
 }

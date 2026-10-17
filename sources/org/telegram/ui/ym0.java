@@ -1,55 +1,71 @@
 package org.telegram.ui;
 
-import java.util.Comparator;
+import android.app.Activity;
+import android.webkit.WebView;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class ym0 implements Comparator {
-    public final /* synthetic */ sn0 a;
+public final /* synthetic */ class ym0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ fo0 b;
+    public final /* synthetic */ TLObject c;
 
-    public ym0(sn0 sn0Var) {
-        this.a = sn0Var;
+    public /* synthetic */ ym0(fo0 fo0Var, TLObject tLObject, int i10) {
+        this.a = i10;
+        this.b = fo0Var;
+        this.c = tLObject;
     }
 
-    public final int a(TLRPC.SecureValueError secureValueError) {
-        if (secureValueError instanceof TLRPC.TL_secureValueError) {
-            return 0;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                fo0.e0(this.b, this.c);
+                break;
+            case 1:
+                fo0 fo0Var = this.b;
+                Utilities.Callback callback = fo0Var.d1;
+                TLObject tLObject = this.c;
+                if (callback != null) {
+                    callback.run((TLRPC.TL_payments_paymentVerificationNeeded) tLObject);
+                }
+                fo0Var.D0(false);
+                fo0Var.z0 = true;
+                fo0Var.H0(true, true);
+                org.telegram.ui.Components.dr drVar = fo0Var.r;
+                if (drVar != null) {
+                    drVar.setVisibility(0);
+                }
+                org.telegram.ui.ActionBar.u0 u0Var = fo0Var.n;
+                if (u0Var != null) {
+                    u0Var.setEnabled(false);
+                    fo0Var.n.getContentView().setVisibility(4);
+                }
+                org.telegram.ui.ActionBar.d5 parentLayout = fo0Var.getParentLayout();
+                Activity parentActivity = fo0Var.getParentActivity();
+                fo0Var.getMessagesController().newMessageCallback = new e7(fo0Var, parentLayout, parentActivity, 17);
+                WebView webView = fo0Var.w;
+                if (webView != null) {
+                    webView.setVisibility(0);
+                    WebView webView2 = fo0Var.w;
+                    String str = ((TLRPC.TL_payments_paymentVerificationNeeded) tLObject).url;
+                    fo0Var.x = str;
+                    webView2.loadUrl(str);
+                }
+                fo0Var.a1 = true;
+                fo0Var.f1 = 3;
+                eo0 eo0Var = fo0Var.Z0;
+                if (eo0Var != null) {
+                    eo0Var.c(3);
+                    break;
+                }
+                break;
+            default:
+                fo0.c0(this.b, this.c);
+                break;
         }
-        if (secureValueError instanceof TLRPC.TL_secureValueErrorFrontSide) {
-            return 1;
-        }
-        if (secureValueError instanceof TLRPC.TL_secureValueErrorReverseSide) {
-            return 2;
-        }
-        if (secureValueError instanceof TLRPC.TL_secureValueErrorSelfie) {
-            return 3;
-        }
-        if (secureValueError instanceof TLRPC.TL_secureValueErrorTranslationFile) {
-            return 4;
-        }
-        if (secureValueError instanceof TLRPC.TL_secureValueErrorTranslationFiles) {
-            return 5;
-        }
-        if (secureValueError instanceof TLRPC.TL_secureValueErrorFile) {
-            return 6;
-        }
-        if (secureValueError instanceof TLRPC.TL_secureValueErrorFiles) {
-            return 7;
-        }
-        if (secureValueError instanceof TLRPC.TL_secureValueErrorData) {
-            return sn0.B0(this.a, ((TLRPC.TL_secureValueErrorData) secureValueError).field);
-        }
-        return 100;
-    }
-
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int a2 = a((TLRPC.SecureValueError) obj);
-        int a10 = a((TLRPC.SecureValueError) obj2);
-        if (a2 < a10) {
-            return -1;
-        }
-        return a2 > a10 ? 1 : 0;
     }
 }

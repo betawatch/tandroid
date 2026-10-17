@@ -1,59 +1,18 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class qw0 extends org.telegram.ui.Cells.u1 {
-    public final /* synthetic */ int Ge;
-    public final /* synthetic */ int He;
-    public final /* synthetic */ int Ie;
+public final class qw0 {
+    public final int a;
+    public final int b;
+    public final CharSequence c;
+    public final String d;
+    public int e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ qw0(Context context, int i10, org.telegram.ui.ActionBar.c6 c6Var, int i11, int i12, int i13) {
-        super(context, i10, false, null, c6Var);
-        this.Ge = i13;
-        this.He = i11;
-        this.Ie = i12;
-    }
-
-    @Override // org.telegram.ui.Cells.u1
-    public final void Y1(Canvas canvas) {
-        switch (this.Ge) {
-            case 0:
-                this.i6 = 0;
-                this.j6 = this.Y5.size() - 1;
-                super.Y1(canvas);
-                break;
-            default:
-                this.i6 = 0;
-                this.j6 = this.Y5.size() - 1;
-                super.Y1(canvas);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Cells.u1, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        switch (this.Ge) {
-            case 0:
-                setMeasuredDimension(this.He, this.Ie);
-                break;
-            default:
-                setMeasuredDimension(this.He, this.Ie);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Cells.u1, android.view.View
-    public final void setPressed(boolean z10) {
-        int i10 = this.Ge;
-    }
-
-    private final void A4(boolean z10) {
-    }
-
-    private final void B4(boolean z10) {
+    public qw0(int i10, int i11, String str, String str2) {
+        this.a = i10;
+        this.b = i11;
+        this.c = str;
+        this.d = str2;
     }
 }

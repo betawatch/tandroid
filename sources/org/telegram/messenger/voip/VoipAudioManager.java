@@ -8,12 +8,12 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.Utilities;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public class VoipAudioManager {
     private Boolean isSpeakerphoneOn;
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static final class InstanceHolder {
         static final VoipAudioManager instance = new VoipAudioManager();
 
@@ -74,7 +74,7 @@ public class VoipAudioManager {
     }
 
     public void isBluetoothAndSpeakerOnAsync(Utilities.Callback2<Boolean, Boolean> callback2) {
-        Utilities.globalQueue.postRunnable(new p0(2, this, callback2));
+        Utilities.globalQueue.postRunnable(new m4.z(21, this, callback2));
     }
 
     public boolean isBluetoothOn() {
@@ -99,7 +99,7 @@ public class VoipAudioManager {
 
     public void setSpeakerphoneOn(boolean z10) {
         this.isSpeakerphoneOn = Boolean.valueOf(z10);
-        Utilities.globalQueue.postRunnable(new ah.t(18, getAudioManager(), z10));
+        Utilities.globalQueue.postRunnable(new ah.t(21, getAudioManager(), z10));
     }
 
     public void startBluetooth() {
@@ -113,13 +113,13 @@ public class VoipAudioManager {
             return;
         }
         this.isSpeakerphoneOn = Boolean.FALSE;
-        Utilities.globalQueue.postRunnable(new p0(1, audioManager, findBluetoothDevice));
+        Utilities.globalQueue.postRunnable(new m4.z(20, audioManager, findBluetoothDevice));
     }
 
     public void stopBluetooth() {
         AudioManager audioManager = getAudioManager();
         if (Build.VERSION.SDK_INT >= 31) {
-            Utilities.globalQueue.postRunnable(new u0(audioManager, 2));
+            Utilities.globalQueue.postRunnable(new s0(audioManager, 2));
         } else {
             audioManager.stopBluetoothSco();
         }

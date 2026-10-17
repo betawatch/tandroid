@@ -1,39 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class zs0 extends s4.m0 {
-    public final /* synthetic */ ts0 a;
+public final class zs0 extends ClippingImageView {
+    public final /* synthetic */ im0 R;
 
-    public zs0(ts0 ts0Var) {
-        this.a = ts0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zs0(Context context, ku0 ku0Var) {
+        super(context);
+        this.R = ku0Var;
     }
 
-    @Override // s4.m0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.y0 y0Var) {
-        if (!(view instanceof org.telegram.ui.Cells.t7)) {
-            rect.left = 0;
-            rect.top = 0;
-            rect.bottom = 0;
-            rect.right = 0;
-            return;
-        }
-        org.telegram.ui.Cells.t7 t7Var = (org.telegram.ui.Cells.t7) view;
-        ts0 ts0Var = this.a;
-        ts0Var.r.getClass();
-        int R = RecyclerView.R(t7Var);
-        int i10 = ts0Var.s.J;
-        t7Var.a0 = R < i10;
-        int i11 = R % i10;
-        t7Var.V = i11 == 0;
-        t7Var.W = i11 == i10 - 1;
-        rect.left = 0;
-        rect.top = 0;
-        rect.bottom = 0;
-        rect.right = 0;
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        this.R.invalidate();
     }
 }

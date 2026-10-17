@@ -1,49 +1,28 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
+import android.widget.TextView;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class lj0 extends org.telegram.ui.Components.ro {
-    public final /* synthetic */ pj0 v0;
+public final class lj0 extends TextView {
+    public final ht a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lj0(pj0 pj0Var, Context context) {
-        super(context, null, false, null);
-        this.v0 = pj0Var;
+    public lj0(Context context) {
+        super(context);
+        this.a = new ht(1, this);
     }
 
-    @Override // org.telegram.ui.Components.ro, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        pj0 pj0Var = this.v0;
-        pj0Var.W.setImageCoords(pj0Var.b0.getAvatarImageView().getX(), pj0Var.b0.getAvatarImageView().getY(), pj0Var.b0.getAvatarImageView().getWidth(), pj0Var.b0.getAvatarImageView().getHeight());
-        if (pj0Var.Y) {
-            canvas.save();
-            canvas.scale(0.9f, 0.9f, pj0Var.W.getCenterX(), pj0Var.W.getCenterY());
-            pj0Var.W.draw(canvas);
-            canvas.restore();
-        }
-        if (pj0Var.X) {
-            int centerX = (int) (pj0Var.W.getCenterX() - (org.telegram.ui.ActionBar.g6.U0.getIntrinsicWidth() / 2));
-            int centerY = (int) (pj0Var.W.getCenterY() - (org.telegram.ui.ActionBar.g6.U0.getIntrinsicHeight() / 2));
-            Drawable drawable = org.telegram.ui.ActionBar.g6.U0;
-            drawable.setBounds(centerX, centerY, drawable.getIntrinsicWidth() + centerX, org.telegram.ui.ActionBar.g6.U0.getIntrinsicHeight() + centerY);
-            org.telegram.ui.ActionBar.g6.U0.draw(canvas);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ro, android.view.ViewGroup, android.view.View
+    @Override // android.widget.TextView, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.v0.W.onAttachedToWindow();
+        NotificationCenter.getGlobalInstance().addObserver(this.a, NotificationCenter.emojiLoaded);
     }
 
-    @Override // org.telegram.ui.Components.ro, android.view.ViewGroup, android.view.View
+    @Override // android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        this.v0.W.onDetachedFromWindow();
+        NotificationCenter.getGlobalInstance().removeObserver(this.a, NotificationCenter.emojiLoaded);
     }
 }

@@ -1,36 +1,18 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import android.graphics.RectF;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class lc0 implements am0 {
-    public final /* synthetic */ pc0 a;
+public final class lc0 {
+    public final int a;
+    public final d11 b;
+    public final RectF c = new RectF();
+    public final RectF d = new RectF();
 
-    public lc0(pc0 pc0Var) {
-        this.a = pc0Var;
-    }
-
-    @Override // org.telegram.ui.Components.am0
-    public final void a(int i10, View view) {
-        pc0 pc0Var = this.a;
-        if (pc0Var.a != 1 || pc0Var.r.previewMessages.size() <= 1) {
-            return;
-        }
-        int id2 = pc0Var.r.previewMessages.get(i10).getId();
-        boolean z10 = pc0Var.r.selectedIds.get(id2, false);
-        boolean z11 = !z10;
-        if (pc0Var.r.selectedIds.size() == 1 && z10) {
-            return;
-        }
-        if (z10) {
-            pc0Var.r.selectedIds.delete(id2);
-        } else {
-            pc0Var.r.selectedIds.put(id2, z11);
-        }
-        if (view instanceof org.telegram.ui.Cells.u1) {
-            ((org.telegram.ui.Cells.u1) view).L3(z11, z11, true);
-        }
-        pc0Var.k(true);
+    public lc0(int i10, String str) {
+        this.a = i10;
+        this.b = new d11(str, 14.0f, AndroidUtilities.bold());
     }
 }

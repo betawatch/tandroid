@@ -1,126 +1,19 @@
 package com.google.android.gms.common.api.internal;
 
-import android.content.Context;
-import android.os.Bundle;
-import android.os.Looper;
-import java.io.FileDescriptor;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.Lock;
-import m.t3;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class m0 implements x0, com.google.android.gms.common.api.k {
-    public final Lock a;
-    public final Condition b;
-    public final Context c;
-    public final k6.e d;
-    public final h0 e;
-    public final Map f;
-    public final HashMap i = new HashMap();
-    public final t3 j;
-    public final Map k;
-    public final a8.d l;
-    public volatile k0 m;
-    public int n;
-    public final j0 o;
-    public final v0 p;
+public abstract class m0 {
+    public static final ExecutorService a;
 
-    public m0(Context context, j0 j0Var, Lock lock, Looper looper, k6.e eVar, a0.f fVar, t3 t3Var, a0.f fVar2, a8.d dVar, ArrayList arrayList, v0 v0Var) {
-        this.c = context;
-        this.a = lock;
-        this.d = eVar;
-        this.f = fVar;
-        this.j = t3Var;
-        this.k = fVar2;
-        this.l = dVar;
-        this.o = j0Var;
-        this.p = v0Var;
-        int size = arrayList.size();
-        for (int i10 = 0; i10 < size; i10++) {
-            ((p1) arrayList.get(i10)).c = this;
-        }
-        this.e = new h0(this, looper, 1);
-        this.b = lock.newCondition();
-        this.m = new a6.m(this, 10);
-    }
-
-    @Override // com.google.android.gms.common.api.internal.x0
-    public final void a() {
-        this.m.d();
-    }
-
-    @Override // com.google.android.gms.common.api.internal.x0
-    public final boolean b() {
-        return this.m instanceof a0;
-    }
-
-    @Override // com.google.android.gms.common.api.internal.x0
-    public final e c(e eVar) {
-        eVar.l();
-        return this.m.C(eVar);
-    }
-
-    @Override // com.google.android.gms.common.api.internal.x0
-    public final boolean d(a6.d dVar) {
-        return false;
-    }
-
-    @Override // com.google.android.gms.common.api.internal.x0
-    public final void f() {
-        if (this.m.u()) {
-            this.i.clear();
-        }
-    }
-
-    @Override // com.google.android.gms.common.api.internal.x0
-    public final void g(String str, FileDescriptor fileDescriptor, PrintWriter printWriter, String[] strArr) {
-        printWriter.append((CharSequence) str).append("mState=").println(this.m);
-        for (com.google.android.gms.common.api.e eVar : this.k.keySet()) {
-            String valueOf = String.valueOf(str);
-            printWriter.append((CharSequence) str).append((CharSequence) eVar.c).println(":");
-            com.google.android.gms.common.api.c cVar = (com.google.android.gms.common.api.c) this.f.get(eVar.b);
-            n6.l.h(cVar);
-            cVar.h(valueOf.concat("  "), printWriter);
-        }
-    }
-
-    public final void h() {
-        this.a.lock();
-        try {
-            this.m = new a6.m(this, 10);
-            this.m.q();
-            this.b.signalAll();
-        } finally {
-            this.a.unlock();
-        }
-    }
-
-    @Override // com.google.android.gms.common.api.k
-    public final void onConnected(Bundle bundle) {
-        this.a.lock();
-        try {
-            this.m.c(bundle);
-        } finally {
-            this.a.unlock();
-        }
-    }
-
-    @Override // com.google.android.gms.common.api.k
-    public final void onConnectionSuspended(int i10) {
-        this.a.lock();
-        try {
-            this.m.o(i10);
-        } finally {
-            this.a.unlock();
-        }
-    }
-
-    @Override // com.google.android.gms.common.api.internal.x0
-    public final void e() {
+    static {
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(2, 2, 60L, TimeUnit.SECONDS, new LinkedBlockingQueue(), new v6.a());
+        threadPoolExecutor.allowCoreThreadTimeOut(true);
+        a = Executors.unconfigurableExecutorService(threadPoolExecutor);
     }
 }

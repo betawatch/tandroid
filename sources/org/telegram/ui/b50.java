@@ -1,27 +1,39 @@
 package org.telegram.ui;
 
-import android.graphics.Paint;
-import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class b50 extends Paint {
-    public final /* synthetic */ n60 a;
+public final /* synthetic */ class b50 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ c50 b;
 
-    public b50(n60 n60Var) {
-        this.a = n60Var;
+    public /* synthetic */ b50(c50 c50Var, int i10) {
+        this.a = i10;
+        this.b = c50Var;
     }
 
-    @Override // android.graphics.Paint
-    public final void setAlpha(int i10) {
-        ViewGroup viewGroup;
-        ViewGroup viewGroup2;
-        super.setAlpha(i10);
-        n60 n60Var = this.a;
-        viewGroup = ((org.telegram.ui.ActionBar.e3) n60Var).containerView;
-        if (viewGroup != null) {
-            viewGroup2 = ((org.telegram.ui.ActionBar.e3) n60Var).containerView;
-            viewGroup2.invalidate();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                c50 c50Var = this.b;
+                x10 x10Var = c50Var.b;
+                if (x10Var != null) {
+                    x10Var.setVisibility(0);
+                }
+                AndroidUtilities.runOnUIThread(new b50(c50Var, 2), 16L);
+                break;
+            case 1:
+                x10 x10Var2 = this.b.b;
+                if (x10Var2 != null) {
+                    x10Var2.setVisibility(4);
+                    break;
+                }
+                break;
+            default:
+                super/*android.app.Dialog*/.dismiss();
+                break;
         }
     }
 }

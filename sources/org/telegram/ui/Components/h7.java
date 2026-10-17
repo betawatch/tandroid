@@ -1,27 +1,47 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.Utilities;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h7 implements Utilities.Callback {
+public final /* synthetic */ class h7 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ m8 b;
+    public final /* synthetic */ k8 b;
+    public final /* synthetic */ i80 c;
 
-    public /* synthetic */ h7(m8 m8Var, int i10) {
+    public /* synthetic */ h7(k8 k8Var, i80 i80Var, int i10) {
         this.a = i10;
-        this.b = m8Var;
+        this.b = k8Var;
+        this.c = i80Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                m8.w(this.b, (MessageObject) obj);
+                k8 k8Var = this.b;
+                k8Var.getClass();
+                this.c.u();
+                k8Var.u0(1);
+                break;
+            case 1:
+                k8 k8Var2 = this.b;
+                k8Var2.getClass();
+                this.c.u();
+                k8Var2.u0(2);
+                break;
+            case 2:
+                k8 k8Var3 = this.b;
+                k8Var3.getClass();
+                this.c.u();
+                k8Var3.u0(4);
+                break;
+            case 3:
+                k8 k8Var4 = this.b;
+                k8Var4.getClass();
+                this.c.u();
+                k8Var4.u0(7);
                 break;
             default:
-                m8.z(this.b);
+                k8.r(this.b, this.c);
                 break;
         }
     }

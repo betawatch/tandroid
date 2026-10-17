@@ -1,23 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class vw extends iz {
-    public final /* synthetic */ wz H;
+public final class vw extends s4.m0 {
+    public final /* synthetic */ tz a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vw(wz wzVar, Context context) {
-        super(wzVar, context, 1);
-        this.H = wzVar;
+    public vw(tz tzVar) {
+        this.a = tzVar;
     }
 
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        if (f7 != getTranslationY()) {
-            super.setTranslationY(f7);
-            this.H.J.invalidate();
+    @Override // s4.m0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.y0 y0Var) {
+        recyclerView.getClass();
+        int R = RecyclerView.R(view);
+        tz tzVar = this.a;
+        s4.g0 adapter = tzVar.h0.getAdapter();
+        yy yyVar = tzVar.n0;
+        if (adapter == yyVar && R == yyVar.I) {
+            rect.set(0, 0, 0, 0);
+            return;
         }
+        if (R == 0) {
+            yyVar.getClass();
+        }
+        rect.left = 0;
+        rect.bottom = 0;
+        rect.top = AndroidUtilities.dp(2.0f);
+        zy zyVar = tzVar.i0;
+        yyVar.getClass();
+        rect.right = zyVar.E1(R) ? 0 : AndroidUtilities.dp(2.0f);
     }
 }

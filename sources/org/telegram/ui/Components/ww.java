@@ -1,25 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaDataController;
+import android.os.Build;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class ww implements View.OnFocusChangeListener {
-    public final /* synthetic */ wz a;
+public final class ww extends sz {
+    public final /* synthetic */ tz d;
 
-    public ww(wz wzVar) {
-        this.a = wzVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ww(tz tzVar) {
+        super(tzVar, 2);
+        this.d = tzVar;
     }
 
-    @Override // android.view.View.OnFocusChangeListener
-    public final void onFocusChange(View view, boolean z10) {
-        if (z10) {
-            String[] currentKeyboardLanguage = AndroidUtilities.getCurrentKeyboardLanguage();
-            wz wzVar = this.a;
-            wzVar.W0 = currentKeyboardLanguage;
-            MediaDataController.getInstance(wzVar.c1).fetchNewEmojiKeywords(wzVar.W0);
+    @Override // org.telegram.ui.Components.sz, s4.r0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        bh.f fVar;
+        super.b(recyclerView, i10, i11);
+        if (Build.VERSION.SDK_INT < 31 || (fVar = this.d.j2) == null) {
+            return;
         }
+        fVar.f(i10, i11);
     }
 }

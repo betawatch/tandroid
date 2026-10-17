@@ -1,172 +1,467 @@
 package org.telegram.ui;
 
+import android.app.Activity;
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.view.View;
-import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import java.util.ArrayList;
-import java.util.HashMap;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.RadialProgressView;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class dr0 extends org.telegram.ui.Components.lm0 {
-    public final Context c;
-    public final /* synthetic */ fr0 d;
+public final /* synthetic */ class dr0 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ PhotoViewer b;
 
-    public dr0(fr0 fr0Var, Context context) {
-        this.d = fr0Var;
-        this.c = context;
+    public /* synthetic */ dr0(PhotoViewer photoViewer, int i10) {
+        this.a = i10;
+        this.b = photoViewer;
     }
 
-    @Override // org.telegram.ui.Components.lm0
-    public final boolean D(s4.b1 b1Var) {
-        fr0 fr0Var = this.d;
-        if (fr0Var.J == null) {
-            return TextUtils.isEmpty(fr0Var.v) ? b1Var.f == 3 : b1Var.b() < fr0Var.f.size();
-        }
-        return true;
-    }
-
-    @Override // s4.g0
-    public final int h() {
-        fr0 fr0Var = this.d;
-        MediaController.AlbumEntry albumEntry = fr0Var.J;
-        if (albumEntry != null) {
-            return albumEntry.photos.size();
-        }
-        if (!fr0Var.f.isEmpty()) {
-            return fr0Var.f.size() + (!fr0Var.s ? 1 : 0);
-        }
-        if (!TextUtils.isEmpty(fr0Var.v) || fr0Var.n.isEmpty()) {
-            return 0;
-        }
-        return fr0Var.n.size() + 2;
-    }
-
-    @Override // s4.g0
-    public final long i(int i10) {
-        return i10;
-    }
-
-    @Override // s4.g0
-    public final int j(int i10) {
-        fr0 fr0Var = this.d;
-        if (fr0Var.Y) {
-            return 2;
-        }
-        if (fr0Var.J != null) {
-            return 0;
-        }
-        return fr0Var.f.isEmpty() ? i10 == fr0Var.n.size() ? 4 : 3 : i10 < fr0Var.f.size() ? 0 : 1;
-    }
-
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
-        boolean M1;
-        fr0 fr0Var = this.d;
-        MediaController.AlbumEntry albumEntry = fr0Var.J;
-        ArrayList arrayList = fr0Var.n;
-        ArrayList arrayList2 = fr0Var.c;
-        HashMap hashMap = fr0Var.b;
-        int i11 = b1Var.f;
-        View view = b1Var.a;
-        if (i11 == 0) {
-            org.telegram.ui.Cells.t5 t5Var = (org.telegram.ui.Cells.t5) view;
-            t5Var.setItemSize(fr0Var.R);
-            org.telegram.ui.Components.z9 imageView = t5Var.getImageView();
-            t5Var.setTag(Integer.valueOf(i10));
-            imageView.q(0, true);
-            if (albumEntry != null) {
-                MediaController.PhotoEntry photoEntry = albumEntry.photos.get(i10);
-                t5Var.d(photoEntry, arrayList2.size() > 1, true, false, false);
-                t5Var.b(fr0Var.e ? arrayList2.indexOf(Integer.valueOf(photoEntry.imageId)) : -1, hashMap.containsKey(Integer.valueOf(photoEntry.imageId)), false);
-                M1 = PhotoViewer.M1(photoEntry.path);
-            } else {
-                MediaController.SearchImage searchImage = (MediaController.SearchImage) fr0Var.f.get(i10);
-                t5Var.e(searchImage);
-                t5Var.getVideoInfoContainer().setVisibility(4);
-                t5Var.b(fr0Var.e ? arrayList2.indexOf(searchImage.id) : -1, hashMap.containsKey(searchImage.id), false);
-                M1 = PhotoViewer.M1(searchImage.getPathToAttach());
-            }
-            imageView.getImageReceiver().setVisible(!M1, true);
-            t5Var.getCheckBox().setVisibility((fr0Var.T != 0 || M1) ? 8 : 0);
-            return;
-        }
-        if (i11 == 1) {
-            ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
-            if (layoutParams != null) {
-                layoutParams.width = -1;
-                layoutParams.height = fr0Var.R;
-                view.setLayoutParams(layoutParams);
-                return;
-            }
-            return;
-        }
-        if (i11 == 2) {
-            MediaController.PhotoEntry photoEntry2 = albumEntry.photos.get(i10);
-            org.telegram.ui.Cells.j7 j7Var = (org.telegram.ui.Cells.j7) view;
-            j7Var.setPhotoEntry(photoEntry2);
-            j7Var.b(hashMap.containsKey(Integer.valueOf(photoEntry2.imageId)), false);
-            j7Var.setTag(Integer.valueOf(i10));
-            return;
-        }
-        if (i11 != 3) {
-            return;
-        }
-        org.telegram.ui.Cells.r8 r8Var = (org.telegram.ui.Cells.r8) view;
-        if (i10 < arrayList.size()) {
-            r8Var.m(R.drawable.msg_recent, (CharSequence) arrayList.get(i10), false);
-        } else {
-            r8Var.m(R.drawable.msg_clear_recent, LocaleController.getString(R.string.ClearRecentHistory), false);
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        ViewGroup viewGroup2;
-        ViewGroup viewGroup3;
-        fr0 fr0Var = this.d;
-        boolean z10 = fr0Var.r0;
-        Context context = this.c;
-        if (i10 != 0) {
-            if (i10 == 1) {
-                ViewGroup frameLayout = new FrameLayout(context);
-                frameLayout.setLayoutParams(new s4.o0(-1, -2));
-                RadialProgressView radialProgressView = new RadialProgressView(context, null);
-                radialProgressView.setProgressColor(-11371101);
-                frameLayout.addView(radialProgressView, w7.z5.d(-1.0f, -1));
-                viewGroup3 = frameLayout;
-            } else if (i10 == 2) {
-                viewGroup3 = new org.telegram.ui.Cells.j7(context, 1, null);
-            } else if (i10 != 3) {
-                org.telegram.ui.Cells.d3 d3Var = new org.telegram.ui.Cells.d3(context, null);
-                d3Var.setForceDarkTheme(z10);
-                viewGroup3 = d3Var;
-            } else {
-                org.telegram.ui.Cells.r8 r8Var = new org.telegram.ui.Cells.r8(23, context, true);
-                r8Var.setLayoutParams(new s4.o0(-1, -2));
-                viewGroup2 = r8Var;
-                if (z10) {
-                    r8Var.a.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, fr0Var.v0, false));
-                    r8Var.e.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.rg, false), PorterDuff.Mode.MULTIPLY));
-                    viewGroup2 = r8Var;
+    /* JADX WARN: Code restructure failed: missing block: B:96:0x023d, code lost:
+    
+        if (r6.startsWith("https://" + org.telegram.messenger.MessagesController.getInstance(r7.T).linkPrefix) == false) goto L92;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:106:0x045e  */
+    /* JADX WARN: Removed duplicated region for block: B:113:0x049b  */
+    @Override // android.view.View.OnClickListener
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onClick(View view) {
+        ju0 ju0Var;
+        float f7;
+        int i10;
+        TLRPC.Message message;
+        int i11 = this.a;
+        float f10 = 0.0f;
+        final PhotoViewer photoViewer = this.b;
+        final int i12 = 0;
+        int i13 = 1;
+        switch (i11) {
+            case 0:
+                if (!photoViewer.e2 && !photoViewer.I1()) {
+                    photoViewer.M2();
+                    break;
                 }
-            }
-            return new org.telegram.ui.Components.wl0(viewGroup3);
+                break;
+            case 1:
+                Drawable[] drawableArr = PhotoViewer.U8;
+                if (!photoViewer.I1() && (ju0Var = photoViewer.d) != null && ju0Var.c() != null && !photoViewer.d.c().isEmpty()) {
+                    photoViewer.p3(!photoViewer.K, true);
+                    break;
+                }
+                break;
+            case 2:
+                Drawable[] drawableArr2 = PhotoViewer.U8;
+                photoViewer.U1(true);
+                photoViewer.B0(0, true);
+                break;
+            case 3:
+                MessageObject messageObject = photoViewer.T4;
+                if (messageObject == null || !messageObject.isSponsored()) {
+                    if (photoViewer.F.u0.a()) {
+                        photoViewer.o0.M(null, null);
+                        break;
+                    }
+                } else {
+                    MessageObject messageObject2 = photoViewer.T4;
+                    if (messageObject2 != null && messageObject2.isSponsored() && photoViewer.o0.getAlpha() > 0.5f) {
+                        final int i14 = photoViewer.T4.currentAccount;
+                        final ci.b bVar = new ci.b();
+                        org.telegram.ui.Components.i80 G = org.telegram.ui.Components.i80.G(photoViewer.e0, bVar, photoViewer.o0, true);
+                        G.a0(0.0f, -AndroidUtilities.dp(46.0f));
+                        int i15 = 5;
+                        G.V(5);
+                        MessageObject messageObject3 = photoViewer.T4;
+                        if (messageObject3.sponsoredInfo == null && messageObject3.sponsoredAdditionalInfo == null) {
+                            String str = messageObject3.sponsoredUrl;
+                            if (str != null) {
+                                break;
+                            }
+                            if (!UserConfig.getInstance(i14).isPremium() && !MessagesController.getInstance(photoViewer.T).premiumFeaturesBlocked() && !photoViewer.T4.sponsoredCanReport) {
+                                G.c(R.drawable.msg_block2, LocaleController.getString(R.string.HideAd), new Runnable() { // from class: org.telegram.ui.vq0
+                                    @Override // java.lang.Runnable
+                                    public final void run() {
+                                        int i16 = i12;
+                                        ci.b bVar2 = bVar;
+                                        int i17 = i14;
+                                        PhotoViewer photoViewer2 = photoViewer;
+                                        switch (i16) {
+                                            case 0:
+                                                Drawable[] drawableArr3 = PhotoViewer.U8;
+                                                if (!UserConfig.getInstance(i17).isPremium()) {
+                                                    new sg.x0(photoViewer2.m4, 3, true).show();
+                                                    break;
+                                                } else {
+                                                    new org.telegram.ui.Components.xc(photoViewer2.e0, bVar2).c(LocaleController.getString(R.string.AdHidden)).j();
+                                                    MessagesController.getInstance(i17).disableAds(true);
+                                                    org.telegram.ui.ActionBar.n2 n2Var = photoViewer2.m4;
+                                                    if (n2Var instanceof sn) {
+                                                        sn snVar = (sn) n2Var;
+                                                        snVar.Ja(photoViewer2.T4);
+                                                        snVar.La(photoViewer2.T4);
+                                                        break;
+                                                    }
+                                                }
+                                                break;
+                                            default:
+                                                Drawable[] drawableArr4 = PhotoViewer.U8;
+                                                if (!UserConfig.getInstance(i17).isPremium()) {
+                                                    new sg.x0(photoViewer2.m4, 3, true).show();
+                                                    break;
+                                                } else {
+                                                    new org.telegram.ui.Components.xc(photoViewer2.e0, bVar2).c(LocaleController.getString(R.string.AdHidden)).j();
+                                                    MessagesController.getInstance(i17).disableAds(true);
+                                                    org.telegram.ui.ActionBar.n2 n2Var2 = photoViewer2.m4;
+                                                    if (n2Var2 instanceof sn) {
+                                                        sn snVar2 = (sn) n2Var2;
+                                                        snVar2.Ja(photoViewer2.T4);
+                                                        snVar2.La(photoViewer2.T4);
+                                                        break;
+                                                    }
+                                                }
+                                                break;
+                                        }
+                                    }
+                                }, false);
+                            }
+                            if (photoViewer.T4.sponsoredCanReport) {
+                                G.c(R.drawable.msg_info, LocaleController.getString(R.string.AboutRevenueSharingAds), new zg0(18, photoViewer, bVar), false);
+                                if ((photoViewer.m4 instanceof sn) && !MessagesController.getInstance(i14).premiumFeaturesBlocked()) {
+                                    G.k();
+                                    final int i16 = 1;
+                                    G.c(R.drawable.msg_cancel, LocaleController.getString(R.string.RemoveAds), new Runnable() { // from class: org.telegram.ui.vq0
+                                        @Override // java.lang.Runnable
+                                        public final void run() {
+                                            int i162 = i16;
+                                            ci.b bVar2 = bVar;
+                                            int i17 = i14;
+                                            PhotoViewer photoViewer2 = photoViewer;
+                                            switch (i162) {
+                                                case 0:
+                                                    Drawable[] drawableArr3 = PhotoViewer.U8;
+                                                    if (!UserConfig.getInstance(i17).isPremium()) {
+                                                        new sg.x0(photoViewer2.m4, 3, true).show();
+                                                        break;
+                                                    } else {
+                                                        new org.telegram.ui.Components.xc(photoViewer2.e0, bVar2).c(LocaleController.getString(R.string.AdHidden)).j();
+                                                        MessagesController.getInstance(i17).disableAds(true);
+                                                        org.telegram.ui.ActionBar.n2 n2Var = photoViewer2.m4;
+                                                        if (n2Var instanceof sn) {
+                                                            sn snVar = (sn) n2Var;
+                                                            snVar.Ja(photoViewer2.T4);
+                                                            snVar.La(photoViewer2.T4);
+                                                            break;
+                                                        }
+                                                    }
+                                                    break;
+                                                default:
+                                                    Drawable[] drawableArr4 = PhotoViewer.U8;
+                                                    if (!UserConfig.getInstance(i17).isPremium()) {
+                                                        new sg.x0(photoViewer2.m4, 3, true).show();
+                                                        break;
+                                                    } else {
+                                                        new org.telegram.ui.Components.xc(photoViewer2.e0, bVar2).c(LocaleController.getString(R.string.AdHidden)).j();
+                                                        MessagesController.getInstance(i17).disableAds(true);
+                                                        org.telegram.ui.ActionBar.n2 n2Var2 = photoViewer2.m4;
+                                                        if (n2Var2 instanceof sn) {
+                                                            sn snVar2 = (sn) n2Var2;
+                                                            snVar2.Ja(photoViewer2.T4);
+                                                            snVar2.La(photoViewer2.T4);
+                                                            break;
+                                                        }
+                                                    }
+                                                    break;
+                                            }
+                                        }
+                                    }, false);
+                                }
+                            }
+                            if (G.x() <= 0) {
+                                G.Z();
+                                break;
+                            }
+                        }
+                        org.telegram.ui.Components.i80 J = G.J();
+                        org.telegram.ui.ActionBar.e1 e1Var = new org.telegram.ui.ActionBar.e1(0, photoViewer.E, bVar, true, false);
+                        e1Var.setItemHeight(44);
+                        e1Var.g(LocaleController.getString(R.string.Back), R.drawable.msg_arrow_back, null);
+                        e1Var.getTextView().setPadding(LocaleController.isRTL ? 0 : AndroidUtilities.dp(40.0f), 0, LocaleController.isRTL ? AndroidUtilities.dp(40.0f) : 0, 0);
+                        e1Var.setOnClickListener(new zg(G, 1));
+                        J.r(e1Var, w7.z5.n(-1, -2));
+                        J.r(new org.telegram.ui.ActionBar.j1(photoViewer.E, bVar), w7.z5.n(-1, 8));
+                        ArrayList arrayList = new ArrayList();
+                        String str2 = photoViewer.T4.sponsoredUrl;
+                        if (str2 != null) {
+                            f7 = 300.0f;
+                            if (!TextUtils.equals(AndroidUtilities.getHostAuthority(str2), MessagesController.getInstance(photoViewer.T).linkPrefix)) {
+                                TextView textView = new TextView(photoViewer.E);
+                                textView.setTextColor(bVar.u(org.telegram.ui.ActionBar.h6.gc));
+                                textView.setTextSize(1, 14.0f);
+                                textView.setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f));
+                                textView.setMaxWidth(AndroidUtilities.dp(300.0f));
+                                Uri parse = Uri.parse(photoViewer.T4.sponsoredUrl);
+                                textView.setText(pf.d.u(parse, null, null, pf.d.a(parse.getHost()), null));
+                                textView.setBackground(org.telegram.ui.ActionBar.h6.Z(photoViewer.z1(org.telegram.ui.ActionBar.h6.I5), 0, photoViewer.T4.sponsoredAdditionalInfo == null ? 6 : 0));
+                                textView.setOnClickListener(new ef0(i15, photoViewer, G));
+                                textView.setOnLongClickListener(new ci.m2(4, photoViewer, bVar));
+                                arrayList.add(textView);
+                            }
+                        } else {
+                            f7 = 300.0f;
+                        }
+                        if (photoViewer.T4.sponsoredInfo != null) {
+                            TextView textView2 = new TextView(photoViewer.E);
+                            textView2.setTextColor(bVar.u(org.telegram.ui.ActionBar.h6.E8));
+                            textView2.setTextSize(1, 14.0f);
+                            textView2.setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f));
+                            textView2.setMaxWidth(AndroidUtilities.dp(f7));
+                            textView2.setText(photoViewer.T4.sponsoredInfo);
+                            textView2.setBackground(org.telegram.ui.ActionBar.h6.Z(photoViewer.z1(org.telegram.ui.ActionBar.h6.I5), 0, photoViewer.T4.sponsoredAdditionalInfo == null ? 6 : 0));
+                            textView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.uq0
+                                @Override // android.view.View.OnClickListener
+                                public final void onClick(View view2) {
+                                    switch (i12) {
+                                        case 0:
+                                            PhotoViewer photoViewer2 = photoViewer;
+                                            if (AndroidUtilities.addToClipboard(photoViewer2.T4.sponsoredInfo)) {
+                                                org.telegram.messenger.wh.p(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(photoViewer2.E), bVar));
+                                                break;
+                                            }
+                                            break;
+                                        default:
+                                            PhotoViewer photoViewer3 = photoViewer;
+                                            if (AndroidUtilities.addToClipboard(photoViewer3.T4.sponsoredAdditionalInfo)) {
+                                                org.telegram.messenger.wh.p(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(photoViewer3.E), bVar));
+                                                break;
+                                            }
+                                            break;
+                                    }
+                                }
+                            });
+                            arrayList.add(textView2);
+                        }
+                        if (photoViewer.T4.sponsoredAdditionalInfo != null) {
+                            TextView textView3 = new TextView(photoViewer.E);
+                            textView3.setTextColor(bVar.u(org.telegram.ui.ActionBar.h6.E8));
+                            textView3.setTextSize(1, 14.0f);
+                            textView3.setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(10.0f));
+                            textView3.setMaxWidth(AndroidUtilities.dp(f7));
+                            textView3.setText(photoViewer.T4.sponsoredAdditionalInfo);
+                            textView3.setBackground(org.telegram.ui.ActionBar.h6.Z(photoViewer.z1(org.telegram.ui.ActionBar.h6.I5), 0, 6));
+                            final int i17 = 1;
+                            textView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.uq0
+                                @Override // android.view.View.OnClickListener
+                                public final void onClick(View view2) {
+                                    switch (i17) {
+                                        case 0:
+                                            PhotoViewer photoViewer2 = photoViewer;
+                                            if (AndroidUtilities.addToClipboard(photoViewer2.T4.sponsoredInfo)) {
+                                                org.telegram.messenger.wh.p(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(photoViewer2.E), bVar));
+                                                break;
+                                            }
+                                            break;
+                                        default:
+                                            PhotoViewer photoViewer3 = photoViewer;
+                                            if (AndroidUtilities.addToClipboard(photoViewer3.T4.sponsoredAdditionalInfo)) {
+                                                org.telegram.messenger.wh.p(R.string.TextCopied, new org.telegram.ui.Components.xc(org.telegram.ui.Components.lb.a(photoViewer3.E), bVar));
+                                                break;
+                                            }
+                                            break;
+                                    }
+                                }
+                            });
+                            arrayList.add(textView3);
+                        }
+                        for (int i18 = 0; i18 < arrayList.size(); i18++) {
+                            View view2 = (View) arrayList.get(i18);
+                            if (i18 > 0) {
+                                FrameLayout frameLayout = new FrameLayout(photoViewer.E);
+                                frameLayout.setBackgroundColor(bVar.u(org.telegram.ui.ActionBar.h6.d7));
+                                i10 = -1;
+                                LinearLayout.LayoutParams n10 = w7.z5.n(-1, 1);
+                                n10.height = 1;
+                                J.r(frameLayout, n10);
+                            } else {
+                                i10 = -1;
+                            }
+                            J.r(view2, w7.z5.n(i10, -2));
+                        }
+                        G.c(R.drawable.msg_channel, LocaleController.getString(R.string.SponsoredMessageSponsorReportable), new gi.g2(G, J, 10), false);
+                        if (!UserConfig.getInstance(i14).isPremium()) {
+                            G.c(R.drawable.msg_block2, LocaleController.getString(R.string.HideAd), new Runnable() { // from class: org.telegram.ui.vq0
+                                @Override // java.lang.Runnable
+                                public final void run() {
+                                    int i162 = i12;
+                                    ci.b bVar2 = bVar;
+                                    int i172 = i14;
+                                    PhotoViewer photoViewer2 = photoViewer;
+                                    switch (i162) {
+                                        case 0:
+                                            Drawable[] drawableArr3 = PhotoViewer.U8;
+                                            if (!UserConfig.getInstance(i172).isPremium()) {
+                                                new sg.x0(photoViewer2.m4, 3, true).show();
+                                                break;
+                                            } else {
+                                                new org.telegram.ui.Components.xc(photoViewer2.e0, bVar2).c(LocaleController.getString(R.string.AdHidden)).j();
+                                                MessagesController.getInstance(i172).disableAds(true);
+                                                org.telegram.ui.ActionBar.n2 n2Var = photoViewer2.m4;
+                                                if (n2Var instanceof sn) {
+                                                    sn snVar = (sn) n2Var;
+                                                    snVar.Ja(photoViewer2.T4);
+                                                    snVar.La(photoViewer2.T4);
+                                                    break;
+                                                }
+                                            }
+                                            break;
+                                        default:
+                                            Drawable[] drawableArr4 = PhotoViewer.U8;
+                                            if (!UserConfig.getInstance(i172).isPremium()) {
+                                                new sg.x0(photoViewer2.m4, 3, true).show();
+                                                break;
+                                            } else {
+                                                new org.telegram.ui.Components.xc(photoViewer2.e0, bVar2).c(LocaleController.getString(R.string.AdHidden)).j();
+                                                MessagesController.getInstance(i172).disableAds(true);
+                                                org.telegram.ui.ActionBar.n2 n2Var2 = photoViewer2.m4;
+                                                if (n2Var2 instanceof sn) {
+                                                    sn snVar2 = (sn) n2Var2;
+                                                    snVar2.Ja(photoViewer2.T4);
+                                                    snVar2.La(photoViewer2.T4);
+                                                    break;
+                                                }
+                                            }
+                                            break;
+                                    }
+                                }
+                            }, false);
+                        }
+                        if (photoViewer.T4.sponsoredCanReport) {
+                        }
+                        if (G.x() <= 0) {
+                        }
+                    }
+                }
+                break;
+            case 4:
+                MessageObject messageObject4 = photoViewer.T4;
+                if (messageObject4 != null && messageObject4.hasVideoQualities()) {
+                    lr lrVar = photoViewer.J0;
+                    MessageObject messageObject5 = photoViewer.T4;
+                    LinearLayout linearLayout = lrVar.b;
+                    if (messageObject5 != null && (message = messageObject5.messageOwner) != null && message.media != null && messageObject5.hasVideoQualities()) {
+                        int i19 = messageObject5.currentAccount;
+                        TLRPC.MessageMedia messageMedia = messageObject5.messageOwner.media;
+                        ArrayList s10 = org.telegram.ui.Components.a81.s(i19, messageMedia.document, messageMedia.alt_documents, 0, true);
+                        linearLayout.removeAllViews();
+                        int i20 = 0;
+                        while (i20 < s10.size()) {
+                            org.telegram.ui.Components.w71 w71Var = (org.telegram.ui.Components.w71) s10.get(i20);
+                            org.telegram.ui.Components.y71 a2 = w71Var.a();
+                            StringBuilder sb2 = new StringBuilder();
+                            int i21 = R.string.QualitySaveIn;
+                            Object[] objArr = new Object[i13];
+                            objArr[0] = Integer.valueOf(w71Var.b());
+                            sb2.append(LocaleController.formatString(i21, objArr));
+                            sb2.append(w71Var.a ? " (" + LocaleController.getString(R.string.QualitySource) + ")" : "");
+                            String sb3 = sb2.toString();
+                            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+                            if (a2.b()) {
+                                spannableStringBuilder.append(AndroidUtilities.formatFileSize(a2.g.size));
+                                spannableStringBuilder.append(LocaleController.getString(R.string.QualityCached));
+                            } else {
+                                SpannableString spannableString = new SpannableString("s ");
+                                org.telegram.ui.Components.yq yqVar = new org.telegram.ui.Components.yq(R.drawable.msg_mini_arrow_mediabold, 0);
+                                yqVar.rotate(90.0f);
+                                yqVar.translate(f10, AndroidUtilities.dp(1.0f));
+                                yqVar.spaceScaleX = 0.85f;
+                                spannableString.setSpan(yqVar, 0, 1, 33);
+                                spannableStringBuilder.append((CharSequence) spannableString);
+                                spannableStringBuilder.append(AndroidUtilities.formatFileSize(a2.g.size));
+                            }
+                            org.telegram.ui.ActionBar.e1 c10 = org.telegram.ui.ActionBar.u0.c(false, false, linearLayout, 0, sb3, false, null);
+                            c10.setSubtext(spannableStringBuilder);
+                            c10.c(-328966, -328966);
+                            c10.b.setPadding(0, 0, 0, 0);
+                            c10.setOnClickListener(new a0(lrVar, messageObject5, w71Var, 9));
+                            c10.setSelectorColor(268435455);
+                            i20++;
+                            f10 = 0.0f;
+                            i13 = 1;
+                        }
+                        photoViewer.t0.b();
+                        break;
+                    }
+                }
+                org.telegram.ui.Components.z7 z7Var = photoViewer.F;
+                if (z7Var != null && z7Var.getActionBarMenuOnItemClick() != null) {
+                    photoViewer.F.getActionBarMenuOnItemClick().b(2);
+                    photoViewer.o0.M(null, null);
+                    break;
+                }
+                break;
+            case 5:
+                Activity activity = photoViewer.y;
+                if (activity != null) {
+                    photoViewer.Z3 = false;
+                    photoViewer.Y3 = 1;
+                    if (photoViewer.X3 == -10) {
+                        photoViewer.X3 = activity.getRequestedOrientation();
+                    }
+                    if (((WindowManager) photoViewer.y.getSystemService("window")).getDefaultDisplay().getRotation() == 3) {
+                        photoViewer.y.setRequestedOrientation(8);
+                    } else {
+                        photoViewer.y.setRequestedOrientation(0);
+                    }
+                    photoViewer.j3(false, false);
+                    break;
+                }
+                break;
+            case 6:
+                Activity activity2 = photoViewer.y;
+                if (activity2 != null) {
+                    photoViewer.Z3 = false;
+                    photoViewer.Y3 = 2;
+                    if (photoViewer.X3 == -10) {
+                        photoViewer.X3 = activity2.getRequestedOrientation();
+                    }
+                    photoViewer.y.setRequestedOrientation(1);
+                    break;
+                }
+                break;
+            default:
+                MessageObject messageObject6 = photoViewer.T4;
+                if (messageObject6 != null && messageObject6.isSponsored()) {
+                    org.telegram.ui.ActionBar.n2 n2Var = photoViewer.m4;
+                    if (n2Var instanceof sn) {
+                        ((sn) n2Var).O9(photoViewer.T4, false, true);
+                    }
+                    photoViewer.G0(true, false);
+                    String str3 = photoViewer.T4.sponsoredUrl;
+                    if (str3 != null) {
+                        Context context = LaunchActivity.H1;
+                        if (context == null) {
+                            context = photoViewer.E;
+                        }
+                        pf.d.q(context, Uri.parse(str3), true, false, false, null, null, false, MessagesController.getInstance(photoViewer.T).sponsoredLinksInappAllow, false);
+                        break;
+                    }
+                }
+                break;
         }
-        org.telegram.ui.Cells.t5 t5Var = new org.telegram.ui.Cells.t5(context, null);
-        t5Var.setDelegate(new cr0(this));
-        t5Var.getCheckFrame().setVisibility(fr0Var.T != 0 ? 8 : 0);
-        viewGroup2 = t5Var;
-        viewGroup3 = viewGroup2;
-        return new org.telegram.ui.Components.wl0(viewGroup3);
     }
 }

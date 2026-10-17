@@ -1,24 +1,23 @@
 package f5;
 
-import com.google.android.gms.internal.play_billing.k3;
+import com.google.android.gms.internal.cast.a6;
 import java.nio.ByteBuffer;
 import java.util.Date;
-import ji.w4;
-import w7.g7;
+import w7.h7;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class k extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ w4 E;
-    public static final /* synthetic */ w4 F;
-    public static final /* synthetic */ w4 G;
-    public static final /* synthetic */ w4 H;
-    public static final /* synthetic */ w4 I;
-    public static final /* synthetic */ w4 s;
-    public static final /* synthetic */ w4 v;
-    public static final /* synthetic */ w4 w;
-    public static final /* synthetic */ w4 x;
-    public static final /* synthetic */ w4 y;
+    public static final /* synthetic */ le.b E;
+    public static final /* synthetic */ le.b F;
+    public static final /* synthetic */ le.b G;
+    public static final /* synthetic */ le.b H;
+    public static final /* synthetic */ le.b I;
+    public static final /* synthetic */ le.b s;
+    public static final /* synthetic */ le.b v;
+    public static final /* synthetic */ le.b w;
+    public static final /* synthetic */ le.b x;
+    public static final /* synthetic */ le.b y;
     public Date e;
     public Date f;
     public long h;
@@ -44,13 +43,13 @@ public final class k extends com.googlecode.mp4parser.c {
     public final void _parseDetails(ByteBuffer byteBuffer) {
         f(byteBuffer);
         if (e() == 1) {
-            this.e = g7.b(e5.b.j(byteBuffer));
-            this.f = g7.b(e5.b.j(byteBuffer));
+            this.e = h7.b(e5.b.j(byteBuffer));
+            this.f = h7.b(e5.b.j(byteBuffer));
             this.h = e5.b.i(byteBuffer);
             this.n = e5.b.j(byteBuffer);
         } else {
-            this.e = g7.b(e5.b.i(byteBuffer));
-            this.f = g7.b(e5.b.i(byteBuffer));
+            this.e = h7.b(e5.b.i(byteBuffer));
+            this.f = h7.b(e5.b.i(byteBuffer));
             this.h = e5.b.i(byteBuffer);
             this.n = e5.b.i(byteBuffer);
         }
@@ -67,13 +66,13 @@ public final class k extends com.googlecode.mp4parser.c {
     public final void getContent(ByteBuffer byteBuffer) {
         i(byteBuffer);
         if (e() == 1) {
-            byteBuffer.putLong(g7.a(this.e));
-            byteBuffer.putLong(g7.a(this.f));
+            byteBuffer.putLong(h7.a(this.e));
+            byteBuffer.putLong(h7.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putLong(this.n);
         } else {
-            byteBuffer.putInt((int) g7.a(this.e));
-            byteBuffer.putInt((int) g7.a(this.f));
+            byteBuffer.putInt((int) h7.a(this.e));
+            byteBuffer.putInt((int) h7.a(this.f));
             byteBuffer.putInt((int) this.h);
             byteBuffer.putInt((int) this.n);
         }
@@ -95,23 +94,23 @@ public final class k extends com.googlecode.mp4parser.c {
     }
 
     public final String toString() {
-        com.google.firebase.messaging.s b10 = te.a.b(I, this, this);
+        com.google.firebase.messaging.r b10 = te.a.b(I, this, this);
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
         StringBuilder sb2 = new StringBuilder("MediaHeaderBox[creationTime=");
-        k3.p(te.a.b(s, this, this));
+        a6.p(te.a.b(s, this, this));
         sb2.append(this.e);
         sb2.append(";modificationTime=");
-        k3.p(te.a.b(v, this, this));
+        a6.p(te.a.b(v, this, this));
         sb2.append(this.f);
         sb2.append(";timescale=");
-        k3.p(te.a.b(w, this, this));
+        a6.p(te.a.b(w, this, this));
         sb2.append(this.h);
         sb2.append(";duration=");
-        k3.p(te.a.b(x, this, this));
+        a6.p(te.a.b(x, this, this));
         sb2.append(this.n);
         sb2.append(";language=");
-        k3.p(te.a.b(y, this, this));
+        a6.p(te.a.b(y, this, this));
         return a1.g.s(sb2, this.r, "]");
     }
 }

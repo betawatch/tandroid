@@ -1,8 +1,8 @@
 package hg;
 
+import ai.x2;
 import android.text.TextUtils;
 import android.util.LongSparseArray;
-import bi.f3;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -11,10 +11,10 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.sq;
-import org.telegram.ui.Components.w51;
+import org.telegram.ui.Components.p51;
+import org.telegram.ui.Components.pq;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class c2 implements Runnable {
     public final /* synthetic */ e2 a;
@@ -66,12 +66,12 @@ public final class c2 implements Runnable {
         HashMap hashMap3 = e2Var.H;
         HashMap hashMap4 = e2Var.I;
         ArrayList arrayList = e2Var.F;
-        w51 w51Var = e2Var.e;
+        p51 p51Var = e2Var.e;
         int i14 = e2Var.c;
         if (TextUtils.isEmpty(e2Var.R)) {
             return;
         }
-        sq progressDrawable = w51Var.b.h.getProgressDrawable();
+        pq progressDrawable = p51Var.b.h.getProgressDrawable();
         progressDrawable.e = true;
         progressDrawable.b = System.currentTimeMillis();
         progressDrawable.invalidateSelf();
@@ -147,12 +147,12 @@ public final class c2 implements Runnable {
             i12 = 0;
         } else {
             String[] currentKeyboardLanguage = AndroidUtilities.getCurrentKeyboardLanguage();
-            if (!Arrays.equals(w51Var.a.b(), currentKeyboardLanguage)) {
+            if (!Arrays.equals(p51Var.a.b(), currentKeyboardLanguage)) {
                 MediaDataController.getInstance(i10).fetchNewEmojiKeywords(currentKeyboardLanguage);
             }
-            w51Var.a.i(currentKeyboardLanguage);
+            p51Var.a.i(currentKeyboardLanguage);
             i12 = 0;
-            MediaDataController.getInstance(i10).getEmojiSuggestions(w51Var.a.b(), e2Var.R, false, new b2(this, i15, allStickers, i12), false);
+            MediaDataController.getInstance(i10).getEmojiSuggestions(p51Var.a.b(), e2Var.R, false, new b2(this, i15, allStickers, 0), false);
         }
         ArrayList<TLRPC.TL_messages_stickerSet> stickerSets = MediaDataController.getInstance(i10).getStickerSets(i12);
         int size2 = stickerSets.size();
@@ -203,16 +203,16 @@ public final class c2 implements Runnable {
             }
         }
         if (!arrayList.isEmpty() || !hashMap5.isEmpty()) {
-            w51Var.b(true);
+            p51Var.b(true);
         }
         TLRPC.TL_messages_searchStickerSets tL_messages_searchStickerSets = new TLRPC.TL_messages_searchStickerSets();
         tL_messages_searchStickerSets.q = e2Var.R;
-        e2Var.N = ConnectionsManager.getInstance(i10).sendRequest(tL_messages_searchStickerSets, new bi.m1(12, this, tL_messages_searchStickerSets));
+        e2Var.N = ConnectionsManager.getInstance(i10).sendRequest(tL_messages_searchStickerSets, new ai.g(19, this, tL_messages_searchStickerSets));
         if (Emoji.isValidEmoji(e2Var.R)) {
             TLRPC.TL_messages_getStickers tL_messages_getStickers = new TLRPC.TL_messages_getStickers();
             tL_messages_getStickers.emoticon = e2Var.R;
             tL_messages_getStickers.hash = 0L;
-            e2Var.O = ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getStickers, new f3(this, tL_messages_getStickers, arrayList2, longSparseArray, 3));
+            e2Var.O = ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getStickers, new x2(this, tL_messages_getStickers, arrayList2, longSparseArray, 8));
         }
         e2Var.l();
     }

@@ -1,6 +1,6 @@
 package tc;
 
-import c5.c0;
+import c5.b0;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Socket;
@@ -8,23 +8,23 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import javax.net.SocketFactory;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class t extends Thread {
     public final h a;
     public final SocketFactory b;
     public final InetSocketAddress c;
     public final int d;
-    public final c0 e;
-    public final c0 f;
+    public final b0 e;
+    public final b0 f;
 
-    public t(h hVar, SocketFactory socketFactory, InetSocketAddress inetSocketAddress, int i10, c0 c0Var, c0 c0Var2) {
+    public t(h hVar, SocketFactory socketFactory, InetSocketAddress inetSocketAddress, int i10, b0 b0Var, b0 b0Var2) {
         this.a = hVar;
         this.b = socketFactory;
         this.c = inetSocketAddress;
         this.d = i10;
-        this.e = c0Var;
-        this.f = c0Var2;
+        this.e = b0Var;
+        this.f = b0Var2;
     }
 
     public final void a(Exception exc) {
@@ -58,9 +58,9 @@ public final class t extends Thread {
         boolean z10;
         Socket socket = null;
         try {
-            c0 c0Var = this.e;
-            if (c0Var != null) {
-                ((CountDownLatch) c0Var.c).await(c0Var.b, TimeUnit.MILLISECONDS);
+            b0 b0Var = this.e;
+            if (b0Var != null) {
+                ((CountDownLatch) b0Var.c).await(b0Var.b, TimeUnit.MILLISECONDS);
             }
             h hVar = this.a;
             synchronized (hVar) {

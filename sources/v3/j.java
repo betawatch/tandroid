@@ -1,10 +1,10 @@
 package v3;
 
-import c3.a0;
-import c3.c0;
+import c3.b0;
+import c3.d0;
 import e2.m0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class j implements h {
     public final long a;
@@ -53,26 +53,26 @@ public final class j implements h {
         return this.a + this.b;
     }
 
-    @Override // c3.b0
+    @Override // c3.c0
     public final boolean d() {
         return this.g != null;
     }
 
-    @Override // c3.b0
+    @Override // c3.c0
     public final /* synthetic */ boolean e() {
         return false;
     }
 
-    @Override // c3.b0
-    public final a0 f(long j10) {
+    @Override // c3.c0
+    public final b0 f(long j10) {
         double d;
         double d10;
         boolean d11 = d();
         int i10 = this.b;
         long j11 = this.a;
         if (!d11) {
-            c0 c0Var = new c0(0L, j11 + i10);
-            return new a0(c0Var, c0Var);
+            d0 d0Var = new d0(0L, j11 + i10);
+            return new b0(d0Var, d0Var);
         }
         long j12 = m0.j(j10, 0L, this.c);
         double d12 = (j12 * 100.0d) / this.c;
@@ -97,8 +97,8 @@ public final class j implements h {
             d13 = ((d10 - d14) * (d12 - i11)) + d14;
         }
         long j13 = this.e;
-        c0 c0Var2 = new c0(j12, j11 + m0.j(Math.round((d13 / d) * j13), i10, j13 - 1));
-        return new a0(c0Var2, c0Var2);
+        d0 d0Var2 = new d0(j12, j11 + m0.j(Math.round((d13 / d) * j13), i10, j13 - 1));
+        return new b0(d0Var2, d0Var2);
     }
 
     @Override // v3.h
@@ -106,7 +106,7 @@ public final class j implements h {
         return this.d;
     }
 
-    @Override // c3.b0
+    @Override // c3.c0
     public final long h() {
         return this.c;
     }

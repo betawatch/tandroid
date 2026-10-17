@@ -1,72 +1,219 @@
 package org.telegram.ui;
 
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.view.MotionEvent;
 import android.view.View;
-import org.telegram.messenger.ImageReceiver;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class lb extends zu0 {
-    public final /* synthetic */ ac a;
+public final class lb extends ub {
+    public final ih.k x0;
+    public final /* synthetic */ xb y0;
 
-    public lb(ac acVar) {
-        this.a = acVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public lb(xb xbVar, Context context) {
+        super(xbVar, context);
+        this.y0 = xbVar;
+        this.x0 = new ih.k();
     }
 
-    @Override // org.telegram.ui.zu0, org.telegram.ui.hv0
-    public final jv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        org.telegram.ui.Cells.w0 w0Var;
-        MessageObject messageObject2;
-        org.telegram.ui.Cells.u1 u1Var;
-        MessageObject messageObject3;
-        ac acVar = this.a;
-        int childCount = acVar.v.getChildCount();
-        int i11 = 0;
+    @Override // org.telegram.ui.Components.jw0
+    public final void U(Drawable drawable) {
+        if (drawable instanceof org.telegram.ui.Components.wc0) {
+            ((org.telegram.ui.Components.wc0) drawable).p();
+        }
+        ih.k kVar = this.x0;
+        gh.a c10 = kVar.c(drawable);
+        AndroidUtilities.computePerceivedBrightness(kVar.a(c10));
+        xb xbVar = this.y0;
+        xbVar.a.a = c10;
+        kh.f fVar = xbVar.W;
+        if (fVar != null) {
+            fVar.invalidate();
+        }
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        c2.b bVar = c2.b.e;
+        if (bVar == null || !bVar.a) {
+            return super.dispatchTouchEvent(motionEvent);
+        }
+        x4 x4Var = (x4) c2.b.m().d;
+        if (x4Var == null) {
+            return true;
+        }
+        x4Var.onTouchEvent(motionEvent);
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.jw0, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        MessageObject playingMessageObject = MediaController.getInstance().getPlayingMessageObject();
+        if (playingMessageObject == null || !playingMessageObject.isRoundVideo() || playingMessageObject.eventId == 0) {
+            return;
+        }
+        long dialogId = playingMessageObject.getDialogId();
+        xb xbVar = this.y0;
+        if (dialogId == (-xbVar.f.id)) {
+            MediaController.getInstance().setTextureView(xbVar.Q0(false), xbVar.e0, xbVar.d0, true);
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:16:0x004f  */
+    /* JADX WARN: Removed duplicated region for block: B:23:0x0092  */
+    /* JADX WARN: Removed duplicated region for block: B:31:0x00b1  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x0083  */
+    @Override // org.telegram.ui.Components.jw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        int i14;
+        int i15;
+        int i16;
+        int i17;
+        int i18;
+        int i19;
+        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.k kVar2;
+        int i20;
+        org.telegram.ui.ActionBar.k kVar3;
+        org.telegram.ui.ActionBar.k kVar4;
+        org.telegram.ui.ActionBar.k kVar5;
+        org.telegram.ui.ActionBar.k kVar6;
+        int childCount = getChildCount();
+        int i21 = 0;
         while (true) {
-            ImageReceiver imageReceiver = null;
-            if (i11 >= childCount) {
-                return null;
+            xb xbVar = this.y0;
+            if (i21 >= childCount) {
+                xbVar.c1();
+                S();
+                return;
             }
-            View childAt = acVar.v.getChildAt(i11);
-            if (childAt instanceof org.telegram.ui.Cells.u1) {
-                if (messageObject != null && (messageObject3 = (u1Var = (org.telegram.ui.Cells.u1) childAt).getMessageObject()) != null && messageObject3.getId() == messageObject.getId()) {
-                    imageReceiver = u1Var.getPhotoImage();
+            View childAt = getChildAt(i21);
+            if (childAt.getVisibility() != 8) {
+                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
+                int measuredWidth = childAt.getMeasuredWidth();
+                int measuredHeight = childAt.getMeasuredHeight();
+                int i22 = layoutParams.gravity;
+                if (i22 == -1) {
+                    i22 = 51;
                 }
-            } else if ((childAt instanceof org.telegram.ui.Cells.w0) && (messageObject2 = (w0Var = (org.telegram.ui.Cells.w0) childAt).getMessageObject()) != null) {
-                if (messageObject != null) {
-                    if (messageObject2.getId() == messageObject.getId()) {
-                        imageReceiver = w0Var.getPhotoImage();
+                int i23 = i22 & 112;
+                int i24 = i22 & 7;
+                if (i24 == 1) {
+                    i14 = (((i12 - i10) - measuredWidth) / 2) + layoutParams.leftMargin;
+                    i15 = layoutParams.rightMargin;
+                } else if (i24 != 5) {
+                    i16 = layoutParams.leftMargin;
+                    if (i23 == 16) {
+                        if (i23 == 48) {
+                            i19 = layoutParams.topMargin + getPaddingTop();
+                            kVar4 = ((org.telegram.ui.ActionBar.n2) xbVar).actionBar;
+                            if (childAt != kVar4) {
+                                kVar5 = ((org.telegram.ui.ActionBar.n2) xbVar).actionBar;
+                                if (kVar5.getVisibility() == 0) {
+                                    kVar6 = ((org.telegram.ui.ActionBar.n2) xbVar).actionBar;
+                                    i19 += kVar6.getMeasuredHeight();
+                                }
+                            }
+                        } else if (i23 != 80) {
+                            i19 = layoutParams.topMargin;
+                        } else {
+                            i17 = (i13 - i11) - measuredHeight;
+                            i18 = layoutParams.bottomMargin;
+                        }
+                        if (childAt == xbVar.H) {
+                            int dp = AndroidUtilities.dp(24.0f);
+                            kVar2 = ((org.telegram.ui.ActionBar.n2) xbVar).actionBar;
+                            if (kVar2.getVisibility() == 0) {
+                                kVar3 = ((org.telegram.ui.ActionBar.n2) xbVar).actionBar;
+                                i20 = kVar3.getMeasuredHeight() / 2;
+                            } else {
+                                i20 = 0;
+                            }
+                            i19 -= dp - i20;
+                        } else {
+                            kVar = ((org.telegram.ui.ActionBar.n2) xbVar).actionBar;
+                            if (childAt == kVar) {
+                                i19 -= getPaddingTop();
+                            } else if (childAt == this.L || childAt == xbVar.W) {
+                                i19 = 0;
+                            } else if (childAt == xbVar.v) {
+                                i19 = -xbVar.e;
+                            }
+                        }
+                        childAt.layout(i16, i19, measuredWidth + i16, measuredHeight + i19);
+                    } else {
+                        i17 = (((i13 - i11) - measuredHeight) / 2) + layoutParams.topMargin;
+                        i18 = layoutParams.bottomMargin;
                     }
-                } else if (fileLocation != null && messageObject2.photoThumbs != null) {
-                    int i12 = 0;
-                    while (true) {
-                        if (i12 >= messageObject2.photoThumbs.size()) {
-                            break;
-                        }
-                        TLRPC.FileLocation fileLocation2 = messageObject2.photoThumbs.get(i12).location;
-                        if (fileLocation2.volume_id == fileLocation.volume_id && fileLocation2.local_id == fileLocation.local_id) {
-                            imageReceiver = w0Var.getPhotoImage();
-                            break;
-                        }
-                        i12++;
+                    i19 = i17 - i18;
+                    if (childAt == xbVar.H) {
+                    }
+                    childAt.layout(i16, i19, measuredWidth + i16, measuredHeight + i19);
+                } else {
+                    i14 = i12 - measuredWidth;
+                    i15 = layoutParams.rightMargin;
+                }
+                i16 = i14 - i15;
+                if (i23 == 16) {
+                }
+                i19 = i17 - i18;
+                if (childAt == xbVar.H) {
+                }
+                childAt.layout(i16, i19, measuredWidth + i16, measuredHeight + i19);
+            }
+            i21++;
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.k kVar2;
+        org.telegram.ui.ActionBar.k kVar3;
+        org.telegram.ui.ActionBar.k kVar4;
+        int size = View.MeasureSpec.getSize(i10);
+        int size2 = View.MeasureSpec.getSize(i11);
+        xb xbVar = this.y0;
+        gh.a aVar = xbVar.a.a;
+        if (aVar instanceof gh.b) {
+            ((gh.b) aVar).c(size, size2);
+        }
+        setMeasuredDimension(size, size2);
+        int paddingTop = size2 - getPaddingTop();
+        kVar = ((org.telegram.ui.ActionBar.n2) xbVar).actionBar;
+        measureChildWithMargins(kVar, i10, 0, i11, 0);
+        kVar2 = ((org.telegram.ui.ActionBar.n2) xbVar).actionBar;
+        int measuredHeight = kVar2.getMeasuredHeight();
+        kVar3 = ((org.telegram.ui.ActionBar.n2) xbVar).actionBar;
+        if (kVar3.getVisibility() == 0) {
+            paddingTop -= measuredHeight;
+        }
+        int childCount = getChildCount();
+        for (int i12 = 0; i12 < childCount; i12++) {
+            View childAt = getChildAt(i12);
+            if (childAt != null && childAt.getVisibility() != 8) {
+                kVar4 = ((org.telegram.ui.ActionBar.n2) xbVar).actionBar;
+                if (childAt != kVar4) {
+                    if (childAt == xbVar.v || childAt == xbVar.n) {
+                        childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.max(AndroidUtilities.dp(10.0f), View.MeasureSpec.getSize(i11)) + (xbVar.e * 2), TLObject.FLAG_30));
+                    } else if (childAt == xbVar.H) {
+                        childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(paddingTop, TLObject.FLAG_30));
+                    } else {
+                        measureChildWithMargins(childAt, i10, 0, i11, 0);
                     }
                 }
             }
-            if (imageReceiver != null) {
-                int[] iArr = new int[2];
-                childAt.getLocationInWindow(iArr);
-                jv0 jv0Var = new jv0();
-                jv0Var.b = iArr[0];
-                jv0Var.c = iArr[1];
-                jv0Var.d = acVar.v;
-                jv0Var.a = imageReceiver;
-                jv0Var.e = imageReceiver.getBitmapSafe();
-                jv0Var.h = imageReceiver.getRoundRadius(true);
-                jv0Var.l = true;
-                return jv0Var;
-            }
-            i11++;
         }
     }
 }

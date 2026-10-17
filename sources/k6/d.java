@@ -14,13 +14,13 @@ import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.util.Log;
 import android.util.TypedValue;
-import androidx.fragment.app.j0;
-import androidx.fragment.app.u;
+import androidx.fragment.app.k0;
+import androidx.fragment.app.v;
 import com.google.android.gms.common.api.GoogleApiActivity;
 import n6.q;
 import n6.r;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class d extends e {
     public static final Object c = new Object();
@@ -46,14 +46,14 @@ public final class d extends e {
         if (d10 != null) {
             builder.setTitle(d10);
         }
-        Log.w("GoogleApiAvailability", i2.d.j(i10, "Creating dialog for Google Play services availability issue. ConnectionResult="), new IllegalArgumentException());
+        Log.w("GoogleApiAvailability", i0.a.j(i10, "Creating dialog for Google Play services availability issue. ConnectionResult="), new IllegalArgumentException());
         return builder.create();
     }
 
     public static void g(Activity activity, AlertDialog alertDialog, String str, DialogInterface.OnCancelListener onCancelListener) {
         try {
-            if (activity instanceof u) {
-                j0 s10 = ((u) activity).s();
+            if (activity instanceof v) {
+                k0 s10 = ((v) activity).s();
                 i iVar = new i();
                 n6.l.i(alertDialog, "Cannot display null dialog");
                 alertDialog.setOnCancelListener(null);
@@ -96,7 +96,7 @@ public final class d extends e {
 
     public final void h(Context context, int i10, PendingIntent pendingIntent) {
         int i11;
-        Log.w("GoogleApiAvailability", i2.d.k(i10, "GMS core API Availability. ConnectionResult=", ", tag=null"), new IllegalArgumentException());
+        Log.w("GoogleApiAvailability", i0.a.k(i10, "GMS core API Availability. ConnectionResult=", ", tag=null"), new IllegalArgumentException());
         if (i10 == 18) {
             new j(this, context).sendEmptyMessageDelayed(1, 120000L);
             return;
@@ -117,31 +117,31 @@ public final class d extends e {
         Object systemService = context.getSystemService("notification");
         n6.l.h(systemService);
         NotificationManager notificationManager = (NotificationManager) systemService;
-        e0.r rVar = new e0.r(context, null);
-        rVar.t = true;
-        rVar.h(16, true);
-        rVar.e = e0.r.d(f7);
-        e0.m mVar = new e0.m(false);
-        mVar.f = e0.r.d(e);
-        rVar.n(mVar);
+        e0.q qVar = new e0.q(context, null);
+        qVar.t = true;
+        qVar.h(16, true);
+        qVar.e = e0.q.d(f7);
+        e0.l lVar = new e0.l(false);
+        lVar.f = e0.q.d(e);
+        qVar.n(lVar);
         PackageManager packageManager = context.getPackageManager();
         if (u6.b.b == null) {
             u6.b.b = Boolean.valueOf(packageManager.hasSystemFeature("android.hardware.type.watch"));
         }
         if (u6.b.b.booleanValue()) {
-            rVar.E.icon = context.getApplicationInfo().icon;
-            rVar.j = 2;
+            qVar.E.icon = context.getApplicationInfo().icon;
+            qVar.j = 2;
             if (u6.b.f(context)) {
-                rVar.a(org.telegram.messenger.beta.R.drawable.common_full_open_on_phone, resources.getString(org.telegram.messenger.beta.R.string.common_open_on_phone), pendingIntent);
+                qVar.a(org.telegram.messenger.beta.R.drawable.common_full_open_on_phone, resources.getString(org.telegram.messenger.beta.R.string.common_open_on_phone), pendingIntent);
             } else {
-                rVar.g = pendingIntent;
+                qVar.g = pendingIntent;
             }
         } else {
-            rVar.E.icon = R.drawable.stat_sys_warning;
-            rVar.p(resources.getString(org.telegram.messenger.beta.R.string.common_google_play_services_notification_ticker));
-            rVar.E.when = System.currentTimeMillis();
-            rVar.g = pendingIntent;
-            rVar.f(e);
+            qVar.E.icon = R.drawable.stat_sys_warning;
+            qVar.p(resources.getString(org.telegram.messenger.beta.R.string.common_google_play_services_notification_ticker));
+            qVar.E.when = System.currentTimeMillis();
+            qVar.g = pendingIntent;
+            qVar.f(e);
         }
         if (u6.b.d()) {
             n6.l.k(u6.b.d());
@@ -155,9 +155,9 @@ public final class d extends e {
                 notificationChannel.setName(string);
                 notificationManager.createNotificationChannel(notificationChannel);
             }
-            rVar.y = "com.google.android.gms.availability";
+            qVar.y = "com.google.android.gms.availability";
         }
-        Notification b10 = rVar.b();
+        Notification b10 = qVar.b();
         if (i10 == 1 || i10 == 2 || i10 == 3) {
             g.a.set(false);
             i11 = 10436;

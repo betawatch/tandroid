@@ -1,110 +1,258 @@
 package org.telegram.ui.Components;
 
-import java.io.File;
-import java.util.HashMap;
-import java.util.Iterator;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.NotificationCenter;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Shader;
+import android.graphics.Typeface;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class d11 implements ri.o0, NotificationCenter.NotificationCenterDelegate {
-    public final int a;
-    public final boolean b;
-    public final HashMap c = new HashMap();
-    public boolean d;
+public final class d11 {
+    public final TextPaint a;
+    public StaticLayout b;
+    public float c;
+    public float d;
+    public float e;
+    public int f;
+    public Layout.Alignment g;
+    public float h;
+    public boolean i;
+    public View j;
+    public w5 k;
+    public int l;
+    public PorterDuffColorFilter m;
+    public int n;
+    public boolean o;
+    public float p;
+    public LinearGradient q;
+    public Matrix r;
+    public Paint s;
+    public int t;
 
-    public d11(int i10, boolean z10) {
-        this.a = i10;
-        this.b = z10;
-        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.fileUploaded);
+    public d11(CharSequence charSequence, TextPaint textPaint) {
+        this.e = 9999.0f;
+        this.f = 1;
+        this.g = Layout.Alignment.ALIGN_NORMAL;
+        this.l = 0;
+        this.p = -1.0f;
+        this.a = textPaint;
+        r(charSequence);
     }
 
-    public final synchronized void a(long j10, File file, long j11, long j12) {
-        b11 b11Var = (b11) this.c.get(Long.valueOf(j10));
-        if (!this.d && b11Var != null && !b11Var.e) {
-            e(b11Var);
-            b11Var.b = Math.max(b11Var.b, j11 + j12);
-            FileLoader.getInstance(this.a).checkUploadNewDataAvailable(file.getAbsolutePath(), this.b, b11Var.b, 0L);
+    public final void a() {
+        Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
+        if (this.g != alignment) {
+            this.g = alignment;
+            r(this.b.getText());
         }
     }
 
-    public final synchronized void b(long j10, long j11, File file) {
-        b11 b11Var = (b11) this.c.get(Long.valueOf(j10));
-        if (!this.d && b11Var != null && !b11Var.e) {
-            e(b11Var);
-            b11Var.b = Math.max(b11Var.b, j11);
-            b11Var.c = j11;
-            FileLoader.getInstance(this.a).checkUploadNewDataAvailable(file.getAbsolutePath(), this.b, b11Var.b, j11);
+    public final float b() {
+        float f7 = 0.0f;
+        for (int i10 = 0; i10 < this.b.getLineCount(); i10++) {
+            f7 = Math.max(f7, this.b.getLineWidth(i10));
         }
+        return f7;
     }
 
-    public final synchronized void c(long j10) {
-        b11 b11Var = (b11) this.c.remove(Long.valueOf(j10));
-        if (b11Var == null) {
+    public final void c(float f7, float f10, float f11, int i10, Canvas canvas) {
+        if (this.b == null) {
             return;
         }
-        b11Var.e = true;
-        if (b11Var.d) {
-            FileLoader.getInstance(this.a).cancelFileUpload(b11Var.a.getAbsolutePath(), this.b);
+        TextPaint textPaint = this.a;
+        textPaint.setColor(i10);
+        textPaint.linkColor = i10;
+        int alpha = textPaint.getAlpha();
+        if (f11 != 1.0f) {
+            textPaint.setAlpha((int) (alpha * f11));
         }
+        canvas.save();
+        canvas.translate(f7, f10 - (this.f > 1 ? 0.0f : this.b.getHeight() / 2.0f));
+        d(canvas);
+        canvas.restore();
+        textPaint.setAlpha(alpha);
     }
 
-    public final synchronized void d(boolean z10) {
-        try {
-            if (this.d) {
-                return;
-            }
-            this.d = true;
-            NotificationCenter.getInstance(this.a).removeObserver(this, NotificationCenter.fileUploaded);
-            if (z10) {
-                Iterator it = this.c.values().iterator();
-                while (it.hasNext()) {
-                    b11 b11Var = (b11) it.next();
-                    if (b11Var.d && !b11Var.e) {
-                        FileLoader.getInstance(this.a).cancelFileUpload(b11Var.a.getAbsolutePath(), this.b);
-                    }
-                    it.remove();
-                }
-            }
-        } catch (Throwable th2) {
-            throw th2;
-        }
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x0039, code lost:
-    
-        r0.f = (org.telegram.tgnet.TLRPC.InputFile) r6[1];
-        r0.g = (org.telegram.tgnet.TLRPC.InputEncryptedFile) r6[2];
-        r0.h = (byte[]) r6[3];
-        r0.i = (byte[]) r6[4];
-        r0.c = java.lang.Math.max(r0.c, ((java.lang.Long) r6[5]).longValue());
-     */
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final synchronized void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (!this.d && i10 == NotificationCenter.fileUploaded && objArr.length >= 6) {
-            String str = (String) objArr[0];
-            Iterator it = this.c.values().iterator();
-            while (true) {
-                if (!it.hasNext()) {
-                    break;
-                }
-                b11 b11Var = (b11) it.next();
-                if (!b11Var.e && b11Var.a.getAbsolutePath().equals(str)) {
-                    break;
-                }
-            }
-        }
-    }
-
-    public final void e(b11 b11Var) {
-        if (b11Var.d) {
+    public final void d(Canvas canvas) {
+        if (this.b == null) {
             return;
         }
-        b11Var.d = true;
-        FileLoader.getInstance(this.a).uploadFile(b11Var.a.getAbsolutePath(), this.b, false, 1L, 33554432, false);
+        float f7 = this.p;
+        if (f7 >= 0.0f && this.c > f7) {
+            canvas.saveLayerAlpha(0.0f, -this.t, f7 - 1.0f, r0.getHeight() + this.t, 255, 31);
+        }
+        canvas.save();
+        canvas.translate(-this.d, 0.0f);
+        boolean z10 = this.o;
+        TextPaint textPaint = this.a;
+        if (z10) {
+            canvas.drawText(this.b.getText().toString(), 0.0f, -textPaint.getFontMetricsInt().ascent, textPaint);
+        } else {
+            this.b.draw(canvas);
+        }
+        if (this.i) {
+            if (this.m == null || textPaint.getColor() != this.n) {
+                int color = textPaint.getColor();
+                this.n = color;
+                this.m = new PorterDuffColorFilter(color, PorterDuff.Mode.SRC_IN);
+            }
+            a6.drawAnimatedEmojis(canvas, this.b, this.k, 0.0f, null, 0.0f, 0.0f, 0.0f, 1.0f, this.m);
+        }
+        canvas.restore();
+        float f10 = this.p;
+        if (f10 < 0.0f || this.c <= f10) {
+            return;
+        }
+        if (this.q == null) {
+            this.q = new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(8.0f), 0.0f, new int[]{16777215, -1}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+            this.r = new Matrix();
+            Paint paint = new Paint(1);
+            this.s = paint;
+            paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+            this.s.setShader(this.q);
+        }
+        canvas.save();
+        this.r.reset();
+        this.r.postTranslate(this.p - AndroidUtilities.dp(8.0f), 0.0f);
+        this.q.setLocalMatrix(this.r);
+        canvas.drawRect(this.p - AndroidUtilities.dp(8.0f), 0.0f, this.p, this.b.getHeight(), this.s);
+        canvas.restore();
+        canvas.restore();
+    }
+
+    public final void e(Canvas canvas, float f7, float f10) {
+        f(canvas, f7, f10, 1.0f);
+    }
+
+    public final void f(Canvas canvas, float f7, float f10, float f11) {
+        if (this.b == null) {
+            return;
+        }
+        canvas.save();
+        canvas.translate(f7, f10 - (this.f > 1 ? 0.0f : this.b.getHeight() / 2.0f));
+        TextPaint textPaint = this.a;
+        int alpha = textPaint.getAlpha();
+        textPaint.setAlpha((int) (alpha * f11));
+        d(canvas);
+        textPaint.setAlpha(alpha);
+        canvas.restore();
+    }
+
+    public final void g(float f7) {
+        this.p = f7;
+    }
+
+    public final float h() {
+        return this.c;
+    }
+
+    public final Paint.FontMetricsInt i() {
+        return this.a.getFontMetricsInt();
+    }
+
+    public final float j() {
+        return this.b.getHeight();
+    }
+
+    public final CharSequence k() {
+        StaticLayout staticLayout = this.b;
+        return (staticLayout == null || staticLayout.getText() == null) ? "" : this.b.getText();
+    }
+
+    public final float l() {
+        float f7 = this.p;
+        return f7 >= 0.0f ? Math.min(f7, this.c) : this.c;
+    }
+
+    public final void m(float f7) {
+        if (this.h != f7) {
+            this.h = f7;
+            r(this.b.getText());
+        }
+    }
+
+    public final void n(int i10) {
+        this.f = i10;
+        r(this.b.getText());
+    }
+
+    public final void o(int i10) {
+        this.a.setColor(i10);
+    }
+
+    public final void p(int i10) {
+        if (this.l != i10) {
+            this.l = i10;
+            if (this.i) {
+                a6.release(this.j, this.k);
+                this.k = a6.update(this.l, this.j, this.k, this.b);
+            }
+        }
+    }
+
+    public final void q(float f7) {
+        this.e = f7;
+        r(this.b.getText());
+    }
+
+    public final void r(CharSequence charSequence) {
+        if (this.f > 1) {
+            this.b = StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), this.a, (int) Math.max(this.e, 1.0f)).setAlignment(this.g).setMaxLines(this.f).setLineSpacing(this.h, 1.0f).build();
+        } else {
+            this.b = new StaticLayout(AndroidUtilities.replaceNewLines(charSequence), this.a, (int) Math.max(this.e, 1.0f), this.g, 1.0f, this.h, false);
+        }
+        if (this.g == Layout.Alignment.ALIGN_CENTER) {
+            this.c = this.b.getWidth();
+            this.d = 0.0f;
+        } else {
+            this.c = 0.0f;
+            this.d = this.b.getWidth();
+            for (int i10 = 0; i10 < this.b.getLineCount(); i10++) {
+                this.c = Math.max(this.c, this.b.getLineWidth(i10));
+                this.d = Math.min(this.d, this.b.getLineLeft(i10));
+            }
+        }
+        View view = this.j;
+        if (view == null || !view.isAttachedToWindow()) {
+            return;
+        }
+        this.k = a6.update(this.l, this.j, this.k, this.b);
+    }
+
+    public final void s(View view) {
+        int i10 = 1;
+        this.i = true;
+        this.j = view;
+        if (view.isAttachedToWindow()) {
+            this.k = a6.update(this.l, view, this.k, this.b);
+        }
+        view.addOnAttachStateChangeListener(new la(i10, this, view));
+    }
+
+    public d11(String str, float f7) {
+        this(str, f7, null);
+    }
+
+    public d11(CharSequence charSequence, float f7, Typeface typeface) {
+        this.e = 9999.0f;
+        this.f = 1;
+        this.g = Layout.Alignment.ALIGN_NORMAL;
+        this.l = 0;
+        this.p = -1.0f;
+        TextPaint textPaint = new TextPaint(1);
+        this.a = textPaint;
+        textPaint.setTextSize(AndroidUtilities.dp(f7));
+        textPaint.setTypeface(typeface);
+        r(charSequence);
     }
 }

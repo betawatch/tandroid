@@ -1,31 +1,24 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.app.Activity;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dz0 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ProfileActivity b;
-    public final /* synthetic */ String c;
+public final class dz0 extends org.telegram.ui.Components.dr0 {
+    public final /* synthetic */ ProfileActivity b1;
 
-    public /* synthetic */ dz0(ProfileActivity profileActivity, String str, int i10) {
-        this.a = i10;
-        this.b = profileActivity;
-        this.c = str;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dz0(ProfileActivity profileActivity, Activity activity, String str, String str2) {
+        super(activity, null, str, false, str2, false, null);
+        this.b1 = profileActivity;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                ProfileActivity profileActivity = this.b;
-                pf.d.r(profileActivity.getParentActivity(), "https://" + profileActivity.getMessagesController().linkPrefix + "/nft/" + this.c);
-                break;
-            default:
-                ProfileActivity profileActivity2 = this.b;
-                pf.d.r(profileActivity2.getParentActivity(), "https://" + profileActivity2.getMessagesController().linkPrefix + "/nft/" + this.c);
-                break;
+    @Override // org.telegram.ui.Components.dr0
+    public final void S0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        if (z10) {
+            AndroidUtilities.runOnUIThread(new lv0(this, hVar, i10, 16), 250L);
         }
     }
 }

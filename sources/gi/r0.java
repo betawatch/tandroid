@@ -1,74 +1,113 @@
 package gi;
 
-import java.util.ArrayList;
+import android.app.Activity;
+import android.content.DialogInterface;
+import ci.z7;
+import java.util.Iterator;
+import java.util.concurrent.atomic.AtomicBoolean;
+import org.json.JSONObject;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_communities;
+import org.telegram.ui.Cells.b6;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class r0 implements Utilities.Callback2 {
+public final /* synthetic */ class r0 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ t0 b;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ r0(t0 t0Var, int i10) {
+    public /* synthetic */ r0(Object obj, Object obj2, Object obj3, int i10) {
         this.a = i10;
-        this.b = t0Var;
+        this.c = obj;
+        this.b = obj2;
+        this.d = obj3;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                t0 t0Var = this.b;
-                t0Var.q.dismiss();
-                t0Var.q = null;
-                t0Var.r = 0;
-                if (tL_error == null) {
-                    s0 s0Var = t0Var.h;
-                    if (s0Var != null) {
-                        s0Var.close();
-                        break;
+                u0 u0Var = (u0) this.c;
+                boolean[] zArr = (boolean[]) this.b;
+                org.telegram.ui.web.q qVar = (org.telegram.ui.web.q) this.d;
+                u0Var.getClass();
+                if (!zArr[0]) {
+                    u0Var.d = true;
+                    u0Var.e = false;
+                    u0Var.k();
+                    Iterator it = u0Var.f.iterator();
+                    while (it.hasNext()) {
+                        ((Runnable) it.next()).run();
                     }
-                } else {
-                    t0Var.c.f0(tL_error, false);
+                    zArr[0] = true;
+                    qVar.run(Boolean.TRUE, Boolean.FALSE);
                     break;
                 }
                 break;
             case 1:
-                TL_communities.PeerLinkRequests peerLinkRequests = (TL_communities.PeerLinkRequests) obj;
-                t0 t0Var2 = this.b;
-                t0Var2.m = false;
-                if (peerLinkRequests != null) {
-                    ArrayList arrayList = t0Var2.j;
-                    if (arrayList == null) {
-                        t0Var2.j = new ArrayList(peerLinkRequests.requests);
-                    } else {
-                        arrayList.addAll(peerLinkRequests.requests);
-                    }
-                    String str = peerLinkRequests.next_offset;
-                    t0Var2.k = str;
-                    t0Var2.l = peerLinkRequests.total_count;
-                    t0Var2.n = str == null;
-                    t0Var2.a();
-                    s0 s0Var2 = t0Var2.h;
-                    if (s0Var2 != null) {
-                        s0Var2.p();
-                        break;
-                    }
+                boolean[] zArr2 = (boolean[]) this.b;
+                boolean[] zArr3 = (boolean[]) this.c;
+                Utilities.Callback callback = (Utilities.Callback) this.d;
+                if (!zArr2[0] && !zArr3[0]) {
+                    zArr3[0] = true;
+                    callback.run("USER_DECLINED");
+                    break;
+                }
+                break;
+            case 2:
+                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.c;
+                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.b;
+                Activity activity = (Activity) this.d;
+                AndroidUtilities.hideKeyboard(editTextBoldCursor);
+                if (n2Var != null) {
+                    AndroidUtilities.requestAdjustResize(activity, n2Var.getClassGuid());
+                    break;
+                }
+                break;
+            case 3:
+                Utilities.Callback callback2 = (Utilities.Callback) this.c;
+                org.telegram.ui.Components.r3 r3Var = (org.telegram.ui.Components.r3) this.b;
+                org.telegram.ui.Components.t3 t3Var = (org.telegram.ui.Components.t3) this.d;
+                callback2.run(Integer.valueOf(t3Var.getValue() + (r3Var.getValue() * 60)));
+                break;
+            case 4:
+                org.telegram.ui.web.a1 a1Var = (org.telegram.ui.web.a1) this.c;
+                AtomicBoolean atomicBoolean = (AtomicBoolean) this.b;
+                z7 z7Var = (z7) this.d;
+                a1Var.getClass();
+                if (!atomicBoolean.get()) {
+                    a1Var.x(z7Var, "popup_closed", new JSONObject());
+                }
+                a1Var.c0 = null;
+                a1Var.e0 = System.currentTimeMillis();
+                break;
+            case 5:
+                b6 b6Var = (b6) this.c;
+                org.telegram.ui.ActionBar.n2 n2Var2 = (org.telegram.ui.ActionBar.n2) this.b;
+                Activity activity2 = (Activity) this.d;
+                AndroidUtilities.hideKeyboard(b6Var);
+                if (n2Var2 != null) {
+                    AndroidUtilities.requestAdjustResize(activity2, n2Var2.getClassGuid());
+                    break;
                 }
                 break;
             default:
-                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
-                t0 t0Var3 = this.b;
-                if (tL_error2 == null) {
-                    t0Var3.getClass();
-                    break;
-                } else {
-                    t0Var3.c.f0(tL_error2, false);
-                    break;
-                }
+                yh.q2 q2Var = (yh.q2) this.c;
+                yh.y1 y1Var = (yh.y1) this.b;
+                Activity activity3 = (Activity) this.d;
+                AndroidUtilities.hideKeyboard(y1Var);
+                AndroidUtilities.requestAdjustResize(activity3, q2Var.a.getClassGuid());
+                break;
         }
+    }
+
+    public /* synthetic */ r0(boolean[] zArr, boolean[] zArr2, Utilities.Callback callback) {
+        this.a = 1;
+        this.b = zArr;
+        this.c = zArr2;
+        this.d = callback;
     }
 }

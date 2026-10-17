@@ -1,108 +1,145 @@
 package org.telegram.ui;
 
-import android.content.SharedPreferences;
-import android.widget.TextView;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.Shader;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class bc1 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ ThemeActivity a;
+public final class bc1 extends org.telegram.ui.Components.w9 {
+    public Drawable G;
+    public final boolean H;
+    public float I;
+    public float J;
+    public final /* synthetic */ mc1 K;
 
-    public bc1(ThemeActivity themeActivity) {
-        this.a = themeActivity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bc1(mc1 mc1Var, Activity activity) {
+        super(activity);
+        this.K = mc1Var;
+        this.H = true;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:53:0x0151  */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x0156  */
-    @Override // org.telegram.ui.ActionBar.j
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b(int i10) {
-        if (i10 == -1) {
-            this.a.finishFragment();
-            return;
+    @Override // android.view.View
+    public Drawable getBackground() {
+        return this.G;
+    }
+
+    @Override // org.telegram.ui.Components.w9, android.view.View
+    public final void onDraw(Canvas canvas) {
+        this.I = 0.0f;
+        this.J = 0.0f;
+        boolean z10 = this.H;
+        mc1 mc1Var = this.K;
+        if (z10) {
+            Drawable drawable = this.G;
+            if ((drawable instanceof ColorDrawable) || (drawable instanceof GradientDrawable) || (drawable instanceof org.telegram.ui.Components.wc0)) {
+                drawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
+                this.G.draw(canvas);
+            } else if (drawable instanceof BitmapDrawable) {
+                if (((BitmapDrawable) drawable).getTileModeX() == Shader.TileMode.REPEAT) {
+                    canvas.save();
+                    float f7 = 2.0f / AndroidUtilities.density;
+                    canvas.scale(f7, f7);
+                    this.G.setBounds(0, 0, (int) Math.ceil(getMeasuredWidth() / f7), (int) Math.ceil(getMeasuredHeight() / f7));
+                    this.G.draw(canvas);
+                    canvas.restore();
+                } else {
+                    int measuredHeight = getMeasuredHeight();
+                    float max = Math.max(getMeasuredWidth() / this.G.getIntrinsicWidth(), measuredHeight / this.G.getIntrinsicHeight());
+                    int ceil = (int) Math.ceil(this.G.getIntrinsicWidth() * max * mc1Var.y1);
+                    int ceil2 = (int) Math.ceil(this.G.getIntrinsicHeight() * max * mc1Var.y1);
+                    int measuredWidth = (getMeasuredWidth() - ceil) / 2;
+                    int i10 = (measuredHeight - ceil2) / 2;
+                    this.J = i10;
+                    this.G.setBounds(measuredWidth, i10, ceil + measuredWidth, ceil2 + i10);
+                    this.G.draw(canvas);
+                }
+            }
         }
-        if (i10 == 1) {
-            this.a.w0();
-            return;
+        if (mc1Var.a2) {
+            if (!mc1Var.c.isFinished() && mc1Var.c.computeScrollOffset()) {
+                if (mc1Var.c.getStartX() < mc1Var.W1 && mc1Var.c.getStartX() > 0) {
+                    mc1Var.X1 = mc1Var.c.getCurrX();
+                }
+                mc1Var.V0();
+                invalidate();
+            }
+            canvas.save();
+            float f10 = -mc1Var.X1;
+            this.I = f10;
+            canvas.translate(f10, 0.0f);
+            super.onDraw(canvas);
+            canvas.restore();
+        } else {
+            super.onDraw(canvas);
         }
-        if (i10 == 2) {
-            org.telegram.ui.ActionBar.e6 k10 = org.telegram.ui.ActionBar.g6.B0().k(false);
-            if (k10.r == null) {
-                this.a.getMessagesController().saveThemeToServer(k10.b, k10);
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needShareTheme, k10.b, k10);
-                return;
+        if (mc1Var.M1) {
+            float f11 = mc1Var.n1;
+            if (f11 > 0.0f) {
+                canvas.drawColor(i0.b.o(-16777216, (int) (f11 * 255.0f * mc1Var.o1)));
             }
-            String str = "https://" + this.a.getMessagesController().linkPrefix + "/addtheme/" + k10.r.slug;
-            this.a.showDialog(new org.telegram.ui.Components.ir0(this.a.getParentActivity(), null, str, false, str, false, null));
-            return;
         }
-        if (i10 == 3) {
-            this.a.x0();
-            return;
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        mc1 mc1Var = this.K;
+        org.telegram.ui.Components.f91 f91Var = mc1Var.v1;
+        int measuredWidth = getMeasuredWidth();
+        int measuredHeight = getMeasuredHeight();
+        f91Var.getClass();
+        float a2 = org.telegram.ui.Components.f91.a(measuredWidth, measuredHeight);
+        mc1Var.y1 = a2;
+        if (mc1Var.E1) {
+            setScaleX(a2);
+            setScaleY(mc1Var.y1);
         }
-        if (i10 == 4) {
-            if (this.a.getParentActivity() == null) {
-                return;
-            }
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this.a.getParentActivity());
-            alertDialog$Builder.a.R = LocaleController.getString("ThemeResetToDefaultsTitle", R.string.ThemeResetToDefaultsTitle);
-            alertDialog$Builder.a.T = LocaleController.getString("ThemeResetToDefaultsText", R.string.ThemeResetToDefaultsText);
-            alertDialog$Builder.k(LocaleController.getString("Reset", R.string.Reset), new lq0(this, 19));
-            alertDialog$Builder.h(LocaleController.getString("Cancel", R.string.Cancel), null);
-            org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
-            this.a.showDialog(a2Var);
-            TextView textView = (TextView) a2Var.d(-1);
-            if (textView != null) {
-                textView.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.q7, false));
-                return;
-            }
-            return;
+        if (mc1Var.b == 2) {
+            getMeasuredWidth();
+            getMeasuredHeight();
         }
-        if (i10 == 5) {
-            SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("themeconfig", 0);
-            String str2 = "Blue";
-            String string = sharedPreferences.getString("lastDayTheme", "Blue");
-            if (org.telegram.ui.ActionBar.g6.O0(string) == null || org.telegram.ui.ActionBar.g6.O0(string).q()) {
-                string = "Blue";
+        int measuredWidth2 = getMeasuredWidth() + (getMeasuredHeight() << 16);
+        if (mc1Var.b2 != measuredWidth2) {
+            mc1Var.a2 = false;
+            if (mc1Var.C1 != null) {
+                int measuredHeight2 = (int) ((getMeasuredHeight() / mc1Var.C1.getHeight()) * r1.getWidth());
+                if (measuredHeight2 - getMeasuredWidth() > 100) {
+                    mc1Var.a2 = true;
+                    mc1Var.Z1 = (int) ((mc1Var.C1.getHeight() / getMeasuredHeight()) * getMeasuredWidth());
+                    float measuredWidth3 = (measuredHeight2 - getMeasuredWidth()) / 2.0f;
+                    mc1Var.X1 = measuredWidth3;
+                    mc1Var.Y1 = measuredWidth3;
+                    mc1Var.W1 = measuredWidth3 * 2.0f;
+                    s(measuredHeight2, getMeasuredHeight());
+                    this.v = true;
+                    mc1Var.V0();
+                }
             }
-            String str3 = "Dark Blue";
-            String string2 = sharedPreferences.getString("lastDarkTheme", "Dark Blue");
-            if (org.telegram.ui.ActionBar.g6.O0(string2) == null || !org.telegram.ui.ActionBar.g6.O0(string2).q()) {
-                string2 = "Dark Blue";
+            if (!mc1Var.a2) {
+                s(-1, -1);
+                this.v = false;
             }
-            org.telegram.ui.ActionBar.f6 f6Var = org.telegram.ui.ActionBar.g6.I;
-            if (!string.equals(string2)) {
-                str3 = string2;
-            } else if (f6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
-                str3 = string2;
-                boolean equals = str2.equals(f6Var.m());
-                org.telegram.ui.ActionBar.f6 O0 = !equals ? org.telegram.ui.ActionBar.g6.O0(str3) : org.telegram.ui.ActionBar.g6.O0(str2);
-                int[] iArr = {(this.a.s.getIconView().getMeasuredWidth() / 2) + r9, (this.a.s.getIconView().getMeasuredHeight() / 2) + r9};
-                this.a.s.getIconView().getLocationInWindow(iArr);
-                int i11 = iArr[0];
-                int i12 = iArr[1];
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, O0, Boolean.FALSE, iArr, -1, Boolean.valueOf(equals), this.a.s.getIconView());
-                this.a.A0(true);
-                org.telegram.ui.ActionBar.g6.G1(this.a);
-            }
-            str2 = string;
-            boolean equals2 = str2.equals(f6Var.m());
-            if (!equals2) {
-            }
-            int[] iArr2 = {(this.a.s.getIconView().getMeasuredWidth() / 2) + i11, (this.a.s.getIconView().getMeasuredHeight() / 2) + i12};
-            this.a.s.getIconView().getLocationInWindow(iArr2);
-            int i112 = iArr2[0];
-            int i122 = iArr2[1];
-            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, O0, Boolean.FALSE, iArr2, -1, Boolean.valueOf(equals2), this.a.s.getIconView());
-            this.a.A0(true);
-            org.telegram.ui.ActionBar.g6.G1(this.a);
         }
+        mc1Var.b2 = measuredWidth2;
+    }
+
+    @Override // android.view.View
+    public void setBackground(Drawable drawable) {
+        this.G = drawable;
+        if (drawable != null) {
+            drawable.setCallback(this);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.w9, android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return this.G == drawable || super.verifyDrawable(drawable);
     }
 }

@@ -1,7 +1,8 @@
 package ig;
 
+import ai.p2;
+import ai.x7;
 import android.text.TextUtils;
-import bi.e5;
 import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesStorage;
@@ -9,10 +10,10 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.td;
-import org.telegram.ui.Components.zc;
+import org.telegram.ui.Components.rd;
+import org.telegram.ui.Components.xc;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class y {
     public static volatile y[] e = new y[4];
@@ -61,11 +62,11 @@ public final class y {
             int indexOf = arrayList.indexOf(c10);
             arrayList.remove(c10);
             NotificationCenter.getInstance(this.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.businessLinksUpdated, new Object[0]);
-            zc.a0(vVar).U(LocaleController.getString(R.string.BusinessLinkDeleted), true, new ah.o(this, indexOf, c10, 14), new hg.t(this, str, c10, 11)).j();
+            xc.a0(vVar).U(LocaleController.getString(R.string.BusinessLinkDeleted), true, new ah.o(this, indexOf, c10, 18), new ei.z1(this, str, c10, 26)).j();
         }
     }
 
-    public final void b(TL_account.TL_businessChatLink tL_businessChatLink, TL_account.TL_inputBusinessChatLink tL_inputBusinessChatLink, td tdVar) {
+    public final void b(TL_account.TL_businessChatLink tL_businessChatLink, TL_account.TL_inputBusinessChatLink tL_inputBusinessChatLink, rd rdVar) {
         TL_account.editBusinessChatLink editbusinesschatlink = new TL_account.editBusinessChatLink();
         editbusinesschatlink.slug = tL_businessChatLink.link;
         if (!tL_inputBusinessChatLink.entities.isEmpty()) {
@@ -75,7 +76,7 @@ public final class y {
             tL_inputBusinessChatLink.flags |= 2;
         }
         editbusinesschatlink.link = tL_inputBusinessChatLink;
-        ConnectionsManager.getInstance(this.a).sendRequest(editbusinesschatlink, new e5(this, tL_businessChatLink, tdVar, 4));
+        ConnectionsManager.getInstance(this.a).sendRequest(editbusinesschatlink, new p2(this, tL_businessChatLink, rdVar, 9));
     }
 
     public final TL_account.TL_businessChatLink c(String str) {
@@ -115,7 +116,7 @@ public final class y {
             int i10 = this.a;
             if (z10) {
                 MessagesStorage messagesStorage = MessagesStorage.getInstance(i10);
-                messagesStorage.getStorageQueue().postRunnable(new di.x0(this, messagesStorage, z11));
+                messagesStorage.getStorageQueue().postRunnable(new x7(this, messagesStorage, z11, 5));
             } else {
                 ConnectionsManager.getInstance(i10).sendRequest(new TL_account.getBusinessChatLinks(), new x(this, 0));
             }
@@ -125,6 +126,6 @@ public final class y {
     public final void f() {
         ArrayList arrayList = new ArrayList(this.b);
         MessagesStorage messagesStorage = MessagesStorage.getInstance(this.a);
-        messagesStorage.getStorageQueue().postRunnable(new di.v0(1, arrayList, messagesStorage));
+        messagesStorage.getStorageQueue().postRunnable(new ei.w0(1, arrayList, messagesStorage));
     }
 }

@@ -1,8 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import android.content.Context;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class dw extends View {
+public final class dw extends w9 {
+    public final /* synthetic */ gw G;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public dw(gw gwVar, Context context) {
+        super(context);
+        this.G = gwVar;
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        if (ah.x0.b(this)) {
+            return;
+        }
+        super.invalidate();
+        this.G.f();
+    }
+
+    @Override // android.view.View
+    public final void invalidate(int i10, int i11, int i12, int i13) {
+        if (ah.x0.b(this)) {
+            return;
+        }
+        super.invalidate(i10, i11, i12, i13);
+    }
 }

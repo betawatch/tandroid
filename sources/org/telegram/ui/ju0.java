@@ -1,62 +1,122 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.ViewGroup;
-import java.lang.reflect.Method;
-import org.telegram.messenger.FileLog;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class ju0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.Components.gn0 b;
+public interface ju0 {
+    boolean A();
 
-    public /* synthetic */ ju0(org.telegram.ui.Components.gn0 gn0Var, int i10) {
-        this.a = i10;
-        this.b = gn0Var;
-    }
+    void B(int i10);
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                PhotoViewer photoViewer = (PhotoViewer) this.b.b;
-                photoViewer.Q1.getNextView().setText((CharSequence) null);
-                hu0 hu0Var = photoViewer.T1;
-                hu0Var.l0 = false;
-                if (hu0Var.m0 >= 0) {
-                    ((ViewGroup.MarginLayoutParams) hu0Var.o0.getLayoutParams()).topMargin = hu0Var.m0;
-                    hu0Var.m0 = -1;
-                    hu0Var.requestLayout();
-                    break;
-                }
-                break;
-            default:
-                ((PhotoViewer) this.b.b).Q1.setTranslationY(0.0f);
-                break;
-        }
-    }
+    CharSequence C(int i10);
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                hu0 hu0Var = ((PhotoViewer) this.b.b).T1;
-                Method method = hu0Var.f0;
-                if (method != null) {
-                    try {
-                        method.invoke(hu0Var, null);
-                        break;
-                    } catch (Exception e) {
-                        FileLog.e(e);
-                        return;
-                    }
-                }
-                break;
-            default:
-                super.onAnimationStart(animator);
-                break;
-        }
-    }
+    void D();
+
+    lu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11);
+
+    void F(boolean z10);
+
+    void G();
+
+    int H();
+
+    boolean I();
+
+    void J();
+
+    boolean K();
+
+    boolean L();
+
+    void M(VideoEditedInfo videoEditedInfo);
+
+    boolean N();
+
+    boolean O();
+
+    boolean P();
+
+    boolean Q();
+
+    int R(Object obj);
+
+    int S(int i10);
+
+    boolean T();
+
+    boolean U();
+
+    MessageObject V();
+
+    void W();
+
+    void X(int i10);
+
+    void Y(int i10);
+
+    boolean Z();
+
+    long a();
+
+    void a0(int i10);
+
+    boolean b();
+
+    String b0();
+
+    ArrayList c();
+
+    CharSequence c0(int i10);
+
+    void d();
+
+    void e(CharSequence charSequence);
+
+    void f(String str, String str2, boolean z10);
+
+    boolean g();
+
+    boolean h();
+
+    void i();
+
+    ImageReceiver.BitmapHolder j(int i10);
+
+    int k(int i10, VideoEditedInfo videoEditedInfo);
+
+    boolean l();
+
+    void m();
+
+    void n();
+
+    void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11);
+
+    boolean p();
+
+    boolean q();
+
+    boolean r();
+
+    void s();
+
+    boolean t();
+
+    boolean u();
+
+    HashMap v();
+
+    boolean w();
+
+    boolean x(int i10);
+
+    int y();
+
+    boolean z();
 }

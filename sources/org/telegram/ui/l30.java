@@ -1,31 +1,23 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes3.dex */
-public final class l30 extends g.o {
-    public final /* synthetic */ n60 c;
+import android.view.ViewGroup;
 
-    public l30(n60 n60Var) {
-        this.c = n60Var;
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes3.dex */
+public final class l30 extends org.telegram.ui.Components.ki0 {
+    public final /* synthetic */ s50 s1;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l30(s50 s50Var, LaunchActivity launchActivity, o40 o40Var, y40 y40Var, k30 k30Var) {
+        super(launchActivity, o40Var, y40Var, k30Var);
+        this.s1 = s50Var;
     }
 
-    @Override // g.o
-    public final int i(int i10) {
-        h60 h60Var;
-        int i11;
-        int i12;
-        int i13 = n60.F3 ? 6 : 2;
-        if (n60.G3 || i10 < (i11 = (h60Var = this.c.P).G) || i10 >= (i12 = h60Var.H)) {
-            return i13;
-        }
-        int i14 = i12 - i11;
-        int i15 = (i10 != i12 - 1 || (!n60.F3 && i14 % 2 == 0)) ? 1 : 2;
-        if (!n60.F3) {
-            return i15;
-        }
-        if (i14 == 1) {
-            return 6;
-        }
-        return i14 == 2 ? 3 : 2;
+    @Override // android.view.View
+    public final void invalidate() {
+        ViewGroup viewGroup;
+        super.invalidate();
+        viewGroup = ((org.telegram.ui.ActionBar.f3) this.s1).containerView;
+        viewGroup.invalidate();
     }
 }

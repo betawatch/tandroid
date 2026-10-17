@@ -1,14 +1,26 @@
 package org.telegram.ui;
 
-import android.content.ClipboardManager;
+import android.content.Context;
+import android.text.Editable;
+import android.text.TextUtils;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o21 implements ClipboardManager.OnPrimaryClipChangedListener {
-    public final /* synthetic */ v21 a;
+public final class o21 extends org.telegram.ui.Cells.i3 {
+    public final /* synthetic */ p21 x;
 
-    @Override // android.content.ClipboardManager.OnPrimaryClipChangedListener
-    public final void onPrimaryClipChanged() {
-        this.a.W();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o21(p21 p21Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, "", true, false, 1024, d6Var);
+        this.x = p21Var;
+    }
+
+    @Override // org.telegram.ui.Cells.i3
+    public final void b(Editable editable) {
+        p21 p21Var = this.x;
+        ei.d dVar = p21Var.s;
+        if (dVar != null) {
+            dVar.setEnabled(p21Var.d.optional || !TextUtils.isEmpty(p21Var.n.getText()));
+        }
     }
 }

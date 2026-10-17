@@ -1,12 +1,12 @@
 package c3;
 
-import b2.u0;
-import b2.w0;
+import b2.t0;
+import b2.v0;
 import e2.m0;
 import java.nio.ByteOrder;
 import java.util.Collections;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class u {
     public final int a;
@@ -19,8 +19,8 @@ public final class u {
     public final int h;
     public final int i;
     public final long j;
-    public final qf.b k;
-    public final u0 l;
+    public final n4.s k;
+    public final t0 l;
 
     public u(byte[] bArr, int i10) {
         a4.g gVar = new a4.g(bArr, bArr.length);
@@ -97,29 +97,29 @@ public final class u {
         return (j10 * 1000000) / this.e;
     }
 
-    public final b2.x c(byte[] bArr, u0 u0Var) {
+    public final b2.w c(byte[] bArr, t0 t0Var) {
         bArr[4] = Byte.MIN_VALUE;
         int i10 = this.d;
         if (i10 <= 0) {
             i10 = -1;
         }
-        u0 u0Var2 = this.l;
-        if (u0Var2 != null) {
-            u0Var = u0Var2.b(u0Var);
+        t0 t0Var2 = this.l;
+        if (t0Var2 != null) {
+            t0Var = t0Var2.b(t0Var);
         }
-        b2.w wVar = new b2.w();
-        wVar.r = w0.n("audio/flac");
-        wVar.s = i10;
-        wVar.J = this.g;
-        wVar.K = this.e;
+        b2.v vVar = new b2.v();
+        vVar.r = v0.n("audio/flac");
+        vVar.s = i10;
+        vVar.J = this.g;
+        vVar.K = this.e;
         String str = m0.a;
-        wVar.L = m0.D(this.h, ByteOrder.LITTLE_ENDIAN);
-        wVar.u = Collections.singletonList(bArr);
-        wVar.k = u0Var;
-        return new b2.x(wVar);
+        vVar.L = m0.D(this.h, ByteOrder.LITTLE_ENDIAN);
+        vVar.u = Collections.singletonList(bArr);
+        vVar.k = t0Var;
+        return new b2.w(vVar);
     }
 
-    public u(int i10, int i11, int i12, int i13, int i14, int i15, int i16, long j10, qf.b bVar, u0 u0Var) {
+    public u(int i10, int i11, int i12, int i13, int i14, int i15, int i16, long j10, n4.s sVar, t0 t0Var) {
         this.a = i10;
         this.b = i11;
         this.c = i12;
@@ -130,7 +130,7 @@ public final class u {
         this.h = i16;
         this.i = a(i16);
         this.j = j10;
-        this.k = bVar;
-        this.l = u0Var;
+        this.k = sVar;
+        this.l = t0Var;
     }
 }

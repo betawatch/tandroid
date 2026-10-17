@@ -1,19 +1,42 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes3.dex */
-public final class gx0 extends i71 {
-    public final /* synthetic */ PremiumPreviewFragment e;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gx0(PremiumPreviewFragment premiumPreviewFragment, fx0 fx0Var) {
-        super(fx0Var);
-        this.e = premiumPreviewFragment;
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class gx0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ PrivacySettingsActivity b;
+
+    public /* synthetic */ gx0(PrivacySettingsActivity privacySettingsActivity, int i10) {
+        this.a = i10;
+        this.b = privacySettingsActivity;
     }
 
-    @Override // org.telegram.ui.i71, android.widget.PopupWindow
-    public final void dismiss() {
-        super.dismiss();
-        this.e.s0 = null;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                PrivacySettingsActivity privacySettingsActivity = this.b;
+                privacySettingsActivity.a.l();
+                privacySettingsActivity.R = true;
+                break;
+            case 1:
+                this.b.c.dismiss();
+                break;
+            default:
+                PrivacySettingsActivity privacySettingsActivity2 = this.b;
+                org.telegram.ui.Components.yb ybVar = new org.telegram.ui.Components.yb(privacySettingsActivity2.getParentActivity(), null);
+                ybVar.d(R.raw.email_check_inbox, new String[0]);
+                ybVar.b.setText(LocaleController.getString(R.string.YourLoginEmailChangedSuccess));
+                org.telegram.ui.Components.qc.g(privacySettingsActivity2, ybVar, 1500).j();
+                try {
+                    privacySettingsActivity2.fragmentView.performHapticFeedback(3, 2);
+                } catch (Exception unused) {
+                }
+                privacySettingsActivity2.z0();
+                break;
+        }
     }
 }

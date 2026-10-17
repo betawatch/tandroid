@@ -1,21 +1,93 @@
 package yh;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.widget.FrameLayout;
+import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.c6;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.GiftAuctionController;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.Components.bb;
+import org.telegram.ui.Components.hm0;
+import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.n7;
+import org.telegram.ui.Components.s61;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ProfileActivity;
+import w7.z5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class c extends FrameLayout {
-    public static final /* synthetic */ int c = 0;
-    public final c6 a;
-    public final int b;
+public final class c extends bb {
+    public static final /* synthetic */ int a0 = 0;
+    public final List X;
+    public final GiftAuctionController.Auction Y;
+    public s61 Z;
 
-    public c(Context context, int i10, c6 c6Var) {
-        super(context);
-        this.b = i10;
-        this.a = c6Var;
-        setPadding(AndroidUtilities.dp(18.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(18.0f), AndroidUtilities.dp(9.0f));
+    public c(Context context, d6 d6Var, GiftAuctionController.Auction auction, List list) {
+        super(context, null, false, false, 2, d6Var);
+        this.Y = auction;
+        this.X = list;
+        this.v = 0.2f;
+        this.L = false;
+        this.K = AndroidUtilities.dp(12.0f);
+        this.e.setTitle(A());
+        fixNavigationBar();
+        this.d.setPadding(this.backgroundPaddingLeft, AndroidUtilities.dp(9.0f), this.backgroundPaddingLeft, AndroidUtilities.dp(64.0f));
+        this.d.setOnItemClickListener(new n7(3));
+        this.d.setOverScrollMode(2);
+        ei.d dVar = new ei.d(context, d6Var, true);
+        dVar.setOnClickListener(new hg.r0(this, 26));
+        dVar.g(LocaleController.getString(R.string.OK), false, true);
+        FrameLayout.LayoutParams a2 = z5.a(48.0f, 16.0f, 16.0f, 16.0f, 16.0f, -1, 80);
+        int i10 = a2.leftMargin;
+        int i11 = this.backgroundPaddingLeft;
+        a2.leftMargin = i10 + i11;
+        a2.rightMargin += i11;
+        this.containerView.addView(dVar, a2);
+        this.Z.N(false);
+    }
+
+    public static void Q(c cVar, TL_stars.TL_StarGiftAuctionAcquiredGift tL_StarGiftAuctionAcquiredGift) {
+        long peerDialogId = DialogObject.getPeerDialogId(tL_StarGiftAuctionAcquiredGift.peer);
+        cVar.dismiss();
+        org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+        if (U == null || UserObject.isService(peerDialogId)) {
+            return;
+        }
+        Bundle bundle = new Bundle();
+        if (peerDialogId > 0) {
+            bundle.putLong("user_id", peerDialogId);
+            if (peerDialogId == UserConfig.getInstance(cVar.currentAccount).getClientUserId()) {
+                bundle.putBoolean("my_profile", true);
+            }
+        } else {
+            bundle.putLong("chat_id", -peerDialogId);
+        }
+        bundle.putBoolean("open_gifts", true);
+        U.presentFragment(new ProfileActivity(bundle, null));
+    }
+
+    @Override // org.telegram.ui.Components.bb
+    public final CharSequence A() {
+        List list = this.X;
+        if (list == null) {
+            return null;
+        }
+        return LocaleController.formatPluralString("Gift2AuctionsAcquiredGifts", list.size(), new Object[0]);
+    }
+
+    @Override // org.telegram.ui.Components.bb
+    public final hm0 x(im0 im0Var) {
+        s61 s61Var = new s61(this.d, getContext(), this.currentAccount, 0, true, new hg.o(this, 22), this.resourcesProvider);
+        this.Z = s61Var;
+        s61Var.r = false;
+        return s61Var;
     }
 }

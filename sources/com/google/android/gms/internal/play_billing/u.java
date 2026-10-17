@@ -5,12 +5,13 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import com.android.billingclient.api.Purchase;
+import com.google.android.gms.internal.cast.a6;
 import java.util.ArrayList;
 import org.json.JSONException;
 import org.telegram.messenger.OneUIUtilities;
 import v7.y5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class u {
     public static final int a = Runtime.getRuntime().availableProcessors();
@@ -44,7 +45,7 @@ public abstract class u {
         Bundle bundle = new Bundle();
         bundle.putInt("RESPONSE_CODE", iVar.a);
         bundle.putString("DEBUG_MESSAGE", iVar.c);
-        bundle.putInt("LOG_REASON", k3.b(i10));
+        bundle.putInt("LOG_REASON", a6.b(i10));
         return bundle;
     }
 
@@ -68,12 +69,12 @@ public abstract class u {
         boolean z10 = false;
         boolean z11 = false;
         for (int i10 = 0; i10 < size; i10++) {
-            c5.s sVar = (c5.s) arrayList.get(i10);
+            c5.r rVar = (c5.r) arrayList.get(i10);
             arrayList2.add(null);
             z10 |= !TextUtils.isEmpty(null);
             arrayList4.add(null);
             z11 |= !TextUtils.isEmpty(null);
-            if (sVar.b.equals("first_party")) {
+            if (rVar.b.equals("first_party")) {
                 throw new NullPointerException("Serialized DocId is required for constructing ExtraParams to query ProductDetails for all first party products.");
             }
         }

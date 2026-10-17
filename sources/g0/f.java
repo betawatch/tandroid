@@ -26,7 +26,6 @@ import android.view.View;
 import android.view.Window;
 import android.view.accessibility.AccessibilityNodeInfo;
 import androidx.core.graphics.drawable.IconCompat;
-import fi.c2;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -38,7 +37,7 @@ import p4.l;
 import p4.m;
 import p4.w;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class f {
     public static volatile e a;
@@ -122,7 +121,7 @@ public abstract class f {
                 return new ArrayList();
             }
         }
-        List<ShortcutInfo> dynamicShortcuts = c2.d(context.getSystemService(c2.f())).getDynamicShortcuts();
+        List<ShortcutInfo> dynamicShortcuts = fh.b.d(context.getSystemService(fh.b.h())).getDynamicShortcuts();
         ArrayList arrayList = new ArrayList(dynamicShortcuts.size());
         Iterator<ShortcutInfo> it = dynamicShortcuts.iterator();
         while (it.hasNext()) {
@@ -138,7 +137,7 @@ public abstract class f {
     public static int g(Context context) {
         context.getClass();
         if (Build.VERSION.SDK_INT >= 25) {
-            return c2.d(context.getSystemService(c2.f())).getMaxShortcutCountPerActivity();
+            return fh.b.d(context.getSystemService(fh.b.h())).getMaxShortcutCountPerActivity();
         }
         return 5;
     }
@@ -300,7 +299,7 @@ public abstract class f {
 
     public static void n(Context context) {
         if (Build.VERSION.SDK_INT >= 25) {
-            c2.d(context.getSystemService(c2.f())).removeAllDynamicShortcuts();
+            fh.b.d(context.getSystemService(fh.b.h())).removeAllDynamicShortcuts();
         }
         j(context).c();
         Iterator it = ((ArrayList) i(context)).iterator();
@@ -339,7 +338,7 @@ public abstract class f {
         context.getClass();
         str.getClass();
         if (Build.VERSION.SDK_INT >= 25) {
-            c2.d(context.getSystemService(c2.f())).reportShortcutUsed(str);
+            fh.b.d(context.getSystemService(fh.b.h())).reportShortcutUsed(str);
         }
         Iterator it = ((ArrayList) i(context)).iterator();
         if (it.hasNext()) {

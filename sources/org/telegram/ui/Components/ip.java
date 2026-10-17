@@ -1,64 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.WallpapersListActivity;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ip implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ zp b;
+public final class ip implements ValueAnimator.AnimatorUpdateListener {
+    public boolean a = false;
+    public final /* synthetic */ wp b;
 
-    public /* synthetic */ ip(zp zpVar, int i10) {
-        this.a = i10;
-        this.b = zpVar;
+    public ip(wp wpVar) {
+        this.b = wpVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                zp zpVar = this.b;
-                vi viVar = zpVar.Y;
-                if (viVar.B0 != viVar.j0) {
-                    zpVar.a0.setText(LocaleController.getString(R.string.SetColorAsBackground));
-                    vi viVar2 = zpVar.Y;
-                    viVar2.U1(viVar2.j0);
-                    break;
-                } else {
-                    zpVar.a0.setText(LocaleController.getString(R.string.ChooseBackgroundFromGallery));
-                    zpVar.Y.F1();
-                    kj kjVar = zpVar.Y.r0;
-                    boolean z10 = zpVar.N;
-                    bb bbVar = kjVar.v;
-                    ((ArrayList) bbVar.e).clear();
-                    WallpapersListActivity.z0((ArrayList) bbVar.e, z10);
-                    bbVar.l();
-                    break;
-                }
-            case 1:
-                zp zpVar2 = this.b;
-                if (!zpVar2.x()) {
-                    zpVar2.dismiss();
-                    break;
-                } else {
-                    zpVar2.C(true);
-                    zpVar2.G(true);
-                    break;
-                }
-            case 2:
-                zp zpVar3 = this.b;
-                if (zpVar3.T == null) {
-                    zpVar3.E(!zpVar3.N);
-                    break;
-                }
-                break;
-            default:
-                this.b.u(false);
-                break;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        wp wpVar = this.b;
+        wpVar.S = floatValue;
+        wpVar.R.invalidate();
+        if (this.a || wpVar.S <= 0.5f) {
+            return;
         }
+        this.a = true;
     }
 }

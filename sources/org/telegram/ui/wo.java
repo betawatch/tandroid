@@ -1,131 +1,84 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessageObject;
+import android.view.View;
+import android.view.ViewGroup;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class wo extends zu0 {
-    public final /* synthetic */ zo a;
+public final class wo extends org.telegram.ui.Components.hm0 {
+    public final /* synthetic */ xo c;
 
-    public wo(zo zoVar) {
-        this.a = zoVar;
+    public wo(xo xoVar) {
+        this.c = xoVar;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x0029, code lost:
-    
-        if (r0 != null) goto L25;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:31:0x0042, code lost:
-    
-        if (r0 != null) goto L25;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0082  */
-    @Override // org.telegram.ui.zu0, org.telegram.ui.hv0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final jv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        TLRPC.FileLocation fileLocation2;
-        zo zoVar = this.a;
-        long j10 = zoVar.C0;
-        jv0 jv0Var = null;
-        if (fileLocation != null) {
-            if (zoVar.D0 != null) {
-                TLRPC.User user = j10 == 0 ? null : zoVar.getMessagesController().getUser(Long.valueOf(j10));
-                if (user != null) {
-                    TLRPC.UserProfilePhoto userProfilePhoto = user.photo;
-                    if (userProfilePhoto != null) {
-                        fileLocation2 = userProfilePhoto.photo_big;
-                    }
-                }
-                fileLocation2 = null;
-                if (fileLocation2 != null && fileLocation2.local_id == fileLocation.local_id && fileLocation2.volume_id == fileLocation.volume_id && fileLocation2.dc_id == fileLocation.dc_id) {
-                    int[] iArr = new int[2];
-                    zoVar.e.getLocationInWindow(iArr);
-                    jv0Var = new jv0();
-                    jv0Var.b = iArr[0];
-                    jv0Var.c = iArr[1];
-                    bi.k5 k5Var = zoVar.e;
-                    jv0Var.d = k5Var;
-                    ImageReceiver imageReceiver = k5Var.getImageReceiver();
-                    jv0Var.a = imageReceiver;
-                    if (j10 == 0) {
-                        j10 = -zoVar.w0;
-                    }
-                    jv0Var.f = j10;
-                    jv0Var.e = imageReceiver.getBitmapSafe();
-                    jv0Var.g = -1L;
-                    jv0Var.h = zoVar.e.getImageReceiver().getRoundRadius(true);
-                    jv0Var.k = zoVar.d.getScaleX();
-                    jv0Var.p = true;
-                }
-            } else {
-                TLRPC.Chat chat = zoVar.getMessagesController().getChat(Long.valueOf(zoVar.w0));
-                if (chat != null) {
-                    TLRPC.ChatPhoto chatPhoto = chat.photo;
-                    if (chatPhoto != null) {
-                        fileLocation2 = chatPhoto.photo_big;
-                    }
-                }
-                fileLocation2 = null;
-                if (fileLocation2 != null) {
-                    int[] iArr2 = new int[2];
-                    zoVar.e.getLocationInWindow(iArr2);
-                    jv0Var = new jv0();
-                    jv0Var.b = iArr2[0];
-                    jv0Var.c = iArr2[1];
-                    bi.k5 k5Var2 = zoVar.e;
-                    jv0Var.d = k5Var2;
-                    ImageReceiver imageReceiver2 = k5Var2.getImageReceiver();
-                    jv0Var.a = imageReceiver2;
-                    if (j10 == 0) {
-                    }
-                    jv0Var.f = j10;
-                    jv0Var.e = imageReceiver2.getBitmapSafe();
-                    jv0Var.g = -1L;
-                    jv0Var.h = zoVar.e.getImageReceiver().getRoundRadius(true);
-                    jv0Var.k = zoVar.d.getScaleX();
-                    jv0Var.p = true;
-                }
+    @Override // org.telegram.ui.Components.hm0
+    public final boolean D(s4.b1 b1Var) {
+        return b1Var.f == 1;
+    }
+
+    @Override // s4.g0
+    public final int h() {
+        return this.c.Y2.N.size() + 2;
+    }
+
+    @Override // s4.g0
+    public final int j(int i10) {
+        if (i10 == 0) {
+            return 0;
+        }
+        return i10 <= this.c.Y2.N.size() ? 1 : 2;
+    }
+
+    @Override // s4.g0
+    public final void v(s4.b1 b1Var, int i10) {
+        xo xoVar = this.c;
+        yo yoVar = xoVar.Y2;
+        int i11 = b1Var.f;
+        View view = b1Var.a;
+        if (i11 == 0) {
+            org.telegram.ui.Cells.l4 l4Var = (org.telegram.ui.Cells.l4) view;
+            l4Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.d6, xoVar.n2));
+            l4Var.setText(LocaleController.getString(R.string.UsernamesChannelHeader));
+            return;
+        }
+        if (i11 != 1) {
+            if (i11 != 2) {
+                return;
             }
+            org.telegram.ui.Cells.d9 d9Var = (org.telegram.ui.Cells.d9) view;
+            d9Var.setText(LocaleController.getString(R.string.UsernamesChannelHelp));
+            d9Var.setBackground(org.telegram.ui.ActionBar.h6.W0(xoVar.getContext(), R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.h6.b7));
+            return;
         }
-        return jv0Var;
-    }
-
-    @Override // org.telegram.ui.zu0, org.telegram.ui.hv0
-    public final void G() {
-        this.a.e.getImageReceiver().setVisible(true, true);
-    }
-
-    @Override // org.telegram.ui.zu0, org.telegram.ui.hv0
-    public final boolean N() {
-        zo zoVar = this.a;
-        long j10 = zoVar.C0;
-        if (j10 == 0) {
-            return true;
+        TLRPC.TL_username tL_username = (TLRPC.TL_username) yoVar.N.get(i10 - 1);
+        ra raVar = (ra) view;
+        if (raVar.H) {
+            yoVar.O = null;
         }
-        TLRPC.TL_photos_updateProfilePhoto tL_photos_updateProfilePhoto = new TLRPC.TL_photos_updateProfilePhoto();
-        tL_photos_updateProfilePhoto.bot = zoVar.getMessagesController().getInputUser(j10);
-        tL_photos_updateProfilePhoto.flags |= 2;
-        tL_photos_updateProfilePhoto.id = new TLRPC.TL_inputPhotoEmpty();
-        zoVar.getConnectionsManager().sendRequest(tL_photos_updateProfilePhoto, new m(this, 2));
-        return false;
+        raVar.a(tL_username, i10 < yoVar.N.size(), false, 0L);
+        if (tL_username == null || !tL_username.editable) {
+            return;
+        }
+        yoVar.O = raVar;
     }
 
-    @Override // org.telegram.ui.zu0, org.telegram.ui.hv0
-    public final void f(String str, String str2, boolean z10) {
-        this.a.s.p(str, str2, z10);
-    }
-
-    @Override // org.telegram.ui.zu0, org.telegram.ui.hv0
-    public final boolean t() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.zu0, org.telegram.ui.hv0
-    public final int y() {
-        return 1;
+    @Override // s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        xo xoVar = this.c;
+        org.telegram.ui.ActionBar.d6 d6Var = xoVar.n2;
+        if (i10 == 0) {
+            return new org.telegram.ui.Components.sl0(new org.telegram.ui.Cells.l4(xoVar.getContext(), d6Var));
+        }
+        if (i10 == 1) {
+            return new org.telegram.ui.Components.sl0(new ka(this, xoVar.getContext(), d6Var));
+        }
+        if (i10 != 2) {
+            return null;
+        }
+        return new org.telegram.ui.Components.sl0(new org.telegram.ui.Cells.d9(xoVar.getContext(), 12, d6Var));
     }
 }

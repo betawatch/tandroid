@@ -1,45 +1,31 @@
 package zh;
 
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.RadialGradient;
-import android.graphics.RectF;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.ad;
+import android.content.Intent;
+import android.net.Uri;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.ui.ActionBar.a2;
+import org.telegram.ui.ActionBar.b2;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class e0 {
-    public final long a;
-    public final TLRPC.Document b;
-    public final long c;
-    public final int d;
-    public final String e;
-    public b8 f;
-    public int g = -1;
-    public RadialGradient h;
-    public Paint i;
-    public org.telegram.ui.Components.s5 j;
-    public org.telegram.ui.Components.g6 k;
-    public final RectF l;
-    public final ad m;
+public final /* synthetic */ class e0 implements a2 {
+    public final /* synthetic */ m0 a;
 
-    public e0(f0 f0Var, TL_stars.TL_starGiftUnique tL_starGiftUnique) {
-        new Matrix();
-        this.l = new RectF();
-        this.m = new ad(f0Var);
-        this.a = tL_starGiftUnique.id;
-        TLRPC.Document document = tL_starGiftUnique.getDocument();
-        this.b = document;
-        this.c = document == null ? 0L : document.id;
-        this.d = ((TL_stars.starGiftAttributeBackdrop) n5.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class)).center_color | (-16777216);
-        this.e = tL_starGiftUnique.slug;
-        this.f = new b8(1, 6);
-        float dp = AndroidUtilities.dp(36.0f);
-        float f7 = (-dp) / 2.0f;
-        float f10 = dp / 2.0f;
-        this.f.c.set(f7, f7, f10, f10);
+    public /* synthetic */ e0(m0 m0Var) {
+        this.a = m0Var;
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(b2 b2Var, int i10) {
+        m0 m0Var = this.a;
+        m0Var.getClass();
+        try {
+            Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+            intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
+            m0Var.getParentActivity().startActivity(intent);
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
     }
 }

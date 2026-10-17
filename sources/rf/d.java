@@ -4,43 +4,42 @@ import android.app.PictureInPictureParams;
 import android.graphics.Rect;
 import android.os.Build;
 import android.view.View;
-import com.google.firebase.messaging.m;
-import com.google.firebase.messaging.s;
-import di.f4;
-import i2.h0;
+import com.google.firebase.messaging.l;
+import com.google.firebase.messaging.r;
+import ei.z3;
+import i2.g0;
 import java.util.HashMap;
-import k2.m0;
+import k2.n0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.TextureViewRenderer;
-import w7.r;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class d {
     public static int n;
     public static final Rect o = new Rect();
-    public final m a;
+    public final l a;
     public final tf.e b;
     public final String c;
     public final int d;
     public final int e;
     public final boolean f;
     public final tf.a g;
-    public final m0 h;
-    public final s i;
+    public final n0 h;
+    public final r i;
     public View j;
     public View k;
-    public h0 l;
+    public g0 l;
     public boolean m;
 
-    public d(m mVar, c cVar) {
+    public d(l lVar, c cVar) {
         int i10 = n;
         n = i10 + 1;
-        m0 m0Var = new m0();
-        this.h = m0Var;
-        s sVar = new s(new f4(this, 1));
-        this.i = sVar;
+        n0 n0Var = new n0();
+        this.h = n0Var;
+        r rVar = new r(new z3(this, 1));
+        this.i = rVar;
         StringBuilder sb2 = new StringBuilder();
         String str = cVar.c;
         sb2.append(str == null ? "pip-source" : str);
@@ -52,20 +51,20 @@ public final class d {
         this.d = cVar.e;
         this.e = cVar.d;
         this.f = cVar.f;
-        this.a = mVar;
-        m0Var.d(cVar.h, cVar.i);
+        this.a = lVar;
+        n0Var.d(cVar.h, cVar.i);
         this.l = cVar.g;
         this.k = cVar.k;
         this.b = new tf.e(this);
         View view = cVar.j;
-        sVar.t(view);
+        rVar.t(view);
         this.j = view;
         if (view != null) {
             e(view);
         }
         b(false);
-        ((HashMap) mVar.a).put(sb3, this);
-        mVar.I();
+        ((HashMap) lVar.a).put(sb3, this);
+        lVar.N();
     }
 
     public final PictureInPictureParams a() {
@@ -83,25 +82,25 @@ public final class d {
         if (this.m != z11) {
             this.m = z11;
             if (z10) {
-                m mVar = this.a;
-                mVar.I();
-                ((a) mVar.c).invalidate();
+                l lVar = this.a;
+                lVar.N();
+                ((a) lVar.c).invalidate();
             }
         }
     }
 
     public final void c() {
         this.i.t(null);
-        m mVar = this.a;
-        if (((HashMap) mVar.a).remove(this.c) != null) {
-            mVar.I();
+        l lVar = this.a;
+        if (((HashMap) lVar.a).remove(this.c) != null) {
+            lVar.N();
         }
     }
 
     public final void d(int i10, int i11) {
         if (this.h.d(i10, i11)) {
             b(true);
-            this.a.n(this);
+            this.a.p(this);
         }
     }
 
@@ -112,11 +111,11 @@ public final class d {
     */
     public final void e(View view) {
         boolean d;
-        m mVar = this.a;
-        if (AndroidUtilities.isInPictureInPictureMode((LaunchActivity) mVar.d)) {
+        l lVar = this.a;
+        if (AndroidUtilities.isInPictureInPictureMode((LaunchActivity) lVar.d)) {
             return;
         }
-        LaunchActivity launchActivity = (LaunchActivity) mVar.d;
+        LaunchActivity launchActivity = (LaunchActivity) lVar.d;
         int[] iArr = uf.b.a;
         view.getLocationOnScreen(iArr);
         boolean z10 = false;
@@ -129,34 +128,34 @@ public final class d {
         int width = view.getWidth() + i12;
         int height = view.getHeight() + i13;
         int i14 = iArr[0];
-        int b10 = r.b(i12, i14, decorView.getWidth() + i14);
+        int b10 = w7.r.b(i12, i14, decorView.getWidth() + i14);
         int i15 = iArr[1];
-        int b11 = r.b(i13, i15, decorView.getHeight() + i15);
+        int b11 = w7.r.b(i13, i15, decorView.getHeight() + i15);
         int i16 = iArr[0];
-        int b12 = r.b(width, i16, decorView.getWidth() + i16);
+        int b12 = w7.r.b(width, i16, decorView.getWidth() + i16);
         int i17 = iArr[1];
-        int b13 = r.b(height, i17, decorView.getHeight() + i17);
+        int b13 = w7.r.b(height, i17, decorView.getHeight() + i17);
         Rect rect = o;
         rect.set(b10, b11, b12, b13);
-        m0 m0Var = this.h;
-        Rect rect2 = (Rect) m0Var.a;
+        n0 n0Var = this.h;
+        Rect rect2 = (Rect) n0Var.a;
         if (!rect2.equals(rect)) {
             rect2.set(rect);
             z10 = true;
         }
         if (!(view instanceof TextureViewRenderer)) {
             if (view.getWidth() != 0 && view.getHeight() != 0) {
-                d = m0Var.d(view.getWidth(), view.getHeight());
+                d = n0Var.d(view.getWidth(), view.getHeight());
             }
             if (z10) {
                 return;
             }
             b(true);
-            mVar.n(this);
+            lVar.p(this);
             return;
         }
         TextureViewRenderer textureViewRenderer = (TextureViewRenderer) view;
-        d = m0Var.d(textureViewRenderer.rotatedFrameWidth, textureViewRenderer.rotatedFrameHeight);
+        d = n0Var.d(textureViewRenderer.rotatedFrameWidth, textureViewRenderer.rotatedFrameHeight);
         z10 |= d;
         if (z10) {
         }

@@ -6,7 +6,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class r2 extends View {
     public final /* synthetic */ s2 a;
@@ -25,7 +25,7 @@ public final class r2 extends View {
             return;
         }
         int b10 = s2Var.b.b();
-        int dp = AndroidUtilities.dp(4.0f) + org.telegram.messenger.g0.D(6.0f, b10 - 1, AndroidUtilities.dp(7.0f) * b10);
+        int dp = AndroidUtilities.dp(4.0f) + org.telegram.messenger.q.D(6.0f, b10 - 1, AndroidUtilities.dp(7.0f) * b10);
         float f7 = s2Var.v + s2Var.s;
         if (dp < getMeasuredWidth()) {
             clamp = (getMeasuredWidth() - dp) / 2.0f;
@@ -38,8 +38,8 @@ public final class r2 extends View {
         canvas.clipRect(0, 0, getMeasuredWidth(), getMeasuredHeight());
         for (int i10 = 0; i10 < s2Var.d.items.size(); i10++) {
             float max = Math.max(0.0f, 1.0f - Math.abs(i10 - f7));
-            k4.B1.setAlpha((int) ((max * 95.0f) + 160.0f));
-            canvas.drawCircle(AndroidUtilities.dp(4.0f) + clamp + (AndroidUtilities.dp(13.0f) * i10), getMeasuredHeight() / 2.0f, (AndroidUtilities.dp(1.0f) * max) + AndroidUtilities.dp(2.0f), k4.B1);
+            l4.B1.setAlpha((int) ((max * 95.0f) + 160.0f));
+            canvas.drawCircle(AndroidUtilities.dp(4.0f) + clamp + (AndroidUtilities.dp(13.0f) * i10), getMeasuredHeight() / 2.0f, (AndroidUtilities.dp(1.0f) * max) + AndroidUtilities.dp(2.0f), l4.B1);
         }
         canvas.restore();
     }

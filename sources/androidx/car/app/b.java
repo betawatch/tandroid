@@ -7,9 +7,9 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.Map;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b implements androidx.car.app.utils.c, androidx.activity.result.b {
+public final /* synthetic */ class b implements androidx.car.app.utils.a, androidx.activity.result.b {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -20,7 +20,7 @@ public final /* synthetic */ class b implements androidx.car.app.utils.c, androi
         this.c = obj2;
     }
 
-    @Override // androidx.car.app.utils.c
+    @Override // androidx.car.app.utils.a
     public Object a() {
         Object lambda$onConfigurationChanged$6;
         Object lambda$onNewIntent$5;
@@ -35,7 +35,7 @@ public final /* synthetic */ class b implements androidx.car.app.utils.c, androi
     }
 
     @Override // androidx.activity.result.b
-    public void j(Object obj) {
+    public void i(Object obj) {
         CarAppPermissionActivity carAppPermissionActivity = (CarAppPermissionActivity) this.b;
         IOnRequestPermissionsListener iOnRequestPermissionsListener = (IOnRequestPermissionsListener) this.c;
         int i10 = CarAppPermissionActivity.J;

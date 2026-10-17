@@ -11,31 +11,19 @@ import v7.i8;
 import v7.t7;
 import v7.u7;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class f0 {
-    public static final a6.i a;
-    public static final a6.i b;
-    public static final a6.i c;
-    public static final a6.i d;
-    public static final a6.i e;
-    public static final a6.i f;
-    public static final a6.i g;
-    public static final a6.i h;
+    public static final com.google.android.gms.internal.clearcut.e a = new com.google.android.gms.internal.clearcut.e("RESUME_TOKEN", 1);
+    public static final com.google.android.gms.internal.clearcut.e b = new com.google.android.gms.internal.clearcut.e("REMOVED_TASK", 1);
+    public static final com.google.android.gms.internal.clearcut.e c = new com.google.android.gms.internal.clearcut.e("CLOSED_EMPTY", 1);
+    public static final com.google.android.gms.internal.clearcut.e d = new com.google.android.gms.internal.clearcut.e("COMPLETING_ALREADY", 1);
+    public static final com.google.android.gms.internal.clearcut.e e = new com.google.android.gms.internal.clearcut.e("COMPLETING_WAITING_CHILDREN", 1);
+    public static final com.google.android.gms.internal.clearcut.e f = new com.google.android.gms.internal.clearcut.e("COMPLETING_RETRY", 1);
+    public static final com.google.android.gms.internal.clearcut.e g = new com.google.android.gms.internal.clearcut.e("TOO_LATE_TO_CANCEL", 1);
+    public static final com.google.android.gms.internal.clearcut.e h = new com.google.android.gms.internal.clearcut.e("SEALED", 1);
     public static final r0 i = new r0(false);
     public static final r0 j = new r0(true);
-
-    static {
-        int i10 = 22;
-        a = new a6.i("RESUME_TOKEN", i10);
-        b = new a6.i("REMOVED_TASK", i10);
-        c = new a6.i("CLOSED_EMPTY", i10);
-        d = new a6.i("COMPLETING_ALREADY", i10);
-        e = new a6.i("COMPLETING_WAITING_CHILDREN", i10);
-        f = new a6.i("COMPLETING_RETRY", i10);
-        g = new a6.i("TOO_LATE_TO_CANCEL", i10);
-        h = new a6.i("SEALED", i10);
-    }
 
     public static t a() {
         t tVar = new t(true);
@@ -166,18 +154,18 @@ public abstract class f0 {
             return new m(1, cVar);
         }
         ge.h hVar = (ge.h) cVar;
-        a6.i iVar = ge.a.d;
+        com.google.android.gms.internal.clearcut.e eVar = ge.a.d;
         AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = ge.h.n;
         loop0: while (true) {
             Object obj = atomicReferenceFieldUpdater.get(hVar);
             mVar = null;
             if (obj == null) {
-                atomicReferenceFieldUpdater.set(hVar, iVar);
+                atomicReferenceFieldUpdater.set(hVar, eVar);
                 mVar2 = null;
                 break;
             }
             if (obj instanceof m) {
-                while (!atomicReferenceFieldUpdater.compareAndSet(hVar, obj, iVar)) {
+                while (!atomicReferenceFieldUpdater.compareAndSet(hVar, obj, eVar)) {
                     if (atomicReferenceFieldUpdater.get(hVar) != obj) {
                         break;
                     }
@@ -185,7 +173,7 @@ public abstract class f0 {
                 mVar2 = (m) obj;
                 break loop0;
             }
-            if (obj != iVar && !(obj instanceof Throwable)) {
+            if (obj != eVar && !(obj instanceof Throwable)) {
                 throw new IllegalStateException(("Inconsistent state " + obj).toString());
             }
         }

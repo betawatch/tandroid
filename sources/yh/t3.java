@@ -1,17 +1,17 @@
 package yh;
 
+import ai.y9;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.kj1;
-import zh.g5;
+import org.telegram.ui.o71;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class t3 implements g5 {
+public final class t3 implements y9 {
     public final int a;
     public final long b;
     public final Utilities.Callback c;
@@ -41,22 +41,22 @@ public final class t3 implements g5 {
         this.c = callback;
     }
 
-    @Override // zh.g5
+    @Override // ai.y9
     public final void a() {
         g(false);
     }
 
-    @Override // zh.g5
+    @Override // ai.y9
     public final int b(int i10) {
         return -1;
     }
 
-    @Override // zh.g5
+    @Override // ai.y9
     public final int c() {
         return this.e;
     }
 
-    @Override // zh.g5
+    @Override // ai.y9
     public final int e() {
         return this.d.size();
     }
@@ -156,11 +156,11 @@ public final class t3 implements g5 {
                     }
                 }
             }
-            this.v = ConnectionsManager.getInstance(this.a).sendRequest(getresalestargifts, new kj1(5, this, getresalestargifts));
+            this.v = ConnectionsManager.getInstance(this.a).sendRequest(getresalestargifts, new o71(12, this, getresalestargifts));
         }
     }
 
-    @Override // zh.g5
+    @Override // ai.y9
     public final Object get(int i10) {
         return this.d.get(i10);
     }
@@ -183,12 +183,12 @@ public final class t3 implements g5 {
         }
     }
 
-    @Override // zh.g5
+    @Override // ai.y9
     public final int indexOf(Object obj) {
         return this.d.indexOf(obj);
     }
 
-    @Override // zh.g5
+    @Override // ai.y9
     public final void d() {
     }
 }

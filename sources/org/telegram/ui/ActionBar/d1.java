@@ -3,7 +3,7 @@ package org.telegram.ui.ActionBar;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class d1 extends AnimatorListenerAdapter {
     public final /* synthetic */ boolean a;
@@ -25,9 +25,9 @@ public final class d1 extends AnimatorListenerAdapter {
         float f7 = this.a ? 1.0f : 0.0f;
         int i10 = this.b;
         int i11 = this.c;
-        int d = i0.a.d(f7, i10, i11);
+        int f10 = i0.b.f(f7, i10, i11);
         e1 e1Var = this.e;
-        e1Var.setTextColor(d);
-        e1Var.setIconColor(i0.a.d(f7, this.d, i11));
+        e1Var.setTextColor(f10);
+        e1Var.setIconColor(i0.b.f(f7, this.d, i11));
     }
 }

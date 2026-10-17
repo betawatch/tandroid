@@ -12,7 +12,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class e extends c {
     public final ContentResolver a;
@@ -168,7 +168,7 @@ public final class e extends c {
         }
     }
 
-    @Override // b2.p
+    @Override // b2.o
     public final int read(byte[] bArr, int i10, int i11) {
         if (i11 == 0) {
             return 0;

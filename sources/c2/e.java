@@ -6,24 +6,24 @@ import android.os.Handler;
 import android.os.Looper;
 import e2.h0;
 import e2.i0;
-import i2.r0;
+import i2.p0;
 import v7.w6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class e {
     public final d9.u a;
     public final Handler b;
-    public r0 c;
+    public p0 c;
     public b2.f d;
     public int f;
     public h h;
     public float g = 1.0f;
     public int e = 0;
 
-    public e(Context context, Looper looper, r0 r0Var) {
+    public e(Context context, Looper looper, p0 p0Var) {
         this.a = w6.a(new d(context, 0));
-        this.c = r0Var;
+        this.c = p0Var;
         this.b = new Handler(looper);
     }
 
@@ -36,9 +36,9 @@ public final class e {
     }
 
     public final void b(int i10) {
-        r0 r0Var = this.c;
-        if (r0Var != null) {
-            i0 i0Var = r0Var.n;
+        p0 p0Var = this.c;
+        if (p0Var != null) {
+            i0 i0Var = p0Var.n;
             i0Var.getClass();
             h0 c10 = i0.c();
             c10.a = i0Var.a.obtainMessage(33, i10, 0);
@@ -56,9 +56,9 @@ public final class e {
             return;
         }
         this.g = f7;
-        r0 r0Var = this.c;
-        if (r0Var != null) {
-            r0Var.n.f(34);
+        p0 p0Var = this.c;
+        if (p0Var != null) {
+            p0Var.n.f(34);
         }
     }
 

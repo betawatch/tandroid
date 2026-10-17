@@ -4,7 +4,7 @@ import android.content.Intent;
 import java.io.PrintWriter;
 import java.util.Set;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public interface c {
     boolean a();
@@ -17,15 +17,15 @@ public interface c {
 
     void disconnect();
 
-    void e(a6.i iVar);
+    void e(n6.b bVar);
 
-    void f(n6.b bVar);
+    boolean f();
 
-    boolean g();
+    void g(String str, PrintWriter printWriter);
 
-    void h(String str, PrintWriter printWriter);
+    String h();
 
-    String i();
+    void i(ag.b bVar);
 
     boolean j();
 

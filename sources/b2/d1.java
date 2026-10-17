@@ -1,25 +1,71 @@
 package b2;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+import java.util.List;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class d1 {
-    public final v a;
+public interface d1 {
+    void onAudioAttributesChanged(f fVar);
 
-    public d1(v vVar) {
-        this.a = vVar;
-    }
+    void onAudioSessionIdChanged(int i10);
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj instanceof d1) {
-            return this.a.equals(((d1) obj).a);
-        }
-        return false;
-    }
+    void onAvailableCommandsChanged(b1 b1Var);
 
-    public final int hashCode() {
-        return this.a.hashCode();
-    }
+    void onCues(d2.c cVar);
+
+    void onCues(List list);
+
+    void onEvents(f1 f1Var, c1 c1Var);
+
+    void onIsLoadingChanged(boolean z10);
+
+    void onIsPlayingChanged(boolean z10);
+
+    void onLoadingChanged(boolean z10);
+
+    void onMediaItemTransition(o0 o0Var, int i10);
+
+    void onMediaMetadataChanged(r0 r0Var);
+
+    void onMetadata(t0 t0Var);
+
+    void onPlayWhenReadyChanged(boolean z10, int i10);
+
+    void onPlaybackParametersChanged(z0 z0Var);
+
+    void onPlaybackStateChanged(int i10);
+
+    void onPlaybackSuppressionReasonChanged(int i10);
+
+    void onPlayerError(y0 y0Var);
+
+    void onPlayerErrorChanged(y0 y0Var);
+
+    void onPlayerStateChanged(boolean z10, int i10);
+
+    void onPlaylistMetadataChanged(r0 r0Var);
+
+    void onPositionDiscontinuity(int i10);
+
+    void onPositionDiscontinuity(e1 e1Var, e1 e1Var2, int i10);
+
+    void onRenderedFirstFrame();
+
+    void onRepeatModeChanged(int i10);
+
+    void onShuffleModeEnabledChanged(boolean z10);
+
+    void onSkipSilenceEnabledChanged(boolean z10);
+
+    void onSurfaceSizeChanged(int i10, int i11);
+
+    void onTimelineChanged(o1 o1Var, int i10);
+
+    void onTrackSelectionParametersChanged(t1 t1Var);
+
+    void onTracksChanged(v1 v1Var);
+
+    void onVideoSizeChanged(a2 a2Var);
+
+    void onVolumeChanged(float f7);
 }

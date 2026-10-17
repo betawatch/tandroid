@@ -1,14 +1,13 @@
 package k2;
 
 import android.media.AudioTrack;
-import ji.w4;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class b0 {
     public final a0 a;
     public final int b;
-    public final w4 c;
+    public final ya.c c;
     public int d;
     public long e;
     public long f;
@@ -16,10 +15,10 @@ public final class b0 {
     public long h;
     public long i;
 
-    public b0(AudioTrack audioTrack, w4 w4Var) {
+    public b0(AudioTrack audioTrack, ya.c cVar) {
         this.a = new a0(audioTrack);
         this.b = audioTrack.getSampleRate();
-        this.c = w4Var;
+        this.c = cVar;
         a(0);
     }
 

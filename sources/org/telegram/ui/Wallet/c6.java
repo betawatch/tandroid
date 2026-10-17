@@ -1,773 +1,356 @@
 package org.telegram.ui.Wallet;
 
-import android.animation.ValueAnimator;
-import android.app.ActivityManager;
 import android.content.Context;
-import android.content.pm.ConfigurationInfo;
-import android.os.PowerManager;
-import android.view.Choreographer;
-import android.view.MotionEvent;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.bk0;
-import org.telegram.ui.Components.es;
-import org.telegram.ui.fi1;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class c6 extends FrameLayout {
-    public float E;
-    public float F;
-    public float G;
-    public float H;
-    public ValueAnimator I;
-    public o1.k J;
+public final class c6 extends FrameLayout implements SensorEventListener {
+    public final boolean E;
+    public final float[] F;
+    public final float[] G;
+    public final a6 H;
+    public float I;
+    public float J;
     public float K;
     public float L;
     public float M;
     public float N;
-    public o1.k O;
+    public float O;
     public float P;
     public float Q;
     public long R;
-    public boolean S;
+    public final org.telegram.ui.Cells.k7 S;
     public float T;
     public float U;
-    public long V;
-    public boolean W;
-    public final int a;
-    public final y5 a0;
-    public final int b;
-    public float b0;
-    public View c;
-    public Runnable c0;
-    public b6 d;
-    public float d0;
-    public a6 e;
-    public double e0;
-    public tg.g f;
-    public long f0;
-    public float g0;
-    public bk0 h;
-    public float h0;
-    public float i0;
-    public final y5 j0;
-    public int k0;
-    public final z5 l0;
-    public boolean n;
-    public boolean r;
-    public boolean s;
-    public boolean v;
-    public boolean w;
-    public boolean x;
-    public int y;
+    public final b6 a;
+    public final o5 b;
+    public boolean c;
+    public boolean d;
+    public Runnable e;
+    public boolean f;
+    public boolean h;
+    public final ai.w1 n;
+    public final ai.w1 r;
+    public final m.s3 s;
+    public final float[] v;
+    public final float[] w;
+    public final SensorManager x;
+    public final Sensor y;
 
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0085  */
-    /* JADX WARN: Type inference failed for: r0v1, types: [org.telegram.ui.Wallet.y5] */
-    /* JADX WARN: Type inference failed for: r0v3, types: [org.telegram.ui.Wallet.y5] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public c6(int i10, Context context, boolean z10) {
+    public c6(Context context, int i10, int i11) {
         super(context);
-        tg.g gVar;
-        this.y = -1;
-        final int i11 = 0;
-        this.a0 = new Choreographer.FrameCallback(this) { // from class: org.telegram.ui.Wallet.y5
-            public final /* synthetic */ c6 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.Choreographer.FrameCallback
-            public final void doFrame(long j10) {
-                switch (i11) {
-                    case 0:
-                        c6 c6Var = this.b;
-                        if (c6Var.n) {
-                            float min = c6Var.V == 0 ? 0.016666668f : Math.min(0.05f, (j10 - r1) / 1.0E9f);
-                            c6Var.V = j10;
-                            float exp = (float) Math.exp((-min) / 0.55f);
-                            float f7 = c6Var.T;
-                            float f10 = c6Var.U;
-                            c6Var.T = (((1.0f - exp) * (0.55f * f10)) + f7) % 360.0f;
-                            c6Var.U = f10 * exp;
-                            c6Var.k();
-                            if (Math.abs(c6Var.U) <= 0.5f) {
-                                c6Var.U = 0.0f;
-                                c6Var.W = false;
-                                c6Var.V = 0L;
-                                break;
-                            } else {
-                                Choreographer.getInstance().postFrameCallback(c6Var.a0);
-                                break;
-                            }
-                        }
-                        break;
-                    default:
-                        c6 c6Var2 = this.b;
-                        if (c6Var2.r && c6Var2.x && c6Var2.f != null) {
-                            float min2 = c6Var2.f0 == 0 ? 0.0f : Math.min(0.05f, (j10 - r1) / 1.0E9f);
-                            c6Var2.f0 = j10;
-                            if (c6Var2.y == -1) {
-                                float exp2 = (float) Math.exp((-min2) / 0.75f);
-                                float f11 = c6Var2.G;
-                                float f12 = c6Var2.b0;
-                                if (f12 == 0.0f) {
-                                    f12 = -18.0f;
-                                }
-                                float f13 = (f12 * min2) + f11;
-                                float f14 = c6Var2.d0;
-                                c6Var2.G = (((1.0f - exp2) * (0.75f * f14)) + f13) % 360.0f;
-                                c6Var2.d0 = f14 * exp2;
-                                double d = ((((min2 * 3.141592653589793d) * 2.0d) / 8.0d) + c6Var2.e0) % 6.283185307179586d;
-                                c6Var2.e0 = d;
-                                c6Var2.H = ((float) Math.sin(d)) * 9.0f;
-                                c6Var2.e();
-                            }
-                            Choreographer.getInstance().postFrameCallback(c6Var2.j0);
-                            break;
-                        }
-                        break;
-                }
-            }
-        };
-        this.i0 = 1.0f;
-        final int i12 = 1;
-        this.j0 = new Choreographer.FrameCallback(this) { // from class: org.telegram.ui.Wallet.y5
-            public final /* synthetic */ c6 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.Choreographer.FrameCallback
-            public final void doFrame(long j10) {
-                switch (i12) {
-                    case 0:
-                        c6 c6Var = this.b;
-                        if (c6Var.n) {
-                            float min = c6Var.V == 0 ? 0.016666668f : Math.min(0.05f, (j10 - r1) / 1.0E9f);
-                            c6Var.V = j10;
-                            float exp = (float) Math.exp((-min) / 0.55f);
-                            float f7 = c6Var.T;
-                            float f10 = c6Var.U;
-                            c6Var.T = (((1.0f - exp) * (0.55f * f10)) + f7) % 360.0f;
-                            c6Var.U = f10 * exp;
-                            c6Var.k();
-                            if (Math.abs(c6Var.U) <= 0.5f) {
-                                c6Var.U = 0.0f;
-                                c6Var.W = false;
-                                c6Var.V = 0L;
-                                break;
-                            } else {
-                                Choreographer.getInstance().postFrameCallback(c6Var.a0);
-                                break;
-                            }
-                        }
-                        break;
-                    default:
-                        c6 c6Var2 = this.b;
-                        if (c6Var2.r && c6Var2.x && c6Var2.f != null) {
-                            float min2 = c6Var2.f0 == 0 ? 0.0f : Math.min(0.05f, (j10 - r1) / 1.0E9f);
-                            c6Var2.f0 = j10;
-                            if (c6Var2.y == -1) {
-                                float exp2 = (float) Math.exp((-min2) / 0.75f);
-                                float f11 = c6Var2.G;
-                                float f12 = c6Var2.b0;
-                                if (f12 == 0.0f) {
-                                    f12 = -18.0f;
-                                }
-                                float f13 = (f12 * min2) + f11;
-                                float f14 = c6Var2.d0;
-                                c6Var2.G = (((1.0f - exp2) * (0.75f * f14)) + f13) % 360.0f;
-                                c6Var2.d0 = f14 * exp2;
-                                double d = ((((min2 * 3.141592653589793d) * 2.0d) / 8.0d) + c6Var2.e0) % 6.283185307179586d;
-                                c6Var2.e0 = d;
-                                c6Var2.H = ((float) Math.sin(d)) * 9.0f;
-                                c6Var2.e();
-                            }
-                            Choreographer.getInstance().postFrameCallback(c6Var2.j0);
-                            break;
-                        }
-                        break;
-                }
-            }
-        };
-        this.l0 = new z5(this, 0);
-        int dp = AndroidUtilities.dp(i10);
-        this.a = dp;
-        this.b = i10;
-        PowerManager powerManager = (PowerManager) context.getSystemService("power");
-        if ((powerManager == null || !powerManager.isPowerSaveMode()) && SharedConfig.getDevicePerformanceClass() != 0) {
-            ActivityManager activityManager = (ActivityManager) context.getSystemService("activity");
-            ConfigurationInfo deviceConfigurationInfo = activityManager == null ? null : activityManager.getDeviceConfigurationInfo();
-            if (deviceConfigurationInfo != null && deviceConfigurationInfo.reqGlEsVersion >= 196608) {
-                if (z10) {
-                    a6 a6Var = new a6(this, context);
-                    this.e = a6Var;
-                    tg.g gVar2 = a6Var.b;
-                    this.f = gVar2;
-                    gVar2.h = 0.2857143f;
-                    this.c = this.e;
-                } else {
-                    b6 b6Var = new b6(this, context);
-                    this.d = b6Var;
-                    this.f = b6Var.a;
-                    this.c = b6Var;
-                }
-                gVar = this.f;
-                if (gVar != null) {
-                    gVar.z = org.telegram.ui.ActionBar.g6.fk;
-                    gVar.A = org.telegram.ui.ActionBar.g6.gk;
-                    gVar.b();
-                    setIdleAnimationEnabled(false);
-                }
-                addView(this.c, new FrameLayout.LayoutParams(dp, dp, 17));
-            }
-        }
-        g();
-        gVar = this.f;
-        if (gVar != null) {
-        }
-        addView(this.c, new FrameLayout.LayoutParams(dp, dp, 17));
+        this.c = true;
+        this.s = new m.s3();
+        this.v = new float[8];
+        this.w = new float[8];
+        this.F = new float[9];
+        this.G = new float[3];
+        this.H = new a6();
+        this.I = -0.22f;
+        this.J = -0.28f;
+        this.M = 1.0f;
+        this.S = new org.telegram.ui.Cells.k7(this, 29);
+        setClipChildren(false);
+        setClipToPadding(false);
+        w7.b6.b(this, 0.02f, 1.2f);
+        Utilities.globalQueue.postRunnable(new org.telegram.messenger.voip.o(context.getApplicationContext(), i10, i11, 1));
+        b6 b6Var = new b6(context, this, i10, i11);
+        this.a = b6Var;
+        addView(b6Var, w7.z5.a(-1.0f, -24.0f, -24.0f, -24.0f, -24.0f, -1, 17));
+        o5 o5Var = new o5(i10, i11, context, true);
+        this.b = o5Var;
+        addView(o5Var, w7.z5.d(-1.0f, -1));
+        ai.w1 w1Var = new ai.w1(context, 12);
+        this.n = w1Var;
+        ai.w1 w1Var2 = new ai.w1(context, 12);
+        this.r = w1Var2;
+        addView(w1Var2, w7.z5.e(-1, -1, 17));
+        addView(w1Var, w7.z5.e(-1, -1, 17));
+        SensorManager sensorManager = (SensorManager) context.getSystemService("sensor");
+        this.x = sensorManager;
+        Sensor defaultSensor = sensorManager.getDefaultSensor(15);
+        defaultSensor = defaultSensor == null ? sensorManager.getDefaultSensor(11) : defaultSensor;
+        defaultSensor = defaultSensor == null ? sensorManager.getDefaultSensor(4) : defaultSensor;
+        this.y = defaultSensor;
+        this.E = (defaultSensor == null || defaultSensor.getType() == 4) ? false : true;
     }
 
-    public static void a(c6 c6Var) {
-        if (c6Var.f == null || !c6Var.r || c6Var.x) {
-            return;
-        }
-        c6Var.setIdleAnimationEnabled(true);
+    public static float b(float f7, float f10, float f11) {
+        return Math.max(f10, Math.min(f11, f7));
     }
 
-    public static /* synthetic */ void b(c6 c6Var, boolean z10, float f7) {
-        if (z10 || f7 > 1.001f || c6Var.f == null) {
-            return;
+    public final void a(float f7, float f10) {
+        float f11 = f7 + this.T;
+        float f12 = f10 + this.U;
+        this.a.f0.Q = new float[]{f11, f12};
+        e();
+        double cos = Math.cos(Math.toRadians(f12)) * Math.cos(Math.toRadians(f11));
+        if (this.c) {
+            this.b.b(f11, f12);
+            this.b.setVisibility(cos >= 0.0d ? 0 : 4);
         }
-        c6Var.setRenderScale(1.0f);
+        this.n.setVisibility(cos >= 0.0d ? 0 : 4);
+        this.r.setVisibility(cos >= 0.0d ? 4 : 0);
+        postInvalidateOnAnimation();
     }
 
-    public static void c(c6 c6Var) {
-        if (c6Var.f == null) {
+    public final void c(float f7, float f10, float f11, float f12) {
+        y5 y5Var = this.a.f0;
+        float[] fArr = y5Var.N;
+        if (fArr[0] == f7 && fArr[1] == f10 && fArr[2] == f11 && fArr[3] == f12) {
             return;
         }
-        c6Var.h(false);
-        c6Var.k0++;
-        c6Var.removeCallbacks(c6Var.l0);
-        Choreographer.getInstance().removeFrameCallback(c6Var.j0);
-        c6Var.f0 = 0L;
-        c6Var.d0 = 0.0f;
-        c6Var.m(null);
-        c6Var.setIdleAnimationEnabled(false);
-        c6Var.setRendererPaused(true);
-        b6 b6Var = c6Var.d;
-        if (b6Var != null) {
-            b6Var.setPaused(true);
-            b6Var.onPause();
-        }
-        a6 a6Var = c6Var.e;
-        if (a6Var != null) {
-            a6Var.o();
-        }
-        c6Var.removeView(c6Var.c);
-        c6Var.d = null;
-        c6Var.e = null;
-        c6Var.f = null;
-        c6Var.g();
-        View view = c6Var.c;
-        int i10 = c6Var.a;
-        c6Var.addView(view, new FrameLayout.LayoutParams(i10, i10, 17));
-        c6Var.r = false;
-        if (c6Var.b0 != 0.0f) {
-            c6Var.h.getAnimatedDrawable().K(1);
-        }
-        c6Var.j();
-        Runnable runnable = c6Var.c0;
-        c6Var.c0 = null;
+        y5Var.N = new float[]{f7, f10, f11, f12};
+    }
+
+    public final void d() {
+        this.c = true;
+        this.a.setAlpha(0.003921569f);
+        a(this.K, this.N);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        Runnable runnable = this.e;
         if (runnable != null) {
-            runnable.run();
+            this.e = null;
+            post(runnable);
         }
-    }
-
-    private void setIdleAnimationEnabled(boolean z10) {
-        b6 b6Var = this.d;
-        if (b6Var != null) {
-            b6Var.setIdleAnimationEnabled(z10);
-        }
-        a6 a6Var = this.e;
-        if (a6Var != null) {
-            a6Var.setIdleAnimationEnabled(z10);
-        }
-    }
-
-    private void setRenderScale(float f7) {
-        b6 b6Var = this.d;
-        if (b6Var != null) {
-            b6Var.setRenderScale(f7);
-        }
-        if (this.e != null) {
-            this.f.h = f7 / 3.5f;
-        }
-    }
-
-    private void setRendererPaused(boolean z10) {
-        b6 b6Var = this.d;
-        if (b6Var != null) {
-            b6Var.setPaused(z10);
-        }
-        a6 a6Var = this.e;
-        if (a6Var != null) {
-            a6Var.setPaused(z10);
-        }
-    }
-
-    public final void d(float f7) {
-        if (f7 > 1.0f && this.f != null) {
-            setRenderScale(3.5f);
-        }
-        if (this.J == null) {
-            o1.k kVar = new o1.k(new o1.j(this.c.getScaleX()));
-            this.J = kVar;
-            o1.l lVar = new o1.l(f7);
-            lVar.a(0.55f);
-            lVar.b(280.0f);
-            kVar.u = lVar;
-            this.J.e(0.001f);
-            this.J.b(new w5(this, 0));
-            this.J.a(new x5(this, 0));
-        }
-        this.J.g(f7);
     }
 
     public final void e() {
-        tg.g gVar = this.f;
-        if (gVar == null) {
+        int width = getWidth();
+        int height = getHeight();
+        if (width == 0 || height == 0) {
             return;
         }
-        float f7 = this.G;
-        float f10 = this.g0;
-        float f11 = this.i0;
-        gVar.d = com.google.android.gms.internal.play_billing.k3.y(1.0f, f11, f10, f7);
-        gVar.i = com.google.android.gms.internal.play_billing.k3.y(1.0f, f11, this.h0, this.H);
+        this.s.c(width, height, this.K, this.N, false, this.v);
+        this.s.c(width, height, this.K, this.N, true, this.w);
+        this.n.a(this.v);
+        this.r.a(this.w);
     }
 
-    public final void f(c6 c6Var) {
-        tg.g gVar;
-        if (c6Var == null || (gVar = c6Var.f) == null || this.f == null) {
+    public final void f() {
+        SensorManager sensorManager;
+        b6 b6Var = this.a;
+        if (b6Var == null || (sensorManager = this.x) == null) {
             return;
         }
-        this.G = gVar.d;
-        this.H = gVar.i;
-        e();
+        if (!isShown() || getWindowVisibility() != 0) {
+            this.d = true;
+        }
+        boolean z10 = this.f && isShown() && getWindowVisibility() == 0 && hasWindowFocus();
+        if (this.h == z10) {
+            return;
+        }
+        this.h = z10;
+        b6Var.setPaused(!z10);
+        org.telegram.ui.Cells.k7 k7Var = this.S;
+        removeCallbacks(k7Var);
+        if (!z10) {
+            sensorManager.unregisterListener(this);
+            return;
+        }
+        if (this.d) {
+            this.d = false;
+            d();
+        }
+        this.R = 0L;
+        Sensor sensor = this.y;
+        if (sensor != null) {
+            sensorManager.registerListener(this, sensor, 1);
+        }
+        postOnAnimation(k7Var);
     }
 
-    public final void g() {
-        bk0 bk0Var = new bk0(getContext());
-        this.h = bk0Var;
-        bk0Var.setScaleType(ImageView.ScaleType.FIT_CENTER);
-        bk0 bk0Var2 = this.h;
-        int i10 = R.raw.wallet_diamond_blue;
-        int i11 = this.b;
-        bk0Var2.f(i10, i11, i11, null);
-        this.h.getAnimatedDrawable().K(0);
-        this.c = this.h;
-        setOnClickListener(new k3(this, 3));
-        setClickable(!this.x);
+    public FrameLayout getBackFace() {
+        return (FrameLayout) this.r.d;
     }
 
-    public float getConversionWobble() {
+    public float getCardRotationX() {
         return this.K;
     }
 
-    public float getFlightPitch() {
-        if (this.f == null) {
-            return 0.0f;
-        }
-        return (float) Math.toRadians(r0.i + r0.j);
+    public float getCardRotationY() {
+        return this.N;
     }
 
-    public float getFlightYaw() {
-        if (this.f == null) {
-            return 0.0f;
-        }
-        return (float) Math.toRadians(r0.d + r0.f);
-    }
-
-    public final void h(boolean z10) {
-        ValueAnimator valueAnimator;
-        if (this.y != -1) {
-            this.y = -1;
-            if (getParent() != null) {
-                getParent().requestDisallowInterceptTouchEvent(false);
-            }
-            if (this.f != null) {
-                if (z10) {
-                    this.g0 = (float) Math.IEEEremainder(r0.d - this.G, 360.0d);
-                    this.h0 = (float) Math.IEEEremainder(this.f.i - this.H, 360.0d);
-                    this.i0 = 0.0f;
-                    ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                    this.I = ofFloat;
-                    ofFloat.setDuration(350L);
-                    this.I.setInterpolator(es.h);
-                    this.I.addUpdateListener(new t2(this, 5));
-                    this.I.addListener(new fi1(this, 6));
-                    this.I.start();
-                } else {
-                    this.i0 = 1.0f;
-                    this.h0 = 0.0f;
-                    this.g0 = 0.0f;
-                    e();
-                }
-            }
-        }
-        if (!z10 && (valueAnimator = this.I) != null) {
-            valueAnimator.removeAllListeners();
-            this.I.cancel();
-            this.I = null;
-            this.i0 = 1.0f;
-            this.h0 = 0.0f;
-            this.g0 = 0.0f;
-            e();
-        }
-        if (this.c == null) {
-            return;
-        }
-        if (z10) {
-            d(1.0f);
-            return;
-        }
-        o1.k kVar = this.J;
-        if (kVar != null) {
-            kVar.c();
-            this.J = null;
-        }
-        this.c.setScaleX(1.0f);
-        this.c.setScaleY(1.0f);
-        if (this.f != null) {
-            setRenderScale(1.0f);
-        }
-    }
-
-    public final void i() {
-        this.x = true;
-        setClipChildren(false);
-        setClipToPadding(false);
-        removeCallbacks(this.l0);
-        setClickable(false);
-        if (this.f != null) {
-            b6 b6Var = this.d;
-            if (b6Var != null) {
-                float max = Math.max(1.0f, 3.5f);
-                b6Var.J = max;
-                b6Var.a.h = b6Var.I / max;
-                b6Var.f();
-            }
-            setIdleAnimationEnabled(false);
-            tg.g gVar = this.f;
-            this.G = gVar.d;
-            this.H = gVar.i;
-            if (this.r) {
-                Choreographer choreographer = Choreographer.getInstance();
-                y5 y5Var = this.j0;
-                choreographer.removeFrameCallback(y5Var);
-                this.f0 = 0L;
-                Choreographer.getInstance().postFrameCallback(y5Var);
-            }
-        }
-    }
-
-    public final void j() {
-        boolean z10 = !this.s && this.n && isShown() && getWindowVisibility() == 0 && hasWindowFocus();
-        if (this.r == z10) {
-            return;
-        }
-        this.r = z10;
-        if (!z10) {
-            h(false);
-        }
-        int i10 = this.k0 + 1;
-        this.k0 = i10;
-        if (this.f == null) {
-            bk0 bk0Var = this.h;
-            if (bk0Var != null) {
-                if (!z10) {
-                    this.w = bk0Var.b();
-                    this.h.i();
-                    return;
-                } else {
-                    if (!this.v || this.w) {
-                        bk0Var.d();
-                    }
-                    this.v = true;
-                    return;
-                }
-            }
-            return;
-        }
-        removeCallbacks(this.l0);
-        setIdleAnimationEnabled(false);
-        if (this.x) {
-            y5 y5Var = this.j0;
-            if (z10) {
-                Choreographer.getInstance().removeFrameCallback(y5Var);
-                this.f0 = 0L;
-                Choreographer.getInstance().postFrameCallback(y5Var);
-            } else {
-                Choreographer.getInstance().removeFrameCallback(y5Var);
-                this.f0 = 0L;
-                this.d0 = 0.0f;
-            }
-        } else if (z10) {
-            tg.g gVar = this.f;
-            gVar.d = 0.0f;
-            gVar.i = 0.0f;
-            m(new i(this, i10, 2));
-        }
-        setRendererPaused(!z10);
-    }
-
-    public final void k() {
-        tg.g gVar = this.f;
-        if (gVar != null) {
-            gVar.f = this.T + this.L;
-            return;
-        }
-        bk0 bk0Var = this.h;
-        if (bk0Var != null) {
-            bk0Var.setRotationY(this.T + this.L);
-        }
-    }
-
-    public final void l(Runnable runnable) {
-        this.c0 = runnable;
-        if (this.f != null) {
-            m(new z5(this, 1));
-        } else if (runnable != null) {
-            post(new z5(this, 1));
-        }
-    }
-
-    public final void m(Runnable runnable) {
-        b6 b6Var = this.d;
-        if (b6Var != null) {
-            b6Var.v = runnable;
-            if (b6Var.s && runnable != null) {
-                b6Var.v = null;
-                runnable.run();
-            }
-        }
-        a6 a6Var = this.e;
-        if (a6Var != null) {
-            a6Var.U = runnable;
-            if (!a6Var.T || runnable == null) {
-                return;
-            }
-            a6Var.U = null;
-            runnable.run();
-        }
+    public FrameLayout getFrontFace() {
+        return (FrameLayout) this.n.d;
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.n = true;
-        j();
+        this.f = true;
+        this.R = 0L;
+        a6 a6Var = this.H;
+        a6Var.a = false;
+        a6Var.h = 0L;
+        a6Var.i = 0L;
+        a6Var.j = 0L;
+        this.O = 0.0f;
+        this.P = 0.0f;
+        this.Q = 0.0f;
+        f();
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
-        this.n = false;
-        Choreographer.getInstance().removeFrameCallback(this.a0);
-        o1.k kVar = this.O;
-        if (kVar != null) {
-            kVar.c();
-            this.O = null;
-            setTranslationX(0.0f);
-        }
-        this.P = 0.0f;
-        this.Q = 0.0f;
-        this.R = 0L;
-        this.W = false;
-        this.S = false;
-        this.V = 0L;
-        this.U = 0.0f;
-        this.T = 0.0f;
-        k();
-        j();
+        this.f = false;
+        f();
         super.onDetachedFromWindow();
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return (isEnabled() && this.x && this.f != null && this.r) || super.onInterceptTouchEvent(motionEvent);
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        if (z10) {
+            e();
+        }
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        int paddingLeft = getPaddingLeft();
-        int i12 = this.a;
-        int resolveSize = View.resolveSize(getPaddingRight() + paddingLeft + i12, i10);
-        int resolveSize2 = View.resolveSize(getPaddingBottom() + getPaddingTop() + i12, i11);
-        setMeasuredDimension(resolveSize, resolveSize2);
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(Math.max(0, Math.min((resolveSize - getPaddingLeft()) - getPaddingRight(), (resolveSize2 - getPaddingTop()) - getPaddingBottom())), TLObject.FLAG_30);
-        this.c.measure(makeMeasureSpec, makeMeasureSpec);
+        int size = View.MeasureSpec.getSize(i10);
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.round(size / 1.64f), TLObject.FLAG_30));
+    }
+
+    @Override // android.hardware.SensorEventListener
+    public final void onSensorChanged(SensorEvent sensorEvent) {
+        if (this.E) {
+            float[] fArr = sensorEvent.values;
+            float[] fArr2 = this.F;
+            SensorManager.getRotationMatrixFromVector(fArr2, fArr);
+            SensorManager.getOrientation(fArr2, this.G);
+            this.I = b((float) Math.sin(r0[2]), -0.82f, 0.82f);
+            this.J = b(-((float) Math.sin(r0[1])), -0.82f, 0.82f);
+        } else {
+            if (this.R != 0) {
+                float f7 = (sensorEvent.timestamp - r4) * 1.0E-9f;
+                if (f7 > 0.0f && f7 < 0.1f) {
+                    this.I = b(org.telegram.ui.Cells.t0.z(sensorEvent.values[1], f7, -0.75f, this.I), -0.82f, 0.82f);
+                    this.J = b(com.google.android.gms.internal.cast.a6.t(sensorEvent.values[0], f7, -0.75f, this.J), -0.82f, 0.82f);
+                }
+            }
+            this.R = sensorEvent.timestamp;
+        }
+        this.H.a(((-this.J) / 0.82f) * 15.0f, (this.I / 0.82f) * 15.0f, sensorEvent.timestamp);
     }
 
     @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (!isEnabled() || !this.x || this.f == null || !this.r) {
-            return super.onTouchEvent(motionEvent);
-        }
-        int actionMasked = motionEvent.getActionMasked();
-        if (actionMasked == 0) {
-            ValueAnimator valueAnimator = this.I;
-            if (valueAnimator != null) {
-                valueAnimator.removeAllListeners();
-                this.I.cancel();
-                this.I = null;
-            }
-            this.d0 = 0.0f;
-            this.y = motionEvent.getPointerId(0);
-            this.E = motionEvent.getX();
-            this.F = motionEvent.getY();
-            if (getParent() != null) {
-                getParent().requestDisallowInterceptTouchEvent(true);
-            }
-            d(3.0f);
-            return true;
-        }
-        if (actionMasked != 1) {
-            if (actionMasked == 2) {
-                int findPointerIndex = motionEvent.findPointerIndex(this.y);
-                if (findPointerIndex < 0) {
-                    h(true);
-                    return true;
-                }
-                float f7 = 0.8f / AndroidUtilities.density;
-                tg.g gVar = this.f;
-                gVar.d = com.google.android.gms.internal.play_billing.k3.y(motionEvent.getX(findPointerIndex), this.E, f7, gVar.d);
-                tg.g gVar2 = this.f;
-                gVar2.i = com.google.android.gms.internal.play_billing.k3.y(motionEvent.getY(findPointerIndex), this.F, f7, gVar2.i);
-                this.E = motionEvent.getX(findPointerIndex);
-                this.F = motionEvent.getY(findPointerIndex);
-                return true;
-            }
-            if (actionMasked != 3) {
-                if (actionMasked != 6) {
-                    if (this.y == -1) {
-                        return false;
-                    }
-                } else if (motionEvent.getPointerId(motionEvent.getActionIndex()) == this.y) {
-                    int i10 = motionEvent.getActionIndex() == 0 ? 1 : 0;
-                    this.y = motionEvent.getPointerId(i10);
-                    this.E = motionEvent.getX(i10);
-                    this.F = motionEvent.getY(i10);
-                }
-                return true;
-            }
-        }
-        h(true);
-        return true;
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        super.onSizeChanged(i10, i11, i12, i13);
+        e();
     }
 
     @Override // android.view.View
     public final void onVisibilityChanged(View view, int i10) {
         super.onVisibilityChanged(view, i10);
-        j();
+        f();
     }
 
     @Override // android.view.View
     public final void onWindowFocusChanged(boolean z10) {
         super.onWindowFocusChanged(z10);
-        j();
+        f();
     }
 
     @Override // android.view.View
     public final void onWindowVisibilityChanged(int i10) {
         super.onWindowVisibilityChanged(i10);
-        j();
+        f();
     }
 
-    public void setContinuousRotation(float f7) {
-        this.b0 = f7;
-        i();
-        setEnabled(false);
-        bk0 bk0Var = this.h;
-        if (bk0Var != null) {
-            bk0Var.getAnimatedDrawable().K(1);
-        }
-    }
-
-    public void setConversionWobble(float f7) {
-        this.K = f7;
-        tg.g gVar = this.f;
-        if (gVar != null) {
-            gVar.g = f7 + this.M;
+    public void setAdditionalTilt(float f7) {
+        float f10 = this.L;
+        if (f10 == f7) {
             return;
         }
-        bk0 bk0Var = this.h;
-        if (bk0Var != null) {
-            bk0Var.setRotation(f7 + this.M);
+        float f11 = (f7 - f10) + this.K;
+        this.K = f11;
+        this.L = f7;
+        a(f11, this.N);
+    }
+
+    public void setCardIcon(int i10) {
+        this.b.setCardIcon(i10);
+        this.a.f0.T = i10;
+    }
+
+    public void setDiamondAlpha(float f7) {
+        y5 y5Var = this.a.f0;
+        y5Var.getClass();
+        y5Var.O = Math.max(0.0f, Math.min(1.0f, f7));
+    }
+
+    public void setEngravingAlpha(float f7) {
+        y5 y5Var = this.a.f0;
+        y5Var.getClass();
+        y5Var.P = Math.max(0.0f, Math.min(1.0f, f7));
+    }
+
+    public void setEngravingBitmap(Bitmap bitmap) {
+        this.b.setEngravingBitmap(bitmap);
+        this.a.f0.R = bitmap;
+    }
+
+    public void setOnFrontContentPresented(Runnable runnable) {
+        this.e = runnable;
+        if (runnable != null) {
+            invalidate();
         }
     }
 
-    @Override // android.view.View
-    public void setEnabled(boolean z10) {
-        super.setEnabled(z10);
-        if (z10) {
+    public void setStickerStyle(float[] fArr) {
+        y5 y5Var = this.a.f0;
+        y5Var.getClass();
+        boolean z10 = fArr.length != y5Var.X.length;
+        for (int i10 = 0; i10 < 6; i10++) {
+            if (fArr[i10] != y5Var.X[i10]) {
+                z10 = true;
+            }
+        }
+        if (!z10) {
+            for (int i11 = 10; i11 < fArr.length; i11++) {
+                if (fArr[i11] != y5Var.X[i11]) {
+                    z10 = true;
+                }
+            }
+        }
+        float[] f7 = z10 ? k7.f(fArr) : (float[]) y5Var.Y.clone();
+        System.arraycopy(fArr, 6, f7, 24, 4);
+        y5Var.X = fArr;
+        y5Var.Y = f7;
+        this.b.setStickerStyle(fArr);
+    }
+
+    public void setUseGyroscope(float f7) {
+        if (this.M == f7) {
             return;
         }
-        h(false);
+        this.M = f7;
+        float f10 = this.P * f7;
+        y5 y5Var = this.a.f0;
+        float f11 = f10 + y5Var.i + this.L;
+        this.K = f11;
+        float f12 = (this.Q * f7) + y5Var.d;
+        this.N = f12;
+        a(f11, f12);
     }
 
-    public void setHeaderTilt(float f7) {
-        tg.g gVar = this.f;
-        if (gVar != null) {
-            gVar.j = f7;
-        }
-    }
-
-    public void setIntroProgress(float f7) {
-        float f10 = 1.0f - f7;
-        float f11 = (2.0f * f10) + 1.0f;
-        this.c.setScaleX(f11);
-        this.c.setScaleY(f11);
-        if (this.f != null) {
-            setRenderScale(f11 > 1.0f ? 3.5f : 1.0f);
-        }
-        this.L = f10 * (-720.0f);
-        this.M = ((float) Math.sin(f7 * 3.141592653589793d)) * 35.0f;
-        k();
-        tg.g gVar = this.f;
-        if (gVar != null) {
-            gVar.g = this.K + this.M;
-            return;
-        }
-        bk0 bk0Var = this.h;
-        if (bk0Var != null) {
-            bk0Var.setRotation(this.K + this.M);
-        }
-    }
-
-    public void setPaused(boolean z10) {
-        this.s = z10;
-        j();
-    }
-
-    public void setStarParticlesView(sg.x1 x1Var) {
-        b6 b6Var = this.d;
-        if (b6Var != null) {
-            b6Var.setStarParticlesView(x1Var);
-        }
-        a6 a6Var = this.e;
-        if (a6Var != null) {
-            a6Var.setStarParticlesView(x1Var);
-        }
+    @Override // android.hardware.SensorEventListener
+    public final void onAccuracyChanged(Sensor sensor, int i10) {
     }
 }

@@ -1,23 +1,39 @@
 package di;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.TranslateController;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.Components.a71;
+import org.telegram.ui.Components.e61;
+import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.s61;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class s {
-    public final t a;
-    public final int b;
-    public final int c;
+public final class s extends e61 {
+    public static final /* synthetic */ int a = 0;
 
-    public s(t tVar, int i10, int i11) {
-        this.a = tVar;
-        this.b = i10;
-        this.c = i11;
+    static {
+        e61.setup(new s());
     }
 
-    public final float a(float f7) {
-        return (f7 / this.a.d[this.c]) * this.b;
+    @Override // org.telegram.ui.Components.e61
+    public final void bindView(View view, f61 f61Var, boolean z10, s61 s61Var, a71 a71Var) {
+        t tVar = (t) view;
+        TranslateController.Language language = (TranslateController.Language) f61Var.G;
+        tVar.a.setText(language.displayName);
+        tVar.b.setText(language.ownDisplayName);
+        if (tVar.c != z10) {
+            tVar.invalidate();
+        }
+        tVar.c = z10;
+        tVar.setWillNotDraw(!z10);
     }
 
-    public final float b(float f7) {
-        return (f7 / this.a.d[this.c]) * (this.b + 1);
+    @Override // org.telegram.ui.Components.e61
+    public final View createView(Context context, im0 im0Var, int i10, int i11, d6 d6Var) {
+        return new t(context);
     }
 }

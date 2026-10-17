@@ -1,12 +1,12 @@
 package i4;
 
-import b2.x0;
+import b2.w0;
 import e2.m0;
 import e2.x;
 import java.nio.charset.StandardCharsets;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class i {
     public static final Pattern a = Pattern.compile("^NOTE([ \t].*)?$");
@@ -48,6 +48,6 @@ public abstract class i {
             return;
         }
         xVar.N(i10);
-        throw x0.a(null, "Expected WEBVTT. Got " + xVar.n(StandardCharsets.UTF_8));
+        throw w0.a(null, "Expected WEBVTT. Got " + xVar.n(StandardCharsets.UTF_8));
     }
 }

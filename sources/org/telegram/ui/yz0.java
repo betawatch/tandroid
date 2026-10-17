@@ -1,43 +1,15 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.ImageReceiver;
+import android.content.Context;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class yz0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ ProfileActivity a;
+public final class yz0 extends org.telegram.ui.Cells.j {
+    public final /* synthetic */ d01 c0;
 
-    public yz0(ProfileActivity profileActivity) {
-        this.a = profileActivity;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        org.telegram.ui.ActionBar.k kVar;
-        ProfileActivity profileActivity = this.a;
-        kVar = ((org.telegram.ui.ActionBar.m2) profileActivity).actionBar;
-        kVar.C(profileActivity.p2 ? 1090519039 : profileActivity.Q5 != null ? 553648127 : org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.f8, profileActivity.z0), false);
-        uz0 uz0Var = profileActivity.e0;
-        ImageReceiver imageReceiver = uz0Var.U;
-        org.telegram.ui.Components.f6 animation = imageReceiver.getAnimation();
-        if (animation != null) {
-            animation.w(uz0Var);
-        }
-        imageReceiver.clearImage();
-        ImageReceiver.BitmapHolder bitmapHolder = uz0Var.W;
-        if (bitmapHolder != null) {
-            bitmapHolder.release();
-            uz0Var.W = null;
-        }
-        uz0Var.V = 0.0f;
-        uz0Var.invalidate();
-        profileActivity.H0 = false;
-        profileActivity.l5(false);
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public yz0(d01 d01Var, Context context, org.telegram.ui.ActionBar.n2 n2Var, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, n2Var, d6Var);
+        this.c0 = d01Var;
     }
 }

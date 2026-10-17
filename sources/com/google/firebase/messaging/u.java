@@ -9,7 +9,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class u implements Runnable {
     public final /* synthetic */ int a;
@@ -20,7 +20,7 @@ public final class u implements Runnable {
 
     public u(FirebaseMessaging firebaseMessaging, long j10) {
         this.a = 0;
-        this.e = new ThreadPoolExecutor(0, 1, 30L, TimeUnit.SECONDS, new LinkedBlockingQueue(), new c5.x("firebase-iid-executor"));
+        this.e = new ThreadPoolExecutor(0, 1, 30L, TimeUnit.SECONDS, new LinkedBlockingQueue(), new c5.w("firebase-iid-executor"));
         this.d = firebaseMessaging;
         this.b = j10;
         PowerManager.WakeLock newWakeLock = ((PowerManager) firebaseMessaging.b.getSystemService("power")).newWakeLock(1, "fiid-sync");
@@ -67,7 +67,7 @@ public final class u implements Runnable {
         switch (this.a) {
             case 0:
                 PowerManager.WakeLock wakeLock = (PowerManager.WakeLock) this.c;
-                s j10 = s.j();
+                r j10 = r.j();
                 FirebaseMessaging firebaseMessaging = (FirebaseMessaging) this.d;
                 if (j10.l(firebaseMessaging.b)) {
                     wakeLock.acquire();
@@ -79,69 +79,69 @@ public final class u implements Runnable {
                         }
                         if (!firebaseMessaging.i.e()) {
                             firebaseMessaging.e(false);
-                            if (!s.j().l(firebaseMessaging.b)) {
+                            if (!r.j().l(firebaseMessaging.b)) {
                                 return;
                             }
-                        } else if (!s.j().k(firebaseMessaging.b) || a()) {
+                        } else if (!r.j().k(firebaseMessaging.b) || a()) {
                             if (b()) {
                                 firebaseMessaging.e(false);
                             } else {
                                 firebaseMessaging.f(this.b);
                             }
-                            if (!s.j().l(firebaseMessaging.b)) {
+                            if (!r.j().l(firebaseMessaging.b)) {
                                 return;
                             }
                         } else {
                             androidx.mediarouter.app.f fVar = new androidx.mediarouter.app.f();
                             fVar.b = this;
                             fVar.a();
-                            if (!s.j().l(firebaseMessaging.b)) {
+                            if (!r.j().l(firebaseMessaging.b)) {
                                 return;
                             }
                         }
                     } catch (IOException e) {
                         Log.e("FirebaseMessaging", "Topic sync or token retrieval failed on hard failure exceptions: " + e.getMessage() + ". Won't retry the operation.");
                         firebaseMessaging.e(false);
-                        if (!s.j().l(firebaseMessaging.b)) {
+                        if (!r.j().l(firebaseMessaging.b)) {
                             return;
                         }
                     }
                     wakeLock.release();
                     return;
                 } catch (Throwable th2) {
-                    if (s.j().l(firebaseMessaging.b)) {
+                    if (r.j().l(firebaseMessaging.b)) {
                         wakeLock.release();
                     }
                     throw th2;
                 }
             default:
-                x9.n nVar = (x9.n) this.e;
-                x9.r rVar = nVar.n;
-                if (rVar == null || !rVar.e.get()) {
+                x9.m mVar = (x9.m) this.e;
+                x9.q qVar = mVar.n;
+                if (qVar == null || !qVar.e.get()) {
                     long j11 = this.b / 1000;
-                    String e7 = nVar.e();
+                    String e7 = mVar.e();
                     if (e7 == null) {
                         Log.w("FirebaseCrashlytics", "Tried to write a non-fatal exception while no session was open.", null);
                         return;
                     }
-                    m mVar = nVar.m;
+                    l lVar = mVar.m;
                     Throwable th3 = (Throwable) this.c;
                     Thread thread = (Thread) this.d;
-                    mVar.getClass();
+                    lVar.getClass();
                     String concat = "Persisting non-fatal event for session ".concat(e7);
                     if (Log.isLoggable("FirebaseCrashlytics", 2)) {
                         Log.v("FirebaseCrashlytics", concat, null);
                     }
-                    mVar.v(th3, thread, e7, "error", j11, false);
+                    lVar.A(th3, thread, e7, "error", j11, false);
                     return;
                 }
                 return;
         }
     }
 
-    public u(x9.n nVar, long j10, Throwable th2, Thread thread) {
+    public u(x9.m mVar, long j10, Throwable th2, Thread thread) {
         this.a = 1;
-        this.e = nVar;
+        this.e = mVar;
         this.b = j10;
         this.c = th2;
         this.d = thread;

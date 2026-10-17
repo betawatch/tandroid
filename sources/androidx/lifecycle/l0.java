@@ -4,15 +4,15 @@ import android.os.Bundle;
 import java.util.Map;
 import v7.h8;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class l0 implements t4.d {
-    public final m.r a;
+    public final m.q a;
     public boolean b;
     public Bundle c;
     public final id.g d;
 
-    public l0(m.r savedStateRegistry, u0 u0Var) {
+    public l0(m.q savedStateRegistry, u0 u0Var) {
         kotlin.jvm.internal.i.e(savedStateRegistry, "savedStateRegistry");
         this.a = savedStateRegistry;
         this.d = h8.a(new k0(u0Var, 0));

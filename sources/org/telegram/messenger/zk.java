@@ -1,41 +1,31 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
+import org.telegram.messenger.LanguageDetector;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class zk implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ BaseController c;
-    public final /* synthetic */ Object d;
+public final /* synthetic */ class zk implements LanguageDetector.StringCallback, LanguageDetector.ExceptionCallback {
+    public final /* synthetic */ TranslateController a;
+    public final /* synthetic */ MessageObject b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ int d;
 
-    public /* synthetic */ zk(BaseController baseController, Object obj, long j10, int i10) {
-        this.a = i10;
-        this.c = baseController;
-        this.d = obj;
-        this.b = j10;
+    public /* synthetic */ zk(TranslateController translateController, MessageObject messageObject, long j10, int i10) {
+        this.a = translateController;
+        this.b = messageObject;
+        this.c = j10;
+        this.d = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ((TopicsController) this.c).lambda$updateTopicsWithDeletedMessages$10((ArrayList) this.d, this.b);
-                break;
-            case 1:
-                ((TranslateController) this.c).lambda$setDialogTranslateTo$0(this.b, (String) this.d);
-                break;
-            default:
-                ((TranslateController) this.c).lambda$invalidateTranslation$9((MessageObject) this.d, this.b);
-                break;
-        }
+    @Override // org.telegram.messenger.LanguageDetector.ExceptionCallback
+    public void run(Exception exc) {
+        this.a.lambda$checkLanguage$15(this.b, this.c, this.d, exc);
     }
 
-    public /* synthetic */ zk(TranslateController translateController, long j10, String str) {
-        this.a = 1;
-        this.c = translateController;
-        this.b = j10;
-        this.d = str;
+    @Override // org.telegram.messenger.LanguageDetector.StringCallback
+    public void run(String str) {
+        long j10 = this.c;
+        int i10 = this.d;
+        this.a.lambda$checkLanguage$13(this.b, j10, i10, str);
     }
 }

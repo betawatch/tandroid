@@ -1,24 +1,24 @@
 package kh;
 
 import af.l;
+import ai.n1;
 import android.content.Context;
 import android.widget.FrameLayout;
-import di.m4;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.jr;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.Components.bs;
+import org.telegram.ui.Components.gr;
 import w7.b6;
 import w7.z5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class h extends FrameLayout implements ne.d {
     public static final int[] s;
     public final String[] a;
-    public final c6 b;
+    public final d6 b;
     public final eh.a c;
     public final bh.b d;
     public final androidx.biometric.e[] e;
@@ -33,7 +33,7 @@ public final class h extends FrameLayout implements ne.d {
         s = new int[]{i10, i11, R.drawable.mentionbutton, R.drawable.reactionbutton, R.drawable.menu_poll_notify, i11, i11};
     }
 
-    public h(Context context, c6 c6Var, eh.b bVar, bh.b bVar2) {
+    public h(Context context, d6 d6Var, eh.b bVar, bh.b bVar2) {
         super(context);
         this.a = new String[]{LocaleController.getString(R.string.AttachMenu), LocaleController.getString(R.string.AccDescrPageDown), LocaleController.getString(R.string.AccDescrMentionDown), LocaleController.getString(R.string.AccDescrReactionMentionDown), LocaleController.getString(R.string.AccDescrPollVotesMentionDown), LocaleController.getString(R.string.AccDescrSearchPrev), LocaleController.getString(R.string.AccDescrSearchNext)};
         this.e = new androidx.biometric.e[7];
@@ -41,7 +41,7 @@ public final class h extends FrameLayout implements ne.d {
         this.r = 83;
         this.d = bVar2;
         this.c = bVar;
-        this.b = c6Var;
+        this.b = d6Var;
     }
 
     public final void a() {
@@ -107,8 +107,8 @@ public final class h extends FrameLayout implements ne.d {
         if (eVar != null || z10) {
             if (eVar == null) {
                 int i13 = i10 << 16;
-                ne.b bVar = new ne.b(i13 | 1, this, i10 == 0 ? es.h : me.a.a, i10 == 0 ? 300L : 280L, false);
-                ne.b bVar2 = new ne.b(i13 | 2, this, i10 == 0 ? es.h : me.a.a, i10 == 0 ? 300L : 280L, false);
+                ne.b bVar = new ne.b(i13 | 1, this, i10 == 0 ? bs.h : me.a.a, i10 == 0 ? 300L : 280L, false);
+                ne.b bVar2 = new ne.b(i13 | 2, this, i10 == 0 ? bs.h : me.a.a, i10 == 0 ? 300L : 280L, false);
                 if (i10 == 0) {
                     i11 = 50;
                     i12 = 32;
@@ -119,9 +119,9 @@ public final class h extends FrameLayout implements ne.d {
                 int i14 = i12;
                 Context context = getContext();
                 int i15 = s[i10];
-                c6 c6Var = this.b;
-                jh.b bVar3 = new jh.b(context, c6Var);
-                jh.a d = jh.a.d(context, this.d, this.c, c6Var, i15, i14);
+                d6 d6Var = this.b;
+                jh.b bVar3 = new jh.b(context, d6Var);
+                jh.a d = jh.a.d(context, this.d, this.c, d6Var, i15, i14);
                 bVar3.b = d;
                 bVar3.addView(d, z5.e(i11, i11, 80));
                 d.setIconPadding(AndroidUtilities.dp(2.0f));
@@ -131,7 +131,7 @@ public final class h extends FrameLayout implements ne.d {
                 bVar3.setPivotY(AndroidUtilities.dp(f7 + 8.0f));
                 bVar3.setVisibility(8);
                 bVar3.setContentDescription(this.a[i10]);
-                bVar3.setOnClickListener(new m4(this, i10, 4));
+                bVar3.setOnClickListener(new n1(this, i10, 5));
                 bVar3.setOnLongClickListener(new g(this, i10, 0));
                 if (i10 == 6) {
                     jh.a aVar = bVar3.b;
@@ -140,9 +140,9 @@ public final class h extends FrameLayout implements ne.d {
                 }
                 if (i10 == 1) {
                     bVar3.d = true;
-                    jr jrVar = bVar3.c;
-                    if (jrVar != null) {
-                        jrVar.setReverse(true);
+                    gr grVar = bVar3.c;
+                    if (grVar != null) {
+                        grVar.setReverse(true);
                     }
                 }
                 addView(bVar3, z5.e(i11, i11 + 8, this.r));
@@ -166,21 +166,6 @@ public final class h extends FrameLayout implements ne.d {
         return false;
     }
 
-    @Override // ne.d
-    public final void p(int i10, float f7, float f10, ne.e eVar) {
-        int i11 = i10 >> 16;
-        int i12 = i10 & 65535;
-        if (i11 >= 0) {
-            androidx.biometric.e[] eVarArr = this.e;
-            if (i11 >= eVarArr.length || eVarArr[i11] == null) {
-                return;
-            }
-            if (i12 == 1 || i12 == 2) {
-                a();
-            }
-        }
-    }
-
     public void setGravity(int i10) {
         this.r = i10;
     }
@@ -194,6 +179,21 @@ public final class h extends FrameLayout implements ne.d {
     }
 
     @Override // ne.d
-    public final /* synthetic */ void A(float f7, int i10) {
+    public final void u(int i10, float f7, float f10, ne.e eVar) {
+        int i11 = i10 >> 16;
+        int i12 = i10 & 65535;
+        if (i11 >= 0) {
+            androidx.biometric.e[] eVarArr = this.e;
+            if (i11 >= eVarArr.length || eVarArr[i11] == null) {
+                return;
+            }
+            if (i12 == 1 || i12 == 2) {
+                a();
+            }
+        }
+    }
+
+    @Override // ne.d
+    public final /* synthetic */ void E(float f7, int i10) {
     }
 }

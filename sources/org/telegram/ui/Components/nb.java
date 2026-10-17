@@ -1,70 +1,75 @@
 package org.telegram.ui.Components;
 
-import android.app.Dialog;
 import android.content.Context;
-import android.os.Build;
+import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
-import java.util.WeakHashMap;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class nb extends Dialog {
-    public final mb a;
-    public final WindowManager.LayoutParams b;
+public abstract class nb extends ub {
+    private mb button;
+    private int childrenMeasuredWidth;
+    org.telegram.ui.ActionBar.d6 resourcesProvider;
+    public jc timerView;
+    private boolean wrapWidth;
 
-    public nb(Context context, di.z8 z8Var) {
-        super(context);
-        AndroidUtilities.enableEdgeToEdge(getWindow());
-        mb mbVar = new mb(this, context);
-        this.a = mbVar;
-        setContentView(mbVar, new ViewGroup.LayoutParams(-1, -1));
-        s sVar = new s(this, 15);
-        WeakHashMap weakHashMap = r0.i0.a;
-        r0.a0.i(mbVar, sVar);
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 >= 30) {
-            mbVar.setSystemUiVisibility(1792);
-        } else {
-            mbVar.setSystemUiVisibility(1280);
+    public nb(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, d6Var);
+        this.resourcesProvider = d6Var;
+    }
+
+    public mb getButton() {
+        return this.button;
+    }
+
+    @Override // android.view.ViewGroup
+    public void measureChildWithMargins(View view, int i10, int i11, int i12, int i13) {
+        mb mbVar = this.button;
+        if (mbVar != null && view != mbVar) {
+            i11 = org.telegram.ui.Cells.t0.e(12.0f, mbVar.getMeasuredWidth(), i11);
         }
-        sc.a(mbVar, new ah.m0(z8Var, 7));
-        try {
-            Window window = getWindow();
-            window.setWindowAnimations(R.style.DialogNoAnimation);
-            window.setBackgroundDrawable(null);
-            WindowManager.LayoutParams attributes = window.getAttributes();
-            this.b = attributes;
-            attributes.width = -1;
-            attributes.height = -1;
-            attributes.gravity = 51;
-            attributes.dimAmount = 0.0f;
-            attributes.format = -3;
-            attributes.flags = (((-3) & attributes.flags) | (-1946091240)) & (-1025);
-            boolean z10 = true;
-            if (i10 >= 28) {
-                attributes.layoutInDisplayCutoutMode = 1;
-            }
-            window.setAttributes(attributes);
-            if (AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.a7, false)) <= 0.721f) {
-                z10 = false;
-            }
-            AndroidUtilities.setLightNavigationBar(this, z10);
-        } catch (Exception unused) {
+        super.measureChildWithMargins(view, i10, i11, i12, i13);
+        if (view != this.button) {
+            ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+            this.childrenMeasuredWidth = Math.max(this.childrenMeasuredWidth, view.getMeasuredWidth() + marginLayoutParams.leftMargin + marginLayoutParams.rightMargin);
         }
     }
 
-    public static mb a(Context context) {
-        return new nb(context, null).a;
+    @Override // android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        this.childrenMeasuredWidth = 0;
+        if (this.wrapWidth) {
+            i10 = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_31);
+        }
+        super.onMeasure(i10, i11);
+        if (this.button == null || View.MeasureSpec.getMode(i10) != Integer.MIN_VALUE) {
+            return;
+        }
+        setMeasuredDimension(this.button.getMeasuredWidth() + this.childrenMeasuredWidth, getMeasuredHeight());
     }
 
-    @Override // android.app.Dialog
-    public final void show() {
-        if (AndroidUtilities.isSafeToShow(getContext())) {
-            super.show();
+    public void setButton(mb mbVar) {
+        mb mbVar2 = this.button;
+        if (mbVar2 != null) {
+            removeCallback(mbVar2);
+            removeView(this.button);
         }
+        this.button = mbVar;
+        if (mbVar != null) {
+            addCallback(mbVar);
+            addView(mbVar, 0, w7.z5.h(-2.0f, -2.0f, 8388629));
+        }
+    }
+
+    public void setTimer() {
+        jc jcVar = new jc(getContext(), this.resourcesProvider);
+        this.timerView = jcVar;
+        jcVar.b = 5000L;
+        addView(jcVar, w7.z5.i(20.0f, 20.0f, 8388627, 21.0f, 0.0f, 21.0f, 0.0f));
+    }
+
+    public void setWrapWidth() {
+        this.wrapWidth = true;
     }
 }

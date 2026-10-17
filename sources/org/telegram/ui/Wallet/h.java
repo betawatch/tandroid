@@ -1,87 +1,283 @@
 package org.telegram.ui.Wallet;
 
-import android.text.TextUtils;
+import android.graphics.Bitmap;
+import java.io.Serializable;
+import java.util.ArrayList;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.wg1;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.ui.Components.i80;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.Wallet.WalletEngine2;
+import org.telegram.ui.fr0;
+import org.telegram.ui.gx;
+import org.telegram.ui.n80;
+import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class h implements Utilities.Callback2 {
+public final /* synthetic */ class h implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ k0 b;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ h(k0 k0Var, int i10) {
+    public /* synthetic */ h(Object obj, Object obj2, Object obj3, int i10) {
         this.a = i10;
-        this.b = k0Var;
+        this.b = obj;
+        this.c = obj2;
+        this.d = obj3;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                k0 k0Var = this.b;
-                TL_wallet.existingBalance existingbalance = (TL_wallet.existingBalance) obj;
-                k0Var.y = -1;
-                if (existingbalance != null) {
-                    k0Var.i = Boolean.valueOf(existingbalance.has_balance);
-                    k0Var.j = existingbalance.url;
-                }
-                Boolean bool = k0Var.i;
-                if (bool != null && bool.booleanValue() && !TextUtils.isEmpty(k0Var.j)) {
-                    k0Var.I();
+                WalletEngine2.ImportedWalletProof importedWalletProof = (WalletEngine2.ImportedWalletProof) this.b;
+                Exception exc = (Exception) this.c;
+                Utilities.Callback2 callback2 = (Utilities.Callback2) this.d;
+                if (importedWalletProof != null) {
+                    m0.F("proof done");
+                    callback2.run(importedWalletProof, null);
+                    break;
+                } else {
+                    StringBuilder sb2 = new StringBuilder("failed to prove: ");
+                    String str = "PROOF_ERROR";
+                    sb2.append((exc == null || exc.getMessage() == null) ? "PROOF_ERROR" : exc.getMessage());
+                    m0.j(sb2.toString(), exc);
+                    if (exc != null && exc.getMessage() != null) {
+                        str = exc.getMessage();
+                    }
+                    callback2.run(null, str);
                     break;
                 }
                 break;
             case 1:
-                k0 k0Var2 = this.b;
-                TL_wallet.WalletState walletState = (TL_wallet.WalletState) obj;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                k0Var2.w = -1;
-                if (walletState == null) {
-                    StringBuilder sb2 = new StringBuilder("requesting gasless info: ");
-                    sb2.append(tL_error != null ? tL_error.text : "NULL_ERROR");
-                    k0.i(sb2.toString());
+                m0 m0Var = (m0) this.b;
+                String str2 = (String) this.c;
+                d0 d0Var = (d0) this.d;
+                if (m0Var.N.get(str2) == d0Var) {
+                    d0Var.e = true;
+                    ArrayList arrayList = d0Var.f;
+                    m0Var.h0(d0Var);
+                    int size = arrayList.size();
+                    int i10 = 0;
+                    while (i10 < size) {
+                        Object obj = arrayList.get(i10);
+                        i10++;
+                        ((Utilities.Callback) obj).run(d0Var);
+                    }
+                    arrayList.clear();
+                    m0Var.J();
                     break;
+                }
+                break;
+            case 2:
+                gx gxVar = (gx) this.b;
+                b2 b2Var = (b2) this.c;
+                ei.d dVar = (ei.d) this.d;
+                if (!gxVar.canScrollVertically(1)) {
+                    b2Var.p = true;
+                }
+                dVar.setEnabled((!b2Var.p || b2Var.m || b2Var.n) ? false : true);
+                break;
+            case 3:
+                f2 f2Var = (f2) this.b;
+                a2 a2Var = (a2) this.c;
+                n80 n80Var = (n80) this.d;
+                f2Var.getClass();
+                l lVar = new l(n80Var, 2);
+                TL_wallet.tonConnectSession tonconnectsession = a2Var.e;
+                if (!tonconnectsession.closed && !tonconnectsession.closing && tonconnectsession.manifest_error == null && tonconnectsession.manifest != null) {
+                    if (!a2Var.f) {
+                        a2Var.f = true;
+                        f2Var.b.j0(new z6(f2Var, a2Var, lVar, tonconnectsession, 6));
+                        break;
+                    } else {
+                        lVar.run("A TON Connect operation is already in progress");
+                        break;
+                    }
                 } else {
-                    long currentTimeMillis = System.currentTimeMillis();
-                    if (walletState instanceof TL_wallet.TL_walletState) {
-                        TL_wallet.WalletState walletState2 = k0Var2.e;
-                        if ((walletState2 instanceof TL_wallet.TL_walletState) && k0Var2.l) {
-                            TL_wallet.TL_walletState tL_walletState = (TL_wallet.TL_walletState) walletState2;
-                            TL_wallet.TL_walletState tL_walletState2 = (TL_wallet.TL_walletState) walletState;
-                            if (currentTimeMillis - k0Var2.k < 30000) {
-                                tL_walletState2.balance = tL_walletState.balance;
-                            } else {
-                                k0Var2.l = false;
-                            }
-                            k0Var2.e = walletState;
-                            k0Var2.K();
-                            k0Var2.I();
+                    lVar.run("The dApp manifest is unavailable or the session is closed");
+                    break;
+                }
+                break;
+            case 4:
+                f2 f2Var2 = (f2) this.b;
+                TL_wallet.tonConnectSession tonconnectsession2 = (TL_wallet.tonConnectSession) this.c;
+                Utilities.Callback callback = (Utilities.Callback) this.d;
+                f2Var2.getClass();
+                l lVar2 = new l(callback, 3);
+                if (tonconnectsession2 != null && tonconnectsession2.dapp_client_id != null && tonconnectsession2.client_id != null && tonconnectsession2.nonce != null) {
+                    if (!f2Var2.c.add(Long.valueOf(tonconnectsession2.id))) {
+                        lVar2.run("A TON Connect operation is already in progress");
+                        break;
+                    } else {
+                        p pVar = new p(f2Var2, tonconnectsession2, lVar2, 3);
+                        if (!tonconnectsession2.closed) {
+                            f2Var2.b.j0(new h(f2Var2, pVar, tonconnectsession2, 6));
+                            break;
+                        } else {
+                            pVar.run(null);
                             break;
                         }
                     }
-                    k0Var2.l = false;
-                    k0Var2.e = walletState;
-                    k0Var2.K();
-                    k0Var2.I();
+                } else {
+                    lVar2.run("Missing TON Connect session data");
+                    break;
                 }
                 break;
-            default:
-                k0 k0Var3 = this.b;
-                TLRPC.Updates updates = (TLRPC.Updates) obj;
-                TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj2;
-                k0Var3.x = -1;
-                if (updates != null) {
-                    Utilities.stageQueue.postRunnable(new wg1(7, k0Var3, updates));
+            case 5:
+                ((s1) this.b).run((TL_wallet.inputTonConnectOauthSession) this.c, (String) this.d);
+                break;
+            case 6:
+                f2 f2Var3 = (f2) this.b;
+                p pVar2 = (p) this.c;
+                TL_wallet.tonConnectSession tonconnectsession3 = (TL_wallet.tonConnectSession) this.d;
+                m0 m0Var2 = f2Var3.b;
+                String s10 = m0Var2.s();
+                byte[] x10 = m0Var2.x();
+                byte[] bArr = x10 == null ? null : (byte[]) x10.clone();
+                if (s10 != null && bArr != null) {
+                    m0Var2.y(new ai.t3(f2Var3, pVar2, tonconnectsession3, s10, bArr, 7), true, false);
                     break;
                 } else {
-                    StringBuilder sb3 = new StringBuilder("requesting gasless info: ");
-                    sb3.append(tL_error2 != null ? tL_error2.text : "NULL_ERROR");
-                    k0.i(sb3.toString());
+                    pVar2.run("Wallet is not ready");
                     break;
                 }
+            case 7:
+                a2 a2Var2 = (a2) this.b;
+                l lVar3 = (l) this.c;
+                String str3 = (String) this.d;
+                a2Var2.f = false;
+                lVar3.run(str3);
+                break;
+            case 8:
+                z6 z6Var = (z6) this.b;
+                i80 i80Var = (i80) this.c;
+                i80 i80Var2 = (i80) this.d;
+                z6Var.run();
+                i80Var.K(i80Var2);
+                break;
+            case 9:
+                Utilities.Callback3 callback3 = (Utilities.Callback3) this.b;
+                k2[] k2VarArr = (k2[]) this.c;
+                TL_wallet.walletTransactionPeerUser wallettransactionpeeruser = (TL_wallet.walletTransactionPeerUser) this.d;
+                if (callback3 == null) {
+                    k2 k2Var = k2VarArr[0];
+                    if (k2Var != null) {
+                        k2Var.dismiss();
+                    }
+                    org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+                    if (U != null) {
+                        U.presentFragment(sn.W9(wallettransactionpeeruser.user_id));
+                        break;
+                    }
+                }
+                break;
+            case 10:
+                k2[] k2VarArr2 = (k2[]) this.b;
+                k2VarArr2[0].setOnDismissListener(new ai.v3(15, (TLRPC.User) this.c, (TL_wallet.walletTransactionPeerUser) this.d));
+                k2VarArr2[0].dismiss();
+                break;
+            case 11:
+                Utilities.Callback3 callback32 = (Utilities.Callback3) this.b;
+                k2[] k2VarArr3 = (k2[]) this.c;
+                TL_wallet.WalletTransactionPeer walletTransactionPeer = (TL_wallet.WalletTransactionPeer) this.d;
+                if (callback32 == null) {
+                    k2 k2Var2 = k2VarArr3[0];
+                    if (k2Var2 != null) {
+                        k2Var2.dismiss();
+                    }
+                    org.telegram.ui.ActionBar.n2 U2 = LaunchActivity.U();
+                    if (U2 != null) {
+                        U2.presentFragment(sn.W9(-walletTransactionPeer.channel_id));
+                        break;
+                    }
+                }
+                break;
+            case 12:
+                ((Utilities.Callback2) this.d).run(((String[]) this.b)[0], Boolean.valueOf(((boolean[]) this.c)[0]));
+                break;
+            case 13:
+                ((Utilities.Callback2) this.d).run((String) this.b, (String) this.c);
+                break;
+            case 14:
+                ((WalletEngine2) this.b).lambda$previewSignMessage$8((e2) this.c, (Utilities.Callback) this.d);
+                break;
+            case 15:
+                ((Utilities.Callback2) this.d).run((Long) this.b, (String) this.c);
+                break;
+            case 16:
+                ((WalletEngine2) this.b).lambda$previewTonConnect$2((e2) this.c, (Utilities.Callback2) this.d);
+                break;
+            case 17:
+                v7 v7Var = (v7) this.b;
+                int[] iArr = (int[]) this.c;
+                Bitmap bitmap = (Bitmap) this.d;
+                v7Var.C = false;
+                w7 w7Var = v7Var.d0;
+                boolean z10 = w7Var.V0;
+                v5 v5Var = w7Var.c;
+                if (!z10) {
+                    if (v7Var.u == null) {
+                        v7Var.u = Bitmap.createBitmap(288, 288, Bitmap.Config.ARGB_8888);
+                        if (v5Var.isShown() && v5Var.getAlpha() > 0.0f) {
+                            u7 u7Var = v7Var.r;
+                            u7Var.a(0.0f);
+                            u7Var.b = 1.0f;
+                        }
+                    }
+                    v7Var.u.setPixels(iArr, 0, 288, 0, 0, 288, 288);
+                    if (bitmap != null && v7Var.w == null) {
+                        v7Var.w = bitmap;
+                    }
+                    if (v7Var.D) {
+                        v7Var.c();
+                    }
+                    w7Var.h0();
+                    break;
+                }
+                break;
+            case 18:
+                k8 k8Var = (k8) this.b;
+                m0 m0Var3 = (m0) this.c;
+                h0 h0Var = (h0) this.d;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(k8Var.getParentActivity(), 0, k8Var.getResourceProvider());
+                alertDialog$Builder.a.R = LocaleController.getString(R.string.WalletDisableBackupTitle);
+                alertDialog$Builder.a.T = LocaleController.getString(R.string.WalletDisableBackupConfirmInfo);
+                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+                alertDialog$Builder.k(LocaleController.getString(R.string.WalletDisable), new e8(k8Var, m0Var3, h0Var));
+                alertDialog$Builder.d(-1);
+                alertDialog$Builder.o();
+                break;
+            default:
+                k8 k8Var2 = (k8) this.b;
+                Boolean bool = (Boolean) this.c;
+                m0 m0Var4 = (m0) this.d;
+                AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(k8Var2.getParentActivity(), 0, k8Var2.getResourceProvider());
+                alertDialog$Builder2.a.R = LocaleController.getString(R.string.WalletReplaceWalletTitle);
+                alertDialog$Builder2.k(LocaleController.getString(R.string.WalletCreateNew), new e8(k8Var2, bool, m0Var4, 0));
+                alertDialog$Builder2.h(LocaleController.getString(R.string.WalletImportExisting), new fr0(25, k8Var2, bool));
+                alertDialog$Builder2.o();
+                break;
         }
+    }
+
+    public /* synthetic */ h(Utilities.Callback2 callback2, Serializable serializable, Serializable serializable2, int i10) {
+        this.a = i10;
+        this.d = callback2;
+        this.b = serializable;
+        this.c = serializable2;
+    }
+
+    public /* synthetic */ h(m0 m0Var, WalletEngine2.ImportedWalletProof importedWalletProof, Exception exc, Utilities.Callback2 callback2) {
+        this.a = 0;
+        this.b = importedWalletProof;
+        this.c = exc;
+        this.d = callback2;
     }
 }

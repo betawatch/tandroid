@@ -1,11 +1,11 @@
 package c3;
 
-import b2.x0;
+import b2.w0;
 import e9.n0;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class x {
     public final List a;
@@ -22,9 +22,9 @@ public final class x {
     public final float l;
     public final int m;
     public final String n;
-    public final pi.e o;
+    public final qi.e o;
 
-    public x(List list, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17, int i18, int i19, float f7, int i20, String str, pi.e eVar) {
+    public x(List list, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17, int i18, int i19, float f7, int i20, String str, qi.e eVar) {
         this.a = list;
         this.b = i10;
         this.c = i11;
@@ -42,7 +42,7 @@ public final class x {
         this.o = eVar;
     }
 
-    public static x a(e2.x xVar, boolean z10, pi.e eVar) {
+    public static x a(e2.x xVar, boolean z10, qi.e eVar) {
         boolean z11;
         com.google.android.gms.internal.cast.a j10;
         int i10;
@@ -75,7 +75,7 @@ public final class x {
             }
             xVar.N(i12);
             byte[] bArr = new byte[i15];
-            pi.e eVar2 = eVar;
+            qi.e eVar2 = eVar;
             int i17 = -1;
             int i18 = -1;
             int i19 = -1;
@@ -94,19 +94,19 @@ public final class x {
                 int A3 = xVar.A() & 63;
                 int H3 = xVar.H();
                 int i29 = i13;
-                pi.e eVar3 = eVar2;
+                qi.e eVar3 = eVar2;
                 while (i29 < H3) {
                     boolean z12 = z11;
                     int H4 = xVar.H();
                     int i30 = A;
-                    System.arraycopy(f2.p.a, i13, bArr, i28, i11);
+                    System.arraycopy(f2.q.a, i13, bArr, i28, i11);
                     int i31 = i28 + 4;
                     System.arraycopy(xVar.a, xVar.b, bArr, i31, H4);
                     if (A3 == 32 && i29 == 0) {
-                        eVar3 = f2.p.l(i31, i31 + H4, bArr);
+                        eVar3 = f2.q.l(i31, i31 + H4, bArr);
                     } else {
                         if (A3 == 33 && i29 == 0) {
-                            f2.l k10 = f2.p.k(bArr, i31, i31 + H4, eVar3);
+                            f2.m k10 = f2.q.k(bArr, i31, i31 + H4, eVar3);
                             i17 = k10.a + 1;
                             i18 = k10.g;
                             int i32 = k10.h;
@@ -118,10 +118,10 @@ public final class x {
                             int i35 = k10.m;
                             float f10 = k10.i;
                             int i36 = k10.j;
-                            f2.i iVar = k10.b;
-                            if (iVar != null) {
+                            f2.j jVar = k10.b;
+                            if (jVar != null) {
                                 i10 = i36;
-                                str = e2.g.a(iVar.a, iVar.c, iVar.d, iVar.f, iVar.b, iVar.e);
+                                str = e2.g.a(jVar.a, jVar.c, jVar.d, jVar.f, jVar.b, jVar.e);
                             } else {
                                 i10 = i36;
                             }
@@ -130,9 +130,9 @@ public final class x {
                             i24 = i35;
                             i23 = i34;
                             i22 = i33;
-                        } else if (A3 == 39 && i29 == 0 && (j10 = f2.p.j(i31, i31 + H4, bArr)) != null && eVar3 != null) {
+                        } else if (A3 == 39 && i29 == 0 && (j10 = f2.q.j(i31, i31 + H4, bArr)) != null && eVar3 != null) {
                             i13 = 0;
-                            i25 = j10.a == ((f2.h) ((n0) eVar3.a).get(0)).b ? 4 : 5;
+                            i25 = j10.a == ((f2.i) ((n0) eVar3.a).get(0)).b ? 4 : 5;
                         }
                         i13 = 0;
                     }
@@ -149,7 +149,7 @@ public final class x {
             }
             return new x(i15 == 0 ? Collections.EMPTY_LIST : Collections.singletonList(bArr), A + 1, i17, i18, i19, i20, i21, i22, i23, i24, i25, f7, i26, str, eVar2);
         } catch (ArrayIndexOutOfBoundsException e) {
-            throw x0.a(e, "Error parsing".concat(z10 ? "L-HEVC config" : "HEVC config"));
+            throw w0.a(e, "Error parsing".concat(z10 ? "L-HEVC config" : "HEVC config"));
         }
     }
 }

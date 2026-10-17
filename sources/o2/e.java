@@ -3,12 +3,17 @@ package o2;
 import java.util.Arrays;
 import v7.k7;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class e extends v2.f {
     public byte[] s;
     public volatile boolean v;
     public byte[] w;
+
+    @Override // y2.i
+    public final void O() {
+        this.v = true;
+    }
 
     @Override // y2.i
     public final void a() {
@@ -34,10 +39,5 @@ public final class e extends v2.f {
             k7.a(this.r);
             throw th2;
         }
-    }
-
-    @Override // y2.i
-    public final void a0() {
-        this.v = true;
     }
 }

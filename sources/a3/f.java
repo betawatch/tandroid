@@ -1,13 +1,13 @@
 package a3;
 
 import android.view.Surface;
-import b2.b2;
+import b2.a2;
 import java.util.ArrayDeque;
 import java.util.List;
 import java.util.concurrent.Executor;
 import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class f implements p0 {
     public final a0 a;
@@ -15,7 +15,7 @@ public final class f implements p0 {
     public final g0 c;
     public final ArrayDeque d;
     public Surface e;
-    public b2.x f;
+    public b2.w f;
     public long g;
     public n0 h;
     public Executor i;
@@ -27,7 +27,7 @@ public final class f implements p0 {
         a0Var.l = g0Var;
         this.c = new g0(new qf.b(this), a0Var, b0Var);
         this.d = new ArrayDeque();
-        this.f = new b2.x(new b2.w());
+        this.f = new b2.w(new b2.v());
         this.g = -9223372036854775807L;
         this.h = n0.g;
         this.i = new b(0);
@@ -54,7 +54,7 @@ public final class f implements p0 {
     }
 
     @Override // a3.p0
-    public final boolean d(b2.x xVar) {
+    public final boolean d(b2.w wVar) {
         return true;
     }
 
@@ -117,23 +117,23 @@ public final class f implements p0 {
     }
 
     @Override // a3.p0
-    public final void l(b2.x xVar, long j10, int i10, List list) {
+    public final void l(b2.w wVar, long j10, int i10, List list) {
         u6.p(list.isEmpty());
-        int i11 = xVar.z;
-        int i12 = xVar.A;
-        b2.x xVar2 = this.f;
-        int i13 = xVar2.z;
+        int i11 = wVar.z;
+        int i12 = wVar.A;
+        b2.w wVar2 = this.f;
+        int i13 = wVar2.z;
         g0 g0Var = this.c;
-        if (i11 != i13 || i12 != xVar2.A) {
+        if (i11 != i13 || i12 != wVar2.A) {
             e2.j0 j0Var = g0Var.d;
             long j11 = g0Var.h;
-            j0Var.a(new b2(i11, i12), j11 == -9223372036854775807L ? 0L : j11 + 1);
+            j0Var.a(new a2(i11, i12), j11 == -9223372036854775807L ? 0L : j11 + 1);
         }
-        float f7 = xVar.D;
+        float f7 = wVar.D;
         if (f7 != this.f.D) {
             this.a.f(f7);
         }
-        this.f = xVar;
+        this.f = wVar;
         if (j10 != this.g) {
             if (g0Var.f.c == 0) {
                 g0Var.b.e(i10);
@@ -169,23 +169,23 @@ public final class f implements p0 {
         g0Var.i = -9223372036854775807L;
         g0Var.j = -9223372036854775807L;
         e2.j0 j0Var2 = g0Var.e;
-        if (j0Var2.m() > 0) {
-            u6.g(j0Var2.m() > 0);
-            while (j0Var2.m() > 1) {
-                j0Var2.h();
+        if (j0Var2.j() > 0) {
+            u6.g(j0Var2.j() > 0);
+            while (j0Var2.j() > 1) {
+                j0Var2.f();
             }
-            Object h = j0Var2.h();
-            h.getClass();
-            g0Var.l = ((Long) h).longValue();
+            Object f7 = j0Var2.f();
+            f7.getClass();
+            g0Var.l = ((Long) f7).longValue();
         }
-        if (j0Var.m() > 0) {
-            u6.g(j0Var.m() > 0);
-            while (j0Var.m() > 1) {
-                j0Var.h();
+        if (j0Var.j() > 0) {
+            u6.g(j0Var.j() > 0);
+            while (j0Var.j() > 1) {
+                j0Var.f();
             }
-            Object h10 = j0Var.h();
-            h10.getClass();
-            j0Var.a((b2) h10, 0L);
+            Object f10 = j0Var.f();
+            f10.getClass();
+            j0Var.a((a2) f10, 0L);
         }
         this.d.clear();
     }
@@ -232,7 +232,7 @@ public final class f implements p0 {
     public final void p(long j10, long j11) {
         try {
             this.c.a(j10, j11);
-        } catch (i2.m e) {
+        } catch (i2.l e) {
             throw new o0(e, this.f);
         }
     }

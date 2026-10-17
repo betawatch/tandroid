@@ -13,7 +13,7 @@ import com.google.android.gms.internal.cast.z5;
 import com.google.android.gms.tasks.Task;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class c extends f {
     public static final g6.b m = new g6.b("CastSession", null);
@@ -64,12 +64,12 @@ public final class c extends f {
             hVar.c.K0(null);
             z5 z5Var = hVar.h;
             if (z5Var != null) {
-                z5Var.D();
+                z5Var.C();
                 z5Var.e = null;
             }
             z5 z5Var2 = hVar.i;
             if (z5Var2 != null) {
-                z5Var2.D();
+                z5Var2.C();
                 z5Var2.e = null;
             }
             android.support.v4.media.session.b0 b0Var = hVar.p;
@@ -93,12 +93,12 @@ public final class c extends f {
         }
         e0 e0Var = cVar.i;
         if (e0Var != null) {
-            com.google.android.gms.common.api.internal.v b10 = com.google.android.gms.common.api.internal.w.b();
+            com.google.android.gms.common.api.internal.u b10 = com.google.android.gms.common.api.internal.v.b();
             b10.c = c6.z.b;
             b10.a = 8403;
             e0Var.e(1, b10.a());
             e0Var.h();
-            com.google.android.gms.common.api.internal.n nVar = a4.l.M(e0Var.f, e0Var.k, "castDeviceControllerListenerKey").c;
+            com.google.android.gms.common.api.internal.n nVar = a6.m.d(e0Var.f, e0Var.k, "castDeviceControllerListenerKey").c;
             n6.l.i(nVar, "Key must not be null");
             e0Var.c(nVar, 8415);
             cVar.i = null;
@@ -188,12 +188,12 @@ public final class c extends f {
         if (b10 != null) {
             e0 e0Var = this.i;
             if (e0Var != null) {
-                com.google.android.gms.common.api.internal.v b11 = com.google.android.gms.common.api.internal.w.b();
+                com.google.android.gms.common.api.internal.u b11 = com.google.android.gms.common.api.internal.v.b();
                 b11.c = c6.z.b;
                 b11.a = 8403;
                 e0Var.e(1, b11.a());
                 e0Var.h();
-                com.google.android.gms.common.api.internal.n nVar = a4.l.M(e0Var.f, e0Var.k, "castDeviceControllerListenerKey").c;
+                com.google.android.gms.common.api.internal.n nVar = a6.m.d(e0Var.f, e0Var.k, "castDeviceControllerListenerKey").c;
                 n6.l.i(nVar, "Key must not be null");
                 e0Var.c(nVar, 8415);
                 this.i = null;
@@ -217,17 +217,17 @@ public final class c extends f {
             e0 e0Var2 = new e0(context, eVar2);
             e0Var2.E.add(new i(this));
             this.i = e0Var2;
-            com.google.android.gms.common.api.internal.p M = a4.l.M(e0Var2.f, e0Var2.k, "castDeviceControllerListenerKey");
-            com.google.android.gms.common.api.internal.r rVar = new com.google.android.gms.common.api.internal.r();
-            rVar.b = true;
-            ya.c cVar = new ya.c(e0Var2, 10);
+            com.google.android.gms.common.api.internal.p d = a6.m.d(e0Var2.f, e0Var2.k, "castDeviceControllerListenerKey");
+            ai.a aVar2 = new ai.a();
+            aVar2.a = true;
+            ag.b bVar3 = new ag.b(e0Var2, 7);
             c6.z zVar = c6.z.c;
-            rVar.e = M;
-            rVar.c = cVar;
-            rVar.d = zVar;
-            rVar.f = new k6.c[]{c6.y.a};
-            rVar.a = 8428;
-            e0Var2.b(rVar.a());
+            aVar2.e = d;
+            aVar2.c = bVar3;
+            aVar2.d = zVar;
+            aVar2.f = new k6.c[]{c6.y.a};
+            aVar2.b = 8428;
+            e0Var2.b(aVar2.a());
             return;
         }
         n6.l.e("Must be called from the main thread.");

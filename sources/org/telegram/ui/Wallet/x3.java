@@ -1,64 +1,32 @@
 package org.telegram.ui.Wallet;
 
-import android.view.View;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.d91;
-import org.telegram.ui.Components.i71;
-import org.telegram.ui.Components.q51;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class x3 extends d91 {
-    public final /* synthetic */ a5 a;
+public final /* synthetic */ class x3 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ l5 b;
 
-    public x3(a5 a5Var) {
-        this.a = a5Var;
+    public /* synthetic */ x3(l5 l5Var, int i10) {
+        this.a = i10;
+        this.b = l5Var;
     }
 
-    @Override // org.telegram.ui.Components.d91
-    public final void b(View view, int i10, int i11) {
-        i71 i71Var = (i71) view;
-        boolean canScrollVertically = i71Var.canScrollVertically(-1);
-        i71Var.W2.N(false);
-        i71Var.a0();
-        if (canScrollVertically) {
-            return;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                l5 l5Var = this.b;
+                l5Var.getClass();
+                l5Var.F0(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            default:
+                l5 l5Var2 = this.b;
+                l5Var2.getClass();
+                l5Var2.I0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                l5Var2.M0();
+                break;
         }
-        i71Var.V2.h1(0, 0);
-    }
-
-    @Override // org.telegram.ui.Components.d91
-    public final View d(int i10) {
-        a5 a5Var = this.a;
-        i71[] i71VarArr = a5Var.p0;
-        i71 i71Var = i71VarArr[i10];
-        if (i71Var != null) {
-            return i71Var;
-        }
-        w3 w3Var = new w3(a5Var, new org.telegram.ui.Components.o(this, i10, 2), new j3(a5Var), new j3(a5Var));
-        w3Var.setFocusableInTouchMode(false);
-        w3Var.setClipChildren(false);
-        w3Var.setClipToPadding(false);
-        w3Var.p1();
-        w3Var.W2.r = false;
-        w3Var.j(new q51(this, i10));
-        i71VarArr[i10] = w3Var;
-        return w3Var;
-    }
-
-    @Override // org.telegram.ui.Components.d91
-    public final int e() {
-        return this.a.g0 ? 2 : 1;
-    }
-
-    @Override // org.telegram.ui.Components.d91
-    public final CharSequence g(int i10) {
-        return LocaleController.getString(i10 == 0 ? R.string.WalletTransactions : R.string.WalletCollectibles);
-    }
-
-    @Override // org.telegram.ui.Components.d91
-    public final int h(int i10) {
-        return i10;
     }
 }

@@ -13,13 +13,13 @@ import android.text.TextPaint;
 import ne.e;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.es;
-import zf.q;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.bs;
+import zf.p;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes3.dex */
 public final class a extends c implements ne.d {
     public final ne.b d;
     public final int[] e;
@@ -29,15 +29,15 @@ public final class a extends c implements ne.d {
     public int r;
     public int s;
 
-    public a(Context context, c6 c6Var) {
-        super(c6Var);
-        this.d = new ne.b(0, this, es.h, 320L, false);
+    public a(Context context, d6 d6Var) {
+        super(d6Var);
+        this.d = new ne.b(0, this, bs.h, 320L, false);
         this.e = new int[]{R.attr.state_enabled, R.attr.state_pressed};
         this.f = context.getResources().getDrawable(org.telegram.messenger.R.drawable.outline_poll_add_24).mutate();
-        this.h = new TextPaint(g6.P2);
-        int w02 = g6.w0(g6.i6, c6Var);
+        this.h = new TextPaint(h6.P2);
+        int w02 = h6.w0(h6.i6, d6Var);
         if (this.b != w02) {
-            g6.C1(this.a, w02, false);
+            h6.C1(this.a, w02, false);
             this.b = w02;
         }
         b();
@@ -67,7 +67,7 @@ public final class a extends c implements ne.d {
     public final void draw(Canvas canvas) {
         Rect bounds = getBounds();
         this.a.draw(canvas);
-        q.b(canvas, this.f, 1.0f - this.d.e);
+        p.b(canvas, this.f, 1.0f - this.d.e);
         if (this.n != null) {
             canvas.save();
             canvas.translate(AndroidUtilities.dp(44.0f) + bounds.left, AndroidUtilities.dp(13.66f) + bounds.top);
@@ -92,7 +92,7 @@ public final class a extends c implements ne.d {
         float dp = AndroidUtilities.dp(22.33f) + rect.left;
         AndroidUtilities.dp(27.0f);
         AndroidUtilities.dp(44.0f);
-        q.d(this.f, dp, exactCenterY, 17);
+        p.d(this.f, dp, exactCenterY, 17);
         int width = rect.width() - AndroidUtilities.dp(56.0f);
         if (this.n == null || this.r != width) {
             this.r = width;
@@ -101,13 +101,13 @@ public final class a extends c implements ne.d {
     }
 
     @Override // ne.d
-    public final void p(int i10, float f7, float f10, e eVar) {
+    public final void u(int i10, float f7, float f10, e eVar) {
         b();
         c();
         invalidateSelf();
     }
 
     @Override // ne.d
-    public final /* synthetic */ void A(float f7, int i10) {
+    public final /* synthetic */ void E(float f7, int i10) {
     }
 }

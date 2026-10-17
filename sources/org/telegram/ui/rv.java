@@ -1,33 +1,43 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.FrameLayout;
+import java.util.ArrayList;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class rv extends FrameLayout {
-    public org.telegram.ui.ActionBar.m2 a;
-    public FrameLayout b;
-    public org.telegram.ui.ActionBar.k c;
-    public org.telegram.ui.Components.mm0 d;
-    public bi.o0 e;
-    public int f;
-    public final /* synthetic */ sv h;
+public final /* synthetic */ class rv implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ ey b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ boolean e;
+    public final /* synthetic */ HashSet f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rv(sv svVar, Context context) {
-        super(context);
-        this.h = svVar;
+    public /* synthetic */ rv(ey eyVar, int i10, ArrayList arrayList, boolean z10, HashSet hashSet) {
+        this.b = eyVar;
+        this.d = i10;
+        this.c = arrayList;
+        this.e = z10;
+        this.f = hashSet;
     }
 
-    @Override // android.view.View
-    public final void setTranslationX(float f7) {
-        rv rvVar;
-        super.setTranslationX(f7);
-        sv svVar = this.h;
-        rv[] rvVarArr = svVar.f;
-        if (svVar.n && (rvVar = rvVarArr[0]) == this) {
-            svVar.e.j(Math.abs(rvVar.getTranslationX()) / rvVarArr[0].getMeasuredWidth(), rvVarArr[1].f);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ey.n0(this.b, this.d, this.c, this.e, this.f);
+                break;
+            default:
+                this.b.p4(this.c, this.d, false, this.e, this.f);
+                break;
         }
+    }
+
+    public /* synthetic */ rv(ey eyVar, ArrayList arrayList, int i10, boolean z10, HashSet hashSet) {
+        this.b = eyVar;
+        this.c = arrayList;
+        this.d = i10;
+        this.e = z10;
+        this.f = hashSet;
     }
 }

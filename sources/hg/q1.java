@@ -1,42 +1,42 @@
 package hg;
 
 import java.util.ArrayList;
-import org.telegram.ui.dt;
+import org.telegram.ui.os;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class q1 implements z1 {
-    public final /* synthetic */ dt a;
+    public final /* synthetic */ os a;
 
-    public q1(dt dtVar) {
-        this.a = dtVar;
+    public q1(os osVar) {
+        this.a = osVar;
     }
 
     @Override // hg.z1
-    public final /* synthetic */ boolean E0(int i10) {
+    public final a0.h J() {
+        return null;
+    }
+
+    @Override // hg.z1
+    public final /* synthetic */ boolean O(int i10) {
         return true;
     }
 
     @Override // hg.z1
-    public final /* synthetic */ a0.h K() {
-        return null;
-    }
-
-    @Override // hg.z1
     public final void f(int i10) {
-        dt dtVar = this.a;
-        dtVar.l();
+        os osVar = this.a;
+        osVar.l();
         if (i10 != 0) {
-            dtVar.F();
+            osVar.F();
         }
     }
 
     @Override // hg.z1
-    public final a0.h k0() {
+    public final /* synthetic */ a0.h y() {
         return null;
     }
 
     @Override // hg.z1
-    public final /* synthetic */ void O0(ArrayList arrayList) {
+    public final /* synthetic */ void Y(ArrayList arrayList) {
     }
 }

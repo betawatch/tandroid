@@ -1,10 +1,11 @@
 package si;
 
-import android.content.SharedPreferences;
-import org.telegram.messenger.ApplicationLoader;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public abstract class d {
-    public static final SharedPreferences a = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
+public final /* synthetic */ class d {
+    public final /* synthetic */ l2.f a;
+
+    public /* synthetic */ d(l2.f fVar) {
+        this.a = fVar;
+    }
 }

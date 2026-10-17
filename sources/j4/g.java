@@ -1,8 +1,8 @@
 package j4;
 
+import b2.v0;
 import b2.w0;
-import b2.x0;
-import c3.i0;
+import c3.j0;
 import e2.m0;
 import java.math.RoundingMode;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -10,18 +10,18 @@ import org.telegram.messenger.MediaDataController;
 import v7.b8;
 import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class g implements i {
     public final e2.x a;
     public final String c;
     public final int d;
     public String f;
-    public i0 g;
+    public j0 g;
     public int i;
     public int j;
     public long k;
-    public b2.x l;
+    public b2.w l;
     public int m;
     public int n;
     public int h = 0;
@@ -110,19 +110,19 @@ public final class g implements i {
                             int i29 = g10 >= 29 ? -1 : (c3.b.l[g10] * MediaDataController.MAX_STYLE_RUNS_COUNT) / 2;
                             k10.o(10);
                             int i30 = i27 + (k10.g(2) > 0 ? 1 : 0);
-                            b2.w wVar = new b2.w();
-                            wVar.a = str;
-                            wVar.q = w0.n(this.e);
-                            wVar.r = w0.n("audio/vnd.dts");
-                            wVar.h = i29;
-                            wVar.J = i30;
-                            wVar.K = i28;
-                            wVar.v = null;
-                            wVar.d = this.c;
-                            wVar.f = this.d;
-                            b2.x xVar3 = new b2.x(wVar);
-                            this.l = xVar3;
-                            this.g.b(xVar3);
+                            b2.v vVar = new b2.v();
+                            vVar.a = str;
+                            vVar.q = v0.n(this.e);
+                            vVar.r = v0.n("audio/vnd.dts");
+                            vVar.h = i29;
+                            vVar.J = i30;
+                            vVar.K = i28;
+                            vVar.v = null;
+                            vVar.d = this.c;
+                            vVar.f = this.d;
+                            b2.w wVar = new b2.w(vVar);
+                            this.l = wVar;
+                            this.g.b(wVar);
                         }
                         this.m = c3.b.g(bArr2);
                         byte b12 = bArr2[0];
@@ -188,7 +188,7 @@ public final class g implements i {
                             int g13 = k12.g(3) + 1;
                             int g14 = k12.g(3) + 1;
                             if (g13 != 1 || g14 != 1) {
-                                throw x0.c("Multiple audio presentations or assets not supported");
+                                throw w0.c("Multiple audio presentations or assets not supported");
                             }
                             int i32 = g11 + 1;
                             int g15 = k12.g(i32);
@@ -238,7 +238,7 @@ public final class g implements i {
                                 i18 = 44100;
                             } else {
                                 if (i14 != 2) {
-                                    throw x0.a(null, "Unsupported reference clock code in DTS HD header: " + i14);
+                                    throw w0.a(null, "Unsupported reference clock code in DTS HD header: " + i14);
                                 }
                                 i18 = 48000;
                             }
@@ -286,7 +286,7 @@ public final class g implements i {
                             i19 = -2147483647;
                         } else {
                             if (!k14.f()) {
-                                throw x0.c("Only supports full channel mask-based audio presentation");
+                                throw w0.c("Only supports full channel mask-based audio presentation");
                             }
                             int i39 = q10 - 1;
                             int i40 = ((bArr3[i39] << 8) & 65535) | (bArr3[q10] & 255);
@@ -299,7 +299,7 @@ public final class g implements i {
                                 i41 = (iArr[((b13 & 15) ^ ((i43 >> 12) & 255)) & 255] ^ ((i43 << 4) & 65535)) & 65535;
                             }
                             if (i40 != i41) {
-                                throw x0.a(null, "CRC check failed");
+                                throw w0.a(null, "CRC check failed");
                             }
                             int g18 = k14.g(2);
                             if (g18 != 0) {
@@ -307,7 +307,7 @@ public final class g implements i {
                                     i21 = 480;
                                 } else {
                                     if (g18 != 2) {
-                                        throw x0.a(null, "Unsupported base duration index in DTS UHD header: " + g18);
+                                        throw w0.a(null, "Unsupported base duration index in DTS UHD header: " + g18);
                                     }
                                     i21 = 384;
                                 }
@@ -324,7 +324,7 @@ public final class g implements i {
                                 i22 = 44100;
                             } else {
                                 if (g20 != 2) {
-                                    throw x0.a(null, "Unsupported clock rate index in DTS UHD header: " + g20);
+                                    throw w0.a(null, "Unsupported clock rate index in DTS UHD header: " + g20);
                                 }
                                 i22 = 48000;
                             }
@@ -400,7 +400,7 @@ public final class g implements i {
         f0Var.c();
         this.f = (String) f0Var.e;
         f0Var.c();
-        this.g = qVar.W(f0Var.c, 1);
+        this.g = qVar.j0(f0Var.c, 1);
     }
 
     @Override // j4.i
@@ -415,22 +415,22 @@ public final class g implements i {
         if (i10 == -2147483647 || i11 == -1) {
             return;
         }
-        b2.x xVar = this.l;
-        if (xVar != null && i11 == xVar.K && i10 == xVar.L && str.equals(xVar.s)) {
+        b2.w wVar = this.l;
+        if (wVar != null && i11 == wVar.K && i10 == wVar.L && str.equals(wVar.s)) {
             return;
         }
-        b2.x xVar2 = this.l;
-        b2.w wVar = xVar2 == null ? new b2.w() : xVar2.a();
-        wVar.a = this.f;
-        wVar.q = w0.n(this.e);
-        wVar.r = w0.n(str);
-        wVar.J = i11;
-        wVar.K = i10;
-        wVar.d = this.c;
-        wVar.f = this.d;
-        b2.x xVar3 = new b2.x(wVar);
-        this.l = xVar3;
-        this.g.b(xVar3);
+        b2.w wVar2 = this.l;
+        b2.v vVar = wVar2 == null ? new b2.v() : wVar2.a();
+        vVar.a = this.f;
+        vVar.q = v0.n(this.e);
+        vVar.r = v0.n(str);
+        vVar.J = i11;
+        vVar.K = i10;
+        vVar.d = this.c;
+        vVar.f = this.d;
+        b2.w wVar3 = new b2.w(vVar);
+        this.l = wVar3;
+        this.g.b(wVar3);
     }
 
     @Override // j4.i

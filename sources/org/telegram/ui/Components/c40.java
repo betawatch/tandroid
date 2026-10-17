@@ -1,51 +1,53 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class c40 implements hg.z1 {
-    public final /* synthetic */ d40 a;
+public final class c40 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ e40 b;
 
-    public c40(d40 d40Var) {
-        this.a = d40Var;
+    public /* synthetic */ c40(e40 e40Var, int i10) {
+        this.a = i10;
+        this.b = e40Var;
     }
 
-    @Override // hg.z1
-    public final /* synthetic */ boolean E0(int i10) {
-        return true;
-    }
-
-    @Override // hg.z1
-    public final a0.h K() {
-        return this.a.w.e0;
-    }
-
-    @Override // hg.z1
-    public final void f(int i10) {
-        d40 d40Var = this.a;
-        e40 e40Var = d40Var.w;
-        if (i10 < 0 || i10 != d40Var.n || d40Var.h) {
-            return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                e40 e40Var = this.b;
+                if (e40Var.b0 == animator) {
+                    e40Var.b0 = null;
+                    e40Var.b();
+                    break;
+                }
+                break;
+            default:
+                e40 e40Var2 = this.b;
+                if (e40Var2.a0 == animator) {
+                    e40Var2.a0 = null;
+                    break;
+                }
+                break;
         }
-        int i11 = d40Var.f - 1;
-        boolean z10 = e40Var.s.getVisibility() == 0;
-        d40Var.l();
-        if (d40Var.f > i11) {
-            e40Var.K(i11);
-        }
-        if (d40Var.d.e() || !e40Var.d.S0()) {
-            return;
-        }
-        e40Var.s.e(false, z10);
     }
 
-    @Override // hg.z1
-    public final /* synthetic */ a0.h k0() {
-        return null;
-    }
-
-    @Override // hg.z1
-    public final /* synthetic */ void O0(ArrayList arrayList) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 1:
+                d40 d40Var = this.b.W;
+                if (d40Var != null) {
+                    ((org.telegram.ui.ds0) d40Var).a.e0.requestLayout();
+                    break;
+                }
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
+        }
     }
 }

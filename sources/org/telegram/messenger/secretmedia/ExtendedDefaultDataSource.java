@@ -25,7 +25,7 @@ import n4.s;
 import org.telegram.messenger.FileStreamLoadOperation;
 import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class ExtendedDefaultDataSource implements h {
     private static final String SCHEME_ASSET = "asset";
@@ -223,7 +223,7 @@ public final class ExtendedDefaultDataSource implements h {
         return this.dataSource.open(mVar);
     }
 
-    @Override // b2.p
+    @Override // b2.o
     public int read(byte[] bArr, int i10, int i11) {
         h hVar = this.dataSource;
         hVar.getClass();
@@ -231,7 +231,7 @@ public final class ExtendedDefaultDataSource implements h {
     }
 
     public ExtendedDefaultDataSource(Context context, String str, int i10, int i11, boolean z10) {
-        this(context, new r(str, i10, i11, z10, new s(17)), (LongSparseArray<Uri>) null);
+        this(context, new r(str, i10, i11, z10, new s(19)), (LongSparseArray<Uri>) null);
     }
 
     public ExtendedDefaultDataSource(Context context, h hVar, LongSparseArray<Uri> longSparseArray) {

@@ -3,7 +3,7 @@ package u2;
 import java.util.ArrayList;
 import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class i extends t1 {
     public final long l;
@@ -13,7 +13,7 @@ public final class i extends t1 {
     public final boolean p;
     public final boolean q;
     public final ArrayList r;
-    public final b2.o1 s;
+    public final b2.n1 s;
     public g t;
     public h u;
     public long v;
@@ -28,24 +28,24 @@ public final class i extends t1 {
         this.p = fVar.f;
         this.q = fVar.g;
         this.r = new ArrayList();
-        this.s = new b2.o1();
+        this.s = new b2.n1();
     }
 
     @Override // u2.t1
-    public final void A(b2.p1 p1Var) {
+    public final void A(b2.o1 o1Var) {
         if (this.u != null) {
             return;
         }
-        D(p1Var);
+        D(o1Var);
     }
 
-    public final void D(b2.p1 p1Var) {
+    public final void D(b2.o1 o1Var) {
         long j10;
         long j11;
         long j12;
-        b2.o1 o1Var = this.s;
-        p1Var.n(0, o1Var);
-        long j13 = o1Var.p;
+        b2.n1 n1Var = this.s;
+        o1Var.n(0, n1Var);
+        long j13 = n1Var.p;
         g gVar = this.t;
         long j14 = this.m;
         ArrayList arrayList = this.r;
@@ -53,7 +53,7 @@ public final class i extends t1 {
             boolean z10 = this.p;
             j10 = this.l;
             if (z10) {
-                long j15 = o1Var.l;
+                long j15 = n1Var.l;
                 j10 += j15;
                 j11 = j15 + j14;
             } else {
@@ -75,7 +75,7 @@ public final class i extends t1 {
             j12 = j14 != Long.MIN_VALUE ? this.w - j13 : Long.MIN_VALUE;
         }
         try {
-            g gVar2 = new g(p1Var, j10, j12, this.q);
+            g gVar2 = new g(o1Var, j10, j12, this.q);
             this.t = gVar2;
             n(gVar2);
         } catch (h e) {
@@ -87,9 +87,9 @@ public final class i extends t1 {
     }
 
     @Override // u2.t1, u2.a
-    public final boolean a(b2.p0 p0Var) {
+    public final boolean a(b2.o0 o0Var) {
         a aVar = this.k;
-        return aVar.i().e.equals(p0Var.e) && aVar.a(p0Var);
+        return aVar.i().e.equals(o0Var.e) && aVar.a(o0Var);
     }
 
     @Override // u2.a

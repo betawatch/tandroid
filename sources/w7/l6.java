@@ -1,13 +1,30 @@
 package w7;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+import android.os.Build;
+import android.util.Log;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class l6 {
-    public static boolean a(int i10, int i11) {
-        return (i10 & i11) != 0;
+    public static void a(Object obj, String str, String str2) {
+        String c10 = c(str);
+        if (Log.isLoggable(c10, 3)) {
+            Log.d(c10, String.format(str2, obj));
+        }
     }
 
-    public static int b(int i10, int i11, boolean z10) {
-        return z10 ? i10 | i11 : i10 & (~i11);
+    public static void b(String str, String str2, Exception exc) {
+        String c10 = c(str);
+        if (Log.isLoggable(c10, 6)) {
+            Log.e(c10, str2, exc);
+        }
+    }
+
+    public static String c(String str) {
+        if (Build.VERSION.SDK_INT >= 26) {
+            return "TRuntime.".concat(str);
+        }
+        String concat = "TRuntime.".concat(str);
+        return concat.length() > 23 ? concat.substring(0, 23) : concat;
     }
 }

@@ -1,13 +1,43 @@
 package androidx.biometric;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+import android.security.identity.IdentityCredential;
+import java.security.Signature;
+import javax.crypto.Cipher;
+import javax.crypto.Mac;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class u {
-    public final v a;
-    public final int b;
+    public final Signature a;
+    public final Cipher b;
+    public final Mac c;
+    public final IdentityCredential d;
 
-    public u(v vVar, int i10) {
-        this.a = vVar;
-        this.b = i10;
+    public u(Signature signature) {
+        this.a = signature;
+        this.b = null;
+        this.c = null;
+        this.d = null;
+    }
+
+    public u(Cipher cipher) {
+        this.a = null;
+        this.b = cipher;
+        this.c = null;
+        this.d = null;
+    }
+
+    public u(Mac mac) {
+        this.a = null;
+        this.b = null;
+        this.c = mac;
+        this.d = null;
+    }
+
+    public u(IdentityCredential identityCredential) {
+        this.a = null;
+        this.b = null;
+        this.c = null;
+        this.d = identityCredential;
     }
 }

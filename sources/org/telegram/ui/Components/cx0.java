@@ -1,71 +1,181 @@
 package org.telegram.ui.Components;
 
-import android.animation.TimeAnimator;
-import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class cx0 extends TimeAnimator {
-    public int a;
-    public int b;
-    public ValueAnimator.AnimatorUpdateListener c;
-    public Float d;
-    public float[] e;
+public final class cx0 extends View {
+    public final x9 a;
+    public final ax0 b;
+    public final f6 c;
+    public boolean d;
+    public bx0 e;
+    public boolean f;
+    public boolean h;
 
-    @Override // android.animation.ValueAnimator
-    public final void addUpdateListener(ValueAnimator.AnimatorUpdateListener animatorUpdateListener) {
-        this.c = animatorUpdateListener;
+    public cx0(Context context) {
+        super(context);
+        ax0 ax0Var = new ax0();
+        ax0Var.c = -16777216;
+        ax0Var.d = -1;
+        this.b = ax0Var;
+        f6 f6Var = new f6(new zw0(this, 0), 380L, bs.h);
+        this.c = f6Var;
+        x9 x9Var = new x9(context);
+        this.a = x9Var;
+        x9Var.setCallback(this);
+        this.d = false;
+        f6Var.d(0.0f, false);
+        a();
     }
 
-    @Override // android.animation.ValueAnimator, android.animation.Animator
-    public final void end() {
-        this.c = null;
-        super.end();
+    public final void a() {
+        boolean z10 = this.h && this.f;
+        this.d = z10;
+        this.c.e(z10);
+        setEnabled(this.d);
+        setClickable(this.d);
+        invalidate();
     }
 
-    @Override // android.animation.ValueAnimator
-    public final Object getAnimatedValue() {
-        return this.d;
+    public final void b(MessagesController.PeerColor peerColor) {
+        this.b.a(peerColor);
+        invalidate();
     }
 
-    @Override // android.animation.ValueAnimator
-    public final void setFloatValues(float[] fArr) {
-        super.setFloatValues(fArr);
-        this.e = fArr;
+    public float getVisibilityFactor() {
+        return this.c.c;
     }
 
-    @Override // android.animation.TimeAnimator, android.animation.ValueAnimator, android.animation.Animator
-    public final void start() {
-        setTimeListener(new TimeAnimator.TimeListener() { // from class: org.telegram.ui.Components.bx0
-            @Override // android.animation.TimeAnimator.TimeListener
-            public final void onTimeUpdate(TimeAnimator timeAnimator, long j10, long j11) {
-                int i10;
-                cx0 cx0Var = cx0.this;
-                int i11 = cx0Var.a;
-                if (i11 <= 0 || (i10 = cx0Var.b) <= 0) {
-                    cx0Var.end();
-                    return;
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.getClass();
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.a.getClass();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float e = this.c.e(this.d);
+        int B = org.telegram.messenger.wh.B(24.0f, getMeasuredWidth(), 2);
+        int measuredHeight = (getMeasuredHeight() - AndroidUtilities.dp(24.0f)) / 2;
+        canvas.save();
+        canvas.translate(B, measuredHeight);
+        canvas.scale(e, e, 0.0f, AndroidUtilities.dp(12.0f));
+        int dp = AndroidUtilities.dp(24.0f);
+        int dp2 = AndroidUtilities.dp(24.0f);
+        x9 x9Var = this.a;
+        x9Var.setBounds(0, 0, dp, dp2);
+        ax0 ax0Var = this.b;
+        int i10 = ax0Var.c;
+        if (x9Var.f != i10) {
+            x9Var.f = i10;
+            if (x9Var.c != null) {
+                x9Var.d.setColorFilter(i10, PorterDuff.Mode.MULTIPLY);
+                x9Var.invalidateSelf();
+            }
+        }
+        int i11 = ax0Var.d;
+        if (x9Var.e != i11) {
+            x9Var.e = i11;
+            Drawable drawable = x9Var.c;
+            if (drawable != null) {
+                drawable.setColorFilter(i11, PorterDuff.Mode.MULTIPLY);
+                x9Var.invalidateSelf();
+            }
+        }
+        int i12 = ax0Var.c | (-16777216);
+        if (x9Var.h != i12) {
+            x9Var.h = i12;
+            x9Var.b.v(i12, false);
+            x9Var.invalidateSelf();
+        }
+        x9Var.draw(canvas);
+        canvas.restore();
+    }
+
+    public void set(TL_stars.Tl_starsRating tl_starsRating) {
+        int b10;
+        this.f = tl_starsRating != null;
+        a();
+        if (tl_starsRating == null) {
+            return;
+        }
+        int i10 = tl_starsRating.level;
+        x9 x9Var = this.a;
+        if (x9Var.r != i10 || x9Var.c == null || x9Var.d == null) {
+            x9Var.b.t(i10 >= 0 ? Integer.toString(i10) : "!", true, true);
+            x9Var.r = i10;
+            if (i10 < 0) {
+                b10 = 18;
+            } else {
+                b10 = w7.r.b(i10 <= 10 ? i10 - 1 : (i10 / 10) + 8, 0, 17);
+            }
+            Context context = x9Var.a;
+            if (x9Var.n != b10 || x9Var.c == null || x9Var.d == null) {
+                int i11 = b10 * 2;
+                Drawable mutate = context.getResources().getDrawable(x9.s[i11]).mutate();
+                x9Var.c = mutate;
+                int i12 = x9Var.e;
+                PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
+                mutate.setColorFilter(i12, mode);
+                Drawable mutate2 = context.getResources().getDrawable(x9.s[i11 + 1]).mutate();
+                x9Var.d = mutate2;
+                mutate2.setColorFilter(x9Var.f, mode);
+                x9Var.n = b10;
+                Drawable drawable = x9Var.c;
+                if (drawable != null) {
+                    drawable.setBounds(x9Var.getBounds());
                 }
-                int i12 = i11 - 1;
-                cx0Var.a = i12;
-                if (cx0Var.c != null) {
-                    float[] fArr = cx0Var.e;
-                    if (fArr == null || fArr.length != 2) {
-                        cx0Var.end();
-                        return;
-                    }
-                    float interpolation = cx0Var.getInterpolator().getInterpolation(1.0f - (i12 / i10));
-                    float[] fArr2 = cx0Var.e;
-                    float f7 = fArr2[0];
-                    cx0Var.d = Float.valueOf(((fArr2[1] - f7) * interpolation) + f7);
-                    cx0Var.c.onAnimationUpdate(cx0Var);
+                Drawable drawable2 = x9Var.d;
+                if (drawable2 != null) {
+                    drawable2.setBounds(x9Var.getBounds());
                 }
             }
-        });
-        int duration = (int) (getDuration() / AndroidUtilities.screenRefreshTime);
-        this.a = duration;
-        this.b = duration;
-        super.start();
+            x9Var.invalidateSelf();
+        }
+        StringBuilder sb2 = new StringBuilder();
+        org.telegram.ui.Cells.t0.n(R.string.AccDescrProfileRatingLevel, " ", sb2);
+        sb2.append(tl_starsRating.level);
+        setContentDescription(sb2.toString());
+        invalidate();
+    }
+
+    public void setDelegate(bx0 bx0Var) {
+        this.e = bx0Var;
+    }
+
+    public void setParentExpanded(float f7) {
+        ax0 ax0Var = this.b;
+        ax0Var.e = f7;
+        ax0Var.a(ax0Var.a);
+        invalidate();
+    }
+
+    public void setResourcesProvider(org.telegram.ui.ActionBar.d6 d6Var) {
+        this.b.b = d6Var;
+    }
+
+    public void setVisibility(boolean z10) {
+        this.h = z10;
+        a();
+    }
+
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return super.verifyDrawable(drawable) || drawable == this.a;
     }
 }

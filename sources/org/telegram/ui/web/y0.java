@@ -1,76 +1,60 @@
 package org.telegram.ui.web;
 
-import android.net.Uri;
-import android.webkit.DownloadListener;
-import android.webkit.URLUtil;
-import android.widget.TextView;
-import java.util.List;
-import ji.m5;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DownloadController;
-import org.telegram.messenger.FileLog;
+import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class y0 implements DownloadListener {
-    public final /* synthetic */ z0 a;
+public final class y0 {
+    public final String a;
+    public final String b;
+    public final int c;
 
-    public y0(z0 z0Var) {
-        this.a = z0Var;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x0048, code lost:
-    
-        if (android.text.TextUtils.isEmpty(r1.substring(r6 + 1)) == false) goto L13;
+    /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue
+    java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because the return value of "jadx.core.dex.visitors.regions.SwitchOverStringVisitor$SwitchData.getNewCases()" is null
+    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.restoreSwitchOverString(SwitchOverStringVisitor.java:109)
+    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.visitRegion(SwitchOverStringVisitor.java:66)
+    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:77)
+    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterativeStepInternal(DepthRegionTraversal.java:82)
+    	at jadx.core.dex.visitors.regions.DepthRegionTraversal.traverseIterative(DepthRegionTraversal.java:31)
+    	at jadx.core.dex.visitors.regions.SwitchOverStringVisitor.visit(SwitchOverStringVisitor.java:60)
      */
-    @Override // android.webkit.DownloadListener
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onDownloadStart(String str, String str2, String str3, String str4, long j10) {
-        String guessFileName;
-        StringBuilder w9 = a1.g.w("onDownloadStart ", str, " ", str2, " ");
-        a1.g.A(w9, str3, " ", str4, " ");
-        w9.append(j10);
-        String sb2 = w9.toString();
-        z0 z0Var = this.a;
-        z0Var.c(sb2);
-        try {
-            if (str.startsWith("blob:")) {
-                return;
-            }
-            try {
-                List<String> pathSegments = Uri.parse(str).getPathSegments();
-                guessFileName = pathSegments.get(pathSegments.size() - 1);
-                int lastIndexOf = guessFileName.lastIndexOf(".");
-                if (lastIndexOf > 0) {
+    public y0(JSONObject jSONObject) {
+        this.c = -1;
+        this.a = jSONObject.getString("id");
+        String string = jSONObject.getString(TeXSymbolParser.TYPE_ATTR);
+        switch (string.hashCode()) {
+            case -1829997182:
+                if (string.equals("destructive")) {
+                    this.c = h6.q7;
+                    break;
                 }
-            } catch (Exception unused) {
-            }
-            guessFileName = URLUtil.guessFileName(str, str3, str4);
-            String escape = AndroidUtilities.escape(guessFileName);
-            b0 b0Var = new b0(this, str, str4, str2, escape, 4);
-            if (DownloadController.getInstance(UserConfig.selectedAccount).canDownloadMedia(8, j10)) {
-                b0Var.run();
-                return;
-            }
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(z0Var.getContext());
-            org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
-            a2Var.R = LocaleController.getString(R.string.WebDownloadAlertTitle);
-            a2Var.T = AndroidUtilities.replaceTags(j10 > 0 ? LocaleController.formatString(R.string.WebDownloadAlertInfoWithSize, escape, AndroidUtilities.formatFileSize(j10)) : LocaleController.formatString(R.string.WebDownloadAlertInfo, escape));
-            alertDialog$Builder.k(LocaleController.getString(R.string.WebDownloadAlertYes), new m5(b0Var, 19));
-            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-            TextView textView = (TextView) alertDialog$Builder.o().d(-2);
-            if (textView != null) {
-                textView.setTextColor(g6.x0(null, g6.q7, false));
-            }
-        } catch (Exception e) {
-            FileLog.e(e);
+                break;
+            case -1367724422:
+                if (string.equals("cancel")) {
+                    this.b = LocaleController.getString(R.string.Cancel);
+                    return;
+                }
+                break;
+            case 3548:
+                if (string.equals("ok")) {
+                    this.b = LocaleController.getString(R.string.OK);
+                    return;
+                }
+                break;
+            case 94756344:
+                if (string.equals("close")) {
+                    this.b = LocaleController.getString(R.string.Close);
+                    return;
+                }
+                break;
+            case 1544803905:
+                string.equals("default");
+                break;
         }
+        this.b = jSONObject.getString("text");
     }
 }

@@ -1,70 +1,14 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PremiumPreviewFragment;
+import android.graphics.RuntimeShader;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class xc0 implements View.OnClickListener {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-
-    public /* synthetic */ xc0(org.telegram.ui.tt ttVar, ArrayList arrayList, boolean z10) {
-        this.c = ttVar;
-        this.d = arrayList;
-        this.b = z10;
+public abstract /* synthetic */ class xc0 {
+    public static /* synthetic */ RuntimeShader a(String str) {
+        return new RuntimeShader(str);
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.ActionBar.e3 e3Var = (org.telegram.ui.ActionBar.e3) this.c;
-                Runnable runnable = (Runnable) this.d;
-                org.telegram.ui.ActionBar.m2 R = LaunchActivity.R();
-                if (R != null) {
-                    R.presentFragment(new PremiumPreviewFragment(0, this.b ? "lastseen" : "readtime"));
-                    e3Var.dismiss();
-                    if (runnable != null) {
-                        runnable.run();
-                        break;
-                    }
-                }
-                break;
-            default:
-                org.telegram.ui.tt ttVar = (org.telegram.ui.tt) this.c;
-                ArrayList arrayList = (ArrayList) this.d;
-                org.telegram.ui.xt xtVar = ttVar.a;
-                if (xtVar.w != null && xtVar.l != null) {
-                    int intValue = ((Integer) arrayList.get(((Integer) view.getTag()).intValue())).intValue();
-                    if (intValue == 0) {
-                        xtVar.l.C(xtVar.W);
-                    } else if (intValue == 1) {
-                        xtVar.l.v(xtVar.W);
-                    } else if (intValue == 2) {
-                        xtVar.l.v(null);
-                    } else if (intValue == 3) {
-                        xtVar.l.H(xtVar.W);
-                    } else if (intValue == 4) {
-                        xtVar.l.q(xtVar.W);
-                    } else if (intValue == 5) {
-                        MediaDataController.getInstance(xtVar.r).addRecentSticker(2, xtVar.b0, xtVar.W, (int) (System.currentTimeMillis() / 1000), this.b);
-                    }
-                    xtVar.p();
-                    break;
-                }
-                break;
-        }
-    }
-
-    public /* synthetic */ xc0(boolean z10, org.telegram.ui.ActionBar.e3 e3Var, Runnable runnable) {
-        this.b = z10;
-        this.c = e3Var;
-        this.d = runnable;
+    public static /* synthetic */ void b() {
     }
 }

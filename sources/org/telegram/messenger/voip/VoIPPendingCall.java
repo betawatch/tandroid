@@ -11,7 +11,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.voip.d2;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class VoIPPendingCall {
     private AccountInstance accountInstance;
@@ -25,15 +25,15 @@ public final class VoIPPendingCall {
     private final boolean video;
 
     private VoIPPendingCall(Activity activity, long j10, boolean z10, long j11, AccountInstance accountInstance) {
-        NotificationCenter.NotificationCenterDelegate notificationCenterDelegate = new NotificationCenter.NotificationCenterDelegate() { // from class: org.telegram.messenger.voip.q
+        NotificationCenter.NotificationCenterDelegate notificationCenterDelegate = new NotificationCenter.NotificationCenterDelegate() { // from class: org.telegram.messenger.voip.p
             @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
             public final void didReceivedNotification(int i10, int i11, Object[] objArr) {
                 VoIPPendingCall.this.lambda$new$0(i10, i11, objArr);
             }
         };
         this.observer = notificationCenterDelegate;
-        t0 t0Var = new t0(this, 2);
-        this.releaseRunnable = t0Var;
+        r0 r0Var = new r0(this, 2);
+        this.releaseRunnable = r0Var;
         this.activity = activity;
         this.userId = j10;
         this.video = z10;
@@ -46,7 +46,7 @@ public final class VoIPPendingCall {
         notificationCenter.addObserver(notificationCenterDelegate, NotificationCenter.didUpdateConnectionState);
         Handler handler = new Handler(Looper.myLooper());
         this.handler = handler;
-        handler.postDelayed(t0Var, j11);
+        handler.postDelayed(r0Var, j11);
     }
 
     private boolean isAirplaneMode() {

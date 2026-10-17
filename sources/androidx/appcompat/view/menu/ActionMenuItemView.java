@@ -17,14 +17,14 @@ import l.c;
 import l.k;
 import l.m;
 import l.y;
-import m.b1;
+import m.a1;
 import m.j;
 import org.telegram.tgnet.TLObject;
 import w7.q;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public class ActionMenuItemView extends b1 implements y, View.OnClickListener, j {
+public class ActionMenuItemView extends a1 implements y, View.OnClickListener, j {
     public boolean E;
     public final int F;
     public int G;
@@ -121,7 +121,7 @@ public class ActionMenuItemView extends b1 implements y, View.OnClickListener, j
         g();
     }
 
-    @Override // m.b1, android.widget.TextView, android.view.View
+    @Override // m.a1, android.widget.TextView, android.view.View
     public final void onMeasure(int i10, int i11) {
         int i12;
         boolean isEmpty = TextUtils.isEmpty(getText());

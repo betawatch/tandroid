@@ -1,17 +1,43 @@
 package m4;
 
-import android.os.Handler;
-import android.os.Looper;
+import m.e3;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class a0 extends Handler {
-    public hg.t a;
-    public final /* synthetic */ e0 b;
+public final /* synthetic */ class a0 implements e0, o0 {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a0(e0 e0Var, Looper looper) {
-        super(looper);
-        this.b = e0Var;
+    public /* synthetic */ a0(p0 p0Var, b2.o0 o0Var, boolean z10, boolean z11) {
+        this.c = p0Var;
+        this.d = o0Var;
+        this.a = z10;
+        this.b = z11;
+    }
+
+    @Override // m4.e0
+    public void b(u uVar, int i10) {
+        uVar.f(i10, (r1) this.c, this.a, this.b, ((v) this.d).c);
+    }
+
+    @Override // m4.o0
+    public void f(v vVar) {
+        p0 p0Var = (p0) this.c;
+        j9.e0 q6 = p0Var.g.q(vVar, e9.n0.y((b2.o0) this.d), -1, -9223372036854775807L);
+        e3 e3Var = new e3();
+        e3Var.d = p0Var;
+        e3Var.c = vVar;
+        e3Var.a = this.a;
+        e3Var.b = this.b;
+        q6.a(new j9.u(0, q6, e3Var), j9.r.a);
+    }
+
+    public /* synthetic */ a0(r1 r1Var, boolean z10, boolean z11, v vVar) {
+        this.c = r1Var;
+        this.a = z10;
+        this.b = z11;
+        this.d = vVar;
     }
 }

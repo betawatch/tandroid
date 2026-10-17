@@ -11,6 +11,7 @@ import android.text.style.StyleSpan;
 import android.text.style.TypefaceSpan;
 import android.text.style.UnderlineSpan;
 import android.util.Pair;
+import d2.g;
 import e2.m0;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ import java.util.TreeSet;
 import v7.b7;
 import v7.q6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class c {
     public final String a;
@@ -30,7 +31,7 @@ public final class c {
     public final boolean c;
     public final long d;
     public final long e;
-    public final g f;
+    public final f f;
     public final String[] g;
     public final String h;
     public final String i;
@@ -39,11 +40,11 @@ public final class c {
     public final HashMap l;
     public ArrayList m;
 
-    public c(String str, String str2, long j10, long j11, g gVar, String[] strArr, String str3, String str4, c cVar) {
+    public c(String str, String str2, long j10, long j11, f fVar, String[] strArr, String str3, String str4, c cVar) {
         this.a = str;
         this.b = str2;
         this.i = str4;
-        this.f = gVar;
+        this.f = fVar;
         this.g = strArr;
         this.c = str2 != null;
         this.d = j10;
@@ -152,7 +153,7 @@ public final class c {
         int i10;
         c cVar;
         int i11;
-        g a2;
+        f a2;
         int i12;
         float f7;
         int i13;
@@ -172,10 +173,10 @@ public final class c {
                 if (intValue != intValue2) {
                     d2.a aVar = (d2.a) treeMap.get(str4);
                     aVar.getClass();
-                    f fVar = (f) hashMap.get(str3);
-                    fVar.getClass();
-                    int i16 = fVar.j;
-                    g a10 = b7.a(this.f, this.g, map2);
+                    e eVar = (e) hashMap.get(str3);
+                    eVar.getClass();
+                    int i16 = eVar.j;
+                    f a10 = b7.a(this.f, this.g, map2);
                     SpannableStringBuilder spannableStringBuilder = (SpannableStringBuilder) aVar.a;
                     if (spannableStringBuilder == null) {
                         spannableStringBuilder = new SpannableStringBuilder();
@@ -239,7 +240,7 @@ public final class c {
                             if (i21 == -2) {
                                 i21 = 1;
                             }
-                            q6.a(new d2.g(i20, i14, i21), spannableStringBuilder, intValue, intValue2);
+                            q6.a(new g(i20, i14, i21), spannableStringBuilder, intValue, intValue2);
                         }
                         int i22 = a10.m;
                         if (i22 == 2) {
@@ -249,7 +250,7 @@ public final class c {
                                     cVar2 = null;
                                     break;
                                 }
-                                g a11 = b7.a(cVar2.f, cVar2.g, map2);
+                                f a11 = b7.a(cVar2.f, cVar2.g, map2);
                                 if (a11 != null && a11.m == 1) {
                                     break;
                                 } else {
@@ -265,7 +266,7 @@ public final class c {
                                         break;
                                     }
                                     c cVar3 = (c) arrayDeque.pop();
-                                    g a12 = b7.a(cVar3.f, cVar3.g, map2);
+                                    f a12 = b7.a(cVar3.f, cVar3.g, map2);
                                     if (a12 != null && a12.m == 3) {
                                         cVar = cVar3;
                                         break;
@@ -280,7 +281,7 @@ public final class c {
                                         if (cVar.b(0).b != null) {
                                             String str5 = cVar.b(0).b;
                                             String str6 = m0.a;
-                                            g a13 = b7.a(cVar.f, cVar.g, map2);
+                                            f a13 = b7.a(cVar.f, cVar.g, map2);
                                             int i23 = a13 != null ? a13.n : -1;
                                             if (i23 == -1 && (a2 = b7.a(cVar2.f, cVar2.g, map2)) != null) {
                                                 i23 = a2.n;

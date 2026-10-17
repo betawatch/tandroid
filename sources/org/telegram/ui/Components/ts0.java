@@ -1,45 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class ts0 extends qu0 {
-    public final /* synthetic */ xv0 M;
+public final class ts0 extends s4.s {
+    public final /* synthetic */ sv0 Q;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ts0(xv0 xv0Var, Context context) {
-        super(context);
-        this.M = xv0Var;
+    public ts0(sv0 sv0Var) {
+        super(3);
+        this.Q = sv0Var;
     }
 
-    @Override // android.view.View
-    public final void setTranslationX(float f7) {
-        qu0 qu0Var;
-        super.setTranslationX(f7);
-        xv0 xv0Var = this.M;
-        qu0[] qu0VarArr = xv0Var.k0;
-        if (xv0Var.g1 && (qu0Var = qu0VarArr[0]) == this) {
-            float abs = Math.abs(qu0Var.getTranslationX()) / qu0VarArr[0].getMeasuredWidth();
-            xv0Var.a1(abs, qu0VarArr[1].F);
-            if (xv0Var.D()) {
-                int i10 = xv0Var.x0;
-                if (i10 == 2) {
-                    xv0Var.o0 = 1.0f - abs;
-                } else if (i10 == 1) {
-                    xv0Var.o0 = abs;
-                }
-                xv0Var.t1(abs);
-                float a02 = xv0Var.a0(abs);
-                xv0Var.p0 = a02;
-                xv0Var.r0.setVisibility((a02 == 0.0f || !xv0Var.D() || xv0Var.q0()) ? 4 : 0);
-            } else {
-                xv0Var.o0 = 0.0f;
-            }
-            xv0Var.r1(false);
+    @Override // s4.s, s4.b0, s4.n0
+    public final int o0(int i10, qf.e eVar, s4.y0 y0Var) {
+        if (this.Q.o1) {
+            i10 = 0;
         }
-        xv0Var.I();
-        xv0Var.K();
-        xv0Var.o0();
+        return super.o0(i10, eVar, y0Var);
+    }
+
+    @Override // s4.s, s4.b0, s4.n0
+    public final boolean y0() {
+        return false;
     }
 }

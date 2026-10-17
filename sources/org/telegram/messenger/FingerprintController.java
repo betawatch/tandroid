@@ -12,7 +12,7 @@ import java.security.KeyStoreException;
 import java.util.Locale;
 import javax.crypto.Cipher;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public class FingerprintController {
     private static final String KEY_ALIAS = "tmessages_passcode";
@@ -63,7 +63,7 @@ public class FingerprintController {
                 keyPairGenerator2.initialize(new KeyGenParameterSpec.Builder(KEY_ALIAS, 3).setDigests("SHA-256", "SHA-512").setEncryptionPaddings("OAEPPadding").setUserAuthenticationRequired(true).build());
                 keyPairGenerator2.generateKeyPair();
                 setLocale(locale);
-                AndroidUtilities.runOnUIThread(new b4(1, z10));
+                AndroidUtilities.runOnUIThread(new a4(1, z10));
             } catch (InvalidAlgorithmParameterException e) {
                 FileLog.e(e);
             } catch (Exception e7) {
@@ -159,7 +159,7 @@ public class FingerprintController {
                 FileLog.e(e7);
             }
             if (z12) {
-                Utilities.globalQueue.postRunnable(new b4(0, z10));
+                Utilities.globalQueue.postRunnable(new a4(0, z10));
                 return;
             }
             return;

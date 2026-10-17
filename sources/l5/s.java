@@ -1,74 +1,41 @@
 package l5;
 
-import android.content.Context;
-import com.google.android.gms.internal.play_billing.k3;
-import j$.util.DesugarCollections;
-import java.nio.charset.Charset;
-import java.util.Collections;
-import java.util.Set;
-import java.util.concurrent.Executor;
-import org.telegram.ui.Components.voip.r2;
+import java.util.HashMap;
+import org.telegram.ui.gn0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class s {
-    public static volatile j e;
-    public final u5.a a;
-    public final u5.a b;
-    public final q5.b c;
-    public final ea.b d;
+    public final i a;
+    public final String b;
+    public final i5.c c;
+    public final i5.e d;
+    public final t e;
 
-    public s(u5.a aVar, u5.a aVar2, q5.b bVar, ea.b bVar2, com.google.firebase.messaging.s sVar) {
-        this.a = aVar;
-        this.b = aVar2;
-        this.c = bVar;
-        this.d = bVar2;
-        ((Executor) sVar.b).execute(new r2(sVar, 21));
+    public s(i iVar, String str, i5.c cVar, i5.e eVar, t tVar) {
+        this.a = iVar;
+        this.b = str;
+        this.c = cVar;
+        this.d = eVar;
+        this.e = tVar;
     }
 
-    public static s a() {
-        j jVar = e;
-        if (jVar != null) {
-            return (s) jVar.f.get();
+    public final void a(i5.a aVar, i5.g gVar) {
+        i5.e eVar = this.d;
+        if (eVar == null) {
+            throw new NullPointerException("Null transformer");
         }
-        throw new IllegalStateException("Not initialized!");
-    }
-
-    public static void b(Context context) {
-        if (e == null) {
-            synchronized (s.class) {
-                try {
-                    if (e == null) {
-                        k0.b bVar = new k0.b();
-                        context.getClass();
-                        bVar.a = context;
-                        e = bVar.b();
-                    }
-                } catch (Throwable th2) {
-                    throw th2;
-                }
-            }
-        }
-    }
-
-    public final q c(k kVar) {
-        byte[] bytes;
-        Set unmodifiableSet = kVar != null ? DesugarCollections.unmodifiableSet(j5.a.d) : Collections.singleton(new i5.c("proto"));
-        androidx.biometric.e a2 = i.a();
-        kVar.getClass();
-        a2.b = "cct";
-        j5.a aVar = (j5.a) kVar;
-        String str = aVar.a;
-        String str2 = aVar.b;
-        if (str2 == null && str == null) {
-            bytes = null;
-        } else {
-            if (str2 == null) {
-                str2 = "";
-            }
-            bytes = k3.k("1$", str, "\\", str2).getBytes(Charset.forName("UTF-8"));
-        }
-        a2.c = bytes;
-        return new q(unmodifiableSet, a2.e(), this);
+        t tVar = this.e;
+        q5.b bVar = tVar.c;
+        i b10 = this.a.b(aVar.c);
+        com.google.firebase.messaging.l lVar = new com.google.firebase.messaging.l();
+        lVar.f = new HashMap();
+        lVar.d = Long.valueOf(tVar.a.d());
+        lVar.e = Long.valueOf(tVar.b.d());
+        lVar.a = this.b;
+        lVar.c = new m(this.c, (byte[]) eVar.apply(aVar.b));
+        lVar.b = aVar.a;
+        q5.a aVar2 = (q5.a) bVar;
+        aVar2.b.execute(new gn0(aVar2, b10, gVar, lVar.h(), 26));
     }
 }

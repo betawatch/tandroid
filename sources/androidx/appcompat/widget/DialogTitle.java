@@ -5,16 +5,16 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.text.Layout;
 import android.util.AttributeSet;
-import m.b1;
+import m.a1;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public class DialogTitle extends b1 {
+public class DialogTitle extends a1 {
     public DialogTitle(Context context, AttributeSet attributeSet, int i10) {
         super(context, attributeSet, i10);
     }
 
-    @Override // m.b1, android.widget.TextView, android.view.View
+    @Override // m.a1, android.widget.TextView, android.view.View
     public final void onMeasure(int i10, int i11) {
         int lineCount;
         super.onMeasure(i10, i11);

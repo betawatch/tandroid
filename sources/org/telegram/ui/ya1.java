@@ -1,29 +1,80 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.ui.ThemeActivity;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class ya1 extends tq {
-    public final /* synthetic */ boolean[] d1;
-    public final /* synthetic */ hb1 e1;
-    public final /* synthetic */ ab1 f1;
+public final class ya1 extends org.telegram.ui.Components.hm0 {
+    public final Context c;
+    public org.telegram.ui.ActionBar.g6 d;
+    public ArrayList e;
+    public final /* synthetic */ ThemeActivity f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ya1(ab1 ab1Var, long j10, long j11, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str, boolean z10, boolean[] zArr, hb1 hb1Var) {
-        super(j10, j11, tL_chatAdminRights, null, tL_chatBannedRights, str, 0, true, z10, null);
-        this.f1 = ab1Var;
-        this.d1 = zArr;
-        this.e1 = hb1Var;
+    public ya1(ThemeActivity themeActivity, Context context) {
+        this.f = themeActivity;
+        this.c = context;
+        l();
     }
 
-    @Override // org.telegram.ui.ActionBar.m2
-    public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
-        if (!z10 && z11 && this.d1[0]) {
-            hb1 hb1Var = this.e1;
-            if (org.telegram.ui.Components.zc.a(hb1Var)) {
-                org.telegram.ui.Components.zc.C(hb1Var, this.f1.a.first_name).j();
-            }
+    @Override // org.telegram.ui.Components.hm0
+    public final boolean D(s4.b1 b1Var) {
+        return false;
+    }
+
+    @Override // s4.g0
+    public final int h() {
+        if (this.e.isEmpty()) {
+            return 0;
         }
+        return this.e.size() + 1;
+    }
+
+    @Override // s4.g0
+    public final int j(int i10) {
+        return i10 == h() - 1 ? 1 : 0;
+    }
+
+    @Override // s4.g0
+    public final void l() {
+        this.d = this.f.f == 1 ? org.telegram.ui.ActionBar.h6.J : org.telegram.ui.ActionBar.h6.B0();
+        this.e = new ArrayList(this.d.b0);
+        super.l();
+    }
+
+    @Override // s4.g0
+    public final void v(s4.b1 b1Var, int i10) {
+        View view = b1Var.a;
+        int j10 = j(i10);
+        if (j10 == 0) {
+            ThemeActivity.InnerAccentView innerAccentView = (ThemeActivity.InnerAccentView) view;
+            org.telegram.ui.ActionBar.g6 g6Var = this.d;
+            org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) this.e.get(i10);
+            innerAccentView.d = g6Var;
+            innerAccentView.e = f6Var;
+            innerAccentView.a(false);
+            return;
+        }
+        if (j10 != 1) {
+            return;
+        }
+        oa1 oa1Var = (oa1) view;
+        org.telegram.ui.ActionBar.g6 g6Var2 = this.d;
+        int i11 = oa1.c;
+        oa1Var.getClass();
+        if (g6Var2.W >= 8) {
+            oa1Var.b = new int[]{g6Var2.l(6), g6Var2.l(4), g6Var2.l(7), g6Var2.l(2), g6Var2.l(0), g6Var2.l(5), g6Var2.l(3)};
+        } else {
+            oa1Var.b = new int[7];
+        }
+    }
+
+    @Override // s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        Context context = this.c;
+        return i10 != 0 ? new org.telegram.ui.Components.sl0(new oa1(context)) : new org.telegram.ui.Components.sl0(new ThemeActivity.InnerAccentView(context));
     }
 }

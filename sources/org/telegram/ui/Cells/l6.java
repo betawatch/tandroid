@@ -1,83 +1,53 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
 import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.sk;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.RadioButton;
+import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.ko;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class l6 extends FrameLayout {
-    public final TextView a;
-    public final TextView b;
-    public final RadioButton c;
-    public int d;
+public final class l6 extends ci.y7 {
+    public final /* synthetic */ int S = 0;
+    public final /* synthetic */ View T;
 
-    public l6(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context);
-        this.d = 50;
-        RadioButton radioButton = new RadioButton(context);
-        this.c = radioButton;
-        radioButton.setSize(AndroidUtilities.dp(20.0f));
-        radioButton.b(org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.D5, c6Var), org.telegram.ui.ActionBar.g6.w0(org.telegram.ui.ActionBar.g6.E5, c6Var));
-        boolean z10 = LocaleController.isRTL;
-        addView(radioButton, w7.z5.a(22.0f, z10 ? 0 : 18, 14.0f, z10 ? 18 : 0, 0.0f, 22, (z10 ? 5 : 3) | 48));
-        TextView textView = new TextView(context);
-        this.a = textView;
-        sk.o(org.telegram.ui.ActionBar.g6.j5, c6Var, textView, 1, 16.0f);
-        textView.setLines(1);
-        textView.setMaxLines(1);
-        textView.setSingleLine(true);
-        textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
-        boolean z11 = LocaleController.isRTL;
-        addView(textView, w7.z5.a(-2.0f, z11 ? 21 : 51, 13.0f, z11 ? 51 : 21, 0.0f, -2, (z11 ? 5 : 3) | 48));
-        TextView textView2 = new TextView(context);
-        this.b = textView2;
-        sk.o(org.telegram.ui.ActionBar.g6.y6, c6Var, textView2, 1, 14.0f);
-        textView2.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
-        textView2.setVisibility(8);
-        boolean z12 = LocaleController.isRTL;
-        addView(textView2, w7.z5.a(-2.0f, z12 ? 21 : 51, 37.0f, z12 ? 51 : 21, 0.0f, -2, (z12 ? 5 : 3) | 48));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l6(n6 n6Var, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(d6Var, false);
+        this.T = n6Var;
     }
 
-    public final void a(int i10, int i11) {
-        this.c.b(i10, i11);
-    }
-
-    public final void b(CharSequence charSequence, boolean z10) {
-        this.a.setText(charSequence);
-        this.b.setVisibility(8);
-        this.c.a(z10, false);
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName("android.widget.RadioButton");
-        accessibilityNodeInfo.setCheckable(true);
-        accessibilityNodeInfo.setChecked(this.c.f);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int i12;
-        TextView textView = this.b;
-        if (textView.getVisibility() == 0) {
-            textView.measure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10) - AndroidUtilities.dp(72.0f), TLObject.FLAG_30), i11);
+    @Override // ci.y7
+    public final void f(long j10) {
+        switch (this.S) {
+            case 0:
+                ((n6) this.T).b(j10);
+                break;
+            case 1:
+                va vaVar = (va) this.T;
+                org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
+                if (R != null) {
+                    R.getOrCreateStoryViewer().getClass();
+                    R.getOrCreateStoryViewer().D(vaVar.getContext(), j10, ci.r7.a((im0) vaVar.getParent()));
+                    break;
+                }
+                break;
+            default:
+                ko koVar = (ko) this.T;
+                koVar.H.getOrCreateStoryViewer().D(koVar.getContext(), j10, new org.telegram.ui.Components.s(this, 25));
+                break;
         }
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30);
-        int dp = AndroidUtilities.dp(this.d);
-        if (textView.getVisibility() == 0) {
-            i12 = textView.getMeasuredHeight() + AndroidUtilities.dp(4.0f);
-        } else {
-            i12 = 0;
-        }
-        super.onMeasure(makeMeasureSpec, View.MeasureSpec.makeMeasureSpec(dp + i12, TLObject.FLAG_30));
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l6(va vaVar) {
+        super(null, false);
+        this.T = vaVar;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public l6(ko koVar) {
+        super(null, true);
+        this.T = koVar;
     }
 }

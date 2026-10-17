@@ -2,9 +2,9 @@ package i2;
 
 import android.util.Pair;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public abstract class a extends b2.p1 {
+public abstract class a extends b2.o1 {
     public static final /* synthetic */ int g = 0;
     public final int e;
     public final u2.i1 f;
@@ -14,7 +14,7 @@ public abstract class a extends b2.p1 {
         this.e = i1Var.getLength();
     }
 
-    @Override // b2.p1
+    @Override // b2.o1
     public final int a(boolean z10) {
         if (this.e != 0) {
             int b10 = z10 ? this.f.b() : 0;
@@ -28,7 +28,7 @@ public abstract class a extends b2.p1 {
         return -1;
     }
 
-    @Override // b2.p1
+    @Override // b2.o1
     public final int b(Object obj) {
         int b10;
         if (!(obj instanceof Pair)) {
@@ -44,7 +44,7 @@ public abstract class a extends b2.p1 {
         return u(q6) + b10;
     }
 
-    @Override // b2.p1
+    @Override // b2.o1
     public final int c(boolean z10) {
         int i10 = this.e;
         if (i10 != 0) {
@@ -60,7 +60,7 @@ public abstract class a extends b2.p1 {
         return -1;
     }
 
-    @Override // b2.p1
+    @Override // b2.o1
     public final int e(int i10, int i11, boolean z10) {
         int s10 = s(i10);
         int v = v(s10);
@@ -81,32 +81,32 @@ public abstract class a extends b2.p1 {
         return -1;
     }
 
-    @Override // b2.p1
-    public final b2.m1 f(int i10, b2.m1 m1Var, boolean z10) {
+    @Override // b2.o1
+    public final b2.l1 f(int i10, b2.l1 l1Var, boolean z10) {
         int r10 = r(i10);
         int v = v(r10);
-        x(r10).f(i10 - u(r10), m1Var, z10);
-        m1Var.c += v;
+        x(r10).f(i10 - u(r10), l1Var, z10);
+        l1Var.c += v;
         if (z10) {
             Object t10 = t(r10);
-            Object obj = m1Var.b;
+            Object obj = l1Var.b;
             obj.getClass();
-            m1Var.b = Pair.create(t10, obj);
+            l1Var.b = Pair.create(t10, obj);
         }
-        return m1Var;
+        return l1Var;
     }
 
-    @Override // b2.p1
-    public final b2.m1 g(Object obj, b2.m1 m1Var) {
+    @Override // b2.o1
+    public final b2.l1 g(Object obj, b2.l1 l1Var) {
         Pair pair = (Pair) obj;
         Object obj2 = pair.first;
         Object obj3 = pair.second;
         int q6 = q(obj2);
         int v = v(q6);
-        x(q6).g(obj3, m1Var);
-        m1Var.c += v;
-        m1Var.b = obj;
-        return m1Var;
+        x(q6).g(obj3, l1Var);
+        l1Var.c += v;
+        l1Var.b = obj;
+        return l1Var;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:38:0x0025, code lost:
@@ -121,7 +121,7 @@ public abstract class a extends b2.p1 {
     
         r0 = r0 - 1;
      */
-    @Override // b2.p1
+    @Override // b2.o1
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -149,26 +149,26 @@ public abstract class a extends b2.p1 {
         return -1;
     }
 
-    @Override // b2.p1
+    @Override // b2.o1
     public final Object l(int i10) {
         int r10 = r(i10);
         return Pair.create(t(r10), x(r10).l(i10 - u(r10)));
     }
 
-    @Override // b2.p1
-    public final b2.o1 m(int i10, b2.o1 o1Var, long j10) {
+    @Override // b2.o1
+    public final b2.n1 m(int i10, b2.n1 n1Var, long j10) {
         int s10 = s(i10);
         int v = v(s10);
         int u10 = u(s10);
-        x(s10).m(i10 - v, o1Var, j10);
+        x(s10).m(i10 - v, n1Var, j10);
         Object t10 = t(s10);
-        if (!b2.o1.q.equals(o1Var.a)) {
-            t10 = Pair.create(t10, o1Var.a);
+        if (!b2.n1.q.equals(n1Var.a)) {
+            t10 = Pair.create(t10, n1Var.a);
         }
-        o1Var.a = t10;
-        o1Var.n += u10;
-        o1Var.o += u10;
-        return o1Var;
+        n1Var.a = t10;
+        n1Var.n += u10;
+        n1Var.o += u10;
+        return n1Var;
     }
 
     public abstract int q(Object obj);
@@ -193,5 +193,5 @@ public abstract class a extends b2.p1 {
         return -1;
     }
 
-    public abstract b2.p1 x(int i10);
+    public abstract b2.o1 x(int i10);
 }

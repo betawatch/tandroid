@@ -1,45 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.TextUtils;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.ConnectionsManager;
+import android.animation.ValueAnimator;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class x51 extends yn0 {
-    public final /* synthetic */ i61 h;
+public final class x51 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Object d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x51(i61 i61Var, Context context, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, 14.0f, c6Var);
-        this.h = i61Var;
+    public x51(org.telegram.ui.ru ruVar, int i10, int i11) {
+        this.a = 1;
+        this.d = ruVar;
+        this.b = i10;
+        this.c = i11;
     }
 
-    @Override // org.telegram.ui.Components.yn0
-    public final void a(String str) {
-        hg.e2 e2Var = this.h.v;
-        hg.c2 c2Var = e2Var.S;
-        int i10 = e2Var.c;
-        if (e2Var.N != 0) {
-            ConnectionsManager.getInstance(i10).cancelRequest(e2Var.N, true);
-            e2Var.N = 0;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                int floatValue = (int) (((Float) valueAnimator.getAnimatedValue()).floatValue() * this.c);
+                b61 b61Var = (b61) this.d;
+                b61Var.N = true;
+                b61Var.n.scrollBy(0, floatValue - this.b);
+                b61Var.N = false;
+                this.b = floatValue;
+                break;
+            default:
+                ((org.telegram.ui.ru) this.d).c.d.setColorFilter(new PorterDuffColorFilter(i0.b.f(((Float) valueAnimator.getAnimatedValue()).floatValue(), this.b, this.c), PorterDuff.Mode.SRC_IN));
+                break;
         }
-        if (e2Var.O != 0) {
-            ConnectionsManager.getInstance(i10).cancelRequest(e2Var.O, true);
-            e2Var.O = 0;
-        }
-        if (TextUtils.isEmpty(str)) {
-            e2Var.R = null;
-            e2Var.F.clear();
-            e2Var.I.clear();
-            e2Var.E.clear();
-            e2Var.e.b(false);
-            e2Var.l();
-        } else {
-            e2Var.R = str.toLowerCase();
-        }
-        AndroidUtilities.cancelRunOnUIThread(c2Var);
-        AndroidUtilities.runOnUIThread(c2Var, 300L);
+    }
+
+    public x51(b61 b61Var, int i10) {
+        this.a = 0;
+        this.d = b61Var;
+        this.c = i10;
+        this.b = 0;
     }
 }

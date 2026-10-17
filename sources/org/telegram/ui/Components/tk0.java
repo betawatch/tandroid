@@ -1,61 +1,31 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class tk0 extends s4.m0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ gl0 b;
+public final class tk0 extends pg.a {
+    public final ah.i1 c;
 
-    public /* synthetic */ tk0(gl0 gl0Var, int i10) {
-        this.a = i10;
-        this.b = gl0Var;
+    public tk0(int i10, ah.i1 i1Var) {
+        super(i10, false);
+        this.c = i1Var;
     }
 
-    @Override // s4.m0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.y0 y0Var) {
-        switch (this.a) {
-            case 0:
-                super.a(rect, view, recyclerView, y0Var);
-                gl0 gl0Var = this.b;
-                if (!gl0Var.q()) {
-                    recyclerView.getClass();
-                    int R = RecyclerView.R(view);
-                    if (R == 0) {
-                        rect.left = AndroidUtilities.dp(6.0f);
-                    }
-                    rect.right = AndroidUtilities.dp(4.0f);
-                    if (R == gl0Var.a0.h() - 1) {
-                        if ((!gl0Var.U.isEmpty() && !MessagesController.getInstance(gl0Var.J).premiumFeaturesBlocked()) || gl0Var.q()) {
-                            rect.right = AndroidUtilities.dp(2.0f);
-                            break;
-                        } else {
-                            rect.right = AndroidUtilities.dp(6.0f);
-                            break;
-                        }
-                    }
-                } else {
-                    rect.left = 0;
-                    rect.right = 0;
-                    break;
-                }
-                break;
-            default:
-                recyclerView.getClass();
-                int R2 = RecyclerView.R(view);
-                if (R2 == 0) {
-                    rect.left = AndroidUtilities.dp(8.0f);
-                }
-                if (R2 == this.b.a0.h() - 1) {
-                    rect.right = AndroidUtilities.dp(8.0f);
-                    break;
-                }
-                break;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (obj != null && tk0.class == obj.getClass()) {
+            tk0 tk0Var = (tk0) obj;
+            int i10 = this.a;
+            int i11 = tk0Var.a;
+            if (i10 == i11 && (i10 == 0 || i10 == 3)) {
+                ah.i1 i1Var = this.c;
+                return i1Var != null && i1Var.equals(tk0Var.c);
+            }
+            if (i10 == i11) {
+                return true;
+            }
+        }
+        return false;
     }
 }

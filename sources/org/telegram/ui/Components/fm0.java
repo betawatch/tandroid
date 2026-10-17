@@ -1,55 +1,9 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class fm0 implements Runnable {
-    public final /* synthetic */ View a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ float d;
-    public final /* synthetic */ gm0 e;
-
-    public fm0(gm0 gm0Var, View view, int i10, float f7, float f10) {
-        this.e = gm0Var;
-        this.a = view;
-        this.b = i10;
-        this.c = f7;
-        this.d = f10;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        hm0 hm0Var = this.e.b;
-        mm0 mm0Var = (mm0) hm0Var.b;
-        if (this == mm0Var.Q1) {
-            mm0Var.Q1 = null;
-        }
-        View view = this.a;
-        if (view != null) {
-            mm0Var.h1(view, 0.0f, 0.0f, false);
-            if (((mm0) hm0Var.b).P1) {
-                return;
-            }
-            try {
-                view.playSoundEffect(0);
-            } catch (Exception unused) {
-            }
-            view.sendAccessibilityEvent(1);
-            int i10 = this.b;
-            if (i10 != -1) {
-                mm0 mm0Var2 = (mm0) hm0Var.b;
-                am0 am0Var = mm0Var2.T0;
-                if (am0Var != null) {
-                    am0Var.a(i10, view);
-                    return;
-                }
-                bm0 bm0Var = mm0Var2.U0;
-                if (bm0Var != null) {
-                    bm0Var.d(this.c - view.getX(), this.d - view.getY(), i10, view);
-                }
-            }
-        }
-    }
+public final class fm0 {
+    public float a;
+    public float b;
+    public float c;
 }

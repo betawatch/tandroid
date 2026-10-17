@@ -1,32 +1,31 @@
 package androidx.car.app.hardware.common;
 
+import ai.d4;
 import android.os.IBinder;
 import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.hardware.ICarHardwareResult;
-import androidx.car.app.utils.i;
+import androidx.car.app.utils.g;
 import j$.util.Objects;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.Executor;
-import org.telegram.ui.ps0;
-import org.telegram.ui.web.v;
 import r.a;
-import r.c;
+import r.e;
 import w.b;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public class CarResultStub<T> extends ICarHardwareResult.Stub {
     private final b mBundle;
-    private final a mHostDispatcher;
+    private final r.b mHostDispatcher;
     private final boolean mIsSingleShot;
-    private final Map<c, Executor> mListeners = new HashMap();
+    private final Map<e, Executor> mListeners = new HashMap();
     private final int mResultType;
     private final T mUnsupportedValue;
 
-    public CarResultStub(int i10, b bVar, boolean z10, T t10, a aVar) {
-        Objects.requireNonNull(aVar);
-        this.mHostDispatcher = aVar;
+    public CarResultStub(int i10, b bVar, boolean z10, T t10, r.b bVar2) {
+        Objects.requireNonNull(bVar2);
+        this.mHostDispatcher = bVar2;
         this.mResultType = i10;
         this.mBundle = bVar;
         this.mIsSingleShot = z10;
@@ -52,40 +51,40 @@ public class CarResultStub<T> extends ICarHardwareResult.Stub {
 
     private void notifyResults(boolean z10, b bVar) {
         T convertAndRecast = z10 ? convertAndRecast(bVar) : this.mUnsupportedValue;
-        for (Map.Entry<c, Executor> entry : this.mListeners.entrySet()) {
-            entry.getValue().execute(new v(15, entry, convertAndRecast));
+        for (Map.Entry<e, Executor> entry : this.mListeners.entrySet()) {
+            entry.getValue().execute(new p2.b(6, entry, convertAndRecast));
         }
         if (this.mIsSingleShot) {
             this.mListeners.clear();
         }
     }
 
-    public void addListener(Executor executor, c cVar) {
+    public void addListener(Executor executor, e eVar) {
         this.mListeners.isEmpty();
-        Objects.requireNonNull(cVar);
+        Objects.requireNonNull(eVar);
         throw new ClassCastException();
     }
 
     @Override // androidx.car.app.hardware.ICarHardwareResult
     public void onCarHardwareResult(int i10, boolean z10, b bVar, IBinder iBinder) {
-        i.b(IOnDoneCallback.Stub.asInterface(iBinder), "onCarHardwareResult", new com.google.firebase.messaging.i(this, z10, bVar, 11));
+        g.b(IOnDoneCallback.Stub.asInterface(iBinder), "onCarHardwareResult", new d4(this, z10, bVar, 12));
     }
 
-    public boolean removeListener(c cVar) {
-        Map<c, Executor> map = this.mListeners;
-        Objects.requireNonNull(cVar);
-        map.remove(cVar);
+    public boolean removeListener(e eVar) {
+        Map<e, Executor> map = this.mListeners;
+        Objects.requireNonNull(eVar);
+        map.remove(eVar);
         if (!this.mListeners.isEmpty()) {
             return false;
         }
         if (this.mIsSingleShot) {
             return true;
         }
-        a aVar = this.mHostDispatcher;
+        r.b bVar = this.mHostDispatcher;
         int i10 = this.mResultType;
-        b bVar = this.mBundle;
-        aVar.getClass();
-        i.d("unsubscribeCarHardwareResult", new ps0(aVar, i10, bVar));
+        b bVar2 = this.mBundle;
+        bVar.getClass();
+        g.d("unsubscribeCarHardwareResult", new a(bVar, i10, bVar2));
         return true;
     }
 }

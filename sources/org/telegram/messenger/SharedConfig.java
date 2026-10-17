@@ -31,7 +31,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public class SharedConfig {
     private static final int[] LOW_SOC;
@@ -186,7 +186,7 @@ public class SharedConfig {
     public static boolean useThreeLinesLayout;
     public static boolean walletUseFingerprintLock;
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class BackgroundActivityPrefs {
         private static SharedPreferences prefs;
 
@@ -207,25 +207,25 @@ public class SharedConfig {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     @Retention(RetentionPolicy.SOURCE)
     public @interface PasscodeType {
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     @Retention(RetentionPolicy.SOURCE)
     public @interface PerformanceClass {
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class ProxyInfo {
         public boolean available;
         public long availableCheckTime;
         public boolean checking;
         public long ping;
-        public pi.a settings;
+        public qi.a settings;
 
-        public ProxyInfo(pi.a aVar) {
+        public ProxyInfo(qi.a aVar) {
             this.settings = aVar;
         }
 
@@ -233,7 +233,7 @@ public class SharedConfig {
         public static ProxyInfo fromSerializedData(int i10, InputSerializedData inputSerializedData) {
             long j10;
             long j11;
-            k2.p0 a2 = pi.a.a();
+            k2.q0 a2 = qi.a.a();
             String readString = inputSerializedData.readString(false);
             if (readString == null) {
                 readString = "";
@@ -260,7 +260,7 @@ public class SharedConfig {
                 j11 = 0;
             }
             if (i10 >= 3) {
-                int e = pi.a.e(inputSerializedData.readInt32(false));
+                int e = qi.a.e(inputSerializedData.readInt32(false));
                 if (e == 0) {
                     e = 1;
                 }
@@ -424,7 +424,7 @@ public class SharedConfig {
                 return;
             }
             lastLogsCheckTime = currentTimeMillis;
-            Utilities.cacheClearQueue.postRunnable(new fi.r2(currentTimeMillis, 7));
+            Utilities.cacheClearQueue.postRunnable(new gi.l2(currentTimeMillis, 7));
         }
     }
 
@@ -835,7 +835,7 @@ public class SharedConfig {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static void lambda$checkSdCard$2() {
-        org.telegram.ui.ActionBar.m2 R;
+        org.telegram.ui.ActionBar.n2 R;
         if (readOnlyStorageDirAlertShowed || (R = LaunchActivity.R()) == null || R.getParentActivity() == null) {
             return;
         }
@@ -846,10 +846,10 @@ public class SharedConfig {
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(R.getParentActivity());
         alertDialog$Builder.a.R = LocaleController.getString(R.string.SdCardError);
         alertDialog$Builder.a.S = LocaleController.getString(R.string.SdCardErrorDescription);
-        alertDialog$Builder.k(LocaleController.getString(R.string.DoNotUseSDCard), new ah());
-        org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
-        a2Var.setCanceledOnTouchOutside(false);
-        a2Var.show();
+        alertDialog$Builder.k(LocaleController.getString(R.string.DoNotUseSDCard), new sg(3));
+        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+        b2Var.setCanceledOnTouchOutside(false);
+        b2Var.show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1180,7 +1180,7 @@ public class SharedConfig {
             return;
         }
         SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
-        pi.a c10 = pi.a.c(sharedPreferences);
+        qi.a c10 = qi.a.c(sharedPreferences);
         proxyListLoaded = true;
         proxyList.clear();
         currentProxy = null;
@@ -1279,8 +1279,8 @@ public class SharedConfig {
             i12 = (i11 < 8 || memoryClass <= 160 || (ceil != -1 && ceil <= 2055) || (ceil == -1 && i11 == 8 && i10 <= 23)) ? 1 : 2;
         }
         if (BuildVars.LOGS_ENABLED) {
-            StringBuilder m10 = i2.d.m("device performance info selected_class = ", i12, " (cpu_count = ", i11, ", freq = ");
-            i2.d.w(m10, ceil, ", memoryClass = ", memoryClass, ", android version ");
+            StringBuilder m10 = i0.a.m("device performance info selected_class = ", i12, " (cpu_count = ", i11, ", freq = ");
+            i0.a.w(m10, ceil, ", memoryClass = ", memoryClass, ", android version ");
             m10.append(i10);
             m10.append(", manufacture ");
             m10.append(Build.MANUFACTURER);
@@ -1413,7 +1413,7 @@ public class SharedConfig {
 
     public static void saveProxyList() {
         ArrayList arrayList = new ArrayList(proxyList);
-        Collections.sort(arrayList, new ci(4));
+        Collections.sort(arrayList, new vh(4));
         SerializedData serializedData = new SerializedData();
         serializedData.writeInt32(-1);
         serializedData.writeByte(3);
@@ -1940,6 +1940,6 @@ public class SharedConfig {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$checkSdCard$1(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
+    public static /* synthetic */ void lambda$checkSdCard$1(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
     }
 }

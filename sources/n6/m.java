@@ -1,6 +1,6 @@
 package n6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class m implements k {
     public static m b;
@@ -11,7 +11,7 @@ public final class m implements k {
         this.a = obj;
     }
 
-    public static synchronized m b() {
+    public static synchronized m a() {
         m mVar;
         synchronized (m.class) {
             try {
@@ -27,7 +27,7 @@ public final class m implements k {
     }
 
     @Override // n6.k
-    public Object a(com.google.android.gms.common.api.q qVar) {
+    public Object b(com.google.android.gms.common.api.q qVar) {
         m8.d dVar = (m8.d) this.a;
         dVar.a = qVar;
         return dVar;

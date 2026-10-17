@@ -1,22 +1,32 @@
 package org.telegram.ui;
 
-import java.util.TimerTask;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class af0 extends TimerTask {
-    public final /* synthetic */ bf0 a;
+public final /* synthetic */ class af0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ jf0 b;
+    public final /* synthetic */ int c;
 
-    public af0(bf0 bf0Var) {
-        this.a = bf0Var;
+    public /* synthetic */ af0(jf0 jf0Var, int i10, int i11) {
+        this.a = i11;
+        this.b = jf0Var;
+        this.c = i10;
     }
 
-    @Override // java.util.TimerTask, java.lang.Runnable
+    @Override // java.lang.Runnable
     public final void run() {
-        if (this.a.N == null) {
-            return;
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new af0(this.b, this.c, 1));
+                break;
+            case 1:
+                this.b.A(this.c);
+                break;
+            default:
+                this.b.f.f[this.c].l(1.0f);
+                break;
         }
-        AndroidUtilities.runOnUIThread(new zz(this, 23));
     }
 }

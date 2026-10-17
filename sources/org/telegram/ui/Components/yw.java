@@ -1,58 +1,65 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.MotionEvent;
+import android.graphics.Canvas;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class yw extends mm0 {
-    public boolean V2;
-    public boolean W2;
-    public final /* synthetic */ wz X2;
+public final class yw extends FrameLayout {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ tz b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yw(wz wzVar, Context context) {
-        super(context, null);
-        this.X2 = wzVar;
+    public yw(tz tzVar, Context context, boolean z10) {
+        super(context);
+        this.b = tzVar;
+        this.a = z10;
     }
 
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.xt q6 = org.telegram.ui.xt.q();
-        wz wzVar = this.X2;
-        return super.onInterceptTouchEvent(motionEvent) || q6.r(motionEvent, wzVar.h0, wzVar.g2, this.n2);
-    }
-
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        wz wzVar = this.X2;
-        if (wzVar.q0 && wzVar.n0.G > 1) {
-            this.V2 = true;
-            wzVar.i0.h1(0, 0);
-            wzVar.o0.setVisibility(0);
-            wzVar.p0.k(0, 0);
-            wzVar.q0 = false;
-            this.V2 = false;
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
+        tz tzVar = this.b;
+        ex exVar = tzVar.B0;
+        ax axVar = tzVar.D0;
+        dx dxVar = tzVar.G0;
+        if (this.a || !(view == axVar || view == dxVar)) {
+            return super.drawChild(canvas, view, j10);
         }
-        super.onLayout(z10, i10, i11, i12, i13);
-        wz.f(wzVar, true);
+        canvas.save();
+        float y3 = exVar.getY() + exVar.getMeasuredHeight() + 1.0f;
+        if (view == axVar) {
+            y3 = Math.max(y3, dxVar.getY() + dxVar.getMeasuredHeight() + 1.0f);
+        }
+        canvas.clipRect(0.0f, y3 - (AndroidUtilities.dp(16.0f) * tzVar.a.e), getMeasuredWidth(), getMeasuredHeight());
+        boolean drawChild = super.drawChild(canvas, view, j10);
+        canvas.restore();
+        return drawChild;
     }
 
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        if (this.W2) {
-            return;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        tz tzVar = this.b;
+        tzVar.K0 = true;
+        tzVar.Y();
+        hg.f1 f1Var = tzVar.T0;
+        if (f1Var != null) {
+            f1Var.a();
         }
-        this.X2.n0.l();
-        this.W2 = true;
     }
 
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.V2) {
-            return;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        tz tzVar = this.b;
+        tzVar.K0 = false;
+        tzVar.Y();
+        hg.f1 f1Var = tzVar.T0;
+        if (f1Var != null) {
+            f1Var.a();
         }
-        super.requestLayout();
     }
 }

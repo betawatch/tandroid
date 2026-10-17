@@ -8,7 +8,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class k extends o {
     public final /* synthetic */ int r;
@@ -124,7 +124,7 @@ public final class k extends o {
                 }
                 mVar3.c(b12, jSONObject4.toString());
                 mVar3.g = Long.valueOf(j11);
-                mVar3.m.a(b12, new qf.b(mVar3, o12, z10 ? 1 : 0, 21));
+                mVar3.m.a(b12, new qf.b(mVar3, o12, z10 ? 1 : 0, 19));
                 return;
         }
     }

@@ -5,11 +5,11 @@ import be.d2;
 import be.f0;
 import be.m0;
 import be.x0;
-import com.google.android.gms.internal.play_billing.k3;
+import com.google.android.gms.internal.cast.a6;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class h extends m0 implements md.d, kd.c {
     public static final /* synthetic */ AtomicReferenceFieldUpdater n = AtomicReferenceFieldUpdater.newUpdater(h.class, Object.class, "_reusableCancellableContinuation$volatile");
@@ -39,7 +39,7 @@ public final class h extends m0 implements md.d, kd.c {
     @Override // md.d
     public final md.d getCallerFrame() {
         md.c cVar = this.e;
-        if (k3.s(cVar)) {
+        if (a6.s(cVar)) {
             return cVar;
         }
         return null;

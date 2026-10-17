@@ -1,15 +1,13 @@
 package mb;
 
 import a1.g;
-import i2.d;
 import j$.util.Objects;
 import java.io.Closeable;
 import java.io.EOFException;
 import java.io.Reader;
 import java.util.Arrays;
-import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public class a implements Closeable {
     public final Reader a;
@@ -218,7 +216,7 @@ public class a implements Closeable {
     public final IllegalStateException E(String str) {
         String str2 = x() == 9 ? "adapter-not-null-safe" : "unexpected-json-structure";
         StringBuilder v = g.v("Expected ", str, " but was ");
-        v.append(d.E(x()));
+        v.append(i0.a.E(x()));
         v.append(m());
         v.append("\nSee ");
         v.append("https://github.com/google/gson/blob/main/Troubleshooting.md#".concat(str2));
@@ -451,7 +449,7 @@ public class a implements Closeable {
                     str2 = "FALSE";
                     i10 = 6;
                 } else if (c11 == 'n' || c11 == 'N') {
-                    str = BuildConfig.BETA_URL;
+                    str = "null";
                     str2 = "NULL";
                     i10 = 7;
                 } else {
@@ -680,7 +678,7 @@ public class a implements Closeable {
                 case 8:
                     break;
                 default:
-                    throw new AssertionError(d.j(i12, "Unknown scope value: "));
+                    throw new AssertionError(i0.a.j(i12, "Unknown scope value: "));
             }
             i10++;
         }
@@ -728,7 +726,7 @@ public class a implements Closeable {
     }
 
     final String m() {
-        StringBuilder m10 = d.m(" at line ", this.e + 1, " column ", (this.c - this.f) + 1, " path ");
+        StringBuilder m10 = i0.a.m(" at line ", this.e + 1, " column ", (this.c - this.f) + 1, " path ");
         m10.append(h());
         return m10.toString();
     }
@@ -965,7 +963,7 @@ public class a implements Closeable {
             i10 = d();
         }
         if (i10 != 7) {
-            throw E(BuildConfig.BETA_URL);
+            throw E("null");
         }
         this.h = 0;
         int[] iArr = this.y;

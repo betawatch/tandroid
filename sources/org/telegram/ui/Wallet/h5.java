@@ -1,54 +1,171 @@
 package org.telegram.ui.Wallet;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewConfiguration;
+import android.view.animation.DecelerateInterpolator;
+import android.widget.Scroller;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.br;
+import org.telegram.ui.Components.a71;
+import org.telegram.ui.Components.u61;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class h5 extends br {
-    public final /* synthetic */ i5 a;
+public final class h5 extends s4.p0 {
+    public RecyclerView a;
+    public u61 c;
+    public boolean d;
+    public boolean e;
+    public boolean f;
+    public float g;
+    public float h;
+    public final /* synthetic */ l5 j;
+    public final ei.e9 b = new ei.e9(this);
+    public final n i = new n(this, 9);
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h5(n4 n4Var, int i10) {
-        super(i10, 0);
-        this.a = n4Var;
+    public h5(l5 l5Var) {
+        this.j = l5Var;
     }
 
-    @Override // org.telegram.ui.Components.br, android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
-        setAlpha(1.0f);
-        i5 i5Var = this.a;
-        boolean z10 = i5Var.a;
-        g5 g5Var = i5Var.L;
-        RectF rectF = i5Var.f;
-        if (z10 && (i5Var.E instanceof q5) && i5Var.F.getWidth() > 0) {
-            q5 q5Var = (q5) i5Var.E;
-            float intrinsicWidth = this.drawable.getIntrinsicWidth() * i5Var.b;
-            float intrinsicHeight = this.drawable.getIntrinsicHeight();
-            float f10 = i5Var.b;
-            float f11 = intrinsicHeight * f10;
-            float f12 = f10 * f7;
-            float height = (g5Var.getHeight() / 2.0f) - (f11 / 2.0f);
-            rectF.set(f12, height, intrinsicWidth + f12, f11 + height);
-            if (!i5Var.h || i5Var.R <= 0.0f) {
-                rectF.offset(i5Var.N.leftMargin, (i5Var.F.getHeight() / 2.0f) - AndroidUtilities.dp(22.0f));
-            } else {
-                i5Var.c.mapRect(rectF);
+    /* JADX WARN: Removed duplicated region for block: B:35:0x008a  */
+    @Override // s4.p0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean a(int i10, int i11) {
+        int minFlingVelocity;
+        int i12;
+        boolean z10 = this.f;
+        if (z10) {
+            if (z10) {
+                this.d = true;
             }
-            q5Var.c(rectF.left / i5Var.F.getWidth(), rectF.top / i5Var.F.getHeight(), rectF.width() / i5Var.F.getWidth(), rectF.height() / i5Var.F.getHeight());
-            if (q5Var.d || !q5Var.c) {
-                float max = Math.max(0.0f, Math.min(1.0f, i5Var.R));
-                setAlpha(max);
-                if (max == 0.0f) {
-                    return;
+            s4.n0 layoutManager = this.a.getLayoutManager();
+            if (layoutManager != null && this.a.getAdapter() != null && ((Math.abs(i11) > (minFlingVelocity = this.a.getMinFlingVelocity()) || Math.abs(i10) > minFlingVelocity) && (layoutManager instanceof s4.b0))) {
+                s4.f1 f1Var = new s4.f1(this, this.a.getContext());
+                if (this.c != null && this.f && Math.abs(i11) >= AndroidUtilities.dp(600.0f)) {
+                    l5 l5Var = this.j;
+                    if (l5Var.u0()) {
+                        int i13 = i11 > 0 ? 1 : -1;
+                        a71 t02 = l5Var.t0();
+                        if (this.c.canScrollVertically(i13) && (i13 >= 0 || t02 == null || !t02.canScrollVertically(-1))) {
+                            i12 = i13 > 0 ? layoutManager.B() - 1 : 0;
+                            if (i12 != -1) {
+                                f1Var.a = i12;
+                                layoutManager.w0(f1Var);
+                                return true;
+                            }
+                        }
+                    }
                 }
-            } else {
-                g5Var.postInvalidateOnAnimation();
+                i12 = -1;
+                if (i12 != -1) {
+                }
             }
         }
-        super.draw(canvas, charSequence, i10, i11, f7, i12, i13, i14, paint);
+        return false;
+    }
+
+    public final void b(u61 u61Var) {
+        u61 u61Var2 = this.c;
+        if (u61Var2 != null) {
+            u61Var2.removeCallbacks(this.i);
+        }
+        this.c = u61Var;
+        RecyclerView recyclerView = this.a;
+        if (recyclerView == u61Var) {
+            return;
+        }
+        ei.e9 e9Var = this.b;
+        if (recyclerView != null) {
+            ArrayList arrayList = recyclerView.w0;
+            if (arrayList != null) {
+                arrayList.remove(e9Var);
+            }
+            this.a.setOnFlingListener(null);
+        }
+        this.a = u61Var;
+        if (u61Var != null) {
+            if (u61Var.getOnFlingListener() != null) {
+                throw new IllegalStateException("An instance of OnFlingListener already set.");
+            }
+            this.a.j(e9Var);
+            this.a.setOnFlingListener(this);
+            new Scroller(this.a.getContext(), new DecelerateInterpolator());
+            f();
+        }
+    }
+
+    public final void c() {
+        this.e = false;
+        this.f = false;
+        this.d = false;
+        u61 u61Var = this.c;
+        if (u61Var != null) {
+            u61Var.removeCallbacks(this.i);
+        }
+    }
+
+    public final View d(s4.n0 n0Var) {
+        u61 u61Var;
+        if (this.e || (u61Var = this.c) == null || u61Var.getScrollState() != 0) {
+            return null;
+        }
+        l5 l5Var = this.j;
+        a71 t02 = l5Var.t0();
+        if ((t02 != null && t02.getScrollState() != 0) || !this.d) {
+            return null;
+        }
+        this.d = false;
+        if (!l5Var.u0()) {
+            return null;
+        }
+        View m10 = n0Var.m(0);
+        View m11 = n0Var.m(n0Var.B() - 1);
+        return m10 == null ? m11 : (m11 != null && Math.abs(new int[]{0, s4.n0.z(m10) - n0Var.F()}[1]) >= Math.abs(new int[]{0, s4.n0.z(m11) - n0Var.F()}[1])) ? m11 : m10;
+    }
+
+    public final void e(MotionEvent motionEvent) {
+        int actionMasked = motionEvent.getActionMasked();
+        if (actionMasked == 0) {
+            c();
+            this.e = true;
+            this.g = motionEvent.getX();
+            this.h = motionEvent.getY();
+            return;
+        }
+        if (actionMasked == 3) {
+            c();
+            return;
+        }
+        if (actionMasked == 2 || actionMasked == 1) {
+            float abs = Math.abs(motionEvent.getX() - this.g);
+            float abs2 = Math.abs(motionEvent.getY() - this.h);
+            boolean z10 = abs2 > ((float) ViewConfiguration.get(this.c.getContext()).getScaledTouchSlop()) && abs2 > abs * 1.5f;
+            this.f = z10;
+            if (!z10) {
+                this.d = false;
+            }
+            if (actionMasked == 1) {
+                this.e = false;
+            }
+        }
+    }
+
+    public final void f() {
+        s4.n0 layoutManager;
+        View d;
+        RecyclerView recyclerView = this.a;
+        if (recyclerView == null || (layoutManager = recyclerView.getLayoutManager()) == null || (d = d(layoutManager)) == null) {
+            return;
+        }
+        int[] iArr = {0, s4.n0.z(d) - layoutManager.F()};
+        int i10 = iArr[0];
+        if (i10 == 0 && iArr[1] == 0) {
+            return;
+        }
+        this.a.v0(i10, iArr[1], null);
     }
 }

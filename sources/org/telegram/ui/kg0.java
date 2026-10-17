@@ -1,47 +1,74 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.widget.FrameLayout;
+import android.os.Bundle;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kg0 implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class kg0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ og0 b;
+    public final /* synthetic */ pg0 b;
 
-    public /* synthetic */ kg0(og0 og0Var, int i10) {
+    public /* synthetic */ kg0(pg0 pg0Var, int i10) {
         this.a = i10;
-        this.b = og0Var;
+        this.b = pg0Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        ph.b[] bVarArr;
         switch (this.a) {
             case 0:
-                og0 og0Var = this.b;
-                og0Var.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                og0Var.d.setAlpha(floatValue);
-                og0Var.e.setAlpha(floatValue);
-                og0Var.f.setProgress(floatValue);
-                FrameLayout frameLayout = og0Var.w;
-                frameLayout.setAlpha(floatValue);
-                float f7 = (floatValue * 0.5f) + 0.5f;
-                frameLayout.setScaleX(f7);
-                frameLayout.setScaleY(f7);
+                pg0.b0(this.b);
+                break;
+            case 1:
+                pg0 pg0Var = this.b;
+                pg0Var.getClass();
+                m9.m0(pg0Var);
+                break;
+            case 2:
+                pg0.c0(this.b);
+                break;
+            case 3:
+                pg0.a0(this.b);
+                break;
+            case 4:
+                AndroidUtilities.removeFromParent(this.b.P);
+                break;
+            case 5:
+                pg0 pg0Var2 = this.b;
+                pg0Var2.getClass();
+                new oj0(pg0Var2.getParentActivity(), pg0Var2).show();
+                break;
+            case 6:
+                pg0 pg0Var3 = this.b;
+                pg0Var3.getClass();
+                Bundle bundle = new Bundle();
+                bundle.putBoolean("needFinishFragment", false);
+                pg0Var3.presentFragment(new m9(bundle));
                 break;
             default:
-                og0 og0Var2 = this.b;
-                og0Var2.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                og0Var2.f.setProgress(floatValue2);
-                og0Var2.d.setAlpha(floatValue2);
-                og0Var2.e.setAlpha(floatValue2);
-                FrameLayout frameLayout2 = og0Var2.w;
-                frameLayout2.setAlpha(floatValue2);
-                float f10 = (floatValue2 * 0.5f) + 0.5f;
-                frameLayout2.setScaleX(f10);
-                frameLayout2.setScaleY(f10);
+                pg0 pg0Var4 = this.b;
+                if (pg0Var4.getParentActivity() != null && (bVarArr = pg0Var4.K) != null) {
+                    float width = ((r1.getWidth() / 2.0f) + (pg0Var4.b.getWidth() - ((bVarArr[4].getX() + pg0Var4.F.getX()) + r1.getWidth()))) / AndroidUtilities.density;
+                    ei.x3 x3Var = new ei.x3(pg0Var4.getParentActivity(), 3);
+                    pg0Var4.P = x3Var;
+                    x3Var.setTranslationY(AndroidUtilities.dp(4.0f) + (-pg0Var4.L));
+                    pg0Var4.P.setPadding(AndroidUtilities.dp(7.33f), 0, AndroidUtilities.dp(7.33f), 0);
+                    pg0Var4.P.p(false);
+                    pg0Var4.P.i(true);
+                    pg0Var4.P.s(LocaleController.getString(R.string.SwitchAccountHint));
+                    pg0Var4.P.l(1.0f, (-width) + 7.33f);
+                    pg0Var4.b.addView(pg0Var4.P, w7.z5.a(100.0f, 0.0f, 0.0f, 0.0f, 72.0f, -1, 87));
+                    ei.x3 x3Var2 = pg0Var4.P;
+                    x3Var2.l0 = new kg0(pg0Var4, 4);
+                    x3Var2.d = 8000L;
+                    x3Var2.u();
+                    org.telegram.ui.Components.s40.r.b();
+                    break;
+                }
                 break;
         }
     }

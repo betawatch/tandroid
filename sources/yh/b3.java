@@ -5,14 +5,14 @@ import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.d10;
-import org.telegram.ui.Components.sc;
-import org.telegram.ui.Components.zc;
-import org.telegram.ui.fo;
+import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.xc;
+import org.telegram.ui.Components.z00;
+import org.telegram.ui.sn;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class b3 extends fo {
+public final class b3 extends sn {
     public boolean Qc;
     public final /* synthetic */ TL_stars.TL_starGiftUnique Rc;
     public final /* synthetic */ long Sc;
@@ -25,19 +25,19 @@ public final class b3 extends fo {
         this.Qc = false;
     }
 
-    @Override // org.telegram.ui.fo, org.telegram.ui.ActionBar.m2
+    @Override // org.telegram.ui.sn, org.telegram.ui.ActionBar.n2
     public final void onBecomeFullyVisible() {
         super.onBecomeFullyVisible();
         if (this.Qc) {
             return;
         }
         this.Qc = true;
-        sc O = zc.a0(this).O(this.Rc.getDocument(), LocaleController.getString(R.string.BoughtResoldGiftToTitle), LocaleController.formatString(R.string.BoughtResoldGiftToText, DialogObject.getShortName(this.currentAccount, this.Sc)));
+        qc O = xc.a0(this).O(this.Rc.getDocument(), LocaleController.getString(R.string.BoughtResoldGiftToTitle), LocaleController.formatString(R.string.BoughtResoldGiftToText, DialogObject.getShortName(this.currentAccount, this.Sc)));
         O.r = false;
         O.j();
-        d10 d10Var = this.m9;
-        if (d10Var != null) {
-            d10Var.c(true);
+        z00 z00Var = this.m9;
+        if (z00Var != null) {
+            z00Var.c(true);
         }
     }
 }

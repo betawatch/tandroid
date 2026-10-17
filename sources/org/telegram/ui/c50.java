@@ -1,44 +1,106 @@
 package org.telegram.ui;
 
+import android.animation.ValueAnimator;
+import android.app.Dialog;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.os.Build;
+import android.os.Bundle;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
-import org.telegram.messenger.ChatObject;
+import android.view.Window;
+import android.view.WindowManager;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class c50 implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ ChatObject.VideoParticipant a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ n60 c;
+public final class c50 extends Dialog {
+    public final ci.i3 a;
+    public final x10 b;
+    public Bitmap c;
+    public Paint d;
+    public BitmapShader e;
+    public final Matrix f;
+    public float h;
+    public ValueAnimator n;
+    public boolean r;
 
-    public c50(n60 n60Var, ChatObject.VideoParticipant videoParticipant, boolean z10) {
-        this.c = n60Var;
-        this.a = videoParticipant;
-        this.b = z10;
+    public c50(Context context, x10 x10Var) {
+        super(context, R.style.TransparentDialog);
+        this.f = new Matrix();
+        this.b = x10Var;
+        x10Var.setVisibility(4);
+        AndroidUtilities.makeGlobalBlurBitmap(new org.telegram.ui.Components.qy(10, this, x10Var), 14.0f);
+        ci.i3 i3Var = new ci.i3(this, context, x10Var);
+        this.a = i3Var;
+        i3Var.setOnClickListener(new a(this, 28));
     }
 
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        ViewGroup viewGroup;
-        n60 n60Var = this.c;
-        t50 t50Var = n60Var.Q;
-        t50Var.getViewTreeObserver().removeOnPreDrawListener(this);
-        n60Var.q2 = null;
-        e40 e40Var = n60Var.a2;
-        ChatObject.VideoParticipant videoParticipant = this.a;
-        e40Var.j(videoParticipant);
-        if (n60Var.s0) {
-            n60Var.s0 = false;
-            n60Var.P0(true);
-            if (this.b && videoParticipant != null) {
-                t50Var.u0(0);
-            }
-            n60Var.s0 = true;
-        } else {
-            n60Var.P0(true);
+    public final void b(float f7, b50 b50Var) {
+        ValueAnimator valueAnimator = this.n;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+            this.n = null;
         }
-        viewGroup = ((org.telegram.ui.ActionBar.e3) n60Var).containerView;
-        viewGroup.requestLayout();
-        return false;
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.h, f7);
+        this.n = ofFloat;
+        ofFloat.addUpdateListener(new e3(this, 16));
+        this.n.addListener(new ai.o7(this, f7, b50Var, 4));
+        this.n.setDuration(420L);
+        this.n.setInterpolator(org.telegram.ui.Components.bs.h);
+        this.n.start();
+    }
+
+    @Override // android.app.Dialog, android.content.DialogInterface
+    public final void dismiss() {
+        if (this.r) {
+            return;
+        }
+        this.r = true;
+        b(0.0f, new b50(this, 0));
+        try {
+            WindowManager.LayoutParams attributes = getWindow().getAttributes();
+            attributes.flags |= 16;
+            getWindow().setAttributes(attributes);
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+    }
+
+    @Override // android.app.Dialog
+    public final void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        Window window = getWindow();
+        window.setWindowAnimations(R.style.DialogNoAnimation);
+        setContentView(this.a, new ViewGroup.LayoutParams(-1, -1));
+        WindowManager.LayoutParams attributes = window.getAttributes();
+        attributes.width = -1;
+        attributes.height = -1;
+        attributes.gravity = 119;
+        attributes.dimAmount = 0.0f;
+        int i10 = attributes.flags & (-3);
+        attributes.softInputMode = 48;
+        attributes.flags = (-2013069056) | i10;
+        if (!BuildVars.DEBUG_PRIVATE_VERSION) {
+            attributes.flags = i10 | (-2013060864);
+            AndroidUtilities.logFlagSecure();
+        }
+        attributes.flags |= 1152;
+        if (Build.VERSION.SDK_INT >= 28) {
+            attributes.layoutInDisplayCutoutMode = 1;
+        }
+        window.setAttributes(attributes);
+    }
+
+    @Override // android.app.Dialog
+    public final void show() {
+        super.show();
+        b(1.0f, null);
+        AndroidUtilities.runOnUIThread(new b50(this, 1), 16L);
     }
 }

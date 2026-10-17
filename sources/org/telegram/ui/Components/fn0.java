@@ -1,92 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ic1;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class fn0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ kn0 b;
+public final class fn0 {
+    public static final fn0 a;
+    public static final fn0 b;
+    public static final /* synthetic */ fn0[] c;
 
-    public /* synthetic */ fn0(kn0 kn0Var, int i10) {
-        this.a = i10;
-        this.b = kn0Var;
+    static {
+        fn0 fn0Var = new fn0("LINE", 0);
+        a = fn0Var;
+        fn0 fn0Var2 = new fn0("TAB", 1);
+        b = fn0Var2;
+        c = new fn0[]{fn0Var, fn0Var2};
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:15:0x0039, code lost:
-    
-        if (r2.q0 != false) goto L8;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x0048, code lost:
-    
-        if (r2.q0 != false) goto L8;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:6:0x0022, code lost:
-    
-        if (r2.q0 != false) goto L8;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:7:0x0024, code lost:
-    
-        r4 = 1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x004b, code lost:
-    
-        r2.scrollBy(r0 * r4, 0);
-        org.telegram.messenger.AndroidUtilities.runOnUIThread(r2.s0);
-     */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        int tabSize;
-        int max;
-        switch (this.a) {
-            case 0:
-                kn0 kn0Var = this.b;
-                ic1 ic1Var = kn0Var.e;
-                kn0Var.b0 = false;
-                kn0Var.V = kn0Var.getScrollX() + kn0Var.W;
-                tabSize = kn0Var.getTabSize();
-                int ceil = ((int) Math.ceil(r3 / tabSize)) - 1;
-                kn0Var.U = ceil;
-                kn0Var.T = ceil;
-                if (kn0Var.e(ceil) && ceil >= 0 && ceil < ic1Var.getChildCount()) {
-                    try {
-                        kn0Var.performHapticFeedback(0);
-                    } catch (Exception unused) {
-                    }
-                    kn0Var.d0 = 0.0f;
-                    kn0Var.v = 0.0f;
-                    View childAt = ic1Var.getChildAt(ceil);
-                    kn0Var.s = childAt;
-                    kn0Var.c0 = childAt.getX() - kn0Var.getScrollX();
-                    kn0Var.s.invalidate();
-                    ic1Var.invalidate();
-                    kn0Var.j();
-                    kn0Var.invalidate();
-                    break;
-                }
-                break;
-            default:
-                long currentTimeMillis = System.currentTimeMillis();
-                kn0 kn0Var2 = this.b;
-                long j10 = currentTimeMillis - kn0Var2.r0;
-                int i10 = -1;
-                if (j10 >= 3000) {
-                    if (j10 >= 5000) {
-                        max = Math.max(1, AndroidUtilities.dp(4.0f));
-                        break;
-                    } else {
-                        max = Math.max(1, AndroidUtilities.dp(2.0f));
-                        break;
-                    }
-                } else {
-                    max = Math.max(1, AndroidUtilities.dp(1.0f));
-                    break;
-                }
-        }
+    public static fn0 valueOf(String str) {
+        return (fn0) Enum.valueOf(fn0.class, str);
+    }
+
+    public static fn0[] values() {
+        return (fn0[]) c.clone();
     }
 }

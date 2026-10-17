@@ -2,12 +2,12 @@ package i1;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import m.n3;
-import m.z2;
+import m.m3;
+import m.y2;
 import s4.v0;
 import z4.f;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class b implements Parcelable.ClassLoaderCreator {
     public final /* synthetic */ int a;
@@ -25,9 +25,9 @@ public final class b implements Parcelable.ClassLoaderCreator {
                 }
                 throw new IllegalStateException("superState must be null");
             case 1:
-                return new z2(parcel, classLoader);
+                return new y2(parcel, classLoader);
             case 2:
-                return new n3(parcel, classLoader);
+                return new m3(parcel, classLoader);
             case 3:
                 return new v0(parcel, classLoader);
             default:
@@ -41,9 +41,9 @@ public final class b implements Parcelable.ClassLoaderCreator {
             case 0:
                 return new c[i10];
             case 1:
-                return new z2[i10];
+                return new y2[i10];
             case 2:
-                return new n3[i10];
+                return new m3[i10];
             case 3:
                 return new v0[i10];
             default:
@@ -60,9 +60,9 @@ public final class b implements Parcelable.ClassLoaderCreator {
                 }
                 throw new IllegalStateException("superState must be null");
             case 1:
-                return new z2(parcel, null);
+                return new y2(parcel, null);
             case 2:
-                return new n3(parcel, null);
+                return new m3(parcel, null);
             case 3:
                 return new v0(parcel, null);
             default:

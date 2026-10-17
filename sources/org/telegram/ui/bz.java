@@ -1,79 +1,68 @@
 package org.telegram.ui;
 
-import android.appwidget.AppWidgetManager;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import java.util.ArrayList;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.messenger.ChatsWidgetProvider;
-import org.telegram.messenger.ContactsWidgetProvider;
-import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class bz extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ hz a;
+public final /* synthetic */ class bz implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ nz b;
 
-    public bz(hz hzVar) {
-        this.a = hzVar;
+    public /* synthetic */ bz(nz nzVar, int i10) {
+        this.a = i10;
+        this.b = nzVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        int i11;
-        hz hzVar = this.a;
-        int i12 = hzVar.w;
-        ArrayList arrayList = hzVar.e;
-        int i13 = hzVar.x;
-        if (i10 == -1) {
-            if (hzVar.y != null) {
-                hzVar.finishFragment();
-                return;
-            }
-            hzVar.Y();
-        }
-        if (i10 != 1 || hzVar.getParentActivity() == null) {
-            return;
-        }
-        ArrayList<MessagesStorage.TopicKey> arrayList2 = new ArrayList<>();
-        for (int i14 = 0; i14 < arrayList.size(); i14++) {
-            arrayList2.add(MessagesStorage.TopicKey.of(((Long) arrayList.get(i14)).longValue(), 0L));
-        }
-        hzVar.getMessagesStorage().putWidgetDialogs(i13, arrayList2);
-        SharedPreferences.Editor edit = hzVar.getParentActivity().getSharedPreferences("shortcut_widget", 0).edit();
-        i11 = ((org.telegram.ui.ActionBar.m2) hzVar).currentAccount;
-        edit.putInt("account" + i13, i11);
-        edit.putInt(TeXSymbolParser.TYPE_ATTR + i13, i12);
-        edit.commit();
-        AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(hzVar.getParentActivity());
-        if (i12 == 0) {
-            ChatsWidgetProvider.updateWidget(hzVar.getParentActivity(), appWidgetManager, i13);
-        } else {
-            ContactsWidgetProvider.updateWidget(hzVar.getParentActivity(), appWidgetManager, i13);
-        }
-        b1 b1Var = hzVar.y;
-        if (b1Var == null) {
-            hzVar.Y();
-            return;
-        }
-        int i15 = b1Var.a;
-        Object obj = b1Var.b;
-        switch (i15) {
-            case 25:
-                ChatsWidgetConfigActivity chatsWidgetConfigActivity = (ChatsWidgetConfigActivity) obj;
-                int i16 = ChatsWidgetConfigActivity.F;
-                Intent intent = new Intent();
-                intent.putExtra("appWidgetId", chatsWidgetConfigActivity.E);
-                chatsWidgetConfigActivity.setResult(-1, intent);
-                chatsWidgetConfigActivity.finish();
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, final TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                final int i10 = 0;
+                final nz nzVar = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.az
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                nz nzVar2 = nzVar;
+                                nzVar2.F = 0;
+                                if (tL_error == null) {
+                                    org.telegram.messenger.q.q(R.string.FilterInviteNameEdited, org.telegram.ui.Components.xc.a0(nzVar2), R.raw.contact_check, 36);
+                                    break;
+                                }
+                                break;
+                            default:
+                                nz.U(nzVar, tL_error);
+                                break;
+                        }
+                    }
+                });
                 break;
             default:
-                ContactsWidgetConfigActivity contactsWidgetConfigActivity = (ContactsWidgetConfigActivity) obj;
-                int i17 = ContactsWidgetConfigActivity.F;
-                Intent intent2 = new Intent();
-                intent2.putExtra("appWidgetId", contactsWidgetConfigActivity.E);
-                contactsWidgetConfigActivity.setResult(-1, intent2);
-                contactsWidgetConfigActivity.finish();
+                final int i11 = 1;
+                final nz nzVar2 = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.az
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                nz nzVar22 = nzVar2;
+                                nzVar22.F = 0;
+                                if (tL_error == null) {
+                                    org.telegram.messenger.q.q(R.string.FilterInviteNameEdited, org.telegram.ui.Components.xc.a0(nzVar22), R.raw.contact_check, 36);
+                                    break;
+                                }
+                                break;
+                            default:
+                                nz.U(nzVar2, tL_error);
+                                break;
+                        }
+                    }
+                });
                 break;
         }
     }

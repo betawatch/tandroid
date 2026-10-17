@@ -1,33 +1,58 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class mu0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ nu0 a;
+public final class mu0 extends org.telegram.ui.Components.s60 {
+    public final /* synthetic */ nu0 d;
 
     public mu0(nu0 nu0Var) {
-        this.a = nu0Var;
+        this.d = nu0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        super.onAnimationEnd(animator);
-        nu0 nu0Var = this.a;
-        PhotoViewer photoViewer = nu0Var.c;
-        photoViewer.n4 = 0;
-        photoViewer.G1();
-        photoViewer.L0.setAlpha(255);
-        photoViewer.e0.invalidate();
-        photoViewer.P0.setTranslationY(0.0f);
-        if (photoViewer.t4) {
-            PhotoViewer.a0(photoViewer, nu0Var.b.intValue());
+    @Override // org.telegram.ui.Components.zo0
+    public final CharSequence d() {
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(LocaleController.getString("AccDescrVideoQuality", R.string.AccDescrVideoQuality));
+        if (this.d.s.Z7 > 0) {
+            sb2.append(", ");
+            sb2.append(this.d.s.Y7 + 1);
+            sb2.append(" / ");
+            sb2.append(this.d.s.Z7);
         }
-        hv0 hv0Var = nu0Var.a;
-        if (hv0Var != null) {
-            hv0Var.d();
+        sb2.append(", ");
+        sb2.append(this.d.h);
+        sb2.append(" – ");
+        sb2.append(this.d.n);
+        return sb2.toString();
+    }
+
+    @Override // org.telegram.ui.Components.s60
+    public final int i() {
+        return Math.max(0, this.d.s.Z7 - 1);
+    }
+
+    @Override // org.telegram.ui.Components.s60
+    public final int j() {
+        return this.d.s.Y7;
+    }
+
+    @Override // org.telegram.ui.Components.s60
+    public final void k(int i10) {
+        int max;
+        if (this.d.s.Z7 > 0 && (max = Math.max(0, Math.min(this.d.s.Z7 - 1, i10))) != this.d.s.Y7) {
+            nu0 nu0Var = this.d;
+            nu0Var.r = nu0Var.s.Y7;
+            this.d.s.Y7 = max;
+            this.d.s.S0();
+            this.d.invalidate();
+            int i11 = this.d.s.Y7;
+            nu0 nu0Var2 = this.d;
+            if (i11 != nu0Var2.r) {
+                nu0Var2.s.p2(1);
+            }
         }
     }
 }

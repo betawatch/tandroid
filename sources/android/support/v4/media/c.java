@@ -1,63 +1,51 @@
 package android.support.v4.media;
 
-import a0.f;
-import a1.g;
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.os.Bundle;
-import android.support.v4.media.session.b0;
-import kotlin.jvm.internal.i;
+import android.media.Rating;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class c {
-    public final Bundle a;
-
-    public c(Context context) {
-        i.e(context, "context");
-        Bundle bundle = context.getPackageManager().getApplicationInfo(context.getPackageName(), 128).metaData;
-        this.a = bundle == null ? Bundle.EMPTY : bundle;
+public abstract class c {
+    public static float a(Rating rating) {
+        return rating.getPercentRating();
     }
 
-    public Boolean a() {
-        Bundle bundle = this.a;
-        if (bundle.containsKey("firebase_sessions_enabled")) {
-            return Boolean.valueOf(bundle.getBoolean("firebase_sessions_enabled"));
-        }
-        return null;
+    public static int b(Rating rating) {
+        return rating.getRatingStyle();
     }
 
-    public void b(String str, Bitmap bitmap) {
-        f fVar = MediaMetadataCompat.d;
-        if (fVar.containsKey(str) && ((Integer) fVar.get(str)).intValue() != 2) {
-            throw new IllegalArgumentException(g.p("The ", str, " key cannot be used to put a Bitmap"));
-        }
-        this.a.putParcelable(str, bitmap);
+    public static float c(Rating rating) {
+        return rating.getStarRating();
     }
 
-    public void c(long j10) {
-        f fVar = MediaMetadataCompat.d;
-        if (fVar.containsKey("android.media.metadata.DURATION") && ((Integer) fVar.get("android.media.metadata.DURATION")).intValue() != 0) {
-            throw new IllegalArgumentException("The android.media.metadata.DURATION key cannot be used to put a long");
-        }
-        this.a.putLong("android.media.metadata.DURATION", j10);
+    public static boolean d(Rating rating) {
+        return rating.hasHeart();
     }
 
-    public void d(String str, String str2) {
-        f fVar = MediaMetadataCompat.d;
-        if (fVar.containsKey(str) && ((Integer) fVar.get(str)).intValue() != 1) {
-            throw new IllegalArgumentException(g.p("The ", str, " key cannot be used to put a String"));
-        }
-        this.a.putCharSequence(str, str2);
+    public static boolean e(Rating rating) {
+        return rating.isRated();
     }
 
-    public c() {
-        this.a = new Bundle();
+    public static boolean f(Rating rating) {
+        return rating.isThumbUp();
     }
 
-    public c(MediaMetadataCompat mediaMetadataCompat) {
-        Bundle bundle = new Bundle(mediaMetadataCompat.a);
-        this.a = bundle;
-        b0.a(bundle);
+    public static Rating g(boolean z10) {
+        return Rating.newHeartRating(z10);
+    }
+
+    public static Rating h(float f7) {
+        return Rating.newPercentageRating(f7);
+    }
+
+    public static Rating i(int i10, float f7) {
+        return Rating.newStarRating(i10, f7);
+    }
+
+    public static Rating j(boolean z10) {
+        return Rating.newThumbRating(z10);
+    }
+
+    public static Rating k(int i10) {
+        return Rating.newUnratedRating(i10);
     }
 }

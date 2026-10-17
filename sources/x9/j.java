@@ -6,14 +6,14 @@ import java.io.File;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class j {
-    public final s a;
+    public final r a;
     public final i b;
 
-    public j(s sVar, ca.c cVar) {
-        this.a = sVar;
+    public j(r rVar, ca.c cVar) {
+        this.a = rVar;
         this.b = new i(cVar);
     }
 

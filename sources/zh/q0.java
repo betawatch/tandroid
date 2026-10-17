@@ -1,83 +1,64 @@
 package zh;
 
-import android.content.Context;
-import android.graphics.Rect;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.es;
+import android.text.TextUtils;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class q0 extends ph.c implements ne.d {
-    public static final /* synthetic */ int s = 0;
-    public final ne.e f;
-    public final ji.p1 h;
-    public final ph.b[] n;
-    public int r;
+public final /* synthetic */ class q0 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ b1 b;
+    public final /* synthetic */ String c;
 
-    public q0(Context context, org.telegram.ui.ActionBar.c6 c6Var, ji.p1 p1Var) {
-        super(context);
-        this.f = new ne.e(0, this, es.h, 1600L);
-        this.h = p1Var;
-        int i10 = org.telegram.ui.ActionBar.g6.Wk;
-        int m12 = org.telegram.ui.ActionBar.g6.m1(0.09411765f, org.telegram.ui.ActionBar.g6.w0(i10, c6Var));
-        org.telegram.ui.ActionBar.g6.m1(0.1254902f, org.telegram.ui.ActionBar.g6.w0(i10, c6Var));
-        this.e.setColor(m12);
-        this.n = new ph.b[]{ph.b.b(context, c6Var, ph.a.G, R.string.GiftPreviewModels), ph.b.b(context, c6Var, ph.a.v, R.string.GiftPreviewBackdrops), ph.b.b(context, c6Var, ph.a.J, R.string.GiftPreviewSymbols)};
-        int i11 = 0;
-        while (true) {
-            ph.b[] bVarArr = this.n;
-            if (i11 >= bVarArr.length) {
-                bVarArr[0].e(true, false);
-                return;
-            } else {
-                this.a.addView(bVarArr[i11], w7.z5.l(1.0f, 0, -1));
-                this.n[i11].setOnClickListener(new di.m4(this, i11, 28));
-                i11++;
-            }
+    public /* synthetic */ q0(b1 b1Var, String str, int i10) {
+        this.a = i10;
+        this.b = b1Var;
+        this.c = str;
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        g gVar = (g) obj;
+        switch (this.a) {
+            case 0:
+                b1 b1Var = this.b;
+                if (TextUtils.equals(b1Var.d, this.c)) {
+                    boolean z10 = b1Var.t0 == null;
+                    b1Var.t0 = gVar;
+                    if (!b1Var.v0) {
+                        if (!z10) {
+                            b1Var.c1(gVar);
+                            break;
+                        } else {
+                            h hVar = b1Var.s0;
+                            hVar.m = gVar;
+                            hVar.n = null;
+                            hVar.q = 2;
+                            hVar.o = 0.0f;
+                            hVar.p = 0L;
+                            hVar.E = 0L;
+                            hVar.F = false;
+                            b1Var.invalidate();
+                            break;
+                        }
+                    }
+                }
+                break;
+            default:
+                b1 b1Var2 = this.b;
+                if (TextUtils.equals(b1Var2.e, this.c)) {
+                    b1Var2.u0 = gVar;
+                    if (b1Var2.v0 && b1Var2.w0 && b1Var2.A0) {
+                        b1Var2.A0 = false;
+                        b1Var2.z0 = System.currentTimeMillis() + 60000;
+                        b1Var2.A2 = -1;
+                    }
+                    if (b1Var2.v0) {
+                        b1Var2.c1(gVar);
+                        break;
+                    }
+                }
+                break;
         }
-    }
-
-    public final void a(int i10) {
-        int i11 = this.r;
-        if (i11 != i10) {
-            ph.b[] bVarArr = this.n;
-            bVarArr[i11].e(false, true);
-            bVarArr[i10].e(true, true);
-            this.r = i10;
-            this.f.a(i10);
-            this.h.run(Integer.valueOf(i10));
-        }
-    }
-
-    public final void b() {
-        float f7 = this.f.e;
-        float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(8.0f), getMeasuredWidth() - AndroidUtilities.dp(8.0f), f7 / 3.0f);
-        float lerp2 = AndroidUtilities.lerp(AndroidUtilities.dp(8.0f), getMeasuredWidth() - AndroidUtilities.dp(8.0f), (f7 + 1.0f) / 3.0f);
-        int measuredHeight = getMeasuredHeight() - AndroidUtilities.dp(8.0f);
-        Rect rect = this.c;
-        rect.set((int) lerp, AndroidUtilities.dp(8.0f), (int) lerp2, measuredHeight);
-        int dp = AndroidUtilities.dp(this.b * 7.0f);
-        Rect rect2 = this.d;
-        rect2.set(rect);
-        int i10 = -dp;
-        rect2.inset(i10, i10);
-        Math.abs(f7 - 1.0f);
-    }
-
-    @Override // android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        super.onSizeChanged(i10, i11, i12, i13);
-        b();
-    }
-
-    @Override // ne.d
-    public final void p(int i10, float f7, float f10, ne.e eVar) {
-        b();
-        invalidate();
-    }
-
-    @Override // ne.d
-    public final /* synthetic */ void A(float f7, int i10) {
     }
 }

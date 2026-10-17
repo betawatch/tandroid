@@ -1,196 +1,136 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import java.util.ArrayList;
+import android.text.TextUtils;
+import java.util.Arrays;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_wallet;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class tk0 extends pg.b {
-    public final Context d;
-    public final /* synthetic */ NotificationsCustomSettingsActivity e;
+public final /* synthetic */ class tk0 implements Runnable {
+    public final /* synthetic */ boolean E;
+    public final /* synthetic */ String F;
+    public final /* synthetic */ org.telegram.ui.web.a1 G;
+    public final /* synthetic */ ei.d a;
+    public final /* synthetic */ ei.d b;
+    public final /* synthetic */ TLRPC.TL_urlAuthResultRequest c;
+    public final /* synthetic */ TL_wallet.inputTonConnectOauthSession[] d;
+    public final /* synthetic */ TLRPC.TL_messages_requestUrlAuth e;
+    public final /* synthetic */ String[] f;
+    public final /* synthetic */ org.telegram.ui.Cells.v8 h;
+    public final /* synthetic */ boolean[] n;
+    public final /* synthetic */ boolean[] r;
+    public final /* synthetic */ int[] s;
+    public final /* synthetic */ boolean[] v;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f3 w;
+    public final /* synthetic */ String x;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d6 y;
 
-    public tk0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity, Context context) {
-        this.e = notificationsCustomSettingsActivity;
-        this.d = context;
+    public /* synthetic */ tk0(ei.d dVar, ei.d dVar2, TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest, TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, String[] strArr, org.telegram.ui.Cells.v8 v8Var, boolean[] zArr, boolean[] zArr2, int[] iArr, boolean[] zArr3, org.telegram.ui.ActionBar.f3 f3Var, String str, org.telegram.ui.ActionBar.d6 d6Var, boolean z10, String str2, org.telegram.ui.web.a1 a1Var) {
+        this.a = dVar;
+        this.b = dVar2;
+        this.c = tL_urlAuthResultRequest;
+        this.d = inputtonconnectoauthsessionArr;
+        this.e = tL_messages_requestUrlAuth;
+        this.f = strArr;
+        this.h = v8Var;
+        this.n = zArr;
+        this.r = zArr2;
+        this.s = iArr;
+        this.v = zArr3;
+        this.w = f3Var;
+        this.x = str;
+        this.y = d6Var;
+        this.E = z10;
+        this.F = str2;
+        this.G = a1Var;
     }
 
-    @Override // org.telegram.ui.Components.lm0
-    public final boolean D(s4.b1 b1Var) {
-        int i10 = b1Var.f;
-        return (i10 == 0 || i10 == 4) ? false : true;
-    }
-
-    @Override // s4.g0
-    public final int h() {
-        return this.e.I.size();
-    }
-
-    @Override // s4.g0
-    public final int j(int i10) {
-        if (i10 < 0) {
-            return 5;
-        }
-        NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.e;
-        if (i10 >= notificationsCustomSettingsActivity.I.size()) {
-            return 5;
-        }
-        return ((sk0) notificationsCustomSettingsActivity.I.get(i10)).a;
-    }
-
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
-        ArrayList arrayList = this.e.I;
-        if (i10 < 0 || i10 >= arrayList.size()) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        final ei.d dVar = this.a;
+        if (dVar.N || this.b.N) {
             return;
         }
-        sk0 sk0Var = (sk0) arrayList.get(i10);
-        int i11 = i10 + 1;
-        boolean z10 = i11 < arrayList.size() && ((sk0) arrayList.get(i11)).a != 4;
-        int i12 = b1Var.f;
-        View view = b1Var.a;
-        switch (i12) {
-            case 0:
-                ((org.telegram.ui.Cells.m4) view).setText(sk0Var.e);
-                break;
-            case 1:
-                ((org.telegram.ui.Cells.w8) view).f("" + ((Object) sk0Var.e), sk0Var.i, z10);
-                break;
-            case 2:
-                ((org.telegram.ui.Cells.xa) view).g(sk0Var.g, null, z10);
-                break;
-            case 3:
-                ((org.telegram.ui.Cells.y8) view).b(sk0Var.h, "" + ((Object) sk0Var.e), z10);
-                break;
-            case 4:
-                org.telegram.ui.Cells.e9 e9Var = (org.telegram.ui.Cells.e9) view;
-                if (sk0Var.e != null) {
-                    e9Var.setFixedSize(0);
-                    e9Var.setText(sk0Var.e);
-                    break;
-                } else {
-                    e9Var.setFixedSize(12);
-                    e9Var.setText(null);
-                    break;
-                }
-            case 5:
-                ((org.telegram.ui.Cells.ca) view).c(sk0Var.e, sk0Var.f, false, z10);
-                break;
-            case 6:
-                org.telegram.ui.Cells.j5 j5Var = (org.telegram.ui.Cells.j5) view;
-                j5Var.setDrawLine(true);
-                j5Var.setChecked(sk0Var.i);
-                j5Var.b(sk0Var.e, sk0Var.f, sk0Var.d, sk0Var.i, 0, false, z10, true);
-                break;
-            case 7:
-                org.telegram.ui.Cells.r8 r8Var = (org.telegram.ui.Cells.r8) view;
-                if (sk0Var.d != 0) {
-                    r8Var.e(org.telegram.ui.ActionBar.g6.v6, org.telegram.ui.ActionBar.g6.u6);
-                    r8Var.m(sk0Var.d, "" + ((Object) sk0Var.e), z10);
-                    break;
-                } else {
-                    r8Var.e(-1, org.telegram.ui.ActionBar.g6.p7);
-                    r8Var.i("" + ((Object) sk0Var.e), z10);
-                    break;
-                }
-            case 8:
-                rk0 rk0Var = (rk0) view;
-                rk0Var.e(org.telegram.ui.ActionBar.g6.v6, org.telegram.ui.ActionBar.g6.u6);
-                CharSequence charSequence = sk0Var.e;
-                org.telegram.messenger.sk.t(rk0Var.R.animate().rotation(sk0Var.d == 1 ? 0.0f : 180.0f), org.telegram.ui.Components.es.h, 340L);
-                rk0Var.i(charSequence, z10);
-                break;
+        final TLRPC.TL_urlAuthResultRequest tL_urlAuthResultRequest = this.c;
+        boolean z10 = tL_urlAuthResultRequest.request_wallet;
+        TL_wallet.inputTonConnectOauthSession[] inputtonconnectoauthsessionArr = this.d;
+        if (z10 && inputtonconnectoauthsessionArr[0] == null) {
+            return;
         }
-    }
-
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        View m4Var;
-        org.telegram.ui.ActionBar.c6 c6Var;
-        NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.e;
-        Context context = this.d;
-        switch (i10) {
-            case 0:
-                m4Var = new org.telegram.ui.Cells.m4(context);
-                break;
-            case 1:
-                m4Var = new org.telegram.ui.Cells.w8(context);
-                break;
-            case 2:
-                m4Var = new org.telegram.ui.Cells.xa(6, 0, context, false);
-                break;
-            case 3:
-                m4Var = new org.telegram.ui.Cells.y8(context, null);
-                break;
-            case 4:
-                m4Var = new org.telegram.ui.Cells.e9(context);
-                break;
-            case 5:
-                m4Var = new org.telegram.ui.Cells.ca(context);
-                break;
-            case 6:
-                c6Var = ((org.telegram.ui.ActionBar.m2) notificationsCustomSettingsActivity).resourceProvider;
-                m4Var = new org.telegram.ui.Cells.j5(21, 64, this.d, c6Var, true);
-                break;
-            case 7:
-            default:
-                m4Var = new org.telegram.ui.Cells.r8(context);
-                break;
-            case 8:
-                rk0 rk0Var = new rk0(context);
-                ImageView imageView = new ImageView(context);
-                rk0Var.R = imageView;
-                imageView.setScaleType(ImageView.ScaleType.CENTER);
-                imageView.setColorFilter(new PorterDuffColorFilter(notificationsCustomSettingsActivity.getThemedColor(org.telegram.ui.ActionBar.g6.v6), PorterDuff.Mode.SRC_IN));
-                imageView.setImageResource(R.drawable.msg_expand);
-                rk0Var.addView(imageView, w7.z5.a(24.0f, 17.0f, 0.0f, 17.0f, 0.0f, 24, (LocaleController.isRTL ? 3 : 5) | 16));
-                m4Var = rk0Var;
-                break;
+        dVar.setLoading(true);
+        final TLRPC.TL_messages_acceptUrlAuth tL_messages_acceptUrlAuth = new TLRPC.TL_messages_acceptUrlAuth();
+        final TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth = this.e;
+        if (TLObject.hasFlag(tL_messages_requestUrlAuth.flags, 2)) {
+            tL_messages_acceptUrlAuth.flags |= 2;
+            tL_messages_acceptUrlAuth.peer = tL_messages_requestUrlAuth.peer;
+            tL_messages_acceptUrlAuth.msg_id = tL_messages_requestUrlAuth.msg_id;
+            tL_messages_acceptUrlAuth.button_id = tL_messages_requestUrlAuth.button_id;
         }
-        return new org.telegram.ui.Components.wl0(m4Var);
-    }
-
-    @Override // s4.g0
-    public final void y(s4.b1 b1Var) {
-        boolean isGlobalNotificationsEnabled;
-        ArrayList arrayList;
-        ArrayList arrayList2;
-        NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.e;
-        ArrayList arrayList3 = notificationsCustomSettingsActivity.I;
-        int i10 = notificationsCustomSettingsActivity.s;
-        if (i10 == 3 || ((arrayList2 = notificationsCustomSettingsActivity.w) != null && arrayList2.isEmpty())) {
-            if (i10 == 3) {
-                Boolean bool = notificationsCustomSettingsActivity.n;
-                isGlobalNotificationsEnabled = bool == null || bool.booleanValue() || !((arrayList = notificationsCustomSettingsActivity.w) == null || arrayList.isEmpty());
-            } else {
-                isGlobalNotificationsEnabled = notificationsCustomSettingsActivity.getNotificationsController().isGlobalNotificationsEnabled(i10);
+        if (TLObject.hasFlag(tL_messages_requestUrlAuth.flags, 4)) {
+            tL_messages_acceptUrlAuth.flags |= 4;
+            tL_messages_acceptUrlAuth.url = tL_messages_requestUrlAuth.url;
+        }
+        String str = this.f[0];
+        if (str != null) {
+            tL_messages_acceptUrlAuth.match_code = str;
+        }
+        org.telegram.ui.Cells.v8 v8Var = this.h;
+        tL_messages_acceptUrlAuth.write_allowed = v8Var != null && v8Var.e.h;
+        tL_messages_acceptUrlAuth.share_phone_number = this.n[0];
+        TL_wallet.inputTonConnectOauthSession inputtonconnectoauthsession = inputtonconnectoauthsessionArr[0];
+        tL_messages_acceptUrlAuth.tonconnect_session = inputtonconnectoauthsession;
+        inputtonconnectoauthsessionArr[0] = null;
+        if (this.r[0]) {
+            if (inputtonconnectoauthsession != null) {
+                Arrays.fill(inputtonconnectoauthsession.challenge_answer, (byte) 0);
+                return;
             }
-            int b10 = b1Var.b();
-            View view = b1Var.a;
-            sk0 sk0Var = (b10 < 0 || b10 >= arrayList3.size()) ? null : (sk0) arrayList3.get(b10);
-            if (sk0Var == null || sk0Var.c != 102) {
-                int i11 = b1Var.f;
-                if (i11 == 0) {
-                    ((org.telegram.ui.Cells.m4) view).a(null, isGlobalNotificationsEnabled);
+            return;
+        }
+        final int[] iArr = this.s;
+        ConnectionsManager connectionsManager = ConnectionsManager.getInstance(iArr[0]);
+        org.telegram.messenger.a aVar = new org.telegram.messenger.a();
+        final boolean[] zArr = this.v;
+        final org.telegram.ui.ActionBar.f3 f3Var = this.w;
+        final String str2 = this.x;
+        final org.telegram.ui.ActionBar.d6 d6Var = this.y;
+        final boolean z11 = this.E;
+        final String str3 = this.F;
+        final org.telegram.ui.web.a1 a1Var = this.G;
+        connectionsManager.sendRequestTyped(tL_messages_acceptUrlAuth, aVar, new Utilities.Callback2() { // from class: org.telegram.ui.qk0
+            @Override // org.telegram.messenger.Utilities.Callback2
+            public final void run(Object obj, Object obj2) {
+                TLRPC.UrlAuthResult urlAuthResult = (TLRPC.UrlAuthResult) obj;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                ei.d.this.setLoading(false);
+                TLRPC.TL_messages_acceptUrlAuth tL_messages_acceptUrlAuth2 = tL_messages_acceptUrlAuth;
+                TL_wallet.inputTonConnectOauthSession inputtonconnectoauthsession2 = tL_messages_acceptUrlAuth2.tonconnect_session;
+                if (inputtonconnectoauthsession2 != null) {
+                    Arrays.fill(inputtonconnectoauthsession2.challenge_answer, (byte) 0);
+                }
+                zArr[0] = true;
+                f3Var.dismiss();
+                if (tL_error == null) {
+                    wk0.b(z11, iArr[0], tL_messages_requestUrlAuth, urlAuthResult, str3, tL_urlAuthResultRequest, null, tL_messages_acceptUrlAuth2.share_phone_number, a1Var);
                     return;
                 }
-                if (i11 == 1) {
-                    ((org.telegram.ui.Cells.w8) view).e(null, isGlobalNotificationsEnabled);
-                } else if (i11 == 3) {
-                    ((org.telegram.ui.Cells.y8) view).a(null, isGlobalNotificationsEnabled);
-                } else {
-                    if (i11 != 5) {
-                        return;
-                    }
-                    ((org.telegram.ui.Cells.ca) view).a(null, isGlobalNotificationsEnabled);
+                if (!"URL_EXPIRED".equalsIgnoreCase(tL_error.text)) {
+                    wk0.a().f0(tL_error, false);
+                    return;
                 }
+                org.telegram.ui.Components.xc a2 = wk0.a();
+                int i10 = R.raw.error;
+                String string = LocaleController.getString(R.string.BotAuthLoggedInFailTitle);
+                String str4 = str2;
+                a2.M(string, TextUtils.isEmpty(str4) ? LocaleController.getString(R.string.BotAuthLoggedInFailNoDomain) : AndroidUtilities.replaceSingleLinkBold(LocaleController.formatString(R.string.BotAuthLoggedInFail, str4), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Gi, d6Var)), i10).j();
             }
-        }
+        });
     }
 }

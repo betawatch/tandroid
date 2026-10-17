@@ -1,31 +1,38 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+import android.graphics.Canvas;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class up0 implements tb {
-    public final /* synthetic */ sc a;
-    public final /* synthetic */ gf b;
+public final class up0 {
+    public final uu a;
+    public final long b;
+    public final float c;
+    public final float d;
+    public final float e;
 
-    public up0(gf gfVar, sc scVar) {
-        this.b = gfVar;
-        this.a = scVar;
+    public up0(View view) {
+        uu uuVar = new uu(1, view);
+        this.b = System.currentTimeMillis();
+        this.a = uuVar;
+        this.c = AndroidUtilities.lerp(5.0f, 9.0f, Utilities.clamp01(Utilities.fastRandom.nextFloat()));
+        this.d = AndroidUtilities.lerp(2.5f, 5.0f, Utilities.clamp01(Utilities.fastRandom.nextFloat()));
+        this.e = AndroidUtilities.lerp(2.5f, 5.2f, Utilities.clamp01(Utilities.fastRandom.nextFloat()));
     }
 
-    @Override // org.telegram.ui.Components.tb
-    public final void c() {
-        this.b.G.remove(this.a);
-    }
-
-    @Override // org.telegram.ui.Components.tb
-    public final void d() {
-        this.b.G.add(this.a);
-    }
-
-    @Override // org.telegram.ui.Components.tb
-    public final /* synthetic */ void a(sc scVar) {
-    }
-
-    @Override // org.telegram.ui.Components.tb
-    public final /* synthetic */ void b() {
+    public final void a(Canvas canvas, float f7) {
+        uu uuVar;
+        float currentTimeMillis = (System.currentTimeMillis() - this.b) / 1000.0f;
+        canvas.translate(0.0f, 0.0f);
+        canvas.rotate(((float) Math.sin(this.c * currentTimeMillis * 3.141592653589793d)) * 1.0f * f7);
+        canvas.translate(((float) Math.cos(this.d * currentTimeMillis * 3.141592653589793d)) * AndroidUtilities.dp(0.5f) * f7, ((float) Math.sin(currentTimeMillis * this.e * 3.141592653589793d)) * AndroidUtilities.dp(0.5f) * f7);
+        canvas.translate(-0.0f, -0.0f);
+        if (f7 <= 0.0f || (uuVar = this.a) == null) {
+            return;
+        }
+        uuVar.run();
     }
 }

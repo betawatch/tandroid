@@ -1,63 +1,79 @@
 package b2;
 
-import android.os.Bundle;
-import j$.util.Objects;
-import v7.u6;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class i1 extends h1 {
+public final class i1 implements Comparable, Parcelable {
+    public static final Parcelable.Creator<i1> CREATOR = new q(2);
     public static final String d;
     public static final String e;
+    public static final String f;
+    public final int a;
     public final int b;
-    public final float c;
+    public final int c;
 
     static {
         String str = e2.m0.a;
-        d = Integer.toString(1, 36);
-        e = Integer.toString(2, 36);
+        d = Integer.toString(0, 36);
+        e = Integer.toString(1, 36);
+        f = Integer.toString(2, 36);
     }
 
-    public i1(int i10) {
-        u6.f("maxStars must be a positive integer", i10 > 0);
-        this.b = i10;
-        this.c = -1.0f;
+    public i1(int i10, int i11, int i12) {
+        this.a = i10;
+        this.b = i11;
+        this.c = i12;
     }
 
-    @Override // b2.h1
-    public final boolean b() {
-        return this.c != -1.0f;
+    @Override // java.lang.Comparable
+    public final int compareTo(Object obj) {
+        i1 i1Var = (i1) obj;
+        int i10 = this.a - i1Var.a;
+        if (i10 != 0) {
+            return i10;
+        }
+        int i11 = this.b - i1Var.b;
+        return i11 == 0 ? this.c - i1Var.c : i11;
     }
 
-    @Override // b2.h1
-    public final Bundle c() {
-        Bundle bundle = new Bundle();
-        bundle.putInt(h1.a, 2);
-        bundle.putInt(d, this.b);
-        bundle.putFloat(e, this.c);
-        return bundle;
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
     }
 
     public final boolean equals(Object obj) {
-        if (!(obj instanceof i1)) {
-            return false;
+        if (this == obj) {
+            return true;
         }
-        i1 i1Var = (i1) obj;
-        return this.b == i1Var.b && this.c == i1Var.c;
+        if (obj != null && i1.class == obj.getClass()) {
+            i1 i1Var = (i1) obj;
+            if (this.a == i1Var.a && this.b == i1Var.b && this.c == i1Var.c) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public final int hashCode() {
-        return Objects.hash(Integer.valueOf(this.b), Float.valueOf(this.c));
+        return (((this.a * 31) + this.b) * 31) + this.c;
     }
 
-    public i1(int i10, float f7) {
-        boolean z10 = false;
-        u6.f("maxStars must be a positive integer", i10 > 0);
-        if (f7 >= 0.0f && f7 <= i10) {
-            z10 = true;
-        }
-        u6.f("starRating is out of range [0, maxStars]", z10);
-        this.b = i10;
-        this.c = f7;
+    public final String toString() {
+        return this.a + "." + this.b + "." + this.c;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        parcel.writeInt(this.a);
+        parcel.writeInt(this.b);
+        parcel.writeInt(this.c);
+    }
+
+    public i1(Parcel parcel) {
+        this.a = parcel.readInt();
+        this.b = parcel.readInt();
+        this.c = parcel.readInt();
     }
 }

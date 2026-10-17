@@ -1,13 +1,13 @@
 package h2;
 
-import b2.q0;
-import b2.x;
+import b2.p0;
+import b2.w;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public class h extends a {
-    public x a;
+    public w a;
     public final d b = new d();
     public ByteBuffer c;
     public boolean d;
@@ -17,7 +17,7 @@ public class h extends a {
     public final int n;
 
     static {
-        q0.a("media3.decoder");
+        p0.a("media3.decoder");
     }
 
     public h(int i10, int i11) {
@@ -74,7 +74,7 @@ public class h extends a {
         this.d = false;
     }
 
-    public final void d() {
+    public final void f() {
         ByteBuffer byteBuffer = this.c;
         if (byteBuffer != null) {
             byteBuffer.flip();

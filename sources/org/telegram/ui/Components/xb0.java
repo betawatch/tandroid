@@ -1,38 +1,25 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class xb0 extends d91 {
-    public final /* synthetic */ Context a;
-    public final /* synthetic */ vc0 b;
+public final class xb0 extends g.o {
+    public final /* synthetic */ ic0 c;
 
-    public xb0(vc0 vc0Var, Context context) {
-        this.b = vc0Var;
-        this.a = context;
+    public xb0(ic0 ic0Var) {
+        this.c = ic0Var;
     }
 
-    @Override // org.telegram.ui.Components.d91
-    public final void b(View view, int i10, int i11) {
-        pc0 pc0Var = (pc0) view;
-        pc0Var.h();
-        pc0Var.k(false);
-    }
-
-    @Override // org.telegram.ui.Components.d91
-    public final View d(int i10) {
-        return new pc0(this.b, this.a, i10);
-    }
-
-    @Override // org.telegram.ui.Components.d91
-    public final int e() {
-        return this.b.e.a.size();
-    }
-
-    @Override // org.telegram.ui.Components.d91
-    public final int h(int i10) {
-        return ((sc0) this.b.e.a.get(i10)).a;
+    @Override // g.o
+    public final int i(int i10) {
+        MessageObject messageObject;
+        MessageObject.GroupedMessages a2;
+        if (i10 < 0) {
+            return MediaDataController.MAX_STYLE_RUNS_COUNT;
+        }
+        ic0 ic0Var = this.c;
+        return (i10 >= ic0Var.r.previewMessages.size() || (a2 = ic0.a(ic0Var, (messageObject = ic0Var.r.previewMessages.get(i10)))) == null) ? MediaDataController.MAX_STYLE_RUNS_COUNT : a2.getPosition(messageObject).spanSize;
     }
 }

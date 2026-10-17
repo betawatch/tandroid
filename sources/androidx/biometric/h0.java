@@ -1,16 +1,11 @@
 package androidx.biometric;
 
-import android.app.KeyguardManager;
-import android.content.Context;
+import android.content.pm.PackageManager;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class h0 {
-    public static KeyguardManager a(Context context) {
-        return (KeyguardManager) context.getSystemService(KeyguardManager.class);
-    }
-
-    public static boolean b(KeyguardManager keyguardManager) {
-        return keyguardManager.isDeviceSecure();
+    public static boolean a(PackageManager packageManager) {
+        return packageManager.hasSystemFeature("android.hardware.fingerprint");
     }
 }

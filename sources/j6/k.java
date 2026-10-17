@@ -3,9 +3,9 @@ package j6;
 import android.os.Bundle;
 import android.util.Log;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import com.google.firebase.messaging.r;
+import com.google.firebase.messaging.q;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class k {
     public final int a;
@@ -30,11 +30,11 @@ public final class k {
         }
     }
 
-    public final void b(r rVar) {
+    public final void b(q qVar) {
         if (Log.isLoggable("MessengerIpcClient", 3)) {
-            Log.d("MessengerIpcClient", "Failing " + toString() + " with " + rVar.toString());
+            Log.d("MessengerIpcClient", "Failing " + toString() + " with " + qVar.toString());
         }
-        this.b.setException(rVar);
+        this.b.setException(qVar);
     }
 
     public final void c(Bundle bundle) {

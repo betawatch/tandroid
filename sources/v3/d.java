@@ -1,11 +1,12 @@
 package v3;
 
-import a4.l;
+import b2.s0;
 import b2.t0;
-import b2.u0;
-import b2.w0;
-import c3.b0;
-import c3.i0;
+import b2.v;
+import b2.v0;
+import c3.a0;
+import c3.c0;
+import c3.j0;
 import c3.k;
 import c3.n;
 import c3.o;
@@ -13,7 +14,7 @@ import c3.p;
 import c3.q;
 import c3.s;
 import c3.w;
-import c3.z;
+import c3.y;
 import e2.m0;
 import e2.x;
 import e9.l0;
@@ -22,25 +23,26 @@ import e9.x1;
 import java.io.EOFException;
 import java.math.RoundingMode;
 import java.util.List;
+import q3.l;
 import v7.b8;
 import v7.n7;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class d implements o {
     public final int a;
     public final long b;
     public final x c;
-    public final z d;
+    public final a0 d;
     public final w e;
-    public final l f;
+    public final y f;
     public final n g;
     public q h;
-    public i0 i;
-    public i0 j;
+    public j0 i;
+    public j0 j;
     public int k;
-    public u0 l;
-    public u0 m;
+    public t0 l;
+    public t0 m;
     public long n;
     public long o;
     public long p;
@@ -63,10 +65,10 @@ public final class d implements o {
     @Override // c3.o
     public final void c(q qVar) {
         this.h = qVar;
-        i0 W = qVar.W(0, 1);
-        this.i = W;
-        this.j = W;
-        this.h.D();
+        j0 j02 = qVar.j0(0, 1);
+        this.i = j02;
+        this.j = j02;
+        this.h.H();
     }
 
     @Override // c3.o
@@ -146,20 +148,20 @@ public final class d implements o {
         h aVar;
         long j13;
         long j14;
-        u0 u0Var;
         t0 t0Var;
-        t0 t0Var2;
+        s0 s0Var;
+        s0 s0Var2;
         int i16;
         long S;
         c cVar;
         h hVar;
-        u0 u0Var2;
+        t0 t0Var2;
         w wVar2;
         int A;
         this.i.getClass();
         String str = m0.a;
         int i17 = this.k;
-        z zVar = this.d;
+        a0 a0Var = this.d;
         if (i17 == 0) {
             try {
                 j(pVar, false);
@@ -171,15 +173,15 @@ public final class d implements o {
             }
         }
         if (this.s == null) {
-            x xVar2 = new x(zVar.b);
-            pVar.b(0, zVar.b, xVar2.a);
+            x xVar2 = new x(a0Var.b);
+            pVar.b(0, a0Var.b, xVar2.a);
             int i18 = 21;
             th2 = null;
-            if ((zVar.a & 1) != 0) {
-                if (zVar.d != 1) {
+            if ((a0Var.a & 1) != 0) {
+                if (a0Var.d != 1) {
                     i18 = 36;
                 }
-            } else if (zVar.d == 1) {
+            } else if (a0Var.d == 1) {
                 i18 = 13;
             }
             j10 = 1000000;
@@ -197,19 +199,19 @@ public final class d implements o {
                         j12 = -9223372036854775807L;
                         xVar2.O(6);
                         i13 = 0;
-                        long j15 = position + zVar.b;
+                        long j15 = position + a0Var.b;
                         long m11 = j15 + xVar2.m();
                         int m12 = xVar2.m();
                         if (m12 <= 0) {
                             aVar = null;
                             wVar2 = wVar3;
                         } else {
-                            long Y = m0.Y(zVar.c, (m12 * zVar.f) - 1);
+                            long Y = m0.Y(a0Var.c, (m12 * a0Var.f) - 1);
                             int H = xVar2.H();
                             int H2 = xVar2.H();
                             int H3 = xVar2.H();
                             xVar2.O(2);
-                            long j16 = position + zVar.b;
+                            long j16 = position + a0Var.b;
                             long[] jArr2 = new long[H];
                             long[] jArr3 = new long[H];
                             int i19 = 0;
@@ -250,11 +252,11 @@ public final class d implements o {
                                         e2.a.l("VbriSeeker", t11.toString());
                                         m11 = Math.max(m11, j16);
                                     }
-                                    aVar = new i(jArr2, jArr3, Y, j15, m11, zVar.e);
+                                    aVar = new i(jArr2, jArr3, Y, j15, m11, a0Var.e);
                                 }
                             }
                         }
-                        pVar.r(zVar.b);
+                        pVar.r(a0Var.b);
                         wVar = wVar2;
                     } else if (i12 != 1483304551) {
                         pVar.q();
@@ -263,49 +265,49 @@ public final class d implements o {
                         i13 = 0;
                         j12 = -9223372036854775807L;
                     }
-                    u0Var = this.l;
+                    t0Var = this.l;
                     long position2 = pVar.getPosition();
-                    if (u0Var != null) {
-                        t0[] t0VarArr = u0Var.a;
-                        int length2 = t0VarArr.length;
+                    if (t0Var != null) {
+                        s0[] s0VarArr = t0Var.a;
+                        int length2 = s0VarArr.length;
                         int i20 = i13;
                         while (true) {
                             if (i20 >= length2) {
-                                t0Var = null;
+                                s0Var = null;
                                 break;
                             }
-                            t0 t0Var3 = t0VarArr[i20];
-                            if (q3.l.class.isAssignableFrom(t0Var3.getClass())) {
-                                t0Var = (t0) q3.l.class.cast(t0Var3);
+                            s0 s0Var3 = s0VarArr[i20];
+                            if (l.class.isAssignableFrom(s0Var3.getClass())) {
+                                s0Var = (s0) l.class.cast(s0Var3);
                             }
-                            t0Var = null;
-                            if (t0Var != null) {
+                            s0Var = null;
+                            if (s0Var != null) {
                                 break;
                             }
                             i20++;
                         }
-                        q3.l lVar = (q3.l) t0Var;
+                        l lVar = (l) s0Var;
                         if (lVar != null) {
                             int[] iArr = lVar.e;
-                            t0[] t0VarArr2 = u0Var.a;
-                            int length3 = t0VarArr2.length;
+                            s0[] s0VarArr2 = t0Var.a;
+                            int length3 = s0VarArr2.length;
                             int i21 = i13;
                             while (true) {
                                 if (i21 >= length3) {
-                                    t0Var2 = null;
+                                    s0Var2 = null;
                                     break;
                                 }
-                                t0 t0Var4 = t0VarArr2[i21];
-                                if (q3.n.class.isAssignableFrom(t0Var4.getClass())) {
-                                    t0Var2 = (t0) q3.n.class.cast(t0Var4);
+                                s0 s0Var4 = s0VarArr2[i21];
+                                if (q3.n.class.isAssignableFrom(s0Var4.getClass())) {
+                                    s0Var2 = (s0) q3.n.class.cast(s0Var4);
                                 }
-                                t0Var2 = null;
-                                if (t0Var2 != null) {
+                                s0Var2 = null;
+                                if (s0Var2 != null) {
                                     break;
                                 }
                                 i21++;
                             }
-                            q3.n nVar = (q3.n) t0Var2;
+                            q3.n nVar = (q3.n) s0Var2;
                             if (nVar == null) {
                                 S = j12;
                                 i16 = i13;
@@ -357,29 +359,29 @@ public final class d implements o {
                                 hVar = new g(j12);
                             }
                             this.s = hVar;
-                            this.h.K(hVar);
-                            u0Var2 = this.l;
-                            if (u0Var2 == null) {
-                                u0 u0Var3 = this.m;
-                                if (u0Var3 != null) {
-                                    u0Var2 = u0Var2.b(u0Var3);
+                            this.h.g0(hVar);
+                            t0Var2 = this.l;
+                            if (t0Var2 == null) {
+                                t0 t0Var3 = this.m;
+                                if (t0Var3 != null) {
+                                    t0Var2 = t0Var2.b(t0Var3);
                                 }
                             } else {
-                                u0Var2 = this.m;
+                                t0Var2 = this.m;
                             }
-                            b2.w wVar4 = new b2.w();
-                            wVar4.q = w0.n("audio/mpeg");
-                            wVar4.r = w0.n((String) zVar.g);
-                            wVar4.s = 4096;
-                            wVar4.J = zVar.d;
-                            wVar4.K = zVar.c;
-                            wVar4.M = wVar.a;
-                            wVar4.N = wVar.b;
-                            wVar4.k = u0Var2;
+                            v vVar = new v();
+                            vVar.q = v0.n("audio/mpeg");
+                            vVar.r = v0.n((String) a0Var.g);
+                            vVar.s = 4096;
+                            vVar.J = a0Var.d;
+                            vVar.K = a0Var.c;
+                            vVar.M = wVar.a;
+                            vVar.N = wVar.b;
+                            vVar.k = t0Var2;
                             if (this.s.g() != -2147483647) {
-                                wVar4.h = this.s.g();
+                                vVar.h = this.s.g();
                             }
-                            this.j.b(new b2.x(wVar4));
+                            this.j.b(new b2.w(vVar));
                             this.p = pVar.getPosition();
                         }
                     }
@@ -387,22 +389,22 @@ public final class d implements o {
                     if (this.t) {
                     }
                     this.s = hVar;
-                    this.h.K(hVar);
-                    u0Var2 = this.l;
-                    if (u0Var2 == null) {
+                    this.h.g0(hVar);
+                    t0Var2 = this.l;
+                    if (t0Var2 == null) {
                     }
-                    b2.w wVar42 = new b2.w();
-                    wVar42.q = w0.n("audio/mpeg");
-                    wVar42.r = w0.n((String) zVar.g);
-                    wVar42.s = 4096;
-                    wVar42.J = zVar.d;
-                    wVar42.K = zVar.c;
-                    wVar42.M = wVar.a;
-                    wVar42.N = wVar.b;
-                    wVar42.k = u0Var2;
+                    v vVar2 = new v();
+                    vVar2.q = v0.n("audio/mpeg");
+                    vVar2.r = v0.n((String) a0Var.g);
+                    vVar2.s = 4096;
+                    vVar2.J = a0Var.d;
+                    vVar2.K = a0Var.c;
+                    vVar2.M = wVar.a;
+                    vVar2.N = wVar.b;
+                    vVar2.k = t0Var2;
                     if (this.s.g() != -2147483647) {
                     }
-                    this.j.b(new b2.x(wVar42));
+                    this.j.b(new b2.w(vVar2));
                     this.p = pVar.getPosition();
                 }
                 i13 = 0;
@@ -443,19 +445,19 @@ public final class d implements o {
                     i15 = -1;
                 }
                 long j19 = E;
-                int i28 = zVar.b;
-                int i29 = zVar.c;
-                int i30 = zVar.e;
-                int i31 = zVar.f;
+                int i28 = a0Var.b;
+                int i29 = a0Var.c;
+                int i30 = a0Var.e;
+                int i31 = a0Var.f;
                 wVar = wVar3;
                 f fVar2 = fVar;
                 if ((wVar.a != -1 || wVar.b == -1) && i15 != -1 && i14 != -1) {
                     wVar.a = i15;
                     wVar.b = i14;
                 }
-                this.m = fVar2 != null ? new u0(fVar2) : null;
+                this.m = fVar2 != null ? new t0(fVar2) : null;
                 long position3 = pVar.getPosition();
-                pVar.r(zVar.b);
+                pVar.r(a0Var.b);
                 if (i12 == 1483304551) {
                     long length5 = pVar.getLength();
                     if (j19 == -1 || j19 == 0) {
@@ -475,57 +477,57 @@ public final class d implements o {
                             C = Math.min(C, j20);
                         }
                         aVar = new j(position3, i28, j14, i30, C, jArr);
-                        u0Var = this.l;
+                        t0Var = this.l;
                         long position22 = pVar.getPosition();
-                        if (u0Var != null) {
+                        if (t0Var != null) {
                         }
                         cVar = null;
                         if (this.t) {
                         }
                         this.s = hVar;
-                        this.h.K(hVar);
-                        u0Var2 = this.l;
-                        if (u0Var2 == null) {
+                        this.h.g0(hVar);
+                        t0Var2 = this.l;
+                        if (t0Var2 == null) {
                         }
-                        b2.w wVar422 = new b2.w();
-                        wVar422.q = w0.n("audio/mpeg");
-                        wVar422.r = w0.n((String) zVar.g);
-                        wVar422.s = 4096;
-                        wVar422.J = zVar.d;
-                        wVar422.K = zVar.c;
-                        wVar422.M = wVar.a;
-                        wVar422.N = wVar.b;
-                        wVar422.k = u0Var2;
+                        v vVar22 = new v();
+                        vVar22.q = v0.n("audio/mpeg");
+                        vVar22.r = v0.n((String) a0Var.g);
+                        vVar22.s = 4096;
+                        vVar22.J = a0Var.d;
+                        vVar22.K = a0Var.c;
+                        vVar22.M = wVar.a;
+                        vVar22.N = wVar.b;
+                        vVar22.k = t0Var2;
                         if (this.s.g() != -2147483647) {
                         }
-                        this.j.b(new b2.x(wVar422));
+                        this.j.b(new b2.w(vVar22));
                         this.p = pVar.getPosition();
                     }
                     aVar = null;
-                    u0Var = this.l;
+                    t0Var = this.l;
                     long position222 = pVar.getPosition();
-                    if (u0Var != null) {
+                    if (t0Var != null) {
                     }
                     cVar = null;
                     if (this.t) {
                     }
                     this.s = hVar;
-                    this.h.K(hVar);
-                    u0Var2 = this.l;
-                    if (u0Var2 == null) {
+                    this.h.g0(hVar);
+                    t0Var2 = this.l;
+                    if (t0Var2 == null) {
                     }
-                    b2.w wVar4222 = new b2.w();
-                    wVar4222.q = w0.n("audio/mpeg");
-                    wVar4222.r = w0.n((String) zVar.g);
-                    wVar4222.s = 4096;
-                    wVar4222.J = zVar.d;
-                    wVar4222.K = zVar.c;
-                    wVar4222.M = wVar.a;
-                    wVar4222.N = wVar.b;
-                    wVar4222.k = u0Var2;
+                    v vVar222 = new v();
+                    vVar222.q = v0.n("audio/mpeg");
+                    vVar222.r = v0.n((String) a0Var.g);
+                    vVar222.s = 4096;
+                    vVar222.J = a0Var.d;
+                    vVar222.K = a0Var.c;
+                    vVar222.M = wVar.a;
+                    vVar222.N = wVar.b;
+                    vVar222.k = t0Var2;
                     if (this.s.g() != -2147483647) {
                     }
-                    this.j.b(new b2.x(wVar4222));
+                    this.j.b(new b2.w(vVar222));
                     this.p = pVar.getPosition();
                 } else {
                     long length6 = pVar.getLength();
@@ -540,57 +542,57 @@ public final class d implements o {
                         long j22 = length6;
                         RoundingMode roundingMode = RoundingMode.HALF_UP;
                         aVar = new a(j22, position3 + i28, b8.b(m0.a0(j21, 8000000L, Y2, roundingMode)), b8.b(n7.b(j21, j19, roundingMode)), false, true);
-                        u0Var = this.l;
+                        t0Var = this.l;
                         long position2222 = pVar.getPosition();
-                        if (u0Var != null) {
+                        if (t0Var != null) {
                         }
                         cVar = null;
                         if (this.t) {
                         }
                         this.s = hVar;
-                        this.h.K(hVar);
-                        u0Var2 = this.l;
-                        if (u0Var2 == null) {
+                        this.h.g0(hVar);
+                        t0Var2 = this.l;
+                        if (t0Var2 == null) {
                         }
-                        b2.w wVar42222 = new b2.w();
-                        wVar42222.q = w0.n("audio/mpeg");
-                        wVar42222.r = w0.n((String) zVar.g);
-                        wVar42222.s = 4096;
-                        wVar42222.J = zVar.d;
-                        wVar42222.K = zVar.c;
-                        wVar42222.M = wVar.a;
-                        wVar42222.N = wVar.b;
-                        wVar42222.k = u0Var2;
+                        v vVar2222 = new v();
+                        vVar2222.q = v0.n("audio/mpeg");
+                        vVar2222.r = v0.n((String) a0Var.g);
+                        vVar2222.s = 4096;
+                        vVar2222.J = a0Var.d;
+                        vVar2222.K = a0Var.c;
+                        vVar2222.M = wVar.a;
+                        vVar2222.N = wVar.b;
+                        vVar2222.k = t0Var2;
                         if (this.s.g() != -2147483647) {
                         }
-                        this.j.b(new b2.x(wVar42222));
+                        this.j.b(new b2.w(vVar2222));
                         this.p = pVar.getPosition();
                     }
                     aVar = null;
-                    u0Var = this.l;
+                    t0Var = this.l;
                     long position22222 = pVar.getPosition();
-                    if (u0Var != null) {
+                    if (t0Var != null) {
                     }
                     cVar = null;
                     if (this.t) {
                     }
                     this.s = hVar;
-                    this.h.K(hVar);
-                    u0Var2 = this.l;
-                    if (u0Var2 == null) {
+                    this.h.g0(hVar);
+                    t0Var2 = this.l;
+                    if (t0Var2 == null) {
                     }
-                    b2.w wVar422222 = new b2.w();
-                    wVar422222.q = w0.n("audio/mpeg");
-                    wVar422222.r = w0.n((String) zVar.g);
-                    wVar422222.s = 4096;
-                    wVar422222.J = zVar.d;
-                    wVar422222.K = zVar.c;
-                    wVar422222.M = wVar.a;
-                    wVar422222.N = wVar.b;
-                    wVar422222.k = u0Var2;
+                    v vVar22222 = new v();
+                    vVar22222.q = v0.n("audio/mpeg");
+                    vVar22222.r = v0.n((String) a0Var.g);
+                    vVar22222.s = 4096;
+                    vVar22222.J = a0Var.d;
+                    vVar22222.K = a0Var.c;
+                    vVar22222.M = wVar.a;
+                    vVar22222.N = wVar.b;
+                    vVar22222.k = t0Var2;
                     if (this.s.g() != -2147483647) {
                     }
-                    this.j.b(new b2.x(wVar422222));
+                    this.j.b(new b2.w(vVar22222));
                     this.p = pVar.getPosition();
                 }
             }
@@ -615,19 +617,19 @@ public final class d implements o {
                     if (xVar.a() >= 24) {
                     }
                     long j192 = E;
-                    int i282 = zVar.b;
-                    int i292 = zVar.c;
-                    int i302 = zVar.e;
-                    int i312 = zVar.f;
+                    int i282 = a0Var.b;
+                    int i292 = a0Var.c;
+                    int i302 = a0Var.e;
+                    int i312 = a0Var.f;
                     wVar = wVar32;
                     f fVar22 = fVar;
                     if (wVar.a != -1) {
                     }
                     wVar.a = i15;
                     wVar.b = i14;
-                    this.m = fVar22 != null ? new u0(fVar22) : null;
+                    this.m = fVar22 != null ? new t0(fVar22) : null;
                     long position32 = pVar.getPosition();
-                    pVar.r(zVar.b);
+                    pVar.r(a0Var.b);
                     if (i12 == 1483304551) {
                     }
                 }
@@ -650,19 +652,19 @@ public final class d implements o {
             if (xVar.a() >= 24) {
             }
             long j1922 = E;
-            int i2822 = zVar.b;
-            int i2922 = zVar.c;
-            int i3022 = zVar.e;
-            int i3122 = zVar.f;
+            int i2822 = a0Var.b;
+            int i2922 = a0Var.c;
+            int i3022 = a0Var.e;
+            int i3122 = a0Var.f;
             wVar = wVar322;
             f fVar222 = fVar;
             if (wVar.a != -1) {
             }
             wVar.a = i15;
             wVar.b = i14;
-            this.m = fVar222 != null ? new u0(fVar222) : null;
+            this.m = fVar222 != null ? new t0(fVar222) : null;
             long position322 = pVar.getPosition();
-            pVar.r(zVar.b);
+            pVar.r(a0Var.b);
             if (i12 == 1483304551) {
             }
         } else {
@@ -691,7 +693,7 @@ public final class d implements o {
                     if (i10 == i11) {
                         h hVar2 = this.s;
                         if (hVar2 instanceof b) {
-                            if (hVar2.h() != ((this.o * j10) / zVar.c) + this.n) {
+                            if (hVar2.h() != ((this.o * j10) / a0Var.c) + this.n) {
                                 ((b) this.s).getClass();
                                 throw th2;
                             }
@@ -699,7 +701,7 @@ public final class d implements o {
                     }
                     return i10;
                 }
-                zVar.a(m13);
+                a0Var.a(m13);
                 if (this.n == -9223372036854775807L) {
                     this.n = this.s.a(pVar.getPosition());
                     long j24 = this.b;
@@ -707,10 +709,10 @@ public final class d implements o {
                         this.n = (j24 - this.s.a(j11)) + this.n;
                     }
                 }
-                this.r = zVar.b;
-                this.q = pVar.getPosition() + zVar.b;
+                this.r = a0Var.b;
+                this.q = pVar.getPosition() + a0Var.b;
                 if (this.s instanceof b) {
-                    long j25 = ((this.o + zVar.f) * j10) / zVar.c;
+                    long j25 = ((this.o + a0Var.f) * j10) / a0Var.c;
                     throw th2;
                 }
             }
@@ -725,8 +727,8 @@ public final class d implements o {
             int i32 = this.r - a11;
             this.r = i32;
             if (i32 <= 0) {
-                this.j.c(((this.o * j10) / zVar.c) + this.n, 1, zVar.b, 0, null);
-                this.o += zVar.f;
+                this.j.c(((this.o * j10) / a0Var.c) + this.n, 1, a0Var.b, 0, null);
+                this.o += a0Var.f;
                 this.r = 0;
                 i10 = 0;
                 i11 = -1;
@@ -752,14 +754,14 @@ public final class d implements o {
         pVar.b(0, 4, xVar.a);
         xVar.N(0);
         int m10 = xVar.m();
-        z zVar = this.d;
-        zVar.a(m10);
-        return new a(pVar.getLength(), pVar.getPosition(), zVar.e, zVar.b, z10, true);
+        a0 a0Var = this.d;
+        a0Var.a(m10);
+        return new a(pVar.getLength(), pVar.getPosition(), a0Var.e, a0Var.b, z10, true);
     }
 
     public final void h() {
-        b0 b0Var = this.s;
-        if ((b0Var instanceof a) && ((k) b0Var).d()) {
+        c0 c0Var = this.s;
+        if ((c0Var instanceof a) && ((k) c0Var).d()) {
             long j10 = this.q;
             if (j10 == -1 || j10 == this.s.b()) {
                 return;
@@ -768,10 +770,10 @@ public final class d implements o {
             this.s = new a(this.q, aVar.i, aVar.j, aVar.k, aVar.l, false);
             q qVar = this.h;
             qVar.getClass();
-            qVar.K(this.s);
-            i0 i0Var = this.i;
-            i0Var.getClass();
-            i0Var.e(this.s.h());
+            qVar.g0(this.s);
+            j0 j0Var = this.i;
+            j0Var.getClass();
+            j0Var.e(this.s.h());
         }
     }
 
@@ -802,10 +804,10 @@ public final class d implements o {
         int h;
         pVar.q();
         if (pVar.getPosition() == 0) {
-            u0 P = this.f.P(pVar, null, 131072);
-            this.l = P;
-            if (P != null) {
-                this.e.b(P);
+            t0 b10 = this.f.b(pVar, null, 131072);
+            this.l = b10;
+            if (b10 != null) {
+                this.e.b(b10);
             }
             i10 = (int) pVar.k();
             if (!z10) {
@@ -871,10 +873,10 @@ public final class d implements o {
         this.a = i10;
         this.b = j10;
         this.c = new x(10);
-        this.d = new z();
+        this.d = new a0();
         this.e = new w();
         this.n = -9223372036854775807L;
-        this.f = new l(9);
+        this.f = new y(0);
         n nVar = new n();
         this.g = nVar;
         this.j = nVar;

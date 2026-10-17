@@ -1,26 +1,26 @@
 package j2;
 
 import a3.s;
-import b2.m1;
+import b2.l1;
+import b2.n1;
 import b2.o1;
-import b2.p1;
 import e2.m0;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Random;
 import u2.g0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class h {
     public static final s h = new s(4);
     public static final Random i = new Random();
     public i d;
     public String f;
-    public final o1 a = new o1();
-    public final m1 b = new m1();
+    public final n1 a = new n1();
+    public final l1 b = new l1();
     public final HashMap c = new HashMap();
-    public p1 e = p1.a;
+    public o1 e = o1.a;
     public long g = -1;
 
     public final void a(g gVar) {
@@ -129,16 +129,16 @@ public final class h {
         return gVar4;
     }
 
-    public final synchronized String d(p1 p1Var, g0 g0Var) {
-        return c(p1Var.g(g0Var.a, this.b).c, g0Var).a;
+    public final synchronized String d(o1 o1Var, g0 g0Var) {
+        return c(o1Var.g(g0Var.a, this.b).c, g0Var).a;
     }
 
     public final void e(a aVar) {
         g0 g0Var;
-        p1 p1Var = aVar.b;
+        o1 o1Var = aVar.b;
         int i10 = aVar.c;
         g0 g0Var2 = aVar.d;
-        boolean p5 = p1Var.p();
+        boolean p5 = o1Var.p();
         HashMap hashMap = this.c;
         if (p5) {
             String str = this.f;

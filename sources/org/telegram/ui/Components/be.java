@@ -1,44 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
+import android.graphics.Canvas;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class be implements fi.l0, org.telegram.ui.ActionBar.z1, lu, org.telegram.ui.ActionBar.k1 {
-    public final /* synthetic */ ChatActivityEnterView a;
+public final /* synthetic */ class be implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ChatActivityEnterView b;
 
-    public /* synthetic */ be(ChatActivityEnterView chatActivityEnterView) {
-        this.a = chatActivityEnterView;
+    public /* synthetic */ be(ChatActivityEnterView chatActivityEnterView, int i10) {
+        this.a = i10;
+        this.b = chatActivityEnterView;
     }
 
-    @Override // org.telegram.ui.ActionBar.z1
-    public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
-        int i11 = ChatActivityEnterView.n5;
-        ChatActivityEnterView chatActivityEnterView = this.a;
-        chatActivityEnterView.M();
-        rf rfVar = chatActivityEnterView.E0;
-        if (rfVar != null) {
-            rfVar.setText("");
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.k1
-    public void n(KeyEvent keyEvent) {
-        ChatActivityEnterView chatActivityEnterView;
-        nf nfVar;
-        int i10 = ChatActivityEnterView.n5;
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (nfVar = (chatActivityEnterView = this.a).N0) != null && nfVar.isShowing()) {
-            chatActivityEnterView.N0.dismiss();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.lu
-    public void p() {
-        ChatActivityEnterView chatActivityEnterView = this.a;
-        chatActivityEnterView.E0.invalidateEffects();
-        pg pgVar = chatActivityEnterView.Z2;
-        if (pgVar != null) {
-            pgVar.r1(chatActivityEnterView.E0.getTextToUse());
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        int i10 = this.a;
+        ChatActivityEnterView chatActivityEnterView = this.b;
+        switch (i10) {
+            case 0:
+                chatActivityEnterView.O0((TL_iv.RichMessage) obj);
+                break;
+            case 1:
+                CharSequence charSequence = (CharSequence) obj;
+                chatActivityEnterView.E0.setText(charSequence);
+                chatActivityEnterView.E0.setSelection(charSequence.length(), charSequence.length());
+                break;
+            default:
+                int i11 = ChatActivityEnterView.n5;
+                chatActivityEnterView.c0((Canvas) obj, false);
+                break;
         }
     }
 }

@@ -1,33 +1,18 @@
 package qi;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+import org.telegram.tgnet.RequestTimeDelegate;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class d implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ q b;
-    public final /* synthetic */ Throwable c;
+public final class d {
+    public final j5.b a;
+    public final a b;
+    public final RequestTimeDelegate c;
+    public int d;
 
-    public /* synthetic */ d(q qVar, Throwable th2, int i10) {
-        this.a = i10;
-        this.b = qVar;
-        this.c = th2;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                q qVar = this.b;
-                qVar.getClass();
-                Throwable th2 = this.c;
-                qVar.g(th2 instanceof Exception ? (Exception) th2 : new RuntimeException(th2));
-                break;
-            default:
-                q qVar2 = this.b;
-                qVar2.getClass();
-                Throwable th3 = this.c;
-                qVar2.g(th3 instanceof Exception ? (Exception) th3 : new RuntimeException(th3));
-                break;
-        }
+    public d(j5.b bVar, a aVar, RequestTimeDelegate requestTimeDelegate) {
+        this.a = bVar;
+        this.b = aVar;
+        this.c = requestTimeDelegate;
     }
 }

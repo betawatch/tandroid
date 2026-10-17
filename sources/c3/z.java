@@ -1,64 +1,65 @@
 package c3;
 
-import java.io.Serializable;
+import e2.m0;
+import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class z {
-    public int a;
-    public int b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
-    public Serializable g;
+public final class z implements c0 {
+    public final c5.b0 a;
+    public final c5.b0 b;
+    public long c;
 
-    public boolean a(int i10) {
-        int i11;
-        int i12;
-        int i13;
-        int i14;
-        if ((i10 & (-2097152)) != -2097152 || (i11 = (i10 >>> 19) & 3) == 1 || (i12 = (i10 >>> 17) & 3) == 0 || (i13 = (i10 >>> 12) & 15) == 0 || i13 == 15 || (i14 = (i10 >>> 10) & 3) == 3) {
-            return false;
-        }
-        this.a = i11;
-        this.g = b.s[3 - i12];
-        int i15 = b.t[i14];
-        this.c = i15;
-        if (i11 == 2) {
-            this.c = i15 / 2;
-        } else if (i11 == 0) {
-            this.c = i15 / 4;
-        }
-        int i16 = (i10 >>> 9) & 1;
-        int i17 = 1152;
-        if (i12 != 1) {
-            if (i12 != 2) {
-                if (i12 != 3) {
-                    throw new IllegalArgumentException();
-                }
-                i17 = 384;
-            }
-        } else if (i11 != 3) {
-            i17 = 576;
-        }
-        this.f = i17;
-        if (i12 == 3) {
-            int i18 = i11 == 3 ? b.u[i13 - 1] : b.v[i13 - 1];
-            this.e = i18;
-            this.b = (((i18 * 12) / this.c) + i16) * 4;
+    public z(long j10, long[] jArr, long[] jArr2) {
+        u6.g(jArr.length == jArr2.length);
+        int length = jArr2.length;
+        if (length <= 0 || jArr2[0] <= 0) {
+            this.a = new c5.b0(length, 3);
+            this.b = new c5.b0(length, 3);
         } else {
-            if (i11 == 3) {
-                int i19 = i12 == 2 ? b.w[i13 - 1] : b.x[i13 - 1];
-                this.e = i19;
-                this.b = ((i19 * 144) / this.c) + i16;
-            } else {
-                int i20 = b.y[i13 - 1];
-                this.e = i20;
-                this.b = (((i12 == 1 ? 72 : 144) * i20) / this.c) + i16;
-            }
+            int i10 = length + 1;
+            c5.b0 b0Var = new c5.b0(i10, 3);
+            this.a = b0Var;
+            c5.b0 b0Var2 = new c5.b0(i10, 3);
+            this.b = b0Var2;
+            b0Var.c(0L);
+            b0Var2.c(0L);
         }
-        this.d = ((i10 >> 6) & 3) == 3 ? 1 : 2;
-        return true;
+        this.a.d(jArr);
+        this.b.d(jArr2);
+        this.c = j10;
+    }
+
+    @Override // c3.c0
+    public final boolean d() {
+        return this.b.b > 0;
+    }
+
+    @Override // c3.c0
+    public final /* synthetic */ boolean e() {
+        return false;
+    }
+
+    @Override // c3.c0
+    public final b0 f(long j10) {
+        c5.b0 b0Var = this.b;
+        if (b0Var.b == 0) {
+            d0 d0Var = d0.c;
+            return new b0(d0Var, d0Var);
+        }
+        int c10 = m0.c(b0Var, j10);
+        long m10 = b0Var.m(c10);
+        c5.b0 b0Var2 = this.a;
+        d0 d0Var2 = new d0(m10, b0Var2.m(c10));
+        if (m10 == j10 || c10 == b0Var.b - 1) {
+            return new b0(d0Var2, d0Var2);
+        }
+        int i10 = c10 + 1;
+        return new b0(d0Var2, new d0(b0Var.m(i10), b0Var2.m(i10)));
+    }
+
+    @Override // c3.c0
+    public final long h() {
+        return this.c;
     }
 }

@@ -13,13 +13,14 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.tgnet.TLObject;
-import z3.e;
+import r.c;
+import z3.d;
+import z3.l;
 import z3.m;
-import z3.n;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class a implements n {
+public final class a implements m {
     public static final Pattern d = Pattern.compile("\\s*((?:(\\d+):)?(\\d+):(\\d+)(?:,(\\d{3}))?)\\s*-->\\s*((?:(\\d+):)?(\\d+):(\\d+)(?:,(\\d{3}))?)\\s*");
     public static final Pattern e = Pattern.compile("\\{\\\\.*?\\}");
     public final StringBuilder a = new StringBuilder();
@@ -101,7 +102,7 @@ public final class a implements n {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static b a(Spanned spanned, String str) {
+    public static b b(Spanned spanned, String str) {
         int i10;
         int i11;
         float f7;
@@ -190,7 +191,7 @@ public final class a implements n {
         return new b(spanned, null, null, null, f10, 0, i11, f7, i10, TLObject.FLAG_31, -3.4028235E38f, -3.4028235E38f, -3.4028235E38f, false, -16777216, TLObject.FLAG_31, 0.0f, 0);
     }
 
-    public static long b(Matcher matcher, int i10) {
+    public static long d(Matcher matcher, int i10) {
         String group = matcher.group(i10 + 1);
         long parseLong = group != null ? Long.parseLong(group) * 3600000 : 0L;
         String group2 = matcher.group(i10 + 2);
@@ -206,17 +207,22 @@ public final class a implements n {
         return parseLong3 * 1000;
     }
 
-    @Override // z3.n
-    public final int X() {
+    @Override // z3.m
+    public final /* synthetic */ d a(int i10, int i11, byte[] bArr) {
+        return c.a(this, bArr, i11);
+    }
+
+    @Override // z3.m
+    public final int c() {
         return 1;
     }
 
-    @Override // z3.n
-    public final void m0(byte[] bArr, int i10, int i11, m mVar, j jVar) {
+    @Override // z3.m
+    public final void g(byte[] bArr, int i10, int i11, l lVar, j jVar) {
         String n10;
         String str;
         a aVar = this;
-        long j10 = mVar.a;
+        long j10 = lVar.a;
         x xVar = aVar.c;
         xVar.L(i10 + i11, bArr);
         xVar.N(i10);
@@ -225,7 +231,7 @@ public final class a implements n {
             J = StandardCharsets.UTF_8;
         }
         long j11 = -9223372036854775807L;
-        ArrayList arrayList = (j10 == -9223372036854775807L || !mVar.b) ? null : new ArrayList();
+        ArrayList arrayList = (j10 == -9223372036854775807L || !lVar.b) ? null : new ArrayList();
         while (true) {
             String n11 = xVar.n(J);
             if (n11 == null) {
@@ -244,8 +250,8 @@ public final class a implements n {
                 }
                 Matcher matcher = d.matcher(n10);
                 if (matcher.matches()) {
-                    long b10 = b(matcher, 1);
-                    long b11 = b(matcher, 6);
+                    long d10 = d(matcher, 1);
+                    long d11 = d(matcher, 6);
                     StringBuilder sb2 = aVar.a;
                     sb2.setLength(0);
                     long j12 = j11;
@@ -285,10 +291,10 @@ public final class a implements n {
                             i13++;
                         }
                     }
-                    if (j13 == j12 || b11 >= j13) {
-                        jVar.accept(new z3.b(b10, b11 - b10, n0.y(a(fromHtml, str))));
+                    if (j13 == j12 || d11 >= j13) {
+                        jVar.accept(new z3.a(d10, d11 - d10, n0.y(b(fromHtml, str))));
                     } else if (arrayList != null) {
-                        arrayList.add(new z3.b(b10, b11 - b10, n0.y(a(fromHtml, str))));
+                        arrayList.add(new z3.a(d10, d11 - d10, n0.y(b(fromHtml, str))));
                     }
                     aVar = this;
                     j11 = j12;
@@ -305,17 +311,12 @@ public final class a implements n {
             while (i14 < size) {
                 Object obj = arrayList.get(i14);
                 i14++;
-                jVar.accept((z3.b) obj);
+                jVar.accept((z3.a) obj);
             }
         }
     }
 
-    @Override // z3.n
-    public final /* synthetic */ e x(int i10, int i11, byte[] bArr) {
-        return t8.b.a(this, bArr, i11);
-    }
-
-    @Override // z3.n
+    @Override // z3.m
     public final /* synthetic */ void reset() {
     }
 }

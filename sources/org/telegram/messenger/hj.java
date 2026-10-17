@@ -1,32 +1,43 @@
 package org.telegram.messenger;
 
+import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class hj implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ SendMessagesHelper b;
-    public final /* synthetic */ TLRPC.TL_error c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.m2 d;
-    public final /* synthetic */ TLRPC.TL_messages_editMessage e;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ TLRPC.Message f;
+    public final /* synthetic */ int h;
+    public final /* synthetic */ TLRPC.Message n;
+    public final /* synthetic */ MessageObject r;
+    public final /* synthetic */ int s;
 
-    public /* synthetic */ hj(SendMessagesHelper sendMessagesHelper, TLRPC.TL_error tL_error, org.telegram.ui.ActionBar.m2 m2Var, TLRPC.TL_messages_editMessage tL_messages_editMessage, int i10) {
-        this.a = i10;
+    public /* synthetic */ hj(SendMessagesHelper sendMessagesHelper, ArrayList arrayList, int i10, int i11, TLRPC.Message message, int i12, TLRPC.Message message2, MessageObject messageObject, int i13, int i14) {
+        this.a = i14;
         this.b = sendMessagesHelper;
-        this.c = tL_error;
-        this.d = m2Var;
-        this.e = tL_messages_editMessage;
+        this.c = arrayList;
+        this.d = i10;
+        this.e = i11;
+        this.f = message;
+        this.h = i12;
+        this.n = message2;
+        this.r = messageObject;
+        this.s = i13;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$sendEditRichMessageRequest$28(this.c, this.d, this.e);
+                this.b.lambda$sendMessage$12(this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s);
                 break;
             default:
-                this.b.lambda$editMessage$23(this.c, this.d, this.e);
+                this.b.lambda$sendMessage$13(this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s);
                 break;
         }
     }

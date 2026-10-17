@@ -1,36 +1,36 @@
 package x2;
 
 import android.os.SystemClock;
-import b2.q1;
-import b2.x;
+import b2.p1;
+import b2.w;
 import e2.m0;
 import java.util.Arrays;
 import java.util.List;
-import org.telegram.ui.ds0;
+import org.telegram.ui.lg0;
 import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class c implements p {
-    public final q1 a;
+    public final p1 a;
     public final int b;
     public final int[] c;
-    public final x[] d;
+    public final w[] d;
     public final long[] e;
     public int f;
 
-    public c(q1 q1Var, int[] iArr) {
+    public c(p1 p1Var, int[] iArr) {
         int i10 = 0;
         u6.p(iArr.length > 0);
-        q1Var.getClass();
-        this.a = q1Var;
+        p1Var.getClass();
+        this.a = p1Var;
         int length = iArr.length;
         this.b = length;
-        this.d = new x[length];
+        this.d = new w[length];
         for (int i11 = 0; i11 < iArr.length; i11++) {
-            this.d[i11] = q1Var.d[iArr[i11]];
+            this.d[i11] = p1Var.d[iArr[i11]];
         }
-        Arrays.sort(this.d, new ds0(14));
+        Arrays.sort(this.d, new lg0(17));
         this.c = new int[this.b];
         while (true) {
             int i12 = this.b;
@@ -38,7 +38,7 @@ public abstract class c implements p {
                 this.e = new long[i12];
                 return;
             } else {
-                this.c[i10] = q1Var.a(this.d[i10]);
+                this.c[i10] = p1Var.a(this.d[i10]);
                 i10++;
             }
         }
@@ -50,7 +50,7 @@ public abstract class c implements p {
     }
 
     @Override // x2.p
-    public final q1 b() {
+    public final p1 b() {
         return this.a;
     }
 
@@ -73,7 +73,7 @@ public abstract class c implements p {
     }
 
     @Override // x2.p
-    public final x f(int i10) {
+    public final w f(int i10) {
         return this.d[i10];
     }
 
@@ -105,7 +105,7 @@ public abstract class c implements p {
     }
 
     @Override // x2.p
-    public final x m() {
+    public final w m() {
         return this.d[c()];
     }
 
@@ -127,9 +127,9 @@ public abstract class c implements p {
     }
 
     @Override // x2.p
-    public final int s(x xVar) {
+    public final int s(w wVar) {
         for (int i10 = 0; i10 < this.b; i10++) {
-            if (this.d[i10] == xVar) {
+            if (this.d[i10] == wVar) {
                 return i10;
             }
         }

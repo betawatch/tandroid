@@ -1,9 +1,9 @@
 package c3;
 
-import b2.x0;
+import b2.w0;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class d {
     public final ArrayList a;
@@ -75,7 +75,7 @@ public final class d {
                 arrayList.add(bArr4);
             }
             if (A2 > 0) {
-                f2.o m10 = f2.p.m(4, ((byte[]) arrayList.get(0)).length, (byte[]) arrayList.get(0));
+                f2.p m10 = f2.q.m(4, ((byte[]) arrayList.get(0)).length, (byte[]) arrayList.get(0));
                 int i22 = m10.e;
                 int i23 = m10.f;
                 int i24 = m10.h + 8;
@@ -113,7 +113,7 @@ public final class d {
             }
             return new d(arrayList, A, i10, i11, i12, i13, i14, i16, i17, i15, f7, str);
         } catch (ArrayIndexOutOfBoundsException e) {
-            throw x0.a(e, "Error parsing AVC config");
+            throw w0.a(e, "Error parsing AVC config");
         }
     }
 }

@@ -1,84 +1,110 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.os.Build;
-import android.view.MotionEvent;
-import j$.util.Objects;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import java.util.Collections;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class ex extends pg.d {
-    public boolean W2;
-    public final /* synthetic */ wz X2;
+public final class ex extends yx {
+    public static final /* synthetic */ int H0 = 0;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 E0;
+    public final /* synthetic */ boolean F0;
+    public final /* synthetic */ tz G0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ex(wz wzVar, Context context) {
-        super(context, null);
-        this.X2 = wzVar;
+    public ex(tz tzVar, Context context, org.telegram.ui.ActionBar.d6 d6Var, org.telegram.ui.ActionBar.n2 n2Var, boolean z10) {
+        super(tzVar, context, d6Var);
+        this.G0 = tzVar;
+        this.E0 = n2Var;
+        this.F0 = z10;
     }
 
-    @Override // pg.d, org.telegram.ui.Components.mm0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        this.X2.m2.h++;
+    @Override // org.telegram.ui.Components.gn0
+    public final void j() {
+        fx fxVar = this.G0.C0;
+        if (fxVar != null) {
+            fxVar.invalidate();
+        }
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public final void k0(int i10, int i11) {
-        bh.f fVar;
-        wz wzVar = this.X2;
-        rz rzVar = wzVar.z0;
-        if (Build.VERSION.SDK_INT >= 31 && (fVar = wzVar.j2) != null) {
-            fVar.f(i10, i11);
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // org.telegram.ui.Components.gn0
+    public final void o(int i10, int i11) {
+        tz tzVar = this.G0;
+        org.telegram.ui.Cells.k7 k7Var = tzVar.f2;
+        int i12 = tzVar.E1;
+        int i13 = i10 - i12;
+        int i14 = i11 - i12;
+        int i15 = tzVar.c1;
+        MediaDataController mediaDataController = MediaDataController.getInstance(i15);
+        ArrayList arrayList = tzVar.d1;
+        arrayList.add(i14, (TLRPC.TL_messages_stickerSet) arrayList.remove(i13));
+        int i16 = 1;
+        Collections.sort(mediaDataController.getStickerSets(0), new zl(this, i16));
+        ArrayList arrayList2 = tzVar.G2;
+        if (arrayList2 != null) {
+            arrayList2.clear();
+            tzVar.G2.addAll(arrayList);
         }
-        if (wzVar.C0 != null) {
-            wzVar.B0.setUnderlineHeight(wzVar.D0.canScrollVertically(-1) ? AndroidUtilities.getShadowHeight() : 0);
+        tzVar.D();
+        AndroidUtilities.cancelRunOnUIThread(k7Var);
+        AndroidUtilities.runOnUIThread(k7Var, 1500L);
+        MediaDataController.getInstance(i15).calcNewHash(0);
+        TLRPC.TL_messages_reorderStickerSets tL_messages_reorderStickerSets = new TLRPC.TL_messages_reorderStickerSets();
+        tL_messages_reorderStickerSets.masks = false;
+        tL_messages_reorderStickerSets.emojis = false;
+        for (int i17 = tzVar.e0; i17 < arrayList.size(); i17 = com.google.android.gms.internal.cast.a6.h(((TLRPC.TL_messages_stickerSet) arrayList.get(i17)).set.id, tL_messages_reorderStickerSets.order, i17, 1)) {
         }
-        if (rzVar != null && getAdapter() == rzVar && rzVar.d == 0) {
-            rz rzVar2 = rzVar.O.w;
-            if (rzVar2.Q.G0.F || rzVar2.y) {
+        ConnectionsManager.getInstance(i15).sendRequest(tL_messages_reorderStickerSets, new ci.e6(13));
+        NotificationCenter.getInstance(i15).lambda$postNotificationNameOnUIThread$1(NotificationCenter.stickersDidLoad, 0, Boolean.TRUE);
+        tzVar.X(true);
+        if (SharedConfig.updateStickersOrderOnSend) {
+            SharedConfig.toggleUpdateStickersOrderOnSend();
+            org.telegram.ui.ActionBar.n2 n2Var = this.E0;
+            if (n2Var != null) {
+                xc.a0(n2Var).K(R.raw.filter_reorder, LocaleController.getString(R.string.DynamicPackOrderOff), LocaleController.getString(R.string.DynamicPackOrderOffInfo), LocaleController.getString("Settings"), new sd(i16, n2Var)).j();
                 return;
             }
-            if (wzVar.E0.N0() + 50 > rzVar.h()) {
-                pz pzVar = rzVar.O;
-                Objects.requireNonNull(pzVar);
-                AndroidUtilities.runOnUIThread(new dx(pzVar, 0));
+            FrameLayout frameLayout = tzVar.r;
+            if (frameLayout != null) {
+                new xc(frameLayout, tzVar.Z1).M(LocaleController.getString(R.string.DynamicPackOrderOff), LocaleController.getString(R.string.DynamicPackOrderOffInfo), R.raw.filter_reorder).j();
             }
         }
     }
 
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        wz wzVar = this.X2;
-        if (wzVar.f) {
-            return false;
+    @Override // org.telegram.ui.Components.gn0
+    public final void p() {
+        tz tzVar = this.G0;
+        tzVar.Y();
+        fx fxVar = tzVar.C0;
+        if (fxVar != null) {
+            fxVar.invalidate();
         }
-        org.telegram.ui.xt q6 = org.telegram.ui.xt.q();
-        ex exVar = wzVar.D0;
-        wzVar.getMeasuredHeight();
-        return super.onInterceptTouchEvent(motionEvent) || q6.r(motionEvent, exVar, wzVar.g2, this.n2);
+        invalidate();
+        uy uyVar = tzVar.t1;
+        if (uyVar != null) {
+            uyVar.u();
+        }
     }
 
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        wz wzVar = this.X2;
-        if (wzVar.I0 && wzVar.y0.h() > 0) {
-            this.W2 = true;
-            wzVar.E0.h1(0, 0);
-            wzVar.I0 = false;
-            this.W2 = false;
+    @Override // android.view.View
+    public final void setTranslationY(float f7) {
+        if (getTranslationY() != f7) {
+            super.setTranslationY(f7);
+            if (this.F0) {
+                return;
+            }
+            this.G0.x0.invalidate();
         }
-        super.onLayout(z10, i10, i11, i12, i13);
-        wzVar.r(true);
-    }
-
-    @Override // org.telegram.ui.Components.mm0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.W2) {
-            return;
-        }
-        super.requestLayout();
     }
 }

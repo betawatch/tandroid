@@ -4,10 +4,8 @@ import android.content.Context;
 import com.google.mlkit.common.internal.MlKitComponentDiscoveryService;
 import java.util.ArrayList;
 import java.util.concurrent.Executor;
-import m2.t;
-import r0.s0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class g {
     public static final Object b = new Object();
@@ -34,16 +32,16 @@ public final class g {
             if (applicationContext != null) {
                 context = applicationContext;
             }
-            ArrayList A = new t(21, context, new gb.e(MlKitComponentDiscoveryService.class)).A();
+            ArrayList R = new mi.q(19, context, new l2.f(MlKitComponentDiscoveryService.class, 16)).R();
             ArrayList arrayList = new ArrayList();
             ArrayList arrayList2 = new ArrayList();
-            s0 s0Var = r9.e.A;
-            arrayList.addAll(A);
+            r.a aVar = r9.e.A;
+            arrayList.addAll(R);
             arrayList2.add(r9.a.c(context, Context.class, new Class[0]));
             arrayList2.add(r9.a.c(gVar2, g.class, new Class[0]));
-            r9.g gVar3 = new r9.g(executor, arrayList, arrayList2, s0Var);
+            r9.g gVar3 = new r9.g(executor, arrayList, arrayList2, aVar);
             gVar2.a = gVar3;
-            gVar3.h(true);
+            gVar3.d(true);
             gVar = c;
         }
         return gVar;

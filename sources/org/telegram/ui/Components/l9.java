@@ -1,20 +1,56 @@
 package org.telegram.ui.Components;
 
+import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class l9 {
-    public k9 a;
-    public org.telegram.ui.Cells.c4 b;
+public final class l9 implements ne.h, qe.a {
+    public final ImageReceiver a;
+    public final h9 b;
     public long c;
-    public long d;
-    public ImageReceiver e;
-    public TLRPC.GroupCallParticipant f;
-    public long g;
-    public TLObject h;
-    public int i;
-    public int j;
+    public boolean d;
+    public final /* synthetic */ m9 e;
+
+    public l9(m9 m9Var, ViewGroup viewGroup) {
+        this.e = m9Var;
+        ImageReceiver imageReceiver = new ImageReceiver(viewGroup);
+        this.a = imageReceiver;
+        imageReceiver.setRoundRadius(m9Var.e / 2);
+        h9 h9Var = new h9((org.telegram.ui.ActionBar.d6) null);
+        this.b = h9Var;
+        h9Var.u(AndroidUtilities.dp(22.0f));
+    }
+
+    @Override // qe.a
+    public final void a() {
+        if (this.d) {
+            this.d = false;
+            this.a.onDetachedFromWindow();
+        }
+        this.c = 0L;
+    }
+
+    @Override // ne.h
+    public final int b(boolean z10) {
+        if (z10) {
+            return 0;
+        }
+        return -this.e.f;
+    }
+
+    public final boolean equals(Object obj) {
+        return (obj instanceof l9) && this.c == ((l9) obj).c;
+    }
+
+    @Override // ne.h
+    public final int getHeight() {
+        return this.e.e;
+    }
+
+    @Override // ne.h
+    public final int getWidth() {
+        return this.e.e;
+    }
 }

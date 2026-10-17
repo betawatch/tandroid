@@ -1,345 +1,73 @@
 package s9;
 
-import android.os.Looper;
-import android.os.SystemClock;
-import android.util.Log;
-import android.util.Xml;
-import androidx.sharetarget.ShortcutInfoCompatSaverImpl;
-import c0.m;
-import com.google.android.gms.common.data.DataHolder;
-import j9.y;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import m.h3;
-import org.telegram.messenger.BuildConfig;
-import org.xmlpull.v1.XmlSerializer;
-import x9.p;
-import y8.b1;
-import y8.k0;
-import y8.v0;
+import java.util.ArrayDeque;
+import java.util.concurrent.Executor;
+import java.util.concurrent.RejectedExecutionException;
+import java.util.logging.Logger;
+import l5.p;
+import n6.l;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class j implements Runnable {
-    public final /* synthetic */ int a;
-    public Object b;
-    public final /* synthetic */ Object c;
+public final class j implements Executor {
+    public static final Logger f = Logger.getLogger(j.class.getName());
+    public final Executor a;
+    public final ArrayDeque b = new ArrayDeque();
+    public int c = 1;
+    public long d = 0;
+    public final i e = new i(this);
 
-    public /* synthetic */ j(int i10, Object obj, Object obj2) {
-        this.a = i10;
-        this.c = obj;
-        this.b = obj2;
+    public j(Executor executor) {
+        l.h(executor);
+        this.a = executor;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x004c, code lost:
-    
-        r1 = r1 | java.lang.Thread.interrupted();
-        r2 = null;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x004e, code lost:
-    
-        ((java.lang.Runnable) r10.b).run();
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:17:0x005a, code lost:
-    
-        r0 = move-exception;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:18:0x007a, code lost:
-    
-        r10.b = null;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x007c, code lost:
-    
-        throw r0;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:21:0x005c, code lost:
-    
-        r3 = move-exception;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x005d, code lost:
-    
-        s9.k.f.log(java.util.logging.Level.SEVERE, "Exception while executing runnable " + ((java.lang.Runnable) r10.b), (java.lang.Throwable) r3);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:27:0x0043, code lost:
-    
-        if (r1 == false) goto L51;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:31:?, code lost:
-    
-        return;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void a() {
-        boolean z10 = false;
-        boolean z11 = false;
-        while (true) {
-            try {
-                synchronized (((k) this.c).b) {
-                    if (!z10) {
-                        k kVar = (k) this.c;
-                        if (kVar.c != 4) {
-                            kVar.d++;
-                            kVar.c = 4;
-                            z10 = true;
-                        }
-                    }
-                    Runnable runnable = (Runnable) ((k) this.c).b.poll();
-                    this.b = runnable;
-                    if (runnable == null) {
-                        ((k) this.c).c = 1;
-                    }
-                }
-                if (!z11) {
-                    return;
-                }
-            } finally {
-                if (z11) {
-                    Thread.currentThread().interrupt();
-                }
-            }
-        }
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        Exception exc;
-        FileOutputStream W;
-        boolean z10;
-        y8.d dVar;
-        switch (this.a) {
-            case 0:
+    @Override // java.util.concurrent.Executor
+    public final void execute(Runnable runnable) {
+        l.h(runnable);
+        synchronized (this.b) {
+            int i10 = this.c;
+            if (i10 != 4 && i10 != 3) {
+                long j10 = this.d;
+                p pVar = new p(1, runnable);
+                this.b.add(pVar);
+                this.c = 2;
                 try {
-                    a();
-                    return;
-                } catch (Error e) {
-                    synchronized (((k) this.c).b) {
-                        ((k) this.c).c = 1;
-                        throw e;
-                    }
-                }
-            case 1:
-                ShortcutInfoCompatSaverImpl shortcutInfoCompatSaverImpl = (ShortcutInfoCompatSaverImpl) this.c;
-                ArrayList arrayList = (ArrayList) this.b;
-                shortcutInfoCompatSaverImpl.e(arrayList);
-                File file = shortcutInfoCompatSaverImpl.f;
-                h3 h3Var = new h3(file);
-                File file2 = (File) h3Var.c;
-                FileOutputStream fileOutputStream = null;
-                try {
-                    W = h3Var.W();
-                } catch (Exception e7) {
-                    exc = e7;
-                }
-                try {
-                    BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(W);
-                    XmlSerializer newSerializer = Xml.newSerializer();
-                    newSerializer.setOutput(bufferedOutputStream, "UTF_8");
-                    newSerializer.startDocument(null, Boolean.TRUE);
-                    newSerializer.startTag(null, "share_targets");
-                    int size = arrayList.size();
-                    int i10 = 0;
-                    while (i10 < size) {
-                        Object obj = arrayList.get(i10);
-                        i10++;
-                        u4.d.h(newSerializer, (u4.g) obj);
-                    }
-                    newSerializer.endTag(null, "share_targets");
-                    newSerializer.endDocument();
-                    bufferedOutputStream.flush();
-                    W.flush();
-                    try {
-                        W.getFD().sync();
-                        z10 = true;
-                    } catch (IOException unused) {
-                        z10 = false;
-                    }
-                    if (!z10) {
-                        Log.e("AtomicFile", "Failed to sync file output stream");
-                    }
-                    try {
-                        W.close();
-                    } catch (IOException e10) {
-                        Log.e("AtomicFile", "Failed to close file output stream", e10);
-                    }
-                    h3.T(file2, file);
-                    return;
-                } catch (Exception e11) {
-                    exc = e11;
-                    fileOutputStream = W;
-                    Log.e("ShortcutInfoCompatSaver", "Failed to write to file " + file, exc);
-                    if (fileOutputStream != null) {
-                        try {
-                            fileOutputStream.getFD().sync();
-                        } catch (IOException unused2) {
-                            Log.e("AtomicFile", "Failed to sync file output stream");
-                        }
-                        try {
-                            fileOutputStream.close();
-                        } catch (IOException e12) {
-                            Log.e("AtomicFile", "Failed to close file output stream", e12);
-                        }
-                        if (!file2.delete()) {
-                            Log.e("AtomicFile", "Failed to delete new file " + file2);
-                        }
-                    }
-                    throw new RuntimeException("Failed to write to file " + file, exc);
-                }
-            case 2:
-                m mVar = (m) this.c;
-                try {
-                    ((m) this.b).get();
-                    mVar.k(null);
-                    return;
-                } catch (Exception e13) {
-                    mVar.l(e13);
-                    return;
-                }
-            case 3:
-                ShortcutInfoCompatSaverImpl shortcutInfoCompatSaverImpl2 = (ShortcutInfoCompatSaverImpl) this.c;
-                a0.f fVar = shortcutInfoCompatSaverImpl2.b;
-                try {
-                    ShortcutInfoCompatSaverImpl.f((File) this.b);
-                    ShortcutInfoCompatSaverImpl.f(shortcutInfoCompatSaverImpl2.g);
-                    fVar.putAll(u4.d.c(shortcutInfoCompatSaverImpl2.f, shortcutInfoCompatSaverImpl2.a));
-                    shortcutInfoCompatSaverImpl2.e(new ArrayList(fVar.values()));
-                    return;
-                } catch (Exception e14) {
-                    Log.w("ShortcutInfoCompatSaver", "ShortcutInfoCompatSaver started with an exceptions ", e14);
-                    return;
-                }
-            case 4:
-                ShortcutInfoCompatSaverImpl shortcutInfoCompatSaverImpl3 = (ShortcutInfoCompatSaverImpl) this.c;
-                shortcutInfoCompatSaverImpl3.b.clear();
-                a0.f fVar2 = shortcutInfoCompatSaverImpl3.c;
-                Iterator it = ((a0.e) fVar2.values()).iterator();
-                while (it.hasNext()) {
-                    ((y) it.next()).cancel(false);
-                }
-                fVar2.clear();
-                shortcutInfoCompatSaverImpl3.h((m) this.b);
-                return;
-            case 5:
-                if (((m) this.c).a instanceof c0.a) {
-                    return;
-                }
-                try {
-                    ((Runnable) this.b).run();
-                    ((m) this.c).k(null);
-                    return;
-                } catch (Exception e15) {
-                    ((m) this.c).l(e15);
-                    return;
-                }
-            case 6:
-                x1.a aVar = (x1.a) this.c;
-                Object obj2 = this.b;
-                if (aVar.c.get()) {
-                    a6.d dVar2 = aVar.e;
-                    if (dVar2.h == aVar) {
-                        SystemClock.uptimeMillis();
-                        dVar2.h = null;
-                        dVar2.b();
-                    }
-                } else {
-                    a6.d dVar3 = aVar.e;
-                    if (dVar3.g != aVar) {
-                        if (dVar3.h == aVar) {
-                            SystemClock.uptimeMillis();
-                            dVar3.h = null;
-                            dVar3.b();
-                        }
-                    } else if (!dVar3.c) {
-                        SystemClock.uptimeMillis();
-                        dVar3.g = null;
-                        w1.a aVar2 = dVar3.a;
-                        if (aVar2 != null) {
-                            if (Looper.myLooper() == Looper.getMainLooper()) {
-                                aVar2.j(obj2);
-                            } else {
-                                aVar2.h(obj2);
-                            }
-                        }
-                    }
-                }
-                aVar.b = 3;
-                return;
-            case 7:
-                DataHolder dataHolder = (DataHolder) this.b;
-                x8.e eVar = new x8.e(dataHolder);
-                try {
-                    ((x8.m) this.c).c.onDataChanged(eVar);
-                    if (dataHolder != null) {
-                        dataHolder.close();
+                    this.a.execute(this.e);
+                    if (this.c != 2) {
                         return;
                     }
-                    return;
-                } catch (Throwable th2) {
-                    DataHolder dataHolder2 = eVar.a;
-                    if (dataHolder2 != null) {
-                        dataHolder2.close();
+                    synchronized (this.b) {
+                        try {
+                            if (this.d == j10 && this.c == 2) {
+                                this.c = 3;
+                            }
+                        } finally {
+                        }
                     }
-                    throw th2;
+                    return;
+                } catch (Error | RuntimeException e) {
+                    synchronized (this.b) {
+                        try {
+                            int i11 = this.c;
+                            boolean z10 = true;
+                            if ((i11 != 1 && i11 != 2) || !this.b.removeLastOccurrence(pVar)) {
+                                z10 = false;
+                            }
+                            if (!(e instanceof RejectedExecutionException) || z10) {
+                                throw e;
+                            }
+                        } finally {
+                        }
+                    }
+                    return;
                 }
-            case 8:
-                ((x8.m) this.c).c.onMessageReceived((k0) this.b);
-                return;
-            case 9:
-                ((x8.m) this.c).c.onConnectedNodes((List) this.b);
-                return;
-            case 10:
-                ((x8.m) this.c).c.onCapabilityChanged((y8.b) this.b);
-                return;
-            case 11:
-                ((x8.m) this.c).c.onNotificationReceived((b1) this.b);
-                return;
-            case 12:
-                ((x8.m) this.c).c.onEntityUpdate((v0) this.b);
-                return;
-            case 13:
-                y8.e eVar2 = (y8.e) this.b;
-                x8.m mVar2 = (x8.m) this.c;
-                eVar2.b(mVar2.c);
-                dVar = mVar2.c.zzh;
-                eVar2.b(dVar);
-                return;
-            default:
-                p.a((p) this.c, (ea.b) this.b);
-                return;
+            }
+            this.b.add(runnable);
         }
     }
 
-    public String toString() {
-        switch (this.a) {
-            case 0:
-                Runnable runnable = (Runnable) this.b;
-                if (runnable != null) {
-                    return "SequentialExecutorWorker{running=" + runnable + "}";
-                }
-                StringBuilder sb2 = new StringBuilder("SequentialExecutorWorker{state=");
-                int i10 = ((k) this.c).c;
-                sb2.append(i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? BuildConfig.BETA_URL : "RUNNING" : "QUEUED" : "QUEUING" : "IDLE");
-                sb2.append("}");
-                return sb2.toString();
-            default:
-                return super.toString();
-        }
-    }
-
-    public j(k kVar) {
-        this.a = 0;
-        this.c = kVar;
-    }
-
-    public j(m mVar, m mVar2) {
-        this.a = 2;
-        this.b = mVar;
-        this.c = mVar2;
+    public final String toString() {
+        return "SequentialExecutor@" + System.identityHashCode(this) + "{" + this.a + "}";
     }
 }

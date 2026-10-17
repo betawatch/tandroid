@@ -5,14 +5,13 @@ import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import ji.w4;
 import nc.k;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class a extends c {
     public static final Logger f;
-    public static final /* synthetic */ w4 h;
+    public static final /* synthetic */ le.b h;
     public ByteBuffer e;
 
     static {

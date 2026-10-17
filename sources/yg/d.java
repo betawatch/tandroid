@@ -4,28 +4,28 @@ import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import com.google.android.gms.internal.play_billing.k3;
+import com.google.android.gms.internal.cast.a6;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
 import w7.z5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class d extends FrameLayout {
-    public final c6 a;
+    public final d6 a;
     public final TextView b;
 
-    public d(Context context, c6 c6Var) {
+    public d(Context context, d6 d6Var) {
         super(context);
-        this.a = c6Var;
-        setBackgroundColor(g6.w0(g6.e7, c6Var));
+        this.a = d6Var;
+        setBackgroundColor(h6.w0(h6.e7, d6Var));
         TextView textView = new TextView(getContext());
         this.b = textView;
-        k3.m(14.0f, 1, textView);
-        textView.setTextColor(g6.w0(g6.f7, c6Var));
+        a6.m(14.0f, 1, textView);
+        textView.setTextColor(h6.w0(h6.f7, d6Var));
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         addView(textView, z5.a(-1.0f, 16.0f, 0.0f, 16.0f, 0.0f, -1, (LocaleController.isRTL ? 5 : 3) | 48));
     }
@@ -40,6 +40,6 @@ public final class d extends FrameLayout {
     }
 
     public void setTextColor(int i10) {
-        this.b.setTextColor(g6.w0(i10, this.a));
+        this.b.setTextColor(h6.w0(i10, this.a));
     }
 }

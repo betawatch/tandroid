@@ -8,10 +8,10 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class a0 {
-    public static n2.v a(g2.h hVar, String str, byte[] bArr, Map map) {
+    public static n2.w a(g2.h hVar, String str, byte[] bArr, Map map) {
         Map map2;
         List list;
         g2.b0 b0Var = new g2.b0(hVar);
@@ -27,14 +27,14 @@ public abstract class a0 {
                 try {
                     byte[] b10 = f9.f.b(kVar);
                     u2.u uVar = new u2.u(mVar, b0Var.c, b0Var.d, SystemClock.elapsedRealtime(), 0L, b10.length);
-                    m2.t tVar = new m2.t(b10);
-                    tVar.c = uVar;
-                    n2.v vVar = new n2.v(tVar);
+                    mi.q qVar = new mi.q(b10);
+                    qVar.c = uVar;
+                    n2.w wVar = new n2.w(qVar);
                     try {
                         kVar.close();
                     } catch (IOException unused) {
                     }
-                    return vVar;
+                    return wVar;
                 } catch (g2.x e) {
                     try {
                         int i11 = e.c;
@@ -62,7 +62,7 @@ public abstract class a0 {
                     }
                 }
             } catch (Exception e7) {
-                throw new n2.w(mVar, b0Var.c, b0Var.a.getResponseHeaders(), b0Var.b, e7);
+                throw new n2.x(mVar, b0Var.c, b0Var.a.getResponseHeaders(), b0Var.b, e7);
             }
         }
     }

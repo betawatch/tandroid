@@ -1,29 +1,27 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class f40 extends v4 {
-    public final /* synthetic */ n60 U;
+public final class f40 extends AnimatorListenerAdapter {
+    public final /* synthetic */ org.telegram.ui.Components.voip.t a;
+    public final /* synthetic */ s50 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f40(n60 n60Var, LaunchActivity launchActivity) {
-        super(launchActivity);
-        this.U = n60Var;
+    public f40(s50 s50Var, org.telegram.ui.Components.voip.t tVar) {
+        this.b = s50Var;
+        this.a = tVar;
     }
 
-    @Override // org.telegram.ui.v4, org.telegram.ui.Components.ki0
-    public final void c() {
-        n60 n60Var = this.U;
-        AccountInstance accountInstance = n60Var.d;
-        g40 g40Var = n60Var.b;
-        long dialogId = g40Var.getDialogId();
-        if (dialogId > 0) {
-            TLRPC.User user = accountInstance.getMessagesController().getUser(Long.valueOf(dialogId));
-            g40Var.H(null, ImageLocation.getForUserOrChat(accountInstance.getCurrentAccount(), user, 0), ImageLocation.getForUserOrChat(accountInstance.getCurrentAccount(), user, 1), false);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        ViewGroup viewGroup;
+        org.telegram.ui.Components.voip.t tVar = this.a;
+        if (tVar.getParent() != null) {
+            viewGroup = ((org.telegram.ui.ActionBar.f3) this.b).containerView;
+            viewGroup.removeView(tVar);
         }
     }
 }

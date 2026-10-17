@@ -1,121 +1,161 @@
 package org.telegram.ui;
 
-import android.view.KeyEvent;
-import android.view.MotionEvent;
-import android.widget.TextView;
+import android.text.TextUtils;
+import java.io.File;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.SecureDocument;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bm0 implements TextView.OnEditorActionListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ sn0 b;
+public final class bm0 implements om0 {
+    public final /* synthetic */ TLRPC.SecureValueType a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ xm0 d;
 
-    public /* synthetic */ bm0(sn0 sn0Var, int i10) {
-        this.a = i10;
-        this.b = sn0Var;
+    public bm0(xm0 xm0Var, TLRPC.SecureValueType secureValueType, boolean z10, int i10) {
+        this.d = xm0Var;
+        this.a = secureValueType;
+        this.b = z10;
+        this.c = i10;
     }
 
-    @Override // android.widget.TextView.OnEditorActionListener
-    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
-        switch (this.a) {
-            case 0:
-                sn0 sn0Var = this.b;
-                if (i10 != 5) {
-                    if (i10 != 6) {
-                        sn0Var.getClass();
-                        break;
-                    } else {
-                        sn0Var.L.callOnClick();
-                        break;
-                    }
-                } else {
-                    sn0Var.Y[2].requestFocus();
-                    break;
-                }
-            case 1:
-                sn0 sn0Var2 = this.b;
-                sn0Var2.getClass();
-                if (i10 == 5) {
-                    int intValue = ((Integer) textView.getTag()).intValue() + 1;
-                    EditTextBoldCursor[] editTextBoldCursorArr = sn0Var2.Y;
-                    if (intValue < editTextBoldCursorArr.length) {
-                        if (!editTextBoldCursorArr[intValue].isFocusable()) {
-                            sn0Var2.Y[intValue].dispatchTouchEvent(MotionEvent.obtain(0L, 0L, 1, 0.0f, 0.0f, 0));
-                            textView.clearFocus();
-                            AndroidUtilities.hideKeyboard(textView);
-                            break;
-                        } else {
-                            sn0Var2.Y[intValue].requestFocus();
-                            break;
-                        }
-                    }
-                }
-                break;
-            case 2:
-                sn0 sn0Var3 = this.b;
-                sn0Var3.getClass();
-                if (i10 == 5) {
-                    int intValue2 = ((Integer) textView.getTag()).intValue() + 1;
-                    EditTextBoldCursor[] editTextBoldCursorArr2 = sn0Var3.a0;
-                    if (intValue2 < editTextBoldCursorArr2.length) {
-                        if (!editTextBoldCursorArr2[intValue2].isFocusable()) {
-                            sn0Var3.a0[intValue2].dispatchTouchEvent(MotionEvent.obtain(0L, 0L, 1, 0.0f, 0.0f, 0));
-                            textView.clearFocus();
-                            AndroidUtilities.hideKeyboard(textView);
-                            break;
-                        } else {
-                            sn0Var3.a0[intValue2].requestFocus();
-                            break;
-                        }
-                    }
-                }
-                break;
-            case 3:
-                sn0 sn0Var4 = this.b;
-                sn0Var4.getClass();
-                if (i10 == 6 || i10 == 5) {
-                    sn0Var4.L.callOnClick();
-                    break;
-                }
-                break;
-            case 4:
-                sn0 sn0Var5 = this.b;
-                sn0Var5.getClass();
-                if (i10 == 5) {
-                    int intValue3 = ((Integer) textView.getTag()).intValue() + 1;
-                    EditTextBoldCursor[] editTextBoldCursorArr3 = sn0Var5.Y;
-                    if (intValue3 < editTextBoldCursorArr3.length) {
-                        if (!editTextBoldCursorArr3[intValue3].isFocusable()) {
-                            sn0Var5.Y[intValue3].dispatchTouchEvent(MotionEvent.obtain(0L, 0L, 1, 0.0f, 0.0f, 0));
-                            textView.clearFocus();
-                            AndroidUtilities.hideKeyboard(textView);
-                            break;
-                        } else {
-                            sn0Var5.Y[intValue3].requestFocus();
-                            break;
-                        }
-                    }
-                }
-                break;
-            case 5:
-                sn0 sn0Var6 = this.b;
-                sn0Var6.getClass();
-                if (i10 == 5 || i10 == 6) {
-                    sn0Var6.L.callOnClick();
-                    break;
-                }
-                break;
-            default:
-                sn0 sn0Var7 = this.b;
-                sn0Var7.getClass();
-                if (i10 == 6 || i10 == 5) {
-                    sn0Var7.L.callOnClick();
-                    break;
-                }
-                break;
+    public static void a(bm0 bm0Var, SecureDocument secureDocument, TLRPC.TL_secureFile tL_secureFile) {
+        bm0Var.getClass();
+        File pathToAttach = FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(secureDocument);
+        String str = secureDocument.secureFile.dc_id + "_" + secureDocument.secureFile.id;
+        File pathToAttach2 = FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(tL_secureFile);
+        String str2 = tL_secureFile.dc_id + "_" + tL_secureFile.id;
+        pathToAttach.renameTo(pathToAttach2);
+        ImageLoader.getInstance().replaceImageInCache(str, str2, null, false);
+    }
+
+    public static TLRPC.InputSecureFile b(SecureDocument secureDocument) {
+        if (secureDocument.inputFile == null) {
+            TLRPC.TL_inputSecureFile tL_inputSecureFile = new TLRPC.TL_inputSecureFile();
+            TLRPC.TL_secureFile tL_secureFile = secureDocument.secureFile;
+            tL_inputSecureFile.id = tL_secureFile.id;
+            tL_inputSecureFile.access_hash = tL_secureFile.access_hash;
+            return tL_inputSecureFile;
         }
-        return true;
+        TLRPC.TL_inputSecureFileUploaded tL_inputSecureFileUploaded = new TLRPC.TL_inputSecureFileUploaded();
+        TLRPC.TL_inputFile tL_inputFile = secureDocument.inputFile;
+        tL_inputSecureFileUploaded.id = tL_inputFile.id;
+        tL_inputSecureFileUploaded.parts = tL_inputFile.parts;
+        tL_inputSecureFileUploaded.md5_checksum = tL_inputFile.md5_checksum;
+        tL_inputSecureFileUploaded.file_hash = secureDocument.fileHash;
+        tL_inputSecureFileUploaded.secret = secureDocument.fileSecret;
+        return tL_inputSecureFileUploaded;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    public final void c(TLRPC.TL_secureRequiredType tL_secureRequiredType, String str, String str2, TLRPC.TL_secureRequiredType tL_secureRequiredType2, String str3, ArrayList arrayList, SecureDocument secureDocument, ArrayList arrayList2, SecureDocument secureDocument2, SecureDocument secureDocument3, Runnable runnable, mi.q qVar) {
+        TLRPC.TL_inputSecureValue tL_inputSecureValue;
+        TLRPC.TL_securePlainPhone tL_securePlainPhone;
+        TLRPC.TL_inputSecureValue tL_inputSecureValue2;
+        int i10;
+        boolean isEmpty = TextUtils.isEmpty(str2);
+        xm0 xm0Var = this.d;
+        if (!isEmpty) {
+            tL_inputSecureValue = new TLRPC.TL_inputSecureValue();
+            tL_inputSecureValue.type = tL_secureRequiredType.type;
+            tL_inputSecureValue.flags |= 1;
+            com.google.android.gms.internal.cast.z5 j12 = xm0Var.j1(AndroidUtilities.getStringBytes(str2));
+            TLRPC.TL_secureData tL_secureData = new TLRPC.TL_secureData();
+            tL_inputSecureValue.data = tL_secureData;
+            tL_secureData.data = (byte[]) j12.a;
+            tL_secureData.data_hash = (byte[]) j12.d;
+            tL_secureData.secret = (byte[]) j12.b;
+        } else if (TextUtils.isEmpty(str)) {
+            tL_inputSecureValue = null;
+        } else {
+            TLRPC.SecureValueType secureValueType = this.a;
+            if (secureValueType instanceof TLRPC.TL_secureValueTypeEmail) {
+                TLRPC.TL_securePlainEmail tL_securePlainEmail = new TLRPC.TL_securePlainEmail();
+                tL_securePlainEmail.email = str;
+                tL_securePlainPhone = tL_securePlainEmail;
+            } else {
+                if (!(secureValueType instanceof TLRPC.TL_secureValueTypePhone)) {
+                    return;
+                }
+                TLRPC.TL_securePlainPhone tL_securePlainPhone2 = new TLRPC.TL_securePlainPhone();
+                tL_securePlainPhone2.phone = str;
+                tL_securePlainPhone = tL_securePlainPhone2;
+            }
+            TLRPC.TL_inputSecureValue tL_inputSecureValue3 = new TLRPC.TL_inputSecureValue();
+            tL_inputSecureValue3.type = tL_secureRequiredType.type;
+            tL_inputSecureValue3.flags |= 32;
+            tL_inputSecureValue3.plain_data = tL_securePlainPhone;
+            tL_inputSecureValue = tL_inputSecureValue3;
+        }
+        boolean z10 = this.b;
+        if (!z10 && tL_inputSecureValue == null) {
+            if (qVar != null) {
+                qVar.p(null, null);
+                return;
+            }
+            return;
+        }
+        if (tL_secureRequiredType2 != null) {
+            TLRPC.TL_inputSecureValue tL_inputSecureValue4 = new TLRPC.TL_inputSecureValue();
+            tL_inputSecureValue4.type = tL_secureRequiredType2.type;
+            if (!TextUtils.isEmpty(str3)) {
+                tL_inputSecureValue4.flags |= 1;
+                com.google.android.gms.internal.cast.z5 j13 = xm0Var.j1(AndroidUtilities.getStringBytes(str3));
+                TLRPC.TL_secureData tL_secureData2 = new TLRPC.TL_secureData();
+                tL_inputSecureValue4.data = tL_secureData2;
+                tL_secureData2.data = (byte[]) j13.a;
+                tL_secureData2.data_hash = (byte[]) j13.d;
+                tL_secureData2.secret = (byte[]) j13.b;
+            }
+            if (secureDocument2 != null) {
+                tL_inputSecureValue4.front_side = b(secureDocument2);
+                tL_inputSecureValue4.flags |= 2;
+            }
+            if (secureDocument3 != null) {
+                tL_inputSecureValue4.reverse_side = b(secureDocument3);
+                tL_inputSecureValue4.flags |= 4;
+            }
+            if (secureDocument != null) {
+                tL_inputSecureValue4.selfie = b(secureDocument);
+                tL_inputSecureValue4.flags |= 8;
+            }
+            if (arrayList2 != null && !arrayList2.isEmpty()) {
+                tL_inputSecureValue4.flags |= 64;
+                int size = arrayList2.size();
+                for (int i11 = 0; i11 < size; i11++) {
+                    tL_inputSecureValue4.translation.add(b((SecureDocument) arrayList2.get(i11)));
+                }
+            }
+            if (arrayList != null && !arrayList.isEmpty()) {
+                tL_inputSecureValue4.flags |= 16;
+                int size2 = arrayList.size();
+                for (int i12 = 0; i12 < size2; i12++) {
+                    tL_inputSecureValue4.files.add(b((SecureDocument) arrayList.get(i12)));
+                }
+            }
+            if (!z10) {
+                tL_inputSecureValue2 = tL_inputSecureValue4;
+                TL_account.saveSecureValue savesecurevalue = new TL_account.saveSecureValue();
+                savesecurevalue.value = tL_inputSecureValue;
+                savesecurevalue.secure_secret_id = xm0Var.b1;
+                i10 = ((org.telegram.ui.ActionBar.n2) xm0Var).currentAccount;
+                ConnectionsManager.getInstance(i10).sendRequest(savesecurevalue, new am0(this, qVar, str, savesecurevalue, tL_secureRequiredType2, tL_secureRequiredType, arrayList, secureDocument, secureDocument2, secureDocument3, arrayList2, str2, str3, runnable, this, tL_inputSecureValue2));
+            }
+            tL_inputSecureValue = tL_inputSecureValue4;
+        }
+        tL_inputSecureValue2 = null;
+        TL_account.saveSecureValue savesecurevalue2 = new TL_account.saveSecureValue();
+        savesecurevalue2.value = tL_inputSecureValue;
+        savesecurevalue2.secure_secret_id = xm0Var.b1;
+        i10 = ((org.telegram.ui.ActionBar.n2) xm0Var).currentAccount;
+        ConnectionsManager.getInstance(i10).sendRequest(savesecurevalue2, new am0(this, qVar, str, savesecurevalue2, tL_secureRequiredType2, tL_secureRequiredType, arrayList, secureDocument, secureDocument2, secureDocument3, arrayList2, str2, str3, runnable, this, tL_inputSecureValue2));
     }
 }

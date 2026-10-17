@@ -19,15 +19,16 @@ import c5.f;
 import java.util.WeakHashMap;
 import l.k;
 import l.z;
+import m.e;
 import m.i;
-import m.w3;
+import m.v3;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import r0.i0;
 import r0.l0;
 import v7.q7;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public class ActionBarContextView extends ViewGroup {
     public TextView E;
@@ -63,7 +64,7 @@ public class ActionBarContextView extends ViewGroup {
     public static int g(int i10, int i11, int i12, View view, boolean z10) {
         int measuredWidth = view.getMeasuredWidth();
         int measuredHeight = view.getMeasuredHeight();
-        int C = i2.d.C(i12, measuredHeight, 2, i11);
+        int C = i0.a.C(i12, measuredHeight, 2, i11);
         if (z10) {
             view.layout(i10 - measuredWidth, C, i10, measuredHeight + C);
         } else {
@@ -84,13 +85,13 @@ public class ActionBarContextView extends ViewGroup {
         View findViewById = this.v.findViewById(R.id.action_mode_close_button);
         this.w = findViewById;
         findViewById.setOnClickListener(new w(aVar, 6));
-        k c10 = aVar.c();
+        k d = aVar.d();
         i iVar = this.d;
         if (iVar != null) {
             iVar.f();
-            m.d dVar = iVar.J;
-            if (dVar != null && dVar.b()) {
-                dVar.i.dismiss();
+            e eVar = iVar.J;
+            if (eVar != null && eVar.b()) {
+                eVar.i.dismiss();
             }
         }
         i iVar2 = new i(getContext());
@@ -98,7 +99,7 @@ public class ActionBarContextView extends ViewGroup {
         iVar2.w = true;
         iVar2.x = true;
         ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(-2, -1);
-        c10.b(this.d, this.b);
+        d.b(this.d, this.b);
         i iVar3 = this.d;
         z zVar = iVar3.n;
         if (zVar == null) {
@@ -246,11 +247,11 @@ public class ActionBarContextView extends ViewGroup {
         i iVar = this.d;
         if (iVar != null) {
             iVar.f();
-            m.d dVar = this.d.J;
-            if (dVar == null || !dVar.b()) {
+            e eVar = this.d.J;
+            if (eVar == null || !eVar.b()) {
                 return;
             }
-            dVar.i.dismiss();
+            eVar.i.dismiss();
         }
     }
 
@@ -275,7 +276,7 @@ public class ActionBarContextView extends ViewGroup {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        boolean a2 = w3.a(this);
+        boolean a2 = v3.a(this);
         int paddingRight = a2 ? (i12 - i10) - getPaddingRight() : getPaddingLeft();
         int paddingTop = getPaddingTop();
         int paddingTop2 = ((i13 - i11) - getPaddingTop()) - getPaddingBottom();

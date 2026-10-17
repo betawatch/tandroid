@@ -1,67 +1,67 @@
 package org.telegram.ui.web;
 
-import bi.n9;
+import ci.z7;
 import org.json.JSONObject;
 import org.telegram.messenger.FileLog;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ c1 b;
+    public final /* synthetic */ a1 b;
 
-    public /* synthetic */ s(c1 c1Var, int i10) {
+    public /* synthetic */ s(a1 a1Var, int i10) {
         this.a = i10;
-        this.b = c1Var;
+        this.b = a1Var;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                h0 h0Var = this.b.c;
-                if (h0Var != null) {
-                    h0Var.b();
+                g0 g0Var = this.b.c;
+                if (g0Var != null) {
+                    g0Var.b();
                 }
-                LaunchActivity.K();
+                LaunchActivity.L();
                 break;
             case 1:
-                c1 c1Var = this.b;
-                n9 n9Var = c1Var.I0;
-                fi.v0 v0Var = c1Var.k0;
-                v0Var.getClass();
+                a1 a1Var = this.b;
+                z7 z7Var = a1Var.I0;
+                gi.u0 u0Var = a1Var.k0;
+                u0Var.getClass();
                 JSONObject jSONObject = new JSONObject();
                 try {
-                    jSONObject.put("available", v0Var.d());
-                    if (v0Var.d()) {
-                        jSONObject.put("access_requested", v0Var.d);
-                        if (v0Var.d) {
-                            jSONObject.put("access_granted", v0Var.e && v0Var.a());
+                    jSONObject.put("available", u0Var.d());
+                    if (u0Var.d()) {
+                        jSONObject.put("access_requested", u0Var.d);
+                        if (u0Var.d) {
+                            jSONObject.put("access_granted", u0Var.e && u0Var.a());
                         }
                     }
                 } catch (Exception e) {
                     FileLog.e(e);
                 }
-                c1Var.x(n9Var, "location_checked", jSONObject);
+                a1Var.x(z7Var, "location_checked", jSONObject);
                 break;
             default:
-                c1 c1Var2 = this.b;
-                if (c1Var2.S) {
-                    c1Var2.S = false;
-                    h0 h0Var2 = c1Var2.c;
-                    if (h0Var2 != null) {
-                        h0Var2.t(false);
+                a1 a1Var2 = this.b;
+                if (a1Var2.S) {
+                    a1Var2.S = false;
+                    g0 g0Var2 = a1Var2.c;
+                    if (g0Var2 != null) {
+                        g0Var2.t(false);
                     }
                 }
-                c1Var2.c();
-                c1Var2.N = false;
-                c1Var2.P = 0L;
-                c1Var2.T = false;
-                z0 z0Var = c1Var2.a;
-                if (z0Var != null) {
-                    z0Var.onResume();
-                    c1Var2.a.reload();
+                a1Var2.c();
+                a1Var2.N = false;
+                a1Var2.P = 0L;
+                a1Var2.T = false;
+                x0 x0Var = a1Var2.a;
+                if (x0Var != null) {
+                    x0Var.onResume();
+                    a1Var2.a.reload();
                     break;
                 }
                 break;

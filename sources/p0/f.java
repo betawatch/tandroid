@@ -1,11 +1,11 @@
 package p0;
 
-import b2.u;
+import b2.t;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class f {
-    public static final u a = new u((e) null, false);
-    public static final u b = new u((e) null, true);
-    public static final u c = new u(e.a, false);
+    public static final t a = new t((e) null, false);
+    public static final t b = new t((e) null, true);
+    public static final t c = new t(e.a, false);
 }

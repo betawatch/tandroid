@@ -2,11 +2,11 @@ package w6;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class b {
     public static final b b;
-    public k0.b a;
+    public q2.b a;
 
     static {
         b bVar = new b();
@@ -14,8 +14,8 @@ public final class b {
         b = bVar;
     }
 
-    public static k0.b a(Context context) {
-        k0.b bVar;
+    public static q2.b a(Context context) {
+        q2.b bVar;
         b bVar2 = b;
         synchronized (bVar2) {
             try {
@@ -23,7 +23,7 @@ public final class b {
                     if (context.getApplicationContext() != null) {
                         context = context.getApplicationContext();
                     }
-                    bVar2.a = new k0.b(context, (byte) 0);
+                    bVar2.a = new q2.b(context, 2);
                 }
                 bVar = bVar2.a;
             } catch (Throwable th2) {

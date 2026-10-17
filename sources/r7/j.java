@@ -6,9 +6,9 @@ import android.os.Process;
 import java.util.Arrays;
 import java.util.List;
 import w7.f0;
-import w7.x6;
+import w7.z6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class j extends o6.a {
     public static final Parcelable.Creator<j> CREATOR = new m(3);
@@ -56,7 +56,7 @@ public final class j extends o6.a {
             int length2 = array2.length;
             for (int i13 = 0; i13 < length2; i13++) {
                 if (array2[i13] == null) {
-                    throw new NullPointerException(i2.d.j(i13, "at index "));
+                    throw new NullPointerException(i0.a.j(i13, "at index "));
                 }
             }
             if (length2 == 0) {
@@ -76,7 +76,7 @@ public final class j extends o6.a {
             return false;
         }
         j jVar = (j) obj;
-        return this.a == jVar.a && this.b == jVar.b && this.e == jVar.e && this.c.equals(jVar.c) && x6.a(this.d, jVar.d) && x6.a(this.f, jVar.f) && x6.a(this.h, jVar.h) && this.n.equals(jVar.n);
+        return this.a == jVar.a && this.b == jVar.b && this.e == jVar.e && this.c.equals(jVar.c) && z6.a(this.d, jVar.d) && z6.a(this.f, jVar.f) && z6.a(this.h, jVar.h) && this.n.equals(jVar.n);
     }
 
     public final int hashCode() {

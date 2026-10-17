@@ -1,65 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
+import j$.util.Objects;
+import org.telegram.messenger.ContactsController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class nj implements TextWatcher {
-    public final /* synthetic */ zj a;
+public final class nj {
+    public final int a;
+    public final long b;
 
-    public nj(zj zjVar) {
-        this.a = zjVar;
+    public nj(int i10, long j10) {
+        this.a = i10;
+        this.b = j10;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        int currentTop;
-        String obj = editable.toString();
-        if (obj.isEmpty()) {
-            s4.g0 adapter = this.a.s.getAdapter();
-            zj zjVar = this.a;
-            if (adapter != zjVar.E) {
-                currentTop = zjVar.getCurrentTop();
-                this.a.G.setText(LocaleController.getString(R.string.NoContacts));
-                this.a.G.c();
-                zj zjVar2 = this.a;
-                zjVar2.s.setAdapter(zjVar2.E);
-                this.a.E.l();
-                if (currentTop > 0) {
-                    this.a.v.h1(0, -currentTop);
-                }
-            }
-        } else {
-            yz yzVar = this.a.G;
-            if (yzVar != null) {
-                yzVar.setText(LocaleController.getString(R.string.NoResult));
-            }
+    public static nj a(Object obj) {
+        if (obj instanceof ContactsController.Contact) {
+            return new nj(2, ((ContactsController.Contact) obj).contact_id);
         }
-        vj vjVar = this.a.F;
-        if (vjVar != null) {
-            if (vjVar.f != null) {
-                Utilities.searchQueue.cancelRunnable(vjVar.f);
-                vjVar.f = null;
-            }
-            int i10 = vjVar.h + 1;
-            vjVar.h = i10;
-            DispatchQueue dispatchQueue = Utilities.searchQueue;
-            uj ujVar = new uj(vjVar, obj, i10, 0);
-            vjVar.f = ujVar;
-            dispatchQueue.postRunnable(ujVar, 300L);
+        if (obj instanceof TLRPC.User) {
+            return new nj(1, ((TLRPC.User) obj).id);
         }
+        return null;
     }
 
-    @Override // android.text.TextWatcher
-    public final /* synthetic */ void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || nj.class != obj.getClass()) {
+            return false;
+        }
+        nj njVar = (nj) obj;
+        return this.b == njVar.b && this.a == njVar.a;
     }
 
-    @Override // android.text.TextWatcher
-    public final /* synthetic */ void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    public final int hashCode() {
+        return Objects.hash(m1.j.a(this.a), Long.valueOf(this.b));
     }
 }

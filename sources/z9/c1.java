@@ -1,6 +1,6 @@
 package z9;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class c1 {
     public final String a;
@@ -8,9 +8,9 @@ public final class c1 {
     public final String c;
     public final String d;
     public final int e;
-    public final m2.t f;
+    public final mi.q f;
 
-    public c1(String str, String str2, String str3, String str4, int i10, m2.t tVar) {
+    public c1(String str, String str2, String str3, String str4, int i10, mi.q qVar) {
         if (str == null) {
             throw new NullPointerException("Null appIdentifier");
         }
@@ -28,7 +28,7 @@ public final class c1 {
         }
         this.d = str4;
         this.e = i10;
-        this.f = tVar;
+        this.f = qVar;
     }
 
     public final boolean equals(Object obj) {

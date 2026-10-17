@@ -4,10 +4,10 @@ import android.os.Bundle;
 import j$.util.Objects;
 import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class r1 {
-    public static final b2.f1 k;
+    public static final b2.e1 k;
     public static final r1 l;
     public static final String m;
     public static final String n;
@@ -19,7 +19,7 @@ public final class r1 {
     public static final String t;
     public static final String u;
     public static final String v;
-    public final b2.f1 a;
+    public final b2.e1 a;
     public final boolean b;
     public final long c;
     public final long d;
@@ -31,9 +31,9 @@ public final class r1 {
     public final long j;
 
     static {
-        b2.f1 f1Var = new b2.f1(null, 0, null, null, 0, 0L, 0L, -1, -1);
-        k = f1Var;
-        l = new r1(f1Var, false, -9223372036854775807L, -9223372036854775807L, 0L, 0, 0L, -9223372036854775807L, -9223372036854775807L, 0L);
+        b2.e1 e1Var = new b2.e1(null, 0, null, null, 0, 0L, 0L, -1, -1);
+        k = e1Var;
+        l = new r1(e1Var, false, -9223372036854775807L, -9223372036854775807L, 0L, 0, 0L, -9223372036854775807L, -9223372036854775807L, 0L);
         String str = e2.m0.a;
         m = Integer.toString(0, 36);
         n = Integer.toString(1, 36);
@@ -47,9 +47,9 @@ public final class r1 {
         v = Integer.toString(9, 36);
     }
 
-    public r1(b2.f1 f1Var, boolean z10, long j10, long j11, long j12, int i10, long j13, long j14, long j15, long j16) {
-        u6.g(z10 == (f1Var.h != -1));
-        this.a = f1Var;
+    public r1(b2.e1 e1Var, boolean z10, long j10, long j11, long j12, int i10, long j13, long j14, long j15, long j16) {
+        u6.g(z10 == (e1Var.h != -1));
+        this.a = e1Var;
         this.b = z10;
         this.c = j10;
         this.d = j11;
@@ -70,9 +70,9 @@ public final class r1 {
 
     public final Bundle b(int i10) {
         Bundle bundle = new Bundle();
-        b2.f1 f1Var = this.a;
-        if (i10 < 3 || !k.a(f1Var)) {
-            bundle.putBundle(m, f1Var.c(i10));
+        b2.e1 e1Var = this.a;
+        if (i10 < 3 || !k.a(e1Var)) {
+            bundle.putBundle(m, e1Var.c(i10));
         }
         boolean z10 = this.b;
         if (z10) {
@@ -133,18 +133,18 @@ public final class r1 {
 
     public final String toString() {
         StringBuilder sb2 = new StringBuilder("SessionPositionInfo {PositionInfo {mediaItemIndex=");
-        b2.f1 f1Var = this.a;
-        sb2.append(f1Var.b);
+        b2.e1 e1Var = this.a;
+        sb2.append(e1Var.b);
         sb2.append(", periodIndex=");
-        sb2.append(f1Var.e);
+        sb2.append(e1Var.e);
         sb2.append(", positionMs=");
-        sb2.append(f1Var.f);
+        sb2.append(e1Var.f);
         sb2.append(", contentPositionMs=");
-        sb2.append(f1Var.g);
+        sb2.append(e1Var.g);
         sb2.append(", adGroupIndex=");
-        sb2.append(f1Var.h);
+        sb2.append(e1Var.h);
         sb2.append(", adIndexInAdGroup=");
-        sb2.append(f1Var.i);
+        sb2.append(e1Var.i);
         sb2.append("}, isPlayingAd=");
         sb2.append(this.b);
         sb2.append(", eventTimeMs=");

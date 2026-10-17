@@ -1,36 +1,53 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class q7 implements RequestDelegate {
+public final /* synthetic */ class q7 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ Utilities.Callback b;
 
-    public /* synthetic */ q7(MediaDataController mediaDataController, int i10, int i11) {
-        this.a = i11;
-        this.b = mediaDataController;
-        this.c = i10;
+    public /* synthetic */ q7(int i10, Utilities.Callback callback) {
+        this.a = i10;
+        this.b = callback;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$loadArchivedStickersCount$72(this.c, tLObject, tL_error);
+                MediaDataController.lambda$loadStickers$98(this.b);
                 break;
             case 1:
-                this.b.lambda$fetchEmojiStatuses$234(this.c, tLObject, tL_error);
+                MediaDataController.lambda$loadStickers$99(this.b);
                 break;
             case 2:
-                this.b.lambda$loadRecents$50(this.c, tLObject, tL_error);
+                MediaDataController.lambda$loadStickers$94(this.b);
+                break;
+            case 3:
+                MediaDataController.lambda$loadStickers$95(this.b);
+                break;
+            case 4:
+                MediaDataController.lambda$loadStickers$96(this.b);
+                break;
+            case 5:
+                MediaDataController.lambda$loadBotInfo$199(this.b);
+                break;
+            case 6:
+                this.b.run(null);
+                break;
+            case 7:
+                MessagesController.lambda$addUserToChat$300(this.b);
+                break;
+            case 8:
+                MessagesController.lambda$addUserToChat$304(this.b);
+                break;
+            case 9:
+                this.b.run(null);
                 break;
             default:
-                this.b.lambda$loadRecents$51(this.c, tLObject, tL_error);
+                ShortcutResultReceiver.lambda$onReceive$0(this.b);
                 break;
         }
     }

@@ -1,61 +1,40 @@
 package org.telegram.ui.web;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
-import java.io.BufferedInputStream;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
-import org.telegram.messenger.SvgHelper;
-import org.telegram.ui.Wallet.z6;
+import java.io.File;
+import java.io.FileInputStream;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class i1 extends AsyncTask {
-    public final HashMap a = new HashMap();
-    public final z6 b;
-    public Exception c;
+public final class i1 extends FileInputStream {
+    public final long a;
 
-    public i1(z6 z6Var) {
-        this.b = z6Var;
-    }
-
-    @Override // android.os.AsyncTask
-    public final Object doInBackground(Object[] objArr) {
-        try {
-            HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(((String[]) objArr)[0]).openConnection();
-            for (Map.Entry entry : this.a.entrySet()) {
-                if (entry.getKey() != null && entry.getValue() != null) {
-                    httpURLConnection.setRequestProperty((String) entry.getKey(), (String) entry.getValue());
-                }
-            }
-            httpURLConnection.setRequestMethod("GET");
-            httpURLConnection.setDoInput(true);
-            int responseCode = httpURLConnection.getResponseCode();
-            if (responseCode >= 200 && responseCode < 300) {
-                return (httpURLConnection.getContentType() == null || !httpURLConnection.getContentType().contains("svg")) ? BitmapFactory.decodeStream(new BufferedInputStream(httpURLConnection.getInputStream())) : SvgHelper.getBitmap((InputStream) new BufferedInputStream(httpURLConnection.getInputStream()), 64, 64, false);
-            }
-            httpURLConnection.disconnect();
-            return null;
-        } catch (Exception e) {
-            this.c = e;
-            return null;
+    public i1(long j10, long j11, File file) {
+        super(file);
+        this.a = j11;
+        if (j10 > 0 && skip(j10) != j10) {
+            throw new RuntimeException("BoundedInputStream failed to skip");
         }
     }
 
-    @Override // android.os.AsyncTask
-    public final void onPostExecute(Object obj) {
-        Bitmap bitmap = (Bitmap) obj;
-        z6 z6Var = this.b;
-        if (z6Var != null) {
-            if (this.c == null) {
-                z6Var.run(bitmap);
-            } else {
-                z6Var.run(null);
-            }
+    @Override // java.io.FileInputStream, java.io.InputStream
+    public final int read() {
+        if (getChannel().position() >= this.a) {
+            return -1;
         }
+        return super.read();
+    }
+
+    @Override // java.io.FileInputStream, java.io.InputStream
+    public final int read(byte[] bArr, int i10, int i11) {
+        long position = getChannel().position();
+        long j10 = this.a;
+        if (position >= j10) {
+            return -1;
+        }
+        long position2 = j10 - getChannel().position();
+        if (i11 > position2) {
+            i11 = (int) position2;
+        }
+        return super.read(bArr, i10, i11);
     }
 }

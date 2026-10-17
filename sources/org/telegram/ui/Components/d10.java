@@ -1,325 +1,77 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.os.SystemClock;
-import android.view.View;
-import java.util.ArrayList;
-import java.util.Calendar;
+import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public class d10 extends View {
-    public static final int[] E;
-    public static final int[] F;
-    public static final int[] G;
-    public static final Paint[] s;
-    public static Drawable[] v;
-    public static Drawable[] w;
-    public static final int x;
-    public static final int y;
-    public final RectF a;
-    public long b;
-    public boolean c;
-    public boolean d;
-    public float e;
-    public int f;
-    public boolean h;
-    public boolean n;
-    public final ArrayList r;
+public final /* synthetic */ class d10 implements Utilities.Callback {
+    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d5 b;
+    public final /* synthetic */ qy c;
 
-    static {
-        x = SharedConfig.getDevicePerformanceClass() == 0 ? 50 : 60;
-        y = SharedConfig.getDevicePerformanceClass() == 0 ? 20 : 30;
-        int[] iArr = {-13845272, -6421296, -79102, -187561, -14185218, -10897300};
-        E = iArr;
-        F = new int[]{-1944197, -10498574, -9623, -2399389, -1870160};
-        G = new int[]{-14778113, -15677815, -42601, -26844, -13639175};
-        s = new Paint[iArr.length];
-        int i10 = 0;
-        while (true) {
-            Paint[] paintArr = s;
-            if (i10 >= paintArr.length) {
-                return;
-            }
-            Paint paint = new Paint(1);
-            paintArr[i10] = paint;
-            paint.setColor(E[i10]);
-            i10++;
-        }
+    public /* synthetic */ d10(org.telegram.ui.ActionBar.d5 d5Var, qy qyVar) {
+        this.b = d5Var;
+        this.c = qyVar;
     }
 
-    public d10(Context context) {
-        super(context);
-        this.a = new RectF();
-        this.e = 1.0f;
-        this.r = new ArrayList(x + y);
-    }
-
-    private int getHeightForAnimation() {
-        return getMeasuredHeight() == 0 ? ((View) getParent()).getHeight() : getMeasuredHeight();
-    }
-
-    private int getWidthForAnimation() {
-        return getMeasuredWidth() == 0 ? ((View) getParent()).getWidth() : getMeasuredWidth();
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:14:0x008b A[Catch: Exception -> 0x0024, TryCatch #0 {Exception -> 0x0024, blocks: (B:3:0x0005, B:6:0x0015, B:7:0x004e, B:11:0x006b, B:14:0x008b, B:17:0x00bf, B:19:0x00d8, B:20:0x00e5, B:23:0x00ec, B:26:0x00dd, B:27:0x0078, B:28:0x0027, B:30:0x002b, B:32:0x0033, B:33:0x0042), top: B:2:0x0005 }] */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x00bf A[Catch: Exception -> 0x0024, TryCatch #0 {Exception -> 0x0024, blocks: (B:3:0x0005, B:6:0x0015, B:7:0x004e, B:11:0x006b, B:14:0x008b, B:17:0x00bf, B:19:0x00d8, B:20:0x00e5, B:23:0x00ec, B:26:0x00dd, B:27:0x0078, B:28:0x0027, B:30:0x002b, B:32:0x0033, B:33:0x0042), top: B:2:0x0005 }] */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0038  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x0045  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0058  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x003e  */
+    @Override // org.telegram.messenger.Utilities.Callback
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final c10 a(boolean z10) {
-        c10 c10Var = new c10(this);
-        try {
-            byte nextInt = (byte) Utilities.random.nextInt(2);
-            c10Var.a = nextInt;
-            if (this.h && nextInt == 0) {
-                c10Var.a = (byte) 2;
-                c10Var.b = (byte) Utilities.random.nextInt(F.length);
-            } else if (this.n && Utilities.random.nextBoolean()) {
-                c10Var.a = (byte) 2;
-                c10Var.b = (byte) Utilities.random.nextInt(G.length);
-            } else {
-                c10Var.b = (byte) Utilities.random.nextInt(E.length);
-            }
-            c10Var.c = (byte) Utilities.random.nextInt(2);
-            c10Var.f = (byte) (Utilities.random.nextInt(2) + 1);
-            byte b10 = c10Var.a;
-            if (b10 != 0 && b10 != 2) {
-                c10Var.d = (byte) ((Utilities.random.nextFloat() * 4.0f) + 4.0f);
-                if (!z10) {
-                    c10Var.h = (-Utilities.random.nextFloat()) * getHeightForAnimation() * 1.2f;
-                    c10Var.g = AndroidUtilities.dp(5.0f) + Utilities.random.nextInt(Math.max(1, getWidthForAnimation() - AndroidUtilities.dp(10.0f)));
-                    c10Var.e = c10Var.f;
-                    return c10Var;
-                }
-                int dp = AndroidUtilities.dp(Utilities.random.nextInt(10) + 4);
-                int heightForAnimation = getHeightForAnimation() / 4;
-                if (c10Var.c == 0) {
-                    c10Var.g = -dp;
-                } else {
-                    c10Var.g = getWidthForAnimation() + dp;
-                }
-                c10Var.j = com.google.android.gms.internal.play_billing.k3.A(Utilities.random.nextFloat(), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(1.2f), c10Var.c == 0 ? 1 : -1);
-                c10Var.k = -((Utilities.random.nextFloat() * AndroidUtilities.dp(4.0f)) + AndroidUtilities.dp(4.0f));
-                c10Var.h = (heightForAnimation / 2) + Utilities.random.nextInt(Math.max(1, heightForAnimation * 2));
-                return c10Var;
-            }
-            c10Var.d = (byte) ((Utilities.random.nextFloat() * 2.0f) + 4.0f);
-            if (!z10) {
-            }
-        } catch (Exception e) {
-            FileLog.e(e);
-            return c10Var;
-        }
-    }
-
-    public void c(boolean z10) {
-        this.n = z10;
-        setLayerType(2, null);
-        boolean z11 = true;
-        this.c = true;
-        this.d = false;
-        this.f = 0;
-        this.e = 1.0f;
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTimeInMillis(System.currentTimeMillis());
-        int i10 = calendar.get(5);
-        if (calendar.get(2) != 1 || (!BuildVars.DEBUG_PRIVATE_VERSION && i10 != 14)) {
-            z11 = false;
-        }
-        this.h = z11;
-        if (z11) {
-            if (v == null) {
-                v = new Drawable[F.length];
-                int i11 = 0;
-                while (true) {
-                    Drawable[] drawableArr = v;
-                    if (i11 >= drawableArr.length) {
+    public final void run(Object obj) {
+        boolean z10;
+        switch (this.a) {
+            case 0:
+                this.c.run(this.b.getLastFragment());
+                break;
+            default:
+                Integer num = (Integer) obj;
+                List fragmentStack = this.b.getFragmentStack();
+                boolean z11 = true;
+                org.telegram.ui.ActionBar.n2 n2Var = null;
+                for (int size = fragmentStack.size() - 1; size >= 0; size--) {
+                    n2Var = (org.telegram.ui.ActionBar.n2) fragmentStack.get(size);
+                    if (!(n2Var instanceof org.telegram.ui.ey) && !(n2Var instanceof org.telegram.ui.pg0)) {
+                        if (z11) {
+                            n2Var.finishFragment();
+                            z11 = false;
+                        } else {
+                            n2Var.removeSelfFromStack();
+                        }
+                    }
+                    org.telegram.ui.ActionBar.n2 n2Var2 = n2Var;
+                    org.telegram.ui.ActionBar.n2 n2Var3 = !(n2Var2 instanceof org.telegram.ui.pg0) ? ((org.telegram.ui.pg0) n2Var2).J : n2Var2;
+                    z10 = n2Var3 instanceof org.telegram.ui.ey;
+                    qy qyVar = this.c;
+                    if (z10) {
+                        qyVar.run(n2Var2);
+                        break;
+                    } else {
+                        org.telegram.ui.ey eyVar = (org.telegram.ui.ey) n2Var3;
+                        eyVar.I3();
+                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.camera.i(eyVar, num, qyVar, n2Var2, 27), 80L);
                         break;
                     }
-                    drawableArr[i11] = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.heart_confetti).mutate();
-                    v[i11].setColorFilter(new PorterDuffColorFilter(F[i11], PorterDuff.Mode.MULTIPLY));
-                    i11++;
                 }
-            }
-        } else if (z10 && w == null) {
-            w = new Drawable[G.length];
-            int i12 = 0;
-            while (true) {
-                Drawable[] drawableArr2 = w;
-                if (i12 >= drawableArr2.length) {
-                    break;
+                org.telegram.ui.ActionBar.n2 n2Var22 = n2Var;
+                if (!(n2Var22 instanceof org.telegram.ui.pg0)) {
                 }
-                drawableArr2[i12] = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.msg_settings_premium).mutate();
-                w[i12].setColorFilter(new PorterDuffColorFilter(G[i12], PorterDuff.Mode.MULTIPLY));
-                i12++;
-            }
+                z10 = n2Var3 instanceof org.telegram.ui.ey;
+                qy qyVar2 = this.c;
+                if (z10) {
+                }
+                break;
         }
-        int i13 = x;
-        int clamp = Utilities.clamp(i13 - this.r.size(), i13, i13 / 3);
-        for (int i14 = 0; i14 < clamp; i14++) {
-            this.r.add(a(false));
-        }
-        invalidate();
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float f7;
-        float f10;
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        int i10 = (int) (elapsedRealtime - this.b);
-        this.b = elapsedRealtime;
-        if (i10 > 18) {
-            i10 = 16;
-        }
-        ArrayList arrayList = this.r;
-        int size = arrayList.size();
-        int i11 = 0;
-        while (i11 < size) {
-            c10 c10Var = (c10) arrayList.get(i11);
-            d10 d10Var = c10Var.l;
-            byte b10 = c10Var.a;
-            Paint[] paintArr = s;
-            if (b10 == 0) {
-                f7 = 2.0f;
-                canvas.drawCircle(c10Var.g, c10Var.h, AndroidUtilities.dp(c10Var.d), paintArr[c10Var.b]);
-                f10 = 16.0f;
-            } else {
-                f7 = 2.0f;
-                if (b10 == 1) {
-                    RectF rectF = d10Var.a;
-                    f10 = 16.0f;
-                    rectF.set(c10Var.g - AndroidUtilities.dp(c10Var.d), c10Var.h - AndroidUtilities.dp(2.0f), c10Var.g + AndroidUtilities.dp(c10Var.d), c10Var.h + AndroidUtilities.dp(2.0f));
-                    canvas.save();
-                    canvas.rotate(c10Var.i, rectF.centerX(), rectF.centerY());
-                    canvas.drawRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), paintArr[c10Var.b]);
-                    canvas.restore();
-                } else {
-                    f10 = 16.0f;
-                    if (b10 == 2) {
-                        Drawable[] drawableArr = w;
-                        Drawable drawable = drawableArr != null ? drawableArr[c10Var.b] : null;
-                        Drawable[] drawableArr2 = v;
-                        if (drawableArr2 != null) {
-                            drawable = drawableArr2[c10Var.b];
-                        }
-                        if (drawable != null) {
-                            int intrinsicWidth = drawable.getIntrinsicWidth() / 2;
-                            int intrinsicHeight = drawable.getIntrinsicHeight() / 2;
-                            int i12 = (int) c10Var.g;
-                            int i13 = (int) c10Var.h;
-                            drawable.setBounds(i12 - intrinsicWidth, i13 - intrinsicHeight, i12 + intrinsicWidth, i13 + intrinsicHeight);
-                            canvas.save();
-                            canvas.rotate(c10Var.i, c10Var.g, c10Var.h);
-                            float f11 = c10Var.d / 6.0f;
-                            canvas.scale(f11, f11, c10Var.g, c10Var.h);
-                            drawable.draw(canvas);
-                            canvas.restore();
-                        }
-                    }
-                }
-            }
-            d10 d10Var2 = c10Var.l;
-            float f12 = i10 / f10;
-            float f13 = c10Var.g;
-            float f14 = c10Var.j;
-            c10Var.g = (f14 * f12) + f13;
-            c10Var.h = (c10Var.k * f12) + c10Var.h;
-            if (c10Var.e != 0) {
-                float dp = AndroidUtilities.dp(1.0f) * 0.5f;
-                if (c10Var.e == 1) {
-                    float t10 = com.google.android.gms.internal.play_billing.k3.t(dp, f12, 0.05f, c10Var.j);
-                    c10Var.j = t10;
-                    if (t10 >= dp) {
-                        c10Var.e = (byte) 2;
-                    }
-                } else {
-                    float f15 = c10Var.j - ((dp * f12) * 0.05f);
-                    c10Var.j = f15;
-                    if (f15 <= (-dp)) {
-                        c10Var.e = (byte) 1;
-                    }
-                }
-            } else if (c10Var.c == 0) {
-                if (f14 > 0.0f) {
-                    float f16 = f14 - (0.05f * f12);
-                    c10Var.j = f16;
-                    if (f16 <= 0.0f) {
-                        c10Var.j = 0.0f;
-                        c10Var.e = c10Var.f;
-                    }
-                }
-            } else if (f14 < 0.0f) {
-                float f17 = (0.05f * f12) + f14;
-                c10Var.j = f17;
-                if (f17 >= 0.0f) {
-                    c10Var.j = 0.0f;
-                    c10Var.e = c10Var.f;
-                }
-            }
-            float f18 = (-AndroidUtilities.dp(1.0f)) / f7;
-            float f19 = c10Var.k;
-            boolean z10 = f19 < f18;
-            if (f19 > f18) {
-                c10Var.k = ((AndroidUtilities.dp(1.0f) / 3.0f) * f12 * d10Var2.e) + f19;
-            } else {
-                c10Var.k = a1.g.d(AndroidUtilities.dp(1.0f), 3.0f, f12, f19);
-            }
-            if (z10 && c10Var.k > f18) {
-                d10Var2.f++;
-            }
-            byte b11 = c10Var.a;
-            if (b11 == 1 || b11 == 2) {
-                short s10 = (short) ((f12 * 10.0f) + c10Var.i);
-                c10Var.i = s10;
-                if (s10 > 360) {
-                    c10Var.i = (short) (s10 - 360);
-                }
-            }
-            if (c10Var.h >= d10Var2.getHeightForAnimation()) {
-                arrayList.remove(i11);
-                i11--;
-                size--;
-            }
-            i11++;
-        }
-        if (this.f >= x / 2 && this.e > 0.2f) {
-            if (!this.d) {
-                this.d = true;
-                for (int i14 = 0; i14 < y; i14++) {
-                    arrayList.add(a(true));
-                }
-            }
-            float b12 = org.telegram.messenger.sk.b(i10, 16.0f, 0.15f, this.e);
-            this.e = b12;
-            if (b12 < 0.2f) {
-                this.e = 0.2f;
-            }
-        }
-        if (!arrayList.isEmpty()) {
-            invalidate();
-            return;
-        }
-        this.c = false;
-        AndroidUtilities.runOnUIThread(new kq(this, 18));
-        b();
-    }
-
-    public void b() {
+    public /* synthetic */ d10(qy qyVar, org.telegram.ui.ActionBar.d5 d5Var) {
+        this.c = qyVar;
+        this.b = d5Var;
     }
 }

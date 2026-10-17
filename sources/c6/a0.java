@@ -3,9 +3,9 @@ package c6;
 import android.os.Parcel;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class a0 implements com.google.android.gms.common.api.internal.s {
+public final /* synthetic */ class a0 implements com.google.android.gms.common.api.internal.r {
     public final /* synthetic */ int a = 0;
     public final /* synthetic */ e0 b;
     public final /* synthetic */ String c;
@@ -17,7 +17,7 @@ public final /* synthetic */ class a0 implements com.google.android.gms.common.a
         this.c = str;
     }
 
-    @Override // com.google.android.gms.common.api.internal.s
+    @Override // com.google.android.gms.common.api.internal.r
     public final void accept(Object obj, Object obj2) {
         g6.w wVar = (g6.w) obj;
         TaskCompletionSource taskCompletionSource = (TaskCompletionSource) obj2;

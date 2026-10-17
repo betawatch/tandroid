@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.util.Log;
 import com.google.firebase.messaging.FirebaseMessagingService;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public class GcmPushListenerService extends FirebaseMessagingService {
     /* JADX INFO: Access modifiers changed from: private */
@@ -17,11 +17,11 @@ public class GcmPushListenerService extends FirebaseMessagingService {
     }
 
     @Override // com.google.firebase.messaging.FirebaseMessagingService
-    public void onMessageReceived(com.google.firebase.messaging.q qVar) {
+    public void onMessageReceived(com.google.firebase.messaging.p pVar) {
         long parseLong;
-        Bundle bundle = qVar.a;
+        Bundle bundle = pVar.a;
         String string = bundle.getString("from");
-        if (qVar.b == null) {
+        if (pVar.b == null) {
             a0.f fVar = new a0.f(0);
             for (String str : bundle.keySet()) {
                 Object obj = bundle.get(str);
@@ -32,9 +32,9 @@ public class GcmPushListenerService extends FirebaseMessagingService {
                     }
                 }
             }
-            qVar.b = fVar;
+            pVar.b = fVar;
         }
-        a0.f fVar2 = qVar.b;
+        a0.f fVar2 = pVar.b;
         Object obj2 = bundle.get("google.sent_time");
         if (obj2 instanceof Long) {
             parseLong = ((Long) obj2).longValue();

@@ -1,76 +1,94 @@
 package u3;
 
-import b2.t;
-import b2.x;
-import b2.x0;
-import c3.h0;
-import c3.i0;
-import c3.j0;
+import android.util.SparseArray;
+import c3.b0;
+import c3.c0;
+import c3.d0;
+import c3.j;
+import java.util.Arrays;
+import java.util.List;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class e {
-    public int A;
-    public int B;
-    public int C;
-    public int D;
-    public int E;
-    public float F;
-    public float G;
-    public float H;
-    public float I;
-    public float J;
-    public float K;
-    public float L;
-    public float M;
-    public float N;
-    public float O;
-    public byte[] P;
-    public int Q;
-    public int R;
-    public int S;
-    public long T;
-    public long U;
-    public j0 V;
-    public boolean W;
-    public boolean X;
-    public boolean Y;
-    public String Z;
-    public boolean a;
-    public i0 a0;
-    public String b;
-    public x b0;
-    public String c;
-    public int c0;
-    public int d;
-    public int e;
-    public int f;
-    public int g;
-    public int h;
-    public boolean i;
-    public byte[] j;
-    public h0 k;
-    public byte[] l;
-    public t m;
-    public int n;
-    public int o;
-    public int p;
-    public int q;
-    public int r;
-    public int s;
-    public int t;
-    public float u;
-    public float v;
-    public float w;
-    public byte[] x;
-    public int y;
-    public boolean z;
+public final class e implements c0 {
+    public final j a;
+    public final SparseArray b;
+    public final long c;
+    public final int d;
 
-    public final byte[] a(String str) {
-        byte[] bArr = this.l;
-        if (bArr != null) {
-            return bArr;
+    public e(SparseArray sparseArray, long j10, int i10, long j11, long j12) {
+        j jVar;
+        int i11;
+        this.b = sparseArray;
+        this.c = j10;
+        this.d = i10;
+        List list = (List) sparseArray.get(i10);
+        if (list == null || list.isEmpty()) {
+            jVar = null;
+        } else {
+            int size = list.size();
+            int[] iArr = new int[size];
+            long[] jArr = new long[size];
+            long[] jArr2 = new long[size];
+            long[] jArr3 = new long[size];
+            int i12 = 0;
+            for (int i13 = 0; i13 < size; i13++) {
+                d dVar = (d) list.get(i13);
+                jArr3[i13] = dVar.a;
+                jArr[i13] = dVar.b;
+            }
+            while (true) {
+                i11 = size - 1;
+                if (i12 >= i11) {
+                    break;
+                }
+                int i14 = i12 + 1;
+                iArr[i12] = (int) (jArr[i14] - jArr[i12]);
+                jArr2[i12] = jArr3[i14] - jArr3[i12];
+                i12 = i14;
+            }
+            int i15 = i11;
+            while (i15 > 0 && jArr3[i15] >= j10) {
+                i15--;
+            }
+            iArr[i15] = (int) ((j11 + j12) - jArr[i15]);
+            jArr2[i15] = j10 - jArr3[i15];
+            if (i15 < i11) {
+                e2.a.l("MatroskaExtractor", "Discarding trailing cue points with timestamps greater than total duration.");
+                int i16 = i15 + 1;
+                iArr = Arrays.copyOf(iArr, i16);
+                jArr = Arrays.copyOf(jArr, i16);
+                jArr2 = Arrays.copyOf(jArr2, i16);
+                jArr3 = Arrays.copyOf(jArr3, i16);
+            }
+            jVar = new j(iArr, jArr, jArr2, jArr3);
         }
-        throw x0.a(null, "Missing CodecPrivate for codec " + str);
+        this.a = jVar;
+    }
+
+    @Override // c3.c0
+    public final boolean d() {
+        List list = (List) this.b.get(this.d);
+        return (list == null || list.isEmpty()) ? false : true;
+    }
+
+    @Override // c3.c0
+    public final /* synthetic */ boolean e() {
+        return false;
+    }
+
+    @Override // c3.c0
+    public final b0 f(long j10) {
+        j jVar = this.a;
+        if (jVar != null) {
+            return jVar.f(j10);
+        }
+        d0 d0Var = d0.c;
+        return new b0(d0Var, d0Var);
+    }
+
+    @Override // c3.c0
+    public final long h() {
+        return this.c;
     }
 }

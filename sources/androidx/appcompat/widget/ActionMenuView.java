@@ -15,32 +15,33 @@ import android.widget.LinearLayout;
 import androidx.appcompat.view.menu.ActionMenuItemView;
 import l.j;
 import l.k;
+import l.m;
 import l.z;
-import m.g;
+import l2.f;
+import m.e;
 import m.h;
 import m.i;
 import m.l;
-import m.m;
-import m.w3;
+import m.v3;
+import m.w1;
 import m.x1;
-import m.y1;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public class ActionMenuView extends y1 implements j, z {
+public class ActionMenuView extends x1 implements j, z {
     public k F;
     public Context G;
     public int H;
     public boolean I;
     public i J;
-    public h K;
+    public k0.b K;
     public boolean L;
     public int M;
     public final int N;
     public final int O;
-    public m P;
+    public l P;
 
     public ActionMenuView(Context context) {
         this(context, null);
@@ -72,7 +73,7 @@ public class ActionMenuView extends y1 implements j, z {
     }
 
     @Override // l.j
-    public final boolean a(l.m mVar) {
+    public final boolean a(m mVar) {
         return this.F.q(mVar, null, 0);
     }
 
@@ -81,7 +82,7 @@ public class ActionMenuView extends y1 implements j, z {
         this.F = kVar;
     }
 
-    @Override // m.y1, android.view.ViewGroup
+    @Override // m.x1, android.view.ViewGroup
     public final boolean checkLayoutParams(ViewGroup.LayoutParams layoutParams) {
         return layoutParams instanceof m.k;
     }
@@ -91,30 +92,30 @@ public class ActionMenuView extends y1 implements j, z {
         return false;
     }
 
-    @Override // m.y1
+    @Override // m.x1
     /* renamed from: e */
-    public final /* bridge */ /* synthetic */ x1 generateDefaultLayoutParams() {
+    public final /* bridge */ /* synthetic */ w1 generateDefaultLayoutParams() {
         return i();
     }
 
-    @Override // m.y1
+    @Override // m.x1
     /* renamed from: f */
-    public final x1 generateLayoutParams(AttributeSet attributeSet) {
+    public final w1 generateLayoutParams(AttributeSet attributeSet) {
         return new m.k(getContext(), attributeSet);
     }
 
-    @Override // m.y1
+    @Override // m.x1
     /* renamed from: g */
-    public final /* bridge */ /* synthetic */ x1 generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
+    public final /* bridge */ /* synthetic */ w1 generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
         return j(layoutParams);
     }
 
-    @Override // m.y1, android.view.ViewGroup
+    @Override // m.x1, android.view.ViewGroup
     public final /* bridge */ /* synthetic */ ViewGroup.LayoutParams generateDefaultLayoutParams() {
         return i();
     }
 
-    @Override // m.y1, android.view.ViewGroup
+    @Override // m.x1, android.view.ViewGroup
     public final /* bridge */ /* synthetic */ ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams layoutParams) {
         return j(layoutParams);
     }
@@ -124,7 +125,7 @@ public class ActionMenuView extends y1 implements j, z {
             Context context = getContext();
             k kVar = new k(context);
             this.F = kVar;
-            kVar.e = new l(this);
+            kVar.e = new f(this, 1);
             i iVar = new i(context);
             this.J = iVar;
             iVar.w = true;
@@ -141,9 +142,9 @@ public class ActionMenuView extends y1 implements j, z {
     public Drawable getOverflowIcon() {
         getMenu();
         i iVar = this.J;
-        g gVar = iVar.r;
-        if (gVar != null) {
-            return gVar.getDrawable();
+        h hVar = iVar.r;
+        if (hVar != null) {
+            return hVar.getDrawable();
         }
         if (iVar.v) {
             return iVar.s;
@@ -191,15 +192,15 @@ public class ActionMenuView extends y1 implements j, z {
         i iVar = this.J;
         if (iVar != null) {
             iVar.f();
-            m.d dVar = iVar.J;
-            if (dVar == null || !dVar.b()) {
+            e eVar = iVar.J;
+            if (eVar == null || !eVar.b()) {
                 return;
             }
-            dVar.i.dismiss();
+            eVar.i.dismiss();
         }
     }
 
-    @Override // m.y1, android.view.ViewGroup, android.view.View
+    @Override // m.x1, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         int width;
         int i14;
@@ -212,7 +213,7 @@ public class ActionMenuView extends y1 implements j, z {
         int dividerWidth = getDividerWidth();
         int i16 = i12 - i10;
         int paddingRight = (i16 - getPaddingRight()) - getPaddingLeft();
-        boolean a2 = w3.a(this);
+        boolean a2 = v3.a(this);
         int i17 = 0;
         int i18 = 0;
         for (int i19 = 0; i19 < childCount; i19++) {
@@ -289,7 +290,7 @@ public class ActionMenuView extends y1 implements j, z {
     /* JADX WARN: Type inference failed for: r11v16, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r11v18 */
     /* JADX WARN: Type inference failed for: r11v41 */
-    @Override // m.y1, android.view.View
+    @Override // m.x1, android.view.View
     public final void onMeasure(int i10, int i11) {
         int i12;
         int i13;
@@ -532,16 +533,16 @@ public class ActionMenuView extends y1 implements j, z {
         this.J.G = z10;
     }
 
-    public void setOnMenuItemClickListener(m mVar) {
-        this.P = mVar;
+    public void setOnMenuItemClickListener(l lVar) {
+        this.P = lVar;
     }
 
     public void setOverflowIcon(Drawable drawable) {
         getMenu();
         i iVar = this.J;
-        g gVar = iVar.r;
-        if (gVar != null) {
-            gVar.setImageDrawable(drawable);
+        h hVar = iVar.r;
+        if (hVar != null) {
+            hVar.setImageDrawable(drawable);
         } else {
             iVar.v = true;
             iVar.s = drawable;
@@ -579,7 +580,7 @@ public class ActionMenuView extends y1 implements j, z {
         this.H = 0;
     }
 
-    @Override // m.y1, android.view.ViewGroup
+    @Override // m.x1, android.view.ViewGroup
     public final ViewGroup.LayoutParams generateLayoutParams(AttributeSet attributeSet) {
         return new m.k(getContext(), attributeSet);
     }

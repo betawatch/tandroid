@@ -1,34 +1,32 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class dd implements Utilities.Callback2 {
+public final /* synthetic */ class dd implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Utilities.Callback2 d;
+    public final /* synthetic */ TLObject c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.g6 d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f6 e;
 
-    public /* synthetic */ dd(MessagesController messagesController, long j10, Utilities.Callback2 callback2, int i10) {
+    public /* synthetic */ dd(MessagesController messagesController, TLObject tLObject, org.telegram.ui.ActionBar.g6 g6Var, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
         this.a = i10;
         this.b = messagesController;
-        this.c = j10;
-        this.d = callback2;
+        this.c = tLObject;
+        this.d = g6Var;
+        this.e = f6Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$resolveCommunityAllJoinPendingRequests$249(this.c, this.d, (TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
-                break;
-            case 1:
-                this.b.lambda$resolveCommunityJoinPendingRequest$248(this.c, this.d, (TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
+                this.b.lambda$didReceivedNotification$47(this.c, this.d, this.e);
                 break;
             default:
-                this.b.lambda$toggleCommunityParticipantBanned$247(this.c, this.d, (TLRPC.Bool) obj, (TLRPC.TL_error) obj2);
+                this.b.lambda$didReceivedNotification$45(this.c, this.d, this.e);
                 break;
         }
     }

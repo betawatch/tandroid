@@ -1,0 +1,62 @@
+package ci;
+
+import android.content.Context;
+import android.view.View;
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes4.dex */
+public final class p4 {
+    public boolean a;
+    public Object b;
+    public Object c = k2.b.f;
+    public Object d;
+    public Object e;
+    public Object f;
+    public Object g;
+
+    public p4(Context context) {
+        this.b = context;
+    }
+
+    public k2.t0 a() {
+        Context context = (Context) this.b;
+        v7.u6.p(!this.a);
+        this.a = true;
+        if (((androidx.biometric.e) this.d) == null) {
+            this.d = new androidx.biometric.e(new c2.n[0]);
+        }
+        if (((k2.k0) this.f) == null) {
+            if (((k2.n0) this.g) == null) {
+                this.g = new k2.n0(context);
+            }
+            if (((k2.u0) this.e) == null) {
+                this.e = k2.u0.a;
+            }
+            k2.j0 j0Var = new k2.j0(context);
+            k2.b bVar = context != null ? null : (k2.b) this.c;
+            Context context2 = j0Var.a;
+            if (context2 == null) {
+                j0Var.d = bVar;
+            }
+            k2.n0 n0Var = (k2.n0) this.g;
+            j0Var.b = n0Var;
+            j0Var.c = (k2.u0) this.e;
+            if (n0Var == null) {
+                j0Var.b = new k2.n0(context2);
+            }
+            this.f = new k2.k0(j0Var);
+        } else {
+            v7.u6.p(((k2.n0) this.g) == null);
+            v7.u6.p(((k2.u0) this.e) == null);
+        }
+        return new k2.t0(this);
+    }
+
+    public void b() {
+        ArrayList arrayList = (ArrayList) this.g;
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            ((View) arrayList.get(i10)).invalidate();
+        }
+    }
+}

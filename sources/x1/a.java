@@ -4,14 +4,14 @@ import a6.d;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
-import c5.y;
+import c5.x;
 import com.google.android.gms.common.api.m;
 import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicBoolean;
-import s9.j;
+import s9.i;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class a implements Runnable {
     public static Handler f;
@@ -19,7 +19,7 @@ public final class a implements Runnable {
     public volatile int b = 1;
     public final AtomicBoolean c = new AtomicBoolean();
     public final AtomicBoolean d = new AtomicBoolean();
-    public final b a = new b(this, new y(this, 7));
+    public final b a = new b(this, new x(this, 7));
 
     public a(d dVar) {
         this.e = dVar;
@@ -54,7 +54,7 @@ public final class a implements Runnable {
                 throw th2;
             }
         }
-        handler.post(new j(6, this, obj));
+        handler.post(new i(6, this, obj));
     }
 
     @Override // java.lang.Runnable

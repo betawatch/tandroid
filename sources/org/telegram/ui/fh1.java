@@ -1,38 +1,45 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class fh1 implements org.telegram.ui.ActionBar.z1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ oh1 b;
+import android.app.Activity;
+import android.text.TextUtils;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.LinearLayout;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.messenger.voip.VoIPServiceState;
 
-    public /* synthetic */ fh1(oh1 oh1Var, int i10) {
-        this.a = i10;
-        this.b = oh1Var;
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes3.dex */
+public final class fh1 extends LinearLayout {
+    public final /* synthetic */ jh1 a;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fh1(jh1 jh1Var, Activity activity) {
+        super(activity);
+        this.a = jh1Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.z1
-    public final void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
-        switch (this.a) {
-            case 0:
-                this.b.finishFragment();
-                break;
-            case 1:
-                oh1 oh1Var = this.b;
-                oh1Var.B0();
-                oh1Var.finishFragment();
-                break;
-            case 2:
-                oh1 oh1Var2 = this.b;
-                oh1Var2.R = "";
-                oh1Var2.E0(false);
-                break;
-            case 3:
-                oh1.a0(this.b);
-                break;
-            default:
-                oh1.X(this.b);
-                break;
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        VoIPServiceState sharedState = VoIPService.getSharedState();
+        CharSequence text = this.a.E.getText();
+        if (sharedState == null || TextUtils.isEmpty(text)) {
+            return;
         }
+        StringBuilder sb2 = new StringBuilder(text);
+        sb2.append(", ");
+        if (sharedState.getPrivateCall() == null || !sharedState.getPrivateCall().video) {
+            sb2.append(LocaleController.getString(R.string.VoipInCallBranding));
+        } else {
+            sb2.append(LocaleController.getString(R.string.VoipInVideoCallBranding));
+        }
+        long callDuration = sharedState.getCallDuration();
+        if (callDuration > 0) {
+            sb2.append(", ");
+            sb2.append(LocaleController.formatDuration((int) (callDuration / 1000)));
+        }
+        accessibilityNodeInfo.setText(sb2);
     }
 }

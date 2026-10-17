@@ -8,10 +8,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import qg.q1;
+import qg.s1;
 import rg.a;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public class ColorPicker extends FrameLayout {
     public static final int[] d = {-1431751, -2409774, -13610525, -11942419, -8337308, -205211, -223667, -16777216, -1};
@@ -71,8 +71,8 @@ public class ColorPicker extends FrameLayout {
         return null;
     }
 
-    public q1 getSwatch() {
-        return new q1(this.a, this.b, a(this.a));
+    public s1 getSwatch() {
+        return new s1(this.a, this.b, a(this.a));
     }
 
     @Override // android.view.View
@@ -106,9 +106,9 @@ public class ColorPicker extends FrameLayout {
         throw null;
     }
 
-    public void setSwatch(q1 q1Var) {
-        setLocation(q1Var.b);
-        setWeight(q1Var.c);
+    public void setSwatch(s1 s1Var) {
+        setLocation(s1Var.b);
+        setWeight(s1Var.c);
     }
 
     public void setUndoEnabled(boolean z10) {

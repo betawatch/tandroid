@@ -15,15 +15,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.telegram.messenger.Emoji;
-import org.telegram.ui.Components.es;
+import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public class CompoundEmoji {
     public static List<String> skinTones = Arrays.asList("🏻", "🏼", "🏽", "🏾", "🏿");
     private static Paint placeholderPaint = new Paint(2);
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class DrawableInfo {
         private static final SparseArray<Bitmap> bitmaps = new SparseArray<>();
         private static final ArrayList<Integer> loading = new ArrayList<>();
@@ -171,17 +171,17 @@ public class CompoundEmoji {
         return compoundEmojiDrawable;
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class CompoundEmojiDrawable extends Emoji.EmojiDrawable {
         private static Paint paint = new Paint(2);
         private static Rect rect = new Rect();
         private DrawableInfo left;
-        private org.telegram.ui.Components.g6 leftUpdateT;
+        private org.telegram.ui.Components.f6 leftUpdateT;
         private DrawableInfo newLeft;
         private DrawableInfo newRight;
         private View parent;
         private DrawableInfo right;
-        private org.telegram.ui.Components.g6 rightUpdateT;
+        private org.telegram.ui.Components.f6 rightUpdateT;
 
         public CompoundEmojiDrawable(DrawableInfo drawableInfo, DrawableInfo drawableInfo2) {
             this.left = drawableInfo;
@@ -230,7 +230,7 @@ public class CompoundEmoji {
             }
             if (this.newLeft != null) {
                 if (this.leftUpdateT == null) {
-                    this.leftUpdateT = new org.telegram.ui.Components.g6(0.0f, new h1(this, 15), 0L, 320L, es.g);
+                    this.leftUpdateT = new org.telegram.ui.Components.f6(0.0f, new h1(this, 15), 0L, 320L, bs.g);
                 }
                 float d = this.leftUpdateT.d(1.0f, false);
                 drawDrawableInfo(canvas, this.newLeft, drawRect, Math.min(1.0f, d * 1.5f));
@@ -247,7 +247,7 @@ public class CompoundEmoji {
                 return;
             }
             if (this.rightUpdateT == null) {
-                this.rightUpdateT = new org.telegram.ui.Components.g6(0.0f, new h1(this, 15), 0L, 320L, es.g);
+                this.rightUpdateT = new org.telegram.ui.Components.f6(0.0f, new h1(this, 15), 0L, 320L, bs.g);
             }
             float d10 = this.rightUpdateT.d(1.0f, false);
             drawDrawableInfo(canvas, this.newRight, drawRect, Math.min(1.0f, 1.5f * d10));
@@ -302,9 +302,9 @@ public class CompoundEmoji {
                     this.left = drawableInfo;
                 }
                 this.newLeft = this.left.updateSkin(i10);
-                org.telegram.ui.Components.g6 g6Var = this.leftUpdateT;
-                if (g6Var != null) {
-                    g6Var.d(0.0f, true);
+                org.telegram.ui.Components.f6 f6Var = this.leftUpdateT;
+                if (f6Var != null) {
+                    f6Var.d(0.0f, true);
                 }
             }
             if (this.right.skin != i11) {
@@ -313,9 +313,9 @@ public class CompoundEmoji {
                     this.right = drawableInfo2;
                 }
                 this.newRight = this.right.updateSkin(i11);
-                org.telegram.ui.Components.g6 g6Var2 = this.rightUpdateT;
-                if (g6Var2 != null) {
-                    g6Var2.d(0.0f, true);
+                org.telegram.ui.Components.f6 f6Var2 = this.rightUpdateT;
+                if (f6Var2 != null) {
+                    f6Var2.d(0.0f, true);
                 }
             }
             invalidate();

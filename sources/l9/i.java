@@ -2,14 +2,15 @@ package l9;
 
 import be.z0;
 import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.api.internal.t;
+import com.google.android.gms.common.api.internal.s;
 import com.google.android.gms.internal.cast.z5;
-import com.google.firebase.messaging.r;
+import com.google.firebase.messaging.q;
 import java.util.concurrent.Executor;
+import r9.r;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class i implements r9.d, t {
+public final class i implements r9.d, s {
     public static final i b = new i(0);
     public static final i c = new i(1);
     public static final i d = new i(2);
@@ -20,7 +21,7 @@ public final class i implements r9.d, t {
         this.a = i10;
     }
 
-    @Override // com.google.android.gms.common.api.internal.t
+    @Override // com.google.android.gms.common.api.internal.s
     public Exception a(Status status) {
         int i10 = status.a;
         int i11 = status.a;
@@ -29,7 +30,7 @@ public final class i implements r9.d, t {
             if (str == null) {
                 str = x8.j.a(i11);
             }
-            return new r(str);
+            return new q(str);
         }
         if (str == null) {
             str = x8.j.a(i11);
@@ -38,24 +39,24 @@ public final class i implements r9.d, t {
     }
 
     @Override // r9.d
-    public Object n2(z5 z5Var) {
+    public Object j2(z5 z5Var) {
         switch (this.a) {
             case 0:
-                Object d10 = z5Var.d(new r9.r(n9.a.class, Executor.class));
-                kotlin.jvm.internal.i.d(d10, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new z0((Executor) d10);
+                Object f7 = z5Var.f(new r(n9.a.class, Executor.class));
+                kotlin.jvm.internal.i.d(f7, "c.get(Qualified.qualifie…a, Executor::class.java))");
+                return new z0((Executor) f7);
             case 1:
-                Object d11 = z5Var.d(new r9.r(n9.c.class, Executor.class));
-                kotlin.jvm.internal.i.d(d11, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new z0((Executor) d11);
+                Object f10 = z5Var.f(new r(n9.c.class, Executor.class));
+                kotlin.jvm.internal.i.d(f10, "c.get(Qualified.qualifie…a, Executor::class.java))");
+                return new z0((Executor) f10);
             case 2:
-                Object d12 = z5Var.d(new r9.r(n9.b.class, Executor.class));
-                kotlin.jvm.internal.i.d(d12, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new z0((Executor) d12);
+                Object f11 = z5Var.f(new r(n9.b.class, Executor.class));
+                kotlin.jvm.internal.i.d(f11, "c.get(Qualified.qualifie…a, Executor::class.java))");
+                return new z0((Executor) f11);
             default:
-                Object d13 = z5Var.d(new r9.r(n9.d.class, Executor.class));
-                kotlin.jvm.internal.i.d(d13, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new z0((Executor) d13);
+                Object f12 = z5Var.f(new r(n9.d.class, Executor.class));
+                kotlin.jvm.internal.i.d(f12, "c.get(Qualified.qualifie…a, Executor::class.java))");
+                return new z0((Executor) f12);
         }
     }
 }

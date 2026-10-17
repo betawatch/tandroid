@@ -1,52 +1,24 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class k61 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ r71 c;
+public final class k61 extends g.o {
+    public final /* synthetic */ m61 c;
 
-    public /* synthetic */ k61(r71 r71Var, boolean z10, int i10) {
-        this.a = i10;
-        this.c = r71Var;
-        this.b = z10;
+    public k61(m61 m61Var) {
+        this.c = m61Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        ArrayList arrayList;
-        ArrayList arrayList2;
-        switch (this.a) {
-            case 0:
-                r71 r71Var = this.c;
-                e61 e61Var = r71Var.i0;
-                boolean z10 = this.b;
-                e61Var.setVisibility(z10 ? 0 : 8);
-                r71Var.h0.setVisibility(z10 ? 8 : 0);
-                r71Var.E1 = null;
-                if (!z10 && (arrayList2 = r71Var.A1) != null) {
-                    arrayList2.clear();
-                    ArrayList arrayList3 = r71Var.D1;
-                    if (arrayList3 != null) {
-                        arrayList3.clear();
-                    }
-                    r71Var.q0.E(false);
-                }
-                if (!z10 && (arrayList = r71Var.B1) != null) {
-                    arrayList.clear();
-                    break;
-                }
-                break;
-            default:
-                r71 r71Var2 = this.c;
-                r71Var2.j0.setVisibility((this.b && r71Var2.i0.getVisibility() == 0) ? 0 : 8);
-                r71Var2.H1 = null;
-                break;
+    @Override // g.o
+    public final int i(int i10) {
+        int i11;
+        m61 m61Var = this.c;
+        org.telegram.ui.Components.wz wzVar = m61Var.X;
+        org.telegram.ui.Components.s61 s61Var = m61Var.d0;
+        if (s61Var == null) {
+            return wzVar.J;
         }
+        org.telegram.ui.Components.f61 G = s61Var.G(i10 - 1);
+        return (G == null || (i11 = G.u) == -1) ? wzVar.J : i11;
     }
 }

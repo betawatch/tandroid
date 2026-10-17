@@ -1,210 +1,120 @@
 package org.telegram.ui.Components;
 
-import android.content.res.Resources;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.GradientDrawable;
-import android.util.SparseIntArray;
-import java.io.File;
+import android.content.Context;
+import android.view.View;
+import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.Bitmaps;
-import org.telegram.messenger.DocumentObject;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SvgHelper;
-import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class u21 extends BitmapDrawable {
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public u21(File file, DocumentObject.ThemeDocument themeDocument) {
-        super(r17);
-        int i10;
-        int i11;
-        int i12;
-        BitmapDrawable bitmapDrawable;
-        org.telegram.ui.ActionBar.d5[] d5VarArr;
-        Bitmap bitmap;
-        cd0 cd0Var;
-        boolean z10;
-        Bitmap bitmap2;
-        Bitmap decodeFile;
-        int i13;
-        new RectF();
-        Paint paint = new Paint();
-        Bitmap createBitmap = Bitmaps.createBitmap(560, 678, Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(createBitmap);
-        SparseIntArray R0 = org.telegram.ui.ActionBar.g6.R0(null, themeDocument.baseTheme.d, null);
-        SparseIntArray clone = R0.clone();
-        themeDocument.accent.c(R0, clone);
-        int G0 = org.telegram.ui.ActionBar.g6.G0(clone, org.telegram.ui.ActionBar.g6.s8);
-        int G02 = org.telegram.ui.ActionBar.g6.G0(clone, org.telegram.ui.ActionBar.g6.v8);
-        int G03 = org.telegram.ui.ActionBar.g6.G0(clone, org.telegram.ui.ActionBar.g6.Sd);
-        int G04 = org.telegram.ui.ActionBar.g6.G0(clone, org.telegram.ui.ActionBar.g6.Xd);
-        int G05 = org.telegram.ui.ActionBar.g6.G0(clone, org.telegram.ui.ActionBar.g6.ra);
-        int G06 = org.telegram.ui.ActionBar.g6.G0(clone, org.telegram.ui.ActionBar.g6.Aa);
-        int i14 = clone.get(org.telegram.ui.ActionBar.g6.Nd);
-        int i15 = clone.get(org.telegram.ui.ActionBar.g6.Od);
-        int i16 = clone.get(org.telegram.ui.ActionBar.g6.Pd);
-        int i17 = clone.get(org.telegram.ui.ActionBar.g6.Qd);
-        int i18 = clone.get(org.telegram.ui.ActionBar.g6.Rd);
-        Drawable mutate = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_back).mutate();
-        org.telegram.ui.ActionBar.g6.x1(G02, mutate);
-        Drawable mutate2 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_dots).mutate();
-        org.telegram.ui.ActionBar.g6.x1(G02, mutate2);
-        Drawable mutate3 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_smile).mutate();
-        org.telegram.ui.ActionBar.g6.x1(G04, mutate3);
-        Drawable mutate4 = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.preview_mic).mutate();
-        org.telegram.ui.ActionBar.g6.x1(G04, mutate4);
-        org.telegram.ui.ActionBar.d5[] d5VarArr2 = new org.telegram.ui.ActionBar.d5[2];
-        int i19 = 0;
-        while (i19 < 2) {
-            Drawable drawable = mutate4;
-            t21 t21Var = new t21(i19 == 1, clone);
-            d5VarArr2[i19] = t21Var;
-            org.telegram.ui.ActionBar.g6.x1(i19 == 1 ? G06 : G05, t21Var);
-            i19++;
-            mutate4 = drawable;
+public final class u21 extends LinearLayout implements org.telegram.ui.ActionBar.y5 {
+    public final org.telegram.ui.ActionBar.d6 a;
+    public final w9 b;
+    public final x90 c;
+    public final x90 d;
+    public int e;
+    public int f;
+
+    public u21(Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context);
+        this.e = 90;
+        this.a = d6Var;
+        setOrientation(1);
+        w9 w9Var = new w9(context);
+        this.b = w9Var;
+        w9Var.getImageReceiver().setAutoRepeatCount(1);
+        w9Var.getImageReceiver().setAutoRepeat(1);
+        w9Var.setOnClickListener(new u80(this, 21));
+        addView(w9Var, w7.z5.t(90, 90, 17, 0, 9, 0, 9));
+        x90 x90Var = new x90(context, null);
+        this.c = x90Var;
+        x90Var.setTextSize(1, 20.0f);
+        x90Var.setGravity(17);
+        x90Var.setTypeface(AndroidUtilities.bold());
+        x90Var.setTextAlignment(4);
+        addView(x90Var, w7.z5.t(-1, -2, 17, 48, 0, 48, 10));
+        x90 x90Var2 = new x90(context, null);
+        this.d = x90Var2;
+        x90Var2.setTextSize(1, 14.0f);
+        x90Var2.setGravity(17);
+        x90Var2.setTextAlignment(4);
+        addView(x90Var2, w7.z5.t(-1, -2, 17, 48, 0, 48, 17));
+        d();
+    }
+
+    public final void a(CharSequence charSequence, CharSequence charSequence2) {
+        x90 x90Var = this.c;
+        x90Var.setText(charSequence);
+        x90Var.setVisibility(0);
+        x90 x90Var2 = this.d;
+        x90Var2.setText(charSequence2);
+        x90Var2.setMaxWidth(ei.x3.a(charSequence2, x90Var2.getPaint()));
+        x90Var2.requestLayout();
+        d();
+    }
+
+    @Override // org.telegram.ui.ActionBar.y5
+    public final void d() {
+        int i10 = org.telegram.ui.ActionBar.h6.G6;
+        org.telegram.ui.ActionBar.d6 d6Var = this.a;
+        int w02 = org.telegram.ui.ActionBar.h6.w0(i10, d6Var);
+        x90 x90Var = this.c;
+        x90Var.setTextColor(w02);
+        int i11 = org.telegram.ui.ActionBar.h6.gc;
+        x90Var.setLinkTextColor(org.telegram.ui.ActionBar.h6.w0(i11, d6Var));
+        if (x90Var.getVisibility() != 0) {
+            i10 = org.telegram.ui.ActionBar.h6.B6;
         }
-        Drawable drawable2 = mutate4;
-        if (i16 != 0) {
-            cd0 cd0Var2 = new cd0(true, i14, i15, i16, i17);
-            i10 = i14;
-            i11 = i15;
-            bitmap = createBitmap;
-            d5VarArr = d5VarArr2;
-            cd0Var = cd0Var2;
-            i12 = 120;
-            bitmapDrawable = null;
-        } else {
-            i10 = i14;
-            i11 = i15;
-            int width = createBitmap.getWidth();
-            int height = createBitmap.getHeight() - 120;
-            GradientDrawable.Orientation d = y9.d(i18);
-            i12 = 120;
-            d5VarArr = d5VarArr2;
-            Resources resources = ApplicationLoader.applicationContext.getResources();
-            Rect e = y9.e(d, width, height);
-            bitmap = createBitmap;
-            Bitmap createBitmap2 = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
-            Utilities.drawDitheredGradient(createBitmap2, new int[]{i10, i11}, e.left, e.top, e.right, e.bottom);
-            bitmapDrawable = new BitmapDrawable(resources, createBitmap2);
-            cd0Var = null;
+        int w03 = org.telegram.ui.ActionBar.h6.w0(i10, d6Var);
+        x90 x90Var2 = this.d;
+        x90Var2.setTextColor(w03);
+        x90Var2.setLinkTextColor(org.telegram.ui.ActionBar.h6.w0(i11, d6Var));
+        int i12 = this.e;
+        this.b.setLayoutParams(w7.z5.t(i12, i12, 17, 0, x90Var.getVisibility() == 0 ? 0 : 9, 0, 9));
+    }
+
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    }
+
+    public void setEmoji(int i10) {
+        if (this.f != i10) {
+            this.f = i10;
+            uj0 uj0Var = new uj0(i10, AndroidUtilities.dp(90.0f), AndroidUtilities.dp(90.0f));
+            w9 w9Var = this.b;
+            w9Var.setImageDrawable(uj0Var);
+            w9Var.getImageReceiver().setAutoRepeat(2);
         }
-        int patternColor = AndroidUtilities.getPatternColor(AndroidUtilities.getAverageColor(i10, i11));
-        if (bitmapDrawable != null) {
-            z10 = false;
-            bitmapDrawable.setBounds(0, i12, bitmap.getWidth(), bitmap.getHeight() - 120);
-            bitmapDrawable.draw(canvas);
-        } else {
-            z10 = false;
+    }
+
+    public void setEmojiSize(int i10) {
+        if (this.e != i10) {
+            this.e = i10;
+            d();
         }
-        if (file != null) {
-            if ("application/x-tgwallpattern".equals(themeDocument.mime_type)) {
-                decodeFile = SvgHelper.getBitmap(file, 560, 678, z10);
-            } else {
-                BitmapFactory.Options options = new BitmapFactory.Options();
-                options.inSampleSize = 1;
-                options.inJustDecodeBounds = true;
-                BitmapFactory.decodeFile(file.getAbsolutePath(), options);
-                float f7 = options.outWidth;
-                float f10 = options.outHeight;
-                float f11 = 560;
-                float f12 = 678;
-                float min = Math.min(f7 / f11, f10 / f12);
-                min = min < 1.2f ? 1.0f : min;
-                options.inJustDecodeBounds = false;
-                if (min <= 1.0f || (f7 <= f11 && f10 <= f12)) {
-                    options.inSampleSize = (int) min;
-                } else {
-                    int i20 = 1;
-                    while (true) {
-                        i13 = i20 * 2;
-                        if (i20 * 4 >= min) {
-                            break;
-                        } else {
-                            i20 = i13;
-                        }
-                    }
-                    options.inSampleSize = i13;
-                }
-                decodeFile = BitmapFactory.decodeFile(file.getAbsolutePath(), options);
-            }
-            bitmap2 = decodeFile;
-            if (bitmap2 != null) {
-                if (cd0Var != null) {
-                    cd0Var.t(bitmap2, (int) (themeDocument.accent.p * 100.0f));
-                    cd0Var.setBounds(0, 120, bitmap.getWidth(), bitmap.getHeight() - 120);
-                    cd0Var.draw(canvas);
-                } else {
-                    Paint paint2 = new Paint(2);
-                    if (themeDocument.accent.p >= 0.0f) {
-                        paint2.setColorFilter(new PorterDuffColorFilter(patternColor, PorterDuff.Mode.SRC_IN));
-                    }
-                    paint2.setAlpha(255);
-                    float max = Math.max(560 / bitmap2.getWidth(), 678 / bitmap2.getHeight());
-                    int width2 = (int) (bitmap2.getWidth() * max);
-                    canvas.save();
-                    canvas.translate((560 - width2) / 2, (678 - ((int) (bitmap2.getHeight() * max))) / 2);
-                    canvas.scale(max, max);
-                    canvas.drawBitmap(bitmap2, 0.0f, 0.0f, paint2);
-                    canvas.restore();
-                }
-            }
-        } else {
-            bitmap2 = null;
+    }
+
+    public void setEmojiStatic(int i10) {
+        if (this.f != i10) {
+            w9 w9Var = this.b;
+            w9Var.b();
+            this.f = i10;
+            w9Var.setImageResource(i10);
         }
-        if (bitmap2 == null && cd0Var != null) {
-            cd0Var.setBounds(0, 120, bitmap.getWidth(), bitmap.getHeight() - 120);
-            cd0Var.draw(canvas);
-        }
-        paint.setColor(G0);
-        canvas.drawRect(0.0f, 0.0f, bitmap.getWidth(), 120.0f, paint);
-        if (mutate != null) {
-            int intrinsicHeight = (120 - mutate.getIntrinsicHeight()) / 2;
-            mutate.setBounds(13, intrinsicHeight, mutate.getIntrinsicWidth() + 13, mutate.getIntrinsicHeight() + intrinsicHeight);
-            mutate.draw(canvas);
-        }
-        if (mutate2 != null) {
-            int width3 = (bitmap.getWidth() - mutate2.getIntrinsicWidth()) - 10;
-            int intrinsicHeight2 = (120 - mutate2.getIntrinsicHeight()) / 2;
-            mutate2.setBounds(width3, intrinsicHeight2, mutate2.getIntrinsicWidth() + width3, mutate2.getIntrinsicHeight() + intrinsicHeight2);
-            mutate2.draw(canvas);
-        }
-        d5VarArr[1].setBounds(161, 216, bitmap.getWidth() - 20, 308);
-        d5VarArr[1].n(0, 560, 522);
-        d5VarArr[1].draw(canvas);
-        d5VarArr[1].setBounds(161, 430, bitmap.getWidth() - 20, 522);
-        d5VarArr[1].n(430, 560, 522);
-        d5VarArr[1].draw(canvas);
-        d5VarArr[0].setBounds(20, 323, 399, 415);
-        d5VarArr[0].n(323, 560, 522);
-        d5VarArr[0].draw(canvas);
-        paint.setColor(G03);
-        canvas.drawRect(0.0f, bitmap.getHeight() - 120, bitmap.getWidth(), bitmap.getHeight(), paint);
-        if (mutate3 != null) {
-            int intrinsicHeight3 = ((120 - mutate3.getIntrinsicHeight()) / 2) + (bitmap.getHeight() - 120);
-            mutate3.setBounds(22, intrinsicHeight3, mutate3.getIntrinsicWidth() + 22, mutate3.getIntrinsicHeight() + intrinsicHeight3);
-            mutate3.draw(canvas);
-        }
-        if (drawable2 != null) {
-            int width4 = (bitmap.getWidth() - drawable2.getIntrinsicWidth()) - 22;
-            int intrinsicHeight4 = ((120 - drawable2.getIntrinsicHeight()) / 2) + (bitmap.getHeight() - 120);
-            drawable2.setBounds(width4, intrinsicHeight4, drawable2.getIntrinsicWidth() + width4, drawable2.getIntrinsicHeight() + intrinsicHeight4);
-            drawable2.draw(canvas);
-        }
+    }
+
+    public void setText(CharSequence charSequence) {
+        this.c.setVisibility(8);
+        x90 x90Var = this.d;
+        x90Var.setText(charSequence);
+        x90Var.setMaxWidth(ei.x3.a(charSequence, x90Var.getPaint()));
+        x90Var.requestLayout();
+        d();
     }
 }

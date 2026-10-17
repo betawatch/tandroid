@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class d implements eb.v {
     public final /* synthetic */ int a;
@@ -59,7 +59,7 @@ public final class d implements eb.v {
                 Type type3 = actualTypeArguments[0];
                 eb.u b10 = (type3 == Boolean.TYPE || type3 == Boolean.class) ? h1.c : gVar.b(new lb.a(type3));
                 eb.u b11 = gVar.b(new lb.a(actualTypeArguments[1]));
-                gb.p W = bVar.W(aVar);
+                gb.n W = bVar.W(aVar);
                 Type[] typeArr = actualTypeArguments;
                 return new o(this, gVar, typeArr[0], b10, typeArr[1], b11, W);
         }

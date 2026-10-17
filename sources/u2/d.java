@@ -1,6 +1,6 @@
 package u2;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class d implements d1 {
     public final d1 a;
@@ -13,8 +13,8 @@ public final class d implements d1 {
     }
 
     @Override // u2.d1
-    public final void b() {
-        this.a.b();
+    public final void a() {
+        this.a.a();
     }
 
     @Override // u2.d1
@@ -32,14 +32,14 @@ public final class d implements d1 {
             hVar.setFlags(4);
             return -4;
         }
-        long p5 = eVar.p();
+        long s10 = eVar.s();
         int f7 = this.a.f(bVar, hVar, i10);
         if (eVar.e != -9223372036854775807L && f7 != -3) {
             eVar.e = -9223372036854775807L;
         }
         if (f7 != -5) {
             long j10 = eVar.h;
-            if (j10 == Long.MIN_VALUE || ((f7 != -4 || hVar.e < j10) && !(f7 == -3 && p5 == Long.MIN_VALUE && !hVar.d))) {
+            if (j10 == Long.MIN_VALUE || ((f7 != -4 || hVar.e < j10) && !(f7 == -3 && s10 == Long.MIN_VALUE && !hVar.d))) {
                 return f7;
             }
             hVar.clear();
@@ -49,10 +49,10 @@ public final class d implements d1 {
         }
         long j11 = eVar.f;
         long j12 = eVar.h;
-        b2.x xVar = (b2.x) bVar.c;
-        xVar.getClass();
-        int i11 = xVar.O;
-        int i12 = xVar.N;
+        b2.w wVar = (b2.w) bVar.c;
+        wVar.getClass();
+        int i11 = wVar.O;
+        int i12 = wVar.N;
         if (i12 != 0 || i11 != 0) {
             if (j11 != 0) {
                 i12 = 0;
@@ -60,19 +60,19 @@ public final class d implements d1 {
             if (j12 != Long.MIN_VALUE) {
                 i11 = 0;
             }
-            b2.w a2 = xVar.a();
+            b2.v a2 = wVar.a();
             a2.M = i12;
             a2.N = i11;
-            bVar.c = new b2.x(a2);
+            bVar.c = new b2.w(a2);
         }
         return -5;
     }
 
     @Override // u2.d1
-    public final int j(long j10) {
+    public final int h(long j10) {
         if (this.c.a()) {
             return -3;
         }
-        return this.a.j(j10);
+        return this.a.h(j10);
     }
 }

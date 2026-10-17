@@ -11,7 +11,7 @@ import com.google.android.gms.vision.face.internal.client.FaceParcel;
 import com.google.android.gms.vision.face.internal.client.LandmarkParcel;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class t2 extends g3 {
     public final /* synthetic */ int r = 0;
@@ -128,8 +128,8 @@ public final class t2 extends g3 {
     }
 
     public t8.a[] n(ByteBuffer byteBuffer, f3 f3Var) {
-        t8.d[] dVarArr;
-        oa.d[] dVarArr2;
+        t8.c[] cVarArr;
+        oa.d[] dVarArr;
         if (!k()) {
             return new t8.a[0];
         }
@@ -151,27 +151,27 @@ public final class t2 extends g3 {
                 new PointF(faceParcel.c, faceParcel.d);
                 LandmarkParcel[] landmarkParcelArr = faceParcel.s;
                 if (landmarkParcelArr == null) {
-                    dVarArr = new t8.d[0];
+                    cVarArr = new t8.c[0];
                 } else {
-                    t8.d[] dVarArr3 = new t8.d[landmarkParcelArr.length];
+                    t8.c[] cVarArr2 = new t8.c[landmarkParcelArr.length];
                     for (int i13 = 0; i13 < landmarkParcelArr.length; i13++) {
                         LandmarkParcel landmarkParcel = landmarkParcelArr[i13];
-                        dVarArr3[i13] = new t8.d(new PointF(landmarkParcel.b, landmarkParcel.c), landmarkParcel.d);
+                        cVarArr2[i13] = new t8.c(new PointF(landmarkParcel.b, landmarkParcel.c), landmarkParcel.d);
                     }
-                    dVarArr = dVarArr3;
+                    cVarArr = cVarArr2;
                 }
                 u8.a[] aVarArr2 = faceParcel.y;
                 if (aVarArr2 == null) {
-                    dVarArr2 = new oa.d[0];
+                    dVarArr = new oa.d[0];
                 } else {
-                    oa.d[] dVarArr4 = new oa.d[aVarArr2.length];
+                    oa.d[] dVarArr2 = new oa.d[aVarArr2.length];
                     for (int i14 = 0; i14 < aVarArr2.length; i14++) {
                         PointF[] pointFArr = aVarArr2[i14].a;
-                        dVarArr4[i14] = new oa.d(23);
+                        dVarArr2[i14] = new oa.d(23);
                     }
-                    dVarArr2 = dVarArr4;
+                    dVarArr = dVarArr2;
                 }
-                aVarArr[i11] = new t8.a(i12, dVarArr, dVarArr2);
+                aVarArr[i11] = new t8.a(i12, cVarArr, dVarArr);
             }
             return aVarArr;
         } catch (RemoteException e) {

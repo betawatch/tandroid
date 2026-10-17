@@ -5,7 +5,7 @@ import java.util.UUID;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class p0 {
     public static final g6.b i = new g6.b("ClientCastAnalytics", null);
@@ -14,7 +14,7 @@ public final class p0 {
     public final u b;
     public final d c;
     public Long e;
-    public l5.r g;
+    public l5.s g;
     public int h = 1;
     public final String d = UUID.randomUUID().toString();
     public final ExecutorService f = Executors.unconfigurableExecutorService(Executors.newCachedThreadPool());

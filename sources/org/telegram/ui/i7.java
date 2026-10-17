@@ -1,63 +1,26 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class i7 extends org.telegram.ui.Components.d91 {
-    public org.telegram.ui.ActionBar.m1 a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.m2 c;
-    public final /* synthetic */ w7 d;
+public abstract class i7 extends pg.b {
+    public final int d;
+    public final ArrayList e = new ArrayList();
 
-    public i7(w7 w7Var, Context context, org.telegram.ui.ActionBar.m2 m2Var) {
-        this.d = w7Var;
-        this.b = context;
-        this.c = m2Var;
+    public i7(int i10) {
+        this.d = i10;
     }
 
-    @Override // org.telegram.ui.Components.d91
-    public final void b(View view, int i10, int i11) {
-        org.telegram.ui.Components.mm0 mm0Var = (org.telegram.ui.Components.mm0) view;
-        ArrayList arrayList = this.d.e;
-        mm0Var.setAdapter(((v7) arrayList.get(i10)).c);
-        if (((v7) arrayList.get(i10)).b == 1 || ((v7) arrayList.get(i10)).b == 4) {
-            view.getContext();
-            mm0Var.setLayoutManager(new s4.s(3));
-        } else {
-            view.getContext();
-            mm0Var.setLayoutManager(new s4.b0());
-        }
-        mm0Var.setTag(Integer.valueOf(((v7) arrayList.get(i10)).b));
+    public abstract void F();
+
+    @Override // s4.g0
+    public final int h() {
+        return this.e.size();
     }
 
-    @Override // org.telegram.ui.Components.d91
-    public final View d(int i10) {
-        org.telegram.ui.Components.mm0 mm0Var = new org.telegram.ui.Components.mm0(this.b, null);
-        s4.k kVar = (s4.k) mm0Var.getItemAnimator();
-        kVar.C = false;
-        kVar.m = false;
-        mm0Var.setClipToPadding(false);
-        mm0Var.setPadding(0, 0, 0, this.d.s);
-        mm0Var.setOnItemClickListener(new h7(this, mm0Var));
-        mm0Var.setOnItemLongClickListener(new f7(this, mm0Var, this.c, 0));
-        return mm0Var;
-    }
-
-    @Override // org.telegram.ui.Components.d91
-    public final int e() {
-        return this.d.e.size();
-    }
-
-    @Override // org.telegram.ui.Components.d91
-    public final int f(int i10) {
-        return ((v7) this.d.e.get(i10)).b;
-    }
-
-    @Override // org.telegram.ui.Components.d91
-    public final CharSequence g(int i10) {
-        return ((v7) this.d.e.get(i10)).a;
+    @Override // s4.g0
+    public final int j(int i10) {
+        return ((p7) this.e.get(i10)).a;
     }
 }

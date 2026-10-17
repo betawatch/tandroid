@@ -1,25 +1,61 @@
 package org.telegram.ui;
 
+import android.content.SharedPreferences;
+import android.os.StatFs;
+import java.io.File;
+import java.util.regex.Pattern;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class e80 implements NotificationCenter.NotificationCenterDelegate {
-    public final /* synthetic */ org.telegram.ui.ActionBar.a2 a;
-    public final /* synthetic */ h80 b;
+public final /* synthetic */ class e80 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ LaunchActivity b;
+    public final /* synthetic */ int c;
 
-    public e80(h80 h80Var, org.telegram.ui.ActionBar.a2 a2Var) {
-        this.b = h80Var;
-        this.a = a2Var;
+    public /* synthetic */ e80(LaunchActivity launchActivity, int i10, int i11) {
+        this.a = i11;
+        this.b = launchActivity;
+        this.c = i10;
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == NotificationCenter.reloadInterface) {
-            this.a.dismiss();
-            NotificationCenter.getGlobalInstance().removeObserver(this, i10);
-            AndroidUtilities.runOnUIThread(new zz(this, 13), 100L);
+    @Override // java.lang.Runnable
+    public final void run() {
+        File directory;
+        int i10 = this.a;
+        int i11 = this.c;
+        LaunchActivity launchActivity = this.b;
+        switch (i10) {
+            case 0:
+                Pattern pattern = LaunchActivity.C1;
+                if (UserConfig.getInstance(launchActivity.O).isClientActivated()) {
+                    try {
+                        SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
+                        if ((((i11 == 2 || i11 == 1) && Math.abs(launchActivity.x1 - System.currentTimeMillis()) > 240000) || Math.abs(globalMainSettings.getLong("last_space_check", 0L) - System.currentTimeMillis()) >= 259200000) && (directory = FileLoader.getDirectory(4)) != null) {
+                            StatFs statFs = new StatFs(directory.getAbsolutePath());
+                            long availableBlocksLong = statFs.getAvailableBlocksLong() * statFs.getBlockSizeLong();
+                            if (i11 > 0 || availableBlocksLong < 52428800) {
+                                if (i11 > 0) {
+                                    launchActivity.x1 = System.currentTimeMillis();
+                                }
+                                globalMainSettings.edit().putLong("last_space_check", System.currentTimeMillis()).commit();
+                                AndroidUtilities.runOnUIThread(new l80(launchActivity, 10));
+                                break;
+                            }
+                        }
+                    } catch (Throwable unused) {
+                        return;
+                    }
+                }
+                break;
+            default:
+                Pattern pattern2 = LaunchActivity.C1;
+                ConnectionsManager.getInstance(launchActivity.O).cancelRequest(i11, true);
+                break;
         }
     }
 }

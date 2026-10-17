@@ -1,74 +1,55 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
+import android.animation.ValueAnimator;
 import android.view.View;
-import android.widget.LinearLayout;
-import java.util.ArrayList;
+import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class kw0 implements View.OnClickListener {
-    public final /* synthetic */ ki0 a;
-    public final /* synthetic */ fo b;
-    public final /* synthetic */ org.telegram.ui.Components.mm0 c;
-    public final /* synthetic */ LinearLayout d;
-    public final /* synthetic */ org.telegram.ui.Components.l80 e;
-    public final /* synthetic */ org.telegram.ui.Components.l80 f;
-    public final /* synthetic */ rw0 h;
+public final /* synthetic */ class kw0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ View c;
+    public final /* synthetic */ Object d;
 
-    public kw0(rw0 rw0Var, ki0 ki0Var, fo foVar, org.telegram.ui.Components.mm0 mm0Var, LinearLayout linearLayout, org.telegram.ui.Components.l80 l80Var, org.telegram.ui.Components.l80 l80Var2) {
-        this.h = rw0Var;
-        this.a = ki0Var;
-        this.b = foVar;
-        this.c = mm0Var;
-        this.d = linearLayout;
-        this.e = l80Var;
-        this.f = l80Var2;
+    public /* synthetic */ kw0(Object obj, ViewGroup viewGroup, Object obj2, int i10) {
+        this.a = i10;
+        this.b = obj;
+        this.c = viewGroup;
+        this.d = obj2;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        ki0 ki0Var = this.a;
-        ArrayList arrayList = ki0Var.b;
-        ArrayList arrayList2 = ki0Var.c;
-        if (arrayList2.isEmpty()) {
-            return;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                pw0 pw0Var = (pw0) this.b;
+                ValueAnimator valueAnimator2 = (ValueAnimator) this.d;
+                PremiumPreviewFragment premiumPreviewFragment = pw0Var.n;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                View view = this.c;
+                view.setAlpha(floatValue);
+                view.setScaleX(floatValue);
+                view.setScaleY(floatValue);
+                float animatedFraction = valueAnimator2.getAnimatedFraction();
+                for (int i10 = 0; i10 < premiumPreviewFragment.U.getChildCount(); i10++) {
+                    View childAt = premiumPreviewFragment.U.getChildAt(i10);
+                    if (childAt != pw0Var.e) {
+                        childAt.setTranslationY((view.getMeasuredHeight() * animatedFraction) + (childAt == pw0Var.c ? 0.0f - (AndroidUtilities.dp(15.0f) * animatedFraction) : 0.0f + (AndroidUtilities.dp(8.0f) * animatedFraction)));
+                    }
+                }
+                break;
+            default:
+                ba1 ba1Var = (ba1) this.b;
+                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
+                org.telegram.ui.Components.si siVar = (org.telegram.ui.Components.si) this.d;
+                ba1Var.getClass();
+                ba1Var.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                chatActivityEnterView.getEditField().setAlpha(ba1Var.a);
+                siVar.invalidate();
+                break;
         }
-        int size = arrayList2.size();
-        rw0 rw0Var = this.h;
-        fo foVar = this.b;
-        if (size == 1 && (arrayList.size() <= 0 || ((Integer) arrayList.get(0)).intValue() <= 0)) {
-            TLObject tLObject = (TLObject) arrayList2.get(0);
-            if (tLObject == null) {
-                return;
-            }
-            Bundle bundle = new Bundle();
-            if (tLObject instanceof TLRPC.User) {
-                bundle.putLong("user_id", ((TLRPC.User) tLObject).id);
-            } else if (tLObject instanceof TLRPC.Chat) {
-                bundle.putLong("chat_id", ((TLRPC.Chat) tLObject).id);
-            }
-            foVar.presentFragment(new ProfileActivity(bundle, null));
-            rw0Var.c(false);
-            return;
-        }
-        if (SharedConfig.messageSeenHintCount > 0 && foVar.X0.getKeyboardHeight() < AndroidUtilities.dp(20.0f)) {
-            org.telegram.ui.Components.sc t10 = new org.telegram.ui.Components.zc(org.telegram.ui.Components.nb.a(rw0Var.getContext()), rw0Var.b).t(AndroidUtilities.replaceTags(LocaleController.getString(R.string.MessageSeenTooltipMessage)), null);
-            foVar.n1 = t10;
-            t10.j = 4000;
-            t10.j();
-            SharedConfig.updateMessageSeenHintCount(SharedConfig.messageSeenHintCount - 1);
-        }
-        org.telegram.ui.Components.mm0 mm0Var = this.c;
-        mm0Var.requestLayout();
-        this.d.requestLayout();
-        mm0Var.getAdapter().l();
-        this.e.K(this.f);
     }
 }

@@ -12,7 +12,7 @@ import java.util.Arrays;
 import java.util.zip.DataFormatException;
 import java.util.zip.Inflater;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class EmojiPack {
     private static final String ASSET_NAME = "emoji.pack";
@@ -44,7 +44,7 @@ public final class EmojiPack {
     private final int[] rootIds;
     private final byte[][] rootMaps;
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static final class Holder {
         static final EmojiPack INSTANCE = open();
 
@@ -61,7 +61,7 @@ public final class EmojiPack {
     }
 
     private static IllegalStateException damaged(String str) {
-        return new IllegalStateException(t8.b.h("Damaged emoji.pack: ", str));
+        return new IllegalStateException(r.c.g("Damaged emoji.pack: ", str));
     }
 
     private Bitmap decode(int i10) {
@@ -489,7 +489,7 @@ public final class EmojiPack {
             int u16 = u16(entry + 2);
             int i15 = this.emojiCount;
             if ((i14 >= i15 && u16 != NO_MASK) || (i14 < i15 && u16 != NO_MASK && find(u16, i15, this.count) < 0)) {
-                throw new IOException(i2.d.j(i14, "Invalid mask reference at record "));
+                throw new IOException(i0.a.j(i14, "Invalid mask reference at record "));
             }
             int i16 = this.buffer.getInt(entry + 4);
             int u162 = u16(entry + 8);
@@ -548,16 +548,16 @@ public final class EmojiPack {
                                 }
                             }
                         }
-                        throw new IOException(i2.d.j(i18, "Invalid palette at record "));
+                        throw new IOException(i0.a.j(i18, "Invalid palette at record "));
                     }
                     i11 = i18;
                     if (u165 != 0 || u8(i17) != 0 || u83 != 0 || (u8(entry + 19) & 127) != 0 || u163 != NO_MASK || u164 != NO_MASK) {
-                        throw new IOException(i2.d.j(i11, "Invalid full image record "));
+                        throw new IOException(i0.a.j(i11, "Invalid full image record "));
                     }
                     i14 = i11 + 1;
                 }
             }
-            throw new IOException(i2.d.j(i10, "Invalid EPK3 record "));
+            throw new IOException(i0.a.j(i10, "Invalid EPK3 record "));
         }
     }
 

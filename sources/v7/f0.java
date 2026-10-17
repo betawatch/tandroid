@@ -2,29 +2,29 @@ package v7;
 
 import com.google.mlkit.vision.segmentation.subject.internal.zzd;
 import java.util.concurrent.Executor;
-import z7.ce;
-import z7.fb;
-import z7.gb;
+import z7.ag;
+import z7.ee;
 import z7.hb;
-import z7.wf;
-import z7.zf;
+import z7.ib;
+import z7.jb;
+import z7.yf;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class f0 {
     public static zzd a(bc.e eVar) {
         cc.b bVar = (cc.b) rb.g.c().a(cc.b.class);
         cc.f fVar = (cc.f) bVar.a.R0(eVar);
         Executor executor = (Executor) bVar.b.a.get();
-        wf b10 = zf.b();
+        yf b10 = ag.b();
         zzd zzdVar = new zzd(fVar, executor);
-        m.t3 t3Var = new m.t3();
-        t3Var.c = fb.b;
-        x9.l lVar = new x9.l();
-        lVar.b = eVar.a();
-        lVar.a = gb.b;
-        t3Var.d = new ce(lVar);
-        rb.m.a.execute(new com.google.android.gms.internal.cast.p(b10, new a5.a(t3Var, 1), hb.N4, b10.c(), 8));
+        m.s3 s3Var = new m.s3();
+        s3Var.c = hb.b;
+        xf.c cVar = new xf.c();
+        cVar.b = eVar.a();
+        cVar.a = ib.b;
+        s3Var.d = new ee(cVar);
+        rb.m.a.execute(new com.google.android.gms.internal.cast.p(b10, new a5.a(s3Var, 1), jb.N4, b10.c(), 8));
         return zzdVar;
     }
 }

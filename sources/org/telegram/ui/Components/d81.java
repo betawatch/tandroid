@@ -1,49 +1,57 @@
 package org.telegram.ui.Components;
 
-import android.net.Uri;
-import java.util.Map;
-import org.telegram.messenger.secretmedia.ExtendedDefaultDataSource;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class d81 implements g2.h {
-    public final g2.h a;
-    public final long b;
+public final /* synthetic */ class d81 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ h81 b;
 
-    public d81(ExtendedDefaultDataSource extendedDefaultDataSource, long j10) {
-        this.a = extendedDefaultDataSource;
-        this.b = j10;
+    public /* synthetic */ d81(h81 h81Var, int i10) {
+        this.a = i10;
+        this.b = h81Var;
     }
 
-    @Override // g2.h
-    public final void addTransferListener(g2.c0 c0Var) {
-        this.a.addTransferListener(c0Var);
-    }
-
-    @Override // g2.h
-    public final void close() {
-        this.a.close();
-    }
-
-    @Override // g2.h
-    public final Map getResponseHeaders() {
-        return this.a.getResponseHeaders();
-    }
-
-    @Override // g2.h
-    public final Uri getUri() {
-        return this.a.getUri();
-    }
-
-    @Override // g2.h
-    public final long open(g2.m mVar) {
-        g2.l a2 = mVar.a();
-        a2.b = mVar.e + this.b;
-        return this.a.open(a2.d());
-    }
-
-    @Override // b2.p
-    public final int read(byte[] bArr, int i10, int i11) {
-        return this.a.read(bArr, i10, i11);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                h81 h81Var = this.b;
+                h81Var.h = 0.0f;
+                e6 e6Var = h81Var.b;
+                if (e6Var != null) {
+                    e6Var.u();
+                    h81Var.b = null;
+                    break;
+                }
+                break;
+            case 1:
+                h81 h81Var2 = this.b;
+                h81Var2.a = true;
+                h81Var2.e = null;
+                if (h81Var2.b != null) {
+                    h81Var2.s = true;
+                    PhotoViewer photoViewer = h81Var2.M.a;
+                    if (photoViewer.u3) {
+                        photoViewer.b3(true);
+                        break;
+                    }
+                }
+                break;
+            default:
+                h81 h81Var3 = this.b;
+                h81Var3.a = true;
+                h81Var3.e = null;
+                if (h81Var3.b != null) {
+                    h81Var3.s = true;
+                    PhotoViewer photoViewer2 = h81Var3.M.a;
+                    if (photoViewer2.u3) {
+                        photoViewer2.b3(true);
+                        break;
+                    }
+                }
+                break;
+        }
     }
 }

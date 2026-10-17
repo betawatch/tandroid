@@ -8,9 +8,9 @@ import android.text.Spanned;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
-import w7.m6;
+import w7.n6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class l {
     public static final Object i = new Object();
@@ -195,7 +195,7 @@ public final class l {
                             }
                         }
                         if (i10 != i11 && i10 < charSequence.length()) {
-                            s sVar = (s) ((pi.e) bVar.b).c;
+                            s sVar = (s) ((qi.e) bVar.b).c;
                             pVar = new p();
                             pVar.a = 1;
                             pVar.d = sVar;
@@ -219,7 +219,7 @@ public final class l {
                                             codePointAt = Character.codePointAt(charSequence, i10);
                                         }
                                     } else if (a2 == 3) {
-                                        if (!bVar.Z(charSequence, i12, i10, ((s) pVar.f).b)) {
+                                        if (!bVar.a0(charSequence, i12, i10, ((s) pVar.f).b)) {
                                             if (yVar == null) {
                                                 yVar = new y((Spannable) new SpannableString(charSequence));
                                             }
@@ -229,7 +229,7 @@ public final class l {
                                     }
                                 }
                             }
-                            if (pVar.a == 2 && ((s) pVar.e).b != null && ((pVar.c > 1 || pVar.e()) && i13 < Integer.MAX_VALUE && !bVar.Z(charSequence, i12, i10, ((s) pVar.e).b))) {
+                            if (pVar.a == 2 && ((s) pVar.e).b != null && ((pVar.c > 1 || pVar.e()) && i13 < Integer.MAX_VALUE && !bVar.a0(charSequence, i12, i10, ((s) pVar.e).b))) {
                                 if (yVar == null) {
                                     yVar = new y(charSequence);
                                 }
@@ -257,7 +257,7 @@ public final class l {
                 }
             }
             if (i10 != i11) {
-                s sVar2 = (s) ((pi.e) bVar.b).c;
+                s sVar2 = (s) ((qi.e) bVar.b).c;
                 pVar = new p();
                 pVar.a = 1;
                 pVar.d = sVar2;
@@ -286,7 +286,7 @@ public final class l {
     }
 
     public final void f(i iVar) {
-        m6.a(iVar, "initCallback cannot be null");
+        n6.a(iVar, "initCallback cannot be null");
         this.a.writeLock().lock();
         try {
             if (this.c != 1 && this.c != 2) {

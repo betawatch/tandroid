@@ -3,39 +3,39 @@ package th;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Cells.u1;
-import org.telegram.ui.Components.ck0;
-import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.r6;
-import zf.q;
+import org.telegram.ui.Components.bs;
+import org.telegram.ui.Components.p6;
+import org.telegram.ui.Components.yj0;
+import zf.p;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes3.dex */
 public final class d extends c {
-    public final r6 d;
-    public final ck0 e;
+    public final p6 d;
+    public final yj0 e;
     public final ne.b f;
     public float h;
 
-    public d(u1 u1Var, c6 c6Var) {
-        super(c6Var);
-        ck0 ck0Var = new ck0(u1Var);
-        this.e = ck0Var;
-        ck0Var.d(null, true, false);
-        ck0Var.v = 650.0f;
-        ck0Var.e(0.69f, false);
-        ck0Var.p.setStrokeWidth(AndroidUtilities.dp(1.5f));
-        this.f = new ne.b(u1Var, es.h, 260L);
-        r6 r6Var = new r6(true, false, false);
-        this.d = r6Var;
-        r6Var.x(AndroidUtilities.bold());
-        r6Var.w(AndroidUtilities.dp(13.0f));
-        r6Var.b = 17;
-        int w02 = g6.w0(g6.i6, c6Var);
+    public d(u1 u1Var, d6 d6Var) {
+        super(d6Var);
+        yj0 yj0Var = new yj0(u1Var);
+        this.e = yj0Var;
+        yj0Var.d(null, true, false);
+        yj0Var.v = 650.0f;
+        yj0Var.e(0.69f, false);
+        yj0Var.p.setStrokeWidth(AndroidUtilities.dp(1.5f));
+        this.f = new ne.b(u1Var, bs.h, 260L);
+        p6 p6Var = new p6(true, false, false);
+        this.d = p6Var;
+        p6Var.x(AndroidUtilities.bold());
+        p6Var.w(AndroidUtilities.dp(13.0f));
+        p6Var.b = 17;
+        int w02 = h6.w0(h6.i6, d6Var);
         if (this.b != w02) {
-            g6.C1(this.a, w02, false);
+            h6.C1(this.a, w02, false);
             this.b = w02;
         }
     }
@@ -68,7 +68,7 @@ public final class d extends c {
     public final void draw(Canvas canvas) {
         float f7 = this.f.e;
         if (f7 < 1.0f) {
-            q.b(canvas, this.d, 1.0f - f7);
+            p.b(canvas, this.d, 1.0f - f7);
         }
         if (f7 > 0.0f) {
             float exactCenterX = getBounds().exactCenterX();

@@ -1,102 +1,75 @@
 package ig;
 
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.text.TextUtils;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.fo;
-import org.telegram.ui.oh1;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n0 implements RequestDelegate {
+public final /* synthetic */ class n0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+    public final /* synthetic */ r0 b;
 
-    public /* synthetic */ n0(u0 u0Var, int[] iArr, ArrayList arrayList, boolean z10, TLRPC.User user) {
-        this.a = 0;
-        this.d = u0Var;
-        this.e = iArr;
-        this.b = arrayList;
-        this.c = z10;
-        this.f = user;
+    public /* synthetic */ n0(r0 r0Var, int i10) {
+        this.a = i10;
+        this.b = r0Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new q0((u0) this.d, tL_error, tLObject, (int[]) this.e, (ArrayList) this.b, this.c, (TLRPC.User) this.f));
+                r0 r0Var = this.b;
+                r0Var.J.manage_stories = !r2.manage_stories;
+                r0Var.c.W2.N(true);
+                r0Var.Y(true);
                 break;
             case 1:
-                ((ContactsController) this.d).lambda$deleteContact$57((ArrayList) this.b, (ArrayList) this.e, this.c, (String) this.f, tLObject, tL_error);
+                r0 r0Var2 = this.b;
+                TL_account.TL_businessBotRights tL_businessBotRights = r0Var2.J;
+                tL_businessBotRights.transfer_stars = true;
+                tL_businessBotRights.transfer_and_upgrade_gifts = true;
+                tL_businessBotRights.change_gift_settings = true;
+                tL_businessBotRights.sell_gifts = true;
+                tL_businessBotRights.view_gifts = true;
+                r0Var2.c.W2.N(true);
+                r0Var2.Y(true);
                 break;
             case 2:
-                ((SendMessagesHelper) this.d).lambda$requestUrlAuth$40((TLRPC.TL_messages_requestUrlAuth) this.e, (fo) this.b, (String) this.f, this.c, tLObject, tL_error);
+                r0 r0Var3 = this.b;
+                TL_account.TL_businessBotRights tL_businessBotRights2 = r0Var3.J;
+                tL_businessBotRights2.edit_username = true;
+                tL_businessBotRights2.edit_profile_photo = true;
+                tL_businessBotRights2.edit_bio = true;
+                tL_businessBotRights2.edit_name = true;
+                r0Var3.c.W2.N(true);
+                r0Var3.Y(true);
                 break;
             case 3:
-                ((SendMessagesHelper) this.d).lambda$sendEditRichMessageRequest$29(this.c, (MessageObject) this.e, (TLRPC.TL_messages_editMessage) this.b, (m2) this.f, tLObject, tL_error);
-                break;
-            case 4:
-                AndroidUtilities.runOnUIThread(new q0((oh1) this.d, tL_error, this.c, tLObject, (byte[]) this.e, (String) this.b, (TL_account.passwordInputSettings) this.f));
+                r0 r0Var4 = this.b;
+                r0Var4.c.W2.N(true);
+                r0Var4.Y(true);
                 break;
             default:
-                xh.l lVar = (xh.l) this.d;
-                TLRPC.TL_chatInviteImporter tL_chatInviteImporter = (TLRPC.TL_chatInviteImporter) this.e;
-                TLRPC.User user = (TLRPC.User) this.f;
-                TLRPC.TL_messages_hideChatJoinRequest tL_messages_hideChatJoinRequest = (TLRPC.TL_messages_hideChatJoinRequest) this.b;
-                if (tL_error == null) {
-                    MessagesController.getInstance(lVar.k).lambda$processUpdates$377((TLRPC.TL_updates) tLObject, false);
+                r0 r0Var5 = this.b;
+                String obj = r0Var5.f.getText().toString();
+                String str = r0Var5.y;
+                if (str == null || !TextUtils.equals(str, obj)) {
+                    r0Var5.x = false;
+                    if (!TextUtils.isEmpty(obj)) {
+                        hg.a2 a2Var = r0Var5.d;
+                        r0Var5.y = obj;
+                        int i10 = r0Var5.E;
+                        r0Var5.E = i10 + 1;
+                        a2Var.h(obj, true, false, true, false, false, 0L, false, 0, i10, 0L, null);
+                        break;
+                    } else {
+                        r0Var5.y = null;
+                        r0Var5.d.b();
+                        r0Var5.c.W2.N(true);
+                        break;
+                    }
                 }
-                AndroidUtilities.runOnUIThread(new q0(lVar, tL_error, tLObject, tL_chatInviteImporter, this.c, user, tL_messages_hideChatJoinRequest));
                 break;
         }
-    }
-
-    public /* synthetic */ n0(Object obj, Object obj2, Object obj3, Object obj4, boolean z10, int i10) {
-        this.a = i10;
-        this.d = obj;
-        this.c = z10;
-        this.e = obj2;
-        this.b = obj3;
-        this.f = obj4;
-    }
-
-    public /* synthetic */ n0(ContactsController contactsController, ArrayList arrayList, ArrayList arrayList2, boolean z10, String str) {
-        this.a = 1;
-        this.d = contactsController;
-        this.b = arrayList;
-        this.e = arrayList2;
-        this.c = z10;
-        this.f = str;
-    }
-
-    public /* synthetic */ n0(SendMessagesHelper sendMessagesHelper, TLRPC.TL_messages_requestUrlAuth tL_messages_requestUrlAuth, fo foVar, String str, boolean z10) {
-        this.a = 2;
-        this.d = sendMessagesHelper;
-        this.e = tL_messages_requestUrlAuth;
-        this.b = foVar;
-        this.f = str;
-        this.c = z10;
-    }
-
-    public /* synthetic */ n0(xh.l lVar, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, boolean z10, TLRPC.User user, TLRPC.TL_messages_hideChatJoinRequest tL_messages_hideChatJoinRequest) {
-        this.a = 5;
-        this.d = lVar;
-        this.e = tL_chatInviteImporter;
-        this.c = z10;
-        this.f = user;
-        this.b = tL_messages_hideChatJoinRequest;
     }
 }

@@ -1,58 +1,44 @@
 package org.telegram.messenger;
 
 import java.util.ArrayList;
-import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class tf implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ MessagesStorage b;
+    public final /* synthetic */ ArrayList c;
     public final /* synthetic */ int d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
 
-    public /* synthetic */ tf(MessagesStorage messagesStorage, long j10, ArrayList arrayList, boolean z10, int i10, int i11) {
-        this.f = messagesStorage;
-        this.e = j10;
-        this.h = arrayList;
-        this.b = z10;
-        this.c = i10;
-        this.d = i11;
+    public /* synthetic */ tf(int i10, ArrayList arrayList, MessagesStorage messagesStorage) {
+        this.a = 1;
+        this.b = messagesStorage;
+        this.c = arrayList;
+        this.d = i10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesStorage) this.f).lambda$markMessagesAsDeleted$229(this.e, (ArrayList) this.h, this.b, this.c, this.d);
+                this.b.lambda$putWallpapers$78(this.d, this.c);
+                break;
+            case 1:
+                this.b.lambda$unpinAllDialogsExceptNew$247(this.c, this.d);
+                break;
+            case 2:
+                this.b.lambda$getDownloadQueue$185(this.d, this.c);
                 break;
             default:
-                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.f;
-                CharSequence charSequence = (CharSequence) this.h;
-                chatActivityEnterView.f0 = null;
-                chatActivityEnterView.o0(true);
-                org.telegram.ui.Components.rf rfVar = chatActivityEnterView.E0;
-                if (rfVar != null) {
-                    rfVar.setText("");
-                }
-                org.telegram.ui.Components.pg pgVar = chatActivityEnterView.Z2;
-                if (pgVar != null) {
-                    pgVar.J(charSequence, this.b, this.c, this.d, this.e);
-                    break;
-                }
+                this.b.lambda$putWidgetDialogs$166(this.d, this.c);
                 break;
         }
     }
 
-    public /* synthetic */ tf(ChatActivityEnterView chatActivityEnterView, CharSequence charSequence, boolean z10, int i10, int i11, long j10) {
-        this.f = chatActivityEnterView;
-        this.h = charSequence;
-        this.b = z10;
-        this.c = i10;
-        this.d = i11;
-        this.e = j10;
+    public /* synthetic */ tf(MessagesStorage messagesStorage, int i10, ArrayList arrayList, int i11) {
+        this.a = i11;
+        this.b = messagesStorage;
+        this.d = i10;
+        this.c = arrayList;
     }
 }

@@ -1,84 +1,42 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
+import android.graphics.Outline;
+import android.view.View;
+import android.view.ViewOutlineProvider;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.camera.CameraView;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class qm extends CameraView {
-    public final ah.m0 a;
-    public boolean b;
-    public final /* synthetic */ ChatAttachAlertPhotoLayout c;
+public final class qm extends ViewOutlineProvider {
+    public final /* synthetic */ sm a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qm(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, Context context, boolean z10, boolean z11) {
-        super(context, z10, z11);
-        this.c = chatAttachAlertPhotoLayout;
-        this.a = new ah.m0(this, 8);
+    public qm(sm smVar) {
+        this.a = smVar;
     }
 
-    @Override // org.telegram.messenger.camera.CameraView, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.c;
-        vi viVar = chatAttachAlertPhotoLayout.b;
-        if (AndroidUtilities.makingGlobalBlurBitmap) {
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) view;
+        if (s5Var.getTag() == null) {
             return;
         }
-        if (this.b || (!chatAttachAlertPhotoLayout.d0 && chatAttachAlertPhotoLayout.b0)) {
-            super.dispatchDraw(canvas);
-            return;
+        int intValue = ((Integer) s5Var.getTag()).intValue();
+        sm smVar = this.a;
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = smVar.v;
+        if (smVar.d && chatAttachAlertPhotoLayout.T0 == chatAttachAlertPhotoLayout.U0 && !chatAttachAlertPhotoLayout.O0) {
+            intValue++;
         }
-        float translationY = (viVar.getContainerView().getTranslationY() + (viVar.J0[1] + chatAttachAlertPhotoLayout.W0)) - chatAttachAlertPhotoLayout.P.getTranslationY();
-        di.i iVar = viVar.E2;
-        int min = (int) Math.min(translationY - (iVar != null ? iVar.d() + AndroidUtilities.dp(8.0f) : 0.0f), getMeasuredHeight());
-        boolean z10 = chatAttachAlertPhotoLayout.d0;
-        if (z10) {
-            RectF rectF = AndroidUtilities.rectTmp;
-            float f7 = chatAttachAlertPhotoLayout.n1;
-            boolean z11 = ChatAttachAlertPhotoLayout.q1;
-            float f10 = 1.0f - chatAttachAlertPhotoLayout.e0;
-            rectF.set((0.0f * f10) + f7, (f10 * chatAttachAlertPhotoLayout.W) + chatAttachAlertPhotoLayout.k1, chatAttachAlertPhotoLayout.m1, AndroidUtilities.lerp(Math.min(min, chatAttachAlertPhotoLayout.l1), getMeasuredHeight(), chatAttachAlertPhotoLayout.e0));
+        if (chatAttachAlertPhotoLayout.g1) {
+            intValue++;
+        }
+        if (intValue == 0) {
+            int dp = AndroidUtilities.dp(16.0f);
+            outline.setRoundRect(0, 0, view.getMeasuredWidth() + dp, view.getMeasuredHeight() + dp, dp);
+        } else if (intValue != chatAttachAlertPhotoLayout.M0 - 1) {
+            outline.setRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
         } else {
-            if (!z10 && !chatAttachAlertPhotoLayout.b0) {
-                RectF rectF2 = AndroidUtilities.rectTmp;
-                boolean z12 = ChatAttachAlertPhotoLayout.q1;
-                rectF2.set(0.0f, chatAttachAlertPhotoLayout.W, getMeasuredWidth(), Math.min(min, getMeasuredHeight()));
-                return;
-            }
-            AndroidUtilities.rectTmp.set(0.0f, 0.0f, getMeasuredWidth(), Math.min(min, getMeasuredHeight()));
+            int dp2 = AndroidUtilities.dp(16.0f);
+            outline.setRoundRect(-dp2, 0, view.getMeasuredWidth(), view.getMeasuredHeight() + dp2, dp2);
         }
-        canvas.save();
-        canvas.clipRect(AndroidUtilities.rectTmp);
-        super.dispatchDraw(canvas);
-        canvas.restore();
-    }
-
-    @Override // org.telegram.messenger.camera.CameraView, android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.c;
-        sc.a(chatAttachAlertPhotoLayout.P, this.a);
-        chatAttachAlertPhotoLayout.E.invalidate();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        sc.h(this.c.P);
-    }
-
-    @Override // android.view.View
-    public void setVisibility(int i10) {
-        super.setVisibility(i10);
-        this.c.E.invalidate();
-    }
-
-    @Override // org.telegram.messenger.camera.CameraView
-    public final void showTexture(boolean z10, boolean z11) {
-        super.showTexture(z10, z11);
-        this.c.E.invalidate();
     }
 }

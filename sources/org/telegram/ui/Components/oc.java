@@ -1,48 +1,90 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Typeface;
-import android.text.method.LinkMovementMethod;
-import android.widget.LinearLayout;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public class oc extends pb {
-    public final z9 a;
-    public final TextView b;
-    public final TextView c;
+public final class oc extends mb {
+    public Runnable a;
+    public Runnable b;
+    public qc c;
+    public final TextView d;
+    public boolean e;
 
-    public oc(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, c6Var);
-        int themedColor = getThemedColor(org.telegram.ui.ActionBar.g6.Hi);
-        z9 z9Var = new z9(context);
-        this.a = z9Var;
-        addView(z9Var, w7.z5.i(29.0f, 29.0f, 8388627, 12.0f, 12.0f, 12.0f, 12.0f));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        addView(linearLayout, w7.z5.i(-2.0f, -2.0f, 8388627, 54.0f, 8.0f, 12.0f, 8.0f));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        textView.setSingleLine();
-        textView.setTextColor(themedColor);
-        textView.setTextSize(1, 14.0f);
-        textView.setTypeface(AndroidUtilities.bold());
-        linearLayout.addView(textView);
-        TextView textView2 = new TextView(context);
-        this.c = textView2;
-        textView2.setMaxLines(2);
-        textView2.setTextColor(themedColor);
-        textView2.setLinkTextColor(getThemedColor(org.telegram.ui.ActionBar.g6.Gi));
-        textView2.setMovementMethod(new LinkMovementMethod());
-        textView2.setTypeface(Typeface.SANS_SERIF);
-        textView2.setTextSize(1, 13.0f);
-        linearLayout.addView(textView2);
+    public oc(Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10, boolean z11) {
+        super(context);
+        int i10 = org.telegram.ui.ActionBar.h6.Gi;
+        int u10 = d6Var != null ? d6Var.u(i10) : org.telegram.ui.ActionBar.h6.x0(null, i10, false);
+        if (z10) {
+            TextView textView = new TextView(context);
+            this.d = textView;
+            textView.setBackground(org.telegram.ui.ActionBar.h6.g0((u10 & 16777215) | 419430400, 7, -1));
+            textView.setTextSize(1, 14.0f);
+            textView.setTypeface(AndroidUtilities.bold());
+            textView.setTextColor(u10);
+            org.telegram.messenger.wh.m(R.string.UndoNoCaps, textView, 16);
+            float f7 = z11 ? 34.0f : 12.0f;
+            boolean z12 = LocaleController.isRTL;
+            w7.f6.a(textView, z12 ? 12.0f : f7, 8.0f, z12 ? f7 : 12.0f, 8.0f);
+            addView(textView, w7.z5.i(-2.0f, -2.0f, 16, 8.0f, 0.0f, 8.0f, 0.0f));
+        }
+        if (z11) {
+            ImageView imageView = new ImageView(getContext());
+            imageView.setImageResource(R.drawable.chats_undo);
+            imageView.setColorFilter(new PorterDuffColorFilter(u10, PorterDuff.Mode.MULTIPLY));
+            if (!z10) {
+                imageView.setBackground(org.telegram.ui.ActionBar.h6.g0((u10 & 16777215) | 419430400, 1, -1));
+            }
+            w7.f6.a(imageView, 0.0f, 12.0f, 0.0f, 12.0f);
+            addView(imageView, w7.z5.h(56.0f, 48.0f, 16));
+        }
+        setOnClickListener(new f0(this, 5));
     }
 
-    @Override // org.telegram.ui.Components.wb
-    public CharSequence getAccessibilityText() {
-        return ((Object) this.b.getText()) + ".\n" + ((Object) this.c.getText());
+    @Override // org.telegram.ui.Components.rb
+    public final void a(qc qcVar) {
+        this.c = qcVar;
+    }
+
+    @Override // org.telegram.ui.Components.rb
+    public final void b() {
+        this.c = null;
+        Runnable runnable = this.b;
+        if (runnable == null || this.e) {
+            return;
+        }
+        runnable.run();
+    }
+
+    public final void e(CharSequence charSequence) {
+        TextView textView = this.d;
+        if (textView != null) {
+            textView.setText(charSequence);
+        }
+    }
+
+    public final void f() {
+        if (this.c != null) {
+            this.e = true;
+            Runnable runnable = this.a;
+            if (runnable != null) {
+                runnable.run();
+            }
+            qc qcVar = this.c;
+            if (qcVar != null) {
+                qcVar.b();
+            }
+        }
+    }
+
+    public oc(Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10) {
+        this(context, d6Var, z10, !z10);
     }
 }

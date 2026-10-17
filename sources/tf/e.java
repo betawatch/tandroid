@@ -9,7 +9,7 @@ import android.util.Log;
 import android.view.View;
 import com.google.android.gms.internal.cast.p;
 import com.google.android.gms.internal.cast.z5;
-import i2.h0;
+import i2.g0;
 import j$.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
@@ -17,7 +17,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class e implements sf.c, sf.b {
     public f d;
@@ -42,12 +42,12 @@ public final class e implements sf.c, sf.b {
 
     @Override // sf.c
     public final void a() {
-        h0 h0Var;
+        g0 g0Var;
         rf.d dVar = this.j;
-        if (dVar == null || (h0Var = dVar.l) == null) {
+        if (dVar == null || (g0Var = dVar.l) == null) {
             return;
         }
-        h0Var.e();
+        g0Var.e();
     }
 
     @Override // sf.c
@@ -58,12 +58,12 @@ public final class e implements sf.c, sf.b {
 
     @Override // sf.c
     public final void c() {
-        h0 h0Var;
+        g0 g0Var;
         rf.d dVar = this.j;
-        if (dVar == null || (h0Var = dVar.l) == null) {
+        if (dVar == null || (g0Var = dVar.l) == null) {
             return;
         }
-        h0Var.i();
+        g0Var.i();
     }
 
     @Override // sf.c
@@ -128,8 +128,8 @@ public final class e implements sf.c, sf.b {
         z5Var.b = view;
         z5Var.c = view2;
         this.h = z5Var;
-        z5Var.x(e);
-        dVar.a.q().addView(this.f);
+        z5Var.z(e);
+        dVar.a.v().addView(this.f);
         this.a = 1;
         this.f.invalidate();
         AndroidUtilities.doOnPreDraw(this.i, new p(ApplicationLoader.applicationHandler, new b(this, 1), 300L));
@@ -141,7 +141,7 @@ public final class e implements sf.c, sf.b {
             FileLog.e("[PIP_DEBUG] wrong pip state STATE_ATTACHED: " + this.a);
             return;
         }
-        this.h.x(this.j.g.c());
+        this.h.z(this.j.g.c());
         this.a = 3;
         this.f.removeView(this.i);
         this.f.invalidate();

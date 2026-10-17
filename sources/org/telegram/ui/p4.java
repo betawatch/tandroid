@@ -1,88 +1,98 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
+import android.content.DialogInterface;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class p4 extends org.telegram.ui.Components.lm0 {
-    public final Context c;
+public final /* synthetic */ class p4 implements DialogInterface.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public p4(Context context) {
-        this.c = context;
+    public /* synthetic */ p4(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.lm0
-    public final boolean D(s4.b1 b1Var) {
-        int b10 = b1Var.b();
-        if (b10 != 1) {
-            si.a aVar = si.e.b;
-            aVar.a();
-            if (!aVar.d || b10 != 2) {
-                return false;
-            }
+    @Override // android.content.DialogInterface.OnClickListener
+    public final void onClick(DialogInterface dialogInterface, int i10) {
+        int i11 = 0;
+        switch (this.a) {
+            case 0:
+                r4 r4Var = (r4) this.b;
+                r4Var.getClass();
+                ti.e.c.b(i10 == 0 ? ri.i.a : ri.i.b);
+                r4Var.b.m(2);
+                break;
+            case 1:
+                ey eyVar = (ey) this.b;
+                if (i10 != 0) {
+                    if (i10 == 1 && eyVar.e0 != null) {
+                        while (true) {
+                            dy[] dyVarArr = eyVar.e0;
+                            if (i11 >= dyVarArr.length) {
+                                break;
+                            } else {
+                                dy dyVar = dyVarArr[i11];
+                                if (dyVar.s == 0 && dyVar.getVisibility() == 0) {
+                                    org.telegram.ui.Cells.r2 O3 = ey.O3(eyVar.e0[i11]);
+                                    zx zxVar = eyVar.e0[i11].a;
+                                    int i12 = zx.t3;
+                                    zxVar.A1(true, O3);
+                                }
+                                i11++;
+                            }
+                        }
+                    }
+                } else {
+                    eyVar.getMessagesStorage().readAllDialogs(1);
+                    break;
+                }
+                break;
+            case 2:
+                eg0 eg0Var = (eg0) this.b;
+                if (i10 != 0) {
+                    ProfileActivity.H4(eg0Var.V.getParentActivity(), false);
+                    break;
+                } else {
+                    BuildVars.LOGS_ENABLED = !BuildVars.LOGS_ENABLED;
+                    ApplicationLoader.applicationContext.getSharedPreferences("systemConfig", 0).edit().putBoolean("logsEnabled", BuildVars.LOGS_ENABLED).commit();
+                    org.telegram.ui.Components.xc.a0(eg0Var.V).Q(R.raw.chats_infotip, 36, BuildVars.LOGS_ENABLED ? "Logs enabled." : "Logs disabled.").j();
+                    if (BuildVars.LOGS_ENABLED) {
+                        org.telegram.messenger.q.r(new StringBuilder("app start time = "), ApplicationLoader.startTime);
+                        try {
+                            FileLog.d("buildVersion = " + ApplicationLoader.applicationContext.getPackageManager().getPackageInfo(ApplicationLoader.applicationContext.getPackageName(), 0).versionCode);
+                            break;
+                        } catch (Exception e) {
+                            FileLog.e(e);
+                            return;
+                        }
+                    }
+                }
+                break;
+            case 3:
+                xm0 xm0Var = (xm0) this.b;
+                if (i10 != 0) {
+                    if (i10 != 1) {
+                        xm0Var.getClass();
+                        break;
+                    } else {
+                        xm0Var.w = "female";
+                        xm0Var.Y[4].setText(LocaleController.getString(R.string.PassportFemale));
+                        break;
+                    }
+                } else {
+                    xm0Var.w = "male";
+                    xm0Var.Y[4].setText(LocaleController.getString(R.string.PassportMale));
+                    break;
+                }
+            default:
+                z71.d0((z71) this.b, i10);
+                break;
         }
-        return true;
-    }
-
-    @Override // s4.g0
-    public final int h() {
-        return 4;
-    }
-
-    @Override // s4.g0
-    public final int j(int i10) {
-        if (i10 == 0) {
-            return 0;
-        }
-        if (i10 == 1) {
-            return 1;
-        }
-        return i10 == 2 ? 2 : 3;
-    }
-
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
-        si.a aVar = si.e.b;
-        aVar.a();
-        boolean z10 = aVar.d;
-        int i11 = b1Var.f;
-        if (i11 == 0) {
-            ((org.telegram.ui.Cells.m4) b1Var.a).setText(LocaleController.getString(R.string.AudioRecorderGeneral));
-            return;
-        }
-        if (i11 == 1) {
-            ((org.telegram.ui.Cells.w8) b1Var.a).f(LocaleController.getString(R.string.AudioRecorderUseNewRecorder), z10, false);
-        } else {
-            if (i11 != 2) {
-                ((org.telegram.ui.Cells.e9) b1Var.a).setText(LocaleController.getString(R.string.AudioRecorderGeneralInfo));
-                return;
-            }
-            org.telegram.ui.Cells.ca caVar = (org.telegram.ui.Cells.ca) b1Var.a;
-            caVar.setEnabled(z10);
-            caVar.c(LocaleController.getString(R.string.AudioRecorderNoiseSuppression), LocaleController.getString(((qi.j) si.e.c.a()) == qi.j.b ? R.string.AudioRecorderNoiseSuppressionRNNoise : R.string.AudioRecorderNoiseSuppressionOff), false, false);
-        }
-    }
-
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        FrameLayout frameLayout;
-        Context context = this.c;
-        if (i10 == 0) {
-            frameLayout = new org.telegram.ui.Cells.m4(context);
-        } else if (i10 == 1) {
-            frameLayout = new org.telegram.ui.Cells.w8(context);
-        } else if (i10 == 2) {
-            org.telegram.ui.Cells.ca caVar = new org.telegram.ui.Cells.ca(context);
-            caVar.setCanDisable(true);
-            frameLayout = caVar;
-        } else {
-            frameLayout = new org.telegram.ui.Cells.e9(context);
-        }
-        frameLayout.setLayoutParams(new s4.o0(-1, -2));
-        return new org.telegram.ui.Components.wl0(frameLayout);
     }
 }

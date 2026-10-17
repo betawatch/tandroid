@@ -1,59 +1,43 @@
 package org.telegram.ui.web;
 
-import bi.n9;
-import org.json.JSONObject;
-import org.telegram.messenger.FileLog;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ String[] b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ z0 d;
-    public final /* synthetic */ n9 e;
+    public final /* synthetic */ a1 b;
+    public final /* synthetic */ String c;
 
-    public /* synthetic */ x(String[] strArr, int i10, z0 z0Var, n9 n9Var, int i11) {
-        this.a = i11;
-        this.b = strArr;
-        this.c = i10;
-        this.d = z0Var;
-        this.e = n9Var;
+    public /* synthetic */ x(a1 a1Var, String str, int i10) {
+        this.a = i10;
+        this.b = a1Var;
+        this.c = str;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                int i10 = this.c;
-                z0 z0Var = this.d;
-                n9 n9Var = this.e;
-                String[] strArr = this.b;
-                if (strArr[0] != null) {
-                    try {
-                        JSONObject jSONObject = new JSONObject();
-                        jSONObject.put("status", strArr[0]);
-                        c1.w(i10, z0Var, n9Var, "phone_requested", jSONObject);
-                        break;
-                    } catch (Exception e) {
-                        FileLog.e(e);
-                        return;
-                    }
+                x0 x0Var = this.b.a;
+                if (x0Var != null) {
+                    x0Var.d(this.c);
+                    break;
                 }
                 break;
             default:
-                String[] strArr2 = this.b;
-                int i11 = this.c;
-                z0 z0Var2 = this.d;
-                n9 n9Var2 = this.e;
-                try {
-                    JSONObject jSONObject2 = new JSONObject();
-                    jSONObject2.put("status", strArr2[0]);
-                    c1.w(i11, z0Var2, n9Var2, "write_access_requested", jSONObject2);
+                a1 a1Var = this.b;
+                a1Var.N = false;
+                a1Var.P = 0L;
+                a1Var.T = false;
+                String str = this.c;
+                a1Var.b = str;
+                a1Var.c();
+                x0 x0Var2 = a1Var.a;
+                if (x0Var2 != null) {
+                    x0Var2.onResume();
+                    a1Var.a.loadUrl(str);
                     break;
-                } catch (Exception e7) {
-                    FileLog.e(e7);
                 }
+                break;
         }
     }
 }

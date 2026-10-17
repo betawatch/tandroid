@@ -1,66 +1,46 @@
 package m;
 
-import android.R;
 import android.content.Context;
 import android.content.res.ColorStateList;
-import android.content.res.TypedArray;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
-import android.text.method.KeyListener;
-import android.text.method.NumberKeyListener;
+import android.text.InputFilter;
 import android.util.AttributeSet;
 import android.view.ActionMode;
-import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputConnection;
-import android.widget.AutoCompleteTextView;
-import v7.q7;
-import w7.w7;
+import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.Button;
+import org.telegram.messenger.beta.R;
+import w7.o6;
+import w7.x7;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public class n extends AutoCompleteTextView implements u0.k {
-    public static final int[] d = {R.attr.popupBackground};
+public final class n extends Button implements u0.k {
     public final e2.c a;
-    public final y0 b;
-    public final a0 c;
+    public final x0 b;
+    public u c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n(Context context, AttributeSet attributeSet, int i10) {
-        super(context, attributeSet, i10);
-        e3.a(context);
-        d3.a(this, getContext());
-        h3 P = h3.P(getContext(), attributeSet, d, i10);
-        if (((TypedArray) P.c).hasValue(0)) {
-            setDropDownBackgroundDrawable(P.F(0));
-        }
-        P.Q();
+    public n(Context context, AttributeSet attributeSet) {
+        super(context, attributeSet, R.attr.buttonStyle);
+        d3.a(context);
+        c3.a(this, getContext());
         e2.c cVar = new e2.c(this);
         this.a = cVar;
-        cVar.f(attributeSet, i10);
-        y0 y0Var = new y0(this);
-        this.b = y0Var;
-        y0Var.f(attributeSet, i10);
-        y0Var.b();
-        a0 a0Var = new a0(this);
-        this.c = a0Var;
-        a0Var.b(attributeSet, i10);
-        KeyListener keyListener = getKeyListener();
-        if (keyListener instanceof NumberKeyListener) {
-            return;
+        cVar.f(attributeSet, R.attr.buttonStyle);
+        x0 x0Var = new x0(this);
+        this.b = x0Var;
+        x0Var.f(attributeSet, R.attr.buttonStyle);
+        x0Var.b();
+        getEmojiTextViewHelper().a(attributeSet, R.attr.buttonStyle);
+    }
+
+    private u getEmojiTextViewHelper() {
+        if (this.c == null) {
+            this.c = new u(this);
         }
-        boolean isFocusable = super.isFocusable();
-        boolean isClickable = super.isClickable();
-        boolean isLongClickable = super.isLongClickable();
-        int inputType = super.getInputType();
-        KeyListener a2 = a0Var.a(keyListener);
-        if (a2 == keyListener) {
-            return;
-        }
-        super.setKeyListener(a2);
-        super.setRawInputType(inputType);
-        super.setFocusable(isFocusable);
-        super.setClickable(isClickable);
-        super.setLongClickable(isLongClickable);
+        return this.c;
     }
 
     @Override // android.widget.TextView, android.view.View
@@ -70,15 +50,72 @@ public class n extends AutoCompleteTextView implements u0.k {
         if (cVar != null) {
             cVar.b();
         }
-        y0 y0Var = this.b;
-        if (y0Var != null) {
-            y0Var.b();
+        x0 x0Var = this.b;
+        if (x0Var != null) {
+            x0Var.b();
         }
     }
 
     @Override // android.widget.TextView
+    public int getAutoSizeMaxTextSize() {
+        if (v3.b) {
+            return super.getAutoSizeMaxTextSize();
+        }
+        x0 x0Var = this.b;
+        if (x0Var != null) {
+            return Math.round(x0Var.i.e);
+        }
+        return -1;
+    }
+
+    @Override // android.widget.TextView
+    public int getAutoSizeMinTextSize() {
+        if (v3.b) {
+            return super.getAutoSizeMinTextSize();
+        }
+        x0 x0Var = this.b;
+        if (x0Var != null) {
+            return Math.round(x0Var.i.d);
+        }
+        return -1;
+    }
+
+    @Override // android.widget.TextView
+    public int getAutoSizeStepGranularity() {
+        if (v3.b) {
+            return super.getAutoSizeStepGranularity();
+        }
+        x0 x0Var = this.b;
+        if (x0Var != null) {
+            return Math.round(x0Var.i.c);
+        }
+        return -1;
+    }
+
+    @Override // android.widget.TextView
+    public int[] getAutoSizeTextAvailableSizes() {
+        if (v3.b) {
+            return super.getAutoSizeTextAvailableSizes();
+        }
+        x0 x0Var = this.b;
+        return x0Var != null ? x0Var.i.f : new int[0];
+    }
+
+    @Override // android.widget.TextView
+    public int getAutoSizeTextType() {
+        if (v3.b) {
+            return super.getAutoSizeTextType() == 1 ? 1 : 0;
+        }
+        x0 x0Var = this.b;
+        if (x0Var != null) {
+            return x0Var.i.a;
+        }
+        return 0;
+    }
+
+    @Override // android.widget.TextView
     public ActionMode.Callback getCustomSelectionActionModeCallback() {
-        return w7.d(super.getCustomSelectionActionModeCallback());
+        return x7.d(super.getCustomSelectionActionModeCallback());
     }
 
     public ColorStateList getSupportBackgroundTintList() {
@@ -105,11 +142,81 @@ public class n extends AutoCompleteTextView implements u0.k {
         return this.b.e();
     }
 
+    @Override // android.view.View
+    public final void onInitializeAccessibilityEvent(AccessibilityEvent accessibilityEvent) {
+        super.onInitializeAccessibilityEvent(accessibilityEvent);
+        accessibilityEvent.setClassName(Button.class.getName());
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName(Button.class.getName());
+    }
+
     @Override // android.widget.TextView, android.view.View
-    public InputConnection onCreateInputConnection(EditorInfo editorInfo) {
-        InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
-        w7.p.a(editorInfo, onCreateInputConnection, this);
-        return this.c.c(onCreateInputConnection, editorInfo);
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        x0 x0Var = this.b;
+        if (x0Var == null || v3.b) {
+            return;
+        }
+        x0Var.i.a();
+    }
+
+    @Override // android.widget.TextView
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        super.onTextChanged(charSequence, i10, i11, i12);
+        x0 x0Var = this.b;
+        if (x0Var != null) {
+            h1 h1Var = x0Var.i;
+            if (v3.b || !h1Var.f()) {
+                return;
+            }
+            h1Var.a();
+        }
+    }
+
+    @Override // android.widget.TextView
+    public void setAllCaps(boolean z10) {
+        super.setAllCaps(z10);
+        getEmojiTextViewHelper().b(z10);
+    }
+
+    @Override // android.widget.TextView
+    public final void setAutoSizeTextTypeUniformWithConfiguration(int i10, int i11, int i12, int i13) {
+        if (v3.b) {
+            super.setAutoSizeTextTypeUniformWithConfiguration(i10, i11, i12, i13);
+            return;
+        }
+        x0 x0Var = this.b;
+        if (x0Var != null) {
+            x0Var.i(i10, i11, i12, i13);
+        }
+    }
+
+    @Override // android.widget.TextView
+    public final void setAutoSizeTextTypeUniformWithPresetSizes(int[] iArr, int i10) {
+        if (v3.b) {
+            super.setAutoSizeTextTypeUniformWithPresetSizes(iArr, i10);
+            return;
+        }
+        x0 x0Var = this.b;
+        if (x0Var != null) {
+            x0Var.j(iArr, i10);
+        }
+    }
+
+    @Override // android.widget.TextView
+    public void setAutoSizeTextTypeWithDefaults(int i10) {
+        if (v3.b) {
+            super.setAutoSizeTextTypeWithDefaults(i10);
+            return;
+        }
+        x0 x0Var = this.b;
+        if (x0Var != null) {
+            x0Var.k(i10);
+        }
     }
 
     @Override // android.view.View
@@ -131,40 +238,24 @@ public class n extends AutoCompleteTextView implements u0.k {
     }
 
     @Override // android.widget.TextView
-    public final void setCompoundDrawables(Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
-        super.setCompoundDrawables(drawable, drawable2, drawable3, drawable4);
-        y0 y0Var = this.b;
-        if (y0Var != null) {
-            y0Var.b();
-        }
-    }
-
-    @Override // android.widget.TextView
-    public final void setCompoundDrawablesRelative(Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
-        super.setCompoundDrawablesRelative(drawable, drawable2, drawable3, drawable4);
-        y0 y0Var = this.b;
-        if (y0Var != null) {
-            y0Var.b();
-        }
-    }
-
-    @Override // android.widget.TextView
     public void setCustomSelectionActionModeCallback(ActionMode.Callback callback) {
-        super.setCustomSelectionActionModeCallback(w7.e(callback, this));
-    }
-
-    @Override // android.widget.AutoCompleteTextView
-    public void setDropDownBackgroundResource(int i10) {
-        setDropDownBackgroundDrawable(q7.b(getContext(), i10));
+        super.setCustomSelectionActionModeCallback(x7.e(callback, this));
     }
 
     public void setEmojiCompatEnabled(boolean z10) {
-        this.c.d(z10);
+        getEmojiTextViewHelper().c(z10);
     }
 
     @Override // android.widget.TextView
-    public void setKeyListener(KeyListener keyListener) {
-        super.setKeyListener(this.c.a(keyListener));
+    public void setFilters(InputFilter[] inputFilterArr) {
+        super.setFilters(((o6) getEmojiTextViewHelper().b.b).a(inputFilterArr));
+    }
+
+    public void setSupportAllCaps(boolean z10) {
+        x0 x0Var = this.b;
+        if (x0Var != null) {
+            x0Var.a.setAllCaps(z10);
+        }
     }
 
     public void setSupportBackgroundTintList(ColorStateList colorStateList) {
@@ -183,24 +274,41 @@ public class n extends AutoCompleteTextView implements u0.k {
 
     @Override // u0.k
     public void setSupportCompoundDrawablesTintList(ColorStateList colorStateList) {
-        y0 y0Var = this.b;
-        y0Var.l(colorStateList);
-        y0Var.b();
+        x0 x0Var = this.b;
+        x0Var.l(colorStateList);
+        x0Var.b();
     }
 
     @Override // u0.k
     public void setSupportCompoundDrawablesTintMode(PorterDuff.Mode mode) {
-        y0 y0Var = this.b;
-        y0Var.m(mode);
-        y0Var.b();
+        x0 x0Var = this.b;
+        x0Var.m(mode);
+        x0Var.b();
     }
 
     @Override // android.widget.TextView
     public final void setTextAppearance(Context context, int i10) {
         super.setTextAppearance(context, i10);
-        y0 y0Var = this.b;
-        if (y0Var != null) {
-            y0Var.g(context, i10);
+        x0 x0Var = this.b;
+        if (x0Var != null) {
+            x0Var.g(context, i10);
+        }
+    }
+
+    @Override // android.widget.TextView
+    public final void setTextSize(int i10, float f7) {
+        boolean z10 = v3.b;
+        if (z10) {
+            super.setTextSize(i10, f7);
+            return;
+        }
+        x0 x0Var = this.b;
+        if (x0Var != null) {
+            h1 h1Var = x0Var.i;
+            if (z10 || h1Var.f()) {
+                return;
+            }
+            h1Var.g(f7, i10);
         }
     }
 }

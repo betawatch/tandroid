@@ -9,17 +9,17 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.Executor;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class k implements Callable {
     public final /* synthetic */ long a;
     public final /* synthetic */ Throwable b;
     public final /* synthetic */ Thread c;
     public final /* synthetic */ ea.b d;
-    public final /* synthetic */ n e;
+    public final /* synthetic */ m e;
 
-    public k(n nVar, long j10, Throwable th2, Thread thread, ea.b bVar) {
-        this.e = nVar;
+    public k(m mVar, long j10, Throwable th2, Thread thread, ea.b bVar) {
+        this.e = mVar;
         this.a = j10;
         this.b = th2;
         this.c = thread;
@@ -32,22 +32,22 @@ public final class k implements Callable {
         String str;
         long j10 = this.a;
         long j11 = j10 / 1000;
-        n nVar = this.e;
-        String e = nVar.e();
+        m mVar = this.e;
+        String e = mVar.e();
         if (e == null) {
             Log.e("FirebaseCrashlytics", "Tried to write a fatal exception while no session was open.", null);
             return Tasks.forResult(null);
         }
-        nVar.c.a();
-        com.google.firebase.messaging.m mVar = nVar.m;
-        mVar.getClass();
+        mVar.c.O();
+        com.google.firebase.messaging.l lVar = mVar.m;
+        lVar.getClass();
         String concat = "Persisting fatal event for session ".concat(e);
         if (Log.isLoggable("FirebaseCrashlytics", 2)) {
             Log.v("FirebaseCrashlytics", concat, null);
         }
-        mVar.v(this.b, this.c, e, "crash", j11, true);
+        lVar.A(this.b, this.c, e, "crash", j11, true);
         try {
-            cVar = nVar.g;
+            cVar = mVar.g;
             str = ".ae" + j10;
             cVar.getClass();
         } catch (IOException e7) {
@@ -57,13 +57,13 @@ public final class k implements Callable {
             throw new IOException("Create new file failed.");
         }
         ea.b bVar = this.d;
-        nVar.c(false, bVar);
-        new f(nVar.f);
-        n.a(nVar, f.b, Boolean.FALSE);
-        if (!nVar.b.a()) {
+        mVar.c(false, bVar);
+        new f(mVar.f);
+        m.a(mVar, f.b, Boolean.FALSE);
+        if (!mVar.b.a()) {
             return Tasks.forResult(null);
         }
-        Executor executor = (Executor) nVar.e.b;
-        return ((TaskCompletionSource) ((AtomicReference) bVar.i).get()).getTask().onSuccessTask(executor, new n3.b(this, executor, e));
+        Executor executor = (Executor) mVar.e.b;
+        return ((TaskCompletionSource) ((AtomicReference) bVar.i).get()).getTask().onSuccessTask(executor, new n2.e(this, executor, e));
     }
 }

@@ -1,44 +1,22 @@
 package org.telegram.ui;
 
-import android.content.Intent;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vb1 implements org.telegram.ui.Components.xl0, org.telegram.ui.ActionBar.z1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ThemeActivity b;
+public final class vb1 extends mc1 {
+    public final /* synthetic */ sn k2;
+    public final /* synthetic */ boolean l2;
 
-    public /* synthetic */ vb1(ThemeActivity themeActivity, int i10) {
-        this.a = i10;
-        this.b = themeActivity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vb1(Object obj, sn snVar, boolean z10) {
+        super(obj, null, true);
+        this.k2 = snVar;
+        this.l2 = z10;
     }
 
-    @Override // org.telegram.ui.ActionBar.z1
-    public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
-        switch (this.a) {
-            case 1:
-                ThemeActivity themeActivity = this.b;
-                themeActivity.getClass();
-                org.telegram.ui.Components.g5.V(themeActivity, 0, null, null);
-                break;
-            default:
-                ThemeActivity themeActivity2 = this.b;
-                if (themeActivity2.getParentActivity() != null) {
-                    try {
-                        themeActivity2.getParentActivity().startActivity(new Intent("android.settings.LOCATION_SOURCE_SETTINGS"));
-                        break;
-                    } catch (Exception unused) {
-                        return;
-                    }
-                }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.xl0
-    public int run() {
-        int i10;
-        i10 = this.b.sensitiveContentRow;
-        return i10;
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void onFragmentClosed() {
+        super.onFragmentClosed();
+        qn qnVar = this.k2.ea;
+        qnVar.k(qnVar.f, qnVar.h, false, Boolean.valueOf(this.l2), false);
     }
 }

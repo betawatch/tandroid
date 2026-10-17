@@ -1,7 +1,7 @@
 package org.telegram.messenger.voip;
 
+import ai.n2;
 import android.text.TextUtils;
-import bi.v2;
 import java.io.File;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
@@ -16,13 +16,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.Components.voip.d2;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public class VoIPDebugToSend {
     private final int currentAccount;
     private final HashMap<Long, Data> pending = new HashMap<>();
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public final class Data {
         long access_hash;
         long callId;
@@ -50,13 +50,13 @@ public class VoIPDebugToSend {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$done$1(File file, TL_phone.saveCallDebug savecalldebug) {
-        FileLoader.getInstance(this.currentAccount).uploadFile(file.getAbsolutePath(), new v2(23, this, savecalldebug));
+        FileLoader.getInstance(this.currentAccount).uploadFile(file.getAbsolutePath(), new n2(29, this, savecalldebug));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$done$2(Data data, File file, TL_phone.saveCallDebug savecalldebug) {
         if (AndroidUtilities.gzip(new File(data.logPath), file)) {
-            AndroidUtilities.runOnUIThread(new n(this, file, savecalldebug, 0));
+            AndroidUtilities.runOnUIThread(new m(this, file, savecalldebug, 0));
         }
     }
 
@@ -68,7 +68,7 @@ public class VoIPDebugToSend {
         if (!(tLObject instanceof TLRPC.TL_boolFalse) || TextUtils.isEmpty(data.logPath)) {
             return;
         }
-        Utilities.searchQueue.postRunnable(new m(this, data, new File(a1.g.s(new StringBuilder(), data.logPath, ".gzip")), savecalldebug, 0));
+        Utilities.searchQueue.postRunnable(new l(this, data, new File(a1.g.s(new StringBuilder(), data.logPath, ".gzip")), savecalldebug, 0));
     }
 
     public void done(long j10, boolean z10) {
@@ -84,7 +84,7 @@ public class VoIPDebugToSend {
         savecalldebug.peer = tL_inputPhoneCall;
         tL_inputPhoneCall.access_hash = remove.access_hash;
         tL_inputPhoneCall.id = remove.callId;
-        ConnectionsManager.getInstance(this.currentAccount).sendRequest(savecalldebug, new o(this, remove, savecalldebug, 0));
+        ConnectionsManager.getInstance(this.currentAccount).sendRequest(savecalldebug, new n(this, remove, savecalldebug, 0));
     }
 
     public void push(long j10, long j11, Instance.FinalState finalState, String str) {

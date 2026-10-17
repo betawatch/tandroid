@@ -1,122 +1,110 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+import android.view.ViewPropertyAnimator;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public abstract class gt extends a71 {
-    public final int N;
-    public final int O;
-    public final ArrayList P;
-    public final ArrayList Q;
-    public final ArrayList R;
-    public final ArrayList S;
-    public boolean T;
-    public boolean U;
-    public final ArrayList V;
-    public boolean W;
-    public boolean X;
-    public boolean Y;
-    public int Z;
-    public int a0;
-    public String b0;
-    public final kq c0;
+public final class gt extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ s4.b1 b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ View d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ ViewPropertyAnimator f;
+    public final /* synthetic */ s4.e1 h;
 
-    public gt(mm0 mm0Var, Context context, int i10, int i11) {
-        super(mm0Var, context, i10, 0, false, null, null);
-        this.P = new ArrayList();
-        this.Q = new ArrayList();
-        this.R = new ArrayList();
-        this.S = new ArrayList();
-        this.V = new ArrayList();
-        uo0 uo0Var = (uo0) this;
-        this.c0 = new kq(uo0Var, 6);
-        this.s = new d(uo0Var, 9);
-        this.N = i10;
-        this.O = i11;
-        N(false);
+    public /* synthetic */ gt(s4.e1 e1Var, s4.b1 b1Var, int i10, View view, int i11, ViewPropertyAnimator viewPropertyAnimator, int i12) {
+        this.a = i12;
+        this.h = e1Var;
+        this.b = b1Var;
+        this.c = i10;
+        this.d = view;
+        this.e = i11;
+        this.f = viewPropertyAnimator;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0079  */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x0083  */
-    /* JADX WARN: Removed duplicated region for block: B:19:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x007c  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void V(boolean z10) {
-        this.W = true;
-        int i10 = this.a0 + 1;
-        this.a0 = i10;
-        TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal = new TLRPC.TL_messages_searchGlobal();
-        tL_messages_searchGlobal.broadcasts_only = true;
-        int i11 = this.O;
-        if (i11 != 0) {
-            tL_messages_searchGlobal.flags |= 1;
-            tL_messages_searchGlobal.folder_id = i11;
-        }
-        tL_messages_searchGlobal.q = this.b0;
-        tL_messages_searchGlobal.limit = 25;
-        tL_messages_searchGlobal.filter = new TLRPC.TL_inputMessagesFilterEmpty();
-        int i12 = this.N;
-        if (z10) {
-            ArrayList arrayList = this.P;
-            if (!arrayList.isEmpty()) {
-                MessageObject messageObject = (MessageObject) i2.d.h(1, arrayList);
-                tL_messages_searchGlobal.offset_rate = this.Z;
-                tL_messages_searchGlobal.offset_id = messageObject.getId();
-                if (messageObject.messageOwner.peer_id == null) {
-                    tL_messages_searchGlobal.offset_peer = new TLRPC.TL_inputPeerEmpty();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 0:
+                int i10 = this.c;
+                View view = this.d;
+                if (i10 != 0) {
+                    view.setTranslationX(0.0f);
+                }
+                if (this.e != 0) {
+                    view.setTranslationY(0.0f);
+                }
+                View view2 = this.b.a;
+                if (!(view2 instanceof org.telegram.ui.Cells.r2)) {
+                    if (view2 instanceof hg.l) {
+                        ((hg.l) view2).a = false;
+                        break;
+                    }
                 } else {
-                    tL_messages_searchGlobal.offset_peer = MessagesController.getInstance(i12).getInputPeer(messageObject.messageOwner.peer_id);
-                }
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.m0(this, i10, tL_messages_searchGlobal, z10, 4), !z10 ? 800L : 0L);
-                if (z10) {
-                    this.X = true;
-                    TLRPC.TL_contacts_search tL_contacts_search = new TLRPC.TL_contacts_search();
-                    tL_contacts_search.limit = 20;
-                    tL_contacts_search.broadcasts = true;
-                    tL_contacts_search.q = this.b0;
-                    ConnectionsManager.getInstance(i12).sendRequestTyped(tL_contacts_search, new org.telegram.messenger.a(), new bi.f0(12, this, tL_contacts_search));
-                    return;
-                }
-                return;
-            }
-        }
-        tL_messages_searchGlobal.offset_rate = 0;
-        tL_messages_searchGlobal.offset_id = 0;
-        tL_messages_searchGlobal.offset_peer = new TLRPC.TL_inputPeerEmpty();
-        AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.m0(this, i10, tL_messages_searchGlobal, z10, 4), !z10 ? 800L : 0L);
-        if (z10) {
-        }
-    }
-
-    public final void W() {
-        ArrayList arrayList = new ArrayList();
-        int i10 = this.N;
-        ArrayList<TLRPC.Dialog> allDialogs = MessagesController.getInstance(i10).getAllDialogs();
-        int size = allDialogs.size();
-        int i11 = 0;
-        while (i11 < size) {
-            TLRPC.Dialog dialog = allDialogs.get(i11);
-            i11++;
-            TLRPC.Chat chat = MessagesController.getInstance(i10).getChat(Long.valueOf(-dialog.id));
-            if (chat != null && ChatObject.isChannelAndNotMegaGroup(chat) && ChatObject.isPublic(chat) && !ChatObject.isNotInChat(chat)) {
-                arrayList.add(chat);
-                if (arrayList.size() >= 100) {
+                    ((org.telegram.ui.Cells.r2) view2).setMoving(false);
                     break;
                 }
-            }
+                break;
+            default:
+                int i11 = this.c;
+                View view3 = this.d;
+                if (i11 != 0) {
+                    view3.setTranslationX(0.0f);
+                }
+                if (this.e != 0) {
+                    view3.setTranslationY(0.0f);
+                    break;
+                }
+                break;
         }
-        ArrayList arrayList2 = this.V;
-        arrayList2.clear();
-        arrayList2.addAll(arrayList);
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.f.setListener(null);
+                kt ktVar = (kt) this.h;
+                s4.b1 b1Var = this.b;
+                ktVar.v(b1Var);
+                ktVar.w.remove(b1Var);
+                ktVar.A();
+                View view = b1Var.a;
+                if (view instanceof org.telegram.ui.Cells.r2) {
+                    ((org.telegram.ui.Cells.r2) view).setMoving(false);
+                } else if (view instanceof hg.l) {
+                    ((hg.l) view).a = false;
+                }
+                View view2 = this.d;
+                view2.setTranslationX(0.0f);
+                view2.setTranslationY(0.0f);
+                break;
+            default:
+                this.f.setListener(null);
+                s4.k kVar = (s4.k) this.h;
+                s4.b1 b1Var2 = this.b;
+                kVar.P(b1Var2);
+                kVar.v(b1Var2);
+                kVar.z.remove(b1Var2);
+                kVar.G();
+                kVar.z(b1Var2);
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                ((kt) this.h).getClass();
+                break;
+            default:
+                ((s4.k) this.h).getClass();
+                break;
+        }
     }
 }

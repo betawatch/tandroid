@@ -1,51 +1,36 @@
 package sg;
 
-import android.app.Activity;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.e3;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.ActionBar.w5;
-import w7.z5;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class d1 extends e3 {
-    public d1(m2 m2Var) {
-        super(m2Var.getParentActivity(), false);
-        Activity parentActivity = m2Var.getParentActivity();
-        LinearLayout e = org.telegram.messenger.g0.e(parentActivity, 1);
-        TextView textView = new TextView(parentActivity);
-        textView.setGravity(8388611);
-        int i10 = g6.j5;
-        org.telegram.messenger.g0.m(20.0f, g6.x0(null, i10, false), 1, textView);
-        e.addView(textView, z5.a(-2.0f, 21.0f, 16.0f, 21.0f, 0.0f, -1, 0));
-        TextView textView2 = new TextView(parentActivity);
-        textView2.setGravity(8388611);
-        textView2.setTextSize(1, 16.0f);
-        textView2.setTextColor(g6.x0(null, i10, false));
-        e.addView(textView2, z5.a(-2.0f, 21.0f, 15.0f, 21.0f, 16.0f, -1, 0));
-        TextView textView3 = new TextView(parentActivity);
-        textView3.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
-        textView3.setGravity(17);
-        org.telegram.messenger.g0.m(14.0f, g6.x0(null, g6.Sh, false), 1, textView3);
-        textView3.setBackground(w5.f(new float[]{8.0f}, g6.Oh));
-        textView3.setText(LocaleController.getString(R.string.InstallOfficialApp));
-        textView3.setOnClickListener(new ah.f(24));
-        FrameLayout frameLayout = new FrameLayout(parentActivity);
-        frameLayout.addView(textView3, z5.a(48.0f, 16.0f, 0.0f, 16.0f, 0.0f, -1, 16));
-        frameLayout.setBackgroundColor(getThemedColor(g6.h5));
-        e.addView(frameLayout, z5.q(-1, 68, 80));
-        org.telegram.messenger.g0.n(R.string.SubscribeToPremiumOfficialAppNeeded, textView);
-        textView2.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.SubscribeToPremiumOfficialAppNeededDescription)));
-        ScrollView scrollView = new ScrollView(parentActivity);
-        scrollView.addView(e);
-        setCustomView(scrollView);
+public final /* synthetic */ class d1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ l1 b;
+
+    public /* synthetic */ d1(l1 l1Var, int i10) {
+        this.a = i10;
+        this.b = l1Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                l1 l1Var = this.b;
+                pf.d.r(l1Var.getContext(), "https://" + MessagesController.getInstance(l1Var.Y).linkPrefix + "/nft/" + l1Var.D0.slug);
+                break;
+            case 1:
+                l1 l1Var2 = this.b;
+                try {
+                    l1Var2.container.performHapticFeedback(3, 2);
+                } catch (Exception unused) {
+                }
+                l1Var2.o0.c(l1Var2.K0);
+                break;
+            default:
+                this.b.O0[0].setVisibility(8);
+                break;
+        }
     }
 }

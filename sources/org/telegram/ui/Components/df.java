@@ -1,92 +1,22 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.widget.ImageView;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class df extends ImageView {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ChatActivityEnterView b;
+public final class df implements o81, e5 {
+    public final /* synthetic */ ChatActivityEnterView a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ df(ChatActivityEnterView chatActivityEnterView, Context context, int i10) {
-        super(context);
-        this.a = i10;
-        this.b = chatActivityEnterView;
+    public /* synthetic */ df(ChatActivityEnterView chatActivityEnterView) {
+        this.a = chatActivityEnterView;
     }
 
-    @Override // android.view.View
-    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        switch (this.a) {
-            case 0:
-                super.onLayout(z10, i10, i11, i12, i13);
-                post(new je(this.b, 5));
-                break;
-            default:
-                super.onLayout(z10, i10, i11, i12, i13);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 2:
-                if (getAlpha() <= 0.0f) {
-                    return false;
-                }
-                return super.onTouchEvent(motionEvent);
-            default:
-                return super.onTouchEvent(motionEvent);
-        }
-    }
-
-    @Override // android.view.View
-    public final void setAlpha(float f7) {
-        switch (this.a) {
-            case 0:
-                super.setAlpha(f7);
-                bf bfVar = this.b.J1;
-                if (bfVar != null) {
-                    bfVar.setTranslationX(bfVar.a);
-                    break;
-                }
-                break;
-            case 1:
-                super.setAlpha(f7);
-                bf bfVar2 = this.b.J1;
-                if (bfVar2 != null) {
-                    bfVar2.setTranslationX(bfVar2.a);
-                    break;
-                }
-                break;
-            default:
-                super.setAlpha(f7);
-                we weVar = this.b.Z0;
-                if (weVar != null) {
-                    weVar.invalidate();
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // android.widget.ImageView, android.view.View
-    public void setVisibility(int i10) {
-        switch (this.a) {
-            case 2:
-                super.setVisibility(i10);
-                we weVar = this.b.Z0;
-                if (weVar != null) {
-                    weVar.invalidate();
-                    break;
-                }
-                break;
-            default:
-                super.setVisibility(i10);
-                break;
+    @Override // org.telegram.ui.Components.e5
+    public void C(int i10, int i11, boolean z10) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        boolean R0 = chatActivityEnterView.R0(i10, z10, i11, true, 0L);
+        mf mfVar = chatActivityEnterView.L0;
+        if (mfVar != null) {
+            mfVar.h(!R0);
+            chatActivityEnterView.L0 = null;
         }
     }
 }

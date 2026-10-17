@@ -1,35 +1,18 @@
 package r0;
 
+import android.os.Build;
 import android.view.animation.Interpolator;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public abstract class v0 {
-    public final int a;
-    public float b;
-    public final Interpolator c;
-    public final long d;
+public final class v0 {
+    public u0 a;
 
     public v0(int i10, long j10, Interpolator interpolator) {
-        this.a = i10;
-        this.c = interpolator;
-        this.d = j10;
-    }
-
-    public long a() {
-        return this.d;
-    }
-
-    public float b() {
-        Interpolator interpolator = this.c;
-        return interpolator != null ? interpolator.getInterpolation(this.b) : this.b;
-    }
-
-    public int c() {
-        return this.a;
-    }
-
-    public void d(float f7) {
-        this.b = f7;
+        if (Build.VERSION.SDK_INT >= 30) {
+            this.a = new t0(r0.b(i10, j10, interpolator));
+        } else {
+            this.a = new q0(i10, j10, interpolator);
+        }
     }
 }

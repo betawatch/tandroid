@@ -1,12 +1,12 @@
 package g2;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class o implements g {
     public c0 b;
     public String c;
     public boolean f;
-    public final n4.s a = new n4.s(17);
+    public final n4.s a = new n4.s(19);
     public final int d = 8000;
     public final int e = 8000;
 

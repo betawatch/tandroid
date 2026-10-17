@@ -4,32 +4,32 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.l80;
-import org.telegram.ui.Components.m61;
+import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.i80;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u2 implements Utilities.Callback5 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ g4 b;
-    public final /* synthetic */ l80 c;
+    public final /* synthetic */ h4 b;
+    public final /* synthetic */ i80 c;
 
-    public /* synthetic */ u2(g4 g4Var, l80 l80Var, int i10) {
+    public /* synthetic */ u2(h4 h4Var, i80 i80Var, int i10) {
         this.a = i10;
-        this.b = g4Var;
-        this.c = l80Var;
+        this.b = h4Var;
+        this.c = i80Var;
     }
 
     @Override // org.telegram.messenger.Utilities.Callback5
     public final void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
         int i10 = this.a;
-        m61 m61Var = (m61) obj;
-        g4 g4Var = this.b;
-        g4Var.getClass();
+        f61 f61Var = (f61) obj;
+        h4 h4Var = this.b;
+        h4Var.getClass();
         switch (i10) {
             case 0:
-                long j10 = ((TL_stars.starGiftAttributePattern) m61Var.G).document.id;
-                t3 t3Var = g4Var.d;
+                long j10 = ((TL_stars.starGiftAttributePattern) f61Var.G).document.id;
+                t3 t3Var = h4Var.d;
                 HashSet hashSet = t3Var.l;
                 if (hashSet.contains(Long.valueOf(j10))) {
                     hashSet.remove(Long.valueOf(j10));
@@ -52,8 +52,8 @@ public final /* synthetic */ class u2 implements Utilities.Callback5 {
                 this.c.u();
                 break;
             case 1:
-                int i12 = ((TL_stars.starGiftAttributeBackdrop) m61Var.G).backdrop_id;
-                t3 t3Var2 = g4Var.d;
+                int i12 = ((TL_stars.starGiftAttributeBackdrop) f61Var.G).backdrop_id;
+                t3 t3Var2 = h4Var.d;
                 HashSet hashSet2 = t3Var2.k;
                 if (hashSet2.contains(Integer.valueOf(i12))) {
                     hashSet2.remove(Integer.valueOf(i12));
@@ -76,8 +76,8 @@ public final /* synthetic */ class u2 implements Utilities.Callback5 {
                 this.c.u();
                 break;
             default:
-                long j12 = ((TL_stars.starGiftAttributeModel) m61Var.G).document.id;
-                t3 t3Var3 = g4Var.d;
+                long j12 = ((TL_stars.starGiftAttributeModel) f61Var.G).document.id;
+                t3 t3Var3 = h4Var.d;
                 HashSet hashSet3 = t3Var3.j;
                 if (hashSet3.contains(Long.valueOf(j12))) {
                     hashSet3.remove(Long.valueOf(j12));

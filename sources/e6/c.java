@@ -6,7 +6,6 @@ import com.google.android.gms.cast.MediaInfo;
 import com.google.android.gms.common.api.internal.BasePendingResult;
 import com.google.android.gms.internal.cast.a0;
 import d6.c0;
-import di.n2;
 import j$.util.DesugarCollections;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -14,18 +13,18 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class c {
     public long b;
     public final h c;
     public ArrayList d;
     public final SparseIntArray e;
-    public final r f;
+    public final s f;
     public final ArrayList g;
     public final ArrayDeque h;
     public final a0 i;
-    public final n2 j;
+    public final r j;
     public BasePendingResult k;
     public BasePendingResult l;
     public final Set m = DesugarCollections.synchronizedSet(new HashSet());
@@ -39,10 +38,9 @@ public final class c {
         this.g = new ArrayList();
         this.h = new ArrayDeque(20);
         this.i = new a0(Looper.getMainLooper(), 0);
-        int i10 = 1;
-        this.j = new n2(this, i10);
-        hVar.p(new c0(this, i10));
-        this.f = new r(this);
+        this.j = new r(this, 0);
+        hVar.p(new c0(this, 1));
+        this.f = new s(this);
         this.b = e();
         d();
     }

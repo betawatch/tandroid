@@ -1,54 +1,98 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.view.ViewGroup;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class p01 implements di.bc {
-    public final /* synthetic */ ProfileActivity a;
+public final class p01 extends Drawable implements org.telegram.ui.ActionBar.i5 {
+    public final org.telegram.ui.Components.p6 a;
+    public final Paint b;
+    public int c;
+    public float d;
+    public float e;
+    public final org.telegram.ui.Cells.l0 f;
+    public org.telegram.ui.Cells.x0 h;
 
-    public p01(ProfileActivity profileActivity) {
-        this.a = profileActivity;
+    public p01(String str) {
+        Paint paint = new Paint(1);
+        this.b = paint;
+        this.d = 1.0f;
+        this.e = 1.0f;
+        this.f = new org.telegram.ui.Cells.l0(this);
+        org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(false, false, false);
+        this.a = p6Var;
+        p6Var.setCallback(new mr(1, this));
+        p6Var.t(str, true, true);
+        p6Var.w(AndroidUtilities.dp(11.0f));
+        p6Var.b = 17;
+        paint.setColor(520093696);
     }
 
-    @Override // di.bc
-    public final di.fc a(long j10) {
-        ProfileActivity profileActivity = this.a;
-        if (j10 != profileActivity.a()) {
-            return null;
+    public final void a(int i10) {
+        Paint paint = this.b;
+        if (paint.getColor() != i10) {
+            paint.setColor(i10);
+            invalidateSelf();
         }
-        profileActivity.e0.setRoundRadiusForExpand((int) AndroidUtilities.lerp(profileActivity.c4(), 0.0f, profileActivity.k2));
-        uz0 uz0Var = profileActivity.e0;
-        boolean isForum = ChatObject.isForum(profileActivity.E2);
-        if (uz0Var == null || uz0Var.getRootView() == null) {
-            return null;
-        }
-        float scaleX = ((View) uz0Var.getParent()).getScaleX();
-        float imageWidth = uz0Var.getImageReceiver().getImageWidth() * scaleX;
-        float f7 = isForum ? 0.32f * imageWidth : imageWidth;
-        di.dc dcVar = new di.dc(uz0Var, 0);
-        float[] fArr = new float[2];
-        uz0Var.getRootView().getLocationOnScreen(new int[2]);
-        AndroidUtilities.getViewPositionInParent(uz0Var, (ViewGroup) uz0Var.getRootView(), fArr);
-        float imageX = (uz0Var.getImageReceiver().getImageX() * scaleX) + r4[0] + fArr[0];
-        float imageY = (uz0Var.getImageReceiver().getImageY() * scaleX) + r4[1] + fArr[1];
-        dcVar.c.set(imageX, imageY, imageX + imageWidth, imageWidth + imageY);
-        dcVar.e = uz0Var.getImageReceiver();
-        dcVar.b = f7;
-        return dcVar;
     }
 
-    @Override // di.bc
-    public final void b(long j10, bi.g gVar) {
-        ProfileActivity profileActivity = this.a;
-        profileActivity.e0.setHasStories(profileActivity.j4());
-        if (j10 == profileActivity.a() && profileActivity.o2 && profileActivity.k2 > 0.0f) {
-            profileActivity.c.h1(0, profileActivity.T3() - profileActivity.a.getPaddingTop());
-            profileActivity.a.post(new bc0(profileActivity, 14));
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        float f7 = this.d * this.e;
+        if (f7 <= 0.0f) {
+            return;
         }
-        AndroidUtilities.runOnUIThread(gVar, 30L);
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(getBounds());
+        canvas.save();
+        float a2 = this.f.a(0.1f);
+        canvas.scale(a2, a2, rectF.centerX(), rectF.centerY());
+        Paint paint = this.b;
+        int alpha = paint.getAlpha();
+        paint.setAlpha((int) (alpha * f7));
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f), paint);
+        paint.setAlpha(alpha);
+        int i10 = this.c;
+        org.telegram.ui.Components.p6 p6Var = this.a;
+        p6Var.u(i10);
+        p6Var.B = (int) (f7 * 255.0f);
+        p6Var.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
+        p6Var.draw(canvas);
+        canvas.restore();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getAlpha() {
+        return (int) (this.d * 255.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(17.33f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return (int) (this.a.d + AndroidUtilities.dp(11.0f));
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.d = i10 / 255.0f;
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

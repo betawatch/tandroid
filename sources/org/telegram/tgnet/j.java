@@ -1,30 +1,30 @@
 package org.telegram.tgnet;
 
-import java.util.Comparator;
+import android.os.AsyncTask;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j implements Comparator {
+public final /* synthetic */ class j implements Runnable {
     public final /* synthetic */ int a;
+    public final /* synthetic */ NativeByteBuffer b;
+    public final /* synthetic */ AsyncTask c;
 
-    public /* synthetic */ j(int i10) {
+    public /* synthetic */ j(AsyncTask asyncTask, NativeByteBuffer nativeByteBuffer, int i10) {
         this.a = i10;
+        this.c = asyncTask;
+        this.b = nativeByteBuffer;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int lambda$doInBackground$0;
-        int lambda$doInBackground$02;
-        String str = (String) obj;
-        String str2 = (String) obj2;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                lambda$doInBackground$0 = ConnectionsManager.GoogleDnsLoadTask.lambda$doInBackground$0(str, str2);
-                return lambda$doInBackground$0;
+                ((ConnectionsManager.GoogleDnsLoadTask) this.c).lambda$onPostExecute$1(this.b);
+                break;
             default:
-                lambda$doInBackground$02 = ConnectionsManager.MozillaDnsLoadTask.lambda$doInBackground$0(str, str2);
-                return lambda$doInBackground$02;
+                ((ConnectionsManager.MozillaDnsLoadTask) this.c).lambda$onPostExecute$1(this.b);
+                break;
         }
     }
 }

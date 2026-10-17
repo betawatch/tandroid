@@ -1,35 +1,80 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.appwidget.AppWidgetManager;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import java.util.ArrayList;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import org.telegram.messenger.ChatsWidgetProvider;
+import org.telegram.messenger.ContactsWidgetProvider;
+import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class hy implements ValueAnimator.AnimatorUpdateListener {
-    public int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ yy d;
+public final class hy extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ ny a;
 
-    public hy(yy yyVar, float f7, boolean z10, float f10) {
-        this.d = yyVar;
-        this.b = f7;
-        this.c = f10;
-        this.a = (int) f7;
+    public hy(ny nyVar) {
+        this.a = nyVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        ((Float) valueAnimator.getAnimatedValue()).getClass();
-        int lerp = (int) AndroidUtilities.lerp(this.b, this.c, ((Float) valueAnimator.getAnimatedValue()).floatValue());
-        int i10 = lerp - this.a;
-        this.a = lerp;
-        yy yyVar = this.d;
-        yyVar.e0[0].a.scrollBy(0, i10);
-        View view = yyVar.fragmentView;
-        if (view != null) {
-            view.invalidate();
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        int i11;
+        ny nyVar = this.a;
+        int i12 = nyVar.w;
+        ArrayList arrayList = nyVar.e;
+        int i13 = nyVar.x;
+        if (i10 == -1) {
+            if (nyVar.y != null) {
+                nyVar.finishFragment();
+                return;
+            }
+            nyVar.Y();
+        }
+        if (i10 != 1 || nyVar.getParentActivity() == null) {
+            return;
+        }
+        ArrayList<MessagesStorage.TopicKey> arrayList2 = new ArrayList<>();
+        for (int i14 = 0; i14 < arrayList.size(); i14++) {
+            arrayList2.add(MessagesStorage.TopicKey.of(((Long) arrayList.get(i14)).longValue(), 0L));
+        }
+        nyVar.getMessagesStorage().putWidgetDialogs(i13, arrayList2);
+        SharedPreferences.Editor edit = nyVar.getParentActivity().getSharedPreferences("shortcut_widget", 0).edit();
+        i11 = ((org.telegram.ui.ActionBar.n2) nyVar).currentAccount;
+        edit.putInt("account" + i13, i11);
+        edit.putInt(TeXSymbolParser.TYPE_ATTR + i13, i12);
+        edit.commit();
+        AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(nyVar.getParentActivity());
+        if (i12 == 0) {
+            ChatsWidgetProvider.updateWidget(nyVar.getParentActivity(), appWidgetManager, i13);
+        } else {
+            ContactsWidgetProvider.updateWidget(nyVar.getParentActivity(), appWidgetManager, i13);
+        }
+        b1 b1Var = nyVar.y;
+        if (b1Var == null) {
+            nyVar.Y();
+            return;
+        }
+        int i15 = b1Var.a;
+        Object obj = b1Var.b;
+        switch (i15) {
+            case 25:
+                ChatsWidgetConfigActivity chatsWidgetConfigActivity = (ChatsWidgetConfigActivity) obj;
+                int i16 = ChatsWidgetConfigActivity.F;
+                Intent intent = new Intent();
+                intent.putExtra("appWidgetId", chatsWidgetConfigActivity.E);
+                chatsWidgetConfigActivity.setResult(-1, intent);
+                chatsWidgetConfigActivity.finish();
+                break;
+            default:
+                ContactsWidgetConfigActivity contactsWidgetConfigActivity = (ContactsWidgetConfigActivity) obj;
+                int i17 = ContactsWidgetConfigActivity.F;
+                Intent intent2 = new Intent();
+                intent2.putExtra("appWidgetId", contactsWidgetConfigActivity.E);
+                contactsWidgetConfigActivity.setResult(-1, intent2);
+                contactsWidgetConfigActivity.finish();
+                break;
         }
     }
 }

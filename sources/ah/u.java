@@ -2,11 +2,11 @@ package ah;
 
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.b5;
-import org.telegram.ui.ActionBar.m2;
+import org.telegram.ui.ActionBar.d5;
+import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.ActionBar.o1;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class u extends o1 {
     public final /* synthetic */ v x;
@@ -22,12 +22,12 @@ public final class u extends o1 {
         boolean z10;
         boolean z11;
         a0 a0Var = (a0) this.x.c;
-        b5 parentLayout = a0Var.getParentLayout();
-        z10 = ((m2) a0Var).inPreviewMode;
+        d5 parentLayout = a0Var.getParentLayout();
+        z10 = ((n2) a0Var).inPreviewMode;
         if (z10 || AndroidUtilities.isTablet()) {
             return false;
         }
-        z11 = ((m2) a0Var).inBubbleMode;
+        z11 = ((n2) a0Var).inBubbleMode;
         return (z11 || AndroidUtilities.isInMultiwindow || parentLayout == null) ? false : true;
     }
 

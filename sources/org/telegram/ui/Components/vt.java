@@ -1,227 +1,92 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.SharedConfig;
+import android.os.Build;
+import android.widget.EdgeEffect;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public abstract class vt implements NotificationCenter.NotificationCenterDelegate {
-    public static ut L;
-    public boolean E;
-    public boolean G;
-    public boolean I;
-    public int J;
-    public final int K;
-    public boolean a;
-    public Bitmap b;
-    public Canvas c;
-    public Bitmap d;
-    public Canvas e;
-    public boolean f;
-    public int n;
-    public boolean r;
-    public int v;
-    public int w;
-    public int x;
-    public final DispatchQueue y;
-    public int h = 1;
-    public final Paint s = new Paint(1);
-    public final tt F = new tt(this, 0);
-    public final tt H = new tt(this, 1);
+public final class vt extends EdgeEffect {
+    public final int a;
+    public final tt b;
+    public final RecyclerView c;
+    public final hq d;
+    public boolean e;
 
-    public vt() {
-        if (L == null) {
-            ut utVar = new ut();
-            utVar.b = new DispatchQueue[2];
-            L = utVar;
-        }
-        ut utVar2 = L;
-        int i10 = utVar2.a + 1;
-        utVar2.a = i10;
-        if (i10 > 1) {
-            utVar2.a = 0;
-        }
-        DispatchQueue[] dispatchQueueArr = (DispatchQueue[]) utVar2.b;
-        int i11 = utVar2.a;
-        DispatchQueue dispatchQueue = dispatchQueueArr[i11];
-        if (dispatchQueue == null) {
-            dispatchQueue = new DispatchQueue("draw_background_queue_" + utVar2.a);
-            dispatchQueueArr[i11] = dispatchQueue;
-        }
-        this.y = dispatchQueue;
-        this.K = L.a;
+    public vt(RecyclerView recyclerView, int i10, tt ttVar) {
+        super(recyclerView.getContext());
+        this.d = new hq(this, 7);
+        this.c = recyclerView;
+        this.a = i10;
+        this.b = ttVar;
     }
 
-    public void a(Canvas canvas, long j10, int i10, int i11, float f7) {
-        if (this.E) {
-            if (BuildVars.DEBUG_PRIVATE_VERSION) {
-                canvas.drawRect(0.0f, 0.0f, i10, i11, org.telegram.ui.ActionBar.g6.Ml);
-                return;
-            }
-            return;
-        }
-        this.w = i11;
-        this.x = i10;
-        if (this.G) {
-            this.G = false;
-            Bitmap bitmap = this.d;
-            Canvas canvas2 = this.e;
-            this.d = this.b;
-            this.e = this.c;
-            this.b = bitmap;
-            this.c = canvas2;
-        }
-        Bitmap bitmap2 = this.d;
-        if (bitmap2 == null || this.I) {
-            this.I = false;
-            if (bitmap2 != null) {
-                ArrayList arrayList = new ArrayList();
-                arrayList.add(this.d);
-                AndroidUtilities.recycleBitmaps(arrayList);
-                this.d = null;
-            }
-            int i12 = this.w + 0;
-            Bitmap bitmap3 = this.d;
-            if (bitmap3 != null && bitmap3.getHeight() == i12 && this.d.getWidth() == this.x) {
-                this.d.eraseColor(0);
-            } else {
-                this.d = Bitmap.createBitmap(this.x, i12, Bitmap.Config.ARGB_8888);
-                this.e = new Canvas(this.d);
-            }
-            this.e.save();
-            this.e.translate(0.0f, 0);
-            d(this.e, f7);
-            this.e.restore();
-        }
-        if (!this.f && !this.r) {
-            this.f = true;
-            i(j10);
-            this.J = this.v;
-            this.y.postRunnable(this.F);
-        }
-        Bitmap bitmap4 = this.d;
-        if (bitmap4 != null) {
-            Paint paint = this.s;
-            paint.setAlpha((int) (f7 * 255.0f));
-            canvas.save();
-            canvas.translate(0.0f, -0);
-            b(canvas, bitmap4, paint);
-            canvas.restore();
-        }
-    }
-
-    public void b(Canvas canvas, Bitmap bitmap, Paint paint) {
-        canvas.drawBitmap(bitmap, 0.0f, 0.0f, paint);
-    }
-
-    public abstract void c(Canvas canvas);
-
-    public abstract void d(Canvas canvas, float f7);
-
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        int i12;
-        if (i10 == NotificationCenter.stopAllHeavyOperations) {
-            Integer num = (Integer) objArr[0];
-            if (this.h < num.intValue()) {
-                if (num.intValue() != 512 || SharedConfig.getDevicePerformanceClass() < 2) {
-                    int intValue = num.intValue() | this.n;
-                    this.n = intValue;
-                    if (intValue == 0 || this.r) {
-                        return;
-                    }
-                    this.r = true;
-                    return;
-                }
-                return;
-            }
-            return;
-        }
-        if (i10 == NotificationCenter.startAllHeavyOperations) {
-            Integer num2 = (Integer) objArr[0];
-            if (this.h >= num2.intValue() || (i12 = this.n) == 0) {
-                return;
-            }
-            int i13 = (~num2.intValue()) & i12;
-            this.n = i13;
-            if (i13 == 0 && this.r) {
-                this.r = false;
+    public final void a() {
+        boolean b10 = b();
+        if (this.e != b10) {
+            this.e = b10;
+            tt ttVar = this.b;
+            if (ttVar != null) {
+                ttVar.a(this.a, b10);
             }
         }
     }
 
-    public final void e() {
-        if (this.a) {
-            return;
+    public final boolean b() {
+        if (isFinished()) {
+            return false;
         }
-        this.a = true;
-        this.E = false;
-        int currentHeavyOperationFlags = NotificationCenter.getGlobalInstance().getCurrentHeavyOperationFlags() & (~this.h);
-        this.n = currentHeavyOperationFlags;
-        if (currentHeavyOperationFlags == 0 && this.r) {
-            this.r = false;
-        }
-        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.stopAllHeavyOperations);
-        NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.startAllHeavyOperations);
+        return Build.VERSION.SDK_INT < 31 || getDistance() != 0.0f;
     }
 
-    public final void f() {
-        if (this.a) {
-            if (!this.f) {
-                j();
-            }
-            this.a = false;
-            NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.stopAllHeavyOperations);
-            NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.startAllHeavyOperations);
-        }
+    @Override // android.widget.EdgeEffect
+    public final boolean draw(Canvas canvas) {
+        boolean draw = super.draw(canvas);
+        this.c.postOnAnimation(this.d);
+        return draw;
     }
 
-    public abstract void g();
-
-    public abstract void i(long j10);
-
-    public final void j() {
-        ArrayList arrayList = new ArrayList();
-        Bitmap bitmap = this.d;
-        if (bitmap != null) {
-            arrayList.add(bitmap);
-        }
-        Bitmap bitmap2 = this.b;
-        if (bitmap2 != null) {
-            arrayList.add(bitmap2);
-        }
-        this.d = null;
-        this.b = null;
-        this.c = null;
-        this.e = null;
-        AndroidUtilities.recycleBitmaps(arrayList);
+    @Override // android.widget.EdgeEffect
+    public final void finish() {
+        super.finish();
+        a();
     }
 
-    public final void k() {
-        this.I = true;
-        this.v++;
-        if (this.d != null) {
-            ArrayList arrayList = new ArrayList();
-            arrayList.add(this.d);
-            this.d = null;
-            AndroidUtilities.recycleBitmaps(arrayList);
-        }
+    @Override // android.widget.EdgeEffect
+    public final void onAbsorb(int i10) {
+        super.onAbsorb(i10);
+        a();
     }
 
-    public final void l(int i10) {
-        this.h = 7;
-        if (this.a) {
-            this.n = NotificationCenter.getGlobalInstance().getCurrentHeavyOperationFlags() & (~this.h);
-        }
+    @Override // android.widget.EdgeEffect
+    public final void onPull(float f7) {
+        super.onPull(f7);
+        a();
     }
 
-    public void h() {
+    @Override // android.widget.EdgeEffect
+    public final float onPullDistance(float f7, float f10) {
+        float onPullDistance = super.onPullDistance(f7, f10);
+        a();
+        return onPullDistance;
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final void onRelease() {
+        super.onRelease();
+        a();
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final void setSize(int i10, int i11) {
+        super.setSize(i10, i11);
+        a();
+    }
+
+    @Override // android.widget.EdgeEffect
+    public final void onPull(float f7, float f10) {
+        super.onPull(f7, f10);
+        a();
     }
 }

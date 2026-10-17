@@ -16,25 +16,15 @@ import org.telegram.tgnet.ConnectionsManager;
 import v7.g8;
 import v7.i8;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class a {
-    public static final a6.i a;
-    public static final a6.i b;
-    public static final a6.i c;
-    public static final a6.i d;
-    public static final a6.i e;
-    public static final a6.i f;
-
-    static {
-        int i10 = 22;
-        a = new a6.i("NO_DECISION", i10);
-        b = new a6.i("CLOSED", i10);
-        c = new a6.i("UNDEFINED", i10);
-        d = new a6.i("REUSABLE_CLAIMED", i10);
-        e = new a6.i("CONDITION_FALSE", i10);
-        f = new a6.i("NO_THREAD_ELEMENTS", i10);
-    }
+    public static final com.google.android.gms.internal.clearcut.e a = new com.google.android.gms.internal.clearcut.e("NO_DECISION", 1);
+    public static final com.google.android.gms.internal.clearcut.e b = new com.google.android.gms.internal.clearcut.e("CLOSED", 1);
+    public static final com.google.android.gms.internal.clearcut.e c = new com.google.android.gms.internal.clearcut.e("UNDEFINED", 1);
+    public static final com.google.android.gms.internal.clearcut.e d = new com.google.android.gms.internal.clearcut.e("REUSABLE_CLAIMED", 1);
+    public static final com.google.android.gms.internal.clearcut.e e = new com.google.android.gms.internal.clearcut.e("CONDITION_FALSE", 1);
+    public static final com.google.android.gms.internal.clearcut.e f = new com.google.android.gms.internal.clearcut.e("NO_THREAD_ELEMENTS", 1);
 
     public static final Object a(t tVar, long j10, td.p pVar) {
         while (true) {
@@ -43,9 +33,9 @@ public abstract class a {
             }
             AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = d.a;
             Object obj = atomicReferenceFieldUpdater.get(tVar);
-            a6.i iVar = b;
-            if (obj == iVar) {
-                return iVar;
+            com.google.android.gms.internal.clearcut.e eVar = b;
+            if (obj == eVar) {
+                return eVar;
             }
             t tVar2 = (t) ((d) obj);
             if (tVar2 == null) {

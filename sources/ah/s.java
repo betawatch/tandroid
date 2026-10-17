@@ -2,23 +2,22 @@ package ah;
 
 import android.os.Bundle;
 import android.text.TextUtils;
-import fi.d5;
-import fi.k3;
-import ig.e2;
+import gi.d3;
+import gi.s4;
+import ig.b2;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.a7;
-import org.telegram.ui.d7;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.c7;
+import org.telegram.ui.da;
 import org.telegram.ui.e6;
-import org.telegram.ui.ea;
-import org.telegram.ui.l8;
-import org.telegram.ui.n9;
-import org.telegram.ui.q4;
-import org.telegram.ui.u4;
-import org.telegram.ui.va;
-import org.telegram.ui.z9;
+import org.telegram.ui.k8;
+import org.telegram.ui.m9;
+import org.telegram.ui.r4;
+import org.telegram.ui.v4;
+import org.telegram.ui.y9;
+import org.telegram.ui.z6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class s extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
@@ -43,42 +42,48 @@ public final class s extends org.telegram.ui.ActionBar.j {
                 break;
             case 1:
                 if (i10 == -1) {
-                    ((fi.t) this.b).finishFragment();
+                    ((ai.x) this.b).finishFragment();
                     break;
                 }
                 break;
             case 2:
                 if (i10 == -1) {
-                    ((k3) this.b).r();
+                    ((gi.t) this.b).finishFragment();
                     break;
                 }
                 break;
             case 3:
                 if (i10 == -1) {
-                    ((d5) this.b).finishFragment();
+                    ((d3) this.b).r();
                     break;
                 }
                 break;
             case 4:
                 if (i10 == -1) {
-                    ((gi.f) this.b).finishFragment();
+                    ((s4) this.b).finishFragment();
                     break;
                 }
                 break;
             case 5:
                 if (i10 == -1) {
-                    ((gi.p) this.b).finishFragment();
+                    ((hi.f) this.b).finishFragment();
                     break;
                 }
                 break;
             case 6:
                 if (i10 == -1) {
-                    ((gi.s) this.b).finishFragment();
+                    ((hi.o) this.b).finishFragment();
                     break;
                 }
                 break;
             case 7:
-                gi.k0 k0Var = ((gi.e0) this.b).h;
+                if (i10 == -1) {
+                    ((hi.r) this.b).finishFragment();
+                    break;
+                }
+                break;
+            case 8:
+                hi.k0 k0Var = ((hi.e0) this.b).h;
                 if (i10 != -1) {
                     if (i10 == 3) {
                         k0Var.c.a(true, true);
@@ -99,8 +104,8 @@ public final class s extends org.telegram.ui.ActionBar.j {
                     break;
                 }
                 break;
-            case 8:
-                gi.k0 k0Var2 = ((gi.f0) this.b).r;
+            case 9:
+                hi.k0 k0Var2 = ((hi.f0) this.b).r;
                 if (i10 != 2) {
                     if (i10 == 3) {
                         k0Var2.b.a(true, true);
@@ -116,20 +121,20 @@ public final class s extends org.telegram.ui.ActionBar.j {
                 } else {
                     Bundle bundle = new Bundle();
                     bundle.putLong("community_id", k0Var2.e);
-                    k0Var2.s.presentFragment(new gi.p(bundle));
+                    k0Var2.s.presentFragment(new hi.o(bundle));
                     k0Var2.dismiss();
                     break;
                 }
                 break;
-            case 9:
-                gi.k0 k0Var3 = ((gi.j0) this.b).h;
+            case 10:
+                hi.k0 k0Var3 = ((hi.j0) this.b).h;
                 if (i10 == -1) {
                     k0Var3.v.d.W2.N(false);
                     k0Var3.d.D(0);
                     break;
                 }
                 break;
-            case 10:
+            case 11:
                 ig.c cVar = (ig.c) this.b;
                 if (i10 != -1) {
                     if (i10 == 1) {
@@ -141,7 +146,7 @@ public final class s extends org.telegram.ui.ActionBar.j {
                     break;
                 }
                 break;
-            case 11:
+            case 12:
                 ig.m mVar = (ig.m) this.b;
                 if (i10 != -1) {
                     if (i10 == 1) {
@@ -153,201 +158,188 @@ public final class s extends org.telegram.ui.ActionBar.j {
                     break;
                 }
                 break;
-            case 12:
-                ig.u0 u0Var = (ig.u0) this.b;
-                if (i10 != -1) {
-                    if (i10 == 1) {
-                        u0Var.a0();
-                        break;
-                    }
-                } else if (u0Var.onBackPressed(true)) {
-                    u0Var.finishFragment();
-                    break;
-                }
-                break;
             case 13:
-                ig.w0 w0Var = (ig.w0) this.b;
+                ig.r0 r0Var = (ig.r0) this.b;
                 if (i10 != -1) {
                     if (i10 == 1) {
-                        w0Var.X();
+                        r0Var.a0();
                         break;
                     }
-                } else if (w0Var.onBackPressed(true)) {
-                    w0Var.finishFragment();
+                } else if (r0Var.onBackPressed(true)) {
+                    r0Var.finishFragment();
                     break;
                 }
                 break;
             case 14:
-                ig.e1 e1Var = (ig.e1) this.b;
+                ig.t0 t0Var = (ig.t0) this.b;
                 if (i10 != -1) {
                     if (i10 == 1) {
-                        e1Var.W();
+                        t0Var.X();
                         break;
                     }
-                } else if (e1Var.onBackPressed(true)) {
-                    e1Var.finishFragment();
+                } else if (t0Var.onBackPressed(true)) {
+                    t0Var.finishFragment();
                     break;
                 }
                 break;
             case 15:
-                ig.g1 g1Var = (ig.g1) this.b;
+                ig.b1 b1Var = (ig.b1) this.b;
                 if (i10 != -1) {
                     if (i10 == 1) {
-                        g1Var.d0();
+                        b1Var.W();
                         break;
                     }
-                } else if (g1Var.onBackPressed(true)) {
-                    g1Var.finishFragment();
+                } else if (b1Var.onBackPressed(true)) {
+                    b1Var.finishFragment();
                     break;
                 }
                 break;
             case 16:
-                if (i10 == -1) {
-                    ((ig.i1) this.b).finishFragment();
+                ig.d1 d1Var = (ig.d1) this.b;
+                if (i10 != -1) {
+                    if (i10 == 1) {
+                        d1Var.d0();
+                        break;
+                    }
+                } else if (d1Var.onBackPressed(true)) {
+                    d1Var.finishFragment();
                     break;
                 }
                 break;
             case 17:
                 if (i10 == -1) {
-                    ((e2) this.b).finishFragment();
+                    ((ig.f1) this.b).finishFragment();
                     break;
                 }
                 break;
             case 18:
                 if (i10 == -1) {
-                    ((org.telegram.ui.h) this.b).finishFragment();
+                    ((b2) this.b).finishFragment();
                     break;
                 }
                 break;
             case 19:
                 if (i10 == -1) {
-                    ((org.telegram.ui.l) this.b).finishFragment();
+                    ((org.telegram.ui.h) this.b).finishFragment();
                     break;
                 }
                 break;
             case 20:
                 if (i10 == -1) {
-                    ((org.telegram.ui.p) this.b).finishFragment();
+                    ((org.telegram.ui.l) this.b).finishFragment();
                     break;
                 }
                 break;
             case 21:
                 if (i10 == -1) {
-                    ((q4) this.b).finishFragment();
+                    ((org.telegram.ui.p) this.b).finishFragment();
                     break;
                 }
                 break;
             case 22:
                 if (i10 == -1) {
-                    ((u4) this.b).finishFragment();
+                    ((r4) this.b).finishFragment();
                     break;
                 }
                 break;
             case 23:
                 if (i10 == -1) {
-                    ((e6) this.b).finishFragment();
+                    ((v4) this.b).finishFragment();
                     break;
                 }
                 break;
             case 24:
-                d7 d7Var = (d7) this.b;
+                if (i10 == -1) {
+                    ((e6) this.b).finishFragment();
+                    break;
+                }
+                break;
+            case 25:
+                c7 c7Var = (c7) this.b;
                 if (i10 != -1) {
                     if (i10 != 1) {
                         if (i10 != 3) {
                             if (i10 == 4) {
-                                d7.f0(d7Var, true);
+                                c7.f0(c7Var, true);
                                 break;
                             }
                         } else {
-                            d7.f0(d7Var, false);
+                            c7.f0(c7Var, false);
                             break;
                         }
                     } else {
-                        d7Var.m0();
+                        c7Var.m0();
                         break;
                     }
                 } else {
-                    kVar = ((m2) d7Var).actionBar;
-                    if (!kVar.t()) {
-                        d7Var.finishFragment();
+                    kVar = ((n2) c7Var).actionBar;
+                    if (!kVar.s()) {
+                        c7Var.finishFragment();
                         break;
                     } else {
-                        ai.c cVar2 = d7Var.Y;
+                        bi.c cVar2 = c7Var.Y;
                         if (cVar2 != null) {
                             cVar2.d();
                         }
-                        a7 a7Var = d7Var.N;
-                        if (a7Var != null) {
-                            a7Var.e(false);
-                            d7Var.N.d();
+                        z6 z6Var = c7Var.N;
+                        if (z6Var != null) {
+                            z6Var.e(false);
+                            c7Var.N.d();
                             break;
                         }
-                    }
-                }
-                break;
-            case 25:
-                l8 l8Var = (l8) this.b;
-                if (i10 == -1) {
-                    if (l8Var.P != 0 || l8Var.Q != 0 || l8Var.G) {
-                        l8Var.G = false;
-                        l8Var.P = 0;
-                        l8Var.Q = 0;
-                        l8Var.t0();
-                        l8Var.o0();
-                        break;
-                    } else {
-                        l8Var.finishFragment();
-                        break;
                     }
                 }
                 break;
             case 26:
-                n9 n9Var = (n9) this.b;
-                if (i10 != -1) {
-                    if (i10 == 2) {
-                        n9Var.p0(false);
-                        break;
-                    }
-                } else {
-                    kVar2 = ((m2) n9Var).actionBar;
-                    if (!kVar2.t()) {
-                        n9Var.finishFragment();
+                k8 k8Var = (k8) this.b;
+                if (i10 == -1) {
+                    if (k8Var.P != 0 || k8Var.Q != 0 || k8Var.G) {
+                        k8Var.G = false;
+                        k8Var.P = 0;
+                        k8Var.Q = 0;
+                        k8Var.t0();
+                        k8Var.o0();
                         break;
                     } else {
-                        n9Var.k0(true);
+                        k8Var.finishFragment();
                         break;
                     }
                 }
                 break;
             case 27:
-                if (i10 == -1) {
-                    ((z9) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 28:
-                ea eaVar = (ea) this.b;
+                m9 m9Var = (m9) this.b;
                 if (i10 != -1) {
-                    if (i10 == 1 && eaVar.a.getText().length() != 0) {
-                        ea.U(eaVar);
-                        eaVar.finishFragment();
+                    if (i10 == 2) {
+                        m9Var.p0(false);
                         break;
                     }
                 } else {
-                    eaVar.finishFragment();
+                    kVar2 = ((n2) m9Var).actionBar;
+                    if (!kVar2.s()) {
+                        m9Var.finishFragment();
+                        break;
+                    } else {
+                        m9Var.k0(true);
+                        break;
+                    }
+                }
+                break;
+            case 28:
+                if (i10 == -1) {
+                    ((y9) this.b).finishFragment();
                     break;
                 }
                 break;
             default:
-                va vaVar = (va) this.b;
+                da daVar = (da) this.b;
                 if (i10 != -1) {
-                    if (i10 == 1) {
-                        va.Y(vaVar);
-                        va.Z(vaVar);
+                    if (i10 == 1 && daVar.a.getText().length() != 0) {
+                        da.U(daVar);
+                        daVar.finishFragment();
                         break;
                     }
                 } else {
-                    vaVar.finishFragment();
+                    daVar.finishFragment();
                     break;
                 }
                 break;

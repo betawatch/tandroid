@@ -27,7 +27,7 @@ import org.telegram.messenger.beta.R;
 import r0.i0;
 import r0.l0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class m implements Window.Callback {
     public final Window.Callback a;
@@ -74,7 +74,7 @@ public final class m implements Window.Callback {
     public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
         boolean z10 = this.c;
         Window.Callback callback = this.a;
-        return z10 ? callback.dispatchKeyEvent(keyEvent) : this.e.i(keyEvent) || callback.dispatchKeyEvent(keyEvent);
+        return z10 ? callback.dispatchKeyEvent(keyEvent) : this.e.j(keyEvent) || callback.dispatchKeyEvent(keyEvent);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:30:0x0066, code lost:
@@ -221,7 +221,7 @@ public final class m implements Window.Callback {
             if (i10 == 0) {
                 q q6 = rVar.q(i10);
                 if (q6.m) {
-                    rVar.h(q6, false);
+                    rVar.i(q6, false);
                     return;
                 }
                 return;
@@ -300,7 +300,7 @@ public final class m implements Window.Callback {
             return k.j.b(this.a, callback, i10);
         }
         Context context = rVar.e;
-        pi.e eVar = new pi.e();
+        qi.e eVar = new qi.e();
         eVar.b = context;
         eVar.a = callback;
         eVar.c = new ArrayList();
@@ -310,7 +310,7 @@ public final class m implements Window.Callback {
         if (aVar != null) {
             aVar.a();
         }
-        n4.s sVar = new n4.s(rVar, eVar, z10, 16);
+        n4.s sVar = new n4.s(rVar, eVar, z10, 18);
         a0 r10 = rVar.r();
         int i11 = 1;
         if (r10 != null) {
@@ -324,9 +324,9 @@ public final class m implements Window.Callback {
             l.k kVar = zVar2.d;
             kVar.w();
             try {
-                if (((pi.e) zVar2.e.b).z(zVar2, kVar)) {
+                if (((qi.e) zVar2.e.b).B(zVar2, kVar)) {
                     r10.i = zVar2;
-                    zVar2.g();
+                    zVar2.h();
                     r10.f.c(zVar2);
                     r10.a(true);
                 } else {
@@ -393,8 +393,8 @@ public final class m implements Window.Callback {
                 kVar2.l = 1;
                 dVar.n = kVar2;
                 kVar2.e = dVar;
-                if (eVar.z(dVar, kVar2)) {
-                    dVar.g();
+                if (eVar.B(dVar, kVar2)) {
+                    dVar.h();
                     rVar.y.c(dVar);
                     rVar.x = dVar;
                     if (rVar.I && (viewGroup = rVar.J) != null) {
@@ -429,7 +429,7 @@ public final class m implements Window.Callback {
         rVar.y();
         k.a aVar3 = rVar.x;
         if (aVar3 != null) {
-            return eVar.k(aVar3);
+            return eVar.n(aVar3);
         }
         return null;
     }

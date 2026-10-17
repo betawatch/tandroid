@@ -2,10 +2,10 @@ package hg;
 
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ac;
-import org.telegram.ui.jt0;
+import org.telegram.ui.ls0;
+import org.telegram.ui.xb;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class a0 extends s4.b0 {
     public final /* synthetic */ int I;
@@ -40,14 +40,14 @@ public final class a0 extends s4.b0 {
     public void v0(RecyclerView recyclerView, s4.y0 y0Var, int i10) {
         switch (this.I) {
             case 4:
-                ki.o oVar = new ki.o(recyclerView.getContext(), 0);
-                oVar.a = i10;
-                w0(oVar);
+                li.n nVar = new li.n(recyclerView.getContext(), 0);
+                nVar.a = i10;
+                w0(nVar);
                 break;
             case 15:
-                jt0 jt0Var = new jt0(recyclerView.getContext());
-                jt0Var.a = i10;
-                w0(jt0Var);
+                ls0 ls0Var = new ls0(recyclerView.getContext());
+                ls0Var.a = i10;
+                w0(ls0Var);
                 break;
             default:
                 super.v0(recyclerView, y0Var, i10);
@@ -106,7 +106,7 @@ public final class a0 extends s4.b0 {
         this.I = i11;
     }
 
-    public a0(ac acVar) {
+    public a0(xb xbVar) {
         this.I = 4;
     }
 

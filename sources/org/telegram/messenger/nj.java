@@ -1,31 +1,66 @@
 package org.telegram.messenger;
 
-import java.util.List;
+import java.util.HashMap;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class nj implements Runnable {
-    public final /* synthetic */ int a;
+    public final /* synthetic */ int a = 0;
     public final /* synthetic */ SendMessagesHelper b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ List d;
+    public final /* synthetic */ MessageObject c;
+    public final /* synthetic */ String d;
+    public final /* synthetic */ SendMessagesHelper.DelayedMessage e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ SendMessagesHelper.DelayedMessage h;
+    public final /* synthetic */ Object n;
+    public final /* synthetic */ HashMap r;
+    public final /* synthetic */ boolean s;
+    public final /* synthetic */ Object v;
+    public final /* synthetic */ TLObject w;
+    public final /* synthetic */ TLObject x;
 
-    public /* synthetic */ nj(SendMessagesHelper sendMessagesHelper, String str, List list, int i10) {
-        this.a = i10;
+    public /* synthetic */ nj(SendMessagesHelper sendMessagesHelper, TLObject tLObject, TLRPC.TL_messages_addPollAnswer tL_messages_addPollAnswer, TLObject tLObject2, MessageObject messageObject, String str, SendMessagesHelper.DelayedMessage delayedMessage, boolean z10, SendMessagesHelper.DelayedMessage delayedMessage2, Object obj, HashMap hashMap, boolean z11) {
         this.b = sendMessagesHelper;
-        this.c = str;
-        this.d = list;
+        this.v = tLObject;
+        this.x = tL_messages_addPollAnswer;
+        this.w = tLObject2;
+        this.c = messageObject;
+        this.d = str;
+        this.e = delayedMessage;
+        this.f = z10;
+        this.h = delayedMessage2;
+        this.n = obj;
+        this.r = hashMap;
+        this.s = z11;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$sendNotificationCallback$31(this.c, this.d);
+                this.b.lambda$performSendMessageRequest$78((TLObject) this.v, (TLRPC.TL_messages_addPollAnswer) this.x, this.w, this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s);
                 break;
             default:
-                this.b.lambda$sendCallback$41(this.c, this.d);
+                this.b.lambda$performSendMessageRequest$86((org.telegram.ui.ActionBar.n2) this.v, (TLRPC.TL_inputMediaStakeDice) this.w, (TLRPC.TL_messages_sendMedia) this.x, this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s);
                 break;
         }
+    }
+
+    public /* synthetic */ nj(SendMessagesHelper sendMessagesHelper, org.telegram.ui.ActionBar.n2 n2Var, TLRPC.TL_inputMediaStakeDice tL_inputMediaStakeDice, TLRPC.TL_messages_sendMedia tL_messages_sendMedia, MessageObject messageObject, String str, SendMessagesHelper.DelayedMessage delayedMessage, boolean z10, SendMessagesHelper.DelayedMessage delayedMessage2, Object obj, HashMap hashMap, boolean z11) {
+        this.b = sendMessagesHelper;
+        this.v = n2Var;
+        this.w = tL_inputMediaStakeDice;
+        this.x = tL_messages_sendMedia;
+        this.c = messageObject;
+        this.d = str;
+        this.e = delayedMessage;
+        this.f = z10;
+        this.h = delayedMessage2;
+        this.n = obj;
+        this.r = hashMap;
+        this.s = z11;
     }
 }

@@ -1,358 +1,59 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.text.TextUtils;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
-import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class vy extends lm0 {
-    public boolean E;
-    public final /* synthetic */ wz F;
-    public final qy c;
-    public long d;
-    public TLRPC.StickerSet e;
-    public ArrayList f;
-    public final ArrayList h = new ArrayList();
-    public final ArrayList n = new ArrayList();
-    public final ArrayList r = new ArrayList();
-    public final ArrayList s = new ArrayList();
-    public String v;
-    public String w;
-    public uy x;
-    public boolean y;
+public final class vy extends e61 {
+    public static final /* synthetic */ int a = 0;
 
-    public vy(wz wzVar, Context context) {
-        this.F = wzVar;
-        qy qyVar = new qy(context, wzVar.c1, new d(this, 11), new xv(this, 1), wzVar.Z1);
-        this.c = qyVar;
-        qyVar.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(5.0f));
-        qyVar.setClipToPadding(false);
-        qyVar.W2.r = false;
-        qyVar.setNestedScrollingEnabled(false);
-        qyVar.setDrawSelection(false);
-        qyVar.setOnTouchListener(new m.e2(this, 1));
+    static {
+        e61.setup(new vy());
     }
 
-    public static void E(vy vyVar, Runnable runnable, ArrayList arrayList, boolean z10) {
-        wz wzVar = vyVar.F;
-        String[] strArr = wzVar.W0;
-        String str = (strArr == null || strArr.length == 0) ? "" : strArr[0];
-        String str2 = vyVar.v;
-        if (str2 == null) {
-            return;
-        }
-        MediaDataController.getInstance(wzVar.c1).searchStickers(true, str, str2, new bi.u3((Object) vyVar, str2, arrayList, (Object) runnable, 9), z10);
+    public static f61 a(TLRPC.StickerSetCovered stickerSetCovered, ky kyVar, boolean z10) {
+        f61 J = f61.J(vy.class);
+        long j10 = stickerSetCovered.set.id;
+        long j11 = 1 + j10;
+        J.d = (int) (j11 ^ (j11 >>> 32));
+        J.B = j10;
+        J.G = stickerSetCovered;
+        J.H = kyVar;
+        J.e = z10;
+        return J;
     }
 
-    @Override // org.telegram.ui.Components.lm0
-    public final boolean D(s4.b1 b1Var) {
-        int i10 = b1Var.f;
-        return i10 == 0 || i10 == 4;
+    @Override // org.telegram.ui.Components.e61
+    public final void bindView(View view, f61 f61Var, boolean z10, s61 s61Var, a71 a71Var) {
+        oh.c cVar = (oh.c) view;
+        Object obj = f61Var.G;
+        if (obj instanceof TLRPC.TL_messages_stickerSet) {
+            cVar.setPack((TLRPC.TL_messages_stickerSet) obj);
+        } else if (obj instanceof TLRPC.StickerSetCovered) {
+            TLRPC.Document document = ((ky) f61Var.H).e;
+            cVar.d.setText(((TLRPC.StickerSetCovered) obj).set.short_name);
+            cVar.c.d(document, null, null, null, false, false);
+        }
+        cVar.a(f61Var.e, false);
     }
 
-    public final void F(String str, boolean z10) {
-        wz wzVar = this.F;
-        iy iyVar = wzVar.P;
-        if (TextUtils.isEmpty(str)) {
-            this.v = null;
-            s4.g0 adapter = iyVar.getAdapter();
-            fy fyVar = wzVar.R;
-            if (adapter != fyVar) {
-                iyVar.setAdapter(fyVar);
-                this.y = false;
-            }
-            this.d = 0L;
-            wzVar.b.a(false, true);
-            l();
-        } else {
-            this.v = str.toLowerCase();
-        }
-        uy uyVar = this.x;
-        if (uyVar != null) {
-            AndroidUtilities.cancelRunOnUIThread(uyVar);
-        }
-        if (TextUtils.isEmpty(this.v)) {
-            return;
-        }
-        this.n.clear();
-        this.E = false;
-        wzVar.V.e(true);
-        uy uyVar2 = new uy(this);
-        this.x = uyVar2;
-        AndroidUtilities.runOnUIThread(uyVar2, z10 ? 300L : 0L);
+    @Override // org.telegram.ui.Components.e61
+    public final boolean contentsEquals(f61 f61Var, f61 f61Var2) {
+        return f61Var.B == f61Var2.B && f61Var.e == f61Var2.e;
     }
 
-    @Override // s4.g0
-    public final int h() {
-        if (this.d != 0) {
-            return this.f.size() + 4;
-        }
-        ArrayList arrayList = this.h;
-        boolean isEmpty = arrayList.isEmpty();
-        ArrayList arrayList2 = this.s;
-        ArrayList arrayList3 = this.r;
-        if (isEmpty && arrayList3.isEmpty() && arrayList2.isEmpty() && !this.y) {
-            return this.F.getRecentEmoji().size() + 1;
-        }
-        int i10 = 2;
-        if (arrayList.isEmpty() && arrayList3.isEmpty() && arrayList2.isEmpty()) {
-            return 2;
-        }
-        if (!arrayList2.isEmpty()) {
-            i10 = 3;
-        } else if (arrayList.isEmpty()) {
-            i10 = 1;
-        }
-        int size = arrayList.size() + i10;
-        if (arrayList3.isEmpty()) {
-            return size;
-        }
-        return arrayList3.size() + size + 1;
+    @Override // org.telegram.ui.Components.e61
+    public final View createView(Context context, im0 im0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
+        oh.c cVar = new oh.c(context, d6Var);
+        cVar.setLayoutParams(new s4.o0(AndroidUtilities.dp(64.0f), -1));
+        return cVar;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:30:0x0049, code lost:
-    
-        if (r8 == 2) goto L49;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:45:0x0052, code lost:
-    
-        if (r8 == 1) goto L49;
-     */
-    @Override // s4.g0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final int j(int i10) {
-        int i11 = 2;
-        if (this.d != 0) {
-            if (i10 != 0) {
-                if (i10 == 1) {
-                    return 4;
-                }
-                if (i10 != 2) {
-                    return i10 == h() - 1 ? 5 : 0;
-                }
-                return 3;
-            }
-            return 1;
-        }
-        if (i10 != 0) {
-            ArrayList arrayList = this.s;
-            ArrayList arrayList2 = this.r;
-            ArrayList arrayList3 = this.h;
-            if (i10 == 1 && this.y && arrayList3.isEmpty() && arrayList2.isEmpty() && arrayList.isEmpty()) {
-                return 2;
-            }
-            if (arrayList.isEmpty()) {
-                if (!arrayList3.isEmpty()) {
-                }
-                if (arrayList2.isEmpty()) {
-                    return 0;
-                }
-                if (!arrayList.isEmpty()) {
-                    i11 = 3;
-                } else if (arrayList3.isEmpty()) {
-                    i11 = 1;
-                }
-                if (i10 != arrayList3.size() + i11) {
-                    return 0;
-                }
-            } else if (i10 == 1) {
-                return 4;
-            }
-            return 3;
-        }
-        return 1;
-    }
-
-    @Override // s4.g0
-    public final void l() {
-        this.c.W2.N(false);
-        super.l();
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:42:0x00ec A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x010a  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0124  */
-    @Override // s4.g0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void v(s4.b1 b1Var, int i10) {
-        String str;
-        String str2;
-        TLRPC.Document document;
-        boolean z10;
-        String str3;
-        String str4;
-        Long l4;
-        int i11 = b1Var.f;
-        View view = b1Var.a;
-        ArrayList arrayList = this.s;
-        int i12 = 1;
-        ArrayList arrayList2 = this.h;
-        if (i11 != 0) {
-            if (i11 != 3) {
-                return;
-            }
-            org.telegram.ui.Cells.o8 o8Var = (org.telegram.ui.Cells.o8) view;
-            if (this.d != 0) {
-                o8Var.b(0, LocaleController.formatPluralString("EmojiCount", this.f.size(), new Object[0]));
-                return;
-            }
-            if (!arrayList.isEmpty()) {
-                i12 = 3;
-            } else if (!arrayList2.isEmpty()) {
-                i12 = 2;
-            }
-            if (i10 == arrayList2.size() + i12) {
-                o8Var.b(0, LocaleController.getString(R.string.StickerOrEmojiGlobalSearchResult));
-                return;
-            } else {
-                o8Var.b(0, LocaleController.getString(R.string.StickerOrEmojiSearchResult));
-                return;
-            }
-        }
-        ez ezVar = (ez) view;
-        ezVar.a = i10;
-        ezVar.e = null;
-        int i13 = i10 - 1;
-        if (!arrayList.isEmpty() || this.d != 0) {
-            i13 = i10 - 3;
-        } else if (!arrayList2.isEmpty()) {
-            i13 = i10 - 2;
-        }
-        if (this.d != 0) {
-            document = (TLRPC.Document) this.f.get(i13);
-            str = null;
-            str2 = null;
-        } else {
-            boolean isEmpty = arrayList2.isEmpty();
-            ArrayList arrayList3 = this.r;
-            if (isEmpty && arrayList3.isEmpty() && !this.y) {
-                str = this.F.getRecentEmoji().get(i13);
-                str2 = str;
-                z10 = true;
-                document = null;
-                if (str != null && str.startsWith("animated_")) {
-                    try {
-                        l4 = Long.valueOf(Long.parseLong(str.substring(9)));
-                        str4 = null;
-                        str3 = null;
-                    } catch (Exception unused) {
-                    }
-                    if (document == null || l4 != null) {
-                        ezVar.setPadding(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f));
-                    } else {
-                        ezVar.setPadding(0, 0, 0, 0);
-                    }
-                    if (document == null) {
-                        ezVar.a(null, z10);
-                        if (ezVar.getSpan() == null || ezVar.getSpan().document != document) {
-                            ezVar.setSpan(new b6(document, (Paint.FontMetricsInt) null));
-                        }
-                    } else if (l4 != null) {
-                        ezVar.a(null, z10);
-                        if (ezVar.getSpan() == null || ezVar.getSpan().getDocumentId() != l4.longValue()) {
-                            ezVar.setSpan(new b6(l4.longValue(), (Paint.FontMetricsInt) null));
-                        }
-                    } else if (str3 != null) {
-                        ezVar.a(Emoji.getEmojiBigDrawable(str3), z10);
-                        ezVar.setSpan(null);
-                    } else {
-                        ezVar.a(null, z10);
-                        ezVar.setSpan(null);
-                    }
-                    ezVar.setTag(str4);
-                }
-                str3 = str2;
-                str4 = str;
-                l4 = null;
-                if (document == null) {
-                }
-                ezVar.setPadding(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f));
-                if (document == null) {
-                }
-                ezVar.setTag(str4);
-            }
-            str = i13 < arrayList2.size() ? ((MediaDataController.KeywordResult) arrayList2.get(i13)).emoji : ((MediaDataController.KeywordResult) arrayList3.get((i13 - arrayList2.size()) - 1)).emoji;
-            str2 = str;
-            document = null;
-        }
-        z10 = false;
-        if (str != null) {
-            l4 = Long.valueOf(Long.parseLong(str.substring(9)));
-            str4 = null;
-            str3 = null;
-            if (document == null) {
-            }
-            ezVar.setPadding(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f));
-            if (document == null) {
-            }
-            ezVar.setTag(str4);
-        }
-        str3 = str2;
-        str4 = str;
-        l4 = null;
-        if (document == null) {
-        }
-        ezVar.setPadding(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f));
-        if (document == null) {
-        }
-        ezVar.setTag(str4);
-    }
-
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        View view;
-        wz wzVar = this.F;
-        if (i10 == 0) {
-            view = new ez(wzVar.getContext());
-        } else if (i10 == 1) {
-            View view2 = new View(wzVar.getContext());
-            view2.setLayoutParams(new s4.o0(-1, wzVar.b1));
-            view = view2;
-        } else if (i10 == 3) {
-            view = new org.telegram.ui.Cells.o8(wzVar.getContext(), true, false, wzVar.Z1, wzVar.i2);
-        } else if (i10 == 4) {
-            ViewGroup.LayoutParams o0Var = new s4.o0(-1, AndroidUtilities.dp(79.0f));
-            View view3 = this.c;
-            view3.setLayoutParams(o0Var);
-            view = view3;
-        } else if (i10 != 5) {
-            ah.x xVar = new ah.x(this, wzVar.getContext(), 14);
-            TextView textView = new TextView(wzVar.getContext());
-            org.telegram.messenger.sk.j(16.0f, R.string.NoEmojiFound, 1, textView);
-            int i11 = org.telegram.ui.ActionBar.g6.Le;
-            textView.setTextColor(wzVar.B(i11));
-            xVar.addView(textView, w7.z5.a(-2.0f, 0.0f, 10.0f, 0.0f, 0.0f, -2, 49));
-            ImageView imageView = new ImageView(wzVar.getContext());
-            imageView.setScaleType(ImageView.ScaleType.CENTER);
-            imageView.setImageResource(R.drawable.msg_emoji_question);
-            imageView.setColorFilter(new PorterDuffColorFilter(wzVar.B(i11), PorterDuff.Mode.MULTIPLY));
-            xVar.addView(imageView, w7.z5.e(48, 48, 85));
-            imageView.setOnClickListener(new sy(this));
-            xVar.setLayoutParams(new s4.o0(-1, -2));
-            view = xVar;
-        } else {
-            View view4 = new View(wzVar.getContext());
-            view4.setLayoutParams(new s4.o0(-1, AndroidUtilities.dp(68.0f)));
-            view = view4;
-        }
-        return new wl0(view);
+    @Override // org.telegram.ui.Components.e61
+    public final boolean equals(f61 f61Var, f61 f61Var2) {
+        return f61Var.B == f61Var2.B;
     }
 }

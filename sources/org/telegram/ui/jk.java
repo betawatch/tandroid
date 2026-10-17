@@ -1,77 +1,39 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.view.MotionEvent;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class jk extends org.telegram.ui.Cells.w0 {
-    public final /* synthetic */ fo t2;
+public final class jk extends org.telegram.ui.Components.nd {
+    public final /* synthetic */ boolean e;
+    public final /* synthetic */ sn f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jk(Context context, org.telegram.ui.ActionBar.c6 c6Var, fo foVar) {
-        super(context, c6Var, false);
-        this.t2 = foVar;
+    public jk(sn snVar, Context context, boolean z10) {
+        super(context);
+        this.f = snVar;
+        this.e = z10;
     }
 
-    @Override // org.telegram.ui.Cells.w0, android.view.View
-    public final void onDraw(Canvas canvas) {
-        fo foVar = this.t2;
-        if (foVar.B8 != null) {
-            return;
-        }
-        float y3 = ((foVar.x0.getY() + foVar.s9) - getY()) - AndroidUtilities.dp(4.0f);
-        if (y3 <= 0.0f) {
-            super.onDraw(canvas);
-        } else if (y3 < getMeasuredHeight()) {
-            canvas.save();
-            canvas.clipRect(0.0f, y3, getMeasuredWidth(), getMeasuredHeight());
-            super.onDraw(canvas);
-            canvas.restore();
-        }
+    @Override // org.telegram.ui.Components.nd
+    public final void d() {
+        int dp = this.e ? AndroidUtilities.dp(4.0f) : 0;
+        int i10 = org.telegram.ui.ActionBar.h6.ve;
+        sn snVar = this.f;
+        setBackground(org.telegram.ui.ActionBar.h6.X(AndroidUtilities.dp(19.0f), 436207615 & snVar.getThemedColor(i10), dp, AndroidUtilities.dp(3.0f), 0, AndroidUtilities.dp(3.0f)));
+        getImageView().setColorFilter(new PorterDuffColorFilter(snVar.getThemedColor(i10), PorterDuff.Mode.MULTIPLY));
+        getTextView().setTextColor(snVar.getThemedColor(i10));
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.ActionBar.k kVar;
-        if (getAlpha() == 0.0f) {
-            return false;
+    @Override // org.telegram.ui.Components.nd
+    public final void setEditButton(boolean z10) {
+        super.setEditButton(z10);
+        if (this.e) {
+            getTextView().setMaxWidth(z10 ? AndroidUtilities.dp(116.0f) : ConnectionsManager.DEFAULT_DATACENTER_ID);
         }
-        fo foVar = this.t2;
-        kVar = ((org.telegram.ui.ActionBar.m2) foVar).actionBar;
-        if (kVar.t() || foVar.F9()) {
-            return false;
-        }
-        return super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Cells.w0, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.ActionBar.k kVar;
-        if (getAlpha() == 0.0f) {
-            return false;
-        }
-        fo foVar = this.t2;
-        kVar = ((org.telegram.ui.ActionBar.m2) foVar).actionBar;
-        if (kVar.t() || foVar.F9()) {
-            return false;
-        }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // android.view.View
-    public final void setAlpha(float f7) {
-        super.setAlpha(f7);
-        setVisibility(f7 > 0.0f ? 0 : 4);
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        if (getTranslationY() != f7) {
-            invalidate();
-        }
-        super.setTranslationY(f7);
     }
 }

@@ -1,47 +1,39 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+import org.telegram.ui.sn;
+import org.webrtc.TextureViewRenderer;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class cf implements Runnable {
-    public final /* synthetic */ int a = 2;
-    public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ boolean c;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
     public final /* synthetic */ int d;
-    public final /* synthetic */ long e;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ cf(MessagesStorage messagesStorage, int i10, boolean z10, long j10) {
-        this.b = messagesStorage;
-        this.d = i10;
-        this.c = z10;
-        this.e = j10;
+    public /* synthetic */ cf(Object obj, int i10, int i11, int i12, int i13, int i14) {
+        this.a = i14;
+        this.f = obj;
+        this.b = i10;
+        this.c = i11;
+        this.d = i12;
+        this.e = i13;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$markMessagesAsDeleted$231(this.e, this.d, this.c);
+                ((MessagesStorage) this.f).lambda$saveDiffParams$35(this.b, this.c, this.d, this.e);
                 break;
             case 1:
-                this.b.lambda$removeFromDownloadQueue$182(this.c, this.d, this.e);
+                sn.w1((sn) this.f, this.b, this.c, this.d, this.e);
                 break;
             default:
-                this.b.lambda$loadPendingTasks$31(this.d, this.c, this.e);
+                ((TextureViewRenderer) this.f).lambda$onFrameResolutionChanged$0(this.b, this.c, this.d, this.e);
                 break;
         }
-    }
-
-    public /* synthetic */ cf(MessagesStorage messagesStorage, long j10, int i10, boolean z10) {
-        this.b = messagesStorage;
-        this.e = j10;
-        this.d = i10;
-        this.c = z10;
-    }
-
-    public /* synthetic */ cf(MessagesStorage messagesStorage, boolean z10, int i10, long j10) {
-        this.b = messagesStorage;
-        this.c = z10;
-        this.d = i10;
-        this.e = j10;
     }
 }

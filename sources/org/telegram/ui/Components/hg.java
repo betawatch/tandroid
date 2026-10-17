@@ -1,28 +1,67 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class hg extends u51 {
-    public final /* synthetic */ ig h;
+public final class hg extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ ChatActivityEnterView c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hg(ig igVar, Context context, org.telegram.ui.ActionBar.m2 m2Var, i61 i61Var, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, m2Var, i61Var, c6Var);
-        this.h = igVar;
+    public /* synthetic */ hg(ChatActivityEnterView chatActivityEnterView, int i10, int i11) {
+        this.a = i11;
+        this.c = chatActivityEnterView;
+        this.b = i10;
     }
 
-    @Override // org.telegram.ui.Components.u51, org.telegram.ui.ActionBar.e3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.i2
-    public final void dismiss() {
-        super.dismiss();
-        ChatActivityEnterView chatActivityEnterView = this.h.a;
-        if (chatActivityEnterView.a3 == this) {
-            chatActivityEnterView.a3 = null;
-        }
-        pg pgVar = chatActivityEnterView.Z2;
-        if (pgVar != null) {
-            pgVar.D(false);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                int i10 = this.b;
+                ChatActivityEnterView chatActivityEnterView = this.c;
+                if (i10 == 0) {
+                    chatActivityEnterView.A2 = 0;
+                }
+                chatActivityEnterView.V0 = null;
+                chatActivityEnterView.H1.setTranslationY(0.0f);
+                chatActivityEnterView.H1.setVisibility(8);
+                chatActivityEnterView.L3.unlock();
+                og ogVar = chatActivityEnterView.Z2;
+                if (ogVar != null) {
+                    ogVar.z(0.0f);
+                }
+                chatActivityEnterView.requestLayout();
+                break;
+            default:
+                ChatActivityEnterView chatActivityEnterView2 = this.c;
+                jw0 jw0Var = chatActivityEnterView2.m1;
+                chatActivityEnterView2.A3 = false;
+                chatActivityEnterView2.B3 = null;
+                dg dgVar = chatActivityEnterView2.U0;
+                if (dgVar != null) {
+                    if (chatActivityEnterView2.d5 == null) {
+                        dgVar.getLayoutParams().height = this.b;
+                    }
+                    chatActivityEnterView2.U0.setLayerType(0, null);
+                }
+                if (jw0Var != null) {
+                    jw0Var.requestLayout();
+                    jw0Var.setForeground(null);
+                    jw0Var.setWillNotDraw(false);
+                }
+                if (chatActivityEnterView2.z2 && chatActivityEnterView2.r0()) {
+                    chatActivityEnterView2.r1(0, chatActivityEnterView2.f2, true, true);
+                }
+                ie ieVar = chatActivityEnterView2.r0;
+                if (ieVar != null) {
+                    ieVar.run();
+                    chatActivityEnterView2.r0 = null;
+                }
+                chatActivityEnterView2.L3.unlock();
+                break;
         }
     }
 }

@@ -1,47 +1,39 @@
 package com.google.android.gms.internal.clearcut;
 
-import java.lang.reflect.Field;
-import sun.misc.Unsafe;
-
 /* loaded from: classes.dex */
-public abstract class i1 {
-    public final Unsafe a;
-
-    public i1(Unsafe unsafe) {
-        this.a = unsafe;
+public final class i1 extends j1 {
+    @Override // com.google.android.gms.internal.clearcut.j1
+    public final void c(Object obj, long j10, double d) {
+        this.a.putDouble(obj, j10, d);
     }
 
-    public final long a(Field field) {
-        return this.a.objectFieldOffset(field);
+    @Override // com.google.android.gms.internal.clearcut.j1
+    public final void d(Object obj, long j10, float f7) {
+        this.a.putFloat(obj, j10, f7);
     }
 
-    public final void b(long j10, Object obj, int i10) {
-        this.a.putInt(obj, j10, i10);
+    @Override // com.google.android.gms.internal.clearcut.j1
+    public final void f(Object obj, long j10, boolean z10) {
+        this.a.putBoolean(obj, j10, z10);
     }
 
-    public abstract void c(Object obj, long j10, double d);
-
-    public abstract void d(Object obj, long j10, float f7);
-
-    public final void e(Object obj, long j10, long j11) {
-        this.a.putLong(obj, j10, j11);
+    @Override // com.google.android.gms.internal.clearcut.j1
+    public final boolean i(Object obj, long j10) {
+        return this.a.getBoolean(obj, j10);
     }
 
-    public abstract void f(Object obj, long j10, boolean z10);
-
-    public final int g(Object obj, long j10) {
-        return this.a.getInt(obj, j10);
+    @Override // com.google.android.gms.internal.clearcut.j1
+    public final float j(Object obj, long j10) {
+        return this.a.getFloat(obj, j10);
     }
 
-    public final long h(Object obj, long j10) {
-        return this.a.getLong(obj, j10);
+    @Override // com.google.android.gms.internal.clearcut.j1
+    public final double k(Object obj, long j10) {
+        return this.a.getDouble(obj, j10);
     }
 
-    public abstract boolean i(Object obj, long j10);
-
-    public abstract float j(Object obj, long j10);
-
-    public abstract double k(Object obj, long j10);
-
-    public abstract byte l(Object obj, long j10);
+    @Override // com.google.android.gms.internal.clearcut.j1
+    public final byte l(Object obj, long j10) {
+        return this.a.getByte(obj, j10);
+    }
 }

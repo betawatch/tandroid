@@ -6,120 +6,68 @@ import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.text.InputFilter;
 import android.util.AttributeSet;
-import android.view.ActionMode;
-import android.view.accessibility.AccessibilityEvent;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.Button;
+import android.widget.CheckBox;
 import org.telegram.messenger.beta.R;
-import w7.n6;
-import w7.w7;
+import v7.q7;
+import w7.o6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class o extends Button implements u0.k {
-    public final e2.c a;
-    public final y0 b;
-    public v c;
+public final class o extends CheckBox implements u0.k {
+    public final q a;
+    public final e2.c b;
+    public final x0 c;
+    public u d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public o(Context context, AttributeSet attributeSet) {
-        super(context, attributeSet, R.attr.buttonStyle);
-        e3.a(context);
-        d3.a(this, getContext());
+        super(context, attributeSet, R.attr.checkboxStyle);
+        d3.a(context);
+        c3.a(this, getContext());
+        q qVar = new q(this);
+        this.a = qVar;
+        qVar.e(attributeSet, R.attr.checkboxStyle);
         e2.c cVar = new e2.c(this);
-        this.a = cVar;
-        cVar.f(attributeSet, R.attr.buttonStyle);
-        y0 y0Var = new y0(this);
-        this.b = y0Var;
-        y0Var.f(attributeSet, R.attr.buttonStyle);
-        y0Var.b();
-        getEmojiTextViewHelper().a(attributeSet, R.attr.buttonStyle);
+        this.b = cVar;
+        cVar.f(attributeSet, R.attr.checkboxStyle);
+        x0 x0Var = new x0(this);
+        this.c = x0Var;
+        x0Var.f(attributeSet, R.attr.checkboxStyle);
+        getEmojiTextViewHelper().a(attributeSet, R.attr.checkboxStyle);
     }
 
-    private v getEmojiTextViewHelper() {
-        if (this.c == null) {
-            this.c = new v(this);
+    private u getEmojiTextViewHelper() {
+        if (this.d == null) {
+            this.d = new u(this);
         }
-        return this.c;
+        return this.d;
     }
 
-    @Override // android.widget.TextView, android.view.View
+    @Override // android.widget.CompoundButton, android.widget.TextView, android.view.View
     public final void drawableStateChanged() {
         super.drawableStateChanged();
-        e2.c cVar = this.a;
+        e2.c cVar = this.b;
         if (cVar != null) {
             cVar.b();
         }
-        y0 y0Var = this.b;
-        if (y0Var != null) {
-            y0Var.b();
+        x0 x0Var = this.c;
+        if (x0Var != null) {
+            x0Var.b();
         }
     }
 
-    @Override // android.widget.TextView
-    public int getAutoSizeMaxTextSize() {
-        if (w3.b) {
-            return super.getAutoSizeMaxTextSize();
+    @Override // android.widget.CompoundButton, android.widget.TextView
+    public int getCompoundPaddingLeft() {
+        int compoundPaddingLeft = super.getCompoundPaddingLeft();
+        q qVar = this.a;
+        if (qVar != null) {
+            qVar.getClass();
         }
-        y0 y0Var = this.b;
-        if (y0Var != null) {
-            return Math.round(y0Var.i.e);
-        }
-        return -1;
-    }
-
-    @Override // android.widget.TextView
-    public int getAutoSizeMinTextSize() {
-        if (w3.b) {
-            return super.getAutoSizeMinTextSize();
-        }
-        y0 y0Var = this.b;
-        if (y0Var != null) {
-            return Math.round(y0Var.i.d);
-        }
-        return -1;
-    }
-
-    @Override // android.widget.TextView
-    public int getAutoSizeStepGranularity() {
-        if (w3.b) {
-            return super.getAutoSizeStepGranularity();
-        }
-        y0 y0Var = this.b;
-        if (y0Var != null) {
-            return Math.round(y0Var.i.c);
-        }
-        return -1;
-    }
-
-    @Override // android.widget.TextView
-    public int[] getAutoSizeTextAvailableSizes() {
-        if (w3.b) {
-            return super.getAutoSizeTextAvailableSizes();
-        }
-        y0 y0Var = this.b;
-        return y0Var != null ? y0Var.i.f : new int[0];
-    }
-
-    @Override // android.widget.TextView
-    public int getAutoSizeTextType() {
-        if (w3.b) {
-            return super.getAutoSizeTextType() == 1 ? 1 : 0;
-        }
-        y0 y0Var = this.b;
-        if (y0Var != null) {
-            return y0Var.i.a;
-        }
-        return 0;
-    }
-
-    @Override // android.widget.TextView
-    public ActionMode.Callback getCustomSelectionActionModeCallback() {
-        return w7.d(super.getCustomSelectionActionModeCallback());
+        return compoundPaddingLeft;
     }
 
     public ColorStateList getSupportBackgroundTintList() {
-        e2.c cVar = this.a;
+        e2.c cVar = this.b;
         if (cVar != null) {
             return cVar.d();
         }
@@ -127,54 +75,35 @@ public final class o extends Button implements u0.k {
     }
 
     public PorterDuff.Mode getSupportBackgroundTintMode() {
-        e2.c cVar = this.a;
+        e2.c cVar = this.b;
         if (cVar != null) {
             return cVar.e();
         }
         return null;
     }
 
+    public ColorStateList getSupportButtonTintList() {
+        q qVar = this.a;
+        if (qVar != null) {
+            return (ColorStateList) qVar.a;
+        }
+        return null;
+    }
+
+    public PorterDuff.Mode getSupportButtonTintMode() {
+        q qVar = this.a;
+        if (qVar != null) {
+            return (PorterDuff.Mode) qVar.b;
+        }
+        return null;
+    }
+
     public ColorStateList getSupportCompoundDrawablesTintList() {
-        return this.b.d();
+        return this.c.d();
     }
 
     public PorterDuff.Mode getSupportCompoundDrawablesTintMode() {
-        return this.b.e();
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityEvent(AccessibilityEvent accessibilityEvent) {
-        super.onInitializeAccessibilityEvent(accessibilityEvent);
-        accessibilityEvent.setClassName(Button.class.getName());
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName(Button.class.getName());
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        y0 y0Var = this.b;
-        if (y0Var == null || w3.b) {
-            return;
-        }
-        y0Var.i.a();
-    }
-
-    @Override // android.widget.TextView
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        super.onTextChanged(charSequence, i10, i11, i12);
-        y0 y0Var = this.b;
-        if (y0Var != null) {
-            i1 i1Var = y0Var.i;
-            if (w3.b || !i1Var.f()) {
-                return;
-            }
-            i1Var.a();
-        }
+        return this.c.e();
     }
 
     @Override // android.widget.TextView
@@ -183,46 +112,10 @@ public final class o extends Button implements u0.k {
         getEmojiTextViewHelper().b(z10);
     }
 
-    @Override // android.widget.TextView
-    public final void setAutoSizeTextTypeUniformWithConfiguration(int i10, int i11, int i12, int i13) {
-        if (w3.b) {
-            super.setAutoSizeTextTypeUniformWithConfiguration(i10, i11, i12, i13);
-            return;
-        }
-        y0 y0Var = this.b;
-        if (y0Var != null) {
-            y0Var.i(i10, i11, i12, i13);
-        }
-    }
-
-    @Override // android.widget.TextView
-    public final void setAutoSizeTextTypeUniformWithPresetSizes(int[] iArr, int i10) {
-        if (w3.b) {
-            super.setAutoSizeTextTypeUniformWithPresetSizes(iArr, i10);
-            return;
-        }
-        y0 y0Var = this.b;
-        if (y0Var != null) {
-            y0Var.j(iArr, i10);
-        }
-    }
-
-    @Override // android.widget.TextView
-    public void setAutoSizeTextTypeWithDefaults(int i10) {
-        if (w3.b) {
-            super.setAutoSizeTextTypeWithDefaults(i10);
-            return;
-        }
-        y0 y0Var = this.b;
-        if (y0Var != null) {
-            y0Var.k(i10);
-        }
-    }
-
     @Override // android.view.View
     public void setBackgroundDrawable(Drawable drawable) {
         super.setBackgroundDrawable(drawable);
-        e2.c cVar = this.a;
+        e2.c cVar = this.b;
         if (cVar != null) {
             cVar.g();
         }
@@ -231,15 +124,42 @@ public final class o extends Button implements u0.k {
     @Override // android.view.View
     public void setBackgroundResource(int i10) {
         super.setBackgroundResource(i10);
-        e2.c cVar = this.a;
+        e2.c cVar = this.b;
         if (cVar != null) {
             cVar.h(i10);
         }
     }
 
+    @Override // android.widget.CompoundButton
+    public void setButtonDrawable(Drawable drawable) {
+        super.setButtonDrawable(drawable);
+        q qVar = this.a;
+        if (qVar != null) {
+            if (qVar.e) {
+                qVar.e = false;
+            } else {
+                qVar.e = true;
+                qVar.a();
+            }
+        }
+    }
+
     @Override // android.widget.TextView
-    public void setCustomSelectionActionModeCallback(ActionMode.Callback callback) {
-        super.setCustomSelectionActionModeCallback(w7.e(callback, this));
+    public final void setCompoundDrawables(Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
+        super.setCompoundDrawables(drawable, drawable2, drawable3, drawable4);
+        x0 x0Var = this.c;
+        if (x0Var != null) {
+            x0Var.b();
+        }
+    }
+
+    @Override // android.widget.TextView
+    public final void setCompoundDrawablesRelative(Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
+        super.setCompoundDrawablesRelative(drawable, drawable2, drawable3, drawable4);
+        x0 x0Var = this.c;
+        if (x0Var != null) {
+            x0Var.b();
+        }
     }
 
     public void setEmojiCompatEnabled(boolean z10) {
@@ -248,67 +168,57 @@ public final class o extends Button implements u0.k {
 
     @Override // android.widget.TextView
     public void setFilters(InputFilter[] inputFilterArr) {
-        super.setFilters(((n6) getEmojiTextViewHelper().b.b).a(inputFilterArr));
-    }
-
-    public void setSupportAllCaps(boolean z10) {
-        y0 y0Var = this.b;
-        if (y0Var != null) {
-            y0Var.a.setAllCaps(z10);
-        }
+        super.setFilters(((o6) getEmojiTextViewHelper().b.b).a(inputFilterArr));
     }
 
     public void setSupportBackgroundTintList(ColorStateList colorStateList) {
-        e2.c cVar = this.a;
+        e2.c cVar = this.b;
         if (cVar != null) {
             cVar.l(colorStateList);
         }
     }
 
     public void setSupportBackgroundTintMode(PorterDuff.Mode mode) {
-        e2.c cVar = this.a;
+        e2.c cVar = this.b;
         if (cVar != null) {
             cVar.m(mode);
         }
     }
 
+    public void setSupportButtonTintList(ColorStateList colorStateList) {
+        q qVar = this.a;
+        if (qVar != null) {
+            qVar.a = colorStateList;
+            qVar.c = true;
+            qVar.a();
+        }
+    }
+
+    public void setSupportButtonTintMode(PorterDuff.Mode mode) {
+        q qVar = this.a;
+        if (qVar != null) {
+            qVar.b = mode;
+            qVar.d = true;
+            qVar.a();
+        }
+    }
+
     @Override // u0.k
     public void setSupportCompoundDrawablesTintList(ColorStateList colorStateList) {
-        y0 y0Var = this.b;
-        y0Var.l(colorStateList);
-        y0Var.b();
+        x0 x0Var = this.c;
+        x0Var.l(colorStateList);
+        x0Var.b();
     }
 
     @Override // u0.k
     public void setSupportCompoundDrawablesTintMode(PorterDuff.Mode mode) {
-        y0 y0Var = this.b;
-        y0Var.m(mode);
-        y0Var.b();
+        x0 x0Var = this.c;
+        x0Var.m(mode);
+        x0Var.b();
     }
 
-    @Override // android.widget.TextView
-    public final void setTextAppearance(Context context, int i10) {
-        super.setTextAppearance(context, i10);
-        y0 y0Var = this.b;
-        if (y0Var != null) {
-            y0Var.g(context, i10);
-        }
-    }
-
-    @Override // android.widget.TextView
-    public final void setTextSize(int i10, float f7) {
-        boolean z10 = w3.b;
-        if (z10) {
-            super.setTextSize(i10, f7);
-            return;
-        }
-        y0 y0Var = this.b;
-        if (y0Var != null) {
-            i1 i1Var = y0Var.i;
-            if (z10 || i1Var.f()) {
-                return;
-            }
-            i1Var.g(f7, i10);
-        }
+    @Override // android.widget.CompoundButton
+    public void setButtonDrawable(int i10) {
+        setButtonDrawable(q7.b(getContext(), i10));
     }
 }

@@ -1,49 +1,62 @@
 package org.telegram.ui;
 
-import android.net.Uri;
-import android.text.TextUtils;
-import java.io.File;
-import java.io.IOException;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.tgnet.TLRPC;
+import android.text.Editable;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class cl0 {
-    public boolean a;
-    public boolean b;
-    public int c;
-    public int d;
-    public TLRPC.Document e;
-    public String f;
-    public String g;
+public final class cl0 implements TextWatcher {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ PasscodeActivity b;
 
-    public final Uri a(int i10) {
-        if (!TextUtils.isEmpty(this.g)) {
-            return Uri.fromFile(new File(this.g));
+    public /* synthetic */ cl0(PasscodeActivity passcodeActivity, int i10) {
+        this.a = i10;
+        this.b = passcodeActivity;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        int i10 = this.a;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        switch (this.a) {
+            case 0:
+                PasscodeActivity passcodeActivity = this.b;
+                yk0 yk0Var = passcodeActivity.S;
+                if (passcodeActivity.R) {
+                    passcodeActivity.n.removeCallbacks(yk0Var);
+                    yk0Var.run();
+                    break;
+                }
+                break;
+            default:
+                PasscodeActivity passcodeActivity2 = this.b;
+                yk0 yk0Var2 = passcodeActivity2.S;
+                if (passcodeActivity2.R) {
+                    passcodeActivity2.n.removeCallbacks(yk0Var2);
+                    yk0Var2.run();
+                    break;
+                }
+                break;
         }
-        TLRPC.Document document = this.e;
-        if (document == null) {
-            return null;
-        }
-        String str = document.file_name_fixed;
-        String documentExtension = FileLoader.getDocumentExtension(document);
-        if (documentExtension == null) {
-            return null;
-        }
-        String lowerCase = documentExtension.toLowerCase();
-        if (!str.endsWith(lowerCase)) {
-            str = a1.g.D(str, ".", lowerCase);
-        }
-        File file = new File(AndroidUtilities.getCacheDir(), str);
-        if (!file.exists()) {
-            try {
-                AndroidUtilities.copyFile(FileLoader.getInstance(i10).getPathToAttach(this.e), file);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        return Uri.fromFile(file);
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
+    }
+
+    private final void a(Editable editable) {
+    }
+
+    private final void b(Editable editable) {
+    }
+
+    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

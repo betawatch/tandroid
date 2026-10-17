@@ -2,19 +2,19 @@ package hb;
 
 import java.lang.reflect.Field;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class u extends t {
-    public final gb.p b;
+    public final gb.n b;
 
-    public u(gb.p pVar, v vVar) {
+    public u(gb.n nVar, v vVar) {
         super(vVar);
-        this.b = pVar;
+        this.b = nVar;
     }
 
     @Override // hb.t
     public final Object a() {
-        return this.b.i2();
+        return this.b.f2();
     }
 
     @Override // hb.t
@@ -25,7 +25,7 @@ public final class u extends t {
             return;
         }
         if (sVar.h) {
-            throw new eb.j(t8.b.h("Cannot set value of 'static final' ", jb.c.d(field, false)));
+            throw new eb.j(r.c.g("Cannot set value of 'static final' ", jb.c.d(field, false)));
         }
         field.set(obj, read);
     }

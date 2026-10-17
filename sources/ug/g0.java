@@ -1,122 +1,56 @@
 package ug;
 
 import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.TextPaint;
 import android.widget.FrameLayout;
-import di.z8;
-import ji.o4;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.sk;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.sc;
-import org.telegram.ui.yy;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.h9;
+import org.telegram.ui.Components.w9;
 import w7.z5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class g0 extends sg.m1 {
-    public static g0 S0;
-    public final wg.a Q0;
-    public final String R0;
+public final class g0 extends FrameLayout {
+    public static final /* synthetic */ int f = 0;
+    public final w9 a;
+    public final f0 b;
+    public final Paint c;
+    public boolean d;
+    public final h9 e;
 
-    public g0(m2 m2Var, int i10, TLRPC.User user, sg.k kVar, String str, boolean z10, c6 c6Var) {
-        super(m2Var, i10, user, kVar, null, c6Var);
-        this.R0 = str;
-        sc.a((FrameLayout) this.containerView, new z8(15));
-        if (!z10) {
-            mm0 mm0Var = this.d;
-            int i11 = this.backgroundPaddingLeft;
-            mm0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(68.0f));
-            wg.a aVar = new wg.a(getContext(), this.resourcesProvider);
-            this.Q0 = aVar;
-            aVar.setOnClickListener(new o4(this, 12));
-            wg.a aVar2 = this.Q0;
-            aVar2.e = true;
-            di.d dVar = aVar2.a;
-            dVar.setEnabled(true);
-            dVar.g(LocaleController.getString(R.string.GiftPremiumActivateForFree), false, true);
-            aVar2.b.setBackgroundColor(g6.w0(g6.h5, aVar2.c));
-            this.containerView.addView(this.Q0, z5.a(68.0f, 0.0f, 0.0f, 0.0f, 0.0f, -1, 80));
+    public g0(Context context, float f7) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.c = paint;
+        this.d = true;
+        this.e = new h9((d6) null);
+        w9 w9Var = new w9(getContext());
+        this.a = w9Var;
+        w9Var.setRoundRadius(AndroidUtilities.dp(f7));
+        f0 f0Var = new f0(context);
+        TextPaint textPaint = new TextPaint(1);
+        f0Var.a = textPaint;
+        textPaint.setTextAlign(Paint.Align.CENTER);
+        int i10 = h6.a7;
+        textPaint.setColor(h6.x0(null, i10, false));
+        textPaint.setTextSize(AndroidUtilities.dp(11.5f));
+        textPaint.setTypeface(AndroidUtilities.bold());
+        this.b = f0Var;
+        f0Var.setAlpha(0.0f);
+        addView(w9Var, z5.a(-1.0f, 5.0f, 5.0f, 5.0f, 5.0f, -1, 0));
+        addView(f0Var, z5.a(26.0f, 0.0f, 0.0f, 1.0f, 3.0f, 26, 85));
+        paint.setColor(h6.x0(null, i10, false));
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        if (this.d) {
+            canvas.drawCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, (getMeasuredHeight() / 2.0f) - AndroidUtilities.dp(2.0f), this.c);
         }
-        fixNavigationBar();
-    }
-
-    public static /* synthetic */ void d0(g0 g0Var, TLRPC.TL_error tL_error) {
-        g0Var.Q0.b(false);
-        j.c(tL_error, (FrameLayout) g0Var.containerView, g0Var.resourcesProvider, new e0(g0Var, 0));
-    }
-
-    public static void e0(g0 g0Var) {
-        sg.m1 m1Var = new sg.m1(g0Var.n, UserConfig.selectedAccount, null, null, null, g0Var.resourcesProvider);
-        m1Var.J0 = true;
-        m1Var.K0 = true;
-        m1Var.c0 = true;
-        g0Var.n.showDialog(m1Var);
-    }
-
-    public static void f0(g0 g0Var) {
-        String str = "https://t.me/giftcode/" + g0Var.R0;
-        yy yyVar = new yy(sk.d(3, "onlySelect", "dialogsType", true));
-        yyVar.C2 = new org.telegram.ui.web.o0(15, g0Var, str);
-        g0Var.n.presentFragment(yyVar);
-        g0Var.dismiss();
-    }
-
-    @Override // sg.m1
-    public final int Y() {
-        return 6;
-    }
-
-    @Override // sg.m1
-    public final void Z(View view) {
-        ((wg.t) view).setSlug(this.R0);
-    }
-
-    @Override // sg.m1
-    public final View a0(Context context, int i10) {
-        if (i10 != 6) {
-            return null;
-        }
-        wg.t tVar = new wg.t(context, this.resourcesProvider);
-        tVar.setPadding(0, 0, 0, AndroidUtilities.dp(8.0f));
-        return tVar;
-    }
-
-    @Override // sg.m1
-    public final void b0(boolean z10) {
-        super.b0(z10);
-        this.P0.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        ((ViewGroup.MarginLayoutParams) this.P0.getLayoutParams()).bottomMargin = AndroidUtilities.dp(14.0f);
-        ((ViewGroup.MarginLayoutParams) this.P0.getLayoutParams()).topMargin = AndroidUtilities.dp(12.0f);
-        this.P0.setText(AndroidUtilities.replaceCharSequence("%1$s", AndroidUtilities.replaceSingleTag(LocaleController.getString("GiftPremiumAboutThisLink", R.string.GiftPremiumAboutThisLink), g6.gc, 0, new e0(this, 0)), AndroidUtilities.replaceTags(LocaleController.getString("GiftPremiumAboutThisLinkEnd", R.string.GiftPremiumAboutThisLinkEnd))));
-    }
-
-    @Override // sg.m1
-    public final void c0() {
-        int i10 = this.f0;
-        this.g0 = i10;
-        this.h0 = i10 + 1;
-        int i11 = i10 + 2;
-        this.f0 = i11;
-        this.i0 = i11;
-        this.j0 = i11;
-        int size = this.X.size() + i11;
-        this.k0 = size;
-        this.f0 = size + 1;
-        this.l0 = size;
-    }
-
-    @Override // org.telegram.ui.ActionBar.e3
-    public final void dismissInternal() {
-        super.dismissInternal();
-        S0 = null;
+        super.dispatchDraw(canvas);
     }
 }

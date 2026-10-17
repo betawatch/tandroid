@@ -2,15 +2,15 @@ package com.google.android.gms.common.api;
 
 import android.os.Looper;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class i {
     public static final i c = new i(new com.google.android.gms.common.api.internal.a(), Looper.getMainLooper());
-    public final com.google.android.gms.common.api.internal.t a;
+    public final com.google.android.gms.common.api.internal.s a;
     public final Looper b;
 
-    public i(com.google.android.gms.common.api.internal.t tVar, Looper looper) {
-        this.a = tVar;
+    public i(com.google.android.gms.common.api.internal.s sVar, Looper looper) {
+        this.a = sVar;
         this.b = looper;
     }
 }

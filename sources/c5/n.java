@@ -4,27 +4,45 @@ import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class n {
-    public final ArrayList a;
+    public final String a;
+    public final a6.m b;
 
-    public n() {
-        this.a = new ArrayList();
-        new ArrayList();
-        new ArrayList();
-    }
-
-    public n(JSONArray jSONArray) {
-        ArrayList arrayList = new ArrayList();
-        if (jSONArray != null) {
-            for (int i10 = 0; i10 < jSONArray.length(); i10++) {
-                JSONObject optJSONObject = jSONArray.optJSONObject(i10);
-                if (optJSONObject != null) {
-                    arrayList.add(new m(optJSONObject));
-                }
+    public n(JSONObject jSONObject) {
+        jSONObject.optString("basePlanId");
+        jSONObject.optString("offerId").getClass();
+        this.a = jSONObject.getString("offerIdToken");
+        this.b = new a6.m(jSONObject.getJSONArray("pricingPhases"));
+        JSONObject optJSONObject = jSONObject.optJSONObject("installmentPlanDetails");
+        if (optJSONObject != null) {
+            optJSONObject.getInt("commitmentPaymentsCount");
+            optJSONObject.optInt("subsequentCommitmentPaymentsCount");
+        }
+        JSONObject optJSONObject2 = jSONObject.optJSONObject("transitionPlanDetails");
+        if (optJSONObject2 != null) {
+            optJSONObject2.getString("productId");
+            optJSONObject2.optString("title");
+            optJSONObject2.optString("name");
+            optJSONObject2.optString("description");
+            optJSONObject2.optString("basePlanId");
+            JSONObject optJSONObject3 = optJSONObject2.optJSONObject("pricingPhase");
+            if (optJSONObject3 != null) {
+                optJSONObject3.optString("billingPeriod");
+                optJSONObject3.optString("priceCurrencyCode");
+                optJSONObject3.optString("formattedPrice");
+                optJSONObject3.optLong("priceAmountMicros");
+                optJSONObject3.optInt("recurrenceMode");
+                optJSONObject3.optInt("billingCycleCount");
             }
         }
-        this.a = arrayList;
+        ArrayList arrayList = new ArrayList();
+        JSONArray optJSONArray = jSONObject.optJSONArray("offerTags");
+        if (optJSONArray != null) {
+            for (int i10 = 0; i10 < optJSONArray.length(); i10++) {
+                arrayList.add(optJSONArray.getString(i10));
+            }
+        }
     }
 }

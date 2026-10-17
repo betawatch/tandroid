@@ -1,45 +1,37 @@
 package org.telegram.ui;
 
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessageObject;
+import android.view.KeyEvent;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class iz implements ImageReceiver.ImageReceiverDelegate {
-    public final /* synthetic */ jz a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ MessageObject c;
-    public final /* synthetic */ kz d;
+public final /* synthetic */ class iz implements TextView.OnEditorActionListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ AlertDialog$Builder b;
 
-    public iz(kz kzVar, jz jzVar, boolean z10, MessageObject messageObject) {
-        this.d = kzVar;
-        this.a = jzVar;
-        this.b = z10;
-        this.c = messageObject;
+    public /* synthetic */ iz(AlertDialog$Builder alertDialog$Builder, int i10) {
+        this.a = i10;
+        this.b = alertDialog$Builder;
     }
 
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        jz jzVar = this.a;
-        if (jzVar.r.getLottieAnimation() != null) {
-            jzVar.r.getLottieAnimation().N(0, false, true);
+    @Override // android.widget.TextView.OnEditorActionListener
+    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.hideKeyboard(textView);
+                this.b.a.d(-1).callOnClick();
+                break;
+            case 1:
+                AndroidUtilities.hideKeyboard(textView);
+                this.b.a.d(-1).callOnClick();
+                break;
+            default:
+                AndroidUtilities.hideKeyboard(textView);
+                this.b.a.d(-1).callOnClick();
+                break;
         }
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        org.telegram.messenger.l5.a(this, i10, str, drawable);
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public final void onAnimationReady(ImageReceiver imageReceiver) {
-        MessageObject messageObject;
-        if (this.b && (messageObject = this.c) != null && messageObject.isAnimatedAnimatedEmoji() && imageReceiver.getLottieAnimation() != null && imageReceiver.getLottieAnimation().x == null) {
-            try {
-                this.d.G.performHapticFeedback(3, 1);
-            } catch (Exception unused) {
-            }
-        }
+        return false;
     }
 }

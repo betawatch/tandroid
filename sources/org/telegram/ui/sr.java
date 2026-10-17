@@ -1,118 +1,228 @@
 package org.telegram.ui;
 
-import android.util.SparseIntArray;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.view.View;
+import android.widget.LinearLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class sr extends s4.o {
-    public int b;
-    public int e;
-    public int f;
-    public int g;
-    public int h;
-    public int i;
-    public int j;
-    public final /* synthetic */ yr n;
-    public final SparseIntArray c = new SparseIntArray();
-    public final SparseIntArray d = new SparseIntArray();
-    public final ArrayList k = new ArrayList();
-    public final ArrayList l = new ArrayList();
-    public final ArrayList m = new ArrayList();
+public abstract class sr extends LinearLayout {
+    public final Paint a;
+    public final Paint b;
+    public float c;
+    public boolean d;
+    public boolean e;
+    public vr[] f;
 
-    public sr(yr yrVar) {
-        this.n = yrVar;
+    public sr(Context context) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.a = paint;
+        this.b = new Paint(1);
+        paint.setStyle(Paint.Style.STROKE);
+        setOrientation(0);
     }
 
-    public static void g(int i10, int i11, SparseIntArray sparseIntArray) {
-        if (i11 >= 0) {
-            sparseIntArray.put(i11, i10);
+    public abstract void a();
+
+    /* JADX WARN: Removed duplicated region for block: B:27:0x00b2  */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00b4  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(int i10, int i11) {
+        int i12;
+        int i13;
+        int i14;
+        vr[] vrVarArr = this.f;
+        int i15 = 0;
+        if (vrVarArr == null || vrVarArr.length != i10) {
+            if (vrVarArr != null) {
+                for (vr vrVar : vrVarArr) {
+                    removeView(vrVar);
+                }
+            }
+            this.f = new vr[i10];
+            int i16 = 0;
+            while (i16 < i10) {
+                this.f[i16] = new qr(this, getContext(), i16, i10);
+                this.f[i16].setImeOptions(268435461);
+                this.f[i16].setTextSize(1, 20.0f);
+                this.f[i16].setMaxLines(1);
+                this.f[i16].setTypeface(AndroidUtilities.bold());
+                this.f[i16].setPadding(0, 0, 0, 0);
+                this.f[i16].setGravity(17);
+                if (i11 == 3) {
+                    this.f[i16].setEnabled(false);
+                    this.f[i16].setInputType(0);
+                    this.f[i16].setVisibility(8);
+                } else {
+                    this.f[i16].setInputType(3);
+                }
+                int i17 = 42;
+                int i18 = 10;
+                if (i11 == 10) {
+                    i12 = 47;
+                } else {
+                    i12 = 34;
+                    if (i11 == 11) {
+                        i17 = 28;
+                        i18 = 5;
+                    } else {
+                        i18 = 7;
+                        i13 = 42;
+                        i14 = 34;
+                        addView(this.f[i16], w7.z5.t(i14, i13, 1, 0, 0, i16 == i10 + (-1) ? i18 : 0, 0));
+                        this.f[i16].addTextChangedListener(new rr(this, i16, i10));
+                        this.f[i16].setOnEditorActionListener(new ma(this, 3));
+                        i16++;
+                    }
+                }
+                i14 = i17;
+                i13 = i12;
+                addView(this.f[i16], w7.z5.t(i14, i13, 1, 0, 0, i16 == i10 + (-1) ? i18 : 0, 0));
+                this.f[i16].addTextChangedListener(new rr(this, i16, i10));
+                this.f[i16].setOnEditorActionListener(new ma(this, 3));
+                i16++;
+            }
+            return;
+        }
+        while (true) {
+            vr[] vrVarArr2 = this.f;
+            if (i15 >= vrVarArr2.length) {
+                return;
+            }
+            vrVarArr2[i15].setText("");
+            i15++;
         }
     }
 
-    @Override // s4.o
-    public final boolean a(int i10, int i11) {
-        return b(i10, i11) && this.n.D0 != i11;
-    }
-
-    @Override // s4.o
-    public final boolean b(int i10, int i11) {
-        int i12 = this.i;
-        yr yrVar = this.n;
-        if (i10 >= i12 && i10 < this.j && i11 >= yrVar.X0 && i11 < yrVar.Y0) {
-            return ((TLObject) this.l.get(i10 - i12)).equals(yrVar.G.get(i11 - yrVar.X0));
+    public final void c(String str, boolean z10) {
+        if (this.f == null) {
+            return;
         }
-        int i13 = this.g;
-        if (i10 >= i13 && i10 < this.h && i11 >= yrVar.U0 && i11 < yrVar.V0) {
-            return ((TLObject) this.m.get(i10 - i13)).equals(yrVar.H.get(i11 - yrVar.U0));
+        int i10 = 0;
+        if (z10) {
+            int i11 = 0;
+            while (true) {
+                vr[] vrVarArr = this.f;
+                if (i11 >= vrVarArr.length) {
+                    break;
+                }
+                if (vrVarArr[i11].isFocused()) {
+                    i10 = i11;
+                    break;
+                }
+                i11++;
+            }
         }
-        int i14 = this.e;
-        return (i10 < i14 || i10 >= this.f || i11 < yrVar.E0 || i11 >= yrVar.F0) ? this.c.get(i10) == this.d.get(i11) : ((TLObject) this.k.get(i10 - i14)).equals(yrVar.F.get(i11 - yrVar.E0));
-    }
-
-    @Override // s4.o
-    public final int d() {
-        return this.n.d1;
-    }
-
-    @Override // s4.o
-    public final int e() {
-        return this.b;
-    }
-
-    public final void f(SparseIntArray sparseIntArray) {
-        sparseIntArray.clear();
-        yr yrVar = this.n;
-        g(1, yrVar.v0, sparseIntArray);
-        g(2, yrVar.z0, sparseIntArray);
-        g(3, yrVar.A0, sparseIntArray);
-        g(4, yrVar.C0, sparseIntArray);
-        g(5, yrVar.D0, sparseIntArray);
-        g(6, yrVar.G0, sparseIntArray);
-        g(7, yrVar.H0, sparseIntArray);
-        g(8, yrVar.s0, sparseIntArray);
-        g(9, yrVar.t0, sparseIntArray);
-        g(10, yrVar.u0, sparseIntArray);
-        g(11, yrVar.b1, sparseIntArray);
-        g(12, yrVar.c1, sparseIntArray);
-        g(13, yrVar.S, sparseIntArray);
-        g(14, yrVar.T, sparseIntArray);
-        g(15, yrVar.U, sparseIntArray);
-        g(16, yrVar.e0, sparseIntArray);
-        g(17, yrVar.d0, sparseIntArray);
-        g(18, yrVar.f0, sparseIntArray);
-        g(19, yrVar.h0, sparseIntArray);
-        g(20, yrVar.m0, sparseIntArray);
-        g(21, yrVar.i0, sparseIntArray);
-        g(22, yrVar.j0, sparseIntArray);
-        int i10 = 23;
-        g(23, yrVar.k0, sparseIntArray);
-        if (yrVar.x) {
-            i10 = 24;
-            g(24, yrVar.l0, sparseIntArray);
+        for (int i12 = i10; i12 < Math.min(this.f.length, str.length() + i10); i12++) {
+            this.f[i12].setText(Character.toString(str.charAt(i12 - i10)));
         }
-        g(i10 + 1, yrVar.g0, sparseIntArray);
-        g(i10 + 2, yrVar.B0, sparseIntArray);
-        g(i10 + 3, yrVar.T0, sparseIntArray);
-        g(i10 + 4, yrVar.W0, sparseIntArray);
-        g(i10 + 5, yrVar.Z0, sparseIntArray);
-        g(i10 + 6, yrVar.N0, sparseIntArray);
-        g(i10 + 7, yrVar.O0, sparseIntArray);
-        g(i10 + 8, yrVar.P0, sparseIntArray);
-        g(i10 + 9, yrVar.Q0, sparseIntArray);
-        g(i10 + 10, yrVar.S0, sparseIntArray);
-        g(i10 + 11, yrVar.R0, sparseIntArray);
-        g(i10 + 12, yrVar.a1, sparseIntArray);
-        g(i10 + 13, yrVar.f1, sparseIntArray);
-        g(i10 + 14, yrVar.g1, sparseIntArray);
-        g(i10 + 15, yrVar.h1, sparseIntArray);
-        g(i10 + 16, yrVar.i1, sparseIntArray);
-        g(i10 + 17, yrVar.j1, sparseIntArray);
-        g(i10 + 18, yrVar.n0, sparseIntArray);
-        g(i10 + 19, yrVar.o0, sparseIntArray);
-        g(i10 + 20, yrVar.p0, sparseIntArray);
-        g(i10 + 21, yrVar.q0, sparseIntArray);
-        g(i10 + 22, yrVar.r0, sparseIntArray);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        for (int i10 = 0; i10 < getChildCount(); i10++) {
+            View childAt = getChildAt(i10);
+            if (childAt instanceof vr) {
+                vr vrVar = (vr) childAt;
+                if (!this.e) {
+                    if (childAt.isFocused()) {
+                        vrVar.j(1.0f);
+                    } else if (!childAt.isFocused()) {
+                        vrVar.j(0.0f);
+                    }
+                }
+                float successProgress = vrVar.getSuccessProgress();
+                int f7 = i0.b.f(successProgress, i0.b.f(vrVar.getErrorProgress(), i0.b.f(vrVar.getFocusedProgress(), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.k6, false), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.l6, false)), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.q7, false)), org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.i7, false));
+                Paint paint = this.a;
+                paint.setColor(f7);
+                RectF rectF = AndroidUtilities.rectTmp;
+                rectF.set(childAt.getLeft(), childAt.getTop(), childAt.getRight(), childAt.getBottom());
+                float f10 = this.c;
+                rectF.inset(f10, f10);
+                if (successProgress != 0.0f) {
+                    float f11 = -Math.max(0.0f, (vrVar.getSuccessScaleProgress() - 1.0f) * this.c);
+                    rectF.inset(f11, f11);
+                }
+                canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), paint);
+            }
+        }
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
+        if (!(view instanceof vr)) {
+            return super.drawChild(canvas, view, j10);
+        }
+        vr vrVar = (vr) view;
+        canvas.save();
+        float f7 = vrVar.v;
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(view.getX(), view.getY(), view.getX() + view.getMeasuredWidth(), view.getY() + view.getMeasuredHeight());
+        float f10 = this.c;
+        rectF.inset(f10, f10);
+        canvas.clipRect(rectF);
+        if (vrVar.x) {
+            float f11 = (f7 * 0.5f) + 0.5f;
+            view.setAlpha(f7);
+            canvas.scale(f11, f11, (vrVar.getMeasuredWidth() / 2.0f) + vrVar.getX(), (vrVar.getMeasuredHeight() / 2.0f) + vrVar.getY());
+        } else {
+            view.setAlpha(1.0f);
+            canvas.translate(0.0f, (1.0f - f7) * view.getMeasuredHeight());
+        }
+        super.drawChild(canvas, view, j10);
+        canvas.restore();
+        float f12 = vrVar.w;
+        if (f12 >= 1.0f) {
+            return true;
+        }
+        canvas.save();
+        float f13 = 1.0f - f12;
+        float f14 = (f13 * 0.5f) + 0.5f;
+        canvas.scale(f14, f14, (vrVar.getMeasuredWidth() / 2.0f) + vrVar.getX(), (vrVar.getMeasuredHeight() / 2.0f) + vrVar.getY());
+        Paint paint = this.b;
+        paint.setAlpha((int) (f13 * 255.0f));
+        canvas.drawBitmap(vrVar.y, vrVar.getX(), vrVar.getY(), paint);
+        canvas.restore();
+        return true;
+    }
+
+    public String getCode() {
+        if (this.f == null) {
+            return "";
+        }
+        StringBuilder sb2 = new StringBuilder();
+        int i10 = 0;
+        while (true) {
+            vr[] vrVarArr = this.f;
+            if (i10 >= vrVarArr.length) {
+                return sb2.toString();
+            }
+            sb2.append(jf.b.d(vrVarArr[i10].getText().toString(), false));
+            i10++;
+        }
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        float dp = AndroidUtilities.dp(1.5f);
+        this.c = dp;
+        this.a.setStrokeWidth(dp);
+    }
+
+    public void setCode(String str) {
+        this.f[0].setText(str);
+    }
+
+    public void setText(String str) {
+        c(str, false);
     }
 }

@@ -1,9 +1,9 @@
 package mg;
 
 import android.animation.ValueAnimator;
-import com.google.android.gms.internal.play_billing.k3;
+import com.google.android.gms.internal.cast.a6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -28,10 +28,10 @@ public final /* synthetic */ class h implements ValueAnimator.AnimatorUpdateList
             case 0:
                 p pVar = this.b;
                 pVar.getClass();
-                float y3 = k3.y(this.c, 1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue(), 1.0f);
+                float x10 = a6.x(this.c, 1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue(), 1.0f);
                 float[] fArr = this.d;
                 float f7 = fArr[0];
-                float f10 = y3 / f7;
+                float f10 = x10 / f7;
                 fArr[0] = f7 * f10;
                 n.g(pVar.L, f10, this.e, this.f);
                 pVar.r(false);

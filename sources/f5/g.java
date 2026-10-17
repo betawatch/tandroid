@@ -1,12 +1,11 @@
 package f5;
 
-import com.google.android.gms.internal.play_billing.k3;
-import ji.w4;
+import com.google.android.gms.internal.cast.a6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class g extends com.googlecode.mp4parser.c {
-    public static final /* synthetic */ w4 e;
+    public static final /* synthetic */ le.b e;
 
     static {
         te.a aVar = new te.a(g.class, "DataEntryUrlBox.java");
@@ -19,7 +18,7 @@ public final class g extends com.googlecode.mp4parser.c {
     }
 
     public final String toString() {
-        k3.p(te.a.b(e, this, this));
+        a6.p(te.a.b(e, this, this));
         return "DataEntryUrlBox[]";
     }
 }

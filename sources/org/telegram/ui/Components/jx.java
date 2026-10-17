@@ -1,58 +1,143 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class jx extends FrameLayout {
-    public final Paint a;
-    public final /* synthetic */ wz b;
+public final class jx implements z4.e {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ tz b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jx(wz wzVar, Context context) {
-        super(context);
-        this.b = wzVar;
-        this.a = new Paint();
+    public jx(tz tzVar, boolean z10) {
+        this.b = tzVar;
+        this.a = z10;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        wz wzVar = this.b;
-        ix ixVar = wzVar.B0;
-        float dp = AndroidUtilities.dp(50.0f) * wzVar.t1.p();
-        if (dp > getMeasuredHeight()) {
-            return;
-        }
-        canvas.save();
-        if (dp != 0.0f) {
-            canvas.clipRect(0.0f, dp, getMeasuredWidth(), getMeasuredHeight());
-        }
-        int B = wzVar.B(org.telegram.ui.ActionBar.g6.He);
-        Paint paint = this.a;
-        paint.setColor(B);
-        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), ixVar.getExpandedOffset() + AndroidUtilities.dp(36.0f), paint);
-        super.dispatchDraw(canvas);
-        if (ixVar.s != null) {
-            canvas.save();
-            float f7 = ixVar.c0 - ixVar.d0;
-            float f10 = ixVar.v;
-            if (f10 > 0.0f) {
-                f7 = ((ixVar.s.getX() - ixVar.getScrollX()) * ixVar.v) + ((1.0f - f10) * f7);
+    @Override // z4.e
+    public final void a(float f7, int i10, int i11) {
+        float f10;
+        tz tzVar = this.b;
+        gz gzVar = tzVar.G0;
+        gz gzVar2 = tzVar.o0;
+        gz gzVar3 = tzVar.V;
+        fx fxVar = tzVar.C0;
+        ax axVar = tzVar.D0;
+        yx yxVar = tzVar.p0;
+        uw uwVar = tzVar.h0;
+        ey eyVar = tzVar.P;
+        boolean z10 = true;
+        if (tzVar.x0 == null || tzVar.g0 == null) {
+            f10 = 0.0f;
+        } else {
+            if (i10 == 0) {
+                eyVar.setVisibility(0);
+                f10 = 0.0f;
+                uwVar.setVisibility(f7 == 0.0f ? 8 : 0);
+                yxVar.setVisibility(f7 == 0.0f ? 8 : 0);
+                axVar.setVisibility(8);
+                if (fxVar != null) {
+                    fxVar.setVisibility(8);
+                }
+            } else {
+                f10 = 0.0f;
+                if (i10 == 1) {
+                    eyVar.setVisibility(8);
+                    uwVar.setVisibility(0);
+                    yxVar.setVisibility(0);
+                    axVar.setVisibility(f7 == 0.0f ? 8 : 0);
+                    if (fxVar != null) {
+                        fxVar.setVisibility(f7 != 0.0f ? 0 : 8);
+                    }
+                } else if (i10 == 2) {
+                    eyVar.setVisibility(8);
+                    uwVar.setVisibility(8);
+                    yxVar.setVisibility(8);
+                    axVar.setVisibility(0);
+                    if (fxVar != null) {
+                        fxVar.setVisibility(0);
+                    }
+                }
             }
-            canvas.translate(f7, 0.0f);
-            ixVar.s.draw(canvas);
-            canvas.restore();
         }
-        canvas.restore();
+        tzVar.getMeasuredWidth();
+        tzVar.getPaddingLeft();
+        tzVar.getPaddingRight();
+        uy uyVar = tzVar.t1;
+        if (uyVar != null) {
+            if (i10 == 1) {
+                uyVar.s(i11 == 0 ? 0 : 2);
+            } else if (i10 == 2) {
+                uyVar.s(3);
+            } else {
+                uyVar.s(0);
+            }
+        }
+        tzVar.M(true);
+        int currentItem = tzVar.h.getCurrentItem();
+        gz gzVar4 = currentItem == 0 ? gzVar3 : currentItem == 1 ? gzVar2 : gzVar;
+        String obj = gzVar4.d.getText().toString();
+        int i12 = 0;
+        while (i12 < 3) {
+            gz gzVar5 = i12 == 0 ? gzVar3 : i12 == 1 ? gzVar2 : gzVar;
+            if (gzVar5 != null) {
+                sq sqVar = gzVar5.d;
+                if (gzVar5 != gzVar4 && sqVar != null && !sqVar.getText().toString().equals(obj)) {
+                    sqVar.setText(obj);
+                    sqVar.setSelection(obj.length());
+                }
+            }
+            i12++;
+        }
+        if ((i10 != 0 || f7 <= f10) && i10 != 1) {
+            z10 = false;
+        }
+        tz.c(tzVar, z10);
+        tzVar.Y();
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        this.b.Y();
+    @Override // z4.e
+    public final void b(int i10) {
+        tz tzVar = this.b;
+        gx gxVar = tzVar.h;
+        boolean z10 = false;
+        if (gxVar != null) {
+            int currentItem = gxVar.getCurrentItem();
+            int i11 = currentItem == 2 ? 1 : currentItem == 1 ? 2 : 0;
+            if (tzVar.A1 != i11) {
+                tzVar.A1 = i11;
+                MessagesController.getGlobalEmojiSettings().edit().putInt("selected_page", i11).commit();
+            }
+        }
+        tzVar.L(i10 == 0, true);
+        if (i10 == 2 && (this.a || tzVar.v0)) {
+            z10 = true;
+        }
+        tzVar.Q(z10, true);
+        if (tzVar.t1.z()) {
+            if (i10 == 0) {
+                rw rwVar = tzVar.V;
+                if (rwVar != null) {
+                    rwVar.d.requestFocus();
+                    return;
+                }
+                return;
+            }
+            if (i10 == 1) {
+                xw xwVar = tzVar.o0;
+                if (xwVar != null) {
+                    xwVar.d.requestFocus();
+                    return;
+                }
+                return;
+            }
+            dx dxVar = tzVar.G0;
+            if (dxVar != null) {
+                dxVar.d.requestFocus();
+            }
+        }
+    }
+
+    @Override // z4.e
+    public final void c(int i10) {
     }
 }

@@ -1,24 +1,62 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+import android.app.Activity;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.ui.ActionBar.ActionBarLayout;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class t9 extends z9 {
-    public final /* synthetic */ u9 h0;
+public final class t9 extends org.telegram.ui.ActionBar.f3 {
+    public final s9 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.d5[] c;
+    public final /* synthetic */ x9 d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t9(u9 u9Var, int i10) {
-        super(i10);
-        this.h0 = u9Var;
+    public t9(Activity activity, org.telegram.ui.ActionBar.d5[] d5VarArr, int i10, boolean z10, x9 x9Var) {
+        super(activity, false);
+        this.c = d5VarArr;
+        this.d = x9Var;
+        d5VarArr[0].setFragmentStack(new ArrayList());
+        s9 s9Var = new s9(this, i10);
+        this.b = s9Var;
+        s9Var.y = true;
+        s9Var.X = z10;
+        ((ActionBarLayout) d5VarArr[0]).c(-1, s9Var);
+        ((ActionBarLayout) d5VarArr[0]).c0();
+        ViewGroup view = d5VarArr[0].getView();
+        int i11 = this.backgroundPaddingLeft;
+        view.setPadding(i11, 0, i11, 0);
+        s9Var.N = x9Var;
+        if (x9Var.p0() != null) {
+            s9Var.c.setText(x9Var.p0());
+        }
+        this.containerView = d5VarArr[0].getView();
+        setApplyBottomPadding(false);
+        setApplyBottomPadding(false);
+        setOnDismissListener(new w5(this, 1));
     }
 
-    @Override // org.telegram.ui.ActionBar.m2
-    public final void finishFragment() {
-        setFinishing(true);
-        this.h0.dismiss();
+    @Override // org.telegram.ui.ActionBar.f3
+    public final boolean canDismissWithSwipe() {
+        return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.m2
-    public final void removeSelfFromStack() {
-        this.h0.dismiss();
+    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
+    public final void dismiss() {
+        super.dismiss();
+        this.c[0] = null;
+        this.d.onDismiss();
+    }
+
+    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
+    public final void onBackPressed() {
+        org.telegram.ui.ActionBar.d5[] d5VarArr = this.c;
+        org.telegram.ui.ActionBar.d5 d5Var = d5VarArr[0];
+        if (d5Var == null || d5Var.getFragmentStack().size() <= 1) {
+            super.onBackPressed();
+        } else {
+            ((ActionBarLayout) d5VarArr[0]).G();
+        }
     }
 }

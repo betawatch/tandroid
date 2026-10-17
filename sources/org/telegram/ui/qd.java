@@ -1,69 +1,77 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.ContextThemeWrapper;
-import org.telegram.ui.Components.RadialProgressView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class qd extends RadialProgressView {
-    public final /* synthetic */ int K;
-    public final /* synthetic */ Object L;
+public final /* synthetic */ class qd implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ke b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ qd(org.telegram.ui.Components.h50 h50Var, Context context, int i10) {
-        super(context, null);
-        this.K = i10;
-        this.L = h50Var;
+    public /* synthetic */ qd(ke keVar, int i10) {
+        this.a = i10;
+        this.b = keVar;
     }
 
-    @Override // android.view.View
-    public void invalidate() {
-        switch (this.K) {
-            case 3:
-                super.invalidate();
-                bv0 bv0Var = ((PhotoViewer) this.L).e0;
-                if (bv0Var != null) {
-                    bv0Var.invalidate();
-                    break;
-                }
-                break;
-            default:
-                super.invalidate();
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.RadialProgressView, android.view.View
-    public final void setAlpha(float f7) {
-        switch (this.K) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                super.setAlpha(f7);
-                ((sd) this.L).f.invalidate();
+                pf.d.r(this.b.getContext(), LocaleController.getString(R.string.MonetizationStarsInfoLink));
                 break;
             case 1:
-                super.setAlpha(f7);
-                ((p70) this.L).e.invalidate();
-                break;
-            case 2:
-                super.setAlpha(f7);
-                ((lf0) this.L).h.invalidate();
-                break;
-            default:
-                super.setAlpha(f7);
-                bv0 bv0Var = ((PhotoViewer) this.L).e0;
-                if (bv0Var != null) {
-                    bv0Var.invalidate();
+                org.telegram.ui.Components.a71 a71Var = this.b.a1;
+                if (a71Var != null) {
+                    a71Var.W2.N(true);
                     break;
                 }
                 break;
+            case 2:
+                ke keVar = this.b;
+                keVar.getClass();
+                try {
+                    org.telegram.ui.Components.im0 currentListView = keVar.e1.getCurrentListView();
+                    if (currentListView != null && currentListView.getAdapter() != null) {
+                        currentListView.getAdapter().l();
+                        break;
+                    }
+                } catch (Throwable unused) {
+                    return;
+                }
+                break;
+            case 3:
+                ke keVar2 = this.b;
+                int i10 = keVar2.y0;
+                AndroidUtilities.cancelRunOnUIThread(keVar2.v1);
+                if (keVar2.m1 != keVar2.n1) {
+                    TLRPC.TL_channels_restrictSponsoredMessages tL_channels_restrictSponsoredMessages = new TLRPC.TL_channels_restrictSponsoredMessages();
+                    tL_channels_restrictSponsoredMessages.channel = MessagesController.getInstance(i10).getInputChannel(-keVar2.z0);
+                    tL_channels_restrictSponsoredMessages.restricted = keVar2.m1;
+                    ConnectionsManager.getInstance(i10).sendRequest(tL_channels_restrictSponsoredMessages, new wd(keVar2, 0));
+                    break;
+                }
+                break;
+            case 4:
+                ke keVar3 = this.b;
+                keVar3.n1 = keVar3.m1;
+                break;
+            case 5:
+                this.b.T0.setLoading(false);
+                break;
+            case 6:
+                this.b.c1.setVisibility(8);
+                break;
+            case 7:
+                this.b.c1.setVisibility(8);
+                break;
+            default:
+                pf.d.r(this.b.getContext(), LocaleController.getString(R.string.MonetizationBalanceInfoLink));
+                break;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qd(PhotoViewer photoViewer, ContextThemeWrapper contextThemeWrapper, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(contextThemeWrapper, c6Var);
-        this.K = 3;
-        this.L = photoViewer;
     }
 }

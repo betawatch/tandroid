@@ -16,14 +16,13 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
 import k6.c;
-import m.h;
+import l2.f;
 import n6.i;
 import n6.l;
 import n6.o;
 import rb.g;
 import rb.j;
 import tb.b;
-import v0.k;
 import v7.b6;
 import v7.c7;
 import v7.e7;
@@ -36,7 +35,7 @@ import v7.y8;
 import v7.z8;
 import vb.e;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public class LanguageIdentifierImpl implements b {
     public final y8 a;
@@ -55,9 +54,9 @@ public class LanguageIdentifierImpl implements b {
     }
 
     public static final f6 k() {
-        h hVar = new h();
-        hVar.b = Float.valueOf(-1.0f);
-        return new f6(hVar);
+        f fVar = new f(23);
+        fVar.b = Float.valueOf(-1.0f);
+        return new f6(fVar);
     }
 
     @Override // com.google.android.gms.common.api.n
@@ -74,7 +73,7 @@ public class LanguageIdentifierImpl implements b {
         }
         this.e.cancel();
         eVar.d(this.c);
-        pi.e eVar2 = new pi.e();
+        qi.e eVar2 = new qi.e();
         eVar2.c = this.f;
         u2.c cVar = new u2.c(5, false);
         cVar.c = k();
@@ -100,11 +99,11 @@ public class LanguageIdentifierImpl implements b {
                 long elapsedRealtime = SystemClock.elapsedRealtime();
                 try {
                     String e = eVar2.e(str2.substring(0, Math.min(str2.length(), 200)));
-                    k kVar = new k();
-                    d9.l lVar = new d9.l();
-                    lVar.a = e;
-                    kVar.a = new c7(lVar);
-                    languageIdentifierImpl.j(elapsedRealtime, z11, new e7(kVar), i6.b);
+                    le.b bVar = new le.b(24, false);
+                    com.google.android.gms.internal.clearcut.e eVar3 = new com.google.android.gms.internal.clearcut.e();
+                    eVar3.b = e;
+                    bVar.b = new c7(eVar3);
+                    languageIdentifierImpl.j(elapsedRealtime, z11, new e7(bVar), i6.b);
                     return e;
                 } catch (RuntimeException e7) {
                     languageIdentifierImpl.j(elapsedRealtime, z11, null, i6.c);
@@ -134,7 +133,7 @@ public class LanguageIdentifierImpl implements b {
             if (e7Var != null) {
                 cVar.d = e7Var;
             }
-            pi.e eVar = new pi.e();
+            qi.e eVar = new qi.e();
             eVar.c = this.f;
             eVar.d = new g7(cVar);
             a aVar = new a(eVar, 0);

@@ -1,19 +1,24 @@
 package f2;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+import e9.n0;
+import e9.x1;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class k {
-    public final int a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final int e;
+    public final n0 a;
+    public final int[] b;
 
-    public k(int i10, int i11, int i12, int i13, int i14) {
-        this.a = i10;
-        this.b = i11;
-        this.c = i12;
-        this.d = i13;
-        this.e = i14;
+    public k(x1 x1Var, int[] iArr, int i10) {
+        switch (i10) {
+            case 1:
+                this.a = n0.u(x1Var);
+                this.b = iArr;
+                break;
+            default:
+                this.a = n0.u(x1Var);
+                this.b = iArr;
+                break;
+        }
     }
 }

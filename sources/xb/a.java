@@ -4,8 +4,9 @@ import android.util.Log;
 import com.google.android.gms.internal.cast.z5;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.mlkit.vision.common.internal.MobileVisionBase;
+import m2.t;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class a implements OnFailureListener, r9.d {
     public static final a a = new a();
@@ -13,15 +14,15 @@ public final class a implements OnFailureListener, r9.d {
     public static final /* synthetic */ a c = new a();
 
     @Override // r9.d
-    public Object n2(z5 z5Var) {
-        return new c(z5Var.w(b.class));
+    public Object j2(z5 z5Var) {
+        return new c(z5Var.y(b.class));
     }
 
     @Override // com.google.android.gms.tasks.OnFailureListener
     public void onFailure(Exception exc) {
-        c5.a aVar = MobileVisionBase.e;
-        if (Log.isLoggable(aVar.a, 6)) {
-            String str = aVar.b;
+        t tVar = MobileVisionBase.e;
+        if (Log.isLoggable(tVar.b, 6)) {
+            String str = tVar.c;
             Log.e("MobileVisionBase", str != null ? str.concat("Error preloading model resource") : "Error preloading model resource", exc);
         }
     }

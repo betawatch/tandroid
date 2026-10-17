@@ -1,30 +1,23 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class pr implements e70 {
-    public final /* synthetic */ j70 a;
-    public final /* synthetic */ yr b;
+public final class pr {
+    public ActionBarPopupWindow$ActionBarPopupWindowLayout a;
+    public org.telegram.ui.ActionBar.a1 b;
+    public org.telegram.ui.ActionBar.e1[] c;
 
-    public pr(yr yrVar, j70 j70Var) {
-        this.b = yrVar;
-        this.a = j70Var;
-    }
-
-    @Override // org.telegram.ui.e70
-    public final void h(TLRPC.User user) {
-        this.b.t0(user.id, null, null, null, "", true, 0, false);
-    }
-
-    @Override // org.telegram.ui.e70
-    public final void i(int i10, ArrayList arrayList) {
-        if (this.a.getParentActivity() == null) {
-            return;
+    public final void a(float f7, boolean z10) {
+        org.telegram.ui.ActionBar.e1[] e1VarArr = this.c;
+        for (int i10 = 0; i10 < e1VarArr.length; i10++) {
+            if (!z10 || ((i10 != 0 || Math.abs(f7 - 0.2f) >= 0.01f) && ((i10 != 1 || Math.abs(f7 - 0.5f) >= 0.1f) && ((i10 != 2 || Math.abs(f7 - 1.0f) >= 0.1f) && ((i10 != 3 || Math.abs(f7 - 1.5f) >= 0.1f) && (i10 != 4 || Math.abs(f7 - 2.0f) >= 0.1f)))))) {
+                e1VarArr[i10].c(-328966, -328966);
+            } else {
+                e1VarArr[i10].c(-9718023, -9718023);
+            }
         }
-        yr yrVar = this.b;
-        yrVar.getMessagesController().addUsersToChat(yrVar.r, yrVar, arrayList, i10, new j3(this, 2), new or(0), null);
+        this.b.d(f7, true);
     }
 }

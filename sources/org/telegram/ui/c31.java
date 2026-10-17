@@ -1,46 +1,60 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MrzRecognizer;
+import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
+import java.util.Locale;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class c31 implements y9 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.m2 b;
+public final class c31 extends org.telegram.ui.ActionBar.n2 {
+    public static final int[] c = {MediaController.VIDEO_BITRATE_360, MediaController.VIDEO_BITRATE_480, 1200000, 2000000};
+    public org.telegram.ui.Components.im0 a;
+    public b31 b;
 
-    public c31(int i10, org.telegram.ui.ActionBar.m2 m2Var) {
-        this.a = i10;
-        this.b = m2Var;
-    }
-
-    @Override // org.telegram.ui.y9
-    public final /* synthetic */ String I0() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.y9
-    public final void K(String str) {
-        String b10 = pf.d.b(str);
-        if (TextUtils.isEmpty(b10)) {
-            AndroidUtilities.runOnUIThread(new b31(0));
-            return;
+    public static String U(int i10) {
+        if (i10 % MediaController.VIDEO_BITRATE_480 == 0) {
+            return (i10 / MediaController.VIDEO_BITRATE_480) + " Mbps";
         }
-        MessagesController.getInstance(this.a).getUserNameResolver().resolve(b10, new v3(this.b, 21));
+        if (i10 > 1000000) {
+            return String.format(Locale.US, "%.1f Mbps", Float.valueOf(i10 / 1000000.0f));
+        }
+        return (i10 / MediaDataController.MAX_STYLE_RUNS_COUNT) + " kbps";
     }
 
-    @Override // org.telegram.ui.y9
-    public final /* synthetic */ boolean d1(String str, o9 o9Var) {
-        return false;
+    public final void V(int i10, CharSequence[] charSequenceArr, hk0 hk0Var) {
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
+        alertDialog$Builder.a.R = LocaleController.getString(i10);
+        alertDialog$Builder.f(charSequenceArr, new mg.j(11, this, hk0Var));
+        showDialog(alertDialog$Builder.a);
     }
 
-    @Override // org.telegram.ui.y9
-    public final /* synthetic */ void V0(MrzRecognizer.Result result) {
-    }
-
-    @Override // org.telegram.ui.y9
-    public final /* synthetic */ void onDismiss() {
+    @Override // org.telegram.ui.ActionBar.n2
+    public final View createView(Context context) {
+        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        this.actionBar.setAllowOverlayTitle(true);
+        this.actionBar.setTitle(LocaleController.getString(R.string.RoundVideoSettings));
+        this.actionBar.setActionBarMenuOnItemClick(new a31(this, 0));
+        FrameLayout frameLayout = new FrameLayout(context);
+        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.a7, false));
+        this.fragmentView = frameLayout;
+        org.telegram.ui.Components.im0 im0Var = new org.telegram.ui.Components.im0(context, null);
+        this.a = im0Var;
+        im0Var.p1();
+        this.actionBar.setAdaptiveBackground(this.a);
+        this.a.setLayoutManager(new s4.b0());
+        this.a.setVerticalScrollBarEnabled(false);
+        org.telegram.ui.Components.im0 im0Var2 = this.a;
+        b31 b31Var = new b31(context);
+        this.b = b31Var;
+        im0Var2.setAdapter(b31Var);
+        this.a.setOnItemClickListener(new h11(this, 3));
+        frameLayout.addView(this.a, w7.z5.d(-1.0f, -1));
+        return this.fragmentView;
     }
 }

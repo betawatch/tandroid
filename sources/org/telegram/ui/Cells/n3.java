@@ -1,31 +1,33 @@
 package org.telegram.ui.Cells;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.a71;
+import org.telegram.ui.Components.e61;
+import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.s61;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class n3 extends AnimatorListenerAdapter {
-    public final /* synthetic */ p3 a;
+public final class n3 extends e61 {
+    public static final /* synthetic */ int a = 0;
 
-    public n3(p3 p3Var) {
-        this.a = p3Var;
+    static {
+        e61.setup(new n3());
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        p3 p3Var = this.a;
-        if (p3Var.v) {
-            p3Var.e.setVisibility(4);
-            p3Var.f.setVisibility(4);
-            p3Var.h.setVisibility(0);
-        } else {
-            if (p3Var.s) {
-                p3Var.e.setVisibility(4);
-            } else {
-                p3Var.f.setVisibility(4);
-            }
-            p3Var.h.setVisibility(8);
-        }
+    @Override // org.telegram.ui.Components.e61
+    public final void bindView(View view, f61 f61Var, boolean z10, s61 s61Var, a71 a71Var) {
+        o3 o3Var = (o3) view;
+        o3Var.a((TLRPC.StickerSetCovered) f61Var.G, z10, f61Var.t, false);
+        o3Var.e.a(f61Var.t, false);
+        o3Var.setAddOnClickListener(f61Var.D);
+    }
+
+    @Override // org.telegram.ui.Components.e61
+    public final View createView(Context context, im0 im0Var, int i10, int i11, org.telegram.ui.ActionBar.d6 d6Var) {
+        return new o3(context, d6Var);
     }
 }

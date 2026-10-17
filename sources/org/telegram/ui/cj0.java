@@ -1,69 +1,9 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.MessageObject;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class cj0 extends s4.t {
-    public final /* synthetic */ gj0 S;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cj0(gj0 gj0Var) {
-        super(true);
-        this.S = gj0Var;
-    }
-
-    @Override // s4.t
-    public final boolean B1(int i10) {
-        byte b10;
-        gj0 gj0Var = this.S;
-        MessageObject messageObject = (MessageObject) gj0Var.N.get((B() - 1) - i10);
-        MessageObject.GroupedMessages l4 = gj0Var.l(messageObject);
-        if (l4 != null) {
-            MessageObject.GroupedMessagePosition position = l4.getPosition(messageObject);
-            if (position.minX != position.maxX && (b10 = position.minY) == position.maxY && b10 != 0) {
-                int size = l4.posArray.size();
-                for (int i11 = 0; i11 < size; i11++) {
-                    MessageObject.GroupedMessagePosition groupedMessagePosition = l4.posArray.get(i11);
-                    if (groupedMessagePosition != position) {
-                        byte b11 = groupedMessagePosition.minY;
-                        byte b12 = position.minY;
-                        if (b11 <= b12 && groupedMessagePosition.maxY >= b12) {
-                            return true;
-                        }
-                    }
-                }
-            }
-        }
-        return false;
-    }
-
-    @Override // s4.t
-    public final boolean C1(View view) {
-        if (view instanceof org.telegram.ui.Cells.u1) {
-            return !((org.telegram.ui.Cells.u1) view).getMessageObject().isOutOwner();
-        }
-        return false;
-    }
-
-    @Override // s4.b0, s4.n0
-    public final int j(s4.y0 y0Var) {
-        return B0(y0Var);
-    }
-
-    @Override // s4.s, s4.b0, s4.n0
-    public final int k(s4.y0 y0Var) {
-        return C0(y0Var);
-    }
-
-    @Override // s4.s, s4.b0, s4.n0
-    public final int l(s4.y0 y0Var) {
-        return D0(y0Var);
-    }
-
-    @Override // s4.s, s4.b0, s4.n0
-    public final boolean y0() {
-        return true;
-    }
+public interface cj0 {
+    void a(ArrayList arrayList);
 }

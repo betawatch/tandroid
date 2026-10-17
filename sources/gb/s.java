@@ -1,22 +1,42 @@
 package gb;
 
+import java.io.ObjectInputStream;
+import java.io.ObjectStreamClass;
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class s extends u {
-    public final /* synthetic */ Method b;
+public abstract class s {
+    public static final s a;
 
-    public s(Method method) {
-        this.b = method;
-    }
-
-    @Override // gb.u
-    public final Object a(Class cls) {
-        String w9 = qf.b.w(cls);
-        if (w9 == null) {
-            return this.b.invoke(null, cls, Object.class);
+    static {
+        s rVar;
+        try {
+            Class<?> cls = Class.forName("sun.misc.Unsafe");
+            Field declaredField = cls.getDeclaredField("theUnsafe");
+            declaredField.setAccessible(true);
+            rVar = new o(cls.getMethod("allocateInstance", Class.class), declaredField.get(null));
+        } catch (Exception unused) {
+            try {
+                try {
+                    Method declaredMethod = ObjectStreamClass.class.getDeclaredMethod("getConstructorId", Class.class);
+                    declaredMethod.setAccessible(true);
+                    int intValue = ((Integer) declaredMethod.invoke(null, Object.class)).intValue();
+                    Method declaredMethod2 = ObjectStreamClass.class.getDeclaredMethod("newInstance", Class.class, Integer.TYPE);
+                    declaredMethod2.setAccessible(true);
+                    rVar = new p(intValue, declaredMethod2);
+                } catch (Exception unused2) {
+                    rVar = new r();
+                }
+            } catch (Exception unused3) {
+                Method declaredMethod3 = ObjectInputStream.class.getDeclaredMethod("newInstance", Class.class, Class.class);
+                declaredMethod3.setAccessible(true);
+                rVar = new q(declaredMethod3);
+            }
         }
-        throw new AssertionError("UnsafeAllocator is used for non-instantiable type: ".concat(w9));
+        a = rVar;
     }
+
+    public abstract Object a(Class cls);
 }

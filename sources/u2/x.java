@@ -4,7 +4,7 @@ import android.util.Pair;
 import java.util.HashMap;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class x extends t1 {
     public final int l;
@@ -19,9 +19,9 @@ public final class x extends t1 {
     }
 
     @Override // u2.t1
-    public final void A(b2.p1 p1Var) {
+    public final void A(b2.o1 o1Var) {
         int i10 = this.l;
-        n(i10 != Integer.MAX_VALUE ? new w(p1Var, i10) : new v(p1Var, 0));
+        n(i10 != Integer.MAX_VALUE ? new w(o1Var, i10) : new v(o1Var, 0));
     }
 
     @Override // u2.a
@@ -41,7 +41,7 @@ public final class x extends t1 {
     }
 
     @Override // u2.t1, u2.a
-    public final b2.p1 h() {
+    public final b2.o1 h() {
         b0 b0Var = (b0) this.k;
         int i10 = this.l;
         return i10 != Integer.MAX_VALUE ? new w(b0Var.o, i10) : new v(b0Var.o, 0);

@@ -1,74 +1,44 @@
 package org.telegram.ui;
 
-import android.view.MotionEvent;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.Button;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.voip.VoIPService;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import org.telegram.messenger.BotWebViewVibrationEffect;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class s30 extends org.telegram.ui.Components.bk0 {
-    public final /* synthetic */ n60 r;
+public final class s30 implements TextWatcher {
+    public final /* synthetic */ s50 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s30(n60 n60Var, LaunchActivity launchActivity) {
-        super(launchActivity);
-        this.r = n60Var;
+    public s30(s50 s50Var) {
+        this.a = s50Var;
     }
 
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName(Button.class.getName());
-        n60 n60Var = this.r;
-        int i10 = n60Var.F1;
-        accessibilityNodeInfo.setEnabled(i10 == 0 || i10 == 1);
-        if (n60Var.F1 == 1) {
-            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, LocaleController.getString(R.string.VoipMute)));
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        String str;
+        s50 s50Var = this.a;
+        s50Var.A3.a(TextUtils.isEmpty(editable), true);
+        int codePointCount = Character.codePointCount(editable, 0, editable.length());
+        int i10 = s50Var.d0;
+        if (codePointCount + 25 > i10) {
+            str = "" + (i10 - codePointCount);
+        } else {
+            str = null;
+        }
+        s50Var.M.a();
+        s50Var.M.setText(str);
+        s50Var.M.setTextColor(codePointCount >= i10 ? -1280137 : -1);
+        if (codePointCount > i10) {
+            BotWebViewVibrationEffect.APP_ERROR.vibrate();
         }
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        n60 n60Var = this.r;
-        z20 z20Var = n60Var.y2;
-        ArrayList arrayList = n60Var.Z1;
-        if (n60Var.s1()) {
-            return super.onTouchEvent(motionEvent);
-        }
-        if (motionEvent.getAction() == 0 && n60Var.F1 == 0 && n60Var.a1 != null) {
-            AndroidUtilities.runOnUIThread(z20Var, 300L);
-            n60Var.R1 = true;
-        } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            if (n60Var.R1) {
-                AndroidUtilities.cancelRunOnUIThread(z20Var);
-                n60Var.R1 = false;
-            } else if (n60Var.S1) {
-                AndroidUtilities.cancelRunOnUIThread(n60Var.x2);
-                n60Var.K1(0, true);
-                if (VoIPService.getSharedInstance() != null) {
-                    VoIPService.getSharedInstance().setMicMute(true, true, false);
-                    try {
-                        n60Var.w.performHapticFeedback(3, 2);
-                    } catch (Exception unused) {
-                    }
-                }
-                arrayList.clear();
-                arrayList.addAll(n60Var.Y1);
-                for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                    ((org.telegram.ui.Components.voip.t) arrayList.get(i10)).j(true);
-                }
-                n60Var.S1 = false;
-                MotionEvent obtain = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
-                super.onTouchEvent(obtain);
-                obtain.recycle();
-                return true;
-            }
-        }
-        return super.onTouchEvent(motionEvent);
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

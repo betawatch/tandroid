@@ -14,39 +14,39 @@ import java.io.File;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicInteger;
-import m.t3;
+import m.s3;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class y0 extends n6.g {
     public final ExecutorService U;
-    public final v1.b V;
-    public final v1.b W;
-    public final v1.b X;
-    public final v1.b Y;
-    public final v1.b Z;
-    public final v1.b a0;
-    public final v1.b b0;
-    public final v1.b c0;
-    public final v1.b d0;
-    public final v1.b e0;
+    public final qb.c V;
+    public final qb.c W;
+    public final qb.c X;
+    public final qb.c Y;
+    public final qb.c Z;
+    public final qb.c a0;
+    public final qb.c b0;
+    public final qb.c c0;
+    public final qb.c d0;
+    public final qb.c e0;
     public final z0 f0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y0(Context context, Looper looper, com.google.android.gms.common.api.k kVar, com.google.android.gms.common.api.l lVar, t3 t3Var) {
-        super(context, looper, 14, t3Var, kVar, lVar, 0);
+    public y0(Context context, Looper looper, com.google.android.gms.common.api.k kVar, com.google.android.gms.common.api.l lVar, s3 s3Var) {
+        super(context, looper, 14, s3Var, kVar, lVar, 0);
         ExecutorService unconfigurableExecutorService = Executors.unconfigurableExecutorService(Executors.newCachedThreadPool());
         z0 a2 = z0.a(context);
-        this.V = new v1.b();
-        this.W = new v1.b();
-        this.X = new v1.b();
-        this.Y = new v1.b();
-        this.Z = new v1.b();
-        this.a0 = new v1.b();
-        this.b0 = new v1.b();
-        this.c0 = new v1.b();
-        this.d0 = new v1.b();
-        this.e0 = new v1.b();
+        this.V = new qb.c();
+        this.W = new qb.c();
+        this.X = new qb.c();
+        this.Y = new qb.c();
+        this.Z = new qb.c();
+        this.a0 = new qb.c();
+        this.b0 = new qb.c();
+        this.c0 = new qb.c();
+        this.d0 = new qb.c();
+        this.e0 = new qb.c();
         n6.l.h(unconfigurableExecutorService);
         this.U = unconfigurableExecutorService;
         this.f0 = a2;
@@ -66,16 +66,16 @@ public final class y0 extends n6.g {
             Log.v("WearableClient", "onPostInitHandler: statusCode " + i10);
         }
         if (i10 == 0) {
-            this.V.b(iBinder);
-            this.W.b(iBinder);
-            this.X.b(iBinder);
-            this.Z.b(iBinder);
-            this.a0.b(iBinder);
-            this.b0.b(iBinder);
-            this.c0.b(iBinder);
-            this.d0.b(iBinder);
-            this.e0.b(iBinder);
-            this.Y.b(iBinder);
+            this.V.a(iBinder);
+            this.W.a(iBinder);
+            this.X.a(iBinder);
+            this.Z.a(iBinder);
+            this.a0.a(iBinder);
+            this.b0.a(iBinder);
+            this.c0.a(iBinder);
+            this.d0.a(iBinder);
+            this.e0.a(iBinder);
+            this.Y.a(iBinder);
             i10 = 0;
         }
         super.B(i10, iBinder, bundle, i11);
@@ -87,7 +87,7 @@ public final class y0 extends n6.g {
     }
 
     @Override // n6.g, com.google.android.gms.common.api.c
-    public final void f(n6.b bVar) {
+    public final void e(n6.b bVar) {
         n6.a0 a0Var = this.v;
         AtomicInteger atomicInteger = this.R;
         Context context = this.n;
@@ -114,7 +114,7 @@ public final class y0 extends n6.g {
                 return;
             }
         }
-        super.f(bVar);
+        super.e(bVar);
     }
 
     @Override // n6.g, com.google.android.gms.common.api.c

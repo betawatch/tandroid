@@ -1,6 +1,7 @@
 package org.telegram.messenger;
 
 import android.os.SystemClock;
+import hg.r;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.RandomAccessFile;
@@ -23,12 +24,12 @@ import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public class FileLoadOperation {
     private static final int FINISH_CODE_DEFAULT = 0;
     private static final int FINISH_CODE_FILE_ALREADY_EXIST = 1;
-    public static zf.a0 filesQueueByteBuffer = null;
+    public static zf.z filesQueueByteBuffer = null;
     private static int globalRequestPointer = 0;
     private static final int preloadMaxBytes = 2097152;
     private static final int stateCanceled = 4;
@@ -160,7 +161,7 @@ public class FileLoadOperation {
     public static volatile DispatchQueue filesQueue = new DispatchQueue("writeFileQueue");
     private static final Object lockObject = new Object();
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public interface FileLoadOperationDelegate {
         void didChangedLoadProgress(FileLoadOperation fileLoadOperation, long j10, long j11);
 
@@ -177,7 +178,7 @@ public class FileLoadOperation {
         void saveFilePath(FilePathDatabase.PathData pathData, File file);
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class PreloadRange {
         private long fileOffset;
         private long length;
@@ -188,7 +189,7 @@ public class FileLoadOperation {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class Range {
         private long end;
         private long start;
@@ -203,7 +204,7 @@ public class FileLoadOperation {
         }
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class RequestInfo {
         public boolean cancelled;
         public boolean cancelling;
@@ -463,7 +464,7 @@ public class FileLoadOperation {
                     requestInfo.cancelling = true;
                     if (runnable == null) {
                         requestInfo.cancelled = true;
-                        g0.o(requestInfo.requestToken, new StringBuilder("cancelRequests cancel "));
+                        q.o(requestInfo.requestToken, new StringBuilder("cancelRequests cancel "));
                         ConnectionsManager.getInstance(this.currentAccount).cancelRequest(requestInfo.requestToken, true);
                     } else {
                         requestInfo.whenCancelled = new h0(requestInfo, iArr, runnable, 21);
@@ -768,11 +769,11 @@ public class FileLoadOperation {
         }
         int size = arrayList.size();
         int i10 = (size * 16) + 4;
-        zf.a0 a0Var = filesQueueByteBuffer;
-        if (a0Var == null) {
-            filesQueueByteBuffer = new zf.a0(i10);
+        zf.z zVar = filesQueueByteBuffer;
+        if (zVar == null) {
+            filesQueueByteBuffer = new zf.z(i10);
         } else {
-            a0Var.b();
+            zVar.b();
         }
         filesQueueByteBuffer.c(size);
         for (int i11 = 0; i11 < size; i11++) {
@@ -1363,7 +1364,7 @@ public class FileLoadOperation {
             sb2.append(" conType=");
             sb2.append(i11);
             sb2.append(" reqId");
-            g0.o(requestInfo.requestToken, sb2);
+            q.o(requestInfo.requestToken, sb2);
         }
         if (requestInfo == this.priorityRequestInfo) {
             if (BuildVars.DEBUG_VERSION) {
@@ -1437,7 +1438,7 @@ public class FileLoadOperation {
             TLRPC.TL_upload_reuploadCdnFile tL_upload_reuploadCdnFile = new TLRPC.TL_upload_reuploadCdnFile();
             tL_upload_reuploadCdnFile.file_token = this.cdnToken;
             tL_upload_reuploadCdnFile.request_token = ((TLRPC.TL_upload_cdnFileReuploadNeeded) tLObject2).request_token;
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_upload_reuploadCdnFile, new fb(this, i11, requestInfo, 1), null, null, 0, this.datacenterId, 1, true);
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(tL_upload_reuploadCdnFile, new bb(this, i11, requestInfo, 1), null, null, 0, this.datacenterId, 1, true);
             return;
         }
         if (tLObject2 instanceof TLRPC.TL_upload_file) {
@@ -1495,7 +1496,7 @@ public class FileLoadOperation {
             notifyStreamListeners();
             cleanup();
             if (!this.isPreloadVideoOperation && !z11) {
-                filesQueue.postRunnable(new i2.f1(this, this.cacheIvTemp, this.cacheFileParts, this.cacheFilePreload, this.cacheFileTemp, z10, 2));
+                filesQueue.postRunnable(new i2.d1(this, this.cacheIvTemp, this.cacheFileParts, this.cacheFilePreload, this.cacheFileTemp, z10, 2));
                 this.cacheIvTemp = null;
                 this.cacheFileParts = null;
                 this.cacheFilePreload = null;
@@ -1514,15 +1515,15 @@ public class FileLoadOperation {
                     sb2.append(" of ");
                     sb2.append(this.totalBytesCount);
                     sb2.append(" prefSize=");
-                    g0.o(this.preloadPrefixSize, sb2);
+                    q.o(this.preloadPrefixSize, sb2);
                 }
             }
             if (this.fileMetadata != null) {
                 if (this.cacheFileTemp != null) {
-                    FileLoader.getInstance(this.currentAccount).getFileDatabase().removeFiles(Collections.singletonList(new ai.b(this.cacheFileTemp)));
+                    FileLoader.getInstance(this.currentAccount).getFileDatabase().removeFiles(Collections.singletonList(new bi.b(this.cacheFileTemp)));
                 }
                 if (this.cacheFileParts != null) {
-                    FileLoader.getInstance(this.currentAccount).getFileDatabase().removeFiles(Collections.singletonList(new ai.b(this.cacheFileParts)));
+                    FileLoader.getInstance(this.currentAccount).getFileDatabase().removeFiles(Collections.singletonList(new bi.b(this.cacheFileParts)));
                 }
             }
             this.delegate.didPreFinishLoading(this, this.cacheFileFinal);
@@ -2512,7 +2513,7 @@ public class FileLoadOperation {
                 }
                 if (fileLoadOperation.streamPriorityStartOffset != j10) {
                     if (BuildVars.DEBUG_VERSION) {
-                        i2.d.x(new StringBuilder("frame get offset = "), fileLoadOperation.streamPriorityStartOffset);
+                        q.r(new StringBuilder("frame get offset = "), fileLoadOperation.streamPriorityStartOffset);
                     }
                     j12 = j10;
                     fileLoadOperation.streamPriorityStartOffset = j12;
@@ -2533,7 +2534,7 @@ public class FileLoadOperation {
                     int i22 = i18;
                     FileLoadOperation fileLoadOperation2 = fileLoadOperation;
                     fileLoadOperation = fileLoadOperation2;
-                    int sendRequestSync = ConnectionsManager.getInstance(fileLoadOperation.currentAccount).sendRequestSync(tL_upload_getFile3, new hg.q(fileLoadOperation2, requestInfo, i21, i22, tL_upload_getFile3, 2), null, null, i20, i21, i22, z16);
+                    int sendRequestSync = ConnectionsManager.getInstance(fileLoadOperation.currentAccount).sendRequestSync(tL_upload_getFile3, new r(fileLoadOperation2, requestInfo, i21, i22, tL_upload_getFile3, 2), null, null, i20, i21, i22, z16);
                     requestInfo.requestToken = sendRequestSync;
                     if (BuildVars.LOGS_ENABLED) {
                         StringBuilder sb2 = new StringBuilder("debug_loading: ");
@@ -2547,7 +2548,7 @@ public class FileLoadOperation {
                         sb2.append(" conType=");
                         sb2.append(i22);
                         sb2.append(" priority=");
-                        g0.o(fileLoadOperation.priority, sb2);
+                        q.o(fileLoadOperation.priority, sb2);
                     }
                     AndroidUtilities.runOnUIThread(new p2(fileLoadOperation, sendRequestSync, 3));
                     fileLoadOperation.requestsCount++;
@@ -2696,10 +2697,10 @@ public class FileLoadOperation {
         if (this.webLocation != null) {
             String MD5 = Utilities.MD5(this.webFile.url);
             if (this.encryptFile) {
-                str6 = t8.b.u(MD5, ".temp.enc");
-                str = a1.g.s(t8.b.i(MD5, "."), this.ext, ".enc");
+                str6 = r.c.u(MD5, ".temp.enc");
+                str = a1.g.s(r.c.i(MD5, "."), this.ext, ".enc");
                 if (this.key != null) {
-                    u10 = t8.b.u(MD5, "_64.iv.enc");
+                    u10 = r.c.u(MD5, "_64.iv.enc");
                     String str7 = str6;
                     str2 = u10;
                     r10 = str7;
@@ -2711,12 +2712,12 @@ public class FileLoadOperation {
                 r10 = str72;
                 j11 = 0;
             } else {
-                String u11 = t8.b.u(MD5, ".temp");
-                StringBuilder i11 = t8.b.i(MD5, ".");
+                String u11 = r.c.u(MD5, ".temp");
+                StringBuilder i11 = r.c.i(MD5, ".");
                 i11.append(this.ext);
                 String sb2 = i11.toString();
                 if (this.key != null) {
-                    u10 = t8.b.u(MD5, "_64.iv");
+                    u10 = r.c.u(MD5, "_64.iv");
                     str6 = u11;
                     str = sb2;
                     String str722 = str6;
@@ -2768,11 +2769,11 @@ public class FileLoadOperation {
             if (exists) {
                 this.cacheFileTemp = new File(this.tempPath, r10);
                 if (this.ungzip) {
-                    this.cacheFileGzipTemp = new File(this.tempPath, t8.b.u(r10, ".gz"));
+                    this.cacheFileGzipTemp = new File(this.tempPath, r.c.u(r10, ".gz"));
                 }
                 String str8 = "rws";
                 if (this.encryptFile) {
-                    File file = new File(FileLoader.getInternalCacheDir(), t8.b.u(str, ".key"));
+                    File file = new File(FileLoader.getInternalCacheDir(), r.c.u(str, ".key"));
                     try {
                         randomAccessFile2 = new RandomAccessFile(file, "rws");
                         long length = file.length();
@@ -3129,7 +3130,7 @@ public class FileLoadOperation {
                         sb3.append(" final = ");
                         sb3.append(this.cacheFileFinal);
                         sb3.append(" priority");
-                        g0.o(this.priority, sb3);
+                        q.o(this.priority, sb3);
                     }
                 }
                 if (str2 != null) {

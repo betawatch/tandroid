@@ -1,116 +1,245 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.content.ComponentName;
+import android.content.Intent;
+import android.net.Uri;
+import android.net.http.SslError;
+import android.text.TextUtils;
+import android.view.View;
+import android.webkit.RenderProcessGoneDetail;
+import android.webkit.SslErrorHandler;
+import android.webkit.WebResourceError;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebResourceResponse;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import java.io.ByteArrayInputStream;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ei1;
+import org.telegram.ui.vf1;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class gg0 {
-    public float a = 0.0f;
-    public float b = 25.0f;
-    public float c = 50.0f;
-    public float d = 75.0f;
-    public float e = 100.0f;
-    public float[] f;
+public final class gg0 extends WebViewClient {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public final float[] a() {
-        float f7 = this.a;
-        float f10 = this.b / 100.0f;
-        float f11 = this.c / 100.0f;
-        float f12 = this.d / 100.0f;
-        float f13 = this.e;
-        int i10 = 2;
-        int i11 = 5;
-        char c10 = '\f';
-        char c11 = '\r';
-        float[] fArr = {-0.001f, f7 / 100.0f, 0.0f, f7 / 100.0f, 0.25f, f10, 0.5f, f11, 0.75f, f12, 1.0f, f13 / 100.0f, 1.001f, f13 / 100.0f};
-        int i12 = 100;
-        ArrayList arrayList = new ArrayList(100);
-        ArrayList arrayList2 = new ArrayList(100);
-        arrayList2.add(Float.valueOf(fArr[0]));
-        arrayList2.add(Float.valueOf(fArr[1]));
-        int i13 = 1;
-        while (i13 < i11) {
-            int i14 = (i13 - 1) * i10;
-            float f14 = fArr[i14];
-            float f15 = fArr[i14 + 1];
-            int i15 = i13 * 2;
-            float f16 = fArr[i15];
-            float f17 = fArr[i15 + 1];
-            int i16 = i13 + 1;
-            int i17 = i16 * 2;
-            int i18 = i10;
-            float f18 = fArr[i17];
-            char c12 = c10;
-            float f19 = fArr[i17 + 1];
-            int i19 = (i13 + 2) * 2;
-            float f20 = fArr[i19];
-            float f21 = fArr[i19 + 1];
-            char c13 = c11;
-            int i20 = 1;
-            while (i20 < i12) {
-                float f22 = i20 * 0.01f;
-                float f23 = f22 * f22;
-                float f24 = f23 * f22;
-                float y3 = ((((((f16 * 3.0f) - f14) - (f18 * 3.0f)) + f20) * f24) + ((((f18 * 4.0f) + ((f14 * 2.0f) - (f16 * 5.0f))) - f20) * f23) + com.google.android.gms.internal.play_billing.k3.y(f18, f14, f22, f16 * 2.0f)) * 0.5f;
-                float max = Math.max(0.0f, Math.min(1.0f, ((((((f17 * 3.0f) - f15) - (f19 * 3.0f)) + f21) * f24) + ((((4.0f * f19) + ((2.0f * f15) - (5.0f * f17))) - f21) * f23) + com.google.android.gms.internal.play_billing.k3.y(f19, f15, f22, f17 * 2.0f)) * 0.5f));
-                if (y3 > f14) {
-                    arrayList2.add(Float.valueOf(y3));
-                    arrayList2.add(Float.valueOf(max));
-                }
-                if ((i20 - 1) % 2 == 0) {
-                    arrayList.add(Float.valueOf(max));
-                }
-                i20++;
-                i12 = 100;
-            }
-            arrayList2.add(Float.valueOf(f18));
-            arrayList2.add(Float.valueOf(f19));
-            i13 = i16;
-            i10 = i18;
-            c10 = c12;
-            c11 = c13;
-            i11 = 5;
-            i12 = 100;
+    public /* synthetic */ gg0(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
+    }
+
+    public boolean a(String str) {
+        if (TextUtils.isEmpty(str)) {
+            return false;
         }
-        arrayList2.add(Float.valueOf(fArr[c10]));
-        arrayList2.add(Float.valueOf(fArr[c11]));
-        this.f = new float[arrayList.size()];
-        int i21 = 0;
-        while (true) {
-            float[] fArr2 = this.f;
-            if (i21 >= fArr2.length) {
+        Uri parse = Uri.parse(str);
+        if (!"tg".equals(parse.getScheme())) {
+            return false;
+        }
+        ((ei1) this.b).getClass();
+        ((ei1) this.b).finishFragment(false);
+        try {
+            Intent intent = new Intent("android.intent.action.VIEW", parse);
+            intent.setComponent(new ComponentName(ApplicationLoader.applicationContext.getPackageName(), LaunchActivity.class.getName()));
+            intent.putExtra("com.android.browser.application_id", ApplicationLoader.applicationContext.getPackageName());
+            ApplicationLoader.applicationContext.startActivity(intent);
+            return true;
+        } catch (Exception e) {
+            FileLog.e(e);
+            return true;
+        }
+    }
+
+    @Override // android.webkit.WebViewClient
+    public void onLoadResource(WebView webView, String str) {
+        switch (this.a) {
+            case 1:
+                if (!a(str)) {
+                    super.onLoadResource(webView, str);
+                    break;
+                }
                 break;
-            }
-            fArr2[i21] = ((Float) arrayList.get(i21)).floatValue();
-            i21++;
+            default:
+                super.onLoadResource(webView, str);
+                break;
         }
-        int size = arrayList2.size();
-        float[] fArr3 = new float[size];
-        for (int i22 = 0; i22 < size; i22++) {
-            fArr3[i22] = ((Float) arrayList2.get(i22)).floatValue();
+    }
+
+    @Override // android.webkit.WebViewClient
+    public void onPageFinished(WebView webView, String str) {
+        int i10 = this.a;
+        Object obj = this.b;
+        switch (i10) {
+            case 0:
+                super.onPageFinished(webView, str);
+                org.telegram.ui.qt0 qt0Var = (org.telegram.ui.qt0) obj;
+                View view = qt0Var.r;
+                if (!qt0Var.x) {
+                    qt0Var.n.setVisibility(4);
+                    qt0Var.h.setVisibility(4);
+                    view.setEnabled(true);
+                    view.setAlpha(1.0f);
+                    break;
+                }
+                break;
+            case 1:
+                super.onPageFinished(webView, str);
+                ei1 ei1Var = (ei1) obj;
+                dr drVar = ei1Var.c;
+                if (drVar != null && drVar.getVisibility() == 0) {
+                    AnimatorSet animatorSet = new AnimatorSet();
+                    ei1Var.b.getContentView().setVisibility(0);
+                    ei1Var.b.setEnabled(true);
+                    animatorSet.playTogether(ObjectAnimator.ofFloat(ei1Var.c, "scaleX", 1.0f, 0.1f), ObjectAnimator.ofFloat(ei1Var.c, "scaleY", 1.0f, 0.1f), ObjectAnimator.ofFloat(ei1Var.c, "alpha", 1.0f, 0.0f), ObjectAnimator.ofFloat(ei1Var.b.getContentView(), "scaleX", 0.0f, 1.0f), ObjectAnimator.ofFloat(ei1Var.b.getContentView(), "scaleY", 0.0f, 1.0f), ObjectAnimator.ofFloat(ei1Var.b.getContentView(), "alpha", 0.0f, 1.0f));
+                    animatorSet.addListener(new vf1(this, 11));
+                    animatorSet.setDuration(150L);
+                    animatorSet.start();
+                    break;
+                }
+                break;
+            default:
+                super.onPageFinished(webView, str);
+                break;
         }
-        return fArr3;
     }
 
-    public final boolean b() {
-        return ((double) Math.abs(this.a - 0.0f)) < 1.0E-5d && ((double) Math.abs(this.b - 25.0f)) < 1.0E-5d && ((double) Math.abs(this.c - 50.0f)) < 1.0E-5d && ((double) Math.abs(this.d - 75.0f)) < 1.0E-5d && ((double) Math.abs(this.e - 100.0f)) < 1.0E-5d;
+    @Override // android.webkit.WebViewClient
+    public void onReceivedError(WebView webView, WebResourceRequest webResourceRequest, WebResourceError webResourceError) {
+        switch (this.a) {
+            case 2:
+                if (webResourceRequest.isForMainFrame()) {
+                    qi.i iVar = (qi.i) this.b;
+                    if (webView == iVar.o) {
+                        iVar.f();
+                        break;
+                    }
+                }
+                break;
+            default:
+                super.onReceivedError(webView, webResourceRequest, webResourceError);
+                break;
+        }
     }
 
-    public final void c(InputSerializedData inputSerializedData, boolean z10) {
-        this.a = inputSerializedData.readFloat(z10);
-        this.b = inputSerializedData.readFloat(z10);
-        this.c = inputSerializedData.readFloat(z10);
-        this.d = inputSerializedData.readFloat(z10);
-        this.e = inputSerializedData.readFloat(z10);
+    @Override // android.webkit.WebViewClient
+    public void onReceivedHttpError(WebView webView, WebResourceRequest webResourceRequest, WebResourceResponse webResourceResponse) {
+        switch (this.a) {
+            case 2:
+                if (webResourceRequest.isForMainFrame()) {
+                    qi.i iVar = (qi.i) this.b;
+                    if (webView == iVar.o) {
+                        iVar.f();
+                        break;
+                    }
+                }
+                break;
+            default:
+                super.onReceivedHttpError(webView, webResourceRequest, webResourceResponse);
+                break;
+        }
     }
 
-    public final void d(OutputSerializedData outputSerializedData) {
-        outputSerializedData.writeFloat(this.a);
-        outputSerializedData.writeFloat(this.b);
-        outputSerializedData.writeFloat(this.c);
-        outputSerializedData.writeFloat(this.d);
-        outputSerializedData.writeFloat(this.e);
+    @Override // android.webkit.WebViewClient
+    public void onReceivedSslError(WebView webView, SslErrorHandler sslErrorHandler, SslError sslError) {
+        switch (this.a) {
+            case 2:
+                sslErrorHandler.cancel();
+                qi.i iVar = (qi.i) this.b;
+                if (webView == iVar.o) {
+                    iVar.f();
+                    break;
+                }
+                break;
+            default:
+                super.onReceivedSslError(webView, sslErrorHandler, sslError);
+                break;
+        }
+    }
+
+    @Override // android.webkit.WebViewClient
+    public boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {
+        switch (this.a) {
+            case 2:
+                qi.i iVar = (qi.i) this.b;
+                if (webView != iVar.o) {
+                    return true;
+                }
+                iVar.f();
+                return true;
+            default:
+                return super.onRenderProcessGone(webView, renderProcessGoneDetail);
+        }
+    }
+
+    @Override // android.webkit.WebViewClient
+    public WebResourceResponse shouldInterceptRequest(WebView webView, WebResourceRequest webResourceRequest) {
+        switch (this.a) {
+            case 0:
+                String uri = webResourceRequest.getUrl().toString();
+                if (!((org.telegram.ui.qt0) this.b).x || !uri.startsWith("https://www.youtube.com/youtubei/v1/player?key=")) {
+                    return null;
+                }
+                Utilities.externalNetworkQueue.postRunnable(new lg(this, uri, webResourceRequest, 16));
+                return null;
+            case 1:
+            default:
+                return super.shouldInterceptRequest(webView, webResourceRequest);
+            case 2:
+                Uri url = webResourceRequest.getUrl();
+                if ("http".equalsIgnoreCase(url.getScheme()) || "https".equalsIgnoreCase(url.getScheme())) {
+                    qi.i iVar = (qi.i) this.b;
+                    iVar.getClass();
+                    String path = url.getPath();
+                    if (!"https".equalsIgnoreCase(url.getScheme()) || !iVar.c.equalsIgnoreCase(url.getHost()) || url.getUserInfo() != null || ((url.getPort() != -1 && url.getPort() != 443) || path == null || !path.startsWith(iVar.d))) {
+                        return new WebResourceResponse("text/plain", "UTF-8", new ByteArrayInputStream(new byte[0]));
+                    }
+                }
+                return null;
+        }
+    }
+
+    @Override // android.webkit.WebViewClient
+    public boolean shouldOverrideUrlLoading(WebView webView, String str) {
+        switch (this.a) {
+            case 0:
+                if (!((org.telegram.ui.qt0) this.b).x) {
+                    break;
+                } else {
+                    pf.d.r(webView.getContext(), str);
+                    break;
+                }
+            case 1:
+                if (a(str) || super.shouldOverrideUrlLoading(webView, str)) {
+                }
+                break;
+        }
+        return super.shouldOverrideUrlLoading(webView, str);
+    }
+
+    @Override // android.webkit.WebViewClient
+    public boolean shouldOverrideUrlLoading(WebView webView, WebResourceRequest webResourceRequest) {
+        switch (this.a) {
+            case 2:
+                if (webResourceRequest.isForMainFrame()) {
+                    qi.i iVar = (qi.i) this.b;
+                    Uri url = webResourceRequest.getUrl();
+                    if (url != null) {
+                        if (iVar.g.equals(url.toString())) {
+                            return false;
+                        }
+                    } else {
+                        iVar.getClass();
+                    }
+                }
+                return true;
+            default:
+                return super.shouldOverrideUrlLoading(webView, webResourceRequest);
+        }
     }
 }

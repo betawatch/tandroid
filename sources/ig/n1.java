@@ -1,134 +1,161 @@
 package ig;
 
-import android.os.Bundle;
-import android.view.KeyEvent;
-import android.widget.TextView;
-import bi.u3;
-import java.util.ArrayList;
-import java.util.regex.Pattern;
+import android.content.Context;
+import android.view.Gravity;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarLayout;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.kg1;
-import org.telegram.ui.sy;
-import org.telegram.ui.yy;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.d5;
+import org.telegram.ui.Components.jw0;
+import org.telegram.ui.Components.tz;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n1 implements org.telegram.ui.ActionBar.z1, sy {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ KeyEvent.Callback b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public final class n1 extends jw0 {
+    public final /* synthetic */ int w0;
 
-    public /* synthetic */ n1(r1 r1Var, u3 u3Var, int i10, a2 a2Var, TextView textView, Utilities.Callback callback) {
-        this.b = r1Var;
-        this.c = u3Var;
-        this.a = i10;
-        this.d = a2Var;
-        this.e = textView;
-        this.f = callback;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ n1(Context context, d5 d5Var, int i10) {
+        super(context, d5Var);
+        this.w0 = i10;
     }
 
-    @Override // org.telegram.ui.sy
-    public /* synthetic */ boolean D() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.sy
-    public /* synthetic */ boolean L(yy yyVar) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ActionBar.z1
-    public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
-        r1 r1Var = (r1) this.b;
-        u3 u3Var = (u3) this.c;
-        a2 a2Var2 = (a2) this.d;
-        TextView textView = (TextView) this.e;
-        Utilities.Callback callback = (Utilities.Callback) this.f;
-        String obj = r1Var.getText().toString();
-        if (obj.length() <= 0 || obj.length() > 32) {
-            AndroidUtilities.shakeView(r1Var);
-            u3Var.run(Boolean.FALSE);
-            return;
-        }
-        b2 f7 = b2.f(this.a);
-        int i11 = a2Var2 == null ? -1 : a2Var2.a;
-        a2 d = f7.d(obj);
-        if (d == null || d.a == i11) {
-            callback.run(obj);
-            a2Var.dismiss();
-        } else {
-            AndroidUtilities.shakeView(r1Var);
-            textView.setText(LocaleController.getString(R.string.BusinessRepliesNameBusy));
-            u3Var.run(Boolean.TRUE);
+    @Override // org.telegram.ui.Components.jw0
+    public boolean P() {
+        switch (this.w0) {
+            case 2:
+                return false;
+            case 3:
+                return false;
+            case 4:
+            default:
+                return super.P();
+            case 5:
+                return false;
         }
     }
 
-    @Override // org.telegram.ui.sy
-    public boolean w(yy yyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, kg1 kg1Var) {
-        TLRPC.TL_chatAdminRights tL_chatAdminRights;
-        final LaunchActivity launchActivity = (LaunchActivity) this.b;
-        final TLRPC.User user = (TLRPC.User) this.c;
-        final String str = (String) this.d;
-        final String str2 = (String) this.e;
-        final yy yyVar2 = (yy) this.f;
-        Pattern pattern = LaunchActivity.B1;
-        final long j10 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
-        final TLRPC.Chat chat = MessagesController.getInstance(launchActivity.O).getChat(Long.valueOf(-j10));
-        final int i12 = this.a;
-        if (chat == null || (!chat.creator && ((tL_chatAdminRights = chat.admin_rights) == null || !tL_chatAdminRights.add_admins))) {
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(launchActivity);
-            String string = LocaleController.getString(R.string.AddBot);
-            org.telegram.ui.ActionBar.a2 a2Var = alertDialog$Builder.a;
-            a2Var.R = string;
-            a2Var.T = AndroidUtilities.replaceTags(LocaleController.formatString("AddMembersAlertNamesText", R.string.AddMembersAlertNamesText, UserObject.getUserName(user), chat == null ? "" : chat.title));
-            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-            alertDialog$Builder.k(LocaleController.getString(R.string.AddBot), new org.telegram.ui.ActionBar.z1() { // from class: org.telegram.ui.w90
-                @Override // org.telegram.ui.ActionBar.z1
-                public final void g(org.telegram.ui.ActionBar.a2 a2Var2, int i13) {
-                    Pattern pattern2 = LaunchActivity.B1;
-                    Bundle h = a1.g.h("scrollToTopOnResume", true);
-                    long j11 = -j10;
-                    h.putLong("chat_id", j11);
-                    fo foVar = new fo(h);
-                    int i14 = i12;
-                    NotificationCenter.getInstance(i14).lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
-                    MessagesController.getInstance(i14).addUserToChat(j11, user, 0, str2, foVar, null);
-                    ((ActionBarLayout) LaunchActivity.this.O()).S(foVar, true, false);
+    @Override // android.view.ViewGroup
+    public void addView(View view) {
+        switch (this.w0) {
+            case 4:
+                if (view instanceof tz) {
+                    ViewGroup.LayoutParams layoutParams = ((tz) view).getLayoutParams();
+                    if (layoutParams == null) {
+                        layoutParams = new FrameLayout.LayoutParams(-1, -2);
+                    }
+                    if (layoutParams instanceof FrameLayout.LayoutParams) {
+                        ((FrameLayout.LayoutParams) layoutParams).gravity = 87;
+                    }
+                    view.setLayoutParams(layoutParams);
                 }
-            });
-            alertDialog$Builder.o();
-        } else {
-            MessagesController.getInstance(i12).checkIsInChat(false, chat, user, new MessagesController.IsInChatCheckedCallback() { // from class: org.telegram.ui.v90
-                @Override // org.telegram.messenger.MessagesController.IsInChatCheckedCallback
-                public final void run(boolean z12, TLRPC.TL_chatAdminRights tL_chatAdminRights2, String str3) {
-                    Pattern pattern2 = LaunchActivity.B1;
-                    AndroidUtilities.runOnUIThread(new org.telegram.messenger.l8(LaunchActivity.this, str, tL_chatAdminRights2, z12, str2, i12, chat, yyVar2, user, j10, str3));
-                }
-            });
+                super.addView(view);
+                break;
+            default:
+                super.addView(view);
+                break;
         }
-        return true;
     }
 
-    public /* synthetic */ n1(LaunchActivity launchActivity, int i10, TLRPC.User user, String str, String str2, yy yyVar) {
-        this.b = launchActivity;
-        this.a = i10;
-        this.c = user;
-        this.d = str;
-        this.e = str2;
-        this.f = yyVar;
+    /* JADX WARN: Removed duplicated region for block: B:20:0x007a  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x00a0  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0090  */
+    @Override // org.telegram.ui.Components.jw0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        int i14;
+        int i15;
+        int i16;
+        int i17;
+        int i18;
+        int i19;
+        int i20;
+        switch (this.w0) {
+            case 4:
+                int childCount = getChildCount();
+                int R = R();
+                int paddingLeft = getPaddingLeft();
+                int paddingRight = (i12 - i10) - getPaddingRight();
+                int paddingTop = getPaddingTop();
+                int i21 = i13 - i11;
+                int paddingBottom = i21 - getPaddingBottom();
+                for (int i22 = 0; i22 < childCount; i22++) {
+                    View childAt = getChildAt(i22);
+                    if (childAt.getVisibility() != 8) {
+                        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
+                        int measuredWidth = childAt.getMeasuredWidth();
+                        int measuredHeight = childAt.getMeasuredHeight();
+                        int i23 = layoutParams.gravity;
+                        if (i23 == -1) {
+                            i23 = 51;
+                        }
+                        int absoluteGravity = Gravity.getAbsoluteGravity(i23, getLayoutDirection());
+                        int i24 = i23 & 112;
+                        int i25 = absoluteGravity & 7;
+                        if (i25 == 1) {
+                            i14 = (((paddingRight - paddingLeft) - measuredWidth) / 2) + paddingLeft + layoutParams.leftMargin;
+                            i15 = layoutParams.rightMargin;
+                        } else if (i25 != 5) {
+                            i16 = layoutParams.leftMargin + paddingLeft;
+                            if (i24 == 16) {
+                                if (i24 == 48) {
+                                    i20 = layoutParams.topMargin;
+                                } else if (i24 != 80) {
+                                    i20 = layoutParams.topMargin;
+                                } else {
+                                    i17 = paddingBottom - measuredHeight;
+                                    i18 = layoutParams.bottomMargin;
+                                }
+                                i19 = i20 + paddingTop;
+                                if (childAt instanceof tz) {
+                                    i19 = AndroidUtilities.isTablet() ? i21 - measuredHeight : (i21 + R) - measuredHeight;
+                                }
+                                childAt.layout(i16, i19, measuredWidth + i16, measuredHeight + i19);
+                            } else {
+                                i17 = (((paddingBottom - paddingTop) - measuredHeight) / 2) + paddingTop + layoutParams.topMargin;
+                                i18 = layoutParams.bottomMargin;
+                            }
+                            i19 = i17 - i18;
+                            if (childAt instanceof tz) {
+                            }
+                            childAt.layout(i16, i19, measuredWidth + i16, measuredHeight + i19);
+                        } else {
+                            i14 = paddingRight - measuredWidth;
+                            i15 = layoutParams.rightMargin;
+                        }
+                        i16 = i14 - i15;
+                        if (i24 == 16) {
+                        }
+                        i19 = i17 - i18;
+                        if (childAt instanceof tz) {
+                        }
+                        childAt.layout(i16, i19, measuredWidth + i16, measuredHeight + i19);
+                    }
+                }
+                S();
+                break;
+            default:
+                super.onLayout(z10, i10, i11, i12, i13);
+                break;
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.w0) {
+            case 0:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11), TLObject.FLAG_30));
+                break;
+            case 1:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11), TLObject.FLAG_30));
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
+        }
     }
 }

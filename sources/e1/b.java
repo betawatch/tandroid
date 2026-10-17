@@ -7,16 +7,15 @@ import android.content.Intent;
 import android.os.CancellationSignal;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
 import androidx.credentials.playservices.controllers.identityauth.HiddenActivity;
-import di.y6;
-import g7.e;
+import ci.v7;
 import g7.g;
 import java.util.concurrent.Executor;
 import td.l;
 import v0.f;
 import v0.i;
-import w7.z7;
+import w7.a8;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements l {
     public final /* synthetic */ int a;
@@ -37,11 +36,11 @@ public final /* synthetic */ class b implements l {
     public final Object invoke(Object obj) {
         switch (this.a) {
             case 0:
-                d dVar = (d) this.e;
-                Context context = dVar.e;
-                e eVar = (e) obj;
-                PendingIntent pendingIntent = eVar.a;
-                g gVar = eVar.b;
+                e eVar = (e) this.e;
+                Context context = eVar.e;
+                g7.e eVar2 = (g7.e) obj;
+                PendingIntent pendingIntent = eVar2.a;
+                g gVar = eVar2.b;
                 CancellationSignal cancellationSignal = this.b;
                 Executor executor = this.c;
                 i iVar = this.d;
@@ -53,28 +52,28 @@ public final /* synthetic */ class b implements l {
                 } else {
                     if (pendingIntent != null) {
                         Intent intent = new Intent(context, (Class<?>) HiddenActivity.class);
-                        b1.d.a(dVar.i, intent, "CREATE_PUBLIC_KEY_CREDENTIAL");
+                        b1.d.a(eVar.i, intent, "CREATE_PUBLIC_KEY_CREDENTIAL");
                         intent.putExtra("EXTRA_FLOW_PENDING_INTENT", pendingIntent);
                         try {
                             context.startActivity(intent);
                         } catch (Exception unused) {
                             CredentialProviderPlayServicesImpl.Companion.getClass();
                             if (!h.a(cancellationSignal)) {
-                                Executor executor2 = dVar.g;
+                                Executor executor2 = eVar.g;
                                 if (executor2 == null) {
                                     kotlin.jvm.internal.i.h("executor");
                                     throw null;
                                 }
-                                executor2.execute(new a(dVar, 0));
+                                executor2.execute(new a(eVar, 0));
                             }
                         }
                     }
                     if (gVar != null) {
-                        v0.c a2 = z7.a(gVar.a, gVar.b);
+                        v0.c a2 = a8.a(gVar.a, gVar.b);
                         if (a2 instanceof f) {
                             CredentialProviderPlayServicesImpl.Companion.getClass();
                             if (!h.a(cancellationSignal)) {
-                                executor.execute(new y6(17, iVar, (f) a2));
+                                executor.execute(new v7(14, iVar, (f) a2));
                             }
                         }
                     }
@@ -87,14 +86,14 @@ public final /* synthetic */ class b implements l {
                 }
                 return id.i.a;
             default:
-                f1.b bVar = (f1.b) this.e;
-                Context context2 = bVar.e;
+                f1.a aVar = (f1.a) this.e;
+                Context context2 = aVar.e;
                 g7.l lVar = (g7.l) obj;
                 CredentialProviderPlayServicesImpl.Companion.getClass();
                 CancellationSignal cancellationSignal2 = this.b;
                 if (!h.a(cancellationSignal2)) {
                     Intent intent2 = new Intent(context2, (Class<?>) HiddenActivity.class);
-                    b1.d.a(bVar.i, intent2, "BEGIN_SIGN_IN");
+                    b1.d.a(aVar.i, intent2, "BEGIN_SIGN_IN");
                     intent2.putExtra("EXTRA_FLOW_PENDING_INTENT", lVar.a);
                     try {
                         context2.startActivity(intent2);

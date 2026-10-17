@@ -1,37 +1,124 @@
 package rg;
 
 import android.content.Context;
-import android.view.MotionEvent;
+import android.graphics.PointF;
+import android.view.ViewGroup;
+import ei.tc;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.wh;
+import org.telegram.ui.Components.el0;
+import w7.z5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class w2 extends b {
-    public final /* synthetic */ x2 E;
+public final class w2 extends j {
+    public final s0 q0;
+    public boolean r0;
+    public int s0;
+    public int t0;
+    public final tc u0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w2(x2 x2Var, Context context) {
-        super(context);
-        this.E = x2Var;
+    public w2(Context context, PointF pointF, int i10, tc tcVar, float f7, int i11) {
+        super(context, pointF);
+        s0 s0Var = new s0(context, f7);
+        this.q0 = s0Var;
+        s0Var.setMaxWidth(i11);
+        s0Var.e(0, this.s0);
+        this.u0 = tcVar;
+        String str = tcVar.c;
+        String a2 = tcVar.a();
+        s0Var.d(i10, str);
+        s0Var.setText(a2);
+        m();
+        addView(s0Var, z5.e(-2, -2, 51));
+        setClipChildren(false);
+        setClipToPadding(false);
+        k();
     }
 
-    @Override // org.telegram.ui.Components.pu, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        i iVar = this.E.H;
-        if (iVar == null || iVar.getVisibility() != 0) {
-            return false;
+    @Override // rg.j
+    public final i a() {
+        return new p0(this, getContext());
+    }
+
+    public int getColor() {
+        return this.s0;
+    }
+
+    @Override // rg.j
+    public float getMaxScale() {
+        return 1.5f;
+    }
+
+    @Override // rg.j
+    public el0 getSelectionBounds() {
+        ViewGroup viewGroup = (ViewGroup) getParent();
+        if (viewGroup == null) {
+            return new el0();
         }
-        return super.dispatchTouchEvent(motionEvent);
+        float scaleX = viewGroup.getScaleX();
+        float dp = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
+        float dp2 = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredHeight());
+        float A = wh.A(dp, 2.0f, getPositionX(), scaleX);
+        return new el0(A, wh.A(dp2, 2.0f, getPositionY(), scaleX), ((dp * scaleX) + A) - A, dp2 * scaleX);
     }
 
-    @Override // org.telegram.ui.Components.pu, android.widget.TextView, android.view.View
+    @Override // rg.j
+    public float getStickyPaddingBottom() {
+        return this.q0.J;
+    }
+
+    @Override // rg.j
+    public float getStickyPaddingLeft() {
+        return this.q0.I;
+    }
+
+    @Override // rg.j
+    public float getStickyPaddingRight() {
+        return this.q0.I;
+    }
+
+    @Override // rg.j
+    public float getStickyPaddingTop() {
+        return this.q0.J;
+    }
+
+    public int getType() {
+        return this.t0;
+    }
+
+    public int getTypesCount() {
+        return this.q0.getTypesCount() - (!this.r0 ? 1 : 0);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
-        this.E.m();
+        k();
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
+    @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         super.onMeasure(i10, i11);
-        this.E.m();
+        k();
+    }
+
+    public void setColor(int i10) {
+        this.r0 = true;
+        this.s0 = i10;
+    }
+
+    @Override // rg.j
+    public void setIsVideo(boolean z10) {
+        this.q0.setIsVideo(true);
+    }
+
+    public void setMaxWidth(int i10) {
+        this.q0.setMaxWidth(i10);
+    }
+
+    public void setType(int i10) {
+        this.t0 = i10;
+        this.q0.e(i10, this.s0);
     }
 }

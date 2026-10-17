@@ -1,26 +1,66 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class sf0 implements org.telegram.ui.ActionBar.z1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ dg0 b;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.drawable.BitmapDrawable;
+import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.Utilities;
 
-    public /* synthetic */ sf0(dg0 dg0Var, int i10) {
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes3.dex */
+public final class sf0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ tf0 b;
+
+    public /* synthetic */ sf0(tf0 tf0Var, int i10) {
         this.a = i10;
-        this.b = dg0Var;
+        this.b = tf0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.z1
-    public final void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                dg0 dg0Var = this.b;
-                dg0Var.c(true);
-                dg0Var.s0.u1(0, true, null, true);
+                if (AndroidUtilities.isAccessibilityTouchExplorationEnabled()) {
+                    this.b.h.requestFocus();
+                    break;
+                }
                 break;
             default:
-                this.b.s0.u1(0, true, null, true);
+                tf0 tf0Var = this.b;
+                if (tf0Var.getParent() instanceof ViewGroup) {
+                    ((ViewGroup) tf0Var.getParent()).removeView(tf0Var);
+                }
+                tf0Var.c.setVisibility(0);
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                tf0 tf0Var = this.b;
+                tf0Var.c.setVisibility(8);
+                int measuredWidth = (int) (tf0Var.b.getMeasuredWidth() / 10.0f);
+                int measuredHeight = (int) (tf0Var.b.getMeasuredHeight() / 10.0f);
+                Bitmap createBitmap = Bitmap.createBitmap(measuredWidth, measuredHeight, Bitmap.Config.ARGB_8888);
+                Canvas canvas = new Canvas(createBitmap);
+                canvas.scale(0.1f, 0.1f);
+                canvas.drawColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
+                tf0Var.b.draw(canvas);
+                Utilities.stackBlurBitmap(createBitmap, Math.max(8, Math.max(measuredWidth, measuredHeight) / ImageReceiver.DEFAULT_CROSSFADE_DURATION));
+                tf0Var.d.setBackground(new BitmapDrawable(tf0Var.getContext().getResources(), createBitmap));
+                tf0Var.d.setAlpha(0.0f);
+                tf0Var.d.setVisibility(0);
+                tf0Var.b.addView(tf0Var);
+                break;
+            default:
+                super.onAnimationStart(animator);
                 break;
         }
     }

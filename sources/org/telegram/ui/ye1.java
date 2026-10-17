@@ -1,44 +1,30 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
-import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class ye1 extends org.telegram.ui.Components.lm0 {
-    public final ArrayList c = new ArrayList();
-    public final ArrayList d = new ArrayList();
-    public xe1 e;
-    public int f;
-    public final /* synthetic */ ze1 h;
+public final class ye1 extends pg.a {
+    public final TLRPC.TL_forumTopic c;
 
-    public ye1(ze1 ze1Var) {
-        this.h = ze1Var;
+    public ye1(int i10, TLRPC.TL_forumTopic tL_forumTopic) {
+        super(i10, false);
+        this.c = tL_forumTopic;
     }
 
-    @Override // org.telegram.ui.Components.lm0
-    public final boolean D(s4.b1 b1Var) {
-        return true;
-    }
-
-    @Override // s4.g0
-    public final int h() {
-        return this.c.size();
-    }
-
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
-        ArrayList arrayList = this.c;
-        TLRPC.Chat chat = (TLRPC.Chat) arrayList.get(i10);
-        String str = (String) this.d.get(i10);
-        org.telegram.ui.Cells.g4 g4Var = (org.telegram.ui.Cells.g4) b1Var.a;
-        g4Var.e(chat, chat.title, str, i10 != arrayList.size() - 1);
-        g4Var.c(this.h.w.contains(Long.valueOf(chat.id)), false);
-    }
-
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        return new org.telegram.ui.Components.wl0(new org.telegram.ui.Cells.g4(1, 0, viewGroup.getContext(), false));
+    public final boolean equals(Object obj) {
+        TLRPC.TL_forumTopic tL_forumTopic;
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || ye1.class != obj.getClass()) {
+            return false;
+        }
+        ye1 ye1Var = (ye1) obj;
+        if (this.a != ye1Var.a) {
+            return false;
+        }
+        TLRPC.TL_forumTopic tL_forumTopic2 = this.c;
+        return tL_forumTopic2 == null || (tL_forumTopic = ye1Var.c) == null || tL_forumTopic2.id == tL_forumTopic.id;
     }
 }

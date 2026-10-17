@@ -12,17 +12,17 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
-import m.t3;
+import m.s3;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class e extends n6.g {
     public final GoogleSignInOptions U;
 
-    public e(Context context, Looper looper, t3 t3Var, GoogleSignInOptions googleSignInOptions, com.google.android.gms.common.api.k kVar, com.google.android.gms.common.api.l lVar) {
-        super(context, looper, 91, t3Var, kVar, lVar, 0);
+    public e(Context context, Looper looper, s3 s3Var, GoogleSignInOptions googleSignInOptions, com.google.android.gms.common.api.k kVar, com.google.android.gms.common.api.l lVar) {
+        super(context, looper, 91, s3Var, kVar, lVar, 0);
         z5.a aVar;
-        Set<Scope> set = (Set) t3Var.b;
+        Set<Scope> set = (Set) s3Var.b;
         if (googleSignInOptions != null) {
             aVar = new z5.a();
             aVar.a = new HashSet();

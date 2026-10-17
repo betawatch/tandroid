@@ -1,40 +1,67 @@
 package org.telegram.ui.web;
 
-import android.content.DialogInterface;
-import android.webkit.JsResult;
+import ai.ab;
+import android.content.Context;
+import android.net.Uri;
+import android.os.Build;
+import android.webkit.RenderProcessGoneDetail;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class t0 implements DialogInterface.OnDismissListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ JsResult c;
+public final class t0 extends WebViewClient {
+    public final /* synthetic */ WebView a;
+    public final /* synthetic */ u0 b;
 
-    public /* synthetic */ t0(boolean[] zArr, JsResult jsResult, int i10) {
-        this.a = i10;
-        this.b = zArr;
-        this.c = jsResult;
+    public t0(u0 u0Var, WebView webView) {
+        this.b = u0Var;
+        this.a = webView;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        switch (this.a) {
-            case 0:
-                boolean[] zArr = this.b;
-                if (!zArr[0]) {
-                    zArr[0] = true;
-                    this.c.cancel();
-                    break;
-                }
-                break;
-            default:
-                boolean[] zArr2 = this.b;
-                if (!zArr2[0]) {
-                    zArr2[0] = true;
-                    this.c.cancel();
-                    break;
-                }
-                break;
+    @Override // android.webkit.WebViewClient
+    public final boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {
+        x0 x0Var = this.b.e;
+        if (Build.VERSION.SDK_INT >= 26) {
+            StringBuilder sb2 = new StringBuilder("newWebView.onRenderProcessGone priority=");
+            sb2.append(renderProcessGoneDetail == null ? null : Integer.valueOf(renderProcessGoneDetail.rendererPriorityAtExit()));
+            sb2.append(" didCrash=");
+            sb2.append(renderProcessGoneDetail == null ? null : Boolean.valueOf(renderProcessGoneDetail.didCrash()));
+            x0Var.c(sb2.toString());
+        } else {
+            x0Var.c("newWebView.onRenderProcessGone");
         }
+        try {
+            if (!AndroidUtilities.isSafeToShow(x0Var.getContext())) {
+                return true;
+            }
+            Context context = x0Var.getContext();
+            a1 a1Var = x0Var.Q;
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, a1Var == null ? null : a1Var.e);
+            alertDialog$Builder.a.R = LocaleController.getString(R.string.ChromeCrashTitle);
+            alertDialog$Builder.a.T = AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ChromeCrashMessage), new ki.u(this, 25));
+            alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
+            alertDialog$Builder.a.setOnDismissListener(new ab(this, 11));
+            alertDialog$Builder.o();
+            return true;
+        } catch (Exception e) {
+            FileLog.e(e);
+            return false;
+        }
+    }
+
+    @Override // android.webkit.WebViewClient
+    public final boolean shouldOverrideUrlLoading(WebView webView, String str) {
+        a1 a1Var = this.b.e.Q;
+        if (a1Var != null) {
+            a1Var.G(Uri.parse(str), null, !a1Var.o0, false, false);
+            this.a.destroy();
+        }
+        return true;
     }
 }

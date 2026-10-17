@@ -1,166 +1,94 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.app.Activity;
 import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
+import android.graphics.PorterDuffColorFilter;
+import android.util.Property;
 import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.GenericProvider;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public class aq extends View {
-    public final CheckBoxBase a;
-    public Drawable b;
-    public int c;
+public final class aq extends FrameLayout {
+    public final TextView[] a;
+    public final xj0[] b;
+    public final ImageView c;
+    public AnimatorSet d;
+    public pg e;
+    public float f;
+    public final org.telegram.ui.ActionBar.d6 h;
 
-    public aq(Context context, int i10, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context);
-        this.a = new CheckBoxBase(i10, this, c6Var);
-    }
-
-    public final void a(boolean z10, boolean z11) {
-        this.a.f(-1, z10, z11);
-    }
-
-    public final void b(int i10, int i11, int i12) {
-        this.a.h(i10, i11, i12);
-    }
-
-    public CheckBoxBase getCheckBoxBase() {
-        return this.a;
-    }
-
-    public boolean getDrawUnchecked() {
-        return this.a.z;
-    }
-
-    public float getProgress() {
-        return this.a.getProgress();
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a.l = true;
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.a.l = false;
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.b == null) {
-            this.a.a(canvas);
-            return;
-        }
-        int measuredWidth = getMeasuredWidth() >> 1;
-        int measuredHeight = getMeasuredHeight() >> 1;
-        Drawable drawable = this.b;
-        drawable.setBounds(org.telegram.ui.Cells.c1.r(2, measuredWidth, drawable), org.telegram.ui.Cells.c1.c(2, measuredHeight, this.b), org.telegram.ui.Cells.c1.v(2, measuredWidth, this.b), org.telegram.ui.Cells.c1.u(2, measuredHeight, this.b));
-        this.b.draw(canvas);
-        Paint paint = new Paint();
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(AndroidUtilities.dp(1.2f));
-        paint.setColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.U6, false));
-        canvas.drawCircle(measuredWidth, measuredHeight, measuredWidth - AndroidUtilities.dp(1.5f), paint);
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName("android.widget.Switch");
-        accessibilityNodeInfo.setCheckable(true);
-        accessibilityNodeInfo.setChecked(this.a.q);
-    }
-
-    @Override // android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        this.a.e(0, 0, i12 - i10, i13 - i11);
-    }
-
-    public void setCirclePaintProvider(GenericProvider<Void, Paint> genericProvider) {
-        CheckBoxBase checkBoxBase = this.a;
-        if (checkBoxBase.G == genericProvider) {
-            return;
-        }
-        checkBoxBase.G = genericProvider;
-        checkBoxBase.b();
-    }
-
-    public void setDrawBackgroundAsArc(int i10) {
-        this.a.d(i10);
-    }
-
-    public void setDrawUnchecked(boolean z10) {
-        this.a.k(z10);
-    }
-
-    public void setDuration(long j10) {
-        this.a.H = j10;
-    }
-
-    @Override // android.view.View
-    public void setEnabled(boolean z10) {
-        CheckBoxBase checkBoxBase = this.a;
-        if (checkBoxBase.k != z10) {
-            checkBoxBase.k = z10;
-            checkBoxBase.b();
-        }
-        super.setEnabled(z10);
-    }
-
-    public void setForbidden(boolean z10) {
-        CheckBoxBase checkBoxBase = this.a;
-        if (checkBoxBase.n == z10) {
-            return;
-        }
-        checkBoxBase.n = z10;
-        checkBoxBase.b();
-    }
-
-    public void setIcon(int i10) {
-        if (i10 != this.c) {
-            this.c = i10;
+    public aq(Activity activity, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(activity);
+        this.a = new TextView[2];
+        this.b = new xj0[2];
+        this.h = d6Var;
+        FrameLayout frameLayout = new FrameLayout(activity);
+        frameLayout.setBackground(org.telegram.ui.ActionBar.h6.c0(AndroidUtilities.dp(6.0f), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.qf, d6Var)));
+        int i10 = 0;
+        frameLayout.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
+        addView(frameLayout, w7.z5.a(-2.0f, 0.0f, 0.0f, 0.0f, 6.0f, -2, 51));
+        while (i10 < 2) {
+            this.b[i10] = new xj0(activity);
+            this.b[i10].setScaleType(ImageView.ScaleType.CENTER);
+            frameLayout.addView(this.b[i10], w7.z5.a(24.0f, 0.0f, i10 == 0 ? 0.0f : 24.0f, 0.0f, 0.0f, 24, 51));
+            this.a[i10] = new TextView(activity);
+            this.a[i10].setTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.pf, this.h));
+            this.a[i10].setTextSize(1, 14.0f);
+            this.a[i10].setMaxLines(1);
+            this.a[i10].setSingleLine(true);
+            this.a[i10].setMaxWidth(AndroidUtilities.dp(250.0f));
+            this.a[i10].setGravity(51);
+            this.a[i10].setPivotX(0.0f);
+            frameLayout.addView(this.a[i10], w7.z5.a(-2.0f, 32.0f, i10 == 0 ? 2.0f : 26.0f, 10.0f, 0.0f, -2, 51));
             if (i10 == 0) {
-                this.b = null;
-                return;
+                this.b[i10].f(R.raw.ticks_single, 24, 24, null);
+                this.a[i10].setText(LocaleController.getString(R.string.HintSent));
+            } else {
+                this.b[i10].f(R.raw.ticks_double, 24, 24, null);
+                this.a[i10].setText(LocaleController.getString(R.string.HintRead));
             }
-            Drawable mutate = getContext().getDrawable(i10).mutate();
-            this.b = mutate;
-            mutate.setColorFilter(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.U6, false), PorterDuff.Mode.MULTIPLY);
+            this.b[i10].d();
+            i10++;
         }
+        ImageView imageView = new ImageView(activity);
+        this.c = imageView;
+        imageView.setImageResource(R.drawable.tooltip_arrow);
+        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.qf, this.h), PorterDuff.Mode.MULTIPLY));
+        addView(imageView, w7.z5.a(6.0f, 0.0f, 0.0f, 0.0f, 0.0f, 14, 83));
     }
 
-    public void setNum(int i10) {
-        String str;
-        CheckBoxBase checkBoxBase = this.a;
-        if (i10 >= 0) {
-            checkBoxBase.getClass();
-            str = "" + (i10 + 1);
-        } else {
-            str = checkBoxBase.p != null ? checkBoxBase.C : null;
-        }
-        String str2 = checkBoxBase.C;
-        if (str2 == null) {
-            if (str == null) {
-                return;
-            }
-        } else if (str2.equals(str)) {
+    public final void a() {
+        if (getTag() == null) {
             return;
         }
-        checkBoxBase.C = str;
-        checkBoxBase.b();
+        setTag(null);
+        pg pgVar = this.e;
+        if (pgVar != null) {
+            AndroidUtilities.cancelRunOnUIThread(pgVar);
+            this.e = null;
+        }
+        AnimatorSet animatorSet = this.d;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+            this.d = null;
+        }
+        AnimatorSet animatorSet2 = new AnimatorSet();
+        this.d = animatorSet2;
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(this, (Property<aq, Float>) View.ALPHA, 0.0f), ObjectAnimator.ofFloat(this, (Property<aq, Float>) View.SCALE_X, 0.0f), ObjectAnimator.ofFloat(this, (Property<aq, Float>) View.SCALE_Y, 0.0f));
+        this.d.addListener(new zp(this, 1));
+        this.d.setDuration(180L);
+        this.d.start();
     }
 
-    public void setProgressDelegate(bq bqVar) {
-        this.a.D = bqVar;
+    public float getBaseTranslationY() {
+        return this.f;
     }
 }

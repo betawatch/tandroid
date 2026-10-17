@@ -1,27 +1,26 @@
 package j4;
 
-import b2.w0;
-import c3.i0;
-import e2.m0;
-import i2.o0;
+import b2.v0;
+import c3.j0;
+import i2.m0;
 import java.util.Collections;
 import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class s implements i {
     public final c0 a;
     public String b;
-    public i0 c;
+    public j0 c;
     public r d;
     public boolean e;
     public long l;
     public final boolean[] f = new boolean[3];
-    public final o0 g = new o0(32);
-    public final o0 h = new o0(33);
-    public final o0 i = new o0(34);
-    public final o0 j = new o0(39);
-    public final o0 k = new o0(40);
+    public final m0 g = new m0(32);
+    public final m0 h = new m0(33);
+    public final m0 i = new m0(34);
+    public final m0 j = new m0(39);
+    public final m0 k = new m0(40);
     public long m = -9223372036854775807L;
     public final e2.x n = new e2.x();
 
@@ -33,7 +32,7 @@ public final class s implements i {
     public final void a(e2.x xVar) {
         int i10;
         this.c.getClass();
-        String str = m0.a;
+        String str = e2.m0.a;
         while (xVar.a() > 0) {
             int i11 = xVar.b;
             int i12 = xVar.c;
@@ -41,7 +40,7 @@ public final class s implements i {
             this.l += xVar.a();
             this.c.d(xVar.a(), xVar);
             while (i11 < i12) {
-                int c10 = f2.p.c(bArr, i11, i12, this.f);
+                int c10 = f2.q.c(bArr, i11, i12, this.f);
                 if (c10 == i12) {
                     g(i11, i12, bArr);
                     return;
@@ -85,60 +84,60 @@ public final class s implements i {
             rVar.i = true;
         }
         if (!this.e) {
-            o0 o0Var = this.g;
-            o0Var.e(i11);
-            o0 o0Var2 = this.h;
-            o0Var2.e(i11);
-            o0 o0Var3 = this.i;
-            o0Var3.e(i11);
-            if (o0Var.d && o0Var2.d && o0Var3.d) {
+            m0 m0Var = this.g;
+            m0Var.e(i11);
+            m0 m0Var2 = this.h;
+            m0Var2.e(i11);
+            m0 m0Var3 = this.i;
+            m0Var3.e(i11);
+            if (m0Var.d && m0Var2.d && m0Var3.d) {
                 String str = this.b;
-                int i12 = o0Var.e;
-                byte[] bArr = new byte[o0Var2.e + i12 + o0Var3.e];
-                System.arraycopy((byte[]) o0Var.f, 0, bArr, 0, i12);
-                System.arraycopy((byte[]) o0Var2.f, 0, bArr, o0Var.e, o0Var2.e);
-                System.arraycopy((byte[]) o0Var3.f, 0, bArr, o0Var.e + o0Var2.e, o0Var3.e);
+                int i12 = m0Var.e;
+                byte[] bArr = new byte[m0Var2.e + i12 + m0Var3.e];
+                System.arraycopy((byte[]) m0Var.f, 0, bArr, 0, i12);
+                System.arraycopy((byte[]) m0Var2.f, 0, bArr, m0Var.e, m0Var2.e);
+                System.arraycopy((byte[]) m0Var3.f, 0, bArr, m0Var.e + m0Var2.e, m0Var3.e);
                 String str2 = null;
-                f2.l k10 = f2.p.k((byte[]) o0Var2.f, 3, o0Var2.e, null);
-                f2.i iVar = k10.b;
-                if (iVar != null) {
-                    str2 = e2.g.a(iVar.a, iVar.c, iVar.d, iVar.f, iVar.b, iVar.e);
+                f2.m k10 = f2.q.k((byte[]) m0Var2.f, 3, m0Var2.e, null);
+                f2.j jVar = k10.b;
+                if (jVar != null) {
+                    str2 = e2.g.a(jVar.a, jVar.c, jVar.d, jVar.f, jVar.b, jVar.e);
                 }
-                b2.w wVar = new b2.w();
-                wVar.a = str;
-                wVar.q = w0.n("video/mp2t");
-                wVar.r = w0.n("video/hevc");
-                wVar.j = str2;
-                wVar.y = k10.e;
-                wVar.z = k10.f;
-                wVar.A = k10.g;
-                wVar.B = k10.h;
-                wVar.H = new b2.o(k10.k, k10.l, k10.m, null, k10.c + 8, k10.d + 8);
-                wVar.E = k10.i;
-                wVar.t = k10.j;
-                wVar.I = k10.a + 1;
-                wVar.u = Collections.singletonList(bArr);
-                b2.x xVar = new b2.x(wVar);
-                this.c.b(xVar);
-                int i13 = xVar.u;
+                b2.v vVar = new b2.v();
+                vVar.a = str;
+                vVar.q = v0.n("video/mp2t");
+                vVar.r = v0.n("video/hevc");
+                vVar.j = str2;
+                vVar.y = k10.e;
+                vVar.z = k10.f;
+                vVar.A = k10.g;
+                vVar.B = k10.h;
+                vVar.H = new b2.n(k10.k, k10.l, k10.m, null, k10.c + 8, k10.d + 8);
+                vVar.E = k10.i;
+                vVar.t = k10.j;
+                vVar.I = k10.a + 1;
+                vVar.u = Collections.singletonList(bArr);
+                b2.w wVar = new b2.w(vVar);
+                this.c.b(wVar);
+                int i13 = wVar.u;
                 u6.p(i13 != -1);
                 cVar.k(i13);
                 this.e = true;
             }
         }
-        o0 o0Var4 = this.j;
-        boolean e = o0Var4.e(i11);
-        e2.x xVar2 = this.n;
+        m0 m0Var4 = this.j;
+        boolean e = m0Var4.e(i11);
+        e2.x xVar = this.n;
         if (e) {
-            xVar2.L(f2.p.p(o0Var4.e, (byte[]) o0Var4.f), (byte[]) o0Var4.f);
-            xVar2.O(5);
-            cVar.a(j11, xVar2);
+            xVar.L(f2.q.p(m0Var4.e, (byte[]) m0Var4.f), (byte[]) m0Var4.f);
+            xVar.O(5);
+            cVar.a(j11, xVar);
         }
-        o0 o0Var5 = this.k;
-        if (o0Var5.e(i11)) {
-            xVar2.L(f2.p.p(o0Var5.e, (byte[]) o0Var5.f), (byte[]) o0Var5.f);
-            xVar2.O(5);
-            cVar.a(j11, xVar2);
+        m0 m0Var5 = this.k;
+        if (m0Var5.e(i11)) {
+            xVar.L(f2.q.p(m0Var5.e, (byte[]) m0Var5.f), (byte[]) m0Var5.f);
+            xVar.O(5);
+            cVar.a(j11, xVar);
         }
     }
 
@@ -146,7 +145,7 @@ public final class s implements i {
     public final void c() {
         this.l = 0L;
         this.m = -9223372036854775807L;
-        f2.p.b(this.f);
+        f2.q.b(this.f);
         this.g.g();
         this.h.g();
         this.i.g();
@@ -169,16 +168,16 @@ public final class s implements i {
         f0Var.c();
         this.b = (String) f0Var.e;
         f0Var.c();
-        i0 W = qVar.W(f0Var.c, 2);
-        this.c = W;
-        this.d = new r(W);
+        j0 j02 = qVar.j0(f0Var.c, 2);
+        this.c = j02;
+        this.d = new r(j02);
         this.a.b(qVar, f0Var);
     }
 
     @Override // j4.i
     public final void e(boolean z10) {
         this.c.getClass();
-        String str = m0.a;
+        String str = e2.m0.a;
         if (z10) {
             this.a.d.c(0);
             b(this.l, 0, 0, this.m);

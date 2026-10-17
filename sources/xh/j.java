@@ -1,142 +1,335 @@
 package xh;
 
-import android.content.Context;
+import android.animation.ValueAnimator;
+import android.app.Activity;
+import android.app.Dialog;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.Point;
-import android.graphics.RectF;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
+import android.os.Build;
+import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.g0;
-import org.telegram.messenger.sk;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.Components.pi0;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.e1;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Components.bs;
+import org.telegram.ui.Components.dn0;
+import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.ki0;
+import org.telegram.ui.Components.w9;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.Wallet.f9;
+import org.telegram.ui.sn;
+import tg.p;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes4.dex */
-public final class j extends ViewGroup {
-    public final GestureDetector a;
-    public final Path b;
-    public final RectF c;
-    public boolean d;
-    public final /* synthetic */ k e;
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes.dex */
+public final class j extends Dialog {
+    public final /* synthetic */ k E;
+    public final int a;
+    public final int b;
+    public final Drawable c;
+    public final TextView d;
+    public final TextView e;
+    public final ActionBarPopupWindow$ActionBarPopupWindowLayout f;
+    public final ki0 h;
+    public final h n;
+    public TLRPC.TL_chatInviteImporter r;
+    public ValueAnimator s;
+    public w9 v;
+    public BitmapDrawable w;
+    public float x;
+    public final i y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j(k kVar, Context context) {
-        super(context);
-        this.e = kVar;
-        this.a = new GestureDetector(getContext(), new tg.e(1, this));
-        this.b = new Path();
-        this.c = new RectF();
-        this.d = true;
+    public j(k kVar, Activity activity, im0 im0Var, d6 d6Var, boolean z10) {
+        super(activity, R.style.TransparentDialog2);
+        this.E = kVar;
+        Drawable mutate = getContext().getResources().getDrawable(R.drawable.popup_fixed_alert2).mutate();
+        this.c = mutate;
+        TextView textView = new TextView(getContext());
+        this.d = textView;
+        TextView textView2 = new TextView(getContext());
+        this.e = textView2;
+        i iVar = new i(this, getContext());
+        this.y = iVar;
+        setCancelable(true);
+        iVar.setVisibility(4);
+        int i10 = h6.G8;
+        n2 n2Var = kVar.g;
+        int w02 = h6.w0(i10, n2Var.getResourceProvider());
+        mutate.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.MULTIPLY));
+        mutate.setCallback(iVar);
+        Rect rect = new Rect();
+        mutate.getPadding(rect);
+        this.a = rect.top;
+        this.b = rect.left;
+        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(activity, d6Var);
+        this.f = actionBarPopupWindow$ActionBarPopupWindowLayout;
+        actionBarPopupWindow$ActionBarPopupWindowLayout.setBackgroundColor(w02);
+        iVar.addView(actionBarPopupWindow$ActionBarPopupWindowLayout);
+        h hVar = new h(getContext());
+        this.n = hVar;
+        ki0 ki0Var = new ki0(activity, n2Var.getActionBar(), im0Var, hVar);
+        this.h = ki0Var;
+        ki0Var.setCreateThumbFromParent(true);
+        iVar.addView(ki0Var);
+        hVar.setProfileGalleryView(ki0Var);
+        iVar.addView(hVar);
+        textView.setMaxLines(1);
+        textView.setTextColor(h6.w0(h6.G6, n2Var.getResourceProvider()));
+        textView.setTextSize(16.0f);
+        textView.setTypeface(AndroidUtilities.bold());
+        iVar.addView(textView);
+        textView2.setTextColor(h6.w0(h6.y6, n2Var.getResourceProvider()));
+        textView2.setTextSize(14.0f);
+        iVar.addView(textView2);
+        e1 e1Var = new e1(activity, true, false);
+        int i11 = h6.E8;
+        int w03 = h6.w0(i11, d6Var);
+        int i12 = h6.F8;
+        e1Var.c(w03, h6.w0(i12, d6Var));
+        int i13 = h6.I5;
+        e1Var.setSelectorColor(h6.w0(i13, d6Var));
+        e1Var.g(LocaleController.getString(z10 ? R.string.AddToChannel : R.string.AddToGroup), R.drawable.msg_requests, null);
+        final int i14 = 0;
+        e1Var.setOnClickListener(new View.OnClickListener(this) { // from class: xh.g
+            public final /* synthetic */ j b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i14) {
+                    case 0:
+                        j jVar = this.b;
+                        k kVar2 = jVar.E;
+                        TLRPC.TL_chatInviteImporter tL_chatInviteImporter = jVar.r;
+                        if (tL_chatInviteImporter != null) {
+                            kVar2.d(tL_chatInviteImporter, true);
+                        }
+                        kVar2.s.e(false);
+                        kVar2.r = null;
+                        break;
+                    case 1:
+                        j.a(this.b);
+                        break;
+                    default:
+                        j jVar2 = this.b;
+                        k kVar3 = jVar2.E;
+                        TLRPC.TL_chatInviteImporter tL_chatInviteImporter2 = jVar2.r;
+                        if (tL_chatInviteImporter2 != null) {
+                            kVar3.d(tL_chatInviteImporter2, false);
+                        }
+                        kVar3.s.e(false);
+                        kVar3.r = null;
+                        break;
+                }
+            }
+        });
+        actionBarPopupWindow$ActionBarPopupWindowLayout.addView(e1Var);
+        e1 e1Var2 = new e1(activity, false, false);
+        e1Var2.c(h6.w0(i11, d6Var), h6.w0(i12, d6Var));
+        e1Var2.setSelectorColor(h6.w0(i13, d6Var));
+        e1Var2.g(LocaleController.getString(R.string.SendMessage), R.drawable.msg_msgbubble3, null);
+        final int i15 = 1;
+        e1Var2.setOnClickListener(new View.OnClickListener(this) { // from class: xh.g
+            public final /* synthetic */ j b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i15) {
+                    case 0:
+                        j jVar = this.b;
+                        k kVar2 = jVar.E;
+                        TLRPC.TL_chatInviteImporter tL_chatInviteImporter = jVar.r;
+                        if (tL_chatInviteImporter != null) {
+                            kVar2.d(tL_chatInviteImporter, true);
+                        }
+                        kVar2.s.e(false);
+                        kVar2.r = null;
+                        break;
+                    case 1:
+                        j.a(this.b);
+                        break;
+                    default:
+                        j jVar2 = this.b;
+                        k kVar3 = jVar2.E;
+                        TLRPC.TL_chatInviteImporter tL_chatInviteImporter2 = jVar2.r;
+                        if (tL_chatInviteImporter2 != null) {
+                            kVar3.d(tL_chatInviteImporter2, false);
+                        }
+                        kVar3.s.e(false);
+                        kVar3.r = null;
+                        break;
+                }
+            }
+        });
+        actionBarPopupWindow$ActionBarPopupWindowLayout.addView(e1Var2);
+        e1 e1Var3 = new e1(activity, false, true);
+        e1Var3.c(h6.w0(h6.q7, d6Var), h6.w0(h6.p7, d6Var));
+        e1Var3.setSelectorColor(h6.w0(i13, d6Var));
+        e1Var3.g(LocaleController.getString(R.string.DismissRequest), R.drawable.msg_remove, null);
+        final int i16 = 2;
+        e1Var3.setOnClickListener(new View.OnClickListener(this) { // from class: xh.g
+            public final /* synthetic */ j b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i16) {
+                    case 0:
+                        j jVar = this.b;
+                        k kVar2 = jVar.E;
+                        TLRPC.TL_chatInviteImporter tL_chatInviteImporter = jVar.r;
+                        if (tL_chatInviteImporter != null) {
+                            kVar2.d(tL_chatInviteImporter, true);
+                        }
+                        kVar2.s.e(false);
+                        kVar2.r = null;
+                        break;
+                    case 1:
+                        j.a(this.b);
+                        break;
+                    default:
+                        j jVar2 = this.b;
+                        k kVar3 = jVar2.E;
+                        TLRPC.TL_chatInviteImporter tL_chatInviteImporter2 = jVar2.r;
+                        if (tL_chatInviteImporter2 != null) {
+                            kVar3.d(tL_chatInviteImporter2, false);
+                        }
+                        kVar3.s.e(false);
+                        kVar3.r = null;
+                        break;
+                }
+            }
+        });
+        actionBarPopupWindow$ActionBarPopupWindowLayout.addView(e1Var3);
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
+    public static /* synthetic */ void a(j jVar) {
+        k kVar = jVar.E;
+        if (jVar.r != null) {
+            kVar.b = true;
+            n2 n2Var = kVar.g;
+            super.dismiss();
+            n2Var.dismissCurrentDialog();
+            Bundle bundle = new Bundle();
+            bundle.putLong("user_id", jVar.r.user_id);
+            n2Var.presentFragment(new sn(bundle));
+        }
+    }
+
+    public final int d() {
+        int measuredHeight = this.d.getMeasuredHeight() + AndroidUtilities.dp(12.0f) + this.h.getMeasuredHeight();
+        TextView textView = this.e;
+        if (textView.getVisibility() != 8) {
+            measuredHeight += textView.getMeasuredHeight() + AndroidUtilities.dp(4.0f);
+        }
+        return this.f.getMeasuredHeight() + AndroidUtilities.dp(12.0f) + measuredHeight;
+    }
+
+    @Override // android.app.Dialog, android.content.DialogInterface
+    public final void dismiss() {
+        e(false);
+    }
+
+    public final void e(boolean z10) {
+        ValueAnimator valueAnimator = this.s;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        int[] iArr = new int[2];
+        this.v.getLocationOnScreen(iArr);
+        ki0 ki0Var = this.h;
+        float width = (this.v.getWidth() * 1.0f) / ki0Var.getMeasuredWidth();
+        float width2 = (this.v.getWidth() / 2.0f) / width;
+        float f7 = 1.0f - width;
+        float left = iArr[0] - (ki0Var.getLeft() + ((int) ((ki0Var.getMeasuredWidth() * f7) / 2.0f)));
+        int i10 = 1;
+        float top = iArr[1] - (ki0Var.getTop() + ((int) ((d() * f7) / 2.0f)));
+        int i11 = (-this.f.getTop()) / 2;
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(z10 ? 0.0f : 1.0f, z10 ? 1.0f : 0.0f);
+        this.s = ofFloat;
+        ofFloat.addUpdateListener(new f9(this, width, left, top, width2, i11, 1));
+        this.s.addListener(new dn0(this, z10, width, i10));
+        this.s.setDuration(220L);
+        this.s.setInterpolator(bs.f);
+        this.s.start();
+    }
+
+    public final void f() {
+        BitmapDrawable bitmapDrawable = this.w;
+        int alpha = bitmapDrawable != null ? bitmapDrawable.getAlpha() : 255;
+        Resources resources = getContext().getResources();
+        i iVar = this.y;
+        int measuredWidth = (int) (iVar.getMeasuredWidth() / 6.0f);
+        int measuredHeight = (int) (iVar.getMeasuredHeight() / 6.0f);
+        Bitmap createBitmap = Bitmap.createBitmap(measuredWidth, measuredHeight, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(createBitmap);
+        canvas.scale(0.16666667f, 0.16666667f);
         canvas.save();
-        canvas.clipPath(this.b);
-        super.dispatchDraw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        this.e.c.draw(canvas);
-        super.onDraw(canvas);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        int height = getHeight();
-        k kVar = this.e;
-        int i14 = kVar.a;
-        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = kVar.f;
-        int i15 = kVar.b;
-        int d = (height - kVar.d()) / 2;
-        int width = getWidth();
-        pi0 pi0Var = kVar.h;
-        int measuredWidth = (width - pi0Var.getMeasuredWidth()) / 2;
-        pi0Var.layout(measuredWidth, d, pi0Var.getMeasuredWidth() + measuredWidth, pi0Var.getMeasuredHeight() + d);
-        i iVar = kVar.n;
-        iVar.layout(pi0Var.getLeft(), pi0Var.getTop(), pi0Var.getRight(), iVar.getMeasuredHeight() + pi0Var.getTop());
-        int C = g0.C(12.0f, pi0Var.getMeasuredHeight(), d);
-        TextView textView = kVar.d;
-        textView.layout(AndroidUtilities.dp(16.0f) + pi0Var.getLeft(), C, pi0Var.getRight() - AndroidUtilities.dp(16.0f), textView.getMeasuredHeight() + C);
-        int measuredHeight = textView.getMeasuredHeight() + C;
-        TextView textView2 = kVar.e;
-        if (textView2.getVisibility() != 8) {
-            int dp = AndroidUtilities.dp(4.0f) + measuredHeight;
-            textView2.layout(textView.getLeft(), dp, textView.getRight(), textView2.getMeasuredHeight() + dp);
-            measuredHeight = textView2.getMeasuredHeight() + dp;
+        n2 n2Var = this.E.g;
+        ((LaunchActivity) n2Var.getParentActivity()).O().getView().draw(canvas);
+        canvas.drawColor(i0.b.o(-16777216, 76));
+        Dialog visibleDialog = n2Var.getVisibleDialog();
+        if (visibleDialog != null) {
+            visibleDialog.getWindow().getDecorView().draw(canvas);
         }
-        int dp2 = AndroidUtilities.dp(12.0f) + measuredHeight;
-        kVar.c.setBounds(pi0Var.getLeft() - i15, pi0Var.getTop() - i14, pi0Var.getRight() + i15, i14 + dp2);
-        actionBarPopupWindow$ActionBarPopupWindowLayout.layout((pi0Var.getRight() - actionBarPopupWindow$ActionBarPopupWindowLayout.getMeasuredWidth()) + i15, dp2, pi0Var.getRight() + i15, actionBarPopupWindow$ActionBarPopupWindowLayout.getMeasuredHeight() + dp2);
-        actionBarPopupWindow$ActionBarPopupWindowLayout.setVisibility(actionBarPopupWindow$ActionBarPopupWindowLayout.getBottom() < i13 ? 0 : 8);
-        int dp3 = AndroidUtilities.dp(6.0f);
-        float left = pi0Var.getLeft();
-        float top = pi0Var.getTop();
-        float right = pi0Var.getRight();
-        float top2 = (dp3 * 2) + pi0Var.getTop();
-        RectF rectF = this.c;
-        rectF.set(left, top, right, top2);
-        Path path = this.b;
-        path.reset();
-        float f7 = dp3;
-        Path.Direction direction = Path.Direction.CW;
-        path.addRoundRect(rectF, f7, f7, direction);
-        rectF.set(i10, pi0Var.getTop() + dp3, i12, i13);
-        path.addRect(rectF, direction);
+        Utilities.stackBlurBitmap(createBitmap, Math.max(7, Math.max(measuredWidth, measuredHeight) / 180));
+        BitmapDrawable bitmapDrawable2 = new BitmapDrawable(resources, createBitmap);
+        this.w = bitmapDrawable2;
+        bitmapDrawable2.setAlpha(alpha);
+        getWindow().setBackgroundDrawable(this.w);
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setWillNotDraw(false);
-        super.onMeasure(i10, i11);
-        int B = sk.B(12.0f, 2, Math.min(Math.min(getMeasuredWidth(), getMeasuredHeight()), (int) (getMeasuredHeight() * 0.66d)));
-        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(B, TLObject.FLAG_31);
-        k kVar = this.e;
-        pi0 pi0Var = kVar.h;
-        pi0Var.measure(makeMeasureSpec, makeMeasureSpec);
-        kVar.n.measure(makeMeasureSpec, makeMeasureSpec);
-        int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(B - (AndroidUtilities.dp(16.0f) * 2), TLObject.FLAG_30);
-        kVar.d.measure(makeMeasureSpec2, View.MeasureSpec.makeMeasureSpec(0, 0));
-        kVar.e.measure(makeMeasureSpec2, View.MeasureSpec.makeMeasureSpec(0, 0));
-        kVar.f.measure(View.MeasureSpec.makeMeasureSpec((kVar.b * 2) + pi0Var.getMeasuredWidth(), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(0, 0));
-    }
-
-    @Override // android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        super.onSizeChanged(i10, i11, i12, i13);
-        Point point = AndroidUtilities.displaySize;
-        int i14 = point.x;
-        int i15 = point.y;
-        k kVar = this.e;
-        if (i14 > i15) {
-            super/*android.app.Dialog*/.dismiss();
+    @Override // android.app.Dialog
+    public final void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        getWindow().setWindowAnimations(R.style.DialogNoAnimation);
+        setContentView(this.y, new ViewGroup.LayoutParams(-1, -1));
+        WindowManager.LayoutParams attributes = getWindow().getAttributes();
+        attributes.width = -1;
+        attributes.height = -1;
+        attributes.dimAmount = 0.0f;
+        int i10 = attributes.flags & (-3);
+        attributes.flags = i10;
+        attributes.gravity = 51;
+        int i11 = Build.VERSION.SDK_INT;
+        attributes.flags = i10 | (-2147417856);
+        if (i11 >= 28) {
+            attributes.layoutInDisplayCutoutMode = 1;
         }
-        if (i10 == i12 || i11 == i13) {
-            return;
-        }
-        if (!this.d) {
-            kVar.f();
-        }
-        this.d = false;
+        getWindow().setAttributes(attributes);
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return this.a.onTouchEvent(motionEvent);
-    }
-
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return drawable == this.e.c || super.verifyDrawable(drawable);
+    @Override // android.app.Dialog
+    public final void show() {
+        super.show();
+        AndroidUtilities.runOnUIThread(new p(this, 11), 80L);
     }
 }

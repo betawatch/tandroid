@@ -1,122 +1,70 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.content.SharedPreferences;
-import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class kk extends org.telegram.ui.Components.ob0 {
-    public boolean V;
-    public final /* synthetic */ fo W;
+public final class kk extends FrameLayout {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ sn b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kk(fo foVar, Context context, long j10, long j11, fo foVar2, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, j10, j11, foVar2, c6Var);
-        this.W = foVar;
-        this.V = true;
+    public /* synthetic */ kk(sn snVar, Context context, int i10) {
+        super(context);
+        this.a = i10;
+        this.b = snVar;
     }
 
-    @Override // org.telegram.ui.Components.ob0
-    public final boolean a() {
-        fo foVar = this.W;
-        return foVar.R.getVisibility() != 0 || foVar.n3;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (getAlpha() <= 0.0f) {
-            return false;
-        }
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.ob0
-    public final void j() {
-        this.W.wc();
-    }
-
-    @Override // org.telegram.ui.Components.ob0
-    public final void k(TLRPC.BotInlineResult botInlineResult) {
-        fo foVar = this.W;
-        if (foVar.getParentActivity() == null || botInlineResult.content == null) {
-            return;
-        }
-        if (!botInlineResult.type.equals(MediaStreamTrack.VIDEO_TRACK_KIND) && !botInlineResult.type.equals("web_player_video")) {
-            foVar.Ba(0, botInlineResult.content.url, null, null, false);
-            return;
-        }
-        int[] inlineResultWidthAndHeight = MessageObject.getInlineResultWidthAndHeight(botInlineResult);
-        oi oiVar = foVar.Ja;
-        String str = botInlineResult.title;
-        if (str == null) {
-            str = "";
-        }
-        String str2 = botInlineResult.description;
-        String str3 = botInlineResult.content.url;
-        org.telegram.ui.Components.hv.J(foVar, null, oiVar, str, str2, str3, str3, inlineResultWidthAndHeight[0], inlineResultWidthAndHeight[1], -1, foVar.C9());
-    }
-
-    @Override // org.telegram.ui.Components.ob0
-    public final void l(boolean z10) {
-        String string;
-        fo foVar = this.W;
-        sk skVar = foVar.Y;
-        if (skVar != null) {
-            hg.j1 adapter = getAdapter();
-            TLRPC.User user = adapter.w0;
-            if (user != null) {
-                string = user.bot_inline_placeholder;
-            } else {
-                String str = adapter.q0;
-                string = (str == null || !str.equals("gif")) ? null : LocaleController.getString(R.string.SearchGifsTitle);
-            }
-            skVar.setCaption(string);
-            org.telegram.ui.Components.ye yeVar = foVar.Y.P1;
-            if (yeVar == null) {
-                return;
-            }
-            if (!z10) {
-                yeVar.e = false;
-                return;
-            }
-            yeVar.e = true;
-            yeVar.b = System.currentTimeMillis();
-            yeVar.invalidateSelf();
+    @Override // android.view.ViewGroup
+    public void measureChildWithMargins(View view, int i10, int i11, int i12, int i13) {
+        switch (this.a) {
+            case 1:
+                sn snVar = this.b;
+                if (view == snVar.U2) {
+                    ImageView imageView = snVar.S2;
+                    int i14 = (imageView == null || imageView.getVisibility() == 8) ? 18 : 66;
+                    ImageView imageView2 = snVar.T2;
+                    if (imageView2 != null && imageView2.getVisibility() != 8) {
+                        i14 += 48;
+                    }
+                    ((ViewGroup.MarginLayoutParams) view.getLayoutParams()).leftMargin = AndroidUtilities.dp(i14);
+                }
+                super.measureChildWithMargins(view, i10, i11, i12, i13);
+                break;
+            default:
+                super.measureChildWithMargins(view, i10, i11, i12, i13);
+                break;
         }
     }
 
-    @Override // org.telegram.ui.Components.ob0
-    public final void m() {
-        fo foVar = this.W;
-        if (foVar.Z4 && ((getAdapter().R == null || foVar.a5 || foVar.b5) && foVar.h != null && getAdapter().R != null)) {
-            SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
-            if (!globalMainSettings.getBoolean("secretbot", false)) {
-                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(foVar.getParentActivity(), 0, foVar.ea);
-                alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
-                alertDialog$Builder.a.T = LocaleController.getString(R.string.SecretChatContextBotAlert);
-                alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
-                foVar.showDialog(alertDialog$Builder.a);
-                globalMainSettings.edit().putBoolean("secretbot", true).commit();
-            }
+    @Override // android.view.View
+    public void setTranslationY(float f7) {
+        switch (this.a) {
+            case 2:
+                super.setTranslationY(f7);
+                this.b.X0.invalidate();
+                break;
+            default:
+                super.setTranslationY(f7);
+                break;
         }
-        foVar.wc();
     }
 
-    @Override // org.telegram.ui.Components.ob0
-    public final void n(boolean z10) {
-        if (this.V != z10) {
-            fo foVar = this.W;
-            AndroidUtilities.updateViewShow(foVar.d1, !foVar.isInPreviewMode() && z10, false, true);
-            this.V = z10;
+    @Override // android.view.View
+    public void setVisibility(int i10) {
+        switch (this.a) {
+            case 0:
+                super.setVisibility(i10);
+                this.b.Bc.i(2, i10 == 0, getMeasuredWidth() > 0);
+                break;
+            default:
+                super.setVisibility(i10);
+                break;
         }
     }
 }

@@ -1,13 +1,27 @@
 package e0;
 
-import android.app.PendingIntent;
-import androidx.core.graphics.drawable.IconCompat;
+import android.media.AudioAttributes;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class p {
-    public PendingIntent a;
-    public IconCompat b;
-    public int c;
-    public int d;
+public abstract class p {
+    public static AudioAttributes a(AudioAttributes.Builder builder) {
+        return builder.build();
+    }
+
+    public static AudioAttributes.Builder b() {
+        return new AudioAttributes.Builder();
+    }
+
+    public static AudioAttributes.Builder c(AudioAttributes.Builder builder, int i10) {
+        return builder.setContentType(i10);
+    }
+
+    public static AudioAttributes.Builder d(AudioAttributes.Builder builder, int i10) {
+        return builder.setLegacyStreamType(i10);
+    }
+
+    public static AudioAttributes.Builder e(AudioAttributes.Builder builder, int i10) {
+        return builder.setUsage(i10);
+    }
 }

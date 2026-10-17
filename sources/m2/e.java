@@ -6,12 +6,12 @@ import android.util.Base64;
 import android.util.Pair;
 import android.util.Xml;
 import androidx.car.app.navigation.model.Maneuver;
-import b2.b0;
-import b2.i0;
+import b2.a0;
+import b2.h0;
+import b2.v;
+import b2.v0;
 import b2.w;
 import b2.w0;
-import b2.x;
-import b2.x0;
 import e2.m0;
 import e9.l0;
 import e9.n0;
@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.UUID;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import m.h3;
+import m.g3;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.tgnet.TLObject;
 import org.webrtc.MediaStreamTrack;
@@ -37,7 +37,7 @@ import org.xmlpull.v1.XmlSerializer;
 import v7.s6;
 import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class e extends DefaultHandler implements y2.n {
     public static final Pattern b = Pattern.compile("(\\d+)(?:/(\\d+))?");
@@ -208,7 +208,7 @@ public final class e extends DefaultHandler implements y2.n {
                     } else {
                         String[] d02 = m0.d0(str);
                         if (d02.length != 0) {
-                            List B = new a5.a(new ya.c(new d9.e('.', 0), 14)).B(s6.c(d02[0].trim()));
+                            List B = new a5.a(new a6.i(new d9.e('.', 0), 15)).B(s6.c(d02[0].trim()));
                             if (B.size() == 4 && ((String) B.get(0)).equals("ac-4")) {
                                 String str2 = (String) B.get(3);
                                 str2.getClass();
@@ -444,21 +444,21 @@ public final class e extends DefaultHandler implements y2.n {
             }
             switch (c10) {
                 case 0:
-                    r72 = b2.n.d;
+                    r72 = b2.m.d;
                     str = null;
                     str2 = null;
                     str3 = str2;
                     r82 = str2;
                     break;
                 case 1:
-                    r72 = b2.n.f;
+                    r72 = b2.m.f;
                     str = null;
                     str2 = null;
                     str3 = str2;
                     r82 = str2;
                     break;
                 case 2:
-                    r72 = b2.n.e;
+                    r72 = b2.m.e;
                     str = null;
                     str2 = null;
                     str3 = str2;
@@ -490,7 +490,7 @@ public final class e extends DefaultHandler implements y2.n {
                         for (int i11 = 0; i11 < split.length; i11++) {
                             uuidArr[i11] = UUID.fromString(split[i11]);
                         }
-                        r72 = b2.n.c;
+                        r72 = b2.m.c;
                         str3 = null;
                         r82 = w3.p.a(r72, uuidArr, null);
                         break;
@@ -535,7 +535,7 @@ public final class e extends DefaultHandler implements y2.n {
                         }
                     }
                     if (r82 == 0) {
-                        ?? r10 = b2.n.f;
+                        ?? r10 = b2.m.f;
                         if (r10.equals(r72) && e2.a.i(xmlPullParser, "mspr:pro") && xmlPullParser.next() == 4) {
                             r82 = w3.p.a(r10, null, Base64.decode(xmlPullParser.getText(), 0));
                         }
@@ -544,7 +544,7 @@ public final class e extends DefaultHandler implements y2.n {
                     r82 = r82;
                 }
             } while (!e2.a.h(xmlPullParser, "ContentProtection"));
-            return Pair.create(str, r72 != null ? new b2.s(r72, str3, "video/mp4", r82) : null);
+            return Pair.create(str, r72 != null ? new b2.r(r72, str3, "video/mp4", r82) : null);
         }
         str = null;
         r72 = null;
@@ -558,7 +558,7 @@ public final class e extends DefaultHandler implements y2.n {
             str3 = xmlPullParser.getText();
             r82 = r82;
         } while (!e2.a.h(xmlPullParser, "ContentProtection"));
-        return Pair.create(str, r72 != null ? new b2.s(r72, str3, "video/mp4", r82) : null);
+        return Pair.create(str, r72 != null ? new b2.r(r72, str3, "video/mp4", r82) : null);
     }
 
     public static int g(XmlPullParser xmlPullParser) {
@@ -760,7 +760,7 @@ public final class e extends DefaultHandler implements y2.n {
         String d10;
         ArrayList arrayList27;
         String str49;
-        b2.o oVar;
+        b2.n nVar;
         Pair pair;
         int parseInt4;
         String str50;
@@ -814,7 +814,7 @@ public final class e extends DefaultHandler implements y2.n {
         i iVar = null;
         t tVar = null;
         Uri uri2 = null;
-        i0 i0Var = null;
+        h0 h0Var = null;
         while (true) {
             xmlPullParser.next();
             String str55 = "BaseURL";
@@ -920,13 +920,13 @@ public final class e extends DefaultHandler implements y2.n {
                                 long j38 = i26;
                                 long j39 = j34;
                                 if (e2.a.h(xmlPullParser, "ServiceDescription")) {
-                                    i0 i0Var2 = new i0();
-                                    i0Var2.a = j35;
-                                    i0Var2.b = j37;
-                                    i0Var2.c = j39;
-                                    i0Var2.d = f12;
-                                    i0Var2.e = f13;
-                                    i0Var = i0Var2;
+                                    h0 h0Var2 = new h0();
+                                    h0Var2.a = j35;
+                                    h0Var2.b = j37;
+                                    h0Var2.c = j39;
+                                    h0Var2.d = f12;
+                                    h0Var2.e = f13;
+                                    h0Var = h0Var2;
                                     z11 = z10;
                                     j10 = j31;
                                     j29 = j36;
@@ -1072,7 +1072,7 @@ public final class e extends DefaultHandler implements y2.n {
                                                         }
                                                         Object obj2 = f15.second;
                                                         if (obj2 != null) {
-                                                            arrayList36.add((b2.s) obj2);
+                                                            arrayList36.add((b2.r) obj2);
                                                         }
                                                     } else if (e2.a.i(xmlPullParser, "ContentComponent")) {
                                                         String attributeValue22 = xmlPullParser.getAttributeValue(null, str56);
@@ -1204,7 +1204,7 @@ public final class e extends DefaultHandler implements y2.n {
                                                                     while (i36 < arrayList14.size()) {
                                                                         ArrayList arrayList46 = arrayList14;
                                                                         d dVar = (d) arrayList46.get(i36);
-                                                                        w a2 = dVar.a.a();
+                                                                        v a2 = dVar.a.a();
                                                                         if (str76 == null || !arrayList35.isEmpty()) {
                                                                             str51 = str76;
                                                                             a2.c = n0.u(arrayList35);
@@ -1228,9 +1228,9 @@ public final class e extends DefaultHandler implements y2.n {
                                                                             int i37 = i12;
                                                                             while (true) {
                                                                                 if (i37 < arrayList47.size()) {
-                                                                                    b2.s sVar3 = (b2.s) arrayList47.get(i37);
+                                                                                    b2.r rVar = (b2.r) arrayList47.get(i37);
                                                                                     str76 = str51;
-                                                                                    if (!b2.n.d.equals(sVar3.b) || (str53 = sVar3.c) == null) {
+                                                                                    if (!b2.m.d.equals(rVar.b) || (str53 = rVar.c) == null) {
                                                                                         i37++;
                                                                                         str51 = str76;
                                                                                     } else {
@@ -1244,11 +1244,11 @@ public final class e extends DefaultHandler implements y2.n {
                                                                             if (str53 != null) {
                                                                                 int i38 = i12;
                                                                                 while (i38 < arrayList47.size()) {
-                                                                                    b2.s sVar4 = (b2.s) arrayList47.get(i38);
+                                                                                    b2.r rVar2 = (b2.r) arrayList47.get(i38);
                                                                                     String str87 = str25;
-                                                                                    if (b2.n.c.equals(sVar4.b) && sVar4.c == null) {
+                                                                                    if (b2.m.c.equals(rVar2.b) && rVar2.c == null) {
                                                                                         j27 = j19;
-                                                                                        arrayList47.set(i38, new b2.s(b2.n.d, str53, sVar4.d, sVar4.e));
+                                                                                        arrayList47.set(i38, new b2.r(b2.m.d, str53, rVar2.d, rVar2.e));
                                                                                     } else {
                                                                                         j27 = j19;
                                                                                     }
@@ -1260,13 +1260,13 @@ public final class e extends DefaultHandler implements y2.n {
                                                                             str52 = str25;
                                                                             j26 = j19;
                                                                             for (int size = arrayList47.size() - 1; size >= 0; size--) {
-                                                                                b2.s sVar5 = (b2.s) arrayList47.get(size);
-                                                                                if (sVar5.e == null) {
+                                                                                b2.r rVar3 = (b2.r) arrayList47.get(size);
+                                                                                if (rVar3.e == null) {
                                                                                     int i39 = i12;
                                                                                     while (true) {
                                                                                         if (i39 < arrayList47.size()) {
-                                                                                            b2.s sVar6 = (b2.s) arrayList47.get(i39);
-                                                                                            if (sVar6.e != null && sVar5.e == null && sVar6.a(sVar5.b)) {
+                                                                                            b2.r rVar4 = (b2.r) arrayList47.get(i39);
+                                                                                            if (rVar4.e != null && rVar3.e == null && rVar4.a(rVar3.b)) {
                                                                                                 arrayList47.remove(size);
                                                                                             } else {
                                                                                                 i39++;
@@ -1275,22 +1275,22 @@ public final class e extends DefaultHandler implements y2.n {
                                                                                     }
                                                                                 }
                                                                             }
-                                                                            a2.v = new b2.t(str86, arrayList47);
+                                                                            a2.v = new b2.s(str86, arrayList47);
                                                                         }
                                                                         ArrayList arrayList49 = dVar.f;
                                                                         arrayList49.addAll(arrayList16);
-                                                                        x xVar = new x(a2);
+                                                                        w wVar = new w(a2);
                                                                         n0 n0Var = dVar.b;
-                                                                        s sVar7 = dVar.c;
+                                                                        s sVar3 = dVar.c;
                                                                         ArrayList arrayList50 = dVar.g;
                                                                         ArrayList arrayList51 = dVar.h;
-                                                                        if (sVar7 instanceof r) {
-                                                                            kVar = new l(xVar, n0Var, (r) sVar7, arrayList49, arrayList50, arrayList51);
+                                                                        if (sVar3 instanceof r) {
+                                                                            kVar = new l(wVar, n0Var, (r) sVar3, arrayList49, arrayList50, arrayList51);
                                                                         } else {
-                                                                            if (!(sVar7 instanceof n)) {
+                                                                            if (!(sVar3 instanceof n)) {
                                                                                 throw new IllegalArgumentException("segmentBase must be of type SingleSegmentBase or MultiSegmentBase");
                                                                             }
-                                                                            kVar = new k(xVar, n0Var, (n) sVar7, arrayList49, arrayList50, arrayList51);
+                                                                            kVar = new k(wVar, n0Var, (n) sVar3, arrayList49, arrayList50, arrayList51);
                                                                         }
                                                                         arrayList45.add(kVar);
                                                                         i36++;
@@ -1428,7 +1428,7 @@ public final class e extends DefaultHandler implements y2.n {
                                                                             str13 = str107;
                                                                             String str108 = attributeValue14;
                                                                             int i41 = i33;
-                                                                            s sVar8 = sVar2;
+                                                                            s sVar4 = sVar2;
                                                                             long j53 = j48;
                                                                             int i42 = i35;
                                                                             long j54 = j18;
@@ -1451,7 +1451,7 @@ public final class e extends DefaultHandler implements y2.n {
                                                                                         String str110 = str74;
                                                                                         if (e2.a.i(xmlPullParser, str110)) {
                                                                                             arrayList18 = arrayList57;
-                                                                                            sVar8 = o(xmlPullParser, (r) sVar8);
+                                                                                            sVar4 = o(xmlPullParser, (r) sVar4);
                                                                                             str35 = str110;
                                                                                             str3 = str55;
                                                                                             arrayList19 = arrayList17;
@@ -1499,11 +1499,11 @@ public final class e extends DefaultHandler implements y2.n {
                                                                                             j12 = j46;
                                                                                             arrayList11 = arrayList55;
                                                                                             if (e2.a.h(xmlPullParser, str45)) {
-                                                                                                if (w0.i(str97)) {
+                                                                                                if (v0.i(str97)) {
                                                                                                     if (str41 != null) {
                                                                                                         for (String str111 : m0.d0(str41)) {
-                                                                                                            d10 = w0.d(str111);
-                                                                                                            if (d10 != null && w0.i(d10)) {
+                                                                                                            d10 = v0.d(str111);
+                                                                                                            if (d10 != null && v0.i(d10)) {
                                                                                                                 str47 = d10;
                                                                                                                 str48 = str97;
                                                                                                             }
@@ -1512,11 +1512,11 @@ public final class e extends DefaultHandler implements y2.n {
                                                                                                     d10 = null;
                                                                                                     str47 = d10;
                                                                                                     str48 = str97;
-                                                                                                } else if (w0.m(str97)) {
+                                                                                                } else if (v0.m(str97)) {
                                                                                                     if (str41 != null) {
                                                                                                         for (String str112 : m0.d0(str41)) {
-                                                                                                            d10 = w0.d(str112);
-                                                                                                            if (d10 != null && w0.m(d10)) {
+                                                                                                            d10 = v0.d(str112);
+                                                                                                            if (d10 != null && v0.m(d10)) {
                                                                                                                 str47 = d10;
                                                                                                                 str48 = str97;
                                                                                                             }
@@ -1525,13 +1525,13 @@ public final class e extends DefaultHandler implements y2.n {
                                                                                                     d10 = null;
                                                                                                     str47 = d10;
                                                                                                     str48 = str97;
-                                                                                                } else if (w0.l(str97) || w0.k(str97)) {
+                                                                                                } else if (v0.l(str97) || v0.k(str97)) {
                                                                                                     str47 = str97;
                                                                                                     str48 = str47;
                                                                                                 } else {
                                                                                                     str48 = str97;
                                                                                                     if ("application/mp4".equals(str48)) {
-                                                                                                        str47 = w0.d(str41);
+                                                                                                        str47 = v0.d(str41);
                                                                                                         if ("text/vtt".equals(str47)) {
                                                                                                             str47 = "application/x-mp4-vtt";
                                                                                                         }
@@ -1564,14 +1564,14 @@ public final class e extends DefaultHandler implements y2.n {
                                                                                                 }
                                                                                                 str49 = str41;
                                                                                                 String str115 = str101;
-                                                                                                if (w0.j(str49, str115)) {
-                                                                                                    b2.o x10 = m0.x(str49, str115, str103);
+                                                                                                if (v0.j(str49, str115)) {
+                                                                                                    b2.n x10 = m0.x(str49, str115, str103);
                                                                                                     String str116 = str115 != null ? str115 : str49;
                                                                                                     str47 = "video/dolby-vision";
-                                                                                                    oVar = x10;
+                                                                                                    nVar = x10;
                                                                                                     str49 = str116;
                                                                                                 } else {
-                                                                                                    oVar = null;
+                                                                                                    nVar = null;
                                                                                                 }
                                                                                                 int i46 = 0;
                                                                                                 int i47 = 0;
@@ -1714,30 +1714,30 @@ public final class e extends DefaultHandler implements y2.n {
                                                                                                                 pair = null;
                                                                                                             }
                                                                                                         }
-                                                                                                        w wVar = new w();
-                                                                                                        wVar.a = str29;
-                                                                                                        wVar.q = w0.n(str119);
-                                                                                                        wVar.r = w0.n(str47);
-                                                                                                        wVar.j = str49;
-                                                                                                        wVar.i = i16;
-                                                                                                        wVar.e = i47;
-                                                                                                        wVar.f = n10;
-                                                                                                        wVar.H = oVar;
+                                                                                                        v vVar = new v();
+                                                                                                        vVar.a = str29;
+                                                                                                        vVar.q = v0.n(str119);
+                                                                                                        vVar.r = v0.n(str47);
+                                                                                                        vVar.j = str49;
+                                                                                                        vVar.i = i16;
+                                                                                                        vVar.e = i47;
+                                                                                                        vVar.f = n10;
+                                                                                                        vVar.H = nVar;
                                                                                                         String str123 = str40;
-                                                                                                        wVar.d = str123;
-                                                                                                        wVar.Q = pair != null ? ((Integer) pair.first).intValue() : -1;
-                                                                                                        wVar.R = pair != null ? ((Integer) pair.second).intValue() : -1;
-                                                                                                        if (w0.m(str47)) {
-                                                                                                            wVar.y = parseInt2;
-                                                                                                            wVar.z = parseInt3;
-                                                                                                            wVar.C = f11;
+                                                                                                        vVar.d = str123;
+                                                                                                        vVar.Q = pair != null ? ((Integer) pair.first).intValue() : -1;
+                                                                                                        vVar.R = pair != null ? ((Integer) pair.second).intValue() : -1;
+                                                                                                        if (v0.m(str47)) {
+                                                                                                            vVar.y = parseInt2;
+                                                                                                            vVar.z = parseInt3;
+                                                                                                            vVar.C = f11;
                                                                                                         } else {
                                                                                                             int i57 = parseInt2;
                                                                                                             int i58 = parseInt3;
-                                                                                                            if (w0.i(str47)) {
-                                                                                                                wVar.J = i18;
-                                                                                                                wVar.K = i15;
-                                                                                                            } else if (w0.l(str47)) {
+                                                                                                            if (v0.i(str47)) {
+                                                                                                                vVar.J = i18;
+                                                                                                                vVar.K = i15;
+                                                                                                            } else if (v0.l(str47)) {
                                                                                                                 if ("application/cea-608".equals(str47)) {
                                                                                                                     int i59 = i12;
                                                                                                                     while (i59 < arrayList64.size()) {
@@ -1748,7 +1748,7 @@ public final class e extends DefaultHandler implements y2.n {
                                                                                                                             Matcher matcher = c.matcher(str125);
                                                                                                                             if (matcher.matches()) {
                                                                                                                                 parseInt4 = Integer.parseInt(matcher.group(i11));
-                                                                                                                                wVar.O = parseInt4;
+                                                                                                                                vVar.O = parseInt4;
                                                                                                                             } else {
                                                                                                                                 e2.a.l("MpdParser", "Unable to parse CEA-608 channel number from: ".concat(str125));
                                                                                                                             }
@@ -1757,7 +1757,7 @@ public final class e extends DefaultHandler implements y2.n {
                                                                                                                         i11 = 1;
                                                                                                                     }
                                                                                                                     parseInt4 = -1;
-                                                                                                                    wVar.O = parseInt4;
+                                                                                                                    vVar.O = parseInt4;
                                                                                                                 } else {
                                                                                                                     if ("application/cea-708".equals(str47)) {
                                                                                                                         for (int i60 = i12; i60 < arrayList64.size(); i60++) {
@@ -1768,7 +1768,7 @@ public final class e extends DefaultHandler implements y2.n {
                                                                                                                                 Matcher matcher2 = d.matcher(str127);
                                                                                                                                 if (matcher2.matches()) {
                                                                                                                                     parseInt4 = Integer.parseInt(matcher2.group(1));
-                                                                                                                                    wVar.O = parseInt4;
+                                                                                                                                    vVar.O = parseInt4;
                                                                                                                                 } else {
                                                                                                                                     e2.a.l("MpdParser", "Unable to parse CEA-708 service block number from: ".concat(str127));
                                                                                                                                 }
@@ -1776,18 +1776,18 @@ public final class e extends DefaultHandler implements y2.n {
                                                                                                                         }
                                                                                                                     }
                                                                                                                     parseInt4 = -1;
-                                                                                                                    wVar.O = parseInt4;
+                                                                                                                    vVar.O = parseInt4;
                                                                                                                 }
                                                                                                                 str6 = str69;
                                                                                                                 j44 = j45;
-                                                                                                            } else if (w0.k(str47)) {
-                                                                                                                wVar.y = i57;
-                                                                                                                wVar.z = i58;
+                                                                                                            } else if (v0.k(str47)) {
+                                                                                                                vVar.y = i57;
+                                                                                                                vVar.z = i58;
                                                                                                             }
                                                                                                         }
-                                                                                                        x xVar2 = new x(wVar);
-                                                                                                        d dVar2 = new d(xVar2, !arrayList18.isEmpty() ? arrayList18 : arrayList19, sVar8 != null ? sVar8 : new r(null, 1L, 0L, 0L, 0L), str46, arrayList21, arrayList23, arrayList25, arrayList27);
-                                                                                                        int h = w0.h(xVar2.s);
+                                                                                                        w wVar2 = new w(vVar);
+                                                                                                        d dVar2 = new d(wVar2, !arrayList18.isEmpty() ? arrayList18 : arrayList19, sVar4 != null ? sVar4 : new r(null, 1L, 0L, 0L, 0L), str46, arrayList21, arrayList23, arrayList25, arrayList27);
+                                                                                                        int h = v0.h(wVar2.s);
                                                                                                         int i61 = i17;
                                                                                                         if (i61 != -1) {
                                                                                                             if (h != -1) {
@@ -1906,7 +1906,7 @@ public final class e extends DefaultHandler implements y2.n {
                                                                                                 arrayList2 = arrayList34;
                                                                                                 j12 = j46;
                                                                                                 arrayList11 = arrayList55;
-                                                                                                sVar8 = p(xmlPullParser, (o) sVar8, j57, j59, j54, d11, j58);
+                                                                                                sVar4 = p(xmlPullParser, (o) sVar4, j57, j59, j54, d11, j58);
                                                                                                 j24 = j59;
                                                                                                 j23 = j57;
                                                                                                 str42 = str70;
@@ -1965,7 +1965,7 @@ public final class e extends DefaultHandler implements y2.n {
                                                                                                     str42 = str129;
                                                                                                     z11 = z10;
                                                                                                     long j61 = j54;
-                                                                                                    sVar8 = q(xmlPullParser, (p) sVar8, arrayList22, j23, j24, j61, d12, j19);
+                                                                                                    sVar4 = q(xmlPullParser, (p) sVar4, arrayList22, j23, j24, j61, d12, j19);
                                                                                                     j54 = j61;
                                                                                                     j23 = j23;
                                                                                                     str43 = str28;
@@ -1989,7 +1989,7 @@ public final class e extends DefaultHandler implements y2.n {
                                                                                                         }
                                                                                                         Object obj4 = f19.second;
                                                                                                         if (obj4 != null) {
-                                                                                                            arrayList21.add((b2.s) obj4);
+                                                                                                            arrayList21.add((b2.r) obj4);
                                                                                                         }
                                                                                                         str92 = str130;
                                                                                                         str44 = str89;
@@ -2215,7 +2215,7 @@ public final class e extends DefaultHandler implements y2.n {
                                                                                                         str26 = str137;
                                                                                                     }
                                                                                                     if (e2.a.h(xmlPullParser, "Label")) {
-                                                                                                        arrayList35.add(new b0(attributeValue32, str26));
+                                                                                                        arrayList35.add(new a0(attributeValue32, str26));
                                                                                                     } else {
                                                                                                         str136 = str26;
                                                                                                     }
@@ -2575,7 +2575,7 @@ public final class e extends DefaultHandler implements y2.n {
                                             j30 = j69;
                                         } else {
                                             if (!equals) {
-                                                throw x0.b("Unable to determine start of period " + arrayList28.size(), null);
+                                                throw w0.b("Unable to determine start of period " + arrayList28.size(), null);
                                             }
                                             arrayList3 = arrayList28;
                                             i29 = i11;
@@ -2620,13 +2620,13 @@ public final class e extends DefaultHandler implements y2.n {
                                 if (j30 != j10) {
                                     i23 = j30;
                                 } else if (!equals) {
-                                    throw x0.b("Unable to determine duration of static manifest.", null);
+                                    throw w0.b("Unable to determine duration of static manifest.", null);
                                 }
                             }
                             if (arrayList3.isEmpty()) {
-                                throw x0.b("No periods found.", null);
+                                throw w0.b("No periods found.", null);
                             }
-                            return new c(V, i23, i24, equals, i25, j11, i27, V2, iVar, tVar, i0Var, uri2, arrayList3);
+                            return new c(V, i23, i24, equals, i25, j11, i27, V2, iVar, tVar, h0Var, uri2, arrayList3);
                         }
                         arrayList28 = arrayList3;
                         i26 = j11;
@@ -2849,8 +2849,8 @@ public final class e extends DefaultHandler implements y2.n {
         long j24 = j15;
         long j25 = j13 == -9223372036854775807L ? j12 : j13;
         long j26 = j25 == Long.MAX_VALUE ? -9223372036854775807L : j25;
-        h3 s10 = s(xmlPullParser, "media", pVar != null ? pVar.k : null);
-        h3 s11 = s(xmlPullParser, "initialization", pVar != null ? pVar.j : null);
+        g3 s10 = s(xmlPullParser, "media", pVar != null ? pVar.k : null);
+        g3 s11 = s(xmlPullParser, "initialization", pVar != null ? pVar.j : null);
         List list2 = null;
         do {
             xmlPullParser.next();
@@ -2912,11 +2912,11 @@ public final class e extends DefaultHandler implements y2.n {
     }
 
     /* JADX WARN: Failed to find 'out' block for switch in B:31:0x0100. Please report as an issue. */
-    public static h3 s(XmlPullParser xmlPullParser, String str, h3 h3Var) {
+    public static g3 s(XmlPullParser xmlPullParser, String str, g3 g3Var) {
         String str2;
         String attributeValue = xmlPullParser.getAttributeValue(null, str);
         if (attributeValue == null) {
-            return h3Var;
+            return g3Var;
         }
         ArrayList arrayList = new ArrayList();
         ArrayList arrayList2 = new ArrayList();
@@ -2972,23 +2972,23 @@ public final class e extends DefaultHandler implements y2.n {
                 i10 = indexOf2 + 1;
             }
         }
-        return new h3(arrayList, arrayList2, arrayList3, 1);
+        return new g3(arrayList, arrayList2, arrayList3, 1);
     }
 
     @Override // y2.n
-    public final Object g2(Uri uri, g2.k kVar) {
+    public final Object d2(Uri uri, g2.k kVar) {
         try {
             XmlPullParser newPullParser = this.a.newPullParser();
             newPullParser.setInput(kVar, null);
             if (newPullParser.next() == 2 && "MPD".equals(newPullParser.getName())) {
                 return k(newPullParser, uri);
             }
-            throw x0.b("inputStream does not contain a valid media presentation description", null);
+            throw w0.b("inputStream does not contain a valid media presentation description", null);
         } catch (XmlPullParserException e7) {
             if (e7.getDetail() instanceof IOException) {
                 throw ((IOException) e7.getDetail());
             }
-            throw x0.b(null, e7);
+            throw w0.b(null, e7);
         }
     }
 }

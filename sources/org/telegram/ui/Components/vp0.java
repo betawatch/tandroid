@@ -1,47 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class vp0 extends LinearLayout {
-    public final ew0 a;
-    public final TextView b;
-    public final TextView c;
+public final /* synthetic */ class vp0 implements o1.g {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int[] b;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
+    public final /* synthetic */ View d;
 
-    public vp0(Context context, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context);
-        setLayoutParams(new s4.o0(-1, -2));
-        setOrientation(0);
-        setGravity(16);
-        int dp = AndroidUtilities.dp(14.0f);
-        int i10 = dp / 2;
-        setPadding(dp, i10, dp, i10);
-        ew0 ew0Var = new ew0(context);
-        this.a = ew0Var;
-        addView(ew0Var, w7.z5.d(40.0f, 40));
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        addView(linearLayout, w7.z5.m(1.0f, 0, -1, 12, 0, 0));
-        TextView textView = new TextView(context);
-        this.b = textView;
-        int i11 = org.telegram.ui.ActionBar.g6.E8;
-        textView.setTextColor(org.telegram.ui.ActionBar.g6.w0(i11, c6Var));
-        textView.setTextSize(1, 16.0f);
-        textView.setTag(textView);
-        textView.setMaxLines(1);
-        linearLayout.addView(textView);
-        TextView textView2 = new TextView(context);
-        this.c = textView2;
-        textView2.setTextColor(i0.a.k(org.telegram.ui.ActionBar.g6.w0(i11, c6Var), 102));
-        textView2.setTextSize(1, 14.0f);
-        textView2.setTag(textView2);
-        textView2.setMaxLines(1);
-        textView2.setEllipsize(TextUtils.TruncateAt.END);
-        linearLayout.addView(textView2);
+    public /* synthetic */ vp0(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, View view, int[] iArr, int i10) {
+        this.a = i10;
+        this.c = notificationCenterDelegate;
+        this.d = view;
+        this.b = iArr;
+    }
+
+    @Override // o1.g
+    public final void a(o1.h hVar, float f7, float f10) {
+        switch (this.a) {
+            case 0:
+                ((dr0) this.c).R0((org.telegram.ui.Cells.e7) this.d, this.b, f7 / 1000.0f);
+                break;
+            default:
+                ((kq0) this.c).d.R0(this.d, this.b, f7 / 1000.0f);
+                break;
+        }
     }
 }

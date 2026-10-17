@@ -1,31 +1,31 @@
 package qh;
 
-import ji.p1;
+import ig.l0;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.voip.r2;
+import org.telegram.ui.web.z1;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class c {
-    public final p1 a;
+    public final l0 a;
     public b c = b.a;
-    public final r2 d = new r2(this, 19);
+    public final z1 d = new z1(this, 8);
     public final long b = (long) ((AndroidUtilities.getAnimatorDurationScale() * 250.0f) * 1.1f);
 
-    public c(p1 p1Var) {
-        this.a = p1Var;
+    public c(l0 l0Var) {
+        this.a = l0Var;
     }
 
     public final void a(b bVar, boolean z10) {
         if (this.c != bVar) {
-            r2 r2Var = this.d;
-            AndroidUtilities.cancelRunOnUIThread(r2Var);
+            z1 z1Var = this.d;
+            AndroidUtilities.cancelRunOnUIThread(z1Var);
             this.c = bVar;
             if (z10) {
                 this.a.run(bVar);
             }
             if (bVar == b.b || bVar == b.c) {
-                AndroidUtilities.runOnUIThread(r2Var, this.b);
+                AndroidUtilities.runOnUIThread(z1Var, this.b);
             }
         }
     }

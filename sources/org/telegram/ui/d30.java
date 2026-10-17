@@ -1,37 +1,31 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d30 implements DialogInterface.OnDismissListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ n60 b;
+public final class d30 extends TextView {
+    public final RectF a;
+    public final /* synthetic */ s50 b;
 
-    public /* synthetic */ d30(n60 n60Var, int i10) {
-        this.a = i10;
-        this.b = n60Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d30(s50 s50Var, Context context) {
+        super(context);
+        this.b = s50Var;
+        this.a = new RectF();
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.ActionBar.m2 U = LaunchActivity.U();
-                if (this.b.x0 && (U instanceof fo)) {
-                    ((fo) U).Y9(true, true);
-                    break;
-                }
-                break;
-            case 1:
-                this.b.dismiss();
-                break;
-            case 2:
-                this.b.E1 = null;
-                break;
-            default:
-                this.b.r0 = null;
-                break;
-        }
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        float width = getWidth();
+        float height = getHeight();
+        RectF rectF = this.a;
+        rectF.set(0.0f, 0.0f, width, height);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), this.b.g1);
+        super.onDraw(canvas);
     }
 }

@@ -4,17 +4,17 @@ import android.animation.ValueAnimator;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.view.View;
-import org.telegram.ui.Components.es;
+import org.telegram.ui.Components.bs;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes.dex */
 public final class q0 {
     public float a;
     public float b;
     public float c;
     public boolean e;
-    public final k3 f;
-    public final k3 g;
+    public final j3 f;
+    public final j3 g;
     public ValueAnimator j;
     public int k;
     public float d = 0.0f;
@@ -22,39 +22,39 @@ public final class q0 {
     public float i = 1.0f;
 
     public q0(int i10, int i11, int i12, int i13) {
-        k3 k3Var = new k3(i13 - 1);
-        this.f = k3Var;
-        k3 k3Var2 = new k3(i13);
-        this.g = k3Var2;
-        k3Var.a = i10;
-        k3Var.b = i11;
-        k3Var2.a = i10 - i12;
-        k3Var2.b = i11 - i12;
-        k3Var.b();
-        k3Var2.b();
-        k3Var.d.setColor(-1);
-        k3Var.d.setAlpha(20);
-        k3Var2.d.setColor(-1);
-        k3Var2.d.setAlpha(36);
+        j3 j3Var = new j3(i13 - 1);
+        this.f = j3Var;
+        j3 j3Var2 = new j3(i13);
+        this.g = j3Var2;
+        j3Var.a = i10;
+        j3Var.b = i11;
+        j3Var2.a = i10 - i12;
+        j3Var2.b = i11 - i12;
+        j3Var.b();
+        j3Var2.b();
+        j3Var.d.setColor(-1);
+        j3Var.d.setAlpha(20);
+        j3Var2.d.setColor(-1);
+        j3Var2.d.setAlpha(36);
     }
 
     public final void a(Canvas canvas, float f7, float f10, View view) {
         float f11 = (this.a * 0.4f) + 0.8f;
         if (this.e || this.d != 0.0f) {
             canvas.save();
-            float interpolation = es.f.getInterpolation(this.d) * f11;
+            float interpolation = bs.f.getInterpolation(this.d) * f11;
             canvas.scale(interpolation, interpolation, f7, f10);
             float f12 = this.a;
             float f13 = this.i;
-            k3 k3Var = this.f;
-            k3Var.g(f12, f13);
-            Paint paint = k3Var.d;
-            k3Var.a(f7, f10, canvas, paint);
+            j3 j3Var = this.f;
+            j3Var.g(f12, f13);
+            Paint paint = j3Var.d;
+            j3Var.a(f7, f10, canvas, paint);
             float f14 = this.a;
             float f15 = this.i;
-            k3 k3Var2 = this.g;
-            k3Var2.g(f14, f15);
-            k3Var2.a(f7, f10, canvas, paint);
+            j3 j3Var2 = this.g;
+            j3Var2.g(f14, f15);
+            j3Var2.a(f7, f10, canvas, paint);
             canvas.restore();
         }
         if (this.h && this.k == 0) {

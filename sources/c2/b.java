@@ -15,12 +15,12 @@ import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
-import bi.la;
-import bi.m4;
-import bi.w2;
-import c3.b0;
-import c3.i0;
+import c3.c0;
+import c3.j0;
+import ci.i1;
+import ci.p3;
 import com.google.firebase.messaging.FirebaseMessaging;
+import e2.i0;
 import e9.c2;
 import j$.util.Objects;
 import java.lang.reflect.Array;
@@ -39,27 +39,28 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.concurrent.atomic.AtomicMarkableReference;
 import java.util.concurrent.atomic.AtomicReference;
-import m.t3;
+import m.s3;
 import n2.w;
+import n2.x;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.n21;
-import org.telegram.ui.Components.xu;
-import org.telegram.ui.Wallet.y0;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.Components.az0;
+import org.telegram.ui.Components.bs;
+import org.telegram.ui.Components.su;
+import org.telegram.ui.Wallet.a1;
 import org.telegram.ui.Wallet.z0;
+import org.telegram.ui.a5;
 import org.telegram.ui.b1;
-import org.telegram.ui.b5;
-import org.telegram.ui.g5;
-import org.telegram.ui.w4;
-import org.telegram.ui.z4;
+import org.telegram.ui.c5;
+import org.telegram.ui.h5;
+import org.telegram.ui.x4;
 import tc.v;
 import v7.u6;
 import w7.a0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class b implements c3.q {
     public static b e;
@@ -69,13 +70,13 @@ public final class b implements c3.q {
     public Object d;
 
     public b(View view) {
-        xu[] xuVarArr = {new xu(), new xu(), new xu()};
-        this.b = xuVarArr;
+        su[] suVarArr = {new su(), new su(), new su()};
+        this.b = suVarArr;
         this.d = new ArrayList();
         AnimatorSet animatorSet = new AnimatorSet();
         this.c = animatorSet;
-        animatorSet.playTogether(i(xuVarArr[0], 0, 255, 0, 300), i(xuVarArr[1], 0, 255, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 300), i(xuVarArr[2], 0, 255, 300, 300), i(xuVarArr[0], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400), i(xuVarArr[1], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400), i(xuVarArr[2], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400));
-        animatorSet.addListener(new m4(this, view));
+        animatorSet.playTogether(i(suVarArr[0], 0, 255, 0, 300), i(suVarArr[1], 0, 255, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 300), i(suVarArr[2], 0, 255, 300, 300), i(suVarArr[0], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400), i(suVarArr[1], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400), i(suVarArr[2], 255, 0, MediaDataController.MAX_STYLE_RUNS_COUNT, 400));
+        animatorSet.addListener(new p3(this, view));
     }
 
     public static void a(kc.e[][][] eVarArr, int i10, kc.e eVar) {
@@ -112,7 +113,7 @@ public final class b implements c3.q {
                 if (ordinal != 6) {
                     return false;
                 }
-                return kc.c.b(String.valueOf(c10));
+                return kc.c.c(String.valueOf(c10));
             }
         } else if (c10 < '0' || c10 > '9') {
             return false;
@@ -120,8 +121,8 @@ public final class b implements c3.q {
         return true;
     }
 
-    public static boolean g(b5 b5Var) {
-        return (b5Var.a == null && b5Var.b == null) ? false : true;
+    public static boolean g(c5 c5Var) {
+        return (c5Var.a == null && c5Var.b == null) ? false : true;
     }
 
     public static b m() {
@@ -137,12 +138,12 @@ public final class b implements c3.q {
     }
 
     public void A(SpannableString spannableString, int i10) {
-        xu[] xuVarArr = (xu[]) this.b;
+        su[] suVarArr = (su[]) this.b;
         int i11 = i10 + 1;
-        spannableString.setSpan(xuVarArr[0], i10, i11, 0);
+        spannableString.setSpan(suVarArr[0], i10, i11, 0);
         int i12 = i10 + 2;
-        spannableString.setSpan(xuVarArr[1], i11, i12, 0);
-        spannableString.setSpan(xuVarArr[2], i12, i10 + 3, 0);
+        spannableString.setSpan(suVarArr[1], i11, i12, 0);
+        spannableString.setSpan(suVarArr[2], i12, i10 + 3, 0);
     }
 
     public void B() {
@@ -169,38 +170,14 @@ public final class b implements c3.q {
     }
 
     @Override // c3.q
-    public void D() {
+    public void H() {
         SparseArray sparseArray = (SparseArray) this.d;
-        ((c3.q) this.b).D();
+        ((c3.q) this.b).H();
         if (this.a) {
             for (int i10 = 0; i10 < sparseArray.size(); i10++) {
-                ((z3.o) sparseArray.valueAt(i10)).i = true;
+                ((z3.n) sparseArray.valueAt(i10)).i = true;
             }
         }
-    }
-
-    @Override // c3.q
-    public void K(b0 b0Var) {
-        ((c3.q) this.b).K(b0Var);
-    }
-
-    @Override // c3.q
-    public i0 W(int i10, int i11) {
-        SparseArray sparseArray = (SparseArray) this.d;
-        c3.q qVar = (c3.q) this.b;
-        if (i11 != 3 && i11 != 5) {
-            this.a = true;
-        }
-        if (i11 != 3) {
-            return qVar.W(i10, i11);
-        }
-        z3.o oVar = (z3.o) sparseArray.get(i10);
-        if (oVar != null) {
-            return oVar;
-        }
-        z3.o oVar2 = new z3.o(qVar.W(i10, i11), (z3.l) this.c);
-        sparseArray.put(i10, oVar2);
-        return oVar2;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:18:0x006c  */
@@ -308,15 +285,15 @@ public final class b implements c3.q {
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            y0 y0Var = (y0) obj;
+            z0 z0Var = (z0) obj;
             try {
                 try {
                     tc.u uVar = (tc.u) this.b;
-                    AndroidUtilities.runOnUIThread(new n21(y0Var.c, uVar, y0Var.a, "websocket error: " + z0.a(vVar), 14));
+                    AndroidUtilities.runOnUIThread(new az0(z0Var.c, uVar, z0Var.a, "websocket error: " + a1.a(vVar), 15, false));
                 } catch (Throwable unused) {
                 }
             } catch (Throwable unused2) {
-                y0Var.getClass();
+                z0Var.getClass();
             }
         }
     }
@@ -328,16 +305,21 @@ public final class b implements c3.q {
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            y0 y0Var = (y0) obj;
+            z0 z0Var = (z0) obj;
             try {
                 try {
-                    y0Var.getClass();
+                    z0Var.getClass();
                 } catch (Throwable unused) {
-                    y0Var.getClass();
+                    z0Var.getClass();
                 }
             } catch (Throwable unused2) {
             }
         }
+    }
+
+    @Override // c3.q
+    public void g0(c0 c0Var) {
+        ((c3.q) this.b).g0(c0Var);
     }
 
     public int h(int i10, int i11, int i12) {
@@ -345,12 +327,12 @@ public final class b implements c3.q {
         return this.a ? bVar.b(i11, i10) : bVar.b(i10, i11) ? (i12 << 1) | 1 : i12 << 1;
     }
 
-    public ValueAnimator i(xu xuVar, int i10, int i11, int i12, int i13) {
+    public ValueAnimator i(su suVar, int i10, int i11, int i12, int i13) {
         ValueAnimator ofInt = ValueAnimator.ofInt(i10, i11);
-        ofInt.addUpdateListener(new l0(16, this, xuVar));
+        ofInt.addUpdateListener(new l0(17, this, suVar));
         ofInt.setDuration(i13);
         ofInt.setStartDelay(i12);
-        ofInt.setInterpolator(es.f);
+        ofInt.setInterpolator(bs.f);
         return ofInt;
     }
 
@@ -389,11 +371,30 @@ public final class b implements c3.q {
         if (i14 >= 0) {
             return new androidx.biometric.e(this, fVar, eVarArr[length][i14][i16]);
         }
-        throw new com.google.firebase.messaging.r(a1.g.p("Internal error: failed to encode \"", str, "\""));
+        throw new com.google.firebase.messaging.q(a1.g.p("Internal error: failed to encode \"", str, "\""));
     }
 
-    public n2.v k(UUID uuid, n2.o oVar) {
-        String str = oVar.b;
+    @Override // c3.q
+    public j0 j0(int i10, int i11) {
+        SparseArray sparseArray = (SparseArray) this.d;
+        c3.q qVar = (c3.q) this.b;
+        if (i11 != 3 && i11 != 5) {
+            this.a = true;
+        }
+        if (i11 != 3) {
+            return qVar.j0(i10, i11);
+        }
+        z3.n nVar = (z3.n) sparseArray.get(i10);
+        if (nVar != null) {
+            return nVar;
+        }
+        z3.n nVar2 = new z3.n(qVar.j0(i10, i11), (z3.k) this.c);
+        sparseArray.put(i10, nVar2);
+        return nVar2;
+    }
+
+    public w k(UUID uuid, n2.p pVar) {
+        String str = pVar.b;
         if (this.a || TextUtils.isEmpty(str)) {
             str = (String) this.c;
         }
@@ -401,23 +402,23 @@ public final class b implements c3.q {
             Map map = Collections.EMPTY_MAP;
             Uri uri = Uri.EMPTY;
             u6.l(uri, "The uri must be set.");
-            throw new w(new g2.m(uri, 1, null, map, 0L, -1L, null, 0), uri, c2.h, 0L, new IllegalStateException("No license URL"));
+            throw new x(new g2.m(uri, 1, null, map, 0L, -1L, null, 0), uri, c2.h, 0L, new IllegalStateException("No license URL"));
         }
         HashMap hashMap = new HashMap();
-        UUID uuid2 = b2.n.f;
-        hashMap.put("Content-Type", uuid2.equals(uuid) ? "text/xml" : b2.n.d.equals(uuid) ? "application/json" : "application/octet-stream");
+        UUID uuid2 = b2.m.f;
+        hashMap.put("Content-Type", uuid2.equals(uuid) ? "text/xml" : b2.m.d.equals(uuid) ? "application/json" : "application/octet-stream");
         if (uuid2.equals(uuid)) {
             hashMap.put("SOAPAction", "http://schemas.microsoft.com/DRM/2007/03/protocols/AcquireLicense");
         }
         synchronized (((HashMap) this.d)) {
             hashMap.putAll((HashMap) this.d);
         }
-        return a0.a(((g2.o) this.b).createDataSource(), str, oVar.a, hashMap);
+        return a0.a(((g2.o) this.b).createDataSource(), str, pVar.a, hashMap);
     }
 
-    public n2.v l(n2.p pVar) {
+    public w l(n2.q qVar) {
         Charset charset = StandardCharsets.UTF_8;
-        byte[][] bArr = {"{\"signedRequest\":\"".getBytes(charset), pVar.a, "\"}".getBytes(charset)};
+        byte[][] bArr = {"{\"signedRequest\":\"".getBytes(charset), qVar.a, "\"}".getBytes(charset)};
         long j10 = 0;
         for (int i10 = 0; i10 < 3; i10++) {
             j10 += bArr[i10].length;
@@ -432,7 +433,7 @@ public final class b implements c3.q {
             i12 += bArr3.length;
         }
         g2.h createDataSource = ((g2.o) this.b).createDataSource();
-        String str = pVar.b;
+        String str = qVar.b;
         String aVar = h9.a.i.toString();
         String valueOf = String.valueOf(i11);
         e9.s.e("Content-Type", aVar);
@@ -453,7 +454,7 @@ public final class b implements c3.q {
                 while (i10 < size) {
                     Object obj = arrayList2.get(i10);
                     i10++;
-                    arrayList.add((y0) obj);
+                    arrayList.add((z0) obj);
                 }
                 this.d = arrayList;
                 this.a = false;
@@ -472,7 +473,7 @@ public final class b implements c3.q {
             Boolean r10 = r();
             this.c = r10;
             if (r10 == null) {
-                ((r9.l) ((na.b) this.b)).a(new w2(7));
+                ((r9.l) ((na.b) this.b)).a(new i1(9));
             }
             this.a = true;
         } catch (Throwable th2) {
@@ -590,7 +591,7 @@ public final class b implements c3.q {
         int i11 = bVar.b;
         for (int i12 = 0; i12 < i11; i12++) {
             for (int i13 = 0; i13 < i11; i13++) {
-                if (i2.d.a(i10, i12, i13)) {
+                if (i0.a.a(i10, i12, i13)) {
                     bVar.a(i13, i12);
                 }
             }
@@ -606,9 +607,9 @@ public final class b implements c3.q {
     }
 
     public void w() {
-        e2.i0 i0Var = (e2.i0) this.d;
+        i0 i0Var = (i0) this.d;
         if (this.a) {
-            i0Var.d(new la(this, 7));
+            i0Var.d(new androidx.fragment.app.d(this, 4));
             this.a = false;
         }
     }
@@ -628,7 +629,7 @@ public final class b implements c3.q {
                         return true;
                     }
                 }
-                ((com.google.firebase.messaging.s) ((t3) this.d).b).v(gVar);
+                ((com.google.firebase.messaging.r) ((s3) this.d).b).v(gVar);
                 return true;
             } catch (Throwable th2) {
                 throw th2;
@@ -636,36 +637,36 @@ public final class b implements c3.q {
         }
     }
 
-    public void y(ViewGroup viewGroup, c6 c6Var, b5 b5Var, z4 z4Var) {
+    public void y(ViewGroup viewGroup, d6 d6Var, c5 c5Var, a5 a5Var) {
         Objects.requireNonNull(viewGroup);
         Context context = viewGroup.getContext();
         if (((ViewGroup) this.b) != viewGroup) {
             if (this.a) {
-                w4 w4Var = (w4) this.d;
-                int i10 = g5.F;
-                w4Var.b(false);
+                x4 x4Var = (x4) this.d;
+                int i10 = h5.F;
+                x4Var.b(false);
             }
             this.b = viewGroup;
             this.c = (WindowManager) context.getSystemService(WindowManager.class);
-            w4 w4Var2 = new w4(this, context, c6Var, z4Var);
-            this.d = w4Var2;
+            x4 x4Var2 = new x4(this, context, d6Var, a5Var);
+            this.d = x4Var2;
             b1 b1Var = new b1(this, 3);
             WeakHashMap weakHashMap = r0.i0.a;
-            r0.a0.i(w4Var2, b1Var);
+            r0.a0.i(x4Var2, b1Var);
         }
-        ((w4) this.d).a(b5Var);
+        ((x4) this.d).a(c5Var);
         if (this.a) {
             return;
         }
-        if (((w4) this.d).getParent() != null) {
-            ((WindowManager) this.c).removeView((w4) this.d);
+        if (((x4) this.d).getParent() != null) {
+            ((WindowManager) this.c).removeView((x4) this.d);
         }
         WindowManager.LayoutParams layoutParams = new WindowManager.LayoutParams(-1, -1, MediaDataController.MAX_STYLE_RUNS_COUNT, 0, -3);
         layoutParams.softInputMode = 16;
         layoutParams.flags |= -1945959040;
         AndroidUtilities.applyEdgeToEdgeLayoutParams(layoutParams);
-        AndroidUtilities.setPreferredMaxRefreshRate((WindowManager) this.c, (w4) this.d, layoutParams);
-        ((WindowManager) this.c).addView((w4) this.d, layoutParams);
+        AndroidUtilities.setPreferredMaxRefreshRate((WindowManager) this.c, (x4) this.d, layoutParams);
+        ((WindowManager) this.c).addView((x4) this.d, layoutParams);
         viewGroup.requestDisallowInterceptTouchEvent(true);
         this.a = true;
     }
@@ -685,14 +686,14 @@ public final class b implements c3.q {
         }
     }
 
-    public b(c3.q qVar, z3.l lVar) {
+    public b(c3.q qVar, z3.k kVar) {
         this.b = qVar;
-        this.c = lVar;
+        this.c = kVar;
         this.d = new SparseArray();
     }
 
-    public b(t3 t3Var, boolean z10) {
-        this.d = t3Var;
+    public b(s3 s3Var, boolean z10) {
+        this.d = s3Var;
         this.c = new AtomicReference(null);
         this.a = z10;
         this.b = new AtomicMarkableReference(new y9.d(z10 ? 8192 : 1024), false);

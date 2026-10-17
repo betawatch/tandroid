@@ -7,7 +7,7 @@ import android.view.MenuInflater;
 import android.view.View;
 import l.a0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class e extends ActionMode {
     public final Context a;
@@ -25,22 +25,22 @@ public final class e extends ActionMode {
 
     @Override // android.view.ActionMode
     public final View getCustomView() {
-        return this.b.b();
+        return this.b.c();
     }
 
     @Override // android.view.ActionMode
     public final Menu getMenu() {
-        return new a0(this.a, this.b.c());
+        return new a0(this.a, this.b.d());
     }
 
     @Override // android.view.ActionMode
     public final MenuInflater getMenuInflater() {
-        return this.b.d();
+        return this.b.e();
     }
 
     @Override // android.view.ActionMode
     public final CharSequence getSubtitle() {
-        return this.b.e();
+        return this.b.f();
     }
 
     @Override // android.view.ActionMode
@@ -50,7 +50,7 @@ public final class e extends ActionMode {
 
     @Override // android.view.ActionMode
     public final CharSequence getTitle() {
-        return this.b.f();
+        return this.b.g();
     }
 
     @Override // android.view.ActionMode
@@ -60,22 +60,22 @@ public final class e extends ActionMode {
 
     @Override // android.view.ActionMode
     public final void invalidate() {
-        this.b.g();
+        this.b.h();
     }
 
     @Override // android.view.ActionMode
     public final boolean isTitleOptional() {
-        return this.b.h();
+        return this.b.i();
     }
 
     @Override // android.view.ActionMode
     public final void setCustomView(View view) {
-        this.b.i(view);
+        this.b.j(view);
     }
 
     @Override // android.view.ActionMode
     public final void setSubtitle(CharSequence charSequence) {
-        this.b.k(charSequence);
+        this.b.l(charSequence);
     }
 
     @Override // android.view.ActionMode
@@ -90,12 +90,12 @@ public final class e extends ActionMode {
 
     @Override // android.view.ActionMode
     public final void setTitleOptionalHint(boolean z10) {
-        this.b.p(z10);
+        this.b.o(z10);
     }
 
     @Override // android.view.ActionMode
     public final void setSubtitle(int i10) {
-        this.b.j(i10);
+        this.b.k(i10);
     }
 
     @Override // android.view.ActionMode

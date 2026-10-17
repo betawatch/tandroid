@@ -17,17 +17,17 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.Components.bp;
-import org.telegram.ui.Components.hc0;
-import org.telegram.ui.Components.pc0;
-import org.telegram.ui.Components.xo;
-import org.telegram.ui.fo;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Components.bc0;
+import org.telegram.ui.Components.ic0;
+import org.telegram.ui.Components.uo;
+import org.telegram.ui.Components.yo;
+import org.telegram.ui.sn;
 import org.webrtc.SurfaceTextureHelper;
 import org.webrtc.SurfaceViewRenderer;
 import org.webrtc.TextureViewRenderer;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements Runnable {
     public final /* synthetic */ int a;
@@ -133,8 +133,8 @@ public final /* synthetic */ class n implements Runnable {
                             }
                         }
                     }
-                    Collections.sort(arrayList4, new a4.d(15));
-                    AndroidUtilities.runOnUIThread(new a3.l0(f0Var, arrayList4, hVar, 29));
+                    Collections.sort(arrayList4, new a4.d(18));
+                    AndroidUtilities.runOnUIThread(new ei.z1(f0Var, arrayList4, hVar, 14));
                     break;
                 } catch (Exception e) {
                     FileLog.e(e);
@@ -142,15 +142,15 @@ public final /* synthetic */ class n implements Runnable {
                 }
                 break;
             case 1:
-                i2.h0 h0Var = (i2.h0) this.d;
-                e2.r rVar = h0Var.m;
+                i2.g0 g0Var7 = (i2.g0) this.d;
+                e2.r rVar = g0Var7.m;
                 int i15 = this.b;
                 int i16 = this.c;
                 rVar.e(24, new eh.c(i15, i16, 2));
-                h0Var.t1(2, 14, new e2.y(i15, i16));
+                g0Var7.t1(2, 14, new e2.y(i15, i16));
                 break;
             case 2:
-                ((i2.b0) this.d).a.q1(this.b, this.c);
+                ((i2.a0) this.d).a.q1(this.b, this.c);
                 break;
             case 3:
                 ((VoIPService) this.d).lambda$initiateActualEncryptedCall$86(this.b, this.c);
@@ -159,53 +159,53 @@ public final /* synthetic */ class n implements Runnable {
                 ((ConnectionsManager) this.d).lambda$discardConnection$0(this.b, this.c);
                 break;
             case 5:
-                org.telegram.ui.web.z0 z0Var = (org.telegram.ui.web.z0) this.d;
+                org.telegram.ui.web.x0 x0Var = (org.telegram.ui.web.x0) this.d;
                 for (int i17 = 0; i17 < this.b - this.c; i17++) {
-                    z0Var.goBack();
+                    x0Var.goBack();
                 }
                 break;
             case 6:
-                m2 m2Var = (m2) this.d;
+                n2 n2Var = (n2) this.d;
                 Bundle bundle = new Bundle();
                 bundle.putLong("user_id", UserConfig.getInstance(this.b).getClientUserId());
                 bundle.putInt("message_id", this.c);
-                m2Var.presentFragment(new fo(bundle));
+                n2Var.presentFragment(new sn(bundle));
                 break;
             case 7:
-                bp bpVar = (bp) this.d;
+                yo yoVar = (yo) this.d;
                 int i18 = this.b;
                 if (i18 != 0) {
                     SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(this.c);
                     notificationsSettings.edit().putInt("last_selected_mute_until_time", i18).putInt("last_selected_mute_until_time2", notificationsSettings.getInt("last_selected_mute_until_time", 0)).apply();
                 }
-                bpVar.y(i18);
+                yoVar.y(i18);
                 break;
             case 8:
-                xo xoVar = (xo) this.d;
+                uo uoVar = (uo) this.d;
                 int i19 = this.b;
                 if (i19 != 0) {
                     SharedPreferences notificationsSettings2 = MessagesController.getNotificationsSettings(this.c);
                     notificationsSettings2.edit().putInt("last_selected_mute_until_time", i19).putInt("last_selected_mute_until_time2", notificationsSettings2.getInt("last_selected_mute_until_time", 0)).apply();
                 }
-                xoVar.run(Integer.valueOf(i19));
+                uoVar.run(Integer.valueOf(i19));
                 break;
             case 9:
-                pc0 pc0Var = ((hc0) this.d).V2;
-                View d = pc0Var.d();
-                hc0 hc0Var = pc0Var.f;
+                ic0 ic0Var = ((bc0) this.d).V2;
+                View d = ic0Var.d();
+                bc0 bc0Var = ic0Var.f;
                 if (d != null) {
                     int top = d.getTop() + this.b;
                     int top2 = d.getTop() + this.c;
                     int i20 = top2 - top;
-                    int paddingTop = hc0Var.getPaddingTop();
-                    int height = hc0Var.getHeight() - hc0Var.getPaddingBottom();
+                    int paddingTop = bc0Var.getPaddingTop();
+                    int height = bc0Var.getHeight() - bc0Var.getPaddingBottom();
                     if (i20 <= height - paddingTop) {
                         top = (top + top2) / 2;
                         paddingTop = (paddingTop + height) / 2;
                     }
                     int i21 = top - paddingTop;
                     if (i21 < 0) {
-                        hc0Var.scrollBy(0, i21);
+                        bc0Var.scrollBy(0, i21);
                         break;
                     }
                 }
@@ -230,9 +230,9 @@ public final /* synthetic */ class n implements Runnable {
         }
     }
 
-    public /* synthetic */ n(i2.b0 b0Var, SurfaceTexture surfaceTexture, int i10, int i11) {
+    public /* synthetic */ n(i2.a0 a0Var, SurfaceTexture surfaceTexture, int i10, int i11) {
         this.a = 2;
-        this.d = b0Var;
+        this.d = a0Var;
         this.b = i10;
         this.c = i11;
     }

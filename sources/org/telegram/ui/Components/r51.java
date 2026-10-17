@@ -1,52 +1,51 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.view.View;
+import android.content.Context;
+import android.view.MotionEvent;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r51 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
+public final class r51 extends im0 {
+    public final /* synthetic */ y51 V2;
+    public final /* synthetic */ b61 W2;
 
-    public /* synthetic */ r51(int i10, View view) {
-        this.a = i10;
-        this.b = view;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r51(b61 b61Var, Context context, y51 y51Var) {
+        super(context, null);
+        this.W2 = b61Var;
+        this.V2 = y51Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                t51 t51Var = (t51) this.b;
-                t51Var.getClass();
-                t51Var.B0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                t51Var.invalidate();
-                break;
-            case 1:
-                j71 j71Var = (j71) this.b;
-                j71Var.getClass();
-                j71Var.G = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                j71Var.invalidate();
-                break;
-            case 2:
-                p71 p71Var = (p71) this.b;
-                p71Var.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                p71Var.b = floatValue;
-                p71Var.setTranslationY(floatValue);
-                break;
-            default:
-                k91 k91Var = (k91) this.b;
-                k91Var.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                k91Var.setAnimationIdicatorProgress(floatValue2);
-                j91 j91Var = k91Var.y;
-                if (j91Var != null) {
-                    ((m.h) j91Var).e(floatValue2);
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.im0
+    public final boolean E0(float f7) {
+        return f7 >= ((float) (AndroidUtilities.dp(58.0f) + this.W2.E));
+    }
+
+    @Override // org.telegram.ui.Components.im0, android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        this.W2.F = true;
+        return super.dispatchTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return super.onInterceptTouchEvent(motionEvent) || this.V2.d(this, motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (this.W2.L != null) {
+            return false;
         }
+        return super.onTouchEvent(motionEvent);
+    }
+
+    @Override // org.telegram.ui.Components.im0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.W2.H) {
+            return;
+        }
+        super.requestLayout();
     }
 }

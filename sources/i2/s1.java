@@ -1,29 +1,72 @@
 package i2;
 
-import j$.util.Objects;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.SystemClock;
+import org.telegram.ui.web.z1;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class s1 {
-    public static final s1 b;
-    public final e9.y0 a;
+public final class s1 implements u0 {
+    public long a;
+    public long b;
+    public boolean c;
+    public final Object d;
+    public Object e;
 
-    static {
-        a6.m mVar = new a6.m(22);
-        mVar.b = e9.y0.t(2, 1, 5);
-        b = new s1(mVar);
+    public s1(z1 z1Var) {
+        this.d = new Handler(Looper.getMainLooper());
+        this.e = z1Var;
     }
 
-    public s1(a6.m mVar) {
-        this.a = (e9.y0) mVar.b;
+    @Override // i2.u0
+    public long a() {
+        long j10 = this.a;
+        if (!this.c) {
+            return j10;
+        }
+        ((e2.g0) this.d).getClass();
+        long elapsedRealtime = SystemClock.elapsedRealtime() - this.b;
+        return (((b2.z0) this.e).a == 1.0f ? e2.m0.S(elapsedRealtime) : elapsedRealtime * r4.c) + j10;
     }
 
-    public final boolean equals(Object obj) {
-        return (obj instanceof s1) && this.a.equals(((s1) obj).a);
+    @Override // i2.u0
+    public /* synthetic */ boolean b() {
+        return false;
     }
 
-    public final int hashCode() {
-        Boolean bool = Boolean.TRUE;
-        return Objects.hash(this.a, null, null, bool, bool, bool, bool, bool);
+    public void c(long j10) {
+        this.a = j10;
+        if (this.c) {
+            ((e2.g0) this.d).getClass();
+            this.b = SystemClock.elapsedRealtime();
+        }
+    }
+
+    public void d() {
+        if (this.c) {
+            return;
+        }
+        ((e2.g0) this.d).getClass();
+        this.b = SystemClock.elapsedRealtime();
+        this.c = true;
+    }
+
+    @Override // i2.u0
+    public void f(b2.z0 z0Var) {
+        if (this.c) {
+            c(a());
+        }
+        this.e = z0Var;
+    }
+
+    @Override // i2.u0
+    public b2.z0 h() {
+        return (b2.z0) this.e;
+    }
+
+    public s1(e2.g0 g0Var) {
+        this.d = g0Var;
+        this.e = b2.z0.d;
     }
 }

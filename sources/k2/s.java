@@ -1,6 +1,6 @@
 package k2;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s implements Runnable {
     public final /* synthetic */ int a;
@@ -25,14 +25,14 @@ public final /* synthetic */ class s implements Runnable {
             case 0:
                 u uVar = (u) ((qf.b) obj).c;
                 String str = e2.m0.a;
-                j2.f fVar = ((i2.b0) uVar).a.s;
+                j2.f fVar = ((i2.a0) uVar).a.s;
                 j2.a p5 = fVar.p();
                 fVar.q(p5, 1011, new j2.e(p5, this.b, this.c, this.d));
                 break;
             default:
                 j2.f fVar2 = ((y2.b) obj).b;
-                com.google.firebase.messaging.m mVar = fVar2.d;
-                j2.a n10 = fVar2.n(((e9.n0) mVar.b).isEmpty() ? null : (u2.g0) e9.s.m((e9.n0) mVar.b));
+                com.google.firebase.messaging.l lVar = fVar2.d;
+                j2.a n10 = fVar2.n(((e9.n0) lVar.b).isEmpty() ? null : (u2.g0) e9.s.m((e9.n0) lVar.b));
                 fVar2.q(n10, 1006, new j2.d(n10, this.b, this.c, this.d));
                 break;
         }

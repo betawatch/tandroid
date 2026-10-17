@@ -1,12 +1,13 @@
 package b1;
 
+import ai.oa;
+import ci.v7;
 import com.google.android.gms.common.api.r;
-import di.y6;
 import java.util.concurrent.Executor;
 import v0.i;
-import v0.p;
+import v0.o;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements td.a {
     public final /* synthetic */ int a;
@@ -14,7 +15,7 @@ public final /* synthetic */ class b implements td.a {
     public final /* synthetic */ i c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ b(e1.d dVar, Exception exc, Executor executor, i iVar) {
+    public /* synthetic */ b(e1.e eVar, Exception exc, Executor executor, i iVar) {
         this.a = 3;
         this.d = exc;
         this.b = executor;
@@ -26,10 +27,10 @@ public final /* synthetic */ class b implements td.a {
         Object cVar;
         switch (this.a) {
             case 0:
-                this.b.execute(new a1.f(14, this.c, this.d));
+                this.b.execute(new oa(3, this.c, this.d));
                 break;
             case 1:
-                this.b.execute(new a1.f(15, this.c, (p) this.d));
+                this.b.execute(new oa(4, this.c, (o) this.d));
                 break;
             case 2:
                 this.b.execute(new h(this.c, (w0.i) this.d, 0));
@@ -54,7 +55,7 @@ public final /* synthetic */ class b implements td.a {
                 } else {
                     cVar = new w0.c("Conditional create failed, failure: " + exc, 2);
                 }
-                this.b.execute(new y6(16, this.c, cVar));
+                this.b.execute(new v7(13, this.c, cVar));
                 break;
         }
         return id.i.a;

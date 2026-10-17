@@ -1,130 +1,163 @@
 package org.telegram.ui.Wallet;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
+import android.animation.ValueAnimator;
+import android.content.Context;
 import android.os.SystemClock;
-import java.util.ArrayList;
-import java.util.Random;
+import android.view.MotionEvent;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.bs;
+import org.telegram.ui.fg;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class l8 {
-    public static final int[] f = {-16106272, -16754689, -14779393, -13326081, -10235137, -6559233};
-    public final ArrayList a = new ArrayList();
-    public final Random b = new Random();
-    public final Paint c = new Paint(1);
-    public final Path d;
-    public long e;
+public final class l8 extends FrameLayout {
+    public final ImageView a;
+    public final j3 b;
+    public float c;
+    public float d;
+    public float e;
+    public float f;
+    public int h;
+    public float n;
+    public float r;
+    public boolean s;
+    public ValueAnimator v;
+    public o1.k w;
 
-    public l8() {
-        Path path = new Path();
-        this.d = path;
-        path.moveTo(0.0f, -1.0f);
-        path.quadTo(0.12f, -0.12f, 1.0f, 0.0f);
-        path.quadTo(0.12f, 0.12f, 0.0f, 1.0f);
-        path.quadTo(-0.12f, 0.12f, -1.0f, 0.0f);
-        path.quadTo(-0.12f, -0.12f, 0.0f, -1.0f);
-        path.close();
+    public l8(Context context) {
+        super(context);
+        this.e = 1.0f;
+        this.h = -1;
+        setClipChildren(false);
+        ImageView imageView = new ImageView(context);
+        this.a = imageView;
+        imageView.setImageResource(R.drawable.mini_gram_72);
+        imageView.setScaleX(0.7407407f);
+        imageView.setScaleY(0.7407407f);
+        addView(imageView, w7.z5.d(-1.0f, -1));
+        j3 j3Var = new j3(this, context, new n(this, 13));
+        this.b = j3Var;
+        addView(j3Var, w7.z5.d(-1.0f, -1));
     }
 
-    public final k8 a(float f7, float f10, float f11, float f12, float f13, float f14, float f15) {
-        ArrayList arrayList = this.a;
-        if (arrayList.isEmpty()) {
-            this.e = SystemClock.uptimeMillis();
+    public final void a(float f7) {
+        if (this.w == null) {
+            o1.k kVar = new o1.k(new o1.j(this.e));
+            this.w = kVar;
+            o1.l lVar = new o1.l(f7);
+            lVar.a(0.55f);
+            lVar.b(280.0f);
+            kVar.u = lVar;
+            this.w.e(0.001f);
+            this.w.b(new y2(this, 1));
         }
-        k8 k8Var = new k8();
-        k8Var.l = 1.0f;
-        k8Var.a = f7;
-        k8Var.b = f10;
-        double d = f11;
-        k8Var.c = ((float) Math.cos(d)) * f12;
-        k8Var.d = ((float) Math.sin(d)) * f12;
-        k8Var.e = f13;
-        k8Var.f = f14;
-        k8Var.g = f15;
-        k8Var.k = f[this.b.nextInt(6)];
-        k8Var.h = e(0.0f, 90.0f);
-        k8Var.i = e(-180.0f, 180.0f);
-        arrayList.add(k8Var);
-        return k8Var;
+        this.w.g(f7);
     }
 
-    public final void b(float f7, float f10) {
-        float f11 = AndroidUtilities.density;
-        for (int i10 = 0; i10 < 28; i10++) {
-            a(f7, f10, e(0.0f, 6.2831855f), e(60.0f, 300.0f) * f11, e(2.5f, 6.0f) * f11, e(0.5f, 0.9f), 3.0f);
+    public final void b() {
+        this.h = -1;
+        if (getParent() != null) {
+            getParent().requestDisallowInterceptTouchEvent(false);
         }
+        this.f = (float) Math.IEEEremainder((this.f + this.c) - c(), 6.283185307179586d);
+        float IEEEremainder = (float) Math.IEEEremainder(this.d, 6.283185307179586d);
+        this.s = true;
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        this.v = ofFloat;
+        ofFloat.setDuration(350L);
+        this.v.setInterpolator(bs.h);
+        this.v.addUpdateListener(new fg(this, IEEEremainder, 6));
+        this.v.start();
+        a(1.0f);
     }
 
-    public final void c(Canvas canvas) {
-        long uptimeMillis = SystemClock.uptimeMillis();
-        float min = Math.min(0.033f, (uptimeMillis - this.e) / 1000.0f);
-        this.e = uptimeMillis;
-        ArrayList arrayList = this.a;
-        for (int size = arrayList.size() - 1; size >= 0; size--) {
-            k8 k8Var = (k8) arrayList.get(size);
-            float f7 = k8Var.j + min;
-            k8Var.j = f7;
-            if (f7 >= 0.0f) {
-                if (f7 >= k8Var.f) {
-                    arrayList.remove(size);
-                } else {
-                    float exp = (float) Math.exp((-k8Var.g) * min);
-                    float f10 = k8Var.c * exp;
-                    k8Var.c = f10;
-                    float f11 = k8Var.d * exp;
-                    k8Var.d = f11;
-                    k8Var.a = (f10 * min) + k8Var.a;
-                    k8Var.b = (f11 * min) + k8Var.b;
-                    k8Var.h = (k8Var.i * min) + k8Var.h;
-                    float f12 = k8Var.j / k8Var.f;
-                    float max = Math.max(0.0f, Math.min(1.0f, (f12 - 0.35f) / 0.65f));
-                    float min2 = (1.0f - ((3.0f - (max * 2.0f)) * (max * max))) * Math.min(1.0f, 8.0f * f12) * k8Var.l;
-                    float B = com.google.android.gms.internal.play_billing.k3.B(f12, 0.5f, 1.0f, k8Var.e);
-                    int save = canvas.save();
-                    canvas.translate(k8Var.a, k8Var.b);
-                    canvas.rotate(k8Var.h);
-                    canvas.scale(B, B);
-                    int i10 = k8Var.k;
-                    Paint paint = this.c;
-                    paint.setColor(i10);
-                    paint.setAlpha(Math.round(20.4f * min2));
-                    canvas.drawCircle(0.0f, 0.0f, 1.4f, paint);
-                    paint.setAlpha(Math.round(min2 * 255.0f));
-                    canvas.drawPath(this.d, paint);
-                    canvas.restoreToCount(save);
+    public final float c() {
+        return ((float) (((SystemClock.uptimeMillis() / 1000.0d) * 0.5961171984672546d) % 6.283185307179586d)) + this.f;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.b.setPaused(false);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        this.b.setPaused(true);
+        ValueAnimator valueAnimator = this.v;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        o1.k kVar = this.w;
+        if (kVar != null) {
+            kVar.c();
+        }
+        super.onDetachedFromWindow();
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        j3 j3Var = this.b;
+        if (j3Var.n && j3Var.getVisibility() == 0) {
+            int actionMasked = motionEvent.getActionMasked();
+            if (actionMasked == 0) {
+                if (!this.s && this.e <= 1.001f) {
+                    this.c = c();
+                    this.d = 0.0f;
+                }
+                ValueAnimator valueAnimator = this.v;
+                if (valueAnimator != null) {
+                    valueAnimator.cancel();
+                    this.v = null;
+                }
+                this.s = false;
+                this.h = motionEvent.getPointerId(0);
+                this.n = motionEvent.getX();
+                this.r = motionEvent.getY();
+                if (getParent() != null) {
+                    getParent().requestDisallowInterceptTouchEvent(true);
+                }
+                a(3.0f);
+                return true;
+            }
+            if (actionMasked != 1) {
+                if (actionMasked == 2) {
+                    int i10 = this.h;
+                    if (i10 != -1) {
+                        int findPointerIndex = motionEvent.findPointerIndex(i10);
+                        if (findPointerIndex < 0) {
+                            b();
+                            return true;
+                        }
+                        float radians = ((float) Math.toRadians(0.800000011920929d)) / AndroidUtilities.density;
+                        this.c = com.google.android.gms.internal.cast.a6.x(motionEvent.getX(findPointerIndex), this.n, radians, this.c);
+                        this.d = com.google.android.gms.internal.cast.a6.x(motionEvent.getY(findPointerIndex), this.r, radians, this.d);
+                        this.n = motionEvent.getX(findPointerIndex);
+                        this.r = motionEvent.getY(findPointerIndex);
+                        return true;
+                    }
+                } else if (actionMasked != 3) {
+                    if (actionMasked != 6) {
+                        if (this.h != -1) {
+                        }
+                    } else if (motionEvent.getPointerId(motionEvent.getActionIndex()) == this.h) {
+                        int i11 = motionEvent.getActionIndex() == 0 ? 1 : 0;
+                        this.h = motionEvent.getPointerId(i11);
+                        this.n = motionEvent.getX(i11);
+                        this.r = motionEvent.getY(i11);
+                        return true;
+                    }
+                    return true;
                 }
             }
-        }
-    }
-
-    public final boolean d() {
-        return !this.a.isEmpty();
-    }
-
-    public final float e(float f7, float f10) {
-        return com.google.android.gms.internal.play_billing.k3.y(f10, f7, this.b.nextFloat(), f7);
-    }
-
-    public final void f() {
-        this.a.clear();
-        float f7 = AndroidUtilities.density;
-        for (int i10 = 0; i10 < 48; i10++) {
-            int i11 = -1;
-            while (i11 <= 1) {
-                k8 a2 = a(0.0f, (e(-3.0f, 3.0f) * f7) + 0.0f, e(-0.6f, 0.6f) + (i11 < 0 ? 3.1415927f : 0.0f), e(150.0f, 310.0f) * f7, e(1.3f, 3.2f) * f7, e(0.65f, 1.05f), 1.8f);
-                a2.k = -6562049;
-                a2.l = e(0.3f, 1.0f);
-                a2.j = (-i10) * 0.006f;
-                i11 += 2;
+            if (this.h != -1) {
+                b();
             }
+            return true;
         }
-    }
-
-    public final void g(float f7, float f10) {
-        float f11 = AndroidUtilities.density;
-        a(f7, f10, e(0.0f, 6.2831855f), e(0.0f, 28.0f) * f11, e(1.5f, 3.5f) * f11, e(0.35f, 0.6f), 2.0f);
+        return false;
     }
 }

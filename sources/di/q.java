@@ -1,91 +1,229 @@
 package di;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.yj0;
+import android.content.Context;
+import android.text.TextUtils;
+import android.view.View;
+import android.view.ViewGroup;
+import ci.a7;
+import ci.h7;
+import ci.t6;
+import ei.a8;
+import java.util.ArrayList;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Cells.r7;
+import org.telegram.ui.Cells.s7;
+import org.telegram.ui.Components.hs0;
+import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.ql0;
+import org.telegram.ui.Components.sl0;
+import s4.b1;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class q extends Drawable {
-    public final Paint a;
-    public float b;
-    public float c;
-    public long d;
-    public boolean e;
-    public boolean f;
-    public boolean g;
-    public final yj0 h;
-    public final ac i;
-    public final /* synthetic */ ac j;
+public class q extends ql0 {
+    public final Context c;
+    public a7 e;
+    public q f;
+    public r7 h;
+    public boolean r;
+    public final /* synthetic */ r s;
+    public final ArrayList d = new ArrayList();
+    public final ArrayList n = new ArrayList();
 
-    public q(ac acVar, ac acVar2) {
-        this.j = acVar;
-        Paint paint = new Paint(1);
-        this.a = paint;
-        this.c = 1.0f;
-        this.i = acVar2;
-        yj0 yj0Var = new yj0(R.raw.chat_audio_record_delete_3, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), false, null);
-        this.h = yj0Var;
-        yj0Var.o0 = true;
-        paint.setColor(-2406842);
-        yj0Var.Z = true;
-        yj0Var.Q(-2406842, "Cup Red");
-        yj0Var.Q(-2406842, "Box");
-        yj0Var.o();
+    public q(r rVar, Context context) {
+        this.s = rVar;
+        this.c = context;
+        M();
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        boolean z10 = this.g;
-        yj0 yj0Var = this.h;
-        if (z10) {
-            yj0Var.setAlpha((int) (this.b * 255.0f * this.c));
+    @Override // org.telegram.ui.Components.hm0
+    public final boolean D(b1 b1Var) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.ql0
+    public final String F(int i10) {
+        MessageObject messageObject;
+        TL_stories.StoryItem storyItem;
+        a7 a7Var = this.e;
+        if (a7Var == null || i10 < 0 || i10 >= a7Var.i.size() || (messageObject = (MessageObject) this.e.i.get(i10)) == null || (storyItem = messageObject.storyItem) == null) {
+            return null;
         }
-        int i10 = (int) (this.b * 255.0f * this.c);
-        Paint paint = this.a;
-        paint.setAlpha(i10);
-        long currentTimeMillis = System.currentTimeMillis() - this.d;
-        if (this.e || this.g) {
-            float f7 = (currentTimeMillis / 600.0f) + this.b;
-            this.b = f7;
-            if (f7 >= 1.0f) {
-                this.b = 1.0f;
-                this.e = false;
-            }
+        return LocaleController.formatYearMont(storyItem.date, true);
+    }
+
+    @Override // org.telegram.ui.Components.ql0
+    public final void G(im0 im0Var, float f7, int[] iArr) {
+        int measuredHeight = im0Var.getChildAt(0).getMeasuredHeight();
+        q qVar = this.f;
+        r rVar = this.s;
+        int i10 = this == qVar ? rVar.e : rVar.d;
+        int ceil = (int) (Math.ceil(h() / i10) * measuredHeight);
+        int measuredHeight2 = im0Var.getMeasuredHeight() - im0Var.getPaddingTop();
+        if (measuredHeight == 0) {
+            iArr[1] = 0;
+            iArr[0] = 0;
         } else {
-            float f10 = this.b - (currentTimeMillis / 600.0f);
-            this.b = f10;
-            if (f10 <= 0.0f) {
-                this.b = 0.0f;
-                this.e = true;
+            float f10 = f7 * (ceil - measuredHeight2);
+            iArr[0] = ((int) (f10 / measuredHeight)) * i10;
+            iArr[1] = ((int) f10) % measuredHeight;
+        }
+    }
+
+    public final boolean L(int i10) {
+        hs0 hs0Var = this.s.W;
+        a7 a7Var = this.e;
+        if (a7Var == null) {
+            return false;
+        }
+        if (a7Var instanceof t6) {
+            TLRPC.User user = MessagesController.getInstance(hs0Var.b).getUser(Long.valueOf(hs0Var.d));
+            return user != null && user.bot && user.bot_has_main_app && user.bot_can_edit;
+        }
+        if (i10 < 0 || i10 >= a7Var.i.size()) {
+            return false;
+        }
+        return this.e.m(((MessageObject) this.e.i.get(i10)).getId());
+    }
+
+    public final void M() {
+        if (this.e == null) {
+            return;
+        }
+        r rVar = this.s;
+        if ((!rVar.I || (rVar.H && h() > 1)) && h() > 0) {
+            if (h() < 5) {
+                int max = Math.max(1, h());
+                rVar.d = max;
+                rVar.H = max == 1;
+            } else if (rVar.H || rVar.d == 1) {
+                rVar.H = false;
+                rVar.d = Math.max(2, SharedConfig.storiesColumnsCount);
+            }
+            rVar.h.y1(rVar.d);
+            rVar.I = true;
+        }
+    }
+
+    @Override // s4.g0
+    public final int h() {
+        if (this.e == null) {
+            return 0;
+        }
+        return this.e.g() + this.d.size();
+    }
+
+    @Override // s4.g0
+    public final int j(int i10) {
+        return 19;
+    }
+
+    @Override // s4.g0
+    public final int k() {
+        return h();
+    }
+
+    @Override // s4.g0
+    public void l() {
+        a7 a7Var = this.e;
+        boolean z10 = a7Var instanceof t6;
+        r rVar = this.s;
+        if (z10) {
+            t6 t6Var = (t6) a7Var;
+            ArrayList arrayList = this.d;
+            arrayList.clear();
+            ArrayList E = MessagesController.getInstance(this.e.c).getStoriesController().E(rVar.W.d);
+            if (E != null) {
+                for (int i10 = 0; i10 < E.size(); i10++) {
+                    h7 h7Var = (h7) E.get(i10);
+                    a8 a8Var = h7Var.c;
+                    if (a8Var != null && !a8Var.g && TextUtils.equals(a8Var.K0, t6Var.E)) {
+                        arrayList.add(h7Var);
+                    }
+                }
             }
         }
-        this.d = System.currentTimeMillis();
-        yj0Var.setBounds(getBounds());
-        if (this.g) {
-            yj0Var.draw(canvas);
+        super.l();
+        q qVar = this.f;
+        if (qVar != null) {
+            qVar.l();
         }
-        if (!this.g || !yj0Var.u()) {
-            canvas.drawCircle(getBounds().centerX(), getBounds().centerY(), AndroidUtilities.dp(5.0f), paint);
+        if (this != rVar.w) {
+            M();
+            rVar.c();
         }
-        this.j.invalidate();
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
+    @Override // s4.g0
+    public final void v(b1 b1Var, int i10) {
+        if (this.e == null) {
+            return;
+        }
+        View view = b1Var.a;
+        if (view instanceof s7) {
+            s7 s7Var = (s7) view;
+            s7Var.d0 = true;
+            r rVar = this.s;
+            ArrayList arrayList = this.d;
+            if (i10 >= 0 && i10 < arrayList.size()) {
+                h7 h7Var = (h7) arrayList.get(i10);
+                s7Var.f0 = false;
+                if (h7Var.K == null) {
+                    TL_stories.TL_storyItem tL_storyItem = new TL_stories.TL_storyItem();
+                    long j10 = h7Var.a;
+                    int i11 = (int) (j10 ^ (j10 >>> 32));
+                    tL_storyItem.messageId = i11;
+                    tL_storyItem.id = i11;
+                    tL_storyItem.attachPath = h7Var.f;
+                    p pVar = new p(this.e.c, tL_storyItem);
+                    h7Var.K = pVar;
+                    pVar.uploadingStory = h7Var;
+                }
+                s7Var.k(h7Var.K, this == this.f ? rVar.e : rVar.d, false);
+                s7Var.d0 = true;
+                s7Var.setReorder(false);
+                s7Var.i(false, false);
+                return;
+            }
+            int size = i10 - arrayList.size();
+            if (size < 0 || size >= this.e.i.size()) {
+                s7Var.f0 = false;
+                s7Var.k(null, this == this.f ? rVar.e : rVar.d, false);
+                s7Var.d0 = true;
+                return;
+            }
+            MessageObject messageObject = (MessageObject) this.e.i.get(size);
+            s7Var.f0 = messageObject != null && this.e.m(messageObject.getId());
+            s7Var.setReorder(true);
+            s7Var.k(messageObject, this == this.f ? rVar.e : rVar.d, false);
+            hs0 hs0Var = rVar.W;
+            if (!hs0Var.G.C1 || messageObject == null) {
+                s7Var.i(false, false);
+            } else {
+                s7Var.i(hs0Var.c(messageObject), true);
+            }
+        }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.c = i10 / 255.0f;
+    @Override // s4.g0
+    public final b1 x(ViewGroup viewGroup, int i10) {
+        hs0 hs0Var = this.s.W;
+        if (this.h == null) {
+            this.h = new r7(viewGroup.getContext(), hs0Var.c);
+        }
+        s7 s7Var = new s7(this.c, this.h, hs0Var.b);
+        s7Var.w0 = true;
+        s7Var.setGradientView(null);
+        s7Var.d0 = true;
+        return new sl0(s7Var);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // org.telegram.ui.Components.ql0
+    public final void I() {
     }
 }

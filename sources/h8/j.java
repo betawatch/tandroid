@@ -13,10 +13,9 @@ import androidx.mediarouter.app.z;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import n6.q;
-import v0.k;
 import v7.a8;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class j {
     public androidx.biometric.e a;
@@ -24,8 +23,8 @@ public final class j {
     public LinkedList c;
     public final d e;
     public final Context f;
-    public k g;
-    public final k d = new k(this);
+    public le.b g;
+    public final le.b d = new le.b(this, 26);
     public final ArrayList h = new ArrayList();
 
     public j(d dVar, Context context) {
@@ -93,13 +92,13 @@ public final class j {
                 if (W0 == null) {
                     return;
                 }
-                this.g.b(new androidx.biometric.e(this.e, W0));
+                this.g.b0(new androidx.biometric.e(this.e, W0));
                 int size = arrayList.size();
                 int i10 = 0;
                 while (i10 < size) {
                     Object obj = arrayList.get(i10);
                     i10++;
-                    this.a.n((f) obj);
+                    this.a.p((f) obj);
                 }
                 arrayList.clear();
             } catch (RemoteException e) {

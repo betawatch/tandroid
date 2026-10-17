@@ -1,91 +1,26 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.util.SparseArray;
-import android.util.SparseIntArray;
-import android.view.View;
-import java.util.List;
-import org.telegram.messenger.MessageObject;
+import android.app.Activity;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class li extends z4.a {
-    public final /* synthetic */ int c;
-    public final /* synthetic */ SparseArray d;
-    public final /* synthetic */ boolean e;
-    public final /* synthetic */ List f;
-    public final /* synthetic */ MessageObject g;
-    public final /* synthetic */ org.telegram.ui.Components.gk0 h;
-    public final /* synthetic */ MessageObject i;
-    public final /* synthetic */ SparseIntArray j;
-    public final /* synthetic */ int k;
-    public final /* synthetic */ z4.g l;
-    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout m;
-    public final /* synthetic */ int[] n;
-    public final /* synthetic */ int o;
-    public final /* synthetic */ fo p;
+public final class li extends org.telegram.ui.Components.to {
+    public final /* synthetic */ sn M;
 
-    public li(fo foVar, int i10, SparseArray sparseArray, boolean z10, List list, MessageObject messageObject, org.telegram.ui.Components.gk0 gk0Var, MessageObject messageObject2, SparseIntArray sparseIntArray, int i11, z4.g gVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr, int i12) {
-        this.p = foVar;
-        this.c = i10;
-        this.d = sparseArray;
-        this.e = z10;
-        this.f = list;
-        this.g = messageObject;
-        this.h = gk0Var;
-        this.i = messageObject2;
-        this.j = sparseIntArray;
-        this.k = i11;
-        this.l = gVar;
-        this.m = actionBarPopupWindow$ActionBarPopupWindowLayout;
-        this.n = iArr;
-        this.o = i12;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public li(sn snVar, Activity activity, int i10, TLRPC.Document document, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(activity, i10, document, d6Var);
+        this.M = snVar;
     }
 
-    @Override // z4.a
-    public final void a(z4.g gVar, Object obj) {
-        gVar.removeView((View) obj);
-    }
-
-    @Override // z4.a
-    public final int b() {
-        return this.c;
-    }
-
-    @Override // z4.a
-    public final Object e(z4.g gVar, int i10) {
-        int i11;
-        SparseArray sparseArray = this.d;
-        View view = (View) sparseArray.get(i10);
-        if (view != null) {
-            gVar.addView(view);
-            return view;
-        }
-        int i12 = this.e ? i10 - 1 : i10;
-        TLRPC.ReactionCount reactionCount = i12 >= 0 ? (TLRPC.ReactionCount) this.f.get(i12) : null;
-        Context context = gVar.getContext();
-        fo foVar = this.p;
-        co coVar = foVar.ea;
-        i11 = ((org.telegram.ui.ActionBar.m2) foVar).currentAccount;
-        org.telegram.ui.Components.qk0 qk0Var = new org.telegram.ui.Components.qk0(context, coVar, i11, this.g, reactionCount, true);
-        org.telegram.ui.Components.gk0 gk0Var = this.h;
-        qk0Var.h(gk0Var.getSeenUsers());
-        qk0Var.G = new b1(this, 16);
-        qk0Var.E = new m4.y0(13, this, this.i);
-        qk0Var.y = new fi.u4(this.j, i10, this.k, this.l, this.m, this.n);
-        if (i12 < 0) {
-            qk0Var.setPredictiveCount(this.o);
-            gk0Var.setSeenCallback(new j3(qk0Var, 1));
-        }
-        gVar.addView(qk0Var);
-        sparseArray.put(i10, qk0Var);
-        return qk0Var;
-    }
-
-    @Override // z4.a
-    public final boolean f(View view, Object obj) {
-        return view == obj;
+    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        float y3 = getY();
+        sn snVar = this.M;
+        float y10 = snVar.R0.getY() + y3;
+        this.J = snVar.X0.getBackgroundSizeY();
+        this.I = y10;
     }
 }

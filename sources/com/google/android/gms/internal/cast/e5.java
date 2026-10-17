@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class e5 implements Cloneable {
     public final f5 a;
@@ -26,7 +26,7 @@ public abstract class e5 implements Cloneable {
         byte byteValue = ((Byte) b10.h(1, null)).byteValue();
         if (byteValue != 1) {
             if (byteValue != 0) {
-                boolean f7 = f6.c.a(b10.getClass()).f(b10);
+                boolean f7 = g6.c.a(b10.getClass()).f(b10);
                 b10.h(2, true == f7 ? b10 : null);
             }
             throw new androidx.car.app.j("Message was missing required fields.  (Lite runtime could not determine which fields were missing).");
@@ -40,7 +40,7 @@ public abstract class e5 implements Cloneable {
         }
         f5 f5Var = this.b;
         f5Var.getClass();
-        f6.c.a(f5Var.getClass()).a(f5Var);
+        g6.c.a(f5Var.getClass()).a(f5Var);
         f5Var.d();
         return this.b;
     }
@@ -50,7 +50,7 @@ public abstract class e5 implements Cloneable {
             return;
         }
         f5 f5Var = (f5) this.a.h(4, null);
-        f6.c.a(f5Var.getClass()).d(f5Var, this.b);
+        g6.c.a(f5Var.getClass()).d(f5Var, this.b);
         this.b = f5Var;
     }
 

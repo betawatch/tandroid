@@ -11,9 +11,9 @@ import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import v7.y7;
-import w7.d8;
+import w7.e8;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class g {
     public static final a0.j a = new a0.j(16);
@@ -54,7 +54,7 @@ public abstract class g {
         int i11;
         Typeface b10;
         a0.j jVar = a;
-        d8.a("getFontSync");
+        e8.a("getFontSync");
         try {
             typeface = (Typeface) jVar.a(str);
         } catch (PackageManager.NameNotFoundException unused) {
@@ -77,9 +77,9 @@ public abstract class g {
                 }
                 if (list2.size() <= 1 || Build.VERSION.SDK_INT < 29) {
                     h[] hVarArr = (h[]) list2.get(0);
-                    y7 y7Var = i0.e.a;
-                    d8.a("TypefaceCompat.createFromFontInfo");
-                    b10 = i0.e.a.b(context, hVarArr, i10);
+                    y7 y7Var = i0.f.a;
+                    e8.a("TypefaceCompat.createFromFontInfo");
+                    b10 = i0.f.a.b(context, hVarArr, i10);
                     Trace.endSection();
                     if (b10 != null) {
                         return new f(-3);
@@ -87,9 +87,9 @@ public abstract class g {
                     jVar.b(str, b10);
                     return new f(b10);
                 }
-                y7 y7Var2 = i0.e.a;
-                d8.a("TypefaceCompat.createFromFontInfoWithFallback");
-                b10 = i0.e.a.c(context, list2, i10);
+                y7 y7Var2 = i0.f.a;
+                e8.a("TypefaceCompat.createFromFontInfoWithFallback");
+                b10 = i0.f.a.c(context, list2, i10);
                 Trace.endSection();
                 if (b10 != null) {
                 }

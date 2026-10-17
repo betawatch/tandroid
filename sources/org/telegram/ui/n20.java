@@ -1,78 +1,40 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes3.dex */
-public final class n20 implements org.telegram.ui.Components.fp0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ tg.g b;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ n20(tg.g gVar, int i10) {
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class n20 implements Utilities.Callback2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ s50 b;
+
+    public /* synthetic */ n20(s50 s50Var, int i10) {
         this.a = i10;
-        this.b = gVar;
+        this.b = s50Var;
     }
 
-    @Override // org.telegram.ui.Components.fp0
-    public final void X(float f7, boolean z10) {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        TLRPC.Updates updates = (TLRPC.Updates) obj;
         switch (this.a) {
             case 0:
-                tg.o oVar = this.b.c;
-                if (oVar != null) {
-                    oVar.B = f7 * 2.0f;
-                    break;
+                s50 s50Var = this.b;
+                if (updates != null) {
+                    s50Var.d.getMessagesController().lambda$processUpdates$377(updates, false);
                 }
-                break;
-            case 1:
-                tg.o oVar2 = this.b.c;
-                if (oVar2 != null) {
-                    oVar2.C = f7 * 2.0f;
-                    break;
-                }
-                break;
-            case 2:
-                tg.o oVar3 = this.b.c;
-                if (oVar3 != null) {
-                    oVar3.D = f7;
-                    break;
-                }
+                AndroidUtilities.runOnUIThread(new e20(s50Var, 10));
                 break;
             default:
-                tg.o oVar4 = this.b.c;
-                if (oVar4 != null) {
-                    oVar4.G = f7 * 2.0f;
+                s50 s50Var2 = this.b;
+                if (updates == null) {
+                    s50Var2.getClass();
+                    break;
+                } else {
+                    s50Var2.d.getMessagesController().lambda$processUpdates$377(updates, false);
                     break;
                 }
-                break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.fp0
-    public final /* synthetic */ CharSequence getContentDescription() {
-        switch (this.a) {
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.fp0
-    public final /* synthetic */ int k0() {
-        switch (this.a) {
-        }
-        return 0;
-    }
-
-    @Override // org.telegram.ui.Components.fp0
-    public final void z() {
-        int i10 = this.a;
-    }
-
-    private final void a() {
-    }
-
-    private final void b() {
-    }
-
-    private final void c() {
-    }
-
-    private final void d() {
     }
 }

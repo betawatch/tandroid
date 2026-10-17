@@ -1,46 +1,84 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLMethod;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class n9 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ BaseController f;
-    public final /* synthetic */ Object h;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    public /* synthetic */ n9(MediaDataController mediaDataController, boolean z10, int i10, ArrayList arrayList, boolean z11, int i11) {
-        this.f = mediaDataController;
-        this.c = z10;
-        this.b = i10;
-        this.h = arrayList;
-        this.d = z11;
-        this.e = i11;
+    public /* synthetic */ n9(int i10, long j10, long j11, org.telegram.ui.ActionBar.e1 e1Var, org.telegram.ui.ActionBar.e1 e1Var2) {
+        this.a = 3;
+        this.c = i10;
+        this.b = j10;
+        this.d = j11;
+        this.e = e1Var;
+        this.f = e1Var2;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
+        int i10;
         switch (this.a) {
             case 0:
-                ((MediaDataController) this.f).lambda$processLoadedRecentDocuments$52(this.c, this.b, (ArrayList) this.h, this.d, this.e);
+                ((MediaDataController) this.e).lambda$loadBotInfo$200(this.b, this.d, (Utilities.Callback) this.f, this.c);
+                break;
+            case 1:
+                ((MessagesController) this.e).lambda$loadFullChat$66(this.b, (TLRPC.TL_messages_chatFull) this.f, this.c, this.d);
+                break;
+            case 2:
+                ((MessagesStorage) this.e).lambda$loadPendingTasks$20(this.b, this.d, (TLMethod) this.f, this.c);
                 break;
             default:
-                ((MessagesController) this.f).lambda$processLoadedMessages$188(this.b, (TLRPC.messages_Messages) this.h, this.c, this.d, this.e);
+                org.telegram.ui.ActionBar.e1 e1Var = (org.telegram.ui.ActionBar.e1) this.e;
+                org.telegram.ui.ActionBar.e1 e1Var2 = (org.telegram.ui.ActionBar.e1) this.f;
+                int i11 = this.c;
+                MessagesController messagesController = MessagesController.getInstance(i11);
+                long j10 = this.b;
+                long j11 = this.d;
+                if (messagesController.isDialogMuted(j10, j11)) {
+                    e1Var.g(LocaleController.getString(R.string.UnmuteNotifications), R.drawable.msg_unmute, null);
+                    i10 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.x6, false);
+                    e1Var2.setVisibility(8);
+                } else {
+                    e1Var.g(LocaleController.getString(R.string.MuteNotifications), R.drawable.msg_mute, null);
+                    int x02 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.q7, false);
+                    e1Var2.setVisibility(0);
+                    if (MessagesController.getInstance(i11).isDialogNotificationsSoundEnabled(j10, j11)) {
+                        e1Var2.g(LocaleController.getString(R.string.SoundOff), R.drawable.msg_tone_off, null);
+                    } else {
+                        e1Var2.g(LocaleController.getString(R.string.SoundOn), R.drawable.msg_tone_on, null);
+                    }
+                    i10 = x02;
+                }
+                e1Var.c(i10, i10);
+                e1Var.setSelectorColor(org.telegram.ui.ActionBar.h6.m1(0.1f, i10));
                 break;
         }
     }
 
-    public /* synthetic */ n9(MessagesController messagesController, int i10, TLRPC.messages_Messages messages_messages, boolean z10, boolean z11, int i11) {
-        this.f = messagesController;
-        this.b = i10;
-        this.h = messages_messages;
-        this.c = z10;
-        this.d = z11;
-        this.e = i11;
+    public /* synthetic */ n9(BaseController baseController, long j10, long j11, Object obj, int i10, int i11) {
+        this.a = i11;
+        this.e = baseController;
+        this.b = j10;
+        this.d = j11;
+        this.f = obj;
+        this.c = i10;
+    }
+
+    public /* synthetic */ n9(MessagesController messagesController, long j10, TLRPC.TL_messages_chatFull tL_messages_chatFull, int i10, long j11) {
+        this.a = 1;
+        this.e = messagesController;
+        this.b = j10;
+        this.f = tL_messages_chatFull;
+        this.c = i10;
+        this.d = j11;
     }
 }

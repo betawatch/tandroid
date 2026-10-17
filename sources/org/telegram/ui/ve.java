@@ -1,247 +1,54 @@
 package org.telegram.ui;
 
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ve implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ fo b;
+public final /* synthetic */ class ve implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ sn b;
+    public final /* synthetic */ MessagesController c;
+    public final /* synthetic */ CharSequence d;
+    public final /* synthetic */ boolean e;
 
-    public /* synthetic */ ve(fo foVar, int i10) {
-        this.a = i10;
-        this.b = foVar;
+    public /* synthetic */ ve(sn snVar, CharSequence charSequence, MessagesController messagesController, boolean z10) {
+        this.b = snVar;
+        this.d = charSequence;
+        this.c = messagesController;
+        this.e = z10;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                final int i10 = 0;
-                final fo foVar = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.mf
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                fo.l1(foVar, tLObject);
-                                break;
-                            case 1:
-                                fo.V0(foVar, tLObject);
-                                break;
-                            case 2:
-                                fo foVar2 = foVar;
-                                TLObject tLObject2 = tLObject;
-                                foVar2.o5 = 0;
-                                if (tLObject2 == null && foVar2.getParentActivity() != null) {
-                                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(foVar2.getParentActivity(), 0, foVar2.ea);
-                                    alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
-                                    alertDialog$Builder.a.T = LocaleController.getString(R.string.EditMessageError);
-                                    alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
-                                    foVar2.showDialog(alertDialog$Builder.a);
-                                    sk skVar = foVar2.Y;
-                                    if (skVar != null) {
-                                        skVar.Z0(null, null, false);
-                                        foVar2.j9(true);
-                                        break;
-                                    }
-                                }
-                                break;
-                            default:
-                                fo foVar3 = foVar;
-                                TLObject tLObject3 = tLObject;
-                                if (tLObject3 != null) {
-                                    TLRPC.TL_exportedMessageLink tL_exportedMessageLink = (TLRPC.TL_exportedMessageLink) tLObject3;
-                                    try {
-                                        ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", tL_exportedMessageLink.link));
-                                        if (org.telegram.ui.Components.zc.a(foVar3)) {
-                                            org.telegram.ui.Components.zc.a0(foVar3).k(!foVar3.K9() && tL_exportedMessageLink.link.contains("/c/")).j();
-                                            break;
-                                        }
-                                    } catch (Exception e) {
-                                        FileLog.e(e);
-                                    }
-                                }
-                                break;
-                        }
-                    }
-                });
+                sn.o0(this.b, this.d, this.c, this.e);
                 break;
-            case 1:
-                final int i11 = 1;
-                final fo foVar2 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.mf
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                fo.l1(foVar2, tLObject);
-                                break;
-                            case 1:
-                                fo.V0(foVar2, tLObject);
-                                break;
-                            case 2:
-                                fo foVar22 = foVar2;
-                                TLObject tLObject2 = tLObject;
-                                foVar22.o5 = 0;
-                                if (tLObject2 == null && foVar22.getParentActivity() != null) {
-                                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(foVar22.getParentActivity(), 0, foVar22.ea);
-                                    alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
-                                    alertDialog$Builder.a.T = LocaleController.getString(R.string.EditMessageError);
-                                    alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
-                                    foVar22.showDialog(alertDialog$Builder.a);
-                                    sk skVar = foVar22.Y;
-                                    if (skVar != null) {
-                                        skVar.Z0(null, null, false);
-                                        foVar22.j9(true);
-                                        break;
-                                    }
-                                }
-                                break;
-                            default:
-                                fo foVar3 = foVar2;
-                                TLObject tLObject3 = tLObject;
-                                if (tLObject3 != null) {
-                                    TLRPC.TL_exportedMessageLink tL_exportedMessageLink = (TLRPC.TL_exportedMessageLink) tLObject3;
-                                    try {
-                                        ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", tL_exportedMessageLink.link));
-                                        if (org.telegram.ui.Components.zc.a(foVar3)) {
-                                            org.telegram.ui.Components.zc.a0(foVar3).k(!foVar3.K9() && tL_exportedMessageLink.link.contains("/c/")).j();
-                                            break;
-                                        }
-                                    } catch (Exception e) {
-                                        FileLog.e(e);
-                                    }
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
-            case 2:
-                final int i12 = 3;
-                final fo foVar3 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.mf
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i12) {
-                            case 0:
-                                fo.l1(foVar3, tLObject);
-                                break;
-                            case 1:
-                                fo.V0(foVar3, tLObject);
-                                break;
-                            case 2:
-                                fo foVar22 = foVar3;
-                                TLObject tLObject2 = tLObject;
-                                foVar22.o5 = 0;
-                                if (tLObject2 == null && foVar22.getParentActivity() != null) {
-                                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(foVar22.getParentActivity(), 0, foVar22.ea);
-                                    alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
-                                    alertDialog$Builder.a.T = LocaleController.getString(R.string.EditMessageError);
-                                    alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
-                                    foVar22.showDialog(alertDialog$Builder.a);
-                                    sk skVar = foVar22.Y;
-                                    if (skVar != null) {
-                                        skVar.Z0(null, null, false);
-                                        foVar22.j9(true);
-                                        break;
-                                    }
-                                }
-                                break;
-                            default:
-                                fo foVar32 = foVar3;
-                                TLObject tLObject3 = tLObject;
-                                if (tLObject3 != null) {
-                                    TLRPC.TL_exportedMessageLink tL_exportedMessageLink = (TLRPC.TL_exportedMessageLink) tLObject3;
-                                    try {
-                                        ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", tL_exportedMessageLink.link));
-                                        if (org.telegram.ui.Components.zc.a(foVar32)) {
-                                            org.telegram.ui.Components.zc.a0(foVar32).k(!foVar32.K9() && tL_exportedMessageLink.link.contains("/c/")).j();
-                                            break;
-                                        }
-                                    } catch (Exception e) {
-                                        FileLog.e(e);
-                                    }
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
-            case 3:
-                final int i13 = 2;
-                final fo foVar4 = this.b;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.mf
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i13) {
-                            case 0:
-                                fo.l1(foVar4, tLObject);
-                                break;
-                            case 1:
-                                fo.V0(foVar4, tLObject);
-                                break;
-                            case 2:
-                                fo foVar22 = foVar4;
-                                TLObject tLObject2 = tLObject;
-                                foVar22.o5 = 0;
-                                if (tLObject2 == null && foVar22.getParentActivity() != null) {
-                                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(foVar22.getParentActivity(), 0, foVar22.ea);
-                                    alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
-                                    alertDialog$Builder.a.T = LocaleController.getString(R.string.EditMessageError);
-                                    alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
-                                    foVar22.showDialog(alertDialog$Builder.a);
-                                    sk skVar = foVar22.Y;
-                                    if (skVar != null) {
-                                        skVar.Z0(null, null, false);
-                                        foVar22.j9(true);
-                                        break;
-                                    }
-                                }
-                                break;
-                            default:
-                                fo foVar32 = foVar4;
-                                TLObject tLObject3 = tLObject;
-                                if (tLObject3 != null) {
-                                    TLRPC.TL_exportedMessageLink tL_exportedMessageLink = (TLRPC.TL_exportedMessageLink) tLObject3;
-                                    try {
-                                        ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", tL_exportedMessageLink.link));
-                                        if (org.telegram.ui.Components.zc.a(foVar32)) {
-                                            org.telegram.ui.Components.zc.a0(foVar32).k(!foVar32.K9() && tL_exportedMessageLink.link.contains("/c/")).j();
-                                            break;
-                                        }
-                                    } catch (Exception e) {
-                                        FileLog.e(e);
-                                    }
-                                }
-                                break;
-                        }
-                    }
-                });
-                break;
-            case 4:
-                fo foVar5 = this.b;
-                if (tL_error == null) {
-                    foVar5.getMessagesController().lambda$processUpdates$377((TLRPC.Updates) tLObject, false);
-                    break;
-                } else {
-                    foVar5.getClass();
-                    break;
-                }
             default:
-                fo.e1(this.b, tLObject);
+                sn snVar = this.b;
+                AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(snVar.getParentActivity(), 0, snVar.ea);
+                alertDialog$Builder.a.R = LocaleController.getString(R.string.AppName);
+                String string = LocaleController.getString(R.string.OK);
+                MessagesController messagesController = this.c;
+                alertDialog$Builder.k(string, new da.b(snVar, messagesController, this.d, this.e, 3));
+                alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+                String string2 = LocaleController.getString(R.string.SecretLinkPreviewAlert);
+                org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+                b2Var.T = string2;
+                snVar.showDialog(b2Var);
+                messagesController.secretWebpagePreview = 0;
+                MessagesController.getGlobalMainSettings().edit().putInt("secretWebpage2", messagesController.secretWebpagePreview).commit();
                 break;
         }
+    }
+
+    public /* synthetic */ ve(sn snVar, MessagesController messagesController, CharSequence charSequence, boolean z10) {
+        this.b = snVar;
+        this.c = messagesController;
+        this.d = charSequence;
+        this.e = z10;
     }
 }

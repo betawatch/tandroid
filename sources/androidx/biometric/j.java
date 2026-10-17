@@ -6,7 +6,7 @@ import android.os.Build;
 import android.os.Handler;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class j implements androidx.lifecycle.a0 {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final class j implements androidx.lifecycle.a0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void n0(Object obj) {
+    public final void Z(Object obj) {
         boolean z10;
         int i10 = this.a;
         q qVar = this.b;
@@ -60,8 +60,8 @@ public final class j implements androidx.lifecycle.a0 {
                     int i12 = Build.VERSION.SDK_INT;
                     int i13 = 0;
                     if (i12 < 29 && ((i11 == 7 || i11 == 9) && n10 != null)) {
-                        KeyguardManager a2 = h0.a(n10);
-                        if ((a2 == null ? false : h0.b(a2)) && v7.k.a(qVar.l0.c())) {
+                        KeyguardManager a2 = g0.a(n10);
+                        if ((a2 == null ? false : g0.b(a2)) && v7.k.a(qVar.l0.c())) {
                             qVar.S();
                             qVar.l0.d(null);
                             break;
@@ -116,11 +116,11 @@ public final class j implements androidx.lifecycle.a0 {
                 if (((Boolean) obj).booleanValue()) {
                     qVar.N(1);
                     qVar.O();
-                    z zVar = qVar.l0;
-                    if (zVar.x == null) {
-                        zVar.x = new androidx.lifecycle.z();
+                    y yVar = qVar.l0;
+                    if (yVar.x == null) {
+                        yVar.x = new androidx.lifecycle.z();
                     }
-                    z.h(zVar.x, Boolean.FALSE);
+                    y.h(yVar.x, Boolean.FALSE);
                     break;
                 }
                 break;

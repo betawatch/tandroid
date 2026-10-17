@@ -1,13 +1,13 @@
 package m4;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public interface u {
     void a(int i10, o oVar);
 
     void b(int i10);
 
-    void c(int i10, b2.c1 c1Var);
+    void c(int i10, b2.b1 b1Var);
 
     void d(int i10, int i11, int i12);
 
@@ -17,7 +17,7 @@ public interface u {
 
     void g();
 
-    void h(int i10, k1 k1Var, b2.c1 c1Var, boolean z10, boolean z11);
+    void h(int i10, k1 k1Var, b2.b1 b1Var, boolean z10, boolean z11);
 
     void j(int i10, s1 s1Var);
 }

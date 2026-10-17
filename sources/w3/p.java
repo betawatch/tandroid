@@ -1,12 +1,12 @@
 package w3;
 
+import b2.s0;
 import b2.t0;
-import b2.u0;
-import b2.w;
-import b2.w0;
-import bi.q8;
-import c3.f0;
-import c5.c0;
+import b2.v;
+import b2.v0;
+import c3.g0;
+import c5.b0;
+import ci.c7;
 import e2.x;
 import e9.k0;
 import e9.l0;
@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.UUID;
 import org.telegram.messenger.TranslateController;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class p {
     public static final int[] a = {1769172845, 1769172786, 1769172787, 1769172788, 1769172789, 1769172790, 1769172793, 1635148593, 1752589105, 1751479857, 1635135537, 1836069937, 1836069938, 862401121, 862401122, 862417462, 862417718, 862414134, 862414646, 1295275552, 1295270176, 1714714144, 1801741417, 1295275600, 1903435808, 1297305174, 1684175153, 1769172332, 1885955686};
@@ -58,12 +58,12 @@ public abstract class p {
             Object obj = arrayList.get(i10);
             i10++;
             String str2 = ((t) obj).a.g.s;
-            if (w0.m(str2)) {
+            if (v0.m(str2)) {
                 return "video/mp4";
             }
-            if (w0.i(str2)) {
+            if (v0.i(str2)) {
                 z10 = true;
-            } else if (w0.k(str2)) {
+            } else if (v0.k(str2)) {
                 if (Objects.equals(str2, "image/heic")) {
                     str = "image/heif";
                 } else if (Objects.equals(str2, "image/avif")) {
@@ -96,7 +96,7 @@ public abstract class p {
             String w9 = xVar.w(m10 - 16);
             return new q3.e(TranslateController.UNKNOWN_LANGUAGE, w9, w9);
         }
-        e2.a.l("MetadataUtil", "Failed to parse comment attribute: " + f2.e.a(i10));
+        e2.a.l("MetadataUtil", "Failed to parse comment attribute: " + f2.f.a(i10));
         return null;
     }
 
@@ -127,7 +127,7 @@ public abstract class p {
             xVar.O(10);
             int H = xVar.H();
             if (H > 0) {
-                String j10 = i2.d.j(H, "");
+                String j10 = i0.a.j(H, "");
                 int H2 = xVar.H();
                 if (H2 > 0) {
                     j10 = j10 + "/" + H2;
@@ -135,7 +135,7 @@ public abstract class p {
                 return new q3.n(str, null, n0.y(j10));
             }
         }
-        e2.a.l("MetadataUtil", "Failed to parse index/count attribute: " + f2.e.a(i10));
+        e2.a.l("MetadataUtil", "Failed to parse index/count attribute: " + f2.f.a(i10));
         return null;
     }
 
@@ -169,7 +169,7 @@ public abstract class p {
         if (g10 >= 0) {
             return z10 ? new q3.n(str, null, n0.y(Integer.toString(g10))) : new q3.e(TranslateController.UNKNOWN_LANGUAGE, str, Integer.toString(g10));
         }
-        e2.a.l("MetadataUtil", "Failed to parse uint8 attribute: " + f2.e.a(i10));
+        e2.a.l("MetadataUtil", "Failed to parse uint8 attribute: " + f2.f.a(i10));
         return null;
     }
 
@@ -241,40 +241,40 @@ public abstract class p {
             xVar.O(8);
             return new q3.n(str, null, n0.y(xVar.w(m10 - 16)));
         }
-        e2.a.l("MetadataUtil", "Failed to parse text attribute: " + f2.e.a(i10));
+        e2.a.l("MetadataUtil", "Failed to parse text attribute: " + f2.f.a(i10));
         return null;
     }
 
-    public static void l(int i10, u0 u0Var, w wVar, u0 u0Var2, u0... u0VarArr) {
-        if (u0Var2 == null) {
-            u0Var2 = new u0(new t0[0]);
+    public static void l(int i10, t0 t0Var, v vVar, t0 t0Var2, t0... t0VarArr) {
+        if (t0Var2 == null) {
+            t0Var2 = new t0(new s0[0]);
         }
-        if (u0Var != null) {
+        if (t0Var != null) {
             k0 t10 = n0.t();
-            for (t0 t0Var : u0Var.a) {
-                if (f2.a.class.isAssignableFrom(t0Var.getClass())) {
-                    t10.c((t0) f2.a.class.cast(t0Var));
+            for (s0 s0Var : t0Var.a) {
+                if (f2.b.class.isAssignableFrom(s0Var.getClass())) {
+                    t10.c((s0) f2.b.class.cast(s0Var));
                 }
             }
             l0 listIterator = t10.f().listIterator(0);
             while (listIterator.hasNext()) {
-                f2.a aVar = (f2.a) listIterator.next();
-                if (!aVar.a.equals("com.android.capture.fps") || i10 == 2) {
-                    u0Var2 = u0Var2.a(aVar);
+                f2.b bVar = (f2.b) listIterator.next();
+                if (!bVar.a.equals("com.android.capture.fps") || i10 == 2) {
+                    t0Var2 = t0Var2.a(bVar);
                 }
             }
         }
-        for (u0 u0Var3 : u0VarArr) {
-            u0Var2 = u0Var2.b(u0Var3);
+        for (t0 t0Var3 : t0VarArr) {
+            t0Var2 = t0Var2.b(t0Var3);
         }
-        if (u0Var2.a.length > 0) {
-            wVar.k = u0Var2;
+        if (t0Var2.a.length > 0) {
+            vVar.k = t0Var2;
         }
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public static f0 m(c3.p pVar, boolean z10, boolean z11) {
-        f0 f0Var;
+    public static g0 m(c3.p pVar, boolean z10, boolean z11) {
+        g0 g0Var;
         int i10;
         long j10;
         int i11;
@@ -325,13 +325,13 @@ public abstract class p {
             long j14 = C;
             long j15 = i12;
             if (j14 < j15) {
-                f0Var = null;
+                g0Var = null;
                 if (m10 != 1718773093 || i12 != 8) {
-                    return new q8(m10, j14, i12);
+                    return new c7(m10, j14, i12);
                 }
                 j14 = j15;
             } else {
-                f0Var = null;
+                g0Var = null;
             }
             int i19 = i11 + i12;
             if (m10 == 1836019574 || m10 == 1970628964) {
@@ -366,7 +366,7 @@ public abstract class p {
                                 }
                             } else {
                                 if (i20 < 8) {
-                                    return new q8(m10, i20, 8);
+                                    return new c7(m10, i20, 8);
                                 }
                                 xVar.K(i20);
                                 i14 = 0;
@@ -393,10 +393,10 @@ public abstract class p {
                                         i21++;
                                     }
                                 } else {
-                                    iArr = f0Var;
+                                    iArr = g0Var;
                                 }
                                 if (!z12) {
-                                    return new c0(m11, iArr);
+                                    return new b0(m11, iArr);
                                 }
                             }
                         }
@@ -415,8 +415,8 @@ public abstract class p {
             j12 = j10;
             length = j11;
         }
-        f0Var = null;
+        g0Var = null;
         i10 = i17;
-        return !z12 ? m.a : z10 != i10 ? i10 != 0 ? i.b : i.c : f0Var;
+        return !z12 ? m.a : z10 != i10 ? i10 != 0 ? i.b : i.c : g0Var;
     }
 }

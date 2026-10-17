@@ -1,81 +1,90 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.text.TextPaint;
-import android.util.TypedValue;
+import android.content.SharedPreferences;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public class s40 extends EditTextBoldCursor {
-    public final TextPaint b;
-    public String c;
-    public final Rect d;
+public final class s40 {
+    public static final s40 d;
+    public static final s40 e;
+    public static final s40 f;
+    public static final s40 h;
+    public static final s40 n;
+    public static final s40 r;
+    public static final s40 s;
+    public static final s40 v;
+    public static final s40 w;
+    public static final /* synthetic */ s40[] x;
+    public final String a;
+    public final int b;
+    public final float c;
 
-    public s40(Context context) {
-        super(context);
-        TextPaint textPaint = new TextPaint(1);
-        this.b = textPaint;
-        this.d = new Rect();
-        textPaint.setColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.H6, false));
+    static {
+        s40 s40Var = new s40("RoundHint2", 0, "needShowRoundHint2", 3, 0.2f);
+        d = s40Var;
+        s40 s40Var2 = new s40("RoundHintChannel2", 1, "needShowRoundHintChannel2", 3, 0.2f);
+        e = s40Var2;
+        s40 s40Var3 = new s40("ChannelSuggestHint", 2, "channelsuggesthint", 3, 0.2f);
+        f = s40Var3;
+        s40 s40Var4 = new s40("ChannelGiftHint", 3, "channelgifthint", 3, 0.2f);
+        h = s40Var4;
+        s40 s40Var5 = new s40("GroupEmojiPackHintShown", 4, "groupEmojiPackShownHint", 1, 1.0f);
+        n = s40Var5;
+        s40 s40Var6 = new s40("AccountSwitchHint", 5, "accountswitchhint", 3, 1.0f);
+        r = s40Var6;
+        s40 s40Var7 = new s40("GiftMessageHint", 6, "giftMessaheHint", 3, 1.0f);
+        s = s40Var7;
+        s40 s40Var8 = new s40("PlaybackSpeedHint", 7, "playbackspeedhint", 3, 0.2f);
+        v = s40Var8;
+        s40 s40Var9 = new s40();
+        w = s40Var9;
+        x = new s40[]{s40Var, s40Var2, s40Var3, s40Var4, s40Var5, s40Var6, s40Var7, s40Var8, s40Var9};
     }
 
-    public String getHintText() {
-        return this.c;
+    public s40() {
+        this.a = "hints_controller_" + this;
+        this.b = 3;
+        this.c = 1.0f;
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.pu, android.widget.TextView, android.view.View
-    public void onDraw(Canvas canvas) {
-        Canvas canvas2;
-        if (this.c != null && length() < this.c.length()) {
-            int i10 = 0;
-            float f7 = 0.0f;
-            while (i10 < this.c.length()) {
-                int length = length();
-                TextPaint textPaint = this.b;
-                float measureText = i10 < length ? getPaint().measureText(getText(), i10, i10 + 1) : textPaint.measureText(this.c, i10, i10 + 1);
-                if (i10 < length()) {
-                    f7 += measureText;
-                    canvas2 = canvas;
-                } else {
-                    int color = textPaint.getColor();
-                    canvas.save();
-                    String str = this.c;
-                    textPaint.getTextBounds(str, 0, str.length(), this.d);
-                    i(i10);
-                    canvas2 = canvas;
-                    canvas2.drawText(this.c, i10, i10 + 1, f7, (r5.height() + getHeight()) / 2.0f, (Paint) textPaint);
-                    f7 += measureText;
-                    canvas2.restore();
-                    textPaint.setColor(color);
-                }
-                i10++;
-                canvas = canvas2;
+    public static s40 valueOf(String str) {
+        return (s40) Enum.valueOf(s40.class, str);
+    }
+
+    public static s40[] values() {
+        return (s40[]) x.clone();
+    }
+
+    public final void a() {
+        MessagesController.getGlobalMainSettings().edit().putInt(this.a, this.b).apply();
+    }
+
+    public final void b() {
+        SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
+        String str = this.a;
+        MessagesController.getGlobalMainSettings().edit().putInt(str, globalMainSettings.getInt(str, 0) + 1).apply();
+    }
+
+    public final boolean c() {
+        if (MessagesController.getGlobalMainSettings().getInt(this.a, 0) < this.b) {
+            float f7 = this.c;
+            if (f7 >= 1.0f) {
+                return true;
+            }
+            if (f7 > 0.0f && Utilities.fastRandom.nextFloat() < f7) {
+                return true;
             }
         }
-        super.onDraw(canvas);
+        return false;
     }
 
-    @Override // org.telegram.ui.Components.pu, android.widget.TextView, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        invalidate();
-    }
-
-    public void setHintText(String str) {
-        this.c = str;
-        invalidate();
-        setText(getText());
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView
-    public void setTextSize(int i10, float f7) {
-        super.setTextSize(i10, f7);
-        this.b.setTextSize(TypedValue.applyDimension(i10, f7, getResources().getDisplayMetrics()));
-    }
-
-    public void i(int i10) {
+    public s40(String str, int i10, String str2, int i11, float f7) {
+        this.a = str2;
+        this.b = i11;
+        this.c = f7;
     }
 }

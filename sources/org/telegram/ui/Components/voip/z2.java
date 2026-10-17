@@ -1,60 +1,29 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class z2 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ b3 b;
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes.dex */
+public final class z2 extends Drawable {
+    public final int a = -15130842;
 
-    public /* synthetic */ z2(b3 b3Var, int i10) {
-        this.a = i10;
-        this.b = b3Var;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        canvas.drawColor(this.a);
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                b3 b3Var = this.b;
-                b3Var.getClass();
-                b3Var.H = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                b3Var.invalidate();
-                b3Var.T.c();
-                break;
-            case 1:
-                b3 b3Var2 = this.b;
-                b3Var2.getClass();
-                b3Var2.I = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                b3Var2.invalidate();
-                b3Var2.T.c();
-                break;
-            case 2:
-                b3 b3Var3 = this.b;
-                b3Var3.getClass();
-                b3Var3.H = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                b3Var3.invalidate();
-                b3Var3.T.c();
-                break;
-            case 3:
-                b3 b3Var4 = this.b;
-                b3Var4.getClass();
-                b3Var4.E = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                b3Var4.invalidate();
-                break;
-            case 4:
-                b3 b3Var5 = this.b;
-                b3Var5.getClass();
-                b3Var5.F = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                b3Var5.invalidate();
-                break;
-            default:
-                b3 b3Var6 = this.b;
-                b3Var6.getClass();
-                b3Var6.E = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                b3Var6.invalidate();
-                break;
-        }
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

@@ -1,42 +1,12 @@
 package e0;
 
-import android.app.PendingIntent;
-import android.os.Bundle;
-import androidx.core.graphics.drawable.IconCompat;
+import android.app.Notification;
+import android.graphics.drawable.Icon;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class i {
-    public final Bundle a;
-    public IconCompat b;
-    public final p0[] c;
-    public final boolean d;
-    public final boolean e;
-    public final int f;
-    public final int g;
-    public final CharSequence h;
-    public final PendingIntent i;
-
-    public i(IconCompat iconCompat, CharSequence charSequence, PendingIntent pendingIntent, Bundle bundle, p0[] p0VarArr, p0[] p0VarArr2, boolean z10, int i10, boolean z11) {
-        this.e = true;
-        this.b = iconCompat;
-        if (iconCompat != null && iconCompat.i() == 2) {
-            this.g = iconCompat.g();
-        }
-        this.h = r.d(charSequence);
-        this.i = pendingIntent;
-        this.a = bundle == null ? new Bundle() : bundle;
-        this.c = p0VarArr;
-        this.d = z10;
-        this.f = i10;
-        this.e = z11;
-    }
-
-    public final IconCompat a() {
-        int i10;
-        if (this.b == null && (i10 = this.g) != 0) {
-            this.b = IconCompat.e(null, "", i10);
-        }
-        return this.b;
+public abstract class i {
+    public static void a(Notification.BigPictureStyle bigPictureStyle, Icon icon) {
+        bigPictureStyle.bigLargeIcon(icon);
     }
 }

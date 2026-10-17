@@ -5,10 +5,10 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.PathInterpolator;
-import di.l7;
-import org.telegram.ui.fi1;
+import ei.c7;
+import org.telegram.ui.vf1;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class e extends GestureDetector.SimpleOnGestureListener {
     public final /* synthetic */ int a;
@@ -65,14 +65,14 @@ public final class e extends GestureDetector.SimpleOnGestureListener {
                 fVar.d = ofFloat;
                 ofFloat.setDuration(220L);
                 fVar.d.setInterpolator(new PathInterpolator(0.23f, 1.0f, 0.32f, 1.0f));
-                fVar.d.addUpdateListener(new l7(this, f7, x10, f10, y3, 2));
-                fVar.d.addListener(new fi1(this, 15));
+                fVar.d.addUpdateListener(new c7(this, f7, x10, f10, y3, 2));
+                fVar.d.addListener(new vf1(this, 18));
                 fVar.d.start();
                 return true;
             default:
-                xh.j jVar = (xh.j) view;
-                if (!jVar.e.c.getBounds().contains((int) motionEvent.getX(), (int) motionEvent.getY()) && (jVar.e.f.getLeft() >= motionEvent.getX() || motionEvent.getX() >= jVar.e.f.getRight() || jVar.e.f.getTop() >= motionEvent.getY() || motionEvent.getY() >= jVar.e.f.getBottom())) {
-                    jVar.e.e(false);
+                xh.i iVar = (xh.i) view;
+                if (!iVar.e.c.getBounds().contains((int) motionEvent.getX(), (int) motionEvent.getY()) && (iVar.e.f.getLeft() >= motionEvent.getX() || motionEvent.getX() >= iVar.e.f.getRight() || iVar.e.f.getTop() >= motionEvent.getY() || motionEvent.getY() >= iVar.e.f.getBottom())) {
+                    iVar.e.e(false);
                 }
                 return super.onSingleTapUp(motionEvent);
         }

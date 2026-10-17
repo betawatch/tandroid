@@ -1,18 +1,21 @@
 package androidx.fragment.app;
 
-import android.view.View;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class q {
-    public boolean a;
-    public int b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
-    public Object g;
-    public Object h;
-    public Object i;
-    public View j;
+    public final /* synthetic */ s a;
+
+    public q(s sVar) {
+        this.a = sVar;
+    }
+
+    public final void a() {
+        s sVar = this.a;
+        sVar.g0.b();
+        androidx.lifecycle.j0.d(sVar);
+        Bundle bundle = sVar.b;
+        sVar.g0.c(bundle != null ? bundle.getBundle("registryState") : null);
+    }
 }

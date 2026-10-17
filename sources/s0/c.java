@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class c {
     public static int c;
@@ -340,7 +340,7 @@ public final class c {
         sb2.append("; visible: ");
         sb2.append(accessibilityNodeInfo.isVisibleToUser());
         sb2.append("; isTextSelectable: ");
-        sb2.append(i10 >= 33 ? g0.a.g(accessibilityNodeInfo) : f(TLObject.FLAG_23));
+        sb2.append(i10 >= 33 ? g0.a.h(accessibilityNodeInfo) : f(TLObject.FLAG_23));
         sb2.append("; accessibilityDataSensitive: ");
         sb2.append(i10 >= 34 ? g1.a.k(accessibilityNodeInfo) : f(64));
         sb2.append("; [");

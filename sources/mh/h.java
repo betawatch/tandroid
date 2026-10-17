@@ -11,17 +11,17 @@ import android.graphics.Shader;
 import android.view.MotionEvent;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
-import b2.n0;
-import bi.o;
+import b2.m0;
+import ci.l;
 import hg.a0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.voip.GroupCallMessagesController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.es;
+import org.telegram.ui.Components.bs;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class h extends RecyclerView {
     public final e S0;
@@ -44,14 +44,14 @@ public final class h extends RecyclerView {
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
         paint.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(16.0f), 0, -16777216, Shader.TileMode.CLAMP));
         setLayoutManager(new a0(1, 1 == true ? 1 : 0, 1));
-        i(new o(2));
+        i(new l(2));
         e eVar = new e(this);
         this.S0 = eVar;
         setAdapter(eVar);
         f fVar = new f(this);
         fVar.m = false;
         fVar.C = false;
-        fVar.o(es.h);
+        fVar.o(bs.h);
         fVar.n(320L);
         setItemAnimator(fVar);
     }
@@ -137,8 +137,8 @@ public final class h extends RecyclerView {
                     if (cVar.getVisibility() == 0) {
                         float x11 = x10 - childAt.getX();
                         float y10 = y3 - childAt.getY();
-                        n0 n0Var = cVar.w;
-                        if (n0Var == null ? false : ((RectF) n0Var.c).contains(x11, y10)) {
+                        m0 m0Var = cVar.w;
+                        if (m0Var == null ? false : ((RectF) m0Var.c).contains(x11, y10)) {
                             z10 = true;
                             break;
                         }

@@ -4,9 +4,9 @@ import e2.m0;
 import java.util.ArrayDeque;
 import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public abstract class k implements z3.f {
+public abstract class k implements z3.e {
     public final ArrayDeque a = new ArrayDeque();
     public final ArrayDeque b;
     public final ArrayDeque c;
@@ -36,7 +36,7 @@ public abstract class k implements z3.f {
         this.g = j10;
     }
 
-    @Override // z3.f
+    @Override // z3.e
     public final void b(long j10) {
         this.e = j10;
     }
@@ -55,24 +55,24 @@ public abstract class k implements z3.f {
 
     @Override // h2.e
     public final void e(Object obj) {
-        z3.j jVar = (z3.j) obj;
-        u6.g(jVar == this.d);
-        i iVar = (i) jVar;
-        if (!iVar.isEndOfStream()) {
-            long j10 = iVar.e;
+        z3.i iVar = (z3.i) obj;
+        u6.g(iVar == this.d);
+        i iVar2 = (i) iVar;
+        if (!iVar2.isEndOfStream()) {
+            long j10 = iVar2.e;
             if (j10 != Long.MIN_VALUE) {
                 long j11 = this.g;
                 if (j11 != -9223372036854775807L && j10 < j11) {
-                    iVar.clear();
-                    this.a.add(iVar);
+                    iVar2.clear();
+                    this.a.add(iVar2);
                     this.d = null;
                 }
             }
         }
         long j12 = this.f;
         this.f = 1 + j12;
-        iVar.s = j12;
-        this.c.add(iVar);
+        iVar2.s = j12;
+        this.c.add(iVar2);
         this.d = null;
     }
 
@@ -107,7 +107,7 @@ public abstract class k implements z3.f {
 
     @Override // h2.e
     /* renamed from: h, reason: merged with bridge method [inline-methods] */
-    public z3.k c() {
+    public z3.j c() {
         ArrayDeque arrayDeque = this.b;
         if (arrayDeque.isEmpty()) {
             return null;
@@ -126,23 +126,23 @@ public abstract class k implements z3.f {
             boolean isEndOfStream = iVar2.isEndOfStream();
             ArrayDeque arrayDeque3 = this.a;
             if (isEndOfStream) {
-                z3.k kVar = (z3.k) arrayDeque.pollFirst();
-                kVar.addFlag(4);
+                z3.j jVar = (z3.j) arrayDeque.pollFirst();
+                jVar.addFlag(4);
                 iVar2.clear();
                 arrayDeque3.add(iVar2);
-                return kVar;
+                return jVar;
             }
             g(iVar2);
             if (i()) {
                 l f7 = f();
-                z3.k kVar2 = (z3.k) arrayDeque.pollFirst();
+                z3.j jVar2 = (z3.j) arrayDeque.pollFirst();
                 long j10 = iVar2.e;
-                kVar2.timeUs = j10;
-                kVar2.a = f7;
-                kVar2.b = j10;
+                jVar2.timeUs = j10;
+                jVar2.a = f7;
+                jVar2.b = j10;
                 iVar2.clear();
                 arrayDeque3.add(iVar2);
-                return kVar2;
+                return jVar2;
             }
             iVar2.clear();
             arrayDeque3.add(iVar2);

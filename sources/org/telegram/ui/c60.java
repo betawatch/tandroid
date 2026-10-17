@@ -1,80 +1,47 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.Shader;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class c60 extends View {
-    public int[] a;
-    public int b;
-    public final Paint c;
-    public float d;
-    public final /* synthetic */ n60 e;
+public final /* synthetic */ class c60 implements org.telegram.ui.Components.l20, org.telegram.ui.ActionBar.a2, r0.n {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ n60 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c60(n60 n60Var, LaunchActivity launchActivity) {
-        super(launchActivity);
-        this.e = n60Var;
-        Paint paint = new Paint(1);
-        this.c = paint;
-        paint.setStyle(Paint.Style.FILL);
-        paint.setAlpha(0);
+    public /* synthetic */ c60(n60 n60Var, int i10) {
+        this.a = i10;
+        this.b = n60Var;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if (!this.e.z2 || r0.a2.c >= 0.1d) {
-            return;
+    @Override // r0.n
+    public r0.k1 B0(View view, r0.k1 k1Var) {
+        int i10 = AndroidUtilities.getDefaultWindowInsets(k1Var, false).d;
+        n60 n60Var = this.b;
+        n60Var.m0 = i10;
+        ai.w1 w1Var = n60Var.F;
+        if (w1Var != null) {
+            w1Var.setPadding(0, 0, 0, i10);
         }
-        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.c);
+        n60Var.j0();
+        n60Var.h0();
+        return r0.k1.b;
     }
 
-    public void setNewColors(int[] iArr) {
-        int[] iArr2 = this.a;
-        Paint paint = this.c;
-        boolean z10 = true;
-        n60 n60Var = this.e;
-        boolean z11 = false;
-        if (iArr2 == null || iArr[0] != iArr2[0] || iArr[1] != iArr2[1]) {
-            if (iArr2 == null) {
-                paint.setAlpha(255);
-            }
-            this.a = iArr;
-            if (n60Var.h1 != null) {
-                float f7 = n60Var.i1;
-                if (f7 != 1.0f) {
-                    iArr[0] = i0.a.k(iArr[0], (int) (f7 * 255.0f));
-                    int[] iArr3 = this.a;
-                    iArr3[1] = i0.a.k(iArr3[1], (int) (n60Var.i1 * 255.0f));
-                }
-            }
-            paint.setShader(new LinearGradient(0.0f, 0.0f, 0.0f, n60Var.U0.getMeasuredHeight(), this.a, (float[]) null, Shader.TileMode.CLAMP));
-            z11 = true;
-        }
-        if (this.b != n60Var.V1) {
-            paint.setShadowLayer(AndroidUtilities.dp(36.0f), 0.0f, this.d, n60Var.V1);
-            this.b = n60Var.V1;
-        } else {
-            z10 = z11;
-        }
-        if (z10) {
-            invalidate();
-        }
-        n60Var.A1();
+    @Override // org.telegram.ui.Components.l20
+    public void a(int i10) {
+        this.b.b.a(Math.min(i10, r0.c0));
     }
 
-    public void setShadowOffset(int i10) {
-        float f7 = i10;
-        if (this.d != f7) {
-            this.c.setShadowLayer(AndroidUtilities.dp(36.0f), 0.0f, this.d, this.e.V1);
-            this.d = f7;
-            invalidate();
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        switch (this.a) {
+            case 1:
+                this.b.o0();
+                break;
+            default:
+                this.b.finishFragment();
+                break;
         }
     }
 }

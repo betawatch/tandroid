@@ -1,29 +1,23 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cw implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ yy b;
-    public final /* synthetic */ float c;
+public final class cw extends org.telegram.ui.Components.s00 {
+    public final /* synthetic */ ey B0;
 
-    public /* synthetic */ cw(yy yyVar, float f7, int i10) {
-        this.a = i10;
-        this.b = yyVar;
-        this.c = f7;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public cw(ey eyVar, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, d6Var);
+        this.B0 = eyVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                yy.V(this.b, this.c, valueAnimator);
-                break;
-            default:
-                yy.C0(this.b, this.c, valueAnimator);
-                break;
-        }
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        getParent().requestDisallowInterceptTouchEvent(true);
+        this.B0.n3 = false;
+        return super.onInterceptTouchEvent(motionEvent);
     }
 }

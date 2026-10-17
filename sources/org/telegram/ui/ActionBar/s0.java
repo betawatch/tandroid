@@ -3,10 +3,10 @@ package org.telegram.ui.ActionBar;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.TextView;
-import org.telegram.ui.bi;
-import org.telegram.ui.zh;
+import org.telegram.ui.oh;
+import org.telegram.ui.qh;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class s0 {
     public final int a;
@@ -16,10 +16,10 @@ public final class s0 {
     public CharSequence e;
     public boolean f;
     public View g;
-    public bi h;
+    public qh h;
     public int i;
     public View j;
-    public zh k;
+    public oh k;
     public int l = 0;
     public int m = 0;
     public Integer n;
@@ -51,11 +51,11 @@ public final class s0 {
         }
     }
 
-    public final void c(zh zhVar) {
-        this.k = zhVar;
+    public final void c(oh ohVar) {
+        this.k = ohVar;
         View view = this.j;
         if (view != null) {
-            view.setOnClickListener(zhVar);
+            view.setOnClickListener(ohVar);
         }
     }
 

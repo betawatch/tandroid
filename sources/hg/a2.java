@@ -1,7 +1,8 @@
 package hg;
 
+import ai.w9;
 import android.util.Pair;
-import fi.q3;
+import ei.p6;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -17,9 +18,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.wq0;
+import org.telegram.ui.Components.rq0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public class a2 {
     public z1 a;
@@ -76,7 +77,7 @@ public class a2 {
             z10 = true;
         }
         if (z10) {
-            MessagesStorage.getInstance(this.m).getStorageQueue().postRunnable(new q3(11, this, this.q));
+            MessagesStorage.getInstance(this.m).getStorageQueue().postRunnable(new p6(28, this, this.q));
         }
     }
 
@@ -117,8 +118,8 @@ public class a2 {
                 if (obj instanceof g0) {
                     obj = ((g0) obj).a;
                 }
-                if (obj instanceof wq0) {
-                    obj = ((wq0) obj).b;
+                if (obj instanceof rq0) {
+                    obj = ((rq0) obj).b;
                 }
                 boolean z10 = obj instanceof TLRPC.User;
                 ArrayList arrayList3 = this.d;
@@ -227,7 +228,7 @@ public class a2 {
                 tL_channels_getParticipants.offset = 0;
                 tL_channels_getParticipants.channel = MessagesController.getInstance(i12).getInputChannel(j10);
                 z17 = z13;
-                arrayList6.add(new Pair(tL_channels_getParticipants, new di.u1(this, str, z17, 1)));
+                arrayList6.add(new Pair(tL_channels_getParticipants, new w9(this, str, z17, 2)));
             } else {
                 z17 = z13;
                 this.n = str.toLowerCase();
@@ -323,11 +324,11 @@ public class a2 {
                                             a0.h hVar4 = a2Var2.f;
                                             z1 z1Var = a2Var2.a;
                                             if (z1Var != null) {
-                                                a0.h k02 = z1Var.k0();
-                                                if (k02 != null) {
-                                                    int m10 = k02.m();
+                                                a0.h J = z1Var.J();
+                                                if (J != null) {
+                                                    int m10 = J.m();
                                                     for (int i20 = 0; i20 < m10; i20++) {
-                                                        TLRPC.User user2 = (TLRPC.User) hVar4.f(k02.j(i20));
+                                                        TLRPC.User user2 = (TLRPC.User) hVar4.f(J.j(i20));
                                                         if (user2 != null) {
                                                             arrayList18.remove(user2);
                                                             arrayList17.remove(user2);
@@ -335,11 +336,11 @@ public class a2 {
                                                         }
                                                     }
                                                 }
-                                                a0.h K = a2Var2.a.K();
-                                                if (K != null) {
-                                                    int m11 = K.m();
+                                                a0.h y3 = a2Var2.a.y();
+                                                if (y3 != null) {
+                                                    int m11 = y3.m();
                                                     for (int i21 = 0; i21 < m11; i21++) {
-                                                        TLRPC.User user3 = (TLRPC.User) hVar4.f(K.j(i21));
+                                                        TLRPC.User user3 = (TLRPC.User) hVar4.f(y3.j(i21));
                                                         if (user3 != null) {
                                                             arrayList18.remove(user3);
                                                             arrayList17.remove(user3);
@@ -413,7 +414,7 @@ public class a2 {
                     ArrayList arrayList12 = a2Var.d;
                     ArrayList arrayList13 = a2Var.e;
                     a0.h hVar7 = a2Var.f;
-                    if (a2Var.a.E0(i11) && tL_error == null) {
+                    if (a2Var.a.O(i11) && tL_error == null) {
                         TLRPC.TL_contacts_found tL_contacts_found2 = (TLRPC.TL_contacts_found) tLObject2;
                         arrayList13.clear();
                         hVar7.b();

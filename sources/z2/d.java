@@ -8,17 +8,17 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import b2.f;
-import b2.x;
+import b2.w;
 import c2.i;
 import e2.m0;
 import e9.l0;
 import e9.n0;
 import e9.x1;
-import i2.f0;
+import i2.e0;
 import j$.util.Objects;
 import java.util.List;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class d {
     public final Spatializer a;
@@ -44,15 +44,15 @@ public final class d {
         this.c = handler;
         c cVar = new c(runnable);
         this.d = cVar;
-        spatializer.addOnSpatializerStateChangedListener(new f0(handler, 1), cVar);
+        spatializer.addOnSpatializerStateChangedListener(new e0(handler, 1), cVar);
     }
 
-    public final boolean a(f fVar, x xVar) {
+    public final boolean a(f fVar, w wVar) {
         if (this.a == null || !this.b || !c() || !d()) {
             return false;
         }
-        String str = xVar.s;
-        int i10 = xVar.K;
+        String str = wVar.s;
+        int i10 = wVar.K;
         if (Objects.equals(str, "audio/eac3-joc")) {
             if (i10 == 16) {
                 i10 = 12;
@@ -69,7 +69,7 @@ public final class d {
             return false;
         }
         AudioFormat.Builder channelMask = new AudioFormat.Builder().setEncoding(2).setChannelMask(t10);
-        int i11 = xVar.L;
+        int i11 = wVar.L;
         if (i11 != -1) {
             channelMask.setSampleRate(i11);
         }

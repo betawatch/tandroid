@@ -1,7 +1,8 @@
 package e3;
 
+import b2.v;
+import b2.v0;
 import b2.w;
-import b2.w0;
 import e2.m0;
 import e2.x;
 import e9.h0;
@@ -14,7 +15,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class f implements a {
     public final n0 a;
@@ -79,11 +80,11 @@ public final class f implements a {
                                     break;
                             }
                             if (str != null) {
-                                w wVar = new w();
-                                wVar.y = o12;
-                                wVar.z = o13;
-                                wVar.r = w0.n(str);
-                                gVar = new g(new b2.x(wVar));
+                                v vVar = new v();
+                                vVar.y = o12;
+                                vVar.z = o13;
+                                vVar.r = v0.n(str);
+                                gVar = new g(new w(vVar));
                                 break;
                             } else {
                                 a1.g.x(o14, "Ignoring track with unsupported compression ", "StreamFormatChunk");
@@ -102,19 +103,19 @@ public final class f implements a {
                                     String str3 = m0.a;
                                     int D = m0.D(t12, ByteOrder.LITTLE_ENDIAN);
                                     int t13 = xVar.a() > 0 ? xVar.t() : 0;
-                                    w wVar2 = new w();
-                                    wVar2.r = w0.n(str2);
-                                    wVar2.J = t11;
-                                    wVar2.K = o15;
+                                    v vVar2 = new v();
+                                    vVar2.r = v0.n(str2);
+                                    vVar2.J = t11;
+                                    vVar2.K = o15;
                                     if (str2.equals("audio/raw") && D != 0) {
-                                        wVar2.L = D;
+                                        vVar2.L = D;
                                     }
                                     if (str2.equals(MediaController.AUDIO_MIME_TYPE) && t13 > 0) {
                                         byte[] bArr = new byte[t13];
                                         xVar.k(0, t13, bArr);
-                                        wVar2.u = n0.y(bArr);
+                                        vVar2.u = n0.y(bArr);
                                     }
-                                    gVar = new g(new b2.x(wVar2));
+                                    gVar = new g(new w(vVar2));
                                     break;
                                 } else {
                                     a1.g.x(t10, "Ignoring track with unsupported format tag ", "StreamFormatChunk");

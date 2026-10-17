@@ -3,32 +3,32 @@ package u2;
 import org.telegram.tgnet.ConnectionsManager;
 import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class w extends i2.a {
-    public final b2.p1 h;
+    public final b2.o1 h;
     public final int i;
     public final int j;
     public final int k;
 
-    public w(b2.p1 p1Var, int i10) {
+    public w(b2.o1 o1Var, int i10) {
         super(new h1(i10));
-        this.h = p1Var;
-        int h = p1Var.h();
+        this.h = o1Var;
+        int h = o1Var.h();
         this.i = h;
-        this.j = p1Var.o();
+        this.j = o1Var.o();
         this.k = i10;
         if (h > 0) {
             u6.o("LoopingMediaSource contains too many periods", i10 <= ConnectionsManager.DEFAULT_DATACENTER_ID / h);
         }
     }
 
-    @Override // b2.p1
+    @Override // b2.o1
     public final int h() {
         return this.i * this.k;
     }
 
-    @Override // b2.p1
+    @Override // b2.o1
     public final int o() {
         return this.j * this.k;
     }
@@ -67,7 +67,7 @@ public final class w extends i2.a {
     }
 
     @Override // i2.a
-    public final b2.p1 x(int i10) {
+    public final b2.o1 x(int i10) {
         return this.h;
     }
 }

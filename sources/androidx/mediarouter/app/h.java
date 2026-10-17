@@ -6,9 +6,9 @@ import android.content.res.Configuration;
 import android.os.Bundle;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public class h extends androidx.fragment.app.o {
+public class h extends androidx.fragment.app.p {
     public boolean A0 = false;
     public g.t B0;
     public p4.r C0;
@@ -21,7 +21,7 @@ public class h extends androidx.fragment.app.o {
         }
     }
 
-    @Override // androidx.fragment.app.o
+    @Override // androidx.fragment.app.p
     public final Dialog O() {
         if (this.A0) {
             c0 c0Var = new c0(n());
@@ -49,7 +49,7 @@ public class h extends androidx.fragment.app.o {
         }
     }
 
-    @Override // androidx.fragment.app.r, android.content.ComponentCallbacks
+    @Override // androidx.fragment.app.s, android.content.ComponentCallbacks
     public final void onConfigurationChanged(Configuration configuration) {
         this.U = true;
         g.t tVar = this.B0;

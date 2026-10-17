@@ -1,31 +1,27 @@
 package rg;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import org.telegram.ui.gu0;
+import android.graphics.Canvas;
+import android.view.View;
+import org.telegram.ui.it0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class d0 extends qg.c1 {
-    public final /* synthetic */ Bitmap E;
-    public final /* synthetic */ gu0 F;
+public final class d0 extends View {
+    public final /* synthetic */ it0 a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d0(gu0 gu0Var, Context context, qg.q0 q0Var, Bitmap bitmap, Bitmap bitmap2) {
-        super(context, q0Var, bitmap, null, null);
-        this.F = gu0Var;
-        this.E = bitmap2;
+    public d0(it0 it0Var, Context context) {
+        super(context);
+        this.a = it0Var;
     }
 
-    @Override // qg.c1
-    public final void g(qg.m mVar) {
-        int indexOf = qg.m.a.indexOf(mVar);
-        int i10 = indexOf + 1;
-        if (i10 <= 1 || this.E != null) {
-            indexOf = i10;
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        b0 b0Var = this.a.W0;
+        if (b0Var != null) {
+            b0Var.d(canvas);
         }
-        gu0 gu0Var = this.F;
-        gu0Var.t1.b(indexOf);
-        gu0Var.o(mVar);
     }
 }

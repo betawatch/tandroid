@@ -11,13 +11,13 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.ha0;
-import org.telegram.ui.Components.x90;
-import org.telegram.ui.ah0;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.ba0;
+import org.telegram.ui.Components.r90;
+import org.telegram.ui.fg0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes.dex */
 public class l2 extends TextView {
     public final /* synthetic */ int a = 0;
     public final Object b;
@@ -43,27 +43,27 @@ public class l2 extends TextView {
 
     public void c() {
         CharSequence text;
-        ha0 ha0Var = (ha0) this.c;
+        ba0 ba0Var = (ba0) this.c;
         Layout layout = getLayout();
         if (layout == null || (text = layout.getText()) == null) {
             return;
         }
-        x90 x90Var = new x90(0);
+        r90 r90Var = new r90(0);
         float dp = AndroidUtilities.dp(3.0f);
         float dp2 = AndroidUtilities.dp(6.0f);
-        x90Var.q = dp;
-        x90Var.r = dp2;
+        r90Var.q = dp;
+        r90Var.r = dp2;
         int length = text.length();
-        x90Var.d(layout, 0, 0.0f);
-        layout.getSelectionPath(0, length, x90Var);
+        r90Var.d(layout, 0, 0.0f);
+        layout.getSelectionPath(0, length, r90Var);
         RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(x90Var.s, x90Var.u, x90Var.t, x90Var.v);
+        rectF.set(r90Var.s, r90Var.u, r90Var.t, r90Var.v);
         ((org.telegram.ui.Cells.z) this.b).setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-        ha0Var.y = x90Var;
-        ha0Var.k(4.0f);
-        int themedColor = ((ah0) this.d).getThemedColor(g6.Ld);
-        ha0Var.g(g6.m1(0.85f, themedColor), g6.m1(2.0f, themedColor), g6.m1(3.5f, themedColor), g6.m1(6.0f, themedColor));
-        ha0Var.l();
+        ba0Var.y = r90Var;
+        ba0Var.k(4.0f);
+        int themedColor = ((fg0) this.d).getThemedColor(h6.Ld);
+        ba0Var.g(h6.m1(0.85f, themedColor), h6.m1(2.0f, themedColor), h6.m1(3.5f, themedColor), h6.m1(6.0f, themedColor));
+        ba0Var.l();
     }
 
     @Override // android.widget.TextView, android.view.View
@@ -83,7 +83,7 @@ public class l2 extends TextView {
                 super.onDraw(canvas);
                 break;
             default:
-                ha0 ha0Var = (ha0) this.c;
+                ba0 ba0Var = (ba0) this.c;
                 canvas.save();
                 if ((getGravity() & 16) == 0 || getLayout() == null) {
                     paddingTop = getPaddingTop();
@@ -94,10 +94,10 @@ public class l2 extends TextView {
                 ((org.telegram.ui.Cells.z) this.b).draw(canvas);
                 canvas.restore();
                 super.onDraw(canvas);
-                if (a() || ha0Var.d()) {
+                if (a() || ba0Var.d()) {
                     canvas.save();
                     canvas.translate(getPaddingLeft(), paddingTop);
-                    ha0Var.draw(canvas);
+                    ba0Var.draw(canvas);
                     canvas.restore();
                     invalidate();
                     break;
@@ -159,15 +159,15 @@ public class l2 extends TextView {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l2(ah0 ah0Var, Context context) {
+    public l2(fg0 fg0Var, Context context) {
         super(context);
-        this.d = ah0Var;
-        org.telegram.ui.Cells.z g02 = g6.g0(g6.m1(0.1f, g6.x0(null, g6.I6, false)), 7, -1);
+        this.d = fg0Var;
+        org.telegram.ui.Cells.z g02 = h6.g0(h6.m1(0.1f, h6.x0(null, h6.I6, false)), 7, -1);
         this.b = g02;
-        ha0 ha0Var = new ha0();
-        this.c = ha0Var;
+        ba0 ba0Var = new ba0();
+        this.c = ba0Var;
         g02.setCallback(this);
-        ha0Var.D = true;
-        ha0Var.u = 0.8f;
+        ba0Var.D = true;
+        ba0Var.u = 0.8f;
     }
 }

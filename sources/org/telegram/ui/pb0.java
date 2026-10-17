@@ -1,66 +1,43 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pb0 implements org.telegram.ui.Components.f5, org.telegram.ui.ActionBar.z1, org.telegram.ui.Components.rw0 {
+public final class pb0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ zb0 b;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ qb0 c;
 
-    public /* synthetic */ pb0(zb0 zb0Var, int i10) {
+    public /* synthetic */ pb0(qb0 qb0Var, float f7, int i10) {
         this.a = i10;
-        this.b = zb0Var;
+        this.c = qb0Var;
+        this.b = f7;
     }
 
-    @Override // org.telegram.ui.Components.f5
-    public void J(int i10, int i11, boolean z10) {
-        this.b.V(i10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.z1
-    public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
-        zb0 zb0Var = this.b;
-        zb0Var.T.a(zb0Var.e);
-        zb0Var.finishFragment();
-    }
-
-    @Override // org.telegram.ui.Components.rw0
-    public void h(int i10) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
-            case 2:
-                zb0 zb0Var = this.b;
-                if (i10 >= zb0Var.P.size()) {
-                    zb0Var.w.setText("");
-                    break;
-                } else {
-                    zb0Var.w.setText(LocaleController.formatDateAudio(zb0Var.getConnectionsManager().getCurrentTime() + ((Integer) r1.get(i10)).intValue(), false));
-                    break;
-                }
+            case 0:
+                qb0 qb0Var = this.c;
+                TextView textView = qb0Var.f;
+                int x02 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.y6, false);
+                int x03 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.n6, false);
+                float f7 = this.b;
+                qb0Var.s = f7;
+                textView.setTextColor(i0.b.f(f7, x02, x03));
+                break;
             default:
-                zb0 zb0Var2 = this.b;
-                zb0Var2.F.clearFocus();
-                zb0Var2.O = true;
-                ArrayList arrayList = zb0Var2.R;
-                if (i10 < arrayList.size()) {
-                    zb0Var2.F.setText(((Integer) arrayList.get(i10)).toString());
-                } else {
-                    zb0Var2.F.setText("");
-                }
-                zb0Var2.O = false;
+                qb0 qb0Var2 = this.c;
+                TextView textView2 = qb0Var2.d;
+                int x04 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.y6, false);
+                int x05 = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.n6, false);
+                float f10 = this.b;
+                qb0Var2.w = f10;
+                textView2.setTextColor(i0.b.f(f10, x04, x05));
                 break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.rw0
-    public /* synthetic */ void m() {
-        int i10 = this.a;
-    }
-
-    private final /* synthetic */ void a() {
-    }
-
-    private final /* synthetic */ void b() {
     }
 }

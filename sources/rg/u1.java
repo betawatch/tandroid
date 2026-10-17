@@ -1,40 +1,63 @@
 package rg;
 
-import android.view.ViewGroup;
-import org.telegram.messenger.LocaleController;
-import org.telegram.ui.Components.lm0;
-import org.telegram.ui.Components.wl0;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
+import com.google.android.gms.internal.cast.a6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class u1 extends lm0 {
-    @Override // org.telegram.ui.Components.lm0
-    public final boolean D(s4.b1 b1Var) {
-        return true;
+public final class u1 extends GestureDetector.SimpleOnGestureListener {
+    public float a;
+    public boolean b;
+    public float c;
+    public final /* synthetic */ w1 d;
+
+    public u1(w1 w1Var) {
+        this.d = w1Var;
     }
 
-    @Override // s4.g0
-    public final int h() {
-        return qg.j0.c().size();
-    }
-
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
-        p1 p1Var = (p1) b1Var.a;
-        qg.j0 j0Var = (qg.j0) qg.j0.c().get(i10);
-        p1Var.getClass();
-        p1Var.setTypeface(j0Var.d());
-        String str = j0Var.c;
-        if (str == null) {
-            str = LocaleController.getString(j0Var.b);
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onDown(MotionEvent motionEvent) {
+        w1 w1Var = this.d;
+        boolean contains = w1Var.e.contains(motionEvent.getX(), motionEvent.getY());
+        if (w1Var.f != contains) {
+            w1Var.f = contains;
+            w1Var.invalidate();
+            if (contains) {
+                v1 v1Var = w1Var.K;
+                this.a = v1Var != null ? v1Var.get() : w1Var.H.c;
+                this.b = false;
+            }
         }
-        p1Var.setText(str);
+        return w1Var.f;
     }
 
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        p1 p1Var = new p1(viewGroup.getContext());
-        p1Var.setLayoutParams(new s4.o0(-1, -2));
-        return new wl0(p1Var);
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
+        w1 w1Var = this.d;
+        if (w1Var.f) {
+            if (!this.b) {
+                this.c = motionEvent.getY() - motionEvent2.getY();
+                this.b = true;
+            }
+            float f11 = this.a;
+            float y3 = ((motionEvent.getY() - motionEvent2.getY()) - this.c) / w1Var.e.height();
+            float f12 = w1Var.G;
+            float f13 = w1Var.F;
+            float a2 = w7.r.a(a6.x(f12, f13, y3, f11), f13, f12);
+            v1 v1Var = w1Var.K;
+            if (v1Var != null) {
+                v1Var.U(a2);
+            } else {
+                w1Var.H.c = a2;
+            }
+            w1Var.w.d(a2, true);
+            Runnable runnable = w1Var.I;
+            if (runnable != null) {
+                runnable.run();
+            }
+            w1Var.invalidate();
+        }
+        return w1Var.f;
     }
 }

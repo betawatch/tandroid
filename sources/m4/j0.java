@@ -1,54 +1,32 @@
 package m4;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class j0 implements o0 {
+public final /* synthetic */ class j0 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ p0 b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ m1 c;
 
-    public /* synthetic */ j0(p0 p0Var, int i10, int i11) {
-        this.a = i11;
+    public /* synthetic */ j0(p0 p0Var, m1 m1Var, int i10) {
+        this.a = i10;
         this.b = p0Var;
-        this.c = i10;
+        this.c = m1Var;
     }
 
-    @Override // m4.o0
-    public final void e(v vVar) {
-        int i10 = this.a;
-        int i11 = 0;
-        r0 = false;
-        boolean z10 = false;
-        i11 = 0;
-        i11 = 0;
-        int i12 = this.c;
-        p0 p0Var = this.b;
-        switch (i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
             case 0:
-                m1 m1Var = p0Var.g.t;
-                int i13 = n.a;
-                if (i12 != -1 && i12 != 0) {
-                    if (i12 == 1) {
-                        i11 = 1;
-                    } else if (i12 == 2 || i12 == 3) {
-                        i11 = 2;
-                    } else {
-                        e2.a.l("LegacyConversions", "Unrecognized PlaybackStateCompat.RepeatMode: " + i12 + " was converted to `Player.REPEAT_MODE_OFF`");
-                    }
-                }
-                m1Var.j(i11);
-                return;
+                p0 p0Var = this.b;
+                n4.s sVar = p0Var.m;
+                m1 m1Var = this.c;
+                sVar.J(p0Var.G(m1Var));
+                p0Var.i.s(m1Var.s().a(17) ? m1Var.y0() : b2.o1.a);
+                break;
             default:
-                m1 m1Var2 = p0Var.g.t;
-                int i14 = n.a;
-                if (i12 != -1 && i12 != 0) {
-                    if (i12 != 1 && i12 != 2) {
-                        throw new IllegalArgumentException(i2.d.j(i12, "Unrecognized ShuffleMode: "));
-                    }
-                    z10 = true;
-                }
-                m1Var2.w(z10);
-                return;
+                p0 p0Var2 = this.b;
+                p0Var2.m.J(p0Var2.G(this.c));
+                break;
         }
     }
 }

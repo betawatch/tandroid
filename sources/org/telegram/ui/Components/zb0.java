@@ -1,36 +1,45 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zb0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ pc0 b;
-    public final /* synthetic */ Context c;
+public final class zb0 extends org.telegram.ui.ActionBar.e1 {
+    public final /* synthetic */ int L;
 
-    public /* synthetic */ zb0(pc0 pc0Var, Context context, int i10) {
-        this.a = i10;
-        this.b = pc0Var;
-        this.c = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ zb0(int i10, int i11, Context context, org.telegram.ui.ActionBar.d6 d6Var, boolean z10, boolean z11) {
+        super(i10, context, d6Var, z10, z11);
+        this.L = i11;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // org.telegram.ui.ActionBar.e1
+    public final void i() {
+        switch (this.L) {
             case 0:
-                pc0 pc0Var = this.b;
-                pc0Var.c0.a(false);
-                AndroidUtilities.runOnUIThread(new zb0(pc0Var, this.c, 1));
+                setBackground(null);
                 break;
             default:
-                Context context = this.c;
-                if (AndroidUtilities.isContextSafe(context)) {
-                    new sg.y0(context, 43, this.b.c0.F).show();
+                setBackground(null);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.L) {
+            case 0:
+                if (getVisibility() == 0 && getAlpha() >= 0.5f) {
+                    break;
+                }
+                break;
+            default:
+                if (getVisibility() == 0 && getAlpha() >= 0.5f) {
                     break;
                 }
                 break;
         }
+        return super.onTouchEvent(motionEvent);
     }
 }

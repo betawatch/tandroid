@@ -6,19 +6,19 @@ import android.os.Looper;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.k;
 import com.google.android.gms.common.api.l;
-import com.google.android.gms.internal.clearcut.z1;
+import com.google.android.gms.internal.clearcut.a2;
 import g6.s;
 import g6.v;
 import g6.w;
 import kotlin.jvm.internal.i;
-import m.t3;
+import m.s3;
 import n6.p;
 import n7.m1;
 import s6.h;
 import v8.o;
 import y8.y0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class d {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final class d {
         this.a = i10;
     }
 
-    public com.google.android.gms.common.api.c a(Context context, Looper looper, t3 commonSettings, Object obj, k kVar, l lVar) {
+    public com.google.android.gms.common.api.c a(Context context, Looper looper, s3 commonSettings, Object obj, k kVar, l lVar) {
         switch (this.a) {
             case 1:
                 c6.e eVar = (c6.e) obj;
@@ -77,7 +77,7 @@ public final class d {
                         throw new UnsupportedOperationException("buildClient must be implemented");
                 }
             case 5:
-                return new z1(context, looper, 40, commonSettings, kVar, lVar, 0);
+                return new a2(context, looper, 40, commonSettings, kVar, lVar, 0);
             case 7:
                 return new b8.a(context, looper, kVar, lVar, commonSettings);
             case 8:

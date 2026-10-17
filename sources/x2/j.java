@@ -1,13 +1,13 @@
 package x2;
 
-import b2.q1;
-import b2.x;
+import b2.p1;
+import b2.w;
 import e9.b0;
 import e9.n0;
 import e9.s1;
 import e9.v1;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class j extends l implements Comparable {
     public final int e;
@@ -21,11 +21,11 @@ public final class j extends l implements Comparable {
     public final int x;
     public final boolean y;
 
-    public j(int i10, q1 q1Var, int i11, i iVar, int i12, String str, String str2) {
-        super(i10, q1Var, i11);
+    public j(int i10, p1 p1Var, int i11, i iVar, int i12, String str, String str2) {
+        super(i10, p1Var, i11);
         int i13;
         int i14 = 0;
-        this.f = i2.d.e(i12, false);
+        this.f = i0.a.e(i12, false);
         int i15 = this.d.e;
         int i16 = iVar.C;
         n0 n0Var = iVar.y;
@@ -55,14 +55,14 @@ public final class j extends l implements Comparable {
         v1 v1Var = n.l;
         int bitCount = (i20 == 0 || i20 != i19) ? Integer.bitCount(i19 & i20) : Integer.MAX_VALUE;
         this.v = bitCount;
-        x xVar = this.d;
-        this.y = (1088 & xVar.f) != 0;
-        int c10 = n.c(xVar, iVar.z);
+        w wVar = this.d;
+        this.y = (1088 & wVar.f) != 0;
+        int c10 = n.c(wVar, iVar.z);
         this.w = c10;
         int i21 = n.i(this.d, str, n.l(str) == null);
         this.x = i21;
         boolean z10 = i13 > 0 || (n0Var.isEmpty() && bitCount > 0) || ((n0Var.isEmpty() && c10 != Integer.MAX_VALUE) || this.h || ((this.n && i21 > 0) || iVar.x));
-        if (i2.d.e(i12, iVar.B0) && z10) {
+        if (i0.a.e(i12, iVar.B0) && z10) {
             i14 = 1;
         }
         this.e = i14;

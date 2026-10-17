@@ -1,45 +1,86 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.MessageObject;
+import android.view.MotionEvent;
+import android.widget.Scroller;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class ob1 extends org.telegram.ui.Components.l61 {
-    public static final /* synthetic */ int b = 0;
-    public org.telegram.ui.Cells.s7 a;
+public final class ob1 implements org.telegram.ui.Components.bp0, org.telegram.ui.Components.r20 {
+    public final /* synthetic */ mc1 a;
 
-    static {
-        org.telegram.ui.Components.l61.setup(new ob1());
+    public /* synthetic */ ob1(mc1 mc1Var) {
+        this.a = mc1Var;
     }
 
-    @Override // org.telegram.ui.Components.l61
-    public final void attachedView(org.telegram.ui.Components.mm0 mm0Var, View view, org.telegram.ui.Components.m61 m61Var) {
-        ((org.telegram.ui.Cells.t7) view).l(m61Var != null && m61Var.h, false);
+    @Override // org.telegram.ui.Components.bp0
+    public void L(float f7, boolean z10) {
+        mc1 mc1Var = this.a;
+        mc1Var.l1 = f7;
+        mc1Var.k1();
     }
 
-    @Override // org.telegram.ui.Components.l61
-    public final void bindView(View view, org.telegram.ui.Components.m61 m61Var, boolean z10, org.telegram.ui.Components.a71 a71Var, org.telegram.ui.Components.i71 i71Var) {
-        org.telegram.ui.Cells.t7 t7Var = (org.telegram.ui.Cells.t7) view;
-        t7Var.k((MessageObject) m61Var.G, m61Var.v, false);
-        t7Var.i(m61Var.e, false);
-        t7Var.l(m61Var.h, false);
+    @Override // org.telegram.ui.Components.bp0
+    public /* synthetic */ int Y() {
+        return 0;
     }
 
-    @Override // org.telegram.ui.Components.l61
-    public final View createView(Context context, org.telegram.ui.Components.mm0 mm0Var, int i10, int i11, org.telegram.ui.ActionBar.c6 c6Var) {
-        if (this.a == null) {
-            this.a = new org.telegram.ui.Cells.s7(context, c6Var);
+    @Override // org.telegram.ui.Components.bp0
+    public /* synthetic */ CharSequence getContentDescription() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.r20
+    public boolean onDown(MotionEvent motionEvent) {
+        Scroller scroller = this.a.c;
+        if (scroller == null) {
+            return true;
         }
-        org.telegram.ui.Cells.t7 t7Var = new org.telegram.ui.Cells.t7(context, this.a, i10);
-        t7Var.w0 = true;
-        t7Var.d0 = true;
-        return t7Var;
+        scroller.abortAnimation();
+        return true;
     }
 
-    @Override // org.telegram.ui.Components.l61
-    public final boolean equals(org.telegram.ui.Components.m61 m61Var, org.telegram.ui.Components.m61 m61Var2) {
-        return m61Var.q == m61Var2.q && m61Var.e == m61Var2.e && m61Var.B == m61Var2.B;
+    @Override // org.telegram.ui.Components.r20
+    public boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
+        mc1 mc1Var = this.a;
+        Scroller scroller = mc1Var.c;
+        if (scroller == null) {
+            return true;
+        }
+        scroller.abortAnimation();
+        mc1Var.c.fling((int) mc1Var.X1, 0, Math.round(-f7), Math.round(f10), 0, (int) mc1Var.W1, 0, ConnectionsManager.DEFAULT_DATACENTER_ID);
+        mc1Var.x0.postInvalidate();
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.r20
+    public boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
+        mc1 mc1Var = this.a;
+        Scroller scroller = mc1Var.c;
+        if (scroller != null) {
+            scroller.abortAnimation();
+        }
+        mc1Var.X1 = Utilities.clamp(mc1Var.X1 + f7, mc1Var.W1, 0.0f);
+        mc1Var.V0();
+        mc1Var.x0.invalidate();
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.r20
+    public boolean onSingleTapUp(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.r20
+    public void N0() {
+    }
+
+    @Override // org.telegram.ui.Components.r20
+    public void onLongPress(MotionEvent motionEvent) {
+    }
+
+    @Override // org.telegram.ui.Components.bp0
+    public void v() {
     }
 }

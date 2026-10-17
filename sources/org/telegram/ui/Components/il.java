@@ -1,34 +1,27 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.location.Location;
 import org.telegram.messenger.IMapsProvider;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class il implements Runnable {
+public final /* synthetic */ class il implements q0.a {
     public final /* synthetic */ int a;
-    public final /* synthetic */ tl b;
-    public final /* synthetic */ IMapsProvider.IMapView c;
+    public final /* synthetic */ rl b;
 
-    public /* synthetic */ il(tl tlVar, IMapsProvider.IMapView iMapView, int i10) {
+    public /* synthetic */ il(rl rlVar, int i10) {
         this.a = i10;
-        this.b = tlVar;
-        this.c = iMapView;
+        this.b = rlVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // q0.a
+    public final void accept(Object obj) {
         switch (this.a) {
             case 0:
-                tl.V(this.b, this.c);
+                rl.N(this.b, (IMapsProvider.IMap) obj);
                 break;
             default:
-                IMapsProvider.IMapView iMapView = this.c;
-                try {
-                    iMapView.onCreate(null);
-                } catch (Exception unused) {
-                }
-                AndroidUtilities.runOnUIThread(new il(this.b, iMapView, 0));
+                rl.U(this.b, (Location) obj);
                 break;
         }
     }

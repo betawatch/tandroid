@@ -1,6 +1,6 @@
 package z9;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class l0 extends a2 {
     public final long a;
@@ -19,15 +19,15 @@ public final class l0 extends a2 {
         this.f = z1Var;
     }
 
-    public final com.google.firebase.messaging.m a() {
-        com.google.firebase.messaging.m mVar = new com.google.firebase.messaging.m();
-        mVar.a = Long.valueOf(this.a);
-        mVar.b = this.b;
-        mVar.c = this.c;
-        mVar.d = this.d;
-        mVar.e = this.e;
-        mVar.f = this.f;
-        return mVar;
+    public final com.google.firebase.messaging.l a() {
+        com.google.firebase.messaging.l lVar = new com.google.firebase.messaging.l();
+        lVar.a = Long.valueOf(this.a);
+        lVar.b = this.b;
+        lVar.c = this.c;
+        lVar.d = this.d;
+        lVar.e = this.e;
+        lVar.f = this.f;
+        return lVar;
     }
 
     public final boolean equals(Object obj) {

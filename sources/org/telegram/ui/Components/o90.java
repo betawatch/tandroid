@@ -1,44 +1,23 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o90 implements org.telegram.ui.ActionBar.z1, org.telegram.ui.ActionBar.k1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ w90 b;
+public final class o90 extends k9 {
+    public final /* synthetic */ ai.w1 e;
 
-    public /* synthetic */ o90(w90 w90Var, int i10) {
-        this.a = i10;
-        this.b = w90Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public o90(ai.w1 w1Var, Context context) {
+        super(context, false);
+        this.e = w1Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.z1
-    public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
-        switch (this.a) {
-            case 0:
-                v90 v90Var = this.b.r;
-                if (v90Var != null) {
-                    v90Var.j();
-                    break;
-                }
-                break;
-            default:
-                v90 v90Var2 = this.b.r;
-                if (v90Var2 != null) {
-                    v90Var2.d();
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.k1
-    public void n(KeyEvent keyEvent) {
-        w90 w90Var = this.b;
-        w90Var.getClass();
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && w90Var.s.isShowing()) {
-            w90Var.s.d(true);
-        }
+    @Override // org.telegram.ui.Components.k9, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(Math.min(3, ((q90) this.e.d).w) == 0 ? 0 : i0.a.g(r4, 1, 20, 32)), TLObject.FLAG_30), i11);
     }
 }

@@ -1,33 +1,16 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.text.TextUtils;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class w30 extends org.telegram.ui.Components.g8 {
-    public final /* synthetic */ n60 E;
-    public final /* synthetic */ Activity y;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w30(n60 n60Var, LaunchActivity launchActivity, Activity activity) {
-        super(launchActivity);
-        this.E = n60Var;
-        this.y = activity;
+public final class w30 extends org.telegram.ui.Components.od0 {
+    public w30(LaunchActivity launchActivity) {
+        super(launchActivity, null);
     }
 
-    @Override // org.telegram.ui.Components.g8
-    public final TextView a() {
-        TextView textView = new TextView(this.y);
-        textView.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.hg, false));
-        textView.setTextSize(1, 20.0f);
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setGravity(51);
-        textView.setSingleLine(true);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setOnClickListener(new xv(9, this, textView));
-        return textView;
+    @Override // org.telegram.ui.Components.od0
+    public final CharSequence d(int i10) {
+        return LocaleController.formatPluralString("Hours", i10, new Object[0]);
     }
 }

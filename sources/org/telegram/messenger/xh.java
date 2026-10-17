@@ -1,31 +1,31 @@
 package org.telegram.messenger;
 
-import android.text.Spanned;
-import java.util.Comparator;
-import org.telegram.messenger.RichMessageLayout;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class xh implements Comparator {
+public final /* synthetic */ class xh implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Spanned b;
+    public final /* synthetic */ SecretChatHelper b;
+    public final /* synthetic */ TLRPC.EncryptedChat c;
 
-    public /* synthetic */ xh(Spanned spanned, int i10) {
+    public /* synthetic */ xh(SecretChatHelper secretChatHelper, TLRPC.EncryptedChat encryptedChat, int i10) {
         this.a = i10;
-        this.b = spanned;
+        this.b = secretChatHelper;
+        this.c = encryptedChat;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int lambda$withReplacements$0;
-        int lambda$new$0;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                lambda$withReplacements$0 = RichMessageLayout.RichBlock.lambda$withReplacements$0(this.b, (org.telegram.ui.Cells.u9) obj, (org.telegram.ui.Cells.u9) obj2);
-                return lambda$withReplacements$0;
+                this.b.lambda$acceptSecretChat$22(this.c, tLObject, tL_error);
+                break;
             default:
-                lambda$new$0 = RichMessageLayout.Text.lambda$new$0(this.b, (RichMessageLayout.RichButtonSpan) obj, (RichMessageLayout.RichButtonSpan) obj2);
-                return lambda$new$0;
+                this.b.lambda$acceptSecretChat$23(this.c, tLObject, tL_error);
+                break;
         }
     }
 }

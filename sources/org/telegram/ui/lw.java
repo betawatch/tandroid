@@ -1,62 +1,112 @@
 package org.telegram.ui;
 
-import java.util.Collections;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.content.Context;
+import android.os.Bundle;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.TopicsController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lw implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ yy b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ boolean d;
+public final class lw extends hg.m {
+    public final /* synthetic */ dy d0;
+    public final /* synthetic */ ey e0;
 
-    public /* synthetic */ lw(yy yyVar, long j10, boolean z10, int i10) {
-        this.a = i10;
-        this.b = yyVar;
-        this.c = j10;
-        this.d = z10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public lw(ey eyVar, ey eyVar2, Context context, int i10, int i11, boolean z10, ArrayList arrayList, int i12, TLRPC.RequestPeerType requestPeerType, dy dyVar) {
+        super(eyVar2, context, i10, i11, z10, arrayList, i12, requestPeerType);
+        this.e0 = eyVar;
+        this.d0 = dyVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        String str;
-        TLRPC.Chat chat;
-        int i10 = this.a;
-        boolean z10 = this.d;
-        long j10 = this.c;
-        yy yyVar = this.b;
-        switch (i10) {
-            case 0:
-                yy yyVar2 = this.b;
-                bi.x8 storiesController = yyVar2.getMessagesController().getStoriesController();
-                long j11 = this.c;
-                boolean z11 = this.d;
-                storiesController.i0(j11, z11, false);
-                n3.b bVar = new n3.b(6, false);
-                bVar.b = new lw(yyVar2, j11, z11, 1);
-                bVar.c = new lw(yyVar2, j11, z11, 2);
-                if (j11 >= 0) {
-                    TLRPC.User user = yyVar2.getMessagesController().getUser(Long.valueOf(j11));
-                    str = ContactsController.formatName(user.first_name, null, 15);
-                    chat = user;
+    @Override // hg.m
+    public final void J() {
+        this.e0.presentFragment(new l());
+    }
+
+    @Override // hg.m
+    public final void K() {
+        ey eyVar = this.e0;
+        org.telegram.ui.ActionBar.b2 b2Var = new org.telegram.ui.ActionBar.b2(eyVar.getParentActivity(), 3, null);
+        TLRPC.RequestPeerType requestPeerType = eyVar.G;
+        if (requestPeerType instanceof TLRPC.TL_requestPeerTypeBroadcast) {
+            Bundle j10 = org.telegram.ui.Cells.t0.j(0, "step");
+            Boolean bool = eyVar.G.has_username;
+            if (bool != null) {
+                j10.putBoolean("forcePublic", bool.booleanValue());
+            }
+            od odVar = new od(j10);
+            odVar.t0 = new p6(eyVar, odVar, b2Var, 2);
+            eyVar.presentFragment(odVar);
+            return;
+        }
+        if (requestPeerType instanceof TLRPC.TL_requestPeerTypeChat) {
+            Bundle bundle = new Bundle();
+            Boolean bool2 = eyVar.G.bot_participant;
+            bundle.putLongArray("result", (bool2 == null || !bool2.booleanValue()) ? new long[]{eyVar.getUserConfig().getClientUserId()} : new long[]{eyVar.getUserConfig().getClientUserId(), eyVar.H});
+            Boolean bool3 = eyVar.G.forum;
+            bundle.putInt("chatType", (bool3 == null || !bool3.booleanValue()) ? 4 : 5);
+            bundle.putBoolean("canToggleTopics", false);
+            u60 u60Var = new u60(bundle);
+            u60Var.Y = new dx(eyVar, b2Var);
+            eyVar.presentFragment(u60Var);
+        }
+    }
+
+    @Override // hg.m
+    public final void L(TLRPC.User user) {
+        int i10;
+        i10 = ((org.telegram.ui.ActionBar.n2) this.e0).currentAccount;
+        MessagesController.getInstance(i10).openApp(user, 0);
+    }
+
+    @Override // hg.m
+    public final boolean S() {
+        return this.e0.R0 == 0;
+    }
+
+    @Override // hg.m, org.telegram.ui.Cells.n2
+    public final void a(org.telegram.ui.Cells.r2 r2Var) {
+        dy dyVar = this.d0;
+        dyVar.a.getClass();
+        this.e0.m4(r2Var, RecyclerView.R(r2Var), 0.0f, dyVar.d);
+    }
+
+    @Override // hg.m, org.telegram.ui.Cells.n2
+    public final void e(org.telegram.ui.Cells.r2 r2Var) {
+        int i10;
+        if (r2Var.getMessage() != null) {
+            ey eyVar = this.e0;
+            TopicsController topicsController = eyVar.getMessagesController().getTopicsController();
+            long j10 = -r2Var.getDialogId();
+            i10 = ((org.telegram.ui.ActionBar.n2) eyVar).currentAccount;
+            TLRPC.TL_forumTopic findTopic = topicsController.findTopic(j10, MessageObject.getTopicId(i10, r2Var.getMessage().messageOwner, true));
+            if (findTopic != null) {
+                if (eyVar.l2) {
+                    eyVar.M3(r2Var.getDialogId(), findTopic.id, false, null);
                 } else {
-                    TLRPC.Chat chat2 = yyVar2.getMessagesController().getChat(Long.valueOf(-j11));
-                    str = chat2.title;
-                    chat = chat2;
+                    og.d.m(eyVar, -r2Var.getDialogId(), findTopic, 0);
                 }
-                yyVar2.S = org.telegram.ui.Components.zc.X().V(Collections.singletonList(chat), yyVar2.c4() ? AndroidUtilities.replaceTags(LocaleController.formatString("StoriesMovedToDialogs", R.string.StoriesMovedToDialogs, str)) : AndroidUtilities.replaceTags(LocaleController.formatString("StoriesMovedToContacts", R.string.StoriesMovedToContacts, ContactsController.formatName(str, null, 15))), null, bVar).j();
-                break;
-            case 1:
-                yyVar.getMessagesController().getStoriesController().i0(j10, !z10, false);
-                break;
-            default:
-                yyVar.getMessagesController().getStoriesController().i0(j10, z10, true);
-                break;
+            }
+        }
+    }
+
+    @Override // hg.m, s4.g0
+    public final void l() {
+        h();
+        int i10 = dy.L;
+        try {
+            super.l();
+        } catch (Exception e) {
+            FileLog.e(e);
+        }
+        ey eyVar = this.e0;
+        if (eyVar.R0 == 15) {
+            eyVar.j0.setVisibility(this.U ? 8 : 0);
         }
     }
 }

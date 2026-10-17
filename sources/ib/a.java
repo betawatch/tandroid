@@ -1,6 +1,6 @@
 package ib;
 
-import com.google.android.gms.internal.play_billing.k3;
+import com.google.android.gms.internal.cast.a6;
 import j$.util.DesugarTimeZone;
 import java.text.ParseException;
 import java.text.ParsePosition;
@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.TimeZone;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final TimeZone a = DesugarTimeZone.getTimeZone("UTC");
@@ -152,7 +152,7 @@ public abstract class a {
             if (message != null || message.isEmpty()) {
                 message = "(" + e.getClass().getName() + ")";
             }
-            ParseException parseException = new ParseException(k3.k("Failed to parse date [", str3, "]: ", message), parsePosition.getIndex());
+            ParseException parseException = new ParseException(a6.k("Failed to parse date [", str3, "]: ", message), parsePosition.getIndex());
             parseException.initCause(e);
             throw parseException;
         } catch (IndexOutOfBoundsException e7) {
@@ -163,7 +163,7 @@ public abstract class a {
             if (message != null) {
             }
             message = "(" + e.getClass().getName() + ")";
-            ParseException parseException2 = new ParseException(k3.k("Failed to parse date [", str3, "]: ", message), parsePosition.getIndex());
+            ParseException parseException2 = new ParseException(a6.k("Failed to parse date [", str3, "]: ", message), parsePosition.getIndex());
             parseException2.initCause(e);
             throw parseException2;
         }

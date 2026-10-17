@@ -1,60 +1,67 @@
 package fi;
 
-import android.view.View;
-import j$.util.Objects;
-import java.util.Locale;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_wallet;
-import org.telegram.ui.Cells.a7;
-import org.telegram.ui.Cells.e9;
-import org.telegram.ui.Components.a71;
-import org.telegram.ui.f20;
+import ai.ic;
+import android.content.Context;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.h6;
+import sg.v1;
+import sg.w1;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class c implements Utilities.CallbackReturn {
-    public final /* synthetic */ int a;
+public final class c extends w1 {
+    public Paint[] n;
+    public final /* synthetic */ int r;
+    public final /* synthetic */ int s;
 
-    public /* synthetic */ c(int i10) {
-        this.a = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c(Context context, int i10, int i11) {
+        super(context);
+        this.r = i10;
+        this.s = i11;
+        c();
     }
 
-    @Override // org.telegram.messenger.Utilities.CallbackReturn
-    public final Object run(Object obj) {
-        switch (this.a) {
-            case 0:
-                return String.format(Locale.US, "%.1f%%", Float.valueOf(((Integer) obj).intValue() / 10.0f));
-            case 1:
-                MessageObject messageObject = (MessageObject) obj;
-                return Boolean.valueOf((messageObject == null || messageObject.getFactCheck() == null) ? false : true);
-            case 2:
-                MessageObject messageObject2 = (MessageObject) obj;
-                return Boolean.valueOf((messageObject2 == null || messageObject2.getEffect() == null) ? false : true);
-            case 3:
-                return LocaleController.formatPluralString("Hours", ((Integer) obj).intValue(), new Object[0]);
-            case 4:
-                return LocaleController.formatPluralString("Minutes", ((Integer) obj).intValue(), new Object[0]);
-            case 5:
-                View view = (View) obj;
-                return Boolean.valueOf(((view instanceof e9) || (view instanceof a7) || (view instanceof f20) || (view instanceof org.telegram.ui.Cells.v3) || (view instanceof org.telegram.ui.Cells.b2) || Objects.equals(view.getTag(), -33024)) ? false : true);
-            case 6:
-                return Boolean.valueOf(a71.K(((Integer) obj).intValue()));
-            case 7:
-                TL_wallet.exportSecretPhrase exportsecretphrase = new TL_wallet.exportSecretPhrase();
-                exportsecretphrase.password = (TLRPC.InputCheckPasswordSRP) obj;
-                return exportsecretphrase;
-            case 8:
-                TL_wallet.replaceWallet replacewallet = new TL_wallet.replaceWallet();
-                replacewallet.wallet = new TL_wallet.inputWalletNew();
-                replacewallet.password = (TLRPC.InputCheckPasswordSRP) obj;
-                return replacewallet;
-            default:
-                TL_wallet.disableBackup disablebackup = new TL_wallet.disableBackup();
-                disablebackup.password = (TLRPC.InputCheckPasswordSRP) obj;
-                return disablebackup;
+    @Override // sg.w1
+    public final void a() {
+        v1 v1Var = new v1(this.r);
+        this.a = v1Var;
+        v1Var.O = 106;
+        int i10 = 0;
+        v1Var.M = false;
+        v1Var.G = false;
+        v1Var.K = true;
+        v1Var.H = true;
+        v1Var.J = false;
+        v1Var.m = true;
+        v1Var.h = true;
+        if (this.s == 1) {
+            v1Var.k = AndroidUtilities.dp(24.0f);
         }
+        this.n = new Paint[20];
+        while (true) {
+            Paint[] paintArr = this.n;
+            if (i10 >= paintArr.length) {
+                v1 v1Var2 = this.a;
+                v1Var2.l = new ic(this, 2);
+                v1Var2.r = 17;
+                v1Var2.s = 18;
+                v1Var2.t = 19;
+                v1Var2.Q = h6.G6;
+                v1Var2.c();
+                return;
+            }
+            paintArr[i10] = new Paint(1);
+            this.n[i10].setColorFilter(new PorterDuffColorFilter(i0.b.f(i10 / (this.n.length - 1), -13729319, -14238726), PorterDuff.Mode.SRC_IN));
+            i10++;
+        }
+    }
+
+    @Override // sg.w1
+    public final int getStarsRectWidth() {
+        return getMeasuredWidth();
     }
 }

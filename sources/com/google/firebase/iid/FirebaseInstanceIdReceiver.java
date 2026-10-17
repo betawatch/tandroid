@@ -7,10 +7,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
-import c5.x;
+import c5.w;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
-import com.google.firebase.messaging.j;
+import com.google.firebase.messaging.i;
 import j6.g;
 import j6.k;
 import j6.l;
@@ -22,7 +22,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import v7.o6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class FirebaseInstanceIdReceiver extends BroadcastReceiver {
     public static SoftReference a;
@@ -60,7 +60,7 @@ public final class FirebaseInstanceIdReceiver extends BroadcastReceiver {
             l4 = k10.l(new k(i10, 2, bundle, 0));
         }
         try {
-            i11 = ((Integer) Tasks.await(new j(context).b(intent))).intValue();
+            i11 = ((Integer) Tasks.await(new i(context).b(intent))).intValue();
         } catch (InterruptedException | ExecutionException e) {
             Log.e("FirebaseMessaging", "Failed to send message to service.", e);
         }
@@ -113,7 +113,7 @@ public final class FirebaseInstanceIdReceiver extends BroadcastReceiver {
                 SoftReference softReference = a;
                 ExecutorService executorService2 = softReference != null ? (ExecutorService) softReference.get() : null;
                 if (executorService2 == null) {
-                    executorService2 = Executors.unconfigurableExecutorService(Executors.newCachedThreadPool(new x("firebase-iid-executor")));
+                    executorService2 = Executors.unconfigurableExecutorService(Executors.newCachedThreadPool(new w("firebase-iid-executor")));
                     a = new SoftReference(executorService2);
                 }
                 executorService = executorService2;

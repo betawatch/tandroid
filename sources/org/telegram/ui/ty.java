@@ -1,13 +1,14 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class ty extends TLRPC.Dialog {
-    public final int a;
-
-    public ty(int i10) {
-        this.a = i10;
+public final class ty extends org.telegram.ui.Components.a71 {
+    @Override // org.telegram.ui.Components.im0
+    public final Integer W0(int i10) {
+        org.telegram.ui.Components.f61 G = this.W2.G(i10);
+        if (G == null || G.d != 2) {
+            return super.W0(i10);
+        }
+        return 0;
     }
 }

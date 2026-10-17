@@ -1,11 +1,11 @@
 package org.telegram.ui.Components.voip;
 
 import android.animation.ValueAnimator;
-import org.telegram.ui.j50;
-import org.telegram.ui.n60;
+import org.telegram.ui.o40;
+import org.telegram.ui.s50;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes.dex */
 public final /* synthetic */ class v implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ l0 b;
@@ -29,11 +29,11 @@ public final /* synthetic */ class v implements ValueAnimator.AnimatorUpdateList
                 l0Var2.getClass();
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 l0Var2.c = floatValue;
-                n60 n60Var = l0Var2.j0;
-                n60Var.z1.setAlpha(1.0f - floatValue);
-                j50 j50Var = n60Var.O;
-                j50Var.setAlpha((1.0f - n60Var.a2.c) * (j50Var.getTag() != null ? 1.0f : 0.0f));
-                n60Var.F1(n60Var.y0);
+                s50 s50Var = l0Var2.j0;
+                s50Var.z1.setAlpha(1.0f - floatValue);
+                o40 o40Var = s50Var.O;
+                o40Var.setAlpha((1.0f - s50Var.a2.c) * (o40Var.getTag() != null ? 1.0f : 0.0f));
+                s50Var.F1(s50Var.y0);
                 l0Var2.l();
                 break;
         }

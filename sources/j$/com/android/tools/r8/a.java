@@ -54,7 +54,6 @@ import java.util.function.Consumer;
 import java.util.function.DoubleConsumer;
 import java.util.function.IntConsumer;
 import java.util.function.LongConsumer;
-import org.telegram.messenger.BuildConfig;
 import sun.misc.Unsafe;
 
 /* loaded from: classes2.dex */
@@ -232,9 +231,9 @@ public abstract /* synthetic */ class a {
     public static String U(Object obj, Object obj2) {
         String str;
         String obj3;
-        String str2 = BuildConfig.BETA_URL;
+        String str2 = "null";
         if (obj == null || (str = obj.toString()) == null) {
-            str = BuildConfig.BETA_URL;
+            str = "null";
         }
         int length = str.length();
         if (obj2 != null && (obj3 = obj2.toString()) != null) {

@@ -1,11 +1,21 @@
 package sg;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+import android.content.Context;
+import android.widget.Scroller;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class t0 extends q1 {
-    @Override // sg.q1, sg.l0
-    public final void setOffset(float f7) {
-        setAutoPlayEnabled(f7 == 0.0f);
-        super.setOffset(f7);
+public final class t0 extends Scroller {
+    public final /* synthetic */ u0 a;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t0(u0 u0Var, Context context) {
+        super(context);
+        this.a = u0Var;
+    }
+
+    @Override // android.widget.Scroller
+    public final void startScroll(int i10, int i11, int i12, int i13, int i14) {
+        super.startScroll(i10, i11, i12, i13, (this.a.x0 ? 3 : 1) * i14);
     }
 }

@@ -9,7 +9,7 @@ import n9.c;
 import r9.d;
 import r9.r;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class a implements d {
     public static final a b = new a(0);
@@ -23,24 +23,24 @@ public final class a implements d {
     }
 
     @Override // r9.d
-    public final Object n2(z5 z5Var) {
+    public final Object j2(z5 z5Var) {
         switch (this.a) {
             case 0:
-                Object d10 = z5Var.d(new r(n9.a.class, Executor.class));
-                i.d(d10, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new z0((Executor) d10);
+                Object f7 = z5Var.f(new r(n9.a.class, Executor.class));
+                i.d(f7, "c.get(Qualified.qualifie…a, Executor::class.java))");
+                return new z0((Executor) f7);
             case 1:
-                Object d11 = z5Var.d(new r(c.class, Executor.class));
-                i.d(d11, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new z0((Executor) d11);
+                Object f10 = z5Var.f(new r(c.class, Executor.class));
+                i.d(f10, "c.get(Qualified.qualifie…a, Executor::class.java))");
+                return new z0((Executor) f10);
             case 2:
-                Object d12 = z5Var.d(new r(b.class, Executor.class));
-                i.d(d12, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new z0((Executor) d12);
+                Object f11 = z5Var.f(new r(b.class, Executor.class));
+                i.d(f11, "c.get(Qualified.qualifie…a, Executor::class.java))");
+                return new z0((Executor) f11);
             default:
-                Object d13 = z5Var.d(new r(n9.d.class, Executor.class));
-                i.d(d13, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new z0((Executor) d13);
+                Object f12 = z5Var.f(new r(n9.d.class, Executor.class));
+                i.d(f12, "c.get(Qualified.qualifie…a, Executor::class.java))");
+                return new z0((Executor) f12);
         }
     }
 }

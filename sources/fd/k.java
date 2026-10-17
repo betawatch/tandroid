@@ -3,14 +3,14 @@ package fd;
 import java.util.Arrays;
 import java.util.Map;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class k {
     public static final char[] r;
     public static final int[] s = {8364, 129, 8218, 402, 8222, 8230, 8224, 8225, 710, 8240, 352, 8249, 338, 141, 381, 143, 144, 8216, 8217, 8220, 8221, 8226, 8211, 8212, 732, 8482, 353, 8250, 339, 157, 382, 376};
     public final a a;
     public final b b;
-    public f2.e d;
+    public f2.f d;
     public j i;
     public final i j;
     public final h k;
@@ -232,25 +232,25 @@ public final class k {
     }
 
     public final void e() {
-        f2.e.c(this.h);
+        f2.f.c(this.h);
     }
 
     public final void f(char c10) {
         h(String.valueOf(c10));
     }
 
-    public final void g(f2.e eVar) {
+    public final void g(f2.f fVar) {
         if (this.e) {
             throw new IllegalArgumentException("There is an unread token pending!");
         }
-        this.d = eVar;
+        this.d = fVar;
         this.e = true;
-        int i10 = eVar.b;
+        int i10 = fVar.b;
         if (i10 == 2) {
-            this.o = ((i) eVar).c;
+            this.o = ((i) fVar).c;
             return;
         }
-        if (i10 != 3 || ((h) eVar).k == null) {
+        if (i10 != 3 || ((h) fVar).k == null) {
             return;
         }
         b bVar = this.b;

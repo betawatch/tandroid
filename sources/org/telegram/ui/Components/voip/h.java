@@ -9,8 +9,8 @@ import android.graphics.Shader;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes4.dex */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes.dex */
 public final class h {
     public final Paint a;
     public LinearGradient b;
@@ -26,8 +26,8 @@ public final class h {
     public boolean l;
     public float m;
     public float n;
-    public sg.a2 o;
-    public ri.h0 p;
+    public sg.z1 o;
+    public org.telegram.ui.web.z1 p;
 
     public h() {
         this(64, 204, 160);
@@ -48,10 +48,10 @@ public final class h {
 
     public final void b(int i10, int i11) {
         float f7 = this.e;
-        int[] iArr = {0, i0.a.k(i10, i11), 0};
+        int[] iArr = {0, i0.b.o(i10, i11), 0};
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
         this.b = new LinearGradient(0.0f, 0.0f, f7, 0.0f, iArr, (float[]) null, tileMode);
-        this.d = new LinearGradient(0.0f, 0.0f, f7, 0.0f, new int[]{0, i0.a.k(i10, 204), 0}, (float[]) null, tileMode);
+        this.d = new LinearGradient(0.0f, 0.0f, f7, 0.0f, new int[]{0, i0.b.o(i10, 204), 0}, (float[]) null, tileMode);
         this.a.setShader(this.b);
         this.c.setShader(this.d);
     }
@@ -70,9 +70,9 @@ public final class h {
                     this.g = f7;
                     if (f7 > this.m) {
                         this.g = 0.0f;
-                        ri.h0 h0Var = this.p;
-                        if (h0Var != null) {
-                            h0Var.run();
+                        org.telegram.ui.web.z1 z1Var = this.p;
+                        if (z1Var != null) {
+                            z1Var.run();
                         }
                     }
                     this.h = currentTimeMillis;
@@ -108,10 +108,10 @@ public final class h {
         int dp = AndroidUtilities.dp(i12);
         this.e = dp;
         float f7 = dp;
-        int[] iArr = {0, i0.a.k(-1, i10), 0};
+        int[] iArr = {0, i0.b.o(-1, i10), 0};
         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
         this.b = new LinearGradient(0.0f, 0.0f, f7, 0.0f, iArr, (float[]) null, tileMode);
-        this.d = new LinearGradient(0.0f, 0.0f, f7, 0.0f, new int[]{0, i0.a.k(-1, i11), 0}, (float[]) null, tileMode);
+        this.d = new LinearGradient(0.0f, 0.0f, f7, 0.0f, new int[]{0, i0.b.o(-1, i11), 0}, (float[]) null, tileMode);
         paint.setShader(this.b);
         paint2.setShader(this.d);
         paint2.setStyle(Paint.Style.STROKE);

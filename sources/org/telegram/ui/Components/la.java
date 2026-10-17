@@ -1,141 +1,105 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.RecordingCanvas;
-import android.graphics.RenderEffect;
-import android.graphics.RenderNode;
-import android.graphics.Shader;
-import android.os.Build;
+import android.graphics.Paint;
 import android.view.View;
 import java.util.ArrayList;
-import javax.microedition.khronos.egl.EGLContext;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class la {
-    public int a;
-    public final View b;
-    public final ArrayList c;
-    public final ArrayList d;
-    public final ArrayList e;
-    public final Object f;
-    public EGLContext g;
-    public final Object h;
-    public int i;
-    public di.wb j;
-    public Object k;
-    public Object l;
-    public ra m;
-    public final qa n;
-    public Bitmap o;
-    public int p;
+public final class la implements View.OnAttachStateChangeListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public la(View view) {
-        ArrayList arrayList = new ArrayList();
-        this.c = arrayList;
-        this.d = new ArrayList();
-        this.e = new ArrayList();
-        this.f = new Object();
-        this.h = new Object();
-        this.n = new qa(0, new qg(this, 14));
-        this.p = 0;
-        this.b = view;
-        if (view.isAttachedToWindow()) {
-            arrayList.clear();
-            for (View view2 = view; view2 != null; view2 = (View) view2.getParent()) {
-                arrayList.add(0, view2);
-                if (!(view2.getParent() instanceof View)) {
+    public /* synthetic */ la(int i10, Object obj, Object obj2) {
+        this.a = i10;
+        this.c = obj;
+        this.b = obj2;
+    }
+
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewAttachedToWindow(View view) {
+        int i10 = this.a;
+        Object obj = this.b;
+        Object obj2 = this.c;
+        switch (i10) {
+            case 0:
+                ja jaVar = (ja) obj;
+                if (jaVar != null) {
+                    jaVar.d.add((na) obj2);
                     break;
                 }
-            }
-        }
-        view.addOnAttachStateChangeListener(new bi.j2(this, 5));
-    }
-
-    public final void a(EGLContext eGLContext) {
-        synchronized (this.f) {
-            try {
-                if (this.g == null) {
-                    this.g = eGLContext;
+                break;
+            case 1:
+                d11 d11Var = (d11) obj2;
+                d11Var.k = a6.update(d11Var.l, (View) obj, d11Var.k, d11Var.b);
+                break;
+            default:
+                org.telegram.ui.Wallet.k3 k3Var = (org.telegram.ui.Wallet.k3) obj2;
+                org.telegram.ui.Wallet.j3 j3Var = k3Var.m;
+                if (j3Var != null) {
+                    j3Var.setPaused(!k3Var.n);
                 }
-            } catch (Throwable th2) {
-                throw th2;
-            }
+                k3Var.u();
+                break;
         }
     }
 
-    public final Bitmap b() {
-        Bitmap bitmap;
-        ra raVar = this.m;
-        if (raVar == null) {
-            return this.o;
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewDetachedFromWindow(View view) {
+        switch (this.a) {
+            case 0:
+                na naVar = (na) this.c;
+                ja jaVar = (ja) this.b;
+                if (jaVar != null) {
+                    ArrayList arrayList = jaVar.d;
+                    arrayList.remove(naVar);
+                    if (jaVar.e.isEmpty() && arrayList.isEmpty()) {
+                        jaVar.n.a();
+                    }
+                }
+                naVar.n = null;
+                Paint paint = naVar.h;
+                naVar.o = null;
+                paint.setShader(null);
+                break;
+            case 1:
+                a6.release((View) this.b, ((d11) this.c).k);
+                break;
+            default:
+                org.telegram.ui.Wallet.k3 k3Var = (org.telegram.ui.Wallet.k3) this.c;
+                k3Var.g();
+                k3Var.M = false;
+                k3Var.N = 0L;
+                k3Var.m();
+                o1.k kVar = k3Var.Z;
+                if (kVar != null) {
+                    kVar.c();
+                    k3Var.Z = null;
+                }
+                k3Var.a0 = 1.0f;
+                org.telegram.ui.Cells.x0 x0Var = k3Var.a;
+                x0Var.invalidate();
+                if (x0Var.getParent() instanceof View) {
+                    ((View) x0Var.getParent()).invalidate();
+                }
+                k3Var.n();
+                org.telegram.ui.Wallet.z5 z5Var = k3Var.k;
+                org.telegram.ui.Cells.x0 x0Var2 = (org.telegram.ui.Cells.x0) this.b;
+                WeakHashMap weakHashMap = z5Var.e;
+                weakHashMap.remove(x0Var2);
+                if (weakHashMap.isEmpty()) {
+                    z5Var.a();
+                }
+                k3Var.u();
+                org.telegram.ui.Wallet.j3 j3Var = k3Var.m;
+                if (j3Var != null) {
+                    j3Var.setPaused(true);
+                }
+                k3Var.l.stop();
+                k3Var.H = false;
+                break;
         }
-        synchronized (raVar.n) {
-            try {
-                bitmap = !raVar.q ? null : raVar.p;
-            } finally {
-            }
-        }
-        return bitmap == null ? this.o : bitmap;
-    }
-
-    public final boolean c() {
-        return this.l != null;
-    }
-
-    public final void d() {
-        ArrayList arrayList = this.d;
-        int size = arrayList.size();
-        int i10 = 0;
-        int i11 = 0;
-        while (i11 < size) {
-            Object obj = arrayList.get(i11);
-            i11++;
-            ((pa) obj).b.invalidate();
-        }
-        ArrayList arrayList2 = this.e;
-        int size2 = arrayList2.size();
-        while (i10 < size2) {
-            Object obj2 = arrayList2.get(i10);
-            i10++;
-            ((Runnable) obj2).run();
-        }
-    }
-
-    public final void e() {
-        ra raVar = this.m;
-        if (raVar != null) {
-            synchronized (raVar.n) {
-                raVar.q = false;
-            }
-        }
-    }
-
-    public final void f(Bitmap bitmap, boolean z10) {
-        StringBuilder sb2 = new StringBuilder("");
-        int i10 = this.p;
-        this.p = i10 + 1;
-        sb2.append(i10);
-        this.o = this.n.b(bitmap, sb2.toString(), 0, 0, z10);
-    }
-
-    public final void g(di.wb wbVar, Object obj) {
-        this.j = wbVar;
-        this.k = obj;
-        this.i = -14737633;
-        if (obj == null || Build.VERSION.SDK_INT < 31) {
-            this.l = null;
-            return;
-        }
-        RenderNode renderNode = (RenderNode) obj;
-        RenderNode renderNode2 = new RenderNode("blurRenderNode");
-        renderNode2.setRenderEffect(RenderEffect.createBlurEffect(AndroidUtilities.dp(35.0f), AndroidUtilities.dp(35.0f), Shader.TileMode.CLAMP));
-        renderNode2.setPosition(0, 0, renderNode.getWidth(), renderNode.getHeight());
-        RecordingCanvas beginRecording = renderNode2.beginRecording();
-        beginRecording.drawColor(-14737633);
-        beginRecording.drawRenderNode(renderNode);
-        renderNode2.endRecording();
-        this.l = renderNode2;
     }
 }

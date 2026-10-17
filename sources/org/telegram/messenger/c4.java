@@ -1,39 +1,39 @@
 package org.telegram.messenger;
 
 import org.telegram.messenger.GiftAuctionController;
+import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_payments;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c4 implements Utilities.Callback2 {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ GiftAuctionController b;
-    public final /* synthetic */ GiftAuctionController.AuctionInternal c;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ BaseController b;
+    public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ c4(GiftAuctionController giftAuctionController, GiftAuctionController.AuctionInternal auctionInternal, Utilities.Callback2 callback2) {
-        this.b = giftAuctionController;
-        this.c = auctionInternal;
-        this.d = callback2;
+    public /* synthetic */ c4(BaseController baseController, Object obj, Object obj2, Object obj3, int i10) {
+        this.a = i10;
+        this.b = baseController;
+        this.c = obj;
+        this.d = obj2;
+        this.e = obj3;
     }
 
     @Override // org.telegram.messenger.Utilities.Callback2
     public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                this.b.lambda$sendBid$8(this.c, (Utilities.Callback2) this.d, (TLRPC.payments_PaymentResult) obj, (TLRPC.TL_error) obj2);
+                ((GiftAuctionController) this.b).lambda$sendBid$9((Utilities.Callback2) this.c, (GiftAuctionController.AuctionInternal) this.d, (TLRPC.TL_payments_getPaymentForm) this.e, (TLRPC.PaymentForm) obj, (TLRPC.TL_error) obj2);
+                break;
+            case 1:
+                ((MediaDataController) this.b).lambda$searchStickers$248((MediaDataController.SearchStickersKey) this.c, (MediaDataController.SearchStickersResult) this.d, (Utilities.Callback) this.e, (TLRPC.messages_FoundStickers) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
-                this.b.lambda$getOrRequestAcquiredGifts$11((Utilities.Callback) this.d, this.c, (TL_payments.TL_StarGiftAuctionAcquiredGifts) obj, (TLRPC.TL_error) obj2);
+                ((MediaDataController) this.b).lambda$getStickerSet$38((String) this.c, (Utilities.Callback) this.d, (TLRPC.InputStickerSet) this.e, (Boolean) obj, (TLRPC.TL_messages_stickerSet) obj2);
                 break;
         }
-    }
-
-    public /* synthetic */ c4(GiftAuctionController giftAuctionController, Utilities.Callback callback, GiftAuctionController.AuctionInternal auctionInternal) {
-        this.b = giftAuctionController;
-        this.d = callback;
-        this.c = auctionInternal;
     }
 }

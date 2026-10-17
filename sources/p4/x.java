@@ -9,9 +9,10 @@ import android.support.v4.media.session.MediaSessionCompat$Token;
 import android.util.Log;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-import m.h3;
+import ki.t1;
+import m.g3;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class x {
     public static e c;
@@ -71,9 +72,9 @@ public final class x {
         if (eVar == null) {
             return null;
         }
-        h3 h3Var = eVar.C;
-        if (h3Var != null) {
-            android.support.v4.media.session.b0 b0Var = (android.support.v4.media.session.b0) h3Var.b;
+        g3 g3Var = eVar.C;
+        if (g3Var != null) {
+            android.support.v4.media.session.b0 b0Var = (android.support.v4.media.session.b0) g3Var.b;
             if (b0Var != null) {
                 return b0Var.a.c;
             }
@@ -108,7 +109,7 @@ public final class x {
         c10.u = zVar;
         if (c10.f()) {
             if (c10.r == null) {
-                k kVar = new k(c10.h, new m.l(c10));
+                k kVar = new k(c10.h, new t1(c10, 20));
                 c10.r = kVar;
                 c10.a(kVar, true);
                 c10.k();

@@ -1,188 +1,78 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.Locale;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class qv0 extends FrameLayout {
-    public float a;
-    public boolean b;
-    public boolean c;
-    public boolean d;
-    public int e;
-    public int f;
-    public int h;
-    public final o1.j n;
-    public final o1.k r;
-    public final /* synthetic */ PhotoViewer s;
+public final class qv0 extends org.telegram.ui.Cells.u1 {
+    public final Path Ge;
+    public final Paint He;
+    public final /* synthetic */ byte[] Ie;
+    public final /* synthetic */ int Je;
+    public final /* synthetic */ int Ke;
+    public final /* synthetic */ sv0 Le;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qv0(Context context, PhotoViewer photoViewer) {
-        super(context);
-        this.s = photoViewer;
-        this.a = 1.0f;
-        this.c = true;
-        o1.j jVar = new o1.j(0.0f);
-        this.n = jVar;
-        o1.k kVar = new o1.k(jVar);
-        kVar.u = org.telegram.ui.Cells.c1.j(0.0f, 750.0f, 1.0f);
-        kVar.b(new wd0(this, 3));
-        this.r = kVar;
-        setWillNotDraw(false);
+    public qv0(sv0 sv0Var, Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var, byte[] bArr, int i11, int i12) {
+        super(context, i10, false, null, d6Var);
+        this.Le = sv0Var;
+        this.Ie = bArr;
+        this.Je = i11;
+        this.Ke = i12;
+        this.Ge = new Path();
+        this.He = new Paint(1);
     }
 
-    public final void a(float f7) {
-        PhotoViewer photoViewer = this.s;
-        photoViewer.o3.setAlpha(f7);
-        photoViewer.p3.setAlpha(f7);
-        if (!this.b) {
-            if (this.c) {
-                setTranslationY((1.0f - f7) * AndroidUtilities.dpf2(24.0f));
-            }
-            photoViewer.r3.setAlpha(f7);
-            return;
+    @Override // org.telegram.ui.Cells.u1
+    public final void Y1(Canvas canvas) {
+        this.i6 = 0;
+        this.j6 = this.Y5.size() - 1;
+        this.k6 = (-AndroidUtilities.dp(7.0f)) * this.Le.y;
+        super.Y1(canvas);
+    }
+
+    @Override // org.telegram.ui.Cells.u1, android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.save();
+        int I2 = I2(this.Ie);
+        float H2 = H2(I2);
+        float G2 = G2(I2);
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(getPollButtonsLeft(), H2, getPollButtonsRight(), G2);
+        float f7 = rectF.top;
+        float dp = AndroidUtilities.dp(3.0f);
+        sv0 sv0Var = this.Le;
+        rectF.top = AndroidUtilities.lerp(dp, sv0Var.V ? -AndroidUtilities.dp(3.0f) : 0.0f, sv0Var.y) + f7;
+        float f10 = rectF.bottom;
+        boolean z10 = sv0Var.V;
+        float dp2 = AndroidUtilities.dp(3.0f);
+        if (!z10) {
+            dp2 = AndroidUtilities.lerp(dp2, 0.0f, sv0Var.y);
         }
-        photoViewer.o3.setPivotX(r1.getWidth());
-        photoViewer.o3.setPivotY(r1.getHeight());
-        float f10 = 1.0f - f7;
-        float f11 = 1.0f - (0.1f * f10);
-        photoViewer.o3.setScaleX(f11);
-        photoViewer.o3.setScaleY(f11);
-        org.telegram.ui.Components.k81 k81Var = photoViewer.q3;
-        if (k81Var.y != f10) {
-            k81Var.y = f10;
-            k81Var.v.invalidate();
-        }
+        rectF.bottom = f10 + dp2;
+        Path path = this.Ge;
+        path.rewind();
+        path.addRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), Path.Direction.CW);
+        Paint paint = this.He;
+        paint.setColor(0);
+        paint.setShadowLayer(AndroidUtilities.dp(2.0f), 0.0f, AndroidUtilities.dp(0.66f), org.telegram.ui.ActionBar.h6.m1(sv0Var.y * 0.2f, -16777216));
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), paint);
+        canvas.clipPath(path);
+        S1(canvas);
+        canvas.restore();
     }
 
-    public final void b(float f7) {
-        if (this.a != f7) {
-            this.a = f7;
-            a(f7);
-        }
-    }
-
-    public final void c(boolean z10) {
-        if (this.b != z10) {
-            this.b = z10;
-            PhotoViewer photoViewer = this.s;
-            if (z10) {
-                setTranslationY(0.0f);
-                photoViewer.r3.setAlpha(1.0f);
-            } else {
-                photoViewer.o3.setScaleX(1.0f);
-                photoViewer.o3.setScaleY(1.0f);
-                org.telegram.ui.Components.k81 k81Var = photoViewer.q3;
-                if (k81Var.y != 0.0f) {
-                    k81Var.y = 0.0f;
-                    k81Var.v.invalidate();
-                }
-            }
-            a(this.a);
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.n.a = 0.0f;
-        this.h = 0;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        PhotoViewer photoViewer = this.s;
-        float n10 = photoViewer.F2 != null ? r3.n() / photoViewer.F2.p() : 0.0f;
-        if (photoViewer.W2) {
-            photoViewer.q3.h(n10, false);
-        }
-        photoViewer.S7.setProgress(n10);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
+    @Override // org.telegram.ui.Cells.u1, android.view.View
     public final void onMeasure(int i10, int i11) {
-        int i12;
-        this.d = true;
-        PhotoViewer photoViewer = this.s;
-        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) photoViewer.o3.getLayoutParams();
-        if (this.e > this.f) {
-            if (photoViewer.p3.getVisibility() != 0) {
-                photoViewer.p3.setVisibility(0);
-            }
-            i12 = AndroidUtilities.dp(48.0f);
-            layoutParams.rightMargin = AndroidUtilities.dp(47.0f);
-        } else {
-            if (photoViewer.p3.getVisibility() != 4) {
-                photoViewer.p3.setVisibility(4);
-            }
-            layoutParams.rightMargin = AndroidUtilities.dp(12.0f);
-            i12 = 0;
-        }
-        this.d = false;
-        super.onMeasure(i10, i11);
-        org.telegram.ui.Components.i81 i81Var = photoViewer.F2;
-        long j10 = 0;
-        if (i81Var != null) {
-            long p5 = i81Var.p();
-            if (p5 != -9223372036854775807L) {
-                j10 = p5;
-            }
-        } else {
-            ou0 ou0Var = photoViewer.f0;
-            if (ou0Var != null && ou0Var.x) {
-                j10 = ou0Var.getVideoDuration();
-            }
-        }
-        int ceil = (int) Math.ceil(photoViewer.o3.getPaint().measureText(String.format(Locale.ROOT, "%1$s / %1$s", (j10 / 1000) / 60 > 60 ? String.format(Locale.ROOT, "%02d:%02d:%02d", Long.valueOf(r8 / 60), Long.valueOf(r8 % 60), Long.valueOf(r6 % 60)) : String.format(Locale.ROOT, "%02d:%02d", Long.valueOf(r8), Long.valueOf(r6 % 60)))));
-        o1.k kVar = this.r;
-        kVar.c();
-        int i13 = this.h;
-        o1.j jVar = this.n;
-        if (i13 != 0) {
-            float f7 = ceil;
-            if (jVar.a != f7) {
-                kVar.u.i = f7;
-                kVar.h();
-                this.h = ceil;
-            }
-        }
-        org.telegram.ui.Components.k81 k81Var = photoViewer.q3;
-        int measuredWidth = ((getMeasuredWidth() - AndroidUtilities.dp(16.0f)) - ceil) - i12;
-        int measuredHeight = getMeasuredHeight();
-        k81Var.h = measuredWidth;
-        k81Var.i = measuredHeight;
-        View view = k81Var.v;
-        if (view != null) {
-            view.invalidate();
-        }
-        jVar.a = ceil;
-        this.h = ceil;
+        setMeasuredDimension(this.Je, this.Ke);
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (this.a < 1.0f) {
-            return false;
-        }
-        PhotoViewer photoViewer = this.s;
-        if (photoViewer.q3.e(motionEvent.getX() - AndroidUtilities.dp(2.0f), motionEvent.getY(), motionEvent.getAction())) {
-            getParent().requestDisallowInterceptTouchEvent(true);
-            photoViewer.r3.invalidate();
-        }
-        return true;
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.d) {
-            return;
-        }
-        super.requestLayout();
+    @Override // org.telegram.ui.Cells.u1, android.view.View
+    public final void setPressed(boolean z10) {
     }
 }

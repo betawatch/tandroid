@@ -1,77 +1,93 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import android.content.Context;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class dy extends UndoView {
-    public final /* synthetic */ yy f0;
+public final class dy extends FrameLayout {
+    public static final /* synthetic */ int L = 0;
+    public boolean E;
+    public ww F;
+    public hg.m G;
+    public boolean H;
+    public final gw I;
+    public final gw J;
+    public final /* synthetic */ ey K;
+    public zx a;
+    public a5.a b;
+    public hw c;
+    public lw d;
+    public s4.y e;
+    public cy f;
+    public int h;
+    public kw n;
+    public org.telegram.ui.Components.ll0 r;
+    public int s;
+    public int v;
+    public org.telegram.ui.Components.b10 w;
+    public fw x;
+    public org.telegram.ui.Components.nl0 y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dy(yy yyVar, Activity activity) {
-        super(activity);
-        this.f0 = yyVar;
+    public dy(Context context, ey eyVar) {
+        super(context);
+        this.K = eyVar;
+        this.I = new gw(this, 1);
+        this.J = new gw(this, 2);
     }
 
-    @Override // org.telegram.ui.Components.UndoView
-    public final boolean a() {
-        int i10 = 0;
-        while (true) {
-            xy[] xyVarArr = this.f0.e0;
-            if (i10 >= xyVarArr.length) {
-                return true;
-            }
-            if (xyVarArr[i10].x.k()) {
-                return false;
-            }
-            i10++;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        ((FrameLayout.LayoutParams) this.a.getLayoutParams()).bottomMargin = 0;
+        super.onMeasure(i10, i11);
+    }
+
+    public final boolean p() {
+        int i10 = this.s;
+        return i10 == 0 || i10 == 7 || i10 == 8;
+    }
+
+    public final void q(boolean z10) {
+        if (((org.telegram.ui.ActionBar.n2) this.K).isPaused) {
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.Components.UndoView
-    public final void h(int i10, long j10) {
-        if (i10 == 1 || i10 == 27) {
-            yy yyVar = this.f0;
-            yyVar.z3 = 1;
-            yyVar.y4(true, true);
-            if (yyVar.R1 != null) {
-                int i11 = 0;
-                while (true) {
-                    if (i11 >= yyVar.R1.size()) {
-                        i11 = -1;
-                        break;
-                    } else if (((TLRPC.Dialog) yyVar.R1.get(i11)).id == j10) {
-                        break;
-                    } else {
-                        i11++;
-                    }
-                }
-                if (i11 >= 0) {
-                    TLRPC.Dialog dialog = (TLRPC.Dialog) yyVar.R1.remove(i11);
-                    yyVar.e0[0].d.l();
-                    AndroidUtilities.runOnUIThread(new gm(this, i11, dialog, 27));
-                } else {
-                    yyVar.y4(false, true);
-                }
+        gw gwVar = this.J;
+        if (z10) {
+            AndroidUtilities.cancelRunOnUIThread(gwVar);
+            this.a.setItemAnimator(this.x);
+            gwVar.run();
+        } else {
+            if (this.H) {
+                return;
             }
-            yyVar.m3();
+            this.H = true;
+            if (!this.x.k()) {
+                this.a.setItemAnimator(null);
+            }
+            AndroidUtilities.runOnUIThread(gwVar, 36L);
         }
     }
 
     @Override // android.view.View
-    public final void setTranslationY(float f7) {
-        super.setTranslationY(f7);
-        yy yyVar = this.f0;
-        UndoView[] undoViewArr = yyVar.y0;
-        if (this == undoViewArr[0]) {
-            UndoView undoView = undoViewArr[1];
-            if (undoView == null || undoView.getVisibility() != 0) {
-                yyVar.u1 = Math.max(0.0f, (AndroidUtilities.dp(8.0f) + getMeasuredHeight()) - f7);
-                yyVar.V4();
+    public void setTranslationX(float f7) {
+        dy dyVar;
+        if (getTranslationX() != f7) {
+            super.setTranslationX(f7);
+            ey eyVar = this.K;
+            if (eyVar.h3 && (dyVar = eyVar.e0[0]) == this) {
+                eyVar.z0.g(Math.abs(dyVar.getTranslationX()) / eyVar.e0[0].getMeasuredWidth(), eyVar.e0[1].h);
             }
+            eyVar.j3();
         }
+    }
+
+    @Override // android.view.View
+    public void setTranslationY(float f7) {
+        if (getTranslationY() != f7) {
+            this.K.j3();
+        }
+        super.setTranslationY(f7);
     }
 }

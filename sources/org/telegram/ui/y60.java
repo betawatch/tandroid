@@ -1,47 +1,46 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.text.Editable;
+import android.text.TextWatcher;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class y60 implements org.telegram.ui.Components.p20, org.telegram.ui.ActionBar.z1, r0.n {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ j70 b;
+public final class y60 implements TextWatcher {
+    public final /* synthetic */ z60 a;
 
-    public /* synthetic */ y60(j70 j70Var, int i10) {
-        this.a = i10;
-        this.b = j70Var;
+    public y60(z60 z60Var) {
+        this.a = z60Var;
     }
 
-    @Override // r0.n
-    public r0.l1 Q0(View view, r0.l1 l1Var) {
-        int i10 = AndroidUtilities.getDefaultWindowInsets(l1Var, false).d;
-        j70 j70Var = this.b;
-        j70Var.m0 = i10;
-        bi.i7 i7Var = j70Var.F;
-        if (i7Var != null) {
-            i7Var.setPadding(0, 0, 0, i10);
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        String trim = editable.toString().trim();
+        z60 z60Var = this.a;
+        c70 c70Var = z60Var.h;
+        if (z60Var.c != 0) {
+            c70Var.getConnectionsManager().cancelRequest(z60Var.c, true);
+            z60Var.c = 0;
         }
-        j70Var.j0();
-        j70Var.h0();
-        return r0.l1.b;
-    }
-
-    @Override // org.telegram.ui.Components.p20
-    public void a(int i10) {
-        this.b.b.a(Math.min(i10, r0.c0));
-    }
-
-    @Override // org.telegram.ui.ActionBar.z1
-    public void g(org.telegram.ui.ActionBar.a2 a2Var, int i10) {
-        switch (this.a) {
-            case 1:
-                this.b.o0();
-                break;
-            default:
-                this.b.finishFragment();
-                break;
+        nt ntVar = z60Var.d;
+        if (ntVar != null) {
+            AndroidUtilities.cancelRunOnUIThread(ntVar);
         }
+        z60Var.e = null;
+        if (trim.isEmpty()) {
+            c70.a0(c70Var, null);
+            return;
+        }
+        nt ntVar2 = new nt(25, this, trim);
+        z60Var.d = ntVar2;
+        AndroidUtilities.runOnUIThread(ntVar2, 300L);
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

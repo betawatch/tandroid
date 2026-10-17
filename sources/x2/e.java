@@ -1,17 +1,18 @@
 package x2;
 
 import android.text.TextUtils;
-import b2.q1;
-import b2.s1;
-import b2.x;
+import b2.p1;
+import b2.r1;
+import b2.w;
 import e2.m0;
 import e9.b0;
 import e9.n0;
+import e9.s1;
 import e9.v1;
 import j$.util.Objects;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class e extends l implements Comparable {
     public final boolean E;
@@ -48,8 +49,8 @@ public final class e extends l implements Comparable {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public e(int i10, q1 q1Var, int i11, i iVar, int i12, boolean z10, d dVar, int i13) {
-        super(i10, q1Var, i11);
+    public e(int i10, p1 p1Var, int i11, i iVar, int i12, boolean z10, d dVar, int i13) {
+        super(i10, p1Var, i11);
         int i14;
         int i15;
         boolean z11;
@@ -57,11 +58,11 @@ public final class e extends l implements Comparable {
         int i16;
         int i17;
         int i18;
-        x xVar;
+        w wVar;
         boolean z12;
         i iVar2;
         boolean z13;
-        s1 s1Var;
+        r1 r1Var;
         boolean z14;
         this.n = iVar;
         boolean z15 = iVar.z0;
@@ -71,7 +72,7 @@ public final class e extends l implements Comparable {
         int i20 = 0;
         this.y = false;
         this.h = n.l(this.d.d);
-        this.r = i2.d.e(i12, false);
+        this.r = i0.a.e(i12, false);
         int i21 = 0;
         while (true) {
             int size = n0Var2.size();
@@ -95,11 +96,11 @@ public final class e extends l implements Comparable {
         int i23 = iVar.s;
         this.w = (i22 == 0 || i22 != i23) ? Integer.bitCount(i22 & i23) : Integer.MAX_VALUE;
         this.x = n.c(this.d, iVar.r);
-        x xVar2 = this.d;
-        int i24 = xVar2.f;
+        w wVar2 = this.d;
+        int i24 = wVar2.f;
         this.E = i24 == 0 || (i24 & 1) != 0;
-        this.H = (xVar2.e & 1) != 0;
-        String str = xVar2.s;
+        this.H = (wVar2.e & 1) != 0;
+        String str = wVar2.s;
         if (str != null) {
             switch (str.hashCode()) {
                 case -2123537834:
@@ -135,12 +136,12 @@ public final class e extends l implements Comparable {
                     break;
             }
             this.O = z11;
-            int i25 = xVar2.K;
+            int i25 = wVar2.K;
             this.I = i25;
-            this.J = xVar2.L;
-            int i26 = xVar2.j;
+            this.J = wVar2.L;
+            int i26 = wVar2.j;
             this.K = i26;
-            this.f = (i26 != -1 || i26 <= iVar.u) && (i25 == -1 || i25 <= iVar.t) && dVar.apply(xVar2);
+            this.f = (i26 != -1 || i26 <= iVar.u) && (i25 == -1 || i25 <= iVar.t) && dVar.apply(wVar2);
             G = m0.G();
             i16 = 0;
             while (true) {
@@ -170,24 +171,24 @@ public final class e extends l implements Comparable {
             this.L = i14;
             this.M = (i12 & 384) != 128;
             this.N = (i12 & 64) != 64;
-            xVar = this.d;
+            wVar = this.d;
             z12 = this.f;
             iVar2 = this.n;
             z13 = iVar2.B0;
-            s1Var = iVar2.w;
-            if (i2.d.e(i12, z13) && ((z12 || iVar2.y0) && (s1Var.a != 2 || n.n(iVar2, i12, xVar)))) {
-                i20 = (i2.d.e(i12, false) || !z12 || xVar.j == -1 || iVar2.G || iVar2.F || (!iVar2.C0 && z10) || s1Var.a == 2 || (i19 & i12) == 0) ? 1 : 2;
+            r1Var = iVar2.w;
+            if (i0.a.e(i12, z13) && ((z12 || iVar2.y0) && (r1Var.a != 2 || n.n(iVar2, i12, wVar)))) {
+                i20 = (i0.a.e(i12, false) || !z12 || wVar.j == -1 || iVar2.G || iVar2.F || (!iVar2.C0 && z10) || r1Var.a == 2 || (i19 & i12) == 0) ? 1 : 2;
             }
             this.e = i20;
         }
         z11 = false;
         this.O = z11;
-        int i252 = xVar2.K;
+        int i252 = wVar2.K;
         this.I = i252;
-        this.J = xVar2.L;
-        int i262 = xVar2.j;
+        this.J = wVar2.L;
+        int i262 = wVar2.j;
         this.K = i262;
-        this.f = (i262 != -1 || i262 <= iVar.u) && (i252 == -1 || i252 <= iVar.t) && dVar.apply(xVar2);
+        this.f = (i262 != -1 || i262 <= iVar.u) && (i252 == -1 || i252 <= iVar.t) && dVar.apply(wVar2);
         G = m0.G();
         i16 = 0;
         while (true) {
@@ -206,13 +207,13 @@ public final class e extends l implements Comparable {
         this.L = i14;
         this.M = (i12 & 384) != 128;
         this.N = (i12 & 64) != 64;
-        xVar = this.d;
+        wVar = this.d;
         z12 = this.f;
         iVar2 = this.n;
         z13 = iVar2.B0;
-        s1Var = iVar2.w;
-        if (i2.d.e(i12, z13)) {
-            if (i2.d.e(i12, false)) {
+        r1Var = iVar2.w;
+        if (i0.a.e(i12, z13)) {
+            if (i0.a.e(i12, false)) {
             }
         }
         this.e = i20;
@@ -228,14 +229,14 @@ public final class e extends l implements Comparable {
         int i10;
         String str;
         e eVar = (e) lVar;
-        x xVar = eVar.d;
+        w wVar = eVar.d;
         this.n.getClass();
-        x xVar2 = this.d;
-        int i11 = xVar2.K;
-        if (i11 == -1 || i11 != xVar.K) {
+        w wVar2 = this.d;
+        int i11 = wVar2.K;
+        if (i11 == -1 || i11 != wVar.K) {
             return false;
         }
-        return (this.y || ((str = xVar2.s) != null && TextUtils.equals(str, xVar.s))) && (i10 = xVar2.L) != -1 && i10 == xVar.L && this.M == eVar.M && this.N == eVar.N;
+        return (this.y || ((str = wVar2.s) != null && TextUtils.equals(str, wVar.s))) && (i10 = wVar2.L) != -1 && i10 == wVar.L && this.M == eVar.M && this.N == eVar.N;
     }
 
     @Override // java.lang.Comparable
@@ -249,7 +250,7 @@ public final class e extends l implements Comparable {
         b0 c10 = b0.a.c(z10, z12);
         Integer valueOf = Integer.valueOf(this.v);
         Integer valueOf2 = Integer.valueOf(eVar.v);
-        e9.s1 s1Var = e9.s1.c;
+        s1 s1Var = s1.c;
         b0 b10 = c10.b(valueOf, valueOf2, s1Var).a(this.s, eVar.s).a(this.w, eVar.w).b(Integer.valueOf(this.x), Integer.valueOf(eVar.x), s1Var).c(this.H, eVar.H).c(this.E, eVar.E).b(Integer.valueOf(this.F), Integer.valueOf(eVar.F), s1Var).a(this.G, eVar.G).c(z11, eVar.f).b(Integer.valueOf(this.L), Integer.valueOf(eVar.L), s1Var);
         boolean z13 = this.n.F;
         int i11 = this.K;

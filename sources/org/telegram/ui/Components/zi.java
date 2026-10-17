@@ -1,27 +1,56 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.messenger.Utilities;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zi implements Utilities.Callback5, Utilities.Callback5Return {
-    public final /* synthetic */ hj a;
+public final class zi implements TextWatcher {
+    public final /* synthetic */ fj a;
 
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        this.a.P((m61) obj, (View) obj2);
+    public zi(fj fjVar) {
+        this.a = fjVar;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5Return
-    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        this.a.P((m61) obj, (View) obj2);
-        return Boolean.TRUE;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        fj fjVar = this.a;
+        ui uiVar = fjVar.f0;
+        TextUtils.isEmpty(fjVar.y);
+        fjVar.y = editable.toString().trim();
+        ui uiVar2 = fjVar.a0;
+        AndroidUtilities.cancelRunOnUIThread(uiVar2);
+        if (!TextUtils.isEmpty(fjVar.y)) {
+            String str = fjVar.y;
+            fjVar.W = str != null && str.length() >= 0;
+            if (!TextUtils.equals(fjVar.V, fjVar.y)) {
+                fjVar.L.clear();
+                fjVar.b0 = 0;
+                fjVar.c0 = false;
+            }
+            AndroidUtilities.runOnUIThread(uiVar2, 1500L);
+        }
+        AndroidUtilities.cancelRunOnUIThread(uiVar);
+        if (!TextUtils.isEmpty(fjVar.y)) {
+            String str2 = fjVar.y;
+            fjVar.m0 = (str2 == null || str2.length() < 3 || TextUtils.isEmpty(MessagesController.getInstance(fjVar.b.M1).config.musicSearchUsername.get())) ? false : true;
+            if (!TextUtils.equals(fjVar.e0, fjVar.y)) {
+                fjVar.M.clear();
+                fjVar.g0 = false;
+            }
+            AndroidUtilities.runOnUIThread(uiVar, 1500L);
+        }
+        fjVar.S();
+    }
+
+    @Override // android.text.TextWatcher
+    public final /* synthetic */ void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final /* synthetic */ void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

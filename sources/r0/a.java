@@ -15,10 +15,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.WeakHashMap;
-import ji.w4;
+import ki.t1;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class a extends View.AccessibilityDelegate {
     public final b a;
@@ -34,7 +34,7 @@ public final class a extends View.AccessibilityDelegate {
 
     @Override // android.view.View.AccessibilityDelegate
     public final AccessibilityNodeProvider getAccessibilityNodeProvider(View view) {
-        w4 a2 = this.a.a(view);
+        t1 a2 = this.a.a(view);
         if (a2 != null) {
             return (AccessibilityNodeProvider) a2.b;
         }

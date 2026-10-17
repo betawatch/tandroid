@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.WeakHashMap;
 import org.telegram.messenger.BuildVars;
-import org.telegram.ui.Components.lt;
+import org.telegram.ui.Components.gt;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public class k extends e1 {
     public static TimeInterpolator E;
@@ -135,14 +135,14 @@ public class k extends e1 {
         }
         ViewPropertyAnimator animate = view.animate();
         this.z.add(b1Var);
-        animate.setUpdateListener(new ah.l0(29, this, b1Var));
+        animate.setUpdateListener(new sg.h1(1, this, b1Var));
         Interpolator interpolator = this.o;
         if (interpolator != null) {
             animate.setInterpolator(interpolator);
         } else {
             animate.setInterpolator(this.i);
         }
-        animate.setDuration(j()).setStartDelay(0L).setListener(new lt(this, b1Var, i14, view, i15, animate, 1)).start();
+        animate.setDuration(j()).setStartDelay(0L).setListener(new gt(this, b1Var, i14, view, i15, animate, 1)).start();
     }
 
     public void D(b1 b1Var) {
@@ -513,9 +513,9 @@ public class k extends e1 {
     }
 
     @Override // s4.e1
-    public boolean q(b1 b1Var, b1 b1Var2, b2.v0 v0Var, int i10, int i11, int i12, int i13) {
+    public boolean q(b1 b1Var, b1 b1Var2, b2.u0 u0Var, int i10, int i11, int i12, int i13) {
         if (b1Var == b1Var2) {
-            return r(b1Var, v0Var, i10, i11, i12, i13);
+            return r(b1Var, u0Var, i10, i11, i12, i13);
         }
         View view = b1Var.a;
         float translationX = view.getTranslationX();
@@ -540,7 +540,7 @@ public class k extends e1 {
     }
 
     @Override // s4.e1
-    public boolean r(b1 b1Var, b2.v0 v0Var, int i10, int i11, int i12, int i13) {
+    public boolean r(b1 b1Var, b2.u0 u0Var, int i10, int i11, int i12, int i13) {
         View view = b1Var.a;
         int translationX = i10 + ((int) view.getTranslationX());
         int translationY = i11 + ((int) b1Var.a.getTranslationY());
@@ -563,7 +563,7 @@ public class k extends e1 {
     }
 
     @Override // s4.e1
-    public void s(b1 b1Var, b2.v0 v0Var) {
+    public void s(b1 b1Var, b2.u0 u0Var) {
         R(b1Var);
         this.p.add(b1Var);
         F();

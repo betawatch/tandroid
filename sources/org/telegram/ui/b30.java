@@ -1,46 +1,33 @@
 package org.telegram.ui;
 
-import java.util.Calendar;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.app.Activity;
+import android.text.TextUtils;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b30 implements org.telegram.ui.Components.qd0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Calendar c;
-    public final /* synthetic */ int d;
+public final class b30 extends org.telegram.ui.Components.e8 {
+    public final /* synthetic */ s50 E;
+    public final /* synthetic */ Activity y;
 
-    public /* synthetic */ b30(long j10, Calendar calendar, int i10, int i11) {
-        this.a = i11;
-        this.b = j10;
-        this.c = calendar;
-        this.d = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b30(s50 s50Var, LaunchActivity launchActivity, Activity activity) {
+        super(launchActivity);
+        this.E = s50Var;
+        this.y = activity;
     }
 
-    @Override // org.telegram.ui.Components.qd0
-    public final String e(int i10) {
-        switch (this.a) {
-            case 0:
-                if (i10 == 0) {
-                    return LocaleController.getString(R.string.MessageScheduleToday);
-                }
-                long j10 = (i10 * 86400000) + this.b;
-                Calendar calendar = this.c;
-                calendar.setTimeInMillis(j10);
-                if (calendar.get(1) != this.d) {
-                    return LocaleController.getInstance().getFormatterScheduleYear().format(j10);
-                }
-                return LocaleController.getInstance().getFormatterWeek().format(j10) + " " + LocaleController.getInstance().getFormatterScheduleDay().format(j10);
-            default:
-                if (i10 == 0) {
-                    return LocaleController.getString("MessageScheduleToday", R.string.MessageScheduleToday);
-                }
-                long j11 = (i10 * 86400000) + this.b;
-                Calendar calendar2 = this.c;
-                calendar2.setTimeInMillis(j11);
-                return calendar2.get(1) == this.d ? LocaleController.getInstance().getFormatterScheduleDay().format(j11) : LocaleController.getInstance().getFormatterScheduleYear().format(j11);
-        }
+    @Override // org.telegram.ui.Components.e8
+    public final TextView a() {
+        TextView textView = new TextView(this.y);
+        textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.hg, false));
+        textView.setTextSize(1, 20.0f);
+        textView.setTypeface(AndroidUtilities.bold());
+        textView.setGravity(51);
+        textView.setSingleLine(true);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setOnClickListener(new org.telegram.ui.Components.g51(19, this, textView));
+        return textView;
     }
 }

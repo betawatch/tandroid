@@ -1,42 +1,34 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+import java.io.File;
+import org.telegram.messenger.AudioRecorderV2Controller;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ AudioRecorderV2Controller.2 b;
     public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
+    public final /* synthetic */ AudioRecorderV2Controller.Listener d;
+    public final /* synthetic */ File e;
 
-    public /* synthetic */ s(AccountInstance accountInstance, long j10, int i10, int i11, int i12) {
-        this.a = i12;
-        this.b = accountInstance;
+    public /* synthetic */ s(AudioRecorderV2Controller.2 r12, long j10, AudioRecorderV2Controller.Listener listener, File file, int i10) {
+        this.a = i10;
+        this.b = r12;
         this.c = j10;
-        this.d = i10;
-        this.e = i11;
+        this.d = listener;
+        this.e = file;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                AutoMessageHeardReceiver.lambda$onReceive$1((AccountInstance) this.b, this.c, this.d, this.e);
-                break;
-            case 1:
-                AutoMessageHeardReceiver.lambda$onReceive$3((AccountInstance) this.b, this.c, this.d, this.e);
+                this.b.lambda$onOutputInvalidated$1(this.c, this.d, this.e);
                 break;
             default:
-                ((MediaController) this.b).lambda$startRecordingV2$23(this.d, this.c, this.e);
+                this.b.lambda$onOutputStarted$0(this.c, this.d, this.e);
                 break;
         }
-    }
-
-    public /* synthetic */ s(MediaController mediaController, int i10, long j10, int i11) {
-        this.a = 2;
-        this.b = mediaController;
-        this.d = i10;
-        this.c = j10;
-        this.e = i11;
     }
 }

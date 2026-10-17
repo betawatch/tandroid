@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import com.google.android.gms.internal.play_billing.k3;
+import com.google.android.gms.internal.cast.a6;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -19,25 +19,25 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Cells.a7;
-import org.telegram.ui.Cells.d3;
-import org.telegram.ui.Cells.m4;
-import org.telegram.ui.Cells.p4;
-import org.telegram.ui.Cells.r4;
-import org.telegram.ui.Cells.r8;
-import org.telegram.ui.Cells.v3;
-import org.telegram.ui.Cells.xa;
-import org.telegram.ui.Components.fr;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Cells.c3;
+import org.telegram.ui.Cells.l4;
+import org.telegram.ui.Cells.o4;
+import org.telegram.ui.Cells.q4;
+import org.telegram.ui.Cells.q8;
+import org.telegram.ui.Cells.u3;
+import org.telegram.ui.Cells.va;
+import org.telegram.ui.Cells.z6;
+import org.telegram.ui.Components.cr;
+import org.telegram.ui.Components.em0;
 import org.telegram.ui.Components.im0;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.wl0;
-import org.telegram.ui.Components.xn;
+import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.un;
 import w7.z5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public abstract class e extends im0 {
+public abstract class e extends em0 {
     public final boolean E;
     public int F;
     public final boolean G;
@@ -61,37 +61,40 @@ public abstract class e extends im0 {
         this.G = i11 == 2;
     }
 
-    @Override // org.telegram.ui.Components.ul0
+    @Override // org.telegram.ui.Components.ql0
     public final String F(int i10) {
-        if (this.F != 2 && !this.I) {
-            int i11 = this.r;
-            int i12 = this.v;
-            ContactsController contactsController = ContactsController.getInstance(i11);
-            ArrayList<String> arrayList = i12 == 2 ? contactsController.sortedUsersMutualSectionsArray : contactsController.sortedUsersSectionsArray;
-            int S = S(i10);
-            if (S == -1) {
-                S = arrayList.size() - 1;
-            }
-            if (i12 == 0 || this.E) {
-                if (S > 0 && S <= arrayList.size()) {
-                    return arrayList.get(S - 1);
-                }
-            } else if (S >= 0 && S < arrayList.size()) {
-                return arrayList.get(S);
-            }
+        if (this.F == 2 || this.I) {
+            return null;
         }
-        return null;
+        int i11 = this.r;
+        int i12 = this.v;
+        ContactsController contactsController = ContactsController.getInstance(i11);
+        ArrayList<String> arrayList = i12 == 2 ? contactsController.sortedUsersMutualSectionsArray : contactsController.sortedUsersSectionsArray;
+        int S = S(i10);
+        if (S == -1) {
+            S = arrayList.size() - 1;
+        }
+        if (i12 == 0 || this.E) {
+            if (S <= 0 || S > arrayList.size()) {
+                return null;
+            }
+            return arrayList.get(S - 1);
+        }
+        if (S < 0 || S >= arrayList.size()) {
+            return null;
+        }
+        return arrayList.get(S);
     }
 
-    @Override // org.telegram.ui.Components.ul0
-    public final void G(mm0 mm0Var, float f7, int[] iArr) {
+    @Override // org.telegram.ui.Components.ql0
+    public final void G(im0 im0Var, float f7, int[] iArr) {
         iArr[0] = (int) (h() * f7);
         iArr[1] = 0;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:30:0x00a2  */
     /* JADX WARN: Removed duplicated region for block: B:32:? A[RETURN, SYNTHETIC] */
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.em0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -153,12 +156,12 @@ public abstract class e extends im0 {
         return 1;
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.em0
     public final int N(int i10, int i11) {
         return Objects.hash(Integer.valueOf(i10 * (-49612)), O(i10, i11));
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.em0
     public final Object O(int i10, int i11) {
         int i12;
         boolean z10 = this.K;
@@ -208,7 +211,7 @@ public abstract class e extends im0 {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:36:0x0089 A[RETURN] */
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.em0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -299,7 +302,7 @@ public abstract class e extends im0 {
         return 3;
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.em0
     public final View T(int i10, View view) {
         View view2;
         int i11 = this.r;
@@ -313,44 +316,44 @@ public abstract class e extends im0 {
         ContactsController contactsController2 = ContactsController.getInstance(i11);
         ArrayList<String> arrayList = i12 == 2 ? contactsController2.sortedUsersMutualSectionsArray : contactsController2.sortedUsersSectionsArray;
         if (view == null) {
-            r4 r4Var = new r4(this.s);
-            r4Var.setLayoutParams(new ViewGroup.LayoutParams(AndroidUtilities.dp(76.0f), AndroidUtilities.dp(64.0f)));
-            TextView textView = new TextView(r4Var.getContext());
-            r4Var.a = textView;
-            k3.m(22.0f, 1, textView);
-            k3.o(g6.B6, null, false, textView, 17);
-            r4Var.addView(textView, z5.a(-1.0f, 12.0f, 0.0f, 0.0f, 0.0f, -1, 119));
-            view2 = r4Var;
+            q4 q4Var = new q4(this.s);
+            q4Var.setLayoutParams(new ViewGroup.LayoutParams(AndroidUtilities.dp(76.0f), AndroidUtilities.dp(64.0f)));
+            TextView textView = new TextView(q4Var.getContext());
+            q4Var.a = textView;
+            a6.m(22.0f, 1, textView);
+            a6.o(h6.B6, null, false, textView, 17);
+            q4Var.addView(textView, z5.a(-1.0f, 12.0f, 0.0f, 0.0f, 0.0f, -1, 119));
+            view2 = q4Var;
         } else {
             view2 = view;
         }
-        r4 r4Var2 = (r4) view2;
+        q4 q4Var2 = (q4) view2;
         if (this.F == 2 || this.H || this.I) {
-            r4Var2.setLetter("");
+            q4Var2.setLetter("");
             return view2;
         }
         if (i12 != 0 && !this.E) {
             if (i10 < arrayList.size()) {
-                r4Var2.setLetter(arrayList.get(i10));
+                q4Var2.setLetter(arrayList.get(i10));
                 return view2;
             }
-            r4Var2.setLetter("");
+            q4Var2.setLetter("");
             return view2;
         }
         if (i10 == 0) {
-            r4Var2.setLetter("");
+            q4Var2.setLetter("");
             return view2;
         }
         int i13 = i10 - 1;
         if (i13 < arrayList.size()) {
-            r4Var2.setLetter(arrayList.get(i13));
+            q4Var2.setLetter(arrayList.get(i13));
             return view2;
         }
-        r4Var2.setLetter("");
+        q4Var2.setLetter("");
         return view2;
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.em0
     public final boolean V(int i10, int i11, s4.b1 b1Var) {
         if (!this.K) {
             int i12 = this.v;
@@ -395,7 +398,7 @@ public abstract class e extends im0 {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.im0
+    @Override // org.telegram.ui.Components.em0
     public final void W(int i10, int i11, s4.b1 b1Var) {
         ArrayList<TLRPC.TL_contact> arrayList;
         int i12 = b1Var.f;
@@ -404,12 +407,12 @@ public abstract class e extends im0 {
         boolean z10 = this.E;
         int i14 = this.r;
         if (i12 == 0) {
-            xa xaVar = (xa) view;
-            xaVar.T.a = false;
+            va vaVar = (va) view;
+            vaVar.T.a = false;
             if (this.F != 2 && !this.H) {
                 i13 = 58;
             }
-            xaVar.b(i13, 1);
+            vaVar.b(i13, 1);
             if (this.F == 2) {
                 arrayList = this.y;
             } else {
@@ -418,22 +421,22 @@ public abstract class e extends im0 {
                 arrayList = (i15 == 2 ? contactsController.usersMutualSectionsDict : contactsController.usersSectionsDict).get((i15 == 2 ? ContactsController.getInstance(i14).sortedUsersMutualSectionsArray : ContactsController.getInstance(i14).sortedUsersSectionsArray).get(i10 - ((i15 == 0 || z10) ? 1 : 0)));
             }
             TLRPC.User user = MessagesController.getInstance(i14).getUser(Long.valueOf(arrayList.get(i11).user_id));
-            xaVar.e(user, null, null, false);
-            xaVar.c(this.x.h(user.id) >= 0, false);
+            vaVar.e(user, null, null, false);
+            vaVar.c(this.x.h(user.id) >= 0, false);
             return;
         }
         if (i12 != 1) {
             if (i12 == 2) {
-                v3 v3Var = (v3) view;
+                u3 u3Var = (u3) view;
                 int i16 = this.F;
                 if (i16 == 0) {
-                    v3Var.setText(LocaleController.getString(R.string.Contacts));
+                    u3Var.setText(LocaleController.getString(R.string.Contacts));
                     return;
                 } else if (i16 == 1) {
-                    v3Var.setText(LocaleController.getString(R.string.SortedByName));
+                    u3Var.setText(LocaleController.getString(R.string.SortedByName));
                     return;
                 } else {
-                    v3Var.setText(LocaleController.getString(R.string.SortedByLastSeen));
+                    u3Var.setText(LocaleController.getString(R.string.SortedByLastSeen));
                     return;
                 }
             }
@@ -445,59 +448,59 @@ public abstract class e extends im0 {
                 if (i12 != 8) {
                     return;
                 }
-                p4 p4Var = (p4) view;
+                o4 o4Var = (o4) view;
                 int i17 = i11 - 2;
                 if (i17 < 0 || i17 >= ContactsController.getInstance(i14).phoneBookContacts.size()) {
                     return;
                 }
-                p4Var.f = ContactsController.getInstance(i14).phoneBookContacts.get(i17);
-                p4Var.h = null;
-                p4Var.a();
+                o4Var.f = ContactsController.getInstance(i14).phoneBookContacts.get(i17);
+                o4Var.h = null;
+                o4Var.a();
                 return;
             }
-            m4 m4Var = (m4) view;
+            l4 l4Var = (l4) view;
             if (this.K && i11 == 1 && i10 == 1) {
-                m4Var.setText(LocaleController.getString(R.string.InviteFriends));
+                l4Var.setText(LocaleController.getString(R.string.InviteFriends));
                 return;
             } else if (this.F == 1) {
-                m4Var.setText(LocaleController.getString(R.string.SortedByName));
+                l4Var.setText(LocaleController.getString(R.string.SortedByName));
                 return;
             } else {
-                m4Var.setText(LocaleController.getString(R.string.SortedByLastSeen));
+                l4Var.setText(LocaleController.getString(R.string.SortedByLastSeen));
                 return;
             }
         }
-        r8 r8Var = (r8) view;
+        q8 q8Var = (q8) view;
         boolean z11 = this.w;
         if (z11 || !z10) {
-            int i18 = g6.G6;
-            r8Var.e(i18, i18);
+            int i18 = h6.G6;
+            q8Var.e(i18, i18);
         } else {
-            int i19 = g6.il;
-            r8Var.e(i19, i19);
+            int i19 = h6.il;
+            q8Var.e(i19, i19);
         }
         if (i10 != 0) {
             ContactsController.Contact contact = ContactsController.getInstance(i14).phoneBookContacts.get(i11);
             String str = contact.first_name;
             if (str == null || contact.last_name == null) {
                 if (str == null || contact.last_name != null) {
-                    r8Var.i(contact.last_name, false);
+                    q8Var.i(contact.last_name, false);
                     return;
                 } else {
-                    r8Var.i(str, false);
+                    q8Var.i(str, false);
                     return;
                 }
             }
-            r8Var.i(contact.first_name + " " + contact.last_name, false);
+            q8Var.i(contact.first_name + " " + contact.last_name, false);
             return;
         }
         if (z11) {
             if (i11 == 0) {
-                r8Var.p(LocaleController.getString(R.string.InviteFriends), "", false, R.drawable.settings_invite, -14899731, -15431455, false);
+                q8Var.p(LocaleController.getString(R.string.InviteFriends), "", false, R.drawable.settings_invite, -14899731, -15431455, false);
                 return;
             } else {
                 if (i11 == 1) {
-                    r8Var.p(LocaleController.getString(R.string.RecentCalls), "", false, R.drawable.settings_calls, -11154873, -14175180, false);
+                    q8Var.p(LocaleController.getString(R.string.RecentCalls), "", false, R.drawable.settings_calls, -11154873, -14175180, false);
                     return;
                 }
                 return;
@@ -505,17 +508,17 @@ public abstract class e extends im0 {
         }
         if (z10) {
             if (this.G) {
-                r8Var.m(R.drawable.msg_link2, LocaleController.getString(R.string.ChannelInviteViaLink), false);
+                q8Var.m(R.drawable.msg_link2, LocaleController.getString(R.string.ChannelInviteViaLink), false);
                 return;
             } else {
-                r8Var.m(R.drawable.msg_link2, LocaleController.getString(R.string.InviteToGroupByLink), false);
+                q8Var.m(R.drawable.msg_link2, LocaleController.getString(R.string.InviteToGroupByLink), false);
                 return;
             }
         }
         if (i11 == 0) {
-            r8Var.p(LocaleController.getString(R.string.NewGroup), "", false, R.drawable.settings_group, -14899731, -15431455, false);
+            q8Var.p(LocaleController.getString(R.string.NewGroup), "", false, R.drawable.settings_group, -14899731, -15431455, false);
         } else if (i11 == 1) {
-            r8Var.p(LocaleController.getString(R.string.NewChannel), "", false, R.drawable.settings_channel, -11154873, -14175180, false);
+            q8Var.p(LocaleController.getString(R.string.NewChannel), "", false, R.drawable.settings_channel, -11154873, -14175180, false);
         }
     }
 
@@ -565,38 +568,38 @@ public abstract class e extends im0 {
         View view2;
         Context context = this.s;
         if (i10 == 0) {
-            xa xaVar = new xa(58, 1, context, false);
-            xaVar.setCallCellStyle(58);
-            view = xaVar;
+            va vaVar = new va(58, 1, context, false);
+            vaVar.setCallCellStyle(58);
+            view = vaVar;
         } else if (i10 == 1) {
-            view = new r8(context);
+            view = new q8(context);
         } else if (i10 == 2) {
-            view = new v3(context, null);
+            view = new u3(context, null);
         } else if (i10 != 3) {
             if (i10 == 4) {
-                FrameLayout vVar = new ah.v(this, context, viewGroup, 3);
-                vVar.addView(new fr(context), z5.e(-1, -2, 17));
+                FrameLayout vVar = new ah.v(this, context, viewGroup, 4);
+                vVar.addView(new cr(context), z5.e(-1, -2, 17));
                 vVar.setLayoutParams(new s4.o0(-1, -2));
                 vVar.setTag(-33024);
                 view2 = vVar;
             } else if (i10 == 7) {
-                view = new m4(this.s, g6.L6, 21, 14, 5, false, false, null);
+                view = new l4(this.s, h6.L6, 21, 14, 5, false, false, null);
             } else if (i10 == 8) {
-                view = new p4(context, false);
+                view = new o4(context, false);
             } else if (i10 != 9) {
-                view = new a7(context, (org.telegram.ui.Cells.c1) null);
+                view = new z6(context, (org.telegram.ui.Cells.t0) null);
             } else {
-                View xnVar = new xn(context, 4);
-                xnVar.setId(9);
-                xnVar.setTag(-33024);
-                view2 = xnVar;
+                View unVar = new un(context, 4);
+                unVar.setId(9);
+                unVar.setTag(-33024);
+                view2 = unVar;
             }
             view = view2;
         } else {
-            View d3Var = new d3(context, null);
-            d3Var.setPadding(AndroidUtilities.dp(LocaleController.isRTL ? 28.0f : 72.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(LocaleController.isRTL ? 72.0f : 28.0f), AndroidUtilities.dp(8.0f));
-            view = d3Var;
+            View c3Var = new c3(context, null);
+            c3Var.setPadding(AndroidUtilities.dp(LocaleController.isRTL ? 28.0f : 72.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(LocaleController.isRTL ? 72.0f : 28.0f), AndroidUtilities.dp(8.0f));
+            view = c3Var;
         }
-        return new wl0(view);
+        return new sl0(view);
     }
 }

@@ -1,14 +1,50 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
-import android.text.style.ForegroundColorSpan;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class ar extends ForegroundColorSpan {
-    @Override // android.text.style.ForegroundColorSpan, android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        super.updateDrawState(textPaint);
-        textPaint.setUnderlineText(true);
+public final class ar extends Drawable {
+    public final Drawable a;
+    public final Paint b;
+    public final float c;
+
+    public ar(Context context, float f7) {
+        Paint paint = new Paint(1);
+        this.b = paint;
+        this.a = context.getResources().getDrawable(R.drawable.msg_filled_menu_groups);
+        paint.setColor(org.telegram.ui.ActionBar.h6.m1(0.1552f, -16777216));
+        this.c = f7;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        float f7 = getBounds().left;
+        float f10 = getBounds().top;
+        float f11 = getBounds().right;
+        float f12 = getBounds().bottom;
+        float f13 = this.c;
+        canvas.drawRoundRect(f7, f10, f11, f12, f13, f13, this.b);
+        zf.p.e(this.a, getBounds().exactCenterX(), getBounds().exactCenterY(), AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), 17);
+        this.a.draw(canvas);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -3;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

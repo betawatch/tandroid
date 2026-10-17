@@ -1,40 +1,34 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class kb implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ boolean e;
-    public final /* synthetic */ int f;
-    public final /* synthetic */ int h;
+    public final /* synthetic */ a0.h c;
+    public final /* synthetic */ a0.h d;
 
-    public /* synthetic */ kb(MessagesController messagesController, long j10, int i10, boolean z10, int i11, int i12, int i13) {
-        this.a = i13;
+    public /* synthetic */ kb(MessagesController messagesController, a0.h hVar, a0.h hVar2, int i10) {
+        this.a = i10;
         this.b = messagesController;
-        this.c = j10;
-        this.d = i10;
-        this.e = z10;
-        this.f = i11;
-        this.h = i12;
+        this.c = hVar;
+        this.d = hVar2;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                int i10 = this.f;
-                int i11 = this.h;
-                int i12 = this.d;
-                this.b.lambda$markDialogAsRead$242(this.c, i12, this.e, i10, i11);
+                this.b.lambda$checkDeletingTask$85(this.c, this.d);
+                break;
+            case 1:
+                this.b.lambda$updatePrintingStrings$169(this.c, this.d);
+                break;
+            case 2:
+                this.b.lambda$getNewDeleteTask$82(this.c, this.d);
                 break;
             default:
-                int i13 = this.f;
-                int i14 = this.h;
-                int i15 = this.d;
-                this.b.lambda$markDialogAsRead$243(this.c, i15, this.e, i13, i14);
+                this.b.lambda$checkDeletingTask$84(this.c, this.d);
                 break;
         }
     }

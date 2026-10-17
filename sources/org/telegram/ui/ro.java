@@ -1,55 +1,38 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import org.telegram.messenger.ChatObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ro implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ zo b;
+public final class ro implements org.telegram.ui.Components.p90 {
+    public final /* synthetic */ Context a;
+    public final /* synthetic */ yo b;
 
-    public /* synthetic */ ro(zo zoVar, int i10) {
-        this.a = i10;
-        this.b = zoVar;
+    public ro(yo yoVar, Context context) {
+        this.b = yoVar;
+        this.a = context;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                zo.V(this.b);
-                break;
-            case 1:
-                zo.a0(this.b);
-                break;
-            case 2:
-                zo zoVar = this.b;
-                zoVar.b.dismiss();
-                zoVar.finishFragment();
-                break;
-            case 3:
-                zo zoVar2 = this.b;
-                zoVar2.M.setChecked(zoVar2.x0.autotranslation);
-                break;
-            default:
-                zo zoVar3 = this.b;
-                zoVar3.e.setImageDrawable(zoVar3.r);
-                zoVar3.b0.m(R.drawable.msg_addphoto, LocaleController.getString("ChatSetPhotoOrVideo", R.string.ChatSetPhotoOrVideo), true);
-                TLRPC.User user = zoVar3.D0;
-                if (user != null) {
-                    user.photo = null;
-                    zoVar3.getMessagesController().putUser(zoVar3.D0, true);
-                }
-                zoVar3.O0 = true;
-                if (zoVar3.R0 == null) {
-                    zoVar3.R0 = new org.telegram.ui.Components.yj0(R.raw.camera_outline, AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f), false, null);
-                }
-                zoVar3.b0.e.setTranslationX(-AndroidUtilities.dp(8.0f));
-                zoVar3.b0.e.setAnimation(zoVar3.R0);
-                break;
-        }
+    @Override // org.telegram.ui.Components.p90
+    public final void d() {
+        this.b.X(true);
+    }
+
+    @Override // org.telegram.ui.Components.p90
+    public final void i() {
+        yo yoVar = this.b;
+        org.telegram.ui.Components.l70 l70Var = new org.telegram.ui.Components.l70(this.a, yoVar.l0, yoVar.Y, yoVar.o0, yoVar, yoVar.Z, true, ChatObject.isChannel(yoVar.X));
+        yo yoVar2 = this.b;
+        yoVar2.p0 = l70Var;
+        yoVar2.p0.show();
+    }
+
+    @Override // org.telegram.ui.Components.p90
+    public final /* synthetic */ void c() {
+    }
+
+    @Override // org.telegram.ui.Components.p90
+    public final /* synthetic */ void k() {
     }
 }

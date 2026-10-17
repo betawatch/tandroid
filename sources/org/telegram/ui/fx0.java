@@ -1,37 +1,111 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.graphics.Canvas;
+import android.graphics.Shader;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
+import android.view.MotionEvent;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class fx0 extends r71 {
-    public final /* synthetic */ bi.f0 d2;
-    public final /* synthetic */ i71[] e2;
-    public final /* synthetic */ PremiumPreviewFragment f2;
+public final class fx0 extends FrameLayout {
+    public org.telegram.ui.Components.u9 a;
+    public org.telegram.ui.Cells.u1 b;
+    public Drawable c;
+    public Drawable d;
+    public org.telegram.ui.Components.r40 e;
+    public MessageObject f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fx0(PremiumPreviewFragment premiumPreviewFragment, PremiumPreviewFragment premiumPreviewFragment2, Activity activity, Integer num, int i10, org.telegram.ui.ActionBar.c6 c6Var, int i11, bi.f0 f0Var, i71[] i71VarArr) {
-        super(premiumPreviewFragment2, activity, true, num, i10, true, c6Var, i11);
-        this.f2 = premiumPreviewFragment;
-        this.d2 = f0Var;
-        this.e2 = i71VarArr;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        this.e.e(this.b, null, 0, 0, false);
     }
 
-    @Override // org.telegram.ui.r71
-    public final float getScrimDrawableTranslationY() {
-        return 0.0f;
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        return false;
     }
 
-    @Override // org.telegram.ui.r71
-    public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        this.d2.run(l4, num);
-        i71 i71Var = this.e2[0];
-        if (i71Var != null) {
-            this.f2.s0 = null;
-            i71Var.dismiss();
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        this.b.invalidate();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        org.telegram.ui.Components.u9 u9Var = this.a;
+        if (u9Var != null) {
+            u9Var.dispose();
+            this.a = null;
         }
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Drawable drawable = this.d;
+        Drawable t02 = org.telegram.ui.ActionBar.h6.t0();
+        if (t02 != null && this.c != t02) {
+            org.telegram.ui.Components.u9 u9Var = this.a;
+            if (u9Var != null) {
+                u9Var.dispose();
+                this.a = null;
+            }
+            this.c = t02;
+        }
+        Drawable drawable2 = this.c;
+        if ((drawable2 instanceof ColorDrawable) || (drawable2 instanceof GradientDrawable) || (drawable2 instanceof org.telegram.ui.Components.wc0)) {
+            drawable2.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
+            Drawable drawable3 = this.c;
+            if (drawable3 instanceof org.telegram.ui.Components.v9) {
+                this.a = ((org.telegram.ui.Components.v9) drawable3).c(canvas, this);
+            } else {
+                drawable3.draw(canvas);
+            }
+        } else if (drawable2 instanceof BitmapDrawable) {
+            if (((BitmapDrawable) drawable2).getTileModeX() == Shader.TileMode.REPEAT) {
+                canvas.save();
+                float f7 = 2.0f / AndroidUtilities.density;
+                canvas.scale(f7, f7);
+                this.c.setBounds(0, 0, (int) Math.ceil(getMeasuredWidth() / f7), (int) Math.ceil(getMeasuredHeight() / f7));
+            } else {
+                int measuredHeight = getMeasuredHeight();
+                float max = Math.max(getMeasuredWidth() / this.c.getIntrinsicWidth(), measuredHeight / this.c.getIntrinsicHeight());
+                int ceil = (int) Math.ceil(this.c.getIntrinsicWidth() * max);
+                int ceil2 = (int) Math.ceil(this.c.getIntrinsicHeight() * max);
+                int measuredWidth = (getMeasuredWidth() - ceil) / 2;
+                int i10 = (measuredHeight - ceil2) / 2;
+                canvas.save();
+                canvas.clipRect(0, 0, ceil, getMeasuredHeight());
+                this.c.setBounds(measuredWidth, i10, ceil + measuredWidth, ceil2 + i10);
+            }
+            this.c.draw(canvas);
+            canvas.restore();
+        } else {
+            super.onDraw(canvas);
+        }
+        drawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
+        drawable.draw(canvas);
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchSetPressed(boolean z10) {
     }
 }

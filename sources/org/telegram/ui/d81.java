@@ -1,18 +1,22 @@
 package org.telegram.ui;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.app.Activity;
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class d81 extends s4.r0 {
-    public final /* synthetic */ e81 a;
+public final class d81 implements View.OnClickListener {
+    public final /* synthetic */ Context a;
 
-    public d81(e81 e81Var) {
-        this.a = e81Var;
+    public d81(Activity activity) {
+        this.a = activity;
     }
 
-    @Override // s4.r0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        this.a.Q();
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        pf.d.r(this.a, LocaleController.getString(R.string.SponsoredMessageAlertLearnMoreUrl));
     }
 }

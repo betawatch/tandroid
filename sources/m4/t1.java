@@ -3,7 +3,7 @@ package m4;
 import android.media.session.MediaSession;
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class t1 {
     public static final String b;
@@ -11,7 +11,7 @@ public final class t1 {
     public final u1 a;
 
     static {
-        b2.q0.a("media3.session");
+        b2.p0.a("media3.session");
         String str = e2.m0.a;
         b = Integer.toString(0, 36);
         c = Integer.toString(1, 36);

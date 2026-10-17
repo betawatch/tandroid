@@ -1,1058 +1,189 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
-import android.graphics.Canvas;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.graphics.drawable.Animatable;
-import android.graphics.drawable.BitmapDrawable;
+import android.animation.TimeInterpolator;
+import android.os.SystemClock;
 import android.view.View;
-import java.io.File;
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.concurrent.ScheduledThreadPoolExecutor;
-import java.util.concurrent.ThreadPoolExecutor;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.AnimatedFileDrawableStream;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.DispatchQueuePoolBackground;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class f6 extends BitmapDrawable implements Animatable, zf.d {
-    public static final float[] V0 = new float[8];
-    public static final ScheduledThreadPoolExecutor W0 = new ScheduledThreadPoolExecutor(8, new ThreadPoolExecutor.DiscardPolicy());
-    public static final PorterDuffXfermode X0 = new PorterDuffXfermode(PorterDuff.Mode.SRC);
-    public com.google.android.gms.internal.cast.a A0;
-    public final d6 B0;
-    public boolean C0;
-    public d6 D0;
-    public boolean E;
-    public final d6 E0;
-    public boolean F;
-    public final d6 F0;
-    public final File G;
-    public int G0;
-    public final long H;
-    public final d6 H0;
-    public final int I;
-    public final d6 I0;
-    public final int J;
-    public d6 J0;
-    public boolean K;
-    public boolean K0;
-    public volatile long L;
-    public long L0;
-    public volatile long M;
-    public Bitmap M0;
-    public boolean N;
-    public AnimatedFileNative N0;
-    public int O;
-    public int O0;
-    public boolean P;
-    public int P0;
-    public final Object Q;
-    public int Q0;
-    public boolean R;
-    public volatile boolean R0;
-    public final RectF S;
-    public final e6 S0;
-    public final int[] T;
-    public boolean T0;
-    public int[] U;
-    public boolean U0;
-    public final Matrix[] V;
-    public final Path[] W;
-    public float X;
-    public float Y;
-    public boolean Z;
-    public boolean a;
-    public final RectF a0;
-    public boolean b;
-    public volatile boolean b0;
-    public int c;
-    public volatile boolean c0;
-    public final int[] d;
-    public volatile AnimatedFileNative d0;
-    public d6 e;
-    public boolean e0;
-    public boolean f;
-    public DispatchQueue f0;
-    public float g0;
-    public final ArrayList h;
-    public float h0;
-    public int i0;
-    public int j0;
-    public final boolean k0;
-    public final boolean l0;
-    public float m0;
-    public c6 n;
-    public boolean n0;
-    public final TLRPC.Document o0;
-    public final RectF[] p0;
-    public final Paint[] q0;
-    public c6 r;
-    public WeakReference r0;
-    public c6 s;
-    public final re.b s0;
-    public final re.b t0;
-    public AnimatedFileDrawableStream u0;
-    public c6 v;
-    public boolean v0;
-    public boolean w;
-    public boolean w0;
-    public boolean x;
-    public boolean x0;
-    public boolean y;
-    public int y0;
-    public final zf.f z0;
+public final class f6 {
+    public View a;
+    public final Runnable b;
+    public float c;
+    public float d;
+    public boolean e;
+    public long f;
+    public long g;
+    public TimeInterpolator h;
+    public boolean i;
+    public long j;
+    public float k;
 
-    public f6(File file, boolean z10, long j10, int i10, TLRPC.Document document, ImageLocation imageLocation, Object obj, long j11, int i11, boolean z11) {
-        this(file, z10, j10, i10, document, imageLocation, obj, j11, i11, z11, 0, 0, null, document != null ? 1 : 0, true);
+    public f6(long j10, TimeInterpolator timeInterpolator) {
+        this.f = 0L;
+        this.g = 200L;
+        bs bsVar = bs.f;
+        this.a = null;
+        this.g = j10;
+        this.h = timeInterpolator;
+        this.e = true;
     }
 
-    public final void A(boolean z10) {
-        this.x0 = z10;
-        if (z10) {
-            this.b = false;
-        }
+    public final void a(boolean z10) {
+        d(z10 ? 1.0f : 0.0f, true);
     }
 
-    public final void B(int[] iArr) {
-        boolean isEmpty = this.s0.isEmpty();
-        int[] iArr2 = this.T;
-        if (!isEmpty) {
-            if (this.U == null) {
-                this.U = new int[4];
-            }
-            int[] iArr3 = this.U;
-            System.arraycopy(iArr2, 0, iArr3, 0, iArr3.length);
+    public final float b() {
+        if (this.i) {
+            return w7.r.a(((SystemClock.elapsedRealtime() - this.j) - this.f) / this.g, 0.0f, 1.0f);
         }
-        for (int i10 = 0; i10 < 4; i10++) {
-            if (!this.w0 && iArr[i10] != iArr2[i10]) {
-                this.w0 = true;
-            }
-            iArr2[i10] = iArr[i10];
-        }
+        return 0.0f;
     }
 
-    public final void C(long j10, long j11) {
-        this.g0 = j10 / 1000.0f;
-        this.h0 = j11 / 1000.0f;
-        if (j10 < 0 || o() >= j10) {
-            return;
-        }
-        y(j10, true, false);
-    }
-
-    public final void D(long j10) {
-        this.Q0 = 0;
-        if (this.R0) {
-            this.R0 = false;
-            AndroidUtilities.executeOnUIThread(new d6(this, 0));
-        }
-        boolean z10 = this.T0 || (!this.b0 && this.y);
-        if (!this.b0) {
-            if (this.b0 || !this.y || !z10 || this.r == null) {
-                return;
-            }
-            c6 c6Var = this.n;
-            if (c6Var != null) {
-                this.h.add(c6Var);
-            }
-            this.n = this.r;
-            this.r = this.s;
-            this.s = null;
-            this.T0 = false;
-            x(false);
-            return;
-        }
-        c6 c6Var2 = this.n;
-        if (c6Var2 == null && this.r == null) {
-            x(false);
-            return;
-        }
-        if (this.r != null) {
-            if (c6Var2 == null || (z10 && !this.a && this.M < 0)) {
-                c6 c6Var3 = this.n;
-                if (c6Var3 != null) {
-                    this.h.add(c6Var3);
-                }
-                this.n = this.r;
-                this.r = this.s;
-                this.s = null;
-                this.T0 = false;
-                x(false);
-            }
-        }
-    }
-
-    public final void E() {
-        int i10;
-        int i11;
-        int[] iArr;
-        int i12;
-        int i13;
-        if (this.n0 || (i10 = this.i0) <= 0 || (i11 = this.j0) <= 0 || (i12 = (iArr = this.d)[0]) <= 0 || (i13 = iArr[1]) <= 0) {
-            this.m0 = 1.0f;
-            return;
-        }
-        float max = Math.max(i11 / i12, i10 / i13);
-        this.m0 = max;
-        if (max <= 0.0f || max > 0.7d) {
-            this.m0 = 1.0f;
-        }
-    }
-
-    @Override // zf.d
-    public final int a(Bitmap bitmap) {
-        int i10;
-        if (this.N0 == null) {
-            return -1;
-        }
-        Canvas canvas = new Canvas(bitmap);
-        Bitmap bitmap2 = this.M0;
-        int[] iArr = this.d;
-        if (bitmap2 == null) {
-            this.M0 = Bitmap.createBitmap(iArr[0], iArr[1], Bitmap.Config.ARGB_8888);
-        }
-        this.N0.c(this.M0, false, this.g0, this.h0, this.k0);
-        long j10 = this.L0;
-        if (j10 != 0 && ((i10 = iArr[3]) == 0 || j10 > i10)) {
-            return 0;
-        }
-        int i11 = this.P0;
-        int i12 = iArr[3];
-        if (i11 == i12) {
-            int i13 = this.O0 + 1;
-            this.O0 = i13;
-            if (i13 > 5) {
-                return 0;
-            }
-        }
-        this.P0 = i12;
-        bitmap.eraseColor(0);
-        canvas.save();
-        float width = this.j0 / this.M0.getWidth();
-        canvas.scale(width, width);
-        canvas.drawBitmap(this.M0, 0.0f, 0.0f, (Paint) null);
-        canvas.restore();
-        this.L0 = iArr[3];
-        return 1;
-    }
-
-    @Override // zf.d
-    public final void b() {
-        this.N0 = AnimatedFileNative.a(this.G.getAbsolutePath(), this.d, this.J, this.H, this.u0, false);
-    }
-
-    @Override // zf.d
-    public final void c() {
-        AnimatedFileNative animatedFileNative = this.N0;
-        if (animatedFileNative != null) {
-            animatedFileNative.f();
-            this.N0 = null;
-        }
-    }
-
-    public final void d() {
-        int i10;
-        if (this.j0 == 0 && this.i0 == 0) {
-            int[] iArr = this.d;
-            int i11 = iArr[0];
-            if (i11 > 3000 || (i10 = iArr[1]) > 3000) {
-                this.j0 = i11 / 4;
-                this.i0 = iArr[1] / 4;
-            } else if (i11 > 2200 || i10 > 2200) {
-                this.j0 = i11 / 2;
-                this.i0 = i10 / 2;
-            }
-        }
-    }
-
-    @Override // android.graphics.drawable.BitmapDrawable, android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        l(canvas, false, System.currentTimeMillis(), 0);
-    }
-
-    public final void e(ImageReceiver imageReceiver) {
-        if (this.t0.add(imageReceiver) && this.b0) {
-            x(false);
-        }
-        h();
-    }
-
-    public final void f(View view) {
-        if (view != null) {
-            this.s0.add(view);
-        }
-    }
-
-    public final void finalize() {
-        try {
-            this.s0.clear();
-            u();
-        } finally {
-            super.finalize();
-        }
-    }
-
-    public final boolean g() {
-        return this.l0 ? this.z0 != null : (this.d0 == null && this.x) ? false : true;
-    }
-
-    @Override // android.graphics.drawable.BitmapDrawable, android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        int i10 = 0;
-        if (this.x) {
-            int[] iArr = this.d;
-            int i11 = iArr[2];
-            i10 = (i11 == 90 || i11 == 270) ? iArr[0] : iArr[1];
-        }
-        return i10 == 0 ? AndroidUtilities.dp(100.0f) : (int) (i10 * this.m0);
-    }
-
-    @Override // android.graphics.drawable.BitmapDrawable, android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        int i10 = 0;
-        if (this.x) {
-            int[] iArr = this.d;
-            int i11 = iArr[2];
-            i10 = (i11 == 90 || i11 == 270) ? iArr[1] : iArr[0];
-        }
-        return i10 == 0 ? AndroidUtilities.dp(100.0f) : (int) (i10 * this.m0);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getMinimumHeight() {
-        int i10 = 0;
-        if (this.x) {
-            int[] iArr = this.d;
-            int i11 = iArr[2];
-            i10 = (i11 == 90 || i11 == 270) ? iArr[0] : iArr[1];
-        }
-        return i10 == 0 ? AndroidUtilities.dp(100.0f) : i10;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getMinimumWidth() {
-        int i10 = 0;
-        if (this.x) {
-            int[] iArr = this.d;
-            int i11 = iArr[2];
-            i10 = (i11 == 90 || i11 == 270) ? iArr[1] : iArr[0];
-        }
-        return i10 == 0 ? AndroidUtilities.dp(100.0f) : i10;
-    }
-
-    @Override // android.graphics.drawable.BitmapDrawable, android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    public final void h() {
-        d6 d6Var;
-        if (this.z0 == null) {
-            return;
-        }
-        boolean isEmpty = this.t0.isEmpty();
-        if (isEmpty && this.J0 == null) {
-            d6 d6Var2 = new d6(this, 1);
-            this.J0 = d6Var2;
-            AndroidUtilities.runOnUIThread(d6Var2, 600L);
-        } else {
-            if (isEmpty || (d6Var = this.J0) == null) {
-                return;
-            }
-            AndroidUtilities.cancelRunOnUIThread(d6Var);
-            this.J0 = null;
-        }
-    }
-
-    public final void i() {
-        int i10;
-        if (!this.b0 || this.R0 || this.f) {
-            if (this.U0) {
-                this.U0 = false;
-                this.Q0 = 0;
-                zf.i.d().g(this.S0);
-                return;
-            }
-            return;
-        }
-        if (this.U0 || (i10 = this.d[5]) <= 0) {
-            return;
-        }
-        this.U0 = true;
-        this.Q0 = 0;
-        zf.i.d().b(this.S0, i10);
-    }
-
-    @Override // android.graphics.drawable.Animatable
-    public final boolean isRunning() {
-        return this.b0;
-    }
-
-    public final void j() {
-        re.b bVar = this.t0;
-        Iterator it = bVar.iterator();
-        int i10 = 0;
-        int i11 = 0;
-        while (it.hasNext()) {
-            ImageReceiver imageReceiver = (ImageReceiver) it.next();
-            if (imageReceiver.isAttachedToWindow()) {
-                i10++;
-            } else {
-                bVar.remove(imageReceiver);
-            }
-            int i12 = imageReceiver.animatedFileDrawableRepeatMaxCount;
-            if (i12 > 0 && this.y0 >= i12) {
-                i11++;
-            }
-        }
-        if (i10 == i11) {
-            stop();
-        } else {
-            start();
-        }
-    }
-
-    public final void k() {
-        if (g()) {
-            return;
-        }
-        c6 c6Var = this.n;
-        if (c6Var != null) {
-            c6Var.b.recycle();
-            Arrays.fill(c6Var.a, (Object) null);
-            this.n = null;
-        }
-        c6 c6Var2 = this.v;
-        if (c6Var2 != null) {
-            c6Var2.b.recycle();
-            Arrays.fill(c6Var2.a, (Object) null);
-            this.v = null;
-        }
-        DispatchQueue dispatchQueue = this.f0;
-        if (dispatchQueue != null) {
-            dispatchQueue.recycle();
-            this.f0 = null;
-        }
-        int i10 = 0;
-        while (true) {
-            ArrayList arrayList = this.h;
-            if (i10 >= arrayList.size()) {
-                arrayList.clear();
-                t();
-                return;
-            } else {
-                c6 c6Var3 = (c6) arrayList.get(i10);
-                c6Var3.b.recycle();
-                Arrays.fill(c6Var3.a, (Object) null);
-                i10++;
-            }
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:43:0x00d8  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x01a7  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void l(Canvas canvas, boolean z10, long j10, int i10) {
-        boolean z11;
-        float width;
-        float height;
-        float[] fArr;
-        int i11;
-        if (!g() || this.w) {
-            return;
-        }
-        long currentTimeMillis = j10 == 0 ? System.currentTimeMillis() : j10;
-        RectF rectF = z10 ? this.p0[i10] : this.a0;
-        Paint paint = z10 ? this.q0[i10] : getPaint();
-        if (!z10) {
-            D(currentTimeMillis);
-        }
-        if (this.n == null) {
-            return;
-        }
-        int[] iArr = this.T;
-        int length = iArr.length;
-        int i12 = 0;
-        while (true) {
-            if (i12 >= length) {
-                z11 = false;
-                break;
-            } else {
-                if (iArr[i12] != 0) {
-                    z11 = true;
-                    break;
-                }
-                i12++;
-            }
-        }
-        if (!z10) {
-            PorterDuffXfermode porterDuffXfermode = (!z11 && this.n.f && paint.getAlpha() == 255) ? X0 : null;
-            if (paint.getXfermode() != porterDuffXfermode) {
-                paint.setXfermode(porterDuffXfermode);
-            }
-        }
-        float f7 = this.X;
-        float f10 = this.Y;
-        int[] iArr2 = this.d;
-        if (!z10) {
-            if (this.Z) {
-                c6 c6Var = this.n;
-                int i13 = c6Var.c;
-                int i14 = c6Var.d;
-                int i15 = iArr2[2];
-                if (i15 == 90 || i15 == 270) {
-                    i13 = i14;
-                    i14 = i13;
-                }
-                rectF.set(getBounds());
-                width = rectF.width() / i13;
-                this.X = width;
-                height = rectF.height() / i14;
-                this.Y = height;
-                this.Z = false;
-            }
-            if (z11) {
-                canvas.save();
-                canvas.translate(rectF.left, rectF.top);
-                int i16 = iArr2[2];
-                if (i16 == 90) {
-                    canvas.rotate(90.0f);
-                    canvas.translate(0.0f, -rectF.width());
-                } else if (i16 == 180) {
-                    canvas.rotate(180.0f);
-                    canvas.translate(-rectF.width(), -rectF.height());
-                } else if (i16 == 270) {
-                    canvas.rotate(270.0f);
-                    canvas.translate(-rectF.height(), 0.0f);
-                }
-                canvas.scale(f7, f10);
-                canvas.drawBitmap(this.n.b, 0.0f, 0.0f, paint);
-                canvas.restore();
-                return;
-            }
-            int i17 = z10 ? i10 + 1 : 0;
-            c6 c6Var2 = this.n;
-            BitmapShader[] bitmapShaderArr = c6Var2.a;
-            if (bitmapShaderArr[i17] == null) {
-                Bitmap bitmap = c6Var2.b;
-                Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-                bitmapShaderArr[i17] = new BitmapShader(bitmap, tileMode, tileMode);
-            }
-            BitmapShader bitmapShader = bitmapShaderArr[i17];
-            paint.setShader(bitmapShader);
-            Matrix[] matrixArr = this.V;
-            Matrix matrix = matrixArr[i17];
-            if (matrix == null) {
-                matrix = new Matrix();
-                matrixArr[i17] = matrix;
-            }
-            matrix.reset();
-            matrix.setTranslate(rectF.left, rectF.top);
-            int i18 = iArr2[2];
-            if (i18 == 90) {
-                matrix.preRotate(90.0f);
-                matrix.preTranslate(0.0f, -rectF.width());
-            } else if (i18 == 180) {
-                matrix.preRotate(180.0f);
-                matrix.preTranslate(-rectF.width(), -rectF.height());
-            } else if (i18 == 270) {
-                matrix.preRotate(270.0f);
-                matrix.preTranslate(-rectF.height(), 0.0f);
-            }
-            matrix.preScale(f7, f10);
-            bitmapShader.setLocalMatrix(matrix);
-            Path[] pathArr = this.W;
-            Path path = pathArr[i17];
-            if (path == null) {
-                path = new Path();
-                pathArr[i17] = path;
-            }
-            boolean z12 = this.w0;
-            RectF rectF2 = this.S;
-            if (z12 || z10) {
-                if (!z10) {
-                    this.w0 = false;
-                }
-                int i19 = 0;
-                while (true) {
-                    int length2 = iArr.length;
-                    fArr = V0;
-                    if (i19 >= length2) {
-                        break;
-                    }
-                    int i20 = i19 * 2;
-                    float f11 = iArr[i19];
-                    fArr[i20] = f11;
-                    fArr[i20 + 1] = f11;
-                    i19++;
-                }
-                path.rewind();
-                path.addRoundRect(z10 ? rectF : rectF2, fArr, Path.Direction.CW);
-            }
-            int i21 = iArr[0];
-            int i22 = iArr[1];
-            if (i21 != i22 || i22 != (i11 = iArr[2]) || i11 != iArr[3]) {
-                canvas.drawPath(path, paint);
-                return;
-            }
-            if (!z10) {
-                rectF = rectF2;
-            }
-            float f12 = i21;
-            canvas.drawRoundRect(rectF, f12, f12, paint);
-            return;
-        }
-        c6 c6Var3 = this.n;
-        int i23 = c6Var3.c;
-        int i24 = c6Var3.d;
-        int i25 = iArr2[2];
-        if (i25 == 90 || i25 == 270) {
-            i23 = i24;
-            i24 = i23;
-        }
-        width = rectF.width() / i23;
-        height = rectF.height() / i24;
-        float f13 = width;
-        f10 = height;
-        f7 = f13;
-        if (z11) {
-        }
-    }
-
-    public final Bitmap m() {
-        c6 c6Var = this.n;
-        if (c6Var != null) {
-            return c6Var.b;
-        }
-        c6 c6Var2 = this.r;
-        if (c6Var2 != null) {
-            return c6Var2.b;
-        }
-        c6 c6Var3 = this.s;
-        if (c6Var3 != null) {
-            return c6Var3.b;
-        }
-        return null;
-    }
-
-    public final float n() {
-        if (this.d[4] == 0) {
-            return 0.0f;
-        }
-        if (this.M >= 0) {
-            return this.M / this.d[4];
-        }
-        int[] iArr = this.d;
-        return iArr[3] / iArr[4];
-    }
-
-    public final int o() {
-        int i10;
-        if (this.M >= 0) {
-            return (int) this.M;
-        }
-        c6 c6Var = this.r;
-        if (c6Var != null && (i10 = c6Var.e) != 0) {
-            return i10;
-        }
-        c6 c6Var2 = this.n;
-        if (c6Var2 != null) {
-            return c6Var2.e;
-        }
-        return 0;
-    }
-
-    @Override // android.graphics.drawable.BitmapDrawable, android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        super.onBoundsChange(rect);
-        this.Z = true;
-    }
-
-    public final Bitmap p() {
-        int i10 = this.j0;
-        int i11 = this.i0;
-        Bitmap.Config config = Bitmap.Config.ARGB_8888;
-        Bitmap createBitmap = Bitmap.createBitmap(i10, i11, config);
-        Canvas canvas = new Canvas(createBitmap);
-        AnimatedFileNative a2 = AnimatedFileNative.a(this.G.getAbsolutePath(), this.d, this.J, this.H, this.u0, false);
-        if (a2 == null) {
-            return createBitmap;
-        }
-        if (this.M0 == null) {
-            int[] iArr = this.d;
-            this.M0 = Bitmap.createBitmap(Math.max(1, iArr[0]), Math.max(1, iArr[1]), config);
-        }
-        a2.c(this.M0, false, this.g0, this.h0, true);
-        a2.f();
-        createBitmap.eraseColor(0);
-        canvas.save();
-        float width = this.j0 / this.M0.getWidth();
-        canvas.scale(width, width);
-        canvas.drawBitmap(this.M0, 0.0f, 0.0f, (Paint) null);
-        canvas.restore();
-        return createBitmap;
-    }
-
-    public final Bitmap q(long j10, boolean z10) {
-        if (this.x && this.d0 != null) {
-            AnimatedFileDrawableStream animatedFileDrawableStream = this.u0;
-            if (animatedFileDrawableStream != null) {
-                animatedFileDrawableStream.cancel(false);
-                this.u0.reset();
-            }
-            if (!z10) {
-                this.d0.g(j10, z10);
-            }
-            int[] iArr = this.d;
-            Bitmap createBitmap = Bitmap.createBitmap(iArr[0], iArr[1], Bitmap.Config.ARGB_8888);
-            if ((z10 ? this.d0.b(createBitmap, j10) : this.d0.c(createBitmap, true, 0.0f, 0.0f, true)) != 0) {
-                return createBitmap;
-            }
-            createBitmap.recycle();
-        }
-        return null;
-    }
-
-    public final Bitmap r(boolean z10) {
-        if (this.d0 == null) {
-            c6 c6Var = this.v;
-            if (c6Var != null) {
-                return c6Var.b;
-            }
-            return null;
-        }
-        if (this.v == null) {
-            if (this.h.isEmpty()) {
-                float f7 = this.d[0];
-                float f10 = this.m0;
-                this.v = new c6(Bitmap.createBitmap((int) (f7 * f10), (int) (r0[1] * f10), Bitmap.Config.ARGB_8888));
-            } else {
-                this.v = (c6) this.h.remove(0);
-            }
-        }
-        this.d0.c(this.v.b, false, this.g0, this.h0, z10);
-        return this.v.b;
-    }
-
-    public final boolean s() {
-        if (g()) {
-            return (this.n == null && this.r == null) ? false : true;
-        }
-        return false;
-    }
-
-    @Override // android.graphics.drawable.Animatable
-    public final void start() {
-        if (this.b0 || this.t0.isEmpty()) {
-            return;
-        }
-        this.b0 = true;
-        this.R0 = false;
-        x(false);
-        AndroidUtilities.runOnUIThread(this.I0);
-        AndroidUtilities.executeOnUIThread(new d6(this, 0));
-    }
-
-    @Override // android.graphics.drawable.Animatable
-    public final void stop() {
-        this.b0 = false;
-        AndroidUtilities.executeOnUIThread(new d6(this, 0));
-    }
-
-    public final void t() {
-        Iterator it = this.t0.iterator();
-        while (it.hasNext()) {
-            ((ImageReceiver) it.next()).invalidate();
-        }
-    }
-
-    public final void u() {
-        if (!this.s0.isEmpty()) {
-            this.K = true;
-            return;
-        }
-        int i10 = 0;
-        this.b0 = false;
-        this.c0 = true;
-        AndroidUtilities.executeOnUIThread(new d6(this, 0));
-        if (this.D0 != null) {
-            zf.f.c();
-            yj0.T0.cancelRunnable(this.D0);
-            this.D0 = null;
-        }
-        if (this.e == null) {
-            if (this.d0 != null) {
-                this.d0.f();
-                this.d0 = null;
-            }
-            ArrayList arrayList = new ArrayList();
-            c6 c6Var = this.n;
-            if (c6Var != null) {
-                arrayList.add(c6Var.b);
-            }
-            c6 c6Var2 = this.r;
-            if (c6Var2 != null) {
-                arrayList.add(c6Var2.b);
-            }
-            c6 c6Var3 = this.s;
-            if (c6Var3 != null) {
-                arrayList.add(c6Var3.b);
-            }
-            c6 c6Var4 = this.v;
-            if (c6Var4 != null) {
-                arrayList.add(c6Var4.b);
-            }
-            ArrayList arrayList2 = this.h;
-            int size = arrayList2.size();
-            while (i10 < size) {
-                Object obj = arrayList2.get(i10);
-                i10++;
-                c6 c6Var5 = (c6) obj;
-                if (c6Var5 != null) {
-                    arrayList.add(c6Var5.b);
-                }
-            }
-            this.h.clear();
-            this.n = null;
-            this.r = null;
-            this.s = null;
-            this.v = null;
-            DispatchQueue dispatchQueue = this.f0;
-            if (dispatchQueue != null) {
-                dispatchQueue.recycle();
-                this.f0 = null;
-            }
-            getPaint().setShader(null);
-            AndroidUtilities.recycleBitmaps(arrayList);
-        } else {
-            this.w = true;
-        }
-        AnimatedFileDrawableStream animatedFileDrawableStream = this.u0;
-        if (animatedFileDrawableStream != null) {
-            animatedFileDrawableStream.cancel(true);
-            this.u0 = null;
-        }
-        t();
-    }
-
-    public final void v(ImageReceiver imageReceiver) {
-        re.b bVar = this.t0;
-        bVar.remove(imageReceiver);
-        if (bVar.isEmpty()) {
-            this.y0 = 0;
-        }
-        h();
-    }
-
-    public final void w(View view) {
-        re.b bVar = this.s0;
-        bVar.remove(view);
-        if (bVar.isEmpty()) {
-            if (this.K) {
-                u();
-                return;
-            }
-            int[] iArr = this.U;
-            if (iArr != null) {
-                B(iArr);
-            }
-        }
-    }
-
-    public final void x(boolean z10) {
-        d6 d6Var;
-        d6 d6Var2;
-        if (this.e == null || z10) {
-            if ((!this.b || (this.s != null && (this.K0 || this.M < 0))) && this.r != null) {
-                return;
-            }
-            if ((this.n == null || !this.f) && g() && !this.w) {
-                if ((!this.b0 && (!this.y || this.E)) || this.t0.isEmpty() || this.C0) {
-                    return;
-                }
-                if (!this.v0) {
-                    if (this.f0 == null) {
-                        this.f0 = new DispatchQueue("decodeQueue" + this);
-                    }
-                    if (z10 && (d6Var = this.e) != null) {
-                        this.f0.cancelRunnable(d6Var);
-                    }
-                    DispatchQueue dispatchQueue = this.f0;
-                    d6 d6Var3 = this.H0;
-                    this.e = d6Var3;
-                    dispatchQueue.postRunnable(d6Var3, 0L);
-                } else if (this.x0) {
-                    d6 d6Var4 = this.H0;
-                    this.e = d6Var4;
-                    DispatchQueuePoolBackground.execute(d6Var4);
+    public final float c() {
+        if (this.i) {
+            long elapsedRealtime = SystemClock.elapsedRealtime();
+            float a2 = w7.r.a(((elapsedRealtime - this.j) - this.f) / this.g, 0.0f, 1.0f);
+            if (elapsedRealtime - this.j >= this.f) {
+                TimeInterpolator timeInterpolator = this.h;
+                if (timeInterpolator == null) {
+                    this.c = AndroidUtilities.lerp(this.k, this.d, a2);
                 } else {
-                    if (z10 && (d6Var2 = this.e) != null) {
-                        W0.remove(d6Var2);
-                    }
-                    ScheduledThreadPoolExecutor scheduledThreadPoolExecutor = W0;
-                    d6 d6Var5 = this.H0;
-                    this.e = d6Var5;
-                    scheduledThreadPoolExecutor.execute(d6Var5);
+                    this.c = AndroidUtilities.lerp(this.k, this.d, timeInterpolator.getInterpolation(a2));
                 }
-                this.K0 = true;
+            }
+            if (a2 >= 1.0f) {
+                this.i = false;
+            } else {
+                View view = this.a;
+                if (view != null) {
+                    view.invalidate();
+                }
+                Runnable runnable = this.b;
+                if (runnable != null) {
+                    runnable.run();
+                }
             }
         }
+        return this.c;
     }
 
-    public final void y(long j10, boolean z10, boolean z11) {
-        AnimatedFileDrawableStream animatedFileDrawableStream;
-        synchronized (this.Q) {
-            try {
-                this.L = j10;
-                this.M = j10;
-                this.K0 = false;
-                if (this.d0 != null) {
-                    this.d0.e();
-                }
-                if (this.x && (animatedFileDrawableStream = this.u0) != null) {
-                    animatedFileDrawableStream.cancel(z10);
-                    this.N = z10;
-                    this.O = z10 ? 0 : 10;
-                }
-                if (z11 && this.y) {
-                    this.E = false;
-                    if (this.e == null) {
-                        x(true);
-                    } else {
-                        this.F = true;
-                    }
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
+    public final float d(float f7, boolean z10) {
+        if (z10 || this.g <= 0 || this.e) {
+            this.d = f7;
+            this.c = f7;
+            this.i = false;
+            this.e = false;
+        } else if (Math.abs(this.d - f7) > 1.0E-4f) {
+            this.i = true;
+            this.d = f7;
+            this.k = this.c;
+            this.j = SystemClock.elapsedRealtime();
         }
+        return c();
     }
 
-    public final void z(float f7, float f10, float f11, float f12) {
-        float f13 = f12 + f10;
-        float f14 = f11 + f7;
-        RectF rectF = this.S;
-        if (rectF.left == f7 && rectF.top == f10 && rectF.right == f14 && rectF.bottom == f13) {
-            return;
-        }
-        rectF.set(f7, f10, f14, f13);
-        this.w0 = true;
+    public final float e(boolean z10) {
+        return d(z10 ? 1.0f : 0.0f, false);
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:48:0x0183  */
-    /* JADX WARN: Removed duplicated region for block: B:51:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Type inference failed for: r13v0 */
-    /* JADX WARN: Type inference failed for: r13v1, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r13v2 */
-    /* JADX WARN: Type inference failed for: r1v3 */
-    /* JADX WARN: Type inference failed for: r1v4, types: [boolean] */
-    /* JADX WARN: Type inference failed for: r1v6 */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public f6(File file, boolean z10, long j10, int i10, TLRPC.Document document, ImageLocation imageLocation, Object obj, long j11, int i11, boolean z11, int i12, int i13, af.l lVar, int i14, boolean z12) {
-        ?? r12;
-        ?? r13;
-        long j12;
-        int[] iArr = new int[8];
-        this.d = iArr;
-        this.h = new ArrayList();
-        this.L = -1L;
-        this.M = -1L;
-        this.Q = new Object();
-        this.S = new RectF();
-        this.T = new int[4];
-        this.V = new Matrix[3];
-        this.W = new Path[3];
-        this.X = 1.0f;
-        this.Y = 1.0f;
-        this.a0 = new RectF();
-        this.m0 = 1.0f;
-        this.p0 = new RectF[2];
-        this.q0 = new Paint[2];
-        this.s0 = new re.b(true, true);
-        this.t0 = new re.b(true, true);
-        this.w0 = true;
-        this.B0 = new d6(this, 2);
-        this.E0 = new d6(this, 3);
-        this.F0 = new d6(this, 4);
-        this.G0 = 0;
-        this.H0 = new d6(this, 5);
-        this.I0 = new d6(this, 6);
-        this.S0 = new e6(this, 0);
-        this.G = file;
-        this.b = SharedConfig.deviceIsAboveAverage();
-        this.H = j10;
-        this.I = i10;
-        this.J = i11;
-        this.i0 = i13;
-        this.j0 = i12;
-        this.k0 = z12;
-        boolean z13 = lVar != null && i12 > 0 && i13 > 0;
-        this.l0 = z13;
-        this.o0 = document;
-        getPaint().setFlags(3);
-        if (j10 == 0 || (document == null && imageLocation == null)) {
-            r12 = 1;
-        } else {
-            r12 = 1;
-            this.u0 = new AnimatedFileDrawableStream(document, imageLocation, obj, i11, z11, i10, i14);
-        }
-        zf.f fVar = null;
-        if (!z10 || z13) {
-            r13 = 0;
-        } else {
-            r13 = 0;
-            this.d0 = AnimatedFileNative.a(file.getAbsolutePath(), iArr, i11, j10, this.u0, z11);
-            this.e0 = (this.d0 != null || (this.n0 && this.G0 <= 15)) ? false : r12;
-            if (this.d0 != null && (iArr[0] > 3840 || iArr[r12] > 3840)) {
-                this.d0.f();
-                this.d0 = null;
-            }
-            d();
-            E();
-            this.x = r12;
-        }
-        if (z13) {
-            this.d0 = AnimatedFileNative.a(file.getAbsolutePath(), iArr, i11, j10, this.u0, z11);
-            this.e0 = (this.d0 != null || (this.n0 && this.G0 <= 15)) ? r13 : r12;
-            if (this.d0 == null || (iArr[r13] <= 3840 && iArr[r12] <= 3840)) {
-                j12 = j11;
-                fVar = new zf.f(file, this, lVar, this.j0, this.i0, !this.x0, 0);
-                this.z0 = fVar;
-                if (j12 == 0) {
-                    y(j12, r13, r13);
-                    return;
-                }
-                return;
-            }
-            this.d0.f();
-            this.d0 = null;
-        }
-        j12 = j11;
-        this.z0 = fVar;
-        if (j12 == 0) {
-        }
+    public final float f(boolean z10, boolean z11) {
+        return d(z10 ? 1.0f : 0.0f, z11);
+    }
+
+    public f6(long j10, long j11, TimeInterpolator timeInterpolator) {
+        this.f = 0L;
+        this.g = 200L;
+        bs bsVar = bs.f;
+        this.a = null;
+        this.f = j10;
+        this.g = j11;
+        this.h = timeInterpolator;
+        this.e = true;
+    }
+
+    public f6(View view) {
+        this.f = 0L;
+        this.g = 200L;
+        this.h = bs.f;
+        this.a = view;
+        this.e = true;
+    }
+
+    public f6(View view, long j10, TimeInterpolator timeInterpolator) {
+        this.f = 0L;
+        this.g = 200L;
+        bs bsVar = bs.f;
+        this.a = view;
+        this.g = j10;
+        this.h = timeInterpolator;
+        this.e = true;
+    }
+
+    public f6(View view, long j10, long j11, TimeInterpolator timeInterpolator) {
+        this.f = 0L;
+        this.g = 200L;
+        bs bsVar = bs.f;
+        this.a = view;
+        this.f = j10;
+        this.g = j11;
+        this.h = timeInterpolator;
+        this.e = true;
+    }
+
+    public f6(Runnable runnable) {
+        this.f = 0L;
+        this.g = 200L;
+        this.h = bs.f;
+        this.b = runnable;
+        this.e = true;
+    }
+
+    public f6(Runnable runnable, long j10, TimeInterpolator timeInterpolator) {
+        this.f = 0L;
+        this.g = 200L;
+        bs bsVar = bs.f;
+        this.b = runnable;
+        this.g = j10;
+        this.h = timeInterpolator;
+        this.e = true;
+    }
+
+    public f6(Runnable runnable, long j10, TimeInterpolator timeInterpolator, int i10) {
+        this.f = 0L;
+        this.g = 200L;
+        bs bsVar = bs.f;
+        this.b = runnable;
+        this.f = 0L;
+        this.g = j10;
+        this.h = timeInterpolator;
+        this.e = true;
+    }
+
+    public f6(float f7, View view, long j10, long j11, TimeInterpolator timeInterpolator) {
+        this.f = 0L;
+        this.g = 200L;
+        bs bsVar = bs.f;
+        this.a = view;
+        this.d = f7;
+        this.c = f7;
+        this.f = j10;
+        this.g = j11;
+        this.h = timeInterpolator;
+        this.e = false;
+    }
+
+    public f6(float f7, Runnable runnable, long j10, long j11, TimeInterpolator timeInterpolator) {
+        this.f = 0L;
+        this.g = 200L;
+        bs bsVar = bs.f;
+        this.b = runnable;
+        this.d = f7;
+        this.c = f7;
+        this.f = j10;
+        this.g = j11;
+        this.h = timeInterpolator;
+        this.e = false;
     }
 }

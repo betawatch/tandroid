@@ -1,58 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.drawable.Drawable;
-import android.os.SystemClock;
-import android.text.TextPaint;
-import org.telegram.messenger.R;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class e41 extends Drawable {
-    public final yj0 a;
-    public int b;
-    public final TextPaint c;
+public final class e41 extends s4.k {
+    public final /* synthetic */ r41 F;
 
-    public e41(TextPaint textPaint) {
-        ah.f1 f1Var = new ah.f1(this, 6);
-        this.c = textPaint;
-        float textSize = textPaint.getTextSize() * 0.89f;
-        yj0 yj0Var = new yj0(R.raw.dots_loading, (int) textSize, (int) (textSize * 1.25f));
-        this.a = yj0Var;
-        yj0Var.setCallback(f1Var);
-        yj0Var.K(1);
-        yj0Var.M((int) ((SystemClock.elapsedRealtime() / 16.0f) % 60.0f));
-        yj0Var.J(true);
-        yj0Var.start();
+    public e41(r41 r41Var) {
+        this.F = r41Var;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        int color = this.c.getColor();
-        int i10 = this.b;
-        yj0 yj0Var = this.a;
-        if (color != i10) {
-            yj0Var.Z = true;
-            yj0Var.Q(color, "Comp 1");
-            yj0Var.o();
-            yj0Var.J(true);
-            yj0Var.V(0L);
-            this.b = color;
-        }
-        yj0Var.draw(canvas);
+    @Override // s4.k
+    public final void O() {
+        ViewGroup viewGroup;
+        viewGroup = ((org.telegram.ui.ActionBar.f3) this.F).containerView;
+        viewGroup.invalidate();
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // s4.k
+    public final void P(s4.b1 b1Var) {
+        ViewGroup viewGroup;
+        viewGroup = ((org.telegram.ui.ActionBar.f3) this.F).containerView;
+        viewGroup.invalidate();
     }
 }

@@ -1,52 +1,32 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.RadialProgressView;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xg0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ yg0 b;
-    public final /* synthetic */ og0 c;
+    public final /* synthetic */ kh0 b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ TLObject d;
 
-    public /* synthetic */ xg0(int i10, og0 og0Var, yg0 yg0Var) {
+    public /* synthetic */ xg0(kh0 kh0Var, TLRPC.TL_error tL_error, TLObject tLObject, int i10) {
         this.a = i10;
-        this.b = yg0Var;
-        this.c = og0Var;
+        this.b = kh0Var;
+        this.c = tL_error;
+        this.d = tLObject;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i10 = this.a;
-        og0 og0Var = this.c;
-        yg0 yg0Var = this.b;
-        switch (i10) {
+        switch (this.a) {
             case 0:
-                int i11 = og0.E;
-                og0Var.a();
-                AndroidUtilities.runOnUIThread(new xg0(1, og0Var, yg0Var), 150L);
+                kh0 kh0Var = this.b;
+                kh0Var.getNotificationCenter().doOnIdle(new xg0(kh0Var, this.c, this.d, 1));
                 break;
             default:
-                zg0 zg0Var = yg0Var.a;
-                zg0Var.h(null);
-                RadialProgressView radialProgressView = zg0Var.V.N.d;
-                RadialProgressView radialProgressView2 = og0Var.h.d;
-                radialProgressView.getClass();
-                radialProgressView.a = radialProgressView2.a;
-                radialProgressView.b = radialProgressView2.b;
-                radialProgressView.H = radialProgressView2.H;
-                radialProgressView.I = radialProgressView2.I;
-                radialProgressView.J = radialProgressView2.J;
-                radialProgressView.c = radialProgressView2.c;
-                radialProgressView.n = radialProgressView2.n;
-                radialProgressView.e = radialProgressView2.e;
-                radialProgressView.y = radialProgressView2.y;
-                radialProgressView.F = radialProgressView2.F;
-                radialProgressView.G = radialProgressView2.G;
-                radialProgressView.d = radialProgressView2.d;
-                radialProgressView.E = radialProgressView2.E;
-                radialProgressView.b(85L);
+                kh0.V(this.b, this.c, this.d);
                 break;
         }
     }

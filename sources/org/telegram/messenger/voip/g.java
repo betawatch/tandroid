@@ -1,24 +1,31 @@
 package org.telegram.messenger.voip;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ GroupCallMessage b;
+    public final /* synthetic */ GroupCallMessagesController b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ GroupCallMessage d;
 
-    public /* synthetic */ g(GroupCallMessage groupCallMessage, int i10) {
+    public /* synthetic */ g(GroupCallMessagesController groupCallMessagesController, long j10, GroupCallMessage groupCallMessage, int i10) {
         this.a = i10;
-        this.b = groupCallMessage;
+        this.b = groupCallMessagesController;
+        this.c = j10;
+        this.d = groupCallMessage;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.notifyStateUpdate();
+                this.b.lambda$processUpdate$0(this.c, this.d);
+                break;
+            case 1:
+                this.b.lambda$processUpdate$1(this.c, this.d);
                 break;
             default:
-                GroupCallMessagesController.lambda$sendCallMessage$4(this.b);
+                this.b.lambda$processUpdate$2(this.c, this.d);
                 break;
         }
     }

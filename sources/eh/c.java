@@ -1,16 +1,16 @@
 package eh;
 
-import b2.e1;
+import b2.d1;
 import e2.j;
 import e2.o;
-import m4.d0;
+import m4.e0;
 import m4.m1;
 import m4.u;
-import org.telegram.ui.ActionBar.c6;
+import org.telegram.ui.ActionBar.d6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c implements d, o, d0, j {
+public final /* synthetic */ class c implements d, o, e0, j {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ int c;
@@ -33,13 +33,13 @@ public final /* synthetic */ class c implements d, o, d0, j {
         }
     }
 
-    @Override // m4.d0
-    public void d(u uVar, int i10) {
+    @Override // m4.e0
+    public void b(u uVar, int i10) {
         uVar.d(i10, this.b, this.c);
     }
 
     @Override // eh.d
-    public int f(c6 c6Var, boolean z10) {
+    public int f(d6 d6Var, boolean z10) {
         return z10 ? this.b : this.c;
     }
 
@@ -47,10 +47,10 @@ public final /* synthetic */ class c implements d, o, d0, j {
     public void invoke(Object obj) {
         switch (this.a) {
             case 1:
-                ((e1) obj).onSurfaceSizeChanged(this.b, this.c);
+                ((d1) obj).onSurfaceSizeChanged(this.b, this.c);
                 break;
             default:
-                ((e1) obj).onSurfaceSizeChanged(this.b, this.c);
+                ((d1) obj).onSurfaceSizeChanged(this.b, this.c);
                 break;
         }
     }

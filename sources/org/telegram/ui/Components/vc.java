@@ -1,47 +1,22 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vc implements Utilities.Callback {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
+public enum vc {
+    d(R.raw.ic_download, 2, "Box", "Arrow"),
+    e(R.raw.ic_save_to_gallery, 0, "Box", "Arrow", "Mask", "Arrow 2", "Splash"),
+    f(R.raw.ic_save_to_music, 2, "Box", "Arrow"),
+    h(R.raw.ic_save_to_gifs, 0, "gif");
 
-    public /* synthetic */ vc(int i10, sc scVar, long j10) {
-        this.c = i10;
-        this.d = scVar;
-        this.b = j10;
-    }
+    public final int a;
+    public final String[] b;
+    public final int c;
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        TLRPC.StickerSet stickerSet;
-        int i10 = this.a;
-        int i11 = this.c;
-        long j10 = this.b;
-        Object obj2 = this.d;
-        switch (i10) {
-            case 0:
-                TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) obj;
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.vp(7, (sc) obj2, (tL_messages_stickerSet == null || (stickerSet = tL_messages_stickerSet.set) == null) ? LocaleController.getString(R.string.AddEmojiNotFound) : i11 == 1 ? AndroidUtilities.replaceTags(LocaleController.formatString("TopicContainsEmojiPackSingle", R.string.TopicContainsEmojiPackSingle, stickerSet.title)) : i11 == 2 ? AndroidUtilities.replaceTags(LocaleController.formatString("StoryContainsEmojiPackSingle", R.string.StoryContainsEmojiPackSingle, stickerSet.title)) : AndroidUtilities.replaceTags(LocaleController.formatString("MessageContainsEmojiPackSingle", R.string.MessageContainsEmojiPackSingle, stickerSet.title))), Math.max(1L, 750 - (System.currentTimeMillis() - j10)));
-                break;
-            default:
-                ((xv0) obj2).getStoriesController().b(i11, j10, (ArrayList) obj);
-                break;
-        }
-    }
-
-    public /* synthetic */ vc(xv0 xv0Var, long j10, int i10) {
-        this.d = xv0Var;
-        this.b = j10;
-        this.c = i10;
+    vc(int i10, int i11, String... strArr) {
+        this.a = i10;
+        this.c = i11;
+        this.b = strArr;
     }
 }

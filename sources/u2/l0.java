@@ -2,15 +2,15 @@ package u2;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class l0 implements x2.p {
     public final x2.p a;
-    public final b2.q1 b;
+    public final b2.p1 b;
 
-    public l0(x2.p pVar, b2.q1 q1Var) {
+    public l0(x2.p pVar, b2.p1 p1Var) {
         this.a = pVar;
-        this.b = q1Var;
+        this.b = p1Var;
     }
 
     @Override // x2.p
@@ -19,7 +19,7 @@ public final class l0 implements x2.p {
     }
 
     @Override // x2.p
-    public final b2.q1 b() {
+    public final b2.p1 b() {
         return this.b;
     }
 
@@ -46,7 +46,7 @@ public final class l0 implements x2.p {
     }
 
     @Override // x2.p
-    public final b2.x f(int i10) {
+    public final b2.w f(int i10) {
         return this.b.d[this.a.h(i10)];
     }
 
@@ -90,7 +90,7 @@ public final class l0 implements x2.p {
     }
 
     @Override // x2.p
-    public final b2.x m() {
+    public final b2.w m() {
         return this.b.d[this.a.l()];
     }
 
@@ -120,8 +120,8 @@ public final class l0 implements x2.p {
     }
 
     @Override // x2.p
-    public final int s(b2.x xVar) {
-        return this.a.u(this.b.a(xVar));
+    public final int s(b2.w wVar) {
+        return this.a.u(this.b.a(wVar));
     }
 
     @Override // x2.p

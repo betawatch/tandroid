@@ -1,104 +1,1386 @@
 package org.telegram.ui.Components;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.ComposeShader;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
+import android.os.SystemClock;
 import android.text.Editable;
-import android.text.TextWatcher;
+import android.text.InputFilter;
+import android.util.Property;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class wq implements TextWatcher {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ View c;
+public class wq extends FrameLayout {
+    public static final /* synthetic */ int e0 = 0;
+    public final EditTextBoldCursor[] E;
+    public final org.telegram.ui.ActionBar.j0 F;
+    public final ImageView G;
+    public final TextView H;
+    public final org.telegram.ui.ActionBar.u0 I;
+    public int J;
+    public int K;
+    public int L;
+    public int M;
+    public final float[] N;
+    public final float[] O;
+    public LinearGradient P;
+    public boolean Q;
+    public boolean R;
+    public int S;
+    public int T;
+    public float U;
+    public long V;
+    public float W;
+    public final vq a;
+    public float a0;
+    public final Paint b;
+    public float b0;
+    public final Paint c;
+    public float c0;
+    public final Paint d;
+    public org.telegram.ui.ActionBar.d6 d0;
+    public final Paint e;
+    public final Drawable f;
+    public boolean h;
+    public final RectF n;
+    public boolean r;
+    public Bitmap s;
+    public final ColorPicker$RadioButton[] v;
+    public final FrameLayout w;
+    public final ai.tc x;
+    public AnimatorSet y;
 
-    public wq(zq zqVar, int i10) {
-        this.c = zqVar;
-        this.b = i10;
+    public wq(Context context, boolean z10, vq vqVar) {
+        super(context);
+        this.n = new RectF();
+        this.v = new ColorPicker$RadioButton[4];
+        final int i10 = 1;
+        this.K = 1;
+        this.L = 1;
+        final int i11 = 3;
+        this.N = new float[]{0.0f, 0.0f, 1.0f};
+        this.O = new float[3];
+        this.U = 1.0f;
+        this.W = 0.0f;
+        this.a0 = 1.0f;
+        this.b0 = 0.0f;
+        this.c0 = 1.0f;
+        this.a = vqVar;
+        final int i12 = 2;
+        this.E = new EditTextBoldCursor[2];
+        final int i13 = 0;
+        setWillNotDraw(false);
+        this.f = context.getResources().getDrawable(R.drawable.knob_shadow).mutate();
+        this.d = new Paint(1);
+        this.b = new Paint(5);
+        this.c = new Paint(5);
+        Paint paint = new Paint();
+        this.e = paint;
+        paint.setColor(301989888);
+        setClipChildren(false);
+        ai.tc tcVar = new ai.tc(this, context);
+        this.x = tcVar;
+        tcVar.setOrientation(0);
+        addView(tcVar, w7.z5.a(54.0f, 27.0f, -6.0f, 17.0f, 0.0f, -1, 51));
+        tcVar.setWillNotDraw(false);
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.w = frameLayout;
+        frameLayout.setClipChildren(false);
+        addView(frameLayout, w7.z5.a(30.0f, 72.0f, 1.0f, 0.0f, 0.0f, 174, 49));
+        int i14 = 0;
+        while (i14 < 4) {
+            this.v[i14] = new ColorPicker$RadioButton(context);
+            ColorPicker$RadioButton colorPicker$RadioButton = this.v[i14];
+            colorPicker$RadioButton.d = this.S == i14;
+            colorPicker$RadioButton.b(false);
+            this.w.addView(this.v[i14], w7.z5.a(30.0f, 0.0f, 0.0f, 0.0f, 0.0f, 30, 48));
+            this.v[i14].setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.rq
+                public final /* synthetic */ wq b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    int i15;
+                    int i16 = i12;
+                    wq wqVar = this.b;
+                    switch (i16) {
+                        case 0:
+                            Property property = View.TRANSLATION_X;
+                            Property property2 = View.SCALE_Y;
+                            Property property3 = View.SCALE_X;
+                            Property property4 = View.ALPHA;
+                            vq vqVar2 = wqVar.a;
+                            org.telegram.ui.ActionBar.j0 j0Var = wqVar.F;
+                            ImageView imageView = wqVar.G;
+                            ColorPicker$RadioButton[] colorPicker$RadioButtonArr = wqVar.v;
+                            if (wqVar.y == null) {
+                                int i17 = wqVar.K;
+                                if (i17 == 1) {
+                                    ColorPicker$RadioButton colorPicker$RadioButton2 = colorPicker$RadioButtonArr[1];
+                                    if (colorPicker$RadioButton2.e == 0) {
+                                        i15 = 0;
+                                        colorPicker$RadioButton2.a(wq.d(colorPicker$RadioButtonArr[0].e));
+                                    } else {
+                                        i15 = 0;
+                                    }
+                                    if (wqVar.h) {
+                                        vqVar2.j0(colorPicker$RadioButtonArr[i15].e, i15, true);
+                                    }
+                                    vqVar2.j0(colorPicker$RadioButtonArr[1].e, 1, true);
+                                    wqVar.K = 2;
+                                } else if (i17 == 2) {
+                                    wqVar.K = 3;
+                                    if (colorPicker$RadioButtonArr[2].e == 0) {
+                                        float[] fArr = new float[3];
+                                        Color.colorToHSV(colorPicker$RadioButtonArr[0].e, fArr);
+                                        float f7 = fArr[0];
+                                        if (f7 > 180.0f) {
+                                            fArr[0] = f7 - 60.0f;
+                                        } else {
+                                            fArr[0] = f7 + 60.0f;
+                                        }
+                                        colorPicker$RadioButtonArr[2].a(Color.HSVToColor(255, fArr));
+                                    }
+                                    vqVar2.j0(colorPicker$RadioButtonArr[2].e, 2, true);
+                                } else if (i17 == 3) {
+                                    wqVar.K = 4;
+                                    ColorPicker$RadioButton colorPicker$RadioButton3 = colorPicker$RadioButtonArr[3];
+                                    if (colorPicker$RadioButton3.e == 0) {
+                                        colorPicker$RadioButton3.a(wq.d(colorPicker$RadioButtonArr[2].e));
+                                    }
+                                    vqVar2.j0(colorPicker$RadioButtonArr[3].e, 3, true);
+                                }
+                                ArrayList arrayList = new ArrayList();
+                                if (wqVar.K < wqVar.L) {
+                                    arrayList.add(ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property4, 1.0f));
+                                    arrayList.add(ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property3, 1.0f));
+                                    arrayList.add(ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property2, 1.0f));
+                                    arrayList.add(ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property, i0.a.g(wqVar.K, 1, AndroidUtilities.dp(13.0f), (wqVar.K - 1) * AndroidUtilities.dp(30.0f))));
+                                } else {
+                                    arrayList.add(ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property, i0.a.g(wqVar.K, 1, AndroidUtilities.dp(13.0f), (wqVar.K - 1) * AndroidUtilities.dp(30.0f))));
+                                    arrayList.add(ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property4, 0.0f));
+                                    arrayList.add(ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property3, 0.0f));
+                                    arrayList.add(ObjectAnimator.ofFloat(imageView, (Property<ImageView, Float>) property2, 0.0f));
+                                }
+                                if (wqVar.K > 1) {
+                                    if (j0Var.getVisibility() != 0) {
+                                        j0Var.setScaleX(0.0f);
+                                        j0Var.setScaleY(0.0f);
+                                    }
+                                    j0Var.setVisibility(0);
+                                    arrayList.add(ObjectAnimator.ofFloat(j0Var, (Property<org.telegram.ui.ActionBar.j0, Float>) property4, 1.0f));
+                                    arrayList.add(ObjectAnimator.ofFloat(j0Var, (Property<org.telegram.ui.ActionBar.j0, Float>) property3, 1.0f));
+                                    arrayList.add(ObjectAnimator.ofFloat(j0Var, (Property<org.telegram.ui.ActionBar.j0, Float>) property2, 1.0f));
+                                }
+                                colorPicker$RadioButtonArr[wqVar.K - 1].callOnClick();
+                                wqVar.y = new AnimatorSet();
+                                wqVar.g(wqVar.getMeasuredWidth(), arrayList, false);
+                                wqVar.y.playTogether(arrayList);
+                                wqVar.y.setDuration(180L);
+                                wqVar.y.setInterpolator(bs.g);
+                                wqVar.y.addListener(new org.telegram.ui.pq(wqVar, 19));
+                                wqVar.y.start();
+                                break;
+                            }
+                            break;
+                        case 1:
+                            vq vqVar3 = wqVar.a;
+                            Property property5 = View.TRANSLATION_X;
+                            Property property6 = View.SCALE_Y;
+                            Property property7 = View.SCALE_X;
+                            Property property8 = View.ALPHA;
+                            org.telegram.ui.ActionBar.j0 j0Var2 = wqVar.F;
+                            ColorPicker$RadioButton[] colorPicker$RadioButtonArr2 = wqVar.v;
+                            ImageView imageView2 = wqVar.G;
+                            if (wqVar.y == null) {
+                                ArrayList arrayList2 = new ArrayList();
+                                int i18 = wqVar.K;
+                                if (i18 == 2) {
+                                    wqVar.K = 1;
+                                    arrayList2.add(ObjectAnimator.ofFloat(j0Var2, (Property<org.telegram.ui.ActionBar.j0, Float>) property8, 0.0f));
+                                    arrayList2.add(ObjectAnimator.ofFloat(j0Var2, (Property<org.telegram.ui.ActionBar.j0, Float>) property7, 0.0f));
+                                    arrayList2.add(ObjectAnimator.ofFloat(j0Var2, (Property<org.telegram.ui.ActionBar.j0, Float>) property6, 0.0f));
+                                    arrayList2.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property5, 0.0f));
+                                } else if (i18 == 3) {
+                                    wqVar.K = 2;
+                                    arrayList2.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property5, AndroidUtilities.dp(13.0f) + AndroidUtilities.dp(30.0f)));
+                                } else if (i18 == 4) {
+                                    wqVar.K = 3;
+                                    arrayList2.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property5, org.telegram.messenger.q.D(13.0f, 2, AndroidUtilities.dp(30.0f) * 2)));
+                                }
+                                if (wqVar.K < wqVar.L) {
+                                    imageView2.setVisibility(0);
+                                    arrayList2.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property8, 1.0f));
+                                    arrayList2.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property7, 1.0f));
+                                    arrayList2.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property6, 1.0f));
+                                } else {
+                                    arrayList2.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property8, 0.0f));
+                                    arrayList2.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property7, 0.0f));
+                                    arrayList2.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property6, 0.0f));
+                                }
+                                int i19 = wqVar.S;
+                                if (i19 != 3) {
+                                    ColorPicker$RadioButton colorPicker$RadioButton4 = colorPicker$RadioButtonArr2[i19];
+                                    for (int i20 = i19 + 1; i20 < colorPicker$RadioButtonArr2.length; i20++) {
+                                        colorPicker$RadioButtonArr2[i20 - 1] = colorPicker$RadioButtonArr2[i20];
+                                    }
+                                    colorPicker$RadioButtonArr2[3] = colorPicker$RadioButton4;
+                                }
+                                int i21 = wqVar.T;
+                                if (i21 < 0 || i21 >= wqVar.S) {
+                                    colorPicker$RadioButtonArr2[wqVar.K - 1].callOnClick();
+                                } else {
+                                    colorPicker$RadioButtonArr2[i21].callOnClick();
+                                }
+                                int i22 = 0;
+                                while (i22 < colorPicker$RadioButtonArr2.length) {
+                                    if (i22 < wqVar.K) {
+                                        vqVar3.j0(colorPicker$RadioButtonArr2[i22].e, i22, i22 == colorPicker$RadioButtonArr2.length - 1);
+                                    } else {
+                                        vqVar3.j0(0, i22, i22 == colorPicker$RadioButtonArr2.length - 1);
+                                    }
+                                    i22++;
+                                }
+                                wqVar.y = new AnimatorSet();
+                                wqVar.g(wqVar.getMeasuredWidth(), arrayList2, true);
+                                wqVar.y.playTogether(arrayList2);
+                                wqVar.y.setDuration(180L);
+                                wqVar.y.setInterpolator(bs.g);
+                                wqVar.y.addListener(new uq(wqVar));
+                                wqVar.y.start();
+                                break;
+                            }
+                            break;
+                        case 2:
+                            wq.a(wqVar, view);
+                            break;
+                        default:
+                            wqVar.I.M(null, null);
+                            break;
+                    }
+                }
+            });
+            i14++;
+        }
+        int i15 = 0;
+        while (true) {
+            EditTextBoldCursor[] editTextBoldCursorArr = this.E;
+            if (i15 >= editTextBoldCursorArr.length) {
+                break;
+            }
+            if (i15 % 2 == 0) {
+                editTextBoldCursorArr[i15] = new sq(this, context, i15, i13);
+                this.E[i15].setBackgroundDrawable(null);
+                this.E[i15].setText("#");
+                this.E[i15].setEnabled(false);
+                this.E[i15].setFocusable(false);
+                this.E[i15].setPadding(0, AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(16.0f));
+                this.x.addView(this.E[i15], w7.z5.k(0.0f, 0.0f, 0.0f, 0.0f, -2, -1));
+            } else {
+                editTextBoldCursorArr[i15] = new sq(this, context, i15, i10);
+                this.E[i15].setBackgroundDrawable(null);
+                this.E[i15].setFilters(new InputFilter[]{new InputFilter.LengthFilter(6)});
+                this.E[i15].setHint("8BC6ED");
+                this.E[i15].setPadding(0, AndroidUtilities.dp(5.0f), 0, AndroidUtilities.dp(16.0f));
+                this.x.addView(this.E[i15], w7.z5.k(0.0f, 0.0f, 0.0f, 0.0f, 71, -1));
+                this.E[i15].addTextChangedListener(new tq(this, i15));
+                this.E[i15].setOnEditorActionListener(new t2(i10));
+            }
+            this.E[i15].setTextSize(1, 16.0f);
+            this.E[i15].setHintTextColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.H6, this.d0));
+            EditTextBoldCursor editTextBoldCursor = this.E[i15];
+            int i16 = org.telegram.ui.ActionBar.h6.G6;
+            editTextBoldCursor.setTextColor(org.telegram.ui.ActionBar.h6.w0(i16, this.d0));
+            this.E[i15].setCursorColor(org.telegram.ui.ActionBar.h6.w0(i16, this.d0));
+            this.E[i15].setCursorSize(AndroidUtilities.dp(18.0f));
+            this.E[i15].setCursorWidth(1.5f);
+            this.E[i15].setSingleLine(true);
+            this.E[i15].setGravity(19);
+            this.E[i15].setHeaderHintColor(org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.L6, this.d0));
+            this.E[i15].setTransformHintToHeader(true);
+            this.E[i15].setInputType(524416);
+            this.E[i15].setImeOptions(268435462);
+            if (i15 == 1) {
+                this.E[i15].requestFocus();
+            } else if (i15 == 2 || i15 == 3) {
+                this.E[i15].setVisibility(8);
+            }
+            i15++;
+        }
+        ImageView imageView = new ImageView(getContext());
+        this.G = imageView;
+        int i17 = org.telegram.ui.ActionBar.h6.I5;
+        imageView.setBackground(org.telegram.ui.ActionBar.h6.g0(org.telegram.ui.ActionBar.h6.w0(i17, this.d0), 1, -1));
+        imageView.setImageResource(R.drawable.msg_add);
+        int i18 = org.telegram.ui.ActionBar.h6.G6;
+        int w02 = org.telegram.ui.ActionBar.h6.w0(i18, this.d0);
+        PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
+        imageView.setColorFilter(new PorterDuffColorFilter(w02, mode));
+        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
+        imageView.setScaleType(scaleType);
+        imageView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.rq
+            public final /* synthetic */ wq b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                int i152;
+                int i162 = i13;
+                wq wqVar = this.b;
+                switch (i162) {
+                    case 0:
+                        Property property = View.TRANSLATION_X;
+                        Property property2 = View.SCALE_Y;
+                        Property property3 = View.SCALE_X;
+                        Property property4 = View.ALPHA;
+                        vq vqVar2 = wqVar.a;
+                        org.telegram.ui.ActionBar.j0 j0Var = wqVar.F;
+                        ImageView imageView2 = wqVar.G;
+                        ColorPicker$RadioButton[] colorPicker$RadioButtonArr = wqVar.v;
+                        if (wqVar.y == null) {
+                            int i172 = wqVar.K;
+                            if (i172 == 1) {
+                                ColorPicker$RadioButton colorPicker$RadioButton2 = colorPicker$RadioButtonArr[1];
+                                if (colorPicker$RadioButton2.e == 0) {
+                                    i152 = 0;
+                                    colorPicker$RadioButton2.a(wq.d(colorPicker$RadioButtonArr[0].e));
+                                } else {
+                                    i152 = 0;
+                                }
+                                if (wqVar.h) {
+                                    vqVar2.j0(colorPicker$RadioButtonArr[i152].e, i152, true);
+                                }
+                                vqVar2.j0(colorPicker$RadioButtonArr[1].e, 1, true);
+                                wqVar.K = 2;
+                            } else if (i172 == 2) {
+                                wqVar.K = 3;
+                                if (colorPicker$RadioButtonArr[2].e == 0) {
+                                    float[] fArr = new float[3];
+                                    Color.colorToHSV(colorPicker$RadioButtonArr[0].e, fArr);
+                                    float f7 = fArr[0];
+                                    if (f7 > 180.0f) {
+                                        fArr[0] = f7 - 60.0f;
+                                    } else {
+                                        fArr[0] = f7 + 60.0f;
+                                    }
+                                    colorPicker$RadioButtonArr[2].a(Color.HSVToColor(255, fArr));
+                                }
+                                vqVar2.j0(colorPicker$RadioButtonArr[2].e, 2, true);
+                            } else if (i172 == 3) {
+                                wqVar.K = 4;
+                                ColorPicker$RadioButton colorPicker$RadioButton3 = colorPicker$RadioButtonArr[3];
+                                if (colorPicker$RadioButton3.e == 0) {
+                                    colorPicker$RadioButton3.a(wq.d(colorPicker$RadioButtonArr[2].e));
+                                }
+                                vqVar2.j0(colorPicker$RadioButtonArr[3].e, 3, true);
+                            }
+                            ArrayList arrayList = new ArrayList();
+                            if (wqVar.K < wqVar.L) {
+                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property4, 1.0f));
+                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property3, 1.0f));
+                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property2, 1.0f));
+                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, i0.a.g(wqVar.K, 1, AndroidUtilities.dp(13.0f), (wqVar.K - 1) * AndroidUtilities.dp(30.0f))));
+                            } else {
+                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, i0.a.g(wqVar.K, 1, AndroidUtilities.dp(13.0f), (wqVar.K - 1) * AndroidUtilities.dp(30.0f))));
+                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property4, 0.0f));
+                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property3, 0.0f));
+                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property2, 0.0f));
+                            }
+                            if (wqVar.K > 1) {
+                                if (j0Var.getVisibility() != 0) {
+                                    j0Var.setScaleX(0.0f);
+                                    j0Var.setScaleY(0.0f);
+                                }
+                                j0Var.setVisibility(0);
+                                arrayList.add(ObjectAnimator.ofFloat(j0Var, (Property<org.telegram.ui.ActionBar.j0, Float>) property4, 1.0f));
+                                arrayList.add(ObjectAnimator.ofFloat(j0Var, (Property<org.telegram.ui.ActionBar.j0, Float>) property3, 1.0f));
+                                arrayList.add(ObjectAnimator.ofFloat(j0Var, (Property<org.telegram.ui.ActionBar.j0, Float>) property2, 1.0f));
+                            }
+                            colorPicker$RadioButtonArr[wqVar.K - 1].callOnClick();
+                            wqVar.y = new AnimatorSet();
+                            wqVar.g(wqVar.getMeasuredWidth(), arrayList, false);
+                            wqVar.y.playTogether(arrayList);
+                            wqVar.y.setDuration(180L);
+                            wqVar.y.setInterpolator(bs.g);
+                            wqVar.y.addListener(new org.telegram.ui.pq(wqVar, 19));
+                            wqVar.y.start();
+                            break;
+                        }
+                        break;
+                    case 1:
+                        vq vqVar3 = wqVar.a;
+                        Property property5 = View.TRANSLATION_X;
+                        Property property6 = View.SCALE_Y;
+                        Property property7 = View.SCALE_X;
+                        Property property8 = View.ALPHA;
+                        org.telegram.ui.ActionBar.j0 j0Var2 = wqVar.F;
+                        ColorPicker$RadioButton[] colorPicker$RadioButtonArr2 = wqVar.v;
+                        ImageView imageView22 = wqVar.G;
+                        if (wqVar.y == null) {
+                            ArrayList arrayList2 = new ArrayList();
+                            int i182 = wqVar.K;
+                            if (i182 == 2) {
+                                wqVar.K = 1;
+                                arrayList2.add(ObjectAnimator.ofFloat(j0Var2, (Property<org.telegram.ui.ActionBar.j0, Float>) property8, 0.0f));
+                                arrayList2.add(ObjectAnimator.ofFloat(j0Var2, (Property<org.telegram.ui.ActionBar.j0, Float>) property7, 0.0f));
+                                arrayList2.add(ObjectAnimator.ofFloat(j0Var2, (Property<org.telegram.ui.ActionBar.j0, Float>) property6, 0.0f));
+                                arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, 0.0f));
+                            } else if (i182 == 3) {
+                                wqVar.K = 2;
+                                arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, AndroidUtilities.dp(13.0f) + AndroidUtilities.dp(30.0f)));
+                            } else if (i182 == 4) {
+                                wqVar.K = 3;
+                                arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, org.telegram.messenger.q.D(13.0f, 2, AndroidUtilities.dp(30.0f) * 2)));
+                            }
+                            if (wqVar.K < wqVar.L) {
+                                imageView22.setVisibility(0);
+                                arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property8, 1.0f));
+                                arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property7, 1.0f));
+                                arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property6, 1.0f));
+                            } else {
+                                arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property8, 0.0f));
+                                arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property7, 0.0f));
+                                arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property6, 0.0f));
+                            }
+                            int i19 = wqVar.S;
+                            if (i19 != 3) {
+                                ColorPicker$RadioButton colorPicker$RadioButton4 = colorPicker$RadioButtonArr2[i19];
+                                for (int i20 = i19 + 1; i20 < colorPicker$RadioButtonArr2.length; i20++) {
+                                    colorPicker$RadioButtonArr2[i20 - 1] = colorPicker$RadioButtonArr2[i20];
+                                }
+                                colorPicker$RadioButtonArr2[3] = colorPicker$RadioButton4;
+                            }
+                            int i21 = wqVar.T;
+                            if (i21 < 0 || i21 >= wqVar.S) {
+                                colorPicker$RadioButtonArr2[wqVar.K - 1].callOnClick();
+                            } else {
+                                colorPicker$RadioButtonArr2[i21].callOnClick();
+                            }
+                            int i22 = 0;
+                            while (i22 < colorPicker$RadioButtonArr2.length) {
+                                if (i22 < wqVar.K) {
+                                    vqVar3.j0(colorPicker$RadioButtonArr2[i22].e, i22, i22 == colorPicker$RadioButtonArr2.length - 1);
+                                } else {
+                                    vqVar3.j0(0, i22, i22 == colorPicker$RadioButtonArr2.length - 1);
+                                }
+                                i22++;
+                            }
+                            wqVar.y = new AnimatorSet();
+                            wqVar.g(wqVar.getMeasuredWidth(), arrayList2, true);
+                            wqVar.y.playTogether(arrayList2);
+                            wqVar.y.setDuration(180L);
+                            wqVar.y.setInterpolator(bs.g);
+                            wqVar.y.addListener(new uq(wqVar));
+                            wqVar.y.start();
+                            break;
+                        }
+                        break;
+                    case 2:
+                        wq.a(wqVar, view);
+                        break;
+                    default:
+                        wqVar.I.M(null, null);
+                        break;
+                }
+            }
+        });
+        imageView.setContentDescription(LocaleController.getString(R.string.Add));
+        addView(imageView, w7.z5.a(30.0f, 36.0f, 1.0f, 0.0f, 0.0f, 30, 49));
+        org.telegram.ui.ActionBar.j0 j0Var = new org.telegram.ui.ActionBar.j0(this, getContext(), 1);
+        this.F = j0Var;
+        j0Var.setBackground(org.telegram.ui.ActionBar.h6.g0(org.telegram.ui.ActionBar.h6.w0(i17, this.d0), 1, -1));
+        j0Var.setImageResource(R.drawable.msg_close);
+        j0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.w0(i18, this.d0), mode));
+        j0Var.setAlpha(0.0f);
+        j0Var.setScaleX(0.0f);
+        j0Var.setScaleY(0.0f);
+        j0Var.setScaleType(scaleType);
+        j0Var.setVisibility(4);
+        j0Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.rq
+            public final /* synthetic */ wq b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                int i152;
+                int i162 = i10;
+                wq wqVar = this.b;
+                switch (i162) {
+                    case 0:
+                        Property property = View.TRANSLATION_X;
+                        Property property2 = View.SCALE_Y;
+                        Property property3 = View.SCALE_X;
+                        Property property4 = View.ALPHA;
+                        vq vqVar2 = wqVar.a;
+                        org.telegram.ui.ActionBar.j0 j0Var2 = wqVar.F;
+                        ImageView imageView2 = wqVar.G;
+                        ColorPicker$RadioButton[] colorPicker$RadioButtonArr = wqVar.v;
+                        if (wqVar.y == null) {
+                            int i172 = wqVar.K;
+                            if (i172 == 1) {
+                                ColorPicker$RadioButton colorPicker$RadioButton2 = colorPicker$RadioButtonArr[1];
+                                if (colorPicker$RadioButton2.e == 0) {
+                                    i152 = 0;
+                                    colorPicker$RadioButton2.a(wq.d(colorPicker$RadioButtonArr[0].e));
+                                } else {
+                                    i152 = 0;
+                                }
+                                if (wqVar.h) {
+                                    vqVar2.j0(colorPicker$RadioButtonArr[i152].e, i152, true);
+                                }
+                                vqVar2.j0(colorPicker$RadioButtonArr[1].e, 1, true);
+                                wqVar.K = 2;
+                            } else if (i172 == 2) {
+                                wqVar.K = 3;
+                                if (colorPicker$RadioButtonArr[2].e == 0) {
+                                    float[] fArr = new float[3];
+                                    Color.colorToHSV(colorPicker$RadioButtonArr[0].e, fArr);
+                                    float f7 = fArr[0];
+                                    if (f7 > 180.0f) {
+                                        fArr[0] = f7 - 60.0f;
+                                    } else {
+                                        fArr[0] = f7 + 60.0f;
+                                    }
+                                    colorPicker$RadioButtonArr[2].a(Color.HSVToColor(255, fArr));
+                                }
+                                vqVar2.j0(colorPicker$RadioButtonArr[2].e, 2, true);
+                            } else if (i172 == 3) {
+                                wqVar.K = 4;
+                                ColorPicker$RadioButton colorPicker$RadioButton3 = colorPicker$RadioButtonArr[3];
+                                if (colorPicker$RadioButton3.e == 0) {
+                                    colorPicker$RadioButton3.a(wq.d(colorPicker$RadioButtonArr[2].e));
+                                }
+                                vqVar2.j0(colorPicker$RadioButtonArr[3].e, 3, true);
+                            }
+                            ArrayList arrayList = new ArrayList();
+                            if (wqVar.K < wqVar.L) {
+                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property4, 1.0f));
+                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property3, 1.0f));
+                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property2, 1.0f));
+                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, i0.a.g(wqVar.K, 1, AndroidUtilities.dp(13.0f), (wqVar.K - 1) * AndroidUtilities.dp(30.0f))));
+                            } else {
+                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, i0.a.g(wqVar.K, 1, AndroidUtilities.dp(13.0f), (wqVar.K - 1) * AndroidUtilities.dp(30.0f))));
+                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property4, 0.0f));
+                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property3, 0.0f));
+                                arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property2, 0.0f));
+                            }
+                            if (wqVar.K > 1) {
+                                if (j0Var2.getVisibility() != 0) {
+                                    j0Var2.setScaleX(0.0f);
+                                    j0Var2.setScaleY(0.0f);
+                                }
+                                j0Var2.setVisibility(0);
+                                arrayList.add(ObjectAnimator.ofFloat(j0Var2, (Property<org.telegram.ui.ActionBar.j0, Float>) property4, 1.0f));
+                                arrayList.add(ObjectAnimator.ofFloat(j0Var2, (Property<org.telegram.ui.ActionBar.j0, Float>) property3, 1.0f));
+                                arrayList.add(ObjectAnimator.ofFloat(j0Var2, (Property<org.telegram.ui.ActionBar.j0, Float>) property2, 1.0f));
+                            }
+                            colorPicker$RadioButtonArr[wqVar.K - 1].callOnClick();
+                            wqVar.y = new AnimatorSet();
+                            wqVar.g(wqVar.getMeasuredWidth(), arrayList, false);
+                            wqVar.y.playTogether(arrayList);
+                            wqVar.y.setDuration(180L);
+                            wqVar.y.setInterpolator(bs.g);
+                            wqVar.y.addListener(new org.telegram.ui.pq(wqVar, 19));
+                            wqVar.y.start();
+                            break;
+                        }
+                        break;
+                    case 1:
+                        vq vqVar3 = wqVar.a;
+                        Property property5 = View.TRANSLATION_X;
+                        Property property6 = View.SCALE_Y;
+                        Property property7 = View.SCALE_X;
+                        Property property8 = View.ALPHA;
+                        org.telegram.ui.ActionBar.j0 j0Var22 = wqVar.F;
+                        ColorPicker$RadioButton[] colorPicker$RadioButtonArr2 = wqVar.v;
+                        ImageView imageView22 = wqVar.G;
+                        if (wqVar.y == null) {
+                            ArrayList arrayList2 = new ArrayList();
+                            int i182 = wqVar.K;
+                            if (i182 == 2) {
+                                wqVar.K = 1;
+                                arrayList2.add(ObjectAnimator.ofFloat(j0Var22, (Property<org.telegram.ui.ActionBar.j0, Float>) property8, 0.0f));
+                                arrayList2.add(ObjectAnimator.ofFloat(j0Var22, (Property<org.telegram.ui.ActionBar.j0, Float>) property7, 0.0f));
+                                arrayList2.add(ObjectAnimator.ofFloat(j0Var22, (Property<org.telegram.ui.ActionBar.j0, Float>) property6, 0.0f));
+                                arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, 0.0f));
+                            } else if (i182 == 3) {
+                                wqVar.K = 2;
+                                arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, AndroidUtilities.dp(13.0f) + AndroidUtilities.dp(30.0f)));
+                            } else if (i182 == 4) {
+                                wqVar.K = 3;
+                                arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, org.telegram.messenger.q.D(13.0f, 2, AndroidUtilities.dp(30.0f) * 2)));
+                            }
+                            if (wqVar.K < wqVar.L) {
+                                imageView22.setVisibility(0);
+                                arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property8, 1.0f));
+                                arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property7, 1.0f));
+                                arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property6, 1.0f));
+                            } else {
+                                arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property8, 0.0f));
+                                arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property7, 0.0f));
+                                arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property6, 0.0f));
+                            }
+                            int i19 = wqVar.S;
+                            if (i19 != 3) {
+                                ColorPicker$RadioButton colorPicker$RadioButton4 = colorPicker$RadioButtonArr2[i19];
+                                for (int i20 = i19 + 1; i20 < colorPicker$RadioButtonArr2.length; i20++) {
+                                    colorPicker$RadioButtonArr2[i20 - 1] = colorPicker$RadioButtonArr2[i20];
+                                }
+                                colorPicker$RadioButtonArr2[3] = colorPicker$RadioButton4;
+                            }
+                            int i21 = wqVar.T;
+                            if (i21 < 0 || i21 >= wqVar.S) {
+                                colorPicker$RadioButtonArr2[wqVar.K - 1].callOnClick();
+                            } else {
+                                colorPicker$RadioButtonArr2[i21].callOnClick();
+                            }
+                            int i22 = 0;
+                            while (i22 < colorPicker$RadioButtonArr2.length) {
+                                if (i22 < wqVar.K) {
+                                    vqVar3.j0(colorPicker$RadioButtonArr2[i22].e, i22, i22 == colorPicker$RadioButtonArr2.length - 1);
+                                } else {
+                                    vqVar3.j0(0, i22, i22 == colorPicker$RadioButtonArr2.length - 1);
+                                }
+                                i22++;
+                            }
+                            wqVar.y = new AnimatorSet();
+                            wqVar.g(wqVar.getMeasuredWidth(), arrayList2, true);
+                            wqVar.y.playTogether(arrayList2);
+                            wqVar.y.setDuration(180L);
+                            wqVar.y.setInterpolator(bs.g);
+                            wqVar.y.addListener(new uq(wqVar));
+                            wqVar.y.start();
+                            break;
+                        }
+                        break;
+                    case 2:
+                        wq.a(wqVar, view);
+                        break;
+                    default:
+                        wqVar.I.M(null, null);
+                        break;
+                }
+            }
+        });
+        j0Var.setContentDescription(LocaleController.getString(R.string.ClearButton));
+        addView(j0Var, w7.z5.a(30.0f, 97.0f, 1.0f, 0.0f, 0.0f, 30, 51));
+        TextView textView = new TextView(context);
+        this.H = textView;
+        textView.setTextSize(1, 15.0f);
+        textView.setTypeface(AndroidUtilities.bold());
+        textView.setGravity(17);
+        textView.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
+        textView.setTextColor(org.telegram.ui.ActionBar.h6.w0(i18, this.d0));
+        addView(textView, w7.z5.a(36.0f, 0.0f, 3.0f, 14.0f, 0.0f, -2, 53));
+        textView.setOnClickListener(new ah.f(11));
+        if (z10) {
+            org.telegram.ui.ActionBar.u0 u0Var = new org.telegram.ui.ActionBar.u0(context, (org.telegram.ui.ActionBar.y) null, 0, org.telegram.ui.ActionBar.h6.w0(i18, this.d0));
+            this.I = u0Var;
+            u0Var.setLongClickEnabled(false);
+            u0Var.setIcon(R.drawable.ic_ab_other);
+            u0Var.setContentDescription(LocaleController.getString(R.string.AccDescrMoreOptions));
+            u0Var.e(1, R.drawable.msg_edit, LocaleController.getString(R.string.OpenInEditor));
+            u0Var.e(2, R.drawable.msg_share, LocaleController.getString(R.string.ShareTheme));
+            u0Var.e(3, R.drawable.msg_delete, LocaleController.getString(R.string.DeleteTheme));
+            u0Var.setMenuYOffset(-AndroidUtilities.dp(80.0f));
+            u0Var.setSubMenuOpenSide(2);
+            u0Var.setDelegate(new s(this, 26));
+            u0Var.setAdditionalYOffset(AndroidUtilities.dp(72.0f));
+            u0Var.setTranslationX(AndroidUtilities.dp(6.0f));
+            u0Var.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.g0(org.telegram.ui.ActionBar.h6.w0(i17, this.d0), 1, -1));
+            addView(u0Var, w7.z5.a(30.0f, 0.0f, 2.0f, 10.0f, 0.0f, 30, 53));
+            u0Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.rq
+                public final /* synthetic */ wq b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // android.view.View.OnClickListener
+                public final void onClick(View view) {
+                    int i152;
+                    int i162 = i11;
+                    wq wqVar = this.b;
+                    switch (i162) {
+                        case 0:
+                            Property property = View.TRANSLATION_X;
+                            Property property2 = View.SCALE_Y;
+                            Property property3 = View.SCALE_X;
+                            Property property4 = View.ALPHA;
+                            vq vqVar2 = wqVar.a;
+                            org.telegram.ui.ActionBar.j0 j0Var2 = wqVar.F;
+                            ImageView imageView2 = wqVar.G;
+                            ColorPicker$RadioButton[] colorPicker$RadioButtonArr = wqVar.v;
+                            if (wqVar.y == null) {
+                                int i172 = wqVar.K;
+                                if (i172 == 1) {
+                                    ColorPicker$RadioButton colorPicker$RadioButton2 = colorPicker$RadioButtonArr[1];
+                                    if (colorPicker$RadioButton2.e == 0) {
+                                        i152 = 0;
+                                        colorPicker$RadioButton2.a(wq.d(colorPicker$RadioButtonArr[0].e));
+                                    } else {
+                                        i152 = 0;
+                                    }
+                                    if (wqVar.h) {
+                                        vqVar2.j0(colorPicker$RadioButtonArr[i152].e, i152, true);
+                                    }
+                                    vqVar2.j0(colorPicker$RadioButtonArr[1].e, 1, true);
+                                    wqVar.K = 2;
+                                } else if (i172 == 2) {
+                                    wqVar.K = 3;
+                                    if (colorPicker$RadioButtonArr[2].e == 0) {
+                                        float[] fArr = new float[3];
+                                        Color.colorToHSV(colorPicker$RadioButtonArr[0].e, fArr);
+                                        float f7 = fArr[0];
+                                        if (f7 > 180.0f) {
+                                            fArr[0] = f7 - 60.0f;
+                                        } else {
+                                            fArr[0] = f7 + 60.0f;
+                                        }
+                                        colorPicker$RadioButtonArr[2].a(Color.HSVToColor(255, fArr));
+                                    }
+                                    vqVar2.j0(colorPicker$RadioButtonArr[2].e, 2, true);
+                                } else if (i172 == 3) {
+                                    wqVar.K = 4;
+                                    ColorPicker$RadioButton colorPicker$RadioButton3 = colorPicker$RadioButtonArr[3];
+                                    if (colorPicker$RadioButton3.e == 0) {
+                                        colorPicker$RadioButton3.a(wq.d(colorPicker$RadioButtonArr[2].e));
+                                    }
+                                    vqVar2.j0(colorPicker$RadioButtonArr[3].e, 3, true);
+                                }
+                                ArrayList arrayList = new ArrayList();
+                                if (wqVar.K < wqVar.L) {
+                                    arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property4, 1.0f));
+                                    arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property3, 1.0f));
+                                    arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property2, 1.0f));
+                                    arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, i0.a.g(wqVar.K, 1, AndroidUtilities.dp(13.0f), (wqVar.K - 1) * AndroidUtilities.dp(30.0f))));
+                                } else {
+                                    arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property, i0.a.g(wqVar.K, 1, AndroidUtilities.dp(13.0f), (wqVar.K - 1) * AndroidUtilities.dp(30.0f))));
+                                    arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property4, 0.0f));
+                                    arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property3, 0.0f));
+                                    arrayList.add(ObjectAnimator.ofFloat(imageView2, (Property<ImageView, Float>) property2, 0.0f));
+                                }
+                                if (wqVar.K > 1) {
+                                    if (j0Var2.getVisibility() != 0) {
+                                        j0Var2.setScaleX(0.0f);
+                                        j0Var2.setScaleY(0.0f);
+                                    }
+                                    j0Var2.setVisibility(0);
+                                    arrayList.add(ObjectAnimator.ofFloat(j0Var2, (Property<org.telegram.ui.ActionBar.j0, Float>) property4, 1.0f));
+                                    arrayList.add(ObjectAnimator.ofFloat(j0Var2, (Property<org.telegram.ui.ActionBar.j0, Float>) property3, 1.0f));
+                                    arrayList.add(ObjectAnimator.ofFloat(j0Var2, (Property<org.telegram.ui.ActionBar.j0, Float>) property2, 1.0f));
+                                }
+                                colorPicker$RadioButtonArr[wqVar.K - 1].callOnClick();
+                                wqVar.y = new AnimatorSet();
+                                wqVar.g(wqVar.getMeasuredWidth(), arrayList, false);
+                                wqVar.y.playTogether(arrayList);
+                                wqVar.y.setDuration(180L);
+                                wqVar.y.setInterpolator(bs.g);
+                                wqVar.y.addListener(new org.telegram.ui.pq(wqVar, 19));
+                                wqVar.y.start();
+                                break;
+                            }
+                            break;
+                        case 1:
+                            vq vqVar3 = wqVar.a;
+                            Property property5 = View.TRANSLATION_X;
+                            Property property6 = View.SCALE_Y;
+                            Property property7 = View.SCALE_X;
+                            Property property8 = View.ALPHA;
+                            org.telegram.ui.ActionBar.j0 j0Var22 = wqVar.F;
+                            ColorPicker$RadioButton[] colorPicker$RadioButtonArr2 = wqVar.v;
+                            ImageView imageView22 = wqVar.G;
+                            if (wqVar.y == null) {
+                                ArrayList arrayList2 = new ArrayList();
+                                int i182 = wqVar.K;
+                                if (i182 == 2) {
+                                    wqVar.K = 1;
+                                    arrayList2.add(ObjectAnimator.ofFloat(j0Var22, (Property<org.telegram.ui.ActionBar.j0, Float>) property8, 0.0f));
+                                    arrayList2.add(ObjectAnimator.ofFloat(j0Var22, (Property<org.telegram.ui.ActionBar.j0, Float>) property7, 0.0f));
+                                    arrayList2.add(ObjectAnimator.ofFloat(j0Var22, (Property<org.telegram.ui.ActionBar.j0, Float>) property6, 0.0f));
+                                    arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, 0.0f));
+                                } else if (i182 == 3) {
+                                    wqVar.K = 2;
+                                    arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, AndroidUtilities.dp(13.0f) + AndroidUtilities.dp(30.0f)));
+                                } else if (i182 == 4) {
+                                    wqVar.K = 3;
+                                    arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property5, org.telegram.messenger.q.D(13.0f, 2, AndroidUtilities.dp(30.0f) * 2)));
+                                }
+                                if (wqVar.K < wqVar.L) {
+                                    imageView22.setVisibility(0);
+                                    arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property8, 1.0f));
+                                    arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property7, 1.0f));
+                                    arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property6, 1.0f));
+                                } else {
+                                    arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property8, 0.0f));
+                                    arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property7, 0.0f));
+                                    arrayList2.add(ObjectAnimator.ofFloat(imageView22, (Property<ImageView, Float>) property6, 0.0f));
+                                }
+                                int i19 = wqVar.S;
+                                if (i19 != 3) {
+                                    ColorPicker$RadioButton colorPicker$RadioButton4 = colorPicker$RadioButtonArr2[i19];
+                                    for (int i20 = i19 + 1; i20 < colorPicker$RadioButtonArr2.length; i20++) {
+                                        colorPicker$RadioButtonArr2[i20 - 1] = colorPicker$RadioButtonArr2[i20];
+                                    }
+                                    colorPicker$RadioButtonArr2[3] = colorPicker$RadioButton4;
+                                }
+                                int i21 = wqVar.T;
+                                if (i21 < 0 || i21 >= wqVar.S) {
+                                    colorPicker$RadioButtonArr2[wqVar.K - 1].callOnClick();
+                                } else {
+                                    colorPicker$RadioButtonArr2[i21].callOnClick();
+                                }
+                                int i22 = 0;
+                                while (i22 < colorPicker$RadioButtonArr2.length) {
+                                    if (i22 < wqVar.K) {
+                                        vqVar3.j0(colorPicker$RadioButtonArr2[i22].e, i22, i22 == colorPicker$RadioButtonArr2.length - 1);
+                                    } else {
+                                        vqVar3.j0(0, i22, i22 == colorPicker$RadioButtonArr2.length - 1);
+                                    }
+                                    i22++;
+                                }
+                                wqVar.y = new AnimatorSet();
+                                wqVar.g(wqVar.getMeasuredWidth(), arrayList2, true);
+                                wqVar.y.playTogether(arrayList2);
+                                wqVar.y.setDuration(180L);
+                                wqVar.y.setInterpolator(bs.g);
+                                wqVar.y.addListener(new uq(wqVar));
+                                wqVar.y.start();
+                                break;
+                            }
+                            break;
+                        case 2:
+                            wq.a(wqVar, view);
+                            break;
+                        default:
+                            wqVar.I.M(null, null);
+                            break;
+                    }
+                }
+            });
+        }
+        g(getMeasuredWidth(), null, false);
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        int i10;
-        int i11 = this.a;
-        int i12 = this.b;
-        View view = this.c;
-        switch (i11) {
-            case 0:
-                zq zqVar = (zq) view;
-                EditTextBoldCursor[] editTextBoldCursorArr = zqVar.E;
-                if (!zqVar.r) {
-                    zqVar.r = true;
-                    int i13 = 0;
-                    while (i13 < editable.length()) {
-                        char charAt = editable.charAt(i13);
-                        if ((charAt < '0' || charAt > '9') && ((charAt < 'a' || charAt > 'f') && (charAt < 'A' || charAt > 'F'))) {
-                            editable.replace(i13, i13 + 1, "");
-                            i13--;
-                        }
-                        i13++;
-                    }
-                    if (editable.length() != 0) {
-                        try {
-                            i10 = Integer.parseInt(editTextBoldCursorArr[i12].getText().toString(), 16) | (-16777216);
-                        } catch (Exception unused) {
-                            i10 = -1;
-                        }
-                        zqVar.setColorInner(i10);
-                        int color = zqVar.getColor();
-                        if (editable.length() == 6) {
-                            editable.replace(0, editable.length(), String.format("%02x%02x%02x", Byte.valueOf((byte) Color.red(color)), Byte.valueOf((byte) Color.green(color)), Byte.valueOf((byte) Color.blue(color))).toUpperCase());
-                            editTextBoldCursorArr[i12].setSelection(editable.length());
-                        }
-                        zqVar.v[zqVar.S].a(color);
-                        zqVar.a.t0(color, zqVar.S, true);
-                        zqVar.r = false;
-                        break;
-                    } else {
-                        zqVar.r = false;
-                        break;
-                    }
-                }
-                break;
-            default:
-                NumberTextView numberTextView = (NumberTextView) view;
-                int codePointCount = i12 - Character.codePointCount(editable, 0, editable.length());
-                if (codePointCount >= 30) {
-                    AndroidUtilities.updateViewVisibilityAnimated(numberTextView, false);
-                    break;
-                } else {
-                    numberTextView.a(codePointCount, numberTextView.getVisibility() == 0);
-                    AndroidUtilities.updateViewVisibilityAnimated(numberTextView, true);
-                    break;
-                }
+    public static void a(wq wqVar, View view) {
+        ColorPicker$RadioButton colorPicker$RadioButton = (ColorPicker$RadioButton) view;
+        int i10 = 0;
+        while (true) {
+            ColorPicker$RadioButton[] colorPicker$RadioButtonArr = wqVar.v;
+            if (i10 >= colorPicker$RadioButtonArr.length) {
+                int i11 = colorPicker$RadioButton.e;
+                wqVar.setColorInner(i11);
+                wqVar.E[1].setText(String.format("%02x%02x%02x", Byte.valueOf((byte) Color.red(i11)), Byte.valueOf((byte) Color.green(i11)), Byte.valueOf((byte) Color.blue(i11))).toUpperCase());
+                return;
+            }
+            ColorPicker$RadioButton colorPicker$RadioButton2 = colorPicker$RadioButtonArr[i10];
+            boolean z10 = colorPicker$RadioButton2 == colorPicker$RadioButton;
+            colorPicker$RadioButton2.d = z10;
+            colorPicker$RadioButton2.b(true);
+            if (z10) {
+                wqVar.T = wqVar.S;
+                wqVar.S = i10;
+            }
+            i10++;
         }
     }
 
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
+    public static int d(int i10) {
+        float[] fArr = new float[3];
+        Color.colorToHSV(i10, fArr);
+        float f7 = fArr[1];
+        if (f7 > 0.5f) {
+            fArr[1] = f7 - 0.15f;
+        } else {
+            fArr[1] = f7 + 0.15f;
+        }
+        float f10 = fArr[0];
+        if (f10 > 180.0f) {
+            fArr[0] = f10 - 20.0f;
+        } else {
+            fArr[0] = f10 + 20.0f;
+        }
+        return Color.HSVToColor(255, fArr);
     }
 
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
+    private float getBrightness() {
+        return Math.max(this.b0, Math.min(this.N[2], this.c0));
     }
 
-    public wq(int i10, NumberTextView numberTextView) {
-        this.b = i10;
-        this.c = numberTextView;
+    /* JADX INFO: Access modifiers changed from: private */
+    public void setColorInner(int i10) {
+        Color.colorToHSV(i10, this.N);
+        int r02 = this.a.r0(this.S);
+        if (r02 == 0 || r02 != i10) {
+            h();
+        }
+        this.P = null;
+        invalidate();
     }
 
-    private final void a(int i10, int i11, int i12, CharSequence charSequence) {
+    public final void c(Canvas canvas, int i10, int i11, int i12, boolean z10) {
+        int dp = AndroidUtilities.dp(z10 ? 12.0f : 16.0f);
+        Drawable drawable = this.f;
+        drawable.setBounds(i10 - dp, i11 - dp, i10 + dp, dp + i11);
+        drawable.draw(canvas);
+        Paint paint = this.d;
+        paint.setColor(-1);
+        float f7 = i10;
+        float f10 = i11;
+        canvas.drawCircle(f7, f10, AndroidUtilities.dp(z10 ? 11.0f : 15.0f), paint);
+        paint.setColor(i12);
+        canvas.drawCircle(f7, f10, AndroidUtilities.dp(z10 ? 9.0f : 13.0f), paint);
     }
 
-    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
+    public final void e(int i10, int i11) {
+        if (!this.r) {
+            this.r = true;
+            if (this.S == i11) {
+                String upperCase = String.format("%02x%02x%02x", Byte.valueOf((byte) Color.red(i10)), Byte.valueOf((byte) Color.green(i10)), Byte.valueOf((byte) Color.blue(i10))).toUpperCase();
+                EditTextBoldCursor[] editTextBoldCursorArr = this.E;
+                editTextBoldCursorArr[1].setText(upperCase);
+                editTextBoldCursorArr[1].setSelection(upperCase.length());
+            }
+            this.v[i11].a(i10);
+            this.r = false;
+        }
+        setColorInner(i10);
     }
 
-    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
+    public final void f(int i10, int i11, int i12, boolean z10) {
+        if (i10 != this.J) {
+            this.T = 0;
+            this.S = 0;
+            int i13 = 0;
+            while (i13 < 4) {
+                ColorPicker$RadioButton colorPicker$RadioButton = this.v[i13];
+                colorPicker$RadioButton.d = i13 == this.S;
+                colorPicker$RadioButton.b(true);
+                i13++;
+            }
+        }
+        this.L = i11;
+        this.J = i10;
+        this.h = z10;
+        this.K = i12;
+        ImageView imageView = this.G;
+        if (i12 == 1) {
+            imageView.setTranslationX(0.0f);
+        } else if (i12 == 2) {
+            imageView.setTranslationX(AndroidUtilities.dp(13.0f) + AndroidUtilities.dp(30.0f));
+        } else if (i12 == 3) {
+            imageView.setTranslationX(org.telegram.messenger.q.D(13.0f, 2, AndroidUtilities.dp(30.0f) * 2));
+        } else {
+            imageView.setTranslationX(org.telegram.messenger.q.D(13.0f, 3, AndroidUtilities.dp(30.0f) * 3));
+        }
+        org.telegram.ui.ActionBar.j0 j0Var = this.F;
+        org.telegram.ui.ActionBar.u0 u0Var = this.I;
+        if (u0Var != null) {
+            if (i10 == 1) {
+                u0Var.setVisibility(0);
+            } else {
+                u0Var.setVisibility(8);
+                j0Var.setTranslationX(0.0f);
+            }
+        }
+        if (i11 <= 1) {
+            imageView.setVisibility(8);
+            j0Var.setVisibility(8);
+        } else {
+            if (i12 < i11) {
+                imageView.setVisibility(0);
+                imageView.setScaleX(1.0f);
+                imageView.setScaleY(1.0f);
+                imageView.setAlpha(1.0f);
+            } else {
+                imageView.setVisibility(8);
+            }
+            if (i12 > 1) {
+                j0Var.setVisibility(0);
+                j0Var.setScaleX(1.0f);
+                j0Var.setScaleY(1.0f);
+                j0Var.setAlpha(1.0f);
+            } else {
+                j0Var.setVisibility(8);
+            }
+        }
+        this.x.invalidate();
+        g(getMeasuredWidth(), null, false);
     }
 
-    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
+    public final void g(int i10, ArrayList arrayList, boolean z10) {
+        float f7;
+        int i11 = this.K;
+        float f10 = 30.0f;
+        int D = org.telegram.messenger.q.D(13.0f, i11 - 1, AndroidUtilities.dp(30.0f) * i11);
+        FrameLayout frameLayout = this.w;
+        float f11 = frameLayout.getLeft() + D > i10 - AndroidUtilities.dp(this.J == 1 ? 50.0f : 0.0f) ? r7 - r2 : 0.0f;
+        Property property = View.TRANSLATION_X;
+        if (arrayList != null) {
+            arrayList.add(ObjectAnimator.ofFloat(frameLayout, (Property<FrameLayout, Float>) property, -f11));
+        } else {
+            frameLayout.setTranslationX(-f11);
+        }
+        int i12 = 0;
+        int i13 = 0;
+        while (true) {
+            ColorPicker$RadioButton[] colorPicker$RadioButtonArr = this.v;
+            if (i12 >= colorPicker$RadioButtonArr.length) {
+                return;
+            }
+            boolean z11 = colorPicker$RadioButtonArr[i12].getTag(R.id.index_tag) != null;
+            int i14 = this.K;
+            Property property2 = View.SCALE_Y;
+            Property property3 = View.SCALE_X;
+            Property property4 = View.ALPHA;
+            if (i12 < i14) {
+                colorPicker$RadioButtonArr[i12].setVisibility(0);
+                if (arrayList != null) {
+                    if (z11) {
+                        f7 = f10;
+                    } else {
+                        f7 = f10;
+                        arrayList.add(ObjectAnimator.ofFloat(colorPicker$RadioButtonArr[i12], (Property<ColorPicker$RadioButton, Float>) property4, 1.0f));
+                        arrayList.add(ObjectAnimator.ofFloat(colorPicker$RadioButtonArr[i12], (Property<ColorPicker$RadioButton, Float>) property3, 1.0f));
+                        arrayList.add(ObjectAnimator.ofFloat(colorPicker$RadioButtonArr[i12], (Property<ColorPicker$RadioButton, Float>) property2, 1.0f));
+                    }
+                    if (z10 || !(z10 || i12 == this.K - 1)) {
+                        arrayList.add(ObjectAnimator.ofFloat(colorPicker$RadioButtonArr[i12], (Property<ColorPicker$RadioButton, Float>) property, i13));
+                    } else {
+                        colorPicker$RadioButtonArr[i12].setTranslationX(i13);
+                    }
+                } else {
+                    f7 = f10;
+                    colorPicker$RadioButtonArr[i12].setVisibility(0);
+                    if (this.y == null) {
+                        colorPicker$RadioButtonArr[i12].setAlpha(1.0f);
+                        colorPicker$RadioButtonArr[i12].setScaleX(1.0f);
+                        colorPicker$RadioButtonArr[i12].setScaleY(1.0f);
+                    }
+                    colorPicker$RadioButtonArr[i12].setTranslationX(i13);
+                }
+                colorPicker$RadioButtonArr[i12].setTag(R.id.index_tag, 1);
+            } else {
+                f7 = f10;
+                if (arrayList == null) {
+                    colorPicker$RadioButtonArr[i12].setVisibility(4);
+                    if (this.y == null) {
+                        colorPicker$RadioButtonArr[i12].setAlpha(0.0f);
+                        colorPicker$RadioButtonArr[i12].setScaleX(0.0f);
+                        colorPicker$RadioButtonArr[i12].setScaleY(0.0f);
+                    }
+                } else if (z11) {
+                    arrayList.add(ObjectAnimator.ofFloat(colorPicker$RadioButtonArr[i12], (Property<ColorPicker$RadioButton, Float>) property4, 0.0f));
+                    arrayList.add(ObjectAnimator.ofFloat(colorPicker$RadioButtonArr[i12], (Property<ColorPicker$RadioButton, Float>) property3, 0.0f));
+                    arrayList.add(ObjectAnimator.ofFloat(colorPicker$RadioButtonArr[i12], (Property<ColorPicker$RadioButton, Float>) property2, 0.0f));
+                }
+                if (!z10) {
+                    colorPicker$RadioButtonArr[i12].setTranslationX(i13);
+                }
+                colorPicker$RadioButtonArr[i12].setTag(R.id.index_tag, null);
+            }
+            i13 = org.telegram.messenger.q.C(13.0f, AndroidUtilities.dp(f7), i13);
+            i12++;
+            f10 = f7;
+        }
+    }
+
+    public int getColor() {
+        float[] fArr = this.N;
+        float f7 = fArr[0];
+        float[] fArr2 = this.O;
+        fArr2[0] = f7;
+        fArr2[1] = fArr[1];
+        fArr2[2] = getBrightness();
+        return (Color.HSVToColor(fArr2) & 16777215) | (-16777216);
+    }
+
+    public final void h() {
+        org.telegram.ui.ActionBar.j0 j0Var = this.F;
+        if (j0Var == null) {
+            return;
+        }
+        float f7 = j0Var.getTag() != null ? 0.0f : this.W;
+        float f10 = j0Var.getTag() != null ? 1.0f : this.a0;
+        float[] fArr = this.N;
+        float f11 = fArr[2];
+        if (f7 == 0.0f && f10 == 1.0f) {
+            this.b0 = 0.0f;
+            this.c0 = 1.0f;
+            return;
+        }
+        fArr[2] = 1.0f;
+        int HSVToColor = Color.HSVToColor(fArr);
+        fArr[2] = f11;
+        float computePerceivedBrightness = AndroidUtilities.computePerceivedBrightness(HSVToColor);
+        float max = Math.max(0.0f, Math.min(f7 / computePerceivedBrightness, 1.0f));
+        this.b0 = max;
+        this.c0 = Math.max(max, Math.min(f10 / computePerceivedBrightness, 1.0f));
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        this.x.invalidate();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float f7;
+        int dp = AndroidUtilities.dp(45.0f);
+        float f10 = dp;
+        canvas.drawBitmap(this.s, 0.0f, f10, (Paint) null);
+        int height = this.s.getHeight() + dp;
+        Paint paint = this.e;
+        canvas.drawRect(0.0f, f10, getMeasuredWidth(), dp + 1, paint);
+        canvas.drawRect(0.0f, height - 1, getMeasuredWidth(), height, paint);
+        float[] fArr = this.N;
+        float f11 = fArr[0];
+        float[] fArr2 = this.O;
+        fArr2[0] = f11;
+        fArr2[1] = fArr[1];
+        fArr2[2] = 1.0f;
+        int measuredWidth = (int) ((fArr[0] * getMeasuredWidth()) / 360.0f);
+        int x10 = (int) com.google.android.gms.internal.cast.a6.x(1.0f, fArr[1], this.s.getHeight(), f10);
+        if (!this.Q) {
+            int dp2 = AndroidUtilities.dp(16.0f);
+            float interpolation = bs.g.getInterpolation(this.U);
+            if (measuredWidth < dp2) {
+                measuredWidth = (int) (((dp2 - measuredWidth) * interpolation) + measuredWidth);
+            } else if (measuredWidth > getMeasuredWidth() - dp2) {
+                measuredWidth = (int) (measuredWidth - ((measuredWidth - (getMeasuredWidth() - dp2)) * interpolation));
+            }
+            if (x10 < dp + dp2) {
+                x10 = (int) ((interpolation * (r5 - x10)) + x10);
+            } else if (x10 > (this.s.getHeight() + dp) - dp2) {
+                x10 = (int) (x10 - (interpolation * (x10 - ((this.s.getHeight() + dp) - dp2))));
+            }
+        }
+        c(canvas, measuredWidth, x10, Color.HSVToColor(fArr2), false);
+        float dp3 = AndroidUtilities.dp(22.0f);
+        float dp4 = AndroidUtilities.dp(26.0f) + height;
+        float measuredWidth2 = getMeasuredWidth() - AndroidUtilities.dp(22.0f);
+        float dp5 = AndroidUtilities.dp(34.0f) + height;
+        RectF rectF = this.n;
+        rectF.set(dp3, dp4, measuredWidth2, dp5);
+        LinearGradient linearGradient = this.P;
+        Paint paint2 = this.c;
+        if (linearGradient == null) {
+            fArr2[2] = this.b0;
+            int HSVToColor = Color.HSVToColor(fArr2);
+            fArr2[2] = this.c0;
+            int HSVToColor2 = Color.HSVToColor(fArr2);
+            float f12 = rectF.left;
+            float f13 = rectF.top;
+            LinearGradient linearGradient2 = new LinearGradient(f12, f13, rectF.right, f13, new int[]{HSVToColor2, HSVToColor}, (float[]) null, Shader.TileMode.CLAMP);
+            this.P = linearGradient2;
+            paint2.setShader(linearGradient2);
+        }
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), paint2);
+        if (this.b0 == this.c0) {
+            f7 = 0.5f;
+        } else {
+            float brightness = getBrightness();
+            float f14 = this.b0;
+            f7 = (brightness - f14) / (this.c0 - f14);
+        }
+        c(canvas, (int) ((rectF.width() * (1.0f - f7)) + rectF.left), (int) rectF.centerY(), getColor(), true);
+        if (this.Q || this.U >= 1.0f) {
+            return;
+        }
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long j10 = elapsedRealtime - this.V;
+        this.V = elapsedRealtime;
+        float f15 = (j10 / 180.0f) + this.U;
+        this.U = f15;
+        if (f15 > 1.0f) {
+            this.U = 1.0f;
+        }
+        invalidate();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        g(getMeasuredWidth(), null, false);
+    }
+
+    @Override // android.view.View
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        if (this.M != i10) {
+            this.M = i10;
+            int dp = AndroidUtilities.dp(180.0f);
+            Bitmap createBitmap = Bitmap.createBitmap(i10, dp, Bitmap.Config.ARGB_8888);
+            float f7 = i10;
+            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+            float f10 = dp;
+            ComposeShader composeShader = new ComposeShader(new LinearGradient(0.0f, dp / 3, 0.0f, f10, new int[]{-1, 0}, (float[]) null, tileMode), new LinearGradient(0.0f, 0.0f, f7, 0.0f, new int[]{-65536, -256, -16711936, -16711681, -16776961, -65281, -65536}, (float[]) null, tileMode), PorterDuff.Mode.MULTIPLY);
+            Paint paint = this.b;
+            paint.setShader(composeShader);
+            new Canvas(createBitmap).drawRect(0.0f, 0.0f, f7, f10, paint);
+            this.s = createBitmap;
+            this.P = null;
+        }
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:27:0x00f0, code lost:
+    
+        if (r12 <= (r5.bottom + org.telegram.messenger.AndroidUtilities.dp(7.0f))) goto L37;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:4:0x000b, code lost:
+    
+        if (r0 != 2) goto L8;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0132  */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        float f7;
+        int action = motionEvent.getAction();
+        if (action != 0) {
+            if (action == 1) {
+                this.R = false;
+                this.Q = false;
+                this.V = SystemClock.elapsedRealtime();
+                invalidate();
+            }
+            return super.onTouchEvent(motionEvent);
+        }
+        int x10 = (int) motionEvent.getX();
+        int y3 = (int) motionEvent.getY();
+        int dp = AndroidUtilities.dp(45.0f);
+        boolean z10 = this.Q;
+        float[] fArr = this.N;
+        if (z10 || (!this.R && y3 >= dp && y3 <= this.s.getHeight() + dp)) {
+            if (!this.Q) {
+                getParent().requestDisallowInterceptTouchEvent(true);
+            }
+            this.Q = true;
+            this.U = 0.0f;
+            this.V = SystemClock.elapsedRealtime();
+            x10 = Math.max(0, Math.min(x10, this.s.getWidth()));
+            y3 = Math.max(dp, Math.min(y3, this.s.getHeight() + dp));
+            if (this.b0 == this.c0) {
+                f7 = 0.5f;
+            } else {
+                float brightness = getBrightness();
+                float f10 = this.b0;
+                f7 = (brightness - f10) / (this.c0 - f10);
+            }
+            fArr[0] = (x10 * 360.0f) / this.s.getWidth();
+            fArr[1] = 1.0f - ((1.0f / this.s.getHeight()) * (y3 - dp));
+            h();
+            fArr[2] = (this.c0 * f7) + ((1.0f - f7) * this.b0);
+            this.P = null;
+        }
+        boolean z11 = this.R;
+        RectF rectF = this.n;
+        if (!z11) {
+            if (!this.Q) {
+                float f11 = x10;
+                if (f11 >= rectF.left && f11 <= rectF.right) {
+                    float f12 = y3;
+                    if (f12 >= rectF.top - AndroidUtilities.dp(7.0f)) {
+                    }
+                }
+            }
+            if (this.R && !this.Q) {
+                return true;
+            }
+            int color = getColor();
+            if (!this.r) {
+                int red = Color.red(color);
+                int green = Color.green(color);
+                int blue = Color.blue(color);
+                this.r = true;
+                String upperCase = String.format("%02x%02x%02x", Byte.valueOf((byte) red), Byte.valueOf((byte) green), Byte.valueOf((byte) blue)).toUpperCase();
+                Editable text = this.E[1].getText();
+                text.replace(0, text.length(), upperCase);
+                this.v[this.S].a(color);
+                this.r = false;
+            }
+            this.a.j0(color, this.S, false);
+            invalidate();
+            return true;
+        }
+        float width = 1.0f - ((x10 - rectF.left) / rectF.width());
+        float f13 = width >= 0.0f ? width > 1.0f ? 1.0f : width : 0.0f;
+        fArr[2] = (this.c0 * f13) + ((1.0f - f13) * this.b0);
+        if (!this.R) {
+            getParent().requestDisallowInterceptTouchEvent(true);
+        }
+        this.R = true;
+        if (this.R) {
+        }
+        int color2 = getColor();
+        if (!this.r) {
+        }
+        this.a.j0(color2, this.S, false);
+        invalidate();
+        return true;
+    }
+
+    public void setHasChanges(boolean z10) {
+        TextView textView = this.H;
+        if (!z10 || textView.getTag() == null) {
+            if ((z10 || textView.getTag() != null) && this.F.getTag() == null) {
+                textView.setTag(z10 ? 1 : null);
+                AnimatorSet animatorSet = new AnimatorSet();
+                ArrayList arrayList = new ArrayList();
+                if (z10) {
+                    textView.setVisibility(0);
+                }
+                arrayList.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) View.ALPHA, z10 ? 1.0f : 0.0f));
+                animatorSet.addListener(new org.telegram.ui.ho(7, this, z10));
+                animatorSet.playTogether(arrayList);
+                animatorSet.setDuration(180L);
+                animatorSet.start();
+            }
+        }
+    }
+
+    public void setMaxBrightness(float f7) {
+        this.a0 = f7;
+        h();
+    }
+
+    public void setMinBrightness(float f7) {
+        this.W = f7;
+        h();
+    }
+
+    public void setResourcesProvider(org.telegram.ui.ActionBar.d6 d6Var) {
+        this.d0 = d6Var;
     }
 }

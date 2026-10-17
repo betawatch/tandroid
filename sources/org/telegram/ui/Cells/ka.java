@@ -1,0 +1,130 @@
+package org.telegram.ui.Cells;
+
+import android.graphics.Canvas;
+import android.view.VelocityTracker;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_payments;
+import org.telegram.ui.Components.xc;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class ka implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+
+    public /* synthetic */ ka(int i10, Object obj, Object obj2) {
+        this.a = i10;
+        this.b = obj;
+        this.c = obj2;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ThemesHorizontalListCell$InnerThemeView themesHorizontalListCell$InnerThemeView = (ThemesHorizontalListCell$InnerThemeView) this.b;
+                TLObject tLObject = (TLObject) this.c;
+                ma maVar = themesHorizontalListCell$InnerThemeView.a0;
+                if (!(tLObject instanceof TLRPC.TL_wallPaper)) {
+                    themesHorizontalListCell$InnerThemeView.b.f = true;
+                    break;
+                } else {
+                    TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) tLObject;
+                    String attachFileName = FileLoader.getAttachFileName(wallPaper.document);
+                    if (!maVar.X2.containsKey(attachFileName)) {
+                        maVar.X2.put(attachFileName, themesHorizontalListCell$InnerThemeView.b);
+                        FileLoader.getInstance(themesHorizontalListCell$InnerThemeView.b.E).loadFile(wallPaper.document, wallPaper, 1, 1);
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                o0 o0Var = (o0) this.b;
+                n0 n0Var = (n0) this.c;
+                u1 u1Var = o0Var.a;
+                n0 n0Var2 = o0Var.F;
+                if (n0Var == n0Var2) {
+                    n0Var2.n.c(false);
+                    n0 n0Var3 = o0Var.F;
+                    if (!n0Var3.g) {
+                        TLObject tLObject2 = n0Var3.o;
+                        u1 u1Var2 = o0Var.a;
+                        if (u1Var2.getDelegate() != null) {
+                            u1Var2.getDelegate().z0(u1Var2, tLObject2, true);
+                        }
+                    } else if (u1Var.getDelegate() != null) {
+                        u1Var.getDelegate().n2();
+                    }
+                }
+                o0Var.F = null;
+                o0Var.G = null;
+                o0Var.B = false;
+                o0Var.A = false;
+                o0Var.y.c(false);
+                VelocityTracker velocityTracker = o0Var.D;
+                if (velocityTracker != null) {
+                    velocityTracker.recycle();
+                    o0Var.D = null;
+                    break;
+                }
+                break;
+            case 2:
+                x0 x0Var = (x0) this.b;
+                x0Var.f1.X1(x0Var, ((TLRPC.TL_messageActionGiftCode) this.c).slug);
+                break;
+            case 3:
+                final x0 x0Var2 = (x0) this.b;
+                final org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.c;
+                TL_payments.TL_resolveStarGiftOffer tL_resolveStarGiftOffer = new TL_payments.TL_resolveStarGiftOffer();
+                tL_resolveStarGiftOffer.offer_msg_id = x0Var2.getMessageObject().getId();
+                tL_resolveStarGiftOffer.decline = true;
+                ConnectionsManager.getInstance(x0Var2.H).sendRequestTyped(tL_resolveStarGiftOffer, new Utilities.Callback2() { // from class: org.telegram.ui.Cells.s0
+                    @Override // org.telegram.messenger.Utilities.Callback2
+                    public final void run(Object obj, Object obj2) {
+                        TLRPC.Updates updates = (TLRPC.Updates) obj;
+                        TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                        if (updates != null) {
+                            MessagesController.getInstance(x0.this.H).lambda$processUpdates$377(updates, false);
+                        }
+                        if (tL_error != null) {
+                            AndroidUtilities.runOnUIThread(new ka(4, n2Var, tL_error));
+                        }
+                    }
+                });
+                break;
+            case 4:
+                org.telegram.ui.ActionBar.n2 n2Var2 = (org.telegram.ui.ActionBar.n2) this.b;
+                xc.a0(n2Var2).f0((TLRPC.TL_error) this.c, false);
+                break;
+            case 5:
+                u1 u1Var3 = (u1) this.b;
+                u1Var3.O0.draw((Canvas) this.c);
+                break;
+            case 6:
+                ((u1) this.b).post(new c1(8, (u1) this.c));
+                break;
+            case 7:
+                l8 l8Var = (l8) this.b;
+                TLRPC.Document document = (TLRPC.Document) this.c;
+                if (l8Var.r.documents.isEmpty()) {
+                    TLRPC.TL_messages_stickerSet tL_messages_stickerSet = l8Var.r;
+                    if (tL_messages_stickerSet.set.thumb_document_id == document.id) {
+                        tL_messages_stickerSet.documents.add(document);
+                        l8Var.d(l8Var.r, l8Var.f, l8Var.s);
+                        break;
+                    }
+                }
+                break;
+            default:
+                ((ma) this.b).x1((org.telegram.ui.ActionBar.g6) this.c);
+                break;
+        }
+    }
+}

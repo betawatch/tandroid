@@ -20,21 +20,20 @@ import n6.l;
 import org.json.JSONException;
 import org.json.JSONObject;
 import r9.n;
-import s9.k;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class c implements d {
     public static final Object m = new Object();
     public final l9.h a;
     public final ta.c b;
-    public final n3.b c;
+    public final n2.e c;
     public final j d;
     public final n e;
     public final h f;
     public final Object g;
     public final ExecutorService h;
-    public final k i;
+    public final s9.j i;
     public String j;
     public final HashSet k;
     public final ArrayList l;
@@ -43,10 +42,10 @@ public final class c implements d {
         new AtomicInteger(1);
     }
 
-    public c(l9.h hVar, qa.b bVar, ExecutorService executorService, k kVar) {
+    public c(l9.h hVar, qa.b bVar, ExecutorService executorService, s9.j jVar) {
         hVar.a();
         ta.c cVar = new ta.c(hVar.a, bVar);
-        n3.b bVar2 = new n3.b(hVar);
+        n2.e eVar = new n2.e(hVar);
         if (sb.a.b == null) {
             sb.a.b = new sb.a(24);
         }
@@ -54,7 +53,7 @@ public final class c implements d {
         if (j.d == null) {
             j.d = new j(aVar);
         }
-        j jVar = j.d;
+        j jVar2 = j.d;
         n nVar = new n(new r9.c(hVar, 2));
         h hVar2 = new h();
         this.g = new Object();
@@ -62,12 +61,12 @@ public final class c implements d {
         this.l = new ArrayList();
         this.a = hVar;
         this.b = cVar;
-        this.c = bVar2;
-        this.d = jVar;
+        this.c = eVar;
+        this.d = jVar2;
         this.e = nVar;
         this.f = hVar2;
         this.h = executorService;
-        this.i = kVar;
+        this.i = jVar;
     }
 
     public final void a(i iVar) {
@@ -84,32 +83,32 @@ public final class c implements d {
         r2.c = r3;
         r2.b = 3;
         r2 = r2.a();
-        r4.F(r2);
+        r4.H(r2);
      */
     /* JADX WARN: Finally extract failed */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void b() {
-        sa.a K;
+        sa.a j02;
         synchronized (m) {
             try {
                 l9.h hVar = this.a;
                 hVar.a();
-                n3.b a2 = n3.b.a(hVar.a);
+                n2.e a2 = n2.e.a(hVar.a);
                 try {
-                    K = this.c.K();
-                    int i10 = K.b;
+                    j02 = this.c.j0();
+                    int i10 = j02.b;
                     boolean z10 = true;
                     if (i10 != 2 && i10 != 1) {
                         z10 = false;
                     }
                     if (a2 != null) {
-                        a2.W();
+                        a2.k0();
                     }
                 } catch (Throwable th2) {
                     if (a2 != null) {
-                        a2.W();
+                        a2.k0();
                     }
                     throw th2;
                 }
@@ -117,7 +116,7 @@ public final class c implements d {
                 throw th3;
             }
         }
-        k(K);
+        k(j02);
         this.i.execute(new b(this, 1));
     }
 
@@ -161,7 +160,7 @@ public final class c implements d {
                 if (responseCode == 401 || responseCode == 404) {
                     a5.a a10 = ta.b.a();
                     a10.b = 3;
-                    f7 = a10.f();
+                    f7 = a10.e();
                 } else {
                     if (responseCode == 429) {
                         throw new e("Firebase servers have received too many requests from this client in a short period of time. Please try again later.");
@@ -170,7 +169,7 @@ public final class c implements d {
                         Log.e("Firebase-Installations", "Firebase Installations can not communicate with Firebase server APIs due to invalid configuration. Please update your Firebase initialization process and set valid Firebase options (API key, Project ID, Application ID) when initializing Firebase.");
                         a5.a a11 = ta.b.a();
                         a11.b = 2;
-                        f7 = a11.f();
+                        f7 = a11.e();
                     }
                 }
             }
@@ -237,15 +236,15 @@ public final class c implements d {
             try {
                 l9.h hVar = this.a;
                 hVar.a();
-                n3.b a2 = n3.b.a(hVar.a);
+                n2.e a2 = n2.e.a(hVar.a);
                 try {
-                    this.c.F(aVar);
+                    this.c.H(aVar);
                     if (a2 != null) {
-                        a2.W();
+                        a2.k0();
                     }
                 } catch (Throwable th2) {
                     if (a2 != null) {
-                        a2.W();
+                        a2.k0();
                     }
                     throw th2;
                 }

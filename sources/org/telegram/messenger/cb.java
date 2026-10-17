@@ -1,39 +1,28 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.util.SparseArray;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class cb implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ ArrayList d;
-    public final /* synthetic */ boolean e;
-    public final /* synthetic */ TLRPC.TL_messages_peerDialogs f;
-    public final /* synthetic */ a0.h h;
-    public final /* synthetic */ TLRPC.TL_messages_dialogs n;
+    public final /* synthetic */ SparseArray c;
 
-    public /* synthetic */ cb(MessagesController messagesController, int i10, ArrayList arrayList, boolean z10, TLRPC.TL_messages_peerDialogs tL_messages_peerDialogs, a0.h hVar, TLRPC.TL_messages_dialogs tL_messages_dialogs, int i11) {
-        this.a = i11;
+    public /* synthetic */ cb(MessagesController messagesController, SparseArray sparseArray, int i10) {
+        this.a = i10;
         this.b = messagesController;
-        this.c = i10;
-        this.d = arrayList;
-        this.e = z10;
-        this.f = tL_messages_peerDialogs;
-        this.h = hVar;
-        this.n = tL_messages_dialogs;
+        this.c = sparseArray;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$loadPinnedDialogs$365(this.c, this.d, this.e, this.f, this.h, this.n);
+                this.b.lambda$getDifference$351(this.c);
                 break;
             default:
-                this.b.lambda$loadPinnedDialogs$364(this.c, this.d, this.e, this.f, this.h, this.n);
+                this.b.lambda$getChannelDifference$338(this.c);
                 break;
         }
     }

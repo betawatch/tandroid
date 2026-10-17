@@ -1,21 +1,49 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.animation.LayoutTransition;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class wk extends kh.e {
-    public final /* synthetic */ fo L;
+public final class wk implements LayoutTransition.TransitionListener {
+    public vk a;
+    public int b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.y c;
+    public final /* synthetic */ sn d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wk(fo foVar, Context context, org.telegram.ui.ActionBar.c6 c6Var, oj ojVar, bh.b bVar) {
-        super(context, bVar, ojVar, c6Var);
-        this.L = foVar;
+    public wk(sn snVar, org.telegram.ui.ActionBar.y yVar) {
+        this.d = snVar;
+        this.c = yVar;
     }
 
-    @Override // kh.e, android.view.View
-    public final void setVisibility(int i10) {
-        super.setVisibility(i10);
-        this.L.Bc.i(3, i10 == 0, getMeasuredWidth() > 0);
+    @Override // android.animation.LayoutTransition.TransitionListener
+    public final void endTransition(LayoutTransition layoutTransition, ViewGroup viewGroup, View view, int i10) {
+        int i11 = this.b - 1;
+        this.b = i11;
+        if (i11 != 0 || this.a == null) {
+            return;
+        }
+        this.c.getViewTreeObserver().removeOnPreDrawListener(this.a);
+        this.a = null;
+    }
+
+    /* JADX WARN: Type inference failed for: r1v5, types: [org.telegram.ui.vk] */
+    @Override // android.animation.LayoutTransition.TransitionListener
+    public final void startTransition(LayoutTransition layoutTransition, ViewGroup viewGroup, View view, int i10) {
+        if (this.b == 0 && this.a == null) {
+            this.a = new ViewTreeObserver.OnPreDrawListener() { // from class: org.telegram.ui.vk
+                @Override // android.view.ViewTreeObserver.OnPreDrawListener
+                public final boolean onPreDraw() {
+                    org.telegram.ui.ActionBar.k kVar;
+                    kVar = ((org.telegram.ui.ActionBar.n2) wk.this.d).actionBar;
+                    kVar.invalidate();
+                    return true;
+                }
+            };
+            this.c.getViewTreeObserver().addOnPreDrawListener(this.a);
+        }
+        this.b++;
     }
 }

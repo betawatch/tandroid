@@ -1,23 +1,24 @@
 package hg;
 
+import ai.bb;
+import ai.pa;
+import ai.va;
+import ai.y3;
+import ai.z6;
 import android.content.Context;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import bi.h4;
-import bi.n8;
-import bi.z7;
-import com.google.android.gms.internal.play_billing.k3;
-import fi.q3;
-import fi.r2;
+import com.google.android.gms.internal.cast.a6;
+import ei.p6;
+import gi.l2;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.DialogObject;
@@ -32,42 +33,40 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
-import org.telegram.messenger.sk;
+import org.telegram.messenger.wh;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Cells.i6;
-import org.telegram.ui.Cells.l4;
-import org.telegram.ui.Cells.qa;
-import org.telegram.ui.Cells.r8;
-import org.telegram.ui.Cells.s2;
-import org.telegram.ui.Cells.v3;
-import org.telegram.ui.Components.b91;
-import org.telegram.ui.Components.br;
-import org.telegram.ui.Components.f10;
-import org.telegram.ui.Components.l80;
-import org.telegram.ui.Components.lm0;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.q10;
-import org.telegram.ui.Components.qo0;
-import org.telegram.ui.Components.so0;
-import org.telegram.ui.Components.wl0;
-import org.telegram.ui.Components.yj0;
-import org.telegram.ui.Components.z9;
-import org.telegram.ui.aw;
-import org.telegram.ui.iy;
-import org.telegram.ui.kc1;
-import org.telegram.ui.ky;
-import org.telegram.ui.s10;
-import org.telegram.ui.yy;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.Cells.h6;
+import org.telegram.ui.Cells.k4;
+import org.telegram.ui.Cells.q8;
+import org.telegram.ui.Cells.r2;
+import org.telegram.ui.Cells.u3;
+import org.telegram.ui.Components.b10;
+import org.telegram.ui.Components.hm0;
+import org.telegram.ui.Components.i80;
+import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.m10;
+import org.telegram.ui.Components.mo0;
+import org.telegram.ui.Components.oo0;
+import org.telegram.ui.Components.s81;
+import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.uj0;
+import org.telegram.ui.Components.w9;
+import org.telegram.ui.Components.yq;
+import org.telegram.ui.ey;
+import org.telegram.ui.iv;
+import org.telegram.ui.nx;
+import org.telegram.ui.px;
+import org.telegram.ui.ua1;
+import org.telegram.ui.x00;
 import w7.z5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public abstract class h0 extends lm0 {
-    public s10 A0;
+public abstract class h0 extends hm0 {
+    public x00 A0;
     public int B0;
     public int C0;
     public int D0;
@@ -81,7 +80,7 @@ public abstract class h0 extends lm0 {
     public String R;
     public int S;
     public int T;
-    public ky U;
+    public px U;
     public final int V;
     public boolean W;
     public boolean X;
@@ -93,21 +92,21 @@ public abstract class h0 extends lm0 {
     public int d0;
     public final Context e;
     public int e0;
-    public r f;
+    public s f;
     public int f0;
     public int g0;
-    public r h;
+    public s h;
     public final int h0;
     public final s4.k i0;
     public final y j0;
-    public kc1 k0;
+    public ua1 k0;
     public final long l0;
     public long n0;
     public View o0;
-    public q3 p0;
+    public p6 p0;
     public ArrayList q0;
     public ah.o r;
-    public final yy r0;
+    public final ey r0;
     public final int s0;
     public ArrayList t0;
     public final ArrayList u0;
@@ -136,7 +135,7 @@ public abstract class h0 extends lm0 {
     public int Y = -1;
     public boolean m0 = false;
 
-    public h0(Context context, yy yyVar, int i10, int i11, s4.k kVar, boolean z10) {
+    public h0(Context context, ey eyVar, int i10, int i11, s4.k kVar, boolean z10) {
         int i12 = UserConfig.selectedAccount;
         this.s0 = i12;
         this.t0 = new ArrayList();
@@ -149,11 +148,11 @@ public abstract class h0 extends lm0 {
         this.G0 = true;
         this.H0 = true;
         this.i0 = kVar;
-        this.r0 = yyVar;
-        so0 so0Var = (so0) this;
-        y yVar = new y(so0Var);
+        this.r0 = eyVar;
+        oo0 oo0Var = (oo0) this;
+        y yVar = new y(oo0Var);
         this.j0 = yVar;
-        yVar.a = new a6.m(so0Var, 21);
+        yVar.a = new ag.b(oo0Var, 21);
         yVar.p = z10;
         this.e = context;
         this.V = i10;
@@ -178,7 +177,7 @@ public abstract class h0 extends lm0 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.hm0
     public final boolean D(s4.b1 b1Var) {
         int i10 = b1Var.f;
         return (i10 == 1 || i10 == 4 || i10 == 10) ? false : true;
@@ -222,9 +221,9 @@ public abstract class h0 extends lm0 {
         boolean z11 = this.N;
         int i10 = this.s0;
         if (z11) {
-            MessagesStorage.getInstance(i10).getStorageQueue().postRunnable(new q3(9, (so0) this, sb2));
+            MessagesStorage.getInstance(i10).getStorageQueue().postRunnable(new p6(26, (oo0) this, sb2));
         } else {
-            MessagesStorage.getInstance(i10).getStorageQueue().postRunnable(new r2(i10, 1));
+            MessagesStorage.getInstance(i10).getStorageQueue().postRunnable(new l2(i10, 1));
         }
     }
 
@@ -233,19 +232,19 @@ public abstract class h0 extends lm0 {
             return true;
         }
         boolean z10 = obj instanceof TLRPC.User;
-        yy yyVar = this.r0;
+        ey eyVar = this.r0;
         if (z10) {
-            return ((TLRPC.User) obj).bot ? yyVar.A2 : yyVar.z2;
+            return ((TLRPC.User) obj).bot ? eyVar.A2 : eyVar.z2;
         }
         if (!(obj instanceof TLRPC.Chat)) {
             return false;
         }
         TLRPC.Chat chat = (TLRPC.Chat) obj;
-        return ChatObject.isChannel(chat) ? yyVar.y2 : ChatObject.isMegagroup(chat) ? yyVar.v2 || yyVar.w2 : yyVar.v2 || yyVar.x2;
+        return ChatObject.isChannel(chat) ? eyVar.y2 : ChatObject.isMegagroup(chat) ? eyVar.v2 || eyVar.w2 : eyVar.v2 || eyVar.x2;
     }
 
     public final void G(String str) {
-        ky kyVar;
+        px pxVar;
         String str2;
         String str3;
         this.w0 = str;
@@ -256,8 +255,8 @@ public abstract class h0 extends lm0 {
             arrayList2.clear();
             int size = this.t0.size();
             for (int i10 = 0; i10 < size; i10++) {
-                ky kyVar2 = this.U;
-                if ((kyVar2 == null || kyVar2.a() != ((g0) this.t0.get(i10)).c) && F(((g0) this.t0.get(i10)).a)) {
+                px pxVar2 = this.U;
+                if ((pxVar2 == null || pxVar2.a() != ((g0) this.t0.get(i10)).c) && F(((g0) this.t0.get(i10)).a)) {
                     arrayList2.add((g0) this.t0.get(i10));
                 }
             }
@@ -267,7 +266,7 @@ public abstract class h0 extends lm0 {
         int size2 = this.t0.size();
         for (int i11 = 0; i11 < size2; i11++) {
             g0 g0Var = (g0) this.t0.get(i11);
-            if (g0Var != null && g0Var.a != null && (((kyVar = this.U) == null || kyVar.a() != g0Var.c) && F(((g0) this.t0.get(i11)).a))) {
+            if (g0Var != null && g0Var.a != null && (((pxVar = this.U) == null || pxVar.a() != g0Var.c) && F(((g0) this.t0.get(i11)).a))) {
                 TLObject tLObject = g0Var.a;
                 if (tLObject instanceof TLRPC.Chat) {
                     TLRPC.Chat chat = (TLRPC.Chat) tLObject;
@@ -296,11 +295,11 @@ public abstract class h0 extends lm0 {
     public final SpannableStringBuilder H(e0 e0Var) {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getString(e0Var.c));
         spannableStringBuilder.append((CharSequence) "v");
-        spannableStringBuilder.setSpan(new br(R.drawable.arrows_select, 0), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new yq(R.drawable.arrows_select, 0), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 33);
         return spannableStringBuilder;
     }
 
-    public final kc1 I() {
+    public final ua1 I() {
         return this.k0;
     }
 
@@ -315,7 +314,7 @@ public abstract class h0 extends lm0 {
             if (i10 > 0 && i10 - 1 < arrayList.size()) {
                 return arrayList.get(i13);
             }
-            i10 = k3.g(1, i10, arrayList);
+            i10 = a6.g(1, i10, arrayList);
         }
         ArrayList arrayList2 = this.J;
         if (!arrayList2.isEmpty()) {
@@ -344,14 +343,14 @@ public abstract class h0 extends lm0 {
             if (i10 > 0 && i10 <= arrayList4.size()) {
                 return arrayList4.get(i10 - 1);
             }
-            i10 = k3.g(1, i10, arrayList4);
+            i10 = a6.g(1, i10, arrayList4);
         }
         ArrayList arrayList5 = this.E;
         if (!arrayList5.isEmpty()) {
             if (i10 > 0 && i10 <= arrayList5.size()) {
                 return arrayList5.get(i10 - 1);
             }
-            i10 = k3.g(1, i10, arrayList5);
+            i10 = a6.g(1, i10, arrayList5);
         }
         y yVar = this.j0;
         ArrayList arrayList6 = yVar.e;
@@ -471,7 +470,7 @@ public abstract class h0 extends lm0 {
         if (this.N && this.J.isEmpty()) {
             ArrayList arrayList = this.x;
             if (!arrayList.isEmpty()) {
-                i10 = k3.g(1, i10, arrayList);
+                i10 = a6.g(1, i10, arrayList);
             }
             if (P()) {
                 ?? M = M();
@@ -534,8 +533,8 @@ public abstract class h0 extends lm0 {
 
     public final void Q() {
         if ((this.Q == 0 || this.O == 0) && this.g0 == this.d0) {
-            ky kyVar = this.U;
-            if (kyVar == null || kyVar.a() == 0 || this.X) {
+            px pxVar = this.U;
+            if (pxVar == null || pxVar.a() == 0 || this.X) {
                 W(this.g0, this.Z);
             } else {
                 V(this.g0, this.Z);
@@ -559,7 +558,7 @@ public abstract class h0 extends lm0 {
         G(str != null ? str.trim() : null);
         l();
         int i10 = this.s0;
-        MessagesStorage.getInstance(i10).getStorageQueue().postRunnable(new fi.a2(i10, j10, 1));
+        MessagesStorage.getInstance(i10).getStorageQueue().postRunnable(new pa(i10, j10, 2));
     }
 
     public final boolean S() {
@@ -600,9 +599,9 @@ public abstract class h0 extends lm0 {
             Utilities.searchQueue.cancelRunnable(this.f);
             this.f = null;
         }
-        r rVar = this.h;
-        if (rVar != null) {
-            AndroidUtilities.cancelRunOnUIThread(rVar);
+        s sVar = this.h;
+        if (sVar != null) {
+            AndroidUtilities.cancelRunOnUIThread(sVar);
             this.h = null;
         }
         ah.o oVar = this.r;
@@ -629,7 +628,7 @@ public abstract class h0 extends lm0 {
                 TLRPC.TL_contacts_getSponsoredPeers tL_contacts_getSponsoredPeers = new TLRPC.TL_contacts_getSponsoredPeers();
                 this.R = trim;
                 tL_contacts_getSponsoredPeers.q = trim;
-                this.S = ConnectionsManager.getInstance(this.s0).sendRequest(tL_contacts_getSponsoredPeers, new z7((so0) this, 9));
+                this.S = ConnectionsManager.getInstance(this.s0).sendRequest(tL_contacts_getSponsoredPeers, new ai.h((oo0) this, 15));
             }
         }
         if (TextUtils.isEmpty(trim)) {
@@ -650,17 +649,17 @@ public abstract class h0 extends lm0 {
                 boolean z11 = i11 != 11;
                 boolean z12 = i11 == 2 || i11 == 11;
                 boolean z13 = i11 == 0;
-                ky kyVar = this.U;
-                yVar.h(null, true, true, z10, z11, z12, 0L, z13, 0, 0, kyVar != null ? kyVar.a() : 0L, null);
+                px pxVar = this.U;
+                yVar.h(null, true, true, z10, z11, z12, 0L, z13, 0, 0, pxVar != null ? pxVar.a() : 0L, null);
             }
             this.N = false;
             this.d0 = 0;
             this.D0 = 0;
             this.G0 = true;
             this.H0 = true;
-            ky kyVar2 = this.U;
-            if (kyVar2 != null) {
-                kyVar2.d(false, true);
+            px pxVar2 = this.U;
+            if (pxVar2 != null) {
+                pxVar2.d(false, true);
             }
             if (this.h0 != 15) {
                 X(null);
@@ -670,9 +669,9 @@ public abstract class h0 extends lm0 {
             l();
             this.y0.clear();
             this.z0 = false;
-            s10 s10Var = this.A0;
-            if (s10Var != null) {
-                ((aw) s10Var).i(false, null, this.y0, false);
+            x00 x00Var = this.A0;
+            if (x00Var != null) {
+                ((iv) x00Var).i(false, null, this.y0, false);
                 return;
             }
             return;
@@ -696,9 +695,9 @@ public abstract class h0 extends lm0 {
                 this.H0 = true;
                 this.D0 = 0;
                 l();
-                ky kyVar3 = this.U;
-                if (kyVar3 != null) {
-                    kyVar3.d(false, false);
+                px pxVar3 = this.U;
+                if (pxVar3 != null) {
+                    pxVar3.d(false, false);
                 }
             } else {
                 MessagesStorage.getInstance(yVar2.m).getStorageQueue().postRunnable(new x1(yVar2, 1));
@@ -712,9 +711,9 @@ public abstract class h0 extends lm0 {
         this.G0 = true;
         this.H0 = true;
         l();
-        ky kyVar4 = this.U;
-        if (kyVar4 != null) {
-            kyVar4.d(true, false);
+        px pxVar4 = this.U;
+        if (pxVar4 != null) {
+            pxVar4.d(true, false);
         }
         if (trim != null) {
             String trim2 = trim.trim();
@@ -726,13 +725,13 @@ public abstract class h0 extends lm0 {
                 }
                 str2 = substring;
                 DispatchQueue dispatchQueue = Utilities.searchQueue;
-                so0 so0Var = (so0) this;
-                r rVar2 = new r(so0Var, trim, i13, str, 2);
-                this.f = rVar2;
-                dispatchQueue.postRunnable(rVar2, 300L);
+                oo0 oo0Var = (oo0) this;
+                s sVar2 = new s(oo0Var, trim, i13, str, 2);
+                this.f = sVar2;
+                dispatchQueue.postRunnable(sVar2, 300L);
                 if (str2 == null) {
                     this.D0++;
-                    ah.o oVar2 = new ah.o(so0Var, i13, str2, 12);
+                    ah.o oVar2 = new ah.o(oo0Var, i13, str2, 16);
                     this.r = oVar2;
                     AndroidUtilities.runOnUIThread(oVar2, 300L);
                     return;
@@ -742,17 +741,17 @@ public abstract class h0 extends lm0 {
         }
         str2 = null;
         DispatchQueue dispatchQueue2 = Utilities.searchQueue;
-        so0 so0Var2 = (so0) this;
-        r rVar22 = new r(so0Var2, trim, i13, str, 2);
-        this.f = rVar22;
-        dispatchQueue2.postRunnable(rVar22, 300L);
+        oo0 oo0Var2 = (oo0) this;
+        s sVar22 = new s(oo0Var2, trim, i13, str, 2);
+        this.f = sVar22;
+        dispatchQueue2.postRunnable(sVar22, 300L);
         if (str2 == null) {
         }
     }
 
     public final void V(int i10, String str) {
-        ky kyVar = this.U;
-        if (kyVar == null || kyVar.a() == 0 || this.V == 0) {
+        px pxVar = this.U;
+        if (pxVar == null || pxVar.a() == 0 || this.V == 0) {
             return;
         }
         if (TextUtils.isEmpty(this.Z) && TextUtils.isEmpty(str)) {
@@ -791,7 +790,7 @@ public abstract class h0 extends lm0 {
         this.Z = str;
         int i13 = 1 + this.T;
         this.T = i13;
-        this.Q = ConnectionsManager.getInstance(i12).sendRequest(tL_messages_search, new q(this, str, i13, i10, tL_messages_search, 0), 2);
+        this.Q = ConnectionsManager.getInstance(i12).sendRequest(tL_messages_search, new r(this, str, i13, i10, tL_messages_search, 0), 2);
     }
 
     public final void W(int i10, String str) {
@@ -832,7 +831,7 @@ public abstract class h0 extends lm0 {
                     this.d = false;
                 }
                 if (str.equals(this.Z) && this.a0 == this.c.a && !arrayList.isEmpty() && this.g0 == this.d0) {
-                    MessageObject messageObject = (MessageObject) i2.d.h(1, arrayList);
+                    MessageObject messageObject = (MessageObject) i0.a.h(1, arrayList);
                     tL_messages_searchGlobal.offset_id = messageObject.getId();
                     tL_messages_searchGlobal.offset_rate = this.c0;
                     tL_messages_searchGlobal.offset_peer = MessagesController.getInstance(i12).getInputPeer(MessageObject.getPeerId(messageObject.messageOwner.peer_id));
@@ -845,14 +844,14 @@ public abstract class h0 extends lm0 {
                 this.a0 = this.c.a;
                 int i14 = this.P + 1;
                 this.P = i14;
-                this.O = ConnectionsManager.getInstance(i12).sendRequest(tL_messages_searchGlobal, new q(this, str, i14, i10, tL_messages_searchGlobal, 1), 2);
+                this.O = ConnectionsManager.getInstance(i12).sendRequest(tL_messages_searchGlobal, new r(this, str, i14, i10, tL_messages_searchGlobal, 1), 2);
                 return;
             }
             int i15 = this.D0 - 1;
             this.D0 = i15;
-            ky kyVar = this.U;
-            if (kyVar != null) {
-                kyVar.d(i15 > 0, true);
+            px pxVar = this.U;
+            if (pxVar != null) {
+                pxVar.d(i15 > 0, true);
                 this.U.c();
             }
         }
@@ -861,8 +860,8 @@ public abstract class h0 extends lm0 {
     public final void X(String str) {
         ArrayList arrayList = this.F;
         arrayList.clear();
-        ky kyVar = this.U;
-        if (kyVar == null || kyVar.a() == 0) {
+        px pxVar = this.U;
+        if (pxVar == null || pxVar.a() == 0) {
             return;
         }
         if (!TextUtils.isEmpty(str)) {
@@ -998,7 +997,7 @@ public abstract class h0 extends lm0 {
                     if (i10 <= arrayList2.size()) {
                         return 3;
                     }
-                    i10 = k3.g(1, i10, arrayList2);
+                    i10 = a6.g(1, i10, arrayList2);
                 }
             }
             ArrayList arrayList3 = this.E;
@@ -1007,7 +1006,7 @@ public abstract class h0 extends lm0 {
                     if (i10 <= arrayList3.size()) {
                         return 8;
                     }
-                    i10 = k3.g(1, i10, arrayList3);
+                    i10 = a6.g(1, i10, arrayList3);
                 }
             }
             y yVar = this.j0;
@@ -1080,26 +1079,26 @@ public abstract class h0 extends lm0 {
         return 1;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:238:0x0571, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:238:0x0572, code lost:
     
         if (r5 != false) goto L269;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:241:0x057c  */
-    /* JADX WARN: Removed duplicated region for block: B:275:0x062b  */
-    /* JADX WARN: Removed duplicated region for block: B:296:0x0687  */
-    /* JADX WARN: Removed duplicated region for block: B:303:0x06a5  */
-    /* JADX WARN: Removed duplicated region for block: B:316:0x0748  */
-    /* JADX WARN: Removed duplicated region for block: B:319:0x0752  */
-    /* JADX WARN: Removed duplicated region for block: B:322:0x0776  */
-    /* JADX WARN: Removed duplicated region for block: B:325:0x0779  */
-    /* JADX WARN: Removed duplicated region for block: B:326:0x0754  */
-    /* JADX WARN: Removed duplicated region for block: B:327:0x074c  */
-    /* JADX WARN: Removed duplicated region for block: B:334:0x06f5  */
-    /* JADX WARN: Removed duplicated region for block: B:340:0x0707  */
-    /* JADX WARN: Removed duplicated region for block: B:341:0x0712  */
-    /* JADX WARN: Removed duplicated region for block: B:90:0x0323  */
-    /* JADX WARN: Removed duplicated region for block: B:92:0x0327  */
+    /* JADX WARN: Removed duplicated region for block: B:241:0x057d  */
+    /* JADX WARN: Removed duplicated region for block: B:275:0x062c  */
+    /* JADX WARN: Removed duplicated region for block: B:296:0x0688  */
+    /* JADX WARN: Removed duplicated region for block: B:303:0x06a6  */
+    /* JADX WARN: Removed duplicated region for block: B:316:0x0744  */
+    /* JADX WARN: Removed duplicated region for block: B:319:0x074e  */
+    /* JADX WARN: Removed duplicated region for block: B:322:0x0772  */
+    /* JADX WARN: Removed duplicated region for block: B:325:0x0775  */
+    /* JADX WARN: Removed duplicated region for block: B:326:0x0750  */
+    /* JADX WARN: Removed duplicated region for block: B:327:0x0748  */
+    /* JADX WARN: Removed duplicated region for block: B:334:0x06f4  */
+    /* JADX WARN: Removed duplicated region for block: B:340:0x0706  */
+    /* JADX WARN: Removed duplicated region for block: B:341:0x0711  */
+    /* JADX WARN: Removed duplicated region for block: B:90:0x0324  */
+    /* JADX WARN: Removed duplicated region for block: B:92:0x0328  */
     /* JADX WARN: Type inference failed for: r10v39, types: [boolean] */
     /* JADX WARN: Type inference failed for: r5v13 */
     /* JADX WARN: Type inference failed for: r5v14, types: [android.text.SpannableStringBuilder] */
@@ -1111,7 +1110,7 @@ public abstract class h0 extends lm0 {
     /* JADX WARN: Type inference failed for: r7v11 */
     /* JADX WARN: Type inference failed for: r7v13 */
     /* JADX WARN: Type inference failed for: r7v14, types: [org.telegram.tgnet.TLRPC$Chat] */
-    /* JADX WARN: Type inference failed for: r7v39 */
+    /* JADX WARN: Type inference failed for: r7v38 */
     @Override // s4.g0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1139,7 +1138,6 @@ public abstract class h0 extends lm0 {
         String str3;
         int i11;
         boolean z14;
-        boolean z15;
         String str4;
         String str5;
         int indexOfIgnoreCase;
@@ -1151,7 +1149,7 @@ public abstract class h0 extends lm0 {
         String str6;
         SpannableStringBuilder spannableStringBuilder;
         Runnable runnable;
-        boolean z16;
+        boolean z15;
         final int i14;
         char c10;
         String i15;
@@ -1168,13 +1166,13 @@ public abstract class h0 extends lm0 {
         final int i19 = 1;
         switch (i17) {
             case 0:
-                i6 i6Var = (i6) view;
-                i6Var.setBackgroundColor(g6.x0(null, g6.d6, false));
-                long dialogId = i6Var.getDialogId();
+                h6 h6Var = (h6) view;
+                h6Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
+                long dialogId = h6Var.getDialogId();
                 boolean O = O(i16);
                 Object J = J(i16);
-                boolean z17 = J instanceof TLRPC.TL_sponsoredPeer;
-                if (z17) {
+                boolean z16 = J instanceof TLRPC.TL_sponsoredPeer;
+                if (z16) {
                     TLRPC.TL_sponsoredPeer tL_sponsoredPeer = (TLRPC.TL_sponsoredPeer) J;
                     HashSet hashSet = this.L;
                     Iterator it = hashSet.iterator();
@@ -1286,11 +1284,11 @@ public abstract class h0 extends lm0 {
                 } else {
                     encryptedChat2 = encryptedChat;
                     z10 = true;
-                    i16 = k3.g(1, i16, arrayList6);
+                    i16 = a6.g(1, i16, arrayList6);
                 }
                 if (P()) {
                     if (i16 < K()) {
-                        i6Var.M = i16 != K() + (-1);
+                        h6Var.M = i16 != K() + (-1);
                         z11 = true;
                     } else {
                         z11 = false;
@@ -1300,10 +1298,10 @@ public abstract class h0 extends lm0 {
                     z11 = false;
                 }
                 if (arrayList7.isEmpty()) {
-                    z12 = z17;
+                    z12 = z16;
                 } else {
-                    z12 = z17;
-                    i16 = k3.g(1, i16, arrayList7);
+                    z12 = z16;
+                    i16 = a6.g(1, i16, arrayList7);
                 }
                 ArrayList arrayList12 = yVar.e;
                 ArrayList arrayList13 = yVar.j;
@@ -1322,7 +1320,7 @@ public abstract class h0 extends lm0 {
                 }
                 int size5 = (arrayList12.isEmpty() && arrayList.isEmpty()) ? 0 : arrayList.size() + size4 + 1;
                 if (!z11) {
-                    i6Var.M = (i21 == (h() - K()) + (-1) || i21 == ((size + i22) + size2) + (-1) || i21 == (((size + size5) + size3) + size2) + (-1)) ? false : true;
+                    h6Var.M = (i21 == (h() - K()) + (-1) || i21 == ((size + i22) + size2) + (-1) || i21 == (((size + size5) + size3) + size2) + (-1)) ? false : true;
                 }
                 if (i21 < 0 || i21 >= this.s.size() || user != null) {
                     charSequence = null;
@@ -1342,7 +1340,7 @@ public abstract class h0 extends lm0 {
                             String formatName = user != null ? ContactsController.formatName(user.first_name, user.last_name) : r72 != 0 ? r72.monoforum ? og.d.i(r72, i18, false) : r72.title : null;
                             if (formatName != null && (indexOfIgnoreCase = AndroidUtilities.indexOfIgnoreCase(formatName, str8)) != -1) {
                                 r52 = new SpannableStringBuilder(formatName);
-                                r52.setSpan(new q10(g6.q6, null), indexOfIgnoreCase, str8.length() + indexOfIgnoreCase, 33);
+                                r52.setSpan(new m10(org.telegram.ui.ActionBar.h6.q6, null), indexOfIgnoreCase, str8.length() + indexOfIgnoreCase, 33);
                             }
                             if (arrayList2 == null || arrayList2.size() <= 1) {
                                 charSequence3 = charSequence2;
@@ -1407,13 +1405,13 @@ public abstract class h0 extends lm0 {
                                         }
                                         charSequence4 = null;
                                         try {
-                                            spannableStringBuilder2.setSpan(new q10(g6.q6, null), indexOfIgnoreCase2, length + indexOfIgnoreCase2, 33);
+                                            spannableStringBuilder2.setSpan(new m10(org.telegram.ui.ActionBar.h6.q6, null), indexOfIgnoreCase2, length + indexOfIgnoreCase2, 33);
                                         } catch (Exception e) {
                                             e = e;
                                             FileLog.e(e);
                                             charSequence3 = str;
                                             str2 = r52;
-                                            i6Var.t(false, false);
+                                            h6Var.s(false, false);
                                             if (user == null) {
                                             }
                                             charSequence5 = charSequence3;
@@ -1423,15 +1421,14 @@ public abstract class h0 extends lm0 {
                                             }
                                             if (user != null) {
                                             }
-                                            z14 = false;
-                                            z15 = true;
-                                            bi.o1 o1Var = new bi.o1(this, 21);
-                                            i6Var.B0 = z11;
-                                            i6Var.C0 = o1Var;
-                                            i6Var.setOnSponsoredOptionsClick(new ci.u(this, 20));
-                                            i6Var.setAd(!z12 ? (TLRPC.TL_sponsoredPeer) obj : charSequence4);
-                                            i6Var.u(user == null ? user : r72, encryptedChat2, str3, charSequence5, true, z13);
-                                            i6Var.t(this.U.a.I2.contains(Long.valueOf(i6Var.getDialogId())), dialogId != i6Var.getDialogId() ? z15 : z14);
+                                            z14 = true;
+                                            ai.r0 r0Var = new ai.r0(this, 26);
+                                            h6Var.B0 = z11;
+                                            h6Var.C0 = r0Var;
+                                            h6Var.setOnSponsoredOptionsClick(new o(this, 0));
+                                            h6Var.setAd(!z12 ? (TLRPC.TL_sponsoredPeer) obj : charSequence4);
+                                            h6Var.t(user == null ? user : r72, encryptedChat2, str3, charSequence5, true, z13);
+                                            h6Var.s(this.U.a.I2.contains(Long.valueOf(h6Var.getDialogId())), dialogId != h6Var.getDialogId() ? z14 : false);
                                             return;
                                         }
                                     } else {
@@ -1443,7 +1440,7 @@ public abstract class h0 extends lm0 {
                                     e = e7;
                                     charSequence4 = null;
                                 }
-                                i6Var.t(false, false);
+                                h6Var.s(false, false);
                                 if (user == null && user.id == this.l0 && this.h0 != 16) {
                                     charSequence5 = charSequence4;
                                     z13 = true;
@@ -1464,38 +1461,35 @@ public abstract class h0 extends lm0 {
                                     String formatPluralStringSpaced2 = LocaleController.formatPluralStringSpaced("BotUsersShort", i11);
                                     if (charSequence5 instanceof SpannableStringBuilder) {
                                         if (TextUtils.isEmpty(charSequence5)) {
-                                            z14 = false;
-                                            z15 = true;
+                                            z14 = true;
                                             charSequence5 = formatPluralStringSpaced2;
                                         } else {
-                                            z14 = false;
-                                            z15 = true;
+                                            z14 = true;
                                             charSequence5 = TextUtils.concat(charSequence5, ", ", formatPluralStringSpaced2);
                                         }
-                                        bi.o1 o1Var2 = new bi.o1(this, 21);
-                                        i6Var.B0 = z11;
-                                        i6Var.C0 = o1Var2;
-                                        i6Var.setOnSponsoredOptionsClick(new ci.u(this, 20));
-                                        i6Var.setAd(!z12 ? (TLRPC.TL_sponsoredPeer) obj : charSequence4);
-                                        i6Var.u(user == null ? user : r72, encryptedChat2, str3, charSequence5, true, z13);
-                                        i6Var.t(this.U.a.I2.contains(Long.valueOf(i6Var.getDialogId())), dialogId != i6Var.getDialogId() ? z15 : z14);
+                                        ai.r0 r0Var2 = new ai.r0(this, 26);
+                                        h6Var.B0 = z11;
+                                        h6Var.C0 = r0Var2;
+                                        h6Var.setOnSponsoredOptionsClick(new o(this, 0));
+                                        h6Var.setAd(!z12 ? (TLRPC.TL_sponsoredPeer) obj : charSequence4);
+                                        h6Var.t(user == null ? user : r72, encryptedChat2, str3, charSequence5, true, z13);
+                                        h6Var.s(this.U.a.I2.contains(Long.valueOf(h6Var.getDialogId())), dialogId != h6Var.getDialogId() ? z14 : false);
                                     } else {
                                         ((SpannableStringBuilder) charSequence5).append((CharSequence) ", ").append((CharSequence) formatPluralStringSpaced2);
                                     }
                                 }
-                                z14 = false;
-                                z15 = true;
-                                bi.o1 o1Var22 = new bi.o1(this, 21);
-                                i6Var.B0 = z11;
-                                i6Var.C0 = o1Var22;
-                                i6Var.setOnSponsoredOptionsClick(new ci.u(this, 20));
-                                i6Var.setAd(!z12 ? (TLRPC.TL_sponsoredPeer) obj : charSequence4);
-                                i6Var.u(user == null ? user : r72, encryptedChat2, str3, charSequence5, true, z13);
-                                i6Var.t(this.U.a.I2.contains(Long.valueOf(i6Var.getDialogId())), dialogId != i6Var.getDialogId() ? z15 : z14);
+                                z14 = true;
+                                ai.r0 r0Var22 = new ai.r0(this, 26);
+                                h6Var.B0 = z11;
+                                h6Var.C0 = r0Var22;
+                                h6Var.setOnSponsoredOptionsClick(new o(this, 0));
+                                h6Var.setAd(!z12 ? (TLRPC.TL_sponsoredPeer) obj : charSequence4);
+                                h6Var.t(user == null ? user : r72, encryptedChat2, str3, charSequence5, true, z13);
+                                h6Var.s(this.U.a.I2.contains(Long.valueOf(h6Var.getDialogId())), dialogId != h6Var.getDialogId() ? z14 : false);
                             }
                             charSequence4 = null;
                             str2 = r52;
-                            i6Var.t(false, false);
+                            h6Var.s(false, false);
                             if (user == null) {
                             }
                             charSequence5 = charSequence3;
@@ -1508,21 +1502,20 @@ public abstract class h0 extends lm0 {
                                 if (charSequence5 instanceof SpannableStringBuilder) {
                                 }
                             }
-                            z14 = false;
-                            z15 = true;
-                            bi.o1 o1Var222 = new bi.o1(this, 21);
-                            i6Var.B0 = z11;
-                            i6Var.C0 = o1Var222;
-                            i6Var.setOnSponsoredOptionsClick(new ci.u(this, 20));
-                            i6Var.setAd(!z12 ? (TLRPC.TL_sponsoredPeer) obj : charSequence4);
-                            i6Var.u(user == null ? user : r72, encryptedChat2, str3, charSequence5, true, z13);
-                            i6Var.t(this.U.a.I2.contains(Long.valueOf(i6Var.getDialogId())), dialogId != i6Var.getDialogId() ? z15 : z14);
+                            z14 = true;
+                            ai.r0 r0Var222 = new ai.r0(this, 26);
+                            h6Var.B0 = z11;
+                            h6Var.C0 = r0Var222;
+                            h6Var.setOnSponsoredOptionsClick(new o(this, 0));
+                            h6Var.setAd(!z12 ? (TLRPC.TL_sponsoredPeer) obj : charSequence4);
+                            h6Var.t(user == null ? user : r72, encryptedChat2, str3, charSequence5, true, z13);
+                            h6Var.s(this.U.a.I2.contains(Long.valueOf(h6Var.getDialogId())), dialogId != h6Var.getDialogId() ? z14 : false);
                         }
                     }
                     charSequence3 = charSequence2;
                     charSequence4 = null;
                     str2 = r52;
-                    i6Var.t(false, false);
+                    h6Var.s(false, false);
                     if (user == null) {
                     }
                     charSequence5 = charSequence3;
@@ -1532,15 +1525,14 @@ public abstract class h0 extends lm0 {
                     }
                     if (user != null) {
                     }
-                    z14 = false;
-                    z15 = true;
-                    bi.o1 o1Var2222 = new bi.o1(this, 21);
-                    i6Var.B0 = z11;
-                    i6Var.C0 = o1Var2222;
-                    i6Var.setOnSponsoredOptionsClick(new ci.u(this, 20));
-                    i6Var.setAd(!z12 ? (TLRPC.TL_sponsoredPeer) obj : charSequence4);
-                    i6Var.u(user == null ? user : r72, encryptedChat2, str3, charSequence5, true, z13);
-                    i6Var.t(this.U.a.I2.contains(Long.valueOf(i6Var.getDialogId())), dialogId != i6Var.getDialogId() ? z15 : z14);
+                    z14 = true;
+                    ai.r0 r0Var2222 = new ai.r0(this, 26);
+                    h6Var.B0 = z11;
+                    h6Var.C0 = r0Var2222;
+                    h6Var.setOnSponsoredOptionsClick(new o(this, 0));
+                    h6Var.setAd(!z12 ? (TLRPC.TL_sponsoredPeer) obj : charSequence4);
+                    h6Var.t(user == null ? user : r72, encryptedChat2, str3, charSequence5, true, z13);
+                    h6Var.s(this.U.a.I2.contains(Long.valueOf(h6Var.getDialogId())), dialogId != h6Var.getDialogId() ? z14 : false);
                 }
                 r52 = 0;
                 charSequence2 = charSequence;
@@ -1549,7 +1541,7 @@ public abstract class h0 extends lm0 {
                 charSequence3 = charSequence2;
                 charSequence4 = null;
                 str2 = r52;
-                i6Var.t(false, false);
+                h6Var.s(false, false);
                 if (user == null) {
                 }
                 charSequence5 = charSequence3;
@@ -1559,23 +1551,22 @@ public abstract class h0 extends lm0 {
                 }
                 if (user != null) {
                 }
-                z14 = false;
-                z15 = true;
-                bi.o1 o1Var22222 = new bi.o1(this, 21);
-                i6Var.B0 = z11;
-                i6Var.C0 = o1Var22222;
-                i6Var.setOnSponsoredOptionsClick(new ci.u(this, 20));
-                i6Var.setAd(!z12 ? (TLRPC.TL_sponsoredPeer) obj : charSequence4);
-                i6Var.u(user == null ? user : r72, encryptedChat2, str3, charSequence5, true, z13);
-                i6Var.t(this.U.a.I2.contains(Long.valueOf(i6Var.getDialogId())), dialogId != i6Var.getDialogId() ? z15 : z14);
+                z14 = true;
+                ai.r0 r0Var22222 = new ai.r0(this, 26);
+                h6Var.B0 = z11;
+                h6Var.C0 = r0Var22222;
+                h6Var.setOnSponsoredOptionsClick(new o(this, 0));
+                h6Var.setAd(!z12 ? (TLRPC.TL_sponsoredPeer) obj : charSequence4);
+                h6Var.t(user == null ? user : r72, encryptedChat2, str3, charSequence5, true, z13);
+                h6Var.s(this.U.a.I2.contains(Long.valueOf(h6Var.getDialogId())), dialogId != h6Var.getDialogId() ? z14 : false);
                 break;
             case 1:
-                final v3 v3Var = (v3) view;
+                final u3 u3Var = (u3) view;
                 if (!arrayList4.isEmpty()) {
                     String string = LocaleController.getString(R.string.Hashtags);
                     String string2 = LocaleController.getString(R.string.ClearButton);
                     final int i25 = r15 ? 1 : 0;
-                    v3Var.c(string, string2, new View.OnClickListener(this) { // from class: hg.o
+                    u3Var.c(string, string2, new View.OnClickListener(this) { // from class: hg.p
                         public final /* synthetic */ h0 b;
 
                         {
@@ -1586,51 +1577,51 @@ public abstract class h0 extends lm0 {
                         public final void onClick(View view2) {
                             switch (i25) {
                                 case 0:
-                                    ky kyVar = this.b.U;
-                                    if (kyVar != null) {
-                                        kyVar.b();
+                                    px pxVar = this.b.U;
+                                    if (pxVar != null) {
+                                        pxVar.b();
                                         break;
                                     }
                                     break;
                                 case 1:
-                                    iy iyVar = ((so0) this.b).K0;
-                                    qo0 qo0Var = iyVar.v0;
-                                    so0 so0Var = iyVar.b0;
-                                    String str10 = so0Var.y;
-                                    ArrayList arrayList14 = so0Var.x;
-                                    int i26 = so0Var.w;
-                                    int i27 = so0Var.v;
-                                    ArrayList arrayList15 = qo0Var.O;
-                                    if (!TextUtils.equals(str10, qo0Var.Y)) {
-                                        qo0Var.V();
+                                    nx nxVar = ((oo0) this.b).K0;
+                                    mo0 mo0Var = nxVar.v0;
+                                    oo0 oo0Var = nxVar.b0;
+                                    String str10 = oo0Var.y;
+                                    ArrayList arrayList14 = oo0Var.x;
+                                    int i26 = oo0Var.w;
+                                    int i27 = oo0Var.v;
+                                    ArrayList arrayList15 = mo0Var.O;
+                                    if (!TextUtils.equals(str10, mo0Var.Y)) {
+                                        mo0Var.V();
                                         arrayList15.clear();
                                         arrayList15.addAll(arrayList14);
-                                        qo0Var.W = i27;
-                                        qo0Var.V = i27 > arrayList14.size();
-                                        qo0Var.Z = i26;
-                                        qo0Var.Y = str10;
-                                        qo0Var.N(true);
+                                        mo0Var.W = i27;
+                                        mo0Var.V = i27 > arrayList14.size();
+                                        mo0Var.Z = i26;
+                                        mo0Var.Y = str10;
+                                        mo0Var.N(true);
                                     }
-                                    iyVar.q0 = true;
-                                    iyVar.t0.h1(0, 0);
-                                    iyVar.R();
-                                    b91 b91Var = iyVar.M;
-                                    if (b91Var != null && b91Var.getCurrentTabId() != 1) {
-                                        iyVar.M.d(1, 1);
+                                    nxVar.q0 = true;
+                                    nxVar.t0.h1(0, 0);
+                                    nxVar.R();
+                                    s81 s81Var = nxVar.M;
+                                    if (s81Var != null && s81Var.getCurrentTabId() != 1) {
+                                        nxVar.M.d(1, 1);
                                     }
-                                    qo0Var.Y(iyVar.K0);
+                                    mo0Var.Y(nxVar.K0);
                                     break;
                                 case 2:
-                                    ky kyVar2 = this.b.U;
-                                    if (kyVar2 != null) {
-                                        kyVar2.b();
+                                    px pxVar2 = this.b.U;
+                                    if (pxVar2 != null) {
+                                        pxVar2.b();
                                         break;
                                     }
                                     break;
                                 default:
-                                    ky kyVar3 = this.b.U;
-                                    if (kyVar3 != null) {
-                                        kyVar3.b();
+                                    px pxVar3 = this.b.U;
+                                    if (pxVar3 != null) {
+                                        pxVar3.b();
                                         break;
                                     }
                                     break;
@@ -1642,7 +1633,7 @@ public abstract class h0 extends lm0 {
                     if (arrayList6.isEmpty()) {
                         i12 = i16;
                     } else if (i16 == 0) {
-                        v3Var.c(LocaleController.getString(R.string.PublicPostsTabs), AndroidUtilities.replaceArrows(LocaleController.getString(R.string.PublicPostsMore), false, AndroidUtilities.dp(-2.0f), AndroidUtilities.dp(1.0f)), new View.OnClickListener(this) { // from class: hg.o
+                        u3Var.c(LocaleController.getString(R.string.PublicPostsTabs), AndroidUtilities.replaceArrows(LocaleController.getString(R.string.PublicPostsMore), false, AndroidUtilities.dp(-2.0f), AndroidUtilities.dp(1.0f)), new View.OnClickListener(this) { // from class: hg.p
                             public final /* synthetic */ h0 b;
 
                             {
@@ -1653,51 +1644,51 @@ public abstract class h0 extends lm0 {
                             public final void onClick(View view2) {
                                 switch (i19) {
                                     case 0:
-                                        ky kyVar = this.b.U;
-                                        if (kyVar != null) {
-                                            kyVar.b();
+                                        px pxVar = this.b.U;
+                                        if (pxVar != null) {
+                                            pxVar.b();
                                             break;
                                         }
                                         break;
                                     case 1:
-                                        iy iyVar = ((so0) this.b).K0;
-                                        qo0 qo0Var = iyVar.v0;
-                                        so0 so0Var = iyVar.b0;
-                                        String str10 = so0Var.y;
-                                        ArrayList arrayList14 = so0Var.x;
-                                        int i26 = so0Var.w;
-                                        int i27 = so0Var.v;
-                                        ArrayList arrayList15 = qo0Var.O;
-                                        if (!TextUtils.equals(str10, qo0Var.Y)) {
-                                            qo0Var.V();
+                                        nx nxVar = ((oo0) this.b).K0;
+                                        mo0 mo0Var = nxVar.v0;
+                                        oo0 oo0Var = nxVar.b0;
+                                        String str10 = oo0Var.y;
+                                        ArrayList arrayList14 = oo0Var.x;
+                                        int i26 = oo0Var.w;
+                                        int i27 = oo0Var.v;
+                                        ArrayList arrayList15 = mo0Var.O;
+                                        if (!TextUtils.equals(str10, mo0Var.Y)) {
+                                            mo0Var.V();
                                             arrayList15.clear();
                                             arrayList15.addAll(arrayList14);
-                                            qo0Var.W = i27;
-                                            qo0Var.V = i27 > arrayList14.size();
-                                            qo0Var.Z = i26;
-                                            qo0Var.Y = str10;
-                                            qo0Var.N(true);
+                                            mo0Var.W = i27;
+                                            mo0Var.V = i27 > arrayList14.size();
+                                            mo0Var.Z = i26;
+                                            mo0Var.Y = str10;
+                                            mo0Var.N(true);
                                         }
-                                        iyVar.q0 = true;
-                                        iyVar.t0.h1(0, 0);
-                                        iyVar.R();
-                                        b91 b91Var = iyVar.M;
-                                        if (b91Var != null && b91Var.getCurrentTabId() != 1) {
-                                            iyVar.M.d(1, 1);
+                                        nxVar.q0 = true;
+                                        nxVar.t0.h1(0, 0);
+                                        nxVar.R();
+                                        s81 s81Var = nxVar.M;
+                                        if (s81Var != null && s81Var.getCurrentTabId() != 1) {
+                                            nxVar.M.d(1, 1);
                                         }
-                                        qo0Var.Y(iyVar.K0);
+                                        mo0Var.Y(nxVar.K0);
                                         break;
                                     case 2:
-                                        ky kyVar2 = this.b.U;
-                                        if (kyVar2 != null) {
-                                            kyVar2.b();
+                                        px pxVar2 = this.b.U;
+                                        if (pxVar2 != null) {
+                                            pxVar2.b();
                                             break;
                                         }
                                         break;
                                     default:
-                                        ky kyVar3 = this.b.U;
-                                        if (kyVar3 != null) {
-                                            kyVar3.b();
+                                        px pxVar3 = this.b.U;
+                                        if (pxVar3 != null) {
+                                            pxVar3.b();
                                             break;
                                         }
                                         break;
@@ -1706,7 +1697,7 @@ public abstract class h0 extends lm0 {
                         });
                         break;
                     } else {
-                        i12 = k3.g(1, i16, arrayList6);
+                        i12 = a6.g(1, i16, arrayList6);
                     }
                     ArrayList arrayList14 = yVar.e;
                     ArrayList arrayList15 = yVar.j;
@@ -1717,14 +1708,14 @@ public abstract class h0 extends lm0 {
                         if (i12 >= M) {
                             if (i12 != M || !P()) {
                                 if (i12 == K() + (arrayList7.isEmpty() ? 0 : arrayList7.size() + 1) + (arrayList16.isEmpty() ? 0 : arrayList16.size() + 1) && !this.s.isEmpty()) {
-                                    v3Var.setText(LocaleController.getString(R.string.SearchAllChatsShort));
+                                    u3Var.setText(LocaleController.getString(R.string.SearchAllChatsShort));
                                     break;
                                 } else {
                                     i12 -= K();
                                 }
                             } else if (!this.N) {
                                 final int i26 = 2;
-                                v3Var.c(LocaleController.getString(R.string.Recent), LocaleController.getString(R.string.ClearButton), new View.OnClickListener(this) { // from class: hg.o
+                                u3Var.c(LocaleController.getString(R.string.Recent), LocaleController.getString(R.string.ClearButton), new View.OnClickListener(this) { // from class: hg.p
                                     public final /* synthetic */ h0 b;
 
                                     {
@@ -1735,51 +1726,51 @@ public abstract class h0 extends lm0 {
                                     public final void onClick(View view2) {
                                         switch (i26) {
                                             case 0:
-                                                ky kyVar = this.b.U;
-                                                if (kyVar != null) {
-                                                    kyVar.b();
+                                                px pxVar = this.b.U;
+                                                if (pxVar != null) {
+                                                    pxVar.b();
                                                     break;
                                                 }
                                                 break;
                                             case 1:
-                                                iy iyVar = ((so0) this.b).K0;
-                                                qo0 qo0Var = iyVar.v0;
-                                                so0 so0Var = iyVar.b0;
-                                                String str10 = so0Var.y;
-                                                ArrayList arrayList142 = so0Var.x;
-                                                int i262 = so0Var.w;
-                                                int i27 = so0Var.v;
-                                                ArrayList arrayList152 = qo0Var.O;
-                                                if (!TextUtils.equals(str10, qo0Var.Y)) {
-                                                    qo0Var.V();
+                                                nx nxVar = ((oo0) this.b).K0;
+                                                mo0 mo0Var = nxVar.v0;
+                                                oo0 oo0Var = nxVar.b0;
+                                                String str10 = oo0Var.y;
+                                                ArrayList arrayList142 = oo0Var.x;
+                                                int i262 = oo0Var.w;
+                                                int i27 = oo0Var.v;
+                                                ArrayList arrayList152 = mo0Var.O;
+                                                if (!TextUtils.equals(str10, mo0Var.Y)) {
+                                                    mo0Var.V();
                                                     arrayList152.clear();
                                                     arrayList152.addAll(arrayList142);
-                                                    qo0Var.W = i27;
-                                                    qo0Var.V = i27 > arrayList142.size();
-                                                    qo0Var.Z = i262;
-                                                    qo0Var.Y = str10;
-                                                    qo0Var.N(true);
+                                                    mo0Var.W = i27;
+                                                    mo0Var.V = i27 > arrayList142.size();
+                                                    mo0Var.Z = i262;
+                                                    mo0Var.Y = str10;
+                                                    mo0Var.N(true);
                                                 }
-                                                iyVar.q0 = true;
-                                                iyVar.t0.h1(0, 0);
-                                                iyVar.R();
-                                                b91 b91Var = iyVar.M;
-                                                if (b91Var != null && b91Var.getCurrentTabId() != 1) {
-                                                    iyVar.M.d(1, 1);
+                                                nxVar.q0 = true;
+                                                nxVar.t0.h1(0, 0);
+                                                nxVar.R();
+                                                s81 s81Var = nxVar.M;
+                                                if (s81Var != null && s81Var.getCurrentTabId() != 1) {
+                                                    nxVar.M.d(1, 1);
                                                 }
-                                                qo0Var.Y(iyVar.K0);
+                                                mo0Var.Y(nxVar.K0);
                                                 break;
                                             case 2:
-                                                ky kyVar2 = this.b.U;
-                                                if (kyVar2 != null) {
-                                                    kyVar2.b();
+                                                px pxVar2 = this.b.U;
+                                                if (pxVar2 != null) {
+                                                    pxVar2.b();
                                                     break;
                                                 }
                                                 break;
                                             default:
-                                                ky kyVar3 = this.b.U;
-                                                if (kyVar3 != null) {
-                                                    kyVar3.b();
+                                                px pxVar3 = this.b.U;
+                                                if (pxVar3 != null) {
+                                                    pxVar3.b();
                                                     break;
                                                 }
                                                 break;
@@ -1789,7 +1780,7 @@ public abstract class h0 extends lm0 {
                                 break;
                             } else {
                                 final int i27 = 3;
-                                v3Var.c(LocaleController.getString(R.string.Recent), LocaleController.getString(R.string.Clear), new View.OnClickListener(this) { // from class: hg.o
+                                u3Var.c(LocaleController.getString(R.string.Recent), LocaleController.getString(R.string.Clear), new View.OnClickListener(this) { // from class: hg.p
                                     public final /* synthetic */ h0 b;
 
                                     {
@@ -1800,51 +1791,51 @@ public abstract class h0 extends lm0 {
                                     public final void onClick(View view2) {
                                         switch (i27) {
                                             case 0:
-                                                ky kyVar = this.b.U;
-                                                if (kyVar != null) {
-                                                    kyVar.b();
+                                                px pxVar = this.b.U;
+                                                if (pxVar != null) {
+                                                    pxVar.b();
                                                     break;
                                                 }
                                                 break;
                                             case 1:
-                                                iy iyVar = ((so0) this.b).K0;
-                                                qo0 qo0Var = iyVar.v0;
-                                                so0 so0Var = iyVar.b0;
-                                                String str10 = so0Var.y;
-                                                ArrayList arrayList142 = so0Var.x;
-                                                int i262 = so0Var.w;
-                                                int i272 = so0Var.v;
-                                                ArrayList arrayList152 = qo0Var.O;
-                                                if (!TextUtils.equals(str10, qo0Var.Y)) {
-                                                    qo0Var.V();
+                                                nx nxVar = ((oo0) this.b).K0;
+                                                mo0 mo0Var = nxVar.v0;
+                                                oo0 oo0Var = nxVar.b0;
+                                                String str10 = oo0Var.y;
+                                                ArrayList arrayList142 = oo0Var.x;
+                                                int i262 = oo0Var.w;
+                                                int i272 = oo0Var.v;
+                                                ArrayList arrayList152 = mo0Var.O;
+                                                if (!TextUtils.equals(str10, mo0Var.Y)) {
+                                                    mo0Var.V();
                                                     arrayList152.clear();
                                                     arrayList152.addAll(arrayList142);
-                                                    qo0Var.W = i272;
-                                                    qo0Var.V = i272 > arrayList142.size();
-                                                    qo0Var.Z = i262;
-                                                    qo0Var.Y = str10;
-                                                    qo0Var.N(true);
+                                                    mo0Var.W = i272;
+                                                    mo0Var.V = i272 > arrayList142.size();
+                                                    mo0Var.Z = i262;
+                                                    mo0Var.Y = str10;
+                                                    mo0Var.N(true);
                                                 }
-                                                iyVar.q0 = true;
-                                                iyVar.t0.h1(0, 0);
-                                                iyVar.R();
-                                                b91 b91Var = iyVar.M;
-                                                if (b91Var != null && b91Var.getCurrentTabId() != 1) {
-                                                    iyVar.M.d(1, 1);
+                                                nxVar.q0 = true;
+                                                nxVar.t0.h1(0, 0);
+                                                nxVar.R();
+                                                s81 s81Var = nxVar.M;
+                                                if (s81Var != null && s81Var.getCurrentTabId() != 1) {
+                                                    nxVar.M.d(1, 1);
                                                 }
-                                                qo0Var.Y(iyVar.K0);
+                                                mo0Var.Y(nxVar.K0);
                                                 break;
                                             case 2:
-                                                ky kyVar2 = this.b.U;
-                                                if (kyVar2 != null) {
-                                                    kyVar2.b();
+                                                px pxVar2 = this.b.U;
+                                                if (pxVar2 != null) {
+                                                    pxVar2.b();
                                                     break;
                                                 }
                                                 break;
                                             default:
-                                                ky kyVar3 = this.b.U;
-                                                if (kyVar3 != null) {
-                                                    kyVar3.b();
+                                                px pxVar3 = this.b.U;
+                                                if (pxVar3 != null) {
+                                                    pxVar3.b();
                                                     break;
                                                 }
                                                 break;
@@ -1854,7 +1845,7 @@ public abstract class h0 extends lm0 {
                                 break;
                             }
                         } else {
-                            v3Var.setText(LocaleController.getString(R.string.ChatHints));
+                            u3Var.setText(LocaleController.getString(R.string.ChatHints));
                             break;
                         }
                     }
@@ -1874,6 +1865,7 @@ public abstract class h0 extends lm0 {
                     if (!arrayList17.isEmpty()) {
                         arrayList17.size();
                     }
+                    int i28 = size13;
                     if (this.c != e0.d || this.d) {
                         arrayList17.isEmpty();
                     }
@@ -1883,28 +1875,28 @@ public abstract class h0 extends lm0 {
                     } else {
                         str6 = i12 == 0 ? LocaleController.getString(R.string.Topics) : null;
                         i13 = 1;
-                        i12 = k3.g(1, i12, arrayList7);
+                        i12 = a6.g(1, i12, arrayList7);
                     }
                     if (!arrayList16.isEmpty()) {
                         if (i12 == 0) {
                             str6 = LocaleController.getString(R.string.InviteToTelegramShort);
                         }
-                        i12 = k3.g(i13, i12, arrayList16);
+                        i12 = a6.g(i13, i12, arrayList16);
                     }
                     if (str6 == null) {
-                        int i28 = i12 - (size8 + size9);
-                        if (i28 < 0 || i28 >= size10) {
-                            int i29 = i28 - size10;
-                            if (i29 < 0 || i29 >= size12) {
-                                if (this.U == null || size13 <= 0) {
+                        int i29 = i12 - (size8 + size9);
+                        if (i29 < 0 || i29 >= size10) {
+                            int i30 = i29 - size10;
+                            if (i30 < 0 || i30 >= size12) {
+                                if (this.U == null || i28 <= 0) {
                                     i14 = 1;
                                 } else {
                                     i14 = 1;
-                                    if (i29 - size12 <= 1) {
+                                    if (i30 - size12 <= 1) {
                                         TLRPC.Chat chat6 = MessagesController.getInstance(i18).getChat(Long.valueOf(-this.U.a()));
-                                        int i30 = R.string.SearchMessagesIn;
+                                        int i31 = R.string.SearchMessagesIn;
                                         if (chat6 == null) {
-                                            i15 = BuildConfig.BETA_URL;
+                                            i15 = "null";
                                             c10 = 0;
                                         } else {
                                             c10 = 0;
@@ -1912,12 +1904,12 @@ public abstract class h0 extends lm0 {
                                         }
                                         Object[] objArr = new Object[1];
                                         objArr[c10] = i15;
-                                        str6 = LocaleController.formatString(i30, objArr);
+                                        str6 = LocaleController.formatString(i31, objArr);
                                     }
                                 }
-                                this.F0 = i29;
+                                this.F0 = i30;
                                 SpannableStringBuilder H = H(this.c);
-                                Runnable runnable2 = new Runnable(this) { // from class: hg.p
+                                Runnable runnable2 = new Runnable(this) { // from class: hg.q
                                     public final /* synthetic */ h0 b;
 
                                     {
@@ -1929,19 +1921,19 @@ public abstract class h0 extends lm0 {
                                         switch (i14) {
                                             case 0:
                                                 h0 h0Var = this.b;
-                                                boolean z18 = h0Var.H0;
-                                                h0Var.H0 = !z18;
-                                                v3Var.setRightText(LocaleController.getString(!z18 ? R.string.ShowMore : R.string.ShowLess));
+                                                boolean z17 = h0Var.H0;
+                                                h0Var.H0 = !z17;
+                                                u3Var.setRightText(LocaleController.getString(!z17 ? R.string.ShowMore : R.string.ShowLess));
                                                 h0Var.l();
                                                 break;
                                             default:
                                                 h0 h0Var2 = this.b;
-                                                yy yyVar = h0Var2.r0;
-                                                v3 v3Var2 = v3Var;
-                                                l80 H2 = l80.H(yyVar, v3Var2);
+                                                ey eyVar = h0Var2.r0;
+                                                u3 u3Var2 = u3Var;
+                                                i80 H2 = i80.H(eyVar, u3Var2);
                                                 for (e0 e0Var : e0.values()) {
-                                                    boolean z19 = e0Var.a == h0Var2.c.a;
-                                                    H2.i(new h4(h0Var2, z19, v3Var2, e0Var, 3), LocaleController.getString(e0Var.b), z19);
+                                                    boolean z18 = e0Var.a == h0Var2.c.a;
+                                                    H2.i(new y3(h0Var2, z18, u3Var2, e0Var, 5), LocaleController.getString(e0Var.b), z18);
                                                 }
                                                 H2.V(5);
                                                 H2.Y = true;
@@ -1955,13 +1947,15 @@ public abstract class h0 extends lm0 {
                                 str6 = LocaleController.getString(R.string.SearchMessages);
                                 runnable = runnable2;
                                 spannableStringBuilder = H;
-                                z16 = false;
+                                z15 = false;
                             } else {
                                 String string3 = LocaleController.getString(R.string.GlobalSearch);
                                 if (yVar.e.size() > 3) {
-                                    z16 = this.G0;
-                                    runnable = new n8(this, arrayList14, i10, v3Var, 3);
+                                    z15 = this.G0;
+                                    bb bbVar = new bb(this, arrayList14, i10, u3Var, 4);
+                                    u3Var = u3Var;
                                     str6 = string3;
+                                    runnable = bbVar;
                                     spannableStringBuilder = null;
                                 } else {
                                     str6 = string3;
@@ -1970,9 +1964,9 @@ public abstract class h0 extends lm0 {
                         } else {
                             str6 = LocaleController.getString(R.string.PhoneNumberSearch);
                             if (arrayList15.size() > 3) {
-                                final int i31 = 0;
-                                z16 = this.H0;
-                                runnable = new Runnable(this) { // from class: hg.p
+                                final int i32 = 0;
+                                z15 = this.H0;
+                                runnable = new Runnable(this) { // from class: hg.q
                                     public final /* synthetic */ h0 b;
 
                                     {
@@ -1981,22 +1975,22 @@ public abstract class h0 extends lm0 {
 
                                     @Override // java.lang.Runnable
                                     public final void run() {
-                                        switch (i31) {
+                                        switch (i32) {
                                             case 0:
                                                 h0 h0Var = this.b;
-                                                boolean z18 = h0Var.H0;
-                                                h0Var.H0 = !z18;
-                                                v3Var.setRightText(LocaleController.getString(!z18 ? R.string.ShowMore : R.string.ShowLess));
+                                                boolean z17 = h0Var.H0;
+                                                h0Var.H0 = !z17;
+                                                u3Var.setRightText(LocaleController.getString(!z17 ? R.string.ShowMore : R.string.ShowLess));
                                                 h0Var.l();
                                                 break;
                                             default:
                                                 h0 h0Var2 = this.b;
-                                                yy yyVar = h0Var2.r0;
-                                                v3 v3Var2 = v3Var;
-                                                l80 H2 = l80.H(yyVar, v3Var2);
+                                                ey eyVar = h0Var2.r0;
+                                                u3 u3Var2 = u3Var;
+                                                i80 H2 = i80.H(eyVar, u3Var2);
                                                 for (e0 e0Var : e0.values()) {
-                                                    boolean z19 = e0Var.a == h0Var2.c.a;
-                                                    H2.i(new h4(h0Var2, z19, v3Var2, e0Var, 3), LocaleController.getString(e0Var.b), z19);
+                                                    boolean z18 = e0Var.a == h0Var2.c.a;
+                                                    H2.i(new y3(h0Var2, z18, u3Var2, e0Var, 5), LocaleController.getString(e0Var.b), z18);
                                                 }
                                                 H2.V(5);
                                                 H2.Y = true;
@@ -2012,62 +2006,62 @@ public abstract class h0 extends lm0 {
                         }
                         if (runnable == null) {
                             if (spannableStringBuilder == null) {
-                                v3Var.c(str6, LocaleController.getString(z16 ? R.string.ShowMore : R.string.ShowLess), new ci.o(2, runnable));
-                                v3Var.setRightTextMargin(16);
+                                u3Var.c(str6, LocaleController.getString(z15 ? R.string.ShowMore : R.string.ShowLess), new z6(3, runnable));
+                                u3Var.setRightTextMargin(16);
                                 break;
                             } else {
-                                v3Var.c(str6, spannableStringBuilder, new ci.o(3, runnable));
-                                v3Var.setRightTextMargin(6);
+                                u3Var.c(str6, spannableStringBuilder, new z6(4, runnable));
+                                u3Var.setRightTextMargin(6);
                                 break;
                             }
                         } else {
-                            v3Var.setText(str6);
+                            u3Var.setText(str6);
                             break;
                         }
                     }
                     spannableStringBuilder = null;
                     runnable = null;
-                    z16 = false;
+                    z15 = false;
                     if (runnable == null) {
                     }
                 }
                 break;
             case 2:
             case 9:
-                s2 s2Var = (s2) view;
-                s2Var.setBackgroundColor(g6.x0(null, g6.d6, false));
-                s2Var.s2 = i16 != h() - 1;
+                r2 r2Var = (r2) view;
+                r2Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
+                r2Var.s2 = i16 != h() - 1;
                 MessageObject messageObject = (MessageObject) J(i16);
-                s2Var.O = arrayList3.contains(messageObject);
+                r2Var.O = arrayList3.contains(messageObject);
                 if (messageObject != null) {
-                    s2Var.W(messageObject.getDialogId(), messageObject, messageObject.messageOwner.date, false, false);
+                    r2Var.W(messageObject.getDialogId(), messageObject, messageObject.messageOwner.date, false, false);
                     break;
                 } else {
-                    s2Var.W(0L, null, 0, false, false);
+                    r2Var.W(0L, null, 0, false, false);
                     break;
                 }
             case 3:
-                ((qa) view).setTopic((TLRPC.TL_forumTopic) J(i16));
+                ((org.telegram.ui.Cells.pa) view).setTopic((TLRPC.TL_forumTopic) J(i16));
                 break;
             case 5:
-                l4 l4Var = (l4) view;
-                l4Var.setBackgroundColor(g6.x0(null, g6.d6, false));
-                l4Var.setText((CharSequence) arrayList4.get(i16 - 1));
-                l4Var.setNeedDivider(i16 != arrayList4.size());
+                k4 k4Var = (k4) view;
+                k4Var.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false));
+                k4Var.setText((CharSequence) arrayList4.get(i16 - 1));
+                k4Var.setNeedDivider(i16 != arrayList4.size());
                 break;
             case 6:
-                ((b0) ((mm0) view).getAdapter()).l();
+                ((b0) ((im0) view).getAdapter()).l();
                 break;
             case 7:
                 String str10 = (String) J(i16);
-                r8 r8Var = (r8) view;
-                r8Var.e(-1, g6.o6);
-                r8Var.i(LocaleController.formatString("AddContactByPhone", R.string.AddContactByPhone, jf.b.c().b("+" + str10)), false);
+                q8 q8Var = (q8) view;
+                q8Var.e(-1, org.telegram.ui.ActionBar.h6.o6);
+                q8Var.i(LocaleController.formatString("AddContactByPhone", R.string.AddContactByPhone, jf.b.c().b("+" + str10)), false);
                 break;
             case 8:
-                i6 i6Var2 = (i6) view;
+                h6 h6Var2 = (h6) view;
                 ContactsController.Contact contact = (ContactsController.Contact) J(i16);
-                i6Var2.u(contact, null, ContactsController.formatName(contact.first_name, contact.last_name), sk.g(new StringBuilder("+"), contact.shortPhones.get(0), jf.b.c()), false, false);
+                h6Var2.t(contact, null, ContactsController.formatName(contact.first_name, contact.last_name), wh.g(new StringBuilder("+"), contact.shortPhones.get(0), jf.b.c()), false, false);
                 break;
         }
     }
@@ -2078,81 +2072,80 @@ public abstract class h0 extends lm0 {
         View view2;
         int i11 = this.h0;
         int i12 = 0;
-        c6 c6Var = null;
+        d6 d6Var = null;
         Context context = this.e;
         switch (i10) {
             case 0:
-                i6 i6Var = new i6(context, null);
-                i6Var.l0 = i11 == 3;
-                view = i6Var;
+                h6 h6Var = new h6(context, null);
+                h6Var.l0 = i11 == 3;
+                view = h6Var;
                 view2 = view;
                 break;
             case 1:
-                view2 = new v3(context, null);
+                view2 = new u3(context, null);
                 break;
             case 2:
             case 9:
                 view2 = new z(i12, context, true ? 1 : 0);
                 break;
             case 3:
-                view2 = new qa(context);
+                view2 = new org.telegram.ui.Cells.pa(context);
                 break;
             case 4:
-                f10 f10Var = new f10(context, null);
-                f10Var.setViewType(1);
-                f10Var.setIsSingleCell(true);
-                view2 = f10Var;
+                b10 b10Var = new b10(context, null);
+                b10Var.setViewType(1);
+                b10Var.setIsSingleCell(true);
+                view2 = b10Var;
                 break;
             case 5:
-                l4 l4Var = new l4(context);
-                l4Var.setGravity(16);
-                l4Var.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
-                l4Var.setTextSize(1, 17.0f);
-                l4Var.setTextColor(g6.x0(null, g6.G6, false));
-                view2 = l4Var;
+                k4 k4Var = new k4(context);
+                k4Var.setGravity(16);
+                k4Var.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
+                k4Var.setTextSize(1, 17.0f);
+                k4Var.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.G6, false));
+                view2 = k4Var;
                 break;
             case 6:
-                kc1 kc1Var = new kc1(context, 2, c6Var);
-                kc1Var.setSelectorDrawableColor(g6.x0(null, g6.i6, false));
-                int i13 = 9;
-                kc1Var.setTag(9);
-                kc1Var.setItemAnimator(null);
-                kc1Var.setLayoutAnimation(null);
+                ua1 ua1Var = new ua1(context, 2, d6Var);
+                ua1Var.setSelectorDrawableColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.i6, false));
+                ua1Var.setTag(9);
+                ua1Var.setItemAnimator(null);
+                ua1Var.setLayoutAnimation(null);
                 a0 a0Var = new a0(i12);
                 a0Var.j1(0);
-                kc1Var.setLayoutManager(a0Var);
-                kc1Var.setAdapter(new b0(this.s0, this.e, null, false, i11 == 3));
-                kc1Var.setOnItemClickListener(new bi.d(this, i13));
-                kc1Var.setOnItemLongClickListener(new w(this));
-                this.k0 = kc1Var;
-                view = kc1Var;
+                ua1Var.setLayoutManager(a0Var);
+                ua1Var.setAdapter(new b0(this.s0, this.e, null, false, i11 == 3));
+                ua1Var.setOnItemClickListener(new va(this, 13));
+                ua1Var.setOnItemLongClickListener(new w(this));
+                this.k0 = ua1Var;
+                view = ua1Var;
                 view2 = view;
                 break;
             case 7:
             default:
-                view2 = new r8(16, context, false);
+                view2 = new q8(16, context, false);
                 break;
             case 8:
-                view2 = new i6(context, null);
+                view2 = new h6(context, null);
                 break;
             case 10:
                 v vVar = new v(this, true ? 1 : 0);
                 d0 d0Var = new d0(context);
                 d0Var.setOrientation(1);
-                z9 z9Var = new z9(context);
-                z9Var.setImageDrawable(new yj0(R.raw.utyan_empty, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(120.0f)));
-                d0Var.addView(z9Var, z5.t(120, 120, 1, 0, 27, 0, 0));
+                w9 w9Var = new w9(context);
+                w9Var.setImageDrawable(new uj0(R.raw.utyan_empty, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(120.0f)));
+                d0Var.addView(w9Var, z5.t(120, 120, 1, 0, 27, 0, 0));
                 TextView textView = new TextView(context);
                 textView.setTextSize(1, 17.0f);
-                int i14 = g6.G6;
-                textView.setTextColor(g6.x0(null, i14, false));
+                int i13 = org.telegram.ui.ActionBar.h6.G6;
+                textView.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i13, false));
                 textView.setTypeface(AndroidUtilities.bold());
-                sk.m(R.string.SearchMessagesFilterEmptyTitle, textView, 17);
+                wh.m(R.string.SearchMessagesFilterEmptyTitle, textView, 17);
                 d0Var.addView(textView, z5.t(-1, -2, 1, 0, 8, 0, 9));
                 TextView textView2 = new TextView(context);
                 d0Var.a = textView2;
                 textView2.setTextSize(1, 14.0f);
-                textView2.setTextColor(g6.x0(null, i14, false));
+                textView2.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i13, false));
                 textView2.setText(LocaleController.formatString(R.string.SearchMessagesFilterEmptyText, ""));
                 textView2.setGravity(17);
                 d0Var.addView(textView2, z5.t(-1, -2, 1, 0, 0, 0, 14));
@@ -2160,11 +2153,11 @@ public abstract class h0 extends lm0 {
                 textView3.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(4.0f));
                 textView3.setTextSize(1, 14.0f);
                 textView3.setText(LocaleController.getString(R.string.SearchMessagesFilterEmptySearchAll));
-                int i15 = g6.Oh;
-                textView3.setTextColor(g6.x0(null, i15, false));
-                int m12 = g6.m1(0.15f, g6.x0(null, i15, false));
-                textView3.setBackground(g6.j0(6, 6, 6, 6, 0, m12, m12));
-                textView3.setOnClickListener(new ah.g0(vVar, 22));
+                int i14 = org.telegram.ui.ActionBar.h6.Oh;
+                textView3.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, i14, false));
+                int m12 = org.telegram.ui.ActionBar.h6.m1(0.15f, org.telegram.ui.ActionBar.h6.x0(null, i14, false));
+                textView3.setBackground(org.telegram.ui.ActionBar.h6.j0(6, 6, 6, 6, 0, m12, m12));
+                textView3.setOnClickListener(new ah.g0(vVar, 29));
                 d0Var.addView(textView3, z5.t(-2, -2, 1, 0, 0, 0, 38));
                 this.E0 = d0Var;
                 textView2.setText(LocaleController.formatString(R.string.SearchMessagesFilterEmptyText, this.Z));
@@ -2176,6 +2169,6 @@ public abstract class h0 extends lm0 {
         } else {
             view2.setLayoutParams(new s4.o0(-1, -2));
         }
-        return new wl0(view2);
+        return new sl0(view2);
     }
 }

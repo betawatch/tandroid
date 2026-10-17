@@ -1,18 +1,17 @@
 package r9;
 
-import org.telegram.ui.web.o0;
-import r0.s0;
+import org.telegram.ui.web.c0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class p implements qa.b {
-    public static final s0 c = new s0(3);
+    public static final r.a c = new r.a(6);
     public static final f d = new f(1);
     public qa.a a;
     public volatile qa.b b;
 
-    public p(s0 s0Var, qa.b bVar) {
-        this.a = s0Var;
+    public p(r.a aVar, qa.b bVar) {
+        this.a = aVar;
         this.b = bVar;
     }
 
@@ -30,7 +29,7 @@ public final class p implements qa.b {
             if (bVar != fVar) {
                 bVar2 = bVar;
             } else {
-                this.a = new o0(4, this.a, aVar);
+                this.a = new c0(5, this.a, aVar);
                 bVar2 = null;
             }
         }

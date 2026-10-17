@@ -1,51 +1,67 @@
 package b2;
 
-import java.util.HashSet;
-import w7.c7;
+import android.net.Uri;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class n0 {
-    public int a;
-    public int b;
-    public Object c;
-    public Object d = null;
-    public Object e;
-    public Object f;
-    public Object g;
+public class n0 {
+    public static final String h;
+    public static final String i;
+    public static final String j;
+    public static final String k;
+    public static final String l;
+    public static final String m;
+    public static final String n;
+    public final Uri a;
+    public final String b;
+    public final String c;
+    public final int d;
+    public final int e;
+    public final String f;
+    public final String g;
 
-    public n0(Class cls, Class[] clsArr) {
-        HashSet hashSet = new HashSet();
-        this.c = hashSet;
-        this.e = new HashSet();
-        this.a = 0;
-        this.b = 0;
-        this.g = new HashSet();
-        hashSet.add(r9.r.a(cls));
-        for (Class cls2 : clsArr) {
-            c7.a(cls2, "Null interface");
-            ((HashSet) this.c).add(r9.r.a(cls2));
-        }
+    static {
+        String str = e2.m0.a;
+        h = Integer.toString(0, 36);
+        i = Integer.toString(1, 36);
+        j = Integer.toString(2, 36);
+        k = Integer.toString(3, 36);
+        l = Integer.toString(4, 36);
+        m = Integer.toString(5, 36);
+        n = Integer.toString(6, 36);
     }
 
-    public void a(r9.j jVar) {
-        if (((HashSet) this.c).contains(jVar.a)) {
-            throw new IllegalArgumentException("Components are not allowed to depend on interfaces they themselves provide.");
-        }
-        ((HashSet) this.e).add(jVar);
+    public n0(m0 m0Var) {
+        this.a = (Uri) m0Var.c;
+        this.b = (String) m0Var.d;
+        this.c = (String) m0Var.e;
+        this.d = m0Var.a;
+        this.e = m0Var.b;
+        this.f = (String) m0Var.f;
+        this.g = (String) m0Var.g;
     }
 
-    public r9.a b() {
-        if (((r9.d) this.f) != null) {
-            return new r9.a((String) this.d, new HashSet((HashSet) this.c), new HashSet((HashSet) this.e), this.a, this.b, (r9.d) this.f, (HashSet) this.g);
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        throw new IllegalStateException("Missing required property: factory.");
+        if (!(obj instanceof n0)) {
+            return false;
+        }
+        n0 n0Var = (n0) obj;
+        return this.a.equals(n0Var.a) && Objects.equals(this.b, n0Var.b) && Objects.equals(this.c, n0Var.c) && this.d == n0Var.d && this.e == n0Var.e && Objects.equals(this.f, n0Var.f) && Objects.equals(this.g, n0Var.g);
     }
 
-    public void c(int i10) {
-        if (!(this.a == 0)) {
-            throw new IllegalStateException("Instantiation type has already been set.");
-        }
-        this.a = i10;
+    public final int hashCode() {
+        int hashCode = this.a.hashCode() * 31;
+        String str = this.b;
+        int hashCode2 = (hashCode + (str == null ? 0 : str.hashCode())) * 31;
+        String str2 = this.c;
+        int hashCode3 = (((((hashCode2 + (str2 == null ? 0 : str2.hashCode())) * 31) + this.d) * 31) + this.e) * 31;
+        String str3 = this.f;
+        int hashCode4 = (hashCode3 + (str3 == null ? 0 : str3.hashCode())) * 31;
+        String str4 = this.g;
+        return hashCode4 + (str4 != null ? str4.hashCode() : 0);
     }
 }

@@ -1,16 +1,12 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class to0 extends s4.k {
-    public final /* synthetic */ org.telegram.ui.iy F;
+public final class to0 {
+    public final int a;
+    public int b;
 
-    public to0(org.telegram.ui.iy iyVar) {
-        this.F = iyVar;
-    }
-
-    @Override // s4.k
-    public final void P(s4.b1 b1Var) {
-        this.F.invalidate();
+    public to0(int i10) {
+        this.a = i10;
     }
 }

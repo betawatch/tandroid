@@ -1,118 +1,85 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.util.Property;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.widget.FrameLayout;
+import androidx.core.widget.NestedScrollView;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class zt0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ PhotoViewer c;
+public final class zt0 extends org.telegram.ui.Components.n11 {
+    public boolean a;
+    public float b;
+    public NestedScrollView c;
+    public FrameLayout d;
 
-    public /* synthetic */ zt0(PhotoViewer photoViewer, boolean z10, int i10) {
-        this.a = i10;
-        this.c = photoViewer;
-        this.b = z10;
+    public zt0(Context context) {
+        super(context);
+        this.a = false;
+        this.b = 1.0f;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 1:
-                PhotoViewer photoViewer = this.c;
-                if (animator.equals(photoViewer.w)) {
-                    photoViewer.w = null;
-                    break;
-                }
-                break;
-            case 2:
-                PhotoViewer photoViewer2 = this.c;
-                if (animator.equals(photoViewer2.L)) {
-                    photoViewer2.L = null;
-                    break;
-                }
-                break;
-            case 3:
-                this.c.U7 = null;
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
+    public final void b(int i10, boolean z10) {
+        super.setVisibility(i10);
+        if (this.a && z10) {
+            this.c.setVisibility(i10);
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int i10 = this.a;
-        boolean z10 = this.b;
-        PhotoViewer photoViewer = this.c;
-        switch (i10) {
-            case 0:
-                if (!z10) {
-                    photoViewer.i3.setVisibility(8);
-                    break;
-                }
-                break;
-            case 1:
-                if (animator.equals(photoViewer.w)) {
-                    if (!z10) {
-                        photoViewer.X0.setVisibility(4);
-                    }
-                    photoViewer.w = null;
-                    break;
-                }
-                break;
-            case 2:
-                if (animator.equals(photoViewer.L)) {
-                    if (!z10) {
-                        photoViewer.F.setVisibility(4);
-                        if (photoViewer.i0.getTag() != null) {
-                            photoViewer.i0.setVisibility(4);
-                        }
-                        if (photoViewer.Q1.getTag() != null) {
-                            photoViewer.Q1.setVisibility(4);
-                        }
-                    }
-                    photoViewer.L = null;
-                    break;
-                }
-                break;
-            default:
-                if (animator.equals(photoViewer.U7)) {
-                    photoViewer.U7 = new AnimatorSet();
-                    if (z10) {
-                        photoViewer.O7.setVisibility(0);
-                        photoViewer.P7.setVisibility(0);
-                        AnimatorSet animatorSet = photoViewer.U7;
-                        lv0 lv0Var = photoViewer.O7;
-                        Property property = View.TRANSLATION_Y;
-                        animatorSet.playTogether(ObjectAnimator.ofFloat(lv0Var, (Property<lv0, Float>) property, 0.0f), ObjectAnimator.ofFloat(photoViewer.P7, (Property<org.telegram.ui.Components.tg0, Float>) property, 0.0f));
-                    } else {
-                        if (photoViewer.S4) {
-                            photoViewer.j0.setVisibility(8);
-                            photoViewer.j0.setAlpha(0.0f);
-                            photoViewer.j0.setBackgroundColor(photoViewer.c2 == 11 ? -16777216 : 2130706432);
-                        }
-                        photoViewer.O7.setVisibility(4);
-                        photoViewer.P7.setVisibility(4);
-                        AnimatorSet animatorSet2 = photoViewer.U7;
-                        x5 x5Var = photoViewer.P0;
-                        Property property2 = View.TRANSLATION_Y;
-                        animatorSet2.playTogether(ObjectAnimator.ofFloat(x5Var, (Property<x5, Float>) property2, 0.0f), ObjectAnimator.ofFloat(photoViewer.P0, (Property<x5, Float>) View.ALPHA, 1.0f), ObjectAnimator.ofFloat(photoViewer.S0, (Property<ji.y1, Float>) property2, 0.0f));
-                    }
-                    photoViewer.U7.addListener(new kj0(this, 12));
-                    photoViewer.U7.setDuration(200L);
-                    photoViewer.U7.setInterpolator(AndroidUtilities.decelerateInterpolator);
-                    photoViewer.U7.start();
-                    break;
-                }
-                break;
+    @Override // android.view.View
+    public float getAlpha() {
+        return this.a ? this.b : super.getAlpha();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        if (this.d == null || getParent() != this.d) {
+            return;
         }
+        this.a = true;
+        this.c.setVisibility(getVisibility());
+        this.c.setAlpha(this.b);
+        super.setAlpha(1.0f);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        if (this.a) {
+            this.a = false;
+            this.c.setVisibility(8);
+            super.setAlpha(this.b);
+        }
+    }
+
+    @Override // android.view.View
+    public void setAlpha(float f7) {
+        this.b = f7;
+        if (this.a) {
+            this.c.setAlpha(f7);
+        } else {
+            super.setAlpha(f7);
+        }
+    }
+
+    public void setContainer(FrameLayout frameLayout) {
+        this.d = frameLayout;
+    }
+
+    public void setScrollView(NestedScrollView nestedScrollView) {
+        this.c = nestedScrollView;
+    }
+
+    @Override // android.view.View
+    public void setTranslationY(float f7) {
+        super.setTranslationY(f7);
+        if (this.a) {
+            this.c.invalidate();
+        }
+    }
+
+    @Override // android.view.View
+    public void setVisibility(int i10) {
+        b(i10, true);
     }
 }

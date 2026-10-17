@@ -1,59 +1,100 @@
 package org.telegram.ui.Components;
 
+import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.view.View;
-import android.widget.FrameLayout;
+import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.ImageView;
-import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class cz extends FrameLayout {
-    public final ImageView a;
-    public final TextView b;
-    public final RadialProgressView c;
-    public boolean d;
-    public final /* synthetic */ wz e;
+public final class cz extends ImageView {
+    public int a;
+    public r5 b;
+    public boolean c;
+    public a6 d;
+    public fy e;
+    public final ImageReceiver.BackgroundThreadDrawHolder[] f;
+    public float h;
+    public ValueAnimator n;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cz(wz wzVar, Context context) {
+    public cz(Context context) {
         super(context);
-        this.e = wzVar;
-        ImageView imageView = new ImageView(getContext());
-        this.a = imageView;
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setImageResource(R.drawable.gif_empty);
-        int i10 = org.telegram.ui.ActionBar.g6.Le;
-        imageView.setColorFilter(new PorterDuffColorFilter(wzVar.B(i10), PorterDuff.Mode.MULTIPLY));
-        addView(imageView, w7.z5.a(-2.0f, 0.0f, 8.0f, 0.0f, 0.0f, -2, 17));
-        TextView textView = new TextView(getContext());
-        this.b = textView;
-        org.telegram.messenger.sk.j(16.0f, R.string.NoGIFsFound, 1, textView);
-        textView.setTextColor(wzVar.B(i10));
-        addView(textView, w7.z5.a(-2.0f, 0.0f, 42.0f, 0.0f, 0.0f, -2, 17));
-        RadialProgressView radialProgressView = new RadialProgressView(context, wzVar.Z1);
-        this.c = radialProgressView;
-        radialProgressView.setVisibility(8);
-        radialProgressView.setProgressColor(wzVar.B(org.telegram.ui.ActionBar.g6.h6));
-        addView(radialProgressView, w7.z5.e(-2, -2, 17));
+        this.f = new ImageReceiver.BackgroundThreadDrawHolder[2];
+        setScaleType(ImageView.ScaleType.CENTER);
+        setBackground(org.telegram.ui.ActionBar.h6.Z(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.i6, false), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f)));
     }
 
-    public final void a(boolean z10) {
-        if (this.d != z10) {
-            this.d = z10;
-            this.a.setVisibility(z10 ? 8 : 0);
-            this.b.setVisibility(z10 ? 8 : 0);
-            this.c.setVisibility(z10 ? 0 : 8);
+    public final void a(Drawable drawable, boolean z10) {
+        setImageDrawable(drawable);
+        this.c = z10;
+    }
+
+    public a6 getSpan() {
+        return this.d;
+    }
+
+    @Override // android.widget.ImageView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (isPressed()) {
+            float f7 = this.h;
+            if (f7 != 1.0f) {
+                float min = (Math.min(40.0f, 1000.0f / AndroidUtilities.screenRefreshRate) / 100.0f) + f7;
+                this.h = min;
+                this.h = Utilities.clamp(min, 1.0f, 0.0f);
+                invalidate();
+            }
+        }
+        float f10 = ((1.0f - this.h) * 0.2f) + 0.8f;
+        canvas.save();
+        canvas.scale(f10, f10, getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f);
+        super.onDraw(canvas);
+        canvas.restore();
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.view.View");
+    }
+
+    @Override // android.widget.ImageView, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setMeasuredDimension(View.MeasureSpec.getSize(i10), View.MeasureSpec.getSize(i10));
+    }
+
+    @Override // android.view.View
+    public void setPressed(boolean z10) {
+        ValueAnimator valueAnimator;
+        if (isPressed() != z10) {
+            super.setPressed(z10);
+            invalidate();
+            if (z10 && (valueAnimator = this.n) != null) {
+                valueAnimator.removeAllListeners();
+                this.n.cancel();
+            }
+            if (z10) {
+                return;
+            }
+            float f7 = this.h;
+            if (f7 != 0.0f) {
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, 0.0f);
+                this.n = ofFloat;
+                ofFloat.addUpdateListener(new l6(this, 22));
+                this.n.addListener(new org.telegram.ui.pq(this, 25));
+                org.telegram.messenger.wh.l(5.0f, this.n);
+                this.n.setDuration(350L);
+                this.n.start();
+            }
         }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(!this.d ? (int) (org.telegram.messenger.sk.A(8.0f, r0 - r4.b1, 3) * 1.7f) : this.e.h0.getMeasuredHeight() - AndroidUtilities.dp(80.0f), TLObject.FLAG_30));
+    public void setSpan(a6 a6Var) {
+        this.d = a6Var;
     }
 }

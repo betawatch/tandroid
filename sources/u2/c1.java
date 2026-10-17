@@ -5,39 +5,39 @@ import j$.util.Objects;
 import java.io.EOFException;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.ip0;
+import org.telegram.ui.Components.ep0;
 import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public class c1 implements c3.i0 {
+public class c1 implements c3.j0 {
     public boolean B;
-    public b2.x C;
-    public b2.x D;
+    public b2.w C;
+    public b2.w D;
     public long E;
     public boolean G;
     public long H;
     public boolean I;
-    public final ip0 a;
-    public final n2.m d;
-    public final n2.j e;
+    public final ep0 a;
+    public final n2.n d;
+    public final n2.k e;
     public Object f;
-    public b2.x g;
-    public n2.g h;
+    public b2.w g;
+    public n2.h h;
     public int p;
     public int q;
     public int r;
     public int s;
     public boolean y;
-    public final j5.b b = new j5.b();
+    public final j5.c b = new j5.c();
     public int i = MediaDataController.MAX_STYLE_RUNS_COUNT;
     public long[] j = new long[MediaDataController.MAX_STYLE_RUNS_COUNT];
     public long[] k = new long[MediaDataController.MAX_STYLE_RUNS_COUNT];
     public long[] n = new long[MediaDataController.MAX_STYLE_RUNS_COUNT];
     public int[] m = new int[MediaDataController.MAX_STYLE_RUNS_COUNT];
     public int[] l = new int[MediaDataController.MAX_STYLE_RUNS_COUNT];
-    public c3.h0[] o = new c3.h0[MediaDataController.MAX_STYLE_RUNS_COUNT];
-    public final a5.a c = new a5.a(new t0.a(5));
+    public c3.i0[] o = new c3.i0[MediaDataController.MAX_STYLE_RUNS_COUNT];
+    public final a5.a c = new a5.a(new si.a(8));
     public long t = Long.MIN_VALUE;
     public long v = Long.MIN_VALUE;
     public long w = Long.MIN_VALUE;
@@ -47,14 +47,14 @@ public class c1 implements c3.i0 {
     public long u = Long.MIN_VALUE;
     public int x = -1;
 
-    public c1(androidx.biometric.e eVar, n2.m mVar, n2.j jVar) {
-        this.d = mVar;
-        this.e = jVar;
-        this.a = new ip0(eVar);
+    public c1(androidx.biometric.e eVar, n2.n nVar, n2.k kVar) {
+        this.d = nVar;
+        this.e = kVar;
+        this.a = new ep0(eVar);
     }
 
     public final synchronized boolean A(boolean z10) {
-        b2.x xVar;
+        b2.w wVar;
         int v = v();
         int i10 = this.x;
         boolean z11 = true;
@@ -67,59 +67,59 @@ public class c1 implements c3.i0 {
             }
             return B(w(this.s));
         }
-        if (!z10 && !this.y && ((xVar = this.D) == null || xVar == this.g)) {
+        if (!z10 && !this.y && ((wVar = this.D) == null || wVar == this.g)) {
             z11 = false;
         }
         return z11;
     }
 
     public final boolean B(int i10) {
-        n2.g gVar = this.h;
-        if (gVar == null || gVar.e() == 4) {
+        n2.h hVar = this.h;
+        if (hVar == null || hVar.e() == 4) {
             return true;
         }
         return (this.m[i10] & TLObject.FLAG_30) == 0 && this.h.d();
     }
 
     public final void C() {
-        n2.g gVar = this.h;
-        if (gVar == null || gVar.e() != 1) {
+        n2.h hVar = this.h;
+        if (hVar == null || hVar.e() != 1) {
             return;
         }
-        n2.f g10 = this.h.g();
+        n2.g g10 = this.h.g();
         g10.getClass();
         throw g10;
     }
 
-    public final void D(b2.x xVar, qf.b bVar) {
-        b2.x xVar2;
-        b2.x xVar3 = this.g;
-        boolean z10 = xVar3 == null;
-        b2.t tVar = xVar3 == null ? null : xVar3.w;
-        this.g = xVar;
-        b2.t tVar2 = xVar.w;
-        n2.m mVar = this.d;
-        if (mVar != null) {
-            int J0 = mVar.J0(xVar);
-            b2.w a2 = xVar.a();
-            a2.S = J0;
-            xVar2 = new b2.x(a2);
+    public final void D(b2.w wVar, qf.b bVar) {
+        b2.w wVar2;
+        b2.w wVar3 = this.g;
+        boolean z10 = wVar3 == null;
+        b2.s sVar = wVar3 == null ? null : wVar3.w;
+        this.g = wVar;
+        b2.s sVar2 = wVar.w;
+        n2.n nVar = this.d;
+        if (nVar != null) {
+            int I0 = nVar.I0(wVar);
+            b2.v a2 = wVar.a();
+            a2.S = I0;
+            wVar2 = new b2.w(a2);
         } else {
-            xVar2 = xVar;
+            wVar2 = wVar;
         }
-        bVar.c = xVar2;
+        bVar.c = wVar2;
         bVar.b = this.h;
-        if (mVar == null) {
+        if (nVar == null) {
             return;
         }
-        if (z10 || !Objects.equals(tVar, tVar2)) {
-            n2.g gVar = this.h;
-            n2.j jVar = this.e;
-            n2.g V0 = mVar.V0(jVar, xVar);
-            this.h = V0;
-            bVar.b = V0;
-            if (gVar != null) {
-                gVar.a(jVar);
+        if (z10 || !Objects.equals(sVar, sVar2)) {
+            n2.h hVar = this.h;
+            n2.k kVar = this.e;
+            n2.h U0 = nVar.U0(kVar, wVar);
+            this.h = U0;
+            bVar.b = U0;
+            if (hVar != null) {
+                hVar.a(kVar);
             }
         }
     }
@@ -166,7 +166,7 @@ public class c1 implements c3.i0 {
     public final int F(qf.b bVar, h2.h hVar, int i10, boolean z10) {
         int i11;
         boolean z11 = (i10 & 2) != 0;
-        j5.b bVar2 = this.b;
+        j5.c cVar = this.b;
         synchronized (this) {
             hVar.d = false;
             int v = v();
@@ -174,8 +174,8 @@ public class c1 implements c3.i0 {
             boolean z12 = i12 != -1 && v >= i12;
             i11 = -5;
             if ((this.s != this.p) && !z12) {
-                b2.x xVar = ((a1) this.c.o(v)).a;
-                if (!z11 && xVar == this.g) {
+                b2.w wVar = ((a1) this.c.o(v)).a;
+                if (!z11 && wVar == this.g) {
                     int w9 = w(this.s);
                     if (B(w9)) {
                         hVar.setFlags(this.m[w9]);
@@ -183,16 +183,16 @@ public class c1 implements c3.i0 {
                             hVar.addFlag(TLObject.FLAG_29);
                         }
                         hVar.e = this.n[w9];
-                        bVar2.b = this.l[w9];
-                        bVar2.a = this.k[w9];
-                        bVar2.c = this.o[w9];
+                        cVar.b = this.l[w9];
+                        cVar.a = this.k[w9];
+                        cVar.c = this.o[w9];
                         i11 = -4;
                     } else {
                         hVar.d = true;
                         i11 = -3;
                     }
                 }
-                D(xVar, bVar);
+                D(wVar, bVar);
             }
             hVar.setFlags(4);
             hVar.e = Long.MIN_VALUE;
@@ -202,11 +202,11 @@ public class c1 implements c3.i0 {
             boolean z13 = (i10 & 1) != 0;
             if ((i10 & 4) == 0) {
                 if (z13) {
-                    ip0 ip0Var = this.a;
-                    ip0.f((z0) ip0Var.f, hVar, this.b, (e2.x) ip0Var.d);
+                    ep0 ep0Var = this.a;
+                    ep0.f((z0) ep0Var.f, hVar, this.b, (e2.x) ep0Var.d);
                 } else {
-                    ip0 ip0Var2 = this.a;
-                    ip0Var2.f = ip0.f((z0) ip0Var2.f, hVar, this.b, (e2.x) ip0Var2.d);
+                    ep0 ep0Var2 = this.a;
+                    ep0Var2.f = ep0.f((z0) ep0Var2.f, hVar, this.b, (e2.x) ep0Var2.d);
                 }
             }
             if (!z13) {
@@ -217,17 +217,17 @@ public class c1 implements c3.i0 {
     }
 
     public final void G(boolean z10) {
-        ip0 ip0Var = this.a;
-        z0 z0Var = (z0) ip0Var.e;
+        ep0 ep0Var = this.a;
+        z0 z0Var = (z0) ep0Var.e;
         if (((y2.a) z0Var.c) != null) {
-            androidx.biometric.e eVar = (androidx.biometric.e) ip0Var.c;
+            androidx.biometric.e eVar = (androidx.biometric.e) ep0Var.c;
             synchronized (eVar) {
-                ((i2.i) eVar.d).c.b(z0Var);
+                ((i2.h) eVar.d).c.b(z0Var);
                 z0 z0Var2 = z0Var;
                 while (z0Var2 != null) {
                     y2.a aVar = (y2.a) z0Var2.c;
                     aVar.getClass();
-                    eVar.t(aVar);
+                    eVar.u(aVar);
                     z0Var2 = (z0) z0Var2.d;
                     if (z0Var2 == null || ((y2.a) z0Var2.c) == null) {
                         z0Var2 = null;
@@ -237,16 +237,16 @@ public class c1 implements c3.i0 {
             z0Var.c = null;
             z0Var.d = null;
         }
-        z0 z0Var3 = (z0) ip0Var.e;
-        int i10 = ip0Var.a;
+        z0 z0Var3 = (z0) ep0Var.e;
+        int i10 = ep0Var.a;
         u6.p(((y2.a) z0Var3.c) == null);
         z0Var3.a = 0L;
         z0Var3.b = i10;
-        z0 z0Var4 = (z0) ip0Var.e;
-        ip0Var.f = z0Var4;
-        ip0Var.g = z0Var4;
-        ip0Var.b = 0L;
-        ((androidx.biometric.e) ip0Var.c).w();
+        z0 z0Var4 = (z0) ep0Var.e;
+        ep0Var.f = z0Var4;
+        ep0Var.g = z0Var4;
+        ep0Var.b = 0L;
+        ((androidx.biometric.e) ep0Var.c).w();
         this.p = 0;
         this.q = 0;
         this.r = 0;
@@ -260,7 +260,7 @@ public class c1 implements c3.i0 {
         a5.a aVar2 = this.c;
         SparseArray sparseArray = (SparseArray) aVar2.c;
         for (int i11 = 0; i11 < sparseArray.size(); i11++) {
-            ((t0.a) aVar2.d).accept(sparseArray.valueAt(i11));
+            ((si.a) aVar2.d).accept(sparseArray.valueAt(i11));
         }
         aVar2.b = -1;
         sparseArray.clear();
@@ -274,8 +274,8 @@ public class c1 implements c3.i0 {
 
     public final synchronized void H() {
         this.s = 0;
-        ip0 ip0Var = this.a;
-        ip0Var.f = (z0) ip0Var.e;
+        ep0 ep0Var = this.a;
+        ep0Var.f = (z0) ep0Var.e;
     }
 
     public final synchronized boolean I(int i10) {
@@ -411,18 +411,18 @@ public class c1 implements c3.i0 {
         this.s += i10;
     }
 
-    @Override // c3.i0
-    public final int a(b2.p pVar, int i10, boolean z10) {
-        return f(pVar, i10, z10);
+    @Override // c3.j0
+    public final int a(b2.o oVar, int i10, boolean z10) {
+        return f(oVar, i10, z10);
     }
 
     /* JADX WARN: Type inference failed for: r6v26, types: [java.lang.Object, u2.b1] */
-    @Override // c3.i0
-    public final void b(b2.x xVar) {
-        b2.x r10 = r(xVar);
+    @Override // c3.j0
+    public final void b(b2.w wVar) {
+        b2.w r10 = r(wVar);
         boolean z10 = false;
         this.B = false;
-        this.C = xVar;
+        this.C = wVar;
         synchronized (this) {
             try {
                 this.A = false;
@@ -433,18 +433,18 @@ public class c1 implements c3.i0 {
                             SparseArray sparseArray2 = (SparseArray) this.c.c;
                             this.D = ((a1) sparseArray2.valueAt(sparseArray2.size() - 1)).a;
                             boolean z11 = this.F;
-                            b2.x xVar2 = this.D;
-                            String str = xVar2.s;
-                            this.F = z11 & (b2.w0.h(str) != 1 && b2.w0.a(str, xVar2.k));
+                            b2.w wVar2 = this.D;
+                            String str = wVar2.s;
+                            this.F = z11 & (b2.v0.h(str) != 1 && b2.v0.a(str, wVar2.k));
                             this.G = false;
                             z10 = true;
                         }
                     }
                     this.D = r10;
                     boolean z112 = this.F;
-                    b2.x xVar22 = this.D;
-                    String str2 = xVar22.s;
-                    this.F = z112 & (b2.w0.h(str2) != 1 && b2.w0.a(str2, xVar22.k));
+                    b2.w wVar22 = this.D;
+                    String str2 = wVar22.s;
+                    this.F = z112 & (b2.v0.h(str2) != 1 && b2.v0.a(str2, wVar22.k));
                     this.G = false;
                     z10 = true;
                 }
@@ -456,20 +456,20 @@ public class c1 implements c3.i0 {
         if (r62 == 0 || !z10) {
             return;
         }
-        r62.b();
+        r62.a();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:24:0x0052  */
-    @Override // c3.i0
+    @Override // c3.j0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void c(long j10, int i10, int i11, int i12, c3.h0 h0Var) {
+    public void c(long j10, int i10, int i11, int i12, c3.i0 i0Var) {
         int i13;
         if (this.B) {
-            b2.x xVar = this.C;
-            xVar.getClass();
-            b(xVar);
+            b2.w wVar = this.C;
+            wVar.getClass();
+            b(wVar);
         }
         int i14 = i10 & 1;
         boolean z10 = i14 != 0;
@@ -510,60 +510,60 @@ public class c1 implements c3.i0 {
                         this.I = false;
                     }
                 }
-                h(j11, i13, (this.a.b - i11) - i12, i11, h0Var);
+                h(j11, i13, (this.a.b - i11) - i12, i11, i0Var);
             }
         }
         i13 = i10;
         if (this.I) {
         }
-        h(j11, i13, (this.a.b - i11) - i12, i11, h0Var);
+        h(j11, i13, (this.a.b - i11) - i12, i11, i0Var);
     }
 
-    @Override // c3.i0
+    @Override // c3.j0
     public final /* synthetic */ void d(int i10, e2.x xVar) {
         a1.g.a(this, xVar, i10);
     }
 
-    @Override // c3.i0
-    public final int f(b2.p pVar, int i10, boolean z10) {
-        ip0 ip0Var = this.a;
-        int c10 = ip0Var.c(i10);
-        z0 z0Var = (z0) ip0Var.g;
+    @Override // c3.j0
+    public final int f(b2.o oVar, int i10, boolean z10) {
+        ep0 ep0Var = this.a;
+        int c10 = ep0Var.c(i10);
+        z0 z0Var = (z0) ep0Var.g;
         y2.a aVar = (y2.a) z0Var.c;
-        int read = pVar.read(aVar.a, ((int) (ip0Var.b - z0Var.a)) + aVar.b, c10);
+        int read = oVar.read(aVar.a, ((int) (ep0Var.b - z0Var.a)) + aVar.b, c10);
         if (read == -1) {
             if (z10) {
                 return -1;
             }
             throw new EOFException();
         }
-        long j10 = ip0Var.b + read;
-        ip0Var.b = j10;
-        z0 z0Var2 = (z0) ip0Var.g;
+        long j10 = ep0Var.b + read;
+        ep0Var.b = j10;
+        z0 z0Var2 = (z0) ep0Var.g;
         if (j10 == z0Var2.b) {
-            ip0Var.g = (z0) z0Var2.d;
+            ep0Var.g = (z0) z0Var2.d;
         }
         return read;
     }
 
-    @Override // c3.i0
+    @Override // c3.j0
     public final void g(e2.x xVar, int i10, int i11) {
         while (true) {
-            ip0 ip0Var = this.a;
+            ep0 ep0Var = this.a;
             if (i10 <= 0) {
-                ip0Var.getClass();
+                ep0Var.getClass();
                 return;
             }
-            int c10 = ip0Var.c(i10);
-            z0 z0Var = (z0) ip0Var.g;
+            int c10 = ep0Var.c(i10);
+            z0 z0Var = (z0) ep0Var.g;
             y2.a aVar = (y2.a) z0Var.c;
-            xVar.k(((int) (ip0Var.b - z0Var.a)) + aVar.b, c10, aVar.a);
+            xVar.k(((int) (ep0Var.b - z0Var.a)) + aVar.b, c10, aVar.a);
             i10 -= c10;
-            long j10 = ip0Var.b + c10;
-            ip0Var.b = j10;
-            z0 z0Var2 = (z0) ip0Var.g;
+            long j10 = ep0Var.b + c10;
+            ep0Var.b = j10;
+            z0 z0Var2 = (z0) ep0Var.g;
             if (j10 == z0Var2.b) {
-                ip0Var.g = (z0) z0Var2.d;
+                ep0Var.g = (z0) z0Var2.d;
             }
         }
     }
@@ -575,7 +575,7 @@ public class c1 implements c3.i0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final synchronized void h(long j10, int i10, long j11, int i11, c3.h0 h0Var) {
+    public final synchronized void h(long j10, int i10, long j11, int i11, c3.i0 i0Var) {
         try {
             int i12 = this.p;
             if (i12 > 0) {
@@ -593,18 +593,18 @@ public class c1 implements c3.i0 {
             this.k[w10] = j11;
             this.l[w10] = i11;
             this.m[w10] = i10;
-            this.o[w10] = h0Var;
+            this.o[w10] = i0Var;
             this.j[w10] = this.E;
             if (!(((SparseArray) this.c.c).size() == 0)) {
                 SparseArray sparseArray = (SparseArray) this.c.c;
             }
-            b2.x xVar = this.D;
-            xVar.getClass();
-            n2.m mVar = this.d;
-            n2.l j02 = mVar != null ? mVar.j0(this.e, xVar) : n2.l.u;
+            b2.w wVar = this.D;
+            wVar.getClass();
+            n2.n nVar = this.d;
+            n2.m j02 = nVar != null ? nVar.j0(this.e, wVar) : n2.m.u;
             a5.a aVar = this.c;
             int i13 = this.q + this.p;
-            a1 a1Var = new a1(xVar, j02);
+            a1 a1Var = new a1(wVar, j02);
             SparseArray sparseArray2 = (SparseArray) aVar.c;
             if (aVar.b == -1) {
                 u6.p(sparseArray2.size() == 0);
@@ -614,7 +614,7 @@ public class c1 implements c3.i0 {
                 int keyAt = sparseArray2.keyAt(sparseArray2.size() - 1);
                 u6.g(i13 >= keyAt);
                 if (keyAt == i13) {
-                    ((t0.a) aVar.d).accept(sparseArray2.valueAt(sparseArray2.size() - 1));
+                    ((si.a) aVar.d).accept(sparseArray2.valueAt(sparseArray2.size() - 1));
                 }
             }
             sparseArray2.append(i13, a1Var);
@@ -628,27 +628,27 @@ public class c1 implements c3.i0 {
                 long[] jArr3 = new long[i16];
                 int[] iArr = new int[i16];
                 int[] iArr2 = new int[i16];
-                c3.h0[] h0VarArr = new c3.h0[i16];
+                c3.i0[] i0VarArr = new c3.i0[i16];
                 int i17 = this.r;
                 int i18 = i15 - i17;
                 System.arraycopy(this.k, i17, jArr2, 0, i18);
                 System.arraycopy(this.n, this.r, jArr3, 0, i18);
                 System.arraycopy(this.m, this.r, iArr, 0, i18);
                 System.arraycopy(this.l, this.r, iArr2, 0, i18);
-                System.arraycopy(this.o, this.r, h0VarArr, 0, i18);
+                System.arraycopy(this.o, this.r, i0VarArr, 0, i18);
                 System.arraycopy(this.j, this.r, jArr, 0, i18);
                 int i19 = this.r;
                 System.arraycopy(this.k, 0, jArr2, i18, i19);
                 System.arraycopy(this.n, 0, jArr3, i18, i19);
                 System.arraycopy(this.m, 0, iArr, i18, i19);
                 System.arraycopy(this.l, 0, iArr2, i18, i19);
-                System.arraycopy(this.o, 0, h0VarArr, i18, i19);
+                System.arraycopy(this.o, 0, i0VarArr, i18, i19);
                 System.arraycopy(this.j, 0, jArr, i18, i19);
                 this.k = jArr2;
                 this.n = jArr3;
                 this.m = iArr;
                 this.l = iArr2;
-                this.o = h0VarArr;
+                this.o = i0VarArr;
                 this.j = jArr;
                 this.r = 0;
                 this.i = i16;
@@ -695,7 +695,7 @@ public class c1 implements c3.i0 {
             if (i11 < sparseArray.keyAt(i16)) {
                 break;
             }
-            ((t0.a) aVar.d).accept(sparseArray.valueAt(i15));
+            ((si.a) aVar.d).accept(sparseArray.valueAt(i15));
             sparseArray.removeAt(i15);
             int i17 = aVar.b;
             if (i17 > 0) {
@@ -715,7 +715,7 @@ public class c1 implements c3.i0 {
 
     public final void k(long j10, boolean z10) {
         Throwable th2;
-        ip0 ip0Var = this.a;
+        ep0 ep0Var = this.a;
         synchronized (this) {
             try {
                 try {
@@ -740,10 +740,10 @@ public class c1 implements c3.i0 {
                             if (q6 != -1) {
                                 j11 = j(q6);
                             }
-                            ip0Var.b(j11);
+                            ep0Var.b(j11);
                         }
                     }
-                    ip0Var.b(j11);
+                    ep0Var.b(j11);
                 } catch (Throwable th4) {
                     th = th4;
                     th2 = th;
@@ -759,12 +759,12 @@ public class c1 implements c3.i0 {
 
     public final void l() {
         long j10;
-        ip0 ip0Var = this.a;
+        ep0 ep0Var = this.a;
         synchronized (this) {
             int i10 = this.p;
             j10 = i10 == 0 ? -1L : j(i10);
         }
-        ip0Var.b(j10);
+        ep0Var.b(j10);
     }
 
     public final void m(long j10) {
@@ -795,7 +795,7 @@ public class c1 implements c3.i0 {
         a5.a aVar = this.c;
         SparseArray sparseArray = (SparseArray) aVar.c;
         for (int size = sparseArray.size() - 1; size >= 0 && i10 < sparseArray.keyAt(size); size--) {
-            ((t0.a) aVar.d).accept(sparseArray.valueAt(size));
+            ((si.a) aVar.d).accept(sparseArray.valueAt(size));
             sparseArray.removeAt(size);
         }
         aVar.b = sparseArray.size() > 0 ? Math.min(aVar.b, sparseArray.size() - 1) : -1;
@@ -807,28 +807,28 @@ public class c1 implements c3.i0 {
     }
 
     public final void o(int i10) {
-        ip0 ip0Var = this.a;
+        ep0 ep0Var = this.a;
         long n10 = n(i10);
-        int i11 = ip0Var.a;
-        u6.g(n10 <= ip0Var.b);
-        ip0Var.b = n10;
+        int i11 = ep0Var.a;
+        u6.g(n10 <= ep0Var.b);
+        ep0Var.b = n10;
         if (n10 != 0) {
-            z0 z0Var = (z0) ip0Var.e;
+            z0 z0Var = (z0) ep0Var.e;
             if (n10 != z0Var.a) {
-                while (ip0Var.b > z0Var.b) {
+                while (ep0Var.b > z0Var.b) {
                     z0Var = (z0) z0Var.d;
                 }
                 z0 z0Var2 = (z0) z0Var.d;
                 z0Var2.getClass();
                 if (((y2.a) z0Var2.c) != null) {
-                    androidx.biometric.e eVar = (androidx.biometric.e) ip0Var.c;
+                    androidx.biometric.e eVar = (androidx.biometric.e) ep0Var.c;
                     synchronized (eVar) {
-                        ((i2.i) eVar.d).c.b(z0Var2);
+                        ((i2.h) eVar.d).c.b(z0Var2);
                         z0 z0Var3 = z0Var2;
                         while (z0Var3 != null) {
                             y2.a aVar = (y2.a) z0Var3.c;
                             aVar.getClass();
-                            eVar.t(aVar);
+                            eVar.u(aVar);
                             z0Var3 = (z0) z0Var3.d;
                             if (z0Var3 == null || ((y2.a) z0Var3.c) == null) {
                                 z0Var3 = null;
@@ -840,22 +840,22 @@ public class c1 implements c3.i0 {
                 }
                 z0 z0Var4 = new z0(z0Var.b, i11);
                 z0Var.d = z0Var4;
-                if (ip0Var.b == z0Var.b) {
+                if (ep0Var.b == z0Var.b) {
                     z0Var = z0Var4;
                 }
-                ip0Var.g = z0Var;
-                if (((z0) ip0Var.f) == z0Var2) {
-                    ip0Var.f = z0Var4;
+                ep0Var.g = z0Var;
+                if (((z0) ep0Var.f) == z0Var2) {
+                    ep0Var.f = z0Var4;
                     return;
                 }
                 return;
             }
         }
-        ip0Var.a((z0) ip0Var.e);
-        z0 z0Var5 = new z0(ip0Var.b, i11);
-        ip0Var.e = z0Var5;
-        ip0Var.f = z0Var5;
-        ip0Var.g = z0Var5;
+        ep0Var.a((z0) ep0Var.e);
+        z0 z0Var5 = new z0(ep0Var.b, i11);
+        ep0Var.e = z0Var5;
+        ep0Var.f = z0Var5;
+        ep0Var.g = z0Var5;
     }
 
     public final int p(long j10, int i10, int i11, boolean z10) {
@@ -895,13 +895,13 @@ public class c1 implements c3.i0 {
         return i12;
     }
 
-    public b2.x r(b2.x xVar) {
-        if (this.H == 0 || xVar.x == Long.MAX_VALUE) {
-            return xVar;
+    public b2.w r(b2.w wVar) {
+        if (this.H == 0 || wVar.x == Long.MAX_VALUE) {
+            return wVar;
         }
-        b2.w a2 = xVar.a();
-        a2.w = xVar.x + this.H;
-        return new b2.x(a2);
+        b2.v a2 = wVar.a();
+        a2.w = wVar.x + this.H;
+        return new b2.w(a2);
     }
 
     public final synchronized long s() {
@@ -968,7 +968,7 @@ public class c1 implements c3.i0 {
         }
     }
 
-    public final synchronized b2.x y() {
+    public final synchronized b2.w y() {
         return this.A ? null : this.D;
     }
 
@@ -976,7 +976,7 @@ public class c1 implements c3.i0 {
         return this.x != -1;
     }
 
-    @Override // c3.i0
+    @Override // c3.j0
     public final /* synthetic */ void e(long j10) {
     }
 }

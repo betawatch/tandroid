@@ -1,10 +1,10 @@
 package k3;
 
-import b2.u0;
-import b2.w;
+import b2.t0;
+import b2.v;
+import b2.v0;
 import b2.w0;
-import b2.x0;
-import c3.i0;
+import c3.j0;
 import c3.o;
 import c3.p;
 import c3.q;
@@ -18,8 +18,9 @@ import j$.util.Objects;
 import java.util.List;
 import org.xmlpull.v1.XmlPullParserException;
 import w3.l;
+import z3.k;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class b implements o {
     public q b;
@@ -170,7 +171,7 @@ public final class b implements o {
             }
             pVar.q();
             if (this.j == null) {
-                this.j = new l(z3.l.D, 8);
+                this.j = new l(k.D, 8);
             }
             ad.d dVar2 = new ad.d(pVar, this.f);
             this.i = dVar2;
@@ -187,11 +188,11 @@ public final class b implements o {
             bVar2.getClass();
             q qVar2 = this.b;
             qVar2.getClass();
-            i0 W = qVar2.W(1024, 4);
-            w wVar = new w();
-            wVar.q = w0.n("image/jpeg");
-            wVar.k = new u0(bVar2);
-            i2.d.u(wVar, W);
+            j0 j02 = qVar2.j0(1024, 4);
+            v vVar = new v();
+            vVar.q = v0.n("image/jpeg");
+            vVar.k = new t0(bVar2);
+            i0.a.u(vVar, j02);
             this.c = 5;
             return 0;
         }
@@ -203,7 +204,7 @@ public final class b implements o {
                 if (length != -1) {
                     try {
                         dVar = d.a(v);
-                    } catch (x0 | NumberFormatException | XmlPullParserException unused) {
+                    } catch (w0 | NumberFormatException | XmlPullParserException unused) {
                         e2.a.l("MotionPhotoXmpParser", "Ignoring unexpected XMP metadata");
                         dVar = null;
                     }
@@ -263,8 +264,8 @@ public final class b implements o {
     public final void g() {
         q qVar = this.b;
         qVar.getClass();
-        qVar.D();
-        this.b.K(new t(-9223372036854775807L));
+        qVar.H();
+        this.b.g0(new t(-9223372036854775807L));
         this.c = 6;
     }
 

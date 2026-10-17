@@ -1,47 +1,46 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class sz0 implements qq {
-    public final /* synthetic */ TLRPC.Chat a;
-    public final /* synthetic */ tq b;
-    public final /* synthetic */ ProfileActivity c;
+public final /* synthetic */ class sz0 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ d01 b;
 
-    public sz0(ProfileActivity profileActivity, TLRPC.Chat chat, tq tqVar) {
-        this.c = profileActivity;
-        this.a = chat;
-        this.b = tqVar;
+    public /* synthetic */ sz0(d01 d01Var, int i10) {
+        this.a = i10;
+        this.b = d01Var;
     }
 
-    @Override // org.telegram.ui.qq
-    public final void a(TLRPC.User user) {
-        ProfileActivity profileActivity = this.c;
-        profileActivity.M.m(-profileActivity.f1, user, profileActivity.E2.megagroup ? 10 : 9);
-    }
-
-    @Override // org.telegram.ui.qq
-    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
-        TLRPC.Chat chat;
-        ProfileActivity profileActivity = this.c;
-        profileActivity.removeSelfFromStack();
-        TLRPC.User user = profileActivity.getMessagesController().getUser(Long.valueOf(profileActivity.e1));
-        if (user == null || (chat = this.a) == null || profileActivity.e1 == 0) {
-            return;
-        }
-        tq tqVar = this.b;
-        if (!tqVar.Q || tqVar.getParentLayout() == null) {
-            return;
-        }
-        for (org.telegram.ui.ActionBar.m2 m2Var : tqVar.getParentLayout().getFragmentStack()) {
-            if (m2Var instanceof ac) {
-                ac acVar = (ac) m2Var;
-                acVar.V0();
-                AndroidUtilities.runOnUIThread(new tf0(acVar, user, chat, 25));
-                return;
-            }
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                d01 d01Var = this.b;
+                ProfileActivity profileActivity = d01Var.e;
+                TLRPC.User user = profileActivity.getMessagesController().getUser(Long.valueOf(profileActivity.f1));
+                MessagesController messagesController = profileActivity.getMessagesController();
+                ProfileActivity profileActivity2 = d01Var.e;
+                messagesController.openApp(profileActivity2, user, null, profileActivity2.getClassGuid(), null);
+                break;
+            default:
+                ProfileActivity profileActivity3 = this.b.e;
+                profileActivity3.Q4 = !profileActivity3.Q4;
+                if (!profileActivity3.P4) {
+                    profileActivity3.P4 = true;
+                }
+                profileActivity3.F4();
+                view.requestLayout();
+                profileActivity3.d.m(profileActivity3.P3);
+                int i10 = profileActivity3.W5;
+                if (i10 >= 0) {
+                    profileActivity3.c.h1(i10, profileActivity3.X5 - profileActivity3.a.getPaddingTop());
+                    break;
+                }
+                break;
         }
     }
 }

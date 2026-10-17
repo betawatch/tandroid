@@ -4,13 +4,12 @@ import android.os.Handler;
 import android.os.Trace;
 import android.view.Surface;
 import androidx.media3.decoder.VideoDecoderOutputBuffer;
-import b2.w0;
-import b2.x;
+import b2.v0;
+import b2.w;
 import e2.m0;
 import h2.e;
-import i2.d;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class ExperimentalFfmpegVideoRenderer extends a3.a {
     public static final int r0 = ((m0.g(720, 64) * m0.g(1280, 64)) * 6144) / 2;
@@ -29,30 +28,30 @@ public final class ExperimentalFfmpegVideoRenderer extends a3.a {
     }
 
     @Override // i2.b
-    public final int C(x xVar) {
-        String str = xVar.s;
+    public final int C(w wVar) {
+        String str = wVar.s;
         String str2 = FfmpegLibrary.a;
-        if (!w0.m(str)) {
-            return d.c(0, 0, 0, 0);
+        if (!v0.m(str)) {
+            return i0.a.c(0, 0, 0, 0);
         }
         if (!FfmpegLibrary.d(str)) {
-            return d.c(1, 0, 0, 0);
+            return i0.a.c(1, 0, 0, 0);
         }
-        if (xVar.T != 0) {
-            return d.c(2, 0, 0, 0);
+        if (wVar.T != 0) {
+            return i0.a.c(2, 0, 0, 0);
         }
         return 140;
     }
 
     @Override // a3.a
-    public final e F(x xVar) {
+    public final e F(w wVar) {
         Trace.beginSection("createFfmpegVideoDecoder");
-        int i10 = xVar.t;
+        int i10 = wVar.t;
         if (i10 == -1) {
             i10 = r0;
         }
         int i11 = i10;
-        ExperimentalFfmpegVideoDecoder experimentalFfmpegVideoDecoder = new ExperimentalFfmpegVideoDecoder(this.n0, this.o0, i11, Math.max(this.p0, 1), xVar);
+        ExperimentalFfmpegVideoDecoder experimentalFfmpegVideoDecoder = new ExperimentalFfmpegVideoDecoder(this.n0, this.o0, i11, Math.max(this.p0, 1), wVar);
         this.q0 = experimentalFfmpegVideoDecoder;
         Trace.endSection();
         return experimentalFfmpegVideoDecoder;

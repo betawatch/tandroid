@@ -5,12 +5,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.lm0;
-import org.telegram.ui.Components.wl0;
+import org.telegram.ui.Components.hm0;
+import org.telegram.ui.Components.sl0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class g0 extends lm0 {
+public final class g0 extends hm0 {
     public final Context c;
     public final ArrayList d = new ArrayList();
     public String e;
@@ -21,7 +21,7 @@ public final class g0 extends lm0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.lm0
+    @Override // org.telegram.ui.Components.hm0
     public final boolean D(s4.b1 b1Var) {
         return b1Var.f == 0;
     }
@@ -56,41 +56,41 @@ public final class g0 extends lm0 {
         if (b1Var.f != 0) {
             return;
         }
-        x1 x1Var = (x1) b1Var.a;
+        u1 u1Var = (u1) b1Var.a;
         boolean z10 = i10 != h() + (-2);
         int i11 = i10 - 1;
         if (i11 >= 0) {
             ArrayList arrayList = this.d;
             if (i11 < arrayList.size()) {
                 obj = arrayList.get(i11);
-                if (obj instanceof a2) {
+                if (obj instanceof x1) {
                     return;
                 }
-                a2 a2Var = (a2) obj;
-                x1Var.a(a2Var, this.e, z10);
-                x1Var.d.a(this.f.w.contains(Integer.valueOf(a2Var.a)), false);
+                x1 x1Var = (x1) obj;
+                u1Var.a(x1Var, this.e, z10);
+                u1Var.d.a(this.f.w.contains(Integer.valueOf(x1Var.a)), false);
                 return;
             }
         }
         obj = null;
-        if (obj instanceof a2) {
+        if (obj instanceof x1) {
         }
     }
 
     @Override // s4.g0
     public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        View x1Var;
+        View u1Var;
         Context context = this.c;
         if (i10 == 0) {
-            x1Var = new x1(context, this.f.a, false);
+            u1Var = new u1(context, this.f.a, false);
         } else if (i10 != 1) {
-            x1Var = new View(context);
-            x1Var.setTag(-33024);
+            u1Var = new View(context);
+            u1Var.setTag(-33024);
         } else {
-            x1Var = new View(context);
-            x1Var.setLayoutParams(new s4.o0(-1, AndroidUtilities.dp(56.0f)));
-            x1Var.setTag(-33024);
+            u1Var = new View(context);
+            u1Var.setLayoutParams(new s4.o0(-1, AndroidUtilities.dp(56.0f)));
+            u1Var.setTag(-33024);
         }
-        return new wl0(x1Var);
+        return new sl0(u1Var);
     }
 }

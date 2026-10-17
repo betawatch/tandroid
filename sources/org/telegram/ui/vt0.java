@@ -1,79 +1,60 @@
 package org.telegram.ui;
 
-import android.R;
-import android.net.Uri;
-import org.telegram.messenger.Utilities;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vt0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ wt0 b;
+public final class vt0 extends rg.c2 {
+    public final Path o0;
+    public boolean p0;
+    public final org.telegram.ui.Components.f6 q0;
+    public final /* synthetic */ PhotoViewer r0;
 
-    public /* synthetic */ vt0(wt0 wt0Var, int i10) {
-        this.a = i10;
-        this.b = wt0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vt0(PhotoViewer photoViewer) {
+        super(photoViewer.p5, photoViewer.E, photoViewer.v2, photoViewer.b0);
+        this.r0 = photoViewer;
+        this.o0 = new Path();
+        this.q0 = new org.telegram.ui.Components.f6(this, 0L, 420L, org.telegram.ui.Components.bs.h);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:38:0x0057, code lost:
-    
-        if (r2 != 7) goto L31;
-     */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        b2.o oVar;
-        switch (this.a) {
-            case 0:
-                PhotoViewer photoViewer = this.b.b;
-                av0 av0Var = photoViewer.E2;
-                if (av0Var != null) {
-                    org.telegram.ui.Components.i81 i81Var = photoViewer.F2;
-                    if (av0Var.e != i81Var) {
-                        av0Var.c = false;
-                        av0Var.d = false;
-                        if (av0Var.b) {
-                            av0Var.a++;
-                            av0Var.b = false;
-                        }
-                        av0Var.setImageResource(R.color.transparent);
-                    }
-                    if (i81Var != null) {
-                        i2.h0 h0Var = i81Var.d;
-                        if (h0Var != null) {
-                            try {
-                                h0Var.F1();
-                                b2.x xVar = h0Var.S;
-                                if (xVar != null && (oVar = xVar.I) != null) {
-                                    int i10 = oVar.c;
-                                    if (i10 != 6) {
-                                        break;
-                                    }
-                                }
-                            } catch (Exception unused) {
-                            }
-                        }
-                        long p5 = i81Var.p() - i81Var.n();
-                        if (!av0Var.c && !av0Var.d && !av0Var.b && p5 < 5250.0f) {
-                            Uri uri = i81Var.F;
-                            int i11 = av0Var.a + 1;
-                            av0Var.a = i11;
-                            Utilities.globalQueue.postRunnable(new c90(av0Var, uri, i11, 4));
-                            av0Var.b = true;
-                        }
-                    }
-                    av0Var.e = i81Var;
-                    break;
-                }
-                break;
-            case 1:
-                av0.a(this.b.b.E2);
-                break;
-            default:
-                av0.a(this.b.b.E2);
-                break;
+    public final void m(boolean z10, boolean z11) {
+        this.p0 = z10;
+        if (!z11) {
+            this.q0.f(z10, true);
         }
+        invalidate();
+    }
+
+    @Override // rg.c2, ei.d, android.view.View
+    public final void onDraw(Canvas canvas) {
+        canvas.save();
+        Path path = this.o0;
+        path.rewind();
+        path.addRoundRect(this.i0, AndroidUtilities.dp(this.m0), AndroidUtilities.dp(this.m0), Path.Direction.CW);
+        canvas.clipPath(path);
+        canvas.translate(-getX(), -getY());
+        PhotoViewer photoViewer = this.r0;
+        if (this == photoViewer.v5 || this == photoViewer.w5) {
+            canvas.translate(-photoViewer.u5.getX(), -photoViewer.u5.getY());
+        }
+        photoViewer.U0(canvas, this.h0, -13948117, 855638016, false, true, false);
+        float e = this.q0.e(this.p0);
+        if (e > 0.0f) {
+            canvas.drawColor(org.telegram.ui.ActionBar.h6.m1(e, -1));
+        }
+        setTextColor(i0.b.f(e, -1, -16777216));
+        canvas.restore();
+        super.onDraw(canvas);
+    }
+
+    @Override // android.view.View
+    public final void onDrawForeground(Canvas canvas) {
+        canvas.save();
+        canvas.clipPath(this.o0);
+        super.onDrawForeground(canvas);
+        canvas.restore();
     }
 }

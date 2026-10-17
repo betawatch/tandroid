@@ -2,7 +2,7 @@ package ac;
 
 import com.google.android.gms.internal.cast.z5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g implements r9.d {
     public static final /* synthetic */ g b = new g(0);
@@ -15,7 +15,7 @@ public final /* synthetic */ class g implements r9.d {
     }
 
     @Override // r9.d
-    public final Object n2(z5 z5Var) {
+    public final Object j2(z5 z5Var) {
         switch (this.a) {
             case 0:
                 return new e((rb.g) z5Var.a(rb.g.class));

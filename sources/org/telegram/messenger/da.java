@@ -1,31 +1,36 @@
 package org.telegram.messenger;
 
-import android.content.Context;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class da implements Runnable {
+public final /* synthetic */ class da implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.a2 c;
+    public final /* synthetic */ BaseController b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ da(int i10, Context context, org.telegram.ui.ActionBar.a2 a2Var) {
-        this.a = i10;
-        this.b = context;
-        this.c = a2Var;
+    public /* synthetic */ da(BaseController baseController, int i10, int i11) {
+        this.a = i11;
+        this.b = baseController;
+        this.c = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                MessagesController.lambda$convertToMegaGroup$261(this.b, this.c);
+                ((MessagesController) this.b).lambda$migrateDialogs$215(this.c, tLObject, tL_error);
                 break;
             case 1:
-                MessagesController.lambda$convertToGigaGroup$266(this.b, this.c);
+                ((MessagesController) this.b).lambda$loadPinnedDialogs$366(this.c, tLObject, tL_error);
+                break;
+            case 2:
+                ((MessagesController) this.b).lambda$loadGlobalNotificationsSettings$200(this.c, tLObject, tL_error);
                 break;
             default:
-                SecretChatHelper.lambda$startSecretChat$24(this.b, this.c);
+                ((ContactsController) this.b).lambda$loadPrivacySettings$65(this.c, tLObject, tL_error);
                 break;
         }
     }

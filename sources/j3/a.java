@@ -1,10 +1,10 @@
 package j3;
 
 import ad.d;
-import b2.u0;
-import b2.w;
-import b2.w0;
-import c3.i0;
+import b2.t0;
+import b2.v;
+import b2.v0;
+import c3.j0;
 import c3.o;
 import c3.p;
 import c3.q;
@@ -17,8 +17,9 @@ import e9.x1;
 import java.util.List;
 import v7.k8;
 import w3.l;
+import z3.k;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class a implements o {
     public q b;
@@ -75,11 +76,11 @@ public final class a implements o {
                 int i11 = this.i;
                 x xVar = this.a;
                 if (i11 == 0) {
-                    if (!pVar.d(xVar.a, 0, 8, true)) {
+                    if (!pVar.c(xVar.a, 0, 8, true)) {
                         q qVar = this.b;
                         qVar.getClass();
-                        qVar.D();
-                        this.b.K(new t(-9223372036854775807L));
+                        qVar.H();
+                        this.b.g0(new t(-9223372036854775807L));
                         this.f = 4;
                         return -1;
                     }
@@ -100,11 +101,11 @@ public final class a implements o {
                     l3.b bVar = new l3.b(0L, position - j10, -9223372036854775807L, position, this.h - j10);
                     q qVar2 = this.b;
                     qVar2.getClass();
-                    i0 W = qVar2.W(1024, 4);
-                    w wVar = new w();
-                    wVar.q = w0.n("image/heic");
-                    wVar.k = new u0(bVar);
-                    i2.d.u(wVar, W);
+                    j0 j02 = qVar2.j0(1024, 4);
+                    v vVar = new v();
+                    vVar.q = v0.n("image/heic");
+                    vVar.k = new t0(bVar);
+                    i0.a.u(vVar, j02);
                     this.f = 2;
                 } else {
                     this.f = 1;
@@ -134,7 +135,7 @@ public final class a implements o {
                     return f7;
                 }
                 if (this.e == null) {
-                    this.e = new l(z3.l.D, 8);
+                    this.e = new l(k.D, 8);
                 }
                 d dVar = new d(pVar, this.j);
                 this.d = dVar;
@@ -148,8 +149,8 @@ public final class a implements o {
                 } else {
                     q qVar4 = this.b;
                     qVar4.getClass();
-                    qVar4.D();
-                    this.b.K(new t(-9223372036854775807L));
+                    qVar4.H();
+                    this.b.g0(new t(-9223372036854775807L));
                     this.f = 4;
                 }
             }

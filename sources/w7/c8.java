@@ -1,64 +1,36 @@
 package w7;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import org.telegram.messenger.BuildConfig;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class c8 {
-    public static String a(String str, Object... objArr) {
-        int length;
-        int length2;
-        int indexOf;
-        String sb2;
-        int i10 = 0;
-        int i11 = 0;
-        while (true) {
-            length = objArr.length;
-            if (i11 >= length) {
-                break;
-            }
-            Object obj = objArr[i11];
-            if (obj == null) {
-                sb2 = BuildConfig.BETA_URL;
+    public static void a(int i10, int i11) {
+        String a2;
+        if (i10 < 0 || i10 >= i11) {
+            if (i10 < 0) {
+                a2 = d8.a("%s (%s) must not be negative", "index", Integer.valueOf(i10));
             } else {
-                try {
-                    sb2 = obj.toString();
-                } catch (Exception e) {
-                    String str2 = obj.getClass().getName() + '@' + Integer.toHexString(System.identityHashCode(obj));
-                    Logger.getLogger("com.google.common.base.Strings").logp(Level.WARNING, "com.google.common.base.Strings", "lenientToString", "Exception during lenientFormat for ".concat(str2), (Throwable) e);
-                    StringBuilder v = a1.g.v("<", str2, " threw ");
-                    v.append(e.getClass().getName());
-                    v.append(">");
-                    sb2 = v.toString();
+                if (i11 < 0) {
+                    throw new IllegalArgumentException(i0.a.j(i11, "negative size: "));
                 }
+                a2 = d8.a("%s (%s) must be less than size (%s)", "index", Integer.valueOf(i10), Integer.valueOf(i11));
             }
-            objArr[i11] = sb2;
-            i11++;
+            throw new IndexOutOfBoundsException(a2);
         }
-        StringBuilder sb3 = new StringBuilder((length * 16) + str.length());
-        int i12 = 0;
-        while (true) {
-            length2 = objArr.length;
-            if (i10 >= length2 || (indexOf = str.indexOf("%s", i12)) == -1) {
-                break;
-            }
-            sb3.append((CharSequence) str, i12, indexOf);
-            sb3.append(objArr[i10]);
-            i10++;
-            i12 = indexOf + 2;
+    }
+
+    public static void b(int i10, int i11, int i12) {
+        if (i10 < 0 || i11 < i10 || i11 > i12) {
+            throw new IndexOutOfBoundsException((i10 < 0 || i10 > i12) ? c(i10, i12, "start index") : (i11 < 0 || i11 > i12) ? c(i11, i12, "end index") : d8.a("end index (%s) must not be less than start index (%s)", Integer.valueOf(i11), Integer.valueOf(i10)));
         }
-        sb3.append((CharSequence) str, i12, str.length());
-        if (i10 < length2) {
-            sb3.append(" [");
-            sb3.append(objArr[i10]);
-            for (int i13 = i10 + 1; i13 < objArr.length; i13++) {
-                sb3.append(", ");
-                sb3.append(objArr[i13]);
-            }
-            sb3.append(']');
+    }
+
+    public static String c(int i10, int i11, String str) {
+        if (i10 < 0) {
+            return d8.a("%s (%s) must not be negative", str, Integer.valueOf(i10));
         }
-        return sb3.toString();
+        if (i11 >= 0) {
+            return d8.a("%s (%s) must not be greater than size (%s)", str, Integer.valueOf(i10), Integer.valueOf(i11));
+        }
+        throw new IllegalArgumentException(i0.a.j(i11, "negative size: "));
     }
 }

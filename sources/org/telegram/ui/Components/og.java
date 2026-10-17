@@ -1,386 +1,101 @@
 package org.telegram.ui.Components;
 
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.content.Context;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.net.Uri;
-import android.text.TextUtils;
-import android.view.ActionMode;
-import android.view.KeyEvent;
-import android.view.Menu;
-import android.view.MotionEvent;
-import android.view.inputmethod.EditorInfo;
-import android.view.inputmethod.InputConnection;
-import android.webkit.MimeTypeMap;
-import java.io.File;
-import java.util.ArrayList;
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.PhotoViewer;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public abstract class og extends nu {
-    public hd c;
-    public final /* synthetic */ ChatActivityEnterView d;
+public interface og {
+    boolean B0();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public og(ChatActivityEnterView chatActivityEnterView, Context context, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, c6Var);
-        this.d = chatActivityEnterView;
-    }
+    void C(boolean z10);
 
-    /* JADX WARN: Removed duplicated region for block: B:25:0x0064 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x0074  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x0078  */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
-        int i10;
-        boolean z10 = false;
-        if (this.d.a0) {
-            return false;
-        }
-        if (keyEvent.getAction() == 0 && keyEvent.isCtrlPressed() && !keyEvent.isAltPressed()) {
-            if (keyEvent.isShiftPressed()) {
-                int keyCode = keyEvent.getKeyCode();
-                if (keyCode != 41) {
-                    if (keyCode != 44) {
-                        if (keyCode == 47 || keyCode == 52) {
-                            i10 = 8;
-                        }
-                        i10 = 0;
-                    } else {
-                        i10 = 256;
-                    }
-                    if (!z10) {
-                    }
-                    if (z10) {
-                    }
-                }
-                i10 = 4;
-                if (!z10) {
-                }
-                if (z10) {
-                }
-            } else {
-                int keyCode2 = keyEvent.getKeyCode();
-                if (keyCode2 != 30) {
-                    if (keyCode2 != 33) {
-                        if (keyCode2 == 37) {
-                            i10 = 2;
-                        } else if (keyCode2 != 39) {
-                            if (keyCode2 == 49) {
-                                i10 = 16;
-                            }
-                            i10 = 0;
-                        } else {
-                            i10 = 0;
-                            z10 = true;
-                        }
-                    }
-                    i10 = 4;
-                } else {
-                    i10 = 1;
-                }
-                if ((!z10 || i10 != 0) && getSelectionStart() != getSelectionEnd()) {
-                    if (z10) {
-                        makeSelectedUrl();
-                        return true;
-                    }
-                    toggleStyleForSelection(i10);
-                    return true;
-                }
-            }
-        }
-        return super.dispatchKeyEvent(keyEvent);
-    }
+    void D0(int i10, int i11);
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor
-    public final void extendActionMode(ActionMode actionMode, Menu menu) {
-        ChatActivityEnterView chatActivityEnterView = this.d;
-        org.telegram.ui.fo foVar = chatActivityEnterView.P2;
-        if (foVar != null) {
-            foVar.extendActionMode(menu);
-        } else {
-            chatActivityEnterView.f0(menu);
-        }
-    }
+    void F0();
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor
-    public final org.telegram.ui.ActionBar.c6 getResourcesProvider() {
-        return this.d.W3;
-    }
+    void H();
 
-    public final void m(Uri uri, String str) {
-        org.telegram.ui.fo foVar = this.d.P2;
-        Utilities.globalQueue.postRunnable(new org.telegram.messenger.video.f(this, uri, AndroidUtilities.generatePicturePath(foVar != null && foVar.x(), MimeTypeMap.getSingleton().getExtensionFromMimeType(str)), 14));
-    }
+    void H0();
 
-    public final void n(File file, ArrayList arrayList) {
-        ChatActivityEnterView chatActivityEnterView = this.d;
-        org.telegram.ui.fo foVar = chatActivityEnterView.P2;
-        if (foVar == null || foVar.getParentActivity() == null) {
-            return;
-        }
-        MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) arrayList.get(0);
-        if (!chatActivityEnterView.z2) {
-            PhotoViewer.t1().K2(null, foVar, chatActivityEnterView.W3);
-            PhotoViewer.t1().g2(arrayList, 0, 2, false, new ng(this, photoEntry, file), chatActivityEnterView.P2);
-        } else {
-            AndroidUtilities.hideKeyboard(this);
-            AndroidUtilities.runOnUIThread(new c5.w(this, arrayList, file, false, 8), 100L);
-        }
-    }
+    void L(CharSequence charSequence, boolean z10, int i10, int i11, long j10);
 
-    public final void o(t0.j jVar, boolean z10, int i10, int i11) {
-        MessageObject threadMessage;
-        MessageObject threadMessage2;
-        ChatActivityEnterView chatActivityEnterView = this.d;
-        org.telegram.ui.fo foVar = chatActivityEnterView.P2;
-        of ofVar = chatActivityEnterView.L0;
-        if (ofVar != null) {
-            ofVar.h(true);
-            chatActivityEnterView.L0 = null;
-        }
-        org.telegram.ui.un unVar = chatActivityEnterView.V2;
-        if (unVar != null && foVar != null && unVar.f) {
-            foVar.Vb();
-            return;
-        }
-        t0.i iVar = jVar.a;
-        if (iVar.getDescription().hasMimeType("image/gif")) {
-            AccountInstance accountInstance = chatActivityEnterView.R;
-            Uri c10 = iVar.c();
-            long j10 = chatActivityEnterView.Q2;
-            MessageObject messageObject = chatActivityEnterView.T2;
-            threadMessage2 = chatActivityEnterView.getThreadMessage();
-            SendMessagesHelper.prepareSendingDocument(accountInstance, null, null, c10, null, "image/gif", j10, messageObject, threadMessage2, null, chatActivityEnterView.V2, null, z10, 0, jVar, foVar != null ? foVar.H8() : null, false);
-        } else {
-            AccountInstance accountInstance2 = chatActivityEnterView.R;
-            Uri c11 = iVar.c();
-            long j11 = chatActivityEnterView.Q2;
-            MessageObject messageObject2 = chatActivityEnterView.T2;
-            threadMessage = chatActivityEnterView.getThreadMessage();
-            SendMessagesHelper.prepareSendingPhoto(accountInstance2, null, c11, j11, messageObject2, threadMessage, chatActivityEnterView.V2, null, null, null, jVar, 0, null, z10, 0, foVar == null ? 0 : foVar.R3, foVar != null ? foVar.H8() : null);
-        }
-        pg pgVar = chatActivityEnterView.Z2;
-        if (pgVar != null) {
-            pgVar.J(null, true, i10, i11, 0L);
-        }
-    }
+    TLRPC.TL_channels_sendAsPeers O();
 
-    @Override // org.telegram.ui.Components.nu
-    public final void onContextMenuClose() {
-        pg pgVar = this.d.Z2;
-        if (pgVar != null) {
-            pgVar.W1();
-        }
-    }
+    void Q0();
 
-    @Override // org.telegram.ui.Components.nu
-    public final void onContextMenuOpen() {
-        pg pgVar = this.d.Z2;
-        if (pgVar != null) {
-            pgVar.k();
-        }
-    }
+    void T1();
 
-    @Override // android.widget.TextView, android.view.View
-    public final InputConnection onCreateInputConnection(EditorInfo editorInfo) {
-        ChatActivityEnterView chatActivityEnterView = this.d;
-        InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
-        if (onCreateInputConnection == null) {
-            return null;
-        }
-        try {
-            int i10 = ChatActivityEnterView.n5;
-            if (!(chatActivityEnterView.b2 != null) && !chatActivityEnterView.l5) {
-                t0.c.b(editorInfo, new String[]{"image/gif", "image/*", "image/jpg", "image/png", "image/webp"});
-                return t0.g.a(onCreateInputConnection, editorInfo, new s(this, 18));
-            }
-            t0.c.b(editorInfo, null);
-            return t0.g.a(onCreateInputConnection, editorInfo, new s(this, 18));
-        } catch (Throwable th2) {
-            FileLog.e(th2);
-            return onCreateInputConnection;
-        }
-    }
+    void U(float f7, int i10);
 
-    @Override // org.telegram.ui.Components.nu, org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public void onMeasure(int i10, int i11) {
-        boolean z10 = getMeasuredWidth() == 0 && getMeasuredHeight() == 0;
-        ChatActivityEnterView chatActivityEnterView = this.d;
-        chatActivityEnterView.S = z10;
-        super.onMeasure(i10, i11);
-        if (chatActivityEnterView.S) {
-            chatActivityEnterView.T = getLineCount();
-            chatActivityEnterView.m1(chatActivityEnterView.T > 2 && !TextUtils.isEmpty(getText().toString().trim()));
-            chatActivityEnterView.s1(chatActivityEnterView.T > 2 && !TextUtils.isEmpty(getText().toString().trim()));
-        }
-        chatActivityEnterView.S = false;
-    }
+    void V1(int i10);
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public final void onScrollChanged(int i10, int i11, int i12, int i13) {
-        super.onScrollChanged(i10, i11, i12, i13);
-        pg pgVar = this.d.Z2;
-        if (pgVar != null) {
-            pgVar.m0();
-        }
-    }
+    void X0(int i10);
 
-    @Override // org.telegram.ui.Components.pu, android.widget.TextView
-    public final void onSelectionChanged(int i10, int i11) {
-        super.onSelectionChanged(i10, i11);
-        pg pgVar = this.d.Z2;
-        if (pgVar != null) {
-            pgVar.E0(i10, i11);
-        }
-    }
+    void Y();
 
-    @Override // org.telegram.ui.Components.nu, android.widget.EditText, android.widget.TextView
-    public boolean onTextContextMenuItem(int i10) {
-        if (i10 == 16908322) {
-            ChatActivityEnterView chatActivityEnterView = this.d;
-            chatActivityEnterView.X1 = true;
-            ClipData primaryClip = ((ClipboardManager) getContext().getSystemService("clipboard")).getPrimaryClip();
-            if (primaryClip != null && primaryClip.getItemCount() == 1 && primaryClip.getDescription().hasMimeType("image/*") && chatActivityEnterView.b2 == null) {
-                m(primaryClip.getItemAt(0).getUri(), primaryClip.getDescription().getMimeType(0));
-            }
-        }
-        return super.onTextContextMenuItem(i10);
-    }
+    int Y0();
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        ChatActivityEnterView chatActivityEnterView = this.d;
-        if (!chatActivityEnterView.E3 && chatActivityEnterView.B3 == null) {
-            if (!chatActivityEnterView.z0 && !chatActivityEnterView.p0()) {
-                if (this.c == null) {
-                    hd hdVar = new hd(this);
-                    this.c = hdVar;
-                    final int i10 = 0;
-                    hdVar.h = new Runnable(this) { // from class: org.telegram.ui.Components.mg
-                        public final /* synthetic */ og b;
+    void Y1();
 
-                        {
-                            this.b = this;
-                        }
+    void Z1(boolean z10);
 
-                        @Override // java.lang.Runnable
-                        public final void run() {
-                            int i11 = i10;
-                            og ogVar = this.b;
-                            switch (i11) {
-                                case 0:
-                                    ChatActivityEnterView chatActivityEnterView2 = ogVar.d;
-                                    int i12 = ChatActivityEnterView.n5;
-                                    chatActivityEnterView2.r1();
-                                    break;
-                                default:
-                                    ChatActivityEnterView chatActivityEnterView3 = ogVar.d;
-                                    chatActivityEnterView3.l3 = false;
-                                    chatActivityEnterView3.G0();
-                                    break;
-                            }
-                        }
-                    };
-                }
-                hd hdVar2 = this.c;
-                int measuredWidth = getMeasuredWidth();
-                int measuredHeight = getMeasuredHeight();
-                hdVar2.getClass();
-                RectF rectF = AndroidUtilities.rectTmp;
-                float f7 = 0;
-                rectF.set(f7, f7, measuredWidth, measuredHeight);
-                hdVar2.i = false;
-                hdVar2.c = 0;
-                hdVar2.a(rectF);
-                return this.c.b(motionEvent);
-            }
-            if (chatActivityEnterView.r0() && motionEvent.getAction() == 0) {
-                if (chatActivityEnterView.R1 != 0) {
-                    chatActivityEnterView.j1(0, false);
-                    chatActivityEnterView.U0.u(false);
-                    requestFocus();
-                }
-                chatActivityEnterView.q1(AndroidUtilities.usingHardwareInput ? 0 : 2, 0, true, true);
-                if (!chatActivityEnterView.z3) {
-                    chatActivityEnterView.G0();
-                    return true;
-                }
-                chatActivityEnterView.k1(false, true, false, true);
-                chatActivityEnterView.l3 = true;
-                final int i11 = 1;
-                AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.ui.Components.mg
-                    public final /* synthetic */ og b;
+    void a0(boolean z10);
 
-                    {
-                        this.b = this;
-                    }
+    TL_stories.StoryItem a1();
 
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        int i112 = i11;
-                        og ogVar = this.b;
-                        switch (i112) {
-                            case 0:
-                                ChatActivityEnterView chatActivityEnterView2 = ogVar.d;
-                                int i12 = ChatActivityEnterView.n5;
-                                chatActivityEnterView2.r1();
-                                break;
-                            default:
-                                ChatActivityEnterView chatActivityEnterView3 = ogVar.d;
-                                chatActivityEnterView3.l3 = false;
-                                chatActivityEnterView3.G0();
-                                break;
-                        }
-                    }
-                }, 200L);
-                return true;
-            }
-            try {
-                return super.onTouchEvent(motionEvent);
-            } catch (Exception e) {
-                FileLog.e(e);
-            }
-        }
-        return false;
-    }
+    void a2(int i10, int i11, int i12, long j10, long j11, boolean z10);
 
-    @Override // android.view.View
-    public final boolean requestFocus(int i10, Rect rect) {
-        ChatActivityEnterView chatActivityEnterView = this.d;
-        if (!chatActivityEnterView.z0 && !chatActivityEnterView.p0()) {
-            return false;
-        }
-        chatActivityEnterView.getClass();
-        return super.requestFocus(i10, rect);
-    }
+    boolean b1(long j10);
 
-    @Override // android.view.View
-    public final boolean requestRectangleOnScreen(Rect rect) {
-        rect.bottom = AndroidUtilities.dp(1000.0f) + rect.bottom;
-        return super.requestRectangleOnScreen(rect);
-    }
+    boolean e1();
 
-    @Override // org.telegram.ui.Components.pu
-    public void setOffsetY(float f7) {
-        super.setOffsetY(f7);
-        ChatActivityEnterView chatActivityEnterView = this.d;
-        if (chatActivityEnterView.m1.getForeground() != null) {
-            ow0 ow0Var = chatActivityEnterView.m1;
-            ow0Var.invalidateDrawable(ow0Var.getForeground());
-        }
-    }
+    void e2();
+
+    void g1(CharSequence charSequence, boolean z10, boolean z11);
+
+    void h();
+
+    void i1();
+
+    boolean j1();
+
+    void k();
+
+    void l1();
+
+    void m0();
+
+    void m1();
+
+    void m2();
+
+    void n1();
+
+    boolean o();
+
+    void o1(View view, CharSequence charSequence, boolean z10);
+
+    org.telegram.ui.in p0();
+
+    void q1(CharSequence charSequence);
+
+    void q2();
+
+    boolean r1();
+
+    void t0();
+
+    int u();
+
+    void u1();
+
+    TLRPC.Peer x();
+
+    void y();
+
+    void y1();
+
+    void z(float f7);
 }

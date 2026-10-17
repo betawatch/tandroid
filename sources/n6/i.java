@@ -6,10 +6,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class i {
-    public static final c5.a b = new c5.a("LibraryVersion", "");
+    public static final m2.t b = new m2.t("LibraryVersion", "");
     public static final i c = new i();
     public final ConcurrentHashMap a = new ConcurrentHashMap();
 
@@ -22,7 +22,7 @@ public final class i {
         IOException e;
         String str2;
         InputStream inputStream;
-        c5.a aVar = b;
+        m2.t tVar = b;
         l.g(str, "Please provide a valid libraryName");
         ConcurrentHashMap concurrentHashMap = this.a;
         if (concurrentHashMap.containsKey(str)) {
@@ -48,8 +48,8 @@ public final class i {
                 properties.load(inputStream);
                 str3 = properties.getProperty("version", null);
                 String str4 = str + " version is " + str3;
-                if (Log.isLoggable(aVar.a, 2)) {
-                    String str5 = aVar.b;
+                if (Log.isLoggable(tVar.b, 2)) {
+                    String str5 = tVar.c;
                     if (str5 != null) {
                         str4 = str5.concat(str4);
                     }
@@ -57,8 +57,8 @@ public final class i {
                 }
             } else {
                 String str6 = "Failed to get app version for libraryName: " + str;
-                if (Log.isLoggable(aVar.a, 5)) {
-                    String str7 = aVar.b;
+                if (Log.isLoggable(tVar.b, 5)) {
+                    String str7 = tVar.c;
                     if (str7 != null) {
                         str6 = str7.concat(str6);
                     }
@@ -70,8 +70,8 @@ public final class i {
             inputStream2 = inputStream;
             str2 = null;
             String str8 = "Failed to get app version for libraryName: " + str;
-            if (Log.isLoggable(aVar.a, 6)) {
-                String str9 = aVar.b;
+            if (Log.isLoggable(tVar.b, 6)) {
+                String str9 = tVar.c;
                 if (str9 != null) {
                     str8 = str9.concat(str8);
                 }
@@ -98,8 +98,8 @@ public final class i {
             u6.b.a(inputStream);
         }
         if (str3 == null) {
-            if (Log.isLoggable(aVar.a, 3)) {
-                String str10 = aVar.b;
+            if (Log.isLoggable(tVar.b, 3)) {
+                String str10 = tVar.c;
                 Log.d("LibraryVersion", str10 != null ? str10.concat(".properties file is dropped during release process. Failure to read app version is expected during Google internal testing where locally-built libraries are used") : ".properties file is dropped during release process. Failure to read app version is expected during Google internal testing where locally-built libraries are used");
             }
             str3 = "UNKNOWN";

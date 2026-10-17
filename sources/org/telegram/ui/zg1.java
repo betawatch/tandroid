@@ -1,20 +1,29 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.tl.TL_account;
+import org.telegram.messenger.AndroidUtilities;
+import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class zg1 extends oh1 {
-    public final /* synthetic */ TwoStepVerificationActivity k0;
+public final class zg1 implements RendererCommon.RendererEvents {
+    public final /* synthetic */ jh1 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zg1(TwoStepVerificationActivity twoStepVerificationActivity, int i10, TL_account.Password password) {
-        super(i10, 4, password);
-        this.k0 = twoStepVerificationActivity;
+    public zg1(jh1 jh1Var) {
+        this.a = jh1Var;
     }
 
-    @Override // org.telegram.ui.oh1
-    public final void B0() {
-        this.k0.N = true;
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFirstFrameRendered() {
+        jh1 jh1Var = this.a;
+        com.google.android.gms.internal.cast.p pVar = jh1Var.l1;
+        if (pVar != null) {
+            pVar.run();
+            jh1Var.l1 = null;
+        }
+        AndroidUtilities.runOnUIThread(new sy0(this, 23));
+    }
+
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFrameResolutionChanged(int i10, int i11, int i12) {
     }
 }

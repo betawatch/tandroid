@@ -1,69 +1,92 @@
 package org.telegram.ui;
 
+import android.os.Bundle;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.IMapsProvider;
+import org.telegram.messenger.FileLog;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vc0 implements Runnable {
+public final /* synthetic */ class vc0 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ld0 b;
+    public final /* synthetic */ fg0 b;
+    public final /* synthetic */ TLRPC.auth_SentCode c;
+    public final /* synthetic */ Bundle d;
+    public final /* synthetic */ boolean e;
 
-    public /* synthetic */ vc0(ld0 ld0Var, int i10) {
+    public /* synthetic */ vc0(int i10, Bundle bundle, TLRPC.auth_SentCode auth_sentcode, fg0 fg0Var, boolean z10) {
         this.a = i10;
-        this.b = ld0Var;
+        this.b = fg0Var;
+        this.c = auth_sentcode;
+        this.d = bundle;
+        this.e = z10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                ld0 ld0Var = this.b;
-                IMapsProvider.ICameraUpdate iCameraUpdate = ld0Var.J;
-                if (iCameraUpdate != null) {
-                    ld0Var.I.moveCamera(iCameraUpdate);
-                    ld0Var.J = null;
+                boolean z10 = tLObject instanceof TLRPC.TL_boolTrue;
+                final fg0 fg0Var = this.b;
+                final TLRPC.auth_SentCode auth_sentcode = this.c;
+                final Bundle bundle = this.d;
+                if (!z10) {
+                    FileLog.d("{PLAYINTEGRITY_REQUESTFIREBASESMS_FALSE} Resend firebase sms because auth.requestFirebaseSms = false");
+                    fg0Var.s1(bundle, auth_sentcode, "PLAYINTEGRITY_REQUESTFIREBASESMS_FALSE");
                     break;
-                }
-                break;
-            case 1:
-                ld0 ld0Var2 = this.b;
-                ld0Var2.getLocationController().setProximityLocation(ld0Var2.e0, 0, true);
-                ld0Var2.G = false;
-                break;
-            case 2:
-                ld0 ld0Var3 = this.b;
-                IMapsProvider.IMap iMap = ld0Var3.I;
-                if (iMap != null) {
-                    iMap.setPadding(AndroidUtilities.dp(70.0f), 0, AndroidUtilities.dp(70.0f), AndroidUtilities.dp(10.0f));
-                }
-                if (!ld0Var3.R.getRadiusSet()) {
-                    double d = ld0Var3.P;
-                    if (d > 0.0d) {
-                        ld0Var3.O.setRadius(d);
-                    } else {
-                        IMapsProvider.ICircle iCircle = ld0Var3.O;
-                        if (iCircle != null) {
-                            iCircle.remove();
-                            ld0Var3.O = null;
+                } else {
+                    fg0Var.k1(false, true);
+                    fg0Var.o0 = false;
+                    auth_sentcode.type.verifiedFirebase = true;
+                    final int i10 = 1;
+                    final boolean z11 = this.e;
+                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.xc0
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            switch (i10) {
+                                case 0:
+                                    fg0Var.g1(bundle, auth_sentcode, z11);
+                                    break;
+                                default:
+                                    fg0Var.g1(bundle, auth_sentcode, z11);
+                                    break;
+                            }
                         }
-                    }
-                }
-                ld0Var3.R = null;
-                break;
-            case 3:
-                id0 id0Var = this.b.x;
-                if (id0Var != null) {
-                    id0Var.a();
+                    });
                     break;
                 }
-                break;
-            case 4:
-                ld0.V(this.b);
-                break;
             default:
-                AndroidUtilities.runOnUIThread(new vc0(this.b, 0));
-                break;
+                boolean z12 = tLObject instanceof TLRPC.TL_boolTrue;
+                final fg0 fg0Var2 = this.b;
+                final TLRPC.auth_SentCode auth_sentcode2 = this.c;
+                final Bundle bundle2 = this.d;
+                if (!z12) {
+                    FileLog.d("{SAFETYNET_REQUESTFIREBASESMS_FALSE} Resend firebase sms because auth.requestFirebaseSms = false");
+                    fg0Var2.s1(bundle2, auth_sentcode2, "SAFETYNET_REQUESTFIREBASESMS_FALSE");
+                    break;
+                } else {
+                    fg0Var2.k1(false, true);
+                    fg0Var2.o0 = false;
+                    auth_sentcode2.type.verifiedFirebase = true;
+                    final int i11 = 0;
+                    final boolean z13 = this.e;
+                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.xc0
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            switch (i11) {
+                                case 0:
+                                    fg0Var2.g1(bundle2, auth_sentcode2, z13);
+                                    break;
+                                default:
+                                    fg0Var2.g1(bundle2, auth_sentcode2, z13);
+                                    break;
+                            }
+                        }
+                    });
+                    break;
+                }
         }
     }
 }

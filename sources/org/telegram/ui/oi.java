@@ -1,71 +1,47 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.VideoEditedInfo;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class oi extends zu0 {
-    public final /* synthetic */ fo a;
+public final /* synthetic */ class oi implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ pi b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ boolean d;
+    public final /* synthetic */ org.telegram.ui.Components.cl0 e;
+    public final /* synthetic */ float f;
+    public final /* synthetic */ float h;
+    public final /* synthetic */ ah.i1 n;
 
-    public oi(fo foVar) {
-        this.a = foVar;
+    public /* synthetic */ oi(pi piVar, int i10, boolean z10, org.telegram.ui.Components.cl0 cl0Var, float f7, float f10, ah.i1 i1Var, int i11) {
+        this.a = i11;
+        this.b = piVar;
+        this.c = i10;
+        this.d = z10;
+        this.e = cl0Var;
+        this.f = f7;
+        this.h = f10;
+        this.n = i1Var;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0076 A[LOOP:0: B:10:0x002a->B:17:0x0076, LOOP_END] */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x004b A[SYNTHETIC] */
-    @Override // org.telegram.ui.zu0, org.telegram.ui.hv0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final jv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
-        kk kkVar;
-        ImageReceiver imageReceiver;
-        if (i10 >= 0) {
-            fo foVar = this.a;
-            if (i10 < foVar.Ia.size() && (kkVar = foVar.I1) != null && kkVar.getListView() != null) {
-                int childCount = foVar.I1.getListView().getChildCount();
-                Object obj = foVar.Ia.get(i10);
-                for (int i11 = 0; i11 < childCount; i11++) {
-                    View childAt = foVar.I1.getListView().getChildAt(i11);
-                    if (childAt instanceof org.telegram.ui.Cells.f2) {
-                        org.telegram.ui.Cells.f2 f2Var = (org.telegram.ui.Cells.f2) childAt;
-                        if (f2Var.getResult() == obj) {
-                            imageReceiver = f2Var.getPhotoImage();
-                            if (imageReceiver == null) {
-                                int[] iArr = new int[2];
-                                childAt.getLocationInWindow(iArr);
-                                jv0 jv0Var = new jv0();
-                                jv0Var.b = iArr[0];
-                                jv0Var.c = iArr[1];
-                                jv0Var.d = foVar.I1.getListView();
-                                jv0Var.a = imageReceiver;
-                                jv0Var.e = imageReceiver.getBitmapSafe();
-                                jv0Var.h = imageReceiver.getRoundRadius(true);
-                                return jv0Var;
-                            }
-                        }
-                    }
-                    imageReceiver = null;
-                    if (imageReceiver == null) {
-                    }
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10;
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new oi(this.b, this.c, this.d, this.e, this.f, this.h, this.n, 1), 50L);
+                break;
+            default:
+                sn snVar = this.b.s;
+                org.telegram.ui.Cells.a0 t82 = snVar.t8(this.c, true);
+                if (this.d) {
+                    i10 = ((org.telegram.ui.ActionBar.n2) snVar).currentAccount;
+                    ah.d1.d(snVar, this.e, t82, null, this.f, this.h, this.n, i10, 1);
+                    ah.d1.f();
+                    break;
                 }
-            }
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.zu0, org.telegram.ui.hv0
-    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
-        if (i10 >= 0) {
-            fo foVar = this.a;
-            if (i10 >= foVar.Ia.size()) {
-                return;
-            }
-            foVar.gb((TLRPC.BotInlineResult) foVar.Ia.get(i10), z10, i11, 0L);
+                break;
         }
     }
 }

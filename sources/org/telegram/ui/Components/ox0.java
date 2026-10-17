@@ -1,37 +1,18 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.CacheFetcher;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class ox0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ px0 b;
-
-    public /* synthetic */ ox0(px0 px0Var, int i10) {
-        this.a = i10;
-        this.b = px0Var;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                px0 px0Var = this.b;
-                px0Var.y = 1.0f;
-                px0Var.invalidate();
-                px0Var.G = null;
-                break;
-            case 1:
-                px0 px0Var2 = this.b;
-                px0Var2.m(((Float) px0Var2.v.getAnimatedValue()).floatValue());
-                px0Var2.v = null;
-                break;
-            default:
-                super.onAnimationEnd(animator);
-                this.b.F = null;
-                break;
-        }
+public final class ox0 extends CacheFetcher {
+    @Override // org.telegram.messenger.CacheFetcher
+    public final void getRemote(int i10, Object obj, long j10, Utilities.Callback4 callback4) {
+        TLRPC.TL_messages_searchCustomEmoji tL_messages_searchCustomEmoji = new TLRPC.TL_messages_searchCustomEmoji();
+        tL_messages_searchCustomEmoji.emoticon = (String) obj;
+        tL_messages_searchCustomEmoji.hash = j10;
+        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_searchCustomEmoji, new mx0(callback4, 1));
     }
 }

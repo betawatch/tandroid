@@ -1,30 +1,38 @@
 package gi;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
+import android.content.Context;
+import android.view.View;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.Components.a71;
+import org.telegram.ui.Components.e61;
+import org.telegram.ui.Components.f61;
+import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.s61;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class h implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ p b;
-
-    public /* synthetic */ h(p pVar, int i10) {
-        this.a = i10;
-        this.b = pVar;
+public final class h extends e61 {
+    static {
+        e61.setup(new h());
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        p pVar = this.b;
-        switch (i10) {
-            case 0:
-                p.W(pVar);
-                break;
-            default:
-                pVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.updateInterfaces, Integer.valueOf(MessagesController.UPDATE_MASK_CHAT));
-                break;
-        }
+    public static f61 a(int i10, int i11, int i12, CharSequence charSequence, String str) {
+        f61 J = f61.J(h.class);
+        J.d = i10;
+        J.z = i11;
+        J.k = i12;
+        J.l = charSequence;
+        J.m = str;
+        return J;
+    }
+
+    @Override // org.telegram.ui.Components.e61
+    public final void bindView(View view, f61 f61Var, boolean z10, s61 s61Var, a71 a71Var) {
+        ((i) view).a(f61Var.z, f61Var.k, f61Var.l, f61Var.m);
+    }
+
+    @Override // org.telegram.ui.Components.e61
+    public final View createView(Context context, im0 im0Var, int i10, int i11, d6 d6Var) {
+        return new i(context, d6Var);
     }
 }

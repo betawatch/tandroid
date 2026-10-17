@@ -4,7 +4,7 @@ import android.util.Log;
 import com.google.firebase.components.ComponentRegistrar;
 import java.lang.reflect.InvocationTargetException;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements qa.b {
     public final /* synthetic */ int a;
@@ -34,9 +34,9 @@ public final /* synthetic */ class c implements qa.b {
                 } catch (InstantiationException e7) {
                     throw new m(a1.g.p("Could not instantiate ", str, "."), e7);
                 } catch (NoSuchMethodException e10) {
-                    throw new m(t8.b.h("Could not instantiate ", str), e10);
+                    throw new m(r.c.g("Could not instantiate ", str), e10);
                 } catch (InvocationTargetException e11) {
-                    throw new m(t8.b.h("Could not instantiate ", str), e11);
+                    throw new m(r.c.g("Could not instantiate ", str), e11);
                 }
             case 1:
                 return (ComponentRegistrar) this.b;

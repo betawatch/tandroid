@@ -8,36 +8,36 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.aq;
-import ri.h0;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.xp;
+import tg.p;
 import w7.z5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class b extends wg.c {
-    public final aq s;
+    public final xp s;
     public TLRPC.TL_help_country v;
     public final TextPaint w;
-    public final h0 x;
+    public final p x;
 
-    public b(Context context, c6 c6Var) {
-        super(context, c6Var);
+    public b(Context context, d6 d6Var) {
+        super(context, d6Var);
         TextPaint textPaint = new TextPaint();
         this.w = textPaint;
-        this.x = new h0(this, 22);
+        this.x = new p(this, 12);
         textPaint.setTextSize(AndroidUtilities.dp(20.0f));
         this.f.setVisibility(8);
         this.c.setVisibility(8);
-        aq aqVar = new aq(context, 21, c6Var);
-        this.s = aqVar;
-        aqVar.b(g6.B5, g6.j7, g6.C5);
-        aqVar.setDrawUnchecked(true);
-        aqVar.setDrawBackgroundAsArc(10);
-        addView(aqVar);
-        aqVar.a(false, false);
-        aqVar.setLayoutParams(z5.a(24.0f, 13.0f, 0.0f, 14.0f, 0.0f, 24, (LocaleController.isRTL ? 5 : 3) | 16));
+        xp xpVar = new xp(context, 21, d6Var);
+        this.s = xpVar;
+        xpVar.b(h6.B5, h6.j7, h6.C5);
+        xpVar.setDrawUnchecked(true);
+        xpVar.setDrawBackgroundAsArc(10);
+        addView(xpVar);
+        xpVar.a(false, false);
+        xpVar.setLayoutParams(z5.a(24.0f, 13.0f, 0.0f, 14.0f, 0.0f, 24, (LocaleController.isRTL ? 5 : 3) | 16));
     }
 
     @Override // wg.c
@@ -52,9 +52,9 @@ public final class b extends wg.c {
 
     @Override // wg.c
     public final void c(boolean z10, boolean z11) {
-        aq aqVar = this.s;
-        if (aqVar.getVisibility() == 0) {
-            aqVar.a(z10, z11);
+        xp xpVar = this.s;
+        if (xpVar.getVisibility() == 0) {
+            xpVar.a(z10, z11);
         }
     }
 

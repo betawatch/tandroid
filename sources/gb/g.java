@@ -1,48 +1,40 @@
 package gb;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class g extends eb.u {
-    public volatile eb.u a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ eb.g d;
-    public final /* synthetic */ lb.a e;
-    public final /* synthetic */ h f;
+public abstract class g {
+    public static final int a;
 
-    public g(h hVar, boolean z10, boolean z11, eb.g gVar, lb.a aVar) {
-        this.f = hVar;
-        this.b = z10;
-        this.c = z11;
-        this.d = gVar;
-        this.e = aVar;
-    }
-
-    @Override // eb.u
-    public final Object read(mb.a aVar) {
-        if (this.b) {
-            aVar.C();
-            return null;
+    static {
+        int i10;
+        String property = System.getProperty("java.version");
+        try {
+            String[] split = property.split("[._]", 3);
+            i10 = Integer.parseInt(split[0]);
+            if (i10 == 1 && split.length > 1) {
+                i10 = Integer.parseInt(split[1]);
+            }
+        } catch (NumberFormatException unused) {
+            i10 = -1;
         }
-        eb.u uVar = this.a;
-        if (uVar == null) {
-            uVar = this.d.c(this.f, this.e);
-            this.a = uVar;
+        if (i10 == -1) {
+            try {
+                StringBuilder sb2 = new StringBuilder();
+                for (int i11 = 0; i11 < property.length(); i11++) {
+                    char charAt = property.charAt(i11);
+                    if (!Character.isDigit(charAt)) {
+                        break;
+                    }
+                    sb2.append(charAt);
+                }
+                i10 = Integer.parseInt(sb2.toString());
+            } catch (NumberFormatException unused2) {
+                i10 = -1;
+            }
         }
-        return uVar.read(aVar);
-    }
-
-    @Override // eb.u
-    public final void write(mb.b bVar, Object obj) {
-        if (this.c) {
-            bVar.i();
-            return;
+        if (i10 == -1) {
+            i10 = 6;
         }
-        eb.u uVar = this.a;
-        if (uVar == null) {
-            uVar = this.d.c(this.f, this.e);
-            this.a = uVar;
-        }
-        uVar.write(bVar, obj);
+        a = i10;
     }
 }

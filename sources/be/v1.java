@@ -8,7 +8,7 @@ import java.util.concurrent.CancellationException;
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import v7.g8;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public class v1 implements g1, r, z1 {
     public static final /* synthetic */ AtomicReferenceFieldUpdater a = AtomicReferenceFieldUpdater.newUpdater(v1.class, Object.class, "_state$volatile");
@@ -297,7 +297,7 @@ public class v1 implements g1, r, z1 {
 
     @Override // kd.h
     public final kd.f get(kd.g gVar) {
-        return w7.k.a(this, gVar);
+        return w7.h.a(this, gVar);
     }
 
     @Override // be.g1
@@ -392,7 +392,7 @@ public class v1 implements g1, r, z1 {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean i(Object obj) {
-        a6.i iVar;
+        com.google.android.gms.internal.clearcut.e eVar;
         Object obj2 = f0.d;
         if (s()) {
             do {
@@ -410,7 +410,7 @@ public class v1 implements g1, r, z1 {
                 Object u11 = u();
                 if (!(u11 instanceof o1)) {
                     if (!(u11 instanceof b1)) {
-                        iVar = f0.g;
+                        eVar = f0.g;
                         break;
                     }
                     if (th2 == null) {
@@ -428,7 +428,7 @@ public class v1 implements g1, r, z1 {
                                 }
                             }
                             E(t10, th2);
-                            iVar = f0.d;
+                            eVar = f0.d;
                             break loop1;
                         }
                         continue;
@@ -445,7 +445,7 @@ public class v1 implements g1, r, z1 {
                 } else {
                     synchronized (u11) {
                         if (o1.d.get((o1) u11) == f0.h) {
-                            iVar = f0.g;
+                            eVar = f0.g;
                         } else {
                             boolean d = ((o1) u11).d();
                             if (th2 == null) {
@@ -456,12 +456,12 @@ public class v1 implements g1, r, z1 {
                             if (b10 != null) {
                                 E(((o1) u11).a, b10);
                             }
-                            iVar = f0.d;
+                            eVar = f0.d;
                         }
                     }
                 }
             }
-            obj2 = iVar;
+            obj2 = eVar;
         }
         if (obj2 != f0.d && obj2 != f0.e) {
             if (obj2 == f0.g) {
@@ -582,7 +582,7 @@ public class v1 implements g1, r, z1 {
 
     @Override // kd.h
     public final kd.h minusKey(kd.g gVar) {
-        return w7.k.b(this, gVar);
+        return w7.h.b(this, gVar);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -660,7 +660,7 @@ public class v1 implements g1, r, z1 {
 
     @Override // kd.h
     public final kd.h plus(kd.h hVar) {
-        return w7.k.c(this, hVar);
+        return w7.h.c(this, hVar);
     }
 
     public final Throwable q(o1 o1Var, ArrayList arrayList) {

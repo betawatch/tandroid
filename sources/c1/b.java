@@ -4,7 +4,7 @@ import java.util.concurrent.Executor;
 import td.l;
 import w0.i;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements l {
     public final /* synthetic */ int a;
@@ -36,15 +36,15 @@ public final /* synthetic */ class b implements l {
                 executor.execute(new d1.a(eVar2, e7, 0));
                 break;
             case 2:
-                e1.d dVar = (e1.d) this.b;
+                e1.e eVar3 = (e1.e) this.b;
                 w0.d e10 = (w0.d) obj;
                 kotlin.jvm.internal.i.e(e10, "e");
-                Executor executor2 = dVar.g;
+                Executor executor2 = eVar3.g;
                 if (executor2 == null) {
                     kotlin.jvm.internal.i.h("executor");
                     throw null;
                 }
-                executor2.execute(new e1.c(dVar, e10, 0));
+                executor2.execute(new e1.d(eVar3, e10, 0));
                 break;
             default:
                 return obj == ((jd.c) this.b) ? "(this Collection)" : String.valueOf(obj);

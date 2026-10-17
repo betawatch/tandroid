@@ -1,42 +1,50 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.tl.TL_stars;
+import android.text.Editable;
+import java.util.ArrayList;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class lp0 extends org.telegram.ui.Components.l61 {
-    public static final /* synthetic */ int a = 0;
+public final class lp0 implements jq0 {
+    public final /* synthetic */ HashMap a;
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ tp0 c;
 
-    static {
-        org.telegram.ui.Components.l61.setup(new lp0());
+    public lp0(tp0 tp0Var, HashMap hashMap, ArrayList arrayList) {
+        this.c = tp0Var;
+        this.a = hashMap;
+        this.b = arrayList;
     }
 
-    @Override // org.telegram.ui.Components.l61
-    public final void bindView(View view, org.telegram.ui.Components.m61 m61Var, boolean z10, org.telegram.ui.Components.a71 a71Var, org.telegram.ui.Components.i71 i71Var) {
-        mp0 mp0Var = (mp0) view;
-        TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) m61Var.G;
-        yh.i1 i1Var = mp0Var.h;
-        yh.e1 e1Var = mp0Var.e;
-        mp0Var.a = savedStarGift.gift.id;
-        mp0Var.setPadding(0, 0, 0, 0);
-        mp0Var.c(savedStarGift.gift.getDocument(), savedStarGift.gift);
-        mp0Var.b = (TL_stars.starGiftAttributeBackdrop) zh.n5.l(savedStarGift.gift.attributes, TL_stars.starGiftAttributeBackdrop.class);
-        mp0Var.c = (TL_stars.starGiftAttributePattern) zh.n5.l(savedStarGift.gift.attributes, TL_stars.starGiftAttributePattern.class);
-        e1Var.d(mp0Var.b);
-        e1Var.e(mp0Var.c);
-        if (i1Var != null) {
-            i1Var.setBackdrop(mp0Var.b);
-            String h = org.telegram.messenger.g0.h(savedStarGift.gift.num, ',', new StringBuilder("#"));
-            i1Var.b = h;
-            i1Var.a.f(9, h, false);
+    @Override // org.telegram.ui.jq0
+    public final void b(Editable editable) {
+        tp0 tp0Var = this.c;
+        org.telegram.ui.Components.qu quVar = tp0Var.M;
+        tp0Var.a = editable;
+        quVar.setText(editable);
+    }
+
+    @Override // org.telegram.ui.jq0
+    public final /* synthetic */ boolean e() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.jq0
+    public final void h(int i10, boolean z10, boolean z11) {
+        tp0 tp0Var = this.c;
+        tp0Var.removeSelfFromStack();
+        if (z10) {
+            return;
         }
-        mp0Var.b(m61Var.e, false);
+        tp0Var.V(this.a, this.b, z11, i10);
     }
 
-    @Override // org.telegram.ui.Components.l61
-    public final View createView(Context context, org.telegram.ui.Components.mm0 mm0Var, int i10, int i11, org.telegram.ui.ActionBar.c6 c6Var) {
-        return new mp0(context, c6Var, true);
+    @Override // org.telegram.ui.jq0
+    public final void a() {
+    }
+
+    @Override // org.telegram.ui.jq0
+    public final /* synthetic */ void g() {
     }
 }

@@ -1,52 +1,109 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.text.TextUtils;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class n40 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ o40 c;
+public abstract class n40 extends s61 {
+    public final int N;
+    public final ArrayList O;
+    public boolean P;
+    public ci.u6 Q;
+    public boolean R;
+    public boolean S;
+    public int T;
+    public int U;
+    public boolean V;
+    public int W;
+    public String X;
+    public String Y;
+    public int Z;
+    public org.telegram.ui.i4 a0;
+    public final boolean[] b0;
 
-    public /* synthetic */ n40(o40 o40Var, boolean z10, int i10) {
-        this.a = i10;
-        this.c = o40Var;
-        this.b = z10;
+    public n40(im0 im0Var, Context context, int i10) {
+        super(im0Var, context, i10, 0, false, null, null);
+        this.O = new ArrayList();
+        this.T = 0;
+        this.U = -1;
+        this.b0 = new boolean[1];
+        this.s = new d(this, 16);
+        this.N = i10;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        org.telegram.ui.go goVar;
-        bi.o0 o0Var;
-        switch (this.a) {
-            case 0:
-                float f7 = this.b ? 1.0f : 0.0f;
-                o40 o40Var = this.c;
-                o40Var.w = f7;
-                o40Var.e.setTranslationY(f7 * AndroidUtilities.dp(48.0f));
-                o40Var.e.setPadding(0, 0, 0, (int) (o40Var.w * AndroidUtilities.dp(48.0f)));
-                break;
-            default:
-                boolean z10 = this.b;
-                float f10 = z10 ? 1.0f : 0.0f;
-                o40 o40Var2 = this.c;
-                o40Var2.E = f10;
-                o40Var2.n.setScaleX(AndroidUtilities.lerp(0.95f, 1.0f, f10));
-                o40Var2.n.setScaleY(AndroidUtilities.lerp(0.95f, 1.0f, o40Var2.E));
-                org.telegram.ui.nk nkVar = o40Var2.f;
-                if (nkVar != null && (goVar = nkVar.a) != null && (o0Var = goVar.L3) != null) {
-                    o0Var.setScaleX(AndroidUtilities.lerp(1.0f, 0.95f, o40Var2.E));
-                    o40Var2.f.a.L3.setScaleY(AndroidUtilities.lerp(1.0f, 0.95f, o40Var2.E));
-                }
-                o40Var2.h.setAlpha(o40Var2.E);
-                if (!z10) {
-                    o40Var2.h.setVisibility(8);
-                    break;
-                }
-                break;
+    public static String X(String str, boolean[] zArr) {
+        if (zArr != null) {
+            zArr[0] = false;
         }
+        if (str == null || str.isEmpty()) {
+            return null;
+        }
+        String trim = str.trim();
+        if (trim.length() <= 1) {
+            return null;
+        }
+        if ((trim.charAt(0) != '#' && trim.charAt(0) != '$') || trim.indexOf(64) >= 0) {
+            return null;
+        }
+        if (zArr != null) {
+            zArr[0] = trim.charAt(0) == '$';
+        }
+        return trim.substring(1);
+    }
+
+    public final void V() {
+        ci.u6 u6Var = this.Q;
+        if (u6Var != null && u6Var.I != 0) {
+            ConnectionsManager.getInstance(u6Var.c).cancelRequest(u6Var.I, true);
+            u6Var.I = 0;
+        }
+        this.P = false;
+        if (this.U >= 0) {
+            ConnectionsManager.getInstance(this.N).cancelRequest(this.U, true);
+            this.U = -1;
+        }
+        AndroidUtilities.cancelRunOnUIThread(this.a0);
+        this.T++;
+        this.S = false;
+    }
+
+    public final void W() {
+        im0 im0Var;
+        if (TextUtils.isEmpty(this.X) || this.V || this.S || (im0Var = this.d) == null) {
+            return;
+        }
+        for (int i10 = 0; i10 < im0Var.getChildCount(); i10++) {
+            if (im0Var.getChildAt(i10) instanceof b10) {
+                Y(this.X);
+                return;
+            }
+        }
+    }
+
+    public final void Y(String str) {
+        this.X = str;
+        String X = X(str, this.b0);
+        if (!TextUtils.equals(this.Y, X)) {
+            this.O.clear();
+            this.V = false;
+            this.W = 0;
+            V();
+        } else if (this.S) {
+            return;
+        }
+        int i10 = this.T + 1;
+        this.T = i10;
+        if (X == null) {
+            return;
+        }
+        this.S = true;
+        N(true);
+        org.telegram.ui.i4 i4Var = new org.telegram.ui.i4(this, i10, X, 11);
+        this.a0 = i4Var;
+        AndroidUtilities.runOnUIThread(i4Var, 300L);
     }
 }

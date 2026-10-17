@@ -1,13 +1,57 @@
 package org.telegram.ui;
 
-import android.view.accessibility.AccessibilityNodeInfo;
+import android.view.View;
+import android.view.ViewTreeObserver;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class sb extends org.telegram.ui.Cells.w0 {
-    @Override // org.telegram.ui.Cells.w0, android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setVisibleToUser(true);
+public final class sb implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ View a;
+    public final /* synthetic */ s4.b1 b;
+    public final /* synthetic */ tb c;
+
+    public sb(tb tbVar, View view, s4.b1 b1Var) {
+        this.c = tbVar;
+        this.a = view;
+        this.b = b1Var;
+    }
+
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.k kVar2;
+        org.telegram.ui.ActionBar.k kVar3;
+        View view = this.a;
+        view.getViewTreeObserver().removeOnPreDrawListener(this);
+        xb xbVar = this.c.n;
+        int measuredHeight = xbVar.v.getMeasuredHeight();
+        int top = view.getTop();
+        view.getBottom();
+        int i10 = top >= 0 ? 0 : -top;
+        int measuredHeight2 = view.getMeasuredHeight();
+        if (measuredHeight2 > measuredHeight) {
+            measuredHeight2 = i10 + measuredHeight;
+        }
+        View view2 = this.b.a;
+        if (view2 instanceof org.telegram.ui.Cells.u1) {
+            int heightWithKeyboard = (xbVar.X.getHeightWithKeyboard() - AndroidUtilities.dp(48.0f)) - xbVar.v.getTop();
+            float y3 = view.getY();
+            kVar3 = ((org.telegram.ui.ActionBar.n2) xbVar).actionBar;
+            ((org.telegram.ui.Cells.u1) view).b4(i10, measuredHeight2 - i10, heightWithKeyboard, 0.0f, (y3 + kVar3.getMeasuredHeight()) - xbVar.X.getBackgroundTranslationY(), xbVar.X.getMeasuredWidth(), xbVar.X.getBackgroundSizeY(), 0, 0, 0);
+            return true;
+        }
+        if (!(view2 instanceof org.telegram.ui.Cells.x0)) {
+            return true;
+        }
+        kVar = ((org.telegram.ui.ActionBar.n2) xbVar).actionBar;
+        if (kVar == null || xbVar.X == null) {
+            return true;
+        }
+        org.telegram.ui.Cells.x0 x0Var = (org.telegram.ui.Cells.x0) view;
+        float y10 = view.getY();
+        kVar2 = ((org.telegram.ui.ActionBar.n2) xbVar).actionBar;
+        x0Var.a0((y10 + kVar2.getMeasuredHeight()) - xbVar.X.getBackgroundTranslationY(), xbVar.X.getBackgroundSizeY());
+        return true;
     }
 }

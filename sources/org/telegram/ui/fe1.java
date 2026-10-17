@@ -1,11 +1,37 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fe1 implements DialogInterface.OnCancelListener {
-    @Override // android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
+public final /* synthetic */ class fe1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ge1 b;
+
+    public /* synthetic */ fe1(ge1 ge1Var, int i10) {
+        this.a = i10;
+        this.b = ge1Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ge1 ge1Var = this.b;
+                ge1Var.F = null;
+                if (ge1Var.G != -1) {
+                    ge1Var.H.getNotificationCenter().onAnimationFinish(ge1Var.G);
+                    ge1Var.G = -1;
+                    break;
+                }
+                break;
+            default:
+                ge1 ge1Var2 = this.b;
+                ge1Var2.F = null;
+                if (ge1Var2.G != -1) {
+                    ge1Var2.H.getNotificationCenter().onAnimationFinish(ge1Var2.G);
+                    ge1Var2.G = -1;
+                    break;
+                }
+                break;
+        }
     }
 }

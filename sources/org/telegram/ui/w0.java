@@ -7,7 +7,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class w0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -24,21 +24,21 @@ public final class w0 extends AnimatorListenerAdapter {
     public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                k4 k4Var = (k4) this.c;
-                k4Var.u0[1].b();
-                k4Var.u0[1].setVisibility(8);
-                k4Var.O0.S(k4Var.u0[0].b);
-                org.telegram.ui.Cells.o9 o9Var = k4Var.O0;
-                o3[] o3VarArr = k4Var.u0;
-                o9Var.z0 = o3VarArr[0].d;
+                l4 l4Var = (l4) this.c;
+                l4Var.u0[1].b();
+                l4Var.u0[1].setVisibility(8);
+                l4Var.O0.S(l4Var.u0[0].b);
+                org.telegram.ui.Cells.n9 n9Var = l4Var.O0;
+                o3[] o3VarArr = l4Var.u0;
+                n9Var.z0 = o3VarArr[0].d;
                 int i10 = this.b;
                 o3VarArr[i10].setBackgroundDrawable(null);
-                k4Var.u0[i10].setLayerType(0, null);
-                k4Var.v0 = null;
-                k4Var.f0.f = false;
+                l4Var.u0[i10].setLayerType(0, null);
+                l4Var.v0 = null;
+                l4Var.f0.f = false;
                 break;
             case 1:
-                ((iv) this.c).c.d.setColorFilter(new PorterDuffColorFilter(this.b, PorterDuff.Mode.SRC_IN));
+                ((ru) this.c).c.d.setColorFilter(new PorterDuffColorFilter(this.b, PorterDuff.Mode.SRC_IN));
                 super.onAnimationEnd(animator);
                 break;
             case 2:
@@ -48,7 +48,7 @@ public final class w0 extends AnimatorListenerAdapter {
                 AndroidUtilities.setLightNavigationBar(activity, AndroidUtilities.computePerceivedBrightness(i11) >= 0.721f);
                 break;
             default:
-                ((LaunchActivity) this.c).z0(this.b);
+                ((LaunchActivity) this.c).D0(this.b);
                 break;
         }
     }

@@ -1,136 +1,157 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import android.widget.ScrollView;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class lx0 extends tg.n {
-    public final /* synthetic */ Context f0;
-    public final /* synthetic */ px0 g0;
+public final class lx0 extends org.telegram.ui.Components.hm0 {
+    public final Context c;
+    public final /* synthetic */ mx0 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lx0(px0 px0Var, Context context, int i10, int i11, Context context2) {
-        super(context, i10, i11);
-        this.g0 = px0Var;
-        this.f0 = context2;
+    public lx0(mx0 mx0Var, Context context) {
+        this.d = mx0Var;
+        this.c = context;
     }
 
-    @Override // tg.n
-    public final void h() {
-        px0 px0Var = this.g0;
-        PremiumPreviewFragment premiumPreviewFragment = px0Var.n;
-        if (premiumPreviewFragment.r0 == null && BuildVars.DEBUG_PRIVATE_VERSION) {
-            Context context = this.f0;
-            premiumPreviewFragment.r0 = new FrameLayout(context);
-            ScrollView scrollView = new ScrollView(context);
-            tg.g gVar = px0Var.d.b;
-            ee eeVar = new ee(context, 5);
-            int i10 = 1;
-            eeVar.setOrientation(1);
-            TextView textView = new TextView(context);
-            textView.setText("Spectral top ");
-            int i11 = org.telegram.ui.ActionBar.g6.n5;
-            int i12 = 0;
-            org.telegram.messenger.sk.u(textView, org.telegram.ui.ActionBar.g6.x0(null, i11, false), 1, 16.0f, 1);
-            textView.setMaxLines(1);
-            textView.setSingleLine(true);
-            textView.setGravity((LocaleController.isRTL ? 3 : 5) | 48);
-            eeVar.addView(textView, w7.z5.a(-1.0f, 21.0f, 13.0f, 21.0f, 0.0f, -2, (LocaleController.isRTL ? 3 : 5) | 48));
-            org.telegram.ui.Components.gp0 gp0Var = new org.telegram.ui.Components.gp0(context);
-            gp0Var.setDelegate(new n20(gVar, 0));
-            tg.o oVar = gVar.c;
-            gp0Var.setProgress(oVar == null ? 0.0f : oVar.B / 2.0f);
-            gp0Var.setReportChanges(true);
-            eeVar.addView(gp0Var, w7.z5.a(38.0f, 5.0f, 4.0f, 5.0f, 0.0f, -1, 0));
-            TextView textView2 = new TextView(context);
-            textView2.setText("Spectral bottom ");
-            org.telegram.messenger.sk.u(textView2, org.telegram.ui.ActionBar.g6.x0(null, i11, false), 1, 16.0f, 1);
-            textView2.setMaxLines(1);
-            textView2.setSingleLine(true);
-            textView2.setGravity((LocaleController.isRTL ? 3 : 5) | 48);
-            eeVar.addView(textView2, w7.z5.a(-1.0f, 21.0f, 13.0f, 21.0f, 0.0f, -2, (LocaleController.isRTL ? 3 : 5) | 48));
-            org.telegram.ui.Components.gp0 gp0Var2 = new org.telegram.ui.Components.gp0(context);
-            gp0Var2.setDelegate(new n20(gVar, 1));
-            tg.o oVar2 = gVar.c;
-            gp0Var2.setProgress(oVar2 == null ? 0.0f : oVar2.C / 2.0f);
-            gp0Var2.setReportChanges(true);
-            eeVar.addView(gp0Var2, w7.z5.a(38.0f, 5.0f, 4.0f, 5.0f, 0.0f, -1, 0));
-            TextView textView3 = new TextView(context);
-            textView3.setText("Setup spec color");
-            textView3.setTextSize(1, 16.0f);
-            textView3.setLines(1);
-            textView3.setGravity(17);
-            textView3.setMaxLines(1);
-            textView3.setSingleLine(true);
-            int i13 = org.telegram.ui.ActionBar.g6.Sh;
-            textView3.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, i13, false));
-            int i14 = org.telegram.ui.ActionBar.g6.Oh;
-            textView3.setBackground(org.telegram.ui.ActionBar.w5.e(new float[]{4.0f}, org.telegram.ui.ActionBar.g6.x0(null, i14, false)));
-            textView3.setOnClickListener(new o20(context, gVar, i12));
-            eeVar.addView(textView3, w7.z5.a(48.0f, 16.0f, 0.0f, 16.0f, 0.0f, -1, 16));
-            TextView textView4 = new TextView(context);
-            textView4.setText("Diffuse ");
-            org.telegram.messenger.sk.u(textView4, org.telegram.ui.ActionBar.g6.x0(null, i11, false), 1, 16.0f, 1);
-            textView4.setMaxLines(1);
-            textView4.setSingleLine(true);
-            textView4.setGravity((LocaleController.isRTL ? 3 : 5) | 48);
-            eeVar.addView(textView4, w7.z5.a(-1.0f, 21.0f, 13.0f, 21.0f, 0.0f, -2, (LocaleController.isRTL ? 3 : 5) | 48));
-            org.telegram.ui.Components.gp0 gp0Var3 = new org.telegram.ui.Components.gp0(context);
-            gp0Var3.setDelegate(new n20(gVar, 2));
-            tg.o oVar3 = gVar.c;
-            gp0Var3.setProgress(oVar3 == null ? 0.0f : oVar3.D);
-            gp0Var3.setReportChanges(true);
-            eeVar.addView(gp0Var3, w7.z5.a(38.0f, 5.0f, 4.0f, 5.0f, 0.0f, -1, 0));
-            TextView textView5 = new TextView(context);
-            textView5.setText("Normal map spectral");
-            org.telegram.messenger.sk.u(textView5, org.telegram.ui.ActionBar.g6.x0(null, i11, false), 1, 16.0f, 1);
-            textView5.setMaxLines(1);
-            textView5.setSingleLine(true);
-            textView5.setGravity((LocaleController.isRTL ? 3 : 5) | 48);
-            eeVar.addView(textView5, w7.z5.a(-1.0f, 21.0f, 13.0f, 21.0f, 0.0f, -2, (LocaleController.isRTL ? 3 : 5) | 48));
-            org.telegram.ui.Components.gp0 gp0Var4 = new org.telegram.ui.Components.gp0(context);
-            gp0Var4.setDelegate(new n20(gVar, 3));
-            tg.o oVar4 = gVar.c;
-            gp0Var4.setProgress(oVar4 != null ? oVar4.G / 2.0f : 0.0f);
-            gp0Var4.setReportChanges(true);
-            eeVar.addView(gp0Var4, w7.z5.a(38.0f, 5.0f, 4.0f, 5.0f, 0.0f, -1, 0));
-            TextView textView6 = new TextView(context);
-            textView6.setText("Setup normal spec color");
-            textView6.setTextSize(1, 16.0f);
-            textView6.setLines(1);
-            textView6.setGravity(17);
-            textView6.setMaxLines(1);
-            textView6.setSingleLine(true);
-            textView6.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, i13, false));
-            textView6.setBackground(org.telegram.ui.ActionBar.w5.e(new float[]{4.0f}, org.telegram.ui.ActionBar.g6.x0(null, i14, false)));
-            textView6.setOnClickListener(new o20(context, gVar, i10));
-            eeVar.addView(textView6, w7.z5.a(48.0f, 16.0f, 0.0f, 16.0f, 0.0f, -1, 16));
-            TextView textView7 = new TextView(context);
-            textView7.setText("Small starts size");
-            org.telegram.messenger.sk.u(textView7, org.telegram.ui.ActionBar.g6.x0(null, i11, false), 1, 16.0f, 1);
-            textView7.setMaxLines(1);
-            textView7.setSingleLine(true);
-            textView7.setGravity((LocaleController.isRTL ? 3 : 5) | 48);
-            eeVar.addView(textView7, w7.z5.a(-1.0f, 21.0f, 13.0f, 21.0f, 0.0f, -2, (LocaleController.isRTL ? 3 : 5) | 48));
-            org.telegram.ui.Components.gp0 gp0Var5 = new org.telegram.ui.Components.gp0(context);
-            gp0Var5.setDelegate(new pb.a(17));
-            gp0Var5.setProgress(ee.b / 2.0f);
-            gp0Var5.setReportChanges(true);
-            eeVar.addView(gp0Var5, w7.z5.a(38.0f, 5.0f, 4.0f, 5.0f, 0.0f, -1, 0));
-            scrollView.addView(eeVar);
-            premiumPreviewFragment.r0.addView(scrollView);
-            premiumPreviewFragment.r0.setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.h5, false));
-            premiumPreviewFragment.d0.addView(premiumPreviewFragment.r0, w7.z5.e(-1, -1, 80));
-            ((ViewGroup.MarginLayoutParams) premiumPreviewFragment.r0.getLayoutParams()).topMargin = premiumPreviewFragment.c0;
-            premiumPreviewFragment.r0.setTranslationY(AndroidUtilities.dp(1000.0f));
-            premiumPreviewFragment.r0.animate().translationY(1.0f).setDuration(300L);
+    @Override // org.telegram.ui.Components.hm0
+    public final boolean D(s4.b1 b1Var) {
+        int i10 = b1Var.f;
+        return i10 == 0 || i10 == 2 || i10 == 4;
+    }
+
+    @Override // s4.g0
+    public final int h() {
+        return this.d.e;
+    }
+
+    @Override // s4.g0
+    public final int j(int i10) {
+        mx0 mx0Var = this.d;
+        if (i10 == mx0Var.w) {
+            return 4;
         }
+        if (i10 == mx0Var.n) {
+            return 3;
+        }
+        if (i10 == mx0Var.f) {
+            return 2;
+        }
+        return (i10 == mx0Var.h || i10 == mx0Var.v) ? 1 : 0;
+    }
+
+    @Override // s4.g0
+    public final void v(s4.b1 b1Var, int i10) {
+        String string;
+        mx0 mx0Var = this.d;
+        int i11 = mx0Var.y;
+        int i12 = b1Var.f;
+        View view = b1Var.a;
+        if (i12 == 0) {
+            org.telegram.ui.Cells.a5 a5Var = (org.telegram.ui.Cells.a5) view;
+            if (i11 != 1) {
+                throw null;
+            }
+            long keyAt = mx0Var.getMessagesController().blockePeers.keyAt(i10 - mx0Var.r);
+            a5Var.setTag(Long.valueOf(keyAt));
+            if (keyAt <= 0) {
+                TLRPC.Chat chat = mx0Var.getMessagesController().getChat(Long.valueOf(-keyAt));
+                if (chat != null) {
+                    int i13 = chat.participants_count;
+                    a5Var.b(chat, null, i13 != 0 ? LocaleController.formatPluralString("Members", i13, new Object[0]) : chat.has_geo ? LocaleController.getString(R.string.MegaLocation) : !ChatObject.isPublic(chat) ? LocaleController.getString(R.string.MegaPrivate) : LocaleController.getString(R.string.MegaPublic), i10 != mx0Var.s - 1);
+                    return;
+                }
+                return;
+            }
+            TLRPC.User user = mx0Var.getMessagesController().getUser(Long.valueOf(keyAt));
+            if (user != null) {
+                if (user.bot) {
+                    string = LocaleController.getString(R.string.Bot).substring(0, 1).toUpperCase() + LocaleController.getString(R.string.Bot).substring(1);
+                } else {
+                    String str = user.phone;
+                    string = (str == null || str.length() == 0) ? LocaleController.getString(R.string.NumberUnknown) : org.telegram.messenger.wh.g(new StringBuilder("+"), user.phone, jf.b.c());
+                }
+                a5Var.b(user, null, string, i10 != mx0Var.s - 1);
+                return;
+            }
+            return;
+        }
+        if (i12 == 1) {
+            org.telegram.ui.Cells.d9 d9Var = (org.telegram.ui.Cells.d9) view;
+            if (i10 != mx0Var.h) {
+                if (i10 == mx0Var.v) {
+                    d9Var.setFixedSize(12);
+                    d9Var.setText("");
+                    return;
+                }
+                return;
+            }
+            if (i11 == 1) {
+                d9Var.setFixedSize(0);
+                d9Var.setText(LocaleController.getString(R.string.BlockedUsersInfo));
+                return;
+            } else {
+                d9Var.setFixedSize(8);
+                d9Var.setText(null);
+                return;
+            }
+        }
+        if (i12 == 2) {
+            org.telegram.ui.Cells.x4 x4Var = (org.telegram.ui.Cells.x4) view;
+            x4Var.a(org.telegram.ui.ActionBar.h6.v6, org.telegram.ui.ActionBar.h6.u6);
+            if (i11 == 1) {
+                x4Var.b(LocaleController.getString(R.string.BlockUser), R.drawable.msg_contact_add, 5, false);
+                return;
+            } else {
+                LocaleController.getString(R.string.PrivacyAddAnException);
+                throw null;
+            }
+        }
+        if (i12 != 3) {
+            return;
+        }
+        org.telegram.ui.Cells.l4 l4Var = (org.telegram.ui.Cells.l4) view;
+        if (i10 == mx0Var.n) {
+            if (i11 == 1) {
+                l4Var.setText(LocaleController.formatPluralString("BlockedUsersCount", mx0Var.getMessagesController().totalBlockedCount, new Object[0]));
+            } else {
+                l4Var.setText(LocaleController.getString(R.string.PrivacyExceptions));
+            }
+        }
+    }
+
+    @Override // s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        FrameLayout frameLayout;
+        FrameLayout d9Var;
+        if (i10 != 0) {
+            Context context = this.c;
+            if (i10 == 1) {
+                d9Var = new org.telegram.ui.Cells.d9(context);
+            } else if (i10 == 2) {
+                d9Var = new org.telegram.ui.Cells.x4(context);
+            } else if (i10 != 4) {
+                org.telegram.ui.Cells.l4 l4Var = new org.telegram.ui.Cells.l4(this.c, org.telegram.ui.ActionBar.h6.L6, 21, 11, false, null);
+                l4Var.setHeight(43);
+                frameLayout = l4Var;
+            } else {
+                org.telegram.ui.Cells.q8 q8Var = new org.telegram.ui.Cells.q8(viewGroup.getContext());
+                q8Var.i(LocaleController.getString(R.string.NotificationsDeleteAllException), false);
+                q8Var.e(-1, org.telegram.ui.ActionBar.h6.p7);
+                frameLayout = q8Var;
+            }
+            frameLayout = d9Var;
+        } else {
+            org.telegram.ui.Cells.a5 a5Var = new org.telegram.ui.Cells.a5(7, 6, this.c, null, true);
+            a5Var.setDelegate(new qp0(this, 9));
+            frameLayout = a5Var;
+        }
+        return new org.telegram.ui.Components.sl0(frameLayout);
     }
 }

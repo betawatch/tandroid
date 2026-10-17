@@ -12,7 +12,7 @@ import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class a implements g2.h {
     public final g2.h a;
@@ -68,7 +68,7 @@ public final class a implements g2.h {
         }
     }
 
-    @Override // b2.p
+    @Override // b2.o
     public final int read(byte[] bArr, int i10, int i11) {
         this.d.getClass();
         int read = this.d.read(bArr, i10, i11);

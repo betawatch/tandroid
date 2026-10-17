@@ -1,36 +1,49 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class bd0 extends org.telegram.ui.Components.xv0 {
-    public final /* synthetic */ ld0 f2;
+public final /* synthetic */ class bd0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ pe0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bd0(ld0 ld0Var, Context context, org.telegram.ui.Components.pv0 pv0Var, ld0 ld0Var2, ad0 ad0Var, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, 0L, pv0Var, 0, null, null, null, 8, 0, ld0Var2, ad0Var, 0, c6Var, null);
-        this.f2 = ld0Var;
+    public /* synthetic */ bd0(pe0 pe0Var, int i10) {
+        this.a = i10;
+        this.b = pe0Var;
     }
 
-    @Override // org.telegram.ui.Components.xv0
-    public final int C0() {
-        return 32;
-    }
-
-    @Override // org.telegram.ui.Components.xv0
-    public final boolean N() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.xv0
-    public final int T0() {
-        return 3;
-    }
-
-    @Override // org.telegram.ui.Components.xv0
-    public final TL_stories.MediaArea getStoriesArea() {
-        return this.f2.M0;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.L.m();
+                break;
+            case 1:
+                pe0 pe0Var = this.b;
+                pe0Var.M = null;
+                pe0Var.N = null;
+                pe0Var.p(true);
+                pe0Var.e.h(null, null, pe0Var.f, null);
+                ld ldVar = pe0Var.n;
+                org.telegram.ui.Components.uj0 uj0Var = pe0Var.I;
+                ldVar.setAnimation(uj0Var);
+                uj0Var.M(0);
+                pe0Var.K = true;
+                break;
+            case 2:
+                this.b.K = true;
+                break;
+            default:
+                EditTextBoldCursor editTextBoldCursor = this.b.c;
+                if (editTextBoldCursor != null) {
+                    editTextBoldCursor.requestFocus();
+                    editTextBoldCursor.setSelection(editTextBoldCursor.length());
+                    AndroidUtilities.showKeyboard(editTextBoldCursor);
+                    break;
+                }
+                break;
+        }
     }
 }

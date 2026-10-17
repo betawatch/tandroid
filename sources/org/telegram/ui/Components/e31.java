@@ -1,35 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.messenger.Utilities;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e31 implements ne.d, Utilities.Callback5, Utilities.Callback5Return {
-    public final /* synthetic */ y31 a;
+public final class e31 extends s4.r0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ q31 b;
 
-    @Override // ne.d
-    public void p(int i10, float f7, float f10, ne.e eVar) {
-        this.a.g();
+    public /* synthetic */ e31(q31 q31Var, int i10) {
+        this.a = i10;
+        this.b = q31Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5Return
-    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        return Boolean.valueOf(y31.c(this.a, (m61) obj, (View) obj2));
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        y31.a(this.a, (m61) obj);
-    }
-
-    @Override // ne.d
-    public /* synthetic */ void A(float f7, int i10) {
+    @Override // s4.r0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                q31 q31Var = this.b;
+                if (q31Var.k()) {
+                    q31Var.l();
+                    break;
+                }
+                break;
+            default:
+                q31 q31Var2 = this.b;
+                if (q31Var2.k()) {
+                    q31Var2.l();
+                    break;
+                }
+                break;
+        }
     }
 }

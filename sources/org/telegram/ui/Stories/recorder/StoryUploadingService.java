@@ -4,8 +4,8 @@ import android.R;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
-import e0.l0;
-import e0.r;
+import e0.k0;
+import e0.q;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
@@ -14,10 +14,10 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
 public class StoryUploadingService extends Service implements NotificationCenter.NotificationCenterDelegate {
-    public r a;
+    public q a;
     public String b;
     public float c;
     public int d = -1;
@@ -42,14 +42,14 @@ public class StoryUploadingService extends Service implements NotificationCenter
         }
         float floatValue = ((Float) objArr[1]).floatValue();
         this.c = floatValue;
-        r rVar = this.a;
+        q qVar = this.a;
         int round = Math.round(floatValue * 100.0f);
         boolean z10 = this.c <= 0.0f;
-        rVar.n = 100;
-        rVar.o = round;
-        rVar.p = z10;
+        qVar.n = 100;
+        qVar.o = round;
+        qVar.p = z10;
         try {
-            new l0(ApplicationLoader.applicationContext).e(null, 33, this.a.b());
+            new k0(ApplicationLoader.applicationContext).e(null, 33, this.a.b());
         } catch (Throwable th2) {
             FileLog.e(th2);
         }
@@ -67,7 +67,7 @@ public class StoryUploadingService extends Service implements NotificationCenter
             stopForeground(true);
         } catch (Exception unused) {
         }
-        new l0(ApplicationLoader.applicationContext).b(33, null);
+        new k0(ApplicationLoader.applicationContext).b(33, null);
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.uploadStoryEnd);
         NotificationCenter.getInstance(this.d).removeObserver(this, NotificationCenter.uploadStoryProgress);
         if (BuildVars.LOGS_ENABLED) {
@@ -103,25 +103,25 @@ public class StoryUploadingService extends Service implements NotificationCenter
         }
         if (this.a == null) {
             NotificationsController.checkOtherNotificationsChannel();
-            r rVar = new r(ApplicationLoader.applicationContext, null);
-            this.a = rVar;
-            rVar.E.icon = R.drawable.stat_sys_upload;
-            rVar.E.when = System.currentTimeMillis();
-            r rVar2 = this.a;
-            rVar2.y = NotificationsController.OTHER_NOTIFICATIONS_CHANNEL;
-            rVar2.g(LocaleController.getString(org.telegram.messenger.R.string.AppName));
+            q qVar = new q(ApplicationLoader.applicationContext, null);
+            this.a = qVar;
+            qVar.E.icon = R.drawable.stat_sys_upload;
+            qVar.E.when = System.currentTimeMillis();
+            q qVar2 = this.a;
+            qVar2.y = NotificationsController.OTHER_NOTIFICATIONS_CHANNEL;
+            qVar2.g(LocaleController.getString(org.telegram.messenger.R.string.AppName));
             this.a.p(LocaleController.getString(org.telegram.messenger.R.string.StoryUploading));
             this.a.f(LocaleController.getString(org.telegram.messenger.R.string.StoryUploading));
         }
         this.c = 0.0f;
-        r rVar3 = this.a;
+        q qVar3 = this.a;
         int round = Math.round(0.0f);
-        rVar3.n = 100;
-        rVar3.o = round;
-        rVar3.p = false;
+        qVar3.n = 100;
+        qVar3.o = round;
+        qVar3.p = false;
         startForeground(33, this.a.b());
         try {
-            new l0(ApplicationLoader.applicationContext).e(null, 33, this.a.b());
+            new k0(ApplicationLoader.applicationContext).e(null, 33, this.a.b());
             return 2;
         } catch (Throwable th2) {
             FileLog.e(th2);

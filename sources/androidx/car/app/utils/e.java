@@ -1,29 +1,31 @@
 package androidx.car.app.utils;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+import android.graphics.Rect;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class e implements c {
+public final /* synthetic */ class e implements a {
     public final /* synthetic */ int a;
     public final /* synthetic */ RemoteUtils$SurfaceCallbackStub b;
-    public final /* synthetic */ w.b c;
+    public final /* synthetic */ Rect c;
 
-    public /* synthetic */ e(RemoteUtils$SurfaceCallbackStub remoteUtils$SurfaceCallbackStub, w.b bVar, int i10) {
+    public /* synthetic */ e(RemoteUtils$SurfaceCallbackStub remoteUtils$SurfaceCallbackStub, Rect rect, int i10) {
         this.a = i10;
         this.b = remoteUtils$SurfaceCallbackStub;
-        this.c = bVar;
+        this.c = rect;
     }
 
-    @Override // androidx.car.app.utils.c
+    @Override // androidx.car.app.utils.a
     public final Object a() {
-        Object lambda$onSurfaceDestroyed$3;
-        Object lambda$onSurfaceAvailable$0;
+        Object lambda$onVisibleAreaChanged$1;
+        Object lambda$onStableAreaChanged$2;
         switch (this.a) {
             case 0:
-                lambda$onSurfaceDestroyed$3 = this.b.lambda$onSurfaceDestroyed$3(this.c);
-                return lambda$onSurfaceDestroyed$3;
+                lambda$onVisibleAreaChanged$1 = this.b.lambda$onVisibleAreaChanged$1(this.c);
+                return lambda$onVisibleAreaChanged$1;
             default:
-                lambda$onSurfaceAvailable$0 = this.b.lambda$onSurfaceAvailable$0(this.c);
-                return lambda$onSurfaceAvailable$0;
+                lambda$onStableAreaChanged$2 = this.b.lambda$onStableAreaChanged$2(this.c);
+                return lambda$onStableAreaChanged$2;
         }
     }
 }

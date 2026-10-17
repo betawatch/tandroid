@@ -3,15 +3,15 @@ package yh;
 import java.util.Comparator;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s2 implements Comparator {
     public final /* synthetic */ int a;
-    public final /* synthetic */ g4 b;
+    public final /* synthetic */ h4 b;
 
-    public /* synthetic */ s2(g4 g4Var, int i10) {
+    public /* synthetic */ s2(h4 h4Var, int i10) {
         this.a = i10;
-        this.b = g4Var;
+        this.b = h4Var;
     }
 
     @Override // java.util.Comparator

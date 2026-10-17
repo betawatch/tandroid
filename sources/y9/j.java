@@ -1,6 +1,6 @@
 package y9;
 
-import b2.u;
+import b2.t;
 import java.io.Closeable;
 import java.io.File;
 import java.io.IOException;
@@ -8,7 +8,7 @@ import java.io.RandomAccessFile;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class j implements Closeable {
     public static final Logger h = Logger.getLogger(j.class.getName());
@@ -109,7 +109,7 @@ public final class j implements Closeable {
         sb2.append(this.e);
         sb2.append(", element lengths=[");
         try {
-            a(new u(sb2));
+            a(new t(sb2));
         } catch (IOException e) {
             h.log(Level.WARNING, "read error", (Throwable) e);
         }

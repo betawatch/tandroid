@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -19,7 +19,7 @@ public final /* synthetic */ class a0 implements View.OnClickListener {
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        e5 e5Var;
+        g5 g5Var;
         switch (this.a) {
             case 0:
                 u0 u0Var = this.b;
@@ -29,18 +29,18 @@ public final /* synthetic */ class a0 implements View.OnClickListener {
                 } else if (u0Var.p()) {
                     u0Var.e.hideActionMode();
                     for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                        if (u0Var.H != null && ((hg.p0) arrayList.get(i10)).h) {
-                            u0Var.H.o((hg.p0) arrayList.get(i10));
+                        if (u0Var.H != null && ((hg.o0) arrayList.get(i10)).h) {
+                            u0Var.H.o((hg.o0) arrayList.get(i10));
                         }
                     }
                     u0Var.m();
                 } else {
                     TextView textView = u0Var.h;
-                    if (textView != null && textView.getVisibility() == 0 && ((e5Var = u0Var.H) == null || e5Var.a())) {
+                    if (textView != null && textView.getVisibility() == 0 && ((g5Var = u0Var.H) == null || g5Var.a())) {
                         u0Var.h.setVisibility(8);
-                        e5 e5Var2 = u0Var.H;
-                        if (e5Var2 != null) {
-                            e5Var2.k();
+                        g5 g5Var2 = u0Var.H;
+                        if (g5Var2 != null) {
+                            g5Var2.k();
                         }
                     }
                 }
@@ -63,7 +63,7 @@ public final /* synthetic */ class a0 implements View.OnClickListener {
                 } else {
                     q0 q0Var = u0Var2.P;
                     if (q0Var != null) {
-                        q0Var.k(((Integer) view.getTag()).intValue());
+                        q0Var.j(((Integer) view.getTag()).intValue());
                         break;
                     }
                 }
@@ -77,7 +77,7 @@ public final /* synthetic */ class a0 implements View.OnClickListener {
                 } else {
                     q0 q0Var2 = u0Var3.P;
                     if (q0Var2 != null) {
-                        q0Var2.k(((Integer) view.getTag()).intValue());
+                        q0Var2.j(((Integer) view.getTag()).intValue());
                         break;
                     }
                 }
@@ -101,7 +101,7 @@ public final /* synthetic */ class a0 implements View.OnClickListener {
                 } else {
                     q0 q0Var3 = u0Var4.P;
                     if (q0Var3 != null) {
-                        q0Var3.k(((Integer) view.getTag()).intValue());
+                        q0Var3.j(((Integer) view.getTag()).intValue());
                         break;
                     }
                 }

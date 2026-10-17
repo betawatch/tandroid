@@ -1,141 +1,29 @@
 package tg;
 
-import android.content.Context;
-import android.graphics.Rect;
-import android.graphics.SurfaceTexture;
-import android.view.Choreographer;
-import android.view.MotionEvent;
+import android.opengl.EGL14;
+import android.opengl.EGLSurface;
 import android.view.Surface;
-import android.view.TextureView;
-import android.view.View;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public abstract class s extends TextureView implements TextureView.SurfaceTextureListener, Choreographer.FrameCallback {
-    public static p w;
-    public final Rect a;
-    public final Runnable b;
-    public final int c;
-    public r d;
-    public boolean e;
-    public boolean f;
-    public boolean h;
-    public float n;
-    public float r;
-    public boolean s;
-    public boolean v;
+public final class s {
+    public final t a;
+    public final Surface b;
+    public volatile boolean d;
+    public volatile r e;
+    public int f;
+    public int g;
+    public boolean i;
+    public boolean j;
+    public volatile boolean c = true;
+    public EGLSurface h = EGL14.EGL_NO_SURFACE;
+    public int k = -1;
+    public float l = -1.0f;
 
-    public s(Context context, Runnable runnable) {
-        super(context);
-        this.a = new Rect();
-        this.f = true;
-        this.b = runnable;
-        if (w == null) {
-            w = new p(context.getApplicationContext());
-        }
-        this.c = w.d;
-        setOpaque(false);
-        setSurfaceTextureListener(this);
-    }
-
-    public abstract void a();
-
-    @Override // android.view.Choreographer.FrameCallback
-    public final void doFrame(long j10) {
-        if (!this.e || this.f) {
-            return;
-        }
-        this.b.run();
-        if (this.d != null) {
-            boolean z10 = isShown() && getWindowVisibility() == 0 && getGlobalVisibleRect(this.a);
-            this.d.e = z10 ? new q(this.n, this.r, this.s, this.v) : null;
-            w.c();
-        }
-        Choreographer.getInstance().postFrameCallback(this);
-    }
-
-    @Override // android.view.TextureView, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.e = true;
-        setPaused(this.f);
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        this.h = false;
-        this.e = false;
-        Choreographer.getInstance().removeFrameCallback(this);
-        super.onDetachedFromWindow();
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
-        this.h = false;
-        int i12 = this.c;
-        surfaceTexture.setDefaultBufferSize(i12, i12);
-        r rVar = new r(this, new Surface(surfaceTexture), this.c);
-        this.d = rVar;
-        p pVar = w;
-        pVar.e.add(rVar);
-        pVar.f = (r[]) pVar.e.toArray(new r[0]);
-        pVar.c();
-        setPaused(this.f);
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
-        this.h = false;
-        r rVar = this.d;
-        this.d = null;
-        if (rVar == null) {
-            return true;
-        }
-        p pVar = w;
-        pVar.getClass();
-        rVar.c = false;
-        pVar.e.remove(rVar);
-        pVar.f = (r[]) pVar.e.toArray(new r[0]);
-        pVar.b.post(new s9.b(6, pVar, rVar));
-        return true;
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i10, int i11) {
-        int i12 = this.c;
-        surfaceTexture.setDefaultBufferSize(i12, i12);
-    }
-
-    @Override // android.view.TextureView.SurfaceTextureListener
-    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
-        r rVar;
-        int i10 = this.c;
-        surfaceTexture.setDefaultBufferSize(i10, i10);
-        if (this.h || (rVar = this.d) == null || !rVar.d) {
-            return;
-        }
-        this.h = true;
-        if (getParent() instanceof View) {
-            ((View) getParent()).invalidate();
-        }
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return false;
-    }
-
-    public void setPaused(boolean z10) {
-        this.f = z10;
-        Choreographer.getInstance().removeFrameCallback(this);
-        if (this.e && !z10) {
-            Choreographer.getInstance().postFrameCallback(this);
-            return;
-        }
-        r rVar = this.d;
-        if (rVar != null) {
-            rVar.e = null;
-            w.c();
-        }
+    public s(t tVar, Surface surface, int i10) {
+        this.a = tVar;
+        this.b = surface;
+        this.g = i10;
+        this.f = i10;
     }
 }

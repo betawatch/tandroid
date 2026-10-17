@@ -1,260 +1,131 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Point;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.GradientDrawable;
-import android.text.TextUtils;
-import android.view.View;
-import j$.util.Objects;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatThemeController;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class io extends Drawable {
-    public final boolean a;
-    public View b;
-    public int c = 255;
-    public final float d;
-    public final bi.b4 e;
-    public final org.telegram.ui.Components.cd0 f;
-    public final TLRPC.WallPaper g;
-    public boolean h;
-    public boolean i;
-    public final ArrayList j;
+public final class io extends bu0 {
+    public final /* synthetic */ ko a;
 
-    public io(TLRPC.WallPaper wallPaper, boolean z10, boolean z11) {
-        TLRPC.WallPaperSettings wallPaperSettings;
-        String n10;
-        TLRPC.WallPaperSettings wallPaperSettings2;
-        bi.b4 b4Var = new bi.b4(this, 3);
-        this.e = b4Var;
-        this.j = new ArrayList();
-        b4Var.setInvalidateAll(true);
-        boolean z12 = wallPaper.pattern;
-        this.g = wallPaper;
-        this.a = z10;
-        if (z10 && ((wallPaper.document != null || wallPaper.uploadingImage != null) && !z12 && (wallPaperSettings2 = wallPaper.settings) != null)) {
-            this.d = wallPaperSettings2.intensity / 100.0f;
-        }
-        if ((z12 || wallPaper.document == null) && (wallPaperSettings = wallPaper.settings) != null && wallPaperSettings.second_background_color != 0 && wallPaperSettings.third_background_color != 0) {
-            org.telegram.ui.Components.cd0 cd0Var = new org.telegram.ui.Components.cd0();
-            this.f = cd0Var;
-            TLRPC.WallPaperSettings wallPaperSettings3 = wallPaper.settings;
-            cd0Var.n(wallPaperSettings3.background_color, wallPaperSettings3.second_background_color, wallPaperSettings3.third_background_color, wallPaperSettings3.fourth_background_color);
-            int i10 = UserConfig.selectedAccount;
-            long j10 = wallPaper.id;
-            uc ucVar = new uc(14, this, wallPaper);
-            int[] iArr = org.telegram.ui.ActionBar.b4.h;
-            boolean z13 = wallPaper.pattern;
-            ChatThemeController.getInstance(i10).loadWallpaperBitmap(j10, z13 ? 1 : 0, new org.telegram.ui.ActionBar.z3(ucVar, wallPaper, z13 ? 1 : 0, i10, j10));
-            return;
-        }
-        Point point = AndroidUtilities.displaySize;
-        int min = Math.min(point.x, point.y);
-        Point point2 = AndroidUtilities.displaySize;
-        int max = Math.max(point2.x, point2.y);
-        if (z11) {
-            n10 = "150_150_wallpaper";
-        } else {
-            StringBuilder sb2 = new StringBuilder();
-            sb2.append((int) (min / AndroidUtilities.density));
-            sb2.append("_");
-            n10 = a1.g.n((int) (max / AndroidUtilities.density), "_wallpaper", sb2);
-        }
-        StringBuilder u10 = a1.g.u(n10);
-        u10.append(wallPaper.id);
-        StringBuilder u11 = a1.g.u(u10.toString());
-        u11.append(e(wallPaper.settings));
-        String sb3 = u11.toString();
-        Drawable b10 = b(wallPaper);
-        String str = wallPaper.uploadingImage;
-        if (str != null) {
-            b4Var.setImage(ImageLocation.getForPath(str), sb3, b10, null, wallPaper, 1);
-            return;
-        }
-        TLRPC.Document document = wallPaper.document;
-        if (document != null) {
-            b4Var.setImage(ImageLocation.getForDocument(document), sb3, b10, null, wallPaper, 1);
-        } else {
-            b4Var.setImageBitmap(b10);
-        }
+    public io(ko koVar) {
+        this.a = koVar;
     }
 
-    public static BitmapDrawable a(Drawable drawable) {
-        Bitmap createBitmap = Bitmap.createBitmap(20, 20, Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(createBitmap);
-        drawable.setBounds(0, 0, 20, 20);
-        drawable.draw(canvas);
-        return new BitmapDrawable(createBitmap);
-    }
-
-    public static Drawable b(TLRPC.WallPaper wallPaper) {
-        BitmapDrawable a2;
-        Drawable drawable = wallPaper.thumbDrawable;
-        if (drawable != null) {
-            return drawable;
-        }
-        if (wallPaper.stripedThumb != null) {
-            return new BitmapDrawable(wallPaper.stripedThumb);
-        }
-        if (wallPaper.pattern && wallPaper.settings == null) {
-            return new ColorDrawable(-16777216);
-        }
-        if (wallPaper.document != null) {
-            a2 = null;
-            while (r2 < wallPaper.document.thumbs.size()) {
-                if (wallPaper.document.thumbs.get(r2) instanceof TLRPC.TL_photoStrippedSize) {
-                    a2 = new BitmapDrawable(ImageLoader.getStrippedPhotoBitmap(wallPaper.document.thumbs.get(r2).bytes, "b"));
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x0029, code lost:
+    
+        if (r0 != null) goto L25;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:31:0x0042, code lost:
+    
+        if (r0 != null) goto L25;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0082  */
+    @Override // org.telegram.ui.bu0, org.telegram.ui.ju0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final lu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        TLRPC.FileLocation fileLocation2;
+        ko koVar = this.a;
+        long j10 = koVar.C0;
+        lu0 lu0Var = null;
+        if (fileLocation != null) {
+            if (koVar.D0 != null) {
+                TLRPC.User user = j10 == 0 ? null : koVar.getMessagesController().getUser(Long.valueOf(j10));
+                if (user != null) {
+                    TLRPC.UserProfilePhoto userProfilePhoto = user.photo;
+                    if (userProfilePhoto != null) {
+                        fileLocation2 = userProfilePhoto.photo_big;
+                    }
                 }
-                r2++;
-            }
-        } else {
-            TLRPC.WallPaperSettings wallPaperSettings = wallPaper.settings;
-            if (wallPaperSettings == null || wallPaperSettings.intensity < 0) {
-                a2 = a(new ColorDrawable(-16777216));
-            } else if (wallPaperSettings.second_background_color == 0) {
-                a2 = a(new ColorDrawable(i0.a.k(wallPaper.settings.background_color, 255)));
-            } else if (wallPaperSettings.third_background_color == 0) {
-                a2 = a(new GradientDrawable(org.telegram.ui.Components.y9.d(wallPaper.settings.rotation), new int[]{i0.a.k(wallPaperSettings.background_color, 255), i0.a.k(wallPaper.settings.second_background_color, 255)}));
+                fileLocation2 = null;
+                if (fileLocation2 != null && fileLocation2.local_id == fileLocation.local_id && fileLocation2.volume_id == fileLocation.volume_id && fileLocation2.dc_id == fileLocation.dc_id) {
+                    int[] iArr = new int[2];
+                    koVar.e.getLocationInWindow(iArr);
+                    lu0Var = new lu0();
+                    lu0Var.b = iArr[0];
+                    lu0Var.c = iArr[1];
+                    ci.k4 k4Var = koVar.e;
+                    lu0Var.d = k4Var;
+                    ImageReceiver imageReceiver = k4Var.getImageReceiver();
+                    lu0Var.a = imageReceiver;
+                    if (j10 == 0) {
+                        j10 = -koVar.w0;
+                    }
+                    lu0Var.f = j10;
+                    lu0Var.e = imageReceiver.getBitmapSafe();
+                    lu0Var.g = -1L;
+                    lu0Var.h = koVar.e.getImageReceiver().getRoundRadius(true);
+                    lu0Var.k = koVar.d.getScaleX();
+                    lu0Var.p = true;
+                }
             } else {
-                int k10 = i0.a.k(wallPaperSettings.background_color, 255);
-                int k11 = i0.a.k(wallPaper.settings.second_background_color, 255);
-                int k12 = i0.a.k(wallPaper.settings.third_background_color, 255);
-                int i10 = wallPaper.settings.fourth_background_color;
-                r2 = i10 != 0 ? i0.a.k(i10, 255) : 0;
-                org.telegram.ui.Components.cd0 cd0Var = new org.telegram.ui.Components.cd0();
-                cd0Var.n(k10, k11, k12, r2);
-                a2 = new BitmapDrawable(cd0Var.k);
+                TLRPC.Chat chat = koVar.getMessagesController().getChat(Long.valueOf(koVar.w0));
+                if (chat != null) {
+                    TLRPC.ChatPhoto chatPhoto = chat.photo;
+                    if (chatPhoto != null) {
+                        fileLocation2 = chatPhoto.photo_big;
+                    }
+                }
+                fileLocation2 = null;
+                if (fileLocation2 != null) {
+                    int[] iArr2 = new int[2];
+                    koVar.e.getLocationInWindow(iArr2);
+                    lu0Var = new lu0();
+                    lu0Var.b = iArr2[0];
+                    lu0Var.c = iArr2[1];
+                    ci.k4 k4Var2 = koVar.e;
+                    lu0Var.d = k4Var2;
+                    ImageReceiver imageReceiver2 = k4Var2.getImageReceiver();
+                    lu0Var.a = imageReceiver2;
+                    if (j10 == 0) {
+                    }
+                    lu0Var.f = j10;
+                    lu0Var.e = imageReceiver2.getBitmapSafe();
+                    lu0Var.g = -1L;
+                    lu0Var.h = koVar.e.getImageReceiver().getRoundRadius(true);
+                    lu0Var.k = koVar.d.getScaleX();
+                    lu0Var.p = true;
+                }
             }
         }
-        wallPaper.thumbDrawable = a2;
-        return a2;
+        return lu0Var;
     }
 
-    public static io d(Drawable drawable, TLRPC.WallPaper wallPaper, boolean z10) {
-        TLRPC.WallPaperSettings wallPaperSettings;
-        TLRPC.WallPaperSettings wallPaperSettings2;
-        if (drawable instanceof io) {
-            io ioVar = (io) drawable;
-            boolean z11 = ioVar.a;
-            TLRPC.WallPaper wallPaper2 = ioVar.g;
-            String str = wallPaper.uploadingImage;
-            if (str == null ? !(wallPaper.id != wallPaper2.id || !TextUtils.equals(e(wallPaper.settings), e(wallPaper2.settings)) || (wallPaper.document != null && !wallPaper.pattern && (wallPaperSettings = wallPaper.settings) != null && wallPaperSettings.intensity > 0 && z11 != z10)) : !(!str.equals(wallPaper2.uploadingImage) || ((wallPaperSettings2 = wallPaper.settings) != null && wallPaper2.settings != null && wallPaperSettings2.intensity > 0 && z11 != z10))) {
-                return ioVar;
-            }
-        }
-        return new io(wallPaper, z10, false);
+    @Override // org.telegram.ui.bu0, org.telegram.ui.ju0
+    public final void G() {
+        this.a.e.getImageReceiver().setVisible(true, true);
     }
 
-    public static String e(TLRPC.WallPaperSettings wallPaperSettings) {
-        return wallPaperSettings == null ? "" : String.valueOf(Objects.hash(Boolean.valueOf(wallPaperSettings.blur), Boolean.valueOf(wallPaperSettings.motion), Integer.valueOf(wallPaperSettings.intensity), Integer.valueOf(wallPaperSettings.background_color), Integer.valueOf(wallPaperSettings.second_background_color), Integer.valueOf(wallPaperSettings.third_background_color), Integer.valueOf(wallPaperSettings.fourth_background_color)));
+    @Override // org.telegram.ui.bu0, org.telegram.ui.ju0
+    public final boolean N() {
+        ko koVar = this.a;
+        long j10 = koVar.C0;
+        if (j10 == 0) {
+            return true;
+        }
+        TLRPC.TL_photos_updateProfilePhoto tL_photos_updateProfilePhoto = new TLRPC.TL_photos_updateProfilePhoto();
+        tL_photos_updateProfilePhoto.bot = koVar.getMessagesController().getInputUser(j10);
+        tL_photos_updateProfilePhoto.flags |= 2;
+        tL_photos_updateProfilePhoto.id = new TLRPC.TL_inputPhotoEmpty();
+        koVar.getConnectionsManager().sendRequest(tL_photos_updateProfilePhoto, new m(this, 2));
+        return false;
     }
 
-    public final Drawable c(boolean z10) {
-        org.telegram.ui.Components.cd0 cd0Var = this.f;
-        if (cd0Var != null) {
-            return cd0Var;
-        }
-        bi.b4 b4Var = this.e;
-        return (!z10 || b4Var.getStaticThumb() == null) ? b4Var.getThumb() != null ? b4Var.getThumb() : b4Var.getDrawable() != null ? b4Var.getDrawable() : b4Var.getStaticThumb() : b4Var.getStaticThumb();
+    @Override // org.telegram.ui.bu0, org.telegram.ui.ju0
+    public final void f(String str, String str2, boolean z10) {
+        this.a.s.p(str, str2, z10);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        org.telegram.ui.Components.cd0 cd0Var = this.f;
-        if (cd0Var != null) {
-            cd0Var.setBounds(getBounds());
-            cd0Var.setAlpha(this.c);
-            cd0Var.draw(canvas);
-            return;
-        }
-        bi.b4 b4Var = this.e;
-        boolean hasImageLoaded = b4Var.hasImageLoaded();
-        float f7 = this.d;
-        boolean z10 = true;
-        if (hasImageLoaded && b4Var.getCurrentAlpha() == 1.0f) {
-            if (!this.h) {
-                this.h = true;
-                b4Var.setColorFilter(new PorterDuffColorFilter(i0.a.k(-16777216, (int) (f7 * 255.0f)), PorterDuff.Mode.DARKEN));
-            }
-            z10 = false;
-        }
-        b4Var.setImageCoords(getBounds());
-        b4Var.setAlpha(this.c / 255.0f);
-        b4Var.draw(canvas);
-        if (!z10 || f7 == 0.0f) {
-            return;
-        }
-        canvas.drawColor(i0.a.k(-16777216, (int) (f7 * 255.0f)));
+    @Override // org.telegram.ui.bu0, org.telegram.ui.ju0
+    public final boolean t() {
+        return false;
     }
 
-    public final void f(View view) {
-        ArrayList arrayList = this.j;
-        if (!arrayList.contains(view)) {
-            arrayList.add(view);
-        }
-        int size = arrayList.size();
-        bi.b4 b4Var = this.e;
-        if (size > 0 && !this.i) {
-            this.i = true;
-            b4Var.onAttachedToWindow();
-        } else if (arrayList.size() <= 0 && this.i) {
-            this.i = false;
-            b4Var.onDetachedFromWindow();
-        }
-        org.telegram.ui.Components.cd0 cd0Var = this.f;
-        if (cd0Var != null) {
-            cd0Var.k();
-        }
-    }
-
-    public final void g(View view) {
-        ArrayList arrayList = this.j;
-        if (!arrayList.contains(view)) {
-            arrayList.remove(view);
-        }
-        int size = arrayList.size();
-        bi.b4 b4Var = this.e;
-        if (size > 0 && !this.i) {
-            this.i = true;
-            b4Var.onAttachedToWindow();
-        } else if (arrayList.size() <= 0 && this.i) {
-            this.i = false;
-            b4Var.onDetachedFromWindow();
-        }
-        org.telegram.ui.Components.cd0 cd0Var = this.f;
-        if (cd0Var != null) {
-            cd0Var.l();
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return 0;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        if (this.c != i10) {
-            this.c = i10;
-            invalidateSelf();
-        }
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
+    @Override // org.telegram.ui.bu0, org.telegram.ui.ju0
+    public final int y() {
+        return 1;
     }
 }

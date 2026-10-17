@@ -1,6 +1,6 @@
 package f3;
 
-import c3.d0;
+import c3.e0;
 import c3.l;
 import c3.o;
 import c3.p;
@@ -12,23 +12,23 @@ import e9.n0;
 import e9.x1;
 import java.util.List;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class a implements o {
     public final /* synthetic */ int a;
     public final x b;
-    public final d0 c;
+    public final e0 c;
 
     public a(int i10) {
         this.a = i10;
         switch (i10) {
             case 1:
                 this.b = new x(4);
-                this.c = new d0(-1, -1, "image/webp");
+                this.c = new e0(-1, -1, "image/webp");
                 break;
             default:
                 this.b = new x(4);
-                this.c = new d0(-1, -1, "image/avif");
+                this.c = new e0(-1, -1, "image/avif");
                 break;
         }
     }

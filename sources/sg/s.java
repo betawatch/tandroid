@@ -13,15 +13,15 @@ import android.text.SpannableStringBuilder;
 import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.view.View;
-import di.d4;
+import ei.x3;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.h6;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.z5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class s extends View {
     public final Path a;
@@ -103,7 +103,7 @@ public final class s extends View {
         Paint paint = limitPreviewView.K;
         if (limitPreviewView.J) {
             measuredHeight = getMeasuredHeight();
-            b1 d = b1.d();
+            a1 d = a1.d();
             int measuredWidth = limitPreviewView.getMeasuredWidth();
             int measuredHeight2 = limitPreviewView.getMeasuredHeight();
             globalXOffset2 = limitPreviewView.getGlobalXOffset();
@@ -111,18 +111,18 @@ public final class s extends View {
             RectF rectF = AndroidUtilities.rectTmp;
             rectF.set(0.0f, AndroidUtilities.dp(3.0f), getMeasuredWidth(), measuredHeight - AndroidUtilities.dp(3.0f));
             float f7 = measuredHeight / 2.0f;
-            b1 d10 = b1.d();
+            a1 d10 = a1.d();
             if (d10.c == null) {
                 d10.c = new Paint(1);
             }
-            d10.c.setColor(g6.x0(null, g6.Oh, false));
+            d10.c.setColor(h6.x0(null, h6.Oh, false));
             canvas.drawRoundRect(rectF, f7, f7, d10.c);
         } else {
             if (this.v) {
                 this.v = false;
                 b();
             }
-            b1 d11 = b1.d();
+            a1 d11 = a1.d();
             int measuredWidth2 = limitPreviewView.getMeasuredWidth();
             int measuredHeight3 = limitPreviewView.getMeasuredHeight();
             globalXOffset = limitPreviewView.getGlobalXOffset();
@@ -133,18 +133,18 @@ public final class s extends View {
             float f11 = f10 / 2.0f;
             boolean z10 = limitPreviewView.R;
             TextPaint textPaint = this.c;
-            canvas.drawRoundRect(rectF2, f11, f11, z10 ? paint : limitPreviewView.e0 != null ? textPaint : b1.d().e());
-            Paint e = b1.d().e();
+            canvas.drawRoundRect(rectF2, f11, f11, z10 ? paint : limitPreviewView.e0 != null ? textPaint : a1.d().e());
+            Paint e = a1.d().e();
             CornerPathEffect cornerPathEffect = this.b;
             e.setPathEffect(cornerPathEffect);
             if (limitPreviewView.e0 != null) {
                 textPaint.setPathEffect(cornerPathEffect);
             }
             if (!limitPreviewView.R) {
-                paint = limitPreviewView.e0 != null ? textPaint : b1.d().e();
+                paint = limitPreviewView.e0 != null ? textPaint : a1.d().e();
             }
             canvas.drawPath(this.a, paint);
-            b1.d().e().setPathEffect(null);
+            a1.d().e().setPathEffect(null);
             if (limitPreviewView.e0 != null) {
                 textPaint.setPathEffect(null);
             }
@@ -218,7 +218,7 @@ public final class s extends View {
     public final void onMeasure(int i10, int i11) {
         SpannableStringBuilder spannableStringBuilder = this.f;
         TextPaint textPaint = this.c;
-        this.e = d4.g(spannableStringBuilder, textPaint);
+        this.e = x3.g(spannableStringBuilder, textPaint);
         this.d = new StaticLayout(this.f, textPaint, AndroidUtilities.dp(12.0f) + ((int) this.e), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         this.e = 0.0f;
         for (int i12 = 0; i12 < this.d.getLineCount(); i12++) {

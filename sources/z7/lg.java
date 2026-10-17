@@ -1,51 +1,39 @@
 package z7;
 
-import java.util.Map;
-import java.util.Set;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public abstract class lg implements k {
-    public transient ed a;
-    public transient e9.e b;
+public final class lg extends o6.a {
+    public static final Parcelable.Creator<lg> CREATOR = new eg(3);
+    public final boolean a;
+    public final boolean b;
+    public final boolean c;
+    public final boolean d;
+    public final boolean e;
 
-    public final Map a() {
-        e9.e eVar = this.b;
-        if (eVar != null) {
-            return eVar;
-        }
-        mg mgVar = (mg) this;
-        e9.e eVar2 = new e9.e(mgVar, mgVar.c, 2);
-        this.b = eVar2;
-        return eVar2;
+    public lg(boolean z10, boolean z11, boolean z12, boolean z13, boolean z14) {
+        this.a = z10;
+        this.b = z11;
+        this.c = z12;
+        this.d = z13;
+        this.e = z14;
     }
 
-    public final Set b() {
-        ed edVar = this.a;
-        if (edVar != null) {
-            return edVar;
-        }
-        mg mgVar = (mg) this;
-        ed edVar2 = new ed(mgVar, mgVar.c);
-        this.a = edVar2;
-        return edVar2;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (obj instanceof k) {
-            return a().equals(((lg) ((k) obj)).a());
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return ((e9.e) a()).b.hashCode();
-    }
-
-    public final String toString() {
-        return ((e9.e) a()).b.toString();
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = w7.f0.q(parcel, 20293);
+        w7.f0.s(parcel, 1, 4);
+        parcel.writeInt(this.a ? 1 : 0);
+        w7.f0.s(parcel, 2, 4);
+        parcel.writeInt(this.b ? 1 : 0);
+        w7.f0.s(parcel, 3, 4);
+        parcel.writeInt(this.c ? 1 : 0);
+        w7.f0.s(parcel, 4, 4);
+        parcel.writeInt(this.d ? 1 : 0);
+        w7.f0.s(parcel, 5, 4);
+        parcel.writeInt(this.e ? 1 : 0);
+        w7.f0.r(parcel, q6);
     }
 }

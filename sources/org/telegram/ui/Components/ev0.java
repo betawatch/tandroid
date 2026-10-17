@@ -1,120 +1,60 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import java.util.Calendar;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class ev0 extends lm0 {
-    public final Context c;
-    public final int d;
-    public final org.telegram.ui.ActionBar.c6 e;
-    public final cv0 f;
-    public final ArrayList h = new ArrayList(10);
-    public final ArrayList n = new ArrayList();
-    public pu0 r;
-    public final /* synthetic */ xv0 s;
+public abstract class ev0 extends ScrollSlidingTextTabStrip {
+    public Paint p0;
+    public int q0;
+    public final Rect r0;
+    public final /* synthetic */ sv0 s0;
 
-    public ev0(xv0 xv0Var, Context context, int i10, org.telegram.ui.ActionBar.c6 c6Var) {
-        this.s = xv0Var;
-        this.c = context;
-        this.d = i10;
-        this.e = c6Var;
-        this.f = new cv0(this, i10, c6Var);
-        E();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ev0(sv0 sv0Var, Context context, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(context, d6Var);
+        this.s0 = sv0Var;
+        this.q0 = 0;
+        this.r0 = new Rect();
     }
 
-    @Override // org.telegram.ui.Components.lm0
-    public final boolean D(s4.b1 b1Var) {
-        return false;
-    }
-
-    public final void E() {
-        ArrayList arrayList = this.n;
-        arrayList.clear();
-        ArrayList c10 = this.s.t1[8].c();
-        int i10 = 0;
-        for (int i11 = 0; i11 < c10.size(); i11++) {
-            MessageObject messageObject = (MessageObject) c10.get(i11);
-            if (messageObject.dateKeyInt != i10) {
-                int i12 = messageObject.messageOwner.date;
-                TLRPC.TL_message tL_message = new TLRPC.TL_message();
-                long j10 = i12;
-                tL_message.message = LocaleController.formatDateChat(j10);
-                tL_message.id = 0;
-                Calendar calendar = Calendar.getInstance();
-                calendar.setTimeInMillis(j10 * 1000);
-                calendar.set(11, 0);
-                calendar.set(12, 0);
-                calendar.set(13, 0);
-                calendar.set(14, 0);
-                tL_message.date = (int) (calendar.getTimeInMillis() / 1000);
-                MessageObject messageObject2 = new MessageObject(this.d, tL_message, false, false);
-                messageObject2.type = 10;
-                messageObject2.contentType = 1;
-                messageObject2.isDateObject = true;
-                arrayList.add(messageObject2);
-                i10 = messageObject.dateKeyInt;
+    @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        if (this.q0 != 0) {
+            if (this.p0 == null) {
+                this.p0 = new Paint();
             }
-            arrayList.add(messageObject);
-        }
-    }
-
-    @Override // s4.g0
-    public final int h() {
-        return this.n.size();
-    }
-
-    @Override // s4.g0
-    public final int j(int i10) {
-        if (i10 < 0) {
-            return 0;
-        }
-        ArrayList arrayList = this.n;
-        if (i10 >= arrayList.size()) {
-            return 0;
-        }
-        return ((MessageObject) arrayList.get(i10)).contentType;
-    }
-
-    @Override // s4.g0
-    public final void l() {
-        E();
-        super.l();
-    }
-
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
-        if (i10 >= 0) {
-            ArrayList arrayList = this.n;
-            if (i10 >= arrayList.size()) {
-                return;
-            }
-            MessageObject messageObject = (MessageObject) arrayList.get(i10);
-            int i11 = b1Var.f;
-            View view = b1Var.a;
-            if (i11 == 0) {
-                ((org.telegram.ui.Cells.u1) view).X3(messageObject, null, false, false, false, false);
+            this.p0.setColor(this.q0);
+            int measuredWidth = getMeasuredWidth();
+            int measuredHeight = getMeasuredHeight();
+            Rect rect = this.r0;
+            rect.set(0, 0, measuredWidth, measuredHeight);
+            canvas.save();
+            canvas.translate(getScrollX(), 0.0f);
+            canvas.clipPath(this.f0);
+            if (SharedConfig.chatBlurEnabled()) {
+                this.s0.P(canvas, getY(), rect, this.p0);
             } else {
-                ((org.telegram.ui.Cells.w0) view).setMessageObject(messageObject);
+                canvas.drawPaint(this.p0);
             }
+            canvas.translate(-getScrollX(), 0.0f);
+            canvas.restore();
         }
+        super.dispatchDraw(canvas);
     }
 
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        if (i10 != 0) {
-            return new wl0(new org.telegram.ui.Cells.w0(this.c, this.e, false));
-        }
-        org.telegram.ui.ActionBar.c6 c6Var = this.e;
-        dv0 dv0Var = new dv0(this.c, this.d, false, null, c6Var);
-        dv0Var.setDelegate(this.f);
-        return new wl0(dv0Var);
+    @Override // org.telegram.ui.Components.ScrollSlidingTextTabStrip
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
+    }
+
+    @Override // android.view.View
+    public void setBackgroundColor(int i10) {
+        this.q0 = i10;
+        invalidate();
     }
 }

@@ -1,29 +1,28 @@
 package sc;
 
-import com.google.android.gms.internal.play_billing.k3;
-import com.google.firebase.messaging.s;
+import com.google.android.gms.internal.cast.a6;
+import com.google.firebase.messaging.r;
 import com.googlecode.mp4parser.g;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
-import ji.w4;
 import nc.c;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class a extends com.googlecode.mp4parser.a {
-    public static final /* synthetic */ w4 b;
-    public static final /* synthetic */ w4 c;
-    public static final /* synthetic */ w4 d;
-    public static final /* synthetic */ w4 e;
-    public static final /* synthetic */ w4 f;
-    public static final /* synthetic */ w4 h;
-    public static final /* synthetic */ w4 n;
-    public static final /* synthetic */ w4 r;
-    public static final /* synthetic */ w4 s;
-    public static final /* synthetic */ w4 v;
-    public static final /* synthetic */ w4 w;
-    public static final /* synthetic */ w4 x;
-    public static final /* synthetic */ w4 y;
+    public static final /* synthetic */ le.b b;
+    public static final /* synthetic */ le.b c;
+    public static final /* synthetic */ le.b d;
+    public static final /* synthetic */ le.b e;
+    public static final /* synthetic */ le.b f;
+    public static final /* synthetic */ le.b h;
+    public static final /* synthetic */ le.b n;
+    public static final /* synthetic */ le.b r;
+    public static final /* synthetic */ le.b s;
+    public static final /* synthetic */ le.b v;
+    public static final /* synthetic */ le.b w;
+    public static final /* synthetic */ le.b x;
+    public static final /* synthetic */ le.b y;
     public b a;
 
     static {
@@ -122,18 +121,18 @@ public final class a extends com.googlecode.mp4parser.a {
     }
 
     public final void d(int i10) {
-        k3.p(te.a.c(e, this, this, new Integer(i10)));
+        a6.p(te.a.c(e, this, this, new Integer(i10)));
         this.a.d = i10;
     }
 
     public final void e(int i10) {
-        k3.p(te.a.c(c, this, this, new Integer(i10)));
+        a6.p(te.a.c(c, this, this, new Integer(i10)));
         this.a.b = i10;
     }
 
     @Override // com.googlecode.mp4parser.a
     public final void getContent(ByteBuffer byteBuffer) {
-        k3.p(te.a.c(x, this, this, byteBuffer));
+        a6.p(te.a.c(x, this, this, byteBuffer));
         b bVar = this.a;
         e5.b.r(bVar.a, byteBuffer);
         byteBuffer.put((byte) (bVar.b & 255));
@@ -192,7 +191,7 @@ public final class a extends com.googlecode.mp4parser.a {
     @Override // com.googlecode.mp4parser.a
     public final long getContentSize() {
         int i10;
-        k3.p(te.a.b(w, this, this));
+        a6.p(te.a.b(w, this, this));
         b bVar = this.a;
         ArrayList arrayList = bVar.f;
         int size = arrayList.size();
@@ -228,7 +227,7 @@ public final class a extends com.googlecode.mp4parser.a {
     }
 
     public final String toString() {
-        s b10 = te.a.b(y, this, this);
+        r b10 = te.a.b(y, this, this);
         g.a().getClass();
         g.b(b10);
         return "AvcConfigurationBox{avcDecoderConfigurationRecord=" + this.a + '}';

@@ -1,52 +1,26 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.Path;
+import android.animation.ValueAnimator;
+import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class c51 extends FrameLayout implements org.telegram.ui.ActionBar.x5 {
-    public final Path a;
-    public dh.d b;
+public final class c51 extends FrameLayout {
+    public FrameLayout a;
+    public org.telegram.ui.Cells.t3 b;
+    public sg.p0 c;
+    public String d;
+    public ValueAnimator e;
+    public float f;
+    public Boolean h;
+    public ValueAnimator n;
 
-    public c51(Activity activity) {
-        super(activity);
-        this.a = new Path();
-    }
-
-    @Override // org.telegram.ui.ActionBar.x5
-    public final void d() {
-        dh.d dVar = this.b;
-        if (dVar != null) {
-            dVar.v();
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        canvas.save();
-        canvas.clipPath(this.a);
-        super.dispatchDraw(canvas);
-        canvas.restore();
-    }
-
-    public /* bridge */ /* synthetic */ int[] getColorKeys() {
-        return null;
-    }
-
-    @Override // android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        super.onSizeChanged(i10, i11, i12, i13);
-        Path path = this.a;
-        path.rewind();
-        path.addRoundRect(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), i10 - AndroidUtilities.dp(9.0f), i11 - AndroidUtilities.dp(9.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), Path.Direction.CW);
-    }
-
-    public void setBlurredBackground(dh.d dVar) {
-        this.b = dVar;
-        setBackground(dVar);
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        setPadding(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(8.0f));
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(getPaddingBottom() + getPaddingTop() + AndroidUtilities.dp(44.0f), TLObject.FLAG_30));
     }
 }

@@ -8,7 +8,7 @@ import e9.x1;
 import java.util.List;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class z implements c3.o {
     public boolean e;
@@ -178,11 +178,11 @@ public final class z implements c3.o {
                 i11 = 4;
                 h3.a aVar = new h3.a(new t7.u(3), new n4.s(xVar.b), j16, j16 + 1, 0L, length, 188L, MediaDataController.MAX_STYLE_RUNS_COUNT);
                 this.i = aVar;
-                this.j.K(aVar.a);
+                this.j.g0(aVar.a);
             } else {
                 i10 = i12;
                 i11 = 4;
-                this.j.K(new c3.t(j16));
+                this.j.g0(new c3.t(j16));
             }
         }
         h3.a aVar2 = this.i;
@@ -247,7 +247,7 @@ public final class z implements c3.o {
             }
             if (pVar.getPosition() > ((this.f && this.g) ? this.h + 8192 : 1048576L)) {
                 this.e = true;
-                this.j.D();
+                this.j.H();
             }
         }
         pVar.b(0, 2, xVar3.a);

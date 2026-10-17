@@ -1,80 +1,89 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import org.telegram.messenger.AccountInstance;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m80 implements RequestDelegate {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object g;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object i;
+public final class m80 extends FrameLayout {
+    public final /* synthetic */ r80 a;
 
-    public /* synthetic */ m80(Context context, bi.s0 s0Var, long j10, byte[] bArr, org.telegram.messenger.video.a aVar, zc zcVar, org.telegram.messenger.video.d dVar, int i10) {
-        this.b = context;
-        this.e = s0Var;
-        this.c = j10;
-        this.f = bArr;
-        this.g = aVar;
-        this.h = zcVar;
-        this.i = dVar;
-        this.d = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public m80(r80 r80Var, Context context) {
+        super(context);
+        this.a = r80Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new fi.f1((org.telegram.ui.ActionBar.a2) this.e, tLObject, (AccountInstance) this.f, (t80) this.g, this.c, this.b, (org.telegram.ui.ActionBar.m2) this.h, this.d, (TLRPC.Peer) this.i));
-                break;
-            default:
-                bi.s0 s0Var = (bi.s0) this.e;
-                byte[] bArr = (byte[]) this.f;
-                org.telegram.messenger.video.a aVar = (org.telegram.messenger.video.a) this.g;
-                zc zcVar = (zc) this.h;
-                org.telegram.messenger.video.d dVar = (org.telegram.messenger.video.d) this.i;
-                Context context = this.b;
-                if (tLObject == null) {
-                    if (tL_error != null && "AD_EXPIRED".equalsIgnoreCase(tL_error.text)) {
-                        AndroidUtilities.runOnUIThread(new org.telegram.ui.x31(aVar, zcVar, context, s0Var, 1), 200L);
-                        break;
-                    }
-                } else if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultChooseOption)) {
-                    if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultReported)) {
-                        if (tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultAdsHidden) {
-                            AndroidUtilities.runOnUIThread(new org.telegram.ui.c90(aVar, zcVar, this.d, 10), 200L);
-                            break;
-                        }
-                    } else {
-                        AndroidUtilities.runOnUIThread(new org.telegram.ui.x31(aVar, zcVar, context, s0Var, 0), 200L);
-                        break;
-                    }
-                } else {
-                    AndroidUtilities.runOnUIThread(new org.telegram.ui.iw(tLObject, context, s0Var, this.c, bArr, aVar, zcVar, dVar));
-                    break;
-                }
-                break;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i10;
+        r80 r80Var = this.a;
+        Drawable drawable = r80Var.b;
+        int i11 = r80Var.r;
+        i10 = ((org.telegram.ui.ActionBar.f3) r80Var).backgroundPaddingTop;
+        drawable.setBounds(0, i11 - i10, getMeasuredWidth(), getMeasuredHeight());
+        drawable.draw(canvas);
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() == 0) {
+            r80 r80Var = this.a;
+            if (r80Var.r != 0 && motionEvent.getY() < r80Var.r) {
+                r80Var.dismiss();
+                return true;
+            }
         }
+        return super.onInterceptTouchEvent(motionEvent);
     }
 
-    public /* synthetic */ m80(org.telegram.ui.ActionBar.a2 a2Var, AccountInstance accountInstance, t80 t80Var, long j10, Context context, org.telegram.ui.ActionBar.m2 m2Var, int i10, TLRPC.Peer peer) {
-        this.e = a2Var;
-        this.f = accountInstance;
-        this.g = t80Var;
-        this.c = j10;
-        this.b = context;
-        this.h = m2Var;
-        this.d = i10;
-        this.i = peer;
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        r80.p(this.a);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int i12;
+        int size = View.MeasureSpec.getSize(i11) - AndroidUtilities.statusBarHeight;
+        r80 r80Var = this.a;
+        TextView textView = r80Var.f;
+        measureChildWithMargins(textView, i10, 0, i11, 0);
+        int measuredHeight = textView.getMeasuredHeight();
+        n80 n80Var = r80Var.d;
+        ((FrameLayout.LayoutParams) n80Var.getLayoutParams()).topMargin = AndroidUtilities.dp(65.0f) + measuredHeight;
+        getMeasuredWidth();
+        int D = org.telegram.messenger.q.D(58.0f, r80Var.h.size(), AndroidUtilities.dp(80.0f));
+        i12 = ((org.telegram.ui.ActionBar.f3) r80Var).backgroundPaddingTop;
+        int C = org.telegram.messenger.q.C(55.0f, i12 + D, measuredHeight);
+        int i13 = size / 5;
+        int i14 = C < i13 * 3 ? size - C : i13 * 2;
+        if (n80Var.getPaddingTop() != i14) {
+            r80Var.n = true;
+            n80Var.setPadding(0, i14, 0, 0);
+            r80Var.n = false;
+        }
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        return !this.a.isDismissed() && super.onTouchEvent(motionEvent);
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.a.n) {
+            return;
+        }
+        super.requestLayout();
     }
 }

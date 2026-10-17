@@ -1,6 +1,55 @@
 package m;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+import android.R;
+import android.graphics.PorterDuff;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public interface m1 {
+public abstract class m1 {
+    public static final int[] a = {R.attr.state_checked};
+    public static final int[] b = new int[0];
+
+    static {
+        new Rect();
+    }
+
+    public static void a(Drawable drawable) {
+        String name = drawable.getClass().getName();
+        int i10 = Build.VERSION.SDK_INT;
+        if (i10 < 29 || i10 >= 31 || !"android.graphics.drawable.ColorStateListDrawable".equals(name)) {
+            return;
+        }
+        int[] state = drawable.getState();
+        if (state == null || state.length == 0) {
+            drawable.setState(a);
+        } else {
+            drawable.setState(b);
+        }
+        drawable.setState(state);
+    }
+
+    public static PorterDuff.Mode b(int i10, PorterDuff.Mode mode) {
+        if (i10 == 3) {
+            return PorterDuff.Mode.SRC_OVER;
+        }
+        if (i10 == 5) {
+            return PorterDuff.Mode.SRC_IN;
+        }
+        if (i10 == 9) {
+            return PorterDuff.Mode.SRC_ATOP;
+        }
+        switch (i10) {
+            case 14:
+                return PorterDuff.Mode.MULTIPLY;
+            case 15:
+                return PorterDuff.Mode.SCREEN;
+            case 16:
+                return PorterDuff.Mode.ADD;
+            default:
+                return mode;
+        }
+    }
 }

@@ -1,47 +1,72 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class ut0 implements org.telegram.ui.Cells.m7 {
-    public final /* synthetic */ xv0 a;
+public final class ut0 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e1 b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.e1 c;
+    public final /* synthetic */ wt0 d;
 
-    public ut0(xv0 xv0Var) {
-        this.a = xv0Var;
+    public /* synthetic */ ut0(wt0 wt0Var, org.telegram.ui.ActionBar.e1 e1Var, org.telegram.ui.ActionBar.e1 e1Var2, int i10) {
+        this.a = i10;
+        this.d = wt0Var;
+        this.b = e1Var;
+        this.c = e1Var2;
     }
 
-    @Override // org.telegram.ui.Cells.m7
-    public final void a(String str, boolean z10) {
-        xv0 xv0Var = this.a;
-        org.telegram.ui.ActionBar.m2 m2Var = xv0Var.v1;
-        if (!z10) {
-            xv0Var.S0(str);
-            return;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                sv0 sv0Var = this.d.d;
+                if (!sv0Var.H1) {
+                    org.telegram.ui.ActionBar.e1 e1Var = this.b;
+                    boolean z10 = e1Var.getCheckView().a.q;
+                    org.telegram.ui.ActionBar.e1 e1Var2 = this.c;
+                    if (!z10 && e1Var2.getCheckView().a.q) {
+                        float f7 = -sv0Var.s1;
+                        sv0Var.s1 = f7;
+                        AndroidUtilities.shakeViewSpring(e1Var2, f7);
+                        break;
+                    } else {
+                        e1Var2.setChecked(!e1Var2.getCheckView().a.q);
+                        if (e1Var2.getCheckView().a.q && e1Var.getCheckView().a.q) {
+                            sv0Var.t1[0].q = 0;
+                        } else {
+                            sv0Var.t1[0].q = 2;
+                        }
+                        sv0.t(sv0Var);
+                        break;
+                    }
+                }
+                break;
+            default:
+                sv0 sv0Var2 = this.d.d;
+                if (!sv0Var2.H1) {
+                    org.telegram.ui.ActionBar.e1 e1Var3 = this.b;
+                    boolean z11 = e1Var3.getCheckView().a.q;
+                    org.telegram.ui.ActionBar.e1 e1Var4 = this.c;
+                    if (!z11 && e1Var4.getCheckView().a.q) {
+                        float f10 = -sv0Var2.s1;
+                        sv0Var2.s1 = f10;
+                        AndroidUtilities.shakeViewSpring(e1Var4, f10);
+                        break;
+                    } else {
+                        e1Var4.setChecked(!e1Var4.getCheckView().a.q);
+                        if (e1Var3.getCheckView().a.q && e1Var4.getCheckView().a.q) {
+                            sv0Var2.t1[0].q = 0;
+                        } else {
+                            sv0Var2.t1[0].q = 1;
+                        }
+                        sv0.t(sv0Var2);
+                        break;
+                    }
+                }
+                break;
         }
-        org.telegram.ui.ActionBar.e3 e3Var = new org.telegram.ui.ActionBar.e3(1, (Context) m2Var.getParentActivity(), (org.telegram.ui.ActionBar.c6) null, false);
-        e3Var.fixNavigationBar();
-        e3Var.title = str;
-        e3Var.bigTitle = false;
-        CharSequence[] charSequenceArr = {LocaleController.getString("Open", R.string.Open), LocaleController.getString("Copy", R.string.Copy)};
-        mg.j jVar = new mg.j(6, this, str);
-        e3Var.items = charSequenceArr;
-        e3Var.onClickListener = jVar;
-        m2Var.showDialog(e3Var);
-    }
-
-    @Override // org.telegram.ui.Cells.m7
-    public final void b(TLRPC.WebPage webPage, MessageObject messageObject) {
-        xv0 xv0Var = this.a;
-        hv.J(xv0Var.v1, messageObject, xv0Var.r1, webPage.site_name, webPage.description, webPage.url, webPage.embed_url, webPage.embed_width, webPage.embed_height, -1, false);
-    }
-
-    @Override // org.telegram.ui.Cells.m7
-    public final boolean c() {
-        return !this.a.C1;
     }
 }

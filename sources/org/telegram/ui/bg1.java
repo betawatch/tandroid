@@ -1,28 +1,49 @@
 package org.telegram.ui;
 
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class bg1 extends pg.a {
-    public final TLRPC.TL_forumTopic c;
+public final /* synthetic */ class bg1 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ UserInfoActivity b;
 
-    public bg1(int i10, TLRPC.TL_forumTopic tL_forumTopic) {
-        super(i10, true);
-        this.c = tL_forumTopic;
+    public /* synthetic */ bg1(UserInfoActivity userInfoActivity, int i10) {
+        this.a = i10;
+        this.b = userInfoActivity;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
+            case 0:
+                UserInfoActivity userInfoActivity = this.b;
+                userInfoActivity.J = (TL_account.TL_birthday) obj;
+                org.telegram.ui.Components.u61 u61Var = userInfoActivity.x;
+                if (u61Var != null) {
+                    u61Var.W2.N(true);
+                }
+                userInfoActivity.b0(true);
+                break;
+            default:
+                TLRPC.Chat chat = (TLRPC.Chat) obj;
+                UserInfoActivity userInfoActivity2 = this.b;
+                if (userInfoActivity2.K != chat) {
+                    userInfoActivity2.K = chat;
+                    if (chat != null) {
+                        org.telegram.messenger.q.q(R.string.EditProfileChannelSet, org.telegram.ui.Components.xc.a0(userInfoActivity2), R.raw.contact_check, 36);
+                    }
+                    userInfoActivity2.b0(true);
+                    org.telegram.ui.Components.u61 u61Var2 = userInfoActivity2.x;
+                    if (u61Var2 != null) {
+                        u61Var2.W2.N(true);
+                        break;
+                    }
+                }
+                break;
         }
-        if (obj != null && bg1.class == obj.getClass()) {
-            bg1 bg1Var = (bg1) obj;
-            int i10 = this.a;
-            if (i10 == bg1Var.a && i10 == 0 && this.c.id == bg1Var.c.id) {
-                return true;
-            }
-        }
-        return false;
     }
 }

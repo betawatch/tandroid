@@ -1,40 +1,21 @@
 package org.telegram.ui;
 
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class i30 implements Utilities.Callback2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ n60 b;
-
-    public /* synthetic */ i30(n60 n60Var, int i10) {
-        this.a = i10;
-        this.b = n60Var;
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        TLRPC.Updates updates = (TLRPC.Updates) obj;
-        switch (this.a) {
-            case 0:
-                n60 n60Var = this.b;
-                if (updates != null) {
-                    n60Var.d.getMessagesController().lambda$processUpdates$377(updates, false);
-                }
-                AndroidUtilities.runOnUIThread(new z20(n60Var, 10));
-                break;
-            default:
-                n60 n60Var2 = this.b;
-                if (updates == null) {
-                    n60Var2.getClass();
-                    break;
-                } else {
-                    n60Var2.d.getMessagesController().lambda$processUpdates$377(updates, false);
-                    break;
-                }
+public final class i30 extends s4.m0 {
+    @Override // s4.m0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.y0 y0Var) {
+        recyclerView.getClass();
+        RecyclerView.R(view);
+        if (s50.F3) {
+            rect.set(0, AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f));
+        } else {
+            rect.set(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
         }
     }
 }

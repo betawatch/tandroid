@@ -14,7 +14,7 @@ import android.util.Log;
 import android.util.SparseIntArray;
 import com.google.android.gms.common.api.GoogleApiActivity;
 import com.google.android.gms.common.api.Status;
-import com.google.android.gms.internal.play_billing.k3;
+import com.google.android.gms.internal.cast.a6;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
 import j$.util.concurrent.ConcurrentHashMap;
@@ -28,7 +28,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class h implements Handler.Callback {
     public static final Status E = new Status(4, "Sign-out occurred while this API call was in progress.", null, null);
@@ -41,7 +41,7 @@ public final class h implements Handler.Callback {
     public p6.b d;
     public final Context e;
     public final k6.d f;
-    public final m2.t h;
+    public final mi.q h;
     public final AtomicInteger n;
     public final AtomicInteger r;
     public final ConcurrentHashMap s;
@@ -64,7 +64,7 @@ public final class h implements Handler.Callback {
         com.google.android.gms.internal.cast.a0 a0Var = new com.google.android.gms.internal.cast.a0(looper, this);
         this.x = a0Var;
         this.f = dVar;
-        this.h = new m2.t((k6.e) dVar);
+        this.h = new mi.q((k6.e) dVar);
         PackageManager packageManager = context.getPackageManager();
         if (u6.b.e == null) {
             u6.b.e = Boolean.valueOf(u6.b.d() && packageManager.hasSystemFeature("android.hardware.type.automotive"));
@@ -91,7 +91,7 @@ public final class h implements Handler.Callback {
     }
 
     public static Status d(b bVar, k6.a aVar) {
-        return new Status(17, k3.k("API: ", bVar.b.c, " is not available on this device. Connection failed with: ", String.valueOf(aVar)), aVar.c, aVar);
+        return new Status(17, a6.k("API: ", bVar.b.c, " is not available on this device. Connection failed with: ", String.valueOf(aVar)), aVar.c, aVar);
     }
 
     public static h g(Context context) {
@@ -116,7 +116,7 @@ public final class h implements Handler.Callback {
         if (this.b) {
             return false;
         }
-        n6.n nVar = (n6.n) n6.m.b().a;
+        n6.n nVar = (n6.n) n6.m.a().a;
         if (nVar != null && !nVar.b) {
             return false;
         }
@@ -154,19 +154,19 @@ public final class h implements Handler.Callback {
         return false;
     }
 
-    public final p0 e(com.google.android.gms.common.api.j jVar) {
+    public final o0 e(com.google.android.gms.common.api.j jVar) {
         b bVar = jVar.e;
         ConcurrentHashMap concurrentHashMap = this.s;
-        p0 p0Var = (p0) concurrentHashMap.get(bVar);
-        if (p0Var == null) {
-            p0Var = new p0(this, jVar);
-            concurrentHashMap.put(bVar, p0Var);
+        o0 o0Var = (o0) concurrentHashMap.get(bVar);
+        if (o0Var == null) {
+            o0Var = new o0(this, jVar);
+            concurrentHashMap.put(bVar, o0Var);
         }
-        if (p0Var.b.p()) {
+        if (o0Var.b.p()) {
             this.w.add(bVar);
         }
-        p0Var.k();
-        return p0Var;
+        o0Var.k();
+        return o0Var;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:27:0x0067  */
@@ -175,27 +175,27 @@ public final class h implements Handler.Callback {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void f(TaskCompletionSource taskCompletionSource, int i10, com.google.android.gms.common.api.j jVar) {
-        y0 y0Var;
+        x0 x0Var;
         h hVar;
         if (i10 == 0) {
             return;
         }
         b bVar = jVar.e;
         if (b()) {
-            n6.n nVar = (n6.n) n6.m.b().a;
+            n6.n nVar = (n6.n) n6.m.a().a;
             boolean z10 = true;
             if (nVar != null) {
                 if (nVar.b) {
                     boolean z11 = nVar.c;
-                    p0 p0Var = (p0) this.s.get(bVar);
-                    if (p0Var != null) {
-                        com.google.android.gms.common.api.c cVar = p0Var.b;
+                    o0 o0Var = (o0) this.s.get(bVar);
+                    if (o0Var != null) {
+                        com.google.android.gms.common.api.c cVar = o0Var.b;
                         if (cVar instanceof n6.g) {
                             n6.g gVar = (n6.g) cVar;
-                            if (gVar.Q != null && !gVar.g()) {
-                                n6.e a2 = y0.a(p0Var, gVar, i10);
+                            if (gVar.Q != null && !gVar.f()) {
+                                n6.e a2 = x0.a(o0Var, gVar, i10);
                                 if (a2 != null) {
-                                    p0Var.n++;
+                                    o0Var.n++;
                                     z10 = a2.c;
                                 }
                             }
@@ -205,19 +205,19 @@ public final class h implements Handler.Callback {
                 }
             }
             hVar = this;
-            y0Var = new y0(hVar, i10, bVar, z10 ? System.currentTimeMillis() : 0L, z10 ? SystemClock.elapsedRealtime() : 0L);
-            if (y0Var == null) {
+            x0Var = new x0(hVar, i10, bVar, z10 ? System.currentTimeMillis() : 0L, z10 ? SystemClock.elapsedRealtime() : 0L);
+            if (x0Var == null) {
                 Task task = taskCompletionSource.getTask();
                 com.google.android.gms.internal.cast.a0 a0Var = hVar.x;
                 a0Var.getClass();
-                task.addOnCompleteListener(new androidx.biometric.o(a0Var, 2), y0Var);
+                task.addOnCompleteListener(new androidx.biometric.o(a0Var, 2), x0Var);
                 return;
             }
             return;
         }
-        y0Var = null;
+        x0Var = null;
         hVar = this;
-        if (y0Var == null) {
+        if (x0Var == null) {
         }
     }
 
@@ -235,7 +235,7 @@ public final class h implements Handler.Callback {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean handleMessage(Message message) {
-        p0 p0Var;
+        o0 o0Var;
         boolean z10;
         k6.c[] g10;
         int i10 = message.what;
@@ -256,28 +256,28 @@ public final class h implements Handler.Callback {
             case 2:
                 throw a1.g.i(message.obj);
             case 3:
-                for (p0 p0Var2 : concurrentHashMap.values()) {
-                    n6.l.d(p0Var2.o.x);
-                    p0Var2.m = null;
-                    p0Var2.k();
+                for (o0 o0Var2 : concurrentHashMap.values()) {
+                    n6.l.d(o0Var2.o.x);
+                    o0Var2.m = null;
+                    o0Var2.k();
                 }
                 return true;
             case 4:
             case 8:
             case 13:
-                a1 a1Var = (a1) message.obj;
-                com.google.android.gms.common.api.j jVar = a1Var.c;
-                k1 k1Var = a1Var.a;
-                p0 p0Var3 = (p0) concurrentHashMap.get(jVar.e);
-                if (p0Var3 == null) {
-                    p0Var3 = e(a1Var.c);
+                z0 z0Var = (z0) message.obj;
+                com.google.android.gms.common.api.j jVar = z0Var.c;
+                j1 j1Var = z0Var.a;
+                o0 o0Var3 = (o0) concurrentHashMap.get(jVar.e);
+                if (o0Var3 == null) {
+                    o0Var3 = e(z0Var.c);
                 }
-                if (!p0Var3.b.p() || this.r.get() == a1Var.b) {
-                    p0Var3.l(k1Var);
+                if (!o0Var3.b.p() || this.r.get() == z0Var.b) {
+                    o0Var3.l(j1Var);
                     return true;
                 }
-                k1Var.a(E);
-                p0Var3.o();
+                j1Var.a(E);
+                o0Var3.o();
                 return true;
             case 5:
                 int i11 = message.arg1;
@@ -285,31 +285,31 @@ public final class h implements Handler.Callback {
                 Iterator it2 = concurrentHashMap.values().iterator();
                 while (true) {
                     if (it2.hasNext()) {
-                        p0Var = (p0) it2.next();
-                        if (p0Var.i == i11) {
+                        o0Var = (o0) it2.next();
+                        if (o0Var.i == i11) {
                         }
                     } else {
-                        p0Var = null;
+                        o0Var = null;
                     }
                 }
-                if (p0Var == null) {
-                    Log.wtf("GoogleApiManager", i2.d.k(i11, "Could not find API instance ", " while trying to fail enqueued calls."), new Exception());
+                if (o0Var == null) {
+                    Log.wtf("GoogleApiManager", i0.a.k(i11, "Could not find API instance ", " while trying to fail enqueued calls."), new Exception());
                     return true;
                 }
                 int i12 = aVar.b;
                 if (i12 != 13) {
-                    p0Var.c(d(p0Var.c, aVar));
+                    o0Var.c(d(o0Var.c, aVar));
                     return true;
                 }
                 this.f.getClass();
                 AtomicBoolean atomicBoolean = k6.g.a;
-                p0Var.c(new Status(17, k3.k("Error resolution was canceled by the user, original error message: ", k6.a.d(i12), ": ", aVar.d), null, null));
+                o0Var.c(new Status(17, a6.k("Error resolution was canceled by the user, original error message: ", k6.a.d(i12), ": ", aVar.d), null, null));
                 return true;
             case 6:
                 if (context.getApplicationContext() instanceof Application) {
                     d.b((Application) context.getApplicationContext());
                     d dVar = d.e;
-                    dVar.a(new o0(this));
+                    dVar.a(new n0(this));
                     AtomicBoolean atomicBoolean2 = dVar.a;
                     AtomicBoolean atomicBoolean3 = dVar.b;
                     if (!atomicBoolean3.get()) {
@@ -337,10 +337,10 @@ public final class h implements Handler.Callback {
                 return true;
             case 9:
                 if (concurrentHashMap.containsKey(message.obj)) {
-                    p0 p0Var4 = (p0) concurrentHashMap.get(message.obj);
-                    n6.l.d(p0Var4.o.x);
-                    if (p0Var4.k) {
-                        p0Var4.k();
+                    o0 o0Var4 = (o0) concurrentHashMap.get(message.obj);
+                    n6.l.d(o0Var4.o.x);
+                    if (o0Var4.k) {
+                        o0Var4.k();
                         return true;
                     }
                 }
@@ -350,45 +350,45 @@ public final class h implements Handler.Callback {
                 gVar.getClass();
                 a0.b bVar = new a0.b(gVar);
                 while (bVar.hasNext()) {
-                    p0 p0Var5 = (p0) concurrentHashMap.remove((b) bVar.next());
-                    if (p0Var5 != null) {
-                        p0Var5.o();
+                    o0 o0Var5 = (o0) concurrentHashMap.remove((b) bVar.next());
+                    if (o0Var5 != null) {
+                        o0Var5.o();
                     }
                 }
                 gVar.clear();
                 return true;
             case 11:
                 if (concurrentHashMap.containsKey(message.obj)) {
-                    p0 p0Var6 = (p0) concurrentHashMap.get(message.obj);
-                    h hVar = p0Var6.o;
+                    o0 o0Var6 = (o0) concurrentHashMap.get(message.obj);
+                    h hVar = o0Var6.o;
                     n6.l.d(hVar.x);
-                    boolean z11 = p0Var6.k;
+                    boolean z11 = o0Var6.k;
                     if (z11) {
-                        b bVar2 = p0Var6.c;
-                        com.google.android.gms.internal.cast.a0 a0Var2 = p0Var6.o.x;
+                        b bVar2 = o0Var6.c;
+                        com.google.android.gms.internal.cast.a0 a0Var2 = o0Var6.o.x;
                         if (z11) {
                             a0Var2.removeMessages(11, bVar2);
                             a0Var2.removeMessages(9, bVar2);
-                            p0Var6.k = false;
+                            o0Var6.k = false;
                         }
-                        p0Var6.c(hVar.f.d(hVar.e, k6.e.a) == 18 ? new Status(21, "Connection timed out waiting for Google Play services update to complete.", null, null) : new Status(22, "API failed to connect while resuming due to an unknown error.", null, null));
-                        p0Var6.b.d("Timing out connection while resuming.");
+                        o0Var6.c(hVar.f.d(hVar.e, k6.e.a) == 18 ? new Status(21, "Connection timed out waiting for Google Play services update to complete.", null, null) : new Status(22, "API failed to connect while resuming due to an unknown error.", null, null));
+                        o0Var6.b.d("Timing out connection while resuming.");
                         return true;
                     }
                 }
                 return true;
             case 12:
                 if (concurrentHashMap.containsKey(message.obj)) {
-                    p0 p0Var7 = (p0) concurrentHashMap.get(message.obj);
-                    n6.l.d(p0Var7.o.x);
-                    com.google.android.gms.common.api.c cVar = p0Var7.b;
-                    if (cVar.j() && p0Var7.f.isEmpty()) {
-                        g1 g1Var = p0Var7.d;
-                        if (((Map) g1Var.a).isEmpty() && ((Map) g1Var.b).isEmpty()) {
+                    o0 o0Var7 = (o0) concurrentHashMap.get(message.obj);
+                    n6.l.d(o0Var7.o.x);
+                    com.google.android.gms.common.api.c cVar = o0Var7.b;
+                    if (cVar.j() && o0Var7.f.isEmpty()) {
+                        f1 f1Var = o0Var7.d;
+                        if (((Map) f1Var.a).isEmpty() && ((Map) f1Var.b).isEmpty()) {
                             cVar.d("Timing out service connection.");
                             return true;
                         }
-                        p0Var7.h();
+                        o0Var7.h();
                     }
                     return true;
                 }
@@ -396,33 +396,33 @@ public final class h implements Handler.Callback {
             case 14:
                 throw a1.g.i(message.obj);
             case 15:
-                q0 q0Var = (q0) message.obj;
-                if (concurrentHashMap.containsKey(q0Var.a)) {
-                    p0 p0Var8 = (p0) concurrentHashMap.get(q0Var.a);
-                    if (p0Var8.l.contains(q0Var) && !p0Var8.k) {
-                        if (p0Var8.b.j()) {
-                            p0Var8.e();
+                p0 p0Var = (p0) message.obj;
+                if (concurrentHashMap.containsKey(p0Var.a)) {
+                    o0 o0Var8 = (o0) concurrentHashMap.get(p0Var.a);
+                    if (o0Var8.l.contains(p0Var) && !o0Var8.k) {
+                        if (o0Var8.b.j()) {
+                            o0Var8.e();
                             return true;
                         }
-                        p0Var8.k();
+                        o0Var8.k();
                         return true;
                     }
                 }
                 return true;
             case 16:
-                q0 q0Var2 = (q0) message.obj;
-                if (concurrentHashMap.containsKey(q0Var2.a)) {
-                    p0 p0Var9 = (p0) concurrentHashMap.get(q0Var2.a);
-                    ArrayList arrayList = p0Var9.l;
-                    com.google.android.gms.internal.cast.a0 a0Var3 = p0Var9.o.x;
-                    LinkedList<k1> linkedList = p0Var9.a;
-                    if (arrayList.remove(q0Var2)) {
-                        a0Var3.removeMessages(15, q0Var2);
-                        a0Var3.removeMessages(16, q0Var2);
-                        k6.c cVar2 = q0Var2.b;
+                p0 p0Var2 = (p0) message.obj;
+                if (concurrentHashMap.containsKey(p0Var2.a)) {
+                    o0 o0Var9 = (o0) concurrentHashMap.get(p0Var2.a);
+                    ArrayList arrayList = o0Var9.l;
+                    com.google.android.gms.internal.cast.a0 a0Var3 = o0Var9.o.x;
+                    LinkedList<j1> linkedList = o0Var9.a;
+                    if (arrayList.remove(p0Var2)) {
+                        a0Var3.removeMessages(15, p0Var2);
+                        a0Var3.removeMessages(16, p0Var2);
+                        k6.c cVar2 = p0Var2.b;
                         ArrayList arrayList2 = new ArrayList(linkedList.size());
-                        for (k1 k1Var2 : linkedList) {
-                            if ((k1Var2 instanceof w0) && (g10 = ((w0) k1Var2).g(p0Var9)) != null) {
+                        for (j1 j1Var2 : linkedList) {
+                            if ((j1Var2 instanceof v0) && (g10 = ((v0) j1Var2).g(o0Var9)) != null) {
                                 int length = g10.length;
                                 int i13 = 0;
                                 while (true) {
@@ -432,16 +432,16 @@ public final class h implements Handler.Callback {
                                     if (!n6.l.l(g10[i13], cVar2)) {
                                         i13++;
                                     } else if (i13 >= 0) {
-                                        arrayList2.add(k1Var2);
+                                        arrayList2.add(j1Var2);
                                     }
                                 }
                             }
                         }
                         int size = arrayList2.size();
                         for (int i14 = 0; i14 < size; i14++) {
-                            k1 k1Var3 = (k1) arrayList2.get(i14);
-                            linkedList.remove(k1Var3);
-                            k1Var3.b(new com.google.android.gms.common.api.r(cVar2));
+                            j1 j1Var3 = (j1) arrayList2.get(i14);
+                            linkedList.remove(j1Var3);
+                            j1Var3.b(new com.google.android.gms.common.api.r(cVar2));
                         }
                     }
                 }
@@ -460,10 +460,10 @@ public final class h implements Handler.Callback {
                 }
                 return true;
             case 18:
-                z0 z0Var = (z0) message.obj;
-                long j10 = z0Var.c;
-                n6.j jVar2 = z0Var.a;
-                int i15 = z0Var.b;
+                y0 y0Var = (y0) message.obj;
+                long j10 = y0Var.c;
+                n6.j jVar2 = y0Var.a;
+                int i15 = y0Var.b;
                 if (j10 == 0) {
                     n6.o oVar2 = new n6.o(i15, Arrays.asList(jVar2));
                     if (this.d == null) {
@@ -475,7 +475,7 @@ public final class h implements Handler.Callback {
                 n6.o oVar3 = this.c;
                 if (oVar3 != null) {
                     List list = oVar3.b;
-                    if (oVar3.a != i15 || (list != null && list.size() >= z0Var.d)) {
+                    if (oVar3.a != i15 || (list != null && list.size() >= y0Var.d)) {
                         a0Var.removeMessages(17);
                         n6.o oVar4 = this.c;
                         if (oVar4 != null) {
@@ -499,7 +499,7 @@ public final class h implements Handler.Callback {
                     ArrayList arrayList3 = new ArrayList();
                     arrayList3.add(jVar2);
                     this.c = new n6.o(i15, arrayList3);
-                    a0Var.sendMessageDelayed(a0Var.obtainMessage(17), z0Var.c);
+                    a0Var.sendMessageDelayed(a0Var.obtainMessage(17), y0Var.c);
                     return true;
                 }
                 return true;

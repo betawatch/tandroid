@@ -1,26 +1,39 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.tgnet.TLRPC;
+import android.animation.ValueAnimator;
+import android.view.View;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class wi extends org.telegram.ui.Components.wo {
-    public final /* synthetic */ fo M;
+public final class wi implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public wi(fo foVar, Activity activity, int i10, TLRPC.Document document, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(activity, i10, document, c6Var);
-        this.M = foVar;
+    public /* synthetic */ wi(int i10, org.telegram.ui.ActionBar.n2 n2Var) {
+        this.a = i10;
+        this.b = n2Var;
     }
 
-    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
-        super.onLayout(z10, i10, i11, i12, i13);
-        float y3 = getY();
-        fo foVar = this.M;
-        float y10 = foVar.R0.getY() + y3;
-        this.J = foVar.X0.getBackgroundSizeY();
-        this.I = y10;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                sn snVar = (sn) this.b;
+                snVar.la = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                snVar.X0.invalidate();
+                break;
+            case 1:
+                ey eyVar = (ey) this.b;
+                eyVar.H0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                View view = eyVar.fragmentView;
+                if (view != null) {
+                    view.invalidate();
+                    break;
+                }
+                break;
+            default:
+                ((mc1) this.b).x0.setAlpha(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+        }
     }
 }

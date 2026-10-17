@@ -1,18 +1,18 @@
 package n3;
 
-import b2.r0;
-import b2.t0;
+import b2.q0;
+import b2.s0;
+import b2.v;
+import b2.v0;
 import b2.w;
-import b2.w0;
-import b2.x;
 import j$.util.Objects;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class a implements t0 {
-    public static final x g;
-    public static final x h;
+public final class a implements s0 {
+    public static final w g;
+    public static final w h;
     public final String a;
     public final String b;
     public final long c;
@@ -21,12 +21,12 @@ public final class a implements t0 {
     public int f;
 
     static {
-        w wVar = new w();
-        wVar.r = w0.n("application/id3");
-        g = new x(wVar);
-        w wVar2 = new w();
-        wVar2.r = w0.n("application/x-scte35");
-        h = new x(wVar2);
+        v vVar = new v();
+        vVar.r = v0.n("application/id3");
+        g = new w(vVar);
+        v vVar2 = new v();
+        vVar2.r = v0.n("application/x-scte35");
+        h = new w(vVar2);
     }
 
     public a(String str, String str2, long j10, long j11, byte[] bArr) {
@@ -37,8 +37,8 @@ public final class a implements t0 {
         this.e = bArr;
     }
 
-    @Override // b2.t0
-    public final x a() {
+    @Override // b2.s0
+    public final w a() {
         String str = this.a;
         str.getClass();
         switch (str) {
@@ -52,7 +52,7 @@ public final class a implements t0 {
         }
     }
 
-    @Override // b2.t0
+    @Override // b2.s0
     public final byte[] c() {
         if (a() != null) {
             return this.e;
@@ -91,7 +91,7 @@ public final class a implements t0 {
         return "EMSG: scheme=" + this.a + ", id=" + this.d + ", durationMs=" + this.c + ", value=" + this.b;
     }
 
-    @Override // b2.t0
-    public final /* synthetic */ void b(r0 r0Var) {
+    @Override // b2.s0
+    public final /* synthetic */ void b(q0 q0Var) {
     }
 }

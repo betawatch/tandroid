@@ -3,13 +3,12 @@ package com.google.firebase;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.os.Build;
-import b2.n0;
+import b2.m0;
 import com.google.firebase.components.ComponentRegistrar;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executor;
-import ji.m5;
-import k2.y0;
+import k2.f0;
 import l9.h;
 import oa.c;
 import oa.d;
@@ -18,10 +17,10 @@ import oa.f;
 import r9.a;
 import r9.j;
 import r9.r;
-import w7.w8;
+import w7.x8;
 import ya.b;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public class FirebaseCommonRegistrar implements ComponentRegistrar {
     public static /* synthetic */ String a(Context context) {
@@ -37,28 +36,28 @@ public class FirebaseCommonRegistrar implements ComponentRegistrar {
     public final List getComponents() {
         String str;
         ArrayList arrayList = new ArrayList();
-        n0 a2 = a.a(b.class);
+        m0 a2 = a.a(b.class);
         a2.a(new j(2, 0, ya.a.class));
-        a2.f = new t0.a(26);
+        a2.f = new si.a(29);
         arrayList.add(a2.b());
         r rVar = new r(n9.a.class, Executor.class);
-        n0 n0Var = new n0(c.class, new Class[]{e.class, f.class});
-        n0Var.a(j.a(Context.class));
-        n0Var.a(j.a(h.class));
-        n0Var.a(new j(2, 0, d.class));
-        n0Var.a(new j(1, 1, b.class));
-        n0Var.a(new j(rVar, 1, 0));
-        n0Var.f = new m5(rVar, 12);
-        arrayList.add(n0Var.b());
-        arrayList.add(w8.a("fire-android", String.valueOf(Build.VERSION.SDK_INT)));
-        arrayList.add(w8.a("fire-core", "20.4.2"));
-        arrayList.add(w8.a("device-name", b(Build.PRODUCT)));
-        arrayList.add(w8.a("device-model", b(Build.DEVICE)));
-        arrayList.add(w8.a("device-brand", b(Build.BRAND)));
-        arrayList.add(w8.b("android-target-sdk", new y0(3)));
-        arrayList.add(w8.b("android-min-sdk", new y0(4)));
-        arrayList.add(w8.b("android-platform", new y0(5)));
-        arrayList.add(w8.b("android-installer", new y0(6)));
+        m0 m0Var = new m0(c.class, new Class[]{e.class, f.class});
+        m0Var.a(j.a(Context.class));
+        m0Var.a(j.a(h.class));
+        m0Var.a(new j(2, 0, d.class));
+        m0Var.a(new j(1, 1, b.class));
+        m0Var.a(new j(rVar, 1, 0));
+        m0Var.f = new j5.b(rVar, 21);
+        arrayList.add(m0Var.b());
+        arrayList.add(x8.a("fire-android", String.valueOf(Build.VERSION.SDK_INT)));
+        arrayList.add(x8.a("fire-core", "20.4.2"));
+        arrayList.add(x8.a("device-name", b(Build.PRODUCT)));
+        arrayList.add(x8.a("device-model", b(Build.DEVICE)));
+        arrayList.add(x8.a("device-brand", b(Build.BRAND)));
+        arrayList.add(x8.b("android-target-sdk", new f0(5)));
+        arrayList.add(x8.b("android-min-sdk", new f0(6)));
+        arrayList.add(x8.b("android-platform", new f0(7)));
+        arrayList.add(x8.b("android-installer", new f0(8)));
         try {
             id.b.b.getClass();
             str = "2.1.20";
@@ -66,7 +65,7 @@ public class FirebaseCommonRegistrar implements ComponentRegistrar {
             str = null;
         }
         if (str != null) {
-            arrayList.add(w8.a("kotlin", str));
+            arrayList.add(x8.a("kotlin", str));
         }
         return arrayList;
     }

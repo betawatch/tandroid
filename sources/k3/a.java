@@ -1,10 +1,10 @@
 package k3;
 
+import b2.v;
+import b2.v0;
 import b2.w;
-import b2.w0;
-import b2.x;
-import c3.d0;
-import c3.i0;
+import c3.e0;
+import c3.j0;
 import c3.o;
 import c3.p;
 import c3.q;
@@ -16,7 +16,7 @@ import e9.x1;
 import java.util.List;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class a implements o {
     public final /* synthetic */ int a = 0;
@@ -24,7 +24,7 @@ public final class a implements o {
 
     public a(int i10) {
         if ((i10 & 1) != 0) {
-            this.b = new d0(65496, 2, "image/jpeg");
+            this.b = new e0(65496, 2, "image/jpeg");
         } else {
             this.b = new b();
         }
@@ -53,14 +53,14 @@ public final class a implements o {
                 ((o) this.b).c(qVar);
                 break;
             default:
-                i0 W = qVar.W(0, 3);
-                qVar.K(new t(-9223372036854775807L));
-                qVar.D();
-                x xVar = (x) this.b;
-                w a2 = xVar.a();
-                a2.r = w0.n("text/x-unknown");
-                a2.j = xVar.s;
-                i2.d.u(a2, W);
+                j0 j02 = qVar.j0(0, 3);
+                qVar.g0(new t(-9223372036854775807L));
+                qVar.H();
+                w wVar = (w) this.b;
+                v a2 = wVar.a();
+                a2.r = v0.n("text/x-unknown");
+                a2.j = wVar.s;
+                i0.a.u(a2, j02);
                 break;
         }
     }
@@ -102,8 +102,8 @@ public final class a implements o {
         }
     }
 
-    public a(x xVar) {
-        this.b = xVar;
+    public a(w wVar) {
+        this.b = wVar;
     }
 
     private final void g() {

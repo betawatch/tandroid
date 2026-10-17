@@ -1,30 +1,38 @@
 package w7;
 
-import android.os.Build;
-import android.util.Log;
+import org.telegram.messenger.DispatchQueue;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class k6 {
-    public static void a(Object obj, String str, String str2) {
-        String c10 = c(str);
-        if (Log.isLoggable(c10, 3)) {
-            Log.d(c10, String.format(str2, obj));
-        }
-    }
+    public static DispatchQueue a;
 
-    public static void b(String str, String str2, Exception exc) {
-        String c10 = c(str);
-        if (Log.isLoggable(c10, 6)) {
-            Log.e(c10, str2, exc);
+    public static void a(int i10, int i11, int[] iArr, int[] iArr2) {
+        int i12;
+        for (int i13 = 0; i13 < 315; i13++) {
+            int i14 = i13 - 7;
+            iArr2[i13] = (i14 < 0 || i14 >= 288) ? 0 : iArr[(i14 * i11) + i10];
         }
-    }
-
-    public static String c(String str) {
-        if (Build.VERSION.SDK_INT >= 26) {
-            return "TRuntime.".concat(str);
+        int i15 = 0;
+        while (i15 < 315) {
+            iArr2[i15 + 315] = iArr2[i15];
+            int i16 = i15 + 1;
+            while (true) {
+                i12 = i15 + 15;
+                if (i16 >= i12) {
+                    break;
+                }
+                iArr2[i16 + 315] = Math.max(iArr2[i16 + 314], iArr2[i16]);
+                i16++;
+            }
+            iArr2[i15 + 644] = iArr2[i15 + 14];
+            for (int i17 = i15 + 13; i17 >= i15; i17--) {
+                iArr2[i17 + 630] = Math.max(iArr2[i17 + 631], iArr2[i17]);
+            }
+            i15 = i12;
         }
-        String concat = "TRuntime.".concat(str);
-        return concat.length() > 23 ? concat.substring(0, 23) : concat;
+        for (int i18 = 0; i18 < 288; i18++) {
+            iArr[(i18 * i11) + i10] = Math.max(iArr2[i18 + 630], iArr2[i18 + 329]);
+        }
     }
 }

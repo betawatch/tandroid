@@ -1,22 +1,71 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes3.dex */
-public final class c10 {
-    public byte a;
-    public byte b;
-    public byte c;
-    public byte d;
-    public byte e;
-    public byte f;
-    public float g;
-    public float h;
-    public short i;
-    public float j;
-    public float k;
-    public final /* synthetic */ d10 l;
+import android.os.Bundle;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
 
-    public c10(d10 d10Var) {
-        this.l = d10Var;
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes3.dex */
+public abstract class c10 extends zo0 {
+    public final boolean d;
+
+    public c10(boolean z10) {
+        this.d = z10;
     }
+
+    @Override // org.telegram.ui.Components.zo0
+    public final boolean a() {
+        return k() > j();
+    }
+
+    @Override // org.telegram.ui.Components.zo0
+    public final boolean b() {
+        return k() < i();
+    }
+
+    @Override // org.telegram.ui.Components.zo0
+    public final void c(boolean z10) {
+        float h = h();
+        if (z10) {
+            h *= -1.0f;
+        }
+        l(Math.min(i(), Math.max(j(), k() + h)));
+    }
+
+    @Override // org.telegram.ui.Components.zo0
+    public final void e(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.e(view, accessibilityNodeInfo);
+        if (this.d) {
+            accessibilityNodeInfo.addAction((AccessibilityNodeInfo.AccessibilityAction) s0.b.h.a);
+            accessibilityNodeInfo.setRangeInfo(AccessibilityNodeInfo.RangeInfo.obtain(1, j(), i(), k()));
+        }
+    }
+
+    @Override // org.telegram.ui.Components.zo0
+    public final boolean g(View view, int i10, Bundle bundle) {
+        if (super.g(view, i10, bundle)) {
+            return true;
+        }
+        if (i10 != ((AccessibilityNodeInfo.AccessibilityAction) s0.b.h.a).getId()) {
+            return false;
+        }
+        l(bundle.getFloat("android.view.accessibility.action.ARGUMENT_PROGRESS_VALUE"));
+        return true;
+    }
+
+    public float h() {
+        return 0.05f;
+    }
+
+    public float i() {
+        return 1.0f;
+    }
+
+    public float j() {
+        return 0.0f;
+    }
+
+    public abstract float k();
+
+    public abstract void l(float f7);
 }

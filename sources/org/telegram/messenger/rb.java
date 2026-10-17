@@ -1,30 +1,31 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class rb implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.m2 b;
+    public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ TLRPC.Dialog c;
 
-    public /* synthetic */ rb(int i10, org.telegram.ui.ActionBar.m2 m2Var) {
+    public /* synthetic */ rb(MessagesController messagesController, TLRPC.Dialog dialog, int i10) {
         this.a = i10;
-        this.b = m2Var;
+        this.b = messagesController;
+        this.c = dialog;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                MessagesController.lambda$checkSensitive$450(this.b);
+                this.b.lambda$checkLastDialogMessage$224(this.c);
                 break;
             case 1:
-                org.telegram.ui.Components.g5.s0(7, this.b, null);
-                break;
-            case 2:
-                org.telegram.ui.Components.g5.s0(8, this.b, null);
+                this.b.lambda$checkLastDialogMessage$225(this.c);
                 break;
             default:
-                TranslateController.lambda$pushToSummarize$18(this.b);
+                this.b.lambda$checkLastDialogMessage$223(this.c);
                 break;
         }
     }

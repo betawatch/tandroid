@@ -1,29 +1,23 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.view.ViewGroup;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h30 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ n60 b;
+public final class h30 extends s4.r0 {
+    public final /* synthetic */ s50 a;
 
-    public /* synthetic */ h30(n60 n60Var, int i10) {
-        this.a = i10;
-        this.b = n60Var;
+    public h30(s50 s50Var) {
+        this.a = s50Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                n60.w(this.b, tLObject);
-                break;
-            default:
-                n60.u(this.b, tLObject);
-                break;
-        }
+    @Override // s4.r0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        ViewGroup viewGroup;
+        s50 s50Var = this.a;
+        viewGroup = ((org.telegram.ui.ActionBar.f3) s50Var).containerView;
+        viewGroup.invalidate();
+        s50Var.a2.invalidate();
     }
 }

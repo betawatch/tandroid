@@ -1,44 +1,65 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fp0 implements Utilities.Callback {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ ag.b b;
-    public final /* synthetic */ TL_stars.TL_starGiftUnique c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
+public final class fp0 {
+    public boolean f;
+    public boolean g;
+    public boolean h;
+    public Path i;
+    public Paint j;
+    public Drawable k;
+    public final org.telegram.ui.Components.yc l;
+    public boolean m;
+    public final org.telegram.ui.Components.f6 n;
+    public int o;
+    public final /* synthetic */ gp0 r;
+    public final Paint a = new Paint(1);
+    public final Paint b = new Paint(1);
+    public final Paint c = new Paint(1);
+    public final Path d = new Path();
+    public final Path e = new Path();
+    public final RectF p = new RectF();
+    public final RectF q = new RectF();
 
-    public /* synthetic */ fp0(eq0 eq0Var, ag.b bVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10, cp0 cp0Var) {
-        this.e = eq0Var;
-        this.b = bVar;
-        this.c = tL_starGiftUnique;
-        this.d = j10;
-        this.f = cp0Var;
+    public fp0(gp0 gp0Var) {
+        this.r = gp0Var;
+        this.l = new org.telegram.ui.Components.yc(gp0Var);
+        this.n = new org.telegram.ui.Components.f6(gp0Var, 0L, 320L, org.telegram.ui.Components.bs.h);
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        switch (this.a) {
-            case 0:
-                eq0.V((eq0) this.e, this.b, this.c, this.d, (cp0) this.f, (TLRPC.TL_payments_paymentFormStarGift) obj);
-                break;
-            default:
-                yh.f4.V((yh.f4) this.e, (org.telegram.ui.ActionBar.a2) this.f, this.b, this.c, this.d, (TLRPC.TL_payments_paymentFormStarGift) obj);
-                break;
+    public final void a(MessagesController.PeerColor peerColor) {
+        gp0 gp0Var = this.r;
+        org.telegram.ui.ActionBar.d6 d6Var = gp0Var.a;
+        if (peerColor == null) {
+            return;
         }
-    }
-
-    public /* synthetic */ fp0(yh.f4 f4Var, org.telegram.ui.ActionBar.a2 a2Var, ag.b bVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10) {
-        this.e = f4Var;
-        this.f = a2Var;
-        this.b = bVar;
-        this.c = tL_starGiftUnique;
-        this.d = j10;
+        boolean q6 = d6Var == null ? org.telegram.ui.ActionBar.h6.I.q() : d6Var.a();
+        int i10 = gp0Var.c;
+        Paint paint = this.b;
+        Paint paint2 = this.a;
+        if (i10 != 1) {
+            paint2.setColor(peerColor.getColor(0, d6Var));
+            paint.setColor(peerColor.hasColor6(q6) ? peerColor.getColor(1, d6Var) : peerColor.getColor(0, d6Var));
+            this.f = peerColor.hasColor6(q6);
+            this.g = false;
+            return;
+        }
+        if (q6 && peerColor.hasColor2() && !peerColor.hasColor3()) {
+            paint2.setColor(peerColor.getColor(1, d6Var));
+            paint.setColor(peerColor.getColor(0, d6Var));
+        } else {
+            paint2.setColor(peerColor.getColor(0, d6Var));
+            paint.setColor(peerColor.getColor(1, d6Var));
+        }
+        this.c.setColor(peerColor.getColor(2, d6Var));
+        this.f = peerColor.hasColor2(q6);
+        this.g = peerColor.hasColor3(q6);
     }
 }

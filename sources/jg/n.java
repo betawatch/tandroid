@@ -10,12 +10,12 @@ import android.text.TextPaint;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.google.android.gms.internal.play_billing.k3;
+import com.google.android.gms.internal.cast.a6;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class n extends q {
     public float[] I1;
@@ -219,7 +219,7 @@ public final class n extends q {
                 valueAnimator.cancel();
             }
             float f12 = this.K1;
-            ValueAnimator e = g.e(oVar.r, f12 == 0.0f ? 0.0f : this.I1[i10] / f12, new l0(6, this, oVar));
+            ValueAnimator e = g.e(oVar.r, f12 == 0.0f ? 0.0f : this.I1[i10] / f12, new l0(7, this, oVar));
             oVar.s = e;
             e.start();
             i10++;
@@ -496,7 +496,7 @@ public final class n extends q {
             float length2 = (1.0f / ((kg.e) nVar.h0).b.length) * nVar.C0;
             int i13 = 0;
             while (i13 < length) {
-                float y3 = k3.y(nVar.C0, length2, ((kg.e) nVar.h0).b[i13], length2 / 2.0f);
+                float x10 = a6.x(nVar.C0, length2, ((kg.e) nVar.h0).b[i13], length2 / 2.0f);
                 int i14 = 1;
                 int i15 = i11;
                 int i16 = i15;
@@ -537,13 +537,13 @@ public final class n extends q {
                                 int i20 = fVar2.j;
                                 int i21 = i20 + 1;
                                 fVar2.j = i21;
-                                fArr[i20] = y3;
+                                fArr[i20] = x10;
                                 int i22 = i20 + 2;
                                 fVar2.j = i22;
                                 fArr[i21] = (i19 - f15) - f14;
                                 int i23 = i20 + 3;
                                 fVar2.j = i23;
-                                fArr[i22] = y3;
+                                fArr[i22] = x10;
                                 fVar2.j = i20 + 4;
                                 fArr[i23] = i19 - f14;
                                 f14 += f15;
@@ -555,13 +555,13 @@ public final class n extends q {
                             int i202 = fVar2.j;
                             int i212 = i202 + 1;
                             fVar2.j = i212;
-                            fArr2[i202] = y3;
+                            fArr2[i202] = x10;
                             int i222 = i202 + 2;
                             fVar2.j = i222;
                             fArr2[i212] = (i192 - f152) - f14;
                             int i232 = i202 + 3;
                             fVar2.j = i232;
-                            fArr2[i222] = y3;
+                            fArr2[i222] = x10;
                             fVar2.j = i202 + 4;
                             fArr2[i232] = i192 - f14;
                             f14 += f152;
@@ -581,13 +581,13 @@ public final class n extends q {
                                 int i2022 = fVar2.j;
                                 int i2122 = i2022 + 1;
                                 fVar2.j = i2122;
-                                fArr22[i2022] = y3;
+                                fArr22[i2022] = x10;
                                 int i2222 = i2022 + 2;
                                 fVar2.j = i2222;
                                 fArr22[i2122] = (i1922 - f1522) - f14;
                                 int i2322 = i2022 + 3;
                                 fVar2.j = i2322;
-                                fArr22[i2222] = y3;
+                                fArr22[i2222] = x10;
                                 fVar2.j = i2022 + 4;
                                 fArr22[i2322] = i1922 - f14;
                                 f14 += f1522;
@@ -599,13 +599,13 @@ public final class n extends q {
                             int i20222 = fVar2.j;
                             int i21222 = i20222 + 1;
                             fVar2.j = i21222;
-                            fArr222[i20222] = y3;
+                            fArr222[i20222] = x10;
                             int i22222 = i20222 + 2;
                             fVar2.j = i22222;
                             fArr222[i21222] = (i19222 - f15222) - f14;
                             int i23222 = i20222 + 3;
                             fVar2.j = i23222;
-                            fArr222[i22222] = y3;
+                            fArr222[i22222] = x10;
                             fVar2.j = i20222 + 4;
                             fArr222[i23222] = i19222 - f14;
                             f14 += f15222;

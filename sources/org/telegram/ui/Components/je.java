@@ -1,51 +1,88 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+import android.util.Property;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class je implements Runnable {
+public final class je extends Property {
     public final /* synthetic */ int a;
     public final /* synthetic */ ChatActivityEnterView b;
 
-    public /* synthetic */ je(ChatActivityEnterView chatActivityEnterView, int i10) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public je(ChatActivityEnterView chatActivityEnterView, int i10) {
+        super(Float.class, "emoji_button_scale");
         this.a = i10;
-        this.b = chatActivityEnterView;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        ChatActivityEnterView chatActivityEnterView = this.b;
         switch (i10) {
-            case 0:
-                pg pgVar = chatActivityEnterView.Z2;
-                if (pgVar != null) {
-                    pgVar.m1();
-                    break;
-                }
-                break;
             case 1:
-                rf rfVar = chatActivityEnterView.E0;
-                if (rfVar != null) {
-                    rfVar.setText("");
-                    break;
-                }
+                this.b = chatActivityEnterView;
+                super(Float.class, "attach_scale");
                 break;
             case 2:
-                rf rfVar2 = chatActivityEnterView.E0;
-                if (rfVar2 != null) {
-                    rfVar2.setText("");
-                }
-                chatActivityEnterView.I(true);
+                this.b = chatActivityEnterView;
+                super(Float.class, "emoji_button_alpha");
                 break;
             case 3:
-                chatActivityEnterView.p0.callOnClick();
+                this.b = chatActivityEnterView;
+                super(Float.class, "attach_layout_translation_x");
                 break;
             case 4:
-                chatActivityEnterView.p0.callOnClick();
+                this.b = chatActivityEnterView;
+                super(Float.class, "message_text_translation_x");
                 break;
             default:
-                int i11 = ChatActivityEnterView.n5;
-                chatActivityEnterView.B();
+                this.b = chatActivityEnterView;
+                break;
+        }
+    }
+
+    @Override // android.util.Property
+    public final Object get(Object obj) {
+        switch (this.a) {
+            case 0:
+                return Float.valueOf(this.b.h);
+            case 1:
+                return Float.valueOf(this.b.E);
+            case 2:
+                return Float.valueOf(this.b.n);
+            case 3:
+                return Float.valueOf(this.b.x);
+            default:
+                return Float.valueOf(this.b.G);
+        }
+    }
+
+    @Override // android.util.Property
+    public final void set(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                float floatValue = ((Float) obj2).floatValue();
+                ChatActivityEnterView chatActivityEnterView = this.b;
+                chatActivityEnterView.h = floatValue;
+                chatActivityEnterView.D1();
+                break;
+            case 1:
+                float floatValue2 = ((Float) obj2).floatValue();
+                ChatActivityEnterView chatActivityEnterView2 = this.b;
+                chatActivityEnterView2.E = floatValue2;
+                chatActivityEnterView2.y1();
+                break;
+            case 2:
+                float floatValue3 = ((Float) obj2).floatValue();
+                ChatActivityEnterView chatActivityEnterView3 = this.b;
+                chatActivityEnterView3.n = floatValue3;
+                chatActivityEnterView3.D1();
+                break;
+            case 3:
+                float floatValue4 = ((Float) obj2).floatValue();
+                ChatActivityEnterView chatActivityEnterView4 = this.b;
+                chatActivityEnterView4.x = floatValue4;
+                chatActivityEnterView4.y1();
+                break;
+            default:
+                float floatValue5 = ((Float) obj2).floatValue();
+                ChatActivityEnterView chatActivityEnterView5 = this.b;
+                chatActivityEnterView5.G = floatValue5;
+                chatActivityEnterView5.H1();
                 break;
         }
     }

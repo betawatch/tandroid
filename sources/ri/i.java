@@ -1,35 +1,27 @@
 package ri;
 
-import android.hardware.camera2.CameraCharacteristics;
-import android.util.Range;
-import android.util.Size;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
 public final class i {
-    public final String a;
-    public final k0 b;
-    public final CameraCharacteristics c;
-    public final Size d;
-    public final Size e;
-    public final int f;
-    public final l0 g;
-    public final m0 h;
-    public final Range i;
-    public final j6.l j;
-    public final float k;
+    public static final i a;
+    public static final i b;
+    public static final /* synthetic */ i[] c;
 
-    public i(String str, k0 k0Var, CameraCharacteristics cameraCharacteristics, Size size, Size size2, int i10, l0 l0Var, m0 m0Var, Range range, j6.l lVar, float f7) {
-        this.a = str;
-        this.b = k0Var;
-        this.c = cameraCharacteristics;
-        this.d = size;
-        this.e = size2;
-        this.f = i10;
-        this.g = l0Var;
-        this.h = m0Var;
-        this.i = range;
-        this.j = lVar;
-        this.k = f7;
+    static {
+        i iVar = new i("DISABLED", 0);
+        a = iVar;
+        i iVar2 = new i("RNNOISE", 1);
+        b = iVar2;
+        c = new i[]{iVar, iVar2};
+    }
+
+    public static i valueOf(String str) {
+        return (i) Enum.valueOf(i.class, str);
+    }
+
+    public static i[] values() {
+        return (i[]) c.clone();
     }
 }

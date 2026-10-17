@@ -1,7 +1,7 @@
 package x2;
 
-import b2.q1;
-import b2.x;
+import b2.p1;
+import b2.w;
 import e9.b0;
 import e9.n0;
 import e9.s1;
@@ -9,9 +9,8 @@ import e9.v1;
 import j$.util.Objects;
 import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.ConnectionsManager;
-import r2.w;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class m extends l {
     public final int E;
@@ -60,8 +59,8 @@ public final class m extends l {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public m(int i10, q1 q1Var, int i11, i iVar, int i12, String str, int i13, boolean z10) {
-        super(i10, q1Var, i11);
+    public m(int i10, p1 p1Var, int i11, i iVar, int i12, String str, int i13, boolean z10) {
+        super(i10, p1Var, i11);
         boolean z11;
         boolean z12;
         int i14;
@@ -76,16 +75,16 @@ public final class m extends l {
         boolean z14;
         boolean z15;
         i iVar2;
-        x xVar;
+        w wVar;
         boolean z16;
         String c10;
         int i20;
-        x xVar2;
+        w wVar2;
         int i21;
         int i22;
         float f7;
         int i23;
-        x xVar3;
+        w wVar3;
         int i24;
         int i25;
         int i26;
@@ -96,23 +95,23 @@ public final class m extends l {
         int i27 = z17 ? 24 : 16;
         int i28 = 0;
         this.I = false;
-        if (z10 && (((i24 = (xVar3 = this.d).z) == -1 || i24 <= iVar.a) && ((i25 = xVar3.A) == -1 || i25 <= iVar.b))) {
-            float f10 = xVar3.D;
-            if ((f10 == -1.0f || f10 <= iVar.c) && ((i26 = xVar3.j) == -1 || i26 <= iVar.d)) {
+        if (z10 && (((i24 = (wVar3 = this.d).z) == -1 || i24 <= iVar.a) && ((i25 = wVar3.A) == -1 || i25 <= iVar.b))) {
+            float f10 = wVar3.D;
+            if ((f10 == -1.0f || f10 <= iVar.c) && ((i26 = wVar3.j) == -1 || i26 <= iVar.d)) {
                 z11 = true;
                 this.e = z11;
-                if (z10 && (((i21 = (xVar2 = this.d).z) == -1 || i21 >= iVar.e) && ((i22 = xVar2.A) == -1 || i22 >= iVar.f))) {
-                    f7 = xVar2.D;
-                    if ((f7 != -1.0f || f7 >= iVar.g) && ((i23 = xVar2.j) == -1 || i23 >= iVar.h)) {
+                if (z10 && (((i21 = (wVar2 = this.d).z) == -1 || i21 >= iVar.e) && ((i22 = wVar2.A) == -1 || i22 >= iVar.f))) {
+                    f7 = wVar2.D;
+                    if ((f7 != -1.0f || f7 >= iVar.g) && ((i23 = wVar2.j) == -1 || i23 >= iVar.h)) {
                         z12 = true;
                         this.h = z12;
-                        this.n = i2.d.e(i12, false);
-                        x xVar4 = this.d;
-                        float f11 = xVar4.D;
+                        this.n = i0.a.e(i12, false);
+                        w wVar4 = this.d;
+                        float f11 = wVar4.D;
                         this.r = f11 == -1.0f && f11 >= 10.0f;
-                        this.s = xVar4.j;
-                        int i29 = xVar4.z;
-                        this.v = (i29 != -1 || (i20 = xVar4.A) == -1) ? -1 : i29 * i20;
+                        this.s = wVar4.j;
+                        int i29 = wVar4.z;
+                        this.v = (i29 != -1 || (i20 = wVar4.A) == -1) ? -1 : i29 * i20;
                         i14 = 0;
                         while (true) {
                             size = n0Var2.size();
@@ -139,10 +138,10 @@ public final class m extends l {
                         int i32 = this.d.f;
                         this.G = (i32 == 0 && (i32 & 1) == 0) ? false : true;
                         this.H = n.i(this.d, str, n.l(str) != null);
-                        x xVar5 = this.d;
-                        str2 = xVar5.s;
+                        w wVar5 = this.d;
+                        str2 = wVar5.s;
                         i17 = i12 & 384;
-                        if (i17 == 256 && (c10 = w.c(xVar5)) != null) {
+                        if (i17 == 256 && (c10 = r2.w.c(wVar5)) != null) {
                             str2 = c10;
                         }
                         i18 = 0;
@@ -222,31 +221,31 @@ public final class m extends l {
                             }
                             this.N = i19;
                             if (z13) {
-                                b2.o oVar = this.d.I;
-                                if (oVar != null) {
-                                    int i33 = oVar.c;
+                                b2.n nVar = this.d.I;
+                                if (nVar != null) {
+                                    int i33 = nVar.c;
                                     if (i33 == 7 || i33 == 6) {
                                         z14 = true;
                                         this.O = z14;
                                         z15 = this.e;
                                         iVar2 = this.f;
-                                        xVar = this.d;
-                                        if ((xVar.f & 16384) == 0 && i2.d.e(i12, iVar2.B0) && (z15 || iVar2.w0)) {
-                                            i28 = (i2.d.e(i12, false) || !this.h || !z15 || xVar.j == -1 || iVar2.G || iVar2.F || (i27 & i12) == 0) ? 1 : 2;
+                                        wVar = this.d;
+                                        if ((wVar.f & 16384) == 0 && i0.a.e(i12, iVar2.B0) && (z15 || iVar2.w0)) {
+                                            i28 = (i0.a.e(i12, false) || !this.h || !z15 || wVar.j == -1 || iVar2.G || iVar2.F || (i27 & i12) == 0) ? 1 : 2;
                                         }
                                         this.J = i28;
                                     }
                                 } else {
-                                    b2.o oVar2 = b2.o.h;
+                                    b2.n nVar2 = b2.n.h;
                                 }
                             }
                             z14 = false;
                             this.O = z14;
                             z15 = this.e;
                             iVar2 = this.f;
-                            xVar = this.d;
-                            if ((xVar.f & 16384) == 0) {
-                                if (i2.d.e(i12, false)) {
+                            wVar = this.d;
+                            if ((wVar.f & 16384) == 0) {
+                                if (i0.a.e(i12, false)) {
                                 }
                             }
                             this.J = i28;
@@ -259,21 +258,21 @@ public final class m extends l {
                         this.O = z14;
                         z15 = this.e;
                         iVar2 = this.f;
-                        xVar = this.d;
-                        if ((xVar.f & 16384) == 0) {
+                        wVar = this.d;
+                        if ((wVar.f & 16384) == 0) {
                         }
                         this.J = i28;
                     }
                 }
                 z12 = false;
                 this.h = z12;
-                this.n = i2.d.e(i12, false);
-                x xVar42 = this.d;
-                float f112 = xVar42.D;
+                this.n = i0.a.e(i12, false);
+                w wVar42 = this.d;
+                float f112 = wVar42.D;
                 this.r = f112 == -1.0f && f112 >= 10.0f;
-                this.s = xVar42.j;
-                int i292 = xVar42.z;
-                this.v = (i292 != -1 || (i20 = xVar42.A) == -1) ? -1 : i292 * i20;
+                this.s = wVar42.j;
+                int i292 = wVar42.z;
+                this.v = (i292 != -1 || (i20 = wVar42.A) == -1) ? -1 : i292 * i20;
                 i14 = 0;
                 while (true) {
                     size = n0Var2.size();
@@ -291,8 +290,8 @@ public final class m extends l {
                 int i322 = this.d.f;
                 this.G = (i322 == 0 && (i322 & 1) == 0) ? false : true;
                 this.H = n.i(this.d, str, n.l(str) != null);
-                x xVar52 = this.d;
-                str2 = xVar52.s;
+                w wVar52 = this.d;
+                str2 = wVar52.s;
                 i17 = i12 & 384;
                 if (i17 == 256) {
                     str2 = c10;
@@ -321,8 +320,8 @@ public final class m extends l {
                 this.O = z14;
                 z15 = this.e;
                 iVar2 = this.f;
-                xVar = this.d;
-                if ((xVar.f & 16384) == 0) {
+                wVar = this.d;
+                if ((wVar.f & 16384) == 0) {
                 }
                 this.J = i28;
             }
@@ -330,18 +329,18 @@ public final class m extends l {
         z11 = false;
         this.e = z11;
         if (z10) {
-            f7 = xVar2.D;
+            f7 = wVar2.D;
             if (f7 != -1.0f) {
             }
             z12 = true;
             this.h = z12;
-            this.n = i2.d.e(i12, false);
-            x xVar422 = this.d;
-            float f1122 = xVar422.D;
+            this.n = i0.a.e(i12, false);
+            w wVar422 = this.d;
+            float f1122 = wVar422.D;
             this.r = f1122 == -1.0f && f1122 >= 10.0f;
-            this.s = xVar422.j;
-            int i2922 = xVar422.z;
-            this.v = (i2922 != -1 || (i20 = xVar422.A) == -1) ? -1 : i2922 * i20;
+            this.s = wVar422.j;
+            int i2922 = wVar422.z;
+            this.v = (i2922 != -1 || (i20 = wVar422.A) == -1) ? -1 : i2922 * i20;
             i14 = 0;
             while (true) {
                 size = n0Var2.size();
@@ -359,8 +358,8 @@ public final class m extends l {
             int i3222 = this.d.f;
             this.G = (i3222 == 0 && (i3222 & 1) == 0) ? false : true;
             this.H = n.i(this.d, str, n.l(str) != null);
-            x xVar522 = this.d;
-            str2 = xVar522.s;
+            w wVar522 = this.d;
+            str2 = wVar522.s;
             i17 = i12 & 384;
             if (i17 == 256) {
             }
@@ -388,20 +387,20 @@ public final class m extends l {
             this.O = z14;
             z15 = this.e;
             iVar2 = this.f;
-            xVar = this.d;
-            if ((xVar.f & 16384) == 0) {
+            wVar = this.d;
+            if ((wVar.f & 16384) == 0) {
             }
             this.J = i28;
         }
         z12 = false;
         this.h = z12;
-        this.n = i2.d.e(i12, false);
-        x xVar4222 = this.d;
-        float f11222 = xVar4222.D;
+        this.n = i0.a.e(i12, false);
+        w wVar4222 = this.d;
+        float f11222 = wVar4222.D;
         this.r = f11222 == -1.0f && f11222 >= 10.0f;
-        this.s = xVar4222.j;
-        int i29222 = xVar4222.z;
-        this.v = (i29222 != -1 || (i20 = xVar4222.A) == -1) ? -1 : i29222 * i20;
+        this.s = wVar4222.j;
+        int i29222 = wVar4222.z;
+        this.v = (i29222 != -1 || (i20 = wVar4222.A) == -1) ? -1 : i29222 * i20;
         i14 = 0;
         while (true) {
             size = n0Var2.size();
@@ -419,8 +418,8 @@ public final class m extends l {
         int i32222 = this.d.f;
         this.G = (i32222 == 0 && (i32222 & 1) == 0) ? false : true;
         this.H = n.i(this.d, str, n.l(str) != null);
-        x xVar5222 = this.d;
-        str2 = xVar5222.s;
+        w wVar5222 = this.d;
+        str2 = wVar5222.s;
         i17 = i12 & 384;
         if (i17 == 256) {
         }
@@ -448,8 +447,8 @@ public final class m extends l {
         this.O = z14;
         z15 = this.e;
         iVar2 = this.f;
-        xVar = this.d;
-        if ((xVar.f & 16384) == 0) {
+        wVar = this.d;
+        if ((wVar.f & 16384) == 0) {
         }
         this.J = i28;
     }

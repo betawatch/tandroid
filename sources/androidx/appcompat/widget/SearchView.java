@@ -1,5 +1,6 @@
 package androidx.appcompat.widget;
 
+import ai.u;
 import android.app.PendingIntent;
 import android.app.SearchableInfo;
 import android.content.ComponentName;
@@ -31,33 +32,33 @@ import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AutoCompleteTextView;
 import android.widget.ImageView;
-import di.h2;
+import gi.o2;
 import java.lang.reflect.Method;
 import java.util.WeakHashMap;
-import m.a3;
-import m.c3;
-import m.h3;
-import m.m0;
-import m.n;
+import m.b3;
+import m.g3;
+import m.l0;
+import m.m;
+import m.r2;
 import m.s2;
 import m.t2;
 import m.u2;
 import m.v2;
 import m.w2;
+import m.x1;
 import m.x2;
 import m.y1;
 import m.y2;
-import m.z1;
 import m.z2;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import r0.i0;
 import w7.q;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public class SearchView extends y1 implements k.b {
-    public static final y2 w0;
+public class SearchView extends x1 implements k.b {
+    public static final x2 w0;
     public final SearchAutoComplete F;
     public final View G;
     public final View H;
@@ -67,7 +68,7 @@ public class SearchView extends y1 implements k.b {
     public final ImageView L;
     public final ImageView M;
     public final View N;
-    public a3 O;
+    public z2 O;
     public final Rect P;
     public final Rect Q;
     public final int[] R;
@@ -95,12 +96,12 @@ public class SearchView extends y1 implements k.b {
     public int q0;
     public SearchableInfo r0;
     public Bundle s0;
-    public final s2 t0;
-    public final s2 u0;
+    public final r2 t0;
+    public final r2 u0;
     public final WeakHashMap v0;
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-    public static class SearchAutoComplete extends n {
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+    public static class SearchAutoComplete extends m {
         public int e;
         public SearchView f;
         public boolean h;
@@ -132,10 +133,10 @@ public class SearchView extends y1 implements k.b {
                 }
                 return;
             }
-            y2 y2Var = SearchView.w0;
-            y2Var.getClass();
-            y2.a();
-            Method method = y2Var.c;
+            x2 x2Var = SearchView.w0;
+            x2Var.getClass();
+            x2.a();
+            Method method = x2Var.c;
             if (method != null) {
                 try {
                     method.invoke(this, Boolean.TRUE);
@@ -149,7 +150,7 @@ public class SearchView extends y1 implements k.b {
             return this.e <= 0 || super.enoughToFilter();
         }
 
-        @Override // m.n, android.widget.TextView, android.view.View
+        @Override // m.m, android.widget.TextView, android.view.View
         public final InputConnection onCreateInputConnection(EditorInfo editorInfo) {
             InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
             if (this.h) {
@@ -208,7 +209,7 @@ public class SearchView extends y1 implements k.b {
             if (z10 && this.f.hasFocus() && getVisibility() == 0) {
                 this.h = true;
                 Context context = getContext();
-                y2 y2Var = SearchView.w0;
+                x2 x2Var = SearchView.w0;
                 if (context.getResources().getConfiguration().orientation == 2) {
                     a();
                 }
@@ -263,34 +264,34 @@ public class SearchView extends y1 implements k.b {
     }
 
     static {
-        y2 y2Var = null;
+        x2 x2Var = null;
         if (Build.VERSION.SDK_INT < 29) {
-            y2 y2Var2 = new y2();
-            y2Var2.a = null;
-            y2Var2.b = null;
-            y2Var2.c = null;
-            y2.a();
+            x2 x2Var2 = new x2();
+            x2Var2.a = null;
+            x2Var2.b = null;
+            x2Var2.c = null;
+            x2.a();
             try {
                 Method declaredMethod = AutoCompleteTextView.class.getDeclaredMethod("doBeforeTextChanged", null);
-                y2Var2.a = declaredMethod;
+                x2Var2.a = declaredMethod;
                 declaredMethod.setAccessible(true);
             } catch (NoSuchMethodException unused) {
             }
             try {
                 Method declaredMethod2 = AutoCompleteTextView.class.getDeclaredMethod("doAfterTextChanged", null);
-                y2Var2.b = declaredMethod2;
+                x2Var2.b = declaredMethod2;
                 declaredMethod2.setAccessible(true);
             } catch (NoSuchMethodException unused2) {
             }
             try {
                 Method method = AutoCompleteTextView.class.getMethod("ensureImeVisible", Boolean.TYPE);
-                y2Var2.c = method;
+                x2Var2.c = method;
                 method.setAccessible(true);
             } catch (NoSuchMethodException unused3) {
             }
-            y2Var = y2Var2;
+            x2Var = x2Var2;
         }
-        w0 = y2Var;
+        w0 = x2Var;
     }
 
     public SearchView(Context context) {
@@ -412,19 +413,19 @@ public class SearchView extends y1 implements k.b {
             c.a(searchAutoComplete);
             return;
         }
-        y2 y2Var = w0;
-        y2Var.getClass();
-        y2.a();
-        Method method = y2Var.a;
+        x2 x2Var = w0;
+        x2Var.getClass();
+        x2.a();
+        Method method = x2Var.a;
         if (method != null) {
             try {
                 method.invoke(searchAutoComplete, null);
             } catch (Exception unused) {
             }
         }
-        y2Var.getClass();
-        y2.a();
-        Method method2 = y2Var.b;
+        x2Var.getClass();
+        x2.a();
+        Method method2 = x2Var.b;
         if (method2 != null) {
             try {
                 method2.invoke(searchAutoComplete, null);
@@ -452,22 +453,22 @@ public class SearchView extends y1 implements k.b {
         if (cursor != null && cursor.moveToPosition(i10)) {
             Intent intent = null;
             try {
-                int i12 = c3.N;
-                String g11 = c3.g(cursor, cursor.getColumnIndex("suggest_intent_action"));
+                int i12 = b3.N;
+                String g11 = b3.g(cursor, cursor.getColumnIndex("suggest_intent_action"));
                 if (g11 == null) {
                     g11 = this.r0.getSuggestIntentAction();
                 }
                 if (g11 == null) {
                     g11 = "android.intent.action.SEARCH";
                 }
-                String g12 = c3.g(cursor, cursor.getColumnIndex("suggest_intent_data"));
+                String g12 = b3.g(cursor, cursor.getColumnIndex("suggest_intent_data"));
                 if (g12 == null) {
                     g12 = this.r0.getSuggestIntentData();
                 }
-                if (g12 != null && (g10 = c3.g(cursor, cursor.getColumnIndex("suggest_intent_data_id"))) != null) {
+                if (g12 != null && (g10 = b3.g(cursor, cursor.getColumnIndex("suggest_intent_data_id"))) != null) {
                     g12 = g12 + "/" + Uri.encode(g10);
                 }
-                intent = i(g11, g12 == null ? null : Uri.parse(g12), c3.g(cursor, cursor.getColumnIndex("suggest_intent_extra_data")), c3.g(cursor, cursor.getColumnIndex("suggest_intent_query")));
+                intent = i(g11, g12 == null ? null : Uri.parse(g12), b3.g(cursor, cursor.getColumnIndex("suggest_intent_extra_data")), b3.g(cursor, cursor.getColumnIndex("suggest_intent_query")));
             } catch (RuntimeException e) {
                 try {
                     i11 = cursor.getPosition();
@@ -544,7 +545,7 @@ public class SearchView extends y1 implements k.b {
         super.onDetachedFromWindow();
     }
 
-    @Override // m.y1, android.view.ViewGroup, android.view.View
+    @Override // m.x1, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         super.onLayout(z10, i10, i11, i12, i13);
         if (z10) {
@@ -564,23 +565,23 @@ public class SearchView extends y1 implements k.b {
             int i18 = i13 - i11;
             Rect rect2 = this.Q;
             rect2.set(i16, 0, i17, i18);
-            a3 a3Var = this.O;
-            if (a3Var == null) {
-                a3 a3Var2 = new a3(rect2, rect, searchAutoComplete);
-                this.O = a3Var2;
-                setTouchDelegate(a3Var2);
+            z2 z2Var = this.O;
+            if (z2Var == null) {
+                z2 z2Var2 = new z2(rect2, rect, searchAutoComplete);
+                this.O = z2Var2;
+                setTouchDelegate(z2Var2);
             } else {
-                a3Var.b.set(rect2);
-                Rect rect3 = a3Var.d;
+                z2Var.b.set(rect2);
+                Rect rect3 = z2Var.d;
                 rect3.set(rect2);
-                int i19 = -a3Var.e;
+                int i19 = -z2Var.e;
                 rect3.inset(i19, i19);
-                a3Var.c.set(rect);
+                z2Var.c.set(rect);
             }
         }
     }
 
-    @Override // m.y1, android.view.View
+    @Override // m.x1, android.view.View
     public final void onMeasure(int i10, int i11) {
         int i12;
         if (this.g0) {
@@ -612,21 +613,21 @@ public class SearchView extends y1 implements k.b {
 
     @Override // android.view.View
     public final void onRestoreInstanceState(Parcelable parcelable) {
-        if (!(parcelable instanceof z2)) {
+        if (!(parcelable instanceof y2)) {
             super.onRestoreInstanceState(parcelable);
             return;
         }
-        z2 z2Var = (z2) parcelable;
-        super.onRestoreInstanceState(z2Var.a);
-        v(z2Var.c);
+        y2 y2Var = (y2) parcelable;
+        super.onRestoreInstanceState(y2Var.a);
+        v(y2Var.c);
         requestLayout();
     }
 
     @Override // android.view.View
     public final Parcelable onSaveInstanceState() {
-        z2 z2Var = new z2(super.onSaveInstanceState());
-        z2Var.c = this.g0;
-        return z2Var;
+        y2 y2Var = new y2(super.onSaveInstanceState());
+        y2Var.c = this.g0;
+        return y2Var;
     }
 
     @Override // android.view.View
@@ -763,8 +764,8 @@ public class SearchView extends y1 implements k.b {
     public void setQueryRefinementEnabled(boolean z10) {
         this.k0 = z10;
         h1.b bVar = this.h0;
-        if (bVar instanceof c3) {
-            ((c3) bVar).F = z10 ? 2 : 1;
+        if (bVar instanceof b3) {
+            ((b3) bVar).F = z10 ? 2 : 1;
         }
     }
 
@@ -796,10 +797,10 @@ public class SearchView extends y1 implements k.b {
                 bVar.b(null);
             }
             if (this.r0.getSuggestAuthority() != null) {
-                c3 c3Var = new c3(getContext(), this, this.r0, this.v0);
-                this.h0 = c3Var;
-                searchAutoComplete.setAdapter(c3Var);
-                ((c3) this.h0).F = this.k0 ? 2 : 1;
+                b3 b3Var = new b3(getContext(), this, this.r0, this.v0);
+                this.h0 = b3Var;
+                searchAutoComplete.setAdapter(b3Var);
+                ((b3) this.h0).F = this.k0 ? 2 : 1;
             }
             s();
         }
@@ -870,19 +871,19 @@ public class SearchView extends y1 implements k.b {
         this.R = new int[2];
         this.S = new int[2];
         int i11 = 0;
-        this.t0 = new s2(this, i11);
+        this.t0 = new r2(this, i11);
         int i12 = 1;
-        this.u0 = new s2(this, i12);
+        this.u0 = new r2(this, i12);
         this.v0 = new WeakHashMap();
         a aVar = new a(this);
         b bVar = new b(this);
-        u2 u2Var = new u2(this, i11);
-        m0 m0Var = new m0(this, i12);
-        z1 z1Var = new z1(this, 1);
-        h2 h2Var = new h2(this, 4);
+        t2 t2Var = new t2(this, i11);
+        l0 l0Var = new l0(this, i12);
+        y1 y1Var = new y1(this, 1);
+        u uVar = new u(this, 5);
         int[] iArr = f.a.u;
         TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, iArr, i10, 0);
-        h3 h3Var = new h3(context, obtainStyledAttributes);
+        g3 g3Var = new g3(context, obtainStyledAttributes);
         i0.i(this, context, iArr, attributeSet, obtainStyledAttributes, i10);
         LayoutInflater.from(context).inflate(obtainStyledAttributes.getResourceId(9, R.layout.abc_search_view), (ViewGroup) this, true);
         SearchAutoComplete searchAutoComplete = (SearchAutoComplete) findViewById(R.id.search_src_text);
@@ -903,14 +904,14 @@ public class SearchView extends y1 implements k.b {
         this.M = imageView4;
         ImageView imageView5 = (ImageView) findViewById(R.id.search_mag_icon);
         this.T = imageView5;
-        findViewById.setBackground(h3Var.F(10));
-        findViewById2.setBackground(h3Var.F(14));
-        imageView.setImageDrawable(h3Var.F(13));
-        imageView2.setImageDrawable(h3Var.F(7));
-        imageView3.setImageDrawable(h3Var.F(4));
-        imageView4.setImageDrawable(h3Var.F(16));
-        imageView5.setImageDrawable(h3Var.F(13));
-        this.U = h3Var.F(12);
+        findViewById.setBackground(g3Var.F(10));
+        findViewById2.setBackground(g3Var.F(14));
+        imageView.setImageDrawable(g3Var.F(13));
+        imageView2.setImageDrawable(g3Var.F(7));
+        imageView3.setImageDrawable(g3Var.F(4));
+        imageView4.setImageDrawable(g3Var.F(16));
+        imageView5.setImageDrawable(g3Var.F(13));
+        this.U = g3Var.F(12);
         q.a(imageView, getResources().getString(R.string.abc_searchview_description_search));
         this.V = obtainStyledAttributes.getResourceId(15, R.layout.abc_search_dropdown_item_icons_2line);
         this.W = obtainStyledAttributes.getResourceId(5, 0);
@@ -919,12 +920,12 @@ public class SearchView extends y1 implements k.b {
         imageView2.setOnClickListener(aVar);
         imageView4.setOnClickListener(aVar);
         searchAutoComplete.setOnClickListener(aVar);
-        searchAutoComplete.addTextChangedListener(h2Var);
-        searchAutoComplete.setOnEditorActionListener(u2Var);
-        searchAutoComplete.setOnItemClickListener(m0Var);
-        searchAutoComplete.setOnItemSelectedListener(z1Var);
+        searchAutoComplete.addTextChangedListener(uVar);
+        searchAutoComplete.setOnEditorActionListener(t2Var);
+        searchAutoComplete.setOnItemClickListener(l0Var);
+        searchAutoComplete.setOnItemSelectedListener(y1Var);
         searchAutoComplete.setOnKeyListener(bVar);
-        searchAutoComplete.setOnFocusChangeListener(new t2(this, 0));
+        searchAutoComplete.setOnFocusChangeListener(new s2(this, 0));
         setIconifiedByDefault(obtainStyledAttributes.getBoolean(8, true));
         int dimensionPixelSize = obtainStyledAttributes.getDimensionPixelSize(1, -1);
         if (dimensionPixelSize != -1) {
@@ -941,7 +942,7 @@ public class SearchView extends y1 implements k.b {
             setInputType(i14);
         }
         setFocusable(obtainStyledAttributes.getBoolean(0, true));
-        h3Var.Q();
+        g3Var.Q();
         Intent intent = new Intent("android.speech.action.WEB_SEARCH");
         this.a0 = intent;
         intent.addFlags(TLObject.FLAG_28);
@@ -952,18 +953,18 @@ public class SearchView extends y1 implements k.b {
         View findViewById3 = findViewById(searchAutoComplete.getDropDownAnchor());
         this.N = findViewById3;
         if (findViewById3 != null) {
-            findViewById3.addOnLayoutChangeListener(new fi.u2(this, 2));
+            findViewById3.addOnLayoutChangeListener(new o2(this, 2));
         }
         v(this.f0);
         s();
     }
 
-    public void setOnCloseListener(v2 v2Var) {
+    public void setOnCloseListener(u2 u2Var) {
     }
 
-    public void setOnQueryTextListener(w2 w2Var) {
+    public void setOnQueryTextListener(v2 v2Var) {
     }
 
-    public void setOnSuggestionListener(x2 x2Var) {
+    public void setOnSuggestionListener(w2 w2Var) {
     }
 }

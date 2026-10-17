@@ -1,70 +1,62 @@
 package org.telegram.ui;
 
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class cr0 implements org.telegram.ui.Cells.s5 {
-    public final /* synthetic */ dr0 a;
+public final /* synthetic */ class cr0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ PhotoViewer b;
+    public final /* synthetic */ Bitmap c;
 
-    public cr0(dr0 dr0Var) {
-        this.a = dr0Var;
+    public /* synthetic */ cr0(PhotoViewer photoViewer, Bitmap bitmap, int i10) {
+        this.a = i10;
+        this.b = photoViewer;
+        this.c = bitmap;
     }
 
-    public final void a() {
-        fo foVar;
-        TLRPC.Chat chat;
-        fr0 fr0Var = this.a.d;
-        if (!fr0Var.I || (foVar = fr0Var.U) == null || (chat = foVar.e) == null || ChatObject.hasAdminRights(chat) || !chat.slowmode_enabled || fr0Var.W == 2) {
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        Bitmap bitmap = this.c;
+        PhotoViewer photoViewer = this.b;
+        switch (i10) {
+            case 0:
+                Drawable[] drawableArr = PhotoViewer.U8;
+                photoViewer.n0(bitmap);
+                AndroidUtilities.runOnUIThread(new cr0(photoViewer, bitmap, 6));
+                break;
+            case 1:
+                Drawable[] drawableArr2 = PhotoViewer.U8;
+                photoViewer.n0(bitmap);
+                AndroidUtilities.runOnUIThread(new cr0(photoViewer, bitmap, 5));
+                break;
+            case 2:
+                Drawable[] drawableArr3 = PhotoViewer.U8;
+                photoViewer.n0(bitmap);
+                AndroidUtilities.runOnUIThread(new cr0(photoViewer, bitmap, 4));
+                break;
+            case 3:
+                Drawable[] drawableArr4 = PhotoViewer.U8;
+                photoViewer.n0(bitmap);
+                break;
+            case 4:
+                photoViewer.C4.setImageBitmap(bitmap);
+                photoViewer.t5.setUndoCutState(true);
+                photoViewer.a3(true, true);
+                break;
+            case 5:
+                photoViewer.C4.setImageBitmap(bitmap);
+                photoViewer.t5.setUndoCutState(true);
+                photoViewer.a3(true, true);
+                break;
+            default:
+                photoViewer.C4.setImageBitmap(bitmap);
+                photoViewer.t5.setUndoCutState(true);
+                photoViewer.a3(true, true);
+                break;
         }
-        org.telegram.ui.Components.g5.t0(fr0Var, LocaleController.getString(R.string.Slowmode), LocaleController.getString(R.string.SlowmodeSelectSendError), null);
-        if (fr0Var.W == 1) {
-            fr0Var.W = 2;
-        }
-    }
-
-    @Override // org.telegram.ui.Cells.s5
-    public final void c(org.telegram.ui.Cells.t5 t5Var) {
-        boolean z10;
-        int intValue = ((Integer) t5Var.getTag()).intValue();
-        fr0 fr0Var = this.a.d;
-        MediaController.AlbumEntry albumEntry = fr0Var.J;
-        int i10 = -1;
-        if (albumEntry != null) {
-            MediaController.PhotoEntry photoEntry = albumEntry.photos.get(intValue);
-            boolean containsKey = fr0Var.b.containsKey(Integer.valueOf(photoEntry.imageId));
-            z10 = !containsKey;
-            if (!containsKey && fr0Var.H > 0 && fr0Var.b.size() >= fr0Var.H) {
-                a();
-                return;
-            }
-            if (fr0Var.e && !containsKey) {
-                i10 = fr0Var.c.size();
-            }
-            t5Var.b(i10, z10, true);
-            fr0Var.Y(intValue, photoEntry);
-        } else {
-            AndroidUtilities.hideKeyboard(fr0Var.getParentActivity().getCurrentFocus());
-            MediaController.SearchImage searchImage = (MediaController.SearchImage) fr0Var.f.get(intValue);
-            boolean containsKey2 = fr0Var.b.containsKey(searchImage.id);
-            z10 = !containsKey2;
-            if (!containsKey2 && fr0Var.H > 0 && fr0Var.b.size() >= fr0Var.H) {
-                a();
-                return;
-            }
-            if (fr0Var.e && !containsKey2) {
-                i10 = fr0Var.c.size();
-            }
-            t5Var.b(i10, z10, true);
-            fr0Var.Y(intValue, searchImage);
-        }
-        fr0Var.i0(z10 ? 1 : 2);
-        fr0Var.s0.a();
     }
 }

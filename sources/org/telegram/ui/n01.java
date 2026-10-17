@@ -1,39 +1,58 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class n01 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ o01 b;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.SerializedData;
 
-    public /* synthetic */ n01(o01 o01Var, int i10) {
-        this.a = i10;
-        this.b = o01Var;
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes3.dex */
+public final class n01 {
+    public final String a;
+    public final Runnable b;
+    public final String c;
+    public final String[] d;
+    public final int e;
+    public final int f;
+    public int g;
+    public String h;
+
+    public n01(String str, int i10, int i11, Runnable runnable) {
+        this(i10, str, null, null, null, i11, runnable);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ProfileActivity profileActivity = this.b.D0;
-                b01 b01Var = profileActivity.B5;
-                if (b01Var != null) {
-                    b01Var.dismiss();
-                    profileActivity.B5 = null;
-                    break;
-                }
-                break;
-            default:
-                try {
-                    org.telegram.ui.Components.mm0 currentListView = this.b.x0.O.getCurrentListView();
-                    if (currentListView != null && currentListView.getAdapter() != null) {
-                        currentListView.getAdapter().l();
-                        break;
-                    }
-                } catch (Throwable unused) {
-                    return;
-                }
-                break;
+    public final void a(String str) {
+        this.h = str;
+    }
+
+    public final boolean equals(Object obj) {
+        return (obj instanceof n01) && this.f == ((n01) obj).f;
+    }
+
+    public final String toString() {
+        SerializedData serializedData = new SerializedData();
+        serializedData.writeInt32(this.g);
+        serializedData.writeInt32(1);
+        serializedData.writeInt32(this.f);
+        return Utilities.bytesToHex(serializedData.toByteArray());
+    }
+
+    public n01(int i10, String str, String str2, int i11, Runnable runnable) {
+        this(i10, str, null, str2, null, i11, runnable);
+    }
+
+    public n01(int i10, String str, String str2, String str3, int i11, Runnable runnable) {
+        this(i10, str, str2, str3, null, i11, runnable);
+    }
+
+    public n01(int i10, String str, String str2, String str3, String str4, int i11, Runnable runnable) {
+        this.f = i10;
+        this.a = str;
+        this.c = str2;
+        this.b = runnable;
+        this.e = i11;
+        if (str3 != null && str4 != null) {
+            this.d = new String[]{str3, str4};
+        } else if (str3 != null) {
+            this.d = new String[]{str3};
         }
     }
 }

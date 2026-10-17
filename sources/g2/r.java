@@ -21,7 +21,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.zip.GZIPInputStream;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class r extends c {
     public final boolean a;
@@ -45,7 +45,7 @@ public final class r extends c {
         this.c = i11;
         this.a = z10;
         this.e = sVar;
-        this.f = new n4.s(17);
+        this.f = new n4.s(19);
     }
 
     public final void a() {
@@ -56,25 +56,6 @@ public final class r extends c {
             } catch (Exception e) {
                 e2.a.d("DefaultHttpDataSource", "Unexpected error while disconnecting", e);
             }
-        }
-    }
-
-    public final URL c(URL url, String str) {
-        if (str == null) {
-            throw new v("Null location redirect", 2001);
-        }
-        try {
-            URL url2 = new URL(url, str);
-            String protocol = url2.getProtocol();
-            if (!"https".equals(protocol) && !"http".equals(protocol)) {
-                throw new v(t8.b.h("Unsupported protocol redirect: ", protocol), 2001);
-            }
-            if (this.a || protocol.equals(url.getProtocol())) {
-                return url2;
-            }
-            throw new v("Disallowed cross-protocol redirect (" + url.getProtocol() + " to " + protocol + ")", 2001);
-        } catch (MalformedURLException e) {
-            throw new v(e, 2001, 1);
         }
     }
 
@@ -104,6 +85,25 @@ public final class r extends c {
         }
     }
 
+    public final URL d(URL url, String str) {
+        if (str == null) {
+            throw new v("Null location redirect", 2001);
+        }
+        try {
+            URL url2 = new URL(url, str);
+            String protocol = url2.getProtocol();
+            if (!"https".equals(protocol) && !"http".equals(protocol)) {
+                throw new v(r.c.g("Unsupported protocol redirect: ", protocol), 2001);
+            }
+            if (this.a || protocol.equals(url.getProtocol())) {
+                return url2;
+            }
+            throw new v("Disallowed cross-protocol redirect (" + url.getProtocol() + " to " + protocol + ")", 2001);
+        } catch (MalformedURLException e) {
+            throw new v(e, 2001, 1);
+        }
+    }
+
     public final HttpURLConnection e(m mVar) {
         HttpURLConnection f7;
         URL url = new URL(mVar.a.toString());
@@ -120,20 +120,20 @@ public final class r extends c {
         while (true) {
             int i13 = i12 + 1;
             if (i12 > 20) {
-                throw new v(new NoRouteToHostException(i2.d.j(i13, "Too many redirects: ")), 2001, 1);
+                throw new v(new NoRouteToHostException(i0.a.j(i13, "Too many redirects: ")), 2001, 1);
             }
             f7 = f(url, i10, bArr, j10, j11, z10, false, mVar.d);
             int responseCode = f7.getResponseCode();
             String headerField = f7.getHeaderField("Location");
             if ((i10 == i11 || i10 == 3) && (responseCode == 300 || responseCode == 301 || responseCode == 302 || responseCode == 303 || responseCode == 307 || responseCode == 308)) {
                 f7.disconnect();
-                url = c(url, headerField);
+                url = d(url, headerField);
             } else {
                 if (i10 != 2 || (responseCode != 300 && responseCode != 301 && responseCode != 302 && responseCode != 303)) {
                     break;
                 }
                 f7.disconnect();
-                url = c(url, headerField);
+                url = d(url, headerField);
                 bArr = null;
                 i10 = 1;
             }
@@ -152,9 +152,9 @@ public final class r extends c {
         HashMap hashMap = new HashMap();
         n4.s sVar = this.e;
         if (sVar != null) {
-            hashMap.putAll(sVar.s());
+            hashMap.putAll(sVar.A());
         }
-        hashMap.putAll(this.f.s());
+        hashMap.putAll(this.f.A());
         hashMap.putAll(map);
         for (Map.Entry entry : hashMap.entrySet()) {
             httpURLConnection.setRequestProperty((String) entry.getKey(), (String) entry.getValue());
@@ -203,26 +203,7 @@ public final class r extends c {
         return httpURLConnection;
     }
 
-    @Override // g2.c, g2.h
-    public final Map getResponseHeaders() {
-        HttpURLConnection httpURLConnection = this.n;
-        return httpURLConnection == null ? c2.h : new q(httpURLConnection.getHeaderFields());
-    }
-
-    @Override // g2.h
-    public final Uri getUri() {
-        HttpURLConnection httpURLConnection = this.n;
-        if (httpURLConnection != null) {
-            return Uri.parse(httpURLConnection.getURL().toString());
-        }
-        m mVar = this.h;
-        if (mVar != null) {
-            return mVar.a;
-        }
-        return null;
-    }
-
-    public final void h(long j10) {
+    public final void g(long j10) {
         if (j10 == 0) {
             return;
         }
@@ -241,6 +222,25 @@ public final class r extends c {
             j10 -= read;
             bytesTransferred(read);
         }
+    }
+
+    @Override // g2.c, g2.h
+    public final Map getResponseHeaders() {
+        HttpURLConnection httpURLConnection = this.n;
+        return httpURLConnection == null ? c2.h : new q(httpURLConnection.getHeaderFields());
+    }
+
+    @Override // g2.h
+    public final Uri getUri() {
+        HttpURLConnection httpURLConnection = this.n;
+        if (httpURLConnection != null) {
+            return Uri.parse(httpURLConnection.getURL().toString());
+        }
+        m mVar = this.h;
+        if (mVar != null) {
+            return mVar.a;
+        }
+        return null;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:24:0x0136 A[Catch: IOException -> 0x0141, TRY_LEAVE, TryCatch #4 {IOException -> 0x0141, blocks: (B:22:0x012e, B:24:0x0136), top: B:21:0x012e }] */
@@ -359,7 +359,7 @@ public final class r extends c {
                                         }
                                         this.s = true;
                                         transferStarted(mVar);
-                                        h(j12);
+                                        g(j12);
                                         return this.w;
                                     }
                                 }
@@ -386,7 +386,7 @@ public final class r extends c {
                 this.s = true;
                 transferStarted(mVar);
                 try {
-                    h(j12);
+                    g(j12);
                     return this.w;
                 } catch (IOException e7) {
                     a();
@@ -405,7 +405,7 @@ public final class r extends c {
         }
     }
 
-    @Override // b2.p
+    @Override // b2.o
     public final int read(byte[] bArr, int i10, int i11) {
         if (i11 == 0) {
             return 0;

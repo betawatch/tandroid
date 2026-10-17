@@ -1,56 +1,53 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Typeface;
+import android.net.Uri;
 import android.text.TextPaint;
-import android.text.style.MetricAffectingSpan;
+import android.text.style.URLSpan;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class j61 extends MetricAffectingSpan {
-    public Typeface a;
-    public int b;
-    public int c;
+public class j61 extends URLSpan {
+    public final boolean a;
+    public final l11 b;
+    public TLObject c;
+    public String d;
 
-    public j61(Typeface typeface) {
-        this.c = -1;
-        this.a = typeface;
+    public j61(String str) {
+        this(str, (l11) null);
     }
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        int i10 = this.c;
-        if (i10 >= 0) {
-            this.b = org.telegram.ui.ActionBar.g6.x0(null, i10, false);
+    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
+    public void onClick(View view) {
+        String url = getURL();
+        if (!url.startsWith("@")) {
+            pf.d.r(view.getContext(), url);
+            return;
         }
-        Typeface typeface = this.a;
-        if (typeface != null) {
-            textPaint.setTypeface(typeface);
-        }
-        int i11 = this.b;
-        if (i11 != 0) {
-            textPaint.setColor(i11);
-        }
-        textPaint.setFlags(textPaint.getFlags() | 128);
+        pf.d.o(view.getContext(), Uri.parse("https://t.me/" + url.substring(1)), true, true);
     }
 
-    @Override // android.text.style.MetricAffectingSpan
-    public final void updateMeasureState(TextPaint textPaint) {
-        Typeface typeface = this.a;
-        if (typeface != null) {
-            textPaint.setTypeface(typeface);
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public void updateDrawState(TextPaint textPaint) {
+        int i10 = textPaint.linkColor;
+        int color = textPaint.getColor();
+        super.updateDrawState(textPaint);
+        l11 l11Var = this.b;
+        if (l11Var != null) {
+            l11Var.a(textPaint);
         }
-        textPaint.setFlags(textPaint.getFlags() | 128);
+        textPaint.setUnderlineText(i10 == color && !this.a);
     }
 
-    public j61() {
-        Typeface typeface = Typeface.DEFAULT;
-        this.c = -1;
-        this.a = typeface;
+    public j61(String str, int i10) {
+        this(str, (l11) null);
+        this.a = true;
     }
 
-    public j61(Typeface typeface, int i10) {
-        this.c = -1;
-        this.a = typeface;
-        this.b = i10;
+    public j61(String str, l11 l11Var) {
+        super(str != null ? str.replace((char) 8238, ' ') : str);
+        this.a = false;
+        this.b = l11Var;
     }
 }

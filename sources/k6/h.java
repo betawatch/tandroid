@@ -1,25 +1,39 @@
 package k6;
 
+import a3.l0;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
+import android.content.pm.ServiceInfo;
 import android.content.pm.Signature;
 import android.os.Build;
+import android.os.Bundle;
 import android.util.Log;
-import b2.w0;
-import b2.x;
-import e2.m0;
-import t7.u;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+import v0.p;
+import v7.t;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class h implements r2.k {
+public final class h implements androidx.emoji2.text.k {
     public static h b;
     public final Context a;
 
     public h(Context context, int i10) {
         switch (i10) {
             case 1:
+                this.a = context.getApplicationContext();
+                break;
+            case 2:
+                this.a = context.getApplicationContext();
+                break;
+            case 3:
+                kotlin.jvm.internal.i.e(context, "context");
                 this.a = context;
                 break;
             default:
@@ -28,7 +42,32 @@ public final class h implements r2.k {
         }
     }
 
-    public static h a(Context context) {
+    public static v0.j b(h hVar, Object obj) {
+        if (obj.equals("androidx.credentials.TYPE_CLEAR_RESTORE_CREDENTIAL")) {
+            return hVar.d();
+        }
+        if (obj instanceof v0.n) {
+            for (p pVar : ((v0.n) obj).a) {
+            }
+        }
+        Context ctx = hVar.a;
+        kotlin.jvm.internal.i.e(ctx, "ctx");
+        if (ctx.getPackageManager().hasSystemFeature("android.software.leanback") || ctx.getPackageManager().hasSystemFeature("android.hardware.type.automotive")) {
+            return hVar.d();
+        }
+        int i10 = Build.VERSION.SDK_INT;
+        if (i10 >= 34) {
+            v0.l lVar = new v0.l(ctx);
+            v0.l lVar2 = lVar.isAvailableOnDevice() ? lVar : null;
+            return lVar2 == null ? hVar.d() : lVar2;
+        }
+        if (i10 <= 33) {
+            return hVar.d();
+        }
+        return null;
+    }
+
+    public static h c(Context context) {
         n6.l.h(context);
         synchronized (h.class) {
             try {
@@ -43,7 +82,7 @@ public final class h implements r2.k {
         return b;
     }
 
-    public static final l b(PackageInfo packageInfo, l... lVarArr) {
+    public static final l e(PackageInfo packageInfo, l... lVarArr) {
         Signature[] signatureArr = packageInfo.signatures;
         if (signatureArr != null) {
             if (signatureArr.length != 1) {
@@ -66,13 +105,13 @@ public final class h implements r2.k {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static final boolean c(PackageInfo packageInfo, boolean z10) {
+    public static final boolean f(PackageInfo packageInfo, boolean z10) {
         PackageInfo packageInfo2;
         if (z10) {
             if (packageInfo == null) {
                 packageInfo2 = null;
                 if (packageInfo != null && packageInfo2.signatures != null) {
-                    if ((!z10 ? b(packageInfo2, n.a) : b(packageInfo2, n.a[0])) == null) {
+                    if ((!z10 ? e(packageInfo2, n.a) : e(packageInfo2, n.a[0])) == null) {
                         return true;
                     }
                 }
@@ -85,28 +124,56 @@ public final class h implements r2.k {
         }
         packageInfo2 = packageInfo;
         if (packageInfo != null) {
-            if ((!z10 ? b(packageInfo2, n.a) : b(packageInfo2, n.a[0])) == null) {
+            if ((!z10 ? e(packageInfo2, n.a) : e(packageInfo2, n.a[0])) == null) {
             }
         }
         return false;
     }
 
-    @Override // r2.k
-    public r2.l h(com.google.firebase.messaging.m mVar) {
-        Context context;
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 < 31 && ((context = this.a) == null || i10 < 28 || !context.getPackageManager().hasSystemFeature("com.amazon.hardware.tv_screen"))) {
-            return new u(20).h(mVar);
+    @Override // androidx.emoji2.text.k
+    public void a(t tVar) {
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(0, 1, 15L, TimeUnit.SECONDS, new LinkedBlockingDeque(), new androidx.emoji2.text.a("EmojiCompatInitializer", 0));
+        threadPoolExecutor.allowCoreThreadTimeOut(true);
+        threadPoolExecutor.execute(new l0(this, tVar, threadPoolExecutor, 18));
+    }
+
+    public v0.j d() {
+        String string;
+        Context context = this.a;
+        PackageInfo packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 132);
+        ArrayList arrayList = new ArrayList();
+        ServiceInfo[] serviceInfoArr = packageInfo.services;
+        if (serviceInfoArr != null) {
+            for (ServiceInfo serviceInfo : serviceInfoArr) {
+                Bundle bundle = serviceInfo.metaData;
+                if (bundle != null && (string = bundle.getString("androidx.credentials.CREDENTIAL_PROVIDER_KEY")) != null) {
+                    arrayList.add(string);
+                }
+            }
         }
-        int h = w0.h(((x) mVar.c).s);
-        e2.a.g("DMCodecAdapterFactory", "Creating an asynchronous MediaCodec adapter for track type " + m0.I(h));
-        r2.b bVar = new r2.b(h, 0);
-        r2.b bVar2 = new r2.b(h, 1);
-        androidx.activity.o oVar = new androidx.activity.o();
-        oVar.b = bVar;
-        oVar.c = bVar2;
-        oVar.a = true;
-        oVar.a = true;
-        return oVar.h(mVar);
+        List m10 = jd.g.m(arrayList);
+        if (m10.isEmpty()) {
+            return null;
+        }
+        Iterator it = m10.iterator();
+        v0.j jVar = null;
+        while (it.hasNext()) {
+            try {
+                Object newInstance = Class.forName((String) it.next()).getConstructor(Context.class).newInstance(context);
+                kotlin.jvm.internal.i.c(newInstance, "null cannot be cast to non-null type androidx.credentials.CredentialProvider");
+                v0.j jVar2 = (v0.j) newInstance;
+                if (!jVar2.isAvailableOnDevice()) {
+                    continue;
+                } else {
+                    if (jVar != null) {
+                        Log.i("CredProviderFactory", "Only one active OEM CredentialProvider allowed");
+                        return null;
+                    }
+                    jVar = jVar2;
+                }
+            } catch (Throwable unused) {
+            }
+        }
+        return jVar;
     }
 }

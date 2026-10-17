@@ -1,159 +1,215 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.content.SharedPreferences;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import java.util.ArrayList;
+import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class xh1 extends org.telegram.ui.Components.d71 {
-    public vh1 d;
-    public long e;
-    public th1 f;
+public final class xh1 extends org.telegram.ui.Components.hm0 {
+    public final /* synthetic */ WallpapersListActivity E;
+    public final Context c;
+    public final ArrayList d = new ArrayList();
+    public final HashMap e = new HashMap();
+    public boolean f = true;
     public String h;
-    public org.telegram.ui.ActionBar.u0 n;
-    public boolean r;
+    public String n;
+    public String r;
+    public int s;
+    public int v;
+    public boolean w;
+    public String x;
+    public org.telegram.ui.Wallet.t3 y;
 
-    /* JADX WARN: Removed duplicated region for block: B:29:0x00aa  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x00ac  */
-    @Override // org.telegram.ui.Components.d71
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void U(ArrayList arrayList, org.telegram.ui.Components.a71 a71Var) {
-        CharSequence charSequence;
-        long j10 = this.e;
-        CharSequence charSequence2 = null;
-        if (TextUtils.isEmpty(this.h) && j10 != 0) {
-            org.telegram.ui.Components.m61 c10 = org.telegram.ui.Components.m61.c(1, R.drawable.msg_archive_hide, LocaleController.getString(R.string.EditProfileChannelHide));
-            c10.r = true;
-            arrayList.add(c10);
-            arrayList.add(org.telegram.ui.Components.m61.B(null));
+    public xh1(WallpapersListActivity wallpapersListActivity, Context context) {
+        this.E = wallpapersListActivity;
+        this.c = context;
+    }
+
+    @Override // org.telegram.ui.Components.hm0
+    public final boolean D(s4.b1 b1Var) {
+        return b1Var.f != 2;
+    }
+
+    public final void E(String str, boolean z10) {
+        int i10;
+        if (str != null && this.n != null) {
+            str = a1.g.q(this.n, " ", str, new StringBuilder("#color"));
         }
-        if (TextUtils.isEmpty(this.h)) {
-            i2.d.p(R.string.EditProfileChannelSelect, arrayList);
+        org.telegram.ui.Wallet.t3 t3Var = this.y;
+        if (t3Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(t3Var);
+            this.y = null;
         }
-        ArrayList arrayList2 = this.d.e;
-        int size = arrayList2.size();
-        int i10 = 0;
-        int i11 = 0;
-        while (i11 < size) {
-            Object obj = arrayList2.get(i11);
-            i11++;
-            TLRPC.Chat chat = (TLRPC.Chat) obj;
-            if (chat == null || ChatObject.isMegagroup(chat)) {
-                charSequence = charSequence2;
-            } else {
-                i10++;
-                if (!TextUtils.isEmpty(this.h)) {
-                    String lowerCase = this.h.toLowerCase();
-                    String translitSafe = AndroidUtilities.translitSafe(lowerCase);
-                    String lowerCase2 = chat.title.toLowerCase();
-                    String translitSafe2 = AndroidUtilities.translitSafe(lowerCase2);
-                    if (!lowerCase2.startsWith(lowerCase)) {
-                        charSequence = charSequence2;
-                        if (!org.telegram.messenger.g0.w(" ", lowerCase, lowerCase2) && !translitSafe2.startsWith(translitSafe) && !org.telegram.messenger.g0.w(" ", translitSafe, translitSafe2)) {
-                        }
-                        long j11 = chat.id;
-                        org.telegram.ui.Components.m61 m61Var = new org.telegram.ui.Components.m61(11);
-                        m61Var.w = true;
-                        m61Var.x = -j11;
-                        m61Var.K(j10 != j11);
-                        arrayList.add(m61Var);
-                    }
-                }
-                charSequence = charSequence2;
-                long j112 = chat.id;
-                org.telegram.ui.Components.m61 m61Var2 = new org.telegram.ui.Components.m61(11);
-                m61Var2.w = true;
-                m61Var2.x = -j112;
-                m61Var2.K(j10 != j112);
-                arrayList.add(m61Var2);
+        boolean isEmpty = TextUtils.isEmpty(str);
+        HashMap hashMap = this.e;
+        ArrayList arrayList = this.d;
+        WallpapersListActivity wallpapersListActivity = this.E;
+        if (isEmpty) {
+            arrayList.clear();
+            hashMap.clear();
+            this.f = true;
+            this.h = null;
+            if (this.s != 0) {
+                i10 = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).currentAccount;
+                ConnectionsManager.getInstance(i10).cancelRequest(this.s, true);
+                this.s = 0;
             }
-            charSequence2 = charSequence;
+            wallpapersListActivity.N.c();
+        } else {
+            wallpapersListActivity.N.b();
+            if (z10) {
+                arrayList.clear();
+                hashMap.clear();
+                this.f = true;
+                F(str, "", true);
+                this.h = str;
+                l();
+            } else {
+                org.telegram.ui.Wallet.t3 t3Var2 = new org.telegram.ui.Wallet.t3(18, this, str);
+                this.y = t3Var2;
+                AndroidUtilities.runOnUIThread(t3Var2, 500L);
+            }
         }
-        CharSequence charSequence3 = charSequence2;
-        if (TextUtils.isEmpty(this.h) && i10 == 0) {
-            org.telegram.ui.Components.m61 c11 = org.telegram.ui.Components.m61.c(2, R.drawable.msg_channel_create, LocaleController.getString(R.string.EditProfileChannelStartNew));
-            c11.q = true;
-            arrayList.add(c11);
-        }
-        arrayList.add(org.telegram.ui.Components.m61.B(charSequence3));
-        org.telegram.ui.ActionBar.u0 u0Var = this.n;
-        if (u0Var != null) {
-            u0Var.setVisibility(i10 <= 5 ? 8 : 0);
-        }
+        l();
     }
 
-    @Override // org.telegram.ui.Components.d71
-    public final CharSequence V() {
-        return LocaleController.getString(R.string.EditProfileChannelTitle);
-    }
-
-    @Override // org.telegram.ui.Components.d71
-    public final void W(org.telegram.ui.Components.m61 m61Var, View view) {
-        th1 th1Var = this.f;
-        int i10 = m61Var.d;
-        if (i10 == 1) {
-            th1Var.run(null);
-            finishFragment();
-            return;
+    public final void F(String str, String str2, boolean z10) {
+        int i10;
+        int i11;
+        int i12;
+        int i13;
+        int i14;
+        int i15;
+        int i16;
+        int i17;
+        int i18;
+        int i19 = this.s;
+        WallpapersListActivity wallpapersListActivity = this.E;
+        if (i19 != 0) {
+            i18 = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).currentAccount;
+            ConnectionsManager.getInstance(i18).cancelRequest(this.s, true);
+            this.s = 0;
         }
-        if (i10 != 2) {
-            if (m61Var.a == 12) {
-                finishFragment();
-                th1Var.run(getMessagesController().getChat(Long.valueOf(-m61Var.x)));
+        this.x = str;
+        i10 = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).currentAccount;
+        MessagesController messagesController = MessagesController.getInstance(i10);
+        i11 = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).currentAccount;
+        TLObject userOrChat = messagesController.getUserOrChat(MessagesController.getInstance(i11).imageSearchBot);
+        if (!(userOrChat instanceof TLRPC.User)) {
+            if (!z10 || this.w) {
                 return;
             }
+            this.w = true;
+            TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
+            i16 = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).currentAccount;
+            tL_contacts_resolveUsername.username = MessagesController.getInstance(i16).imageSearchBot;
+            i17 = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).currentAccount;
+            ConnectionsManager.getInstance(i17).sendRequest(tL_contacts_resolveUsername, new m(this, 25));
             return;
         }
-        this.r = true;
-        SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
-        if (!BuildVars.DEBUG_VERSION && globalMainSettings.getBoolean("channel_intro", false)) {
-            presentFragment(new sd(org.telegram.ui.Cells.c1.f(0, "step")));
+        TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults = new TLRPC.TL_messages_getInlineBotResults();
+        tL_messages_getInlineBotResults.query = r.c.g("#wallpaper ", str);
+        i12 = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).currentAccount;
+        tL_messages_getInlineBotResults.bot = MessagesController.getInstance(i12).getInputUser((TLRPC.User) userOrChat);
+        tL_messages_getInlineBotResults.offset = str2;
+        tL_messages_getInlineBotResults.peer = new TLRPC.TL_inputPeerEmpty();
+        int i20 = this.v + 1;
+        this.v = i20;
+        i13 = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).currentAccount;
+        this.s = ConnectionsManager.getInstance(i13).sendRequest(tL_messages_getInlineBotResults, new ai.m2(this, i20, 9));
+        i14 = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).currentAccount;
+        ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i14);
+        int i21 = this.s;
+        i15 = ((org.telegram.ui.ActionBar.n2) wallpapersListActivity).classGuid;
+        connectionsManager.bindRequestToGuid(i21, i15);
+    }
+
+    @Override // s4.g0
+    public final int h() {
+        if (TextUtils.isEmpty(this.h)) {
+            return 2;
+        }
+        return (int) Math.ceil(this.d.size() / this.E.R);
+    }
+
+    @Override // s4.g0
+    public final int j(int i10) {
+        if (TextUtils.isEmpty(this.h)) {
+            return i10 == 0 ? 2 : 1;
+        }
+        return 0;
+    }
+
+    @Override // s4.g0
+    public final void v(s4.b1 b1Var, int i10) {
+        int i11 = b1Var.f;
+        View view = b1Var.a;
+        if (i11 != 0) {
+            if (i11 != 2) {
+                return;
+            }
+            ((org.telegram.ui.Cells.u3) view).setText(LocaleController.getString(R.string.SearchByColor));
+            return;
+        }
+        org.telegram.ui.Cells.ab abVar = (org.telegram.ui.Cells.ab) view;
+        WallpapersListActivity wallpapersListActivity = this.E;
+        int i12 = i10 * wallpapersListActivity.R;
+        ArrayList arrayList = this.d;
+        int ceil = (int) Math.ceil(arrayList.size() / wallpapersListActivity.R);
+        int i13 = wallpapersListActivity.R;
+        abVar.d(i13, i12 == 0, i12 / i13 == ceil - 1);
+        for (int i14 = 0; i14 < wallpapersListActivity.R; i14++) {
+            int i15 = i12 + i14;
+            abVar.e(wallpapersListActivity.v, i15 < arrayList.size() ? arrayList.get(i15) : null, "", i14);
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r2v1, types: [android.view.View, android.view.ViewGroup, androidx.recyclerview.widget.RecyclerView, org.telegram.ui.Components.im0, org.telegram.ui.ua1] */
+    @Override // s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        FrameLayout hjVar;
+        FrameLayout frameLayout;
+        Context context = this.c;
+        if (i10 != 0) {
+            hjVar = null;
+            boolean z10 = false;
+            if (i10 == 1) {
+                ?? ua1Var = new ua1(context, 13, z10 ? 1 : 0);
+                ua1Var.setItemAnimator(null);
+                ua1Var.setLayoutAnimation(null);
+                hg.a0 a0Var = new hg.a0(20);
+                ua1Var.setPadding(AndroidUtilities.dp(7.0f), 0, AndroidUtilities.dp(7.0f), 0);
+                ua1Var.setClipToPadding(false);
+                a0Var.j1(0);
+                ua1Var.setLayoutManager(a0Var);
+                ua1Var.setAdapter(new ai.l5(this, 5));
+                ua1Var.setOnItemClickListener(new h11(this, 14));
+                frameLayout = ua1Var;
+            } else if (i10 == 2) {
+                frameLayout = new org.telegram.ui.Cells.u3(context, null);
+            }
+            hjVar = frameLayout;
         } else {
-            presentFragment(new h(0));
-            globalMainSettings.edit().putBoolean("channel_intro", true).apply();
+            hjVar = new org.telegram.ui.Components.hj(this, context, 2);
         }
-    }
-
-    @Override // org.telegram.ui.Components.d71
-    public final boolean X(org.telegram.ui.Components.m61 m61Var, View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.d71, org.telegram.ui.ActionBar.m2
-    public final View createView(Context context) {
-        org.telegram.ui.ActionBar.u0 c10 = this.actionBar.n().c(0, R.drawable.outline_header_search, getResourceProvider());
-        c10.F();
-        c10.H = new ig.d2(this, 19);
-        this.n = c10;
-        c10.setSearchFieldHint(LocaleController.getString(R.string.Search));
-        this.n.setContentDescription(LocaleController.getString(R.string.Search));
-        this.n.setVisibility(8);
-        super.createView(context);
-        this.a.p1();
-        this.actionBar.setAdaptiveBackground(this.a);
-        return this.fragmentView;
-    }
-
-    @Override // org.telegram.ui.ActionBar.m2
-    public final void onResume() {
-        super.onResume();
-        if (this.r) {
-            vh1 vh1Var = this.d;
-            vh1Var.c = false;
-            vh1Var.f.add(new wh1(this, 0));
-            this.r = false;
+        if (i10 == 1) {
+            hjVar.setLayoutParams(new s4.o0(-1, AndroidUtilities.dp(60.0f)));
+        } else {
+            hjVar.setLayoutParams(new s4.o0(-1, -2));
         }
+        return new org.telegram.ui.Components.sl0(hjVar);
     }
 }

@@ -1,42 +1,53 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
+import android.text.style.URLSpan;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class v10 extends org.telegram.ui.Cells.i7 {
-    public final /* synthetic */ w10 l0;
+public final /* synthetic */ class v10 implements Utilities.CallbackReturn {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v10(w10 w10Var, Context context) {
-        super(context, 1, null);
-        this.l0 = w10Var;
+    public /* synthetic */ v10(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.Cells.i7
-    public final boolean d(MessageObject messageObject) {
-        boolean isVoice = messageObject.isVoice();
-        w10 w10Var = this.l0;
-        if (isVoice || messageObject.isRoundVideo()) {
-            boolean playMessage = MediaController.getInstance().playMessage(messageObject);
-            MediaController.getInstance().setVoiceMessagesPlaylist(playMessage ? w10Var.v.f : null, false);
-            return playMessage;
+    @Override // org.telegram.messenger.Utilities.CallbackReturn
+    public final Object run(Object obj) {
+        switch (this.a) {
+            case 0:
+                a20 a20Var = (a20) this.b;
+                a20Var.getClass();
+                if (((View) obj).getParent() == a20Var.c) {
+                    break;
+                } else {
+                    break;
+                }
+            case 1:
+                of0 of0Var = (of0) this.b;
+                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
+                if (tL_error != null && "PHONE_CODE_EXPIRED".equalsIgnoreCase(tL_error.text)) {
+                    AndroidUtilities.runOnUIThread(new lf0(of0Var, 1));
+                    break;
+                } else {
+                    break;
+                }
+                break;
+            default:
+                ProfileActivity profileActivity = (ProfileActivity) this.b;
+                URLSpan uRLSpan = (URLSpan) obj;
+                if (uRLSpan == null) {
+                    break;
+                } else {
+                    profileActivity.B4(uRLSpan.getURL(), null);
+                    break;
+                }
         }
-        if (!messageObject.isMusic()) {
-            return false;
-        }
-        b20 b20Var = w10Var.v;
-        String str = b20Var.Q;
-        long j10 = b20Var.E;
-        long j11 = b20Var.H;
-        MediaController.PlaylistGlobalSearchParams playlistGlobalSearchParams = new MediaController.PlaylistGlobalSearchParams(str, j10, j11, j11, b20Var.y);
-        b20 b20Var2 = w10Var.v;
-        playlistGlobalSearchParams.endReached = b20Var2.N;
-        playlistGlobalSearchParams.nextSearchRate = b20Var2.v;
-        playlistGlobalSearchParams.totalCount = b20Var2.O;
-        playlistGlobalSearchParams.folderId = b20Var2.J ? 1 : 0;
-        return MediaController.getInstance().setPlaylist(w10Var.v.f, messageObject, 0L, playlistGlobalSearchParams);
+        return Boolean.FALSE;
     }
 }

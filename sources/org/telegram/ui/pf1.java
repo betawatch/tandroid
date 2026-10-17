@@ -1,26 +1,67 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class pf1 implements View.OnClickListener {
-    public final /* synthetic */ kg1 a;
+public final /* synthetic */ class pf1 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xf1 b;
 
-    public pf1(kg1 kg1Var) {
-        this.a = kg1Var;
+    public /* synthetic */ pf1(xf1 xf1Var, int i10) {
+        this.a = i10;
+        this.b = xf1Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        kg1 kg1Var = this.a;
-        if (kg1Var.M == 1) {
-            org.telegram.ui.Components.g5.i0(kg1Var, -kg1Var.a, null, kg1Var.g(), null, false, kg1Var.J, new za(this, 5), kg1Var.getResourceProvider());
-            return;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                final int i10 = 0;
+                final xf1 xf1Var = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.rf1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                xf1.b0(xf1Var, tL_error, tLObject);
+                                break;
+                            default:
+                                xf1.h0(xf1Var, tL_error, tLObject);
+                                break;
+                        }
+                    }
+                });
+                break;
+            case 1:
+                AndroidUtilities.runOnUIThread(new sf1(this.b, tL_error, 0));
+                break;
+            case 2:
+                AndroidUtilities.runOnUIThread(new sf1(this.b, tL_error, 1));
+                break;
+            case 3:
+                AndroidUtilities.runOnUIThread(new sf1(this.b, tL_error, 2));
+                break;
+            default:
+                final int i11 = 1;
+                final xf1 xf1Var2 = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.rf1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                xf1.b0(xf1Var2, tL_error, tLObject);
+                                break;
+                            default:
+                                xf1.h0(xf1Var2, tL_error, tLObject);
+                                break;
+                        }
+                    }
+                });
+                break;
         }
-        kg1Var.getMessagesController().addUserToChat(kg1Var.a, kg1Var.getUserConfig().getCurrentUser(), 0, null, kg1Var, false, new if1(kg1Var, 2), new jf1(kg1Var));
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeSearchByActiveAction, new Object[0]);
-        kg1Var.O0(false);
     }
 }

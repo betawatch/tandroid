@@ -2,8 +2,8 @@ package com.google.android.recaptcha.internal;
 
 import android.app.Application;
 import com.google.android.gms.common.api.b;
+import com.google.android.gms.common.api.internal.u;
 import com.google.android.gms.common.api.internal.v;
-import com.google.android.gms.common.api.internal.w;
 import com.google.android.gms.tasks.Task;
 import id.f;
 import kd.c;
@@ -12,7 +12,7 @@ import md.i;
 import td.p;
 import v7.i8;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 final class zzs extends i implements p {
     final /* synthetic */ zzu zza;
@@ -54,7 +54,7 @@ final class zzs extends i implements p {
         Application context = zzu.zzl(zzuVar);
         kotlin.jvm.internal.i.e(context, "context");
         a8.f fVar = new a8.f(context, a8.f.k, b.p, com.google.android.gms.common.api.i.c);
-        v b10 = w.b();
+        u b10 = v.b();
         b10.d = new k6.c[]{l8.f.b};
         b10.c = new a6.i(cVar, 2);
         b10.a = 34001;

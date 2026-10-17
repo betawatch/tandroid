@@ -1,13 +1,13 @@
 package hg;
 
-import bi.f3;
+import ai.x2;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class a1 implements Runnable {
     public final /* synthetic */ String a;
@@ -49,6 +49,6 @@ public final class a1 implements Runnable {
         }
         TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
         tL_contacts_resolveUsername.username = j1Var.q0;
-        j1Var.t0 = ConnectionsManager.getInstance(j1Var.f).sendRequest(tL_contacts_resolveUsername, new f3(this, str, messagesController, this.d, 2));
+        j1Var.t0 = ConnectionsManager.getInstance(j1Var.f).sendRequest(tL_contacts_resolveUsername, new x2(this, str, messagesController, this.d, 7));
     }
 }

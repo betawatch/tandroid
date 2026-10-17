@@ -1,39 +1,21 @@
 package rg;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r2 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ v2 b;
+public final class r2 extends o0 {
+    public final /* synthetic */ t2 t0;
 
-    public /* synthetic */ r2(v2 v2Var, int i10) {
-        this.a = i10;
-        this.b = v2Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public r2(t2 t2Var, Context context, float f7) {
+        super(context, f7);
+        this.t0 = t2Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                super/*android.app.Dialog*/.dismiss();
-                break;
-            case 1:
-                AndroidUtilities.runOnUIThread(new r2(this.b, 0));
-                break;
-            case 2:
-                this.b.dismiss();
-                break;
-            default:
-                v2 v2Var = this.b;
-                bi.o1 o1Var = v2Var.H;
-                if (o1Var != null) {
-                    o1Var.run(null);
-                    v2Var.H = null;
-                }
-                v2Var.dismiss();
-                break;
-        }
+    @Override // android.view.View
+    public final void invalidate() {
+        this.t0.d.invalidate();
+        super.invalidate();
     }
 }

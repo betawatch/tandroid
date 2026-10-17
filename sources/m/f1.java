@@ -1,15 +1,18 @@
 package m;
 
 import android.text.StaticLayout;
-import android.text.TextDirectionHeuristic;
-import android.text.TextDirectionHeuristics;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public class f1 extends h1 {
-    @Override // m.h1
+public final class f1 extends e1 {
+    @Override // m.e1, m.g1
     public void a(StaticLayout.Builder builder, TextView textView) {
-        builder.setTextDirection((TextDirectionHeuristic) i1.e(textView, "getTextDirectionHeuristic", TextDirectionHeuristics.FIRSTSTRONG_LTR));
+        builder.setTextDirection(textView.getTextDirectionHeuristic());
+    }
+
+    @Override // m.g1
+    public boolean b(TextView textView) {
+        return textView.isHorizontallyScrollable();
     }
 }

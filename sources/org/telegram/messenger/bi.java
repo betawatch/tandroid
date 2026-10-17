@@ -1,33 +1,28 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class bi implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ SavedMessagesController b;
+    public final /* synthetic */ SecretChatHelper b;
+    public final /* synthetic */ TLRPC.TL_encryptedChatDiscarded c;
 
-    public /* synthetic */ bi(SavedMessagesController savedMessagesController, int i10) {
+    public /* synthetic */ bi(SecretChatHelper secretChatHelper, TLRPC.TL_encryptedChatDiscarded tL_encryptedChatDiscarded, int i10) {
         this.a = i10;
-        this.b = savedMessagesController;
+        this.b = secretChatHelper;
+        this.c = tL_encryptedChatDiscarded;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.update();
-                break;
-            case 1:
-                this.b.saveCache();
-                break;
-            case 2:
-                this.b.lambda$deleteCache$12();
-                break;
-            case 3:
-                this.b.lambda$saveCache$10();
+                this.b.lambda$processAcceptedSecretChat$19(this.c);
                 break;
             default:
-                this.b.lambda$loadDialogs$1();
+                this.b.lambda$decryptMessage$17(this.c);
                 break;
         }
     }

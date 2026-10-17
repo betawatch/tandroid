@@ -5,7 +5,7 @@ import android.os.Parcel;
 import j$.util.Objects;
 import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class d1 implements u {
     public final l a;
@@ -51,8 +51,8 @@ public final class d1 implements u {
     }
 
     @Override // m4.u
-    public final void c(int i10, b2.c1 c1Var) {
-        Bundle b10 = c1Var.b();
+    public final void c(int i10, b2.b1 b1Var) {
+        Bundle b10 = b1Var.b();
         k kVar = (k) this.a;
         kVar.getClass();
         Parcel obtain = Parcel.obtain();
@@ -136,15 +136,15 @@ public final class d1 implements u {
     /* JADX WARN: Type inference failed for: r3v3, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r3v6 */
     @Override // m4.u
-    public final void h(int i10, k1 k1Var, b2.c1 c1Var, boolean z10, boolean z11) {
+    public final void h(int i10, k1 k1Var, b2.b1 b1Var, boolean z10, boolean z11) {
         Parcel obtain;
         int i11 = this.b;
         u6.p(i11 != 0);
-        ?? r32 = (z10 || !c1Var.a(17)) ? 1 : 0;
-        boolean z12 = z11 || !c1Var.a(30);
+        ?? r32 = (z10 || !b1Var.a(17)) ? 1 : 0;
+        boolean z12 = z11 || !b1Var.a(30);
         l lVar = this.a;
         if (i11 < 2) {
-            Bundle f7 = k1Var.e(c1Var, z10, true).f(i11);
+            Bundle f7 = k1Var.e(b1Var, z10, true).f(i11);
             k kVar = (k) lVar;
             kVar.getClass();
             obtain = Parcel.obtain();
@@ -158,7 +158,7 @@ public final class d1 implements u {
             } finally {
             }
         }
-        Bundle f10 = k1Var.e(c1Var, z10, z11).f(i11);
+        Bundle f10 = k1Var.e(b1Var, z10, z11).f(i11);
         Bundle bundle = new Bundle();
         bundle.putBoolean(j1.a, r32);
         bundle.putBoolean(j1.b, z12);

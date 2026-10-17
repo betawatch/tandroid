@@ -3,20 +3,19 @@ package p4;
 import android.content.ComponentName;
 import com.google.android.gms.internal.vision.g3;
 import java.util.ArrayList;
-import ji.h5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class u {
     public final g3 a;
     public final ArrayList b = new ArrayList();
     public final boolean c;
-    public final h5 d;
-    public b2.u e;
+    public final k0.b d;
+    public b2.t e;
 
     public u(g3 g3Var, boolean z10) {
         this.a = g3Var;
-        this.d = (h5) g3Var.d;
+        this.d = (k0.b) g3Var.d;
         this.c = z10;
     }
 

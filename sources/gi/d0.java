@@ -1,46 +1,61 @@
 package gi;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.qb;
-import org.telegram.ui.Components.sc;
+import android.os.AsyncTask;
+import android.os.Build;
+import android.util.Pair;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class d0 implements qb {
-    @Override // org.telegram.ui.Components.qb
-    public final /* synthetic */ boolean a() {
-        return true;
+public final class d0 extends AsyncTask {
+    public String a;
+    public long b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ ai.q d;
+
+    public d0(String str, ai.q qVar) {
+        this.c = str;
+        this.d = qVar;
     }
 
-    @Override // org.telegram.ui.Components.qb
-    public final /* synthetic */ boolean e() {
-        return true;
+    @Override // android.os.AsyncTask
+    public final Object doInBackground(Object[] objArr) {
+        try {
+            HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(this.c).openConnection();
+            httpURLConnection.setRequestMethod("GET");
+            httpURLConnection.setRequestProperty("Accept-Encoding", "identity");
+            httpURLConnection.setConnectTimeout(MediaDataController.MAX_STYLE_RUNS_COUNT);
+            httpURLConnection.setReadTimeout(MediaDataController.MAX_STYLE_RUNS_COUNT);
+            httpURLConnection.setUseCaches(false);
+            httpURLConnection.setDefaultUseCaches(false);
+            httpURLConnection.setDoOutput(false);
+            httpURLConnection.setDoInput(false);
+            httpURLConnection.getResponseCode();
+            if (Build.VERSION.SDK_INT >= 24) {
+                this.b = httpURLConnection.getContentLengthLong();
+            } else {
+                this.b = httpURLConnection.getContentLength();
+            }
+            String contentType = httpURLConnection.getContentType();
+            this.a = contentType;
+            if (contentType.contains("; ")) {
+                String str = this.a;
+                this.a = str.substring(0, str.indexOf("; "));
+            }
+            httpURLConnection.getInputStream().close();
+            return null;
+        } catch (Exception e) {
+            FileLog.e(e);
+            return null;
+        }
     }
 
-    @Override // org.telegram.ui.Components.qb
-    public final int f(int i10) {
-        return AndroidUtilities.dp(60.0f) + AndroidUtilities.navigationBarHeight;
-    }
-
-    @Override // org.telegram.ui.Components.qb
-    public final /* synthetic */ boolean g(int i10) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.qb
-    public final /* synthetic */ int h(int i10) {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.Components.qb
-    public final /* synthetic */ void b(sc scVar) {
-    }
-
-    @Override // org.telegram.ui.Components.qb
-    public final /* synthetic */ void c(float f7) {
-    }
-
-    @Override // org.telegram.ui.Components.qb
-    public final /* synthetic */ void d(sc scVar) {
+    @Override // android.os.AsyncTask
+    public final void onPostExecute(Object obj) {
+        j0.h.put(this.c, new Pair(this.a, Long.valueOf(this.b)));
+        this.d.run(this.a, Long.valueOf(this.b));
     }
 }

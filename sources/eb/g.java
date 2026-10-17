@@ -22,7 +22,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicLongArray;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class g {
     public static final c h = c.d;
@@ -36,15 +36,15 @@ public final class g {
     public final boolean f;
     public final c g;
 
-    public g(gb.h hVar, HashMap hashMap, c cVar, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, t tVar, t tVar2, ArrayList arrayList4) {
-        qf.b bVar = new qf.b(22, hashMap, arrayList4);
+    public g(gb.f fVar, HashMap hashMap, c cVar, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, t tVar, t tVar2, ArrayList arrayList4) {
+        qf.b bVar = new qf.b(20, hashMap, arrayList4);
         this.c = bVar;
         this.f = true;
         this.g = cVar;
         ArrayList arrayList5 = new ArrayList();
         arrayList5.add(h1.A);
         arrayList5.add(tVar == t.a ? hb.r.c : new hb.p(tVar, 1));
-        arrayList5.add(hVar);
+        arrayList5.add(fVar);
         arrayList5.addAll(arrayList3);
         arrayList5.add(h1.p);
         arrayList5.add(h1.g);
@@ -67,7 +67,7 @@ public final class g {
         arrayList5.add(h1.r);
         arrayList5.add(new x0(BigDecimal.class, h1.m, i10));
         arrayList5.add(new x0(BigInteger.class, h1.n, i10));
-        arrayList5.add(new x0(gb.j.class, h1.o, i10));
+        arrayList5.add(new x0(gb.h.class, h1.o, i10));
         arrayList5.add(h1.s);
         arrayList5.add(h1.t);
         arrayList5.add(h1.v);
@@ -90,7 +90,7 @@ public final class g {
         this.d = jVar;
         arrayList5.add(jVar);
         arrayList5.add(h1.B);
-        arrayList5.add(new x(bVar, hVar, jVar, arrayList4));
+        arrayList5.add(new x(bVar, fVar, jVar, arrayList4));
         this.e = DesugarCollections.unmodifiableList(arrayList5);
     }
 
@@ -186,7 +186,7 @@ public final class g {
                 if (aVar2 != null) {
                     Class value = aVar2.value();
                     if (v.class.isAssignableFrom(value)) {
-                        v vVar3 = (v) jVar.a.W(new lb.a(value)).i2();
+                        v vVar3 = (v) jVar.a.W(new lb.a(value)).f2();
                         v vVar4 = (v) concurrentHashMap.putIfAbsent(cls, vVar3);
                         if (vVar4 != null) {
                             vVar3 = vVar4;

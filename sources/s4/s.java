@@ -12,9 +12,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.Arrays;
 import java.util.WeakHashMap;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.jv;
+import org.telegram.ui.su;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public class s extends b0 {
     public boolean I;
@@ -31,7 +31,7 @@ public class s extends b0 {
         this.J = -1;
         this.M = new SparseIntArray();
         this.N = new SparseIntArray();
-        this.O = new jv(1);
+        this.O = new su(1);
         this.P = new Rect();
         y1(i10);
     }
@@ -190,7 +190,7 @@ public class s extends b0 {
                             } else {
                                 if (view4 == null) {
                                     i14 = i19;
-                                    if (!(this.c.H(q6) && this.d.H(q6))) {
+                                    if (!(this.c.X(q6) && this.d.X(q6))) {
                                         if (min <= i21) {
                                             if (min == i21) {
                                             }
@@ -329,7 +329,7 @@ public class s extends b0 {
             int i22 = zVar.d;
             int v12 = v1(i22, eVar, y0Var);
             if (v12 > this.J) {
-                throw new IllegalArgumentException(a1.g.n(this.J, " spans.", i2.d.m("Item at position ", i22, " requires ", v12, " spans but GridLayoutManager has only ")));
+                throw new IllegalArgumentException(a1.g.n(this.J, " spans.", i0.a.m("Item at position ", i22, " requires ", v12, " spans but GridLayoutManager has only ")));
             }
             i20 -= v12;
             if (i20 < 0 || (c10 = zVar.c(eVar)) == null) {
@@ -452,24 +452,24 @@ public class s extends b0 {
     }
 
     @Override // s4.b0
-    public final void a1(qf.e eVar, y0 y0Var, i2.o0 o0Var, int i10) {
+    public final void a1(qf.e eVar, y0 y0Var, i2.m0 m0Var, int i10) {
         A1();
         if (y0Var.b() > 0 && !y0Var.g) {
             boolean z10 = i10 == 1;
-            int u12 = u1(o0Var.b, eVar, y0Var);
+            int u12 = u1(m0Var.b, eVar, y0Var);
             if (z10) {
                 while (u12 > 0) {
-                    int i11 = o0Var.b;
+                    int i11 = m0Var.b;
                     if (i11 <= 0) {
                         break;
                     }
                     int i12 = i11 - 1;
-                    o0Var.b = i12;
+                    m0Var.b = i12;
                     u12 = u1(i12, eVar, y0Var);
                 }
             } else {
                 int b10 = y0Var.b() - 1;
-                int i13 = o0Var.b;
+                int i13 = m0Var.b;
                 while (i13 < b10) {
                     int i14 = i13 + 1;
                     int u13 = u1(i14, eVar, y0Var);
@@ -479,7 +479,7 @@ public class s extends b0 {
                     i13 = i14;
                     u12 = u13;
                 }
-                o0Var.b = i13;
+                m0Var.b = i13;
             }
         }
         r1();
@@ -767,7 +767,7 @@ public class s extends b0 {
         }
         this.I = true;
         if (i10 < 1) {
-            throw new IllegalArgumentException(i2.d.j(i10, "Span count should be at least 1. Provided "));
+            throw new IllegalArgumentException(i0.a.j(i10, "Span count should be at least 1. Provided "));
         }
         this.J = i10;
         this.O.j();
@@ -784,7 +784,7 @@ public class s extends b0 {
         this.J = -1;
         this.M = new SparseIntArray();
         this.N = new SparseIntArray();
-        this.O = new jv(1);
+        this.O = new su(1);
         this.P = new Rect();
         y1(i10);
     }

@@ -1,57 +1,52 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Point;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class uj extends org.telegram.ui.Components.ro {
-    public final /* synthetic */ fo v0;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public uj(fo foVar, Context context, fo foVar2, boolean z10, org.telegram.ui.ActionBar.c6 c6Var) {
-        super(context, foVar2, z10, c6Var);
-        this.v0 = foVar;
-    }
-
-    @Override // org.telegram.ui.Components.ro
-    public final boolean a() {
-        boolean z10;
-        fo foVar = this.v0;
-        if (foVar.Pa || foVar.isInPreviewMode()) {
-            return false;
+public final class uj extends s4.m0 {
+    @Override // s4.m0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, s4.y0 y0Var) {
+        org.telegram.ui.Cells.u1 u1Var;
+        MessageObject.GroupedMessages currentMessagesGroup;
+        MessageObject.GroupedMessagePosition currentPosition;
+        int i10 = 0;
+        rect.bottom = 0;
+        if (!(view instanceof org.telegram.ui.Cells.u1) || (currentMessagesGroup = (u1Var = (org.telegram.ui.Cells.u1) view).getCurrentMessagesGroup()) == null || (currentPosition = u1Var.getCurrentPosition()) == null || currentPosition.siblingHeights == null) {
+            return;
         }
-        z10 = ((org.telegram.ui.ActionBar.m2) foVar).inBubbleMode;
-        if (z10 || foVar.j0 == null || foVar.s3) {
-            return false;
+        Point point = AndroidUtilities.displaySize;
+        float max = Math.max(point.x, point.y) * 0.5f;
+        int extraInsetHeight = u1Var.getExtraInsetHeight();
+        int i11 = 0;
+        while (true) {
+            if (i11 >= currentPosition.siblingHeights.length) {
+                break;
+            }
+            extraInsetHeight += (int) Math.ceil(r3[i11] * max);
+            i11++;
         }
-        return !foVar.K9() || foVar.h4;
-    }
-
-    @Override // org.telegram.ui.Components.ro
-    public final boolean d() {
-        fo foVar = this.v0;
-        TLRPC.User user = foVar.f;
-        if (user != null && user.linked_community_id != 0) {
-            foVar.showDialog(new gi.k0(foVar, foVar.f.linked_community_id, null, null));
-            return true;
+        int round = (Math.round(AndroidUtilities.density * 7.0f) * (currentPosition.maxY - currentPosition.minY)) + extraInsetHeight;
+        int size = currentMessagesGroup.posArray.size();
+        while (true) {
+            if (i10 < size) {
+                MessageObject.GroupedMessagePosition groupedMessagePosition = currentMessagesGroup.posArray.get(i10);
+                byte b10 = groupedMessagePosition.minY;
+                byte b11 = currentPosition.minY;
+                if (b10 == b11 && ((groupedMessagePosition.minX != currentPosition.minX || groupedMessagePosition.maxX != currentPosition.maxX || b10 != b11 || groupedMessagePosition.maxY != currentPosition.maxY) && b10 == b11)) {
+                    round = org.telegram.messenger.q.A(4.0f, (int) Math.ceil(max * groupedMessagePosition.ph), round);
+                    break;
+                }
+                i10++;
+            } else {
+                break;
+            }
         }
-        TLRPC.Chat chat = foVar.e;
-        if (chat == null || chat.linked_community_id == 0) {
-            return false;
-        }
-        foVar.showDialog(new gi.k0(foVar, foVar.e.linked_community_id, null, null));
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.ro
-    public final void f() {
-        fo foVar = this.v0;
-        foVar.qa(foVar.J9() ? "" : null);
-    }
-
-    @Override // org.telegram.ui.Components.ro
-    public final boolean o() {
-        return this.v0.R3 == 3;
+        rect.bottom = -round;
     }
 }

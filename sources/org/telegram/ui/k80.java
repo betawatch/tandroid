@@ -1,29 +1,32 @@
 package org.telegram.ui;
 
-import java.util.TimerTask;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
+import android.animation.ValueAnimator;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class k80 extends TimerTask {
-    public final /* synthetic */ String a;
-    public final /* synthetic */ l80 b;
+public final /* synthetic */ class k80 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ LaunchActivity b;
 
-    public k80(l80 l80Var, String str) {
-        this.b = l80Var;
-        this.a = str;
+    public /* synthetic */ k80(LaunchActivity launchActivity, int i10) {
+        this.a = i10;
+        this.b = launchActivity;
     }
 
-    @Override // java.util.TimerTask, java.lang.Runnable
-    public final void run() {
-        l80 l80Var = this.b;
-        try {
-            l80Var.f.cancel();
-            l80Var.f = null;
-        } catch (Exception e) {
-            FileLog.e(e);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        int i10 = this.a;
+        LaunchActivity launchActivity = this.b;
+        switch (i10) {
+            case 0:
+                launchActivity.w0.invalidate();
+                break;
+            default:
+                Pattern pattern = LaunchActivity.C1;
+                launchActivity.getClass();
+                launchActivity.D0(((Integer) valueAnimator.getAnimatedValue()).intValue());
+                break;
         }
-        AndroidUtilities.runOnUIThread(new j80(this, this.a, 0));
     }
 }

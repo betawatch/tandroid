@@ -1,34 +1,48 @@
 package org.telegram.ui;
 
-import android.content.Context;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class e60 extends org.telegram.ui.Cells.e4 {
-    public final /* synthetic */ h60 f0;
+public final /* synthetic */ class e60 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ n60 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e60(h60 h60Var, Context context) {
-        super(context);
-        this.f0 = h60Var;
+    public /* synthetic */ e60(n60 n60Var, int i10) {
+        this.a = i10;
+        this.b = n60Var;
     }
 
-    @Override // org.telegram.ui.Cells.e4
-    public final void d(org.telegram.ui.Cells.e4 e4Var) {
-        n60 n60Var = this.f0.M;
-        n60 n60Var2 = n60.D3;
-        n60Var.G1(e4Var);
-    }
-
-    @Override // org.telegram.ui.Cells.e4, android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        if (AndroidUtilities.isTablet()) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(420.0f), View.MeasureSpec.getSize(i10)), TLObject.FLAG_30), i11);
-        } else {
-            super.onMeasure(i10, i11);
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                n60 n60Var = this.b;
+                n60Var.f.r.clearFocus();
+                n60Var.f.r.requestFocus();
+                AndroidUtilities.showKeyboard(n60Var.f.r);
+                break;
+            case 1:
+                this.b.o0();
+                break;
+            case 2:
+                n60 n60Var2 = this.b;
+                n60Var2.n0(n60Var2.l0());
+                break;
+            case 3:
+                n60 n60Var3 = this.b;
+                n60Var3.n0(n60Var3.l0());
+                break;
+            default:
+                n60 n60Var4 = this.b;
+                n60Var4.X = null;
+                n60Var4.Z.b();
+                n60Var4.h.b();
+                n60Var4.k0();
+                n60Var4.r0();
+                n60Var4.s0();
+                break;
         }
     }
 }

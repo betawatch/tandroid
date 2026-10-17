@@ -1,11 +1,11 @@
 package com.google.android.recaptcha.internal;
 
-import com.google.android.gms.internal.play_billing.k3;
+import com.google.android.gms.internal.cast.a6;
 import java.util.Iterator;
 import java.util.List;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 final class zzui {
     public static final /* synthetic */ int zza = 0;
@@ -158,7 +158,7 @@ final class zzui {
         }
         int zzA = zzqv.zzA(i11);
         int zza2 = ((zztd) obj).zza();
-        return k3.x(zza2, zza2, zzA);
+        return a6.y(zza2, zza2, zzA);
     }
 
     public static int zzi(List list) {

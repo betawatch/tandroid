@@ -1,60 +1,84 @@
 package rg;
 
 import android.content.Context;
-import android.graphics.ColorMatrix;
-import android.graphics.ColorMatrixColorFilter;
-import android.graphics.Paint;
-import android.text.TextPaint;
-import di.a6;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.pa;
+import android.view.View;
+import android.view.ViewGroup;
+import ei.q6;
+import ei.r5;
+import java.util.ArrayList;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.UserConfig;
+import org.telegram.ui.Components.hm0;
+import org.telegram.ui.Components.ja;
+import org.telegram.ui.Components.sl0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class a1 extends org.telegram.ui.Cells.w0 {
-    public final pa t2;
-    public final TextPaint u2;
-    public final /* synthetic */ c1 v2;
+public final class a1 extends hm0 {
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ ja d;
+    public final /* synthetic */ q6 e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ r5 h;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a1(c1 c1Var, Context context, com.google.firebase.messaging.m mVar) {
-        super(context, mVar, false);
-        this.v2 = c1Var;
-        this.t2 = new pa(c1Var.d, this, 10, false);
-        TextPaint textPaint = new TextPaint(1);
-        this.u2 = textPaint;
-        textPaint.setTypeface(AndroidUtilities.bold());
-        textPaint.setTextSize(AndroidUtilities.dp(Math.max(16, SharedConfig.fontSize) - 2));
-        textPaint.setColor(-1);
+    public a1(r5 r5Var, Context context, ja jaVar, q6 q6Var, boolean z10) {
+        this.h = r5Var;
+        this.c = context;
+        this.d = jaVar;
+        this.e = q6Var;
+        this.f = z10;
     }
 
-    @Override // org.telegram.ui.Cells.w0
-    public final Paint I(String str) {
-        if ("paintChatActionText".equals(str) || "paintChatActionText2".equals(str)) {
-            return this.u2;
-        }
-        if ("paintChatActionBackground".equals(str)) {
-            a6 a6Var = this.v2.h;
-            a6Var.v0 = true;
-            boolean z10 = a6Var.B0;
-            pa paVar = this.t2;
-            if (paVar.r != z10) {
-                paVar.r = z10;
-                if (paVar.i == 10) {
-                    ColorMatrix colorMatrix = new ColorMatrix();
-                    colorMatrix.setSaturation(1.6f);
-                    AndroidUtilities.multiplyBrightnessColorMatrix(colorMatrix, paVar.r ? 0.97f : 0.92f);
-                    AndroidUtilities.adjustBrightnessColorMatrix(colorMatrix, paVar.r ? 0.12f : -0.06f);
-                    paVar.h.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
-                    paVar.g.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
-                }
+    @Override // org.telegram.ui.Components.hm0
+    public final boolean D(s4.b1 b1Var) {
+        return true;
+    }
+
+    @Override // s4.g0
+    public final int h() {
+        return this.h.s0.size();
+    }
+
+    @Override // s4.g0
+    public final int j(int i10) {
+        return ((MessageObject) this.h.s0.get((r0.size() - 1) - i10)).contentType;
+    }
+
+    @Override // s4.g0
+    public final void v(s4.b1 b1Var, int i10) {
+        boolean z10;
+        MessageObject.GroupedMessagePosition position;
+        r5 r5Var = this.h;
+        ArrayList arrayList = r5Var.s0;
+        MessageObject messageObject = (MessageObject) arrayList.get((arrayList.size() - 1) - i10);
+        View view = b1Var.a;
+        if (!(view instanceof org.telegram.ui.Cells.u1)) {
+            if (view instanceof org.telegram.ui.Cells.x0) {
+                ((org.telegram.ui.Cells.x0) view).setMessageObject(messageObject);
+                return;
             }
-            Paint c10 = paVar.c(1.0f);
-            if (c10 != null) {
-                return c10;
-            }
+            return;
         }
-        return super.I(str);
+        org.telegram.ui.Cells.u1 u1Var = (org.telegram.ui.Cells.u1) view;
+        MessageObject.GroupedMessages groupedMessages = r5Var.t0;
+        if (groupedMessages == null || (position = groupedMessages.getPosition(messageObject)) == null) {
+            z10 = false;
+        } else {
+            z10 = position.minY != 0;
+        }
+        MessageObject.GroupedMessages groupedMessages2 = r5Var.t0;
+        u1Var.X3(messageObject, groupedMessages2, groupedMessages2 != null, z10, false, false);
+    }
+
+    @Override // s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        com.google.firebase.messaging.l lVar = this.h.D0;
+        Context context = this.c;
+        if (i10 == 1) {
+            return new sl0(new y0(this, context, lVar));
+        }
+        z0 z0Var = new z0(this, context, UserConfig.selectedAccount, lVar);
+        z0Var.N7 = true;
+        return new sl0(z0Var);
     }
 }

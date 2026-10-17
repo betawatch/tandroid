@@ -5,9 +5,9 @@ import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.text.style.ReplacementSpan;
 import java.nio.ByteBuffer;
-import w7.m6;
+import w7.n6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class v extends ReplacementSpan {
     public final o b;
@@ -15,7 +15,7 @@ public final class v extends ReplacementSpan {
     public float c = 1.0f;
 
     public v(o oVar) {
-        m6.a(oVar, "metadata cannot be null");
+        n6.a(oVar, "metadata cannot be null");
         this.b = oVar;
     }
 
@@ -23,7 +23,7 @@ public final class v extends ReplacementSpan {
     public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
         l.a().getClass();
         o oVar = this.b;
-        pi.e eVar = oVar.b;
+        qi.e eVar = oVar.b;
         Typeface typeface = (Typeface) eVar.d;
         Typeface typeface2 = paint.getTypeface();
         paint.setTypeface(typeface);

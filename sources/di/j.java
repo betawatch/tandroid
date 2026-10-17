@@ -1,33 +1,72 @@
 package di;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.widget.ImageView;
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.ui.Cells.s7;
+import s4.m0;
+import s4.y0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class j extends ImageView {
-    public final float a;
-    public final org.telegram.ui.Components.ad b;
+public final class j extends m0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ r b;
 
-    public j(Context context) {
-        super(context);
-        this.b = new org.telegram.ui.Components.ad(this);
-        this.a = 0.2f;
+    public /* synthetic */ j(r rVar, int i10) {
+        this.a = i10;
+        this.b = rVar;
     }
 
-    @Override // android.view.View
-    public final void draw(Canvas canvas) {
-        canvas.save();
-        float a2 = this.b.a(this.a);
-        canvas.scale(a2, a2, getWidth() / 2.0f, getHeight() / 2.0f);
-        super.draw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.view.View
-    public void setPressed(boolean z10) {
-        super.setPressed(z10);
-        this.b.c(z10);
+    @Override // s4.m0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, y0 y0Var) {
+        switch (this.a) {
+            case 0:
+                if (!(view instanceof s7)) {
+                    rect.left = 0;
+                    rect.top = 0;
+                    rect.bottom = 0;
+                    rect.right = 0;
+                    break;
+                } else {
+                    s7 s7Var = (s7) view;
+                    r rVar = this.b;
+                    rVar.f.getClass();
+                    int R = RecyclerView.R(s7Var);
+                    int i10 = rVar.h.J;
+                    s7Var.a0 = R < i10;
+                    int i11 = R % i10;
+                    s7Var.V = i11 == 0;
+                    s7Var.W = i11 == i10 - 1;
+                    rect.left = 0;
+                    rect.top = 0;
+                    rect.bottom = 0;
+                    rect.right = 0;
+                    break;
+                }
+            default:
+                if (!(view instanceof s7)) {
+                    rect.left = 0;
+                    rect.top = 0;
+                    rect.bottom = 0;
+                    rect.right = 0;
+                    break;
+                } else {
+                    s7 s7Var2 = (s7) view;
+                    r rVar2 = this.b;
+                    rVar2.r.getClass();
+                    int R2 = RecyclerView.R(s7Var2);
+                    int i12 = rVar2.s.J;
+                    s7Var2.a0 = R2 < i12;
+                    int i13 = R2 % i12;
+                    s7Var2.V = i13 == 0;
+                    s7Var2.W = i13 == i12 - 1;
+                    rect.left = 0;
+                    rect.top = 0;
+                    rect.bottom = 0;
+                    rect.right = 0;
+                    break;
+                }
+        }
     }
 }

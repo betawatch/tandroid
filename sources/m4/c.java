@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class c {
     public int a;
@@ -95,15 +95,15 @@ public final class c {
                                 int i21 = i19 >> 5;
                                 i10 = i17;
                                 s4.l e = e(i21, arrayList2, false);
-                                cVar.D(i18, e.b - 1);
+                                cVar.y(i18, e.b - 1);
                                 if (i20 == 4) {
                                     int i22 = e.b - 1;
                                     oVar.getClass();
-                                    cVar.m1(i22, 1);
+                                    cVar.a1(i22, 1);
                                 }
                             } else {
                                 if (i20 != 16) {
-                                    StringBuilder l4 = i2.d.l(i18, "unknown flag for pos ", " ");
+                                    StringBuilder l4 = i0.a.l(i18, "unknown flag for pos ", " ");
                                     l4.append(Long.toBinaryString(i20));
                                     throw new IllegalStateException(l4.toString());
                                 }
@@ -114,7 +114,7 @@ public final class c {
                             oVar = oVar2;
                             i10 = i17;
                             boolean z11 = true;
-                            cVar.O0(i18, 1);
+                            cVar.t0(i18, 1);
                             int size2 = arrayList2.size();
                             int i23 = 0;
                             while (i23 < size2) {
@@ -130,7 +130,7 @@ public final class c {
                         oVar2 = oVar;
                     }
                 } else {
-                    cVar.O0(i14, i16);
+                    cVar.t0(i14, i16);
                 }
             }
             ArrayList arrayList4 = arrayList;
@@ -145,20 +145,20 @@ public final class c {
                         if (i28 != 0) {
                             if (i28 != 4 && i28 != 8) {
                                 if (i28 != 16) {
-                                    StringBuilder l10 = i2.d.l(i26, "unknown flag for pos ", " ");
+                                    StringBuilder l10 = i0.a.l(i26, "unknown flag for pos ", " ");
                                     l10.append(Long.toBinaryString(i28));
                                     throw new IllegalStateException(l10.toString());
                                 }
                                 arrayList2.add(new s4.l(i26, i14, false));
                             }
-                            cVar.D(e(i27 >> 5, arrayList2, true).b, i14);
+                            cVar.y(e(i27 >> 5, arrayList2, true).b, i14);
                             if (i28 == 4) {
                                 oVar3.getClass();
-                                cVar.m1(i14, 1);
+                                cVar.a1(i14, 1);
                             }
                         } else {
                             boolean z12 = true;
-                            cVar.j0(i14, 1);
+                            cVar.X(i14, 1);
                             int size3 = arrayList2.size();
                             int i29 = 0;
                             while (i29 < size3) {
@@ -170,14 +170,14 @@ public final class c {
                         }
                     }
                 } else {
-                    cVar.j0(i14, i24);
+                    cVar.X(i14, i24);
                 }
             }
             for (int i30 = i13 - 1; i30 >= 0; i30--) {
                 int i31 = nVar.a + i30;
                 if ((iArr2[i31] & 31) == 2) {
                     oVar3.getClass();
-                    cVar.m1(i31, 1);
+                    cVar.a1(i31, 1);
                 }
             }
             i11 = nVar.a;
@@ -191,7 +191,7 @@ public final class c {
     }
 
     public void c(s4.g0 g0Var) {
-        b(new m.h(g0Var, 16));
+        b(new k0.b(g0Var, 25));
     }
 
     public void d(int i10, int i11, int i12, boolean z10) {

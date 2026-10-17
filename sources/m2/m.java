@@ -1,6 +1,6 @@
 package m2;
 
-import b2.x;
+import b2.w;
 import e2.m0;
 import e9.n0;
 import j$.util.DesugarCollections;
@@ -9,10 +9,10 @@ import java.util.Collections;
 import java.util.List;
 import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class m {
-    public final x a;
+    public final w a;
     public final n0 b;
     public final long c;
     public final List d;
@@ -20,9 +20,9 @@ public abstract class m {
     public final List f;
     public final j h;
 
-    public m(x xVar, List list, s sVar, List list2, List list3, List list4) {
+    public m(w wVar, List list, s sVar, List list2, List list3, List list4) {
         u6.g(!list.isEmpty());
-        this.a = xVar;
+        this.a = wVar;
         this.b = n0.u(list);
         this.d = list2 == null ? Collections.EMPTY_LIST : DesugarCollections.unmodifiableList(list2);
         this.e = list3;
@@ -36,7 +36,7 @@ public abstract class m {
 
     public abstract String b();
 
-    public abstract l2.h d();
+    public abstract l2.i c();
 
-    public abstract j g();
+    public abstract j h();
 }

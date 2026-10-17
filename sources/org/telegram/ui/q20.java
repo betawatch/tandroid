@@ -1,53 +1,31 @@
 package org.telegram.ui;
 
-import android.text.style.URLSpan;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q20 implements Utilities.CallbackReturn {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class q20 extends g.o {
+    public final /* synthetic */ s50 c;
 
-    public /* synthetic */ q20(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public q20(s50 s50Var) {
+        this.c = s50Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.CallbackReturn
-    public final Object run(Object obj) {
-        switch (this.a) {
-            case 0:
-                v20 v20Var = (v20) this.b;
-                v20Var.getClass();
-                if (((View) obj).getParent() == v20Var.c) {
-                    break;
-                } else {
-                    break;
-                }
-            case 1:
-                jg0 jg0Var = (jg0) this.b;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
-                if (tL_error != null && "PHONE_CODE_EXPIRED".equalsIgnoreCase(tL_error.text)) {
-                    AndroidUtilities.runOnUIThread(new fg0(jg0Var, 1));
-                    break;
-                } else {
-                    break;
-                }
-                break;
-            default:
-                ProfileActivity profileActivity = (ProfileActivity) this.b;
-                URLSpan uRLSpan = (URLSpan) obj;
-                if (uRLSpan == null) {
-                    break;
-                } else {
-                    profileActivity.B4(uRLSpan.getURL(), null);
-                    break;
-                }
+    @Override // g.o
+    public final int i(int i10) {
+        m50 m50Var;
+        int i11;
+        int i12;
+        int i13 = s50.F3 ? 6 : 2;
+        if (s50.G3 || i10 < (i11 = (m50Var = this.c.P).G) || i10 >= (i12 = m50Var.H)) {
+            return i13;
         }
-        return Boolean.FALSE;
+        int i14 = i12 - i11;
+        int i15 = (i10 != i12 - 1 || (!s50.F3 && i14 % 2 == 0)) ? 1 : 2;
+        if (!s50.F3) {
+            return i15;
+        }
+        if (i14 == 1) {
+            return 6;
+        }
+        return i14 == 2 ? 3 : 2;
     }
 }

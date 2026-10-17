@@ -1,85 +1,44 @@
 package org.telegram.ui;
 
-import android.util.SparseArray;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class fj {
-    public boolean a;
+public final /* synthetic */ class fj implements MessagesStorage.IntCallback {
+    public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
-    public final /* synthetic */ SparseArray c;
-    public final /* synthetic */ fo d;
+    public final /* synthetic */ Object c;
 
-    public fj(fo foVar, boolean z10, SparseArray sparseArray) {
-        this.d = foVar;
+    public /* synthetic */ fj(int i10, Object obj, boolean z10) {
+        this.a = i10;
+        this.c = obj;
         this.b = z10;
-        this.c = sparseArray;
     }
 
-    public final boolean a(int i10) {
-        fo foVar = this.d;
-        int i11 = i10 - foVar.A0.J;
-        if (i11 < 0 || i11 >= foVar.u6.size()) {
-            return false;
-        }
-        MessageObject messageObject = (MessageObject) foVar.u6.get(i11);
-        if (messageObject.contentType != 0) {
-            return false;
-        }
-        SparseArray sparseArray = this.c;
-        boolean z10 = this.b;
-        if (z10 || sparseArray.get(messageObject.getId(), null) != null) {
-            return z10 && sparseArray.get(messageObject.getId(), null) != null;
-        }
-        return true;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:30:0x007c  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b(int i10, boolean z10, float f7, float f10) {
-        s4.b1 K;
-        fo foVar = this.d;
-        ArrayList arrayList = foVar.u6;
-        SparseArray[] sparseArrayArr = foVar.W5;
-        int i11 = i10 - foVar.A0.J;
-        if (this.b) {
-            z10 = !z10;
-        }
-        if (i11 < 0 || i11 >= arrayList.size()) {
-            return;
-        }
-        MessageObject messageObject = (MessageObject) arrayList.get(i11);
-        if (!z10 || (sparseArrayArr[0].indexOfKey(messageObject.getId()) < 0 && sparseArrayArr[1].indexOfKey(messageObject.getId()) < 0)) {
-            if ((z10 || sparseArrayArr[0].indexOfKey(messageObject.getId()) >= 0 || sparseArrayArr[1].indexOfKey(messageObject.getId()) >= 0) && messageObject.contentType == 0) {
-                if (z10) {
-                    if (sparseArrayArr[1].size() + sparseArrayArr[0].size() >= 100) {
-                        this.a = true;
-                        K = foVar.x0.K(i10);
-                        if (K != null) {
-                            View view = K.a;
-                            if (view instanceof org.telegram.ui.Cells.u1) {
-                                fo.c2(foVar, view, false, f7, f10);
-                                return;
-                            }
-                        }
-                        foVar.A6(messageObject, false, true);
-                        foVar.hc();
-                        foVar.ad(false);
-                    }
+    @Override // org.telegram.messenger.MessagesStorage.IntCallback
+    public final void run(int i10) {
+        switch (this.a) {
+            case 0:
+                sn snVar = ((hj) this.c).b;
+                if (i10 > 0 && snVar.getParentActivity() != null) {
+                    org.telegram.ui.Components.xc.a0(snVar).m(this.b ? org.telegram.ui.Components.wc.G : org.telegram.ui.Components.wc.I, i10, 0, 0, snVar.ea).j();
+                    break;
                 }
-                this.a = false;
-                K = foVar.x0.K(i10);
-                if (K != null) {
+                break;
+            default:
+                gj gjVar = (gj) this.c;
+                sn snVar2 = gjVar.b.b;
+                if (i10 < 50) {
+                    snVar2.va(snVar2.d4, true);
+                    break;
+                } else {
+                    TLRPC.Chat chat = snVar2.e;
+                    TLRPC.User user = snVar2.f;
+                    boolean z10 = this.b;
+                    org.telegram.ui.Components.f5.r(snVar2, true, chat, user, false, false, false, z10, new b1(gjVar, z10));
+                    break;
                 }
-                foVar.A6(messageObject, false, true);
-                foVar.hc();
-                foVar.ad(false);
-            }
         }
     }
 }

@@ -1,32 +1,28 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.be1;
+import android.content.Context;
+import android.view.accessibility.AccessibilityNodeInfo;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pp implements be1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ qp b;
+public final class pp extends xj0 {
+    public final /* synthetic */ wp r;
 
-    public /* synthetic */ pp(qp qpVar, int i10) {
-        this.a = i10;
-        this.b = qpVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pp(wp wpVar, Context context) {
+        super(context);
+        this.r = wpVar;
     }
 
-    @Override // org.telegram.ui.be1
-    public final void a(TLRPC.TL_wallPaper tL_wallPaper) {
-        switch (this.a) {
-            case 0:
-                zp zpVar = this.b.a;
-                zpVar.Y.dismissInternal();
-                zpVar.dismiss();
-                break;
-            default:
-                zp zpVar2 = this.b.a;
-                zpVar2.Y.dismissInternal();
-                zpVar2.dismiss();
-                break;
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        if (this.r.N) {
+            accessibilityNodeInfo.setText(LocaleController.getString(R.string.AccDescrSwitchToDayTheme));
+        } else {
+            accessibilityNodeInfo.setText(LocaleController.getString(R.string.AccDescrSwitchToNightTheme));
         }
     }
 }

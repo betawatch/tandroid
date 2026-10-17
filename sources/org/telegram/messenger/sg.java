@@ -1,32 +1,37 @@
 package org.telegram.messenger;
 
-import java.util.Comparator;
-import org.telegram.messenger.support.LongSparseIntArray;
+import android.app.NotificationChannel;
+import org.telegram.tgnet.InputSerializedData;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class sg implements Comparator {
+public final /* synthetic */ class sg implements Vector.TLDeserializer, org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ LongSparseIntArray b;
 
-    public /* synthetic */ sg(LongSparseIntArray longSparseIntArray, int i10) {
+    public /* synthetic */ sg(int i10) {
         this.a = i10;
-        this.b = longSparseIntArray;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int lambda$checkLoadedRemoteFilters$68;
-        int lambda$resetDialogs$94;
-        Long l4 = (Long) obj;
-        Long l10 = (Long) obj2;
+    public static /* bridge */ /* synthetic */ NotificationChannel a(Object obj) {
+        return (NotificationChannel) obj;
+    }
+
+    @Override // org.telegram.tgnet.Vector.TLDeserializer
+    public TLObject deserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
         switch (this.a) {
-            case 0:
-                lambda$checkLoadedRemoteFilters$68 = MessagesStorage.lambda$checkLoadedRemoteFilters$68(this.b, l4, l10);
-                return lambda$checkLoadedRemoteFilters$68;
+            case 2:
+                return TL_iv.RichText.TLdeserialize(inputSerializedData, i10, z10);
             default:
-                lambda$resetDialogs$94 = MessagesStorage.lambda$resetDialogs$94(this.b, l4, l10);
-                return lambda$resetDialogs$94;
+                return TLRPC.PollAnswer.TLdeserialize(inputSerializedData, i10, z10);
         }
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        SharedConfig.lambda$checkSdCard$1(b2Var, i10);
     }
 }

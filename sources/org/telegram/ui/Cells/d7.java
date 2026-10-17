@@ -1,31 +1,99 @@
 package org.telegram.ui.Cells;
 
-import android.widget.FrameLayout;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.uj0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class d7 extends org.telegram.ui.Components.k9 {
-    public final /* synthetic */ int D;
-    public final /* synthetic */ FrameLayout E;
+public final class d7 extends Drawable {
+    public final Paint a;
+    public final uj0 b;
+    public final Drawable c;
+    public int d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ d7(FrameLayout frameLayout, org.telegram.ui.ActionBar.c6 c6Var, int i10) {
-        super(c6Var);
-        this.D = i10;
-        this.E = frameLayout;
+    public d7(Context context, org.telegram.ui.Components.w9 w9Var, boolean z10, org.telegram.ui.ActionBar.d6 d6Var) {
+        this(context, w9Var, z10, R.drawable.large_repost_story, d6Var);
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void invalidateSelf() {
-        switch (this.D) {
-            case 0:
-                super.invalidateSelf();
-                ((f7) this.E).a.invalidate();
-                break;
-            default:
-                super.invalidateSelf();
-                ((g7) this.E).a.invalidate();
-                break;
+    public final void draw(Canvas canvas) {
+        canvas.save();
+        canvas.translate(getBounds().left, getBounds().top);
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(0.0f, 0.0f, getBounds().width(), getBounds().height());
+        int i10 = this.d;
+        Paint paint = this.a;
+        paint.setAlpha(i10);
+        float min = (this.d / 255.0f) * (Math.min(getBounds().width(), getBounds().height()) / 2.0f);
+        canvas.drawRoundRect(rectF, min, min, paint);
+        canvas.restore();
+        Drawable drawable = this.b;
+        int dp = AndroidUtilities.dp(drawable != null ? 20.0f : 15.0f);
+        Rect rect = AndroidUtilities.rectTmp2;
+        rect.set(getBounds().centerX() - dp, getBounds().centerY() - dp, getBounds().centerX() + dp, getBounds().centerY() + dp);
+        if (drawable == null) {
+            drawable = this.c;
         }
+        if (drawable != null) {
+            drawable.setBounds(rect);
+            drawable.setAlpha(this.d);
+            drawable.draw(canvas);
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(56.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return AndroidUtilities.dp(56.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.d = i10;
+    }
+
+    public d7(Context context, View view, boolean z10, int i10, org.telegram.ui.ActionBar.d6 d6Var) {
+        Paint paint = new Paint(1);
+        this.a = paint;
+        this.d = 255;
+        paint.setShader(new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f), new int[]{org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.hk, d6Var), org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.ik, d6Var)}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
+        if (!z10) {
+            this.b = null;
+            Drawable mutate = context.getResources().getDrawable(i10).mutate();
+            this.c = mutate;
+            mutate.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+            return;
+        }
+        uj0 uj0Var = new uj0(R.raw.story_repost, AndroidUtilities.dp(42.0f), AndroidUtilities.dp(42.0f), true, null);
+        this.b = uj0Var;
+        uj0Var.R(view);
+        AndroidUtilities.runOnUIThread(new r0(uj0Var, 1), 450L);
+        this.c = null;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

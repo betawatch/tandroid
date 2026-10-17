@@ -1,53 +1,49 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.view.View;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n8 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ n9 b;
+public final /* synthetic */ class n8 implements r0.n, Utilities.Callback5, Utilities.Callback5Return, org.telegram.ui.Components.kl0 {
+    public final /* synthetic */ m9 a;
 
-    public /* synthetic */ n8(n9 n9Var, int i10) {
-        this.a = i10;
-        this.b = n9Var;
+    public /* synthetic */ n8(m9 m9Var) {
+        this.a = m9Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                n9 n9Var = this.b;
-                n9Var.f0();
-                n9Var.i0();
-                break;
-            case 1:
-                n9 n9Var2 = this.b;
-                n9Var2.n0(false);
-                org.telegram.ui.Components.sc I = (n9Var2.w ? org.telegram.ui.Components.zc.X() : org.telegram.ui.Components.zc.a0(n9Var2)).I(R.raw.contact_check, AndroidUtilities.replaceTags(LocaleController.getString(R.string.GroupCallTabWasHiddenTitle)), LocaleController.getString(R.string.UndoNoCaps), 5000, true, new n8(n9Var2, 5));
-                I.j = 5000;
-                I.j();
-                break;
-            case 2:
-                this.b.p0(true);
-                break;
-            case 3:
-                n9 n9Var3 = this.b;
-                n9Var3.h0();
-                n9Var3.f0();
-                break;
-            case 4:
-                this.b.n0(false);
-                break;
-            case 5:
-                this.b.n0(true);
-                break;
-            default:
-                n9 n9Var4 = this.b;
-                n9Var4.d.postOnAnimation(new n8(n9Var4, 3));
-                break;
+    @Override // r0.n
+    public r0.k1 B0(View view, r0.k1 k1Var) {
+        return this.a.onInsetsInternal(view, k1Var);
+    }
+
+    @Override // org.telegram.ui.Components.kl0
+    public void b() {
+        this.a.f0();
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        m9.X(this.a, (org.telegram.ui.Components.f61) obj, (View) obj2);
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback5Return
+    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        boolean z10;
+        View view = (View) obj2;
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        Object obj6 = ((org.telegram.ui.Components.f61) obj).G;
+        if (obj6 instanceof i9) {
+            this.a.e0(((i9) obj6).c, (h9) view);
+            z10 = true;
+        } else {
+            z10 = false;
         }
+        return Boolean.valueOf(z10);
     }
 }

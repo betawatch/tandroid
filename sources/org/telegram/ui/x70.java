@@ -1,162 +1,98 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.drawable.ColorDrawable;
-import android.text.SpannableString;
-import android.text.TextUtils;
-import android.view.ViewGroup;
+import android.text.method.LinkMovementMethod;
+import android.view.View;
+import android.widget.FrameLayout;
 import java.util.ArrayList;
-import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.CacheByChatsController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class x70 extends org.telegram.ui.Components.lm0 {
-    public final Context c;
-    public ArrayList d = new ArrayList();
-    public ArrayList e = new ArrayList();
-    public d20 f;
-    public String h;
-    public int n;
-    public final /* synthetic */ y70 r;
+public final class x70 extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
+    public final org.telegram.ui.Components.x90 T;
+    public final org.telegram.ui.ActionBar.e1 U;
+    public final org.telegram.ui.ActionBar.e1 V;
+    public final org.telegram.ui.ActionBar.e1 W;
+    public final ArrayList a0;
+    public final org.telegram.ui.Components.t00 b0;
+    public int c0;
+    public final CacheByChatsController d0;
+    public v70 e0;
+    public ArrayList f0;
+    public final org.telegram.ui.ActionBar.n2 g0;
+    public final FrameLayout h0;
 
-    public x70(y70 y70Var, Context context) {
-        this.r = y70Var;
-        this.c = context;
-        C(true);
+    public x70(Context context, org.telegram.ui.ActionBar.n2 n2Var) {
+        super(context, null);
+        ArrayList arrayList = new ArrayList();
+        this.a0 = arrayList;
+        this.g0 = n2Var;
+        this.d0 = n2Var.getMessagesController().getCacheByChatsController();
+        setFitItems(true);
+        org.telegram.ui.ActionBar.e1 c10 = org.telegram.ui.ActionBar.u0.c(false, false, this, R.drawable.msg_autodelete_1d, LocaleController.formatPluralString("Days", 1, new Object[0]), false, null);
+        org.telegram.ui.ActionBar.e1 c11 = org.telegram.ui.ActionBar.u0.c(false, false, this, R.drawable.msg_autodelete_2d, LocaleController.formatPluralString("Days", 2, new Object[0]), false, null);
+        this.W = c11;
+        org.telegram.ui.ActionBar.e1 c12 = org.telegram.ui.ActionBar.u0.c(false, false, this, R.drawable.msg_autodelete_1w, LocaleController.formatPluralString("Weeks", 1, new Object[0]), false, null);
+        org.telegram.ui.ActionBar.e1 c13 = org.telegram.ui.ActionBar.u0.c(false, false, this, R.drawable.msg_autodelete_1m, LocaleController.formatPluralString("Months", 1, new Object[0]), false, null);
+        this.V = c13;
+        org.telegram.ui.ActionBar.e1 c14 = org.telegram.ui.ActionBar.u0.c(false, false, this, R.drawable.msg_cancel, LocaleController.getString(R.string.AutoDeleteMediaNever), false, null);
+        org.telegram.ui.ActionBar.e1 c15 = org.telegram.ui.ActionBar.u0.c(false, false, this, R.drawable.msg_delete, LocaleController.getString(R.string.DeleteException), false, null);
+        this.U = c15;
+        int i10 = org.telegram.ui.ActionBar.h6.p7;
+        c15.c(org.telegram.ui.ActionBar.h6.x0(null, i10, false), org.telegram.ui.ActionBar.h6.x0(null, i10, false));
+        arrayList.add(new w70(c10, CacheByChatsController.KEEP_MEDIA_ONE_DAY));
+        arrayList.add(new w70(c11, CacheByChatsController.KEEP_MEDIA_TWO_DAY));
+        arrayList.add(new w70(c12, CacheByChatsController.KEEP_MEDIA_ONE_WEEK));
+        arrayList.add(new w70(c13, CacheByChatsController.KEEP_MEDIA_ONE_MONTH));
+        arrayList.add(new w70(c14, CacheByChatsController.KEEP_MEDIA_FOREVER));
+        arrayList.add(new w70(c15, CacheByChatsController.KEEP_MEDIA_DELETE));
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.h0 = frameLayout;
+        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.H8, false));
+        View view = new View(context);
+        view.setBackground(org.telegram.ui.ActionBar.h6.V0(context, R.drawable.greydivider, org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.b7, null)));
+        frameLayout.addView(view, w7.z5.d(-1.0f, -1));
+        frameLayout.setTag(R.id.fit_width_tag, 1);
+        a(frameLayout, w7.z5.n(-1, 8));
+        org.telegram.ui.Components.t00 t00Var = new org.telegram.ui.Components.t00(this, context);
+        this.b0 = t00Var;
+        a(t00Var, w7.z5.n(-1, 48));
+        t00Var.setOnClickListener(new org.telegram.ui.Components.g51(22, this, n2Var));
+        for (int i11 = 0; i11 < this.a0.size(); i11++) {
+            ((w70) this.a0.get(i11)).a.setOnClickListener(new ai.n1(this, ((w70) this.a0.get(i11)).b, 20));
+        }
+        org.telegram.ui.Components.x90 x90Var = new org.telegram.ui.Components.x90(context, null);
+        this.T = x90Var;
+        x90Var.setTag(R.id.fit_width_tag, 1);
+        x90Var.setPadding(AndroidUtilities.dp(13.0f), 0, AndroidUtilities.dp(13.0f), AndroidUtilities.dp(8.0f));
+        x90Var.setTextSize(1, 13.0f);
+        x90Var.setTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.E8, false));
+        x90Var.setMovementMethod(LinkMovementMethod.getInstance());
+        x90Var.setLinkTextColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.J6, false));
+        x90Var.setText(LocaleController.getString(R.string.KeepMediaPopupDescription));
+        a(x90Var, w7.z5.p(-1, -2, 0.0f, 0, 0, 8, 0, 0));
     }
 
-    public static void E(x70 x70Var, String str) {
-        y70 y70Var = x70Var.r;
-        if (y70Var.N) {
-            if (TextUtils.isEmpty(str)) {
-                y70Var.d.setBackground(null);
-            } else {
-                y70Var.d.setBackgroundColor(y70Var.getThemedColor(org.telegram.ui.ActionBar.g6.d6));
-            }
+    public final void f() {
+        if (this.f0 != null) {
+            ((org.telegram.ui.Components.k9) this.b0.d).setTranslationX((3 - Math.min(3, this.f0.size())) * AndroidUtilities.dp(12.0f));
         }
-        if (x70Var.n != 0) {
-            y70Var.getConnectionsManager().cancelRequest(x70Var.n, true);
-            x70Var.n = 0;
-        }
-        d20 d20Var = x70Var.f;
-        if (d20Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(d20Var);
-            x70Var.f = null;
-        }
-        x70Var.h = null;
-        int h = x70Var.h();
-        if (h > 0) {
-            x70Var.d.clear();
-            x70Var.e.clear();
-            x70Var.t(0, h);
-        }
-        if (TextUtils.isEmpty(str)) {
-            y70Var.b.setVisibility(8);
-            y70Var.b.e(false, true);
-            return;
-        }
-        if (y70Var.b.getVisibility() != 0) {
-            y70Var.b.setVisibility(0);
-            y70Var.b.e(true, false);
-        } else {
-            y70Var.b.e(true, true);
-        }
-        d20 d20Var2 = new d20(9, x70Var, str);
-        x70Var.f = d20Var2;
-        AndroidUtilities.runOnUIThread(d20Var2, 300L);
     }
 
-    @Override // org.telegram.ui.Components.lm0
-    public final boolean D(s4.b1 b1Var) {
-        return j(b1Var.b()) == 0;
+    public final void g(boolean z10) {
+        this.c0 = -1;
+        this.h0.setVisibility(0);
+        this.U.setVisibility(z10 ? 8 : 0);
+        this.T.setVisibility(0);
+        this.b0.setVisibility(8);
     }
 
-    @Override // s4.g0
-    public final int h() {
-        return this.e.size() + this.d.size() + (!this.e.isEmpty() ? 1 : 0);
-    }
-
-    @Override // s4.g0
-    public final long i(int i10) {
-        if (j(i10) != 0) {
-            return -1L;
-        }
-        ArrayList arrayList = i10 > this.d.size() ? this.e : this.d;
-        if (i10 > this.d.size()) {
-            i10 = (i10 - this.d.size()) - 1;
-        }
-        return ((TLRPC.TL_messages_stickerSet) arrayList.get(i10)).set.id;
-    }
-
-    @Override // s4.g0
-    public final int j(int i10) {
-        return this.d.size() == i10 ? 1 : 0;
-    }
-
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
-        if (j(i10) != 0) {
-            return;
-        }
-        boolean z10 = i10 > this.d.size();
-        ArrayList arrayList = z10 ? this.e : this.d;
-        if (z10) {
-            i10 = (i10 - this.d.size()) - 1;
-        }
-        org.telegram.ui.Cells.m8 m8Var = (org.telegram.ui.Cells.m8) b1Var.a;
-        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) arrayList.get(i10);
-        m8Var.d(tL_messages_stickerSet, i10 != arrayList.size() - 1, !z10);
-        String str = this.h;
-        String lowerCase = str != null ? str.toLowerCase(Locale.ROOT) : "";
-        y70 y70Var = this.r;
-        org.telegram.ui.ActionBar.c6 resourceProvider = y70Var.getResourceProvider();
-        TLRPC.StickerSet stickerSet = tL_messages_stickerSet.set;
-        String str2 = stickerSet.title;
-        Locale locale = Locale.ROOT;
-        int indexOf = str2.toLowerCase(locale).indexOf(lowerCase);
-        if (indexOf != -1) {
-            SpannableString spannableString = new SpannableString(stickerSet.title);
-            spannableString.setSpan(new org.telegram.ui.Components.q10(org.telegram.ui.ActionBar.g6.q6, resourceProvider), indexOf, lowerCase.length() + indexOf, 0);
-            m8Var.b.setText(spannableString);
-        }
-        int indexOf2 = stickerSet.short_name.toLowerCase(locale).indexOf(lowerCase);
-        if (indexOf2 != -1) {
-            String str3 = stickerSet.emojis ? "t.me/addemoji/" : "t.me/addstickers/";
-            int length = str3.length() + indexOf2;
-            StringBuilder u10 = a1.g.u(str3);
-            u10.append(stickerSet.short_name);
-            SpannableString spannableString2 = new SpannableString(u10.toString());
-            spannableString2.setSpan(new org.telegram.ui.Components.q10(org.telegram.ui.ActionBar.g6.q6, resourceProvider), length, lowerCase.length() + length, 0);
-            m8Var.c.setText(spannableString2);
-        }
-        TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = y70Var.r;
-        m8Var.b(tL_messages_stickerSet.set.id == (tL_messages_stickerSet2 != null ? tL_messages_stickerSet2.set.id : y70Var.b0(y70Var.v) != null ? y70Var.b0(y70Var.v).id : 0L), false);
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        org.telegram.ui.Cells.m8 m8Var;
-        Context context = this.c;
-        if (i10 != 0) {
-            int i11 = org.telegram.ui.ActionBar.g6.B6;
-            y70 y70Var = this.r;
-            org.telegram.ui.Cells.m4 m4Var = new org.telegram.ui.Cells.m4(this.c, i11, 21, 0, 0, false, false, y70Var.getResourceProvider());
-            org.telegram.ui.Components.cr crVar = new org.telegram.ui.Components.cr(new ColorDrawable(y70Var.getThemedColor(org.telegram.ui.ActionBar.g6.a7)), org.telegram.ui.ActionBar.g6.W0(context, R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.g6.b7));
-            crVar.w = true;
-            m4Var.setBackground(crVar);
-            m4Var.setText(LocaleController.getString(y70Var.N ? R.string.ChooseStickerMyEmojiPacks : R.string.ChooseStickerMyStickerSets));
-            m8Var = m4Var;
-        } else {
-            org.telegram.ui.Cells.m8 m8Var2 = new org.telegram.ui.Cells.m8(context, 3);
-            m8Var2.setBackgroundColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.d6, false));
-            m8Var = m8Var2;
-        }
-        m8Var.setLayoutParams(new s4.o0(-1, -2));
-        return new org.telegram.ui.Components.wl0(m8Var);
+    public void setCallback(v70 v70Var) {
+        this.e0 = v70Var;
     }
 }

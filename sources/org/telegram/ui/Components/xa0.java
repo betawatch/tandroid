@@ -1,21 +1,54 @@
 package org.telegram.ui.Components;
 
-import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class xa0 extends org.telegram.ui.r01 {
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        if (!getImageReceiver().hasNotThumb()) {
-            accessibilityNodeInfo.setVisibleToUser(false);
-            return;
+public final class xa0 extends xh.k {
+    public final /* synthetic */ int E = 1;
+    public final /* synthetic */ Object F;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xa0(org.telegram.ui.lh0 lh0Var, org.telegram.ui.lh0 lh0Var2, FrameLayout frameLayout, long j10) {
+        super(lh0Var2, frameLayout, j10, true);
+        this.F = lh0Var;
+    }
+
+    @Override // xh.k
+    public final void f(String str, boolean z10, boolean z11) {
+        org.telegram.ui.ActionBar.k kVar;
+        switch (this.E) {
+            case 0:
+                xh.b bVar = (xh.b) this.F;
+                rx0 rx0Var = bVar.W;
+                if (!this.e.isEmpty()) {
+                    if (!z11) {
+                        super.f(str, z10, z11);
+                        break;
+                    } else {
+                        bVar.w.J.setText("");
+                        break;
+                    }
+                } else if (rx0Var.getVisibility() != 4) {
+                    rx0Var.setVisibility(4);
+                    break;
+                }
+                break;
+            default:
+                if (!z11) {
+                    super.f(str, z10, z11);
+                    break;
+                } else {
+                    kVar = ((org.telegram.ui.ActionBar.n2) ((org.telegram.ui.lh0) this.F)).actionBar;
+                    kVar.setSearchFieldText("");
+                    break;
+                }
         }
-        accessibilityNodeInfo.setText(LocaleController.getString(R.string.AccDescrProfilePicture));
-        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, LocaleController.getString(R.string.Open)));
-        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, LocaleController.getString(R.string.AccDescrOpenInPhotoViewer)));
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public xa0(xh.b bVar, org.telegram.ui.ActionBar.n2 n2Var, FrameLayout frameLayout, long j10) {
+        super(n2Var, frameLayout, j10, false);
+        this.F = bVar;
     }
 }

@@ -1,339 +1,175 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.kc1;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class er0 extends lm0 {
-    public int G;
-    public dr0 H;
-    public int J;
-    public final /* synthetic */ ir0 K;
-    public final Context c;
-    public final cr0 e;
-    public br0 f;
-    public br0 h;
-    public String n;
-    public int r;
-    public int s;
-    public int v;
-    public ArrayList d = new ArrayList();
-    public int w = -1;
-    public int x = -1;
-    public int y = -1;
-    public int E = -1;
-    public int F = -1;
-    public boolean I = false;
+public final class er0 extends Drawable {
+    public long a = 0;
+    public final float[] b = {0.0f, -0.5f};
+    public final Drawable c;
+    public final Drawable d;
+    public final Drawable e;
+    public final int f;
 
-    public er0(ir0 ir0Var, Context context) {
-        this.K = ir0Var;
-        this.c = context;
-        cr0 cr0Var = new cr0(false);
-        this.e = cr0Var;
-        cr0Var.a = new ji.w4(this, 16);
-    }
-
-    @Override // org.telegram.ui.Components.lm0
-    public final boolean D(s4.b1 b1Var) {
-        int i10 = b1Var.f;
-        return (i10 == 1 || i10 == 4) ? false : true;
-    }
-
-    public final void E(String str) {
-        if (str == null || !str.equals(this.n)) {
-            this.n = str;
-            if (this.f != null) {
-                Utilities.searchQueue.cancelRunnable(this.f);
-                this.f = null;
-            }
-            br0 br0Var = this.h;
-            if (br0Var != null) {
-                AndroidUtilities.cancelRunOnUIThread(br0Var);
-                this.h = null;
-            }
-            this.d.clear();
-            this.e.f(null, null);
-            this.e.g(null, true, true, true, true, 0L, false, 0, 0);
-            l();
-            this.K.L0(true);
-            if (TextUtils.isEmpty(str)) {
-                ir0.G0(this.K);
-                this.r = -1;
-                this.I = false;
-            } else {
-                this.I = true;
-                int i10 = this.r + 1;
-                this.r = i10;
-                this.K.Q.e(true, true);
-                DispatchQueue dispatchQueue = Utilities.searchQueue;
-                br0 br0Var2 = new br0(this, str, i10, 0);
-                this.f = br0Var2;
-                dispatchQueue.postRunnable(br0Var2, 300L);
-            }
-            this.K.L0(false);
+    public er0(Context context, int i10) {
+        this.f = i10;
+        if (i10 == 4) {
+            this.c = context.getResources().getDrawable(R.drawable.filled_extend_location).mutate();
+            this.d = context.getResources().getDrawable(R.drawable.smallanimationpinleft).mutate();
+            this.e = context.getResources().getDrawable(R.drawable.smallanimationpinright).mutate();
+        } else if (i10 == 5) {
+            this.c = context.getResources().getDrawable(R.drawable.filled_stop_location).mutate();
+            this.d = context.getResources().getDrawable(R.drawable.smallanimationpinleft).mutate();
+            this.e = context.getResources().getDrawable(R.drawable.smallanimationpinright).mutate();
+        } else if (i10 == 1) {
+            this.c = context.getResources().getDrawable(R.drawable.smallanimationpin).mutate();
+            this.d = context.getResources().getDrawable(R.drawable.smallanimationpinleft).mutate();
+            this.e = context.getResources().getDrawable(R.drawable.smallanimationpinright).mutate();
+        } else {
+            this.c = context.getResources().getDrawable(R.drawable.animationpin).mutate();
+            this.d = context.getResources().getDrawable(R.drawable.animationpinleft).mutate();
+            this.e = context.getResources().getDrawable(R.drawable.animationpinright).mutate();
         }
     }
 
-    @Override // s4.g0
-    public final int h() {
-        this.G = 0;
-        this.w = -1;
-        this.x = -1;
-        this.E = -1;
-        this.F = -1;
-        if (!TextUtils.isEmpty(this.n)) {
-            int i10 = this.G;
-            int i11 = i10 + 1;
-            this.G = i11;
-            this.y = i10;
-            int size = this.e.d.size() + this.d.size() + i11;
-            this.G = size;
-            if (size == 1) {
-                this.y = -1;
-                this.G = 0;
-                this.J = 0;
-                return 0;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        float[] fArr;
+        int dp;
+        int dp2;
+        int dp3;
+        int e;
+        int i10;
+        Drawable drawable = this.c;
+        int intrinsicWidth = drawable.getIntrinsicWidth();
+        int intrinsicHeight = drawable.getIntrinsicHeight();
+        int i11 = 3;
+        int i12 = 5;
+        int i13 = 1;
+        int i14 = this.f;
+        int i15 = 4;
+        int dp4 = (i14 == 4 || i14 == 5) ? AndroidUtilities.dp(24.0f) : i14 == 3 ? AndroidUtilities.dp(44.0f) : i14 == 2 ? AndroidUtilities.dp(32.0f) : i14 == 1 ? AndroidUtilities.dp(30.0f) : AndroidUtilities.dp(120.0f);
+        int intrinsicHeight2 = ((getIntrinsicHeight() - dp4) / 2) + getBounds().top;
+        int intrinsicWidth2 = ((getIntrinsicWidth() - dp4) / 2) + getBounds().left;
+        int i16 = intrinsicWidth + intrinsicWidth2;
+        drawable.setBounds(intrinsicWidth2, intrinsicHeight2, i16, intrinsicHeight2 + intrinsicHeight);
+        drawable.draw(canvas);
+        int i17 = 0;
+        while (true) {
+            fArr = this.b;
+            if (i17 >= 2) {
+                break;
             }
-            int i12 = size + 1;
-            this.G = i12;
-            this.F = size;
-            this.J = i12;
-            return i12;
-        }
-        int i13 = this.G;
-        this.y = i13;
-        this.G = i13 + 2;
-        this.w = i13 + 1;
-        ir0 ir0Var = this.K;
-        if (ir0Var.E0.size() > 0) {
-            int i14 = this.G;
-            int i15 = i14 + 1;
-            this.G = i15;
-            this.x = i14;
-            this.E = i15;
-            this.G = ir0Var.E0.size() + i15;
-        }
-        int i16 = this.G;
-        int i17 = i16 + 1;
-        this.G = i17;
-        this.F = i16;
-        this.J = i17;
-        return i17;
-    }
-
-    @Override // s4.g0
-    public final int j(int i10) {
-        if (i10 == this.F) {
-            return 4;
-        }
-        if (i10 == this.y) {
-            return 1;
-        }
-        if (i10 == this.w) {
-            return 2;
-        }
-        if (i10 == this.x) {
-            return 3;
-        }
-        return TextUtils.isEmpty(this.n) ? 0 : 5;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r3v9, types: [java.lang.CharSequence] */
-    /* JADX WARN: Type inference failed for: r9v1, types: [android.text.SpannableStringBuilder] */
-    /* JADX WARN: Type inference failed for: r9v2, types: [android.text.SpannableStringBuilder] */
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
-        long j10;
-        String str;
-        String str2;
-        TLObject tLObject;
-        long j11;
-        int indexOfIgnoreCase;
-        org.telegram.ui.ActionBar.c6 c6Var;
-        TLObject tLObject2;
-        String str3;
-        int i11;
-        int indexOfIgnoreCase2;
-        org.telegram.ui.ActionBar.c6 c6Var2;
-        ir0 ir0Var = this.K;
-        a0.h hVar = ir0Var.U;
-        int i12 = b1Var.f;
-        View view = b1Var.a;
-        if (i12 != 0 && i12 != 5) {
-            if (i12 == 2) {
-                ((mm0) view).getAdapter().l();
-                return;
-            }
-            return;
-        }
-        boolean isEmpty = TextUtils.isEmpty(this.n);
-        String str4 = null;
-        cr0 cr0Var = this.e;
-        TLRPC.TL_encryptedChat tL_encryptedChat = null;
-        if (!isEmpty) {
-            int i13 = i10 - 1;
-            if (i13 < this.d.size()) {
-                wq0 wq0Var = (wq0) this.d.get(i13);
-                j11 = wq0Var.a.id;
-                str2 = wq0Var.d;
-                tLObject = null;
-            } else {
-                i13 -= this.d.size();
-                TLObject tLObject3 = (TLObject) cr0Var.d.get(i13);
-                if (tLObject3 instanceof TLRPC.User) {
-                    TLRPC.User user = (TLRPC.User) tLObject3;
-                    j10 = user.id;
-                    str = ContactsController.formatName(user.first_name, user.last_name);
+            float f7 = fArr[i17];
+            if (f7 >= 0.0f) {
+                float f10 = (f7 * 0.5f) + 0.5f;
+                if (i14 == i15 || i14 == i12) {
+                    int dp5 = AndroidUtilities.dp(2.5f * f10);
+                    dp = AndroidUtilities.dp(f10 * 6.5f);
+                    int dp6 = AndroidUtilities.dp(fArr[i17] * 6.0f);
+                    dp2 = (AndroidUtilities.dp(3.0f) + intrinsicWidth2) - dp6;
+                    dp3 = ((intrinsicHeight / 2) + intrinsicHeight2) - AndroidUtilities.dp(2.0f);
+                    e = org.telegram.ui.Cells.t0.e(3.0f, i16, dp6);
+                    i10 = dp5;
+                } else if (i14 == i11) {
+                    i10 = AndroidUtilities.dp(5.0f * f10);
+                    dp = AndroidUtilities.dp(f10 * 18.0f);
+                    int dp7 = AndroidUtilities.dp(fArr[i17] * 15.0f);
+                    dp2 = (AndroidUtilities.dp(2.0f) + intrinsicWidth2) - dp7;
+                    dp3 = ((intrinsicHeight / 2) + intrinsicHeight2) - AndroidUtilities.dp(7.0f);
+                    e = org.telegram.ui.Cells.t0.e(2.0f, i16, dp7);
+                } else if (i14 == 2) {
+                    i10 = AndroidUtilities.dp(5.0f * f10);
+                    dp = AndroidUtilities.dp(f10 * 18.0f);
+                    int dp8 = AndroidUtilities.dp(fArr[i17] * 15.0f);
+                    dp2 = (AndroidUtilities.dp(2.0f) + intrinsicWidth2) - dp8;
+                    dp3 = (intrinsicHeight / 2) + intrinsicHeight2;
+                    e = org.telegram.ui.Cells.t0.e(2.0f, i16, dp8);
+                } else if (i14 == i13) {
+                    int dp9 = AndroidUtilities.dp(2.5f * f10);
+                    dp = AndroidUtilities.dp(f10 * 6.5f);
+                    int dp10 = AndroidUtilities.dp(fArr[i17] * 6.0f);
+                    dp2 = (AndroidUtilities.dp(7.0f) + intrinsicWidth2) - dp10;
+                    dp3 = (intrinsicHeight / 2) + intrinsicHeight2;
+                    i10 = dp9;
+                    e = org.telegram.ui.Cells.t0.e(7.0f, i16, dp10);
                 } else {
-                    TLRPC.Chat chat = (TLRPC.Chat) tLObject3;
-                    j10 = -chat.id;
-                    str = chat.title;
+                    i10 = AndroidUtilities.dp(5.0f * f10);
+                    dp = AndroidUtilities.dp(f10 * 18.0f);
+                    int dp11 = AndroidUtilities.dp(fArr[i17] * 15.0f);
+                    dp2 = (AndroidUtilities.dp(42.0f) + intrinsicWidth2) - dp11;
+                    dp3 = ((intrinsicHeight / 2) + intrinsicHeight2) - AndroidUtilities.dp(7.0f);
+                    e = org.telegram.ui.Cells.t0.e(42.0f, i16, dp11);
                 }
-                String str5 = cr0Var.c;
-                if (TextUtils.isEmpty(str5) || str == null || (indexOfIgnoreCase = AndroidUtilities.indexOfIgnoreCase(str.toString(), str5)) == -1) {
-                    str2 = str;
-                    tLObject = tLObject3;
-                } else {
-                    ?? spannableStringBuilder = new SpannableStringBuilder(str);
-                    int i14 = org.telegram.ui.ActionBar.g6.q6;
-                    c6Var = ((org.telegram.ui.ActionBar.e3) ir0Var).resourcesProvider;
-                    spannableStringBuilder.setSpan(new q10(i14, c6Var), indexOfIgnoreCase, str5.length() + indexOfIgnoreCase, 33);
-                    tLObject = tLObject3;
-                    str2 = spannableStringBuilder;
-                }
-                j11 = j10;
+                float f11 = fArr[i17];
+                int x10 = (int) ((f11 < 0.5f ? f11 / 0.5f : org.telegram.messenger.q.x(f11, 0.5f, 0.5f, 1.0f)) * 255.0f);
+                Drawable drawable2 = this.d;
+                drawable2.setAlpha(x10);
+                int i18 = dp3 - dp;
+                int i19 = dp3 + dp;
+                drawable2.setBounds(dp2 - i10, i18, dp2 + i10, i19);
+                drawable2.draw(canvas);
+                Drawable drawable3 = this.e;
+                drawable3.setAlpha(x10);
+                drawable3.setBounds(e - i10, i18, e + i10, i19);
+                drawable3.draw(canvas);
             }
-            if (view instanceof org.telegram.ui.Cells.i6) {
-                org.telegram.ui.Cells.i6 i6Var = (org.telegram.ui.Cells.i6) view;
-                i6Var.u(tLObject, null, str2, null, false, false);
-                i6Var.M = i13 < h() + (-2);
-                return;
-            } else {
-                String str6 = str2;
-                if (view instanceof org.telegram.ui.Cells.f7) {
-                    ((org.telegram.ui.Cells.f7) view).c(j11, hVar.h(j11) >= 0, str6);
-                    return;
-                }
-                return;
+            i17++;
+            i11 = 3;
+            i12 = 5;
+            i13 = 1;
+            i15 = 4;
+        }
+        long currentTimeMillis = System.currentTimeMillis();
+        long j10 = currentTimeMillis - this.a;
+        this.a = currentTimeMillis;
+        if (j10 > 16) {
+            j10 = 16;
+        }
+        for (int i20 = 0; i20 < 2; i20++) {
+            if (fArr[i20] >= 1.0f) {
+                fArr[i20] = 0.0f;
+            }
+            float f12 = (j10 / 1300.0f) + fArr[i20];
+            fArr[i20] = f12;
+            if (f12 > 1.0f) {
+                fArr[i20] = 1.0f;
             }
         }
-        int i15 = this.E;
-        long j12 = 0;
-        if (i15 < 0 || i10 < i15) {
-            tLObject2 = null;
-            str3 = null;
-        } else {
-            TLObject tLObject4 = ((hg.g0) ir0Var.E0.get(i10 - i15)).a;
-            if (tLObject4 instanceof TLRPC.User) {
-                TLRPC.User user2 = (TLRPC.User) tLObject4;
-                j12 = user2.id;
-                str4 = ContactsController.formatName(user2.first_name, user2.last_name);
-            } else if (tLObject4 instanceof TLRPC.Chat) {
-                TLRPC.Chat chat2 = (TLRPC.Chat) tLObject4;
-                j12 = -chat2.id;
-                str4 = chat2.title;
-            } else if (tLObject4 instanceof TLRPC.TL_encryptedChat) {
-                tL_encryptedChat = (TLRPC.TL_encryptedChat) tLObject4;
-                i11 = ((org.telegram.ui.ActionBar.e3) ir0Var).currentAccount;
-                TLRPC.User user3 = MessagesController.getInstance(i11).getUser(Long.valueOf(tL_encryptedChat.user_id));
-                if (user3 != null) {
-                    j12 = user3.id;
-                    str4 = ContactsController.formatName(user3.first_name, user3.last_name);
-                }
-            }
-            String str7 = cr0Var.c;
-            if (TextUtils.isEmpty(str7) || str4 == null || (indexOfIgnoreCase2 = AndroidUtilities.indexOfIgnoreCase(str4.toString(), str7)) == -1) {
-                tLObject2 = tLObject4;
-                str3 = str4;
-            } else {
-                ?? spannableStringBuilder2 = new SpannableStringBuilder(str4);
-                int i16 = org.telegram.ui.ActionBar.g6.q6;
-                c6Var2 = ((org.telegram.ui.ActionBar.e3) ir0Var).resourcesProvider;
-                spannableStringBuilder2.setSpan(new q10(i16, c6Var2), indexOfIgnoreCase2, str7.length() + indexOfIgnoreCase2, 33);
-                tLObject2 = tLObject4;
-                str3 = spannableStringBuilder2;
-            }
-        }
-        TLRPC.TL_encryptedChat tL_encryptedChat2 = tL_encryptedChat;
-        if (view instanceof org.telegram.ui.Cells.i6) {
-            org.telegram.ui.Cells.i6 i6Var2 = (org.telegram.ui.Cells.i6) view;
-            i6Var2.u(tLObject2, tL_encryptedChat2, str3, null, false, false);
-            i6Var2.M = i10 < h() + (-2);
-        } else {
-            String str8 = str3;
-            if (view instanceof org.telegram.ui.Cells.f7) {
-                ((org.telegram.ui.Cells.f7) view).c(j12, hVar.h(j12) >= 0, str8);
-            }
-        }
+        invalidateSelf();
     }
 
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        org.telegram.ui.ActionBar.c6 c6Var;
-        View view;
-        org.telegram.ui.ActionBar.c6 c6Var2;
-        int i11;
-        org.telegram.ui.ActionBar.c6 c6Var3;
-        org.telegram.ui.ActionBar.c6 c6Var4;
-        org.telegram.ui.ActionBar.c6 c6Var5;
-        Context context = this.c;
-        ir0 ir0Var = this.K;
-        if (i10 == 0) {
-            c6Var = ((org.telegram.ui.ActionBar.e3) ir0Var).resourcesProvider;
-            org.telegram.ui.Cells.i6 i6Var = new org.telegram.ui.Cells.i6(context, c6Var);
-            i6Var.E0 = true;
-            i6Var.l0 = true;
-            view = i6Var;
-        } else if (i10 == 2) {
-            c6Var2 = ((org.telegram.ui.ActionBar.e3) ir0Var).resourcesProvider;
-            kc1 kc1Var = new kc1(context, 6, c6Var2);
-            kc1Var.setItemAnimator(null);
-            kc1Var.setLayoutAnimation(null);
-            hg.a0 a0Var = new hg.a0(11);
-            a0Var.j1(0);
-            kc1Var.setLayoutManager(a0Var);
-            i11 = ((org.telegram.ui.ActionBar.e3) ir0Var).currentAccount;
-            c6Var3 = ((org.telegram.ui.ActionBar.e3) ir0Var).resourcesProvider;
-            dr0 dr0Var = new dr0(this, context, i11, c6Var3);
-            this.H = dr0Var;
-            kc1Var.setAdapter(dr0Var);
-            kc1Var.setOnItemClickListener(new j(this, 12));
-            view = kc1Var;
-        } else if (i10 == 3) {
-            c6Var4 = ((org.telegram.ui.ActionBar.e3) ir0Var).resourcesProvider;
-            org.telegram.ui.Cells.v3 v3Var = new org.telegram.ui.Cells.v3(context, c6Var4);
-            v3Var.setTextColor(org.telegram.ui.ActionBar.g6.f7);
-            v3Var.setBackgroundColor(ir0Var.getThemedColor(org.telegram.ui.ActionBar.g6.e7));
-            v3Var.setText(LocaleController.getString(R.string.Recent));
-            view = v3Var;
-        } else if (i10 == 4) {
-            view = new di.ab(this, context, 22);
-        } else if (i10 != 5) {
-            View view2 = new View(context);
-            view2.setLayoutParams(new s4.o0(-1, AndroidUtilities.dp((!ir0Var.h0 || ir0Var.o0[1] == null) ? 56.0f : 109.0f)));
-            view = view2;
-        } else {
-            c6Var5 = ((org.telegram.ui.ActionBar.e3) ir0Var).resourcesProvider;
-            View f7Var = new org.telegram.ui.Cells.f7(context, 0, c6Var5);
-            f7Var.setLayoutParams(new s4.o0(-1, AndroidUtilities.dp(100.0f)));
-            view = f7Var;
-        }
-        return new wl0(view);
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        int i10 = this.f;
+        return (i10 == 4 || i10 == 5) ? AndroidUtilities.dp(42.0f) : i10 == 3 ? AndroidUtilities.dp(100.0f) : i10 == 2 ? AndroidUtilities.dp(74.0f) : i10 == 1 ? AndroidUtilities.dp(40.0f) : AndroidUtilities.dp(180.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        int i10 = this.f;
+        return (i10 == 4 || i10 == 5) ? AndroidUtilities.dp(42.0f) : i10 == 3 ? AndroidUtilities.dp(100.0f) : i10 == 2 ? AndroidUtilities.dp(74.0f) : i10 == 1 ? AndroidUtilities.dp(40.0f) : AndroidUtilities.dp(120.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.c.setColorFilter(colorFilter);
+        this.d.setColorFilter(colorFilter);
+        this.e.setColorFilter(colorFilter);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
     }
 }

@@ -1,138 +1,108 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.text.SpannableStringBuilder;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class sr extends lm0 {
-    public final /* synthetic */ ur c;
+public final /* synthetic */ class sr implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xr b;
+    public final /* synthetic */ ei.d c;
 
-    public sr(ur urVar) {
-        this.c = urVar;
+    public /* synthetic */ sr(xr xrVar, ei.d dVar, int i10) {
+        this.a = i10;
+        this.b = xrVar;
+        this.c = dVar;
     }
 
-    @Override // org.telegram.ui.Components.lm0
-    public final boolean D(s4.b1 b1Var) {
-        return b1Var.f == 3;
-    }
-
-    @Override // s4.g0
-    public final int h() {
-        ur urVar = this.c;
-        return urVar.Z ? urVar.Y.size() + 3 : urVar.a0 ? 2 : 1;
-    }
-
-    @Override // s4.g0
-    public final int j(int i10) {
-        if (i10 == 0) {
-            return 0;
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                final int i10 = 0;
+                final xr xrVar = this.b;
+                final ei.d dVar = this.c;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.tr
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                xr xrVar2 = xrVar;
+                                xrVar2.getClass();
+                                dVar.setLoading(false);
+                                TLObject tLObject2 = tLObject;
+                                if (tLObject2 != null && (tLObject2 instanceof TL_phone.groupCallStreamRtmpUrl)) {
+                                    TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl = (TL_phone.groupCallStreamRtmpUrl) tLObject2;
+                                    xrVar2.b0 = groupcallstreamrtmpurl.url;
+                                    xrVar2.c0 = groupcallstreamrtmpurl.key;
+                                    xrVar2.d0 = new SpannableStringBuilder(xrVar2.c0);
+                                    xrVar2.e0.N(true);
+                                    break;
+                                }
+                                break;
+                            default:
+                                xr xrVar3 = xrVar;
+                                xrVar3.getClass();
+                                dVar.setLoading(false);
+                                TLObject tLObject3 = tLObject;
+                                if (tLObject3 instanceof TL_phone.groupCallStreamRtmpUrl) {
+                                    TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl2 = (TL_phone.groupCallStreamRtmpUrl) tLObject3;
+                                    xrVar3.b0 = groupcallstreamrtmpurl2.url;
+                                    xrVar3.c0 = groupcallstreamrtmpurl2.key;
+                                    xrVar3.d0 = new SpannableStringBuilder(xrVar3.c0);
+                                    xrVar3.e0.N(true);
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
+            default:
+                final int i11 = 1;
+                final xr xrVar2 = this.b;
+                final ei.d dVar2 = this.c;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.tr
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                xr xrVar22 = xrVar2;
+                                xrVar22.getClass();
+                                dVar2.setLoading(false);
+                                TLObject tLObject2 = tLObject;
+                                if (tLObject2 != null && (tLObject2 instanceof TL_phone.groupCallStreamRtmpUrl)) {
+                                    TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl = (TL_phone.groupCallStreamRtmpUrl) tLObject2;
+                                    xrVar22.b0 = groupcallstreamrtmpurl.url;
+                                    xrVar22.c0 = groupcallstreamrtmpurl.key;
+                                    xrVar22.d0 = new SpannableStringBuilder(xrVar22.c0);
+                                    xrVar22.e0.N(true);
+                                    break;
+                                }
+                                break;
+                            default:
+                                xr xrVar3 = xrVar2;
+                                xrVar3.getClass();
+                                dVar2.setLoading(false);
+                                TLObject tLObject3 = tLObject;
+                                if (tLObject3 instanceof TL_phone.groupCallStreamRtmpUrl) {
+                                    TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl2 = (TL_phone.groupCallStreamRtmpUrl) tLObject3;
+                                    xrVar3.b0 = groupcallstreamrtmpurl2.url;
+                                    xrVar3.c0 = groupcallstreamrtmpurl2.key;
+                                    xrVar3.d0 = new SpannableStringBuilder(xrVar3.c0);
+                                    xrVar3.e0.N(true);
+                                    break;
+                                }
+                                break;
+                        }
+                    }
+                });
+                break;
         }
-        int i11 = 1;
-        if (i10 != 1) {
-            i11 = 2;
-            if (i10 != 2) {
-                return 3;
-            }
-        }
-        return i11;
-    }
-
-    @Override // s4.g0
-    public final void v(s4.b1 b1Var, int i10) {
-        int i11;
-        TLObject chat;
-        String str;
-        int i12;
-        int i13 = b1Var.f;
-        View view = b1Var.a;
-        if (i13 != 3) {
-            if (i13 != 2) {
-                if (i13 == 1) {
-                    ((org.telegram.ui.Cells.e9) view).setText(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.VoipChatStreamWithAnotherApp), org.telegram.ui.ActionBar.g6.L6, 0, new kq(this, 3)), true, AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f)));
-                    return;
-                }
-                return;
-            } else {
-                org.telegram.ui.Cells.m4 m4Var = (org.telegram.ui.Cells.m4) view;
-                m4Var.setTextSize(15.0f);
-                m4Var.setPadding(0, 0, 0, AndroidUtilities.dp(2.0f));
-                m4Var.setText(LocaleController.getString(R.string.VoipChatDisplayedAs).replace(":", ""));
-                return;
-            }
-        }
-        ur urVar = this.c;
-        TLRPC.Peer peer = (TLRPC.Peer) urVar.Y.get(i10 - 3);
-        long peerId = MessageObject.getPeerId(peer);
-        if (peerId > 0) {
-            i12 = ((org.telegram.ui.ActionBar.e3) urVar).currentAccount;
-            chat = MessagesController.getInstance(i12).getUser(Long.valueOf(peerId));
-            str = LocaleController.getString(R.string.VoipGroupPersonalAccount);
-        } else {
-            i11 = ((org.telegram.ui.ActionBar.e3) urVar).currentAccount;
-            chat = MessagesController.getInstance(i11).getChat(Long.valueOf(-peerId));
-            str = null;
-        }
-        org.telegram.ui.Cells.g4 g4Var = (org.telegram.ui.Cells.g4) view;
-        g4Var.e(chat, null, str, i10 != h() - 1);
-        g4Var.c(peer == urVar.d0, false);
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r0v5, types: [android.view.ViewGroup, android.widget.LinearLayout] */
-    @Override // s4.g0
-    public final s4.b1 x(ViewGroup viewGroup, int i10) {
-        org.telegram.ui.ActionBar.c6 c6Var;
-        FrameLayout frameLayout;
-        Context context = viewGroup.getContext();
-        ur urVar = this.c;
-        if (i10 == 1) {
-            org.telegram.ui.Cells.e9 e9Var = new org.telegram.ui.Cells.e9(context);
-            int i11 = org.telegram.ui.ActionBar.g6.a7;
-            c6Var = ((org.telegram.ui.ActionBar.e3) urVar).resourcesProvider;
-            e9Var.setBackgroundColor(org.telegram.ui.ActionBar.g6.w0(i11, c6Var));
-            e9Var.setTopPadding(17);
-            e9Var.setBottomPadding(17);
-            frameLayout = e9Var;
-        } else if (i10 == 2) {
-            frameLayout = new org.telegram.ui.Cells.m4(context, 22);
-        } else if (i10 != 3) {
-            boolean z10 = urVar.b0;
-            ?? trVar = new tr(context);
-            trVar.setOrientation(1);
-            bk0 bk0Var = new bk0(context);
-            bk0Var.setAutoRepeat(true);
-            bk0Var.f(R.raw.utyan_schedule, 112, 112, null);
-            bk0Var.d();
-            trVar.addView(bk0Var, w7.z5.t(112, 112, 49, 0, 24, 0, 0));
-            TextView textView = new TextView(context);
-            textView.setTypeface(AndroidUtilities.bold());
-            textView.setText(z10 ? LocaleController.formatString(R.string.StartVoipChannelTitle, new Object[0]) : LocaleController.formatString(R.string.StartVoipChatTitle, new Object[0]));
-            textView.setTextSize(1, 20.0f);
-            textView.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.G6, false));
-            trVar.addView(textView, w7.z5.t(-2, -2, 1, 0, 14, 0, 7));
-            TextView textView2 = new TextView(context);
-            textView2.setTextSize(1, 14.0f);
-            textView2.setGravity(1);
-            textView2.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.j5, false));
-            textView2.setText(z10 ? LocaleController.formatString(R.string.VoipChannelStart2, new Object[0]) : LocaleController.formatString(R.string.VoipGroupStart2, new Object[0]));
-            textView2.setLineSpacing(textView2.getLineSpacingExtra(), textView2.getLineSpacingMultiplier() * 1.1f);
-            trVar.addView(textView2, w7.z5.t(-2, -2, 1, 28, 0, 28, 17));
-            frameLayout = trVar;
-        } else {
-            frameLayout = new org.telegram.ui.Cells.g4(1, 0, context, false);
-        }
-        frameLayout.setLayoutParams(new s4.o0(-1, -2));
-        return new wl0(frameLayout);
     }
 }

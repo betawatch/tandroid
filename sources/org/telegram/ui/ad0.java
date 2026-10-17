@@ -1,60 +1,88 @@
 package org.telegram.ui;
 
+import android.graphics.PointF;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class ad0 implements org.telegram.ui.Components.ju0 {
-    public final /* synthetic */ ld0 a;
+public final /* synthetic */ class ad0 implements o1.g {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public ad0(ld0 ld0Var) {
-        this.a = ld0Var;
+    public /* synthetic */ ad0(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.ju0
-    public final void R() {
-        ld0 ld0Var = this.a;
-        bd0 bd0Var = ld0Var.K0;
-        int c02 = bd0Var == null ? 0 : bd0Var.c0(8);
-        ld0Var.L0.setText(LocaleController.formatPluralString("LocationStories", c02, new Object[0]));
-        zc0 zc0Var = ld0Var.T;
-        boolean z10 = c02 > 0;
-        if (zc0Var.i0 != z10) {
-            zc0Var.i0 = z10;
-            zc0Var.l();
-            ld0Var.U.v0(0, AndroidUtilities.dp(200.0f), null);
+    @Override // o1.g
+    public final void a(o1.h hVar, float f7, float f10) {
+        int i10 = this.a;
+        Object obj = this.b;
+        switch (i10) {
+            case 0:
+                tf0 tf0Var = ((fg0) obj).b0;
+                if (tf0Var != null) {
+                    int i11 = tf0.E;
+                    View view = tf0Var.c;
+                    ViewGroup viewGroup = tf0Var.b;
+                    PointF pointF = tf0Var.y;
+                    ih.j.b(view, viewGroup, pointF);
+                    org.telegram.ui.Components.h20 h20Var = tf0Var.h;
+                    h20Var.setTranslationX(pointF.x);
+                    h20Var.setTranslationY(pointF.y);
+                    tf0Var.requestLayout();
+                    break;
+                }
+                break;
+            case 1:
+                bo0 bo0Var = (bo0) obj;
+                float f11 = f7 / 100.0f;
+                bo0Var.b = f11;
+                TextView textView = bo0Var.d.U;
+                if (textView != null) {
+                    textView.setAlpha((f11 * 0.2f) + 0.8f);
+                }
+                bo0Var.invalidate();
+                break;
+            case 2:
+                wt0 wt0Var = (wt0) obj;
+                wt0Var.c0 = f7;
+                wt0Var.e0 = f10;
+                wt0Var.G();
+                break;
+            case 3:
+                su0 su0Var = (su0) obj;
+                int dp = su0Var.e > su0Var.f ? AndroidUtilities.dp(48.0f) : 0;
+                org.telegram.ui.Components.c81 c81Var = su0Var.s.q3;
+                int measuredHeight = su0Var.getMeasuredHeight();
+                c81Var.h = (int) (((su0Var.getMeasuredWidth() - AndroidUtilities.dp(16.0f)) - f7) - dp);
+                c81Var.i = measuredHeight;
+                View view2 = c81Var.v;
+                if (view2 != null) {
+                    view2.invalidate();
+                    break;
+                }
+                break;
+            case 4:
+                z21 z21Var = (z21) obj;
+                z21Var.y = f7 / 1000.0f;
+                z21Var.invalidate();
+                break;
+            default:
+                t31 t31Var = (t31) obj;
+                org.telegram.ui.Components.c81 c81Var2 = t31Var.r.Q;
+                int measuredHeight2 = t31Var.getMeasuredHeight();
+                c81Var2.h = (int) (((t31Var.getMeasuredWidth() - AndroidUtilities.dp(16.0f)) - f7) - 0);
+                c81Var2.i = measuredHeight2;
+                View view3 = c81Var2.v;
+                if (view3 != null) {
+                    view3.invalidate();
+                    break;
+                }
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.ju0
-    public final boolean T() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ju0
-    public final org.telegram.ui.Components.mm0 f() {
-        return this.a.U;
-    }
-
-    @Override // org.telegram.ui.Components.ju0
-    public final TLRPC.Chat g() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.ju0
-    public final boolean h(TLRPC.ChatParticipant chatParticipant, boolean z10, boolean z11, View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ju0
-    public final boolean r() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.ju0
-    public final void F() {
     }
 }

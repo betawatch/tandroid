@@ -4,7 +4,7 @@ import android.content.Context;
 import android.opengl.GLES20;
 import android.opengl.GLES30;
 import android.opengl.Matrix;
-import com.google.android.gms.internal.play_billing.k3;
+import com.google.android.gms.internal.cast.a6;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
@@ -12,9 +12,9 @@ import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
-import w7.u7;
+import w7.v7;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class a {
     public static final String[] D = {"crownGradient", "pavilionGradient", "lightSweep", "crownSweep", "rightCrownSweep", "leftCrownSweep", "pavilionSweep", "rightPavilionSweep", "leftPavilionSweep"};
@@ -52,7 +52,7 @@ public final class a {
         try {
             String[] strArr = {"diamond", "sparkle", "copy"};
             for (int i11 = 0; i11 < 3; i11++) {
-                this.a[i11] = u7.b(context, "diamond", j(context, i11 == 2 ? "fullscreenVertex" : strArr[i11] + "Vertex"), j(context, strArr[i11] + "Fragment"), "position", "normal");
+                this.a[i11] = v7.b(context, "diamond", j(context, i11 == 2 ? "fullscreenVertex" : strArr[i11] + "Vertex"), j(context, strArr[i11] + "Fragment"), "position", "normal");
             }
             float[] a2 = a(context, "frames");
             this.m = a2;
@@ -149,7 +149,7 @@ public final class a {
 
     public static float i(float f7) {
         float max = Math.max(0.0f, Math.min(1.0f, f7));
-        return k3.B(max, 2.0f, 3.0f, max * max);
+        return a6.B(max, 2.0f, 3.0f, max * max);
     }
 
     public static String j(Context context, String str) {
@@ -197,7 +197,7 @@ public final class a {
             }
             float[] fArr2 = this.m;
             float f17 = fArr2[(i14 * 42) + i16];
-            fArr[i16] = k3.y(fArr2[((1 + i14) * 42) + i16], f17, f16, f17);
+            fArr[i16] = a6.x(fArr2[((1 + i14) * 42) + i16], f17, f16, f17);
             i16++;
         }
         float f18 = i10;

@@ -1,8 +1,8 @@
 package a0;
 
-import w7.g8;
+import w7.h8;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class k {
     public int[] a;
@@ -16,7 +16,7 @@ public final class k {
             if (i10 == i11) {
                 int[] iArr = this.a;
                 int[] iArr2 = kVar.a;
-                wd.e a2 = g8.a(0, i11);
+                wd.e a2 = h8.a(0, i11);
                 int i12 = a2.a;
                 int i13 = a2.b;
                 if (i12 > i13) {

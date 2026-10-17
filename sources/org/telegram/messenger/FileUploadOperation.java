@@ -14,7 +14,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public class FileUploadOperation {
     private static final int initialRequestsCount = 8;
@@ -68,7 +68,7 @@ public class FileUploadOperation {
     private SparseArray<UploadCachedResult> cachedResults = new SparseArray<>();
     private boolean[] recalculatedEstimatedSize = {false, false};
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public interface FileUploadOperationDelegate {
         void didChangedUploadProgress(FileUploadOperation fileUploadOperation, long j10, long j11);
 
@@ -77,7 +77,7 @@ public class FileUploadOperation {
         void didFinishUploadingFile(FileUploadOperation fileUploadOperation, TLRPC.InputFile inputFile, TLRPC.InputEncryptedFile inputEncryptedFile, byte[] bArr, byte[] bArr2);
     }
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class UploadCachedResult {
         private long bytesOffset;
         private byte[] iv;
@@ -255,7 +255,7 @@ public class FileUploadOperation {
             StringBuilder sb2 = new StringBuilder("debug_uploading:  response reqId ");
             sb2.append(iArr[0]);
             sb2.append(" time");
-            i2.d.v(this.uploadingFilePath, sb2);
+            i0.a.v(this.uploadingFilePath, sb2);
         }
         int currentNetworkType = tLObject != null ? tLObject.networkType : ApplicationLoader.getCurrentNetworkType();
         int i15 = this.currentType;
@@ -760,7 +760,7 @@ public class FileUploadOperation {
                     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
                         FileUploadOperation.this.lambda$startUploadRequest$6(i27, iArr, objectSize, bArr7, i26, i29, i25, j15, tLObject, tL_error);
                     }
-                }, null, new d0(this, 3), this.forceSmallFile ? 4 : 0, ConnectionsManager.DEFAULT_DATACENTER_ID, i28, true);
+                }, null, new e0(this, 3), this.forceSmallFile ? 4 : 0, ConnectionsManager.DEFAULT_DATACENTER_ID, i28, true);
                 if (BuildVars.LOGS_ENABLED) {
                     StringBuilder sb3 = new StringBuilder("debug_uploading:  send reqId ");
                     sb3.append(iArr[0]);
@@ -771,7 +771,7 @@ public class FileUploadOperation {
                     sb3.append(" isBig=");
                     sb3.append(this.isBigFile);
                     sb3.append(" file_id=");
-                    i2.d.x(sb3, this.currentFileId);
+                    q.r(sb3, this.currentFileId);
                 }
                 this.requestTokens.put(i26, iArr[0]);
                 AndroidUtilities.runOnUIThread(new w3(this, iArr, 1));
@@ -810,7 +810,7 @@ public class FileUploadOperation {
     }
 
     public void checkNewDataAvailable(long j10, long j11, Float f7) {
-        Utilities.stageQueue.postRunnable(new a3.h0(this, f7, j11, j10, 3));
+        Utilities.stageQueue.postRunnable(new a3.h0(this, f7, j11, j10, 4));
     }
 
     public long getTotalFileSize() {
@@ -821,7 +821,7 @@ public class FileUploadOperation {
         if (this.state != 1) {
             return;
         }
-        Utilities.stageQueue.postRunnable(new ah.t(11, this, z10));
+        Utilities.stageQueue.postRunnable(new ah.t(14, this, z10));
         AndroidUtilities.runOnUIThread(new v3(this, 3));
     }
 

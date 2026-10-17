@@ -9,14 +9,13 @@ import android.graphics.Bitmap;
 import android.media.AudioRecord;
 import android.net.Uri;
 import android.util.Log;
-import e0.f0;
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.concurrent.Callable;
 import org.webrtc.audio.WebRtcAudioRecord;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h implements Callable {
     public final /* synthetic */ int a;
@@ -41,7 +40,7 @@ public final /* synthetic */ class h implements Callable {
             case 0:
                 Context context = (Context) this.b;
                 Intent intent = (Intent) this.c;
-                s j10 = s.j();
+                r j10 = r.j();
                 j10.getClass();
                 if (Log.isLoggable("FirebaseMessaging", 3)) {
                     Log.d("FirebaseMessaging", "Starting service");
@@ -103,8 +102,8 @@ public final /* synthetic */ class h implements Callable {
                 g2.i iVar = (g2.i) this.b;
                 byte[] bArr = (byte[]) this.c;
                 boolean z10 = iVar.d;
-                Bitmap a2 = f0.a(bArr.length, iVar.c, bArr);
-                return z10 ? f0.c(a2) : a2;
+                Bitmap a2 = e0.e0.a(bArr.length, iVar.c, bArr);
+                return z10 ? e0.e0.c(a2) : a2;
             case 2:
                 g2.i iVar2 = (g2.i) this.b;
                 Uri uri = (Uri) this.c;
@@ -128,9 +127,9 @@ public final /* synthetic */ class h implements Callable {
                         }
                     }
                     byte[] copyOf = Arrays.copyOf(bArr2, i13);
-                    Bitmap a10 = f0.a(copyOf.length, i11, copyOf);
+                    Bitmap a10 = e0.e0.a(copyOf.length, i11, copyOf);
                     if (z11) {
-                        a10 = f0.c(a10);
+                        a10 = e0.e0.c(a10);
                     }
                     nVar.close();
                     return a10;

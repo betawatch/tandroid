@@ -1,63 +1,67 @@
 package gb;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+import java.util.ConcurrentModificationException;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class j extends Number {
-    public final String a;
+public final class j implements Iterator {
+    public l a;
+    public l b = null;
+    public int c;
+    public final /* synthetic */ m d;
+    public final /* synthetic */ int e;
 
-    public j(String str) {
-        this.a = str;
+    public j(m mVar, int i10) {
+        this.e = i10;
+        this.d = mVar;
+        this.a = mVar.f.d;
+        this.c = mVar.e;
     }
 
-    @Override // java.lang.Number
-    public final double doubleValue() {
-        return Double.parseDouble(this.a);
+    public final Object a() {
+        return b();
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public final l b() {
+        l lVar = this.a;
+        m mVar = this.d;
+        if (lVar == mVar.f) {
+            throw new NoSuchElementException();
         }
-        if (obj instanceof j) {
-            return this.a.equals(((j) obj).a);
+        if (mVar.e != this.c) {
+            throw new ConcurrentModificationException();
         }
-        return false;
+        this.a = lVar.d;
+        this.b = lVar;
+        return lVar;
     }
 
-    @Override // java.lang.Number
-    public final float floatValue() {
-        return Float.parseFloat(this.a);
+    @Override // java.util.Iterator
+    public final boolean hasNext() {
+        return this.a != this.d.f;
     }
 
-    public final int hashCode() {
-        return this.a.hashCode();
-    }
-
-    @Override // java.lang.Number
-    public final int intValue() {
-        String str = this.a;
-        try {
-            try {
-                return Integer.parseInt(str);
-            } catch (NumberFormatException unused) {
-                return (int) Long.parseLong(str);
-            }
-        } catch (NumberFormatException unused2) {
-            return d.i(str).intValue();
-        }
-    }
-
-    @Override // java.lang.Number
-    public final long longValue() {
-        String str = this.a;
-        try {
-            return Long.parseLong(str);
-        } catch (NumberFormatException unused) {
-            return d.i(str).longValue();
+    @Override // java.util.Iterator
+    public Object next() {
+        switch (this.e) {
+            case 1:
+                return b().f;
+            default:
+                return a();
         }
     }
 
-    public final String toString() {
-        return this.a;
+    @Override // java.util.Iterator
+    public final void remove() {
+        l lVar = this.b;
+        if (lVar == null) {
+            throw new IllegalStateException();
+        }
+        m mVar = this.d;
+        mVar.c(lVar, true);
+        this.b = null;
+        this.c = mVar.e;
     }
 }

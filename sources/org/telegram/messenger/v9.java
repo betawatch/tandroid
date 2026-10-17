@@ -1,86 +1,36 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_communities;
+
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class v9 implements Runnable {
+public final /* synthetic */ class v9 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ Utilities.Callback2 c;
 
-    public /* synthetic */ v9(MessagesController messagesController, long j10, int i10) {
+    public /* synthetic */ v9(MessagesController messagesController, Utilities.Callback2 callback2, int i10) {
         this.a = i10;
         this.b = messagesController;
-        this.c = j10;
+        this.c = callback2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                this.b.lambda$setDefaultBannedRole$96(this.c);
+                this.b.lambda$toggleChatNoForwards$277(this.c, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);
                 break;
             case 1:
-                this.b.lambda$setChatReactions$473(this.c);
+                this.b.lambda$fetchCommunityPendingJoinRequests$245(this.c, (TL_communities.PeerLinkRequests) obj, (TLRPC.TL_error) obj2);
                 break;
             case 2:
-                this.b.lambda$deleteParticipantFromChat$311(this.c);
-                break;
-            case 3:
-                this.b.lambda$setBoostsToUnblockRestrictions$94(this.c);
-                break;
-            case 4:
-                this.b.lambda$deleteDialog$139(this.c);
-                break;
-            case 5:
-                this.b.lambda$addUserToChat$297(this.c);
-                break;
-            case 6:
-                this.b.lambda$addUserToChat$308(this.c);
-                break;
-            case 7:
-                this.b.lambda$addUserToChat$306(this.c);
-                break;
-            case 8:
-                this.b.lambda$processUpdateArray$386(this.c);
-                break;
-            case 9:
-                this.b.lambda$getSavedReactionTags$491(this.c);
-                break;
-            case 10:
-                this.b.lambda$getChannelDifference$333(this.c);
-                break;
-            case 11:
-                this.b.lambda$getChannelDifference$334(this.c);
-                break;
-            case 12:
-                this.b.lambda$getChannelDifference$335(this.c);
-                break;
-            case 13:
-                this.b.lambda$getChannelDifference$336(this.c);
-                break;
-            case 14:
-                this.b.lambda$setChannelSlowMode$92(this.c);
-                break;
-            case 15:
-                this.b.lambda$deleteParticipantFromChat$314(this.c);
-                break;
-            case 16:
-                this.b.lambda$deleteDialog$138(this.c);
-                break;
-            case 17:
-                this.b.lambda$removeDialog$133(this.c);
-                break;
-            case 18:
-                this.b.lambda$setParticipantBannedRole$89(this.c);
-                break;
-            case 19:
-                this.b.lambda$getChannelDifference$343(this.c);
-                break;
-            case 20:
-                this.b.lambda$getChannelDifference$344(this.c);
+                this.b.lambda$fetchCommunityJoinedChats$246(this.c, (TL_communities.ParticipantJoinedChats) obj, (TLRPC.TL_error) obj2);
                 break;
             default:
-                this.b.lambda$getChannelDifference$342(this.c);
+                this.b.lambda$fetchChatsToAddToCommunity$251(this.c, (TLRPC.messages_Chats) obj, (TLRPC.TL_error) obj2);
                 break;
         }
     }

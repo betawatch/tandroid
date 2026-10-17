@@ -7,7 +7,7 @@ import java.util.concurrent.locks.LockSupport;
 import kotlin.jvm.internal.p;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class a extends Thread {
     public static final /* synthetic */ AtomicIntegerFieldUpdater r = AtomicIntegerFieldUpdater.newUpdater(a.class, "workerCtl$volatile");
@@ -330,8 +330,8 @@ public final class a extends Thread {
                     this.h = false;
                     if (this.e == 0) {
                         Object obj = this.nextParkedWorker;
-                        a6.i iVar = c.v;
-                        if (obj != iVar) {
+                        com.google.android.gms.internal.clearcut.e eVar = c.v;
+                        if (obj != eVar) {
                             r.set(this, -1);
                             while (this.nextParkedWorker != c.v) {
                                 AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = r;
@@ -390,7 +390,7 @@ public final class a extends Thread {
                             }
                         } else {
                             c cVar4 = this.n;
-                            if (this.nextParkedWorker == iVar) {
+                            if (this.nextParkedWorker == eVar) {
                                 AtomicLongFieldUpdater atomicLongFieldUpdater2 = c.n;
                                 while (true) {
                                     long j11 = atomicLongFieldUpdater2.get(cVar4);

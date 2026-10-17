@@ -2,24 +2,24 @@ package a3;
 
 import android.os.SystemClock;
 import android.os.Trace;
-import b2.b2;
-import b2.w0;
+import b2.a2;
+import b2.v0;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class g0 {
     public final qf.b a;
     public final a0 b;
     public final z c = new z();
-    public final e2.j0 d = new e2.j0(0, (byte) 0);
-    public final e2.j0 e = new e2.j0(0, (byte) 0);
+    public final e2.j0 d = new e2.j0();
+    public final e2.j0 e = new e2.j0();
     public final e2.s f;
     public final b0 g;
     public long h;
     public long i;
     public long j;
-    public b2 k;
+    public a2 k;
     public long l;
 
     public g0(qf.b bVar, a0 a0Var, b0 b0Var) {
@@ -35,7 +35,7 @@ public final class g0 {
         sVar.d = highestOneBit - 1;
         this.f = sVar;
         this.h = -9223372036854775807L;
-        this.k = b2.d;
+        this.k = a2.d;
         this.i = -9223372036854775807L;
         this.j = -9223372036854775807L;
     }
@@ -53,7 +53,7 @@ public final class g0 {
                 throw new NoSuchElementException();
             }
             long j12 = ((long[]) sVar.e)[sVar.a];
-            Long l4 = (Long) this.e.i(j12);
+            Long l4 = (Long) this.e.g(j12);
             a0 a0Var = this.b;
             if (l4 != null && l4.longValue() != this.l) {
                 this.l = l4.longValue();
@@ -70,15 +70,15 @@ public final class g0 {
                 this.i = j12;
                 boolean z10 = a2 == 0;
                 long d = sVar.d();
-                b2 b2Var = (b2) this.d.i(d);
-                if (b2Var != null && !b2Var.equals(b2.d) && !b2Var.equals(this.k)) {
-                    this.k = b2Var;
-                    b2.w wVar = new b2.w();
-                    wVar.y = b2Var.a;
-                    wVar.z = b2Var.b;
-                    wVar.r = w0.n("video/raw");
-                    bVar.b = new b2.x(wVar);
-                    fVar.i.execute(new a1.f(2, bVar, b2Var));
+                a2 a2Var = (a2) this.d.g(d);
+                if (a2Var != null && !a2Var.equals(a2.d) && !a2Var.equals(this.k)) {
+                    this.k = a2Var;
+                    b2.v vVar = new b2.v();
+                    vVar.y = a2Var.a;
+                    vVar.z = a2Var.b;
+                    vVar.r = v0.n("video/raw");
+                    bVar.b = new b2.w(vVar);
+                    fVar.i.execute(new a1.f(2, bVar, a2Var));
                 }
                 long nanoTime = z10 ? System.nanoTime() : zVar.b;
                 boolean z11 = a0Var.e != 3;
@@ -95,14 +95,14 @@ public final class g0 {
                                     ((f) bVar.c).h.onFirstFrameRendered();
                                     break;
                                 default:
-                                    ((f) bVar.c).h.b();
+                                    ((f) bVar.c).h.h();
                                     break;
                             }
                         }
                     });
                 }
-                b2.x xVar = (b2.x) bVar.b;
-                fVar.j.a(d, nanoTime, xVar == null ? new b2.x(new b2.w()) : xVar, null);
+                b2.w wVar = (b2.w) bVar.b;
+                fVar.j.a(d, nanoTime, wVar == null ? new b2.w(new b2.v()) : wVar, null);
                 j jVar = (j) fVar.d.remove();
                 jVar.c.M0(jVar.a, jVar.b, nanoTime);
             } else if (a2 == 2 || a2 == 3) {
@@ -117,7 +117,7 @@ public final class g0 {
                                 ((f) bVar.c).h.onFirstFrameRendered();
                                 break;
                             default:
-                                ((f) bVar.c).h.b();
+                                ((f) bVar.c).h.h();
                                 break;
                         }
                     }
@@ -127,7 +127,7 @@ public final class g0 {
                 r2.l lVar = jVar2.a;
                 int i13 = jVar2.b;
                 Trace.beginSection("dropVideoBuffer");
-                lVar.e(i13);
+                lVar.d(i13);
                 Trace.endSection();
                 nVar.R0(0, 1);
             } else {

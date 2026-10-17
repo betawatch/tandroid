@@ -4,8 +4,8 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.util.SparseArray;
 import android.util.SparseBooleanArray;
+import b2.s1;
 import b2.t1;
-import b2.u1;
 import e2.m0;
 import j$.util.Objects;
 import java.util.ArrayList;
@@ -14,9 +14,9 @@ import org.telegram.messenger.MediaDataController;
 import u2.r1;
 import v7.b8;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class i extends u1 {
+public final class i extends t1 {
     public static final i F0 = new i(new h());
     public static final String G0;
     public static final String H0;
@@ -83,12 +83,12 @@ public final class i extends u1 {
         this.E0 = hVar.R;
     }
 
-    @Override // b2.u1
-    public final t1 a() {
+    @Override // b2.t1
+    public final s1 a() {
         return new h(this);
     }
 
-    @Override // b2.u1
+    @Override // b2.t1
     public final Bundle c() {
         Bundle c10 = super.c();
         c10.putBoolean(G0, this.w0);
@@ -130,7 +130,7 @@ public final class i extends u1 {
                 arrayList.add(Integer.valueOf(keyAt));
             }
             c10.putIntArray(Q0, b8.f(arrayList));
-            c10.putParcelableArrayList(R0, e2.e.h(arrayList2, new t0.a(22)));
+            c10.putParcelableArrayList(R0, e2.e.h(arrayList2, new si.a(25)));
             SparseArray<? extends Parcelable> sparseArray3 = new SparseArray<>(sparseArray.size());
             if (sparseArray.size() > 0) {
                 sparseArray.keyAt(0);
@@ -142,7 +142,7 @@ public final class i extends u1 {
         }
     }
 
-    @Override // b2.u1
+    @Override // b2.t1
     public final boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -190,7 +190,7 @@ public final class i extends u1 {
         return false;
     }
 
-    @Override // b2.u1
+    @Override // b2.t1
     public final int hashCode() {
         return (((((((((((((((super.hashCode() + 31) * 31) + (this.w0 ? 1 : 0)) * 961) + (this.x0 ? 1 : 0)) * 961) + (this.y0 ? 1 : 0)) * 28629151) + (this.z0 ? 1 : 0)) * 31) + (this.A0 ? 1 : 0)) * 31) + (this.B0 ? 1 : 0)) * 961) + (this.C0 ? 1 : 0)) * 31;
     }

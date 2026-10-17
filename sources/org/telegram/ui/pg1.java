@@ -1,30 +1,142 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class pg1 extends pg.a {
-    public final TLRPC.TL_forumTopic c;
+public final class pg1 extends org.telegram.ui.Components.c91 {
+    public boolean T;
+    public final Path U;
+    public final /* synthetic */ qg1 V;
 
-    public pg1(int i10, TLRPC.TL_forumTopic tL_forumTopic) {
-        super(i10, false);
-        this.c = tL_forumTopic;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pg1(qg1 qg1Var, Context context) {
+        super(context, null);
+        this.V = qg1Var;
+        this.U = new Path();
     }
 
-    public final boolean equals(Object obj) {
-        TLRPC.TL_forumTopic tL_forumTopic;
-        if (this == obj) {
-            return true;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        if (this.T) {
+            Path path = this.U;
+            path.rewind();
+            float dpf2 = AndroidUtilities.dpf2(24.0f);
+            RectF rectF = AndroidUtilities.rectTmp;
+            rectF.set(0.0f, AndroidUtilities.statusBarHeight, getWidth(), getHeight());
+            path.addRoundRect(rectF, dpf2, dpf2, Path.Direction.CW);
+            canvas.save();
+            canvas.clipPath(path);
         }
-        if (obj == null || pg1.class != obj.getClass()) {
-            return false;
+        super.dispatchDraw(canvas);
+        if (this.T) {
+            canvas.restore();
         }
-        pg1 pg1Var = (pg1) obj;
-        if (this.a != pg1Var.a) {
-            return false;
+    }
+
+    @Override // org.telegram.ui.Components.c91
+    public float getAvailableTranslationX() {
+        return getMeasuredWidth();
+    }
+
+    @Override // org.telegram.ui.Components.c91
+    public long getManualScrollDuration() {
+        return 320L;
+    }
+
+    @Override // org.telegram.ui.Components.c91
+    public final boolean j(MotionEvent motionEvent) {
+        Object X = ((pg0) this.V).X();
+        if (X instanceof og0) {
+            return ((og0) X).S(motionEvent, false);
         }
-        TLRPC.TL_forumTopic tL_forumTopic2 = this.c;
-        return tL_forumTopic2 == null || (tL_forumTopic = pg1Var.c) == null || tL_forumTopic2.id == tL_forumTopic.id;
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.c91
+    public final boolean k(MotionEvent motionEvent) {
+        Object X = ((pg0) this.V).X();
+        if (X instanceof og0) {
+            return ((og0) X).S(motionEvent, true);
+        }
+        return false;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+    }
+
+    @Override // android.view.View
+    public void setLayoutParams(ViewGroup.LayoutParams layoutParams) {
+        super.setLayoutParams(layoutParams);
+    }
+
+    public void setTabletLayout(boolean z10) {
+        if (this.T == z10) {
+            return;
+        }
+        this.T = z10;
+        invalidate();
+    }
+
+    @Override // org.telegram.ui.Components.c91
+    public final void t(View view, View view2, int i10, int i11) {
+        this.V.U();
+    }
+
+    @Override // org.telegram.ui.Components.c91
+    public final void u() {
+        ey eyVar;
+        qg1 qg1Var = this.V;
+        pg0 pg0Var = (pg0) qg1Var;
+        if (pg0Var.F != null) {
+            pg0Var.m0(pg0Var.c.getCurrentPosition(), true);
+            pg0Var.n0(0.0f, false);
+        }
+        pg0Var.d0();
+        pg1 pg1Var = pg0Var.c;
+        if (pg1Var != null) {
+            int currentPosition = pg1Var.getCurrentPosition();
+            if (currentPosition != 2 && pg0Var.x) {
+                pg0Var.W(2);
+                pg0Var.x = false;
+            }
+            if (currentPosition != 3) {
+                pg0Var.W(3);
+            }
+            Integer num = pg0Var.I;
+            if (num != null && currentPosition == 0 && (eyVar = pg0Var.J) != null) {
+                eyVar.u4(num.intValue());
+                pg0Var.I = null;
+            }
+        }
+        qg1Var.U();
+    }
+
+    @Override // org.telegram.ui.Components.c91
+    public final void w(boolean z10) {
+        qg1 qg1Var = this.V;
+        pg0 pg0Var = (pg0) qg1Var;
+        boolean z11 = !z10;
+        if (pg0Var.F != null) {
+            float positionAnimated = pg0Var.c.getPositionAnimated();
+            pg0Var.n0(positionAnimated, z11);
+            if (!z10) {
+                pg0Var.m0(Math.round(positionAnimated), true);
+            }
+        }
+        pg0Var.h0();
+        pg0Var.d0();
+        pg0Var.b.invalidate();
+        qg1Var.U();
+        qg1Var.checkSystemBarColors();
     }
 }

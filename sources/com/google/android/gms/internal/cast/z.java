@@ -2,7 +2,7 @@ package com.google.android.gms.internal.cast;
 
 import java.io.IOException;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class z implements i5.e, c0 {
     public static final /* synthetic */ z a = new z();
@@ -43,7 +43,7 @@ public final /* synthetic */ class z implements i5.e, c0 {
             int i10 = s1Var.i();
             byte[] bArr = new byte[i10];
             y4 y4Var = new y4(bArr, i10);
-            i6 a2 = f6.c.a(s1.class);
+            j6 a2 = g6.c.a(s1.class);
             u5 u5Var = y4Var.a;
             if (u5Var == null) {
                 u5Var = new u5(y4Var);

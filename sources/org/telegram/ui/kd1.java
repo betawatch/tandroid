@@ -1,38 +1,30 @@
 package org.telegram.ui;
 
-import android.graphics.Point;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class kd1 extends w7.w5 {
+public final /* synthetic */ class kd1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
+    public final /* synthetic */ pd1 b;
 
-    public /* synthetic */ kd1(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10) {
+    public /* synthetic */ kd1(pd1 pd1Var, int i10) {
         this.a = i10;
-        this.b = notificationCenterDelegate;
+        this.b = pd1Var;
     }
 
-    @Override // w7.w5
-    public void a() {
-        switch (this.a) {
-            case 1:
-                ((cj1) this.b).v.invalidate();
-                break;
-        }
-    }
-
-    @Override // w7.w5
-    public void b(int i10, int i11) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                Point point = AndroidUtilities.displaySize;
-                if ((point.x <= point.y) == (i10 <= i11)) {
-                    ((ce1) this.b).x0.invalidate();
-                    break;
-                }
+                pd1 pd1Var = this.b;
+                pd1Var.getClass();
+                new sg.x0((org.telegram.ui.ActionBar.n2) pd1Var, 11, false).show();
+                break;
+            default:
+                pd1 pd1Var2 = this.b;
+                pd1Var2.e.requestFocus();
+                AndroidUtilities.showKeyboard(pd1Var2.e);
                 break;
         }
     }

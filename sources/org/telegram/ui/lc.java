@@ -1,27 +1,42 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.R;
+import android.app.Activity;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lc implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ gd b;
+public final class lc extends z51 {
+    public final /* synthetic */ gc d2;
+    public final /* synthetic */ q51[] e2;
+    public final /* synthetic */ dd f2;
 
-    public /* synthetic */ lc(gd gdVar, int i10) {
-        this.a = i10;
-        this.b = gdVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public lc(dd ddVar, dd ddVar2, Activity activity, Integer num, int i10, org.telegram.ui.ActionBar.d6 d6Var, int i11, int i12, gc gcVar, q51[] q51VarArr) {
+        super(ddVar2, activity, true, num, i10, true, d6Var, i11, i12);
+        this.f2 = ddVar;
+        this.d2 = gcVar;
+        this.e2 = q51VarArr;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                gd.U(this.b);
-                break;
-            default:
-                org.telegram.messenger.g0.q(R.string.ChannelWallpaperUpdated, org.telegram.ui.Components.zc.a0(this.b), R.raw.done, 36);
-                break;
+    @Override // org.telegram.ui.z51
+    public final long getDialogId() {
+        return this.f2.a;
+    }
+
+    @Override // org.telegram.ui.z51
+    public final float getScrimDrawableTranslationY() {
+        return 0.0f;
+    }
+
+    @Override // org.telegram.ui.z51
+    public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
+        this.d2.run(Long.valueOf(l4 == null ? 0L : l4.longValue()), num, tL_starGiftUnique);
+        q51 q51Var = this.e2[0];
+        if (q51Var != null) {
+            this.f2.Q = null;
+            q51Var.dismiss();
         }
     }
 }

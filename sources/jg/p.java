@@ -5,20 +5,20 @@ import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import bi.w5;
+import ci.v4;
 import java.util.ArrayList;
 import org.telegram.messenger.SegmentTree;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.lq0;
-import org.telegram.ui.ra1;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.b91;
+import org.telegram.ui.qp0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class p extends g {
     public long[] D1;
 
-    public p(Context context, c6 c6Var) {
-        super(context, c6Var);
+    public p(Context context, d6 d6Var) {
+        super(context, d6Var);
         this.w0 = true;
         this.x0 = true;
     }
@@ -59,9 +59,9 @@ public final class p extends g {
             e eVar = this.Q0;
             if (eVar != null) {
                 getSelectedDate();
-                ra1 ra1Var = (ra1) ((lq0) eVar).b;
-                ra1Var.f();
-                ra1Var.b.t0.d(false, false);
+                b91 b91Var = (b91) ((qp0) eVar).b;
+                b91Var.f();
+                b91Var.b.t0.d(false, false);
             }
             invalidate();
             B();
@@ -95,7 +95,7 @@ public final class p extends g {
                     if (animator != null) {
                         animator.cancel();
                     }
-                    ValueAnimator e = g.e(this.j0, this.l0, new w5(this, 5));
+                    ValueAnimator e = g.e(this.j0, this.l0, new v4(this, 5));
                     this.d0 = e;
                     e.start();
                 }
@@ -237,12 +237,12 @@ public final class p extends g {
             Paint paint = (z10 || this.f0) ? hVar.q : hVar.c;
             if (z10) {
                 f13 = 255.0f;
-                hVar.q.setColor(i0.a.d(this.v0, hVar.m, hVar.r));
+                hVar.q.setColor(i0.b.f(this.v0, hVar.m, hVar.r));
             } else {
                 f13 = 255.0f;
             }
             if (this.f0) {
-                hVar.q.setColor(i0.a.d(1.0f, hVar.m, hVar.r));
+                hVar.q.setColor(i0.b.f(1.0f, hVar.m, hVar.r));
             }
             paint.setAlpha((int) (f12 * f13));
             paint.setStrokeWidth(f7);

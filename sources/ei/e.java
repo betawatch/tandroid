@@ -1,40 +1,131 @@
 package ei;
 
-import android.app.Activity;
-import android.view.ViewGroup;
-import ci.u;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.Cells.m4;
-import org.telegram.ui.Components.a71;
-import org.telegram.ui.Components.mm0;
-import org.telegram.ui.Components.wl0;
-import s4.b1;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Shader;
+import android.widget.FrameLayout;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.bs;
+import org.telegram.ui.Components.iu;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final class e extends a71 {
-    public final /* synthetic */ i N;
+public final /* synthetic */ class e implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ m b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e(i iVar, mm0 mm0Var, Activity activity, int i10, int i11, u uVar, c6 c6Var) {
-        super(mm0Var, activity, i10, i11, true, uVar, c6Var);
-        this.N = iVar;
+    public /* synthetic */ e(m mVar, int i10) {
+        this.a = i10;
+        this.b = mVar;
     }
 
-    @Override // org.telegram.ui.Components.a71, s4.g0
-    public final b1 x(ViewGroup viewGroup, int i10) {
-        c6 c6Var;
-        if (i10 != 42) {
-            return super.x(viewGroup, i10);
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        m mVar = this.b;
+        switch (i10) {
+            case 0:
+                mVar.t();
+                break;
+            default:
+                boolean z10 = mVar.m0;
+                FrameLayout frameLayout = mVar.J;
+                j jVar = mVar.r;
+                g gVar = mVar.f;
+                if (mVar.p0 != z10) {
+                    mVar.p0 = z10;
+                    ValueAnimator valueAnimator = mVar.q0;
+                    if (valueAnimator != null) {
+                        valueAnimator.cancel();
+                        mVar.q0 = null;
+                    }
+                    Utilities.Callback callback = mVar.k0;
+                    if (callback != null) {
+                        callback.run(Boolean.valueOf(z10));
+                    }
+                    mVar.d(z10);
+                    if (z10) {
+                        i iVar = mVar.M;
+                        if (iVar != null) {
+                            iVar.setVisibility(0);
+                        }
+                        jVar.setVisibility(0);
+                    } else {
+                        gVar.getEditText().scrollBy(0, -gVar.getEditText().getScrollY());
+                    }
+                    ValueAnimator ofFloat = ValueAnimator.ofFloat(mVar.o0, z10 ? 1.0f : 0.0f);
+                    mVar.q0 = ofFloat;
+                    ofFloat.addUpdateListener(new ah.c0(mVar, 23));
+                    if (!z10) {
+                        gVar.getEditText().setAllowDrawCursor(false);
+                    }
+                    mVar.q0.addListener(new ah.p0(8, mVar, z10));
+                    if (z10) {
+                        mVar.q0.setInterpolator(org.telegram.ui.ActionBar.o1.w);
+                        mVar.q0.setDuration(250L);
+                    } else {
+                        mVar.q0.setInterpolator(new u1.a());
+                        mVar.q0.setDuration(420L);
+                    }
+                    mVar.q0.start();
+                    iu editText = gVar.getEditText();
+                    if (editText != null && editText.getLayout() != null) {
+                        ObjectAnimator objectAnimator = mVar.g0;
+                        if (objectAnimator != null) {
+                            objectAnimator.cancel();
+                        }
+                        int scrollY = editText.getScrollY();
+                        gVar.setSelection(z10 ? gVar.a.length() : 0);
+                        gVar.getEditText().setForceCursorEnd(false);
+                        ObjectAnimator ofInt = ObjectAnimator.ofInt(editText, "scrollY", scrollY, z10 ? editText.getLayout().getLineTop(editText.getLineCount()) - ((editText.getHeight() - editText.getPaddingTop()) - editText.getPaddingBottom()) : 0);
+                        mVar.g0 = ofInt;
+                        ofInt.setDuration(360L);
+                        mVar.g0.setInterpolator(bs.h);
+                        mVar.g0.start();
+                    }
+                    gVar.setSuggestionsEnabled(z10);
+                    if (!z10) {
+                        gVar.getEditText().setSpoilersRevealed(false, true);
+                    }
+                    if (z10 && SharedConfig.getDevicePerformanceClass() >= 1 && !LiteMode.isPowerSaverApplied()) {
+                        if (mVar.r0 == null) {
+                            mVar.r0 = Bitmap.createBitmap((int) (frameLayout.getWidth() / 12.0f), (int) (frameLayout.getHeight() / 12.0f), Bitmap.Config.ARGB_8888);
+                        }
+                        mVar.y0 = true;
+                        mVar.i(mVar.r0);
+                        mVar.y0 = false;
+                        Bitmap bitmap = mVar.r0;
+                        if (bitmap != null && !bitmap.isRecycled()) {
+                            Bitmap bitmap2 = mVar.r0;
+                            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+                            mVar.s0 = new BitmapShader(bitmap2, tileMode, tileMode);
+                            Matrix matrix = mVar.t0;
+                            if (matrix == null) {
+                                mVar.t0 = new Matrix();
+                            } else {
+                                matrix.reset();
+                            }
+                            mVar.s0.setLocalMatrix(mVar.t0);
+                            if (mVar.u0 == null) {
+                                Paint paint = new Paint(3);
+                                mVar.u0 = paint;
+                                paint.setColor(-1);
+                            }
+                            mVar.u0.setShader(mVar.s0);
+                            break;
+                        } else {
+                            mVar.r0 = null;
+                            break;
+                        }
+                    }
+                }
+                break;
         }
-        i iVar = this.N;
-        Activity parentActivity = iVar.getParentActivity();
-        int i11 = g6.L6;
-        c6Var = ((m2) iVar).resourceProvider;
-        m4 m4Var = new m4(parentActivity, i11, 21, 0, false, c6Var);
-        m4Var.setHeight(25);
-        return new wl0(m4Var);
     }
 }

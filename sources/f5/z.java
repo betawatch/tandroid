@@ -1,15 +1,14 @@
 package f5;
 
-import com.google.android.gms.internal.play_billing.k3;
+import com.google.android.gms.internal.cast.a6;
 import java.nio.ByteBuffer;
-import ji.w4;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class z extends a {
-    public static final /* synthetic */ w4 h;
-    public static final /* synthetic */ w4 n;
-    public static final /* synthetic */ w4 r;
+    public static final /* synthetic */ le.b h;
+    public static final /* synthetic */ le.b n;
+    public static final /* synthetic */ le.b r;
     public int e;
     public int[] f;
 
@@ -47,21 +46,21 @@ public final class z extends a {
     }
 
     public final String toString() {
-        com.google.firebase.messaging.s b10 = te.a.b(r, this, this);
+        com.google.firebase.messaging.r b10 = te.a.b(r, this, this);
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
         StringBuilder sb2 = new StringBuilder("VideoMediaHeaderBox[graphicsmode=");
-        k3.p(te.a.b(h, this, this));
+        a6.p(te.a.b(h, this, this));
         sb2.append(this.e);
         sb2.append(";opcolor0=");
-        w4 w4Var = n;
-        k3.p(te.a.b(w4Var, this, this));
+        le.b bVar = n;
+        a6.p(te.a.b(bVar, this, this));
         sb2.append(this.f[0]);
         sb2.append(";opcolor1=");
-        k3.p(te.a.b(w4Var, this, this));
+        a6.p(te.a.b(bVar, this, this));
         sb2.append(this.f[1]);
         sb2.append(";opcolor2=");
-        k3.p(te.a.b(w4Var, this, this));
+        a6.p(te.a.b(bVar, this, this));
         return a1.g.n(this.f[2], "]", sb2);
     }
 }

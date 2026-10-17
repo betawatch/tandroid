@@ -1,25 +1,33 @@
 package cc;
 
-import b2.h;
+import ai.c1;
+import android.content.Context;
+import com.google.android.gms.common.api.i;
+import java.util.concurrent.atomic.AtomicLong;
+import n6.p;
 import rb.g;
-import z7.wf;
-import z7.xf;
-import z7.zf;
+import z7.ag;
+import z7.ra;
+import z7.yf;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class c extends h {
+public final class c extends c1 {
     public final g b;
 
     public c(g gVar) {
-        super(5);
+        super(6);
         this.b = gVar;
     }
 
-    @Override // b2.h
+    @Override // ai.c1
     public final Object Q0(Object obj) {
-        wf b10 = zf.b();
+        yf b10 = ag.b();
         g gVar = this.b;
-        return new f(gVar, (bc.e) obj, b10, new xf(gVar.b()));
+        Context b11 = gVar.b();
+        ra raVar = new ra();
+        raVar.b = new AtomicLong(-1L);
+        raVar.a = new p6.b(b11, p6.b.k, new p("mlkit:vision"), i.c);
+        return new f(gVar, (bc.e) obj, b10, raVar);
     }
 }

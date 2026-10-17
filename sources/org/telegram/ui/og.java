@@ -1,48 +1,103 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.Utilities;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class og implements Utilities.Callback2 {
+public final /* synthetic */ class og implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ fo b;
-    public final /* synthetic */ String c;
+    public final /* synthetic */ sn b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.b2[] c;
+    public final /* synthetic */ int d;
 
-    public /* synthetic */ og(fo foVar, String str, int i10) {
-        this.a = i10;
-        this.b = foVar;
-        this.c = str;
+    public /* synthetic */ og(sn snVar, org.telegram.ui.ActionBar.b2[] b2VarArr, int i10, int i11) {
+        this.a = i11;
+        this.b = snVar;
+        this.c = b2VarArr;
+        this.d = i10;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        Boolean bool = (Boolean) obj;
-        Boolean bool2 = (Boolean) obj2;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                if (bool.booleanValue()) {
-                    boolean booleanValue = bool2.booleanValue();
-                    fo foVar = this.b;
-                    String str = this.c;
-                    if (booleanValue) {
-                        foVar.getMessagesController().addWebBrowserException(str, false);
-                    }
-                    foVar.getParentActivity();
-                    pf.d.m(str);
+                org.telegram.ui.ActionBar.b2[] b2VarArr = this.c;
+                org.telegram.ui.ActionBar.b2 b2Var = b2VarArr[0];
+                if (b2Var != null) {
+                    final int i10 = 0;
+                    final sn snVar = this.b;
+                    final int i11 = this.d;
+                    b2Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.yg
+                        @Override // android.content.DialogInterface.OnCancelListener
+                        public final void onCancel(DialogInterface dialogInterface) {
+                            switch (i10) {
+                                case 0:
+                                    snVar.getConnectionsManager().cancelRequest(i11, true);
+                                    break;
+                                case 1:
+                                    snVar.getConnectionsManager().cancelRequest(i11, true);
+                                    break;
+                                default:
+                                    snVar.getConnectionsManager().cancelRequest(i11, true);
+                                    break;
+                            }
+                        }
+                    });
+                    snVar.showDialog(b2VarArr[0]);
+                    break;
+                }
+                break;
+            case 1:
+                org.telegram.ui.ActionBar.b2[] b2VarArr2 = this.c;
+                org.telegram.ui.ActionBar.b2 b2Var2 = b2VarArr2[0];
+                if (b2Var2 != null) {
+                    final int i12 = 1;
+                    final sn snVar2 = this.b;
+                    final int i13 = this.d;
+                    b2Var2.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.yg
+                        @Override // android.content.DialogInterface.OnCancelListener
+                        public final void onCancel(DialogInterface dialogInterface) {
+                            switch (i12) {
+                                case 0:
+                                    snVar2.getConnectionsManager().cancelRequest(i13, true);
+                                    break;
+                                case 1:
+                                    snVar2.getConnectionsManager().cancelRequest(i13, true);
+                                    break;
+                                default:
+                                    snVar2.getConnectionsManager().cancelRequest(i13, true);
+                                    break;
+                            }
+                        }
+                    });
+                    snVar2.showDialog(b2VarArr2[0]);
                     break;
                 }
                 break;
             default:
-                fo foVar2 = this.b;
-                foVar2.getClass();
-                if (bool.booleanValue()) {
-                    boolean booleanValue2 = bool2.booleanValue();
-                    String str2 = this.c;
-                    if (booleanValue2) {
-                        foVar2.getMessagesController().addWebBrowserException(str2, true);
-                    }
-                    pf.d.l(foVar2.getParentActivity(), str2, false, null);
+                org.telegram.ui.ActionBar.b2[] b2VarArr3 = this.c;
+                org.telegram.ui.ActionBar.b2 b2Var3 = b2VarArr3[0];
+                if (b2Var3 != null) {
+                    final int i14 = 2;
+                    final sn snVar3 = this.b;
+                    final int i15 = this.d;
+                    b2Var3.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.yg
+                        @Override // android.content.DialogInterface.OnCancelListener
+                        public final void onCancel(DialogInterface dialogInterface) {
+                            switch (i14) {
+                                case 0:
+                                    snVar3.getConnectionsManager().cancelRequest(i15, true);
+                                    break;
+                                case 1:
+                                    snVar3.getConnectionsManager().cancelRequest(i15, true);
+                                    break;
+                                default:
+                                    snVar3.getConnectionsManager().cancelRequest(i15, true);
+                                    break;
+                            }
+                        }
+                    });
+                    snVar3.showDialog(b2VarArr3[0]);
                     break;
                 }
                 break;

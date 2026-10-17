@@ -1,63 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.util.Property;
-import android.view.MotionEvent;
-import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class kx extends z4.g {
-    public final /* synthetic */ wz w0;
+public final class kx extends aw {
+    public final /* synthetic */ TLRPC.StickerSet W;
+    public final /* synthetic */ tz X;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public kx(wz wzVar, Context context) {
-        super(context);
-        this.w0 = wzVar;
+    public kx(tz tzVar, org.telegram.ui.ActionBar.n2 n2Var, Context context, org.telegram.ui.ActionBar.d6 d6Var, ArrayList arrayList, TLRPC.StickerSet stickerSet) {
+        super(n2Var, context, d6Var, arrayList);
+        this.X = tzVar;
+        this.W = stickerSet;
     }
 
-    @Override // z4.g, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (this.w0.f) {
-            return false;
+    @Override // org.telegram.ui.Components.aw
+    public final void Y(boolean z10) {
+        tz tzVar = this.X;
+        ArrayList arrayList = tzVar.p1;
+        TLRPC.StickerSet stickerSet = this.W;
+        if (!z10) {
+            arrayList.remove(Long.valueOf(stickerSet.id));
+        } else if (!arrayList.contains(Long.valueOf(stickerSet.id))) {
+            arrayList.add(Long.valueOf(stickerSet.id));
         }
-        if (getParent() != null) {
-            getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1));
-        }
-        try {
-            return super.onInterceptTouchEvent(motionEvent);
-        } catch (IllegalArgumentException unused) {
-            return false;
-        }
+        tzVar.T();
     }
 
-    @Override // z4.g
-    public final void x(int i10, boolean z10) {
-        wz wzVar = this.w0;
-        zx zxVar = wzVar.I;
-        wz.c(wzVar, i10 == 1);
-        if (i10 != getCurrentItem()) {
-            super.x(i10, z10);
-            return;
-        }
-        if (i10 != 0) {
-            if (i10 == 1) {
-                wzVar.h0.x0(0);
-                return;
-            } else {
-                wzVar.D0.x0(1);
-                return;
-            }
-        }
-        wzVar.Q0[1] = 0;
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(zxVar, (Property<zx, Float>) ViewGroup.TRANSLATION_Y, 0.0f);
-        ofFloat.setDuration(150L);
-        ofFloat.setInterpolator(es.h);
-        ofFloat.start();
-        wzVar.G(1, 0);
-        if (zxVar != null) {
-            zxVar.j(0, true);
-        }
+    @Override // org.telegram.ui.Components.aw, org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
+    public final void dismiss() {
+        this.X.v2 = false;
+        super.dismiss();
     }
 }

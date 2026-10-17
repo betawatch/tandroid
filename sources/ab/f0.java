@@ -3,13 +3,13 @@ package ab;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.os.Build;
-import ji.w4;
+import ki.t1;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class f0 {
     public static final f0 a = new f0();
-    public static final w4 b;
+    public static final t1 b;
 
     static {
         la.d dVar = new la.d();
@@ -20,7 +20,7 @@ public final class f0 {
         dVar.a(a.class, c.a);
         dVar.a(q.class, f.a);
         dVar.d = true;
-        b = new w4(dVar, 4);
+        b = new t1(dVar, 4);
     }
 
     public static b a(l9.h hVar) {

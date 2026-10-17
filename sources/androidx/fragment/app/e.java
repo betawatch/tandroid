@@ -1,23 +1,41 @@
 package androidx.fragment.app;
 
+import ai.oa;
+import android.util.Log;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class e extends s0 {
-    public final f b;
+public final class e implements Animation.AnimationListener {
+    public final /* synthetic */ ViewGroup a;
+    public final /* synthetic */ f b;
 
-    public e(f fVar) {
+    public e(u0 u0Var, ViewGroup viewGroup, f fVar) {
+        this.a = viewGroup;
         this.b = fVar;
     }
 
-    @Override // androidx.fragment.app.s0
-    public final void a(ViewGroup container) {
-        kotlin.jvm.internal.i.e(container, "container");
-        if (this.b.a()) {
-            throw null;
+    @Override // android.view.animation.Animation.AnimationListener
+    public final void onAnimationEnd(Animation animation) {
+        kotlin.jvm.internal.i.e(animation, "animation");
+        ViewGroup viewGroup = this.a;
+        viewGroup.post(new oa(2, viewGroup, this.b));
+        if (j0.K(2)) {
+            Log.v("FragmentManager", "Animation from operation " + ((Object) null) + " has ended.");
         }
-        container.getContext();
-        throw null;
+    }
+
+    @Override // android.view.animation.Animation.AnimationListener
+    public final void onAnimationRepeat(Animation animation) {
+        kotlin.jvm.internal.i.e(animation, "animation");
+    }
+
+    @Override // android.view.animation.Animation.AnimationListener
+    public final void onAnimationStart(Animation animation) {
+        kotlin.jvm.internal.i.e(animation, "animation");
+        if (j0.K(2)) {
+            Log.v("FragmentManager", "Animation from operation " + ((Object) null) + " has reached onAnimationStart.");
+        }
     }
 }

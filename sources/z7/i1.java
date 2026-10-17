@@ -2,17 +2,17 @@ package z7;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class i1 {
-    public final gb a;
+    public final ib a;
     public final Boolean b;
-    public final ve c;
+    public final xe c;
 
     public /* synthetic */ i1(u2.c cVar) {
-        this.a = (gb) cVar.b;
+        this.a = (ib) cVar.b;
         this.b = (Boolean) cVar.c;
-        this.c = (ve) cVar.d;
+        this.c = (xe) cVar.d;
     }
 
     public final boolean equals(Object obj) {

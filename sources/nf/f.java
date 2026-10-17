@@ -1,10 +1,9 @@
 package nf;
 
 import java.io.EOFException;
-import ji.h5;
-import m.h3;
+import m.g3;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class f {
     public final String a;
@@ -15,22 +14,22 @@ public final class f {
     public final boolean f;
     public final int g;
 
-    public f(h3 h3Var) {
+    public f(g3 g3Var) {
         byte b10;
         byte b11;
-        of.a aVar = (of.a) h3Var.b;
+        of.a aVar = (of.a) g3Var.b;
         long j10 = aVar.b;
-        h5 h5Var = (h5) h3Var.d;
-        h hVar = (h) h3Var.c;
+        k0.b bVar = (k0.b) g3Var.d;
+        h hVar = (h) g3Var.c;
         int i10 = hVar.a;
         int i11 = hVar.a;
         byte b12 = 2;
         if (i10 == 2) {
-            h5Var.getClass();
+            bVar.getClass();
             byte[] bArr = new byte[3];
             int i12 = 0;
             while (i12 < 3) {
-                int read = ((com.google.firebase.messaging.d) h5Var.b).read(bArr, i12, 3 - i12);
+                int read = ((com.google.firebase.messaging.d) bVar.b).read(bArr, i12, 3 - i12);
                 if (read <= 0) {
                     throw new EOFException();
                 }
@@ -38,11 +37,11 @@ public final class f {
             }
             this.a = new String(bArr, "ISO-8859-1");
         } else {
-            h5Var.getClass();
+            bVar.getClass();
             byte[] bArr2 = new byte[4];
             int i13 = 0;
             while (i13 < 4) {
-                int read2 = ((com.google.firebase.messaging.d) h5Var.b).read(bArr2, i13, 4 - i13);
+                int read2 = ((com.google.firebase.messaging.d) bVar.b).read(bArr2, i13, 4 - i13);
                 if (read2 <= 0) {
                     throw new EOFException();
                 }
@@ -52,15 +51,15 @@ public final class f {
         }
         byte b13 = 8;
         if (i11 == 2) {
-            this.c = ((h5Var.c() & 255) << 16) | ((h5Var.c() & 255) << 8) | (h5Var.c() & 255);
+            this.c = ((bVar.Z() & 255) << 16) | ((bVar.Z() & 255) << 8) | (bVar.Z() & 255);
         } else if (i11 == 3) {
-            this.c = h5Var.g();
+            this.c = bVar.a0();
         } else {
-            this.c = h5Var.i();
+            this.c = bVar.b0();
         }
         if (i11 > 2) {
-            h5Var.c();
-            byte c10 = h5Var.c();
+            bVar.Z();
+            byte Z = bVar.Z();
             byte b14 = 64;
             if (i11 == 3) {
                 b13 = 128;
@@ -72,35 +71,35 @@ public final class f {
                 b11 = 1;
                 b14 = 4;
             }
-            boolean z10 = (b13 & c10) != 0;
+            boolean z10 = (b13 & Z) != 0;
             this.e = z10;
-            this.d = (b12 & c10) != 0;
-            boolean z11 = (c10 & b14) != 0;
+            this.d = (b12 & Z) != 0;
+            boolean z11 = (Z & b14) != 0;
             this.f = z11;
             if (i11 == 3) {
                 if (z10) {
-                    this.g = h5Var.g();
+                    this.g = bVar.a0();
                     this.c -= 4;
                 }
                 if (z11) {
-                    h5Var.c();
+                    bVar.Z();
                     this.c--;
                 }
-                if ((c10 & b10) != 0) {
-                    h5Var.c();
+                if ((Z & b10) != 0) {
+                    bVar.Z();
                     this.c--;
                 }
             } else {
-                if ((c10 & b10) != 0) {
-                    h5Var.c();
+                if ((Z & b10) != 0) {
+                    bVar.Z();
                     this.c--;
                 }
                 if (z11) {
-                    h5Var.c();
+                    bVar.Z();
                     this.c--;
                 }
-                if ((c10 & b11) != 0) {
-                    this.g = h5Var.i();
+                if ((Z & b11) != 0) {
+                    this.g = bVar.b0();
                     this.c -= 4;
                 }
             }

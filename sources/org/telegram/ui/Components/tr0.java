@@ -1,72 +1,81 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import java.util.Collections;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tr0 implements View.OnClickListener {
+public final /* synthetic */ class tr0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ xv0 b;
+    public final /* synthetic */ sv0 b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ TLObject f;
 
-    public /* synthetic */ tr0(xv0 xv0Var, int i10) {
-        this.a = i10;
-        this.b = xv0Var;
+    public /* synthetic */ tr0(sv0 sv0Var, TLRPC.TL_error tL_error, int i10, int i11, TLObject tLObject, int i12) {
+        this.a = i12;
+        this.b = sv0Var;
+        this.c = tL_error;
+        this.d = i10;
+        this.e = i11;
+        this.f = tLObject;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.L(true);
-                break;
-            case 1:
-                this.b.D0(102, view);
-                break;
-            case 2:
-                this.b.D0(100, view);
-                break;
-            case 3:
-                this.b.D0(103, view);
-                break;
-            case 4:
-                this.b.D0(104, view);
-                break;
-            case 5:
-                this.b.D0(101, view);
-                break;
-            case 6:
-                xv0 xv0Var = this.b;
-                ss0 ss0Var = xv0Var.W;
-                ns0 ns0Var = xv0Var.V;
-                if (xv0Var.q0.getAlpha() >= 0.1f) {
-                    if (ns0Var != null && ns0Var.g()) {
-                        ns0Var.i();
-                    }
-                    if (ss0Var != null && ss0Var.w) {
-                        wv0 j12 = xv0Var.j1(xv0Var.i1(xv0Var.getClosestTab()));
-                        qu0 W = xv0Var.W(j12.a);
-                        if (W != null) {
-                            ss0Var.setReorderingAlbums(false);
-                            ws0 ws0Var = W.h;
-                            for (int i10 = 0; i10 < ws0Var.getChildCount(); i10++) {
-                                View childAt = ws0Var.getChildAt(i10);
-                                if (childAt instanceof org.telegram.ui.Cells.t7) {
-                                    ((org.telegram.ui.Cells.t7) childAt).l(false, true);
-                                }
-                            }
-                            vv0 vv0Var = j12.c;
-                            if (vv0Var != null && vv0Var.x) {
-                                vv0Var.x = false;
-                                break;
-                            }
-                        }
-                    }
-                }
+                sv0 sv0Var = this.b;
+                NotificationCenter.getInstance(sv0Var.v1.getCurrentAccount()).doOnIdle(new tr0(sv0Var, this.c, this.d, this.e, this.f, 1));
                 break;
             default:
-                org.telegram.ui.ActionBar.m2 m2Var = this.b.v1;
-                m2Var.getMessagesController().getMainSettings().edit().putBoolean("story_keep", true).apply();
-                di.kc.D(m2Var.getParentActivity(), m2Var.getCurrentAccount()).Q(null);
+                sv0 sv0Var2 = this.b;
+                hv0[] hv0VarArr = sv0Var2.t1;
+                if (this.c == null) {
+                    int i10 = this.e;
+                    hv0 hv0Var = hv0VarArr[i10];
+                    if (this.d == hv0Var.p) {
+                        TLRPC.TL_messages_searchResultsPositions tL_messages_searchResultsPositions = (TLRPC.TL_messages_searchResultsPositions) this.f;
+                        hv0Var.e.clear();
+                        int size = tL_messages_searchResultsPositions.positions.size();
+                        int i11 = 0;
+                        for (int i12 = 0; i12 < size; i12++) {
+                            TLRPC.TL_searchResultPosition tL_searchResultPosition = tL_messages_searchResultsPositions.positions.get(i12);
+                            int i13 = tL_searchResultPosition.date;
+                            if (i13 != 0) {
+                                qu0 qu0Var = new qu0();
+                                qu0Var.c = i13;
+                                qu0Var.d = tL_searchResultPosition.msg_id;
+                                qu0Var.b = tL_searchResultPosition.offset;
+                                qu0Var.a = LocaleController.formatYearMont(i13, true);
+                                hv0VarArr[i10].e.add(qu0Var);
+                            }
+                        }
+                        Collections.sort(hv0VarArr[i10].e, new org.telegram.ui.ActionBar.i4(24));
+                        hv0 hv0Var2 = hv0VarArr[i10];
+                        hv0Var2.f[0] = tL_messages_searchResultsPositions.count;
+                        hv0Var2.h = true;
+                        if (!hv0Var2.e.isEmpty()) {
+                            while (true) {
+                                lu0[] lu0VarArr = sv0Var2.k0;
+                                if (i11 < lu0VarArr.length) {
+                                    lu0 lu0Var = lu0VarArr[i11];
+                                    if (lu0Var.F == i10) {
+                                        lu0Var.b = true;
+                                        sv0Var2.q1(lu0Var, true);
+                                    }
+                                    i11++;
+                                }
+                            }
+                        }
+                        sv0Var2.H.l();
+                        break;
+                    }
+                }
                 break;
         }
     }

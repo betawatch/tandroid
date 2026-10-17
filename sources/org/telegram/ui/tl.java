@@ -1,34 +1,24 @@
 package org.telegram.ui;
 
-import android.graphics.Outline;
-import android.view.View;
-import android.view.ViewOutlineProvider;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.R;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class tl extends ViewOutlineProvider {
-    public final /* synthetic */ fo a;
+public final class tl extends bu0 {
+    public final /* synthetic */ sn a;
 
-    public tl(fo foVar) {
-        this.a = foVar;
+    public tl(sn snVar) {
+        this.a = snVar;
     }
 
-    @Override // android.view.ViewOutlineProvider
-    public final void getOutline(View view, Outline outline) {
-        ImageReceiver imageReceiver = (ImageReceiver) view.getTag(R.id.parent_tag);
-        if (imageReceiver == null) {
-            fo foVar = this.a;
-            outline.setOval(0, 0, AndroidUtilities.roundPlayingMessageSize(foVar.H9()), AndroidUtilities.roundPlayingMessageSize(foVar.H9()));
-            return;
-        }
-        int[] roundRadius = imageReceiver.getRoundRadius();
-        int i10 = 0;
-        for (int i11 = 0; i11 < 4; i11++) {
-            i10 = Math.max(i10, roundRadius[i11]);
-        }
-        outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), i10);
+    @Override // org.telegram.ui.bu0, org.telegram.ui.ju0
+    public final lu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        return sn.E1(this.a, messageObject, fileLocation, i10, z10, false);
+    }
+
+    @Override // org.telegram.ui.bu0, org.telegram.ui.ju0
+    public final boolean L() {
+        return true;
     }
 }

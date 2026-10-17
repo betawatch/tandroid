@@ -1,31 +1,55 @@
 package m;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.util.AttributeSet;
+import android.app.Activity;
+import android.content.ClipData;
+import android.os.Build;
+import android.text.Selection;
+import android.text.Spannable;
+import android.view.DragEvent;
 import android.view.View;
-import android.widget.RatingBar;
-import org.telegram.messenger.beta.R;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class c0 extends RatingBar {
-    public final a0 a;
-
-    public c0(Context context, AttributeSet attributeSet) {
-        super(context, attributeSet, R.attr.ratingBarStyle);
-        d3.a(this, getContext());
-        a0 a0Var = new a0(this);
-        this.a = a0Var;
-        a0Var.b(attributeSet, R.attr.ratingBarStyle);
+public abstract class c0 {
+    public static boolean a(DragEvent dragEvent, TextView textView, Activity activity) {
+        r0.d dVar;
+        activity.requestDragAndDropPermissions(dragEvent);
+        int offsetForPosition = textView.getOffsetForPosition(dragEvent.getX(), dragEvent.getY());
+        textView.beginBatchEdit();
+        try {
+            Selection.setSelection((Spannable) textView.getText(), offsetForPosition);
+            ClipData clipData = dragEvent.getClipData();
+            if (Build.VERSION.SDK_INT >= 31) {
+                dVar = new j2.j(clipData, 3);
+            } else {
+                r0.e eVar = new r0.e();
+                eVar.b = clipData;
+                eVar.c = 3;
+                dVar = eVar;
+            }
+            r0.i0.h(textView, dVar.build());
+            textView.endBatchEdit();
+            return true;
+        } catch (Throwable th2) {
+            textView.endBatchEdit();
+            throw th2;
+        }
     }
 
-    @Override // android.widget.RatingBar, android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
-    public final synchronized void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        Bitmap bitmap = (Bitmap) this.a.c;
-        if (bitmap != null) {
-            setMeasuredDimension(View.resolveSizeAndState(bitmap.getWidth() * getNumStars(), i10, 0), getMeasuredHeight());
+    public static boolean b(DragEvent dragEvent, View view, Activity activity) {
+        r0.d dVar;
+        activity.requestDragAndDropPermissions(dragEvent);
+        ClipData clipData = dragEvent.getClipData();
+        if (Build.VERSION.SDK_INT >= 31) {
+            dVar = new j2.j(clipData, 3);
+        } else {
+            r0.e eVar = new r0.e();
+            eVar.b = clipData;
+            eVar.c = 3;
+            dVar = eVar;
         }
+        r0.i0.h(view, dVar.build());
+        return true;
     }
 }

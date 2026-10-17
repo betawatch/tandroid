@@ -1,90 +1,59 @@
 package org.telegram.ui;
 
 import java.util.ArrayList;
-import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class hr implements qq {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ boolean[] e;
-    public final /* synthetic */ yr f;
+public final /* synthetic */ class hr implements org.telegram.ui.Cells.z4, hg.z1 {
+    public final /* synthetic */ ir a;
 
-    public hr(yr yrVar, int i10, long j10, int i11, boolean z10, boolean[] zArr) {
-        this.f = yrVar;
-        this.a = i10;
-        this.b = j10;
-        this.c = i11;
-        this.d = z10;
-        this.e = zArr;
+    @Override // hg.z1
+    public /* synthetic */ a0.h J() {
+        return null;
     }
 
-    @Override // org.telegram.ui.qq
-    public final void a(TLRPC.User user) {
-        yr.c0(this.f, user);
+    @Override // hg.z1
+    public /* synthetic */ boolean O(int i10) {
+        return true;
     }
 
-    @Override // org.telegram.ui.qq
-    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
-        yr yrVar = this.f;
-        ArrayList arrayList = yrVar.F;
-        long j10 = this.b;
-        int i11 = this.a;
-        if (i11 != 0) {
-            if (i11 == 1 && i10 == 0) {
-                yrVar.v0(j10);
-                return;
-            }
+    @Override // org.telegram.ui.Cells.z4
+    public boolean d(org.telegram.ui.Cells.a5 a5Var, boolean z10) {
+        int intValue = ((Integer) a5Var.getTag()).intValue();
+        ir irVar = this.a;
+        TLObject E = irVar.E(intValue);
+        if (!(E instanceof TLRPC.ChannelParticipant)) {
+            return false;
+        }
+        return irVar.y.h0((TLRPC.ChannelParticipant) E, !z10, a5Var);
+    }
+
+    @Override // hg.z1
+    public void f(int i10) {
+        ir irVar = this.a;
+        jr jrVar = irVar.y;
+        if (irVar.h.e()) {
             return;
         }
-        int i12 = 0;
-        while (true) {
-            if (i12 >= arrayList.size()) {
-                break;
-            }
-            TLObject tLObject = (TLObject) arrayList.get(i12);
-            if (tLObject instanceof TLRPC.ChannelParticipant) {
-                if (MessageObject.getPeerId(((TLRPC.ChannelParticipant) tLObject).peer) == j10) {
-                    TLRPC.ChannelParticipant tL_channelParticipantAdmin = i10 == 1 ? new TLRPC.TL_channelParticipantAdmin() : new TLRPC.TL_channelParticipant();
-                    tL_channelParticipantAdmin.admin_rights = tL_chatAdminRights;
-                    tL_channelParticipantAdmin.banned_rights = tL_chatBannedRights;
-                    tL_channelParticipantAdmin.inviter_id = yrVar.getUserConfig().getClientUserId();
-                    if (j10 > 0) {
-                        TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
-                        tL_channelParticipantAdmin.peer = tL_peerUser;
-                        tL_peerUser.user_id = j10;
-                    } else {
-                        TLRPC.TL_peerChannel tL_peerChannel = new TLRPC.TL_peerChannel();
-                        tL_channelParticipantAdmin.peer = tL_peerChannel;
-                        tL_peerChannel.channel_id = -j10;
-                    }
-                    tL_channelParticipantAdmin.date = this.c;
-                    tL_channelParticipantAdmin.flags |= 4;
-                    tL_channelParticipantAdmin.rank = str;
-                    arrayList.set(i12, tL_channelParticipantAdmin);
-                }
-            } else if (tLObject instanceof TLRPC.ChatParticipant) {
-                TLRPC.ChatParticipant chatParticipant = (TLRPC.ChatParticipant) tLObject;
-                TLRPC.ChatParticipant tL_chatParticipantAdmin = i10 == 1 ? new TLRPC.TL_chatParticipantAdmin() : new TLRPC.TL_chatParticipant();
-                tL_chatParticipantAdmin.user_id = chatParticipant.user_id;
-                tL_chatParticipantAdmin.date = chatParticipant.date;
-                tL_chatParticipantAdmin.inviter_id = chatParticipant.inviter_id;
-                int indexOf = yrVar.s.participants.participants.indexOf(chatParticipant);
-                if (indexOf >= 0) {
-                    yrVar.s.participants.participants.set(indexOf, tL_chatParticipantAdmin);
-                }
-                yrVar.r0();
-            }
-            i12++;
+        int i11 = irVar.r;
+        irVar.l();
+        if (irVar.r > i11) {
+            jrVar.y0(i11);
         }
-        if (i10 != 1 || this.d) {
+        if (irVar.s || irVar.r != 0 || i10 == 0) {
             return;
         }
-        this.e[0] = true;
+        jrVar.b.e(false, true);
+    }
+
+    @Override // hg.z1
+    public /* synthetic */ a0.h y() {
+        return null;
+    }
+
+    @Override // hg.z1
+    public /* synthetic */ void Y(ArrayList arrayList) {
     }
 }

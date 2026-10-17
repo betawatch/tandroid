@@ -1,13 +1,13 @@
 package eh;
 
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class e implements a {
-    public final c6 a;
+    public final d6 a;
     public d b;
     public d c;
     public d d;
@@ -17,8 +17,8 @@ public final class e implements a {
     public float n;
     public float r;
 
-    public e(c6 c6Var) {
-        this.a = c6Var;
+    public e(d6 d6Var) {
+        this.a = d6Var;
         float dpf2 = AndroidUtilities.dpf2(1.0f);
         float dpf22 = AndroidUtilities.dpf2(0.33333334f);
         this.n = dpf2;
@@ -30,7 +30,7 @@ public final class e implements a {
     }
 
     @Override // eh.a
-    public final int J() {
+    public final int E() {
         return a(this.b);
     }
 
@@ -39,11 +39,16 @@ public final class e implements a {
         if (dVar == null) {
             return 0;
         }
-        c6 c6Var = this.a;
-        if ((c6Var instanceof bi.b) || (c6Var == null ? g6.I.q() : c6Var.a())) {
+        d6 d6Var = this.a;
+        if ((d6Var instanceof ci.b) || (d6Var == null ? h6.I.q() : d6Var.a())) {
             z10 = true;
         }
-        return dVar.f(c6Var, z10);
+        return dVar.f(d6Var, z10);
+    }
+
+    @Override // eh.a
+    public final int a0() {
+        return a(this.e);
     }
 
     public final void b(int i10, int i11) {
@@ -59,17 +64,12 @@ public final class e implements a {
     }
 
     @Override // eh.a
-    public final int j0() {
-        return a(this.e);
-    }
-
-    @Override // eh.a
-    public final int k() {
+    public final int h() {
         return a(this.c);
     }
 
     @Override // eh.a
-    public final int w() {
+    public final int u() {
         return a(this.d);
     }
 }

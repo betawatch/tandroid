@@ -5,12 +5,12 @@ import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.model.IOnSelectedListener;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public class OnSelectedDelegateImpl implements h0 {
     private final IOnSelectedListener mStub;
 
-    /* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+    /* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
     public static class OnSelectedListenerStub extends IOnSelectedListener.Stub {
         private final t mListener;
 
@@ -24,7 +24,7 @@ public class OnSelectedDelegateImpl implements h0 {
 
         @Override // androidx.car.app.model.IOnSelectedListener
         public void onSelected(int i10, IOnDoneCallback iOnDoneCallback) {
-            androidx.car.app.utils.i.b(iOnDoneCallback, "onSelectedListener", new g(this, i10, 1));
+            androidx.car.app.utils.g.b(iOnDoneCallback, "onSelectedListener", new g(this, i10, 1));
         }
     }
 
@@ -40,7 +40,7 @@ public class OnSelectedDelegateImpl implements h0 {
         try {
             IOnSelectedListener iOnSelectedListener = this.mStub;
             Objects.requireNonNull(iOnSelectedListener);
-            iOnSelectedListener.onSelected(i10, androidx.car.app.utils.i.a());
+            iOnSelectedListener.onSelected(i10, androidx.car.app.utils.g.a());
         } catch (RemoteException e) {
             throw new RuntimeException(e);
         }

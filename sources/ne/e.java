@@ -6,9 +6,9 @@ import android.os.Looper;
 import android.util.Log;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Interpolator;
-import di.xa;
+import ei.ja;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class e {
     public final int a;
@@ -38,7 +38,7 @@ public final class e {
         int i10 = this.a;
         d dVar = this.b;
         if (f10 == f7) {
-            dVar.A(f10, i10);
+            dVar.E(f10, i10);
             return;
         }
         int i11 = 1;
@@ -53,7 +53,7 @@ public final class e {
             if (this.g) {
                 this.g = false;
             }
-            dVar.A(f7, i10);
+            dVar.E(f7, i10);
             return;
         }
         this.f = f7;
@@ -62,7 +62,7 @@ public final class e {
         this.h = ofFloat;
         ofFloat.setDuration(j10);
         this.h.setInterpolator(this.c);
-        this.h.addUpdateListener(new xa(this, f10, f11, i11));
+        this.h.addUpdateListener(new ja(this, f10, f11, i11));
         this.h.addListener(new c(this, f10, f11, i12));
         try {
             this.h.start();
@@ -94,7 +94,7 @@ public final class e {
     public final void c(float f7) {
         boolean b10 = b();
         if (d(f7, 1.0f) || b10) {
-            this.b.A(f7, this.a);
+            this.b.E(f7, this.a);
         }
     }
 
@@ -103,7 +103,7 @@ public final class e {
             return false;
         }
         this.e = f7;
-        this.b.p(this.a, f7, f10, this);
+        this.b.u(this.a, f7, f10, this);
         return true;
     }
 

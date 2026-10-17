@@ -1,24 +1,31 @@
 package i2;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class o1 extends u2.s {
-    public final b2.o1 f;
+public final class o1 {
+    public static final o1 c = new o1(0, false);
+    public final int a;
+    public final boolean b;
 
-    public o1(b2.p1 p1Var) {
-        super(p1Var);
-        this.f = new b2.o1();
+    public o1(int i10, boolean z10) {
+        this.a = i10;
+        this.b = z10;
     }
 
-    @Override // u2.s, b2.p1
-    public final b2.m1 f(int i10, b2.m1 m1Var, boolean z10) {
-        b2.p1 p1Var = this.e;
-        b2.m1 f7 = p1Var.f(i10, m1Var, z10);
-        if (p1Var.m(f7.c, this.f, 0L).a()) {
-            f7.h(m1Var.a, m1Var.b, m1Var.c, m1Var.d, m1Var.e, b2.c.c, true);
-            return f7;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        f7.f = true;
-        return f7;
+        if (obj != null && o1.class == obj.getClass()) {
+            o1 o1Var = (o1) obj;
+            if (this.a == o1Var.a && this.b == o1Var.b) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return (this.a << 1) + (this.b ? 1 : 0);
     }
 }

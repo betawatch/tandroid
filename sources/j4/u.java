@@ -1,18 +1,18 @@
 package j4;
 
-import b2.w0;
-import c3.i0;
+import b2.v0;
+import c3.j0;
 import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class u implements i {
     public final e2.x a;
-    public final c3.z b;
+    public final c3.a0 b;
     public final String c;
     public final int d;
     public final String e;
-    public i0 f;
+    public j0 f;
     public String g;
     public int h = 0;
     public int i;
@@ -26,7 +26,7 @@ public final class u implements i {
         e2.x xVar = new e2.x(4);
         this.a = xVar;
         xVar.a[0] = -1;
-        this.b = new c3.z();
+        this.b = new c3.a0();
         this.n = -9223372036854775807L;
         this.c = str;
         this.d = i10;
@@ -70,21 +70,21 @@ public final class u implements i {
                 if (i13 >= 4) {
                     xVar2.N(0);
                     int m10 = xVar2.m();
-                    c3.z zVar = this.b;
-                    if (zVar.a(m10)) {
-                        this.m = zVar.b;
+                    c3.a0 a0Var = this.b;
+                    if (a0Var.a(m10)) {
+                        this.m = a0Var.b;
                         if (!this.j) {
-                            this.l = (zVar.f * 1000000) / zVar.c;
-                            b2.w wVar = new b2.w();
-                            wVar.a = this.g;
-                            wVar.q = w0.n(this.e);
-                            wVar.r = w0.n((String) zVar.g);
-                            wVar.s = 4096;
-                            wVar.J = zVar.d;
-                            wVar.K = zVar.c;
-                            wVar.d = this.c;
-                            wVar.f = this.d;
-                            this.f.b(new b2.x(wVar));
+                            this.l = (a0Var.f * 1000000) / a0Var.c;
+                            b2.v vVar = new b2.v();
+                            vVar.a = this.g;
+                            vVar.q = v0.n(this.e);
+                            vVar.r = v0.n((String) a0Var.g);
+                            vVar.s = 4096;
+                            vVar.J = a0Var.d;
+                            vVar.K = a0Var.c;
+                            vVar.d = this.c;
+                            vVar.f = this.d;
+                            this.f.b(new b2.w(vVar));
                             this.j = true;
                         }
                         xVar2.N(0);
@@ -128,7 +128,7 @@ public final class u implements i {
         f0Var.c();
         this.g = (String) f0Var.e;
         f0Var.c();
-        this.f = qVar.W(f0Var.c, 1);
+        this.f = qVar.j0(f0Var.c, 1);
     }
 
     @Override // j4.i

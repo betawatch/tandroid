@@ -1,63 +1,93 @@
 package org.telegram.ui;
 
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.Drawable;
+import android.view.View;
 import java.util.ArrayList;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wr implements org.telegram.ui.Cells.a5, hg.z1 {
-    public final /* synthetic */ xr a;
+public final class wr extends Drawable {
+    public final Drawable a;
+    public final Drawable b;
+    public int d;
+    public int e;
+    public final ArrayList c = new ArrayList();
+    public boolean f = false;
+    public final org.telegram.ui.Components.f6 g = new org.telegram.ui.Components.f6(new vi(this, 14), 420, org.telegram.ui.Components.bs.h);
+    public int h = 255;
 
-    public /* synthetic */ wr(xr xrVar) {
-        this.a = xrVar;
+    public wr(Drawable drawable, Drawable drawable2) {
+        this.a = drawable;
+        this.b = drawable2;
     }
 
-    @Override // hg.z1
-    public /* synthetic */ boolean E0(int i10) {
-        return true;
+    public final void a(int i10, int i11) {
+        this.d = i10;
+        this.e = i11;
     }
 
-    @Override // hg.z1
-    public /* synthetic */ a0.h K() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Cells.a5
-    public boolean d(org.telegram.ui.Cells.b5 b5Var, boolean z10) {
-        int intValue = ((Integer) b5Var.getTag()).intValue();
-        xr xrVar = this.a;
-        TLObject E = xrVar.E(intValue);
-        if (!(E instanceof TLRPC.ChannelParticipant)) {
-            return false;
-        }
-        return xrVar.y.h0((TLRPC.ChannelParticipant) E, !z10, b5Var);
-    }
-
-    @Override // hg.z1
-    public void f(int i10) {
-        xr xrVar = this.a;
-        yr yrVar = xrVar.y;
-        if (xrVar.h.e()) {
+    public final void b(boolean z10) {
+        if (this.f == z10) {
             return;
         }
-        int i11 = xrVar.r;
-        xrVar.l();
-        if (xrVar.r > i11) {
-            yrVar.y0(i11);
+        this.f = z10;
+        ArrayList arrayList = this.c;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ((View) obj).invalidate();
         }
-        if (xrVar.s || xrVar.r != 0 || i10 == 0) {
-            return;
-        }
-        yrVar.b.e(false, true);
+        invalidateSelf();
     }
 
-    @Override // hg.z1
-    public /* synthetic */ a0.h k0() {
-        return null;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        float e = this.g.e(this.f);
+        int i10 = this.h;
+        Drawable drawable = this.a;
+        drawable.setAlpha(i10);
+        drawable.setBounds(getBounds());
+        drawable.draw(canvas);
+        if (e > 0.0f) {
+            Drawable drawable2 = this.b;
+            drawable2.setAlpha((int) (this.h * e));
+            drawable2.setBounds(getBounds().left + this.d, getBounds().top + this.e, drawable2.getIntrinsicWidth() + getBounds().left + this.d, drawable2.getIntrinsicHeight() + getBounds().top + this.e);
+            float lerp = AndroidUtilities.lerp(0.5f, 1.0f, e);
+            canvas.save();
+            canvas.scale(lerp, lerp, drawable2.getBounds().centerX(), drawable2.getBounds().centerY());
+            drawable2.draw(canvas);
+            canvas.restore();
+        }
     }
 
-    @Override // hg.z1
-    public /* synthetic */ void O0(ArrayList arrayList) {
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return this.a.getIntrinsicHeight();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return this.a.getIntrinsicWidth();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.h = i10;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
+        this.a.setColorFilter(colorFilter);
+        this.b.setColorFilter(colorFilter);
     }
 }

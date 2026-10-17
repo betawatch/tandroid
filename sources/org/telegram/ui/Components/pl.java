@@ -1,46 +1,39 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
-import android.util.Property;
-import android.view.View;
-import android.view.animation.OvershootInterpolator;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class pl implements ValueAnimator.AnimatorUpdateListener {
-    public boolean a;
-    public final float[] b = {0.0f, 1.0f};
-    public final /* synthetic */ FrameLayout c;
-    public final /* synthetic */ ql d;
+public final class pl extends TextView {
+    public final /* synthetic */ int a;
+    public float b;
+    public float c;
 
-    public pl(ql qlVar, FrameLayout frameLayout) {
-        this.d = qlVar;
-        this.c = frameLayout;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ pl(Context context, int i10) {
+        super(context);
+        this.a = i10;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        float lerp = AndroidUtilities.lerp(this.b, valueAnimator.getAnimatedFraction());
-        if (lerp >= 0.7f && !this.a) {
-            ql qlVar = this.d;
-            tl tlVar = qlVar.b;
-            tl tlVar2 = qlVar.b;
-            if (tlVar.i0 != null) {
-                AnimatorSet animatorSet = new AnimatorSet();
-                animatorSet.playTogether(ObjectAnimator.ofFloat(tlVar2.i0, (Property<FrameLayout, Float>) View.SCALE_X, 0.0f, 1.0f), ObjectAnimator.ofFloat(tlVar2.i0, (Property<FrameLayout, Float>) View.SCALE_Y, 0.0f, 1.0f), ObjectAnimator.ofFloat(tlVar2.i0, (Property<FrameLayout, Float>) View.ALPHA, 0.0f, 1.0f));
-                animatorSet.setInterpolator(new OvershootInterpolator(1.02f));
-                animatorSet.setDuration(250L);
-                animatorSet.start();
-                this.a = true;
-            }
+    @Override // android.view.View
+    public final float getTranslationX() {
+        switch (this.a) {
         }
-        float interpolation = lerp <= 0.5f ? es.g.getInterpolation(lerp / 0.5f) * 1.1f : lerp <= 0.75f ? 1.1f - (es.g.getInterpolation((lerp - 0.5f) / 0.25f) * 0.2f) : (es.g.getInterpolation((lerp - 0.75f) / 0.25f) * 0.1f) + 0.9f;
-        FrameLayout frameLayout = this.c;
-        frameLayout.setScaleX(interpolation);
-        frameLayout.setScaleY(interpolation);
+        return this.b;
+    }
+
+    @Override // android.view.View
+    public final void setTranslationX(float f7) {
+        switch (this.a) {
+            case 0:
+                this.b = f7;
+                setTranslationY(this.c + f7);
+                break;
+            default:
+                this.b = f7;
+                setTranslationY(this.c + f7);
+                break;
+        }
     }
 }

@@ -1,14 +1,59 @@
 package org.telegram.ui;
 
-import android.view.TextureView;
-import org.telegram.messenger.MessageObject;
+import android.content.Context;
+import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public interface rv0 {
-    void C0(MessageObject messageObject);
+public final class rv0 extends org.telegram.ui.Cells.u1 {
+    public final /* synthetic */ int Ge;
+    public final /* synthetic */ int He;
+    public final /* synthetic */ int Ie;
 
-    void H(MessageObject messageObject);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ rv0(Context context, int i10, org.telegram.ui.ActionBar.d6 d6Var, int i11, int i12, int i13) {
+        super(context, i10, false, null, d6Var);
+        this.Ge = i13;
+        this.He = i11;
+        this.Ie = i12;
+    }
 
-    TextureView g0();
+    @Override // org.telegram.ui.Cells.u1
+    public final void Y1(Canvas canvas) {
+        switch (this.Ge) {
+            case 0:
+                this.i6 = 0;
+                this.j6 = this.Y5.size() - 1;
+                super.Y1(canvas);
+                break;
+            default:
+                this.i6 = 0;
+                this.j6 = this.Y5.size() - 1;
+                super.Y1(canvas);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Cells.u1, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        switch (this.Ge) {
+            case 0:
+                setMeasuredDimension(this.He, this.Ie);
+                break;
+            default:
+                setMeasuredDimension(this.He, this.Ie);
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Cells.u1, android.view.View
+    public final void setPressed(boolean z10) {
+        int i10 = this.Ge;
+    }
+
+    private final void A4(boolean z10) {
+    }
+
+    private final void B4(boolean z10) {
+    }
 }

@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.Map;
 import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class n implements h {
     public final Context a;
@@ -32,7 +32,7 @@ public final class n implements h {
         this.b = new ArrayList();
     }
 
-    public static void c(h hVar, c0 c0Var) {
+    public static void d(h hVar, c0 c0Var) {
         if (hVar != null) {
             hVar.addTransferListener(c0Var);
         }
@@ -55,13 +55,13 @@ public final class n implements h {
         c0Var.getClass();
         this.c.addTransferListener(c0Var);
         this.b.add(c0Var);
-        c(this.d, c0Var);
-        c(this.e, c0Var);
-        c(this.f, c0Var);
-        c(this.h, c0Var);
-        c(this.n, c0Var);
-        c(this.r, c0Var);
-        c(this.s, c0Var);
+        d(this.d, c0Var);
+        d(this.e, c0Var);
+        d(this.f, c0Var);
+        d(this.h, c0Var);
+        d(this.n, c0Var);
+        d(this.r, c0Var);
+        d(this.s, c0Var);
     }
 
     @Override // g2.h
@@ -178,7 +178,7 @@ public final class n implements h {
         return this.v.open(mVar);
     }
 
-    @Override // b2.p
+    @Override // b2.o
     public final int read(byte[] bArr, int i10, int i11) {
         h hVar = this.v;
         hVar.getClass();

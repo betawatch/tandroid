@@ -1,34 +1,53 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l7 implements Runnable {
+public final /* synthetic */ class l7 implements o1.g {
     public final /* synthetic */ int a;
-    public final /* synthetic */ m8 b;
-    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ l7(m8 m8Var, TLRPC.TL_error tL_error, int i10) {
+    public /* synthetic */ l7(Object obj, int i10) {
         this.a = i10;
-        this.b = m8Var;
-        this.c = tL_error;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // o1.g
+    public final void a(o1.h hVar, float f7, float f10) {
+        ViewGroup viewGroup;
         switch (this.a) {
             case 0:
-                m8.u(this.b, this.c);
+                ((k8) this.b).T.setBufferedProgress(f7 / 1000.0f);
                 break;
             case 1:
-                m8.y(this.b, this.c);
+                qc qcVar = (qc) this.b;
+                qcVar.o = (int) f7;
+                qcVar.l();
                 break;
             case 2:
-                m8.I(this.b, this.c);
+                if (Math.abs(f7) > ((ub) this.b).getWidth()) {
+                    hVar.c();
+                    break;
+                }
+                break;
+            case 3:
+                ti tiVar = (ti) ((ai.b5) this.b).d;
+                li liVar = tiVar.C0;
+                if (liVar == tiVar.m0 || liVar == tiVar.n0 || (tiVar.F && tiVar.w1 != null)) {
+                    tiVar.e2(1);
+                }
+                tiVar.C0.l(tiVar.o2);
+                viewGroup = ((org.telegram.ui.ActionBar.f3) tiVar).containerView;
+                viewGroup.invalidate();
+                break;
+            case 4:
+                al alVar = (al) this.b;
+                alVar.j0 = f7;
+                alVar.k0();
                 break;
             default:
-                m8.J(this.b, this.c);
+                ((wc0) this.b).y();
                 break;
         }
     }

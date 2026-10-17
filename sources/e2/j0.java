@@ -5,28 +5,26 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.widget.TextView;
-import di.x8;
+import ei.bc;
 import java.lang.ref.WeakReference;
 import java.security.SecureRandom;
 import java.util.Arrays;
 import java.util.WeakHashMap;
+import m.w0;
 import m.x0;
-import m.y0;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import v7.u6;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public class j0 {
-    public final /* synthetic */ int a;
+    public int a;
     public int b;
-    public int c;
+    public Object c;
     public Object d;
-    public Object e;
 
     public j0(int[] iArr) {
-        this.a = 3;
         SecureRandom secureRandom = tc.k.a;
         int i10 = ConnectionsManager.DEFAULT_DATACENTER_ID;
         for (int i11 : iArr) {
@@ -34,20 +32,20 @@ public class j0 {
                 i10 = i11;
             }
         }
-        this.b = Math.max(i10, 1);
+        this.a = Math.max(i10, 1);
         int i12 = TLObject.FLAG_31;
         for (int i13 : iArr) {
             if (i12 < i13) {
                 i12 = i13;
             }
         }
-        this.c = i12;
+        this.b = i12;
         int i14 = i12 + 1;
         int[] iArr2 = new int[i14];
         for (int i15 : iArr) {
             iArr2[i15] = iArr2[i15] + 1;
         }
-        int i16 = this.c + 1;
+        int i16 = this.b + 1;
         int[] iArr3 = new int[i16];
         for (int i17 = 0; i17 < i16; i17++) {
             iArr3[i17] = -1;
@@ -63,7 +61,7 @@ public class j0 {
             iArr3[i20] = i18;
         }
         Object[] objArr = {iArr4, Integer.valueOf(i18)};
-        this.d = iArr3;
+        this.c = iArr3;
         int[] iArr5 = (int[]) objArr[0];
         int[] iArr6 = new int[((Integer) objArr[1]).intValue() + 1];
         for (int i21 = 0; i21 < iArr.length; i21++) {
@@ -74,139 +72,123 @@ public class j0 {
                 iArr6[i23] = i21;
             }
         }
-        this.e = iArr6;
-    }
-
-    private final synchronized void d() {
-        this.b = 0;
-        this.c = 0;
-        Arrays.fill((Object[]) this.e, (Object) null);
-    }
-
-    private final synchronized void e() {
-        this.c = 0;
-        this.b = 0;
+        this.d = iArr6;
     }
 
     public synchronized void a(Object obj, long j10) {
-        if (this.c > 0) {
-            if (j10 <= ((long[]) this.d)[((this.b + r0) - 1) % ((Object[]) this.e).length]) {
+        if (this.b > 0) {
+            if (j10 <= ((long[]) this.c)[((this.a + r0) - 1) % ((Object[]) this.d).length]) {
                 c();
             }
         }
-        f();
-        int i10 = this.b;
-        int i11 = this.c;
-        Object[] objArr = (Object[]) this.e;
+        d();
+        int i10 = this.a;
+        int i11 = this.b;
+        Object[] objArr = (Object[]) this.d;
         int length = (i10 + i11) % objArr.length;
-        ((long[]) this.d)[length] = j10;
+        ((long[]) this.c)[length] = j10;
         objArr[length] = obj;
-        this.c = i11 + 1;
+        this.b = i11 + 1;
     }
 
     public void b() {
-        new Handler(Looper.getMainLooper()).post(new x8(this, 22));
+        new Handler(Looper.getMainLooper()).post(new bc(this, 12));
     }
 
     public synchronized void c() {
-        switch (this.a) {
-            case 0:
-                d();
-                break;
-            default:
-                e();
-                break;
-        }
+        this.a = 0;
+        this.b = 0;
+        Arrays.fill((Object[]) this.d, (Object) null);
     }
 
-    public void f() {
-        int length = ((Object[]) this.e).length;
-        if (this.c < length) {
+    public void d() {
+        int length = ((Object[]) this.d).length;
+        if (this.b < length) {
             return;
         }
         int i10 = length * 2;
         long[] jArr = new long[i10];
         Object[] objArr = new Object[i10];
-        int i11 = this.b;
+        int i11 = this.a;
         int i12 = length - i11;
-        System.arraycopy((long[]) this.d, i11, jArr, 0, i12);
-        System.arraycopy((Object[]) this.e, this.b, objArr, 0, i12);
-        int i13 = this.b;
+        System.arraycopy((long[]) this.c, i11, jArr, 0, i12);
+        System.arraycopy((Object[]) this.d, this.a, objArr, 0, i12);
+        int i13 = this.a;
         if (i13 > 0) {
-            System.arraycopy((long[]) this.d, 0, jArr, i12, i13);
-            System.arraycopy((Object[]) this.e, 0, objArr, i12, this.b);
+            System.arraycopy((long[]) this.c, 0, jArr, i12, i13);
+            System.arraycopy((Object[]) this.d, 0, objArr, i12, this.a);
         }
-        this.d = jArr;
-        this.e = objArr;
-        this.b = 0;
+        this.c = jArr;
+        this.d = objArr;
+        this.a = 0;
     }
 
-    public void g(Typeface typeface) {
+    public void e(Typeface typeface) {
         int i10;
-        if (Build.VERSION.SDK_INT >= 28 && (i10 = this.b) != -1) {
-            typeface = x0.a(typeface, i10, (this.c & 2) != 0);
+        if (Build.VERSION.SDK_INT >= 28 && (i10 = this.a) != -1) {
+            typeface = w0.a(typeface, i10, (this.b & 2) != 0);
         }
-        y0 y0Var = (y0) this.e;
-        WeakReference weakReference = (WeakReference) this.d;
-        if (y0Var.m) {
-            y0Var.l = typeface;
+        x0 x0Var = (x0) this.d;
+        WeakReference weakReference = (WeakReference) this.c;
+        if (x0Var.m) {
+            x0Var.l = typeface;
             TextView textView = (TextView) weakReference.get();
             if (textView != null) {
                 WeakHashMap weakHashMap = r0.i0.a;
                 if (textView.isAttachedToWindow()) {
-                    textView.post(new androidx.activity.g(textView, typeface, y0Var.j, 4));
+                    textView.post(new androidx.activity.g(textView, typeface, x0Var.j, 4));
                 } else {
-                    textView.setTypeface(typeface, y0Var.j);
+                    textView.setTypeface(typeface, x0Var.j);
                 }
             }
         }
     }
 
-    public synchronized Object h() {
-        return this.c == 0 ? null : j();
+    public synchronized Object f() {
+        return this.b == 0 ? null : h();
     }
 
-    public synchronized Object i(long j10) {
+    public synchronized Object g(long j10) {
         Object obj;
         obj = null;
-        while (this.c > 0 && j10 - ((long[]) this.d)[this.b] >= 0) {
-            obj = j();
+        while (this.b > 0 && j10 - ((long[]) this.c)[this.a] >= 0) {
+            obj = h();
         }
         return obj;
     }
 
-    public Object j() {
-        u6.p(this.c > 0);
-        Object[] objArr = (Object[]) this.e;
-        int i10 = this.b;
+    public Object h() {
+        u6.p(this.b > 0);
+        Object[] objArr = (Object[]) this.d;
+        int i10 = this.a;
         Object obj = objArr[i10];
         objArr[i10] = null;
-        this.b = (i10 + 1) % objArr.length;
-        this.c--;
+        this.a = (i10 + 1) % objArr.length;
+        this.b--;
         return obj;
     }
 
-    public int k(c5.c0 c0Var, int[] iArr) {
-        int i10 = this.b;
+    public int i(c5.b0 b0Var, int[] iArr) {
+        int i10 = this.a;
         while (true) {
             int i11 = 1;
-            if (i10 > this.c) {
-                throw new com.google.firebase.messaging.r(String.format("[%s] Bad code at the bit index '%d'.", getClass().getSimpleName(), Integer.valueOf(iArr[0])));
+            if (i10 > this.b) {
+                throw new com.google.firebase.messaging.q(String.format("[%s] Bad code at the bit index '%d'.", getClass().getSimpleName(), Integer.valueOf(iArr[0])));
             }
-            int i12 = ((int[]) this.d)[i10];
+            int i12 = ((int[]) this.c)[i10];
             if (i12 >= 0) {
                 int i13 = iArr[0];
                 int i14 = i10 - 1;
                 int i15 = 0;
                 while (i14 >= 0) {
-                    if (c0Var.i(i13 + i14)) {
+                    if (b0Var.n(i13 + i14)) {
                         i15 += i11;
                     }
                     i14--;
                     i11 *= 2;
                 }
                 if (i12 >= i15) {
-                    int i16 = ((int[]) this.e)[i15];
+                    int i16 = ((int[]) this.d)[i15];
                     iArr[0] = iArr[0] + i10;
                     return i16;
                 }
@@ -215,44 +197,12 @@ public class j0 {
         }
     }
 
-    public synchronized void l(long j10, long j11) {
-        long[] jArr = (long[]) this.d;
-        int i10 = this.b;
-        jArr[i10] = j10;
-        ((long[]) this.e)[i10] = j11;
-        this.b = (i10 + 1) % jArr.length;
-        this.c = Math.min(this.c + 1, jArr.length);
+    public synchronized int j() {
+        return this.b;
     }
 
-    public synchronized int m() {
-        return this.c;
-    }
-
-    public j0(int i10, byte b10) {
-        this.a = i10;
-        switch (i10) {
-            case 2:
-                this.d = new long[64];
-                this.e = new long[64];
-                break;
-            default:
-                this.d = new long[10];
-                this.e = new Object[10];
-                break;
-        }
-    }
-
-    public j0(y0 y0Var, int i10, int i11, WeakReference weakReference) {
-        this.a = 1;
-        this.e = y0Var;
-        this.b = i10;
-        this.c = i11;
-        this.d = weakReference;
-    }
-
-    public j0(int i10) {
-        this.a = 4;
-        this.d = new w3.r[i10];
-        this.c = 0;
+    public j0() {
+        this.c = new long[10];
+        this.d = new Object[10];
     }
 }

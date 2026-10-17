@@ -1,53 +1,63 @@
 package org.telegram.ui;
 
-import j$.util.Objects;
-import org.telegram.tgnet.tl.TL_stories;
+import android.view.View;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class gc extends pg.a {
-    public final String c;
-    public final TL_stories.Boost d;
-    public TL_stories.PrepaidGiveaway e;
-    public boolean f;
-    public final int g;
+public final /* synthetic */ class gc implements Utilities.Callback3 {
+    public final /* synthetic */ dd a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ View c;
 
-    public gc(int i10, String str) {
-        super(i10, false);
-        this.c = str;
+    public /* synthetic */ gc(dd ddVar, int i10, View view) {
+        this.a = ddVar;
+        this.b = i10;
+        this.c = view;
     }
 
-    public final boolean equals(Object obj) {
-        TL_stories.PrepaidGiveaway prepaidGiveaway;
-        boolean z10 = this.f;
-        if (this == obj) {
-            return true;
+    @Override // org.telegram.messenger.Utilities.Callback3
+    public final void run(Object obj, Object obj2, Object obj3) {
+        Long l4 = (Long) obj;
+        Integer num = (Integer) obj2;
+        TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) obj3;
+        dd ddVar = this.a;
+        int i10 = ddVar.U;
+        int i11 = this.b;
+        if (i11 == i10) {
+            ddVar.n = l4.longValue();
+            ddVar.a1(true);
+        } else if (i11 == ddVar.c0) {
+            ddVar.w = l4.longValue();
+            ddVar.b1();
+        } else if (i11 == ddVar.f0) {
+            if (l4.longValue() == 0) {
+                ddVar.y = null;
+            } else if (tL_starGiftUnique != null) {
+                TLRPC.TL_emojiStatusCollectible emojiStatusCollectibleFromGift = MessagesController.emojiStatusCollectibleFromGift(tL_starGiftUnique);
+                if (num != null) {
+                    emojiStatusCollectibleFromGift.flags |= 1;
+                    emojiStatusCollectibleFromGift.until = num.intValue();
+                }
+                ddVar.y = emojiStatusCollectibleFromGift;
+                ddVar.s = -1;
+                ddVar.w = 0L;
+            } else {
+                TLRPC.TL_emojiStatus tL_emojiStatus = new TLRPC.TL_emojiStatus();
+                tL_emojiStatus.document_id = l4.longValue();
+                if (num != null) {
+                    tL_emojiStatus.flags |= 1;
+                    tL_emojiStatus.until = num.intValue();
+                }
+                ddVar.y = tL_emojiStatus;
+            }
+            ddVar.b1();
         }
-        if (obj == null || gc.class != obj.getClass()) {
-            return false;
-        }
-        gc gcVar = (gc) obj;
-        TL_stories.Boost boost = gcVar.d;
-        boolean z11 = gcVar.f;
-        TL_stories.PrepaidGiveaway prepaidGiveaway2 = this.e;
-        if (prepaidGiveaway2 != null && (prepaidGiveaway = gcVar.e) != null) {
-            return prepaidGiveaway2.id == prepaidGiveaway.id && z10 == z11;
-        }
-        TL_stories.Boost boost2 = this.d;
-        if (boost2 == null || boost == null) {
-            return true;
-        }
-        return boost2.id.hashCode() == boost.id.hashCode() && z10 == z11 && this.g == gcVar.g;
-    }
-
-    public final int hashCode() {
-        return Objects.hash(this.c, this.d, this.e, Boolean.valueOf(this.f), Integer.valueOf(this.g));
-    }
-
-    public gc(TL_stories.Boost boost, boolean z10, int i10) {
-        super(5, true);
-        this.d = boost;
-        this.f = z10;
-        this.g = i10;
+        ddVar.X0(true);
+        ((qc) this.c).c(l4.longValue(), tL_starGiftUnique != null, true);
+        ddVar.Z0(true);
     }
 }

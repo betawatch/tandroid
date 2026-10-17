@@ -3,10 +3,10 @@ package vf;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import bi.d4;
+import ci.i3;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class e {
     public static b a(View view, d dVar) {
@@ -24,13 +24,13 @@ public abstract class e {
         ViewGroup viewGroup = (ViewGroup) rootView;
         b bVar2 = (b) viewGroup.getTag(R.id.tag_view_on_post_draw_root_state);
         if (bVar2 == null) {
-            d4 d4Var = new d4(viewGroup.getContext());
-            b bVar3 = new b(d4Var);
+            i3 i3Var = new i3(viewGroup.getContext());
+            b bVar3 = new b(i3Var);
             viewGroup.setTag(R.id.tag_view_on_post_draw_root_state, bVar3);
             if (viewGroup instanceof FrameLayout) {
-                viewGroup.addView(d4Var, new FrameLayout.LayoutParams(1, 1, 17));
+                viewGroup.addView(i3Var, new FrameLayout.LayoutParams(1, 1, 17));
             } else {
-                viewGroup.addView(d4Var, new ViewGroup.LayoutParams(1, 1));
+                viewGroup.addView(i3Var, new ViewGroup.LayoutParams(1, 1));
             }
             bVar2 = bVar3;
         }

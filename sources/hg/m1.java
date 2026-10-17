@@ -11,52 +11,52 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import bi.g8;
+import ci.u6;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.m9;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.j9;
 import w7.z5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class m1 extends FrameLayout {
-    public final c6 a;
-    public final m9 b;
+    public final d6 a;
+    public final j9 b;
     public final TextView[] c;
     public final TextView[] d;
     public float e;
     public ValueAnimator f;
 
-    public m1(Context context, c6 c6Var) {
+    public m1(Context context, d6 d6Var) {
         super(context);
         this.c = new TextView[2];
         this.d = new TextView[2];
-        this.a = c6Var;
+        this.a = d6Var;
         setWillNotDraw(false);
-        m9 m9Var = new m9(this, false);
-        this.b = m9Var;
-        m9Var.l = true;
-        m9Var.p = AndroidUtilities.dp(75.0f);
-        m9Var.o = AndroidUtilities.dp(48.0f);
-        m9Var.x = true;
-        m9Var.s = AndroidUtilities.dp(22.0f);
+        j9 j9Var = new j9(this, false);
+        this.b = j9Var;
+        j9Var.l = true;
+        j9Var.p = AndroidUtilities.dp(75.0f);
+        j9Var.o = AndroidUtilities.dp(48.0f);
+        j9Var.x = true;
+        j9Var.s = AndroidUtilities.dp(22.0f);
         int i10 = 0;
         while (i10 < 2) {
             this.c[i10] = new TextView(context);
-            this.c[i10].setTextColor(g6.w0(g6.G6, c6Var));
+            this.c[i10].setTextColor(h6.w0(h6.G6, d6Var));
             this.c[i10].setTypeface(AndroidUtilities.bold());
             this.c[i10].setTextSize(1, 14.0f);
             int i11 = 8;
             this.c[i10].setVisibility(i10 == 0 ? 0 : 8);
             addView(this.c[i10], z5.a(-2.0f, 76.0f, 7.0f, 40.0f, 0.0f, -1, 48));
             this.d[i10] = new TextView(context);
-            this.d[i10].setTextColor(g6.w0(g6.z6, c6Var));
+            this.d[i10].setTextColor(h6.w0(h6.z6, d6Var));
             this.d[i10].setTextSize(1, 12.0f);
             TextView textView = this.d[i10];
             if (i10 == 0) {
@@ -68,40 +68,40 @@ public final class m1 extends FrameLayout {
         }
         ImageView imageView = new ImageView(context);
         imageView.setImageResource(R.drawable.msg_arrowright);
-        imageView.setColorFilter(new PorterDuffColorFilter(g6.w0(g6.P5, c6Var), PorterDuff.Mode.SRC_IN));
+        imageView.setColorFilter(new PorterDuffColorFilter(h6.w0(h6.P5, d6Var), PorterDuff.Mode.SRC_IN));
         addView(imageView, z5.a(24.0f, 0.0f, 0.0f, 8.66f, 0.0f, 24, 21));
     }
 
-    public final boolean a(g8 g8Var) {
+    public final boolean a(u6 u6Var) {
         String str;
-        m9 m9Var;
+        j9 j9Var;
         int i10 = 0;
         int i11 = 0;
         while (true) {
-            ArrayList arrayList = g8Var.i;
-            str = g8Var.D;
+            ArrayList arrayList = u6Var.i;
+            str = u6Var.D;
             int size = arrayList.size();
-            m9Var = this.b;
+            j9Var = this.b;
             if (i10 >= size || i11 >= 3) {
                 break;
             }
-            MessageObject messageObject = (MessageObject) g8Var.i.get(i10);
+            MessageObject messageObject = (MessageObject) u6Var.i.get(i10);
             long j10 = messageObject.storyItem.dialogId;
             TextUtils.isEmpty(str);
-            m9Var.l(i11, messageObject.storyItem, g8Var.c);
+            j9Var.l(i11, messageObject.storyItem, u6Var.c);
             i11++;
             i10++;
         }
-        m9Var.k(i11);
-        m9Var.b(false, true);
+        j9Var.k(i11);
+        j9Var.b(false, true);
         boolean isEmpty = TextUtils.isEmpty(str);
         TextView[] textViewArr = this.c;
         if (isEmpty) {
-            textViewArr[0].setText(LocaleController.formatPluralStringSpaced("HashtagStoriesFound", g8Var.J));
+            textViewArr[0].setText(LocaleController.formatPluralStringSpaced("HashtagStoriesFound", u6Var.J));
         } else {
-            textViewArr[0].setText(AndroidUtilities.replaceSingleLink(LocaleController.formatPluralStringSpaced("HashtagStoriesFoundChannel", g8Var.J, "@" + str), g6.w0(g6.Oh, this.a), null));
+            textViewArr[0].setText(AndroidUtilities.replaceSingleLink(LocaleController.formatPluralStringSpaced("HashtagStoriesFoundChannel", u6Var.J, "@" + str), h6.w0(h6.Oh, this.a), null));
         }
-        this.d[0].setText(LocaleController.formatString(R.string.HashtagStoriesFoundSubtitle, g8Var.C));
+        this.d[0].setText(LocaleController.formatString(R.string.HashtagStoriesFoundSubtitle, u6Var.C));
         return i11 > 0;
     }
 
@@ -111,7 +111,7 @@ public final class m1 extends FrameLayout {
         if (isEmpty) {
             textViewArr[1].setText(LocaleController.formatPluralStringSpaced("HashtagMessagesFound", i10));
         } else {
-            textViewArr[1].setText(AndroidUtilities.replaceSingleLink(LocaleController.formatPluralStringSpaced("HashtagMessagesFoundChannel", i10, t8.b.h("@", str2)), g6.w0(g6.Oh, this.a), null));
+            textViewArr[1].setText(AndroidUtilities.replaceSingleLink(LocaleController.formatPluralStringSpaced("HashtagMessagesFoundChannel", i10, r.c.g("@", str2)), h6.w0(h6.Oh, this.a), null));
         }
         this.d[1].setText(LocaleController.formatString(R.string.HashtagMessagesFoundSubtitle, str));
     }
@@ -127,9 +127,9 @@ public final class m1 extends FrameLayout {
         this.b.i(canvas);
         canvas.restore();
         super.onDraw(canvas);
-        Paint U0 = g6.U0("paintDivider", this.a);
+        Paint U0 = h6.U0("paintDivider", this.a);
         if (U0 == null) {
-            U0 = g6.k0;
+            U0 = h6.k0;
         }
         canvas.drawRect(0.0f, getHeight() - 1, getWidth(), getHeight(), U0);
     }

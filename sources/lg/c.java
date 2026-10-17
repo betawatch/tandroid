@@ -7,18 +7,18 @@ import android.graphics.drawable.Drawable;
 import android.text.TextPaint;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-import com.google.android.gms.internal.play_billing.k3;
-import di.e4;
+import com.google.android.gms.internal.cast.a6;
+import ei.y3;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.c6;
-import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
 import w7.z5;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public class c extends FrameLayout {
     public final TextView a;
@@ -29,13 +29,13 @@ public class c extends FrameLayout {
     public boolean f;
     public final Drawable h;
     public final int n;
-    public final c6 r;
+    public final d6 r;
 
-    public c(Context context, c6 c6Var) {
+    public c(Context context, d6 d6Var) {
         super(context);
         this.e = true;
         new SimpleDateFormat("d MMM yyyy");
-        this.r = c6Var;
+        this.r = d6Var;
         TextPaint textPaint = new TextPaint();
         textPaint.setTextSize(14.0f);
         textPaint.setTypeface(AndroidUtilities.bold());
@@ -43,7 +43,7 @@ public class c extends FrameLayout {
         this.n = measureText;
         TextView textView = new TextView(context);
         this.a = textView;
-        k3.m(15.0f, 1, textView);
+        a6.m(15.0f, 1, textView);
         addView(textView, z5.a(-2.0f, 16.0f, 0.0f, measureText, 0.0f, -2, 8388627));
         TextView textView2 = new TextView(context);
         this.d = textView2;
@@ -71,20 +71,20 @@ public class c extends FrameLayout {
         textView2.setCompoundDrawablesWithIntrinsicBounds(drawable, (Drawable) null, (Drawable) null, (Drawable) null);
         textView2.setCompoundDrawablePadding(AndroidUtilities.dp(4.0f));
         textView2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(4.0f));
-        textView2.setBackground(g6.H0(AndroidUtilities.dp(3.0f), g6.w0(g6.Rh, c6Var)));
-        textView4.addOnLayoutChangeListener(new e4(this, 1));
+        textView2.setBackground(h6.H0(AndroidUtilities.dp(3.0f), h6.w0(h6.Rh, d6Var)));
+        textView4.addOnLayoutChangeListener(new y3(this, 1));
         a();
     }
 
     public final void a() {
-        int i10 = g6.j5;
-        c6 c6Var = this.r;
-        this.a.setTextColor(g6.w0(i10, c6Var));
-        this.b.setTextColor(g6.w0(i10, c6Var));
-        this.c.setTextColor(g6.w0(i10, c6Var));
-        int i11 = g6.fj;
-        this.d.setTextColor(g6.w0(i11, c6Var));
-        this.h.setColorFilter(g6.w0(i11, c6Var), PorterDuff.Mode.SRC_IN);
+        int i10 = h6.j5;
+        d6 d6Var = this.r;
+        this.a.setTextColor(h6.w0(i10, d6Var));
+        this.b.setTextColor(h6.w0(i10, d6Var));
+        this.c.setTextColor(h6.w0(i10, d6Var));
+        int i11 = h6.fj;
+        this.d.setTextColor(h6.w0(i11, d6Var));
+        this.h.setColorFilter(h6.w0(i11, d6Var), PorterDuff.Mode.SRC_IN);
     }
 
     public final void b(long j10, long j11) {

@@ -1,34 +1,34 @@
 package t1;
 
 import android.util.Log;
-import androidx.fragment.app.i0;
-import androidx.fragment.app.r;
+import androidx.fragment.app.j0;
+import androidx.fragment.app.s;
 import kotlin.jvm.internal.i;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final b a = b.a;
 
-    public static b a(r rVar) {
-        while (rVar != null) {
-            if (rVar.t()) {
-                rVar.p();
+    public static b a(s sVar) {
+        while (sVar != null) {
+            if (sVar.t()) {
+                sVar.p();
             }
-            rVar = rVar.M;
+            sVar = sVar.M;
         }
         return a;
     }
 
     public static void b(a aVar) {
-        if (i0.K(3)) {
+        if (j0.K(3)) {
             Log.d("FragmentManager", "StrictMode violation in ".concat(aVar.a.getClass().getName()), aVar);
         }
     }
 
-    public static final void c(r rVar, String previousFragmentId) {
+    public static final void c(s sVar, String previousFragmentId) {
         i.e(previousFragmentId, "previousFragmentId");
-        b(new a(rVar, "Attempting to reuse fragment " + rVar + " with previous ID " + previousFragmentId));
-        a(rVar).getClass();
+        b(new a(sVar, "Attempting to reuse fragment " + sVar + " with previous ID " + previousFragmentId));
+        a(sVar).getClass();
     }
 }

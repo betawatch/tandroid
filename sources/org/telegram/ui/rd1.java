@@ -1,145 +1,42 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.Shader;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.GradientDrawable;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class rd1 extends org.telegram.ui.Components.z9 {
-    public Drawable G;
-    public final boolean H;
-    public float I;
-    public float J;
-    public final /* synthetic */ ce1 K;
+public final /* synthetic */ class rd1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ te1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rd1(ce1 ce1Var, Activity activity) {
-        super(activity);
-        this.K = ce1Var;
-        this.H = true;
+    public /* synthetic */ rd1(te1 te1Var, int i10) {
+        this.a = i10;
+        this.b = te1Var;
     }
 
-    @Override // android.view.View
-    public Drawable getBackground() {
-        return this.G;
-    }
-
-    @Override // org.telegram.ui.Components.z9, android.view.View
-    public final void onDraw(Canvas canvas) {
-        this.I = 0.0f;
-        this.J = 0.0f;
-        boolean z10 = this.H;
-        ce1 ce1Var = this.K;
-        if (z10) {
-            Drawable drawable = this.G;
-            if ((drawable instanceof ColorDrawable) || (drawable instanceof GradientDrawable) || (drawable instanceof org.telegram.ui.Components.cd0)) {
-                drawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
-                this.G.draw(canvas);
-            } else if (drawable instanceof BitmapDrawable) {
-                if (((BitmapDrawable) drawable).getTileModeX() == Shader.TileMode.REPEAT) {
-                    canvas.save();
-                    float f7 = 2.0f / AndroidUtilities.density;
-                    canvas.scale(f7, f7);
-                    this.G.setBounds(0, 0, (int) Math.ceil(getMeasuredWidth() / f7), (int) Math.ceil(getMeasuredHeight() / f7));
-                    this.G.draw(canvas);
-                    canvas.restore();
-                } else {
-                    int measuredHeight = getMeasuredHeight();
-                    float max = Math.max(getMeasuredWidth() / this.G.getIntrinsicWidth(), measuredHeight / this.G.getIntrinsicHeight());
-                    int ceil = (int) Math.ceil(this.G.getIntrinsicWidth() * max * ce1Var.y1);
-                    int ceil2 = (int) Math.ceil(this.G.getIntrinsicHeight() * max * ce1Var.y1);
-                    int measuredWidth = (getMeasuredWidth() - ceil) / 2;
-                    int i10 = (measuredHeight - ceil2) / 2;
-                    this.J = i10;
-                    this.G.setBounds(measuredWidth, i10, ceil + measuredWidth, ceil2 + i10);
-                    this.G.draw(canvas);
-                }
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                te1 te1Var = this.b;
+                te1Var.x0();
+                te1Var.B0();
+                break;
+            case 1:
+                this.b.x0();
+                break;
+            case 2:
+                this.b.O0(true);
+                break;
+            case 3:
+                this.b.finishPreviewFragment();
+                break;
+            case 4:
+                te1 te1Var2 = this.b;
+                te1Var2.A0 = null;
+                te1Var2.U0(true, false);
+                break;
+            default:
+                te1 te1Var3 = this.b;
+                te1Var3.N.postOnAnimation(new rd1(te1Var3, 1));
+                break;
         }
-        if (ce1Var.a2) {
-            if (!ce1Var.c.isFinished() && ce1Var.c.computeScrollOffset()) {
-                if (ce1Var.c.getStartX() < ce1Var.W1 && ce1Var.c.getStartX() > 0) {
-                    ce1Var.X1 = ce1Var.c.getCurrX();
-                }
-                ce1Var.V0();
-                invalidate();
-            }
-            canvas.save();
-            float f10 = -ce1Var.X1;
-            this.I = f10;
-            canvas.translate(f10, 0.0f);
-            super.onDraw(canvas);
-            canvas.restore();
-        } else {
-            super.onDraw(canvas);
-        }
-        if (ce1Var.M1) {
-            float f11 = ce1Var.n1;
-            if (f11 > 0.0f) {
-                canvas.drawColor(i0.a.k(-16777216, (int) (f11 * 255.0f * ce1Var.o1)));
-            }
-        }
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        ce1 ce1Var = this.K;
-        org.telegram.ui.Components.o91 o91Var = ce1Var.v1;
-        int measuredWidth = getMeasuredWidth();
-        int measuredHeight = getMeasuredHeight();
-        o91Var.getClass();
-        float a2 = org.telegram.ui.Components.o91.a(measuredWidth, measuredHeight);
-        ce1Var.y1 = a2;
-        if (ce1Var.E1) {
-            setScaleX(a2);
-            setScaleY(ce1Var.y1);
-        }
-        if (ce1Var.b == 2) {
-            getMeasuredWidth();
-            getMeasuredHeight();
-        }
-        int measuredWidth2 = getMeasuredWidth() + (getMeasuredHeight() << 16);
-        if (ce1Var.b2 != measuredWidth2) {
-            ce1Var.a2 = false;
-            if (ce1Var.C1 != null) {
-                int measuredHeight2 = (int) ((getMeasuredHeight() / ce1Var.C1.getHeight()) * r1.getWidth());
-                if (measuredHeight2 - getMeasuredWidth() > 100) {
-                    ce1Var.a2 = true;
-                    ce1Var.Z1 = (int) ((ce1Var.C1.getHeight() / getMeasuredHeight()) * getMeasuredWidth());
-                    float measuredWidth3 = (measuredHeight2 - getMeasuredWidth()) / 2.0f;
-                    ce1Var.X1 = measuredWidth3;
-                    ce1Var.Y1 = measuredWidth3;
-                    ce1Var.W1 = measuredWidth3 * 2.0f;
-                    s(measuredHeight2, getMeasuredHeight());
-                    this.v = true;
-                    ce1Var.V0();
-                }
-            }
-            if (!ce1Var.a2) {
-                s(-1, -1);
-                this.v = false;
-            }
-        }
-        ce1Var.b2 = measuredWidth2;
-    }
-
-    @Override // android.view.View
-    public void setBackground(Drawable drawable) {
-        this.G = drawable;
-        if (drawable != null) {
-            drawable.setCallback(this);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.z9, android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return this.G == drawable || super.verifyDrawable(drawable);
     }
 }

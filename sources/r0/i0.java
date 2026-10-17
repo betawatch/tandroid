@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.WeakHashMap;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class i0 {
     public static WeakHashMap a = null;
@@ -41,16 +41,16 @@ public abstract class i0 {
         return l0Var2;
     }
 
-    public static l1 b(View view, l1 l1Var) {
+    public static k1 b(View view, k1 k1Var) {
         int i10 = Build.VERSION.SDK_INT;
-        WindowInsets g10 = l1Var.g();
+        WindowInsets g10 = k1Var.g();
         if (g10 != null) {
             WindowInsets a2 = i10 >= 30 ? f0.a(view, g10) : y.a(view, g10);
             if (!a2.equals(g10)) {
-                return l1.h(view, a2);
+                return k1.h(view, a2);
             }
         }
-        return l1Var;
+        return k1Var;
     }
 
     public static boolean c(View view, KeyEvent keyEvent) {
@@ -137,8 +137,8 @@ public abstract class i0 {
         }
     }
 
-    public static String[] e(m.u uVar) {
-        return Build.VERSION.SDK_INT >= 31 ? g0.a(uVar) : (String[]) uVar.getTag(R.id.tag_on_receive_content_mime_types);
+    public static String[] e(m.t tVar) {
+        return Build.VERSION.SDK_INT >= 31 ? g0.a(tVar) : (String[]) tVar.getTag(R.id.tag_on_receive_content_mime_types);
     }
 
     public static void f(int i10, View view) {
@@ -210,15 +210,15 @@ public abstract class i0 {
         }
     }
 
-    public static l1 g(View view, l1 l1Var) {
-        WindowInsets g10 = l1Var.g();
+    public static k1 g(View view, k1 k1Var) {
+        WindowInsets g10 = k1Var.g();
         if (g10 != null) {
             WindowInsets b10 = y.b(view, g10);
             if (!b10.equals(g10)) {
-                return l1.h(view, b10);
+                return k1.h(view, b10);
             }
         }
-        return l1Var;
+        return k1Var;
     }
 
     /* JADX WARN: Multi-variable type inference failed */

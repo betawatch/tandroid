@@ -18,10 +18,11 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import ki.t1;
 import org.telegram.messenger.beta.R;
 import s4.b1;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class l0 extends s4.g0 {
     public final ArrayList c = new ArrayList();
@@ -88,8 +89,8 @@ public final class l0 extends s4.g0 {
         uVar.getClass();
         p4.x.b();
         for (p4.v vVar : DesugarCollections.unmodifiableList(uVar.b)) {
-            m.l b10 = n0Var.r.b(vVar);
-            if (b10 != null && (oVar = (p4.o) b10.a) != null && oVar.d) {
+            t1 b10 = n0Var.r.b(vVar);
+            if (b10 != null && (oVar = (p4.o) b10.b) != null && oVar.d) {
                 arrayList3.add(vVar);
             }
         }
@@ -187,7 +188,7 @@ public final class l0 extends s4.g0 {
 
     @Override // s4.g0
     public final void v(b1 b1Var, int i10) {
-        m.l b10;
+        t1 b10;
         p4.o oVar;
         ArrayList arrayList = this.c;
         int i11 = (i10 == 0 ? this.r : (j0) arrayList.get(i10 - 1)).b;
@@ -261,7 +262,7 @@ public final class l0 extends s4.g0 {
         k0Var.C.setText(vVar3.d);
         checkBox.setVisibility(0);
         boolean v = k0Var.v(vVar3);
-        boolean z10 = !n0Var3.x.contains(vVar3) && (!k0Var.v(vVar3) || DesugarCollections.unmodifiableList(n0Var3.r.v).size() >= 2) && (!k0Var.v(vVar3) || ((b10 = n0Var3.r.b(vVar3)) != null && ((oVar = (p4.o) b10.a) == null || oVar.c)));
+        boolean z10 = !n0Var3.x.contains(vVar3) && (!k0Var.v(vVar3) || DesugarCollections.unmodifiableList(n0Var3.r.v).size() >= 2) && (!k0Var.v(vVar3) || ((b10 = n0Var3.r.b(vVar3)) != null && ((oVar = (p4.o) b10.b) == null || oVar.c)));
         checkBox.setChecked(v);
         k0Var.B.setVisibility(4);
         imageView2.setVisibility(0);

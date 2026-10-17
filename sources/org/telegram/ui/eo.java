@@ -1,33 +1,55 @@
 package org.telegram.ui;
 
-import android.app.Activity;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.NumberTextView;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class eo extends org.telegram.ui.ActionBar.h5 {
-    public boolean M0;
-    public final /* synthetic */ fo N0;
+public final /* synthetic */ class eo implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ko b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public eo(fo foVar, Activity activity) {
-        super(activity);
-        this.N0 = foVar;
-        this.M0 = true;
+    public /* synthetic */ eo(ko koVar, int i10) {
+        this.a = i10;
+        this.b = koVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.h5
-    public final void d(int i10) {
-        super.d(i10);
-        if (this.M0 && getVisibility() == 0) {
-            int dp = AndroidUtilities.dp(4.0f) + getTextWidth();
-            fo foVar = this.N0;
-            foVar.G2 = dp;
-            NumberTextView numberTextView = foVar.F2;
-            if (numberTextView != null) {
-                numberTextView.setTranslationX(dp);
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ko.V(this.b);
+                break;
+            case 1:
+                ko.a0(this.b);
+                break;
+            case 2:
+                ko koVar = this.b;
+                koVar.b.dismiss();
+                koVar.finishFragment();
+                break;
+            case 3:
+                ko koVar2 = this.b;
+                koVar2.M.setChecked(koVar2.x0.autotranslation);
+                break;
+            default:
+                ko koVar3 = this.b;
+                koVar3.e.setImageDrawable(koVar3.r);
+                koVar3.b0.m(R.drawable.msg_addphoto, LocaleController.getString("ChatSetPhotoOrVideo", R.string.ChatSetPhotoOrVideo), true);
+                TLRPC.User user = koVar3.D0;
+                if (user != null) {
+                    user.photo = null;
+                    koVar3.getMessagesController().putUser(koVar3.D0, true);
+                }
+                koVar3.O0 = true;
+                if (koVar3.R0 == null) {
+                    koVar3.R0 = new org.telegram.ui.Components.uj0(R.raw.camera_outline, AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f), false, null);
+                }
+                koVar3.b0.e.setTranslationX(-AndroidUtilities.dp(8.0f));
+                koVar3.b0.e.setAnimation(koVar3.R0);
+                break;
         }
     }
 }

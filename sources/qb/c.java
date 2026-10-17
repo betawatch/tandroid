@@ -1,15 +1,44 @@
 package qb;
 
+import android.os.IBinder;
+import android.os.RemoteException;
+import android.util.Log;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
-import org.telegram.messenger.AndroidUtilities;
+import y8.w0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class c {
     public final HashMap a = new HashMap();
+
+    public c() {
+    }
+
+    public void a(IBinder iBinder) {
+        synchronized (this.a) {
+            if (iBinder != null) {
+                try {
+                    iBinder.queryLocalInterface("com.google.android.gms.wearable.internal.IWearableService");
+                } catch (Throwable th2) {
+                    throw th2;
+                }
+            }
+            new w0();
+            for (Map.Entry entry : this.a.entrySet()) {
+                if (entry.getValue() != null) {
+                    throw new ClassCastException();
+                }
+                try {
+                    throw null;
+                } catch (RemoteException unused) {
+                    Log.w("WearableClient", "onPostInitHandler: Didn't add: " + String.valueOf(entry.getKey()) + "/null");
+                }
+            }
+        }
+    }
 
     public c(Set set) {
         Iterator it = set.iterator();
@@ -19,24 +48,5 @@ public final class c {
             bVar.getClass();
             hashMap.put(a.class, bVar.a);
         }
-    }
-
-    public void a(Runnable runnable) {
-        Runnable runnable2 = (Runnable) this.a.remove(runnable);
-        if (runnable2 != null) {
-            AndroidUtilities.cancelRunOnUIThread(runnable2);
-        }
-    }
-
-    public void b() {
-        HashMap hashMap = this.a;
-        Iterator it = hashMap.entrySet().iterator();
-        while (it.hasNext()) {
-            AndroidUtilities.cancelRunOnUIThread((Runnable) ((Map.Entry) it.next()).getValue());
-        }
-        hashMap.clear();
-    }
-
-    public c() {
     }
 }

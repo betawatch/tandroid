@@ -14,16 +14,16 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.es;
-import org.telegram.ui.Components.s5;
-import org.telegram.ui.Components.yj0;
-import org.telegram.ui.kz;
+import org.telegram.ui.Components.bs;
+import org.telegram.ui.Components.r5;
+import org.telegram.ui.Components.uj0;
+import org.telegram.ui.qy;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class e {
     public static int m;
-    public s5 a;
+    public r5 a;
     public Rect b;
     public ArrayList c;
     public View d;
@@ -36,14 +36,14 @@ public final class e {
     public int k;
     public long l;
 
-    public static e a(s5 s5Var, boolean z10, boolean z11) {
+    public static e a(r5 r5Var, boolean z10, boolean z11) {
         int i10 = UserConfig.selectedAccount;
         e eVar = new e();
         eVar.b = new Rect();
         eVar.c = new ArrayList();
         eVar.g = true;
         eVar.k = -1;
-        eVar.a = s5Var;
+        eVar.a = r5Var;
         eVar.f = z10;
         eVar.h = i10;
         eVar.i = z11;
@@ -107,13 +107,13 @@ public final class e {
             dVar3.h = min;
             float clamp = Utilities.clamp(min, 1.0f, 0.0f);
             dVar3.h = clamp;
-            es esVar = es.g;
-            float interpolation = esVar.getInterpolation(clamp);
+            bs bsVar = bs.g;
+            float interpolation = bsVar.getInterpolation(clamp);
             float lerp = AndroidUtilities.lerp(dVar3.a, dVar3.c, interpolation);
             e eVar = dVar3.l;
-            s5 s5Var = eVar.a;
+            r5 r5Var = eVar.a;
             float f10 = dVar3.h;
-            float lerp2 = f10 < 0.3f ? AndroidUtilities.lerp(dVar3.b, dVar3.d, esVar.getInterpolation(f10 / 0.3f)) : AndroidUtilities.lerp(dVar3.d, dVar3.e, es.i.getInterpolation((f10 - 0.3f) / 0.7f));
+            float lerp2 = f10 < 0.3f ? AndroidUtilities.lerp(dVar3.b, dVar3.d, bsVar.getInterpolation(f10 / 0.3f)) : AndroidUtilities.lerp(dVar3.d, dVar3.e, bs.i.getInterpolation((f10 - 0.3f) / 0.7f));
             float lerp3 = AndroidUtilities.lerp(dVar3.f, dVar3.g, interpolation);
             if (!eVar.f) {
                 float height = eVar.b.height() * 0.8f;
@@ -125,10 +125,10 @@ public final class e {
                         canvas.scale(-1.0f, 1.0f, lerp, lerp2);
                     }
                     canvas.rotate(dVar3.k, lerp, lerp2);
-                    s5Var.setAlpha((int) (Utilities.clamp(dVar3.h / 0.2f, 1.0f, 0.0f) * f7 * 255.0f));
-                    s5Var.setBounds((int) (lerp - f11), (int) (lerp2 - f11), (int) (lerp + f11), (int) (lerp2 + f11));
-                    s5Var.draw(canvas);
-                    s5Var.setAlpha(255);
+                    r5Var.setAlpha((int) (Utilities.clamp(dVar3.h / 0.2f, 1.0f, 0.0f) * f7 * 255.0f));
+                    r5Var.setBounds((int) (lerp - f11), (int) (lerp2 - f11), (int) (lerp + f11), (int) (lerp2 + f11));
+                    r5Var.draw(canvas);
+                    r5Var.setAlpha(255);
                     canvas.restore();
                     if (((d) arrayList.get(i11)).h < 1.0f) {
                         arrayList.remove(i11);
@@ -143,10 +143,10 @@ public final class e {
             if (dVar3.j) {
             }
             canvas.rotate(dVar3.k, lerp, lerp2);
-            s5Var.setAlpha((int) (Utilities.clamp(dVar3.h / 0.2f, 1.0f, 0.0f) * f7 * 255.0f));
-            s5Var.setBounds((int) (lerp - f112), (int) (lerp2 - f112), (int) (lerp + f112), (int) (lerp2 + f112));
-            s5Var.draw(canvas);
-            s5Var.setAlpha(255);
+            r5Var.setAlpha((int) (Utilities.clamp(dVar3.h / 0.2f, 1.0f, 0.0f) * f7 * 255.0f));
+            r5Var.setBounds((int) (lerp - f112), (int) (lerp2 - f112), (int) (lerp + f112), (int) (lerp2 + f112));
+            r5Var.draw(canvas);
+            r5Var.setAlpha(255);
             canvas.restore();
             if (((d) arrayList.get(i11)).h < 1.0f) {
             }
@@ -189,15 +189,15 @@ public final class e {
         TLRPC.Document document;
         boolean z12 = this.f;
         int i10 = this.h;
-        s5 s5Var = this.a;
-        s5Var.a(view);
+        r5 r5Var = this.a;
+        r5Var.a(view);
         this.d = view;
         ImageReceiver imageReceiver = this.j;
         if (imageReceiver == null || !this.i) {
             return;
         }
         imageReceiver.onAttachedToWindow();
-        TLRPC.Document document2 = s5Var.e;
+        TLRPC.Document document2 = r5Var.e;
         TLRPC.TL_messages_stickerSet tL_messages_stickerSet = null;
         String findAnimatedEmojiEmoticon = MessageObject.findAnimatedEmojiEmoticon(document2, null);
         if (findAnimatedEmojiEmoticon == null || (tL_availableReaction = MediaDataController.getInstance(i10).getReactionsMap().get(findAnimatedEmojiEmoticon)) == null || (document = tL_availableReaction.around_animation) == null) {
@@ -211,7 +211,7 @@ public final class e {
                 sb2.append(i11);
                 sb2.append(" ");
                 imageReceiver.setUniqKeyPrefix(sb2.toString());
-                int f7 = kz.f();
+                int f7 = qy.f();
                 TLRPC.Document document3 = tL_availableReaction.around_animation;
                 z10 = true;
                 imageReceiver.setImage(ImageLocation.getForDocument(tL_availableReaction.around_animation), f7 + "_" + f7 + "_pcache_compress", null, null, document3, 0);
@@ -240,7 +240,7 @@ public final class e {
                     sb3.append(i12);
                     sb3.append(" ");
                     imageReceiver.setUniqKeyPrefix(sb3.toString());
-                    int f10 = kz.f();
+                    int f10 = qy.f();
                     imageReceiver.setImage(ImageLocation.getForDocument(tL_messages_stickerSet.documents.get(this.k)), f10 + "_" + f10 + "_pcache_compress", null, null, tL_messages_stickerSet.documents.get(this.k), 0);
                 } else {
                     imageReceiver.setImage(ImageLocation.getForDocument(tL_messages_stickerSet.documents.get(this.k)), "60_60", null, null, tL_messages_stickerSet.documents.get(this.k), 0);
@@ -249,7 +249,7 @@ public final class e {
             }
         }
         if (!z11) {
-            imageReceiver.setImageBitmap(new yj0(R.raw.custom_emoji_reaction, AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f), false, null));
+            imageReceiver.setImageBitmap(new uj0(R.raw.custom_emoji_reaction, AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f), false, null));
             return;
         }
         if (imageReceiver.getLottieAnimation() != null) {

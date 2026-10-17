@@ -1,21 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.content.DialogInterface;
+import android.app.Activity;
+import android.content.Context;
+import android.view.OrientationEventListener;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class av implements DialogInterface.OnShowListener {
-    public final /* synthetic */ hv a;
+public final class av extends OrientationEventListener {
+    public final /* synthetic */ cv a;
 
-    public av(hv hvVar) {
-        this.a = hvVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public av(cv cvVar, Context context) {
+        super(context);
+        this.a = cvVar;
     }
 
-    @Override // android.content.DialogInterface.OnShowListener
-    public final void onShow(DialogInterface dialogInterface) {
-        da1 da1Var = this.a.c;
-        if (fh0.p0.P && da1Var.f()) {
-            da1Var.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.Cells.da(this, 1));
+    @Override // android.view.OrientationEventListener
+    public final void onOrientationChanged(int i10) {
+        Activity activity;
+        cv cvVar = this.a;
+        u91 u91Var = cvVar.c;
+        if (cvVar.F != null && u91Var.getVisibility() == 0 && (activity = cvVar.r) != null && u91Var.T && cvVar.M) {
+            if (i10 >= 240 && i10 <= 300) {
+                cvVar.N = true;
+                return;
+            }
+            if (!cvVar.N || i10 <= 0) {
+                return;
+            }
+            if (i10 >= 330 || i10 <= 30) {
+                activity.setRequestedOrientation(cvVar.L);
+                cvVar.M = false;
+                cvVar.N = false;
+            }
         }
     }
 }

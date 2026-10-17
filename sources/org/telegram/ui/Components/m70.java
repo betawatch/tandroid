@@ -1,47 +1,93 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class m70 extends FrameLayout {
-    public final TextView a;
-    public final TextView b;
-    public final /* synthetic */ p70 c;
+public final class m70 extends h71 {
+    public float f;
+    public float h;
+    public final Paint n;
+    public float r;
+    public m.g3 s;
+    public final /* synthetic */ v70 v;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m70(p70 p70Var, Context context) {
-        super(context);
-        this.c = p70Var;
-        ImageView imageView = new ImageView(context);
-        imageView.setBackground(org.telegram.ui.ActionBar.g6.L(46, org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.R7, false), org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.Y7, false)));
-        imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-        imageView.setImageResource(R.drawable.large_income);
-        imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        addView(imageView, w7.z5.a(46.0f, 13.0f, 0.0f, 0.0f, 0.0f, 46, 19));
-        TextView textView = new TextView(context);
-        this.a = textView;
-        com.google.android.gms.internal.play_billing.k3.m(16.0f, 1, textView);
-        textView.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.G6, false));
-        addView(textView, w7.z5.a(-2.0f, 72.0f, 9.0f, 0.0f, 0.0f, -1, 51));
-        TextView textView2 = new TextView(context);
-        this.b = textView2;
-        textView2.setTextSize(1, 14.0f);
-        textView2.setTextColor(org.telegram.ui.ActionBar.g6.x0(null, org.telegram.ui.ActionBar.g6.y6, false));
-        addView(textView2, w7.z5.a(-2.0f, 72.0f, 32.0f, 0.0f, 0.0f, -1, 51));
+    public m70(v70 v70Var, Context context) {
+        super(v70Var, context);
+        this.v = v70Var;
+        this.n = new Paint();
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(58.0f), TLObject.FLAG_30));
+    @Override // org.telegram.ui.Components.h71, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        int i10;
+        v70 v70Var = this.v;
+        int i11 = v70Var.y;
+        i10 = ((org.telegram.ui.ActionBar.f3) v70Var).backgroundPaddingTop;
+        v70Var.V.setTranslationY(AndroidUtilities.dp(64.0f) + AndroidUtilities.dp(6.0f) + (i11 - i10));
+        float f7 = v70Var.o0 + v70Var.u0;
+        rx0 rx0Var = v70Var.s;
+        if (rx0Var.getVisibility() != 0) {
+            this.f = f7;
+            this.h = f7;
+        } else if (this.h != f7) {
+            this.h = f7;
+            this.r = (f7 - this.f) * 0.10666667f;
+        }
+        float f10 = this.f;
+        float f11 = this.h;
+        if (f10 != f11) {
+            float f12 = this.r;
+            float f13 = f10 + f12;
+            this.f = f13;
+            if (f12 > 0.0f && f13 > f11) {
+                this.f = f11;
+            } else if (f12 >= 0.0f || f13 >= f11) {
+                invalidate();
+            } else {
+                this.f = f11;
+            }
+        }
+        rx0Var.setTranslationY(v70Var.y + this.f);
+        super.dispatchDraw(canvas);
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
+        v70 v70Var = this.v;
+        if (view != v70Var.V) {
+            return super.drawChild(canvas, view, j10);
+        }
+        canvas.save();
+        canvas.clipRect(0.0f, view.getY() - AndroidUtilities.dp(4.0f), getMeasuredWidth(), view.getY() + v70Var.k0 + 1.0f);
+        canvas.drawColor(i0.b.o(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d6, false), (int) (v70Var.h0 * 255.0f)));
+        int o10 = i0.b.o(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.d7, false), (int) (v70Var.h0 * 255.0f));
+        Paint paint = this.n;
+        paint.setColor(o10);
+        canvas.drawRect(0.0f, view.getY() + v70Var.k0, getMeasuredWidth(), view.getY() + v70Var.k0 + 1.0f, paint);
+        boolean drawChild = super.drawChild(canvas, view, j10);
+        canvas.restore();
+        return drawChild;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        m.g3 g3Var = this.s;
+        if (g3Var != null) {
+            ((m71) g3Var.b).b = true;
+        }
+    }
+
+    @Override // android.view.ViewGroup
+    public final void onViewAdded(View view) {
+        if (view == this.v.t0 && this.s == null) {
+            this.s = new m.g3(view);
+        }
     }
 }

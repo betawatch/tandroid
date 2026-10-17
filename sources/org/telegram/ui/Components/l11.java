@@ -1,32 +1,74 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Typeface;
 import android.text.TextPaint;
-import android.text.style.MetricAffectingSpan;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class l11 extends MetricAffectingSpan {
-    public TextPaint a;
+public final class l11 {
+    public int a;
+    public int b;
+    public int c;
+    public TLRPC.MessageEntity d;
+    public boolean e;
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        TextPaint textPaint2 = this.a;
-        textPaint.setColor(textPaint2.getColor());
-        textPaint.setTypeface(textPaint2.getTypeface());
-        textPaint.setFlags(textPaint2.getFlags());
-        textPaint.setTextSize(textPaint2.getTextSize());
-        textPaint.baselineShift = textPaint2.baselineShift;
-        textPaint.bgColor = textPaint2.bgColor;
+    public l11() {
     }
 
-    @Override // android.text.style.MetricAffectingSpan
-    public final void updateMeasureState(TextPaint textPaint) {
-        TextPaint textPaint2 = this.a;
-        textPaint.setColor(textPaint2.getColor());
-        textPaint.setTypeface(textPaint2.getTypeface());
-        textPaint.setFlags(textPaint2.getFlags());
-        textPaint.setTextSize(textPaint2.getTextSize());
-        textPaint.baselineShift = textPaint2.baselineShift;
-        textPaint.bgColor = textPaint2.bgColor;
+    public final void a(TextPaint textPaint) {
+        Typeface typeface;
+        if (this.e) {
+            typeface = (this.a & 2) != 0 ? AndroidUtilities.getTypeface("fonts/mw_bolditalic.ttf") : AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_MERRIWEATHER_BOLD);
+        } else {
+            int i10 = this.a;
+            if ((i10 & 4) == 0 && (i10 & 2048) == 0) {
+                int i11 = i10 & 1;
+                typeface = (i11 == 0 || (i10 & 2) == 0) ? i11 != 0 ? AndroidUtilities.bold() : (i10 & 2) != 0 ? AndroidUtilities.getTypeface("fonts/ritalic.ttf") : null : AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM_ITALIC);
+            } else {
+                typeface = Typeface.MONOSPACE;
+            }
+        }
+        if (typeface != null) {
+            textPaint.setTypeface(typeface);
+        }
+        if ((this.a & 16) != 0) {
+            textPaint.setFlags(textPaint.getFlags() | 8);
+        } else {
+            textPaint.setFlags(textPaint.getFlags() & (-9));
+        }
+        int i12 = this.a;
+        if ((i12 & 8) == 0 && (i12 & 8192) == 0) {
+            textPaint.setFlags(textPaint.getFlags() & (-17));
+        } else {
+            textPaint.setFlags(textPaint.getFlags() | 16);
+        }
+        if ((this.a & 512) != 0) {
+            textPaint.bgColor = org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.R9, false);
+        }
+        int i13 = this.a;
+        if ((i13 & 8192) != 0) {
+            textPaint.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.q7, false));
+        } else if ((i13 & 4096) != 0) {
+            textPaint.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.Oh, false));
+        }
+    }
+
+    public final void b(l11 l11Var) {
+        TLRPC.MessageEntity messageEntity;
+        this.a |= l11Var.a;
+        if (this.d != null || (messageEntity = l11Var.d) == null) {
+            return;
+        }
+        this.d = messageEntity;
+    }
+
+    public l11(l11 l11Var) {
+        this.a = l11Var.a;
+        this.b = l11Var.b;
+        this.c = l11Var.c;
+        this.d = l11Var.d;
+        this.e = l11Var.e;
     }
 }

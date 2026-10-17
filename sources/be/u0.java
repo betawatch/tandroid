@@ -1,6 +1,6 @@
 package be;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class u0 implements Runnable, Comparable, p0 {
     private volatile Object _heap;
@@ -77,15 +77,15 @@ public abstract class u0 implements Runnable, Comparable, p0 {
         synchronized (this) {
             try {
                 Object obj = this._heap;
-                a6.i iVar = f0.b;
-                if (obj == iVar) {
+                com.google.android.gms.internal.clearcut.e eVar = f0.b;
+                if (obj == eVar) {
                     return;
                 }
                 v0 v0Var = obj instanceof v0 ? (v0) obj : null;
                 if (v0Var != null) {
                     v0Var.c(this);
                 }
-                this._heap = iVar;
+                this._heap = eVar;
             } catch (Throwable th2) {
                 throw th2;
             }

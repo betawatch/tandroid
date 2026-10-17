@@ -1,85 +1,31 @@
 package org.telegram.ui.Components;
 
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BotWebViewVibrationEffect;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d80 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ l80 b;
-    public final /* synthetic */ Runnable c;
+public final class d80 extends org.telegram.ui.ActionBar.m1 {
+    public final /* synthetic */ ViewGroup o;
+    public final /* synthetic */ i80 p;
 
-    public /* synthetic */ d80(l80 l80Var, Runnable runnable, int i10) {
-        this.a = i10;
-        this.b = l80Var;
-        this.c = runnable;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public d80(i80 i80Var, View view, ViewGroup viewGroup) {
+        super(view, -2, -2);
+        this.p = i80Var;
+        this.o = viewGroup;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                this.b.u();
-                Runnable runnable = this.c;
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            case 1:
-                this.c.run();
-                l80 l80Var = this.b;
-                if (l80Var.J) {
-                    l80Var.u();
-                    break;
-                }
-                break;
-            case 2:
-                l80 l80Var2 = this.b;
-                Runnable runnable2 = this.c;
-                if (runnable2 == null) {
-                    l80Var2.getClass();
-                    break;
-                } else {
-                    int i10 = -l80Var2.K;
-                    l80Var2.K = i10;
-                    AndroidUtilities.shakeViewSpring(view, i10);
-                    BotWebViewVibrationEffect.APP_ERROR.vibrate();
-                    runnable2.run();
-                    break;
-                }
-            case 3:
-                Runnable runnable3 = this.c;
-                if (runnable3 != null) {
-                    runnable3.run();
-                }
-                l80 l80Var3 = this.b;
-                if (l80Var3.J) {
-                    l80Var3.u();
-                    break;
-                }
-                break;
-            case 4:
-                this.c.run();
-                l80 l80Var4 = this.b;
-                if (l80Var4.J) {
-                    l80Var4.u();
-                    break;
-                }
-                break;
-            default:
-                Runnable runnable4 = this.c;
-                if (runnable4 != null) {
-                    runnable4.run();
-                }
-                l80 l80Var5 = this.b;
-                if (l80Var5.J) {
-                    l80Var5.u();
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.ActionBar.m1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        ViewGroup viewGroup = this.o;
+        i80 i80Var = this.p;
+        i80.a(i80Var, viewGroup);
+        Runnable runnable = i80Var.p;
+        if (runnable != null) {
+            runnable.run();
+            i80Var.p = null;
         }
     }
 }

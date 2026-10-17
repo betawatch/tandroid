@@ -1,11 +1,11 @@
 package sg;
 
-import com.google.android.gms.internal.play_billing.k3;
+import com.google.android.gms.internal.cast.a6;
 import org.telegram.messenger.BillingController;
 import org.telegram.messenger.BuildVars;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final class k {
     public final TLRPC.TL_premiumGiftOption a;
@@ -15,7 +15,7 @@ public final class k {
     public int e;
     public long f;
     public long g;
-    public c5.p h;
+    public c5.o h;
 
     public k(TLRPC.TL_premiumGiftOption tL_premiumGiftOption) {
         this.a = tL_premiumGiftOption;
@@ -34,8 +34,8 @@ public final class k {
         } else if (BuildVars.useInvoiceBilling() || tL_premiumGiftOption.store_product == null) {
             return tL_premiumGiftOption.currency;
         }
-        c5.p pVar = this.h;
-        return pVar == null ? "" : pVar.a().c;
+        c5.o oVar = this.h;
+        return oVar == null ? "" : oVar.a().c;
     }
 
     public final int b() {
@@ -82,11 +82,11 @@ public final class k {
         } else if (BuildVars.useInvoiceBilling() || tL_premiumGiftOption.store_product == null) {
             return tL_premiumGiftOption.amount;
         }
-        c5.p pVar = this.h;
-        if (pVar == null) {
+        c5.o oVar = this.h;
+        if (oVar == null) {
             return 0L;
         }
-        return pVar.a().b;
+        return oVar.a().b;
     }
 
     public final long f() {
@@ -127,6 +127,6 @@ public final class k {
         this.a = null;
         this.b = tL_premiumGiftCodeOption;
         this.c = null;
-        this.d = k3.s(tL_premiumGiftCodeOption2) ? tL_premiumGiftCodeOption2 : null;
+        this.d = a6.s(tL_premiumGiftCodeOption2) ? tL_premiumGiftCodeOption2 : null;
     }
 }

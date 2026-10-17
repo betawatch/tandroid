@@ -1,120 +1,107 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.ShapeDrawable;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
 import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MediaDataController;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n81 implements ImageReceiver.ImageReceiverDelegate {
-    public final /* synthetic */ View a;
+public final class n81 extends View {
+    public ShapeDrawable a;
+    public Drawable b;
+    public StaticLayout c;
+    public TextPaint d;
+    public long e;
+    public float f;
+    public float h;
+    public boolean n;
 
-    public /* synthetic */ n81(View view) {
-        this.a = view;
+    public final void a(boolean z10) {
+        this.n = z10;
+        invalidate();
     }
 
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
-        boolean z13;
-        p81 p81Var;
-        int i10;
-        int i11;
-        double ceil;
-        q81 q81Var = (q81) this.a;
-        ImageReceiver imageReceiver2 = q81Var.Q;
-        if (z10) {
-            if (q81Var.N == null && q81Var.d0 == null) {
-                return;
-            }
-            int dp = AndroidUtilities.dp(150.0f);
-            org.telegram.ui.ou0 ou0Var = q81Var.N;
-            if (ou0Var != null) {
-                int i12 = (int) q81Var.O;
-                ArrayList arrayList = ou0Var.v;
-                int indexOf = arrayList.indexOf(ou0Var.c(i12));
-                if (indexOf == -1) {
-                    z13 = true;
-                    i11 = 0;
-                } else if (indexOf == arrayList.size() - 1) {
-                    int videoDuration = ou0Var.getVideoDuration() / MediaDataController.MAX_STYLE_RUNS_COUNT;
-                    if (videoDuration <= 100) {
-                        z13 = true;
-                        ceil = Math.ceil(videoDuration);
-                    } else {
-                        z13 = true;
-                        ceil = videoDuration <= 250 ? Math.ceil(videoDuration / 2.0f) : videoDuration <= 500 ? Math.ceil(videoDuration / 4.0f) : videoDuration <= 1000 ? Math.ceil(videoDuration / 5.0f) : Math.ceil(videoDuration / 10.0f);
-                    }
-                    i11 = Math.min(25, (((int) ceil) - ((arrayList.size() - 1) * 25)) + 1);
-                } else {
-                    z13 = true;
-                    i11 = 25;
-                }
-                float bitmapWidth = imageReceiver2.getBitmapWidth() / Math.min(i11, 5);
-                float bitmapHeight = imageReceiver2.getBitmapHeight() / ((int) Math.ceil(i11 / 5.0f));
-                org.telegram.ui.ou0 ou0Var2 = q81Var.N;
-                int i13 = (int) q81Var.O;
-                int videoDuration2 = ou0Var2.getVideoDuration() / MediaDataController.MAX_STYLE_RUNS_COUNT;
-                int min = Math.min(videoDuration2 <= 100 ? ((int) Math.ceil(i13)) % 25 : videoDuration2 <= 250 ? ((int) Math.ceil(i13 / 2.0f)) % 25 : videoDuration2 <= 500 ? ((int) Math.ceil(i13 / 4.0f)) % 25 : videoDuration2 <= 1000 ? ((int) Math.ceil(i13 / 5.0f)) % 25 : ((int) Math.ceil(i13 / 10.0f)) % 25, i11 - 1);
-                q81Var.R = (int) ((min % 5) * bitmapWidth);
-                q81Var.S = (int) ((min / 5) * bitmapHeight);
-                q81Var.T = (int) bitmapWidth;
-                q81Var.U = (int) bitmapHeight;
-            } else {
-                z13 = true;
-                int i14 = 0;
-                while (true) {
-                    if (i14 >= q81Var.d0.size()) {
-                        p81Var = null;
-                        break;
-                    }
-                    p81Var = (p81) q81Var.d0.get(i14);
-                    double d = i14 == 0 ? 0.0d : p81Var.a;
-                    double d10 = i14 == q81Var.d0.size() + (-1) ? 9.9999999E7d : ((p81) q81Var.d0.get(i14 + 1)).a;
-                    double d11 = q81Var.O;
-                    if (d11 >= d && d11 <= d10) {
-                        break;
-                    } else {
-                        i14++;
-                    }
-                }
-                if (p81Var == null) {
-                    return;
-                }
-                q81Var.R = p81Var.b;
-                q81Var.S = p81Var.c;
-                q81Var.T = q81Var.b0;
-                q81Var.U = q81Var.c0;
-            }
-            q81Var.P = z13;
-            float f7 = q81Var.T / q81Var.U;
-            if (f7 > 1.0f) {
-                i10 = (int) (dp / f7);
-            } else {
-                dp = (int) (dp * f7);
-                i10 = dp;
-            }
-            ViewGroup.LayoutParams layoutParams = q81Var.getLayoutParams();
-            if (q81Var.getVisibility() == 0 && layoutParams.width == dp && layoutParams.height == i10) {
-                return;
-            }
-            layoutParams.width = dp;
-            layoutParams.height = i10;
-            q81Var.setVisibility(0);
-            q81Var.requestLayout();
+    public final void b() {
+        this.d.setColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.pf, false));
+        int dp = AndroidUtilities.dp(5.0f);
+        int i10 = org.telegram.ui.ActionBar.h6.qf;
+        this.a = org.telegram.ui.ActionBar.h6.c0(dp, org.telegram.ui.ActionBar.h6.x0(null, i10, false));
+        this.b.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.h6.x0(null, i10, false), PorterDuff.Mode.MULTIPLY));
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Drawable drawable = this.b;
+        if (this.c == null) {
+            return;
         }
+        if (this.n) {
+            float f7 = this.h;
+            if (f7 != 1.0f) {
+                float f10 = f7 + 0.12f;
+                this.h = f10;
+                if (f10 > 1.0f) {
+                    this.h = 1.0f;
+                }
+                invalidate();
+            }
+        } else {
+            float f11 = this.h;
+            if (f11 != 0.0f) {
+                float f12 = f11 - 0.12f;
+                this.h = f12;
+                if (f12 < 0.0f) {
+                    this.h = 0.0f;
+                }
+                invalidate();
+            }
+            if (this.h == 0.0f) {
+                return;
+            }
+        }
+        float f13 = this.h;
+        int i10 = (int) ((f13 > 0.5f ? 1.0f : f13 / 0.5f) * 255.0f);
+        canvas.save();
+        float f14 = this.h;
+        canvas.scale(f14, f14, this.f, getMeasuredHeight());
+        canvas.translate(this.f - (this.c.getWidth() / 2.0f), 0.0f);
+        this.a.setBounds(-AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f) + this.c.getWidth(), (int) (AndroidUtilities.dpf2(4.0f) + this.c.getHeight()));
+        drawable.setBounds(org.telegram.ui.Cells.t0.w(2, this.c.getWidth() / 2, drawable), (int) (AndroidUtilities.dpf2(4.0f) + this.c.getHeight()), org.telegram.ui.Cells.t0.B(2, this.c.getWidth() / 2, drawable), drawable.getIntrinsicHeight() + ((int) (AndroidUtilities.dpf2(4.0f) + this.c.getHeight())));
+        drawable.setAlpha(i10);
+        this.a.setAlpha(i10);
+        this.d.setAlpha(i10);
+        drawable.draw(canvas);
+        this.a.draw(canvas);
+        canvas.translate(0.0f, AndroidUtilities.dpf2(1.0f));
+        this.c.draw(canvas);
+        canvas.restore();
     }
 
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        org.telegram.messenger.l5.a(this, i10, str, drawable);
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(this.b.getIntrinsicHeight() + AndroidUtilities.dp(4.0f) + this.c.getHeight(), TLObject.FLAG_30));
     }
 
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        org.telegram.messenger.l5.b(this, imageReceiver);
+    public void setCx(float f7) {
+        this.f = f7;
+        invalidate();
+    }
+
+    public void setTime(int i10) {
+        long j10 = i10;
+        if (j10 != this.e) {
+            this.e = j10;
+            String formatShortDuration = AndroidUtilities.formatShortDuration(i10);
+            TextPaint textPaint = this.d;
+            this.c = new StaticLayout(formatShortDuration, textPaint, (int) textPaint.measureText(formatShortDuration), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, true);
+        }
     }
 }

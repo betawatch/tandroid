@@ -1,43 +1,42 @@
 package org.telegram.ui.Components;
 
 import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class do0 extends s4.k {
-    @Override // s4.k, s4.e1
-    public final boolean r(s4.b1 b1Var, b2.v0 v0Var, int i10, int i11, int i12, int i13) {
-        jo0 jo0Var;
-        io0 io0Var;
-        View view = b1Var.a;
-        if ((view instanceof jo0) && (io0Var = (jo0Var = (jo0) view).a) != null) {
-            io0Var.i = io0Var.N;
-            io0Var.g = io0Var.O;
-            io0Var.h = io0Var.P;
-            jo0Var.b.d(0.0f, true);
-            jo0Var.invalidate();
-        }
-        int translationX = i10 + ((int) view.getTranslationX());
-        int translationY = i11 + ((int) view.getTranslationY());
-        R(b1Var);
-        int i14 = i12 - translationX;
-        int i15 = i13 - translationY;
-        if (i14 == 0 && i15 == 0) {
-            v(b1Var);
-            return false;
-        }
-        if (i14 != 0) {
-            view.setTranslationX(-i14);
-        }
-        if (i15 != 0) {
-            view.setTranslationY(-i15);
-        }
-        this.r.add(new s4.j(b1Var, translationX, translationY, i12, i13));
-        return true;
+public final class do0 extends ah.g1 {
+    public final /* synthetic */ eo0 h0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public do0(eo0 eo0Var, int i10, View view, TLRPC.TL_reactionCount tL_reactionCount, org.telegram.ui.ActionBar.d6 d6Var) {
+        super(null, i10, view, tL_reactionCount, false, true, d6Var);
+        this.h0 = eo0Var;
     }
 
-    @Override // s4.e1
-    public final boolean t(s4.b1 b1Var) {
-        return true;
+    @Override // ah.g1
+    public final boolean e() {
+        return this.w > 0 || this.u || this.F.l != 1.0f;
+    }
+
+    @Override // ah.g1
+    public final boolean i() {
+        return !e();
+    }
+
+    @Override // ah.g1
+    public final int j() {
+        return 18;
+    }
+
+    @Override // ah.g1
+    public final void s(float f7) {
+        int i10 = this.i;
+        eo0 eo0Var = this.h0;
+        this.N = i0.b.f(f7, i10, org.telegram.ui.ActionBar.h6.w0(eo0Var.e ? org.telegram.ui.ActionBar.h6.Fj : org.telegram.ui.ActionBar.h6.va, eo0Var.s.c));
+        int f10 = i0.b.f(f7, this.g, eo0Var.e ? org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.Cj, eo0Var.s.c) : 0);
+        this.O = f10;
+        this.N = org.telegram.ui.ActionBar.h6.v(f10, this.N);
+        this.P = i0.b.f(f7, this.h, eo0Var.e ? 1526726655 : org.telegram.ui.ActionBar.h6.w0(org.telegram.ui.ActionBar.h6.wa, eo0Var.s.c));
     }
 }

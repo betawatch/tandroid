@@ -2,7 +2,7 @@ package ge;
 
 import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public abstract class b extends p {
     public static final /* synthetic */ AtomicReferenceFieldUpdater a = AtomicReferenceFieldUpdater.newUpdater(b.class, Object.class, "_consensus$volatile");
@@ -12,17 +12,17 @@ public abstract class b extends p {
     public final Object a(Object obj) {
         AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = a;
         Object obj2 = atomicReferenceFieldUpdater.get(this);
-        a6.i iVar = a.a;
-        if (obj2 == iVar) {
-            a6.i c10 = c(obj);
+        com.google.android.gms.internal.clearcut.e eVar = a.a;
+        if (obj2 == eVar) {
+            com.google.android.gms.internal.clearcut.e c10 = c(obj);
             obj2 = atomicReferenceFieldUpdater.get(this);
-            if (obj2 == iVar) {
+            if (obj2 == eVar) {
                 while (true) {
-                    if (atomicReferenceFieldUpdater.compareAndSet(this, iVar, c10)) {
+                    if (atomicReferenceFieldUpdater.compareAndSet(this, eVar, c10)) {
                         obj2 = c10;
                         break;
                     }
-                    if (atomicReferenceFieldUpdater.get(this) != iVar) {
+                    if (atomicReferenceFieldUpdater.get(this) != eVar) {
                         obj2 = atomicReferenceFieldUpdater.get(this);
                         break;
                     }
@@ -35,5 +35,5 @@ public abstract class b extends p {
 
     public abstract void b(Object obj, Object obj2);
 
-    public abstract a6.i c(Object obj);
+    public abstract com.google.android.gms.internal.clearcut.e c(Object obj);
 }

@@ -1,48 +1,43 @@
 package f2;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import b2.q0;
+import b2.s0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class c extends e {
-    public final long c;
-    public final ArrayList d;
-    public final ArrayList e;
+public final class c implements s0 {
+    public final int a;
 
-    public c(int i10, long j10) {
-        super(i10, 0);
-        this.c = j10;
-        this.d = new ArrayList();
-        this.e = new ArrayList();
+    public c(int i10) {
+        this.a = i10;
     }
 
-    public final c d(int i10) {
-        ArrayList arrayList = this.e;
-        int size = arrayList.size();
-        for (int i11 = 0; i11 < size; i11++) {
-            c cVar = (c) arrayList.get(i11);
-            if (cVar.b == i10) {
-                return cVar;
-            }
-        }
+    @Override // b2.s0
+    public final /* synthetic */ b2.w a() {
         return null;
     }
 
-    public final d e(int i10) {
-        ArrayList arrayList = this.d;
-        int size = arrayList.size();
-        for (int i11 = 0; i11 < size; i11++) {
-            d dVar = (d) arrayList.get(i11);
-            if (dVar.b == i10) {
-                return dVar;
-            }
-        }
+    @Override // b2.s0
+    public final /* synthetic */ byte[] c() {
         return null;
     }
 
-    @Override // f2.e
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        return (obj instanceof c) && this.a == ((c) obj).a;
+    }
+
+    public final int hashCode() {
+        return this.a;
+    }
+
     public final String toString() {
-        return e.a(this.b) + " leaves: " + Arrays.toString(this.d.toArray()) + " containers: " + Arrays.toString(this.e.toArray());
+        return "Mp4AlternateGroup: " + this.a;
+    }
+
+    @Override // b2.s0
+    public final /* synthetic */ void b(q0 q0Var) {
     }
 }

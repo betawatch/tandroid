@@ -5,7 +5,7 @@ import android.os.IBinder;
 import android.os.Parcel;
 import android.util.Log;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class b0 extends b8.b {
     public g b;
@@ -45,19 +45,19 @@ public final class b0 extends b8.b {
             gVar.Q = f0Var;
             if (gVar.C()) {
                 e eVar = f0Var.d;
-                m b10 = m.b();
+                m a2 = m.a();
                 n nVar = eVar == null ? null : eVar.a;
-                synchronized (b10) {
+                synchronized (a2) {
                     if (nVar == null) {
                         nVar = m.c;
                     } else {
-                        n nVar2 = (n) b10.a;
+                        n nVar2 = (n) a2.a;
                         if (nVar2 != null) {
                             if (nVar2.a < nVar.a) {
                             }
                         }
                     }
-                    b10.a = nVar;
+                    a2.a = nVar;
                 }
             }
             Bundle bundle2 = f0Var.a;

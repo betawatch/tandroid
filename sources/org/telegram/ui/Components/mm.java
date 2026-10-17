@@ -1,31 +1,47 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.View;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class mm extends s4.c0 {
-    public final /* synthetic */ ci.k r;
+public final class mm extends TextView {
+    public float a;
+    public boolean b;
+    public final /* synthetic */ Paint c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mm(ci.k kVar, Context context) {
+    public mm(Context context, Paint paint) {
         super(context);
-        this.r = kVar;
+        this.c = paint;
+        this.a = 0.0f;
     }
 
-    @Override // s4.c0
-    public final int k(int i10, View view) {
-        int topScrollOffset;
-        int k10 = super.k(i10, view);
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) this.r.R;
-        int paddingTop = chatAttachAlertPhotoLayout.E.getPaddingTop();
-        topScrollOffset = chatAttachAlertPhotoLayout.getTopScrollOffset();
-        return k10 - (paddingTop - topScrollOffset);
-    }
-
-    @Override // s4.c0
-    public final int m(int i10) {
-        return super.m(i10) * 2;
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        int i10 = (int) ((this.a * 130.0f) + 125.0f);
+        Paint paint = this.c;
+        paint.setAlpha(i10);
+        if (this.b) {
+            float f7 = this.a + 0.026666667f;
+            this.a = f7;
+            if (f7 >= 1.0f) {
+                this.a = 1.0f;
+                this.b = false;
+            }
+        } else {
+            float f10 = this.a - 0.026666667f;
+            this.a = f10;
+            if (f10 <= 0.0f) {
+                this.a = 0.0f;
+                this.b = true;
+            }
+        }
+        super.onDraw(canvas);
+        canvas.drawCircle(AndroidUtilities.dp(14.0f), getMeasuredHeight() / 2, AndroidUtilities.dp(4.0f), paint);
+        invalidate();
     }
 }

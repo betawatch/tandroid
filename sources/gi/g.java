@@ -1,32 +1,36 @@
 package gi;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.ui.fo;
+import android.app.Activity;
+import android.view.ViewGroup;
+import org.telegram.ui.ActionBar.d6;
+import org.telegram.ui.ActionBar.h6;
+import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.s61;
+import org.telegram.ui.Components.sl0;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class g implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ p b;
-    public final /* synthetic */ long c;
+public final class g extends s61 {
+    public final /* synthetic */ l N;
 
-    public /* synthetic */ g(p pVar, long j10, int i10) {
-        this.a = i10;
-        this.b = pVar;
-        this.c = j10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g(l lVar, im0 im0Var, Activity activity, int i10, int i11, ai.q qVar, d6 d6Var) {
+        super(im0Var, activity, i10, i11, true, qVar, d6Var);
+        this.N = lVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                MessagesController.getInstance(r0.currentAccount).unlinkCommunity(this.c, r0.b, new i(this.b, 0));
-                break;
-            default:
-                p pVar = this.b;
-                pVar.getClass();
-                pVar.presentFragment(fo.W9(this.c));
-                break;
+    @Override // org.telegram.ui.Components.s61, s4.g0
+    public final s4.b1 x(ViewGroup viewGroup, int i10) {
+        d6 d6Var;
+        if (i10 != 42) {
+            return super.x(viewGroup, i10);
         }
+        l lVar = this.N;
+        Activity parentActivity = lVar.getParentActivity();
+        int i11 = h6.L6;
+        d6Var = ((org.telegram.ui.ActionBar.n2) lVar).resourceProvider;
+        org.telegram.ui.Cells.l4 l4Var = new org.telegram.ui.Cells.l4(parentActivity, i11, 21, 0, false, d6Var);
+        l4Var.setHeight(25);
+        return new sl0(l4Var);
     }
 }

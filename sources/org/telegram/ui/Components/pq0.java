@@ -1,147 +1,90 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.graphics.Paint;
+import android.graphics.RectF;
 import android.view.View;
-import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class pq0 implements NotificationCenter.NotificationCenterDelegate {
-    public final /* synthetic */ TLRPC.Dialog a;
-    public final /* synthetic */ AtomicReference b;
-    public final /* synthetic */ View c;
-    public final /* synthetic */ ir0 d;
+public final class pq0 extends cr0 {
+    public final /* synthetic */ dr0 r;
 
-    public pq0(ir0 ir0Var, TLRPC.Dialog dialog, AtomicReference atomicReference, View view) {
-        this.d = ir0Var;
-        this.a = dialog;
-        this.b = atomicReference;
-        this.c = view;
-    }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pq0(dr0 dr0Var, Context context) {
+        super(context);
+        this.r = dr0Var;
+        final int i10 = 1;
+        this.h = new Paint(1);
+        this.n = new RectF();
+        View view = new View(context);
+        this.a = view;
+        int dp = AndroidUtilities.dp(18.0f);
+        int i11 = org.telegram.ui.ActionBar.h6.O5;
+        int i12 = dr0.a1;
+        view.setBackgroundDrawable(org.telegram.ui.ActionBar.h6.c0(dp, dr0Var.getThemedColor(i11)));
+        addView(view, w7.z5.a(36.0f, 14.0f, 0.0f, 14.0f, 0.0f, -1, 51));
+        ai.hc hcVar = new ai.hc(this, context, 24);
+        this.d = hcVar;
+        addView(hcVar, w7.z5.a(36.0f, 14.0f, 0.0f, 14.0f, 0.0f, -1, 51));
+        org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(context);
+        this.c = j5Var;
+        int i13 = org.telegram.ui.ActionBar.h6.ng;
+        j5Var.setTextColor(dr0Var.getThemedColor(i13));
+        j5Var.setTextSize(13);
+        j5Var.setLeftDrawable(R.drawable.msg_tabs_mic1);
+        final int i14 = 0;
+        j5Var.l(LocaleController.getString(R.string.VoipGroupInviteCanSpeak), false);
+        j5Var.setGravity(17);
+        addView(j5Var, w7.z5.a(-1.0f, 14.0f, 0.0f, 0.0f, 0.0f, -1, 51));
+        j5Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.br0
+            public final /* synthetic */ pq0 b;
 
-    /* JADX WARN: Code restructure failed: missing block: B:6:0x0033, code lost:
-    
-        if (org.telegram.messenger.MessagesController.getInstance(r3).getTopicsController().getTopics(-r11.id) == null) goto L8;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x006d  */
-    /* JADX WARN: Removed duplicated region for block: B:13:0x0074  */
-    /* JADX WARN: Removed duplicated region for block: B:15:0x0083  */
-    /* JADX WARN: Removed duplicated region for block: B:37:? A[RETURN, SYNTHETIC] */
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        boolean z10;
-        int i12;
-        int i13;
-        int i14;
-        int i15;
-        int i16;
-        int i17;
-        int i18;
-        int i19;
-        int i20;
-        int i21;
-        int i22;
-        ir0 ir0Var = this.d;
-        mm0 mm0Var = ir0Var.E;
-        fr0 fr0Var = ir0Var.L;
-        org.telegram.ui.ActionBar.k kVar = ir0Var.z0;
-        long longValue = ((Long) objArr[0]).longValue();
-        TLRPC.Dialog dialog = this.a;
-        if (longValue != (-dialog.id)) {
-            return;
-        }
-        ArrayList arrayList = fr0Var.f;
-        AtomicReference atomicReference = this.b;
-        if (arrayList == null) {
-            i22 = ((org.telegram.ui.ActionBar.e3) ir0Var).currentAccount;
-        }
-        if (atomicReference.get() != null) {
-            z10 = false;
-            i12 = ((org.telegram.ui.ActionBar.e3) ir0Var).currentAccount;
-            fr0Var.f = MessagesController.getInstance(i12).getTopicsController().getTopics(-dialog.id);
-            i13 = ((org.telegram.ui.ActionBar.e3) ir0Var).currentAccount;
-            fr0Var.d = UserObject.isBotForum(i13, dialog.id);
-            i14 = ((org.telegram.ui.ActionBar.e3) ir0Var).currentAccount;
-            fr0Var.e = UserObject.isBotForumWithEditableTopics(i14, dialog.id);
-            if (z10) {
-                fr0Var.l();
+            {
+                this.b = this;
             }
-            if (fr0Var.f != null) {
-                i21 = ((org.telegram.ui.ActionBar.e3) ir0Var).currentAccount;
-                NotificationCenter.getInstance(i21).removeObserver(this, NotificationCenter.topicsDidLoaded);
-            }
-            if (z10) {
-                return;
-            }
-            mm0Var.setVisibility(0);
-            mm0Var.setAlpha(0.0f);
-            kVar.setVisibility(0);
-            kVar.setAlpha(0.0f);
-            i15 = ((org.telegram.ui.ActionBar.e3) ir0Var).currentAccount;
-            if (UserObject.isBotForum(i15, dialog.id)) {
-                i20 = ((org.telegram.ui.ActionBar.e3) ir0Var).currentAccount;
-                kVar.setTitle(DialogObject.getShortName(MessagesController.getInstance(i20).getUser(Long.valueOf(dialog.id))));
-                kVar.setSubtitle(LocaleController.getString(R.string.SelectChat));
-            } else {
-                i16 = ((org.telegram.ui.ActionBar.e3) ir0Var).currentAccount;
-                if (ChatObject.isMonoForum(i16, dialog.id)) {
-                    i18 = ((org.telegram.ui.ActionBar.e3) ir0Var).currentAccount;
-                    i19 = ((org.telegram.ui.ActionBar.e3) ir0Var).currentAccount;
-                    kVar.setTitle(og.d.i(MessagesController.getInstance(i19).getChat(Long.valueOf(-dialog.id)), i18, false));
-                    kVar.setSubtitle(LocaleController.getString(R.string.SelectChat));
-                } else {
-                    i17 = ((org.telegram.ui.ActionBar.e3) ir0Var).currentAccount;
-                    kVar.setTitle(MessagesController.getInstance(i17).getChat(Long.valueOf(-dialog.id)).title);
-                    kVar.setSubtitle(LocaleController.getString(R.string.SelectTopic));
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view2) {
+                switch (i14) {
+                    case 0:
+                        this.b.a(0);
+                        break;
+                    default:
+                        this.b.a(1);
+                        break;
                 }
             }
-            ir0Var.M0 = ir0Var.L0;
-            o1.k kVar2 = ir0Var.B0;
-            if (kVar2 != null) {
-                kVar2.c();
+        });
+        org.telegram.ui.ActionBar.j5 j5Var2 = new org.telegram.ui.ActionBar.j5(context);
+        this.b = j5Var2;
+        j5Var2.setTextColor(dr0Var.getThemedColor(i13));
+        j5Var2.setTextSize(13);
+        j5Var2.setLeftDrawable(R.drawable.msg_tabs_mic2);
+        j5Var2.l(LocaleController.getString(R.string.VoipGroupInviteListenOnly), false);
+        j5Var2.setGravity(17);
+        addView(j5Var2, w7.z5.a(-1.0f, 0.0f, 0.0f, 14.0f, 0.0f, -1, 51));
+        j5Var2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.br0
+            public final /* synthetic */ pq0 b;
+
+            {
+                this.b = this;
             }
-            int[] iArr = new int[2];
-            o1.k kVar3 = new o1.k(new o1.j(0.0f));
-            o1.l lVar = new o1.l(1000.0f);
-            org.telegram.ui.fo foVar = ir0Var.f0;
-            lVar.b((foVar == null || !foVar.b) ? 800.0f : 10.0f);
-            lVar.a(1.0f);
-            kVar3.u = lVar;
-            ir0Var.B0 = kVar3;
-            kVar3.b(new aq0(this, this.c, iArr, 1));
-            ir0Var.B0.a(new jb(this, 6));
-            ir0Var.B0.h();
-            if (atomicReference.get() != null) {
-                AndroidUtilities.cancelRunOnUIThread((Runnable) atomicReference.get());
-                atomicReference.set(null);
-                return;
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view2) {
+                switch (i10) {
+                    case 0:
+                        this.b.a(0);
+                        break;
+                    default:
+                        this.b.a(1);
+                        break;
+                }
             }
-            return;
-        }
-        z10 = true;
-        i12 = ((org.telegram.ui.ActionBar.e3) ir0Var).currentAccount;
-        fr0Var.f = MessagesController.getInstance(i12).getTopicsController().getTopics(-dialog.id);
-        i13 = ((org.telegram.ui.ActionBar.e3) ir0Var).currentAccount;
-        fr0Var.d = UserObject.isBotForum(i13, dialog.id);
-        i14 = ((org.telegram.ui.ActionBar.e3) ir0Var).currentAccount;
-        fr0Var.e = UserObject.isBotForumWithEditableTopics(i14, dialog.id);
-        if (z10) {
-        }
-        if (fr0Var.f != null) {
-        }
-        if (z10) {
-        }
+        });
     }
 }

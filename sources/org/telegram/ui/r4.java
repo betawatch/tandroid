@@ -1,26 +1,38 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
+import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class r4 implements Runnable {
-    public final /* synthetic */ u4 a;
+public final class r4 extends org.telegram.ui.ActionBar.n2 {
+    public org.telegram.ui.Components.im0 a;
+    public q4 b;
 
-    public r4(u4 u4Var) {
-        this.a = u4Var;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        UsersSelectActivity usersSelectActivity = new UsersSelectActivity(null);
-        usersSelectActivity.N = new a0.h();
-        usersSelectActivity.O = new ArrayList();
-        usersSelectActivity.x = 1;
-        usersSelectActivity.G = false;
-        u4 u4Var = this.a;
-        usersSelectActivity.R = u4Var.U();
-        usersSelectActivity.n = new b1(this, 2);
-        u4Var.presentFragment(usersSelectActivity);
+    @Override // org.telegram.ui.ActionBar.n2
+    public final View createView(Context context) {
+        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
+        this.actionBar.setAllowOverlayTitle(true);
+        this.actionBar.setTitle(LocaleController.getString(R.string.AudioRecorderSettings));
+        this.actionBar.setActionBarMenuOnItemClick(new ah.s(this, 22));
+        FrameLayout frameLayout = new FrameLayout(context);
+        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.h6.x0(null, org.telegram.ui.ActionBar.h6.a7, false));
+        this.fragmentView = frameLayout;
+        org.telegram.ui.Components.im0 im0Var = new org.telegram.ui.Components.im0(context, null);
+        this.a = im0Var;
+        im0Var.p1();
+        this.actionBar.setAdaptiveBackground(this.a);
+        this.a.setLayoutManager(new s4.b0());
+        this.a.setVerticalScrollBarEnabled(false);
+        org.telegram.ui.Components.im0 im0Var2 = this.a;
+        q4 q4Var = new q4(context);
+        this.b = q4Var;
+        im0Var2.setAdapter(q4Var);
+        this.a.setOnItemClickListener(new i(this, 2));
+        frameLayout.addView(this.a, w7.z5.d(-1.0f, -1));
+        return this.fragmentView;
     }
 }

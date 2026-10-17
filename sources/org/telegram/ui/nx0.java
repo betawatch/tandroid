@@ -1,30 +1,83 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Intent;
+import android.net.Uri;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final class nx0 extends sg.r1 {
-    public final /* synthetic */ ox0 N;
+public final /* synthetic */ class nx0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ProfileActivity b;
+    public final /* synthetic */ TLRPC.User c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nx0(ox0 ox0Var, Context context) {
-        super(context);
-        this.N = ox0Var;
+    public /* synthetic */ nx0(ProfileActivity profileActivity, TLRPC.User user, int i10) {
+        this.a = i10;
+        this.b = profileActivity;
+        this.c = user;
     }
 
-    @Override // sg.r1, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        if (this.r.getVisibility() == 0) {
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(r0.getLeft(), r0.getTop(), r0.getRight(), r0.getBottom());
-            ox0 ox0Var = this.N;
-            ox0Var.d.n.n0.d(0, 0.0f, 0, getMeasuredWidth(), -this.n.h, ox0Var.d.n.O);
-            canvas.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), ox0Var.d.n.n0.f);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ProfileActivity profileActivity = this.b;
+                TLRPC.User user = this.c;
+                profileActivity.getClass();
+                profileActivity.presentFragment(sn.W9(user.id));
+                break;
+            case 1:
+                ProfileActivity profileActivity2 = this.b;
+                TLRPC.User user2 = this.c;
+                if (profileActivity2.getParentActivity() != null) {
+                    TLRPC.UserFull userFull = profileActivity2.w2;
+                    org.telegram.ui.Components.voip.d2.m(user2, false, userFull != null && userFull.video_calls_available, profileActivity2.getParentActivity(), profileActivity2.w2, profileActivity2.getAccountInstance());
+                    break;
+                }
+                break;
+            case 2:
+                ProfileActivity profileActivity3 = this.b;
+                TLRPC.User user3 = this.c;
+                if (profileActivity3.getParentActivity() != null) {
+                    TLRPC.UserFull userFull2 = profileActivity3.w2;
+                    org.telegram.ui.Components.voip.d2.m(user3, true, userFull2 != null && userFull2.video_calls_available, profileActivity3.getParentActivity(), profileActivity3.w2, profileActivity3.getAccountInstance());
+                    break;
+                }
+                break;
+            case 3:
+                ProfileActivity profileActivity4 = this.b;
+                TLRPC.User user4 = this.c;
+                profileActivity4.getClass();
+                try {
+                    Intent intent = new Intent("android.intent.action.DIAL", Uri.parse("tel:+" + user4.phone));
+                    intent.addFlags(TLObject.FLAG_28);
+                    profileActivity4.getParentActivity().startActivityForResult(intent, 500);
+                    break;
+                } catch (Exception e) {
+                    FileLog.e(e);
+                    return;
+                }
+            default:
+                ProfileActivity profileActivity5 = this.b;
+                TLRPC.User user5 = this.c;
+                try {
+                    ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", "+" + user5.phone));
+                    if (AndroidUtilities.shouldShowClipboardToast()) {
+                        org.telegram.ui.Components.xc.a0(profileActivity5).i(LocaleController.getString(R.string.PhoneCopied)).j();
+                        break;
+                    }
+                } catch (Exception e7) {
+                    FileLog.e(e7);
+                }
+                break;
         }
-        super.dispatchDraw(canvas);
     }
 }

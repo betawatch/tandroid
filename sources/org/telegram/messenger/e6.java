@@ -1,29 +1,35 @@
 package org.telegram.messenger;
 
-import android.net.Uri;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.Components.i80;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e6 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback b;
-    public final /* synthetic */ Uri c;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ e6(Utilities.Callback callback, Uri uri, int i10) {
+    public /* synthetic */ e6(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Object obj, float f7, int i10) {
         this.a = i10;
-        this.b = callback;
-        this.c = uri;
+        this.c = notificationCenterDelegate;
+        this.d = obj;
+        this.b = f7;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.run(this.c);
+                ((MediaController) this.c).lambda$setPlaybackSpeed$16((MessageObject) this.d, this.b);
                 break;
             default:
-                this.b.run(this.c);
+                org.telegram.ui.l4 l4Var = (org.telegram.ui.l4) this.c;
+                i80 i80Var = (i80) this.d;
+                l4Var.h0.M.c(0.0f, true);
+                i80Var.p = new org.telegram.ui.c0(l4Var, this.b, 0);
+                i80Var.Z();
                 break;
         }
     }

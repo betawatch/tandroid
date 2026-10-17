@@ -1,55 +1,47 @@
 package m;
 
-import android.app.Activity;
-import android.content.ClipData;
-import android.os.Build;
-import android.text.Selection;
-import android.text.Spannable;
-import android.view.DragEvent;
-import android.view.View;
-import android.widget.TextView;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
+import android.util.AttributeSet;
+import android.widget.SeekBar;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public abstract class d0 {
-    public static boolean a(DragEvent dragEvent, TextView textView, Activity activity) {
-        r0.d dVar;
-        activity.requestDragAndDropPermissions(dragEvent);
-        int offsetForPosition = textView.getOffsetForPosition(dragEvent.getX(), dragEvent.getY());
-        textView.beginBatchEdit();
-        try {
-            Selection.setSelection((Spannable) textView.getText(), offsetForPosition);
-            ClipData clipData = dragEvent.getClipData();
-            if (Build.VERSION.SDK_INT >= 31) {
-                dVar = new j2.j(clipData, 3);
-            } else {
-                r0.e eVar = new r0.e();
-                eVar.b = clipData;
-                eVar.c = 3;
-                dVar = eVar;
-            }
-            r0.i0.h(textView, dVar.build());
-            textView.endBatchEdit();
-            return true;
-        } catch (Throwable th2) {
-            textView.endBatchEdit();
-            throw th2;
+public class d0 extends SeekBar {
+    public final e0 a;
+
+    public d0(Context context, AttributeSet attributeSet, int i10) {
+        super(context, attributeSet, i10);
+        c3.a(this, getContext());
+        e0 e0Var = new e0(this);
+        this.a = e0Var;
+        e0Var.b(attributeSet, i10);
+    }
+
+    @Override // android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
+    public void drawableStateChanged() {
+        super.drawableStateChanged();
+        e0 e0Var = this.a;
+        d0 d0Var = e0Var.e;
+        Drawable drawable = e0Var.f;
+        if (drawable != null && drawable.isStateful() && drawable.setState(d0Var.getDrawableState())) {
+            d0Var.invalidateDrawable(drawable);
         }
     }
 
-    public static boolean b(DragEvent dragEvent, View view, Activity activity) {
-        r0.d dVar;
-        activity.requestDragAndDropPermissions(dragEvent);
-        ClipData clipData = dragEvent.getClipData();
-        if (Build.VERSION.SDK_INT >= 31) {
-            dVar = new j2.j(clipData, 3);
-        } else {
-            r0.e eVar = new r0.e();
-            eVar.b = clipData;
-            eVar.c = 3;
-            dVar = eVar;
+    @Override // android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
+    public final void jumpDrawablesToCurrentState() {
+        super.jumpDrawablesToCurrentState();
+        Drawable drawable = this.a.f;
+        if (drawable != null) {
+            drawable.jumpToCurrentState();
         }
-        r0.i0.h(view, dVar.build());
-        return true;
+    }
+
+    @Override // android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
+    public final synchronized void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        this.a.g(canvas);
     }
 }

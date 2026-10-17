@@ -1,45 +1,29 @@
 package ug;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class t0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ z0 b;
+import android.view.View;
 
-    public /* synthetic */ t0(z0 z0Var, int i10) {
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class t0 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ x0 b;
+
+    public /* synthetic */ t0(x0 x0Var, int i10) {
         this.a = i10;
-        this.b = z0Var;
+        this.b = x0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                this.b.X(true);
-                break;
-            case 1:
-                this.b.c0(true, false);
-                break;
-            case 2:
-                this.b.S();
-                break;
-            case 3:
-                this.b.c0(true, false);
-                break;
-            case 4:
-                this.b.c0(true, false);
-                break;
-            case 5:
-                this.b.c0(true, false);
-                break;
-            case 6:
-                z0 z0Var = this.b;
-                z0Var.e0.clear();
-                z0Var.f0.clear();
-                z0Var.dismiss();
+                x0 x0Var = this.b;
+                x0Var.e0.clear();
+                x0Var.Y.d.b(true);
+                x0Var.c0(true, false);
                 break;
             default:
-                this.b.dismiss();
+                this.b.X(false);
                 break;
         }
     }

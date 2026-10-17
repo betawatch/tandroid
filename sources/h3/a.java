@@ -8,7 +8,7 @@ import c3.i;
 import c3.p;
 import c3.s;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class a {
     public final e a;
@@ -53,7 +53,7 @@ public final class a {
             i iVar = this.b;
             if (j13 <= j14) {
                 this.c = null;
-                iVar.c();
+                iVar.f();
                 return c(pVar, j10, sVar);
             }
             long position = j12 - pVar.getPosition();
@@ -68,7 +68,7 @@ public final class a {
             long j16 = b10.c;
             if (i10 == -3) {
                 this.c = null;
-                iVar.c();
+                iVar.f();
                 return c(pVar, j12, sVar);
             }
             if (i10 == -2) {
@@ -85,7 +85,7 @@ public final class a {
                         pVar.r((int) position2);
                     }
                     this.c = null;
-                    iVar.c();
+                    iVar.f();
                     return c(pVar, j16, sVar);
                 }
                 fVar.e = j15;
@@ -99,7 +99,7 @@ public final class a {
         f fVar = this.c;
         if (fVar == null || fVar.a != j10) {
             e eVar = this.a;
-            this.c = new f(j10, eVar.a.l(j10), eVar.c, eVar.d, eVar.e, eVar.f);
+            this.c = new f(j10, eVar.a.k(j10), eVar.c, eVar.d, eVar.e, eVar.f);
         }
     }
 }

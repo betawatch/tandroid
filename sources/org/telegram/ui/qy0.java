@@ -1,38 +1,66 @@
 package org.telegram.ui;
 
-import java.util.List;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.ActionBarLayout;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qy0 implements MessagesStorage.BooleanCallback, vs {
-    public final /* synthetic */ ProfileActivity a;
-    public final /* synthetic */ TLRPC.User b;
+public final class qy0 extends s4.r0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ProfileActivity b;
 
-    public /* synthetic */ qy0(ProfileActivity profileActivity, TLRPC.User user) {
-        this.a = profileActivity;
-        this.b = user;
+    public /* synthetic */ qy0(ProfileActivity profileActivity, int i10) {
+        this.a = i10;
+        this.b = profileActivity;
     }
 
-    @Override // org.telegram.ui.vs
-    public void b() {
-        ProfileActivity.j0(this.a, this.b);
-    }
-
-    @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
-    public void run(boolean z10) {
-        ProfileActivity profileActivity = this.a;
-        if (profileActivity.getParentLayout() != null) {
-            List fragmentStack = profileActivity.getParentLayout().getFragmentStack();
-            if (((fragmentStack == null || fragmentStack.size() < 2) ? null : (org.telegram.ui.ActionBar.m2) t8.b.g(2, fragmentStack)) instanceof fo) {
-                ((ActionBarLayout) profileActivity.getParentLayout()).Y(fragmentStack.size() - 2);
-            }
+    @Override // s4.r0
+    public final void a(RecyclerView recyclerView, int i10) {
+        switch (this.a) {
+            case 0:
+                if (i10 == 1) {
+                    AndroidUtilities.hideKeyboard(this.b.getParentActivity().getCurrentFocus());
+                    break;
+                }
+                break;
+            default:
+                ProfileActivity profileActivity = this.b;
+                if (i10 == 1) {
+                    AndroidUtilities.hideKeyboard(profileActivity.getParentActivity().getCurrentFocus());
+                }
+                if (profileActivity.G0 && i10 != 2) {
+                    profileActivity.G0 = false;
+                }
+                org.telegram.ui.ActionBar.u0 u0Var = profileActivity.V0;
+                if (u0Var != null) {
+                    boolean z10 = i10 != 0;
+                    profileActivity.A1 = z10;
+                    u0Var.setEnabled((z10 || profileActivity.q2) ? false : true);
+                }
+                pz0 pz0Var = profileActivity.O;
+                boolean z11 = profileActivity.a.I1;
+                pz0Var.getClass();
+                break;
         }
-        profileActivity.N1 = true;
-        profileActivity.finishFragment();
-        profileActivity.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needDeleteDialog, Long.valueOf(profileActivity.i1), this.b, profileActivity.E2, Boolean.valueOf(z10));
+    }
+
+    @Override // s4.r0
+    public void b(RecyclerView recyclerView, int i10, int i11) {
+        switch (this.a) {
+            case 1:
+                ProfileActivity profileActivity = this.b;
+                org.telegram.ui.Components.r40 r40Var = profileActivity.X;
+                if (r40Var != null) {
+                    r40Var.b(true);
+                }
+                profileActivity.A3();
+                if (profileActivity.D1 != null && !profileActivity.E1 && profileActivity.c.N0() > profileActivity.w4 - 8) {
+                    profileActivity.R3(false);
+                }
+                pz0 pz0Var = profileActivity.O;
+                pz0Var.setPinnedToTop(pz0Var.getY() <= 0.0f);
+                profileActivity.U4();
+                break;
+        }
     }
 }

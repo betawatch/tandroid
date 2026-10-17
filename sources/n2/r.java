@@ -1,30 +1,37 @@
 package n2;
 
-import android.os.Build;
-import java.util.UUID;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
-public final class r implements h2.b {
-    public static final boolean c;
-    public final UUID a;
-    public final byte[] b;
+public interface r {
+    boolean B0(String str, byte[] bArr);
 
-    static {
-        boolean z10;
-        if ("Amazon".equals(Build.MANUFACTURER)) {
-            String str = Build.MODEL;
-            if ("AFTM".equals(str) || "AFTB".equals(str)) {
-                z10 = true;
-                c = z10;
-            }
-        }
-        z10 = false;
-        c = z10;
-    }
+    byte[] H();
 
-    public r(UUID uuid, byte[] bArr) {
-        this.a = uuid;
-        this.b = bArr;
-    }
+    void U(byte[] bArr, byte[] bArr2);
+
+    void Y(byte[] bArr);
+
+    Map b(byte[] bArr);
+
+    byte[] g0(byte[] bArr, byte[] bArr2);
+
+    void h(byte[] bArr, j2.k kVar);
+
+    void j0(byte[] bArr);
+
+    p k0(byte[] bArr, List list, int i10, HashMap hashMap);
+
+    int m0();
+
+    q o();
+
+    void release();
+
+    void t0(l2.f fVar);
+
+    h2.b u(byte[] bArr);
 }

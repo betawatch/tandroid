@@ -1,36 +1,26 @@
 package org.telegram.ui;
 
-import android.view.View;
-import java.util.Iterator;
+import android.view.ViewTreeObserver;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class z50 implements org.telegram.ui.Components.y5 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class z50 implements ViewTreeObserver.OnGlobalLayoutListener {
+    public final /* synthetic */ FrameLayout a;
+    public final /* synthetic */ b60 b;
 
-    public /* synthetic */ z50(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public z50(b60 b60Var, FrameLayout frameLayout) {
+        this.b = b60Var;
+        this.a = frameLayout;
     }
 
-    @Override // org.telegram.ui.Components.y5
-    public final void invalidate() {
-        switch (this.a) {
-            case 0:
-                Iterator it = ((a60) this.b).i.iterator();
-                while (it.hasNext()) {
-                    ((View) it.next()).invalidate();
-                }
-                break;
-            default:
-                a71 a71Var = (a71) this.b;
-                a71Var.getClass();
-                if (!ah.x0.b && a71Var.getParent() != null) {
-                    ((View) a71Var.getParent()).invalidate();
-                    break;
-                }
-                break;
+    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
+    public final void onGlobalLayout() {
+        this.a.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+        b60 b60Var = this.b;
+        if (b60Var.z0 == null) {
+            b60Var.z0 = (vc) b60Var.y0(b60Var.Z);
         }
+        b60Var.z0.f.setOnClickListener(new y50(this, 0));
     }
 }

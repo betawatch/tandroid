@@ -3,9 +3,9 @@ package bc;
 import com.google.android.gms.internal.cast.z5;
 import java.util.Arrays;
 import n6.l;
-import z7.ve;
+import z7.xe;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes.dex */
 public final class e {
     public final boolean a;
@@ -18,7 +18,7 @@ public final class e {
         this.c = dVar.c;
     }
 
-    public final ve a() {
+    public final xe a() {
         z5 z5Var = new z5();
         Boolean bool = Boolean.FALSE;
         z5Var.b = bool;
@@ -26,7 +26,7 @@ public final class e {
         z5Var.a = Boolean.valueOf(this.b);
         z5Var.d = bool;
         z5Var.e = Boolean.valueOf(this.c);
-        return new ve(z5Var);
+        return new xe(z5Var);
     }
 
     public final boolean equals(Object obj) {

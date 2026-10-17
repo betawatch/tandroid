@@ -1,31 +1,32 @@
 package ah;
 
+import ai.a2;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.view.View;
-import bi.b2;
-import di.i4;
+import ci.p1;
+import ei.c4;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.ActionBar.m2;
-import org.telegram.ui.Cells.a2;
+import org.telegram.ui.ActionBar.n2;
 import org.telegram.ui.Components.FragmentContextView;
-import org.telegram.ui.Components.bd;
-import org.telegram.ui.Components.fh0;
-import org.telegram.ui.Components.hv;
-import org.telegram.ui.Components.is;
+import org.telegram.ui.Components.cv;
+import org.telegram.ui.Components.fs;
 import org.telegram.ui.Components.voip.k2;
-import org.telegram.ui.Components.zq;
+import org.telegram.ui.Components.wq;
+import org.telegram.ui.Components.zc;
+import org.telegram.ui.Components.zg0;
 import org.telegram.ui.ExternalActionActivity;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PremiumPreviewFragment;
+import org.telegram.ui.Wallet.x2;
 
-/* compiled from: r8-map-id-1f25b96fe9d12701c1febda7f3362f7edb2a81cc9281e2e56ab1ce93f20d85c1 */
+/* compiled from: r8-map-id-189a3a12219b7c214453a48fa9697387dfb8b2ca31ce3a2eba70ff5e2610a248 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -41,33 +42,36 @@ public final /* synthetic */ class f implements View.OnClickListener {
                 int i10 = i.e;
                 break;
             case 1:
-                b2.j();
+                int i11 = a2.D0;
                 break;
             case 2:
-                int i11 = i4.d;
+                p1.j();
                 break;
             case 3:
-                PhotoViewer.t1().j0(1.0f, 0.0f, 0.0f, false);
+                int i12 = c4.d;
                 break;
             case 4:
-                int i12 = fi.n.n;
+                PhotoViewer.t1().j0(1.0f, 0.0f, 0.0f, false);
                 break;
             case 5:
+                int i13 = gi.n.n;
                 break;
             case 6:
-                int i13 = kh.c.e;
+                int i14 = kh.c.e;
                 break;
             case 7:
-                int i14 = org.telegram.ui.Cells.x.L;
                 break;
             case 8:
-                m2 R = LaunchActivity.R();
+                int i15 = org.telegram.ui.Cells.x.L;
+                break;
+            case 9:
+                n2 R = LaunchActivity.R();
                 if (R != null) {
                     R.presentFragment(new PremiumPreviewFragment(0, "contact"));
                     break;
                 }
                 break;
-            case 9:
+            case 10:
                 if (!MediaController.getInstance().isDownloadingCurrentMessage()) {
                     if (!MediaController.getInstance().isMessagePaused()) {
                         MediaController.getInstance().lambda$startAudioAgain$7(MediaController.getInstance().getPlayingMessageObject());
@@ -78,37 +82,37 @@ public final /* synthetic */ class f implements View.OnClickListener {
                     }
                 }
                 break;
-            case 10:
-                int i15 = zq.e0;
-                break;
             case 11:
-                int i16 = is.s;
+                int i16 = wq.e0;
                 break;
             case 12:
+                int i17 = fs.s;
+                break;
+            case 13:
                 float[] fArr = FragmentContextView.Q0;
                 MediaController.getInstance().updateSilent(false);
                 break;
-            case 13:
-                fh0 fh0Var = fh0.p0;
-                hv hvVar = fh0Var.U;
-                if (hvVar != null) {
-                    hvVar.H();
+            case 14:
+                zg0 zg0Var = zg0.p0;
+                cv cvVar = zg0Var.U;
+                if (cvVar != null) {
+                    cvVar.H();
                 } else {
-                    PhotoViewer photoViewer = fh0Var.V;
+                    PhotoViewer photoViewer = zg0Var.V;
                     if (photoViewer != null) {
-                        photoViewer.P0();
+                        photoViewer.Q0();
                         MediaController.getInstance().tryResumePausedAudio();
                     }
                 }
-                fh0.j(false);
-                break;
-            case 14:
-                org.telegram.ui.Components.voip.h1.j();
+                zg0.j(false);
                 break;
             case 15:
-                ((a2) view).c(!r6.b(), true);
+                org.telegram.ui.Components.voip.h1.j();
                 break;
             case 16:
+                ((org.telegram.ui.Cells.a2) view).c(!r6.b(), true);
+                break;
+            case 17:
                 VoIPService sharedInstance = VoIPService.getSharedInstance();
                 if (sharedInstance == null) {
                     k2.i();
@@ -117,20 +121,20 @@ public final /* synthetic */ class f implements View.OnClickListener {
                     sharedInstance.hangUp();
                     break;
                 }
-            case 17:
-                ug.m1.f0(0, null);
-                break;
             case 18:
-                ArrayList arrayList = ExternalActionActivity.x;
+                ug.l1.f0(0, null);
                 break;
             case 19:
+                ArrayList arrayList = ExternalActionActivity.x;
                 break;
             case 20:
-                Pattern pattern = LaunchActivity.B1;
                 break;
             case 21:
+                Pattern pattern = LaunchActivity.C1;
                 break;
             case 22:
+                break;
+            case 23:
                 try {
                     view.getContext().startActivity(new Intent("android.intent.action.VIEW", Uri.parse("https://fragment.com")));
                     break;
@@ -138,10 +142,13 @@ public final /* synthetic */ class f implements View.OnClickListener {
                     FileLog.e(e);
                     return;
                 }
-            case 23:
+            case 24:
+                int i18 = x2.R;
+                break;
+            case 25:
                 PhotoViewer.t1().j0(1.0f, 0.0f, 0.0f, false);
                 break;
-            case 24:
+            case 26:
                 try {
                     view.getContext().startActivity(new Intent("android.intent.action.VIEW", Uri.parse("https://play.google.com/store/apps/details?id=org.telegram.messenger")));
                     break;
@@ -149,17 +156,14 @@ public final /* synthetic */ class f implements View.OnClickListener {
                     FileLog.e(e7);
                     return;
                 }
-            case 25:
-                int i17 = yh.n.A0;
-                break;
-            case 26:
-                bd[] bdVarArr = yh.w.p0;
-                break;
             case 27:
-                int i18 = yh.d0.f0;
+                int i19 = yh.n.A0;
+                break;
+            case 28:
+                zc[] zcVarArr = yh.w.p0;
                 break;
             default:
-                int i19 = zh.r0.D0;
+                int i20 = yh.d0.f0;
                 break;
         }
     }
